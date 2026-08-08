@@ -4,16 +4,19 @@
 \alias{ox_view_pptx}
 \title{Preview a .pptx file}
 \usage{
-ox_view_pptx(x, interactive = NA, browser = FALSE)
+ox_view_pptx(x, interactive = NA, browser = FALSE, debug = FALSE)
 }
 \arguments{
-\item{x}{Path to an existing .pptx file.}
+\item{x}{Path or URL to an existing .pptx file.}
 
 \item{interactive}{Whether to actually open the viewer. Defaults to
 \code{interactive()}; set explicitly to avoid depending on session state.}
 
 \item{browser}{If \code{TRUE}, force opening in the system browser instead
 of the RStudio Viewer pane.}
+
+\item{debug}{If \code{TRUE}, show the in-viewer debug panel (dump the
+viewer instance, list its methods, call any method with an argument).}
 }
 \description{
 Preview a .pptx file

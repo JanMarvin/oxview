@@ -43,10 +43,15 @@
 }
 
 .ox_csp_header <- function() {
-  # No network egress beyond this local server: blocks the vendored
-  # library's optional Google Fonts substitution call along with any
-  # other outbound request, enforced by the browser regardless of what
-  # the bundled JS/WASM tries to do.
+  if (isTRUE(getOption("oxview.disable_csp", FALSE))) {
+    return(list())
+  }
+  # No network egress beyond this local server: blocks any outbound
+  # fetch/XHR/image/font/script/worker request the bundled JS/WASM could
+  # attempt, enforced by the browser regardless of what that code contains.
+  # (frame-ancestors/object-src/base-uri deliberately omitted: they're
+  # anti-clickjacking/legacy-plugin hardening, not exfiltration-relevant,
+  # and can interfere with how an IDE's viewer pane embeds the page.)
   list("Content-Security-Policy" = paste(
     "default-src 'self';",
     "script-src 'self' 'wasm-unsafe-eval';",
@@ -54,10 +59,7 @@
     "img-src 'self' data: blob:;",
     "font-src 'self' data:;",
     "connect-src 'self' blob:;",
-    "worker-src 'self' blob:;",
-    "object-src 'none';",
-    "base-uri 'none';"
-    # "frame-ancestors 'self'"
+    "worker-src 'self' blob:"
   ))
 }
 

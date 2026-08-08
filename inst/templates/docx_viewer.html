@@ -4,12 +4,66 @@
     <meta charset="UTF-8">
     <title>DOCX Preview</title>
     <style>
-        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: auto; background: #e8e8e8; }
-        #docx-scroll { width: 100%; height: 100%; }
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; }
+        #toolbar {
+            position: absolute; top: 0; left: 0; right: 0; height: 36px; background: #f0f0f0;
+            border-bottom: 1px solid #ccc; box-sizing: border-box; padding: 4px 8px; z-index: 999;
+            display: flex; align-items: center; gap: 6px; font-size: 12px;
+        }
+        #toolbar button {
+            height: 26px; font-size: 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;
+            background: #fff;
+        }
+        #toolbar button:hover { background: #e8e8e8; }
+        #page-indicator { min-width: 70px; text-align: center; color: #333; }
+        #docx-scroll { position: absolute; top: 36px; bottom: 0; left: 0; right: 0; overflow: auto; background: #e8e8e8; }
+        #searchbar {
+            position: absolute; top: 40px; right: 12px; background: #fff; border: 1px solid #ccc;
+            border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); padding: 6px; z-index: 998;
+            display: none; align-items: center; gap: 4px; font-size: 12px;
+        }
+        #searchbar input { height: 24px; font-size: 12px; width: 160px; box-sizing: border-box; }
+        #searchbar button { height: 24px; font-size: 12px; cursor: pointer; }
     </style>
 </head>
 <body>
+    <div id="toolbar">
+        <button id="btn-prev" title="Previous page">&larr;</button>
+        <span id="page-indicator">Page - / -</span>
+        <button id="btn-next" title="Next page">&rarr;</button>
+        <span style="width:1px;height:20px;background:#ccc;"></span>
+        <button id="btn-zoom-out" title="Zoom out">&minus;</button>
+        <button id="btn-zoom-in" title="Zoom in">+</button>
+        <button id="btn-fit-width">Fit width</button>
+        <button id="btn-fit-page">Fit page</button>
+        <span id="zoom-indicator" style="color:#666;">100%</span>
+        <span style="flex:1 1 auto;"></span>
+        <span id="load-status" style="color:#666;"></span>
+        <span id="word-count" style="color:#666;"></span>
+        <span id="selection-count" style="color:#666; display:inline-block; min-width:130px; text-align:right;"></span>
+        <button id="btn-debug-toggle" title="Toggle debug panel" style="margin-left:4px; display:none;">&#128027;</button>
+    </div>
+    <div id="debugpanel" style="display:none; position:absolute; top:40px; left:12px; right:12px; height:35%;
+         background:#fff; border:1px solid #ccc; border-radius:4px; box-shadow:0 2px 8px rgba(0,0,0,0.15);
+         z-index:997; padding:6px; box-sizing:border-box; font-family:monospace; font-size:11px;">
+        <div style="margin-bottom:4px;">
+            <button id="dbg-dump">Dump viewer</button>
+            <button id="dbg-methods">List methods</button>
+            <input id="dbg-arg" type="text" placeholder="arg" style="width:60px;" />
+            <button id="dbg-call">viewer[name](arg)</button>
+            <input id="dbg-name" type="text" placeholder="method name" style="width:140px;" />
+            <button id="dbg-close" style="float:right;">&times;</button>
+        </div>
+        <textarea id="dbg-output" readonly style="width:100%; height:calc(100% - 28px); box-sizing:border-box;
+            white-space:pre; overflow:auto;"></textarea>
+    </div>
     <div id="docx-scroll"></div>
+    <div id="searchbar">
+        <input type="text" id="search-input" placeholder="Find in document..." />
+        <button id="search-prev" title="Previous match">&uarr;</button>
+        <button id="search-next" title="Next match">&darr;</button>
+        <button id="search-close" title="Close">&times;</button>
+    </div>
     <script type="module" src="./viewer.js"></script>
 </body>
 </html>

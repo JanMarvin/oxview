@@ -1,24 +1,33 @@
-.ox_get_file <- function(path_or_url) {
-  ## Is this a file or URL (approach taken from read.table())
-  fl <- file(description = path_or_url)
+.ox_get_file <- function(path_or_url, kind = NULL) {
+  ## Is this a file or URL (code taken from read.table())
   on.exit(try(close(fl), silent = TRUE), add = TRUE)
+  fl <- file(description = path_or_url)
+  ## If URL download
   if (inherits(fl, "url")) {
-    ext <- tools::file_ext(sub("[?#].*$", "", path_or_url))
+    ## Extension for the downloaded tempfile: prefer the known target kind
+    ## (the caller already knows this is "docx"/"xlsx"/"pptx" - far more
+    ## reliable than parsing it back out of the URL, which only works when
+    ## the URL happens to end in the real extension).
+    ext <- if (!is.null(kind)) kind else tools::file_ext(sub("[?#].*$", "", path_or_url))
     tmp <- tempfile(fileext = if (nzchar(ext)) paste0(".", ext) else "")
     utils::download.file(url = path_or_url, destfile = tmp, cacheOK = FALSE, mode = "wb", quiet = TRUE)
-    return(tmp)
+    if (!file.exists(tmp) || file.info(tmp)$size == 0) {
+      stop("Download appeared to succeed but produced no file (or an empty file) at ",
+           tmp, ". URL: ", path_or_url, call. = FALSE)
+    }
+    path_or_url <- tmp
   }
   path_or_url
 }
 
-.ox_resolve_source <- function(x, allow_workbook = FALSE) {
+.ox_resolve_source <- function(x, kind, allow_workbook = FALSE) {
   if (allow_workbook && inherits(x, "wbWorkbook")) {
     tmp <- tempfile(fileext = ".xlsx")
     x$clone()$save(tmp, flush = FALSE)
     return(normalizePath(tmp, mustWork = TRUE))
   }
   if (is.character(x) && length(x) == 1) {
-    resolved <- .ox_get_file(x)
+    resolved <- .ox_get_file(x, kind = kind)
     if (!file.exists(resolved)) {
       stop("`x` did not resolve to an existing file (checked as a local path and as a URL).",
            call. = FALSE)
@@ -30,33 +39,34 @@
   stop(msg, ".", call. = FALSE)
 }
 
-.ox_view <- function(x, kind, template, allow_workbook = FALSE, interactive = NA, browser = FALSE) {
+.ox_view <- function(x, kind, template, allow_workbook = FALSE, interactive = NA, browser = FALSE, debug = FALSE) {
   if (is.na(interactive)) interactive <- interactive()
   if (!isTRUE(interactive)) {
     warning("will not open file when not interactive", call. = FALSE)
     return(invisible(x))
   }
-  
-  src_path <- .ox_resolve_source(x, allow_workbook = allow_workbook)
-  
+
+  src_path <- .ox_resolve_source(x, kind = kind, allow_workbook = allow_workbook)
+
   ox_start_server()
   sess <- .ox_new_session_dir()
-  
+
   file.copy(src_path, file.path(sess$dir, paste0("workbook.", kind)), overwrite = TRUE)
   file.copy(file.path(.ox_template_root(), paste0(template, ".html")),
             file.path(sess$dir, "index.html"), overwrite = TRUE)
   file.copy(file.path(.ox_template_root(), paste0(template, ".js")),
             file.path(sess$dir, "viewer.js"), overwrite = TRUE)
-  
+
   url <- sprintf("http://127.0.0.1:%d/session/%s/index.html", .ox_env$port, sess$id)
-  
+  if (isTRUE(debug)) url <- paste0(url, "?debug=1")
+
   viewer_fn <- if (!browser) getOption("viewer") else NULL
   if (!is.null(viewer_fn)) {
     viewer_fn(url)
   } else {
     utils::browseURL(url)
   }
-  
+
   invisible(x)
 }
 
@@ -73,53 +83,62 @@
 #'   \code{interactive()}; set explicitly to avoid depending on session state.
 #' @param browser If \code{TRUE}, force opening in the system browser instead
 #'   of the RStudio Viewer pane.
+#' @param debug If \code{TRUE}, show the in-viewer debug panel (dump the
+#'   viewer instance, list its methods, call any method with an argument).
 #' @export
-ox_view_xlsx <- function(x, interactive = NA, browser = FALSE) {
+ox_view_xlsx <- function(x, interactive = NA, browser = FALSE, debug = FALSE) {
   .ox_view(x, kind = "xlsx", template = "xlsx_viewer", allow_workbook = TRUE,
-           interactive = interactive, browser = browser)
+           interactive = interactive, browser = browser, debug = debug)
 }
 
 #' Preview a .docx file
 #' @inheritParams ox_view_xlsx
-#' @param x Path to an existing .docx file.
+#' @param x Path or URL to an existing .docx file.
 #' @export
-ox_view_docx <- function(x, interactive = NA, browser = FALSE) {
+ox_view_docx <- function(x, interactive = NA, browser = FALSE, debug = FALSE) {
   .ox_view(x, kind = "docx", template = "docx_viewer",
-           interactive = interactive, browser = browser)
+           interactive = interactive, browser = browser, debug = debug)
 }
 
 #' Preview a .pptx file
 #' @inheritParams ox_view_xlsx
-#' @param x Path to an existing .pptx file.
+#' @param x Path or URL to an existing .pptx file.
 #' @export
-ox_view_pptx <- function(x, interactive = NA, browser = FALSE) {
+ox_view_pptx <- function(x, interactive = NA, browser = FALSE, debug = FALSE) {
   .ox_view(x, kind = "pptx", template = "pptx_viewer",
-           interactive = interactive, browser = browser)
+           interactive = interactive, browser = browser, debug = debug)
 }
 
 #' Preview an xlsx, docx, or pptx file
 #'
 #' Dispatches to \code{\link{ox_view_xlsx}}, \code{\link{ox_view_docx}}, or
-#' \code{\link{ox_view_pptx}} based on \code{x}'s file extension (or, for an
-#' openxlsx2 \code{wbWorkbook} object, always to the xlsx viewer).
+#' \code{\link{ox_view_pptx}} based on \code{type} if given, otherwise on
+#' \code{x}'s file extension (or, for an openxlsx2 \code{wbWorkbook} object,
+#' always to the xlsx viewer).
 #'
 #' @inheritParams ox_view_xlsx
 #' @param x Path or URL to an .xlsx/.xlsm/.docx/.pptx file, or an
 #'   openxlsx2 \code{wbWorkbook} object.
+#' @param type Optionally force the format ("xlsx", "docx", or "pptx")
+#'   instead of guessing it from \code{x}'s extension. Useful when \code{x}
+#'   is a URL that doesn't end in the actual file extension (e.g. a download
+#'   endpoint with an opaque or query-string path).
 #' @export
-ox_view <- function(x, interactive = NA, browser = FALSE) {
+ox_view <- function(x, interactive = NA, browser = FALSE, debug = FALSE, type = NULL) {
   if (inherits(x, "wbWorkbook")) {
-    return(ox_view_xlsx(x, interactive = interactive, browser = browser))
+    return(ox_view_xlsx(x, interactive = interactive, browser = browser, debug = debug))
   }
   if (!is.character(x) || length(x) != 1) {
     stop("`x` must be a path or URL to a file, or an openxlsx2 wbWorkbook object.", call. = FALSE)
   }
-  ext <- tolower(tools::file_ext(sub("[?#].*$", "", x)))
+  ext <- if (!is.null(type)) tolower(type) else tolower(tools::file_ext(sub("[?#].*$", "", x)))
   switch(ext,
          xlsx = ,
-         xlsm = ox_view_xlsx(x, interactive = interactive, browser = browser),
-         docx = ox_view_docx(x, interactive = interactive, browser = browser),
-         pptx = ox_view_pptx(x, interactive = interactive, browser = browser),
-         stop("Unrecognized file extension '.", ext, "' - expected xlsx, xlsm, docx, or pptx.", call. = FALSE)
+         xlsm = ox_view_xlsx(x, interactive = interactive, browser = browser, debug = debug),
+         docx = ox_view_docx(x, interactive = interactive, browser = browser, debug = debug),
+         pptx = ox_view_pptx(x, interactive = interactive, browser = browser, debug = debug),
+         stop("Unrecognized file extension '.", ext, "' - expected xlsx, xlsm, docx, or pptx. ",
+              "If `x` doesn't end in its real extension (e.g. a URL with an opaque path), ",
+              "pass `type = \"docx\"` (or \"xlsx\"/\"pptx\") explicitly.", call. = FALSE)
   )
 }

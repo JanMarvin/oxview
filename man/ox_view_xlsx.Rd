@@ -4,7 +4,7 @@
 \alias{ox_view_xlsx}
 \title{Preview an .xlsx / .xlsm file or openxlsx2 workbook}
 \usage{
-ox_view_xlsx(x, interactive = NA, browser = FALSE)
+ox_view_xlsx(x, interactive = NA, browser = FALSE, debug = FALSE)
 }
 \arguments{
 \item{x}{Path to an existing .xlsx/.xlsm file, or an openxlsx2
@@ -15,6 +15,9 @@ ox_view_xlsx(x, interactive = NA, browser = FALSE)
 
 \item{browser}{If \code{TRUE}, force opening in the system browser instead
 of the RStudio Viewer pane.}
+
+\item{debug}{If \code{TRUE}, show the in-viewer debug panel (dump the
+viewer instance, list its methods, call any method with an argument).}
 }
 \description{
 Opens a live spreadsheet preview (RStudio Viewer pane, or the default

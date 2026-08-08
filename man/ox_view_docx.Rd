@@ -4,16 +4,19 @@
 \alias{ox_view_docx}
 \title{Preview a .docx file}
 \usage{
-ox_view_docx(x, interactive = NA, browser = FALSE)
+ox_view_docx(x, interactive = NA, browser = FALSE, debug = FALSE)
 }
 \arguments{
-\item{x}{Path to an existing .docx file.}
+\item{x}{Path or URL to an existing .docx file.}
 
 \item{interactive}{Whether to actually open the viewer. Defaults to
 \code{interactive()}; set explicitly to avoid depending on session state.}
 
 \item{browser}{If \code{TRUE}, force opening in the system browser instead
 of the RStudio Viewer pane.}
+
+\item{debug}{If \code{TRUE}, show the in-viewer debug panel (dump the
+viewer instance, list its methods, call any method with an argument).}
 }
 \description{
 Preview a .docx file

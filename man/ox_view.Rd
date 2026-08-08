@@ -4,7 +4,7 @@
 \alias{ox_view}
 \title{Preview an xlsx, docx, or pptx file}
 \usage{
-ox_view(x, interactive = NA, browser = FALSE)
+ox_view(x, interactive = NA, browser = FALSE, debug = FALSE, type = NULL)
 }
 \arguments{
 \item{x}{Path or URL to an .xlsx/.xlsm/.docx/.pptx file, or an
@@ -15,9 +15,18 @@ openxlsx2 \code{wbWorkbook} object.}
 
 \item{browser}{If \code{TRUE}, force opening in the system browser instead
 of the RStudio Viewer pane.}
+
+\item{debug}{If \code{TRUE}, show the in-viewer debug panel (dump the
+viewer instance, list its methods, call any method with an argument).}
+
+\item{type}{Optionally force the format ("xlsx", "docx", or "pptx")
+instead of guessing it from \code{x}'s extension. Useful when \code{x}
+is a URL that doesn't end in the actual file extension (e.g. a download
+endpoint with an opaque or query-string path).}
 }
 \description{
 Dispatches to \code{\link{ox_view_xlsx}}, \code{\link{ox_view_docx}}, or
-\code{\link{ox_view_pptx}} based on \code{x}'s file extension (or, for an
-openxlsx2 \code{wbWorkbook} object, always to the xlsx viewer).
+\code{\link{ox_view_pptx}} based on \code{type} if given, otherwise on
+\code{x}'s file extension (or, for an openxlsx2 \code{wbWorkbook} object,
+always to the xlsx viewer).
 }

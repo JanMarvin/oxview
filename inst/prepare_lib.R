@@ -27,16 +27,51 @@ if (file.exists(upstream_license)) {
   file.copy(upstream_license, "inst/ooxml-dist/LICENSE.upstream", overwrite = TRUE)
 }
 
-writeLines(ooxml_ver, "inst/ooxml-dist/VERSION")
+## Prune anything not actually reachable from the xlsx/docx/pptx entry
+## points we use (we never import '.', './math', or './node'). Traced via
+## static `import ... from "./x"`, dynamic `import("./x")`, and the lazy
+## `new URL("x.wasm", import.meta.url)` pattern the library uses for
+## WASM/worker assets - re-derived here rather than hardcoded, since the
+## content-hashed chunk filenames (e.g. "render-worker-host-B8HAb_sK.js")
+## change on every upstream build and a hardcoded list would silently go
+## stale and under-prune on the next version bump.
+.prune_unreachable <- function(dist_root, entries) {
+  all_files <- list.files(dist_root)
+  import_pattern <- "(?:from|import)\\s*\\(?\\s*[\"']\\./([^\"']+)[\"']"
+  url_pattern <- "[\"']([A-Za-z0-9_.-]+\\.(?:wasm|js|mjs))[\"']"
 
-## bump the pinned version referenced in DESCRIPTION's vendored-library note, if present
-description <- readLines("DESCRIPTION")
-description <- gsub(
-  pattern = "'@silurus/ooxml' [0-9.]+",
-  replacement = sprintf("'@silurus/ooxml' %s", ooxml_ver),
-  x = description
-)
-writeLines(description, "DESCRIPTION")
+  reachable <- character(0)
+  queue <- entries
+  while (length(queue) > 0) {
+    f <- queue[[1]]
+    queue <- queue[-1]
+    if (f %in% reachable || !(f %in% all_files)) next
+    reachable <- c(reachable, f)
+    if (!grepl("\\.(js|mjs)$", f)) next
+    txt <- paste(readLines(file.path(dist_root, f), warn = FALSE), collapse = "\n")
+
+    m1 <- regmatches(txt, gregexpr(import_pattern, txt, perl = TRUE))[[1]]
+    deps1 <- gsub(import_pattern, "\\1", m1, perl = TRUE)
+
+    m2 <- regmatches(txt, gregexpr(url_pattern, txt, perl = TRUE))[[1]]
+    deps2 <- gsub('^["\']|["\']$', "", m2)
+    deps2 <- deps2[deps2 %in% all_files]
+
+    queue <- c(queue, deps1, deps2)
+  }
+
+  unreachable <- setdiff(all_files, reachable)
+  if (length(unreachable) > 0) {
+    unlink(file.path(dist_root, unreachable))
+  }
+  invisible(unreachable)
+}
+
+pruned <- .prune_unreachable("inst/ooxml-dist", c("xlsx.mjs", "docx.mjs", "pptx.mjs"))
+message("prepare_lib.R: pruned ", length(pruned), " unreachable file(s): ",
+        paste(pruned, collapse = ", "))
+
+writeLines(ooxml_ver, "inst/ooxml-dist/VERSION")
 
 unlink(tmp_tar)
 unlink(tmp_dir, recursive = TRUE)
