@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XLSX Preview</title>
+    <style>
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; }
+        #topbar {
+            position: absolute; top: 0; left: 0; right: 0; height: 32px; background: #f0f0f0;
+            border-bottom: 1px solid #ccc; box-sizing: border-box; padding: 3px 8px; z-index: 999;
+            display: flex; align-items: center; gap: 6px;
+        }
+        #ref-box {
+            width: 64px; height: 24px; font-size: 12px; box-sizing: border-box;
+            border: 1px solid #ccc; border-radius: 3px; padding: 0 6px; text-align: center;
+            background: #fff; flex: none;
+        }
+        #formula-box {
+            flex: 1 1 auto; height: 24px; font-size: 12px; box-sizing: border-box;
+            border: 1px solid #ccc; border-radius: 3px; padding: 0 6px;
+        }
+        #btn-copy { height: 26px; font-size: 12px; cursor: pointer; flex: none; }
+        #xlsx-container { position: absolute; top: 32px; bottom: 22px; left: 0; right: 0; }
+        #statusbar {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 22px; background: #f0f0f0;
+            border-top: 1px solid #ccc; box-sizing: border-box; padding: 2px 10px; z-index: 999;
+            font-size: 11px; color: #333; display: flex; gap: 16px; align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="topbar">
+        <input type="text" id="ref-box" placeholder="B2" />
+        <input type="text" id="formula-box" readonly placeholder="Click a cell..." />
+        <button id="btn-copy">Copy</button>
+    </div>
+    <div id="xlsx-container"></div>
+    <div id="statusbar">
+        <span id="stat-count"></span>
+        <span id="stat-sum"></span>
+        <span id="stat-avg"></span>
+        <span id="stat-hint" style="margin-left:auto; color:#888;"></span>
+    </div>
+    <textarea id="clip-helper" style="position:absolute; left:-9999px;"></textarea>
+    <script type="module" src="./viewer.js"></script>
+</body>
+</html>
