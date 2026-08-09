@@ -184,6 +184,16 @@ async function init() {
         } else if ((ev.metaKey || ev.ctrlKey) && ev.key === "-") {
             ev.preventDefault();
             viewer.zoomOut();
+        } else if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "a" &&
+                   !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+            // No public "select all" API; enableTextSelection renders real
+            // DOM text, so native browser select-all against the scroll
+            // container works. Skipped while focus is in an input/textarea
+            // (e.g. the search box) so it doesn't hijack normal text editing.
+            ev.preventDefault();
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.selectAllChildren(container);
         }
     });
 

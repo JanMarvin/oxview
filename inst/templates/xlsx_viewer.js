@@ -10,11 +10,13 @@ import { XlsxViewer } from "/assets/xlsx.mjs";
 // gives the same cell values/formulas/display text through a real public
 // API (bounded to 10,000 cells - see MAX_SELECTION_CONTEXT_CELLS).
 //
-// The one thing that STILL needs the private worksheet structure: the
-// hyperlink hover tooltip, since getSelectionContext() only covers the
-// current *selection*, not an arbitrary hovered cell. No public "get this
-// specific cell's data" API exists for that, so findCell()/cellDisplay()
-// stick around for that one remaining use.
+// Hyperlink hover tooltip: initially assumed cells carried a `.hyperlink`
+// field (matching docx/pptx run shape) - confirmed wrong against the
+// actual dist/types/xlsx.d.ts, no such field exists on Cell. Hyperlinks
+// live in a separate `Worksheet.hyperlinks: Hyperlink[]` array
+// ({row, col, url, location, display}), looked up by address instead.
+// This is public (part of the documented Worksheet type), so no private
+// API dependency remains for this feature after all.
 
 function colLetters(col) {
     let n = col, s = "";
@@ -24,38 +26,6 @@ function colLetters(col) {
         n = Math.floor((n - 1) / 26);
     }
     return s;
-}
-
-function findCell(ws, row, col) {
-    if (!ws) return null;
-    const rowObj = ws.rows.find(r => r.index === row);
-    if (!rowObj || !rowObj.cells) return null;
-    return rowObj.cells.find(c => c.col === col) || null;
-}
-
-function cellDisplay(cell) {
-    if (!cell) return { text: "", num: null, formula: null };
-    const formula = cell.formula ? "=" + cell.formula : null;
-    const v = cell.value;
-    if (v === null || v === undefined) return { text: "", num: null, formula: formula };
-    if (typeof v !== "object") return { text: String(v), num: typeof v === "number" ? v : null, formula: formula };
-
-    if (v.type === "number" && typeof v.number === "number") {
-        return { text: String(v.number), num: v.number, formula: formula };
-    }
-    if (v.type === "text" && "text" in v) {
-        return { text: String(v.text), num: null, formula: formula };
-    }
-    if (v.type === "bool" && "bool" in v) {
-        return { text: v.bool ? "TRUE" : "FALSE", num: null, formula: formula };
-    }
-    if (v.type === "error" && "error" in v) {
-        return { text: String(v.error), num: null, formula: formula };
-    }
-    if ("text" in v) return { text: String(v.text), num: null, formula: formula };
-    if ("number" in v) return { text: String(v.number), num: v.number, formula: formula };
-    if ("value" in v) return { text: String(v.value), num: typeof v.value === "number" ? v.value : null, formula: formula };
-    return { text: JSON.stringify(v), num: null, formula: formula };
 }
 
 function safeStringify(obj, maxDepth) {
@@ -345,6 +315,21 @@ async function init() {
         } else if ((ev.metaKey || ev.ctrlKey) && ev.key === "-") {
             ev.preventDefault();
             xlsx.zoomOut();
+        } else if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "a") {
+            ev.preventDefault();
+            // No public "select all" method exists; XlsxSelectionArea's
+            // documented kind:'sheet' variant is the supported way to
+            // express "the whole sheet" to setSelection().
+            try {
+                xlsx.setSelection({
+                    areas: [{ kind: "sheet" }],
+                    activeAreaIndex: 0,
+                    activeCell: { row: 1, col: 1 },
+                    extensionAnchor: { row: 1, col: 1 }
+                });
+            } catch (e) {
+                console.error("[oxview] select-all failed:", e);
+            }
         }
     });
 
@@ -418,11 +403,16 @@ async function init() {
         if (key !== lastHoverCell) {
             lastHoverCell = key;
             const ws = xlsx.currentWorksheet;
-            const cell = findCell(ws, addr.row, addr.col);
-            if (cell && cell.hyperlink) {
-                const label = cell.hyperlink.kind === "external"
-                    ? cell.hyperlink.url
-                    : "\u2192 " + cell.hyperlink.ref + " (in this workbook)";
+            // Cells don't carry a .hyperlink field (that was never right -
+            // confirmed against dist/types/xlsx.d.ts: no such field exists
+            // on Cell). Hyperlinks live in a separate, flat
+            // Worksheet.hyperlinks array of {row, col, url, location,
+            // display}, matched by address.
+            const link = ws && ws.hyperlinks
+                ? ws.hyperlinks.find(h => h.row === addr.row && h.col === addr.col)
+                : null;
+            if (link) {
+                const label = link.url ? link.url : "\u2192 " + (link.location || "") + " (in this workbook)";
                 linkTooltip.textContent = label;
                 linkTooltip.style.display = "block";
             } else {

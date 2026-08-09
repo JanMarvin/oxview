@@ -176,6 +176,12 @@ async function init() {
         } else if ((ev.metaKey || ev.ctrlKey) && ev.key === "-") {
             ev.preventDefault();
             viewer.zoomOut();
+        } else if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "a" &&
+                   !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+            ev.preventDefault();
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.selectAllChildren(container);
         }
     });
 
