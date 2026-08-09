@@ -37,6 +37,22 @@ if (interactive()) {
 }
 ```
 
+## Screenshots
+
+<!-- Drafts - swap these for real screenshots of each viewer. -->
+
+### xlsx
+
+![xlsx viewer screenshot placeholder](man/figures/xlsx.png)
+
+### docx
+
+![docx viewer screenshot placeholder](man/figures/docx.png)
+
+### pptx
+
+![pptx viewer screenshot placeholder](man/figures/pptx.png)
+
 
 ## License
 

@@ -28,6 +28,37 @@ if (interactive()) {
 }
 ```
 
+## Screenshots
+
+<!-- Drafts - swap these for real screenshots of each viewer. -->
+
+### xlsx
+
+<figure>
+<img src="man/figures/xlsx.png"
+alt="xlsx viewer screenshot placeholder" />
+<figcaption aria-hidden="true">xlsx viewer screenshot
+placeholder</figcaption>
+</figure>
+
+### docx
+
+<figure>
+<img src="man/figures/docx.png"
+alt="docx viewer screenshot placeholder" />
+<figcaption aria-hidden="true">docx viewer screenshot
+placeholder</figcaption>
+</figure>
+
+### pptx
+
+<figure>
+<img src="man/figures/pptx.png"
+alt="pptx viewer screenshot placeholder" />
+<figcaption aria-hidden="true">pptx viewer screenshot
+placeholder</figcaption>
+</figure>
+
 ## License
 
 This package is licensed under the MIT license and is based on
