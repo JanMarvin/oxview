@@ -16,6 +16,18 @@ You can install the development version of `oxview` from
 remotes::install_github("JanMarvin/oxview")
 ```
 
+Or from [r-universe](https://janmarvin.r-universe.dev/oxview) with:
+
+``` r
+
+# Enable repository from janmarvin
+options(repos = c(
+  janmarvin = 'https://janmarvin.r-universe.dev',
+  CRAN = 'https://cloud.r-project.org'))
+# Download and install oxview in R
+install.packages('oxview')
+```
+
 ## Usage
 
 ``` r

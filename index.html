@@ -57,11 +57,19 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"JanMarvin/oxview"</span><span class="op">)</span></span></code></pre></div>
+<p>Or from <a href="https://janmarvin.r-universe.dev/oxview" class="external-link">r-universe</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Enable repository from janmarvin</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>  janmarvin <span class="op">=</span> <span class="st">'https://janmarvin.r-universe.dev'</span>,</span>
+<span>  CRAN <span class="op">=</span> <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># Download and install oxview in R</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'oxview'</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu">oxview</span><span class="fu">::</span><span class="fu"><a href="reference/ox_view.html">ox_view</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"https://github.com/JanMarvin/msoc/raw/refs/heads/main/inst/extdata/Untitled1.docx"</span><span class="op">)</span></span>
 <span>  <span class="fu">oxview</span><span class="fu">::</span><span class="fu"><a href="reference/ox_view.html">ox_view</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"https://github.com/JanMarvin/msoc/raw/refs/heads/main/inst/extdata/Untitled1.pptx"</span><span class="op">)</span></span>
