@@ -73,5 +73,20 @@ message("prepare_lib.R: pruned ", length(pruned), " unreachable file(s): ",
 
 writeLines(ooxml_ver, "inst/ooxml-dist/VERSION")
 
+## Rewrite (not patch) the Dependabot tracking manifest so its pinned
+## version stays in sync with ooxml_ver above - full rewrite rather than a
+## targeted edit since it's a small, fully-generated file with nothing else
+## in it worth preserving.
+package_json <- sprintf('{
+  "name": "oxview-vendored-deps",
+  "private": true,
+  "description": "Not a real Node project - this file exists solely so Dependabot has an npm manifest to track the version of @silurus/ooxml vendored into inst/ooxml-dist by inst/prepare_lib.R. Nothing here is installed or run; version bumps here are written automatically by prepare_lib.R.",
+  "dependencies": {
+    "@silurus/ooxml": "%s"
+  }
+}
+', ooxml_ver)
+writeLines(package_json, ".github/dependabot/package.json")
+
 unlink(tmp_tar)
 unlink(tmp_dir, recursive = TRUE)

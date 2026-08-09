@@ -3,6 +3,12 @@
 
 # oxview
 
+<!-- badges: start -->
+
+[![R-CMD-check.yaml](https://github.com/JanMarvin/oxview/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/JanMarvin/oxview/actions/workflows/check-standard.yaml)
+[![r-universe](https://janmarvin.r-universe.dev/badges/oxview)](https://janmarvin.r-universe.dev/oxview)
+<!-- badges: end -->
+
 `oxview` is an R package that bundles the
 [office-open-xml-viewer](https://github.com/yukiyokotani/office-open-xml-viewer)
 to provide preview functionality for `.docx`, `.pptx`, and `.xlsx` files
