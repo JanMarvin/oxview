@@ -106,7 +106,10 @@ async function init() {
     const clipHelper = document.getElementById("clip-helper");
     const zoomIndicator = document.getElementById("zoom-indicator");
     const loadStatus = document.getElementById("load-status");
-    const sheetTabs = document.getElementById("sheettabs");
+    const sheetSearch = document.getElementById("sheet-search");
+    const sheetNamesList = document.getElementById("sheet-names");
+
+    const qs = new URLSearchParams(window.location.search);
 
     loadStatus.textContent = "Loading\u2026";
 
@@ -128,11 +131,13 @@ async function init() {
             updateBars();
             doCopy();
         },
-        onSheetChange: (index, total) => {
-            renderSheetTabs(index);
-        },
-        onReady: (sheetNames) => {
-            renderSheetTabs(xlsx.sheetIndex);
+        onReady: () => {
+            sheetNamesList.innerHTML = "";
+            xlsx.sheetNames.forEach((name) => {
+                const opt = document.createElement("option");
+                opt.value = name;
+                sheetNamesList.appendChild(opt);
+            });
         },
         onScaleChange: (scale) => {
             zoomIndicator.textContent = Math.round(scale * 100) + "%";
@@ -150,20 +155,53 @@ async function init() {
     setTimeout(() => { loadStatus.textContent = ""; }, 3000);
 
     zoomIndicator.textContent = Math.round(xlsx.getScale() * 100) + "%";
-    renderSheetTabs(xlsx.sheetIndex);
 
-    function renderSheetTabs(activeIndex) {
-        sheetTabs.innerHTML = "";
-        xlsx.sheetNames.forEach((name, i) => {
-            const tab = document.createElement("span");
-            tab.className = "sheet-tab" + (i === activeIndex ? " active" : "");
-            tab.textContent = name;
-            tab.addEventListener("click", () => {
-                xlsx.goToSheet(i).catch(e => console.error("[oxview] goToSheet failed:", e));
-            });
-            sheetTabs.appendChild(tab);
-        });
+    // ---- apply sheet= / cell= / zoom= from the query string (set by
+    // ox_view_xlsx(x, sheet=, cell=, zoom=)) ----
+
+    const initialSheet = qs.get("sheet");
+    if (initialSheet !== null) {
+        const byName = xlsx.sheetNames.indexOf(initialSheet);
+        let targetIndex = byName;
+        if (targetIndex === -1) {
+            const asNum = parseInt(initialSheet, 10);
+            if (!isNaN(asNum)) targetIndex = asNum - 1; // 1-based from R, 0-based here
+        }
+        if (targetIndex >= 0 && targetIndex < xlsx.sheetCount) {
+            xlsx.goToSheet(targetIndex).catch(e => console.error("[oxview] initial goToSheet failed:", e));
+        } else {
+            console.warn("[oxview] sheet '" + initialSheet + "' not found");
+        }
     }
+
+    const initialZoom = qs.get("zoom");
+    if (initialZoom !== null) {
+        const z = parseFloat(initialZoom);
+        if (!isNaN(z)) xlsx.setScale(z);
+    }
+
+    const initialCell = qs.get("cell");
+    if (initialCell !== null) {
+        try {
+            xlsx.select(initialCell);
+            xlsx.scrollToCell(initialCell).catch(() => {});
+        } catch (e) {
+            console.warn("[oxview] initial cell select failed:", e);
+        }
+    }
+
+    sheetSearch.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter") return;
+        const name = sheetSearch.value.trim();
+        const idx = xlsx.sheetNames.findIndex(n => n.toLowerCase() === name.toLowerCase());
+        if (idx === -1) {
+            sheetSearch.style.borderColor = "#e00";
+            setTimeout(() => { sheetSearch.style.borderColor = ""; }, 800);
+            return;
+        }
+        xlsx.goToSheet(idx).catch(e => console.error("[oxview] goToSheet failed:", e));
+        sheetSearch.value = xlsx.sheetNames[idx];
+    });
 
     function extractSelection() {
         const ws = xlsx.currentWorksheet;
@@ -251,8 +289,6 @@ async function init() {
 
     document.getElementById("btn-zoom-in").addEventListener("click", () => xlsx.zoomIn());
     document.getElementById("btn-zoom-out").addEventListener("click", () => xlsx.zoomOut());
-    document.getElementById("btn-fit-width").addEventListener("click", () => xlsx.fitWidth());
-    document.getElementById("btn-fit-page").addEventListener("click", () => xlsx.fitPage());
 
     // ---- search (Cmd/Ctrl+F) ----
 

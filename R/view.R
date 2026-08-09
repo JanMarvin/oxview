@@ -39,7 +39,18 @@
   stop(msg, ".", call. = FALSE)
 }
 
-.ox_build_session <- function(x, kind, template, allow_workbook = FALSE, debug = FALSE) {
+.ox_query_string <- function(params) {
+  params <- params[!vapply(params, is.null, logical(1))]
+  if (length(params) == 0) return("")
+  pairs <- vapply(names(params), function(n) {
+    paste0(utils::URLencode(n, reserved = TRUE), "=",
+           utils::URLencode(as.character(params[[n]]), reserved = TRUE))
+  }, character(1))
+  paste0("?", paste(pairs, collapse = "&"))
+}
+
+.ox_build_session <- function(x, kind, template, allow_workbook = FALSE, debug = FALSE,
+                               extra_params = list()) {
   src_path <- .ox_resolve_source(x, kind = kind, allow_workbook = allow_workbook)
 
   ox_start_server()
@@ -52,12 +63,14 @@
             file.path(sess$dir, "viewer.js"), overwrite = TRUE)
 
   url <- sprintf("http://127.0.0.1:%d/session/%s/index.html", .ox_env$port, sess$id)
-  if (isTRUE(debug)) url <- paste0(url, "?debug=1")
+  if (isTRUE(debug)) extra_params$debug <- 1
+  url <- paste0(url, .ox_query_string(extra_params))
 
   list(session = sess, url = url)
 }
 
-.ox_view <- function(x, kind, template, allow_workbook = FALSE, interactive = NA, browser = FALSE, debug = FALSE) {
+.ox_view <- function(x, kind, template, allow_workbook = FALSE, interactive = NA, browser = FALSE,
+                      debug = FALSE, extra_params = list()) {
   if (is.na(interactive)) interactive <- interactive()
   if (!isTRUE(interactive)) {
     warning("will not open file when not interactive", call. = FALSE)
@@ -65,7 +78,8 @@
   }
 
   built <- .ox_build_session(x, kind = kind, template = template,
-                              allow_workbook = allow_workbook, debug = debug)
+                              allow_workbook = allow_workbook, debug = debug,
+                              extra_params = extra_params)
 
   viewer_fn <- if (!browser) getOption("viewer") else NULL
   if (!is.null(viewer_fn)) {
@@ -81,11 +95,21 @@
 #'
 #' Opens a live spreadsheet preview (RStudio Viewer pane, or the default
 #' browser with \code{browser = TRUE}) with a formula bar, cell reference
-#' box, and a status bar showing count/sum/average for the current
-#' selection.
+#' box, sheet-name search, and a status bar showing count/sum/average for
+#' the current selection.
 #'
 #' @param x Path to an existing .xlsx/.xlsm file, or an openxlsx2
 #'   \code{wbWorkbook} object.
+#' @param sheet Sheet to open initially: a sheet name, or a 1-based index.
+#'   If \code{NULL} (the default) and \code{x} is a \code{wbWorkbook}, the
+#'   workbook's current sheet is used automatically via openxlsx2's private
+#'   \code{current_sheet}/\code{get_sheet_index} R6 fields - this reaches
+#'   into another package's undocumented internals (there's no public
+#'   accessor for this), so it may break across openxlsx2 versions without
+#'   notice; pass \code{sheet} explicitly to sidestep it entirely.
+#' @param cell A cell reference (e.g. \code{"B2"} or \code{"B2:D5"}) to
+#'   select and scroll to on open.
+#' @param zoom Initial zoom as a scale multiplier, e.g. \code{1.5} for 150%.
 #' @param interactive Whether to actually open the viewer. Defaults to
 #'   \code{interactive()}; set explicitly to avoid depending on session state.
 #' @param browser If \code{TRUE}, force opening in the system browser instead
@@ -93,27 +117,42 @@
 #' @param debug If \code{TRUE}, show the in-viewer debug panel (dump the
 #'   viewer instance, list its methods, call any method with an argument).
 #' @export
-ox_view_xlsx <- function(x, interactive = NA, browser = FALSE, debug = FALSE) {
+ox_view_xlsx <- function(x, sheet = NULL, cell = NULL, zoom = NULL,
+                          interactive = NA, browser = FALSE, debug = FALSE) {
+  if (is.null(sheet) && inherits(x, "wbWorkbook")) {
+    sheet <- tryCatch({
+      priv <- x$.__enclos_env__$private
+      priv$get_sheet_index(priv$current_sheet)
+    }, error = function(e) NULL)
+  }
   .ox_view(x, kind = "xlsx", template = "xlsx_viewer", allow_workbook = TRUE,
-           interactive = interactive, browser = browser, debug = debug)
+           interactive = interactive, browser = browser, debug = debug,
+           extra_params = list(sheet = sheet, cell = cell, zoom = zoom))
 }
 
 #' Preview a .docx file
 #' @inheritParams ox_view_xlsx
 #' @param x Path or URL to an existing .docx file.
+#' @param page Page to open initially (1-based).
+#' @param background Background color behind the page (any valid CSS color).
 #' @export
-ox_view_docx <- function(x, interactive = NA, browser = FALSE, debug = FALSE) {
+ox_view_docx <- function(x, page = NULL, zoom = NULL, background = NULL,
+                          interactive = NA, browser = FALSE, debug = FALSE) {
   .ox_view(x, kind = "docx", template = "docx_viewer",
-           interactive = interactive, browser = browser, debug = debug)
+           interactive = interactive, browser = browser, debug = debug,
+           extra_params = list(page = page, zoom = zoom, background = background))
 }
 
 #' Preview a .pptx file
-#' @inheritParams ox_view_xlsx
+#' @inheritParams ox_view_docx
 #' @param x Path or URL to an existing .pptx file.
+#' @param slide Slide to open initially (1-based).
 #' @export
-ox_view_pptx <- function(x, interactive = NA, browser = FALSE, debug = FALSE) {
+ox_view_pptx <- function(x, slide = NULL, zoom = NULL, background = NULL,
+                          interactive = NA, browser = FALSE, debug = FALSE) {
   .ox_view(x, kind = "pptx", template = "pptx_viewer",
-           interactive = interactive, browser = browser, debug = debug)
+           interactive = interactive, browser = browser, debug = debug,
+           extra_params = list(slide = slide, zoom = zoom, background = background))
 }
 
 #' Preview an xlsx, docx, or pptx file
@@ -121,7 +160,8 @@ ox_view_pptx <- function(x, interactive = NA, browser = FALSE, debug = FALSE) {
 #' Dispatches to \code{\link{ox_view_xlsx}}, \code{\link{ox_view_docx}}, or
 #' \code{\link{ox_view_pptx}} based on \code{type} if given, otherwise on
 #' \code{x}'s file extension (or, for an openxlsx2 \code{wbWorkbook} object,
-#' always to the xlsx viewer).
+#' always to the xlsx viewer). For per-format options like starting sheet,
+#' page, or zoom, call the format-specific function directly instead.
 #'
 #' @inheritParams ox_view_xlsx
 #' @param x Path or URL to an .xlsx/.xlsm/.docx/.pptx file, or an

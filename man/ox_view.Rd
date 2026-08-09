@@ -28,5 +28,6 @@ endpoint with an opaque or query-string path).}
 Dispatches to \code{\link{ox_view_xlsx}}, \code{\link{ox_view_docx}}, or
 \code{\link{ox_view_pptx}} based on \code{type} if given, otherwise on
 \code{x}'s file extension (or, for an openxlsx2 \code{wbWorkbook} object,
-always to the xlsx viewer).
+always to the xlsx viewer). For per-format options like starting sheet,
+page, or zoom, call the format-specific function directly instead.
 }

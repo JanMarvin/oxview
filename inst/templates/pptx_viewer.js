@@ -21,8 +21,12 @@ async function init() {
     let targetPage = 0;
     let suppressSyncUntil = 0;
 
+    const qs = new URLSearchParams(window.location.search);
+    const bgParam = qs.get("background");
+
     const viewer = new PptxScrollViewer(container, {
         enableTextSelection: true,
+        background: bgParam || undefined,
         onVisibleSlideChange: (topIndex, total) => {
             // Fires with intermediate, mid-animation values during a smooth
             // scroll, not just the final settled position - trusting every
@@ -53,6 +57,27 @@ async function init() {
     pageIndicator.textContent = "Slide " + (viewer.topVisibleSlide + 1) + " / " + viewer.slideCount;
     zoomIndicator.textContent = Math.round(viewer.getScale() * 100) + "%";
     targetPage = viewer.topVisibleSlide;
+
+    // ---- apply slide= / zoom= from the query string (set by
+    // ox_view_pptx(x, slide=, zoom=, background=); background is applied via
+    // the constructor option above, before load) ----
+
+    const initialSlide = qs.get("slide");
+    if (initialSlide !== null) {
+        const p = parseInt(initialSlide, 10);
+        if (!isNaN(p)) {
+            targetPage = Math.max(0, Math.min(viewer.slideCount - 1, p - 1)); // 1-based from R
+            suppressSyncUntil = Date.now() + 700;
+            viewer.scrollToSlide(targetPage);
+            pageIndicator.textContent = "Slide " + (targetPage + 1) + " / " + viewer.slideCount;
+        }
+    }
+
+    const initialZoom = qs.get("zoom");
+    if (initialZoom !== null) {
+        const z = parseFloat(initialZoom);
+        if (!isNaN(z)) viewer.setScale(z);
+    }
 
     // ---- custom hover tooltip layered on top of the native title-attribute
     // tooltip the library sets on hyperlink spans (Wikipedia-style: instant,

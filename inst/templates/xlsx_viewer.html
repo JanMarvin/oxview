@@ -29,19 +29,12 @@
             background: #fff;
         }
         #toolbar2 button:hover { background: #e8e8e8; }
+        #sheet-search {
+            width: 140px; height: 24px; font-size: 12px; box-sizing: border-box;
+            border: 1px solid #ccc; border-radius: 3px; padding: 0 6px;
+        }
         #zoom-indicator { color: #666; }
-        #xlsx-container { position: absolute; top: 62px; bottom: 44px; left: 0; right: 0; }
-        #sheettabs {
-            position: absolute; bottom: 22px; left: 0; right: 0; height: 22px; background: #f0f0f0;
-            border-top: 1px solid #ccc; box-sizing: border-box; overflow-x: auto; overflow-y: hidden;
-            white-space: nowrap; font-size: 11px; z-index: 999;
-        }
-        .sheet-tab {
-            display: inline-block; padding: 2px 10px; cursor: pointer; border-right: 1px solid #ddd;
-            height: 100%; box-sizing: border-box; line-height: 18px;
-        }
-        .sheet-tab:hover { background: #e8e8e8; }
-        .sheet-tab.active { background: #fff; font-weight: bold; border-bottom: 2px solid #0b5cff; }
+        #xlsx-container { position: absolute; top: 62px; bottom: 22px; left: 0; right: 0; }
         #statusbar {
             position: absolute; bottom: 0; left: 0; right: 0; height: 22px; background: #f0f0f0;
             border-top: 1px solid #ccc; box-sizing: border-box; padding: 2px 10px; z-index: 999;
@@ -69,9 +62,10 @@
     <div id="toolbar2">
         <button id="btn-zoom-out" title="Zoom out">&minus;</button>
         <button id="btn-zoom-in" title="Zoom in">+</button>
-        <button id="btn-fit-width">Fit width</button>
-        <button id="btn-fit-page">Fit page</button>
         <span id="zoom-indicator">100%</span>
+        <span style="width:1px;height:20px;background:#ccc;"></span>
+        <input type="text" id="sheet-search" placeholder="Jump to sheet..." list="sheet-names" />
+        <datalist id="sheet-names"></datalist>
         <span style="flex:1 1 auto;"></span>
         <span id="load-status" style="color:#666;"></span>
         <button id="btn-debug-toggle" title="Toggle debug panel" style="margin-left:4px; display:none;">&#128027;</button>
@@ -89,7 +83,6 @@
             white-space:pre; overflow:auto;"></textarea>
     </div>
     <div id="xlsx-container"></div>
-    <div id="sheettabs"></div>
     <div id="statusbar">
         <span id="stat-count"></span>
         <span id="stat-sum"></span>

@@ -33,6 +33,18 @@ if (!requireNamespace("httpuv", quietly = TRUE)) {
     !grepl("?debug=1", built$url, fixed = TRUE)
   )
 
+  ## extra_params (used by ox_view_docx(x, page=, zoom=, background=) etc.)
+  built_extra <- oxview:::.ox_build_session(
+    local_tmp, kind = "docx", template = "docx_viewer",
+    extra_params = list(page = 3, zoom = 1.5, background = NULL)
+  )
+  assert(
+    "extra_params are appended to the URL as a query string, NULLs dropped",
+    grepl("page=3", built_extra$url, fixed = TRUE),
+    grepl("zoom=1.5", built_extra$url, fixed = TRUE),
+    !grepl("background", built_extra$url, fixed = TRUE)
+  )
+
   unlink(local_tmp)
   oxview::ox_stop_server()
 }

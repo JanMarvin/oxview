@@ -4,11 +4,32 @@
 \alias{ox_view_xlsx}
 \title{Preview an .xlsx / .xlsm file or openxlsx2 workbook}
 \usage{
-ox_view_xlsx(x, interactive = NA, browser = FALSE, debug = FALSE)
+ox_view_xlsx(
+  x,
+  sheet = NULL,
+  cell = NULL,
+  zoom = NULL,
+  interactive = NA,
+  browser = FALSE,
+  debug = FALSE
+)
 }
 \arguments{
 \item{x}{Path to an existing .xlsx/.xlsm file, or an openxlsx2
 \code{wbWorkbook} object.}
+
+\item{sheet}{Sheet to open initially: a sheet name, or a 1-based index.
+If \code{NULL} (the default) and \code{x} is a \code{wbWorkbook}, the
+workbook's current sheet is used automatically via openxlsx2's private
+\code{current_sheet}/\code{get_sheet_index} R6 fields - this reaches
+into another package's undocumented internals (there's no public
+accessor for this), so it may break across openxlsx2 versions without
+notice; pass \code{sheet} explicitly to sidestep it entirely.}
+
+\item{cell}{A cell reference (e.g. \code{"B2"} or \code{"B2:D5"}) to
+select and scroll to on open.}
+
+\item{zoom}{Initial zoom as a scale multiplier, e.g. \code{1.5} for 150\%.}
 
 \item{interactive}{Whether to actually open the viewer. Defaults to
 \code{interactive()}; set explicitly to avoid depending on session state.}
@@ -22,6 +43,6 @@ viewer instance, list its methods, call any method with an argument).}
 \description{
 Opens a live spreadsheet preview (RStudio Viewer pane, or the default
 browser with \code{browser = TRUE}) with a formula bar, cell reference
-box, and a status bar showing count/sum/average for the current
-selection.
+box, sheet-name search, and a status bar showing count/sum/average for
+the current selection.
 }

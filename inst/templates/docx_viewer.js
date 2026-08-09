@@ -29,8 +29,12 @@ async function init() {
     let targetPage = 0;
     let suppressSyncUntil = 0;
 
+    const qs = new URLSearchParams(window.location.search);
+    const bgParam = qs.get("background");
+
     const viewer = new DocxScrollViewer(container, {
         enableTextSelection: true,
+        background: bgParam || undefined,
         onVisiblePageChange: (topIndex, total) => {
             // Fires with intermediate, mid-animation values during a smooth
             // scroll, not just the final settled position - trusting every
@@ -61,6 +65,27 @@ async function init() {
     pageIndicator.textContent = "Page " + (viewer.topVisiblePage + 1) + " / " + viewer.pageCount;
     zoomIndicator.textContent = Math.round(viewer.getScale() * 100) + "%";
     targetPage = viewer.topVisiblePage;
+
+    // ---- apply page= / zoom= from the query string (set by
+    // ox_view_docx(x, page=, zoom=, background=); background is applied via
+    // the constructor option above, before load) ----
+
+    const initialPage = qs.get("page");
+    if (initialPage !== null) {
+        const p = parseInt(initialPage, 10);
+        if (!isNaN(p)) {
+            targetPage = Math.max(0, Math.min(viewer.pageCount - 1, p - 1)); // 1-based from R
+            suppressSyncUntil = Date.now() + 700;
+            viewer.scrollToPage(targetPage);
+            pageIndicator.textContent = "Page " + (targetPage + 1) + " / " + viewer.pageCount;
+        }
+    }
+
+    const initialZoom = qs.get("zoom");
+    if (initialZoom !== null) {
+        const z = parseFloat(initialZoom);
+        if (!isNaN(z)) viewer.setScale(z);
+    }
 
     // ---- custom hover tooltip layered on top of the native title-attribute
     // tooltip the library sets on hyperlink spans (Wikipedia-style: instant,

@@ -4,10 +4,24 @@
 \alias{ox_view_docx}
 \title{Preview a .docx file}
 \usage{
-ox_view_docx(x, interactive = NA, browser = FALSE, debug = FALSE)
+ox_view_docx(
+  x,
+  page = NULL,
+  zoom = NULL,
+  background = NULL,
+  interactive = NA,
+  browser = FALSE,
+  debug = FALSE
+)
 }
 \arguments{
 \item{x}{Path or URL to an existing .docx file.}
+
+\item{page}{Page to open initially (1-based).}
+
+\item{zoom}{Initial zoom as a scale multiplier, e.g. \code{1.5} for 150\%.}
+
+\item{background}{Background color behind the page (any valid CSS color).}
 
 \item{interactive}{Whether to actually open the viewer. Defaults to
 \code{interactive()}; set explicitly to avoid depending on session state.}
