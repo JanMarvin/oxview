@@ -101,12 +101,27 @@ async function init() {
 
     const xlsx = new XlsxViewer(container, {
         enableHyperlinks: true,
+        enableElementSelection: true,
         onSelectionStateChange: (state) => {
             if (!state) return;
             currentState = state;
             statHint.textContent = "";
             updateBars();
             doCopy();
+        },
+        onSelectionContextChange: (context) => {
+            // Element selection (chart/image/shape) is a separate concept
+            // from cell selection - onSelectionStateChange doesn't fire for
+            // it, this callback does. Read-only by the library's own design
+            // (no move/edit API exists); the context gives metadata only
+            // (element type, chart series *count*, shape text, image mime
+            // type) - not actual chart data values, which live in a
+            // separate headless document model this viewer doesn't expose.
+            if (context && context.kind === "element") {
+                showElementInfo(context);
+            } else {
+                hideElementInfo();
+            }
         },
         onReady: () => {
             sheetNamesList.innerHTML = "";
@@ -190,39 +205,55 @@ async function init() {
 
     function updateBars() {
         if (!currentState) return;
-        const context = currentContext();
-        if (!context || context.cells.length === 0) return;
 
-        let r1 = Infinity, r2 = -Infinity, c1 = Infinity, c2 = -Infinity;
-        for (const cell of context.cells) {
-            r1 = Math.min(r1, cell.address.row); r2 = Math.max(r2, cell.address.row);
-            c1 = Math.min(c1, cell.address.col); c2 = Math.max(c2, cell.address.col);
+        // Range bounds and ref-box text come from currentState.areas, not
+        // from context.cells - the cells array is sparse (empty cells
+        // aren't included, same as the old private structure was) and can
+        // also be truncated for large row/column/whole-sheet selections, so
+        // it was never a reliable source for "what's the actual selection
+        // bounds". This also fixes a real bug: selecting a blank cell right
+        // after a non-blank one left the formula bar/ref box/stats showing
+        // the previous cell's stale data, because the old code bailed out
+        // entirely whenever context.cells was empty (which it always is
+        // for an all-blank selection).
+        const area = currentState.areas[currentState.activeAreaIndex];
+        let refText;
+        if (area.kind === "cells") {
+            refText = (area.top === area.bottom && area.left === area.right)
+                ? colLetters(area.left) + area.top
+                : colLetters(area.left) + area.top + ":" + colLetters(area.right) + area.bottom;
+        } else if (area.kind === "rows") {
+            refText = area.firstRow === area.lastRow
+                ? String(area.firstRow) + ":" + area.firstRow
+                : area.firstRow + ":" + area.lastRow;
+        } else if (area.kind === "columns") {
+            refText = area.firstColumn === area.lastColumn
+                ? colLetters(area.firstColumn) + ":" + colLetters(area.firstColumn)
+                : colLetters(area.firstColumn) + ":" + colLetters(area.lastColumn);
+        } else {
+            refText = "(entire sheet)";
         }
+        refBox.value = refText;
 
-        const isRange = r1 !== r2 || c1 !== c2;
-        refBox.value = isRange
-            ? colLetters(c1) + r1 + ":" + colLetters(c2) + r2
-            : colLetters(c1) + r1;
-        if (context.truncated) {
+        const context = currentContext();
+        if (context && context.truncated) {
             statHint.textContent = "selection truncated to " + context.maxCells + " cells";
         }
 
         const active = currentState.activeCell;
-        const activeEntry = context.cells.find(c => c.address.row === active.row && c.address.col === active.col);
-        if (activeEntry) {
-            formulaBox.value = activeEntry.formula ? "=" + activeEntry.formula : activeEntry.displayText;
-        } else {
-            formulaBox.value = "";
-        }
+        const activeEntry = context ? context.cells.find(c => c.address.row === active.row && c.address.col === active.col) : null;
+        formulaBox.value = activeEntry ? (activeEntry.formula ? "=" + activeEntry.formula : activeEntry.displayText) : "";
         autoGrowFormulaBox();
 
         let count = 0, numCount = 0, sum = 0;
-        for (const cell of context.cells) {
-            if (cell.valueType === "empty") continue;
-            count++;
-            if (cell.valueType === "number" && typeof cell.value === "number") {
-                numCount++;
-                sum += cell.value;
+        if (context) {
+            for (const cell of context.cells) {
+                if (cell.valueType === "empty") continue;
+                count++;
+                if (cell.valueType === "number" && typeof cell.value === "number") {
+                    numCount++;
+                    sum += cell.value;
+                }
             }
         }
         statCount.textContent = "Count: " + count;
@@ -373,6 +404,66 @@ async function init() {
     // public getCellAt() hit-test instead. Unverified assumption carried
     // over: xlsx cells carry a `.hyperlink` field in the same {kind,
     // url|ref} shape docx/pptx runs do.
+
+    // ---- selected-element info panel (charts/images/shapes) - draggable,
+    // since a fixed corner position turned out to be an awkward, unmovable
+    // spot for what's often a real chunk of text (context.text turns out
+    // to be a real summary - chart type, title, categories - worth showing
+    // in full rather than truncating to a snippet) ----
+
+    let elementInfo = document.getElementById("ox-element-info");
+    if (!elementInfo) {
+        elementInfo = document.createElement("div");
+        elementInfo.id = "ox-element-info";
+        elementInfo.style.cssText =
+            "position:fixed;top:100px;left:120px;z-index:996;display:none;flex-direction:column;" +
+            "background:#fff;border:1px solid #ccc;border-radius:4px;" +
+            "box-shadow:0 2px 8px rgba(0,0,0,0.15);width:300px;max-height:280px;" +
+            "font:12px sans-serif;color:#333;overflow:hidden;";
+        elementInfo.innerHTML =
+            '<div id="ox-element-info-header" style="cursor:move;background:#f0f0f0;' +
+            'padding:5px 8px;border-bottom:1px solid #ccc;display:flex;' +
+            'align-items:center;font-weight:bold;flex:none;">' +
+            '<span id="ox-element-info-title" style="flex:1 1 auto;"></span>' +
+            '<span id="ox-element-info-close" style="cursor:pointer;padding:0 4px;">&times;</span>' +
+            '</div>' +
+            '<div id="ox-element-info-body" style="padding:8px 10px;overflow-y:auto;' +
+            'white-space:pre-wrap;word-break:break-word;"></div>';
+        document.body.appendChild(elementInfo);
+
+        const header = document.getElementById("ox-element-info-header");
+        let dragOffsetX = 0, dragOffsetY = 0, dragging = false;
+        header.addEventListener("mousedown", (ev) => {
+            dragging = true;
+            const rect = elementInfo.getBoundingClientRect();
+            dragOffsetX = ev.clientX - rect.left;
+            dragOffsetY = ev.clientY - rect.top;
+            ev.preventDefault();
+        });
+        window.addEventListener("mousemove", (ev) => {
+            if (!dragging) return;
+            elementInfo.style.left = (ev.clientX - dragOffsetX) + "px";
+            elementInfo.style.top = (ev.clientY - dragOffsetY) + "px";
+        });
+        window.addEventListener("mouseup", () => { dragging = false; });
+
+        document.getElementById("ox-element-info-close").addEventListener("click", hideElementInfo);
+    }
+
+    function showElementInfo(context) {
+        document.getElementById("ox-element-info-title").textContent = context.elementType + " selected (read-only)";
+        const lines = [];
+        if (context.elementType === "chart" && context.seriesCount !== undefined) {
+            lines.push(context.seriesCount + " series (data values not exposed by this API)");
+        }
+        if (context.mimeType) lines.push(context.mimeType);
+        if (context.text) lines.push(context.text);
+        document.getElementById("ox-element-info-body").textContent = lines.join("\n\n");
+        elementInfo.style.display = "flex";
+    }
+    function hideElementInfo() {
+        elementInfo.style.display = "none";
+    }
 
     let linkTooltip = document.getElementById("ox-link-tooltip");
     if (!linkTooltip) {
