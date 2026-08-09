@@ -39,13 +39,7 @@
   stop(msg, ".", call. = FALSE)
 }
 
-.ox_view <- function(x, kind, template, allow_workbook = FALSE, interactive = NA, browser = FALSE, debug = FALSE) {
-  if (is.na(interactive)) interactive <- interactive()
-  if (!isTRUE(interactive)) {
-    warning("will not open file when not interactive", call. = FALSE)
-    return(invisible(x))
-  }
-
+.ox_build_session <- function(x, kind, template, allow_workbook = FALSE, debug = FALSE) {
   src_path <- .ox_resolve_source(x, kind = kind, allow_workbook = allow_workbook)
 
   ox_start_server()
@@ -60,11 +54,24 @@
   url <- sprintf("http://127.0.0.1:%d/session/%s/index.html", .ox_env$port, sess$id)
   if (isTRUE(debug)) url <- paste0(url, "?debug=1")
 
+  list(session = sess, url = url)
+}
+
+.ox_view <- function(x, kind, template, allow_workbook = FALSE, interactive = NA, browser = FALSE, debug = FALSE) {
+  if (is.na(interactive)) interactive <- interactive()
+  if (!isTRUE(interactive)) {
+    warning("will not open file when not interactive", call. = FALSE)
+    return(invisible(x))
+  }
+
+  built <- .ox_build_session(x, kind = kind, template = template,
+                              allow_workbook = allow_workbook, debug = debug)
+
   viewer_fn <- if (!browser) getOption("viewer") else NULL
   if (!is.null(viewer_fn)) {
-    viewer_fn(url)
+    viewer_fn(built$url)
   } else {
-    utils::browseURL(url)
+    utils::browseURL(built$url)
   }
 
   invisible(x)

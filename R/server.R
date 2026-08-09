@@ -28,7 +28,7 @@
 
 .ox_serve_file <- function(local_path) {
   if (!file.exists(local_path) || dir.exists(local_path)) {
-    return(list(status = 404L, headers = list("Content-Type" = "text/plain"), body = "Not found"))
+    return(.ox_plain_response(404L, "Not found"))
   }
   ext <- tools::file_ext(local_path)
   bytes <- readBin(local_path, "raw", file.info(local_path)$size)
@@ -39,6 +39,18 @@
       .ox_csp_header()
     ),
     body = bytes
+  )
+}
+
+.ox_plain_response <- function(status, body) {
+  # Every response carries the CSP header, including error responses - the
+  # earlier version only attached it in .ox_serve_file()'s success path,
+  # leaving the 403/404 early-return paths below without it, which defeats
+  # the point of applying it uniformly.
+  list(
+    status = status,
+    headers = c(list("Content-Type" = "text/plain"), .ox_csp_header()),
+    body = body
   )
 }
 
@@ -68,11 +80,11 @@
     call = function(req) {
       host_header <- req$HTTP_HOST
       if (is.null(host_header) || !grepl("^(127\\.0\\.0\\.1|localhost)(:[0-9]+)?$", host_header)) {
-        return(list(status = 403L, headers = list("Content-Type" = "text/plain"), body = "Forbidden"))
+        return(.ox_plain_response(403L, "Forbidden"))
       }
       path_info <- req$PATH_INFO
       if (is.null(path_info) || path_info == "" || path_info == "/") {
-        return(list(status = 404L, headers = list("Content-Type" = "text/plain"), body = "Not found"))
+        return(.ox_plain_response(404L, "Not found"))
       }
       rel <- sub("^/", "", path_info)
       if (startsWith(rel, "assets/")) {
@@ -80,7 +92,7 @@
       } else if (startsWith(rel, "session/")) {
         local_path <- file.path(.ox_env$session_root, sub("^session/", "", rel))
       } else {
-        return(list(status = 404L, headers = list("Content-Type" = "text/plain"), body = "Not found"))
+        return(.ox_plain_response(404L, "Not found"))
       }
       .ox_serve_file(local_path)
     }
