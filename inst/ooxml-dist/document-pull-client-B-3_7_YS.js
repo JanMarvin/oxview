@@ -1,9 +1,9 @@
-import { A as e, At as t, Bt as n, C as r, Ct as i, D as a, Dt as o, E as s, Gt as c, Ht as l, Kt as u, M as d, Mt as f, N as p, O as m, Ot as h, Pt as g, Rt as _, S as v, Tt as y, U as b, Vt as x, W as S, Xt as C, Yt as w, _ as T, _t as E, c as D, cn as O, ct as k, d as A, dn as j, f as M, fn as N, g as ee, gt as P, h as te, ht as ne, j as re, k as ie, l as F, ln as I, m as ae, mt as oe, n as se, o as ce, on as le, pn as ue, pt as de, qt as fe, s as pe, sn as me, t as he, u as ge, un as _e, v as ve, vt as ye, w as be, wt as xe, y as Se, yt as Ce } from "./line-metrics-BdCACYlq.js";
+import { A as e, At as t, Bt as n, C as r, Ct as i, D as a, Dt as o, E as s, Gt as c, Ht as l, Kt as u, M as d, Mt as f, N as p, O as m, Ot as h, Pt as g, Rt as _, S as v, Tt as y, U as b, Vt as x, W as S, Xt as C, Yt as w, _ as T, _t as E, c as D, cn as O, ct as k, d as A, dn as j, f as M, fn as ee, g as te, gt as N, h as ne, ht as re, j as ie, k as ae, l as P, ln as F, m as oe, mt as I, n as se, o as ce, on as le, pn as ue, pt as de, qt as fe, s as pe, sn as me, t as he, u as ge, un as _e, v as ve, vt as ye, w as be, wt as xe, y as Se, yt as Ce } from "./line-metrics-BdCACYlq.js";
 import { c as we, o as Te, r as Ee, s as De } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { a as Oe, c as L, i as ke, l as Ae, n as je, o as Me, r as Ne, s as Pe, t as Fe, u as Ie } from "./line-distribute-C1r2zvji.js";
+import { a as Oe, c as ke, i as Ae, l as je, n as Me, o as Ne, r as L, s as Pe, t as Fe, u as Ie } from "./line-distribute-C1r2zvji.js";
 import { t as Le } from "./mathjax-CMjda8Ip.js";
 //#region packages/core/src/fonts/canvas-route.ts
-function R(e, t) {
+function Re(e, t) {
 	let n = e.trim();
 	if (!n) throw TypeError("Canvas font route requires a family list");
 	return Object.freeze({
@@ -12,7 +12,7 @@ function R(e, t) {
 		fingerprint: `canvas-font-route-v1:${encodeURIComponent(t)}:${encodeURIComponent(n)}`
 	});
 }
-function Re(e, t, n, r) {
+function ze(e, t, n, r) {
 	if (!Number.isFinite(t) || t < 0) throw RangeError("Canvas font size must be finite and non-negative");
 	if (!Number.isFinite(n) || n < 1 || n > 1e3) throw RangeError("Canvas font weight must be finite and between 1 and 1000");
 	if (!e.familyList.trim()) throw TypeError("Canvas font route requires a family list");
@@ -20,7 +20,7 @@ function Re(e, t, n, r) {
 }
 //#endregion
 //#region packages/core/src/shape/drawingml-shape.ts
-function z(e, t, n) {
+function Be(e, t, n) {
 	let { x: r, y: i, w: a, h: o } = t.rect, { rotationDeg: s, flipH: c, flipV: l } = t.transform;
 	e.save();
 	try {
@@ -29,7 +29,7 @@ function z(e, t, n) {
 		e.restore();
 	}
 }
-function ze(e, t) {
+function Ve(e, t) {
 	let { x: n, y: r, w: i, h: a } = t.rect;
 	if (e.beginPath(), t.geometry.kind === "preset") {
 		let o = [...t.geometry.adjustments];
@@ -37,7 +37,7 @@ function ze(e, t) {
 	} else Pe(e, t.geometry.subpaths, n, r, i, a);
 	e.clip();
 }
-var Be = new Set([
+var He = new Set([
 	"line",
 	"straightconnector1",
 	"bentconnector2",
@@ -48,7 +48,7 @@ var Be = new Set([
 	"curvedconnector3",
 	"curvedconnector4",
 	"curvedconnector5"
-]), Ve = new Set([
+]), R = new Set([
 	"callout1",
 	"callout2",
 	"callout3",
@@ -62,54 +62,54 @@ var Be = new Set([
 	"accentbordercallout2",
 	"accentbordercallout3"
 ]);
-function He(e) {
-	return Ve.has(e) || e === "line" || e === "straightconnector1" || e.startsWith("bentconnector");
+function Ue(e) {
+	return R.has(e) || e === "line" || e === "straightconnector1" || e.startsWith("bentconnector");
 }
-function Ue(e, t, n, r) {
+function We(e, t, n, r) {
 	if (u(e, t, n), t.fill) {
 		let n = w(t.fill, e, r.x, r.y, r.w, r.h);
 		n && (e.strokeStyle = n);
 	}
 }
-function We(e, t, r, i) {
+function Ge(e, t, r, i) {
 	let a = t.stroke;
-	if (!a || !Be.has(r) && !Ve.has(r)) return;
+	if (!a || !He.has(r) && !R.has(r)) return;
 	let { x: o, y: s, w: c, h: l } = t.rect, u = n(r, o, s, c, l, [...t.geometry.kind === "preset" ? t.geometry.adjustments : []]);
 	if (u) {
-		if (He(r) && u.vertices.length >= 2 && (a.headEnd || a.tailEnd)) {
+		if (Ue(r) && u.vertices.length >= 2 && (a.headEnd || a.tailEnd)) {
 			let n = u.vertices.map((e) => ({
 				x: e.x,
 				y: e.y
 			}));
-			a.tailEnd && (n[n.length - 1] = ke(n[n.length - 1], n[n.length - 2], Ne(a.tailEnd, a, i))), a.headEnd && (n[0] = ke(n[0], n[1], Ne(a.headEnd, a, i))), Ue(e, a, i, t.rect), e.beginPath(), e.moveTo(n[0].x, n[0].y);
+			a.tailEnd && (n[n.length - 1] = Ae(n[n.length - 1], n[n.length - 2], L(a.tailEnd, a, i))), a.headEnd && (n[0] = Ae(n[0], n[1], L(a.headEnd, a, i))), We(e, a, i, t.rect), e.beginPath(), e.moveTo(n[0].x, n[0].y);
 			for (let t = 1; t < n.length; t++) e.lineTo(n[t].x, n[t].y);
 			e.stroke();
 		}
-		a.tailEnd && je(e, u.end.x, u.end.y, u.end.angle, a.tailEnd, a, i), a.headEnd && je(e, u.start.x, u.start.y, u.start.angle, a.headEnd, a, i);
+		a.tailEnd && Me(e, u.end.x, u.end.y, u.end.angle, a.tailEnd, a, i), a.headEnd && Me(e, u.start.x, u.start.y, u.start.angle, a.headEnd, a, i);
 	}
 }
-function Ge(e, t, n) {
+function Ke(e, t, n) {
 	if (t.geometry.kind !== "custom") return;
 	let r = t.stroke;
 	if (!r || !r.headEnd && !r.tailEnd) return;
-	let i = Me(t.geometry.subpaths), { x: a, y: o, w: s, h: c } = t.rect;
-	i.start && r.headEnd && je(e, a + i.start.x * s, o + i.start.y * c, Math.atan2(i.start.dy * c, i.start.dx * s), r.headEnd, r, n), i.end && r.tailEnd && je(e, a + i.end.x * s, o + i.end.y * c, Math.atan2(i.end.dy * c, i.end.dx * s), r.tailEnd, r, n);
+	let i = Ne(t.geometry.subpaths), { x: a, y: o, w: s, h: c } = t.rect;
+	i.start && r.headEnd && Me(e, a + i.start.x * s, o + i.start.y * c, Math.atan2(i.start.dy * c, i.start.dx * s), r.headEnd, r, n), i.end && r.tailEnd && Me(e, a + i.end.x * s, o + i.end.y * c, Math.atan2(i.end.dy * c, i.end.dx * s), r.tailEnd, r, n);
 }
-function Ke(e, t, n) {
+function qe(e, t, n) {
 	let { x: r, y: i, w: a, h: o } = t.rect;
-	z(e, t, () => {
+	Be(e, t, () => {
 		let s = w(t.fill, e, r, i, a, o), c = t.stroke, u = c ? () => {
-			Ue(e, c, n, t.rect), e.stroke();
+			We(e, c, n, t.rect), e.stroke();
 		} : null;
 		if (t.geometry.kind === "preset") {
-			let d = t.geometry.name.toLowerCase(), f = [...t.geometry.adjustments], p = He(d) && !!(c?.headEnd || c?.tailEnd);
-			x(d) && l(e, d, r, i, a, o, f, s, u, () => {}, p ? { skipTrailingStroke: !0 } : void 0) || (e.beginPath(), Oe(e, d, r, i, a, o, f[0], f[1], f[2], f[3]), s && d !== "arc" && (e.fillStyle = s, d === "donut" || d === "smileyface" || d === "frame" ? e.fill("evenodd") : e.fill()), u && u()), We(e, t, d, n);
-		} else e.beginPath(), Pe(e, t.geometry.subpaths, r, i, a, o), s && (e.fillStyle = s, e.fill()), u && u(), Ge(e, t, n);
+			let d = t.geometry.name.toLowerCase(), f = [...t.geometry.adjustments], p = Ue(d) && !!(c?.headEnd || c?.tailEnd);
+			x(d) && l(e, d, r, i, a, o, f, s, u, () => {}, p ? { skipTrailingStroke: !0 } : void 0) || (e.beginPath(), Oe(e, d, r, i, a, o, f[0], f[1], f[2], f[3]), s && d !== "arc" && (e.fillStyle = s, d === "donut" || d === "smileyface" || d === "frame" ? e.fill("evenodd") : e.fill()), u && u()), Ge(e, t, d, n);
+		} else e.beginPath(), Pe(e, t.geometry.subpaths, r, i, a, o), s && (e.fillStyle = s, e.fill()), u && u(), Ke(e, t, n);
 	});
 }
 //#endregion
 //#region packages/core/src/draw/double-border.ts
-function qe(e, t) {
+function Je(e, t) {
 	let n = Math.max(1, Math.round(e * t / 3)), r = Math.max(1, Math.round(e * t / 3));
 	return {
 		railDev: n,
@@ -119,7 +119,7 @@ function qe(e, t) {
 }
 //#endregion
 //#region packages/core/src/text/number-format.ts
-var Je = [
+var Ye = [
 	[1e3, "M"],
 	[900, "CM"],
 	[500, "D"],
@@ -134,16 +134,16 @@ var Je = [
 	[4, "IV"],
 	[1, "I"]
 ];
-function Ye(e) {
+function Xe(e) {
 	let t = "", n = e;
-	for (let [e, r] of Je) for (; n >= e;) t += r, n -= e;
+	for (let [e, r] of Ye) for (; n >= e;) t += r, n -= e;
 	return t;
 }
-function Xe(e, t) {
+function Ze(e, t) {
 	let n = t.length, r = Math.floor((e - 1) / n) + 1;
 	return t[(e - 1) % n].repeat(r);
 }
-var Ze = Array.from({ length: 26 }, (e, t) => String.fromCharCode(65 + t)), Qe = /* @__PURE__ */ "أ.ب.ت.ث.ج.ح.خ.د.ذ.ر.ز.س.ش.ص.ض.ط.ظ.ع.غ.ف.ق.ك.ل.م.ن.ه.و.ي".split("."), $e = /* @__PURE__ */ "أ.ب.ج.د.ه.و.ز.ح.ط.ي.ك.ل.م.ن.س.ع.ف.ص.ق.ر.ش.ت.ث.خ.ذ.ض.غ.ظ".split("."), et = [
+var Qe = Array.from({ length: 26 }, (e, t) => String.fromCharCode(65 + t)), $e = /* @__PURE__ */ "أ.ب.ت.ث.ج.ح.خ.د.ذ.ر.ز.س.ش.ص.ض.ط.ظ.ع.غ.ف.ق.ك.ل.م.ن.ه.و.ي".split("."), et = /* @__PURE__ */ "أ.ب.ج.د.ه.و.ز.ح.ط.ي.ك.ل.م.ن.س.ع.ف.ص.ق.ر.ش.ت.ث.خ.ذ.ض.غ.ظ".split("."), tt = [
 	"א",
 	"ב",
 	"ג",
@@ -166,30 +166,30 @@ var Ze = Array.from({ length: 26 }, (e, t) => String.fromCharCode(65 + t)), Qe =
 	"ר",
 	"ש",
 	"ת"
-], tt = [
-	...ct(1072, 1080),
-	...ct(1082, 1087),
-	...ct(1088, 1097),
+], nt = [
+	...lt(1072, 1080),
+	...lt(1082, 1087),
+	...lt(1088, 1097),
 	"ы",
 	"э",
 	"ю",
 	"я"
-], nt = [
-	...ct(1040, 1048),
-	...ct(1050, 1055),
-	...ct(1056, 1065),
+], rt = [
+	...lt(1040, 1048),
+	...lt(1050, 1055),
+	...lt(1056, 1065),
 	"Ы",
 	"Э",
 	"Ю",
 	"Я"
-], rt = [
+], it = [
 	"ก",
 	"ข",
 	"ค",
-	...ct(3591, 3619),
+	...lt(3591, 3619),
 	"ล",
-	...ct(3623, 3630)
-], it = [
+	...lt(3623, 3630)
+], at = [
 	"ㄱ",
 	"ㄴ",
 	"ㄷ",
@@ -204,7 +204,7 @@ var Ze = Array.from({ length: 26 }, (e, t) => String.fromCharCode(65 + t)), Qe =
 	"ㅌ",
 	"ㅍ",
 	"ㅎ"
-], at = [
+], ot = [
 	"가",
 	"나",
 	"다",
@@ -219,28 +219,28 @@ var Ze = Array.from({ length: 26 }, (e, t) => String.fromCharCode(65 + t)), Qe =
 	"타",
 	"파",
 	"하"
-], ot = ct(2325, 2361), st = [
-	...ct(2309, 2324),
+], st = lt(2325, 2361), ct = [
+	...lt(2309, 2324),
 	"अं",
 	"अः"
 ];
-function ct(e, t) {
+function lt(e, t) {
 	let n = [];
 	for (let r = e; r <= t; r++) n.push(String.fromCodePoint(r));
 	return n;
 }
-var lt = /* @__PURE__ */ "ア.イ.ウ.エ.オ.カ.キ.ク.ケ.コ.サ.シ.ス.セ.ソ.タ.チ.ツ.テ.ト.ナ.ニ.ヌ.ネ.ノ.ハ.ヒ.フ.ヘ.ホ.マ.ミ.ム.メ.モ.ヤ.ユ.ヨ.ラ.リ.ル.レ.ロ.ワ.ヰ.ヱ.ヲ.ン".split("."), ut = [
-	...ct(65393, 65436),
+var ut = /* @__PURE__ */ "ア.イ.ウ.エ.オ.カ.キ.ク.ケ.コ.サ.シ.ス.セ.ソ.タ.チ.ツ.テ.ト.ナ.ニ.ヌ.ネ.ノ.ハ.ヒ.フ.ヘ.ホ.マ.ミ.ム.メ.モ.ヤ.ユ.ヨ.ラ.リ.ル.レ.ロ.ワ.ヰ.ヱ.ヲ.ン".split("."), dt = [
+	...lt(65393, 65436),
 	"ｦ",
 	"ﾝ"
 ];
-function dt(e) {
+function ft(e) {
 	return e <= 20 ? String.fromCodePoint(9312 + (e - 1)) : String(e);
 }
-function ft(e, t) {
+function pt(e, t) {
 	return String(e).split("").map((e) => t[e.charCodeAt(0) - 48]).join("");
 }
-var pt = ct(65296, 65305), mt = ct(3664, 3673), ht = ct(2406, 2415), gt = [
+var mt = lt(65296, 65305), ht = lt(3664, 3673), gt = lt(2406, 2415), _t = [
 	"〇",
 	"一",
 	"二",
@@ -251,7 +251,7 @@ var pt = ct(65296, 65305), mt = ct(3664, 3673), ht = ct(2406, 2415), gt = [
 	"七",
 	"八",
 	"九"
-], _t = [
+], vt = [
 	"영",
 	"일",
 	"이",
@@ -262,7 +262,7 @@ var pt = ct(65296, 65305), mt = ct(3664, 3673), ht = ct(2406, 2415), gt = [
 	"칠",
 	"팔",
 	"구"
-], vt = [
+], yt = [
 	"零",
 	"一",
 	"二",
@@ -273,7 +273,7 @@ var pt = ct(65296, 65305), mt = ct(3664, 3673), ht = ct(2406, 2415), gt = [
 	"七",
 	"八",
 	"九"
-], yt = [
+], bt = [
 	"○",
 	"一",
 	"二",
@@ -285,60 +285,60 @@ var pt = ct(65296, 65305), mt = ct(3664, 3673), ht = ct(2406, 2415), gt = [
 	"八",
 	"九"
 ];
-function bt(e, t) {
+function xt(e, t) {
 	if (e < 10) return t[e];
 	if (e < 100) {
 		let n = Math.floor(e / 10), r = e % 10, i = n === 1 ? "十" : t[n] + "十";
 		return r === 0 ? i : i + t[r];
 	}
-	return ft(e, t);
+	return pt(e, t);
 }
-function xt(e, t) {
+function St(e, t) {
 	switch (t) {
-		case "upperRoman": return e >= 1 ? Ye(e) : String(e);
-		case "lowerRoman": return e >= 1 ? Ye(e).toLowerCase() : String(e);
-		case "upperLetter": return e >= 1 ? Xe(e, Ze) : String(e);
-		case "lowerLetter": return e >= 1 ? Xe(e, Ze).toLowerCase() : String(e);
-		case "arabicAlpha": return e >= 1 ? Xe(e, Qe) : String(e);
-		case "arabicAbjad": return e >= 1 ? Xe(e, $e) : String(e);
-		case "russianLower": return e >= 1 ? Xe(e, tt) : String(e);
-		case "russianUpper": return e >= 1 ? Xe(e, nt) : String(e);
-		case "thaiLetters": return e >= 1 ? Xe(e, rt) : String(e);
-		case "chosung": return e >= 1 ? Xe(e, it) : String(e);
-		case "ganada": return e >= 1 ? Xe(e, at) : String(e);
-		case "hindiVowels": return e >= 1 ? Xe(e, ot) : String(e);
-		case "hindiConsonants": return e >= 1 ? Xe(e, st) : String(e);
-		case "aiueoFullWidth": return e >= 1 ? Xe(e, lt) : String(e);
-		case "aiueo": return e >= 1 ? Xe(e, ut) : String(e);
-		case "decimalEnclosedCircle": return e >= 1 ? dt(e) : String(e);
-		case "hebrew1": return e >= 1 ? Tt(e) : String(e);
-		case "hebrew2": return e >= 1 ? Et(e) : String(e);
+		case "upperRoman": return e >= 1 ? Xe(e) : String(e);
+		case "lowerRoman": return e >= 1 ? Xe(e).toLowerCase() : String(e);
+		case "upperLetter": return e >= 1 ? Ze(e, Qe) : String(e);
+		case "lowerLetter": return e >= 1 ? Ze(e, Qe).toLowerCase() : String(e);
+		case "arabicAlpha": return e >= 1 ? Ze(e, $e) : String(e);
+		case "arabicAbjad": return e >= 1 ? Ze(e, et) : String(e);
+		case "russianLower": return e >= 1 ? Ze(e, nt) : String(e);
+		case "russianUpper": return e >= 1 ? Ze(e, rt) : String(e);
+		case "thaiLetters": return e >= 1 ? Ze(e, it) : String(e);
+		case "chosung": return e >= 1 ? Ze(e, at) : String(e);
+		case "ganada": return e >= 1 ? Ze(e, ot) : String(e);
+		case "hindiVowels": return e >= 1 ? Ze(e, st) : String(e);
+		case "hindiConsonants": return e >= 1 ? Ze(e, ct) : String(e);
+		case "aiueoFullWidth": return e >= 1 ? Ze(e, ut) : String(e);
+		case "aiueo": return e >= 1 ? Ze(e, dt) : String(e);
+		case "decimalEnclosedCircle": return e >= 1 ? ft(e) : String(e);
+		case "hebrew1": return e >= 1 ? Et(e) : String(e);
+		case "hebrew2": return e >= 1 ? Dt(e) : String(e);
 		case "hex": return e >= 1 ? e.toString(16).toUpperCase() : String(e);
 		case "numberInDash": return e >= 1 ? `- ${e} -` : String(e);
 		case "decimalZero": return e >= 1 && e <= 9 ? `0${e}` : String(e);
-		case "decimalFullWidth": return e >= 1 ? ft(e, pt) : String(e);
+		case "decimalFullWidth": return e >= 1 ? pt(e, mt) : String(e);
 		case "decimalHalfWidth": return String(e);
-		case "thaiNumbers": return e >= 1 ? ft(e, mt) : String(e);
-		case "hindiNumbers": return e >= 1 ? ft(e, ht) : String(e);
+		case "thaiNumbers": return e >= 1 ? pt(e, ht) : String(e);
+		case "hindiNumbers": return e >= 1 ? pt(e, gt) : String(e);
 		case "ideographDigital":
-		case "japaneseDigitalTenThousand": return e >= 1 ? ft(e, gt) : String(e);
-		case "koreanDigital": return e >= 1 ? ft(e, _t) : String(e);
-		case "koreanDigital2": return e >= 1 ? ft(e, vt) : String(e);
-		case "taiwaneseDigital": return e >= 1 ? ft(e, yt) : String(e);
-		case "chineseCounting": return e >= 1 ? bt(e, gt) : String(e);
-		case "taiwaneseCounting": return e >= 1 ? bt(e, yt) : String(e);
-		case "chineseCountingThousand": return e >= 1 ? Ft(e, Ot) : String(e);
-		case "taiwaneseCountingThousand": return e >= 1 ? Ft(e, kt) : String(e);
-		case "chineseLegalSimplified": return e >= 1 ? Ft(e, jt) : String(e);
-		case "ideographLegalTraditional": return e >= 1 ? Ft(e, Nt) : String(e);
-		case "japaneseCounting": return e >= 1 ? Ft(e, Dt) : String(e);
-		case "japaneseLegal": return e >= 1 ? Ft(e, Mt) : String(e);
-		case "koreanCounting": return e >= 1 ? Ft(e, At) : String(e);
-		case "koreanLegal": return e >= 1 ? Rt(e) : String(e);
+		case "japaneseDigitalTenThousand": return e >= 1 ? pt(e, _t) : String(e);
+		case "koreanDigital": return e >= 1 ? pt(e, vt) : String(e);
+		case "koreanDigital2": return e >= 1 ? pt(e, yt) : String(e);
+		case "taiwaneseDigital": return e >= 1 ? pt(e, bt) : String(e);
+		case "chineseCounting": return e >= 1 ? xt(e, _t) : String(e);
+		case "taiwaneseCounting": return e >= 1 ? xt(e, bt) : String(e);
+		case "chineseCountingThousand": return e >= 1 ? It(e, kt) : String(e);
+		case "taiwaneseCountingThousand": return e >= 1 ? It(e, At) : String(e);
+		case "chineseLegalSimplified": return e >= 1 ? It(e, Mt) : String(e);
+		case "ideographLegalTraditional": return e >= 1 ? It(e, Pt) : String(e);
+		case "japaneseCounting": return e >= 1 ? It(e, Ot) : String(e);
+		case "japaneseLegal": return e >= 1 ? It(e, Nt) : String(e);
+		case "koreanCounting": return e >= 1 ? It(e, jt) : String(e);
+		case "koreanLegal": return e >= 1 ? zt(e) : String(e);
 		default: return String(e);
 	}
 }
-var St = [
+var Ct = [
 	"",
 	"א",
 	"ב",
@@ -349,7 +349,7 @@ var St = [
 	"ז",
 	"ח",
 	"ט"
-], Ct = [
+], wt = [
 	"",
 	"י",
 	"כ",
@@ -360,7 +360,7 @@ var St = [
 	"ע",
 	"פ",
 	"צ"
-], wt = [
+], Tt = [
 	"",
 	"ק",
 	"ר",
@@ -372,32 +372,32 @@ var St = [
 	"ף",
 	"ץ"
 ];
-function Tt(e) {
+function Et(e) {
 	let t = "", n = e, r = Math.floor(n / 1e3);
 	n %= 1e3;
 	let i = Math.floor(n / 100);
-	if (n %= 100, r > 0 && (t += St[r % 10]), t += wt[i], n === 15) return t + "טו";
+	if (n %= 100, r > 0 && (t += Ct[r % 10]), t += Tt[i], n === 15) return t + "טו";
 	if (n === 16) return t + "טז";
 	let a = Math.floor(n / 10), o = n % 10;
-	return t += Ct[a], t += St[o], t;
+	return t += wt[a], t += Ct[o], t;
 }
-function Et(e) {
-	let t = et.length, n = Math.floor((e - 1) / t);
-	return et[e - t * n - 1] + "ת".repeat(n);
+function Dt(e) {
+	let t = tt.length, n = Math.floor((e - 1) / t);
+	return tt[e - t * n - 1] + "ת".repeat(n);
 }
-var Dt = {
-	digits: vt,
+var Ot = {
+	digits: yt,
 	ten: "十",
 	hundred: "百",
 	thousand: "千",
 	myriad: "万",
 	elideOne: !0,
 	insertZero: !1
-}, Ot = {
-	...Dt,
+}, kt = {
+	...Ot,
 	elideOne: !1,
 	insertZero: !0
-}, kt = { ...Ot }, At = {
+}, At = { ...kt }, jt = {
 	digits: [
 		"영",
 		"일",
@@ -416,7 +416,7 @@ var Dt = {
 	myriad: "만",
 	elideOne: !0,
 	insertZero: !1
-}, jt = {
+}, Mt = {
 	digits: [
 		"零",
 		"壹",
@@ -435,7 +435,7 @@ var Dt = {
 	myriad: "万",
 	elideOne: !1,
 	insertZero: !0
-}, Mt = {
+}, Nt = {
 	digits: [
 		"零",
 		"壱",
@@ -454,7 +454,7 @@ var Dt = {
 	myriad: "萬",
 	elideOne: !1,
 	insertZero: !1
-}, Nt = {
+}, Pt = {
 	digits: [
 		"零",
 		"壹",
@@ -474,7 +474,7 @@ var Dt = {
 	elideOne: !1,
 	insertZero: !1
 };
-function Pt(e, t, n) {
+function Ft(e, t, n) {
 	let r = Math.floor(e / 1e3) % 10, i = Math.floor(e / 100) % 10, a = Math.floor(e / 10) % 10, o = e % 10, s = [
 		{
 			digit: r,
@@ -502,15 +502,15 @@ function Pt(e, t, n) {
 	}
 	return c;
 }
-function Ft(e, t) {
+function It(e, t) {
 	if (e >= 1e8) {
-		let n = Math.floor(e / 1e8), r = e % 1e8, i = Ft(n, t) + "億";
-		return r === 0 ? i : i + (t.insertZero && r < 1e7 ? t.digits[0] : "") + Ft(r, t);
+		let n = Math.floor(e / 1e8), r = e % 1e8, i = It(n, t) + "億";
+		return r === 0 ? i : i + (t.insertZero && r < 1e7 ? t.digits[0] : "") + It(r, t);
 	}
 	let n = Math.floor(e / 1e4), r = e % 1e4, i = "";
-	return n > 0 && (i += Pt(n, t, t.elideOne) + t.myriad), r > 0 && (t.insertZero && n > 0 && r < 1e3 && (i += t.digits[0]), i += Pt(r, t, t.elideOne)), i;
+	return n > 0 && (i += Ft(n, t, t.elideOne) + t.myriad), r > 0 && (t.insertZero && n > 0 && r < 1e3 && (i += t.digits[0]), i += Ft(r, t, t.elideOne)), i;
 }
-var It = [
+var Lt = [
 	"",
 	"하나",
 	"둘",
@@ -521,7 +521,7 @@ var It = [
 	"일곱",
 	"여덟",
 	"아홉"
-], Lt = [
+], Rt = [
 	"",
 	"열",
 	"스물",
@@ -533,14 +533,14 @@ var It = [
 	"여든",
 	"아흔"
 ];
-function Rt(e) {
+function zt(e) {
 	if (e >= 100) return String(e);
 	let t = Math.floor(e / 10), n = e % 10;
-	return Lt[t] + It[n];
+	return Rt[t] + Lt[n];
 }
 //#endregion
 //#region packages/core/src/text/field-format-switch.ts
-var zt = {
+var Bt = {
 	Arabic: "decimal",
 	ArabicDash: "numberInDash",
 	Hex: "hex",
@@ -562,17 +562,17 @@ var zt = {
 	DBCHAR: "decimalFullWidth",
 	SBCHAR: "decimalHalfWidth"
 };
-function Bt(e) {
+function Vt(e) {
 	let t = /\\\*\s+(\S+)/g, n;
 	for (; (n = t.exec(e)) !== null;) {
-		let e = zt[n[1]];
+		let e = Bt[n[1]];
 		if (e) return e;
 	}
 	return null;
 }
 //#endregion
 //#region packages/core/src/text/date-time-picture.ts
-var Vt = [
+var Ht = [
 	"January",
 	"February",
 	"March",
@@ -585,7 +585,7 @@ var Vt = [
 	"October",
 	"November",
 	"December"
-], Ht = [
+], Ut = [
 	"Jan",
 	"Feb",
 	"Mar",
@@ -598,7 +598,7 @@ var Vt = [
 	"Oct",
 	"Nov",
 	"Dec"
-], Ut = [
+], Wt = [
 	"Sunday",
 	"Monday",
 	"Tuesday",
@@ -606,7 +606,7 @@ var Vt = [
 	"Thursday",
 	"Friday",
 	"Saturday"
-], Wt = [
+], Gt = [
 	"Sun",
 	"Mon",
 	"Tue",
@@ -614,14 +614,14 @@ var Vt = [
 	"Thu",
 	"Fri",
 	"Sat"
-], Gt = (e) => e < 10 ? `0${e}` : `${e}`;
-function Kt(e) {
+], Kt = (e) => e < 10 ? `0${e}` : `${e}`;
+function qt(e) {
 	let t = /\\@\s*"([^"]*)"/.exec(e);
 	if (t) return t[1];
 	let n = /\\@\s*(\S+)/.exec(e);
 	return n ? n[1] : null;
 }
-function qt(e, t) {
+function Jt(e, t) {
 	let n = t.getFullYear(), r = t.getMonth(), i = t.getDate(), a = t.getDay(), o = t.getHours(), s = o % 12 == 0 ? 12 : o % 12, c = t.getMinutes(), l = t.getSeconds(), u = o >= 12, d = "", f = 0, p = e.length;
 	for (; f < p;) {
 		let t = e[f];
@@ -646,7 +646,7 @@ function qt(e, t) {
 			let u = f;
 			for (; u < p && e[u] === t;) u++;
 			let m = e.slice(f, u).length, h = t.toLowerCase(), g = null;
-			if (t === "y" || t === "Y" ? g = m >= 4 ? String(n).padStart(4, "0") : Gt(n % 100) : t === "M" ? g = m >= 4 ? Vt[r] : m === 3 ? Ht[r] : m === 2 ? Gt(r + 1) : String(r + 1) : h === "d" ? g = m >= 4 ? Ut[a] : m === 3 ? Wt[a] : m === 2 ? Gt(i) : String(i) : t === "H" ? g = m >= 2 ? Gt(o) : String(o) : t === "h" ? g = m >= 2 ? Gt(s) : String(s) : t === "m" ? g = m >= 2 ? Gt(c) : String(c) : t === "s" ? g = m >= 2 ? Gt(l) : String(l) : (h === "a" || h === "p") && (g = null), g !== null) {
+			if (t === "y" || t === "Y" ? g = m >= 4 ? String(n).padStart(4, "0") : Kt(n % 100) : t === "M" ? g = m >= 4 ? Ht[r] : m === 3 ? Ut[r] : m === 2 ? Kt(r + 1) : String(r + 1) : h === "d" ? g = m >= 4 ? Wt[a] : m === 3 ? Gt[a] : m === 2 ? Kt(i) : String(i) : t === "H" ? g = m >= 2 ? Kt(o) : String(o) : t === "h" ? g = m >= 2 ? Kt(s) : String(s) : t === "m" ? g = m >= 2 ? Kt(c) : String(c) : t === "s" ? g = m >= 2 ? Kt(l) : String(l) : (h === "a" || h === "p") && (g = null), g !== null) {
 				d += g, f = u;
 				continue;
 			}
@@ -664,19 +664,19 @@ function qt(e, t) {
 }
 //#endregion
 //#region packages/core/src/fonts/local-metrics.ts
-function Jt(e) {
+function Yt(e) {
 	return e.trim().toLowerCase();
 }
-function Yt(e) {
+function Xt(e) {
 	return `local("${e.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"")}")`;
 }
-function Xt(e) {
+function Zt(e) {
 	return `__ooxml_local_${[...e].map((e) => (e.codePointAt(0) ?? 0).toString(16).padStart(6, "0")).join("")}`;
 }
-function Zt() {
+function Qt() {
 	return typeof OffscreenCanvas < "u" ? new OffscreenCanvas(1, 1).getContext("2d") : typeof document < "u" && document?.createElement ? document.createElement("canvas").getContext("2d") : null;
 }
-async function Qt(e) {
+async function $t(e) {
 	let t = Ee();
 	if (!t || typeof FontFace > "u") return {
 		faces: [],
@@ -688,7 +688,7 @@ async function Qt(e) {
 		if (!e || n.length === 0 || t.lineHeightMultiplier != null && !(t.lineHeightMultiplier > 0)) continue;
 		let r = t.weight ?? 400, a = t.style ?? "normal";
 		if (!(r >= 100 && r <= 900) || a !== "normal" && a !== "italic") continue;
-		let o = n.map(Yt).join(", "), s = Jt(e), c = `local-face:${o}:${r}:${a}`, l = i.get(c) ?? {
+		let o = n.map(Xt).join(", "), s = Yt(e), c = `local-face:${o}:${r}:${a}`, l = i.get(c) ?? {
 			source: o,
 			requests: []
 		};
@@ -702,7 +702,7 @@ async function Qt(e) {
 		}), i.set(c, l);
 	}
 	for (let [e, a] of i) {
-		let i = Xt(e), { face: o } = we(e, t, () => {
+		let i = Zt(e), { face: o } = we(e, t, () => {
 			let e = a.requests[0], n = new FontFace(i, a.source, {
 				weight: String(e.weight),
 				style: e.style
@@ -715,7 +715,7 @@ async function Qt(e) {
 			for (let t of a.requests) {
 				let n;
 				if (t.lineHeightMultiplier != null) {
-					let e = Zt();
+					let e = Qt();
 					if (!e) continue;
 					e.font = `${t.style} ${t.weight} 100px "${i}"`;
 					let r = e.measureText("Hg国"), a = r.fontBoundingBoxAscent, o = r.fontBoundingBoxDescent;
@@ -744,67 +744,67 @@ async function Qt(e) {
 		metrics: r
 	};
 }
-function $t(e) {
+function en(e) {
 	De(e);
 }
 //#endregion
 //#region packages/core/src/text/font-advance-metrics.ts
-var en = [{
+var tn = [{
 	test: (e) => e === "georgia",
 	biasEm: .0105
 }];
-function tn(e) {
+function nn(e) {
 	return (e ?? "").trim().replace(/^["']|["']$/g, "").replace(/\s+/g, " ").toLowerCase();
 }
-function nn(e) {
-	let t = tn(e);
-	for (let e of en) if (e.test(t)) return e.biasEm;
+function rn(e) {
+	let t = nn(e);
+	for (let e of tn) if (e.test(t)) return e.biasEm;
 	return 0;
 }
 //#endregion
 //#region packages/docx/src/layout/fingerprint.ts
-function rn(e, t = "$") {
+function an(e, t = "$") {
 	if (e === null || typeof e == "boolean" || typeof e == "number" || typeof e == "string") return JSON.stringify(e);
-	if (Array.isArray(e)) return `[${e.map((e, n) => rn(e, `${t}[${n}]`)).join(",")}]`;
+	if (Array.isArray(e)) return `[${e.map((e, n) => an(e, `${t}[${n}]`)).join(",")}]`;
 	if (typeof e == "object") {
 		let n = e;
-		return `{${Object.keys(n).sort().map((e) => `${JSON.stringify(e)}:${rn(n[e], `${t}.${e}`)}`).join(",")}}`;
+		return `{${Object.keys(n).sort().map((e) => `${JSON.stringify(e)}:${an(n[e], `${t}.${e}`)}`).join(",")}}`;
 	}
 	throw TypeError(`Cannot fingerprint ${typeof e} at ${t}`);
 }
-function an(e, t) {
-	let n = rn(t);
+function on(e, t) {
+	let n = an(t);
 	return `${e}:${encodeURIComponent(n)}`;
 }
 //#endregion
 //#region packages/docx/src/layout/source-key.ts
-function B(e) {
+function z(e) {
 	return `${e.story}:${encodeURIComponent(e.storyInstance)}:${e.path.join(".")}`;
 }
-function on(e, t, n) {
+function sn(e, t, n) {
 	if (t.length === 0 || n.length === 0) throw RangeError("Body occurrence identity requires a flow domain and fragment start");
 	return [
 		"body-occurrence",
-		encodeURIComponent(B(e)),
+		encodeURIComponent(z(e)),
 		encodeURIComponent(t),
 		encodeURIComponent(n)
 	].join("/");
 }
-function sn(e, t) {
-	return `image:${B(e)}:${encodeURIComponent(t)}`;
-}
 function cn(e, t) {
-	return `math:${B(e)}:${encodeURIComponent(t)}`;
+	return `image:${z(e)}:${encodeURIComponent(t)}`;
 }
-function ln(e) {
-	return an("chart-resource", e);
+function ln(e, t) {
+	return `math:${z(e)}:${encodeURIComponent(t)}`;
 }
-function un(e, t) {
-	return `anchor:${B(e)}:${encodeURIComponent(t)}`;
+function un(e) {
+	return on("chart-resource", e);
+}
+function dn(e, t) {
+	return `anchor:${z(e)}:${encodeURIComponent(t)}`;
 }
 //#endregion
 //#region packages/docx/src/layout/plain-data.ts
-function dn(e, t, n = /* @__PURE__ */ new WeakSet(), r = /* @__PURE__ */ new WeakSet()) {
+function fn(e, t, n = /* @__PURE__ */ new WeakSet(), r = /* @__PURE__ */ new WeakSet()) {
 	if (e == null || typeof e == "string" || typeof e == "boolean") return;
 	if (typeof e == "number") {
 		if (!Number.isFinite(e)) throw TypeError(`${t} must contain finite numbers`);
@@ -821,82 +821,82 @@ function dn(e, t, n = /* @__PURE__ */ new WeakSet(), r = /* @__PURE__ */ new Wea
 			if (Array.isArray(e) && i === "length") continue;
 			let a = Object.getOwnPropertyDescriptor(e, i);
 			if (!a || !a.enumerable || !("value" in a)) throw TypeError(`${t}.${i} must be an enumerable data property`);
-			dn(a.value, `${t}.${i}`, n, r);
+			fn(a.value, `${t}.${i}`, n, r);
 		}
 	} finally {
 		n.delete(e);
 	}
 	r.add(e);
 }
-function fn(e, t = /* @__PURE__ */ new WeakSet()) {
+function pn(e, t = /* @__PURE__ */ new WeakSet()) {
 	if (typeof e != "object" || !e || t.has(e)) return e;
 	t.add(e);
-	for (let n of Object.values(e)) fn(n, t);
+	for (let n of Object.values(e)) pn(n, t);
 	return Object.freeze(e);
 }
-function V(e, t) {
-	dn(e, t);
+function B(e, t) {
+	fn(e, t);
 	try {
-		return fn(structuredClone(e));
+		return pn(structuredClone(e));
 	} catch {
 		throw TypeError(`${t} must be structured-clone-safe plain data`);
 	}
 }
-function pn(e, t) {
-	return dn(e, t), fn(e);
+function mn(e, t) {
+	return fn(e, t), pn(e);
 }
 //#endregion
 //#region packages/docx/src/layout/paint-resources.ts
-function mn(e, t) {
+function hn(e, t) {
 	if (typeof e != "string" || e.trim().length === 0) throw TypeError(`${t} must be a non-empty string`);
 }
-function hn(e, t) {
+function gn(e, t) {
 	if (!Number.isFinite(e) || e < 0) throw TypeError(`${t} must be finite and non-negative`);
 }
-function gn(e, t) {
+function _n(e, t) {
 	if (!Number.isFinite(e)) throw TypeError(`${t} must be finite`);
 }
-function _n(e, t) {
+function vn(e, t) {
 	if (!Number.isFinite(e) || e < 0 || e > 1) throw TypeError(`${t} must be between 0 and 1`);
 }
-function vn(e, t) {
-	hn(e.widthPt, `${t}.widthPt`), hn(e.heightPt, `${t}.heightPt`);
+function yn(e, t) {
+	gn(e.widthPt, `${t}.widthPt`), gn(e.heightPt, `${t}.heightPt`);
 }
-function yn(e) {
-	switch (mn(e.resourceKey, "resourceKey"), e.kind) {
+function bn(e) {
+	switch (hn(e.resourceKey, "resourceKey"), e.kind) {
 		case "image":
 		case "picture-bullet":
 			if (e.documentOrder !== void 0 && (!Number.isSafeInteger(e.documentOrder) || e.documentOrder < 0)) throw TypeError("documentOrder must be a non-negative safe integer");
-			if (mn(e.partPath, "partPath"), mn(e.mimeType, "mimeType"), e.svgImagePath !== void 0 && mn(e.svgImagePath, "svgImagePath"), vn(e.intrinsicSize, "intrinsicSize"), e.alpha !== void 0 && _n(e.alpha, "alpha"), e.rotation !== void 0 && !Number.isFinite(e.rotation)) throw TypeError("rotation must be finite");
-			e.srcRect !== void 0 && (gn(e.srcRect.l, "srcRect.l"), gn(e.srcRect.t, "srcRect.t"), gn(e.srcRect.r, "srcRect.r"), gn(e.srcRect.b, "srcRect.b"));
+			if (hn(e.partPath, "partPath"), hn(e.mimeType, "mimeType"), e.svgImagePath !== void 0 && hn(e.svgImagePath, "svgImagePath"), yn(e.intrinsicSize, "intrinsicSize"), e.alpha !== void 0 && vn(e.alpha, "alpha"), e.rotation !== void 0 && !Number.isFinite(e.rotation)) throw TypeError("rotation must be finite");
+			e.srcRect !== void 0 && (_n(e.srcRect.l, "srcRect.l"), _n(e.srcRect.t, "srcRect.t"), _n(e.srcRect.r, "srcRect.r"), _n(e.srcRect.b, "srcRect.b"));
 			break;
 		case "chart":
-			vn(e.intrinsicSize, "intrinsicSize");
+			yn(e.intrinsicSize, "intrinsicSize");
 			break;
 		case "math": break;
 		default: throw TypeError(`Unknown paint resource kind: ${String(e)}`);
 	}
 }
-function bn(e) {
-	return yn(e), V(e, `paint resource ${e.resourceKey}`);
+function xn(e) {
+	return bn(e), B(e, `paint resource ${e.resourceKey}`);
 }
-function xn(e, t, n) {
+function Sn(e, t, n) {
 	return /* @__PURE__ */ Error(`Paint resource kind mismatch for ${e}: expected ${t}, got ${n}`);
 }
-function Sn(e) {
+function Cn(e) {
 	let t = /* @__PURE__ */ new Set();
 	for (let n of e) {
 		if (t.has(n.resourceKey)) throw Error(`Duplicate paint resource key: ${n.resourceKey}`);
 		t.add(n.resourceKey);
 	}
-	let n = e.map(bn).sort((e, t) => e.resourceKey.localeCompare(t.resourceKey));
-	return Cn(Object.freeze(n));
+	let n = e.map(xn).sort((e, t) => e.resourceKey.localeCompare(t.resourceKey));
+	return wn(Object.freeze(n));
 }
-function Cn(e) {
+function wn(e) {
 	if (!Object.isFrozen(e)) throw TypeError("Owned paint descriptors must be sealed");
 	let t = null;
 	for (let n of e) {
-		if (yn(n), !Object.isFrozen(n)) throw TypeError(`Owned paint descriptor must be sealed: ${n.resourceKey}`);
+		if (bn(n), !Object.isFrozen(n)) throw TypeError(`Owned paint descriptor must be sealed: ${n.resourceKey}`);
 		if (t !== null && n.resourceKey.localeCompare(t) <= 0) throw Error(`Owned paint descriptors must have unique sorted keys: ${n.resourceKey}`);
 		t = n.resourceKey;
 	}
@@ -907,17 +907,17 @@ function Cn(e) {
 		resolve(e, t) {
 			let n = r.get(e);
 			if (!n) throw Error(`Unknown paint resource: ${e}`);
-			if (n.kind !== t) throw xn(e, t, n.kind);
+			if (n.kind !== t) throw Sn(e, t, n.kind);
 			return n;
 		}
 	});
 }
 //#endregion
 //#region packages/docx/src/layout/production-paint-resources.ts
-function wn(e) {
-	return ln(e);
+function Tn(e) {
+	return un(e);
 }
-function Tn(e, t, n, r = {}) {
+function En(e, t, n, r = {}) {
 	return {
 		kind: e,
 		resourceKey: t,
@@ -932,10 +932,10 @@ function Tn(e, t, n, r = {}) {
 		...r.duotone === void 0 ? {} : { duotone: { ...r.duotone } }
 	};
 }
-function En(e, t, n, r) {
+function Dn(e, t, n, r) {
 	let i = [], a = [], o = [], s = (e, t, n, r, o, s, c = {}) => {
-		let l = sn(t, n);
-		i.push(Tn(e, l, n, c)), a.push({
+		let l = cn(t, n);
+		i.push(En(e, l, n, c)), a.push({
 			resourceKey: l,
 			mimeType: r,
 			widthPt: o,
@@ -949,7 +949,7 @@ function En(e, t, n, r) {
 		if (e.type === "chart") {
 			o.push({
 				kind: "chart",
-				resourceKey: wn(t),
+				resourceKey: Tn(t),
 				intrinsicSize: {
 					widthPt: e.widthPt,
 					heightPt: e.heightPt
@@ -1051,16 +1051,16 @@ function En(e, t, n, r) {
 		descriptors: o
 	};
 }
-function Dn(e, t, n, r) {
-	let i = En(e, t, n, r);
+function On(e, t, n, r) {
+	let i = Dn(e, t, n, r);
 	return Object.freeze({
 		imageMetadata: Object.freeze(i.imageMetadata.map((e) => Object.freeze({ ...e }))),
-		paintResources: Sn(i.descriptors)
+		paintResources: Cn(i.descriptors)
 	});
 }
 //#endregion
 //#region packages/docx/src/layout/resources.ts
-function On(e, t = "body", n = "body") {
+function kn(e, t = "body", n = "body") {
 	let r = [], i = (e, a = []) => {
 		e.forEach((e, o) => {
 			let s = [...a, o];
@@ -1073,7 +1073,7 @@ function On(e, t = "body", n = "body") {
 						storyInstance: n,
 						path: [...s, i]
 					},
-					resourceKey: cn({
+					resourceKey: ln({
 						story: t,
 						storyInstance: n,
 						path: [...s, i]
@@ -1090,20 +1090,20 @@ function On(e, t = "body", n = "body") {
 	};
 	return i(e), r;
 }
-function kn(e, t) {
+function An(e, t) {
 	if (!Number.isFinite(e) || e < 0) throw RangeError(`${t} must be finite and non-negative`);
 	return e;
 }
-function An(e) {
+function jn(e) {
 	let t = [...e].map((e) => Object.freeze({
 		resourceKey: e.resourceKey,
-		widthPt: kn(e.widthPt, "widthPt"),
-		heightPt: kn(e.heightPt, "heightPt"),
+		widthPt: An(e.widthPt, "widthPt"),
+		heightPt: An(e.heightPt, "heightPt"),
 		mimeType: e.mimeType
 	})).sort((e, t) => e.resourceKey.localeCompare(t.resourceKey)), n = new Map(t.map(({ resourceKey: e, ...t }) => [e, Object.freeze(t)]));
 	if (n.size !== t.length) throw Error("Duplicate image resource key");
 	return Object.freeze({
-		fingerprint: an("images", t),
+		fingerprint: on("images", t),
 		resolve(e) {
 			let t = n.get(e);
 			if (!t) throw Error(`Unknown image resource: ${e}`);
@@ -1111,18 +1111,18 @@ function An(e) {
 		}
 	});
 }
-function jn(e) {
+function Mn(e) {
 	let t = [...e].map((e) => Object.freeze({
 		resourceKey: e.resourceKey,
-		widthEm: kn(e.widthEm, "widthEm"),
-		ascentEm: kn(e.ascentEm, "ascentEm"),
-		descentEm: kn(e.descentEm, "descentEm"),
+		widthEm: An(e.widthEm, "widthEm"),
+		ascentEm: An(e.ascentEm, "ascentEm"),
+		descentEm: An(e.descentEm, "descentEm"),
 		diagnostics: Object.freeze(e.diagnostics.map((e) => Object.freeze({ ...e }))),
 		...e.available === !1 ? { available: !1 } : {}
 	})).sort((e, t) => e.resourceKey.localeCompare(t.resourceKey)), n = new Map(t.map((e) => [e.resourceKey, e]));
 	if (n.size !== t.length) throw Error("Duplicate math resource key");
 	return Object.freeze({
-		fingerprint: an("math", t),
+		fingerprint: on("math", t),
 		resolve(e) {
 			let t = n.get(e);
 			if (!t) throw Error(`Unknown math resource: ${e}`);
@@ -1132,9 +1132,9 @@ function jn(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/runtime-state.ts
-var Mn = Symbol("document-layout-runtime");
-function Nn(e, t) {
-	Object.defineProperty(e, Mn, {
+var Nn = Symbol("document-layout-runtime");
+function Pn(e, t) {
+	Object.defineProperty(e, Nn, {
 		configurable: !1,
 		enumerable: !1,
 		writable: !1,
@@ -1144,12 +1144,12 @@ function Nn(e, t) {
 		}
 	});
 }
-function Pn(e) {
-	let t = e[Mn];
+function Fn(e) {
+	let t = e[Nn];
 	if (t) return t;
 	throw Error("Document layout runtime is not initialized; attach it explicitly");
 }
-function Fn(e) {
+function In(e) {
 	let t = new Map(e), n = Object.freeze([...t.keys()].sort());
 	return Object.freeze({
 		keys: n,
@@ -1160,8 +1160,8 @@ function Fn(e) {
 		}
 	});
 }
-var In = /* @__PURE__ */ new WeakMap(), Ln = /* @__PURE__ */ new WeakMap(), Rn = /* @__PURE__ */ new WeakMap(), zn = /* @__PURE__ */ new WeakMap(), Bn = /* @__PURE__ */ new WeakMap(), Vn = /* @__PURE__ */ new WeakMap(), Hn = /* @__PURE__ */ new WeakMap();
-function Un() {
+var Ln = /* @__PURE__ */ new WeakMap(), Rn = /* @__PURE__ */ new WeakMap(), zn = /* @__PURE__ */ new WeakMap(), Bn = /* @__PURE__ */ new WeakMap(), Vn = /* @__PURE__ */ new WeakMap(), Hn = /* @__PURE__ */ new WeakMap(), Un = /* @__PURE__ */ new WeakMap();
+function Wn() {
 	let e = /* @__PURE__ */ new WeakMap(), t = /* @__PURE__ */ new WeakMap(), n = 1;
 	return Object.freeze({
 		objectIdentity(t) {
@@ -1177,113 +1177,113 @@ function Un() {
 		}
 	});
 }
-function Wn(e, t) {
+function Gn(e, t) {
 	let n = [
 		e.text,
 		e.images,
 		e.math
 	], r = new Set(n.flatMap((e) => {
-		let t = Ln.get(e);
+		let t = Rn.get(e);
 		return t ? [t] : [];
 	}));
 	if (r.size > 1) throw Error("Layout services combine foreign runtime owners");
-	let i = r.values().next().value, a = n.filter((e) => !Ln.has(e));
+	let i = r.values().next().value, a = n.filter((e) => !Rn.has(e));
 	if (i && a.length > 1) throw Error("Layout services are missing service lineage for multiple components");
 	if (!i && !t) return;
 	let o = i ?? {};
 	for (let e of n) {
-		let t = Ln.get(e);
+		let t = Rn.get(e);
 		if (t && t !== o) throw Error("Layout services combine foreign runtime owners");
-		Ln.set(e, o);
+		Rn.set(e, o);
 	}
 	return o;
 }
-function Gn(e, t) {
-	let n = Wn(e, !0);
-	if (Rn.has(n)) throw Error("Body layout kernel is already attached");
-	Rn.set(n, t);
-}
-function Kn(e) {
-	let t = Wn(e, !1);
-	return t ? Rn.get(t) : void 0;
-}
-function qn(e, t) {
-	let n = Wn(e, !0);
-	if (zn.has(n)) throw Error("Layout source store is already attached");
+function Kn(e, t) {
+	let n = Gn(e, !0);
+	if (zn.has(n)) throw Error("Body layout kernel is already attached");
 	zn.set(n, t);
 }
-function Jn(e) {
-	let t = Wn(e, !1);
+function qn(e) {
+	let t = Gn(e, !1);
 	return t ? zn.get(t) : void 0;
 }
-function Yn(e, t) {
-	let n = Wn(e, !0);
-	if (Bn.has(n)) throw Error("Vertical glyph measurement service is already attached");
+function Jn(e, t) {
+	let n = Gn(e, !0);
+	if (Bn.has(n)) throw Error("Layout source store is already attached");
 	Bn.set(n, t);
 }
-function Xn(e) {
-	let t = Wn(e, !1), n = t ? Bn.get(t) : void 0;
+function Yn(e) {
+	let t = Gn(e, !1);
+	return t ? Bn.get(t) : void 0;
+}
+function Xn(e, t) {
+	let n = Gn(e, !0);
+	if (Vn.has(n)) throw Error("Vertical glyph measurement service is already attached");
+	Vn.set(n, t);
+}
+function Zn(e) {
+	let t = Gn(e, !1), n = t ? Vn.get(t) : void 0;
 	if (!n) throw Error("Vertical glyph measurement service is not attached");
 	return n;
 }
-function Zn(e, t) {
-	if (Vn.has(e)) throw Error("Layout variant store is already attached");
-	Vn.set(e, t);
+function Qn(e, t) {
+	if (Hn.has(e)) throw Error("Layout variant store is already attached");
+	Hn.set(e, t);
 }
-function Qn(e) {
-	return Vn.get(e);
+function $n(e) {
+	return Hn.get(e);
 }
-function $n(e, t, n = t.keys()) {
-	if (In.has(e)) throw Error("Private resource lookup is already attached");
+function er(e, t, n = t.keys()) {
+	if (Ln.has(e)) throw Error("Private resource lookup is already attached");
 	let r = new Set(t.keys()), i = new Set(n), a = [...i].filter((e) => !r.has(e)).sort(), o = [...r].filter((e) => !i.has(e)).sort();
 	if (a.length > 0 || o.length > 0) throw Error(`Runtime resource membership mismatch: missing [${a.join(", ")}]; extra [${o.join(", ")}]`);
-	In.set(e, Fn(t));
+	Ln.set(e, In(t));
 }
-function er(e) {
-	return In.get(e);
+function tr(e) {
+	return Ln.get(e);
 }
-var tr = /* @__PURE__ */ new WeakMap(), nr = /* @__PURE__ */ new WeakMap();
-function rr(e, t = {}) {
+var nr = /* @__PURE__ */ new WeakMap(), rr = /* @__PURE__ */ new WeakMap();
+function ir(e, t = {}) {
 	let n = Object.freeze({
 		...e,
 		...t
-	}), r = Kn(e);
+	}), r = qn(e);
 	if (!r) throw Error("Body layout kernel is not attached to the supplied services");
-	if (Kn(n) !== r) throw Error("Layout service view did not retain its body layout kernel owner");
-	let i = In.get(e);
-	i && In.set(n, i);
-	let a = tr.get(e);
-	a && tr.set(n, a);
-	let o = Hn.get(e);
-	return o && Hn.set(n, o), n;
-}
-function ir(e) {
-	let t = rr(e);
-	return Hn.set(t, Un()), t;
+	if (qn(n) !== r) throw Error("Layout service view did not retain its body layout kernel owner");
+	let i = Ln.get(e);
+	i && Ln.set(n, i);
+	let a = nr.get(e);
+	a && nr.set(n, a);
+	let o = Un.get(e);
+	return o && Un.set(n, o), n;
 }
 function ar(e) {
-	return Hn.get(e);
+	let t = ir(e);
+	return Un.set(t, Wn()), t;
 }
-function or(e, t) {
+function or(e) {
+	return Un.get(e);
+}
+function sr(e, t) {
 	if (!Number.isInteger(t.totalPages) || t.totalPages < 1) throw RangeError("Field acquisition totalPages must be a positive integer");
-	let n = rr(e);
-	return nr.set(n, Object.freeze({ ...t })), n;
+	let n = ir(e);
+	return rr.set(n, Object.freeze({ ...t })), n;
 }
-function sr(e) {
-	return nr.get(e) ?? Object.freeze({ totalPages: 1 });
+function cr(e) {
+	return rr.get(e) ?? Object.freeze({ totalPages: 1 });
 }
-function cr(e, t) {
-	if (tr.has(e)) throw Error("Paint resource registry is already attached");
-	tr.set(e, t);
+function lr(e, t) {
+	if (nr.has(e)) throw Error("Paint resource registry is already attached");
+	nr.set(e, t);
 }
-function lr(e) {
-	let t = tr.get(e);
+function ur(e) {
+	let t = nr.get(e);
 	if (!t) throw Error("Paint resource registry is not attached");
 	return t;
 }
 //#endregion
 //#region packages/docx/src/layout/page-layers.ts
-var ur = [
+var dr = [
 	"background",
 	"behindText",
 	"header",
@@ -1291,7 +1291,7 @@ var ur = [
 	"notes",
 	"front",
 	"footer"
-], dr = Object.freeze({
+], fr = Object.freeze({
 	a: 1,
 	b: 0,
 	c: 0,
@@ -1299,23 +1299,23 @@ var ur = [
 	e: 0,
 	f: 0
 });
-function fr(e) {
+function pr(e) {
 	return Object.freeze({
 		kind: "clip",
 		clip: e
 	});
 }
-function pr(e, t) {
+function mr(e, t) {
 	return Object.freeze({
 		kind: "transform",
 		transform: Object.freeze({
-			...dr,
+			...fr,
 			e,
 			f: t
 		})
 	});
 }
-function mr(e, t) {
+function hr(e, t) {
 	if (!t.textBoxIds?.length) return Object.freeze([]);
 	let n = new Map(e.textBoxes.map((e) => [e.id, e]));
 	return Object.freeze(t.textBoxIds.flatMap((e) => {
@@ -1323,7 +1323,7 @@ function mr(e, t) {
 		return t ? [t] : [];
 	}));
 }
-function hr(e, t, n, r, i) {
+function gr(e, t, n, r, i) {
 	if (e.kind === "drawing") {
 		if (!e.anchorLayer) return;
 		i.push(Object.freeze({
@@ -1338,16 +1338,16 @@ function hr(e, t, n, r, i) {
 	}
 	if (e.kind !== "textbox") {
 		if (e.kind === "note") {
-			let a = e.story.clipBounds ? Object.freeze([...n, fr(e.story.clipBounds)]) : n;
-			for (let n of e.story.blocks) hr(n, t, a, r, i);
+			let a = e.story.clipBounds ? Object.freeze([...n, pr(e.story.clipBounds)]) : n;
+			for (let n of e.story.blocks) gr(n, t, a, r, i);
 			return;
 		}
 		if (e.kind === "paragraph") {
-			let a = e.clipBounds ? Object.freeze([...n, fr(e.clipBounds)]) : n;
+			let a = e.clipBounds ? Object.freeze([...n, pr(e.clipBounds)]) : n;
 			for (let n of e.drawings) n.anchorLayer && i.push(Object.freeze({
 				drawing: n,
 				owner: e,
-				textBoxes: mr(e, n),
+				textBoxes: hr(e, n),
 				frames: Object.freeze([...a]),
 				layoutTranslationPt: Object.freeze({ ...r }),
 				encounterOrder: i.length,
@@ -1355,36 +1355,36 @@ function hr(e, t, n, r, i) {
 			}));
 			return;
 		}
-		vr(e, t, n, r, i);
+		yr(e, t, n, r, i);
 	}
 }
-function gr(e, t, n, r, i, a) {
+function _r(e, t, n, r, i, a) {
 	let o = t.xPt - e.flowBounds.xPt, s = t.yPt - e.flowBounds.yPt;
-	hr(e, n, Object.freeze([...r, pr(o, s)]), Object.freeze({
+	gr(e, n, Object.freeze([...r, mr(o, s)]), Object.freeze({
 		xPt: i.xPt + o,
 		yPt: i.yPt + s
 	}), a);
 }
-function _r(e, t, n, r, i) {
-	gr(e.child, {
+function vr(e, t, n, r, i) {
+	_r(e.child, {
 		xPt: e.xPt - r.xPt,
 		yPt: e.yPt - r.yPt
 	}, t, n, r, i);
 }
-function vr(e, t, n, r, i) {
-	let a = e.clipBounds ? Object.freeze([...n, fr(e.clipBounds)]) : n;
+function yr(e, t, n, r, i) {
+	let a = e.clipBounds ? Object.freeze([...n, pr(e.clipBounds)]) : n;
 	for (let n of e.rows) for (let e of n.cells) {
 		let n = "visualMergeOwnership" in e && e.visualMergeOwnership === "continuation";
 		if (e.verticalMerge === "continue" && !n) continue;
-		let o = e.clipBounds ? Object.freeze([...a, fr(e.clipBounds)]) : a;
-		for (let n of e.blocks) gr(n.layout, {
+		let o = e.clipBounds ? Object.freeze([...a, pr(e.clipBounds)]) : a;
+		for (let n of e.blocks) _r(n.layout, {
 			xPt: e.contentBounds.xPt + (n.layout.kind === "table" ? n.layout.flowBounds.xPt : 0),
 			yPt: e.flowBounds.yPt + n.offsetPt + (n.layout.kind === "table" ? n.layout.flowBounds.yPt : 0)
 		}, t, o, r, i);
 	}
-	for (let n of e.resolvedFloatingTables ?? []) _r(n, t, a, r, i);
+	for (let n of e.resolvedFloatingTables ?? []) vr(n, t, a, r, i);
 }
-function yr(e) {
+function br(e) {
 	let t = e.drawing.anchorLayer;
 	return Object.freeze({
 		kind: "drawing",
@@ -1400,7 +1400,7 @@ function yr(e) {
 		layoutTranslationPt: e.layoutTranslationPt
 	});
 }
-function br(e, t) {
+function xr(e, t) {
 	return Object.freeze({
 		kind: "node",
 		layer: e.layer,
@@ -1412,44 +1412,44 @@ function br(e, t) {
 		omitAnchoredDrawings: t
 	});
 }
-function xr(e, t) {
+function Sr(e, t) {
 	return e.drawing.anchorLayer.relativeHeight - t.drawing.anchorLayer.relativeHeight || e.drawing.anchorLayer.sourceOrder - t.drawing.anchorLayer.sourceOrder || e.encounterOrder - t.encounterOrder;
 }
-function Sr(e) {
+function Cr(e) {
 	let t = [];
-	for (let n of e) hr(n.node, n, Object.freeze([]), Object.freeze({
+	for (let n of e) gr(n.node, n, Object.freeze([]), Object.freeze({
 		xPt: 0,
 		yPt: 0
 	}), t);
-	let n = t.filter(({ drawing: e }) => e.anchorLayer.behindDoc).sort(xr).map(yr), r = t.filter(({ drawing: e }) => !e.anchorLayer.behindDoc).sort(xr).map(yr), i = new Set(t.map(({ root: e }) => e.node)), a = e.flatMap((e) => e.node.kind === "drawing" && e.node.anchorLayer ? [] : [br(e, i.has(e.node))]);
+	let n = t.filter(({ drawing: e }) => e.anchorLayer.behindDoc).sort(Sr).map(br), r = t.filter(({ drawing: e }) => !e.anchorLayer.behindDoc).sort(Sr).map(br), i = new Set(t.map(({ root: e }) => e.node)), a = e.flatMap((e) => e.node.kind === "drawing" && e.node.anchorLayer ? [] : [xr(e, i.has(e.node))]);
 	return Object.freeze([
 		...n,
 		...a,
 		...r
 	]);
 }
-function Cr(e, t) {
-	return t.has(e) || (t.add(e), e.kind === "drawing") ? !1 : e.kind === "paragraph" ? e.lines.some((e) => e.placements.some((e) => e.kind === "text" && e.paintOps?.some((e) => e.verticalFeature === !0) === !0)) || e.textBoxes.some((e) => Cr(e, t)) : e.kind === "textbox" || e.kind === "note" ? e.story.blocks.some((e) => Cr(e, t)) : e.rows.some((e) => e.cells.some((e) => e.blocks.some((e) => Cr(e.layout, t)))) || (e.resolvedFloatingTables ?? []).some((e) => Cr(e.child, t));
+function wr(e, t) {
+	return t.has(e) || (t.add(e), e.kind === "drawing") ? !1 : e.kind === "paragraph" ? e.lines.some((e) => e.placements.some((e) => e.kind === "text" && e.paintOps?.some((e) => e.verticalFeature === !0) === !0)) || e.textBoxes.some((e) => wr(e, t)) : e.kind === "textbox" || e.kind === "note" ? e.story.blocks.some((e) => wr(e, t)) : e.rows.some((e) => e.cells.some((e) => e.blocks.some((e) => wr(e.layout, t)))) || (e.resolvedFloatingTables ?? []).some((e) => wr(e.child, t));
 }
-function wr(e) {
+function Tr(e) {
 	let t = Object.freeze(e.map(({ layer: e, node: t, coordinateSpace: n }) => Object.freeze({
 		layer: e,
 		node: t,
 		coordinateSpace: n ?? "section-logical"
-	}))), n = new Map(ur.map((e) => [e, []]));
+	}))), n = new Map(dr.map((e) => [e, []]));
 	for (let e of t) n.get(e.layer).push(e.node);
 	let r = [];
 	for (let e = 0; e < t.length;) {
 		let n = t[e].layer, i = e + 1;
 		for (; t[i]?.layer === n;) i += 1;
 		let a = t.slice(e, i);
-		n === "header" || n === "body" || n === "notes" || n === "footer" ? r.push(...Sr(a)) : r.push(...a.map((e) => br(e, !1))), e = i;
+		n === "header" || n === "body" || n === "notes" || n === "footer" ? r.push(...Cr(a)) : r.push(...a.map((e) => xr(e, !1))), e = i;
 	}
 	let i = /* @__PURE__ */ new Set();
 	return Object.freeze({
 		roots: t,
 		paintOrder: Object.freeze(r),
-		capabilities: Object.freeze({ requiresElementBackedVerticalGlyphPaint: t.some(({ node: e }) => Cr(e, i)) }),
+		capabilities: Object.freeze({ requiresElementBackedVerticalGlyphPaint: t.some(({ node: e }) => wr(e, i)) }),
 		background: Object.freeze(n.get("background")),
 		behindText: Object.freeze(n.get("behindText")),
 		header: Object.freeze(n.get("header")),
@@ -1461,75 +1461,75 @@ function wr(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/page-graph.ts
-var Tr = class extends Error {
+var Er = class extends Error {
 	constructor(e) {
 		super(e), this.name = "PageGraphError";
 	}
-}, Er = wr;
-function Dr(e, t, n) {
+}, Dr = Tr;
+function Or(e, t, n) {
 	let r = new Map(n.map((e) => [e.id, e]));
-	if (r.size !== n.length || n.length !== e[t].length) throw new Tr(`Replacement ${t} layer must preserve unique paint node identities`);
-	return Er(e.roots.map((e) => {
+	if (r.size !== n.length || n.length !== e[t].length) throw new Er(`Replacement ${t} layer must preserve unique paint node identities`);
+	return Dr(e.roots.map((e) => {
 		if (e.layer !== t) return e;
 		let n = r.get(e.node.id);
-		if (!n) throw new Tr(`Missing replacement paint node ${e.node.id}`);
+		if (!n) throw new Er(`Missing replacement paint node ${e.node.id}`);
 		return {
 			...e,
 			node: n
 		};
 	}));
 }
-function Or(e) {
+function kr(e) {
 	return e.layers.roots;
 }
-function kr(e) {
+function Ar(e) {
 	let t = !1, n = !1;
 	for (let r of e.layers.roots) if (r.layer === "body") {
-		if (n) throw new Tr(`Paint sequence must contain one contiguous body paint run; re-entered at ${r.node.id}`);
+		if (n) throw new Er(`Paint sequence must contain one contiguous body paint run; re-entered at ${r.node.id}`);
 		t = !0;
 	} else t && (n = !0);
 	let r = /* @__PURE__ */ new Map();
 	for (let t of e.layers.roots) {
-		if (r.has(t.node.id)) throw new Tr(`Duplicate paint node ${t.node.id}`);
+		if (r.has(t.node.id)) throw new Er(`Duplicate paint node ${t.node.id}`);
 		r.set(t.node.id, t);
 	}
 	let i = /* @__PURE__ */ new Map();
-	for (let t of ur) for (let n of e.layers[t]) {
-		if (i.has(n.id)) throw new Tr(`Duplicate semantic page node ${n.id}`);
+	for (let t of dr) for (let n of e.layers[t]) {
+		if (i.has(n.id)) throw new Er(`Duplicate semantic page node ${n.id}`);
 		i.set(n.id, {
 			layer: t,
 			node: n
 		});
 	}
-	if (i.size !== r.size) throw new Tr("Semantic page layers do not match retained roots");
+	if (i.size !== r.size) throw new Er("Semantic page layers do not match retained roots");
 	for (let [e, t] of r) {
 		let n = i.get(e);
-		if (!n || n.layer !== t.layer || n.node !== t.node) throw new Tr(`Paint root ${e} is not the retained ${t.layer} node`);
+		if (!n || n.layer !== t.layer || n.node !== t.node) throw new Er(`Paint root ${e} is not the retained ${t.layer} node`);
 	}
 	let a = /* @__PURE__ */ new Set(), o = /* @__PURE__ */ new Set();
 	for (let t of e.layers.paintOrder) {
 		let e = r.get(t.rootNodeId);
-		if (!e) throw new Tr(`Missing paint root ${t.rootNodeId}`);
-		if (e.layer !== t.sourceLayer) throw new Tr(`Paint root ${t.rootNodeId} belongs to ${e.layer}, not ${t.sourceLayer}`);
+		if (!e) throw new Er(`Missing paint root ${t.rootNodeId}`);
+		if (e.layer !== t.sourceLayer) throw new Er(`Paint root ${t.rootNodeId} belongs to ${e.layer}, not ${t.sourceLayer}`);
 		if (a.add(t.rootNodeId), t.kind === "node") {
-			if (t.node !== e.node || t.node.id !== t.rootNodeId) throw new Tr(`Paint root ${t.rootNodeId} is not the retained ${t.sourceLayer} node`);
+			if (t.node !== e.node || t.node.id !== t.rootNodeId) throw new Er(`Paint root ${t.rootNodeId} is not the retained ${t.sourceLayer} node`);
 			continue;
 		}
-		if (!t.node.anchorLayer) throw new Tr(`Drawing paint entry ${t.node.id} is not anchored`);
-		if (o.has(t.node.id)) throw new Tr(`Duplicate drawing paint reference ${t.node.id}`);
+		if (!t.node.anchorLayer) throw new Er(`Drawing paint entry ${t.node.id} is not anchored`);
+		if (o.has(t.node.id)) throw new Er(`Duplicate drawing paint reference ${t.node.id}`);
 		o.add(t.node.id);
 	}
-	if (a.size !== r.size) throw new Tr(`Missing paint-order reference for ${[...r.keys()].find((e) => !a.has(e)) ?? "<unknown>"}`);
+	if (a.size !== r.size) throw new Er(`Missing paint-order reference for ${[...r.keys()].find((e) => !a.has(e)) ?? "<unknown>"}`);
 	return e.layers.roots.map(({ node: e }) => e);
 }
 //#endregion
 //#region packages/docx/src/layout/error-page.ts
-var Ar = Object.freeze({
+var jr = Object.freeze({
 	story: "body",
 	storyInstance: "parse-error",
 	path: Object.freeze([])
 });
-function jr(e, t, n, r, i) {
+function Mr(e, t, n, r, i) {
 	let a = e.trim().split(/\s+/).filter(Boolean), o = [], s = "", c = (e) => r.shape({
 		text: e,
 		fontSizePt: n,
@@ -1581,7 +1581,7 @@ function jr(e, t, n, r, i) {
 	}
 	return s && o.length < i && o.push(s), o;
 }
-function Mr(e, t, n) {
+function Nr(e, t, n) {
 	if (!(t.widthPt > 0 && t.heightPt > 0)) throw RangeError("Error page size must be positive");
 	let r = Math.max(18, Math.min(t.widthPt, t.heightPt) * .06), i = {
 		xPt: r,
@@ -1592,7 +1592,7 @@ function Mr(e, t, n) {
 		fonts: {},
 		slot: "ascii",
 		genericFamily: "sans-serif"
-	}).route, s = jr(e, t.widthPt - r * 4, a, n, 4), c = a * 1.4, l = [
+	}).route, s = Mr(e, t.widthPt - r * 4, a, n, 4), c = a * 1.4, l = [
 		{
 			kind: "fill-rect",
 			rect: {
@@ -1664,7 +1664,7 @@ function Mr(e, t, n) {
 	], u = {
 		kind: "drawing",
 		id: "parse-error-page",
-		source: Ar,
+		source: jr,
 		flowDomainId: "parse-error",
 		flowBounds: i,
 		inkBounds: i,
@@ -1752,7 +1752,7 @@ function Mr(e, t, n) {
 				flowDomainIds: ["parse-error"],
 				section: d
 			}],
-			layers: Er([{
+			layers: Dr([{
 				layer: "body",
 				node: u
 			}]),
@@ -1761,23 +1761,23 @@ function Mr(e, t, n) {
 		diagnostics: [{
 			code: "UNSUPPORTED_FEATURE",
 			severity: "error",
-			source: Ar,
+			source: jr,
 			message: e
 		}]
 	};
 }
 //#endregion
 //#region packages/docx/src/layout/options.ts
-function Nr(e, t) {
+function Pr(e, t) {
 	let n = e == null ? t : typeof e == "number" ? e : e.getTime();
 	if (!Number.isFinite(n)) throw RangeError("currentDate must resolve to finite epoch milliseconds");
 	return Object.freeze({ currentDateMs: n });
 }
-function Pr(e) {
-	return Nr(e.currentDate, e.defaultCurrentDateMs);
+function Fr(e) {
+	return Pr(e.currentDate, e.defaultCurrentDateMs);
 }
-function Fr(e, t) {
-	return an("layout", {
+function Ir(e, t) {
+	return on("layout", {
 		currentDateMs: e.currentDateMs,
 		text: t.text.fingerprint,
 		images: t.images.fingerprint,
@@ -1787,7 +1787,7 @@ function Fr(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/diagnostics.ts
-var Ir = Object.freeze({
+var Lr = Object.freeze({
 	UNSUPPORTED_TEXT_EFFECT: Object.freeze({
 		severity: "warning",
 		layoutCode: "UNSUPPORTED_FEATURE",
@@ -1813,36 +1813,36 @@ var Ir = Object.freeze({
 		layoutCode: "INVALID_GEOMETRY",
 		message: "A drawing has a schema-valid zero-area extent"
 	})
-}), Lr = Object.freeze({
+}), Rr = Object.freeze({
 	code: "INVALID_VALUE",
 	severity: "warning",
 	message: "The parser diagnostic contract did not match this renderer build"
 });
-function Rr(e) {
+function zr(e) {
 	return typeof e == "object" && !!e && !Array.isArray(e);
 }
-function zr(e, t) {
+function Br(e, t) {
 	if (!Array.isArray(e) || !e.every((e) => Number.isSafeInteger(e) && e >= 0)) return !1;
 	let [n] = e;
 	return n === void 0 || n < t;
 }
-function Br(e) {
+function Vr(e) {
 	return Object.freeze({
 		story: "body",
 		storyInstance: "body",
 		path: Object.freeze([...e])
 	});
 }
-function Vr(e, t) {
+function Hr(e, t) {
 	if (e === void 0) return Object.freeze([]);
-	if (!Array.isArray(e)) return Object.freeze([Lr]);
+	if (!Array.isArray(e)) return Object.freeze([Rr]);
 	let n = [], r = !1;
 	for (let i of e) {
-		if (!Rr(i) || typeof i.code != "string" || !Object.hasOwn(Ir, i.code) || i.part !== "word/document.xml" || !zr(i.path, t)) {
+		if (!zr(i) || typeof i.code != "string" || !Object.hasOwn(Lr, i.code) || i.part !== "word/document.xml" || !Br(i.path, t)) {
 			r = !0;
 			continue;
 		}
-		let e = Ir[i.code];
+		let e = Lr[i.code];
 		if (i.severity !== e.severity) {
 			r = !0;
 			continue;
@@ -1850,13 +1850,13 @@ function Vr(e, t) {
 		n.push(Object.freeze({
 			code: e.layoutCode,
 			severity: e.severity,
-			source: Br(i.path),
+			source: Vr(i.path),
 			message: e.message
 		}));
 	}
-	return r && n.push(Lr), Object.freeze(n);
+	return r && n.push(Rr), Object.freeze(n);
 }
-var H = class extends Error {
+var V = class extends Error {
 	code;
 	constructor(e, t) {
 		super(`${e}: ${t}`), this.name = "LayoutInvariantError", this.code = e;
@@ -1864,7 +1864,7 @@ var H = class extends Error {
 };
 //#endregion
 //#region packages/docx/src/layout/coordinate-space.ts
-function Hr(e) {
+function Ur(e) {
 	switch (e) {
 		case "tb":
 		case "tbV":
@@ -1881,13 +1881,13 @@ function Hr(e) {
 		default: throw RangeError(`Unsupported Transitional text direction ${JSON.stringify(e)}`);
 	}
 }
-function Ur(e) {
+function Wr(e) {
 	if (!Number.isFinite(e.widthPt) || !Number.isFinite(e.heightPt) || e.widthPt <= 0 || e.heightPt <= 0) throw RangeError("Physical page extents must be positive and finite");
 }
-function Wr(e) {
+function Gr(e) {
 	if (!Number.isFinite(e.xPt) || !Number.isFinite(e.yPt)) throw RangeError("Point coordinates must be finite");
 }
-function Gr(e) {
+function Kr(e) {
 	if (![
 		e.a,
 		e.b,
@@ -1897,25 +1897,11 @@ function Gr(e) {
 		e.f
 	].every(Number.isFinite)) throw RangeError("Matrix coefficients must be finite");
 }
-function Kr(e) {
-	if (Wr(e), !Number.isFinite(e.widthPt) || !Number.isFinite(e.heightPt) || e.widthPt < 0 || e.heightPt < 0) throw RangeError("Rectangle extents must be finite and non-negative");
-}
-function qr(e, t) {
-	switch (Ur(e), t) {
-		case "horizontal-tb": return {
-			widthPt: e.widthPt,
-			heightPt: e.heightPt
-		};
-		case "vertical-rl":
-		case "vertical-lr": return {
-			widthPt: e.heightPt,
-			heightPt: e.widthPt
-		};
-		default: throw RangeError(`Unsupported writing mode ${String(t)}`);
-	}
+function qr(e) {
+	if (Gr(e), !Number.isFinite(e.widthPt) || !Number.isFinite(e.heightPt) || e.widthPt < 0 || e.heightPt < 0) throw RangeError("Rectangle extents must be finite and non-negative");
 }
 function Jr(e, t) {
-	switch (Ur(e), t) {
+	switch (Wr(e), t) {
 		case "horizontal-tb": return {
 			widthPt: e.widthPt,
 			heightPt: e.heightPt
@@ -1929,7 +1915,21 @@ function Jr(e, t) {
 	}
 }
 function Yr(e, t) {
-	switch (Ur(t), e) {
+	switch (Wr(e), t) {
+		case "horizontal-tb": return {
+			widthPt: e.widthPt,
+			heightPt: e.heightPt
+		};
+		case "vertical-rl":
+		case "vertical-lr": return {
+			widthPt: e.heightPt,
+			heightPt: e.widthPt
+		};
+		default: throw RangeError(`Unsupported writing mode ${String(t)}`);
+	}
+}
+function Xr(e, t) {
+	switch (Wr(t), e) {
 		case "horizontal-tb": return {
 			a: 1,
 			b: 0,
@@ -1957,8 +1957,8 @@ function Yr(e, t) {
 		default: throw RangeError(`Unsupported writing mode ${String(e)}`);
 	}
 }
-function Xr(e, t) {
-	switch (Ur(t), e) {
+function Zr(e, t) {
+	switch (Wr(t), e) {
 		case "horizontal-tb": return {
 			a: 1,
 			b: 0,
@@ -1986,25 +1986,25 @@ function Xr(e, t) {
 		default: throw RangeError(`Unsupported writing mode ${String(e)}`);
 	}
 }
-function Zr(e, t) {
-	return Gr(e), Wr(t), {
+function Qr(e, t) {
+	return Kr(e), Gr(t), {
 		xPt: e.a * t.xPt + e.c * t.yPt + e.e,
 		yPt: e.b * t.xPt + e.d * t.yPt + e.f
 	};
 }
-function Qr(e, t) {
-	Kr(t);
+function $r(e, t) {
+	qr(t);
 	let n = [
-		Zr(e, t),
-		Zr(e, {
+		Qr(e, t),
+		Qr(e, {
 			xPt: t.xPt + t.widthPt,
 			yPt: t.yPt
 		}),
-		Zr(e, {
+		Qr(e, {
 			xPt: t.xPt,
 			yPt: t.yPt + t.heightPt
 		}),
-		Zr(e, {
+		Qr(e, {
 			xPt: t.xPt + t.widthPt,
 			yPt: t.yPt + t.heightPt
 		})
@@ -2016,9 +2016,9 @@ function Qr(e, t) {
 		heightPt: Math.max(...i) - o
 	};
 }
-function $r(e, t) {
-	Gr(e);
-	let n = Zr(e, {
+function ei(e, t) {
+	Kr(e);
+	let n = Qr(e, {
 		xPt: 0,
 		yPt: 0
 	}), r = {
@@ -2045,26 +2045,26 @@ function $r(e, t) {
 		"bottom",
 		"left"
 	]) {
-		let s = Zr(e, r[o]), c = s.xPt - n.xPt, l = s.yPt - n.yPt, u = l === 0 && c !== 0 ? c > 0 ? "right" : "left" : c === 0 && l !== 0 ? l > 0 ? "bottom" : "top" : null;
+		let s = Qr(e, r[o]), c = s.xPt - n.xPt, l = s.yPt - n.yPt, u = l === 0 && c !== 0 ? c > 0 ? "right" : "left" : c === 0 && l !== 0 ? l > 0 ? "bottom" : "top" : null;
 		if (u === null || a.has(u)) throw RangeError("Edge transforms require a non-degenerate axis-aligned matrix");
 		i[u] = t[o], a.add(u);
 	}
 	if (a.size !== 4) throw RangeError("Edge transform must map every physical edge exactly once");
 	return i;
 }
-function ei(e, t) {
+function ti(e, t) {
 	return {
 		writingMode: e,
-		logicalToPhysical: Yr(e, t),
-		physicalToLogical: Xr(e, t)
+		logicalToPhysical: Xr(e, t),
+		physicalToLogical: Zr(e, t)
 	};
 }
 //#endregion
 //#region packages/docx/src/layout/column-separators.ts
-function ti(e) {
+function ni(e) {
 	return Object.freeze(e);
 }
-function ni(e) {
+function ri(e) {
 	let t = [];
 	for (let n of e) {
 		let { columns: e, columnSeparator: r } = n.section;
@@ -2075,11 +2075,11 @@ function ni(e) {
 			if (!i.has(o)) continue;
 			let s = a[r + 1], c = Math.min(o, s), l = Math.max(o, s), u = e[c], d = e[l], f = (u.xPt + u.wPt + d.xPt) / 2;
 			t.push(Object.freeze({
-				start: ti(Zr(n.coordinateSpace.logicalToPhysical, {
+				start: ni(Qr(n.coordinateSpace.logicalToPhysical, {
 					xPt: f,
 					yPt: n.blockStartPt
 				})),
-				end: ti(Zr(n.coordinateSpace.logicalToPhysical, {
+				end: ni(Qr(n.coordinateSpace.logicalToPhysical, {
 					xPt: f,
 					yPt: n.blockEndPt
 				}))
@@ -2090,7 +2090,7 @@ function ni(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/border-treatment.ts
-function ri(e, t) {
+function ii(e, t) {
 	let n = C(e, t), r = e === "triple" || /^(?:thinThick|thickThin|thinThickThin)(?:Small|Medium|Large)Gap$/.test(e);
 	return Object.freeze({
 		authoredStyle: e,
@@ -2100,14 +2100,14 @@ function ri(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/text.ts
-function ii(e, t) {
+function ai(e, t) {
 	let n = (e.smallCaps ? Math.max(e.fontSize - 2, 1) : e.fontSize) * t;
 	return e.vertAlign && (n *= .65), n;
 }
-var ai = /[ᄀ-ᇿ⺀-⿟　-〿぀-ヿ㄰-㆏㐀-䶿一-鿿ꥠ-꥿가-퟿豈-﫿＀-￯]/u;
-function oi(e, t, n) {
+var oi = /[ᄀ-ᇿ⺀-⿟　-〿぀-ヿ㄰-㆏㐀-䶿一-鿿ꥠ-꥿가-퟿豈-﫿＀-￯]/u;
+function si(e, t, n) {
 	let r = null, i = 0;
-	for (let n of t) n.pos > i && (i = n.pos), n.pos > e && (r === null || n.pos < r.pos) && (r = n);
+	for (let n of t) n.alignment !== "bar" && (n.pos > i && (i = n.pos), n.pos > e && (r === null || n.pos < r.pos) && (r = n));
 	let a = null;
 	if (n > 0) {
 		let t = Math.ceil((Math.max(e, i) + 1e-6) / n) * n;
@@ -2118,10 +2118,10 @@ function oi(e, t, n) {
 	}
 	return r && a ? r.pos <= a.pos ? r : a : r ?? a;
 }
-function si(e, t, n) {
-	return oi(e, t, n);
+function ci(e, t, n) {
+	return si(e, t, n);
 }
-function ci(e, t) {
+function li(e, t) {
 	let n = t === "vert" || t === "vert270" || t === "eaVert" || t === "mongolianVert";
 	return {
 		type: "text",
@@ -2143,14 +2143,14 @@ function ci(e, t) {
 		textBoxVertical: n
 	};
 }
-function li(e, t = {}, n = {}) {
+function ui(e, t = {}, n = {}) {
 	if (!e) return "sans-serif";
 	let r = t[e];
 	return r === "roman" ? "serif" : r === "swiss" ? "sans-serif" : r === "modern" && n[e] === "fixed" ? "monospace" : "sans-serif";
 }
-var ui = Symbol("docx.localMetricSnapshot");
-function di(e = {}) {
-	if (e[ui]) return e;
+var di = Symbol("docx.localMetricSnapshot");
+function fi(e = {}) {
+	if (e[di]) return e;
 	let t = Object.entries(e).map(([e, t]) => {
 		if (!t.family?.trim()) throw TypeError(`Local metric ${e} requires a family`);
 		if (t.lineHeightRatio !== void 0 && (!Number.isFinite(t.lineHeightRatio) || t.lineHeightRatio < 0)) throw RangeError(`Local metric ${e} lineHeightRatio must be finite and non-negative`);
@@ -2164,11 +2164,11 @@ function di(e = {}) {
 			...t.sourceIdentity === void 0 ? {} : { sourceIdentity: t.sourceIdentity },
 			...t.synthesized === void 0 ? {} : { synthesized: t.synthesized }
 		};
-		return [Jt(e), Object.freeze(n)];
+		return [Yt(e), Object.freeze(n)];
 	}).sort(([e], [t]) => e.localeCompare(t)), n = Object.fromEntries(t);
-	return Object.defineProperty(n, ui, { value: !0 }), Object.freeze(n);
+	return Object.defineProperty(n, di, { value: !0 }), Object.freeze(n);
 }
-var fi = new Set([
+var pi = new Set([
 	161,
 	164,
 	167,
@@ -2192,7 +2192,7 @@ var fi = new Set([
 	191,
 	215,
 	247
-]), pi = new Set([
+]), mi = new Set([
 	224,
 	225,
 	232,
@@ -2206,22 +2206,22 @@ var fi = new Set([
 	250,
 	252
 ]);
-function mi(e, t, n, r, i) {
+function hi(e, t, n, r, i) {
 	let a = n === "eastAsia", o = r?.split(/[-_]/, 1)[0]?.toLowerCase() === "zh", s = /^(?:86|88)$/i.test(i?.trim() ?? ""), c = "highAnsi";
-	return e <= 127 ? c = "ascii" : e <= 255 ? c = a && (fi.has(e) || o && pi.has(e)) ? "eastAsia" : "highAnsi" : e >= 256 && e <= 687 ? c = a && (o || s) ? "eastAsia" : "highAnsi" : e >= 688 && e <= 767 || e >= 768 && e <= 879 || e >= 880 && e <= 975 || e >= 1024 && e <= 1279 ? c = a ? "eastAsia" : "highAnsi" : e >= 1424 && e <= 1983 || e >= 64285 && e <= 65023 || e >= 65136 && e <= 65278 ? c = "ascii" : e >= 4352 && e <= 4607 || e >= 11904 && e <= 12031 || e >= 12032 && e <= 12255 || e >= 12272 && e <= 12687 || e >= 12688 && e <= 12703 || e >= 12800 && e <= 19903 || e >= 19968 && e <= 40879 || e >= 40960 && e <= 42127 || e >= 42128 && e <= 42191 || e >= 44032 && e <= 55215 || e >= 63744 && e <= 64255 || e >= 65072 && e <= 65103 || e >= 65104 && e <= 65135 || e >= 65280 && e <= 65519 || e >= 65536 && e <= 1114111 ? c = "eastAsia" : e >= 7680 && e <= 7935 ? c = a && o ? "eastAsia" : "highAnsi" : (e >= 8192 && e <= 10175 || e >= 57344 && e <= 63743 || e >= 64256 && e <= 64284) && (c = a ? "eastAsia" : "highAnsi"), c === "eastAsia" && a ? c : t ? "complexScript" : c;
+	return e <= 127 ? c = "ascii" : e <= 255 ? c = a && (pi.has(e) || o && mi.has(e)) ? "eastAsia" : "highAnsi" : e >= 256 && e <= 687 ? c = a && (o || s) ? "eastAsia" : "highAnsi" : e >= 688 && e <= 767 || e >= 768 && e <= 879 || e >= 880 && e <= 975 || e >= 1024 && e <= 1279 ? c = a ? "eastAsia" : "highAnsi" : e >= 1424 && e <= 1983 || e >= 64285 && e <= 65023 || e >= 65136 && e <= 65278 ? c = "ascii" : e >= 4352 && e <= 4607 || e >= 11904 && e <= 12031 || e >= 12032 && e <= 12255 || e >= 12272 && e <= 12687 || e >= 12688 && e <= 12703 || e >= 12800 && e <= 19903 || e >= 19968 && e <= 40879 || e >= 40960 && e <= 42127 || e >= 42128 && e <= 42191 || e >= 44032 && e <= 55215 || e >= 63744 && e <= 64255 || e >= 65072 && e <= 65103 || e >= 65104 && e <= 65135 || e >= 65280 && e <= 65519 || e >= 65536 && e <= 1114111 ? c = "eastAsia" : e >= 7680 && e <= 7935 ? c = a && o ? "eastAsia" : "highAnsi" : (e >= 8192 && e <= 10175 || e >= 57344 && e <= 63743 || e >= 64256 && e <= 64284) && (c = a ? "eastAsia" : "highAnsi"), c === "eastAsia" && a ? c : t ? "complexScript" : c;
 }
-function hi(e, t) {
+function gi(e, t) {
 	return e.themeFontPresence?.[t] ?? e.themeFonts?.[t] != null ? e.themeFonts?.[t] : e.fonts[t] ?? (e.themeFontPresence?.ascii ?? e.themeFonts?.ascii != null ? e.themeFonts?.ascii : e.fonts.ascii);
 }
-function gi(e) {
-	let t = di(e.localMetrics), n = Object.freeze(Object.fromEntries(Object.entries(e.genericFamilies ?? {}).map(([e, t]) => [e.trim().toLocaleLowerCase("en-US"), t]).sort(([e], [t]) => e.localeCompare(t)))), r = Object.freeze(Object.fromEntries(Object.entries(e.eastAsiaFontCharsets ?? {}).map(([e, t]) => [e.trim().toLocaleLowerCase("en-US"), t.trim()]).sort(([e], [t]) => e.localeCompare(t)))), i = an("text", {
+function _i(e) {
+	let t = fi(e.localMetrics), n = Object.freeze(Object.fromEntries(Object.entries(e.genericFamilies ?? {}).map(([e, t]) => [e.trim().toLocaleLowerCase("en-US"), t]).sort(([e], [t]) => e.localeCompare(t)))), r = Object.freeze(Object.fromEntries(Object.entries(e.eastAsiaFontCharsets ?? {}).map(([e, t]) => [e.trim().toLocaleLowerCase("en-US"), t.trim()]).sort(([e], [t]) => e.localeCompare(t)))), i = on("text", {
 		fonts: e.fonts.fingerprint,
 		measurer: e.measurer.fingerprint,
 		localMetrics: t,
 		eastAsiaFontCharsets: r,
 		genericFamilies: n
 	}), a = (t) => {
-		let r = hi(t, t.slot), i = r ? n[r.trim().toLocaleLowerCase("en-US")] ?? t.genericFamily ?? "sans-serif" : t.genericFamily;
+		let r = gi(t, t.slot), i = r ? n[r.trim().toLocaleLowerCase("en-US")] ?? t.genericFamily ?? "sans-serif" : t.genericFamily;
 		return e.fonts.resolve({
 			requestedFamily: r,
 			genericFamily: i,
@@ -2293,7 +2293,7 @@ function gi(e) {
 				e.text.length
 			])].sort((e, t) => e - t)), u = new Set(o), d = 0;
 			for (let t of e.text) {
-				let n = d + t.length, a = hi(e, "eastAsia"), o = e.eastAsiaFontCharset ?? (a ? r[a.trim().toLocaleLowerCase("en-US")] : void 0), s = mi(t.codePointAt(0) ?? 0, e.complexScript ?? !1, e.fontHint, e.eastAsiaLanguage, o), c = i.at(-1);
+				let n = d + t.length, a = gi(e, "eastAsia"), o = e.eastAsiaFontCharset ?? (a ? r[a.trim().toLocaleLowerCase("en-US")] : void 0), s = hi(t.codePointAt(0) ?? 0, e.complexScript ?? !1, e.fontHint, e.eastAsiaLanguage, o), c = i.at(-1);
 				c?.script === s ? (c.text += t, c.end = n) : i.push({
 					text: t,
 					start: d,
@@ -2395,7 +2395,7 @@ function gi(e) {
 }
 //#endregion
 //#region packages/docx/src/fit-text.ts
-function _i(e, t) {
+function vi(e, t) {
 	let n = [];
 	for (let r = 0; r < e.length;) {
 		let i = e[r];
@@ -2425,114 +2425,114 @@ function _i(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/exact-geometry.ts
-function vi(e) {
+function yi(e) {
 	return e < 0n ? -e : e;
 }
-function yi(e, t) {
-	let n = vi(e), r = vi(t);
+function bi(e, t) {
+	let n = yi(e), r = yi(t);
 	for (; r !== 0n;) {
 		let e = n % r;
 		n = r, r = e;
 	}
 	return n;
 }
-function U(e, t) {
+function H(e, t) {
 	if (t === 0n) throw Error("Exact rational denominator must be nonzero");
 	if (e === 0n) return Object.freeze({
 		numerator: 0n,
 		denominator: 1n
 	});
-	let n = t < 0n ? -1n : 1n, r = yi(e, t);
+	let n = t < 0n ? -1n : 1n, r = bi(e, t);
 	return Object.freeze({
 		numerator: n * e / r,
 		denominator: n * t / r
 	});
 }
-function W(e, t) {
+function U(e, t) {
 	let n = e.numerator * t.denominator - t.numerator * e.denominator;
 	return n < 0n ? -1 : +(n > 0n);
 }
-function bi(e, t) {
-	return U(e.numerator * t.denominator - t.numerator * e.denominator, e.denominator * t.denominator);
-}
 function xi(e, t) {
-	return U(e.numerator * t.denominator + t.numerator * e.denominator, 2n * e.denominator * t.denominator);
+	return H(e.numerator * t.denominator - t.numerator * e.denominator, e.denominator * t.denominator);
 }
-function Si(e) {
+function Si(e, t) {
+	return H(e.numerator * t.denominator + t.numerator * e.denominator, 2n * e.denominator * t.denominator);
+}
+function Ci(e) {
 	return `${e.numerator}/${e.denominator}`;
 }
-var Ci = /* @__PURE__ */ new DataView(/* @__PURE__ */ new ArrayBuffer(8));
-function wi(e) {
+var wi = /* @__PURE__ */ new DataView(/* @__PURE__ */ new ArrayBuffer(8));
+function Ti(e) {
 	if (!Number.isFinite(e)) throw Error("Exact geometry requires a finite binary64 value");
 	if (e === 0) return Object.freeze({
 		coefficient: 0n,
 		exponent: 0
 	});
-	Ci.setFloat64(0, e, !1);
-	let t = Ci.getBigUint64(0, !1), n = t >> 63n != 0n, r = Number(t >> 52n & 2047n), i = t & (1n << 52n) - 1n, a = r === 0 ? i : 1n << 52n | i, o = r === 0 ? -1074 : r - 1023 - 52;
+	wi.setFloat64(0, e, !1);
+	let t = wi.getBigUint64(0, !1), n = t >> 63n != 0n, r = Number(t >> 52n & 2047n), i = t & (1n << 52n) - 1n, a = r === 0 ? i : 1n << 52n | i, o = r === 0 ? -1074 : r - 1023 - 52;
 	for (; (a & 1n) == 0n;) a >>= 1n, o += 1;
 	return Object.freeze({
 		coefficient: n ? -a : a,
 		exponent: o
 	});
 }
-function Ti(e) {
+function Ei(e) {
 	return e === 0n ? 0 : e.toString(2).length;
 }
-function Ei(e, t, n) {
+function Di(e, t, n) {
 	let r = n >= 0 ? e : e << BigInt(-n), i = n >= 0 ? t << BigInt(n) : t;
 	return r < i ? -1 : +(r > i);
 }
-function Di(e, t, n) {
+function Oi(e, t, n) {
 	let r = n >= 0 ? e << BigInt(n) : e, i = n >= 0 ? t : t << BigInt(-n), a = r / i, o = r % i * 2n;
 	return (o > i || o === i && (a & 1n) != 0n) && (a += 1n), a;
 }
-function Oi(e) {
-	return Ci.setBigUint64(0, e, !1), Ci.getFloat64(0, !1);
-}
 function ki(e) {
-	if (e.numerator === 0n) return 0;
-	let t = e.numerator < 0n, n = vi(e.numerator), r = e.denominator, i = Ti(n) - Ti(r);
-	Ei(n, r, i) < 0 && --i;
-	let a = t ? 1n << 63n : 0n;
-	if (i < -1022) {
-		let e = Di(n, r, 1074);
-		return Oi(e === 0n ? a : e >= 1n << 52n ? a | 1n << 52n : a | e);
-	}
-	let o = Di(n, r, 52 - i);
-	if (o === 1n << 53n && (o >>= 1n, i += 1), i > 1023) return t ? -Infinity : Infinity;
-	let s = BigInt(i + 1023) << 52n, c = o - (1n << 52n);
-	return Oi(a | s | c);
+	return wi.setBigUint64(0, e, !1), wi.getFloat64(0, !1);
 }
 function Ai(e) {
-	if (e === Infinity) return e;
-	if (Object.is(e, -0) || e === 0) return Number.MIN_VALUE;
-	Ci.setFloat64(0, e, !1);
-	let t = Ci.getBigUint64(0, !1);
-	return Oi(e > 0 ? t + 1n : t - 1n);
+	if (e.numerator === 0n) return 0;
+	let t = e.numerator < 0n, n = yi(e.numerator), r = e.denominator, i = Ei(n) - Ei(r);
+	Di(n, r, i) < 0 && --i;
+	let a = t ? 1n << 63n : 0n;
+	if (i < -1022) {
+		let e = Oi(n, r, 1074);
+		return ki(e === 0n ? a : e >= 1n << 52n ? a | 1n << 52n : a | e);
+	}
+	let o = Oi(n, r, 52 - i);
+	if (o === 1n << 53n && (o >>= 1n, i += 1), i > 1023) return t ? -Infinity : Infinity;
+	let s = BigInt(i + 1023) << 52n, c = o - (1n << 52n);
+	return ki(a | s | c);
 }
 function ji(e) {
-	let t = ki(e);
+	if (e === Infinity) return e;
+	if (Object.is(e, -0) || e === 0) return Number.MIN_VALUE;
+	wi.setFloat64(0, e, !1);
+	let t = wi.getBigUint64(0, !1);
+	return ki(e > 0 ? t + 1n : t - 1n);
+}
+function Mi(e) {
+	let t = Ai(e);
 	if (t === Infinity) return t;
 	if (t === -Infinity) return -Number.MAX_VALUE;
-	let n = wi(t);
-	return W(n.exponent >= 0 ? {
+	let n = Ti(t);
+	return U(n.exponent >= 0 ? {
 		numerator: n.coefficient << BigInt(n.exponent),
 		denominator: 1n
 	} : {
 		numerator: n.coefficient,
 		denominator: 1n << BigInt(-n.exponent)
-	}, e) >= 0 ? t : Ai(t);
+	}, e) >= 0 ? t : ji(t);
 }
-function Mi(e) {
-	return -ji({
+function Ni(e) {
+	return -Mi({
 		numerator: -e.numerator,
 		denominator: e.denominator
 	});
 }
 //#endregion
 //#region packages/docx/src/layout/polygon-wrap.ts
-function Ni(e) {
+function Pi(e) {
 	if (!e.points || e.points.length < 3 || e.points.some((e) => !Number.isFinite(e.xPt) || !Number.isFinite(e.yPt))) throw Error(`Invalid ${e.kind} wrapPolygon for ${e.imageKey}`);
 	if (![
 		e.xLeftPt,
@@ -2541,44 +2541,44 @@ function Ni(e) {
 		e.yBottomPt
 	].every(Number.isFinite) || e.xRightPt < e.xLeftPt || e.yBottomPt < e.yTopPt) throw Error(`Invalid finite wrap bounds for ${e.imageKey}`);
 }
-var Pi = /* @__PURE__ */ new WeakMap();
-function Fi(e, t) {
+var Fi = /* @__PURE__ */ new WeakMap();
+function Ii(e, t) {
 	return e.x === t.x && e.y === t.y;
 }
-function Ii(e, t, n, r) {
+function Li(e, t, n, r) {
 	return e * r - t * n;
 }
-function Li(e, t) {
+function Ri(e, t) {
 	return t > 0n ? e >= 0n && e <= t : e <= 0n && e >= t;
 }
-function Ri(e, t) {
-	let n = Fi(e.from, t.from) || Fi(e.from, t.to) ? e.from : Fi(e.to, t.from) || Fi(e.to, t.to) ? e.to : null;
+function zi(e, t) {
+	let n = Ii(e.from, t.from) || Ii(e.from, t.to) ? e.from : Ii(e.to, t.from) || Ii(e.to, t.to) ? e.to : null;
 	if (n) return Object.freeze({
-		y: U(n.y, 1n),
+		y: H(n.y, 1n),
 		contact: "shared-endpoint"
 	});
-	let r = e.to.x - e.from.x, i = e.to.y - e.from.y, a = t.to.x - t.from.x, o = t.to.y - t.from.y, s = Ii(r, i, a, o);
+	let r = e.to.x - e.from.x, i = e.to.y - e.from.y, a = t.to.x - t.from.x, o = t.to.y - t.from.y, s = Li(r, i, a, o);
 	if (s === 0n) return null;
-	let c = t.from.x - e.from.x, l = t.from.y - e.from.y, u = Ii(c, l, a, o), d = Ii(c, l, r, i);
-	return !Li(u, s) || !Li(d, s) ? null : Object.freeze({
-		y: U(e.from.y * s + i * u, s),
+	let c = t.from.x - e.from.x, l = t.from.y - e.from.y, u = Li(c, l, a, o), d = Li(c, l, r, i);
+	return !Ri(u, s) || !Ri(d, s) ? null : Object.freeze({
+		y: H(e.from.y * s + i * u, s),
 		contact: i === 0n || o === 0n ? "horizontal" : "active-crossing"
 	});
 }
-function zi(e, t) {
+function Bi(e, t) {
 	return `${e}:${t}`;
 }
-function Bi(e, t, n) {
+function Vi(e, t, n) {
 	let r = /* @__PURE__ */ new Set();
 	for (let i of t) {
 		if (i < 0 || i >= Math.floor(e.length / 2)) continue;
 		n();
 		let t = e[i * 2], a = e[i * 2 + 1];
-		r.add(zi(t, a));
+		r.add(Bi(t, a));
 	}
 	return r;
 }
-function Vi(e) {
+function Hi(e) {
 	let t = (e) => {
 		if (e.length === 0) return null;
 		let n = e[Math.floor(e.length / 2)].yTopPt, r = [], i = [], a = [];
@@ -2593,17 +2593,8 @@ function Vi(e) {
 	};
 	return t(e.slice().sort((e, t) => e.yTopPt - t.yTopPt || e.yBottomPt - t.yBottomPt));
 }
-function Hi(e, t) {
-	return ki(t >= 0 ? {
-		numerator: e.numerator << BigInt(t),
-		denominator: e.denominator
-	} : {
-		numerator: e.numerator,
-		denominator: e.denominator << BigInt(-t)
-	});
-}
 function Ui(e, t) {
-	return ji(t >= 0 ? {
+	return Ai(t >= 0 ? {
 		numerator: e.numerator << BigInt(t),
 		denominator: e.denominator
 	} : {
@@ -2612,7 +2603,16 @@ function Ui(e, t) {
 	});
 }
 function Wi(e, t) {
-	let n = wi(e), r = n.exponent - t;
+	return Mi(t >= 0 ? {
+		numerator: e.numerator << BigInt(t),
+		denominator: e.denominator
+	} : {
+		numerator: e.numerator,
+		denominator: e.denominator << BigInt(-t)
+	});
+}
+function Gi(e, t) {
+	let n = Ti(e), r = n.exponent - t;
 	return r >= 0 ? {
 		numerator: n.coefficient << BigInt(r),
 		denominator: 1n
@@ -2621,51 +2621,51 @@ function Wi(e, t) {
 		denominator: 1n << BigInt(-r)
 	};
 }
-function Gi(e, t, n) {
+function Ki(e, t, n) {
 	let r = e.dx * n.numerator - e.c * n.denominator, i = t.dx * n.numerator - t.c * n.denominator, a = r * t.dy - i * e.dy;
 	return a < 0n ? -1 : +(a > 0n);
 }
-function Ki(e) {
+function qi(e) {
 	let t = (e) => {
 		if (e.length === 0) return null;
 		let n = e[Math.floor(e.length / 2)].yTop, r = [], i = [], a = [];
-		for (let t of e) W(t.yBottom, n) <= 0 ? r.push(t) : W(t.yTop, n) > 0 ? i.push(t) : a.push(t);
+		for (let t of e) U(t.yBottom, n) <= 0 ? r.push(t) : U(t.yTop, n) > 0 ? i.push(t) : a.push(t);
 		return Object.freeze({
 			centerY: n,
 			crossingByTop: Object.freeze(a),
-			crossingByBottom: Object.freeze(a.slice().sort((e, t) => W(t.yBottom, e.yBottom))),
+			crossingByBottom: Object.freeze(a.slice().sort((e, t) => U(t.yBottom, e.yBottom))),
 			below: t(r),
 			above: t(i)
 		});
 	};
-	return t(e.slice().sort((e, t) => W(e.yTop, t.yTop) || W(e.yBottom, t.yBottom)));
+	return t(e.slice().sort((e, t) => U(e.yTop, t.yTop) || U(e.yBottom, t.yBottom)));
 }
-function qi(e, t, n, r) {
-	if (!(!e || W(n, t) <= 0)) {
-		if (W(n, e.centerY) <= 0) {
+function Ji(e, t, n, r) {
+	if (!(!e || U(n, t) <= 0)) {
+		if (U(n, e.centerY) <= 0) {
 			for (let t of e.crossingByTop) {
-				if (W(t.yTop, n) >= 0) break;
+				if (U(t.yTop, n) >= 0) break;
 				r.push(t);
 			}
-			qi(e.below, t, n, r);
+			Ji(e.below, t, n, r);
 			return;
 		}
-		if (W(t, e.centerY) >= 0) {
+		if (U(t, e.centerY) >= 0) {
 			for (let n of e.crossingByBottom) {
-				if (W(n.yBottom, t) <= 0) break;
+				if (U(n.yBottom, t) <= 0) break;
 				r.push(n);
 			}
-			qi(e.above, t, n, r);
+			Ji(e.above, t, n, r);
 			return;
 		}
-		r.push(...e.crossingByTop), qi(e.below, t, n, r), qi(e.above, t, n, r);
+		r.push(...e.crossingByTop), Ji(e.below, t, n, r), Ji(e.above, t, n, r);
 	}
 }
-function Ji(e, t, n, r, i) {
+function Yi(e, t, n, r, i) {
 	let a = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Map();
 	t.forEach((e, t) => {
 		if (e.minY === e.maxY) return;
-		let n = Si(U(e.minY, 1n)), r = Si(U(e.maxY, 1n)), i = a.get(n);
+		let n = Ci(H(e.minY, 1n)), r = Ci(H(e.maxY, 1n)), i = a.get(n);
 		i ? i.push(t) : a.set(n, [t]);
 		let s = o.get(r);
 		s ? s.push(t) : o.set(r, [t]);
@@ -2673,14 +2673,14 @@ function Ji(e, t, n, r, i) {
 	let s = /* @__PURE__ */ new Map();
 	for (let e of i) {
 		if (e.contact !== "active-crossing") continue;
-		let t = Si(e.y), n = s.get(t);
+		let t = Ci(e.y), n = s.get(t);
 		n || s.set(t, n = /* @__PURE__ */ new Set()), n.add(e.leftEdge), n.add(e.rightEdge);
 	}
 	let c = [], l = /* @__PURE__ */ new Set(), u = /* @__PURE__ */ new Map(), d = [], f = [], p = 0, m = 0, h = (t, n, i) => {
 		for (let a of t) {
 			if (n.has(a)) continue;
 			let t = u.get(a);
-			if (t && W(i, t.yTop) > 0) {
+			if (t && U(i, t.yTop) > 0) {
 				let n = Object.freeze({
 					yTop: t.yTop,
 					yBottom: i,
@@ -2688,7 +2688,7 @@ function Ji(e, t, n, r, i) {
 					rightEdge: t.rightEdge
 				});
 				d.push(n);
-				let a = Hi(t.yTop, r), o = Hi(i, r);
+				let a = Ui(t.yTop, r), o = Ui(i, r);
 				o > a && f.push(Object.freeze({
 					yTopPt: a,
 					yBottomPt: o,
@@ -2709,15 +2709,15 @@ function Ji(e, t, n, r, i) {
 		}
 	}, g = /* @__PURE__ */ new Map(), _ = (e, t) => {
 		e.add(Math.floor((t - 1) / 2)), e.add(Math.floor(t / 2)), e.add(Math.floor((t + 1) / 2));
-	}, v = (e) => Bi(c, e, () => {
+	}, v = (e) => Vi(c, e, () => {
 		m += 2;
 	}), y = () => {
 		let e = /* @__PURE__ */ new Set();
-		for (let t = 0; t + 1 < c.length; t += 2) m += 2, e.add(zi(c[t], c[t + 1]));
+		for (let t = 0; t + 1 < c.length; t += 2) m += 2, e.add(Bi(c[t], c[t + 1]));
 		return e;
 	};
 	for (let e = 0; e < n.length; e += 1) {
-		let r = n[e], i = n[e + 1], u = i ? xi(r, i) : r, d = (e, n) => (p += 1, Gi(t[e], t[n], u) || e - n), f = (e) => {
+		let r = n[e], i = n[e + 1], u = i ? Si(r, i) : r, d = (e, n) => (p += 1, Ki(t[e], t[n], u) || e - n), f = (e) => {
 			let t = 0, n = c.length;
 			for (; t < n;) {
 				let r = t + n >>> 1;
@@ -2732,13 +2732,13 @@ function Ji(e, t, n, r, i) {
 				for (let e = t; e < c.length; e += 1) g.set(c[e], e);
 			}
 		}, b = (e) => {
-			let n = [...e].filter((e) => g.has(e) && W(U(t[e].minY, 1n), r) <= 0 && W(r, U(t[e].maxY, 1n)) < 0), i = n.map((e) => g.get(e)).sort((e, t) => e - t);
+			let n = [...e].filter((e) => g.has(e) && U(H(t[e].minY, 1n), r) <= 0 && U(r, H(t[e].maxY, 1n)) < 0), i = n.map((e) => g.get(e)).sort((e, t) => e - t);
 			n.sort(d);
 			for (let e = 0; e < i.length; e += 1) {
 				let t = i[e], r = n[e];
 				c[t] = r, g.set(r, t);
 			}
-		}, x = Si(r), S = o.get(x) ?? [], C = a.get(x) ?? [], w = s.get(x) ?? l;
+		}, x = Ci(r), S = o.get(x) ?? [], C = a.get(x) ?? [], w = s.get(x) ?? l;
 		if (S.length === 0 && C.length === 0 && (w.size === 0 || i === void 0)) continue;
 		let T = S.length > 0 || C.length > 0, E = /* @__PURE__ */ new Set();
 		if (!T) for (let e of w) {
@@ -2766,16 +2766,16 @@ function Ji(e, t, n, r, i) {
 		pairMembershipVisitCount: m
 	});
 }
-function Yi(e) {
-	Ni(e);
+function Xi(e) {
+	Pi(e);
 	let t = e.points, n = Object.freeze(t.map((e) => Object.freeze({ ...e }))), r = [
 		...n.flatMap((e) => [e.xPt, e.yPt]),
 		e.xLeftPt,
 		e.xRightPt,
 		e.yTopPt,
 		e.yBottomPt
-	].map(wi).filter(({ coefficient: e }) => e !== 0n), i = r.length === 0 ? 0 : Math.min(...r.map(({ exponent: e }) => e)), a = (e) => {
-		let t = wi(e);
+	].map(Ti).filter(({ coefficient: e }) => e !== 0n), i = r.length === 0 ? 0 : Math.min(...r.map(({ exponent: e }) => e)), a = (e) => {
+		let t = Ti(e);
 		return t.coefficient === 0n ? 0n : t.coefficient << BigInt(t.exponent - i);
 	}, o = n.map((e) => Object.freeze({
 		x: a(e.xPt),
@@ -2804,7 +2804,7 @@ function Yi(e) {
 		});
 	}), l = [];
 	for (let e = 0; e < c.length; e += 1) for (let t = e + 1; t < c.length; t += 1) {
-		let n = Ri(c[e], c[t]);
+		let n = zi(c[e], c[t]);
 		n && l.push(Object.freeze({
 			y: n.y,
 			contact: n.contact,
@@ -2816,33 +2816,33 @@ function Yi(e) {
 	for (let e of n) u = Math.min(u, e.xPt), d = Math.max(d, e.xPt), f = Math.min(f, e.yPt), p = Math.max(p, e.yPt);
 	let m = /* @__PURE__ */ new Map();
 	for (let e of o) {
-		let t = U(e.y, 1n);
-		m.set(Si(t), t);
+		let t = H(e.y, 1n);
+		m.set(Ci(t), t);
 	}
-	for (let e of l) m.set(Si(e.y), e.y);
-	let h = Object.freeze([...m.values()].sort(W)), g = Object.freeze([...new Set(h.map((e) => Hi(e, i)))].sort((e, t) => e - t)), _ = Ji(s, c, h, i, l), v = U(o.reduce((e, t) => t.x < e ? t.x : e, o[0].x), 1n), y = U(o.reduce((e, t) => t.x > e ? t.x : e, o[0].x), 1n), b = U(o.reduce((e, t) => t.y < e ? t.y : e, o[0].y), 1n), x = U(o.reduce((e, t) => t.y > e ? t.y : e, o[0].y), 1n), S = U(0n, 1n), C = (e, t) => {
-		let n = bi(e, t);
-		return W(n, S) > 0 ? n : S;
+	for (let e of l) m.set(Ci(e.y), e.y);
+	let h = Object.freeze([...m.values()].sort(U)), g = Object.freeze([...new Set(h.map((e) => Ui(e, i)))].sort((e, t) => e - t)), _ = Yi(s, c, h, i, l), v = H(o.reduce((e, t) => t.x < e ? t.x : e, o[0].x), 1n), y = H(o.reduce((e, t) => t.x > e ? t.x : e, o[0].x), 1n), b = H(o.reduce((e, t) => t.y < e ? t.y : e, o[0].y), 1n), x = H(o.reduce((e, t) => t.y > e ? t.y : e, o[0].y), 1n), S = H(0n, 1n), C = (e, t) => {
+		let n = xi(e, t);
+		return U(n, S) > 0 ? n : S;
 	}, w = Object.freeze({
 		scaleExponent: i,
 		edges: Object.freeze(c),
 		eventYs: h,
 		spans: _.exactSpans,
-		spanIndex: Ki(_.exactSpans),
+		spanIndex: qi(_.exactSpans),
 		polygonLeft: v,
 		polygonRight: y,
 		polygonTop: b,
 		polygonBottom: x,
-		padLeft: C(v, U(a(e.xLeftPt), 1n)),
-		padRight: C(U(a(e.xRightPt), 1n), y),
-		padTop: C(b, U(a(e.yTopPt), 1n)),
-		padBottom: C(U(a(e.yBottomPt), 1n), x)
+		padLeft: C(v, H(a(e.xLeftPt), 1n)),
+		padRight: C(H(a(e.xRightPt), 1n), y),
+		padTop: C(b, H(a(e.yTopPt), 1n)),
+		padBottom: C(H(a(e.yBottomPt), 1n), x)
 	}), T = Object.freeze({
 		kind: e.kind,
 		edges: Object.freeze(s),
 		eventYPts: g,
 		contourSpans: _.spans,
-		contourSpanIndex: Vi(_.spans),
+		contourSpanIndex: Hi(_.spans),
 		intersectionCount: l.length,
 		compileOrderComparisonCount: _.orderComparisonCount,
 		compilePairMembershipVisitCount: _.pairMembershipVisitCount,
@@ -2855,97 +2855,97 @@ function Yi(e) {
 		padTopPt: Math.max(0, f - e.yTopPt),
 		padBottomPt: Math.max(0, e.yBottomPt - p)
 	});
-	return Pi.set(T, w), T;
+	return Fi.set(T, w), T;
 }
-function Xi(e, t) {
+function Zi(e, t) {
 	return {
 		numerator: e.dx * t.numerator - e.c * t.denominator,
 		denominator: e.dy * t.denominator
 	};
 }
-function Zi(e, t) {
+function Qi(e, t) {
 	return e.dx * t.dy === t.dx * e.dy && e.c * t.dy === t.c * e.dy;
 }
-function Qi(e) {
-	let t = e.filter((e) => W(e.r, e.l) > 0).slice().sort((e, t) => W(e.l, t.l) || W(e.r, t.r)), n = [];
+function $i(e) {
+	let t = e.filter((e) => U(e.r, e.l) > 0).slice().sort((e, t) => U(e.l, t.l) || U(e.r, t.r)), n = [];
 	for (let e of t) {
 		let t = n.at(-1);
-		!t || W(e.l, t.r) > 0 ? n.push({ ...e }) : W(e.r, t.r) > 0 && (n[n.length - 1] = {
+		!t || U(e.l, t.r) > 0 ? n.push({ ...e }) : U(e.r, t.r) > 0 && (n[n.length - 1] = {
 			l: t.l,
 			r: e.r
 		});
 	}
 	return n;
 }
-function $i(e, t) {
+function ea(e, t) {
 	return {
 		numerator: e.numerator * t.denominator + t.numerator * e.denominator,
 		denominator: e.denominator * t.denominator
 	};
 }
-function ea(e, t) {
+function ta(e, t) {
 	return {
 		numerator: e.numerator * t.denominator - t.numerator * e.denominator,
 		denominator: e.denominator * t.denominator
 	};
 }
-function ta(e, t, n) {
-	let r = Pi.get(e);
+function na(e, t, n) {
+	let r = Fi.get(e);
 	if (!r) throw Error("Compiled polygon omitted its exact geometry authority");
-	let i = ea(t, r.padBottom), a = $i(n, r.padTop), o = W(r.polygonTop, i) >= 0 ? r.polygonTop : i, s = W(r.polygonBottom, a) <= 0 ? r.polygonBottom : a;
-	if (W(s, o) <= 0) return [];
+	let i = ta(t, r.padBottom), a = ea(n, r.padTop), o = U(r.polygonTop, i) >= 0 ? r.polygonTop : i, s = U(r.polygonBottom, a) <= 0 ? r.polygonBottom : a;
+	if (U(s, o) <= 0) return [];
 	let c = [], l = [];
-	qi(r.spanIndex, o, s, l);
+	Ji(r.spanIndex, o, s, l);
 	for (let e of l) {
-		let t = W(o, e.yTop) >= 0 ? o : e.yTop, n = W(s, e.yBottom) <= 0 ? s : e.yBottom;
-		if (W(n, t) <= 0) continue;
+		let t = U(o, e.yTop) >= 0 ? o : e.yTop, n = U(s, e.yBottom) <= 0 ? s : e.yBottom;
+		if (U(n, t) <= 0) continue;
 		let i = r.edges[e.leftEdge], a = r.edges[e.rightEdge];
-		if (Zi(i, a)) continue;
-		let l = Xi(i, t), u = Xi(i, n), d = Xi(a, t), f = Xi(a, n);
+		if (Qi(i, a)) continue;
+		let l = Zi(i, t), u = Zi(i, n), d = Zi(a, t), f = Zi(a, n);
 		c.push({
-			l: ea(W(l, u) <= 0 ? l : u, r.padLeft),
-			r: $i(W(d, f) >= 0 ? d : f, r.padRight)
+			l: ta(U(l, u) <= 0 ? l : u, r.padLeft),
+			r: ea(U(d, f) >= 0 ? d : f, r.padRight)
 		});
 	}
-	let u = Qi(c);
+	let u = $i(c);
 	return e.kind === "through" || u.length === 0 ? u : [{
 		l: u[0].l,
 		r: u.at(-1).r
 	}];
 }
-function na(e, t, n) {
-	let r = Pi.get(e);
+function ra(e, t, n) {
+	let r = Fi.get(e);
 	if (!r) throw Error("Compiled polygon omitted its exact geometry authority");
-	let i = Wi(t, r.scaleExponent), a = $i(i, Wi(n, r.scaleExponent)), o = (e) => r.scaleExponent >= 0 ? {
+	let i = Gi(t, r.scaleExponent), a = ea(i, Gi(n, r.scaleExponent)), o = (e) => r.scaleExponent >= 0 ? {
 		numerator: e.numerator << BigInt(r.scaleExponent),
 		denominator: e.denominator
 	} : {
 		numerator: e.numerator,
 		denominator: e.denominator << BigInt(-r.scaleExponent)
 	};
-	return Object.freeze(ta(e, i, a).map((e) => Object.freeze({
+	return Object.freeze(na(e, i, a).map((e) => Object.freeze({
 		l: o(e.l),
 		r: o(e.r)
 	})));
 }
-function ra(e, t) {
-	let n = Pi.get(e);
+function ia(e, t) {
+	let n = Fi.get(e);
 	if (!n) throw Error("Compiled polygon omitted its exact geometry authority");
-	let r = Wi(t, n.scaleExponent), i = /* @__PURE__ */ new Set();
-	for (let e of n.eventYs) i.add(Ui($i(e, n.padBottom), n.scaleExponent)), i.add(Ui(ea(ea(e, r), n.padTop), n.scaleExponent));
+	let r = Gi(t, n.scaleExponent), i = /* @__PURE__ */ new Set();
+	for (let e of n.eventYs) i.add(Wi(ea(e, n.padBottom), n.scaleExponent)), i.add(Wi(ta(ta(e, r), n.padTop), n.scaleExponent));
 	return Object.freeze([...i].filter(Number.isFinite).sort((e, t) => e - t));
 }
-function ia(e, t, n, r) {
-	let i = Pi.get(e);
+function aa(e, t, n, r) {
+	let i = Fi.get(e);
 	if (!i) throw Error("Compiled polygon omitted its exact geometry authority");
-	let a = xi(Wi(n, i.scaleExponent), Wi(r, i.scaleExponent)), o = Wi(t, i.scaleExponent), s = ea(a, i.padBottom), c = $i(o, i.padTop), l = $i(a, c), u = W(i.polygonTop, s) >= 0 ? i.polygonTop : s, d = W(i.polygonBottom, l) <= 0 ? i.polygonBottom : l, f = [], p = [];
-	qi(i.spanIndex, u, d, p);
+	let a = Si(Gi(n, i.scaleExponent), Gi(r, i.scaleExponent)), o = Gi(t, i.scaleExponent), s = ta(a, i.padBottom), c = ea(o, i.padTop), l = ea(a, c), u = U(i.polygonTop, s) >= 0 ? i.polygonTop : s, d = U(i.polygonBottom, l) <= 0 ? i.polygonBottom : l, f = [], p = [];
+	Ji(i.spanIndex, u, d, p);
 	for (let e of p) {
-		let t = W(u, e.yTop) >= 0 ? u : e.yTop;
-		if (W(W(d, e.yBottom) <= 0 ? d : e.yBottom, t) <= 0) continue;
+		let t = U(u, e.yTop) >= 0 ? u : e.yTop;
+		if (U(U(d, e.yBottom) <= 0 ? d : e.yBottom, t) <= 0) continue;
 		let n = i.edges[e.leftEdge], r = i.edges[e.rightEdge];
-		if (Zi(n, r)) continue;
-		let a = W(s, e.yTop) > 0, o = W(l, e.yBottom) < 0, p = (e, t, n, r) => {
+		if (Qi(n, r)) continue;
+		let a = U(s, e.yTop) > 0, o = U(l, e.yBottom) < 0, p = (e, t, n, r) => {
 			let a = t ? n : r, o = {
 				numerator: e.dx * a.numerator - e.c * a.denominator,
 				denominator: e.dy * a.denominator
@@ -2975,7 +2975,7 @@ function ia(e, t, n, r) {
 		}, e.yTop), _ = p(r, o, c, e.yBottom), v = n.dx >= 0n ? m : h, y = r.dx >= 0n ? _ : g, b = Object.freeze({
 			left: Object.freeze({
 				slope: v.slope,
-				intercept: ea(v.intercept, i.scaleExponent >= 0 ? {
+				intercept: ta(v.intercept, i.scaleExponent >= 0 ? {
 					numerator: i.padLeft.numerator << BigInt(i.scaleExponent),
 					denominator: i.padLeft.denominator
 				} : {
@@ -2985,7 +2985,7 @@ function ia(e, t, n, r) {
 			}),
 			right: Object.freeze({
 				slope: y.slope,
-				intercept: $i(y.intercept, i.scaleExponent >= 0 ? {
+				intercept: ea(y.intercept, i.scaleExponent >= 0 ? {
 					numerator: i.padRight.numerator << BigInt(i.scaleExponent),
 					denominator: i.padRight.denominator
 				} : {
@@ -3000,10 +3000,10 @@ function ia(e, t, n, r) {
 }
 //#endregion
 //#region packages/docx/src/layout/axis-aligned-overlap.ts
-function aa(e, t, n) {
+function oa(e, t, n) {
 	return e.left < t.right - n && e.right > t.left + n && e.top < t.bottom - n && e.bottom > t.top + n;
 }
-function oa(e, t, n) {
+function sa(e, t, n) {
 	let r = e.right - e.left, i = e.bottom - e.top;
 	if (r < 0 || i < 0) throw RangeError("Overlap rectangle has negative extent");
 	let a = e.left, o = e.top;
@@ -3018,7 +3018,7 @@ function oa(e, t, n) {
 			right: e.right,
 			top: e.top,
 			bottom: e.bottom
-		})).filter((e) => aa(s, e, n.overlapEpsilon));
+		})).filter((e) => oa(s, e, n.overlapEpsilon));
 		if (c.length === 0) return Object.freeze({
 			left: a,
 			top: o
@@ -3035,26 +3035,26 @@ function oa(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/layout/compatibility.ts
-function sa(e, t) {
+function ca(e, t) {
 	if (e.trim() === "") throw Error(`CompatibilityRule.${t} must not be empty`);
 }
-function G(e) {
-	if (sa(e.id, "id"), sa(e.description, "description"), !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(e.id)) throw Error("CompatibilityRule.id must be a stable kebab-case identifier");
+function W(e) {
+	if (ca(e.id, "id"), ca(e.description, "description"), !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(e.id)) throw Error("CompatibilityRule.id must be a stable kebab-case identifier");
 	if (e.evidence.kind === "microsoft-note") {
-		if (sa(e.evidence.reference, "evidence.reference"), !/^\[MS-[A-Z0-9]+\] §§?\d/.test(e.evidence.reference)) throw Error("CompatibilityRule.evidence.reference must identify a Microsoft specification section");
+		if (ca(e.evidence.reference, "evidence.reference"), !/^\[MS-[A-Z0-9]+\] §§?\d/.test(e.evidence.reference)) throw Error("CompatibilityRule.evidence.reference must identify a Microsoft specification section");
 	} else if (e.evidence.kind === "regression-test") {
-		if (sa(e.evidence.reference, "evidence.reference"), !/^packages\/docx\/src\/.+\.(?:test|spec)\.tsx?#[^#]+$/.test(e.evidence.reference)) throw Error("CompatibilityRule.evidence.reference must use DOCX path#test-title");
-	} else if (sa(e.evidence.syntheticFixtureId, "evidence.syntheticFixtureId"), sa(e.evidence.application, "evidence.application"), sa(e.evidence.version, "evidence.version"), sa(e.evidence.platform, "evidence.platform"), !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(e.evidence.syntheticFixtureId)) throw Error("CompatibilityRule.evidence.syntheticFixtureId must be kebab-case");
+		if (ca(e.evidence.reference, "evidence.reference"), !/^packages\/docx\/src\/.+\.(?:test|spec)\.tsx?#[^#]+$/.test(e.evidence.reference)) throw Error("CompatibilityRule.evidence.reference must use DOCX path#test-title");
+	} else if (ca(e.evidence.syntheticFixtureId, "evidence.syntheticFixtureId"), ca(e.evidence.application, "evidence.application"), ca(e.evidence.version, "evidence.version"), ca(e.evidence.platform, "evidence.platform"), !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(e.evidence.syntheticFixtureId)) throw Error("CompatibilityRule.evidence.syntheticFixtureId must be kebab-case");
 	return Object.freeze(e.evidence), Object.freeze(e);
 }
-G({
+W({
 	id: "word-section-btlr-tbrl-page-frame",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/coordinate-space.test.ts#maps Transitional text direction %s to %s"
 	},
 	description: "Issue #988 comment 4950296007 records that, unlike the normative ECMA-376 Part 4 §14.11.7 equivalence to lr, Word uses the tbRl page frame for section-level btLr; this rule covers only the page frame, while glyph orientation is paint-owned."
-}), G({
+}), W({
 	id: "word-square-line-start-one-inch",
 	evidence: {
 		kind: "regression-test",
@@ -3062,14 +3062,14 @@ G({
 	},
 	description: "Issue #676 records that Word starts a content line beside a square-wrapped object only when the free side gap is at least one inch; tight and through polygon openings and empty paragraph marks are outside this rule."
 });
-var ca = G({
+var la = W({
 	id: "word-float-different-paragraph-displacement",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/floats.test.ts#keeps observed different-paragraph displacement on exclusion bounds"
 	},
 	description: "Preserve the established Word-compatible policy that an overlap-permitted float is displaced by exclusion geometry from floats anchored in other paragraphs, while same-paragraph floats may overlap."
-}), la = G({
+}), ua = W({
 	id: "word-page-anchored-table-collision-deferral",
 	evidence: {
 		kind: "regression-test",
@@ -3077,7 +3077,7 @@ var ca = G({
 	},
 	description: "Preserve the established Word-compatible pagination behavior that defers an absolute page- or margin-anchored floating table when its authored object band intersects an existing floating-table text-exclusion band on the page."
 });
-G({
+W({
 	id: "word-empty-mark-float-side-gap",
 	evidence: {
 		kind: "regression-test",
@@ -3085,29 +3085,29 @@ G({
 	},
 	description: "An empty or anchor-only paragraph-mark line may start beside a square-wrapped object when the available side gap can hold the paragraph mark em; the one-inch content-line threshold does not apply."
 });
-var ua = .05;
-function da(e) {
-	return (72 - ua) * e;
+var da = .05;
+function fa(e) {
+	return (72 - da) * e;
 }
-function fa(e, t) {
+function pa(e, t) {
 	return e * t;
 }
 //#endregion
 //#region packages/docx/src/layout/floats.ts
-var pa = .01, ma = .5;
-function ha(e, t) {
+var ma = .01, ha = .5;
+function ga(e, t) {
 	return Object.freeze(e === "overlap" ? {
 		kind: "word-different-paragraph",
 		paragraphId: t
 	} : { kind: "none" });
 }
-function ga(e, t) {
+function _a(e, t) {
 	return Object.freeze(e ? {
 		kind: "word-different-paragraph",
 		paragraphId: t
 	} : { kind: "drawingml-normative" });
 }
-function _a(e) {
+function va(e) {
 	let t = {
 		occurrenceId: e.occurrenceId,
 		paragraphId: e.paragraphId,
@@ -3123,7 +3123,7 @@ function _a(e) {
 		kind: e.kind === "shape" ? "drawingml" : "frame"
 	};
 }
-function va(e, t) {
+function ya(e, t) {
 	let n = e.imageX, r = e.imageY, i = e.imageW, a = e.imageH, o = e.xLeft, s = e.xRight, c = e.yTop, l = e.yBottom, u = {
 		occurrenceId: e.anchorOccurrenceId ?? e.acquisitionOccurrenceId ?? `display-float:${t}`,
 		paragraphId: e.paraId,
@@ -3149,7 +3149,7 @@ function va(e, t) {
 		kind: e.kind === "shape" ? "drawingml" : "frame"
 	};
 }
-function ya(e) {
+function ba(e) {
 	let t = e.xPt, n = e.yPt, r = e.widthPt, i = e.heightPt;
 	return {
 		left: t,
@@ -3158,7 +3158,7 @@ function ya(e) {
 		bottom: n + i
 	};
 }
-function ba(e, t, n) {
+function xa(e, t, n) {
 	return t === 0 && n === 0 ? e : Object.freeze({
 		xPt: e.xPt + t,
 		yPt: e.yPt + n,
@@ -3166,10 +3166,10 @@ function ba(e, t, n) {
 		heightPt: e.heightPt
 	});
 }
-function xa(e, t, n, r) {
+function Sa(e, t, n, r) {
 	return Object.freeze({
-		bounds: ba(e.bounds, t, n),
-		exclusionBounds: ba(e.exclusionBounds, t, n),
+		bounds: xa(e.bounds, t, n),
+		exclusionBounds: xa(e.exclusionBounds, t, n),
 		displacement: Object.freeze({
 			xPt: t,
 			yPt: n
@@ -3177,8 +3177,8 @@ function xa(e, t, n, r) {
 		appliedCompatibilityRuleIds: Object.freeze([...r])
 	});
 }
-function Sa(e, t) {
-	let n = e.bounds.xPt - e.exclusionBounds.xPt, r = e.bounds.yPt - e.exclusionBounds.yPt, i = e.exclusionBounds.xPt + e.exclusionBounds.widthPt - e.bounds.xPt - e.bounds.widthPt, a = e.exclusionBounds.yPt + e.exclusionBounds.heightPt - e.bounds.yPt - e.bounds.heightPt, o = ya(t.exclusionBounds);
+function Ca(e, t) {
+	let n = e.bounds.xPt - e.exclusionBounds.xPt, r = e.bounds.yPt - e.exclusionBounds.yPt, i = e.exclusionBounds.xPt + e.exclusionBounds.widthPt - e.bounds.xPt - e.bounds.widthPt, a = e.exclusionBounds.yPt + e.exclusionBounds.heightPt - e.bounds.yPt - e.bounds.heightPt, o = ba(t.exclusionBounds);
 	return {
 		left: o.left - i,
 		right: o.right + n,
@@ -3186,22 +3186,22 @@ function Sa(e, t) {
 		bottom: o.bottom + r
 	};
 }
-function Ca(e, t, n = e.rightBoundaryPt) {
-	let r = ya(e.moving.bounds);
+function wa(e, t, n = e.rightBoundaryPt) {
+	let r = ba(e.moving.bounds);
 	return t.length === 0 ? Object.freeze({
 		left: r.left,
 		top: r.top
-	}) : oa(r, t, {
+	}) : sa(r, t, {
 		overlapEpsilon: e.overlapEpsilonPt ?? 0,
 		rightBoundary: n,
 		rightBoundarySlack: e.rightBoundarySlackPt ?? 0
 	});
 }
-function wa(e) {
-	let { moving: t, avoidance: n } = e, r = e.blockers.flatMap((e) => t.kind === "table" && e.kind === "table" && (t.tableOverlap === "never" || e.tableOverlap === "never") || n.kind === "drawingml-normative" && e.kind === "drawingml" ? [ya(e.bounds)] : []), i = n.kind === "word-different-paragraph" ? e.blockers.flatMap((e) => e.paragraphId === n.paragraphId ? [] : [Sa(t, e)]) : [], a = t.exclusionBounds.xPt + t.exclusionBounds.widthPt - t.bounds.xPt - t.bounds.widthPt, o = n.kind === "word-different-paragraph" ? e.rightBoundaryPt - a : e.rightBoundaryPt, s = Ca(e, r, o), c = i.length === 0 ? s : Ca(e, [...r, ...i], o);
-	return xa(t, c.left - t.bounds.xPt, c.top - t.bounds.yPt, c.left !== s.left || c.top !== s.top ? [ca.id] : []);
-}
 function Ta(e) {
+	let { moving: t, avoidance: n } = e, r = e.blockers.flatMap((e) => t.kind === "table" && e.kind === "table" && (t.tableOverlap === "never" || e.tableOverlap === "never") || n.kind === "drawingml-normative" && e.kind === "drawingml" ? [ba(e.bounds)] : []), i = n.kind === "word-different-paragraph" ? e.blockers.flatMap((e) => e.paragraphId === n.paragraphId ? [] : [Ca(t, e)]) : [], a = t.exclusionBounds.xPt + t.exclusionBounds.widthPt - t.bounds.xPt - t.bounds.widthPt, o = n.kind === "word-different-paragraph" ? e.rightBoundaryPt - a : e.rightBoundaryPt, s = wa(e, r, o), c = i.length === 0 ? s : wa(e, [...r, ...i], o);
+	return Sa(t, c.left - t.bounds.xPt, c.top - t.bounds.yPt, c.left !== s.left || c.top !== s.top ? [la.id] : []);
+}
+function Ea(e) {
 	if (e.inlineEndPt < e.inlineStartPt || e.blockExtentPt < 0) throw RangeError("Block-flow admission received a negative extent");
 	let t = e.blockers.filter((t) => {
 		let n = t.exclusionBounds;
@@ -3218,17 +3218,17 @@ function Ta(e) {
 	}
 	throw Error("Block-flow float admission did not converge");
 }
-function Ea(e) {
-	let t = ya(e.bounds), n = e.blockers.some((n) => n.kind === "table" && aa(t, ya(n.exclusionBounds), e.overlapEpsilonPt));
+function Da(e) {
+	let t = ba(e.bounds), n = e.blockers.some((n) => n.kind === "table" && oa(t, ba(n.exclusionBounds), e.overlapEpsilonPt));
 	return Object.freeze({
 		defer: n,
-		appliedCompatibilityRuleIds: Object.freeze(n ? [la.id] : [])
+		appliedCompatibilityRuleIds: Object.freeze(n ? [ua.id] : [])
 	});
 }
 //#endregion
 //#region packages/docx/src/layout/float-wrap.ts
-function K(e) {
-	let t = wi(e);
+function G(e) {
+	let t = Ti(e);
 	return t.exponent >= 0 ? {
 		numerator: t.coefficient << BigInt(t.exponent),
 		denominator: 1n
@@ -3237,39 +3237,39 @@ function K(e) {
 		denominator: 1n << BigInt(-t.exponent)
 	};
 }
-function Da(e, t) {
+function Oa(e, t) {
 	return {
 		numerator: e.numerator * t.denominator + t.numerator * e.denominator,
 		denominator: e.denominator * t.denominator
 	};
 }
-function Oa(e, t) {
+function ka(e, t) {
 	return {
 		numerator: e.numerator * t.denominator - t.numerator * e.denominator,
 		denominator: e.denominator * t.denominator
 	};
 }
-function ka(e, t) {
+function Aa(e, t) {
 	return {
 		numerator: e.numerator * t.numerator,
 		denominator: e.denominator * t.denominator
 	};
 }
-function Aa(e, t) {
+function ja(e, t) {
 	let n = t.numerator < 0n;
 	return {
 		numerator: (n ? -e.numerator : e.numerator) * t.denominator,
 		denominator: e.denominator * (n ? -t.numerator : t.numerator)
 	};
 }
-function ja(e, t) {
-	let n = K(e), r = K(t);
-	return ki({
+function Ma(e, t) {
+	let n = G(e), r = G(t);
+	return Ai({
 		numerator: n.numerator * r.denominator + r.numerator * n.denominator,
 		denominator: 2n * n.denominator * r.denominator
 	});
 }
-function Ma(e) {
+function Na(e) {
 	switch (e) {
 		case "left":
 		case "right":
@@ -3278,20 +3278,20 @@ function Ma(e) {
 		default: return "bothSides";
 	}
 }
-function Na(e) {
+function Pa(e) {
 	return e === "square" || e === "topAndBottom" || e === "tight" || e === "through";
 }
-function Pa(e, t, n) {
+function Fa(e, t, n) {
 	return e.xRight > t + .01 && e.xLeft < n - .01;
 }
-var Fa = /* @__PURE__ */ new WeakMap(), Ia = 4, La = /* @__PURE__ */ new WeakMap();
-function Ra(e) {
+var Ia = /* @__PURE__ */ new WeakMap(), La = 4, Ra = /* @__PURE__ */ new WeakMap();
+function za(e) {
 	return Object.isFrozen(e) && e.every((e) => Object.isFrozen(e));
 }
-function za(e, t, n, r, i, a) {
+function Ba(e, t, n, r, i, a) {
 	return e.kind === t && Object.is(e.xLeftPt, n) && Object.is(e.xRightPt, r) && Object.is(e.yTopPt, i) && Object.is(e.yBottomPt, a);
 }
-function Ba(e, t, n) {
+function Va(e, t, n) {
 	let r = e.authoredWrap;
 	if (r !== "tight" && r !== "through") throw Error("Polygon compilation requires tight or through wrap");
 	let i = {
@@ -3303,14 +3303,14 @@ function Ba(e, t, n) {
 		yTopPt: e.yTop,
 		yBottomPt: e.yBottom
 	};
-	Ni(i);
-	let a = Ra(t);
+	Pi(i);
+	let a = za(t);
 	if (a) {
-		let i = La.get(t)?.find((t) => za(t, r, e.xLeft, e.xRight, e.yTop, e.yBottom));
+		let i = Ra.get(t)?.find((t) => Ba(t, r, e.xLeft, e.xRight, e.yTop, e.yBottom));
 		if (i) return n && (n.polygonCacheHitCount += 1), i.compiled;
 	}
 	n && (n.polygonCompileCount += 1);
-	let o = Yi(i);
+	let o = Xi(i);
 	if (a) {
 		let n = Object.freeze({
 			kind: r,
@@ -3320,18 +3320,18 @@ function Ba(e, t, n) {
 			yBottomPt: e.yBottom,
 			compiled: o
 		});
-		La.set(t, Object.freeze([n, ...(La.get(t) ?? []).slice(0, Ia - 1)]));
+		Ra.set(t, Object.freeze([n, ...(Ra.get(t) ?? []).slice(0, La - 1)]));
 	}
 	return o;
 }
-function Va(e, t) {
+function Ha(e, t) {
 	let n = e.map((e) => {
 		let n = e.wrapPolygon;
 		t && n && (t.polygonSnapshotPointCount += n.length);
 		let r = Object.freeze({
 			...e,
 			...n ? { wrapPolygon: Object.freeze(n.map((e) => Object.freeze({ ...e }))) } : {}
-		}), i = r.authoredWrap === "tight" || r.authoredWrap === "through" ? Ba(r, n ?? [], t) : null;
+		}), i = r.authoredWrap === "tight" || r.authoredWrap === "through" ? Va(r, n ?? [], t) : null;
 		return Object.freeze({
 			rect: r,
 			polygon: i,
@@ -3339,30 +3339,30 @@ function Va(e, t) {
 			wrapMaximumRightPt: i ? Math.max(r.xRight, i.polygonRightPt) : r.xRight
 		});
 	}), r = Object.freeze({ floats: Object.freeze(n) });
-	return Fa.set(r, /* @__PURE__ */ new Map()), r;
+	return Ia.set(r, /* @__PURE__ */ new Map()), r;
 }
-function Ha(e, t) {
-	let n = Ma(e.rect.side);
+function Ua(e, t) {
+	let n = Na(e.rect.side);
 	if (n !== "largest") return n;
-	let r = W(Oa(K(e.wrapMaximumLeftPt), K(t.xLeftPt)), Oa(K(t.xRightPt), K(e.wrapMaximumRightPt)));
+	let r = U(ka(G(e.wrapMaximumLeftPt), G(t.xLeftPt)), ka(G(t.xRightPt), G(e.wrapMaximumRightPt)));
 	return r === 0 ? t.readingDirection === "ltr" ? "left" : "right" : r > 0 ? "left" : "right";
 }
-function Ua(e, t, n, r, i, a) {
-	let { rect: o, polygon: s } = e, c = s ? na(s, t, n) : [{
-		l: K(o.xLeft),
-		r: K(o.xRight)
+function Wa(e, t, n, r, i, a) {
+	let { rect: o, polygon: s } = e, c = s ? ra(s, t, n) : [{
+		l: G(o.xLeft),
+		r: G(o.xRight)
 	}];
 	if (c.length === 0) return [];
-	let l = s === null, u = c.reduce((e, t) => W(t.l, e) < 0 ? t.l : e, c[0].l), d = c.reduce((e, t) => W(t.r, e) > 0 ? t.r : e, c[0].r);
-	switch (Ha(e, a)) {
+	let l = s === null, u = c.reduce((e, t) => U(t.l, e) < 0 ? t.l : e, c[0].l), d = c.reduce((e, t) => U(t.r, e) > 0 ? t.r : e, c[0].r);
+	switch (Ua(e, a)) {
 		case "left": return [{
 			l: u,
-			r: K(i),
+			r: G(i),
 			leftSquareBoundary: l,
 			rightSquareBoundary: !1
 		}];
 		case "right": return [{
-			l: K(r),
+			l: G(r),
 			r: d,
 			leftSquareBoundary: !1,
 			rightSquareBoundary: l
@@ -3374,66 +3374,66 @@ function Ua(e, t, n, r, i, a) {
 		}));
 	}
 }
-function Wa(e, t) {
-	let n = Fa.get(t);
+function Ga(e, t) {
+	let n = Ia.get(t);
 	if (!n) throw Error("Prepared float geometry omitted its sweep cache");
 	let r = n.get(e);
 	if (r) return r;
 	let i = /* @__PURE__ */ new Set(), a = (e) => {
 		Number.isFinite(e) && i.add(e);
 	};
-	for (let { rect: n, polygon: r } of t.floats) if (a(ji(Oa(K(n.yTop), K(e)))), a(n.yBottom), r) for (let t of ra(r, e)) a(t);
+	for (let { rect: n, polygon: r } of t.floats) if (a(Mi(ka(G(n.yTop), G(e)))), a(n.yBottom), r) for (let t of ia(r, e)) a(t);
 	let o = Object.freeze([...i].sort((e, t) => e - t));
 	return n.set(e, o), o;
 }
-function Ga(e) {
-	let t = e.filter((e) => W(e.r, e.l) > 0).slice().sort((e, t) => W(e.l, t.l) || W(e.r, t.r)), n = [];
+function Ka(e) {
+	let t = e.filter((e) => U(e.r, e.l) > 0).slice().sort((e, t) => U(e.l, t.l) || U(e.r, t.r)), n = [];
 	for (let e of t) {
 		let t = n.at(-1);
-		if (!t || W(e.l, t.r) > 0) {
+		if (!t || U(e.l, t.r) > 0) {
 			n.push({ ...e });
 			continue;
 		}
-		W(e.l, t.l) === 0 && (t.leftSquareBoundary = t.leftSquareBoundary && e.leftSquareBoundary);
-		let r = W(e.r, t.r);
+		U(e.l, t.l) === 0 && (t.leftSquareBoundary = t.leftSquareBoundary && e.leftSquareBoundary);
+		let r = U(e.r, t.r);
 		r > 0 ? (t.r = e.r, t.rightSquareBoundary = e.rightSquareBoundary) : r === 0 && (t.rightSquareBoundary = t.rightSquareBoundary && e.rightSquareBoundary);
 	}
 	return n;
 }
-function Ka(e, t, n, r, i) {
-	let a = Ga(e), o = K(t), s = K(n), c = [], l = (e, t, n) => {
-		let r = W(o, e) >= 0 ? o : e, i = W(s, t) <= 0 ? s : t;
-		W(i, r) > 0 && c.push({
+function qa(e, t, n, r, i) {
+	let a = Ka(e), o = G(t), s = G(n), c = [], l = (e, t, n) => {
+		let r = U(o, e) >= 0 ? o : e, i = U(s, t) <= 0 ? s : t;
+		U(i, r) > 0 && c.push({
 			l: r,
 			r: i,
 			squareConstrained: n
 		});
 	}, u = o, d = !1;
 	for (let e of a) {
-		if (W(e.r, o) <= 0) {
+		if (U(e.r, o) <= 0) {
 			d = e.rightSquareBoundary;
 			continue;
 		}
-		if (W(e.l, s) >= 0) {
+		if (U(e.l, s) >= 0) {
 			l(u, s, d), u = s;
 			break;
 		}
-		W(e.l, u) > 0 && l(u, e.l, d || e.leftSquareBoundary);
-		let t = W(e.r, u);
-		if (t > 0 ? (u = e.r, d = e.rightSquareBoundary) : t === 0 && (d &&= e.rightSquareBoundary), W(u, s) >= 0) break;
+		U(e.l, u) > 0 && l(u, e.l, d || e.leftSquareBoundary);
+		let t = U(e.r, u);
+		if (t > 0 ? (u = e.r, d = e.rightSquareBoundary) : t === 0 && (d &&= e.rightSquareBoundary), U(u, s) >= 0) break;
 	}
-	W(u, s) < 0 && l(u, s, d);
+	U(u, s) < 0 && l(u, s, d);
 	let f = {
 		numerator: 0n,
 		denominator: 1n
 	};
 	for (let e of c) {
-		let t = Oa(e.r, e.l);
-		W(t, f) > 0 && (f = t);
+		let t = ka(e.r, e.l);
+		U(t, f) > 0 && (f = t);
 	}
 	for (let e of c) {
-		let t = Oa(e.r, e.l);
-		if (W(t, f) === 0 && W(t, K(Math.max(1, e.squareConstrained ? i : r))) >= 0) return {
+		let t = ka(e.r, e.l);
+		if (U(t, f) === 0 && U(t, G(Math.max(1, e.squareConstrained ? i : r))) >= 0) return {
 			l: e.l,
 			r: e.r,
 			squareConstrained: e.squareConstrained
@@ -3441,14 +3441,14 @@ function Ka(e, t, n, r, i) {
 	}
 	return null;
 }
-function qa(e, t, n, r, i, a, o, s, c, l, u) {
-	let d = K(e), f = Da(d, K(t)), p = (e) => K(e);
-	if (a.floats.some(({ rect: e }) => e.mode === "topAndBottom" && Pa(e, o, s) && W(f, p(e.yTop)) > 0 && W(d, p(e.yBottom)) < 0)) return null;
+function Ja(e, t, n, r, i, a, o, s, c, l, u) {
+	let d = G(e), f = Oa(d, G(t)), p = (e) => G(e);
+	if (a.floats.some(({ rect: e }) => e.mode === "topAndBottom" && Fa(e, o, s) && U(f, p(e.yTop)) > 0 && U(d, p(e.yBottom)) < 0)) return null;
 	let m = [];
 	for (let i of a.floats) {
 		let { rect: a } = i;
-		if (a.mode !== "square" || W(f, p(a.yTop)) <= 0 || W(d, p(a.yBottom)) >= 0 || !Pa(a, n, r)) continue;
-		let o = Ua(i, e, t, n, r, c);
+		if (a.mode !== "square" || U(f, p(a.yTop)) <= 0 || U(d, p(a.yBottom)) >= 0 || !Fa(a, n, r)) continue;
+		let o = Wa(i, e, t, n, r, c);
 		o.length !== 0 && m.push(...o);
 	}
 	if (m.length === 0) return {
@@ -3456,74 +3456,74 @@ function qa(e, t, n, r, i, a, o, s, c, l, u) {
 		xOffset: 0,
 		maxWidth: i
 	};
-	let h = Ka(m, n, r, l, u);
+	let h = qa(m, n, r, l, u);
 	if (!h) return null;
 	let g = {
 		numerator: 0n,
 		denominator: 1n
-	}, _ = Oa(h.l, K(n)), v = W(_, g) > 0 ? _ : g, y = K(n), b = ji(v), x = n + b, S = K(x);
-	if (W(S, h.l) < 0 && (b = ji(Oa(K(ji(h.l)), y)), x = n + b, S = K(x)), W(S, h.l) < 0) throw Error("Exact float window could not represent a contained start");
-	let C = K(r), w = W(h.r, C) <= 0 ? h.r : C, T = Oa(K(Mi(w)), S), E = Mi(W(T, g) > 0 ? T : g);
-	if (W(K(x + E), w) > 0) throw Error("Exact float window could not represent a contained end");
+	}, _ = ka(h.l, G(n)), v = U(_, g) > 0 ? _ : g, y = G(n), b = Mi(v), x = n + b, S = G(x);
+	if (U(S, h.l) < 0 && (b = Mi(ka(G(Mi(h.l)), y)), x = n + b, S = G(x)), U(S, h.l) < 0) throw Error("Exact float window could not represent a contained start");
+	let C = G(r), w = U(h.r, C) <= 0 ? h.r : C, T = ka(G(Ni(w)), S), E = Ni(U(T, g) > 0 ? T : g);
+	if (U(G(x + E), w) > 0) throw Error("Exact float window could not represent a contained end");
 	return {
 		topY: e,
 		xOffset: b,
 		maxWidth: E
 	};
 }
-function Ja(e, t) {
-	return Da(ka(e.exact.slope, K(t)), e.exact.intercept);
-}
 function Ya(e, t) {
-	return W(e.exact.slope, t.exact.slope) === 0 && W(e.exact.intercept, t.exact.intercept) === 0;
+	return Oa(Aa(e.exact.slope, G(t)), e.exact.intercept);
 }
-function Xa(e, t, n) {
-	return W(Ja(e, n), Ja(t, n)) || W(e.exact.slope, t.exact.slope);
+function Xa(e, t) {
+	return U(e.exact.slope, t.exact.slope) === 0 && U(e.exact.intercept, t.exact.intercept) === 0;
 }
 function Za(e, t, n) {
-	let r = Oa(e.slope, t.slope);
+	return U(Ya(e, n), Ya(t, n)) || U(e.exact.slope, t.exact.slope);
+}
+function Qa(e, t, n) {
+	let r = ka(e.slope, t.slope);
 	if (r.numerator === 0n) return null;
-	let i = Oa(e.intercept, t.intercept);
-	return Aa(Oa(K(n), i), r);
+	let i = ka(e.intercept, t.intercept);
+	return ja(ka(G(n), i), r);
 }
-function Qa(e, t, n, r, i) {
-	t === null || W(t, K(n)) <= 0 || W(t, K(r)) >= 0 || (e.push(ji(t)), i && (i.localRootCandidateCount += 1));
+function $a(e, t, n, r, i) {
+	t === null || U(t, G(n)) <= 0 || U(t, G(r)) >= 0 || (e.push(Mi(t)), i && (i.localRootCandidateCount += 1));
 }
-function $a(e, t, n, r, i, a) {
+function eo(e, t, n, r, i, a) {
 	let o = e[0];
 	for (let r of e.slice(1)) {
-		let e = Xa(r, o, n);
+		let e = Za(r, o, n);
 		(t === "min" && e < 0 || t === "max" && e > 0) && (o = r);
 	}
 	let s = o.square;
 	for (let c of e) if (c !== o) {
-		if (Ya(c, o)) {
+		if (Xa(c, o)) {
 			s &&= c.square;
 			continue;
 		}
-		(t === "min" ? W(c.exact.slope, o.exact.slope) < 0 : W(c.exact.slope, o.exact.slope) > 0) && Qa(i, Za(c.exact, o.exact, 0), n, r, a);
+		(t === "min" ? U(c.exact.slope, o.exact.slope) < 0 : U(c.exact.slope, o.exact.slope) > 0) && $a(i, Qa(c.exact, o.exact, 0), n, r, a);
 	}
 	return {
 		exact: o.exact,
 		square: s
 	};
 }
-function eo(e, t = !1) {
+function to(e, t = !1) {
 	return {
 		exact: {
 			slope: {
 				numerator: 0n,
 				denominator: 1n
 			},
-			intercept: K(e)
+			intercept: G(e)
 		},
 		square: t
 	};
 }
-function to(e, t, n, r, i, a, o, s, c) {
-	let { rect: l, polygon: u } = e, d = K(ja(n, r));
-	if (W(Da(d, K(t)), K(l.yTop)) <= 0 || W(d, K(l.yBottom)) >= 0) return [];
-	let f = u ? ia(u, t, n, r).map((e) => ({
+function no(e, t, n, r, i, a, o, s, c) {
+	let { rect: l, polygon: u } = e, d = G(Ma(n, r));
+	if (U(Oa(d, G(t)), G(l.yTop)) <= 0 || U(d, G(l.yBottom)) >= 0) return [];
+	let f = u ? aa(u, t, n, r).map((e) => ({
 		left: {
 			exact: e.left,
 			square: !1
@@ -3533,29 +3533,29 @@ function to(e, t, n, r, i, a, o, s, c) {
 			square: !1
 		}
 	})) : [{
-		left: eo(l.xLeft, !0),
-		right: eo(l.xRight, !0)
+		left: to(l.xLeft, !0),
+		right: to(l.xRight, !0)
 	}];
 	if (f.length === 0) return [];
-	let p = $a(f.map((e) => e.left), "min", n, r, s, c), m = $a(f.map((e) => e.right), "max", n, r, s, c);
+	let p = eo(f.map((e) => e.left), "min", n, r, s, c), m = eo(f.map((e) => e.right), "max", n, r, s, c);
 	switch (u?.kind === "tight" && (f = [{
 		left: p,
 		right: m
-	}]), Ha(e, o)) {
+	}]), Ua(e, o)) {
 		case "left": return [{
 			left: p,
-			right: eo(a)
+			right: to(a)
 		}];
 		case "right": return [{
-			left: eo(i),
+			left: to(i),
 			right: m
 		}];
 		case "bothSides": return f;
 	}
 }
-function no(e, t, n, r, i) {
-	let a = e.slice().sort((e, n) => Xa(e.left, n.left, t) || Xa(e.right, n.right, t));
-	for (let e = 0; e + 1 < a.length; e += 1) Qa(r, Za(a[e].left.exact, a[e + 1].left.exact, 0), t, n, i);
+function ro(e, t, n, r, i) {
+	let a = e.slice().sort((e, n) => Za(e.left, n.left, t) || Za(e.right, n.right, t));
+	for (let e = 0; e + 1 < a.length; e += 1) $a(r, Qa(a[e].left.exact, a[e + 1].left.exact, 0), t, n, i);
 	let o = [];
 	for (let e of a) {
 		let a = o.at(-1);
@@ -3563,11 +3563,11 @@ function no(e, t, n, r, i) {
 			o.push(e);
 			continue;
 		}
-		if (Qa(r, Za(e.left.exact, a.right.exact, 0), t, n, i), Xa(e.left, a.right, t) > 0) {
+		if ($a(r, Qa(e.left.exact, a.right.exact, 0), t, n, i), Za(e.left, a.right, t) > 0) {
 			o.push(e);
 			continue;
 		}
-		let s = $a([a.right, e.right], "max", t, n, r, i), c = Ya(a.left, e.left) ? {
+		let s = eo([a.right, e.right], "max", t, n, r, i), c = Xa(a.left, e.left) ? {
 			exact: a.left.exact,
 			square: a.left.square && e.left.square
 		} : a.left;
@@ -3578,46 +3578,46 @@ function no(e, t, n, r, i) {
 	}
 	return o;
 }
-function ro(e, t, n, r, i, a, o, s, c, l, u, d) {
-	let f = K(ja(e, t)), p = Da(f, K(n));
-	if (a.floats.some(({ rect: e }) => e.mode === "topAndBottom" && Pa(e, o, s) && W(p, K(e.yTop)) > 0 && W(f, K(e.yBottom)) < 0)) return null;
+function io(e, t, n, r, i, a, o, s, c, l, u, d) {
+	let f = G(Ma(e, t)), p = Oa(f, G(n));
+	if (a.floats.some(({ rect: e }) => e.mode === "topAndBottom" && Fa(e, o, s) && U(p, G(e.yTop)) > 0 && U(f, G(e.yBottom)) < 0)) return null;
 	let m = [], h = [];
 	for (let o of a.floats) {
 		let { rect: a } = o;
-		a.mode === "square" && Pa(a, r, i) && h.push(...to(o, n, e, t, r, i, c, m, d));
+		a.mode === "square" && Fa(a, r, i) && h.push(...no(o, n, e, t, r, i, c, m, d));
 	}
 	if (h.length === 0) return null;
-	let g = no(h, e, t, m, d), _ = eo(r), v = eo(i), y = [], b = (n, r, i) => {
+	let g = ro(h, e, t, m, d), _ = to(r), v = to(i), y = [], b = (n, r, i) => {
 		let a = {
-			slope: Oa(r.exact.slope, n.exact.slope),
-			intercept: Oa(r.exact.intercept, n.exact.intercept)
+			slope: ka(r.exact.slope, n.exact.slope),
+			intercept: ka(r.exact.intercept, n.exact.intercept)
 		};
 		y.push({ exactWidth: a });
 		let o = Math.max(1, i ? u : l);
-		W(Da(ka(a.slope, K(e)), a.intercept), K(o)) < 0 && a.slope.numerator > 0n && Qa(m, Za(r.exact, n.exact, o), e, t, d);
+		U(Oa(Aa(a.slope, G(e)), a.intercept), G(o)) < 0 && a.slope.numerator > 0n && $a(m, Qa(r.exact, n.exact, o), e, t, d);
 	}, x = _;
 	for (let e of g) b(x, e.left, x.square || e.left.square), x = e.right;
 	b(x, v, x.square);
 	let S = y[0];
-	for (let t of y.slice(1)) (W(Da(ka(t.exactWidth.slope, K(e)), t.exactWidth.intercept), Da(ka(S.exactWidth.slope, K(e)), S.exactWidth.intercept)) || W(t.exactWidth.slope, S.exactWidth.slope)) > 0 && (S = t);
-	if (S) for (let n of y) n === S || W(n.exactWidth.slope, S.exactWidth.slope) <= 0 || Qa(m, Za(n.exactWidth, S.exactWidth, 0), e, t, d);
+	for (let t of y.slice(1)) (U(Oa(Aa(t.exactWidth.slope, G(e)), t.exactWidth.intercept), Oa(Aa(S.exactWidth.slope, G(e)), S.exactWidth.intercept)) || U(t.exactWidth.slope, S.exactWidth.slope)) > 0 && (S = t);
+	if (S) for (let n of y) n === S || U(n.exactWidth.slope, S.exactWidth.slope) <= 0 || $a(m, Qa(n.exactWidth, S.exactWidth, 0), e, t, d);
 	return m.length === 0 ? null : Math.min(...m);
 }
-function io(e, t, n, r, i, a, o = r, s = r + i, c = {
+function ao(e, t, n, r, i, a, o = r, s = r + i, c = {
 	xLeftPt: r,
 	xRightPt: r + i,
 	readingDirection: "ltr"
 }, l = t, u = null) {
-	let d = r, f = r + i, p = Wa(n, a);
+	let d = r, f = r + i, p = Ga(n, a);
 	if (u) {
 		u.structuralEventCount = p.length;
 		for (let { polygon: e } of a.floats) e && (u.compiledIntersectionCount += e.intersectionCount, u.compiledContourSpanCount += e.contourSpans.length, u.compileOrderComparisonCount += e.compileOrderComparisonCount, u.compilePairMembershipVisitCount += e.compilePairMembershipVisitCount);
 	}
-	let m = (e) => (u && (u.evaluatedYCount += 1), qa(e, n, d, f, i, a, o, s, c, t, l)), h = m(e);
+	let m = (e) => (u && (u.evaluatedYCount += 1), Ja(e, n, d, f, i, a, o, s, c, t, l)), h = m(e);
 	if (h) return h;
 	let g = e, _ = p.findIndex((e) => e > g);
 	for (; _ >= 0 && _ < p.length;) {
-		let e = p[_], r = ro(g, e, n, d, f, a, o, s, c, t, l, u);
+		let e = p[_], r = io(g, e, n, d, f, a, o, s, c, t, l, u);
 		if (r !== null) {
 			u && (u.localRootEventCount += 1);
 			let e = m(r);
@@ -3634,18 +3634,18 @@ function io(e, t, n, r, i, a, o = r, s = r + i, c = {
 	}
 	throw Error("Finite float line-window event sweep found no usable terminal Y");
 }
-function ao(e, t, n, r, i, a, o = r, s = r + i, c = {
+function oo(e, t, n, r, i, a, o = r, s = r + i, c = {
 	xLeftPt: r,
 	xRightPt: r + i,
 	readingDirection: "ltr"
 }, l = t) {
-	return io(e, t, n, r, i, a, o, s, c, l);
+	return ao(e, t, n, r, i, a, o, s, c, l);
 }
-function oo(e, t, n, r) {
+function so(e, t, n, r) {
 	let i = /* @__PURE__ */ new Set();
 	for (;;) {
 		let a = e;
-		for (let i of t) i.mode === "topAndBottom" && Pa(i, n, r) && e >= i.yTop && e < i.yBottom && (a = Math.max(a, i.yBottom));
+		for (let i of t) i.mode === "topAndBottom" && Fa(i, n, r) && e >= i.yTop && e < i.yBottom && (a = Math.max(a, i.yBottom));
 		if (a === e) return e;
 		if (!Number.isFinite(a) || a < e || i.has(a)) throw Error("Top-and-bottom solver violated strictly increasing finite-bottom progress");
 		i.add(a), e = a;
@@ -3653,7 +3653,7 @@ function oo(e, t, n, r) {
 }
 //#endregion
 //#region packages/docx/src/layout/math-fallback-text.ts
-var so = new Set([
+var co = new Set([
 	"+",
 	"-",
 	"−",
@@ -3662,37 +3662,37 @@ var so = new Set([
 	"×",
 	"÷"
 ]);
-function co(e) {
-	return so.has(e) ? ` ${e} ` : e;
+function lo(e) {
+	return co.has(e) ? ` ${e} ` : e;
 }
-function q(e) {
+function K(e) {
 	return e.map((e) => {
 		switch (e.kind) {
-			case "run": return co(e.text);
-			case "fraction": return `${q(e.num)}/${q(e.den)}`;
-			case "sup": return `${q(e.base)}^${q(e.sup ?? [])}`;
-			case "sub": return `${q(e.base)}_${q(e.sub ?? [])}`;
-			case "subSup": return `${q(e.base)}_${q(e.sub ?? [])}^${q(e.sup ?? [])}`;
-			case "nary": return `${e.op}${q(e.sub ?? [])}${q(e.sup ?? [])}${q(e.body)}`;
-			case "delimiter": return `${e.begChar}${e.items.map(q).join(",")}${e.endChar}`;
-			case "radical": return `${e.index?.length ? q(e.index) : ""}√${q(e.radicand)}`;
-			case "limit": return `${q(e.base)}${q(e.lower ?? [])}${q(e.upper ?? [])}`;
-			case "array": return e.rows.map((e) => e.map(q).join(" ")).join(" ");
-			case "groupChr": return `${e.char}${q(e.base)}`;
+			case "run": return lo(e.text);
+			case "fraction": return `${K(e.num)}/${K(e.den)}`;
+			case "sup": return `${K(e.base)}^${K(e.sup ?? [])}`;
+			case "sub": return `${K(e.base)}_${K(e.sub ?? [])}`;
+			case "subSup": return `${K(e.base)}_${K(e.sub ?? [])}^${K(e.sup ?? [])}`;
+			case "nary": return `${e.op}${K(e.sub ?? [])}${K(e.sup ?? [])}${K(e.body)}`;
+			case "delimiter": return `${e.begChar}${e.items.map(K).join(",")}${e.endChar}`;
+			case "radical": return `${e.index?.length ? K(e.index) : ""}√${K(e.radicand)}`;
+			case "limit": return `${K(e.base)}${K(e.lower ?? [])}${K(e.upper ?? [])}`;
+			case "array": return e.rows.map((e) => e.map(K).join(" ")).join(" ");
+			case "groupChr": return `${e.char}${K(e.base)}`;
 			case "bar":
 			case "box":
-			case "borderBox": return q(e.base);
-			case "accent": return `${e.char}${q(e.base)}`;
-			case "func": return `${q(e.name)}(${q(e.arg)})`;
-			case "group": return q(e.items);
-			case "phant": return e.show ? q(e.base) : "";
-			case "sPre": return `${q(e.sub)}${q(e.sup)}${q(e.base)}`;
+			case "borderBox": return K(e.base);
+			case "accent": return `${e.char}${K(e.base)}`;
+			case "func": return `${K(e.name)}(${K(e.arg)})`;
+			case "group": return K(e.items);
+			case "phant": return e.show ? K(e.base) : "";
+			case "sPre": return `${K(e.sub)}${K(e.sup)}${K(e.base)}`;
 		}
 	}).join("").replace(/[ \t]{2,}/g, " ");
 }
 //#endregion
 //#region packages/docx/src/layout/convergence.ts
-var lo = class extends H {
+var uo = class extends V {
 	reason;
 	states;
 	passes;
@@ -3700,7 +3700,7 @@ var lo = class extends H {
 		super("NON_CONVERGENCE", e === "cycle" ? `repeated exact-state cycle at ${t.at(-1) ?? "<missing>"}` : `hard exact-state pass limit ${n} reached`), this.name = "ExactConvergenceError", this.reason = e, this.states = Object.freeze([...t]), this.passes = n;
 	}
 };
-function uo(e) {
+function fo(e) {
 	let { seedState: t, step: n, stateOf: r, limit: i } = e, a = t === void 0 ? 2 : 1;
 	if (!Number.isInteger(i) || i < a) throw RangeError(`Exact convergence limit must be an integer >= ${a}`);
 	let o = t === void 0 ? [] : [t], s = new Set(o), c = null;
@@ -3710,38 +3710,38 @@ function uo(e) {
 			value: t,
 			passes: e
 		});
-		if (s.has(a)) throw new lo("cycle", o, e);
-		if (s.add(a), e === i) throw new lo("limit", o, e);
+		if (s.has(a)) throw new uo("cycle", o, e);
+		if (s.add(a), e === i) throw new uo("limit", o, e);
 		c = t;
 	}
-	throw new lo("limit", o, i);
+	throw new uo("limit", o, i);
 }
-function fo(e, t, n) {
-	if (!Number.isInteger(n) || n < 1) throw new H("NON_CONVERGENCE", "limit must be a positive integer");
+function po(e, t, n) {
+	if (!Number.isInteger(n) || n < 1) throw new V("NON_CONVERGENCE", "limit must be a positive integer");
 	try {
-		return uo({
+		return fo({
 			seedState: e.fingerprint,
 			step: (n) => t(n ?? e),
 			stateOf: (e) => e.fingerprint,
 			limit: n
 		}).value;
 	} catch (e) {
-		throw e instanceof lo ? new H("NON_CONVERGENCE", e.reason === "cycle" ? `repeated geometry fingerprint cycle at ${e.states.at(-1) ?? "<missing>"}` : `hard iteration limit ${n} reached`) : e;
+		throw e instanceof uo ? new V("NON_CONVERGENCE", e.reason === "cycle" ? `repeated geometry fingerprint cycle at ${e.states.at(-1) ?? "<missing>"}` : `hard iteration limit ${n} reached`) : e;
 	}
 }
 //#endregion
 //#region packages/docx/src/layout/line-wrap-convergence.ts
-var po = class extends H {
+var mo = class extends V {
 	reason;
 	states;
 	constructor(e, t) {
 		super("NON_CONVERGENCE", e === "cycle" ? `line wrap measure/resolve cycle did not converge (${t.length} states)` : `line wrap measure/resolve pass limit did not converge (${t.length} states)`), this.name = "LineWrapNonConvergenceError", this.reason = e, this.states = Object.freeze([...t]);
 	}
 };
-function mo(e) {
+function ho(e) {
 	return e.map((e) => ({ ...e }));
 }
-function ho(e, t) {
+function go(e, t) {
 	return JSON.stringify(e.map((e, n) => ({
 		end: e.consumedEnd,
 		topY: e.topY,
@@ -3754,33 +3754,114 @@ function ho(e, t) {
 		}))
 	})));
 }
-var go = 16;
-function _o(e, t) {
+var _o = 16;
+function vo(e, t) {
 	try {
-		return uo({
+		return fo({
 			step: (n) => {
 				let r = e(n?.probeHeights ?? null), i = Object.freeze(r.map(t));
 				return Object.freeze({
 					lines: r,
 					probeHeights: i,
-					state: ho(r, i)
+					state: go(r, i)
 				});
 			},
 			stateOf: (e) => e.state,
-			limit: go
+			limit: _o
 		}).value.lines;
 	} catch (e) {
-		throw e instanceof lo ? new po(e.reason, e.states) : e;
+		throw e instanceof uo ? new mo(e.reason, e.states) : e;
 	}
 }
-G({
+W({
 	id: "word-east-asian-grid-line-allocation",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/compatibility.test.ts#pins East Asian grid allocation and the untabled Far East metric factor"
 	},
 	description: "For an East Asian single-spaced line on a document grid, preserve the measured whole-cell allocation from the intended face design height and use the established 1.3-times-em fallback only when that design height is unavailable."
-}), G({
+}), W({
+	id: "word-table-cell-ignores-grid-right-indent-adjustment",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "table-cell-adjust-right-indent-width-position-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "In the observed linesAndChars matrix, paragraphs inside fixed-width table cells retain the same line breaks for omitted (default true) and explicit-false w:adjustRightInd across four boundary widths and both left/right cell positions. Scope this Word-only exception to table-cell containers; ordinary body paragraphs retain the ECMA-376 §17.3.1.1 adjustment."
+}), W({
+	id: "word-snap-to-chars-east-asian-cell-fit",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "snap-to-chars-east-asian-cell-fit-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "For snapToChars, Word centers each East-Asian grapheme independently in the smallest whole number of character-pitch units that contains its natural advance. A grapheme that fits uses the one-unit placement described by [MS-OI29500] §2.1.534; an undersized authored pitch expands only that grapheme to additional units."
+}), W({
+	id: "word-snap-to-chars-script-block-allocation",
+	evidence: {
+		kind: "microsoft-note",
+		reference: "[MS-OI29500] §2.1.534"
+	},
+	description: "Allocate snapToChars Latin text in contiguous blocks centered across the required grid units, complex-script blocks from their leading edge, and East-Asian graphemes independently by character cell."
+});
+function yo(e, t) {
+	return !(t > 0) || !Number.isFinite(e) ? 1 : Math.max(1, Math.ceil(Math.max(0, e) / t - 1e-9));
+}
+function bo(e) {
+	return !e;
+}
+W({
+	id: "word-grid-right-indent-pitch-alignment",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "grid-right-indent-character-pitch-boundary-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "For body paragraphs whose ECMA-376 §17.3.1.1 adjustment is enabled on a linesAndChars character grid, Word reduces the physical line width to the greatest whole character-pitch multiple not exceeding the available width. The observed matrix covers exact and non-exact widths, zero and negative charSpace, explicit opt-out, line-only control, both physical indent sides, and the separately registered table-cell exception."
+});
+function xo(e, t) {
+	if (!(t > 0) || !Number.isFinite(e) || e <= 0) return 0;
+	let n = (e % t + t) % t, r = 1e-9;
+	return n <= r || t - n <= r ? 0 : n;
+}
+W({
+	id: "word-hanging-tab-same-position-precedence",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "hanging-indent-authored-tab-collision-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "When the implicit tab created by a hanging indent shares its coordinate with an authored center, end, or start stop, Word resolves one advancing stop at that coordinate using the authored alignment. An authored bar remains an independent drawing rule, so the implicit advancing stop survives beside it. If center/end alignment would place following text before the current pen, the tab contributes zero advance."
+});
+function So(e) {
+	return e !== "bar" && e !== "clear";
+}
+W({
+	id: "word-rtl-decimal-tab-physical-alignment",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "rtl-decimal-tab-run-boundary-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "For LTR numeric cells embedded in a bidi paragraph, Word aligns the physical left edge of the first halfwidth period to the decimal stop across source-run boundaries. When no period exists, it aligns the numeric cell's physical right edge to the stop."
+}), W({
+	id: "word-decimal-tab-separator-resolution",
+	evidence: {
+		kind: "microsoft-note",
+		reference: "[MS-OI29500] §2.1.556"
+	},
+	description: "Use the first explicit halfwidth period as the decimal-tab alignment point; when absent, use the implicit separator after the final digit of the first Unicode decimal-number sequence."
+}), W({
 	id: "word-use-fe-layout-inherited-grid-minimum",
 	evidence: {
 		kind: "office-observation",
@@ -3790,7 +3871,7 @@ G({
 		platform: "macOS 26.5.2"
 	},
 	description: "With useFELayout enabled, a visible Latin line with a resolved eastAsia font axis participates in Far East grid metrics even when w:rFonts@hint is absent; inherited automatic spacing keeps the larger of its whole-cell design allocation and one grid pitch multiplied by the inherited spacing value."
-}), G({
+}), W({
 	id: "word-use-fe-layout-empty-mark-grid-allocation",
 	evidence: {
 		kind: "office-observation",
@@ -3801,32 +3882,32 @@ G({
 	},
 	description: "With useFELayout enabled, a content-less paragraph mark participates in Far East whole-cell document-grid allocation even when the document contains no literal East Asian text. Its face-specific Far East design height governs the cell count; exact spacing and snapToGrid=false remain the document-grid overrides named by ECMA-376 §17.6.5. Observed Word output gives signed atLeast spacing a discontinuous boundary on an active grid: negative values use their absolute magnitude as the mark advance, zero keeps the ordinary atLeast-zero advance regardless of inheritance source, and positive values retain whole-cell allocation."
 });
-function vo(e) {
+function Co(e) {
 	let { ordinaryAdvancePx: t, allocatedGridAdvancePx: n, atLeastZeroAdvancePx: r, lineSpacing: i, gridAllocationActive: a, scale: o } = e;
 	return a ? i?.rule === "atLeast" && i.value < 0 ? Math.abs(i.value) * o : i?.rule === "atLeast" && i.value === 0 ? r : i?.rule === "exact" ? t : Math.max(t, n) : t;
 }
-G({
+W({
 	id: "word-contiguous-underline-geometry",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/paragraph.test.ts#uses one safe baseline for a solid underline spanning adjacent source runs"
 	},
 	description: "Adjacent compatible underlined source runs share one safe baseline and continuous authored cadence while style, color, and thickness boundaries remain distinct."
-}), G({
+}), W({
 	id: "word-grid-at-least-tall-line-unsnapped",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/line-box-height.test.ts#does not round tall East Asian content up to an additional grid cell"
 	},
 	description: "An explicitly authored atLeast line on an active document grid keeps the maximum of its natural height, authored minimum, and one pitch instead of rounding tall content to another whole cell."
-}), G({
+}), W({
 	id: "word-degenerate-line-spacing-single",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-DOC] §2.9.146"
 	},
 	description: "Preserve a non-collapsing single-line fallback for exact or automatic line spacing at or below zero, consistent with the native LSPD representation."
-}), G({
+}), W({
 	id: "word-auto-multiple-baseline-pin",
 	evidence: {
 		kind: "office-observation",
@@ -3836,42 +3917,42 @@ G({
 		platform: "macOS 26.5.2"
 	},
 	description: "Paint a positive automatic line-spacing multiplier with its glyph baseline pinned inside the single design line, placing extra leading or compressed overflow toward block-end; this is draw-only and does not replace the centered trailing-mark pagination metric."
-}), G({
+}), W({
 	id: "word-mixed-anchor-visible-line-metrics",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/anchor-host-metrics.test.ts#reserves host line height without using its zero-ink box for a visible run baseline"
 	},
 	description: "A zero-ink drawing anchor host reserves its line and grid height while visible neighboring glyphs retain their own ascent, descent, and design-line baseline."
-}), G({
+}), W({
 	id: "word-justification-leading-indent-exclusion",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/text-distribute.test.ts#forwards (segs, slack, firstContentSi, lastDrawnSi) positionally"
 	},
 	description: "Keep leading whitespace used as a first-line text indent fixed while distributing justified-line slack across content in a left-to-right line."
-}), G({
+}), W({
 	id: "word-justified-candidate-separator-fit",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/justify-shrink-overshoot.test.ts#counts a candidate trailing space when the prospective line will justify"
 	},
 	description: "On a full paragraph-width line that will be fully justified, include the candidate word separator in its wrap-fit width; lines narrowed by DrawingML wrap exclusions retain collapsible line-end separator fit behavior."
-}), G({
+}), W({
 	id: "word-overflow-punctuation-language-sets",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OE376] §2.1.56"
 	},
 	description: "Apply the language-specific punctuation sets documented for Word in [MS-OE376] §2.1.56, and let overflowPunct override kinsoku when both rules affect the same character."
-}), G({
+}), W({
 	id: "word-full-width-character-spacing-scope",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OE376] §2.1.562"
 	},
 	description: "Interpret ST_CharacterSpacing as applying whitespace compression to full-width punctuation characters. This rule establishes only which characters are eligible; it does not define a universal compression amount."
-}), G({
+}), W({
 	id: "word-japanese-punctuation-compression-cell",
 	evidence: {
 		kind: "office-observation",
@@ -3880,8 +3961,8 @@ G({
 		version: "16.111.1",
 		platform: "macOS 26.5.2"
 	},
-	description: "In the observed Japanese compatibility fixture, compressed full-width punctuation retains at least half of the ideographic cell measured through the selected font route. Tight adjacent glyph ink can require a larger retained extent to prevent collision. This is an Office-observed compression amount, not a normative interpretation of ST_CharacterSpacing."
-}), G({
+	description: "In the observed Japanese compatibility matrix, 、。 ，． and the closing forms 」』】）］｝ on a full ideographic-cell advance retain at least half of that cell. U+3017 and full-width !/? remain full-cell. A fontTable w:pitch value classifies the authored face for font selection; it is not a switch for document-level characterSpacingControl. Punctuation that the selected face already exposes on a smaller proportional advance is retained as measured rather than compressed a second time. Tight adjacent glyph ink can require a larger retained extent to prevent collision. This is an Office-observed compression amount, not a normative interpretation of ST_CharacterSpacing."
+}), W({
 	id: "word-authored-character-spacing-pitch-priority",
 	evidence: {
 		kind: "office-observation",
@@ -3891,7 +3972,58 @@ G({
 		platform: "macOS 26.5.2"
 	},
 	description: "When a run authors a positive w:spacing character pitch, Word preserves that expanded pitch instead of additionally applying the document-level punctuation whitespace compression. Omitted, zero, or overlapping run spacing leaves characterSpacingControl active."
-}), G({
+}), W({
+	id: "word-source-run-space-sequence",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "source-run-space-sequence-wrap-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "At a source-run boundary, Word keeps a space-only continuation attached when the preceding run already ends in a space. A single leading space in a distinct run without a preceding space remains a break opportunity. This isolates source-boundary compatibility from the ordinary UAX #14 LB7 handling within one authored run."
+}), W({
+	id: "word-consecutive-space-natural-advance",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "consecutive-space-wrap-grid-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "When visible text follows two or more authored consecutive spaces, Word preserves the sequence at natural advance instead of using it as Knuth-Plass inter-word shrink capacity. The result is invariant across linesAndChars with negative/zero charSpace and a line-only grid; source-run boundaries remain governed separately by the source-space-sequence rule."
+}), W({
+	id: "word-balanced-consecutive-space-cell",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "single-double-byte-width-space-grid-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "With ECMA-376 §17.15.3.3 balanceSingleByteDoubleByteWidth enabled, Word retains one ordinary inter-word U+0020 at its proportional natural advance, while a sequence of two or more authored U+0020 spaces advances each space by half of the selected East-Asian ideographic cell. The observed matrix covers one, two, four, and eight spaces; same-run and source-run boundaries; proportional and fixed-pitch faces; linesAndChars with negative/zero charSpace; and a line-only grid."
+});
+function wo(e) {
+	return Number.isInteger(e) && e >= 2;
+}
+function To(e) {
+	return e !== "snapToChars";
+}
+W({
+	id: "word-balanced-lines-and-chars-grid-delta",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "single-double-byte-width-grid-observation-matrix",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "With balanceSingleByteDoubleByteWidth enabled on linesAndChars, Word applies half of the authored charSpace delta to ASCII SBCS text and to U+0020/U+3000 space characters, while applying the full delta to CJK ideographs and full-width ASCII forms. The Word-output evidence covers ASCII digits, letters, punctuation, spaces, CJK, full-width ASCII, mixed text, proportional/fixed-pitch faces, negative/zero/positive charSpace, and line-only controls. Non-ASCII high-ANSI and complex-script text are outside the observed matrix and retain the preexisting grid behavior."
+});
+function Eo(e, t) {
+	if (t !== "complexScript") return e.length > 0 && [...e].every((e) => e === " " || e === "　") ? .5 : t === "eastAsia" ? 1 : [...e].every((e) => (e.codePointAt(0) ?? 128) <= 127) ? .5 : void 0;
+}
+W({
 	id: "word-ms-mincho-empty-east-asian-mark-height",
 	evidence: {
 		kind: "office-observation",
@@ -3902,84 +4034,87 @@ G({
 	},
 	description: "In the observed compatibility fixture, an empty 12-point East-Asian paragraph mark routed to MS Mincho occupies a 15.6-point single-line box. Scope this 1.3-em floor to empty East-Asian paragraph marks; ordinary MS Mincho text lines and Latin marks retain their independently measured metrics."
 });
-function yo(e) {
-	let t = Math.max(0, e.punctuationAdvancePt);
-	return Math.min(t, Math.max(0, e.punctuationInkEndPt, e.ideographicCellAdvancePt / 2));
+function Do(e) {
+	let t = Math.max(0, e.punctuationAdvancePt), n = Math.max(0, e.ideographicCellAdvancePt);
+	return t < n ? t : Math.min(t, Math.max(0, e.punctuationInkEndPt, n / 2));
 }
-function bo(e) {
+function Oo(e) {
 	return e === void 0 || e <= 0;
 }
-var xo = {
+function ko(e, t) {
+	return e.endsWith(" ") && t.startsWith(" ");
+}
+var Ao = {
 	ja: new Set([...",.’”、。」』】），．］｝｡､"]),
 	zhHans: new Set([..."!%),.:;>?]}¢°·ˇ’”‰′″℃∶、。〃〉》」』】〗〕〞﹚﹜﹞！＂％＇），．：；？］｝￠"]),
 	zhHant: new Set([..."!),.:;?]}’”′、。〉》」』】〕〞﹚﹜﹞！），．：；？］｝"]),
 	ko: new Set([..."!%),.:;?]}¢°’”′″℃〉》」』】〕！％），．：；？］｝￠"])
-}, So = new Set([
-	...xo.ja,
-	...xo.zhHans,
-	...xo.zhHant,
-	...xo.ko
+}, jo = new Set([
+	...Ao.ja,
+	...Ao.zhHans,
+	...Ao.zhHant,
+	...Ao.ko
 ]);
-function Co(e, t) {
+function Mo(e, t) {
 	let n = t?.toLowerCase();
-	return n?.startsWith("ja") ? xo.ja.has(e) : n?.startsWith("ko") ? xo.ko.has(e) : n?.startsWith("zh") ? (/(?:^|-)(?:tw|hk|mo)(?:-|$)|hant/u.test(n) ? xo.zhHant : xo.zhHans).has(e) : So.has(e);
+	return n?.startsWith("ja") ? Ao.ja.has(e) : n?.startsWith("ko") ? Ao.ko.has(e) : n?.startsWith("zh") ? (/(?:^|-)(?:tw|hk|mo)(?:-|$)|hant/u.test(n) ? Ao.zhHant : Ao.zhHans).has(e) : jo.has(e);
 }
-function wo(e) {
+function No(e) {
 	return e.lineWillJustify && e.wrapNarrowed !== !0 ? e.widthPx : e.widthPx - e.trailingSpacePx;
 }
-function To(e) {
+function Po(e) {
 	return e.resolvedMeasurementRouteCount === 1 ? e.biasBudgetPx : 0;
 }
-G({
+W({
 	id: "word-ruby-paragraph-uniform-line-advance",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/paragraph-measure.test.ts#uses one uniform snapped advance for every line in a ruby paragraph"
 	},
 	description: "Every line in a ruby-bearing paragraph uses the paragraph-wide maximum snapped line advance so its baseline rhythm remains uniform."
-}), G({
+}), W({
 	id: "word-fit-text-inter-character-expansion",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/fit-text.test.ts#distributes (val − Σnatural)/(n−1) as the inter-character gap, no trailing gap"
 	},
 	description: "Expand a multi-character fitText region to its authored width by distributing the residual evenly across interior character gaps."
-}), G({
+}), W({
 	id: "word-cjk-both-inter-character-expansion",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/text-distribute.test.ts#§17.18.44: fills a wrapped pure-CJK line via inter-CJK pitch (expansion default)"
 	},
 	description: "Treat inter-CJK boundaries as eligible inter-word gaps when expanding a non-final both-justified line that contains no spaces."
-}), G({
+}), W({
 	id: "word-thai-distribute-cluster-policy",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/thai-distribute.test.ts#fills non-final lines to the right margin under thaiDistribute"
 	},
 	description: "Expand non-final thaiDistribute lines at Thai grapheme-cluster boundaries while retaining a natural-width final line."
-}), G({
+}), W({
 	id: "word-numeric-decimal-tab-inference",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/decimal-tab-autoalign.test.ts#right-aligns numbers of different digit counts at the decimal tab"
 	},
 	description: "Right-align an otherwise tab-less numeric paragraph at its leading decimal tab while leaving non-numeric and no-decimal-tab paragraphs unchanged."
-}), G({
+}), W({
 	id: "word-numbering-marker-overflow-tab-advance",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/numbered-marker-tab-advance.test.ts#advances the body past the marker to the next tab stop, not onto indentLeft"
 	},
 	description: "When a numbering marker overruns its hanging-indent budget, advance the body to the next reachable tab stop beyond the marker edge."
-}), G({
+}), W({
 	id: "word-numbering-suffix-coincident-list-tab",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/numbering-marker.test.ts#keeps a suffix tab on the list stop coincident with the marker end"
 	},
 	description: "For the tab synthesized by a numbering suffix, accept an authored numeric list tab coincident with the shaped marker end instead of advancing to the next automatic tab stop."
-}), G({
+}), W({
 	id: "word-numbering-marker-paragraph-mark-fallback",
 	evidence: {
 		kind: "office-observation",
@@ -3990,45 +4125,45 @@ G({
 	},
 	description: "When numbering-level rPr omits a marker formatting axis, Word takes that axis from the effective paragraph-mark rPr rather than a content run. A numbering-level concrete value or explicit auto remains authoritative, and body and text-box stories use the same cascade."
 });
-function Eo(e, t) {
+function Fo(e, t) {
 	return t.alignment === "num" && Math.abs(t.pos - e) <= 1e-6;
 }
-G({
+W({
 	id: "word-tab-stop-page-edge-clamp",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/rtl-tab-stops.test.ts#pins a page number to the left text margin when the stop is past it"
 	},
 	description: "Clamp content assigned to a tab stop beyond the trailing text edge back onto that edge instead of placing ink outside the page content band."
-}), G({
+}), W({
 	id: "word-dictionary-sea-natural-fit",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/sea-justified-fit.test.ts#Rule 1: wraps the paragraph-final Thai word on a thaiDistribute closing line (zero space-shrink)"
 	},
 	description: "Do not admit a dictionary Southeast-Asian word by compressing preceding inter-word spaces when its natural advance exceeds the remaining line width."
-}), G({
+}), W({
 	id: "word-dictionary-sea-atomic-chunk",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/sea-justified-fit.test.ts#Rule 2: a no-space chunk that fits a full line moves whole instead of splitting"
 	},
 	description: "Move a glued dictionary Southeast-Asian chunk to a fresh line whole when it fits that full line, using dictionary breaks only when the chunk itself is overlong."
-}), G({
+}), W({
 	id: "word-overlong-token-emergency-break",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/run-inline-formatting.test.ts#breaks a no-space token wider than the line at the character level"
 	},
 	description: "Emergency-break a non-CJK token that is wider than an empty line at grapheme-safe character boundaries so it remains inside the content band."
-}), G({
+}), W({
 	id: "word-run-vertical-align-baseline-shift",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/run-char-metrics-render.test.ts#w:vertAlign raises superscript, lowers subscript, and leaves ordinary baselines unchanged"
 	},
 	description: "Retain the established run-level baseline displacement for vertically aligned text: superscript rises by 0.35 of its authored font size and subscript falls by 0.15, while the separately authored w:position remains additive."
-}), G({
+}), W({
 	id: "word-uniform-run-position-leading",
 	evidence: {
 		kind: "office-observation",
@@ -4039,62 +4174,62 @@ G({
 	},
 	description: "When every metric-bearing item on a line has the same non-zero w:position, Word preserves the enlarged line extent but shares the resulting surplus above and below the glyphs. A line containing a differently-positioned item retains the full relative displacement."
 });
-function Do(e, t) {
+function Io(e, t) {
 	return t === 0 ? e : e - t / 2;
 }
-function Oo(e, t) {
+function Lo(e, t) {
 	return e === "super" ? t * .35 : e === "sub" ? -t * .15 : 0;
 }
-var ko = 1.3;
-function Ao(e, t, n) {
+var Ro = 1.3;
+function zo(e, t, n) {
 	if (!n || !e) return 0;
 	let r = e.trim().toLowerCase();
-	return r === "ms mincho" || r === "ｍｓ 明朝" ? t * ko : 0;
+	return r === "ms mincho" || r === "ｍｓ 明朝" ? t * Ro : 0;
 }
-function jo(e, t) {
+function Bo(e, t) {
 	return t > 0 ? Math.max(1, Math.ceil(e / t)) : 1;
 }
-function Mo(e, t) {
-	return e > 0 ? e : t * ko;
+function Vo(e, t) {
+	return e > 0 ? e : t * Ro;
 }
-function No(e, t, n) {
+function Ho(e, t, n) {
 	return Math.max(e, t * n);
 }
-function Po(e, t, n) {
+function Uo(e, t, n) {
 	return Math.max(e, t, n);
 }
-function Fo(e, t) {
+function Wo(e, t) {
 	return (e === "exact" || e === "auto") && t <= 0;
 }
-G({
+W({
 	id: "word-neutral-script-attachment",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/compatibility.test.ts#keeps neutral characters attached to the active script slice"
 	},
 	description: "Weak and neutral non-letter characters stay with the active complex-script slice instead of opening additional formatting segments."
-}), G({
+}), W({
 	id: "word-rtl-run-ambiguous-class-override",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/bidi-line.test.ts#keeps LTR word order for English text in rtl-marked runs"
 	},
 	description: "Model an rtl-marked run as a higher-level UAX #9 override for punctuation and symbols only, leaving whitespace and strong letters at their ordinary classes."
-}), G({
+}), W({
 	id: "word-rtl-complex-script-european-digits-an",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/bidi-line.test.ts#orders an AN-classified date as 2026-02-28"
 	},
 	description: "Classify European digits as Arabic Number within an Arabic or Hebrew complex-script run so UAX #9 preserves the compatible visual ordering of digit groups and separators."
-}), G({
+}), W({
 	id: "word-kashida-final-form-priority",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/kashida-priority.test.ts#uses the BaRa join (Beh->Yeh) over the final-letter join in بين"
 	},
 	description: "Apply the measured kashida final-letter priority classes only at a word-final following letter instead of copying the broader Qt final-form conditions."
-}), G({
+}), W({
 	id: "word-vertical-tu-corner-placement",
 	evidence: {
 		kind: "regression-test",
@@ -4102,26 +4237,26 @@ G({
 	},
 	description: "Keep a substituted vertical Tu comma or full stop at the font-designed upper-right cell position rather than ink-centering it geometrically."
 });
-var Io = /[\p{P}\p{S}]/u;
-function Lo(e) {
-	return Io.test(e);
+var Go = /[\p{P}\p{S}]/u;
+function Ko(e) {
+	return Go.test(e);
 }
-function Ro(e, t) {
+function qo(e, t) {
 	return e === t;
 }
-function zo(e) {
+function Jo(e) {
 	return e !== null;
 }
 //#endregion
 //#region packages/docx/src/line-layout.ts
-function Bo(e, t, n, r, i, a = {}) {
+function Yo(e, t, n, r, i, a = {}) {
 	if (t != null) return t * n;
 	if (!r?.ruby || !i) throw Error(`Ruby at ${e}pt without hpsRaise requires retained base and guide ink`);
 	if (r.textLayoutService && r.textShapeRequest) {
 		let e = r.textLayoutService.shape({
 			...r.textShapeRequest,
 			text: r.text,
-			fontSizePt: ii(r, n),
+			fontSizePt: ai(r, n),
 			measure: !0,
 			clusterGeometry: !1
 		}), t = r.textLayoutService.shape({
@@ -4135,9 +4270,9 @@ function Bo(e, t, n, r, i, a = {}) {
 	}
 	let o = i.font;
 	try {
-		i.font = $o(r.bold, r.italic, ii(r, n), r.fontFamily, a, r.fontRoute);
+		i.font = cs(r.bold, r.italic, ai(r, n), r.fontFamily, a, r.fontRoute);
 		let t = i.measureText(r.text);
-		i.font = $o(r.bold, r.italic, e * n, r.fontFamily, a, r.fontRoute);
+		i.font = cs(r.bold, r.italic, e * n, r.fontFamily, a, r.fontRoute);
 		let o = i.measureText(r.ruby.text);
 		if (Number.isFinite(t.actualBoundingBoxAscent) && Number.isFinite(o.actualBoundingBoxDescent)) return t.actualBoundingBoxAscent + o.actualBoundingBoxDescent;
 	} finally {
@@ -4145,7 +4280,7 @@ function Bo(e, t, n, r, i, a = {}) {
 	}
 	throw Error("Ruby without hpsRaise requires retained base and guide ink");
 }
-var Vo = new Set([
+var Xo = new Set([
 	"sakkal majalla",
 	"traditional arabic",
 	"simplified arabic",
@@ -4153,156 +4288,169 @@ var Vo = new Set([
 	"univers next arabic",
 	"noto naskh arabic",
 	"noto sans arabic"
-]), Ho = new Set([
+]), Zo = new Set([
 	"sakkal majalla",
 	"traditional arabic",
 	"simplified arabic",
 	"arabic typesetting",
 	"noto naskh arabic"
 ]);
-function Uo(e) {
-	return Vo.has(e.toLowerCase());
+function Qo(e) {
+	return Xo.has(e.toLowerCase());
 }
-function Wo(e) {
+function $o(e) {
 	return e.map((e) => `"${e}"`).join(", ");
 }
-var Go = ["Noto Naskh Arabic", "Noto Sans Arabic"];
-function Ko(e) {
-	let t = e && e !== "jp" ? I(e, "sans") : [
+var es = ["Noto Naskh Arabic", "Noto Sans Arabic"];
+function ts(e) {
+	let t = e && e !== "jp" ? F(e, "sans") : [
 		"Noto Sans JP",
 		"Hiragino Sans",
 		"Meiryo",
-		...I("jp", "sans").slice(1)
+		...F("jp", "sans").slice(1)
 	];
-	return e == null ? `${Wo([
+	return e == null ? `${$o([
 		...le,
 		"Arial",
 		"Helvetica",
 		"Liberation Sans",
 		...t,
-		...Go
-	])}, sans-serif` : `${Wo([
+		...es
+	])}, sans-serif` : `${$o([
 		...t,
-		...Go,
+		...es,
 		...le
 	])}, sans-serif`;
 }
-function qo(e) {
-	let t = e && e !== "jp" ? I(e, "serif") : [
+function ns(e) {
+	let t = e && e !== "jp" ? F(e, "serif") : [
 		"Yu Mincho",
 		"YuMincho",
 		"Hiragino Mincho ProN",
 		"MS Mincho",
 		"Noto Serif JP",
-		...I("jp", "serif").slice(1)
+		...F("jp", "serif").slice(1)
 	];
-	return e == null ? `${Wo([
+	return e == null ? `${$o([
 		...me,
 		"Times New Roman",
 		"Cambria",
 		"Liberation Serif",
 		...t,
-		...Go
-	])}, serif` : `${Wo([
+		...es
+	])}, serif` : `${$o([
 		...t,
-		...Go,
+		...es,
 		...me
 	])}, serif`;
 }
-var Jo = /* @__PURE__ */ new WeakMap(), Yo = /* @__PURE__ */ new WeakMap();
-function Xo(e, t) {
+var rs = /* @__PURE__ */ new WeakMap(), is = /* @__PURE__ */ new WeakMap();
+function as(e, t) {
 	let n = e ?? {};
-	return t && Object.keys(t).length > 0 && Yo.set(n, t), n;
+	return t && Object.keys(t).length > 0 && is.set(n, t), n;
 }
-function Zo(e, t = {}) {
-	let n = Jo.get(t) ?? (() => {
+function os(e, t = {}) {
+	let n = rs.get(t) ?? (() => {
 		let e = /* @__PURE__ */ new Map();
-		return Jo.set(t, e), e;
+		return rs.set(t, e), e;
 	})(), r = e ?? "\0null", i = n.get(r);
 	if (i !== void 0) return i;
-	let a = Qo(e, t, Yo.get(t));
+	let a = ss(e, t, is.get(t));
 	return n.set(r, a), a;
 }
-function Qo(e, t, n = {}) {
-	if (!e) return Ko(null);
+function ss(e, t, n = {}) {
+	if (!e) return ts(null);
 	let r = `"${((e) => e.replace(/"/g, "\\\""))(e)}"`, i = e.toLowerCase(), a = _e(e);
-	if (Uo(e)) return Ho.has(i) ? `${r}, "Noto Naskh Arabic", "Noto Sans Arabic", "Noto Serif", "Noto Sans JP", "Hiragino Sans", serif` : `${r}, "Noto Sans Arabic", "Noto Naskh Arabic", "Noto Sans JP", "Hiragino Sans", sans-serif`;
+	if (Qo(e)) return Zo.has(i) ? `${r}, "Noto Naskh Arabic", "Noto Sans Arabic", "Noto Serif", "Noto Sans JP", "Hiragino Sans", serif` : `${r}, "Noto Sans Arabic", "Noto Naskh Arabic", "Noto Sans JP", "Hiragino Sans", sans-serif`;
 	let o = t[e];
 	if (o && o !== "auto") switch (o) {
-		case "roman": return `${r}, ${qo(a)}`;
-		case "swiss": return `${r}, ${Ko(a)}`;
+		case "roman": return `${r}, ${ns(a)}`;
+		case "swiss": return `${r}, ${ts(a)}`;
 		case "modern":
-			if (n[e] === "fixed") return a == null ? `${r}, "Courier New", monospace` : `${r}, ${Wo([...a === "jp" ? [
+			if (n[e] === "fixed") return a == null ? `${r}, "Courier New", monospace` : `${r}, ${$o([...a === "jp" ? [
 				"Yu Gothic",
 				"YuGothic",
 				"Hiragino Sans",
 				"Meiryo",
 				"Noto Sans JP"
-			] : I(a, "sans"), "Courier New"])}, monospace`;
+			] : F(a, "sans"), "Courier New"])}, monospace`;
 			break;
 		default: break;
 	}
 	let s = j(e);
-	if (s === "serif") return `${r}, ${qo(a)}`;
+	if (s === "serif") return `${r}, ${ns(a)}`;
 	if (s === "mono") return `${r}, "Courier New", monospace`;
 	if (a == null || a === "jp") {
-		if (i.includes("meiryo") || e.includes("メイリオ")) return `${r}, "Meiryo UI", "Meiryo", ${Ko(a)}`;
-		if (e.includes("游ゴシック") || /\byu\s*gothic\b/i.test(e) || i.includes("yugothic")) return `${r}, "Yu Gothic", "YuGothic", ${Ko(a)}`;
-		if (i.includes("ipa")) return `${r}, "IPAexGothic", ${Ko(a)}`;
-		if (i.includes("segoe")) return `${r}, "Segoe UI", ${Wo([...Go, ...le])}, sans-serif`;
+		if (i.includes("meiryo") || e.includes("メイリオ")) return `${r}, "Meiryo UI", "Meiryo", ${ts(a)}`;
+		if (e.includes("游ゴシック") || /\byu\s*gothic\b/i.test(e) || i.includes("yugothic")) return `${r}, "Yu Gothic", "YuGothic", ${ts(a)}`;
+		if (i.includes("ipa")) return `${r}, "IPAexGothic", ${ts(a)}`;
+		if (i.includes("segoe")) return `${r}, "Segoe UI", ${$o([...es, ...le])}, sans-serif`;
 	}
-	return `${r}, ${Ko(a)}`;
+	return `${r}, ${ts(a)}`;
 }
-function $o(e, t, n, r, i = {}, a) {
-	return a ? Re(a, n, e ? 700 : 400, t ? "italic" : "normal") : `${t ? "italic" : "normal"} ${e ? "bold" : "normal"} ${n}px ${Zo(r, i)}`;
+function cs(e, t, n, r, i = {}, a) {
+	return a ? ze(a, n, e ? 700 : 400, t ? "italic" : "normal") : `${t ? "italic" : "normal"} ${e ? "bold" : "normal"} ${n}px ${os(r, i)}`;
 }
-function es(e, t, n = !1) {
+function ls(e, t, n = !1) {
 	return Math.max(se(e.fontFamily, t, n), (e.resolvedLineHeightRatio ?? 0) * t);
 }
-function ts(e, t, n = !1) {
+function us(e, t, n = !1) {
 	return Math.max(se(e.eaFloorFamily, t, n), (e.resolvedEaFloorLineHeightRatio ?? 0) * t);
 }
-function ns(e) {
+function ds(e) {
 	for (let t of e.runs) if (t.type === "text" || t.type === "field") return t.fontSize;
 	return typeof e.defaultFontSize == "number" ? e.defaultFontSize : 10;
 }
-function rs(e, t = !1) {
+function fs(e, t = !1) {
 	for (let t of e.runs) if (t.type === "text" || t.type === "field") return t.fontFamily;
 	return t && e.defaultFontFamilyEastAsia ? e.defaultFontFamilyEastAsia : e.defaultFontFamily ?? null;
 }
-function is(e, t, n) {
-	return se(rs(e, n), ns(e) * t, n);
+function ps(e, t, n) {
+	return se(fs(e, n), ds(e) * t, n);
 }
-function as(e) {
+function ms(e, t) {
+	return !e || e.charSpacePt == null || e.type !== "linesAndChars" && e.type !== "snapToChars" ? 0 : e.charSpacePt * t;
+}
+function hs(e) {
 	let t = 0;
-	for (let n of e) ai.test(n) && t++;
+	for (let n of e) oi.test(n) && t++;
 	return t;
 }
-function os(e, t) {
-	if (t === 0 || e.length === 0) return 0;
-	let n = [...e];
-	return as(e) === n.length ? n.length * t : 0;
+function gs(e, t, n) {
+	let r = ms(t, n);
+	if (r === 0 || e.length === 0) return 0;
+	let i = [...e];
+	return t?.type === "linesAndChars" || hs(e) === i.length ? i.length * r : 0;
 }
-function ss(e, t) {
-	return e.snapToCharacterGrid === !1 ? 0 : t;
+function _s(e, t, n) {
+	return e.snapToCharacterGrid === !1 || t?.type === "snapToChars" ? 0 : t?.type === "linesAndChars" && e.widthBalanceGridDeltaFactor !== void 0 ? ms(t, n) * e.widthBalanceGridDeltaFactor : gs(e.text, t, n) === 0 ? 0 : ms(t, n);
 }
-function cs(e, t) {
-	return e.fitTextPerGapPx === void 0 ? ls(e) * t : e.fitTextPerGapPx;
+function vs(e, t) {
+	return e.fitTextPerGapPx === void 0 ? ys(e) * t : e.fitTextPerGapPx;
 }
-function ls(e) {
+function ys(e) {
 	return e.charSpacing ?? 0;
 }
-function us(e) {
+function bs(e) {
 	return e.punctuationCompressions?.reduce((e, t) => e + t.adjustmentPt, 0) ?? 0;
 }
-function ds(e, t, n) {
+function xs(e, t) {
+	return Ss(e, e.text, t);
+}
+function Ss(e, t, n) {
+	if (e.fitTextPerGapPx !== void 0 || e.tateChuYoko || !To(n?.type) || !e.widthBalanceSpaceSequence || e.widthBalanceSpaceAdjustmentPt === void 0) return 0;
+	let r = 0;
+	for (let e of t) e === " " && (r += 1);
+	return r * e.widthBalanceSpaceAdjustmentPt;
+}
+function q(e, t, n) {
 	let r = e.punctuationCompressions?.filter((e) => e.end > t && e.end <= n).map((e) => Object.freeze({
 		end: e.end - t,
 		adjustmentPt: e.adjustmentPt
 	}));
 	return r && r.length > 0 ? Object.freeze(r) : void 0;
 }
-function fs(e, t) {
+function Cs(e, t) {
 	if (!e.textLayoutService || !e.textShapeRequest || t.length === 0) return;
 	let n = e.textLayoutService.shape({
 		...e.textShapeRequest,
@@ -4318,7 +4466,7 @@ function fs(e, t) {
 		xMaxPt: n.inkBounds.xMaxPt * r
 	};
 }
-function ps(e) {
+function ws(e) {
 	if (!e.textLayoutService || !e.textShapeRequest || e.text.length === 0) return;
 	let t = e.textLayoutService.shape({
 		...e.textShapeRequest,
@@ -4334,14 +4482,14 @@ function ps(e) {
 	}
 	return r;
 }
-function ms(e) {
+function Ts(e) {
 	let t, n = /* @__PURE__ */ new Map();
 	for (let r of e) {
 		if (!("text" in r) || r.verticalRun) {
 			t = void 0;
 			continue;
 		}
-		let e = r, i = e.punctuationCompressions ?? [], a = new Map(i.map((e, t) => [e.end, t])), o = i.length > 0 ? ps(e) : void 0, s = [
+		let e = r, i = e.punctuationCompressions ?? [], a = new Map(i.map((e, t) => [e.end, t])), o = i.length > 0 ? ws(e) : void 0, s = [
 			0,
 			...T(e.text),
 			e.text.length
@@ -4349,7 +4497,7 @@ function ms(e) {
 		for (let r = 0; r < s.length - 1; r += 1) {
 			let i = s[r], c = s[r + 1];
 			if (c <= i) continue;
-			let l = a.get(c), u = t || l !== void 0 ? fs(e, e.text.slice(i, c)) : void 0;
+			let l = a.get(c), u = t || l !== void 0 ? Cs(e, e.text.slice(i, c)) : void 0;
 			if (t && u) {
 				let e = n.get(t.segment) ?? t.segment.punctuationCompressions.map((e) => ({ ...e })), r = e[t.compressionIndex], i = Math.max(0, t.ink.advancePt + r.adjustmentPt), a = Math.min(0, i - t.contextualAdvancePt), o = Math.min(0, t.ink.xMaxPt - u.xMinPt - t.contextualAdvancePt), s = Math.max(r.adjustmentPt, a, o);
 				s !== r.adjustmentPt && (e[t.compressionIndex] = {
@@ -4367,38 +4515,47 @@ function ms(e) {
 	}
 	for (let [e, t] of n) e.punctuationCompressions = Object.freeze(t.map((e) => Object.freeze(e)));
 }
-function hs(e) {
+function Es(e) {
 	return e.charScale ?? 1;
 }
-function gs(e, t, n, r, i) {
-	return e * r + os(t, n) + [...t].length * i;
+function Ds(e, t, n, r, i) {
+	return e * r + [...t].length * n + [...t].length * i;
 }
-function _s(e, t, n, r) {
+function Os(e, t, n) {
+	return e.fitTextPerGapPx === void 0 ? _s(e, t, n) + vs(e, n) : e.fitTextPerGapPx;
+}
+function ks(e, t, n, r) {
 	if (e.fitTextPerGapPx !== void 0) {
 		let n = [...e.text].length, r = e.fitTextRegionEnd ? Math.max(0, n - 1) : n;
-		return t * hs(e) + r * e.fitTextPerGapPx + (e.fitTextTrailingPadPx ?? 0);
+		return t * Es(e) + r * e.fitTextPerGapPx + (e.fitTextTrailingPadPx ?? 0);
 	}
 	if (e.tateChuYoko) return e.fontSize * r;
-	let i = ss(e, n);
-	return gs(t, e.text, i, hs(e), cs(e, r)) + us(e) * r;
+	let i = _s(e, n, r);
+	return Ds(t, e.text, i, Es(e), vs(e, r)) + xs(e, n) * r * Es(e) + bs(e) * r;
 }
-function vs(e) {
+function As(e, t) {
+	return t?.type !== "snapToChars" || !t.characterPitchPt || t.characterPitchPt <= 0 || e.snapToCharacterGrid === !1 || e.metricOnly || e.fitTextRegionIndex !== void 0 || e.tateChuYoko ? null : e.script === "eastAsia" ? "eastAsia" : e.script === "complexScript" ? "complexScript" : "latin";
+}
+function js(e, t, n, r = 1) {
+	return !(n > 0) || !Number.isFinite(e) ? e : t === "eastAsia" ? Math.max(1, r) * n : Math.max(1, Math.ceil(Math.max(0, e) / n - 1e-9)) * n;
+}
+function Ms(e) {
 	return !e || !e.linePitchPt || e.linePitchPt <= 0 ? !1 : e.type === "lines" || e.type === "linesAndChars" || e.type === "snapToChars";
 }
-function ys(e, t) {
-	return jo(e, t);
+function Ns(e, t) {
+	return Bo(e, t);
 }
-function bs(e, t) {
-	return Mo(e, t);
+function Ps(e, t) {
+	return Vo(e, t);
 }
-function xs(e, t, n, r, i, a, o = 0, s = !1, c, l) {
-	let u = t + n, d = Math.max(u, o), f = vs(i), p = f ? i.linePitchPt * r : 0, m = () => s ? a ? Math.max(p, Math.ceil(u / p) * p) : ys(c ?? (o > 0 ? o : l === void 0 ? p : bs(0, l)), p) * p : Math.max(u, p), h = e !== null && e.explicit !== !0;
-	if (!e || Fo(e.rule, e.value)) return f ? m() : d;
+function Fs(e, t, n, r, i, a, o = 0, s = !1, c, l) {
+	let u = t + n, d = Math.max(u, o), f = Ms(i), p = f ? i.linePitchPt * r : 0, m = () => s ? a ? Math.max(p, Math.ceil(u / p) * p) : Ns(c ?? (o > 0 ? o : l === void 0 ? p : Ps(0, l)), p) * p : Math.max(u, p), h = e !== null && e.explicit !== !0;
+	if (!e || Wo(e.rule, e.value)) return f ? m() : d;
 	if (e.rule === "auto") {
 		if (f) {
 			if (h) {
 				let t = m();
-				return s ? No(t, p, e.value) : t;
+				return s ? Ho(t, p, e.value) : t;
 			}
 			return Math.max(u, p * e.value);
 		}
@@ -4407,21 +4564,21 @@ function xs(e, t, n, r, i, a, o = 0, s = !1, c, l) {
 	if (e.rule === "exact") return e.value * r;
 	if (e.rule === "atLeast") {
 		let t = f ? a || h ? m() : p : 0;
-		return Po(d, e.value * r, t);
+		return Uo(d, e.value * r, t);
 	}
 	return d;
 }
-function Ss(e, t) {
+function Is(e, t) {
 	return {
 		asc: e * t * .8,
 		desc: e * t * .2
 	};
 }
-function Cs(e, t, n, r, i = !1) {
+function Ls(e, t, n, r, i = !1) {
 	return he(t, r, e.fontBoundingBoxAscent ?? e.actualBoundingBoxAscent ?? n * .8, e.fontBoundingBoxDescent ?? e.actualBoundingBoxDescent ?? n * .2, i);
 }
-function ws(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = !1) {
-	let f = u, p = i || f?.fontHint === "eastAsia", m = f?.complexScript === !0, h = f?.fontSizePt ?? ns(e), g = rs(e, p), _ = g ? c[Jt(g)] : void 0, v = _?.family ?? g, y, b;
+function Rs(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = !1) {
+	let f = u, p = i || f?.fontHint === "eastAsia", m = f?.complexScript === !0, h = f?.fontSizePt ?? ds(e), g = fs(e, p), _ = g ? c[Yt(g)] : void 0, v = _?.family ?? g, y, b;
 	if (l) {
 		let n = f ? f.weight >= 600 : !1, r = f?.style === "italic", i = f?.fonts.ascii ?? e.defaultFontFamily ?? g, a = l.shape({
 			text: p ? "あ" : "x",
@@ -4442,7 +4599,7 @@ function ws(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = 
 			kerning: f?.kerning,
 			measure: !0
 		}), o = a.spans[0]?.font.resolvedFamily ?? g;
-		({ascent: y, descent: b} = Cs({
+		({ascent: y, descent: b} = Ls({
 			width: a.advancePt,
 			actualBoundingBoxAscent: a.ascentPt,
 			actualBoundingBoxDescent: a.descentPt,
@@ -4451,17 +4608,17 @@ function ws(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = 
 		}, o, h * t, h * t, p));
 	} else if (a) {
 		let e = a.font;
-		a.font = $o(!1, !1, h * t, v, o);
+		a.font = cs(!1, !1, h * t, v, o);
 		let n = a.measureText(p ? "あ" : "x");
-		a.font = e, {ascent: y, descent: b} = Cs(n, v, h * t, h * t, p);
-	} else ({asc: y, desc: b} = Ss(h, t));
-	let x = _?.lineHeightRatio == null ? is(e, t, p) : h * t * _.lineHeightRatio, S = Math.max(x, Ao(g, h * t, p)), C = i ? bs(S, h * t) : void 0, w = xs(s, y, b, t, n, r, S, i, C), T = d && i && vs(n), E = T ? xs(null, y, b, t, n, r, S, i, C) : w, D = T ? xs({
+		a.font = e, {ascent: y, descent: b} = Ls(n, v, h * t, h * t, p);
+	} else ({asc: y, desc: b} = Is(h, t));
+	let x = _?.lineHeightRatio == null ? ps(e, t, p) : h * t * _.lineHeightRatio, S = Math.max(x, zo(g, h * t, p)), C = i ? Ps(S, h * t) : void 0, w = Fs(s, y, b, t, n, r, S, i, C), T = d && i && Ms(n), E = T ? Fs(null, y, b, t, n, r, S, i, C) : w, D = T ? Fs({
 		rule: "atLeast",
 		value: 0,
 		explicit: !0
 	}, y, b, t, n, r, S, i, C) : w;
 	return {
-		advancePx: d ? vo({
+		advancePx: d ? Co({
 			ordinaryAdvancePx: w,
 			allocatedGridAdvancePx: E,
 			atLeastZeroAdvancePx: D,
@@ -4473,17 +4630,17 @@ function ws(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = 
 		descentPx: b
 	};
 }
-function Ts(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = !1) {
-	return ws(e, t, n, r, i, a, o, s, c, l, u, d).advancePx;
+function zs(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = !1) {
+	return Rs(e, t, n, r, i, a, o, s, c, l, u, d).advancePx;
 }
-function Es(e, t, n) {
+function Bs(e, t, n) {
 	return Math.max(0, (e - t + n) / 2);
 }
-function Ds(e, t, n, r, i, a, o, s = {}, c, l, u = !1) {
-	let d = ws(e, 1, t, n, r, i, a, o, s, c, l, u);
-	return Es(d.advancePx, d.ascentPx, d.descentPx);
+function Vs(e, t, n, r, i, a, o, s = {}, c, l, u = !1) {
+	let d = Rs(e, 1, t, n, r, i, a, o, s, c, l, u);
+	return Bs(d.advancePx, d.ascentPx, d.descentPx);
 }
-function Os(e) {
+function Hs(e) {
 	let t = [];
 	for (let n of e) {
 		let e = n.toLowerCase() === n && n.toUpperCase() !== n, r = /\s/.test(n) ? t[t.length - 1]?.reduced ?? !1 : e, i = t[t.length - 1];
@@ -4497,7 +4654,7 @@ function Os(e) {
 		reduced: !1
 	}];
 }
-function ks(e, t) {
+function Us(e, t) {
 	for (let n = t - 1; n >= 0; n--) {
 		let t = e[n];
 		if (t.type === "text" || t.type === "field") return t.fontSize;
@@ -4508,23 +4665,23 @@ function ks(e, t) {
 	}
 	return 10;
 }
-function As(e, t) {
-	if (e.fieldType === "page") return xt(t.displayPageNumber ?? t.pageIndex + 1, Bt(e.instruction) ?? t.pageNumberFormat ?? "decimal");
+function Ws(e, t) {
+	if (e.fieldType === "page") return St(t.displayPageNumber ?? t.pageIndex + 1, Vt(e.instruction) ?? t.pageNumberFormat ?? "decimal");
 	if (e.fieldType === "numPages") {
-		let n = Bt(e.instruction) ?? "decimal";
-		return xt(t.totalPages, n);
+		let n = Vt(e.instruction) ?? "decimal";
+		return St(t.totalPages, n);
 	}
 	if (e.fieldType === "date" || e.fieldType === "time") {
-		let n = Kt(e.instruction);
+		let n = qt(e.instruction);
 		if (n) {
-			let e = qt(n, new Date(t.currentDateMs ?? Date.now()));
+			let e = Jt(n, new Date(t.currentDateMs ?? Date.now()));
 			if (e !== null) return e;
 		}
 		return e.fallbackText;
 	}
 	return e.fallbackText;
 }
-function js(e) {
+function Gs(e) {
 	for (let t = 0; t < e.length;) {
 		let n = e.codePointAt(t);
 		if (be(n)) return !0;
@@ -4532,7 +4689,7 @@ function js(e) {
 	}
 	return !1;
 }
-var Ms = new Set([
+var Ks = new Set([
 	"、",
 	"。",
 	"，",
@@ -4540,44 +4697,41 @@ var Ms = new Set([
 	"」",
 	"』",
 	"】",
-	"〗",
 	"）",
 	"］",
-	"｝",
-	"！",
-	"？"
+	"｝"
 ]);
-function Ns(e) {
+function qs(e) {
 	let t = e.codePointAt(0);
 	return t === void 0 ? !1 : t >= 12353 && t <= 12438 || t >= 12445 && t <= 12447 || t >= 12449 && t <= 12538 || t === 12540 || t >= 12541 && t <= 12543 || t >= 12784 && t <= 12799 || t >= 110576 && t <= 110591 || t >= 110592 && t <= 110959;
 }
-function Ps(e, t) {
+function Js(e, t) {
 	switch (t) {
-		case "compressPunctuation": return Ms.has(e);
-		case "compressPunctuationAndJapaneseKana": return Ms.has(e) || Ns(e);
+		case "compressPunctuation": return Ks.has(e);
+		case "compressPunctuationAndJapaneseKana": return Ks.has(e) || qs(e);
 		default: return !1;
 	}
 }
-function Fs(e, t) {
+function Ys(e, t) {
 	if (e === void 0) return;
 	let n = [];
 	for (let r of e) r > t && n.push(r - t);
 	return n;
 }
-function Is(e, t) {
+function Xs(e, t) {
 	if (t <= 0) return t;
 	let n = t;
 	for (; n < e.length && e[n] === "　";) n++;
 	return n;
 }
-function Ls(e, t, n, r = 0, i = 1, a = 0, o = !1, s, c) {
+function Zs(e, t, n, r = 0, i = 1, a = 0, o = !1, s, c) {
 	let l = [...t], u = (t) => c?.(t) ?? (() => {
 		let n = 0;
 		if (o) {
 			if (!s) throw Error("Vertical glyph measurement capability is required for vertical text");
 			n = s.measureRunInkExtra(t);
 		}
-		return gs(e.measureText(t).width + n, t, r, i, a);
+		return Ds(e.measureText(t).width + n, t, r, i, a);
 	})(), d = (e) => {
 		let t = e;
 		for (; t > 0 && l[t - 1] === "　";) t--;
@@ -4590,7 +4744,7 @@ function Ls(e, t, n, r = 0, i = 1, a = 0, o = !1, s, c) {
 	}
 	return l.slice(0, f).join("");
 }
-var Rs = new Set([
+var Qs = new Set([
 	"ar",
 	"fa",
 	"ur",
@@ -4605,14 +4759,14 @@ var Rs = new Set([
 	"syr",
 	"ckb"
 ]);
-function zs(e, t) {
+function $s(e, t) {
 	if (e) {
 		let t = e.split("-")[0].toLowerCase();
-		if (Rs.has(t)) return !0;
+		if (Qs.has(t)) return !0;
 	}
 	return t;
 }
-function Bs(e) {
+function ec(e) {
 	let t = [], n = null, r = "";
 	for (let i of e) {
 		let e = be(i.codePointAt(0));
@@ -4626,7 +4780,7 @@ function Bs(e) {
 		ea: n ?? !1
 	}), t;
 }
-function Vs(e) {
+function tc(e) {
 	let t = (e) => e >= 48 && e <= 57, n = (e) => e === "." || e === "," || e === ":" || e === "/" || e === "\xA0", r = [], i = "", a = null;
 	for (let o = 0; o < e.length; o++) {
 		let s = e[o], c = t(s.charCodeAt(0));
@@ -4634,7 +4788,7 @@ function Vs(e) {
 	}
 	return i.length > 0 && r.push(i), r.length ? r : [e];
 }
-function Hs(e) {
+function nc(e) {
 	let t = [], n = 0;
 	for (; n < e.length;) {
 		let r = n;
@@ -4644,39 +4798,42 @@ function Hs(e) {
 	}
 	return t.length ? t : [e];
 }
-var Us = .25;
-function Ws(e) {
+var rc = .25;
+function ic(e) {
 	let t = e?.defaultTabStop;
 	return t != null && t > 0 ? t : 36;
 }
-function Gs(e) {
-	return e === "center" ? "center" : e === "right" || e === "end" || e === "decimal" ? "trailing" : "leading";
+function ac(e) {
+	return e === "center" ? "center" : e === "decimal" ? "decimal" : e === "right" || e === "end" ? "trailing" : "leading";
 }
-function Ks(e, t, n, r, i) {
-	let a = e.length, o = e.map((e) => e.width), s = Array(a).fill(void 0), c = (t) => {
-		let n = 0;
-		for (let r = t; r < a && !e[r].isTab; r++) n += o[r];
-		return n;
+function oc(e, t, n, r, i) {
+	let a = e.length, o = e.map((e) => e.width), s = Array(a).fill(void 0), c = (t, n) => {
+		let r = 0, i;
+		for (let n = t; n < a && !e[n].isTab; n++) i === void 0 && e[n].decimalOffset !== void 0 && (i = r + e[n].decimalOffset), r += o[n];
+		return {
+			total: r,
+			alignment: n === "center" ? r / 2 : n === "trailing" ? r : n === "decimal" ? i === void 0 ? 0 : r - i : 0
+		};
 	}, l = n;
 	for (let n = 0; n < a; n++) {
 		if (!e[n].isTab) {
 			l += o[n];
 			continue;
 		}
-		let a = si(l, t, i);
+		let a = ci(l, t, i);
 		if (!a) {
 			o[n] = 0;
 			continue;
 		}
-		let u = c(n + 1), d, f = Gs(a.alignment);
-		d = f === "trailing" ? a.pos - u : f === "center" ? a.pos - u / 2 : a.pos, d + u > r && (d = r - u), d < l && (d = l), o[n] = d - l, s[n] = a.leader, l = d;
+		let u = ac(a.alignment), d = c(n + 1, u), f = d.total, p;
+		p = u === "leading" ? a.pos : a.pos - d.alignment, p + f > r && (p = r - f), p < l && (p = l), o[n] = p - l, s[n] = a.leader, l = p;
 	}
 	return e.map((e, t) => ({
 		width: o[t],
 		leader: s[t]
 	}));
 }
-function qs(e, t, n) {
+function sc(e, t, n) {
 	let r = /* @__PURE__ */ new Map();
 	for (let t of e) {
 		if (t.fitTextRegionIndex === void 0) continue;
@@ -4687,8 +4844,8 @@ function qs(e, t, n) {
 		let r = e.find((e) => e.fitTextVal !== void 0);
 		if (!r || r.fitTextVal === void 0) continue;
 		let i = 0, a = 0;
-		for (let t of e) i += n(t) * hs(t), a += [...t.text].length;
-		let o = _i([{
+		for (let t of e) i += n(t) * Es(t), a += [...t.text].length;
+		let o = vi([{
 			fitTextValTwips: r.fitTextVal,
 			charCount: a,
 			naturalWidthPx: i
@@ -4698,15 +4855,15 @@ function qs(e, t, n) {
 		});
 	}
 }
-function Js(e, t) {
+function cc(e, t) {
 	let n = [], i = (e, n = 400, r = "normal") => {
 		if (!e) return;
-		let i = Jt(e), a = t.resolvedLocalFonts;
+		let i = Yt(e), a = t.resolvedLocalFonts;
 		if (!a) return;
 		let o = a[`${i}:${n}:${r}`];
 		if (o) return o;
 		let s = a[i];
-		return n === 400 && r === "normal" && s ? s : Object.values(a).find((e) => Jt(e.requestedFamily ?? "") === i && (e.weight ?? 400) === n && (e.style ?? "normal") === r);
+		return n === 400 && r === "normal" && s ? s : Object.values(a).find((e) => Yt(e.requestedFamily ?? "") === i && (e.weight ?? 400) === n && (e.style ?? "normal") === r);
 	}, a = /* @__PURE__ */ new Map(), o = [];
 	for (let [t, n] of e.entries()) {
 		if (n.type !== "text") {
@@ -4729,11 +4886,11 @@ function Js(e, t) {
 		});
 	}
 	let s = /* @__PURE__ */ new Map();
-	_i(o, 1).forEach((e, t) => {
+	vi(o, 1).forEach((e, t) => {
 		for (let n = e.start; n < e.end; n += 1) s.set(n, t);
 	});
 	let c = (e, r, o, c, l) => {
-		let u = r, d = u.typographyInput, f = (e, t) => e?.status === "valid" && e.value !== null ? e.value : t, p = f(d?.verticalAlign, o ?? void 0) ?? null, m = f(d?.positionPt, u.position), h = d?.characterSpacingPt ?? u.charSpacing, g = bo(h), _ = d?.characterScale ?? u.charScale, v = d?.kerningThresholdPt ?? u.kerning, y = d?.snapToGrid ?? u.snapToGrid, b = !1, x = u.ruby, S = x ? {
+		let u = r, d = u.typographyInput, f = (e, t) => e?.status === "valid" && e.value !== null ? e.value : t, p = f(d?.verticalAlign, o ?? void 0) ?? null, m = f(d?.positionPt, u.position), h = d?.characterSpacingPt ?? u.charSpacing, g = Oo(h), _ = d?.characterScale ?? u.charScale, v = d?.kerningThresholdPt ?? u.kerning, y = d?.snapToGrid ?? u.snapToGrid, b = !1, x = u.ruby, S = x ? {
 			text: x.text,
 			fontSizePt: x.fontSizePt,
 			...x.hpsRaisePt == null ? {} : { hpsRaisePt: x.hpsRaisePt }
@@ -4743,19 +4900,23 @@ function Js(e, t) {
 		} : u.hyperlinkAnchor ? {
 			kind: "internal",
 			ref: u.hyperlinkAnchor
-		} : void 0, k = u.rtl === !0 || u.cs === !0, A = u.fontSizeCs ?? r.fontSize, j = u.fontFamilyCs ?? r.fontFamily, M = u.fontFamilyHighAnsi ?? r.fontFamily, N = u.boldCs ?? !1, ee = u.italicCs ?? !1, P = u.fontFamilyEastAsia ?? r.fontFamily, te = (k || !!u.rtl) && zs(u.langBidi, !!u.rtl), ne = !0, re = !1, ie = (e, a, o, s, c = !1, l = !1) => {
+		} : void 0, k = u.rtl === !0 || u.cs === !0, A = u.fontSizeCs ?? r.fontSize, j = u.fontFamilyCs ?? r.fontFamily, M = u.fontFamilyHighAnsi ?? r.fontFamily, ee = u.boldCs ?? !1, te = u.italicCs ?? !1, N = u.fontFamilyEastAsia ?? r.fontFamily, ne = (k || !!u.rtl) && $s(u.langBidi, !!u.rtl), re = !0, ie = !1, ae = (e, a, o, s, c = !1, l = !1) => {
+			if (t.balanceSingleByteDoubleByteWidth && !a && e.includes("　") && [...e].some((e) => e !== "　")) {
+				for (let t of e.split(/(\u3000+)/u).filter(Boolean)) ae(t, a, o, void 0, c, l);
+				return;
+			}
 			if (!c && g && D === void 0) {
 				let n = [
 					0,
 					...T(e),
 					e.length
 				];
-				if (n.slice(0, -1).map((t, r) => e.slice(t, n[r + 1])).some((e) => Ps(e, t.characterSpacingControl))) {
-					ie(e, a, o, void 0, !0, l);
+				if (n.slice(0, -1).map((t, r) => e.slice(t, n[r + 1])).some((e) => Js(e, t.characterSpacingControl))) {
+					ae(e, a, o, void 0, !0, l);
 					return;
 				}
 			}
-			let d = a ? N : r.bold, f = a ? ee : r.italic, x = d ? 700 : 400, k = f ? "italic" : "normal", F = Object.freeze({
+			let d = a ? ee : r.bold, f = a ? te : r.italic, x = d ? 700 : 400, k = f ? "italic" : "normal", P = Object.freeze({
 				text: e,
 				fontSizePt: a ? A : r.fontSize,
 				fonts: l ? {
@@ -4766,7 +4927,7 @@ function Js(e, t) {
 				} : u.fontSlots?.direct ?? {
 					ascii: r.fontFamily,
 					highAnsi: M,
-					eastAsia: P,
+					eastAsia: N,
 					complexScript: j
 				},
 				themeFonts: l ? void 0 : u.fontSlots?.theme,
@@ -4778,7 +4939,7 @@ function Js(e, t) {
 				eastAsiaLanguage: u.langEastAsia,
 				kerning: v == null ? void 0 : (a ? A : r.fontSize) >= v,
 				measure: !1
-			}), I = s ? { spans: [s] } : t.layoutServices?.text.shape(F), ae = c && g ? (() => {
+			}), F = s ? { spans: [s] } : t.layoutServices?.text.shape(P), oe = c && g ? (() => {
 				let n = [
 					0,
 					...T(e),
@@ -4786,24 +4947,24 @@ function Js(e, t) {
 				], r = [];
 				for (let i = 0; i < n.length - 1; i += 1) {
 					let a = n[i], o = n[i + 1], s = e.slice(a, o);
-					if (!Ps(s, t.characterSpacingControl)) continue;
+					if (!Js(s, t.characterSpacingControl)) continue;
 					let c = t.layoutServices?.text.shape({
-						...F,
+						...P,
 						text: s,
 						measure: !0,
 						clusterGeometry: !1
 					}), l = (c?.inkBounds && c.horizontalInkBoundsAreTight === !0 ? (() => {
 						let e = Math.max(0, Math.min(c.advancePt, c.advancePt - c.inkBounds.xMaxPt));
-						if (!Ms.has(s)) return e;
+						if (!Ks.has(s)) return e;
 						let n = c.spans[0]?.fontRoute.fingerprint, r = t.layoutServices?.text.shape({
-							...F,
-							text: "　",
+							...P,
+							text: "一",
 							fontHint: "eastAsia",
 							measure: !0,
 							clusterGeometry: !1
 						}), i = r?.spans[0]?.fontRoute.fingerprint, a = r?.advancePt;
 						if (!n || i !== n || a === void 0 || !Number.isFinite(a) || a <= 0) return 0;
-						let o = yo({
+						let o = Do({
 							punctuationAdvancePt: c.advancePt,
 							punctuationInkEndPt: c.inkBounds.xMaxPt,
 							ideographicCellAdvancePt: a
@@ -4816,28 +4977,30 @@ function Js(e, t) {
 					});
 				}
 				return r.length === 0 ? void 0 : Object.freeze(r.map((e) => Object.freeze(e)));
-			})() : void 0, oe = I?.spans.some((e) => e.script === "complexScript" !== a) ?? !1;
-			if (I && (I.spans.length > 1 || oe)) {
-				for (let e = 0; e < I.spans.length; e += 1) {
-					let n = I.spans[e], i = n.script === "complexScript", a = i ? j : n.script === "eastAsia" ? P : n.script === "highAnsi" ? M : r.fontFamily, o = g && c && [...n.text].some((e) => Ps(e, t.characterSpacingControl));
-					ie(n.text, i, a, n, o);
+			})() : void 0, I = F?.spans.some((e) => e.script === "complexScript" !== a) ?? !1;
+			if (F && (F.spans.length > 1 || I)) {
+				for (let e = 0; e < F.spans.length; e += 1) {
+					let n = F.spans[e], i = n.script === "complexScript", a = i ? j : n.script === "eastAsia" ? N : n.script === "highAnsi" ? M : r.fontFamily, o = g && c && [...n.text].some((e) => Js(e, t.characterSpacingControl));
+					ae(n.text, i, a, n, o);
 				}
 				return;
 			}
-			let se = I?.spans[0], ce = (e, n) => {
+			let se = F?.spans[0], ce = (e, n) => {
 				if (!e) return;
-				let r = Object.values(t.layoutServices?.text.localMetrics ?? {}).filter((t) => Jt(t.family) === Jt(e) && (t.weight ?? 400) === x && (t.style ?? "normal") === k);
-				return r.find((e) => n && Jt(e.requestedFamily ?? "") === Jt(n)) ?? r[0];
+				let r = Object.values(t.layoutServices?.text.localMetrics ?? {}).filter((t) => Yt(t.family) === Yt(e) && (t.weight ?? 400) === x && (t.style ?? "normal") === k);
+				return r.find((e) => n && Yt(e.requestedFamily ?? "") === Yt(n)) ?? r[0];
 			}, le = se ? ce(se.font.resolvedFamily, se.font.requestedFamily) : i(o, x, k), ue = t.layoutServices?.text.resolve({
-				fonts: F.fonts,
-				themeFonts: F.themeFonts,
-				themeFontPresence: F.themeFontPresence,
+				fonts: P.fonts,
+				themeFonts: P.themeFonts,
+				themeFontPresence: P.themeFontPresence,
 				slot: "eastAsia",
 				weight: x,
 				style: k
-			}), de = ue ? ce(ue.resolvedFamily, ue.requestedFamily) : i(P, x, k), fe = le ?? (o ? t.resolvedLocalFonts?.[Jt(o)] : void 0), pe = de ?? (P ? t.resolvedLocalFonts?.[Jt(P)] : void 0), me = ue?.resolvedFamily ?? de?.family ?? P, he = t.useFeLayout && (u.fontHint === "eastAsia" || !!me?.trim());
+			}), de = ue ? ce(ue.resolvedFamily, ue.requestedFamily) : i(N, x, k), fe = le ?? (o ? t.resolvedLocalFonts?.[Yt(o)] : void 0), pe = de ?? (N ? t.resolvedLocalFonts?.[Yt(N)] : void 0), me = ue?.resolvedFamily ?? de?.family ?? N, he = t.useFeLayout && (u.fontHint === "eastAsia" || !!me?.trim()), ge = se?.script ?? s?.script ?? (a ? "complexScript" : oi.test(e) ? "eastAsia" : "ascii"), _e = t.balanceSingleByteDoubleByteWidth ? Eo(e, ge) : void 0;
 			n.push({
 				text: e,
+				script: ge,
+				..._e === void 0 ? {} : { widthBalanceGridDeltaFactor: _e },
 				...he ? { metricEastAsian: !0 } : {},
 				bold: d,
 				italic: f,
@@ -4853,20 +5016,20 @@ function Js(e, t) {
 				vertAlign: p,
 				measuredWidth: 0,
 				textLayoutService: t.layoutServices?.text,
-				textShapeRequest: F,
+				textShapeRequest: P,
 				breakBefore: se?.breakBefore ?? s?.breakBefore ?? !0,
 				smallCaps: b,
-				joinPrev: re || s?.breakBefore === !1 ? !0 : void 0,
+				joinPrev: ie || s?.breakBefore === !1 ? !0 : void 0,
 				doubleStrikethrough: r.doubleStrikethrough ?? !1,
 				highlight: r.highlight ?? null,
 				emphasisMark: r.emphasisMark,
 				background: r.background ?? null,
 				colorAuto: u.colorAuto ?? !1,
 				border: u.border ?? null,
-				ruby: ne ? S : void 0,
+				ruby: re ? S : void 0,
 				revision: C,
 				rtl: w,
-				digitsAsAN: te ? !0 : void 0,
+				digitsAsAN: ne ? !0 : void 0,
 				eaFloorFamily: me,
 				eaFloorRoute: ue?.route,
 				resolvedEaFloorLineHeightRatio: pe?.lineHeightRatio,
@@ -4875,7 +5038,7 @@ function Js(e, t) {
 				hyperlink: O,
 				snapToCharacterGrid: y !== !1,
 				charSpacing: h,
-				punctuationCompressions: ae,
+				punctuationCompressions: oe,
 				eastAsiaLanguage: u.langEastAsia,
 				charScale: _,
 				fitTextVal: D === void 0 ? void 0 : u.fitTextVal,
@@ -4888,34 +5051,34 @@ function Js(e, t) {
 				tateChuYoko: t.verticalCJK && u.eastAsianVert === !0 ? !0 : void 0,
 				tateChuYokoCompress: t.verticalCJK && u.eastAsianVert === !0 && u.eastAsianVertCompress === !0 ? !0 : void 0,
 				verticalRun: t.verticalCJK && u.eastAsianVert !== !0 ? !0 : void 0
-			}), ne = !1, re = !1;
-		}, F = (e, t) => {
-			let n = t === "cs", i = t === "cs" ? j : t === "ea" ? P : r.fontFamily;
-			if (L(i)) {
-				for (let t of Ie(e, i)) ie(t.text, n, t.mapped ? null : i, void 0, !1, t.mapped);
+			}), re = !1, ie = !1;
+		}, P = (e, t) => {
+			let n = t === "cs", i = t === "cs" ? j : t === "ea" ? N : r.fontFamily;
+			if (ke(i)) {
+				for (let t of Ie(e, i)) ae(t.text, n, t.mapped ? null : i, void 0, !1, t.mapped);
 				return;
 			}
-			ie(e, n, i);
-		}, I = (e) => {
+			ae(e, n, i);
+		}, F = (e) => {
 			if (t.layoutServices?.text) {
-				if (L(r.fontFamily)) {
-					F(e, "latin");
+				if (ke(r.fontFamily)) {
+					P(e, "latin");
 					return;
 				}
-				ie(e, !1, r.fontFamily);
+				ae(e, !1, r.fontFamily);
 				return;
 			}
-			for (let t of Bs(e)) F(t.text, t.ea ? "ea" : "latin");
-		}, ae = r.smallCaps ? Os(e) : [{
+			for (let t of ec(e)) P(t.text, t.ea ? "ea" : "latin");
+		}, oe = r.smallCaps ? Hs(e) : [{
 			text: e,
 			reduced: !1
-		}], oe = "";
-		for (let e of ae) {
-			b = e.reduced, re = oe.length > 0 && !/\s$/.test(oe), oe = e.text;
+		}], I = "";
+		for (let e of oe) {
+			b = e.reduced, ie = I.length > 0 && !/\s$/.test(I), I = e.text;
 			let t = r.allCaps || r.smallCaps ? e.text.toUpperCase() : e.text;
-			for (let e of Hs(t)) if (k) if (te) for (let t of Vs(e)) F(t, "cs");
-			else F(e, "cs");
-			else I(e);
+			for (let e of nc(t)) if (k) if (ne) for (let t of tc(e)) P(t, "cs");
+			else P(e, "cs");
+			else F(e);
 		}
 	};
 	for (let [r, a] of e.entries()) {
@@ -5004,7 +5167,7 @@ function Js(e, t) {
 			});
 		} else if (a.type === "break") {
 			if (a.breakType === "line") {
-				let t = ks(e, e.indexOf(a));
+				let t = Us(e, e.indexOf(a));
 				n.push({
 					lineBreak: !0,
 					fontSize: t,
@@ -5012,10 +5175,10 @@ function Js(e, t) {
 				});
 			}
 		} else if (a.type === "field") {
-			let e = a, n = As(e, t);
+			let e = a, n = Ws(e, t);
 			n && c(n, e, e.vertAlign, r);
 		} else if (a.type === "math") {
-			let r = a.fontSize || ks(e, e.indexOf(a)), i = "resourceKey" in a ? a.resourceKey : void 0;
+			let r = a.fontSize || Us(e, e.indexOf(a)), i = "resourceKey" in a ? a.resourceKey : void 0;
 			if (t.layoutServices && !i) throw Error("Service-backed math layout requires a normalized structural resource key");
 			let o = i ? t.layoutServices?.math.resolve(i) : void 0;
 			n.push({
@@ -5025,7 +5188,7 @@ function Js(e, t) {
 				display: a.display,
 				fontSize: r,
 				color: null,
-				fallbackText: "fallbackText" in a ? a.fallbackText : q(a.nodes),
+				fallbackText: "fallbackText" in a ? a.fallbackText : K(a.nodes),
 				measuredWidth: 0,
 				mathAscent: 0,
 				mathDescent: 0,
@@ -5033,7 +5196,7 @@ function Js(e, t) {
 			});
 		} else if (a.type === "ptab") n.push({
 			isTab: !0,
-			fontSize: a.fontSize || ks(e, e.indexOf(a)),
+			fontSize: a.fontSize || Us(e, e.indexOf(a)),
 			measuredWidth: 0,
 			leader: a.leader,
 			ptab: {
@@ -5042,7 +5205,7 @@ function Js(e, t) {
 			}
 		});
 		else if (a.type === "anchorHost") {
-			let e = a.fontFamilyEastAsia != null, r = a.bold ?? !1, o = a.italic ?? !1, s = a.fontFamilyEastAsia ?? a.fontFamily ?? null, c = r ? 700 : 400, l = o ? "italic" : "normal", u = i(s, c, l), d = i(a.fontFamilyEastAsia ?? null, c, l), f = u ?? (s ? t.resolvedLocalFonts?.[Jt(s)] : void 0), p = d ?? (a.fontFamilyEastAsia ? t.resolvedLocalFonts?.[Jt(a.fontFamilyEastAsia)] : void 0);
+			let e = a.fontFamilyEastAsia != null, r = a.bold ?? !1, o = a.italic ?? !1, s = a.fontFamilyEastAsia ?? a.fontFamily ?? null, c = r ? 700 : 400, l = o ? "italic" : "normal", u = i(s, c, l), d = i(a.fontFamilyEastAsia ?? null, c, l), f = u ?? (s ? t.resolvedLocalFonts?.[Yt(s)] : void 0), p = d ?? (a.fontFamilyEastAsia ? t.resolvedLocalFonts?.[Yt(a.fontFamilyEastAsia)] : void 0);
 			n.push({
 				text: "",
 				metricOnly: !0,
@@ -5064,6 +5227,55 @@ function Js(e, t) {
 		}
 		for (let e = o; e < n.length; e += 1) n[e].sourceRunIndex = r;
 	}
+	if (t.balanceSingleByteDoubleByteWidth) {
+		let e = /* @__PURE__ */ new Map(), t = (t) => {
+			let n = t.textLayoutService, r = t.textShapeRequest;
+			if (!n || !r) return;
+			let i = ai(t, 1), a = [
+				n.fingerprint,
+				t.fontRoute?.fingerprint ?? "implicit-latin",
+				t.eaFloorRoute?.fingerprint ?? "implicit-east-asia",
+				i,
+				t.bold ? 700 : 400,
+				t.italic ? "italic" : "normal",
+				t.kerning ?? "auto"
+			].join("|"), o = e.get(a);
+			if (o !== void 0) return o;
+			let s = n.shape({
+				...r,
+				text: " ",
+				fontSizePt: i,
+				measure: !0,
+				clusterGeometry: !1
+			}).advancePt, c = n.shape({
+				...r,
+				text: "一",
+				fontSizePt: i,
+				fontHint: "eastAsia",
+				measure: !0,
+				clusterGeometry: !1
+			}).advancePt;
+			if (!Number.isFinite(s) || !Number.isFinite(c) || s < 0 || c <= 0) return;
+			let l = c / 2 - s;
+			return e.set(a, l), l;
+		}, r = [], i = 0, a = () => {
+			if (wo(i)) for (let e of r) {
+				e.widthBalanceSpaceSequence = !0;
+				let n = t(e);
+				n !== void 0 && (e.widthBalanceSpaceAdjustmentPt = n);
+			}
+			r = [], i = 0;
+		};
+		for (let e of n) {
+			if (!("text" in e) || e.script === "complexScript") {
+				a();
+				continue;
+			}
+			let t = e.text.length - e.text.replace(/ +$/u, "").length;
+			t > 0 && t === e.text.length || a(), t > 0 ? (r.push(e), i += t) : a();
+		}
+		a();
+	}
 	for (let e = 1; e < n.length; e++) {
 		let t = n[e];
 		if (!("text" in t) || t.joinPrev) continue;
@@ -5074,28 +5286,36 @@ function Js(e, t) {
 	}
 	for (let e = 1; e < n.length; e++) {
 		let t = n[e];
+		if (!("text" in t) || t.joinPrev || !t.text.startsWith(" ")) continue;
+		let r = n[e - 1];
+		if (!("text" in r)) continue;
+		let i = t.sourceRunIndex === r.sourceRunIndex, a = ko(r.text, t.text);
+		!i && !a || (t.joinPrev = !0);
+	}
+	for (let e = 1; e < n.length; e++) {
+		let t = n[e];
 		if (!("text" in t) || t.joinPrev || t.text.length === 0) continue;
 		let i = n[e - 1];
 		if (!("text" in i) || i.text.length === 0 || /\s$/u.test(i.text) || /^\s/u.test(t.text)) continue;
 		let a = [...i.text].at(-1), o = [...t.text][0], s = a?.codePointAt(0), c = o?.codePointAt(0);
-		s === void 0 || c === void 0 || s === 8203 || c === 8203 || te(i.text) || te(t.text) || js(i.text) || js(t.text) || r(s, c) && (t.joinPrev = !0);
+		s === void 0 || c === void 0 || s === 8203 || c === 8203 || ne(i.text) || ne(t.text) || Gs(i.text) || Gs(t.text) || r(s, c) && (t.joinPrev = !0);
 	}
 	let l = /* @__PURE__ */ new Set();
 	for (let e of n) !("text" in e) || e.fitTextRegionIndex === void 0 || (l.has(e.fitTextRegionIndex) ? e.joinPrev = !0 : (e.fitTextRegionStart = !0, l.add(e.fitTextRegionIndex)));
-	return ms(n), n;
+	return Ts(n), n;
 }
-function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n, g = !1, _ = !1, y = !1, b, x = "bounded", S, C = !1, w) {
+function lc(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = void 0, p = 36, h = n, g = !1, _ = !1, y = !1, b, x = "bounded", S, C = !1, w) {
 	if (w === void 0) {
-		let a = (a, s) => Ys(e, mo(t), n, r, i, o, c, l, u, d, f, p, h, g, _, y, b, x, S, C, {
+		let a = (a, s) => lc(e, ho(t), n, r, i, o, c, l, u, d, f, p, h, g, _, y, b, x, S, C, {
 			probeHeights: a,
 			preparedFloatWrap: s
 		});
 		if (!c || x === "intrinsic") return a(null);
-		let s = c.lineWindow ? void 0 : Va(c.floats);
-		return _o((e) => a(e, s), (e) => c.lineBoxH(e.ascent, e.descent, e.hasRuby, e.intendedSingle, e.eastAsian, e.gridCountSingle));
+		let s = c.lineWindow ? void 0 : Ha(c.floats);
+		return vo((e) => a(e, s), (e) => c.lineBoxH(e.ascent, e.descent, e.hasRuby, e.intendedSingle, e.eastAsian, e.gridCountSingle));
 	}
-	let { probeHeights: E, preparedFloatWrap: D } = w, O = [], k = [], A = 0, j = 0, M = 0, N = /* @__PURE__ */ new Set(), P = 0, ne = 0, re = 0, ie = 0, F = 0, I = 0, ae = 0, oe = 0, se = !1, ce = !0, le = n, ue = 0, de = c?.startPageY ?? 0, fe = () => da(i), pe = t.length > 0 && t.every((e) => "text" in e && e.metricOnly === !0 || "imagePath" in e && !!e.anchor), me = (e = 0) => {
-		if (M = 0, N.clear(), ue = 0, le = n, !c) return;
+	let { probeHeights: E, preparedFloatWrap: D } = w, O = [], k = [], A = 0, j = f?.type === "snapToChars" && f.characterPitchPt != null && f.characterPitchPt > 0 ? f.characterPitchPt * i : null, M = null, ee = 0, N = 0, re = 0, ie = 0, ae = /* @__PURE__ */ new Set(), P = 0, F = 0, oe = 0, I = 0, se = 0, ce = 0, le = 0, ue = 0, de = !1, fe = !0, pe = n, me = 0, he = c?.startPageY ?? 0, ge = () => fa(i), _e = t.length > 0 && t.every((e) => "text" in e && e.metricOnly === !0 || "imagePath" in e && !!e.anchor), ye = (e = 0) => {
+		if (M = null, ie = 0, ae.clear(), me = 0, pe = n, !c) return;
 		let t = E?.[O.length];
 		if (t === void 0) return;
 		let r = {
@@ -5105,7 +5325,7 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 		};
 		if (c.lineWindow) {
 			let r = c.lineWindow({
-				topYPt: de,
+				topYPt: he,
 				minimumStartWidthPt: 1,
 				squareMinimumStartWidthPt: e,
 				probeHeightPt: t,
@@ -5114,28 +5334,38 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				columnXPt: c.columnXPt,
 				columnWidthPt: c.columnWidthPt
 			});
-			de = r.topYPt, ue = r.xOffsetPt, le = r.maximumWidthPt;
+			he = r.topYPt, me = r.xOffsetPt, pe = r.maximumWidthPt;
 		} else {
-			let i = ao(de, 1, t, c.paraX, n, D ?? Va(c.floats), c.columnXPt, c.columnXPt + c.columnWidthPt, r, e);
-			de = i.topY, ue = i.xOffset, le = i.maxWidth;
+			let i = oo(he, 1, t, c.paraX, n, D ?? Ha(c.floats), c.columnXPt, c.columnXPt + c.columnWidthPt, r, e);
+			he = i.topY, me = i.xOffset, pe = i.maxWidth;
 		}
-	}, he = () => x === "intrinsic" ? Infinity : le - (ce ? r : 0), ge = g ? o.map((e) => ({
+	}, be = () => x === "intrinsic" ? Infinity : pe - (fe ? r : 0), xe = g ? o.map((e) => ({
 		pos: e.pos * i,
 		alignment: e.alignment,
 		leader: e.leader
-	})) : [], _e = p * i, ye = () => {
+	})) : [], Ce = p * i, we = () => {
 		if (!g || !k.some((e) => "isTab" in e)) return;
-		let e = Ks(k.map((e) => ({
+		let e = k.map((e) => ({
 			isTab: "isTab" in e,
 			width: e.measuredWidth
-		})), ge, h - (ue + le) + (ce ? r : 0), h + u, _e), t = 0;
-		for (let n = 0; n < k.length; n++) {
-			let r = k[n];
-			"isTab" in r && (t += e[n].width - r.measuredWidth, r.measuredWidth = e[n].width, r.leader = e[n].leader);
+		}));
+		for (let t = 0; t < k.length; t += 1) {
+			if (!("isTab" in k[t])) continue;
+			let n = t + 1;
+			for (; n < k.length && !("isTab" in k[n]);) n += 1;
+			let r = Xe(k.slice(t + 1, n));
+			if (!r) continue;
+			let i = t + 1 + r.segmentIndex, a = k[i];
+			"text" in a && (e[i].decimalOffset = Je(a, a.text.slice(0, r.charOffset)));
 		}
-		A += t;
-	}, be = !1, xe = !1, Ce = !1, we = (e, t = !1, n) => {
-		ye();
+		let t = oc(e, xe, h - (me + pe) + (fe ? r : 0), h + u, Ce), n = 0;
+		for (let e = 0; e < k.length; e++) {
+			let r = k[e];
+			"isTab" in r && (n += t[e].width - r.measuredWidth, r.measuredWidth = t[e].width, r.leader = t[e].leader);
+		}
+		A += n;
+	}, Te = !1, Ee = !1, De = !1, Oe = (e, t = !1, n) => {
+		we();
 		let r, a = !1;
 		for (let e of k) {
 			if ("isTab" in e) continue;
@@ -5151,8 +5381,8 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 			}
 		}
 		let o = a ? r ?? 0 : 0;
-		if (o !== 0) for (let e of k) "text" in e && (e.lineRelativePosition = Do(e.position ?? 0, o));
-		let s = e === void 0 ? P || 10 : Math.max(P, e), l = ne > 0 || re > 0, u = l ? ne : s * i * .8, d = l ? re : s * i * .2, f = se ? I : u, p = se ? ae : d, m = se ? oe : ie, h = F || (xe ? bs(ie, s * i) : u + d);
+		if (o !== 0) for (let e of k) "text" in e && (e.lineRelativePosition = Io(e.position ?? 0, o));
+		let s = e === void 0 ? P || 10 : Math.max(P, e), l = F > 0 || oe > 0, u = l ? F : s * i * .8, d = l ? oe : s * i * .2, f = de ? ce : u, p = de ? le : d, m = de ? ue : I, h = se || (Ee ? Ps(I, s * i) : u + d);
 		O.push({
 			segments: k,
 			height: s,
@@ -5161,53 +5391,91 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 			visibleAscent: f,
 			visibleDescent: p,
 			visibleIntendedSingle: m,
-			intendedSingle: ie,
+			intendedSingle: I,
 			gridCountSingle: h,
-			xOffset: ue,
-			availWidth: le,
-			topY: c ? de : void 0,
-			hasRuby: be,
-			eastAsian: xe,
+			xOffset: me,
+			availWidth: pe,
+			topY: c ? he : void 0,
+			hasRuby: Te,
+			eastAsian: Ee,
 			endsWithBreak: t,
-			consumedEnd: n ?? R[0]?.src ?? Ie
-		}), c && (de += c.lineBoxH(u, d, be, ie, xe, h)), k = [], A = 0, j = 0, M = 0, N.clear(), P = 0, ne = 0, re = 0, ie = 0, F = 0, I = 0, ae = 0, oe = 0, se = !1, be = !1, xe = !1, Ce = !1, ce = !1, me(fe());
-	}, Te = (e, t = e.text) => nn(e.fontFamily) * ii(e, i) * hs(e) * [...t].length, Ee = (e) => {
+			consumedEnd: n ?? R[0]?.src ?? Ve
+		}), c && (he += c.lineBoxH(u, d, Te, I, Ee, h)), k = [], A = 0, ee = 0, N = 0, re = 0, ie = 0, ae.clear(), P = 0, F = 0, oe = 0, I = 0, se = 0, ce = 0, le = 0, ue = 0, de = !1, Te = !1, Ee = !1, De = !1, fe = !1, ye(ge());
+	}, ke = (e, t = e.text) => rn(e.fontFamily) * ai(e, i) * Es(e) * [...t].length, Ae = (e) => {
 		let t = e.bold ? 700 : 400, n = e.italic ? "italic" : "normal";
-		return e.fontRoute ? `${e.fontRoute.fingerprint}|${t}|${n}` : `implicit|${$o(e.bold, e.italic, 1, e.fontFamily, l)}`;
-	}, De = (e, t, n = t.text) => {
-		/\S/.test(n) && e.add(Ee(t));
-	}, Oe = (e) => {
-		let t = N.size;
-		for (let n of e) N.has(n) || (t += 1);
+		return e.fontRoute ? `${e.fontRoute.fingerprint}|${t}|${n}` : `implicit|${cs(e.bold, e.italic, 1, e.fontFamily, l)}`;
+	}, je = (e, t, n = t.text) => {
+		/\S/.test(n) && e.add(Ae(t));
+	}, Me = (e) => {
+		let t = ae.size;
+		for (let n of e) ae.has(n) || (t += 1);
 		return t;
+	}, Ne = (e, t) => {
+		let n = As(e, f);
+		return !n || j == null ? t : n === "eastAsia" ? js(t, n, j, qe(e)) : M?.kind === n ? js(M.naturalWidthPx + t, n, j) - M.allocatedWidthPx : js(t, n, j);
 	}, L = (e, t, n, r, a, o = 0) => {
-		k.push(e), A += t, j += o, "text" in e && (M += Te(e), De(N, e)), n > P && (P = n), r > ne && (ne = r), a > re && (re = a);
-		let s = !("text" in e) || e.metricOnly !== !0;
-		s && (se = !0, r > I && (I = r), a > ae && (ae = a));
-		let c = 0;
+		let s = t;
+		if ("text" in e) {
+			let n = As(e, f), r = e.snapGridNaturalWidthPx ?? t;
+			if (n && j != null) if (e.snapGridClass = n, e.snapGridNaturalWidthPx = r, e.snapGridCellPitchPx = j, n === "eastAsia") s = js(r, n, j, qe(e)), e.snapGridLeadingPadPx = 0, e.snapGridTrailingPadPx = s - r, e.measuredWidth = s, M = null;
+			else if (M?.kind === n) {
+				let t = M.first.snapGridLeadingPadPx ?? 0, i = M.last.snapGridTrailingPadPx ?? 0, a = M.naturalWidthPx + r, o = js(a, n, j), c = o - a, l = n === "latin" ? c / 2 : 0, u = c - l;
+				M.first.measuredWidth -= t, M.first.snapGridLeadingPadPx = l, M.first.measuredWidth += l, M.last.measuredWidth -= i, e.snapGridLeadingPadPx = 0, e.snapGridTrailingPadPx = u, e.measuredWidth = r + u, s = o - M.allocatedWidthPx, M = {
+					kind: n,
+					first: M.first,
+					last: e,
+					naturalWidthPx: a,
+					allocatedWidthPx: o
+				};
+			} else {
+				let t = js(r, n, j), i = t - r, a = n === "latin" ? i / 2 : 0, o = i - a;
+				e.snapGridLeadingPadPx = a, e.snapGridTrailingPadPx = o, e.measuredWidth = t, s = t, M = {
+					kind: n,
+					first: e,
+					last: e,
+					naturalWidthPx: r,
+					allocatedWidthPx: t
+				};
+			}
+			else e.snapGridClass = void 0, e.snapGridLeadingPadPx = void 0, e.snapGridTrailingPadPx = void 0, e.snapGridCellPitchPx = void 0, e.measuredWidth = t, M = null;
+		} else M = null;
+		if (k.push(e), A += s, "text" in e) {
+			let t = e.text.length - e.text.replace(/ +$/, "").length, n = t > 0 && t === e.text.length;
+			if (n && N > 0) ee -= re, N += t, re = 0;
+			else {
+				N = 0, re = 0;
+				let e = k[k.length - 2], r = e !== void 0 && "text" in e && /\S$/u.test(e.text);
+				(n && r || t > 0 && !n) && (N = t, re = t === 1 ? o : 0, ee += re);
+			}
+			ie += ke(e), je(ae, e);
+		}
+		n > P && (P = n), r > F && (F = r), a > oe && (oe = a);
+		let c = !("text" in e) || e.metricOnly !== !0;
+		c && (de = !0, r > ce && (ce = r), a > le && (le = a));
+		let l = 0;
 		if (!("isTab" in e) && !("imagePath" in e) && !("math" in e)) {
 			let t = e;
-			t.ruby && (be = !0), t.seaBreaks !== void 0 && ve(t.text) && (Ce = !0);
-			let n = t.metricEastAsian === !0 || ai.test(t.text);
-			!xe && n && (xe = !0);
-			let r = t.smallCaps && !t.vertAlign ? t.fontSize * i : ke(t), a = n && !t.ruby, o = t.textBoxLineFloor && t.ruby ? 0 : Math.max(es(t, r, a), t.textBoxLineFloor || t.metricEastAsian === !0 ? ts(t, r, a) : 0);
-			o > ie && (ie = o), s && o > oe && (oe = o), a && (c = bs(o, r));
-		} else "isTab" in e || (c = r + a);
-		c > F && (F = c);
-	}, ke = (e) => ii(e, i), Ae = null, je = (t) => {
-		t !== Ae && (e.font = t, Ae = t);
-	}, Me = (t) => {
+			t.ruby && (Te = !0), t.seaBreaks !== void 0 && ve(t.text) && (De = !0);
+			let n = t.metricEastAsian === !0 || oi.test(t.text);
+			!Ee && n && (Ee = !0);
+			let r = t.smallCaps && !t.vertAlign ? t.fontSize * i : Pe(t), a = n && !t.ruby, o = t.textBoxLineFloor && t.ruby ? 0 : Math.max(ls(t, r, a), t.textBoxLineFloor || t.metricEastAsian === !0 ? us(t, r, a) : 0);
+			o > I && (I = o), c && o > ue && (ue = o), a && (l = Ps(o, r));
+		} else "isTab" in e || (l = r + a);
+		l > se && (se = l);
+	}, Pe = (e) => ai(e, i), Fe = null, Ie = (t) => {
+		t !== Fe && (e.font = t, Fe = t);
+	}, Le = (t) => {
 		if (t.kerning == null) return null;
 		let n = e.fontKerning;
 		return e.fontKerning = t.fontSize >= t.kerning ? "normal" : "none", n;
-	}, Ne = (t) => {
+	}, Re = (t) => {
 		t != null && (e.fontKerning = t);
-	}, Pe = (t, n = !1) => {
+	}, ze = (t, n = !1) => {
 		if (t.textLayoutService && t.textShapeRequest) {
 			let e = t.textLayoutService.shape({
 				...t.textShapeRequest,
 				text: t.text,
-				fontSizePt: ke(t),
+				fontSizePt: Pe(t),
 				measure: !0,
 				clusterGeometry: n
 			});
@@ -5227,33 +5495,33 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				fontBoundingBoxDescent: e.descentPt
 			};
 		}
-		je($o(t.bold, t.italic, ke(t), t.fontFamily, l, t.fontRoute));
-		let r = Me(t), i = e.measureText(t.text);
-		return Ne(r), i;
-	}, Fe = (e, t) => {
+		Ie(cs(t.bold, t.italic, Pe(t), t.fontFamily, l, t.fontRoute));
+		let r = Le(t), i = e.measureText(t.text);
+		return Re(r), i;
+	}, Be = (e, t) => {
 		if (!e.verticalRun) return 0;
 		if (!S) throw Error("Vertical glyph measurement capability is required for vertical text");
-		je($o(e.bold, e.italic, ke(e), e.fontFamily, l, e.fontRoute));
-		let n = Me(e);
+		Ie(cs(e.bold, e.italic, Pe(e), e.fontFamily, l, e.fontRoute));
+		let n = Le(e);
 		try {
 			return S.measureRunInkExtra(t);
 		} finally {
-			Ne(n);
+			Re(n);
 		}
-	}, Ie = {
+	}, Ve = {
 		segIndex: t.length,
 		charOffset: 0
-	}, Le = t.map((e, t) => (e.src = {
+	}, He = t.map((e, t) => (e.src = {
 		segIndex: t,
 		charOffset: 0
-	}, "text" in e && te(e.text) && (e.seaBreaks = v(e.text, {
+	}, "text" in e && ne(e.text) && (e.seaBreaks = v(e.text, {
 		cjk: !0,
 		kinsoku: d
 	})), e)), R;
-	if (!b) R = Le;
-	else if (b.segIndex >= Le.length) R = [];
+	if (!b) R = He;
+	else if (b.segIndex >= He.length) R = [];
 	else {
-		let e = Le[b.segIndex];
+		let e = He[b.segIndex];
 		if (b.charOffset > 0) if (!("text" in e) || b.charOffset > e.text.length) R = [];
 		else {
 			let t = e.text.slice(b.charOffset);
@@ -5262,53 +5530,136 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				text: t,
 				measuredWidth: 0,
 				src: { ...b },
-				punctuationCompressions: ds(e, b.charOffset, e.text.length),
-				seaBreaks: Fs(e.seaBreaks, b.charOffset)
-			}, ...Le.slice(b.segIndex + 1)] : Le.slice(b.segIndex + 1);
+				punctuationCompressions: q(e, b.charOffset, e.text.length),
+				seaBreaks: Ys(e.seaBreaks, b.charOffset)
+			}, ...He.slice(b.segIndex + 1)] : He.slice(b.segIndex + 1);
 		}
-		else R = Le.slice(b.segIndex);
+		else R = He.slice(b.segIndex);
 	}
-	qs(R.filter((e) => "text" in e), i, (e) => Pe(e).width + Fe(e, e.text));
-	let Re = (e) => _s(e, Pe(e).width + Fe(e, e.text), f, i), z = (t, n, r = !1) => {
+	sc(R.filter((e) => "text" in e), i, (e) => ze(e).width + Be(e, e.text));
+	let Ue = (e) => ks(e, ze(e).width + Be(e, e.text), f, i), We = (e, t) => {
+		let n = As(e, f);
+		return !n || j == null || e.text.length === 0 ? t : js(t, n, j, n === "eastAsia" ? qe(e) : 1);
+	}, Ge = (e) => We(e, Ue(e)), Ke = (t, n, r = !1) => {
 		let a = r ? t.text.length - n.length : 0, o = {
 			...t,
 			text: n,
-			punctuationCompressions: ds(t, Math.max(0, a), Math.max(0, a) + n.length)
+			punctuationCompressions: q(t, Math.max(0, a), Math.max(0, a) + n.length)
 		};
-		if (t.textLayoutService && t.textShapeRequest) return _s(o, t.textLayoutService.shape({
+		if (t.textLayoutService && t.textShapeRequest) return ks(o, t.textLayoutService.shape({
 			...t.textShapeRequest,
 			text: n,
-			fontSizePt: ke(t),
+			fontSizePt: Pe(t),
 			measure: !0,
 			clusterGeometry: !1
-		}).advancePt + Fe(t, n), f, i);
-		je($o(t.bold, t.italic, ke(t), t.fontFamily, l, t.fontRoute));
-		let s = Me(t), c = e.measureText(n).width;
-		return Ne(s), _s(o, c + Fe(t, n), f, i);
-	}, ze = (e) => "isTab" in e ? e.measuredWidth || 0 : "imagePath" in e ? e.widthPt * i : "math" in e ? e.measuredWidth || 0 : "lineBreak" in e ? 0 : Re(e), Be = null;
-	for (me(pe ? c?.paragraphMarkLineStartWidth ?? fe() : fe()); R.length > 0;) {
+		}).advancePt + Be(t, n), f, i);
+		Ie(cs(t.bold, t.italic, Pe(t), t.fontFamily, l, t.fontRoute));
+		let s = Le(t), c = e.measureText(n).width;
+		return Re(s), ks(o, c + Be(t, n), f, i);
+	}, qe = (t) => {
+		if (j == null) return 1;
+		t.textLayoutService && t.textShapeRequest && !t.shapedClusters && ze(t, !0);
+		let n = t.shapedClusters?.length ? t.shapedClusters : null, r = n == null ? [...new Set([
+			0,
+			...T(t.text),
+			t.text.length
+		])].sort((e, t) => e - t) : null, a = n?.map((e) => ({
+			start: e.range.start,
+			end: e.range.end,
+			advancePx: e.advancePt
+		})) ?? r.slice(0, -1).map((e, t) => ({
+			start: e,
+			end: r[t + 1],
+			advancePx: void 0
+		})), o = 0;
+		for (let n of a) {
+			let { start: r, end: a } = n;
+			if (a <= r) continue;
+			let s = t.text.slice(r, a), c = {
+				...t,
+				text: s,
+				punctuationCompressions: q(t, r, a)
+			}, u;
+			if (n.advancePx != null) u = ks(c, n.advancePx + Be(t, s), f, i);
+			else {
+				Ie(cs(t.bold, t.italic, Pe(t), t.fontFamily, l, t.fontRoute));
+				let n = Le(t), r = e.measureText(s).width;
+				Re(n), u = ks(c, r + Be(t, s), f, i);
+			}
+			o += yo(u, j);
+		}
+		return Math.max(1, o);
+	}, Je = (e, t, n = !1) => We({
+		...e,
+		text: t,
+		shapedClusters: t === e.text ? e.shapedClusters : void 0
+	}, Ke(e, t, n)), Ye = (e) => "isTab" in e ? e.measuredWidth || 0 : "imagePath" in e ? e.widthPt * i : "math" in e ? e.measuredWidth || 0 : "lineBreak" in e ? 0 : Ge(e), Xe = (e) => {
+		for (let t = 0; t < e.length; t += 1) {
+			let n = e[t];
+			if (!("text" in n)) continue;
+			let r = n.text.indexOf(".");
+			if (r >= 0) return {
+				segmentIndex: t,
+				charOffset: r
+			};
+		}
+		let t = null, n = !1;
+		for (let r = 0; r < e.length; r += 1) {
+			let i = e[r];
+			if (!("text" in i)) {
+				if (n) return t;
+				continue;
+			}
+			let a = 0;
+			for (let e of i.text) if (a += e.length, /\p{Decimal_Number}/u.test(e)) n = !0, t = {
+				segmentIndex: r,
+				charOffset: a
+			};
+			else if (n) return t;
+		}
+		return t;
+	}, Ze = (e) => {
+		let t = Xe(e);
+		if (!t) return;
+		let n = 0;
+		for (let r = 0; r < t.segmentIndex; r += 1) n += Ye(e[r]);
+		let r = e[t.segmentIndex];
+		return "text" in r ? n + Je(r, r.text.slice(0, t.charOffset)) : n;
+	}, Qe = () => {
+		let e = [], t = 0;
+		for (let n of R) {
+			if ("isTab" in n || "lineBreak" in n) break;
+			e.push(n), t += Ye(n);
+		}
+		let n = Ze(e);
+		return n === void 0 ? { totalWidth: t } : {
+			totalWidth: t,
+			decimalPrefixWidth: n
+		};
+	}, $e = null;
+	for (ye(_e ? c?.paragraphMarkLineStartWidth ?? ge() : ge()); R.length > 0;) {
 		let t = R.shift();
 		if ("lineBreak" in t) {
-			we(t.fontSize, !0), Be = t.fontSize;
+			Oe(t.fontSize, !0), $e = t.fontSize;
 			continue;
 		}
-		if (Be = null, "isTab" in t) {
+		if ($e = null, "isTab" in t) {
 			if (g && !t.ptab) {
 				t.measuredWidth = 0, L(t, 0, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2);
 				continue;
 			}
-			let e = A + (ce ? r : 0);
+			let e = A + (fe ? r : 0);
 			if (t.ptab) {
 				t.resolvedAlignment = t.ptab.alignment;
 				let r = t.ptab.relativeTo === "indent" ? 0 : -u, a = t.ptab.relativeTo === "indent" ? n : h, o = t.ptab.alignment === "left" ? r : t.ptab.alignment === "center" ? (r + a) / 2 : a, s = 0;
 				for (let e of R) {
 					if ("isTab" in e || "lineBreak" in e) break;
-					s += ze(e);
+					s += Ye(e);
 				}
 				let c = t.ptab.alignment === "center" ? .5 : +(t.ptab.alignment === "right"), l = o - e - s * c;
 				if (l <= 0) {
 					if (k.length > 0) {
-						we(void 0, !1, t.src), R.unshift(t);
+						Oe(void 0, !1, t.src), R.unshift(t);
 						continue;
 					}
 					l = 0;
@@ -5321,7 +5672,7 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 						e.measuredWidth = t, L(e, t, e.heightPt, e.heightPt * i, 0);
 					} else if ("math" in e) L(e, e.measuredWidth || 0, e.fontSize, e.mathAscent || 0, e.mathDescent || 0);
 					else {
-						let t = Pe(e), n = _s(e, t.width + Fe(e, e.text), f, i);
+						let t = ze(e), n = ks(e, t.width + Be(e, e.text), f, i);
 						e.measuredWidth = n;
 						let r = t.fontBoundingBoxAscent ?? t.actualBoundingBoxAscent ?? e.fontSize * i * .8, a = t.fontBoundingBoxDescent ?? t.actualBoundingBoxDescent ?? e.fontSize * i * .2;
 						L(e, n, e.fontSize, r, a);
@@ -5329,23 +5680,18 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				}
 				continue;
 			}
-			let a = oi(e + u, o.map((e) => ({
+			let a = si(e + u, o.map((e) => ({
 				pos: e.pos * i,
 				alignment: e.alignment,
 				leader: e.leader
 			})), p * i);
 			t.resolvedAlignment = a?.alignment ?? "left";
-			let s = a ? a.pos - u : e, c = a ? Gs(a.alignment) : "leading";
+			let s = a ? a.pos - u : e, c = a ? ac(a.alignment) : "leading";
 			if (a && c !== "leading") {
 				let n = s;
 				t.leader = a.leader;
-				let r = 0;
-				for (let e of R) {
-					if ("isTab" in e || "lineBreak" in e) break;
-					r += ze(e);
-				}
-				let o = c === "center" ? .5 : 1, l = n - e - r * o;
-				for (l <= 0 && (l = t.fontSize * i * .25), t.measuredWidth = l, L(t, l, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2); R.length > 0;) {
+				let r = Qe(), o = c === "center" ? r.totalWidth / 2 : c === "decimal" ? r.decimalPrefixWidth ?? r.totalWidth : r.totalWidth, l = n - e - o;
+				for (l <= 0 && (l = 0), t.measuredWidth = l, L(t, l, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2); R.length > 0;) {
 					let e = R[0];
 					if ("isTab" in e || "lineBreak" in e) break;
 					if (R.shift(), "imagePath" in e) {
@@ -5353,7 +5699,7 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 						e.measuredWidth = t, L(e, t, e.heightPt, e.heightPt * i, 0);
 					} else if ("math" in e) L(e, e.measuredWidth || 0, e.fontSize, e.mathAscent || 0, e.mathDescent || 0);
 					else {
-						let t = Pe(e), n = _s(e, t.width + Fe(e, e.text), f, i);
+						let t = ze(e), n = ks(e, t.width + Be(e, e.text), f, i);
 						e.measuredWidth = n;
 						let r = t.fontBoundingBoxAscent ?? t.actualBoundingBoxAscent ?? e.fontSize * i * .8, a = t.fontBoundingBoxDescent ?? t.actualBoundingBoxDescent ?? e.fontSize * i * .2;
 						L(e, n, e.fontSize, r, a);
@@ -5363,11 +5709,11 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 			}
 			let l = s - e;
 			if (a && (t.leader = a.leader), l <= 0) {
-				we(void 0, !1, t.src), R.unshift(t);
+				Oe(void 0, !1, t.src), R.unshift(t);
 				continue;
 			}
-			if (A + l > he() && k.length > 0) {
-				we(void 0, !1, t.src), R.unshift(t);
+			if (A + l > be() && k.length > 0) {
+				Oe(void 0, !1, t.src), R.unshift(t);
 				continue;
 			}
 			t.measuredWidth = l, L(t, l, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2);
@@ -5379,35 +5725,37 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				continue;
 			}
 			let e = t.widthPt * i, n = t.heightPt, r = t.heightPt * i;
-			t.measuredWidth = e, k.length > 0 && A + e > he() && we(void 0, !1, t.src), L(t, e, n, r, 0);
+			t.measuredWidth = e, k.length > 0 && A + e > be() && Oe(void 0, !1, t.src), L(t, e, n, r, 0);
 			continue;
 		}
 		if ("math" in t) {
 			let n = t.mathMetadata;
 			if (!n || n.available === !1) {
 				let n = t.fontSize * i;
-				je($o(!1, !1, n, null, l));
+				Ie(cs(!1, !1, n, null, l));
 				let r = e.measureText(t.fallbackText), a = r.width, o = r.fontBoundingBoxAscent ?? r.actualBoundingBoxAscent ?? n * .8, s = r.fontBoundingBoxDescent ?? r.actualBoundingBoxDescent ?? n * .2;
-				t.measuredWidth = a, t.mathAscent = o, t.mathDescent = s, k.length > 0 && A + a > he() && we(void 0, !1, t.src), L(t, a, t.fontSize, Math.max(o, n * .8), Math.max(s, n * .2));
+				t.measuredWidth = a, t.mathAscent = o, t.mathDescent = s, k.length > 0 && A + a > be() && Oe(void 0, !1, t.src), L(t, a, t.fontSize, Math.max(o, n * .8), Math.max(s, n * .2));
 				continue;
 			}
 			let r = t.fontSize * i, a = n.widthEm * r, o = n.ascentEm * r, s = n.descentEm * r;
 			t.measuredWidth = a, t.mathAscent = o, t.mathDescent = s;
 			let c = Math.max(o, r * .8), u = Math.max(s, r * .2);
-			k.length > 0 && A + a > he() && we(void 0, !1, t.src), L(t, a, t.fontSize, c, u);
+			k.length > 0 && A + a > be() && Oe(void 0, !1, t.src), L(t, a, t.fontSize, c, u);
 			continue;
 		}
-		let c = t, v = Pe(c), b = _s(c, v.width + Fe(c, c.text), f, i), x = c.fontSize, w = c.fontSize * i, E = v, D = ke(c);
-		if (c.smallCaps && !c.vertAlign && D !== w) {
+		let c = t, v = ze(c, As(c, f) === "eastAsia"), b = ks(c, v.width + Be(c, c.text), f, i);
+		c.snapGridNaturalWidthPx = b;
+		let x = Ne(c, b), w = c.fontSize, E = c.fontSize * i, D = v, O = Pe(c);
+		if (c.smallCaps && !c.vertAlign && O !== E) {
 			if (c.textLayoutService && c.textShapeRequest) {
 				let e = c.textLayoutService.shape({
 					...c.textShapeRequest,
 					text: c.text || "X",
-					fontSizePt: w,
+					fontSizePt: E,
 					measure: !0,
 					clusterGeometry: !1
 				});
-				E = {
+				D = {
 					width: e.advancePt,
 					actualBoundingBoxAscent: e.ascentPt,
 					actualBoundingBoxDescent: e.descentPt,
@@ -5416,106 +5764,106 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				};
 			} else {
 				let t = e.font;
-				e.font = $o(c.bold, c.italic, w, c.fontFamily, l, c.fontRoute), E = e.measureText(c.text || "X"), e.font = t;
+				e.font = cs(c.bold, c.italic, E, c.fontFamily, l, c.fontRoute), D = e.measureText(c.text || "X"), e.font = t;
 			}
-			D = w;
+			O = E;
 		}
-		let O = Cs(E, c.fontFamily, w, D, (c.metricEastAsian === !0 || ai.test(c.text)) && !c.ruby), N = O.ascent, P = O.descent;
+		let j = Ls(D, c.fontFamily, E, O, (c.metricEastAsian === !0 || oi.test(c.text)) && !c.ruby), M = j.ascent, N = j.descent;
 		if (c.positionExtendsLineBox !== !1) {
 			let e = (c.position ?? 0) * i;
-			e > 0 ? N += e : e < 0 && (P -= e);
+			e > 0 ? M += e : e < 0 && (N -= e);
 		}
-		if (c.ruby && (!c.textBoxLineFloor || c.textBoxVertical) && (N += Bo(c.ruby.fontSizePt, c.ruby.hpsRaisePt, i, c, e, l)), c.fitTextRegionIndex !== void 0) {
+		if (c.ruby && (!c.textBoxLineFloor || c.textBoxVertical) && (M += Yo(c.ruby.fontSizePt, c.ruby.hpsRaisePt, i, c, e, l)), c.fitTextRegionIndex !== void 0) {
 			if (c.fitTextRegionStart) {
 				let e = b;
 				for (let t of R) {
 					if (!("text" in t) || t.fitTextRegionIndex !== c.fitTextRegionIndex) break;
-					e += Re(t);
+					e += Ge(t);
 				}
-				k.length > 0 && A + e > he() && we(void 0, !1, c.src);
+				k.length > 0 && A + e > be() && Oe(void 0, !1, c.src);
 			}
-			c.measuredWidth = b, L(c, b, x, N, P);
+			c.measuredWidth = b, L(c, b, w, M, N);
 			continue;
 		}
-		let te = c.text.replace(/ +$/, ""), ne = c.text.endsWith(" ") ? b - z(c, te) : 0, re = (e) => {
+		let ne = c.text.replace(/ +$/, ""), re = As(c, f) ? 0 : c.text.endsWith(" ") ? b - Je(c, ne) : 0, ae = (e) => {
 			let t = e === void 0 || "lineBreak" in e;
 			return _ && (!t || y);
-		}, ie = (e, t, r) => wo({
+		}, P = (e, t, r) => No({
 			widthPx: e,
 			trailingSpacePx: t,
-			lineWillJustify: re(r),
-			wrapNarrowed: le !== n || ue !== 0
-		}), F = ie(b, ne, R[0]), I = c.seaBreaks !== void 0 && ve(c.text), ae = /* @__PURE__ */ new Set();
-		De(ae, c, te);
-		let oe = (e, t, n) => re(e) ? To({
+			lineWillJustify: ae(r),
+			wrapNarrowed: pe !== n || me !== 0
+		}), F = P(x, re, R[0]), oe = c.seaBreaks !== void 0 && ve(c.text), I = /* @__PURE__ */ new Set();
+		je(I, c, ne);
+		let se = (e, t, n) => ae(e) ? Po({
 			biasBudgetPx: t,
-			resolvedMeasurementRouteCount: Oe(n)
-		}) : Ce || I ? 0 : j * Us;
-		if (!c.joinPrev && k.length > 0 && R[0]?.joinPrev && !js(c.text) && !(c.seaBreaks && c.seaBreaks.length > 0)) {
-			let e = b, t = ne, n = 0, r = M, i = new Set(ae), a = c, o = c.text, s = (e, t = e.text) => {
-				r += Te(a, o), a = e, o = t;
+			resolvedMeasurementRouteCount: Me(n)
+		}) : De || oe ? 0 : ee * rc;
+		if (!c.joinPrev && k.length > 0 && R[0]?.joinPrev && !Gs(c.text) && !(c.seaBreaks && c.seaBreaks.length > 0)) {
+			let e = b, t = re, n = 0, r = ie, i = new Set(I), a = c, o = c.text, s = (e, t = e.text) => {
+				r += ke(a, o), a = e, o = t;
 			};
 			for (; n < R.length && R[n].joinPrev; n++) {
 				let r = R[n];
-				if (js(r.text)) {
+				if (Gs(r.text)) {
 					let n = [...r.text], a = 0;
 					for (; a < n.length && m.lineStartForbidden.has(n[a].codePointAt(0));) a++;
 					if (a < n.length) {
-						let o = n.slice(0, a).join(""), c = z(r, o);
-						e += c, o.length > 0 && (s(r, o), De(i, r, o)), t = 0;
+						let o = n.slice(0, a).join(""), c = Je(r, o);
+						e += c, o.length > 0 && (s(r, o), je(i, r, o)), t = 0;
 						break;
 					}
 				}
-				let a = Re(r);
-				e += a, s(r), De(i, r);
-				let o = r.text.replace(/ +$/, "");
-				t = r.text.endsWith(" ") ? a - z(r, o) : 0;
+				let a = Ge(r);
+				e += a, s(r), je(i, r);
+				let o = r.text.replace(/ +$/, ""), c = r.text.endsWith(" ") ? a - Je(r, o) : 0;
+				t = o.length === 0 && t > 0 ? t + c : c;
 			}
-			r += Te(a, o.replace(/ +$/, "")), A + ie(e, t, R[n]) > he() + oe(R[n], r, i) && we(void 0, !1, c.src);
+			r += ke(a, o.replace(/ +$/, "")), A + P(e, t, R[n]) > be() + se(R[n], r, i) && Oe(void 0, !1, c.src);
 		}
-		if (I && k.length > 0 && (() => {
+		if (oe && k.length > 0 && (() => {
 			let e = k[k.length - 1];
 			return !("text" in e) || e.text.endsWith(" ");
 		})()) {
-			let e = b, t = ne, n = 0, r = M + Te(c, te), i = new Set(ae);
+			let e = b, t = re, n = 0, r = ie + ke(c, ne), i = new Set(I);
 			if (!c.text.endsWith(" ")) for (; n < R.length; n++) {
 				let a = R[n];
 				if (!("text" in a) || a.seaBreaks === void 0 || !ve(a.text)) break;
-				let o = a, s = Re(o), c = o.text.replace(/ +$/, "");
-				if (e += s, t = o.text.endsWith(" ") ? s - z(o, c) : 0, r += Te(o, c), De(i, o, c), o.text.endsWith(" ")) {
+				let o = a, s = Ge(o), c = o.text.replace(/ +$/, "");
+				if (e += s, t = o.text.endsWith(" ") ? s - Je(o, c) : 0, r += ke(o, c), je(i, o, c), o.text.endsWith(" ")) {
 					n++;
 					break;
 				}
 			}
-			let a = ie(e, t, R[n]);
-			A + a > he() + oe(R[n], r, i) && a <= le && we(void 0, !1, c.src);
+			let a = P(e, t, R[n]);
+			A + a > be() + se(R[n], r, i) && a <= pe && Oe(void 0, !1, c.src);
 		}
-		let se = oe(R[0], M + Te(c, te), ae), de = [...te], fe = de.at(-1), pe = de.slice(0, -1).join(""), me = C && fe !== void 0 && (k.length > 0 || pe.length > 0) && Co(fe, c.eastAsiaLanguage) && A + z(c, pe) <= he() + se;
-		if (A + F <= he() + se) c.measuredWidth = b, L(c, b, x, N, P, ne);
-		else if (me) c.measuredWidth = b, L(c, b, x, N, P, ne);
-		else if (js(c.text) && c.seaBreaks === void 0) {
-			let t = he() - A;
-			je($o(c.bold, c.italic, ke(c), c.fontFamily, l, c.fontRoute));
-			let n = Me(c), r = "";
+		let ce = se(R[0], ie + ke(c, ne), I), le = [...ne], ue = le.at(-1), de = le.slice(0, -1).join(""), he = C && ue !== void 0 && (k.length > 0 || de.length > 0) && Mo(ue, c.eastAsiaLanguage) && A + Je(c, de) <= be() + ce;
+		if (A + F <= be() + ce) c.measuredWidth = b, L(c, b, w, M, N, re);
+		else if (he) c.measuredWidth = b, L(c, b, w, M, N, re);
+		else if (Gs(c.text) && c.seaBreaks === void 0) {
+			let t = be() - A;
+			Ie(cs(c.bold, c.italic, Pe(c), c.fontFamily, l, c.fontRoute));
+			let n = Le(c), r = "";
 			try {
-				r = t > 0 ? Ls(e, c.text, t, ss(c, f), hs(c), cs(c, i), c.verticalRun === !0, S, (e) => z(c, e)) : "";
+				r = t > 0 ? Zs(e, c.text, t, _s(c, f, i), Es(c), vs(c, i), c.verticalRun === !0, S, (e) => Je(c, e)) : "";
 			} finally {
-				Ne(n);
+				Re(n);
 			}
-			let o = [...c.text], u = [...r].length, p = k.length > 0 ? 0 : 1, m = Is(o, (C && u < o.length && (k.length > 0 || u > 0) && Co(o[u], c.eastAsiaLanguage) ? u + 1 : null) ?? a(o, u, d, p)), h = o.slice(0, m).join("");
+			let o = [...c.text], u = [...r].length, p = k.length > 0 ? 0 : 1, m = Xs(o, (C && u < o.length && (k.length > 0 || u > 0) && Mo(o[u], c.eastAsiaLanguage) ? u + 1 : null) ?? a(o, u, d, p)), h = o.slice(0, m).join("");
 			if (h.length > 0) {
-				let e = z(c, h);
+				let e = Ke(c, h);
 				L({
 					...c,
 					text: h,
 					measuredWidth: e,
-					punctuationCompressions: ds(c, 0, h.length)
-				}, e, x, N, P);
+					punctuationCompressions: q(c, 0, h.length)
+				}, e, w, M, N);
 				let t = c.text.slice(h.length);
 				t && R.unshift({
 					...c,
 					text: t,
-					punctuationCompressions: ds(c, h.length, c.text.length),
+					punctuationCompressions: q(c, h.length, c.text.length),
 					measuredWidth: 0,
 					src: {
 						segIndex: c.src.segIndex,
@@ -5531,39 +5879,39 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 						if (e = {
 							...t,
 							text: a,
-							punctuationCompressions: ds(t, n.length, t.text.length),
-							measuredWidth: z(t, a, !0),
+							punctuationCompressions: q(t, n.length, t.text.length),
+							measuredWidth: Je(t, a, !0),
 							src: {
 								segIndex: t.src.segIndex,
 								charOffset: t.src.charOffset + n.length
 							}
 						}, n) {
-							let e = z(t, n);
+							let e = Je(t, n);
 							A -= t.measuredWidth - e, k[k.length - 1] = {
 								...t,
 								text: n,
 								measuredWidth: e,
-								punctuationCompressions: ds(t, 0, n.length)
+								punctuationCompressions: q(t, 0, n.length)
 							};
 						} else A -= t.measuredWidth, k.pop();
 					}
 				}
-				we(void 0, !1, e?.src ?? c.src), R.unshift(c), e && R.unshift(e);
+				Oe(void 0, !1, e?.src ?? c.src), R.unshift(c), e && R.unshift(e);
 			} else {
-				let e = [...c.text], t = e.length > 0 ? Is(e, 1) : 0, n = e.slice(0, t).join("");
+				let e = [...c.text], t = e.length > 0 ? Xs(e, 1) : 0, n = e.slice(0, t).join("");
 				if (n) {
-					let e = z(c, n);
+					let e = Ke(c, n);
 					L({
 						...c,
 						text: n,
 						measuredWidth: e,
-						punctuationCompressions: ds(c, 0, n.length)
-					}, e, x, N, P);
+						punctuationCompressions: q(c, 0, n.length)
+					}, e, w, M, N);
 					let t = c.text.slice(n.length);
 					t && R.unshift({
 						...c,
 						text: t,
-						punctuationCompressions: ds(c, n.length, c.text.length),
+						punctuationCompressions: q(c, n.length, c.text.length),
 						measuredWidth: 0,
 						src: {
 							segIndex: c.src.segIndex,
@@ -5573,26 +5921,26 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				}
 			}
 		} else if (c.seaBreaks !== void 0) {
-			let e = he() - A, t = (e) => z(c, e), n = Se(c.text), r = ee(c.text, c.seaBreaks, 0, e, t, n);
+			let e = be() - A, t = (e) => Je(c, e), n = Se(c.text), r = te(c.text, c.seaBreaks, 0, e, t, n);
 			if (r > 0) {
-				let e = c.text.slice(0, r), t = z(c, e);
+				let e = c.text.slice(0, r), t = Ke(c, e);
 				L({
 					...c,
 					text: e,
 					measuredWidth: t,
-					punctuationCompressions: ds(c, 0, e.length)
-				}, t, x, N, P);
+					punctuationCompressions: q(c, 0, e.length)
+				}, t, w, M, N);
 				let n = c.text.slice(r);
 				n && R.unshift({
 					...c,
 					text: n,
-					punctuationCompressions: ds(c, r, c.text.length),
+					punctuationCompressions: q(c, r, c.text.length),
 					measuredWidth: 0,
 					src: {
 						segIndex: c.src.segIndex,
 						charOffset: c.src.charOffset + r
 					},
-					seaBreaks: Fs(c.seaBreaks, r)
+					seaBreaks: Ys(c.seaBreaks, r)
 				});
 			} else if (k.length > 0) {
 				let e = null, t = c.text.codePointAt(0), n = k[k.length - 1];
@@ -5603,56 +5951,56 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 						if (e = {
 							...t,
 							text: a,
-							punctuationCompressions: ds(t, n.length, t.text.length),
-							measuredWidth: z(t, a, !0),
+							punctuationCompressions: q(t, n.length, t.text.length),
+							measuredWidth: Je(t, a, !0),
 							src: {
 								segIndex: t.src.segIndex,
 								charOffset: t.src.charOffset + n.length
 							},
-							seaBreaks: Fs(t.seaBreaks, n.length)
+							seaBreaks: Ys(t.seaBreaks, n.length)
 						}, n) {
-							let e = z(t, n);
+							let e = Je(t, n);
 							A -= t.measuredWidth - e, k[k.length - 1] = {
 								...t,
 								text: n,
 								measuredWidth: e,
-								punctuationCompressions: ds(t, 0, n.length)
+								punctuationCompressions: q(t, 0, n.length)
 							};
 						} else A -= t.measuredWidth, k.pop();
 					}
 				}
-				we(void 0, !1, e?.src ?? c.src), R.unshift(c), e && R.unshift(e);
+				Oe(void 0, !1, e?.src ?? c.src), R.unshift(c), e && R.unshift(e);
 			} else {
-				let r = c.seaBreaks[0] ?? c.text.length, i = c.text.slice(0, r), a = T(i), o = ee(i, a, 0, e, t, n);
+				let r = c.seaBreaks[0] ?? c.text.length, i = c.text.slice(0, r), a = T(i), o = te(i, a, 0, e, t, n);
 				o <= 0 && (o = a.length > 0 ? a[0] : i.length);
-				let s = c.text.slice(0, o), l = z(c, s);
+				let s = c.text.slice(0, o), l = Ke(c, s);
 				L({
 					...c,
 					text: s,
 					measuredWidth: l,
-					punctuationCompressions: ds(c, 0, s.length)
-				}, l, x, N, P);
+					punctuationCompressions: q(c, 0, s.length)
+				}, l, w, M, N);
 				let u = c.text.slice(o);
 				u && R.unshift({
 					...c,
 					text: u,
-					punctuationCompressions: ds(c, o, c.text.length),
+					punctuationCompressions: q(c, o, c.text.length),
 					measuredWidth: 0,
 					src: {
 						segIndex: c.src.segIndex,
 						charOffset: c.src.charOffset + o
 					},
-					seaBreaks: Fs(c.seaBreaks, o)
+					seaBreaks: Ys(c.seaBreaks, o)
 				});
 			}
 		} else if (k.length === 0) {
-			let t = he();
-			je($o(c.bold, c.italic, ke(c), c.fontFamily, l, c.fontRoute));
-			let n = Me(c), r = 0;
+			let t = be();
+			Ie(cs(c.bold, c.italic, Pe(c), c.fontFamily, l, c.fontRoute));
+			let n = Le(c), r = 0;
 			try {
-				r = t > 0 ? Ls(e, c.text, t, ss(c, f), hs(c), cs(c, i), c.verticalRun === !0, S, (e) => z(c, e)).length : 0;
+				r = t > 0 ? Zs(e, c.text, t, _s(c, f, i), Es(c), vs(c, i), c.verticalRun === !0, S, (e) => Je(c, e)).length : 0;
 			} finally {
-				Ne(n);
+				Re(n);
 			}
 			let a = [
 				0,
@@ -5660,18 +6008,18 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 				c.text.length
 			], o = a.filter((e) => e <= r).at(-1) ?? 0;
 			for (o <= 0 && (o = a[1] ?? c.text.length); c.text.startsWith("　", o);) o += 1;
-			if (o >= c.text.length) c.measuredWidth = b, L(c, b, x, N, P);
+			if (o >= c.text.length) c.measuredWidth = b, L(c, b, w, M, N);
 			else {
-				let e = c.text.slice(0, o), t = z(c, e);
+				let e = c.text.slice(0, o), t = Ke(c, e);
 				L({
 					...c,
 					text: e,
 					measuredWidth: t,
-					punctuationCompressions: ds(c, 0, e.length)
-				}, t, x, N, P), R.unshift({
+					punctuationCompressions: q(c, 0, e.length)
+				}, t, w, M, N), R.unshift({
 					...c,
 					text: c.text.slice(o),
-					punctuationCompressions: ds(c, o, c.text.length),
+					punctuationCompressions: q(c, o, c.text.length),
 					measuredWidth: 0,
 					src: {
 						segIndex: c.src.segIndex,
@@ -5681,30 +6029,30 @@ function Ys(e, t, n, r, i, o = [], c, l = {}, u = 0, d = m, f = 0, p = 36, h = n
 			}
 		} else {
 			if (c.joinPrev) {
-				c.measuredWidth = b, L(c, b, x, N, P, ne);
+				c.measuredWidth = b, L(c, b, w, M, N, re);
 				continue;
 			}
-			we(void 0, !1, c.src), R.unshift(c);
+			Oe(void 0, !1, c.src), R.unshift(c);
 		}
 	}
-	if (k.length > 0 ? we() : Be !== null && we(Be), x === "bounded") for (let e of O) for (let t of e.segments) !("text" in t) || t.metricOnly || t.text.length === 0 || (t.shapedClusters = void 0, t.textLayoutService && t.textShapeRequest && Pe(t, !0));
+	if (k.length > 0 ? Oe() : $e !== null && Oe($e), x === "bounded") for (let e of O) for (let t of e.segments) !("text" in t) || t.metricOnly || t.text.length === 0 || (t.shapedClusters = void 0, t.textLayoutService && t.textShapeRequest && ze(t, !0));
 	return O;
 }
 //#endregion
 //#region packages/docx/src/bidi-line.ts
-var Xs = (e) => {
+var uc = (e) => {
 	let t = e.text;
 	return typeof t == "string" ? t : void 0;
-}, Zs = (e) => e.rtl === !0, Qs = (e) => e.digitsAsAN === !0, $s = (e) => "isTab" in e;
-function ec(e) {
+}, dc = (e) => e.rtl === !0, fc = (e) => e.digitsAsAN === !0, pc = (e) => "isTab" in e;
+function mc(e) {
 	for (let t of e) {
-		if (Zs(t)) return !0;
-		let e = Xs(t);
-		if (e !== void 0 && re(e)) return !0;
+		if (dc(t)) return !0;
+		let e = uc(t);
+		if (e !== void 0 && ie(e)) return !0;
 	}
 	return !1;
 }
-function tc(t, n) {
+function hc(t, n) {
 	let r = t.length;
 	if (r === 0) return {
 		order: [],
@@ -5715,13 +6063,13 @@ function tc(t, n) {
 		return s;
 	};
 	for (let e = 0; e < r; e++) {
-		let n = Xs(t[e]) ?? "";
-		if (a[e] = i.length, i += n.length > 0 ? n : "￼", o[e] = i.length, $s(t[e])) c()[a[e]] = "S";
-		else if (n.length > 0 && (Qs(t[e]) || Zs(t[e]))) {
-			let n = c(), r = Qs(t[e]), s = Zs(t[e]);
+		let n = uc(t[e]) ?? "";
+		if (a[e] = i.length, i += n.length > 0 ? n : "￼", o[e] = i.length, pc(t[e])) c()[a[e]] = "S";
+		else if (n.length > 0 && (fc(t[e]) || dc(t[e]))) {
+			let n = c(), r = fc(t[e]), s = dc(t[e]);
 			for (let t = a[e]; t < o[e]; t++) {
 				let e = i.charCodeAt(t);
-				r && e >= 48 && e <= 57 ? n[t] = "AN" : s && Lo(i[t]) && (n[t] = "R");
+				r && e >= 48 && e <= 57 ? n[t] = "AN" : s && Ko(i[t]) && (n[t] = "R");
 			}
 		}
 	}
@@ -5753,7 +6101,7 @@ function tc(t, n) {
 		rtl: f
 	};
 }
-function nc(e, t) {
+function gc(e, t) {
 	switch (e) {
 		case "center": return "center";
 		case "both":
@@ -5771,7 +6119,7 @@ function nc(e, t) {
 		default: return t ? "right" : "left";
 	}
 }
-function rc(e) {
+function _c(e) {
 	switch (e) {
 		case "both":
 		case "justify":
@@ -5783,26 +6131,137 @@ function rc(e) {
 		default: return !1;
 	}
 }
-function ic(e) {
+function vc(e) {
 	return e === "distribute";
 }
 //#endregion
+//#region packages/docx/src/layout/float-wrap-oracle.ts
+function yc(e, t) {
+	let n = e.map((e) => Object.freeze({ ...e })), r = Ha(n);
+	return {
+		lineWindow: ({ topYPt: e, minimumStartWidthPt: n, squareMinimumStartWidthPt: i, probeHeightPt: a, paragraphXPt: o, maximumWidthPt: s, columnXPt: c, columnWidthPt: l }) => {
+			let u = oo(e, n, a, o, s, r, c, c + l, t ?? {
+				xLeftPt: o,
+				xRightPt: o + s,
+				readingDirection: "ltr"
+			}, i ?? n);
+			return {
+				topYPt: u.topY,
+				xOffsetPt: u.xOffset,
+				maximumWidthPt: u.maxWidth
+			};
+		},
+		skipTopAndBottomBands: ({ yPt: e, columnXPt: t, columnWidthPt: r }) => so(e, n, t, t + r)
+	};
+}
+//#endregion
+//#region packages/docx/src/paragraph-measure.ts
+function bc(e) {
+	if (e.characterGrid.active) return {
+		type: e.characterGrid.kind,
+		linePitchPt: null,
+		characterPitchPt: e.characterGrid.pitchPt,
+		charSpacePt: e.characterGrid.deltaPt
+	};
+}
+function xc(e) {
+	let t = bc(e);
+	return {
+		type: t ? t.type : e.lineGrid.active ? "lines" : null,
+		linePitchPt: e.lineGrid.active ? e.lineGrid.pitchPt : null,
+		characterPitchPt: e.characterGrid.active ? e.characterGrid.pitchPt : null,
+		charSpacePt: e.characterGrid.active ? e.characterGrid.deltaPt : null
+	};
+}
+function Sc(e, t) {
+	if (!Ms(t)) return e;
+	let n = t.linePitchPt;
+	return n <= 0 ? e : e <= n ? n : Math.ceil(e / n) * n;
+}
+function Cc(e, t, n, r, i, a) {
+	let o = xc(t), s = dl(t, n.availableWidthPt), c = Math.max(1, n.availableWidthPt - t.physicalIndentLeftPt - t.physicalIndentRightPt - s), l = n.paragraphXPt + t.physicalIndentLeftPt, u = t.spaceBeforePt, d = t.spaceAfterPt, f = Object.freeze({ ...n }), p = r.fontFamilyClasses, m = i.documentHasEastAsianText === !0 || i.useFeLayout === !0, h = n.startYPt + (n.suppressSpaceBefore ? 0 : u);
+	n.wrap && (h = n.wrap.skipTopAndBottomBands({
+		yPt: h,
+		columnXPt: n.paragraphXPt,
+		columnWidthPt: n.availableWidthPt
+	}));
+	let g = () => {
+		let a = h, s = zs(e, 1, o, t.hasRuby, m, r.context, p, t.lineSpacing, i.resolvedLocalFonts, i.layoutServices?.text, i.paragraphMarkShapeInput, i.useFeLayout === !0);
+		return n.wrap && (a = n.wrap.lineWindow({
+			topYPt: a,
+			minimumStartWidthPt: ds(e),
+			squareMinimumStartWidthPt: pa(ds(e), 1),
+			probeHeightPt: s,
+			paragraphXPt: l,
+			maximumWidthPt: c,
+			columnXPt: n.paragraphXPt,
+			columnWidthPt: n.availableWidthPt
+		}).topYPt), {
+			lines: [],
+			markOnly: !0,
+			requestedSpaceBeforePt: u,
+			requestedSpaceAfterPt: d,
+			uniformRubyAdvancePt: 0,
+			contentStartYPt: a,
+			contentEndYPt: a + s,
+			lastLineBelowBaselinePt: Vs(e, o, t.hasRuby, m, r.context, p, t.lineSpacing, i.resolvedLocalFonts, i.layoutServices?.text, i.paragraphMarkShapeInput, i.useFeLayout === !0),
+			placement: f
+		};
+	}, _ = cc(e.runs, i);
+	if (_.length === 0) return g();
+	let v = n.wrap ? {
+		startPageY: h,
+		paraX: l,
+		columnXPt: n.paragraphXPt,
+		columnWidthPt: n.availableWidthPt,
+		floats: [],
+		paragraphMarkLineStartWidth: pa(ds(e), 1),
+		lineWindow: (e) => n.wrap.lineWindow(e),
+		lineBoxH: (e, n, r, i, a, s) => Fs(t.lineSpacing, e, n, 1, o, t.hasRuby, i ?? 0, t.hasRuby ? t.hasEastAsianText : a ?? !1, s),
+		pageH: n.maximumYPt
+	} : void 0, y = lc(r.context, _, c, a ? 0 : t.firstIndentPt, 1, [...t.tabStops], v, p, t.physicalIndentLeftPt, t.kinsoku, o, t.defaultTabPt, c + t.physicalIndentRightPt + s, t.baseRtl, t.isJustified, t.stretchLastLine, a?.boundary, void 0, i.verticalGlyphMeasurement, t.overflowPunct !== !1);
+	if (y.length === 0) return g();
+	let b = t.hasRuby ? Sc(Math.max(0, ...y.map((e) => Fs(t.lineSpacing, e.ascent, e.descent, 1, o, !0, e.intendedSingle, t.hasEastAsianText))), o) : 0;
+	t.hasRuby && a?.uniformRubyAdvancePt !== void 0 && (b = Math.max(b, a.uniformRubyAdvancePt));
+	let x = [];
+	for (let e of y) {
+		let n = e.topY !== void 0 && e.topY > h ? e.topY : h, r = t.hasRuby ? b : Fs(t.lineSpacing, e.ascent, e.descent, 1, o, !1, e.intendedSingle, e.eastAsian ?? !1, e.gridCountSingle);
+		x.push({
+			layout: e,
+			topYPt: n,
+			advancePt: r
+		}), h = n + r;
+	}
+	let S = x[x.length - 1];
+	return {
+		lines: x,
+		markOnly: !1,
+		requestedSpaceBeforePt: u,
+		requestedSpaceAfterPt: d,
+		uniformRubyAdvancePt: b,
+		contentStartYPt: x[0].topYPt,
+		contentEndYPt: h,
+		lastLineBelowBaselinePt: Bs(S.advancePt, S.layout.ascent, S.layout.descent),
+		placement: f
+	};
+}
+//#endregion
 //#region packages/docx/src/layout/numbering-marker.ts
-function ac(e) {
+function wc(e) {
 	let t = e.leadingIndentPt + e.authoredFirstIndentPt + e.markerShiftPt;
 	return {
 		startPt: t,
 		endPt: t + e.markerWidthPt
 	};
 }
-function oc(e) {
+function Tc(e) {
 	let t = e.authoredFirstIndentPt + e.markerShiftPt;
 	return e.baseRtl ? e.alignedLeadingEdgePt - t - e.markerWidthPt : e.alignedLeadingEdgePt + t;
 }
-function sc(e, t) {
+function Ec(e, t) {
 	let { numbering: n, markerInput: r, service: i } = t, a = n != null && (n.text !== "" || n.picBulletImagePath != null) && (!e.baseRtl || (n?.suff || "tab") === "tab" && t.authoredFirstIndentPt < 0);
 	if (!n || !r || !i || !a) return e;
-	let o = uc(n, r, {
+	let o = kc(n, r, {
 		authoredFirstIndentPt: t.authoredFirstIndentPt,
 		physicalIndentLeftPt: e.physicalIndentLeftPt,
 		tabStops: t.tabStops,
@@ -5814,7 +6273,7 @@ function sc(e, t) {
 		numberingMarkerGeometry: o
 	};
 }
-function cc(e, t, n, r, i = !0) {
+function Dc(e, t, n, r, i = !0) {
 	return r ? {
 		shape: r.shape({
 			text: t,
@@ -5834,14 +6293,14 @@ function cc(e, t, n, r, i = !0) {
 		fontSizePx: e.fontSizePt * n
 	} : null;
 }
-function lc(e, t, n) {
-	return t.find((t) => Eo(e, t)) ?? oi(e, [...t], n);
+function Oc(e, t, n) {
+	return t.find((t) => Fo(e, t)) ?? si(e, [...t], n);
 }
-function uc(e, t, n, r, i = !0) {
-	let a = e.picBulletImagePath ? "" : Ae(e.text, e.fontFamily ?? null), o = a ? cc(t, a, 1, r, i)?.shape ?? null : null, s = e.picBulletImagePath ? e.picBulletWidthPt ?? t.fontSizePt : o?.advancePt ?? 0, c = e.jc === "right" ? -s : e.jc === "center" ? -s / 2 : 0, l = n.authoredFirstIndentPt + c + s, u = e.suff || "tab", d = l;
-	if (u === "space") d += cc(t, " ", 1, r, i)?.shape.advancePt ?? 0;
+function kc(e, t, n, r, i = !0) {
+	let a = e.picBulletImagePath ? "" : je(e.text, e.fontFamily ?? null), o = a ? Dc(t, a, 1, r, i)?.shape ?? null : null, s = e.picBulletImagePath ? e.picBulletWidthPt ?? t.fontSizePt : o?.advancePt ?? 0, c = e.jc === "right" ? -s : e.jc === "center" ? -s / 2 : 0, l = n.authoredFirstIndentPt + c + s, u = e.suff || "tab", d = l;
+	if (u === "space") d += Dc(t, " ", 1, r, i)?.shape.advancePt ?? 0;
 	else if (u === "tab" && (d = 0, l > 0)) {
-		let e = lc(n.physicalIndentLeftPt + l, n.tabStops, n.defaultTabPt);
+		let e = Oc(n.physicalIndentLeftPt + l, n.tabStops, n.defaultTabPt);
 		d = e ? e.pos - n.physicalIndentLeftPt : l;
 	}
 	return {
@@ -5854,7 +6313,7 @@ function uc(e, t, n, r, i = !0) {
 }
 //#endregion
 //#region packages/docx/src/layout/intrinsic-width.ts
-function dc(e, t, n) {
+function Ac(e, t, n) {
 	let r = 0, i = 0;
 	for (let t of e.content) {
 		let e = t.type === "paragraph" ? n.paragraph(t) : n.nestedTable(t);
@@ -5866,14 +6325,14 @@ function dc(e, t, n) {
 		maxWidthPt: Math.max(r, i) + a
 	};
 }
-function fc(e) {
+function jc(e) {
 	let t = e.textShapeRequest, n = (e) => e ? [
 		e.ascii ?? null,
 		e.highAnsi ?? null,
 		e.eastAsia ?? null,
 		e.complexScript ?? null
 	] : null;
-	return an("paragraph-intrinsic-text", [
+	return on("paragraph-intrinsic-text", [
 		e.textLayoutService?.fingerprint ?? null,
 		t ? [
 			n(t.fonts),
@@ -5897,7 +6356,7 @@ function fc(e) {
 		] : null,
 		e.bold,
 		e.italic,
-		ii(e, 1),
+		ai(e, 1),
 		e.fontFamily,
 		e.fontRoute ?? null,
 		e.charScale ?? 1,
@@ -5906,6 +6365,10 @@ function fc(e) {
 		e.fitTextTrailingPadPx ?? null,
 		e.fitTextRegionIndex ?? null,
 		e.snapToCharacterGrid !== !1,
+		e.widthBalanceGridDeltaFactor ?? null,
+		e.widthBalanceSpaceSequence ?? !1,
+		e.widthBalanceSpaceAdjustmentPt ?? null,
+		e.script,
 		e.tateChuYoko ?? !1,
 		e.tateChuYoko ? e.sourceRunIndex ?? null : null,
 		e.ruby ? [
@@ -5917,11 +6380,11 @@ function fc(e) {
 		e.verticalRun ?? !1
 	]);
 }
-function pc(e) {
+function Mc(e) {
 	let t = [];
 	for (let n of e) {
 		let e = t.at(-1);
-		if (e && "text" in e && "text" in n && fc(e) === fc(n)) {
+		if (e && "text" in e && "text" in n && jc(e) === jc(n)) {
 			let r = e.text.length, i = e.text + n.text, a = [...e.punctuationCompressions ?? [], ...(n.punctuationCompressions ?? []).map((e) => ({
 				end: r + e.end,
 				adjustmentPt: e.adjustmentPt
@@ -5941,33 +6404,76 @@ function pc(e) {
 	}
 	return t;
 }
-function mc(e, t, n, r, i, a) {
-	let o = 0;
-	for (let s of e) {
-		let e = Math.max(n, s.start), c = Math.min(r, s.end);
-		if (e >= c) continue;
-		let l = t.slice(e, c), u = e - s.start, d = c - s.start, f = {
-			...s.segment,
-			text: l,
-			punctuationCompressions: ds(s.segment, u, d)
-		};
-		if (f.textLayoutService && f.textShapeRequest) {
-			let e = f.textLayoutService.shape({
-				...f.textShapeRequest,
-				text: l,
-				fontSizePt: ii(f, 1),
+function Nc(e, t, n, r, i, a) {
+	let o = 0, s = null, c = a?.type === "snapToChars" && a.characterPitchPt != null && a.characterPitchPt > 0 ? a.characterPitchPt : null, l = () => {
+		!s || c == null || (o += js(s.naturalWidthPt, s.kind, c), s = null);
+	};
+	for (let u of e) {
+		let e = Math.max(n, u.start), d = Math.min(r, u.end);
+		if (e >= d) continue;
+		let f = t.slice(e, d), p = e - u.start, m = d - u.start, h = {
+			...u.segment,
+			text: f,
+			punctuationCompressions: q(u.segment, p, m)
+		}, g = (e) => e.textLayoutService && e.textShapeRequest ? ks(e, e.textLayoutService.shape({
+			...e.textShapeRequest,
+			text: e.text,
+			fontSizePt: ai(e, 1),
+			measure: !0,
+			clusterGeometry: !1
+		}).advancePt, a, 1) : (i.context.font = cs(e.bold, e.italic, ai(e, 1), e.fontFamily, i.fontFamilyClasses, e.fontRoute), ks(e, i.context.measureText(e.text).width, a, 1)), _ = As(h, a);
+		if (_ === "eastAsia" && c != null) {
+			l();
+			let e = h.textLayoutService && h.textShapeRequest ? h.textLayoutService.shape({
+				...h.textShapeRequest,
+				text: f,
+				fontSizePt: ai(h, 1),
 				measure: !0,
-				clusterGeometry: !1
-			});
-			o += _s(f, e.advancePt, a, 1);
-			continue;
+				clusterGeometry: !0
+			}).clusters : void 0, t = e?.length ? null : [...new Set([
+				0,
+				...T(f),
+				f.length
+			])].sort((e, t) => e - t), n = e?.map((e) => ({
+				start: e.range.start,
+				end: e.range.end,
+				naturalWidthPt: ks({
+					...h,
+					text: f.slice(e.range.start, e.range.end),
+					punctuationCompressions: q(h, e.range.start, e.range.end)
+				}, e.advancePt, a, 1)
+			})) ?? t.slice(0, -1).map((e, n) => {
+				let r = t[n + 1];
+				return {
+					start: e,
+					end: r,
+					naturalWidthPt: g({
+						...h,
+						text: f.slice(e, r),
+						punctuationCompressions: q(h, e, r)
+					})
+				};
+			}), r = 0;
+			for (let e of n) e.end <= e.start || (r += yo(e.naturalWidthPt, c));
+			o += js(n.reduce((e, t) => e + t.naturalWidthPt, 0), _, c, Math.max(1, r));
+		} else {
+			let e = g(h);
+			if ((_ === "latin" || _ === "complexScript") && c != null) {
+				let t = s;
+				t?.kind === _ ? s = {
+					kind: _,
+					naturalWidthPt: t.naturalWidthPt + e
+				} : (l(), s = {
+					kind: _,
+					naturalWidthPt: e
+				});
+			} else l(), o += e;
 		}
-		i.context.font = $o(f.bold, f.italic, ii(f, 1), f.fontFamily, i.fontFamilyClasses, f.fontRoute), o += _s(f, i.context.measureText(l).width, a, 1);
 	}
-	return o;
+	return l(), o;
 }
-function hc(e, t, n) {
-	let r = t.characterGrid.active ? t.characterGrid.deltaPt : 0, i = 0;
+function Pc(e, t, n) {
+	let r = bc(t), i = 0;
 	for (let a = 0; a < e.length; a += 1) {
 		let o = e[a];
 		if (!("text" in o) || o.text.length === 0) continue;
@@ -5985,11 +6491,11 @@ function hc(e, t, n) {
 			l(t), a += 1;
 		}
 		let u = 0;
-		for (let e of Hs(c)) {
+		for (let e of nc(c)) {
 			let a = e.replace(/\s+$/u, ""), o = u, l = u + a.length;
 			if (u += e.length, !a) continue;
-			if (!js(a)) {
-				i = Math.max(i, mc(s, c, o, l, n, r));
+			if (!Gs(a)) {
+				i = Math.max(i, Nc(s, c, o, l, n, r));
 				continue;
 			}
 			let d = [
@@ -6012,37 +6518,37 @@ function hc(e, t, n) {
 				};
 			}
 			m && p.push(m);
-			for (let e of p) i = Math.max(i, mc(s, c, e.start, e.end, n, r));
+			for (let e of p) i = Math.max(i, Nc(s, c, e.start, e.end, n, r));
 		}
 	}
 	return i;
 }
-function gc(e, t, n) {
+function Fc(e, t, n) {
 	let r = (n.baseRtl ? n.physicalIndentRightPt : n.physicalIndentLeftPt) + (t === 0 ? n.firstIndentPt : 0) + e.xOffset;
 	return {
 		startPt: r,
 		endPt: r + e.segments.reduce((e, t) => e + t.measuredWidth, 0)
 	};
 }
-function _c(e, t, n, r, i, a) {
+function Ic(e, t, n, r, i, a) {
 	if (!Number.isFinite(n) || n < 0) throw RangeError("maximumWidthPt must be finite and non-negative");
 	if (n === 0) return {
 		minWidthPt: 0,
 		maxWidthPt: 0
 	};
-	let o = pc(Js(e.runs, i)), s = Math.max(1, n - t.physicalIndentLeftPt - t.physicalIndentRightPt), c = o.length === 0 ? [] : Ys(r.context, o, s, t.firstIndentPt, 1, [...t.tabStops], void 0, r.fontFamilyClasses, t.physicalIndentLeftPt, t.kinsoku, t.characterGrid.active ? t.characterGrid.deltaPt : 0, t.defaultTabPt, s + t.physicalIndentRightPt, t.baseRtl, t.isJustified, t.stretchLastLine, void 0, "intrinsic", i.verticalGlyphMeasurement, t.overflowPunct !== !1), l = t.baseRtl ? t.physicalIndentLeftPt : t.physicalIndentRightPt, u = 0, d = 0;
+	let o = Mc(cc(e.runs, i)), s = Math.max(1, n - t.physicalIndentLeftPt - t.physicalIndentRightPt), c = o.length === 0 ? [] : lc(r.context, o, s, t.firstIndentPt, 1, [...t.tabStops], void 0, r.fontFamilyClasses, t.physicalIndentLeftPt, t.kinsoku, bc(t), t.defaultTabPt, s + t.physicalIndentRightPt, t.baseRtl, t.isJustified, t.stretchLastLine, void 0, "intrinsic", i.verticalGlyphMeasurement, t.overflowPunct !== !1), l = t.baseRtl ? t.physicalIndentLeftPt : t.physicalIndentRightPt, u = 0, d = 0;
 	c.forEach((e, n) => {
-		let r = gc(e, n, t);
+		let r = Fc(e, n, t);
 		u = Math.min(u, r.startPt), d = Math.max(d, r.endPt);
 	});
-	let f = a ? ac({
+	let f = a ? wc({
 		leadingIndentPt: t.baseRtl ? t.physicalIndentRightPt : t.physicalIndentLeftPt,
 		authoredFirstIndentPt: e.indentFirst,
 		markerShiftPt: a.markerShiftPt,
 		markerWidthPt: a.markerWidthPt
 	}) : void 0;
 	f && (u = Math.min(u, f.startPt), d = Math.max(d, f.endPt));
-	let p = Math.min(n, Math.max(0, d - u + l)), m = hc(o, t, r);
+	let p = Math.min(n, Math.max(0, d - u + l)), m = Pc(o, t, r);
 	for (let e of c) {
 		let t = 0, n = e.segments.reduce((e, t) => e + t.measuredWidth, 0);
 		for (let r of e.segments) t += r.measuredWidth, "imagePath" in r && !r.anchor || "math" in r ? m = Math.max(m, r.measuredWidth) : "isTab" in r && (m = Math.max(m, r.resolvedAlignment === "left" ? t : n));
@@ -6055,22 +6561,22 @@ function _c(e, t, n, r, i, a) {
 }
 //#endregion
 //#region packages/docx/src/layout/paragraph-border-adjacency.ts
-function vc(e, t) {
+function Lc(e, t) {
 	if (!e || t?.suppressBottom) return 0;
 	let n = e.bottom;
 	return !n || n.style === "none" ? 0 : (n.space ?? 0) + (n.width ?? 0) / 2;
 }
-function yc(e) {
+function Rc(e) {
 	return e == null || e.style === "none" ? null : e;
 }
-function bc(e, t) {
-	let n = yc(e), r = yc(t);
+function zc(e, t) {
+	let n = Rc(e), r = Rc(t);
 	return n == null || r == null ? n == null && r == null : n.style === r.style && n.width === r.width && (n.space ?? 0) === (r.space ?? 0) && (n.color ?? null) === (r.color ?? null);
 }
-function xc(e, t) {
-	return !e || !t ? !1 : bc(e.top, t.top) && bc(e.bottom, t.bottom) && bc(e.left, t.left) && bc(e.right, t.right) && bc(e.between, t.between);
+function Bc(e, t) {
+	return !e || !t ? !1 : zc(e.top, t.top) && zc(e.bottom, t.bottom) && zc(e.left, t.left) && zc(e.right, t.right) && zc(e.between, t.between);
 }
-function Sc(e) {
+function Vc(e) {
 	return e ? [
 		e.top,
 		e.right,
@@ -6079,11 +6585,11 @@ function Sc(e) {
 		e.between
 	].some((e) => e != null && e.style !== "none") : !1;
 }
-function Cc(e, t) {
-	return !e || !t || e.framePr || t.framePr ? !1 : Sc(e.borders) && Sc(t.borders) && xc(e.borders, t.borders);
+function Hc(e, t) {
+	return !e || !t || e.framePr || t.framePr ? !1 : Vc(e.borders) && Vc(t.borders) && Bc(e.borders, t.borders);
 }
-function wc(e, t, n, r = !1) {
-	let i = (e, t) => r ? !!e && !!t && !!e.framePr && !!t.framePr && Sc(e.borders) && Sc(t.borders) && xc(e.borders, t.borders) : Cc(e, t), a = i(e, t), o = i(t, n), s = t.borders?.between;
+function Uc(e, t, n, r = !1) {
+	let i = (e, t) => r ? !!e && !!t && !!e.framePr && !!t.framePr && Vc(e.borders) && Vc(t.borders) && Bc(e.borders, t.borders) : Hc(e, t), a = i(e, t), o = i(t, n), s = t.borders?.between;
 	return Object.freeze({
 		top: a ? s && s.style !== "none" ? "between" : "none" : "top",
 		bottom: o ? "none" : "bottom"
@@ -6091,12 +6597,12 @@ function wc(e, t, n, r = !1) {
 }
 //#endregion
 //#region packages/docx/src/layout/frame.ts
-function Tc(e, t, n, r, i, a) {
-	return _c(e, t, n, r, i, a).maxWidthPt;
+function Wc(e, t, n, r, i, a) {
+	return Ic(e, t, n, r, i, a).maxWidthPt;
 }
-function Ec(e) {
+function Gc(e) {
 	let t = e;
-	return an("w:framePr", [
+	return on("w:framePr", [
 		t.dropCap,
 		t.lines,
 		t.wrap,
@@ -6114,7 +6620,7 @@ function Ec(e) {
 		t.__anchorLock === !0
 	]);
 }
-function Dc(e) {
+function Kc(e) {
 	let t = /* @__PURE__ */ new WeakMap();
 	for (let n = 0; n < e.length;) {
 		let r = e[n];
@@ -6122,10 +6628,10 @@ function Dc(e) {
 			n += 1;
 			continue;
 		}
-		let i = Ec(r.framePr), a = [r], o = [n], s = n + 1;
+		let i = Gc(r.framePr), a = [r], o = [n], s = n + 1;
 		for (; s < e.length;) {
 			let t = e[s];
-			if (t?.type !== "paragraph" || !t.framePr || Ec(t.framePr) !== i) break;
+			if (t?.type !== "paragraph" || !t.framePr || Gc(t.framePr) !== i) break;
 			a.push(t), o.push(s), s += 1;
 		}
 		let c = Object.freeze({
@@ -6140,53 +6646,54 @@ function Dc(e) {
 	}
 	return t;
 }
-var Oc = /* @__PURE__ */ new WeakMap(), kc = /* @__PURE__ */ new WeakMap();
-function Ac(e) {
-	let t = Dc(e);
+var qc = /* @__PURE__ */ new WeakMap(), Jc = /* @__PURE__ */ new WeakMap();
+function Yc(e) {
+	let t = Kc(e);
 	for (let n = 0; n < e.length; n += 1) {
 		let r = e[n];
 		if (r.type !== "paragraph") continue;
 		let i = t.get(r);
-		i && Oc.set(r, i);
+		i && qc.set(r, i);
 		let a = e[n - 1], o = e[n + 1], s = a?.type === "paragraph" && t.get(a) === i ? a : null, c = o?.type === "paragraph" && t.get(o) === i ? o : null;
-		kc.set(r, wc(i ? s : a?.type === "paragraph" ? a : null, r, i ? c : o?.type === "paragraph" ? o : null, i !== void 0));
+		Jc.set(r, Uc(i ? s : a?.type === "paragraph" ? a : null, r, i ? c : o?.type === "paragraph" ? o : null, i !== void 0));
 	}
 }
-var jc = (e) => Oc.get(e), Mc = (e) => kc.get(e);
+var Xc = (e) => qc.get(e), Zc = (e) => Jc.get(e);
 //#endregion
 //#region packages/docx/src/layout-context.ts
-function Nc(e) {
+function Qc(e) {
 	return {
 		story: e.story,
 		containers: [...e.containers, { kind: "tableCell" }],
 		lineNumberingEligible: !1
 	};
 }
-function Pc(e) {
+function $c(e) {
 	return e.runs.some((e) => e.type === "text" && !!e.ruby);
 }
-function Fc(e) {
-	return e.runs.some((e) => e.type === "text" && ai.test(e.text));
+function el(e) {
+	return e.runs.some((e) => e.type === "text" && oi.test(e.text));
 }
-function Ic(e) {
+function tl(e) {
 	for (let t of e) {
 		if (t.type === "paragraph") {
-			if (Fc(t)) return !0;
+			if (el(t)) return !0;
 			continue;
 		}
 		if (t.type === "table") {
-			for (let e of t.rows) for (let t of e.cells) if (Ic(t.content)) return !0;
+			for (let e of t.rows) for (let t of e.cells) if (tl(t.content)) return !0;
 		}
 	}
 	return !1;
 }
-function Lc(e) {
-	return Ac(e.body), {
-		kinsoku: ie(e.settings),
-		defaultTabPt: Ws(e.settings),
+function nl(e, t = { normalStyleFontSizePt: 10 }) {
+	return Yc(e.body), {
+		kinsoku: ae(e.settings),
+		defaultTabPt: ic(e.settings),
 		characterSpacingControl: e.settings?.characterSpacingControl,
 		mathDefJc: e.settings?.mathDefJc,
-		documentHasEastAsianText: Ic(e.body),
+		documentHasEastAsianText: tl(e.body),
+		normalStyleFontSizePt: t.normalStyleFontSizePt,
 		compat: {
 			adjustLineHeightInTable: e.settings?.adjustLineHeightInTable ?? !1,
 			useFeLayout: e.settings?.useFeLayout ?? !1,
@@ -6194,7 +6701,7 @@ function Lc(e) {
 		}
 	};
 }
-function Rc(e) {
+function rl(e) {
 	let t = e.pageWidth - e.marginLeft - e.marginRight, n = e.columns;
 	if (!n || n.count <= 1) return [{
 		xPt: e.marginLeft,
@@ -6214,7 +6721,7 @@ function Rc(e) {
 		wPt: r
 	}));
 }
-function zc(e) {
+function il(e) {
 	switch (e) {
 		case "lines":
 		case "linesAndChars":
@@ -6222,13 +6729,13 @@ function zc(e) {
 		default: return "none";
 	}
 }
-function Bc(e) {
+function al(e) {
 	return e === "lines" || e === "linesAndChars" || e === "snapToChars";
 }
-function Vc(e) {
+function ol(e) {
 	return e === "linesAndChars" || e === "snapToChars";
 }
-function Hc(e, t) {
+function sl(e, t) {
 	return {
 		geometry: {
 			pageWidth: t.pageWidth,
@@ -6240,10 +6747,10 @@ function Hc(e, t) {
 			headerDistance: t.headerDistance,
 			footerDistance: t.footerDistance
 		},
-		columns: Rc(t),
+		columns: rl(t),
 		columnSeparator: t.columns?.sep === !0,
 		grid: {
-			kind: zc(t.docGridType),
+			kind: il(t.docGridType),
 			linePitchPt: t.docGridLinePitch ?? null,
 			charSpacePt: t.docGridCharSpace == null ? null : t.docGridCharSpace / 4096
 		},
@@ -6253,11 +6760,11 @@ function Hc(e, t) {
 		lineNumbering: t.lineNumbering ?? void 0
 	};
 }
-function Uc(e) {
+function cl(e) {
 	return e.containers.some((e) => e.kind === "tableCell");
 }
-function Wc(e, t, n, r) {
-	let i = Bc(t.grid.kind) && t.grid.linePitchPt != null && t.grid.linePitchPt > 0 && r.snapToGrid !== !1 && r.lineSpacing?.rule !== "exact" && (!Uc(n) || e.compat.adjustLineHeightInTable), a = Vc(t.grid.kind) && t.grid.charSpacePt != null, o = r.bidi === !0, s = r.numbering, c = s != null && (s.text !== "" || s.picBulletImagePath != null), l = o && c && (s.suff || "tab") === "tab" && r.indentFirst < 0;
+function ll(e, t, n, r) {
+	let i = al(t.grid.kind) && t.grid.linePitchPt != null && t.grid.linePitchPt > 0 && r.snapToGrid !== !1 && r.lineSpacing?.rule !== "exact" && (!cl(n) || e.compat.adjustLineHeightInTable), a = ol(t.grid.kind), o = r.bidi === !0, s = cl(n), c = a ? e.normalStyleFontSizePt + (t.grid.charSpacePt ?? 0) : null, l = t.grid.kind === "linesAndChars" ? c : null, u = r.numbering, d = u != null && (u.text !== "" || u.picBulletImagePath != null), f = o && d && (u.suff || "tab") === "tab" && r.indentFirst < 0;
 	return {
 		lineGrid: {
 			active: i,
@@ -6265,48 +6772,76 @@ function Wc(e, t, n, r) {
 		},
 		characterGrid: {
 			active: a,
-			deltaPt: a ? t.grid.charSpacePt ?? 0 : 0
+			kind: a ? t.grid.kind : null,
+			deltaPt: a ? t.grid.charSpacePt ?? 0 : 0,
+			pitchPt: c != null && c > 0 ? c : null
+		},
+		rightIndentGrid: {
+			pitchPt: l != null && l > 0 ? l : null,
+			paragraphAllowsAdjustment: r.adjustRightInd !== !1 && bo(s)
 		},
 		physicalIndentLeftPt: o ? r.indentRight : r.indentLeft,
 		physicalIndentRightPt: o ? r.indentLeft : r.indentRight,
-		firstIndentPt: l ? 0 : r.indentFirst,
+		firstIndentPt: f ? 0 : r.indentFirst,
 		lineSpacing: r.lineSpacing,
 		spaceBeforePt: r.spaceBefore,
 		spaceAfterPt: r.spaceAfter,
 		baseRtl: o,
-		isJustified: rc(r.alignment),
-		stretchLastLine: ic(r.alignment),
-		tabStops: [...r.tabStops],
-		hasRuby: Pc(r),
-		hasEastAsianText: Fc(r),
+		isJustified: _c(r.alignment),
+		stretchLastLine: vc(r.alignment),
+		tabStops: ul(r),
+		hasRuby: $c(r),
+		hasEastAsianText: el(r),
 		kinsoku: e.kinsoku,
 		defaultTabPt: e.defaultTabPt,
 		overflowPunct: r.overflowPunct !== !1,
 		mathDefJc: e.mathDefJc
 	};
 }
-G({
+function ul(e) {
+	let t = e.tabStops.filter((e) => e.alignment !== "clear").map((e) => ({ ...e })), n = e.indentLeft, r = t.some((e) => e.pos === n && So(e.alignment));
+	return (e.indentFirst < 0 && !r ? [{
+		pos: n,
+		alignment: "left",
+		leader: "none"
+	}, ...t] : t).sort((e, t) => e.pos - t.pos);
+}
+function dl(e, t) {
+	let { pitchPt: n, paragraphAllowsAdjustment: r } = e.rightIndentGrid;
+	return !r || n == null ? 0 : xo(t, n);
+}
+W({
 	id: "word-default-line-number-distance",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/compatibility.test.ts#uses Word's observed 18pt line-number distance only when omitted"
 	},
 	description: "ECMA-376 §17.6.8 leaves an omitted line-number distance implementation-defined. Preserve Word-compatible 18pt placement only when the authored distance is absent."
-}), G({
+}), W({
 	id: "word-continuous-section-page-number-restart",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/page-number-field-render.test.ts#restarts a spilling continuous section after its shared first page"
 	},
 	description: "Issue #804 records that Word anchors a continuous section page-number restart to the section first appearance on the shared physical page, so its next owned page advances from that appearance."
-}), G({
+}), W({
 	id: "word-trailing-empty-mark-baseline-admission",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/paginate-trailing-empty-mark-fit.test.ts#KEEPS an inkless empty paragraph on the page when ink-bearing content follows and only its below-baseline whitespace overflows"
 	},
 	description: "At the unreserved physical body edge, Word admits an undecorated non-terminal empty paragraph mark by its baseline when later ink follows in the same flow."
-}), G({
+}), W({
+	id: "word-section-mark-blank-page-suppression",
+	evidence: {
+		kind: "office-observation",
+		syntheticFixtureId: "next-page-section-mark-bottom-edge-admission",
+		application: "Microsoft Word",
+		version: "16.111.1",
+		platform: "macOS 26.5.2"
+	},
+	description: "For the observed nextPage boundary, Word consumes an undecorated inkless paragraph that carries the section boundary on the outgoing page instead of creating an otherwise empty intermediate page solely for that non-painting mark. The following section still starts its requested page. Other section-start kinds remain outside this observation."
+}), W({
 	id: "word-book-fold-gutter-right-edge",
 	evidence: {
 		kind: "microsoft-note",
@@ -6314,21 +6849,21 @@ G({
 	},
 	description: "For book-fold printing Word places the automatic gutter at the right-margin bisector edge, including reverse book-fold mode."
 });
-function Gc(e) {
+function fl(e) {
 	return e ?? 18;
 }
-function Kc(e, t, n) {
+function pl(e, t, n) {
 	return e + t - n;
 }
-function qc(e) {
-	return !e.hasContinuationBoundary && e.inkless && e.undecorated && !e.keepNext && e.markReservePt === 0 && e.pageBottomIsUnreserved && e.physicalRegionBottomIsActive && e.hasFollowingInk ? e.markBelowBaselinePt : 0;
+function ml(e) {
+	return !e.hasContinuationBoundary && e.inkless && e.undecorated && !e.keepNext && e.markReservePt === 0 && e.pageBottomIsUnreserved && e.physicalRegionBottomIsActive ? e.followsNextPageSectionBoundary ? Math.max(0, e.markExtentPt) : e.hasFollowingInk ? e.markBelowBaselinePt : 0 : 0;
 }
-function Jc() {
+function hl() {
 	return "right";
 }
 //#endregion
 //#region packages/docx/src/layout/context.ts
-function Yc(e) {
+function gl(e) {
 	if (e.sectionOccurrenceId.length === 0) throw RangeError("Section occurrence id must not be empty");
 	if (e.columns.length === 0) throw RangeError("A page-flow section requires at least one column");
 	return Object.freeze({
@@ -6344,16 +6879,16 @@ function Yc(e) {
 		})
 	});
 }
-function Xc(e) {
-	return Qc(e.geometry.marginTop);
+function _l(e) {
+	return yl(e.geometry.marginTop);
 }
-function Zc(e) {
-	return e.geometry.pageHeight - Qc(e.geometry.marginBottom);
+function vl(e) {
+	return e.geometry.pageHeight - yl(e.geometry.marginBottom);
 }
-function Qc(e) {
+function yl(e) {
 	return Math.abs(e);
 }
-function $c(e) {
+function bl(e) {
 	return {
 		pageWidth: e.pageHeight,
 		pageHeight: e.pageWidth,
@@ -6365,7 +6900,7 @@ function $c(e) {
 		footerDistance: e.footerDistance
 	};
 }
-function el(e) {
+function xl(e) {
 	return {
 		pageWidth: e.pageHeight,
 		pageHeight: e.pageWidth,
@@ -6377,13 +6912,13 @@ function el(e) {
 		footerDistance: e.footerDistance
 	};
 }
-function tl(e) {
+function Sl(e) {
 	return e === "tbRl" || e === "tbRlV" || e === "tbLrV" || e === "btLr";
 }
-function nl(e, t) {
+function Cl(e, t) {
 	if (!Number.isInteger(t) || t < 0) throw RangeError("Physical page index must be a non-negative integer");
 	let { pageWidth: n, pageHeight: r } = e.physicalGeometry, { marginTop: i, marginRight: a, marginBottom: o, marginLeft: s } = e.physicalGeometry, c = e.bookFoldPrinting || e.bookFoldRevPrinting;
-	return c ? (n /= 2, Jc() === "right" && (a += e.gutterPt)) : e.printTwoOnOne ? (r /= 2, i += e.gutterPt) : e.gutterAtTop && !e.mirrorMargins ? i += e.gutterPt : e.rtlGutter ? a += e.gutterPt : s += e.gutterPt, !c && !e.printTwoOnOne && e.mirrorMargins && t % 2 == 1 && ([s, a] = [a, s]), {
+	return c ? (n /= 2, hl() === "right" && (a += e.gutterPt)) : e.printTwoOnOne ? (r /= 2, i += e.gutterPt) : e.gutterAtTop && !e.mirrorMargins ? i += e.gutterPt : e.rtlGutter ? a += e.gutterPt : s += e.gutterPt, !c && !e.printTwoOnOne && e.mirrorMargins && t % 2 == 1 && ([s, a] = [a, s]), {
 		...e.physicalGeometry,
 		pageWidth: n,
 		pageHeight: r,
@@ -6393,12 +6928,12 @@ function nl(e, t) {
 		marginLeft: s
 	};
 }
-function rl(e, t, n) {
-	let r = nl(t, n), i = tl(t.textDirection) ? $c(r) : r;
+function wl(e, t, n) {
+	let r = Cl(t, n), i = Sl(t.textDirection) ? bl(r) : r;
 	return Object.freeze({
 		...e,
 		geometry: Object.freeze(i),
-		columns: Object.freeze(Rc({
+		columns: Object.freeze(rl({
 			...i,
 			titlePage: !1,
 			evenAndOddHeaders: !1,
@@ -6406,7 +6941,7 @@ function rl(e, t, n) {
 		}).map((e) => Object.freeze(e)))
 	});
 }
-function il(e) {
+function Tl(e) {
 	return {
 		pageWidth: e.pageWidth,
 		pageHeight: e.pageHeight,
@@ -6418,7 +6953,7 @@ function il(e) {
 		footerDistance: e.footerDistance
 	};
 }
-function al() {
+function El() {
 	return {
 		pageWidth: 612,
 		pageHeight: 792,
@@ -6430,11 +6965,11 @@ function al() {
 		footerDistance: 36
 	};
 }
-function ol(e, t = !1) {
+function Dl(e, t = !1) {
 	let n = e.docGridType === "lines" || e.docGridType === "linesAndChars" || e.docGridType === "snapToChars" ? e.docGridType : "none";
 	return Object.freeze({
-		geometry: Object.freeze(il(e)),
-		columns: Object.freeze(Rc(e).map((e) => Object.freeze(e))),
+		geometry: Object.freeze(Tl(e)),
+		columns: Object.freeze(rl(e).map((e) => Object.freeze(e))),
 		columnSeparator: e.columns?.sep === !0,
 		grid: Object.freeze({
 			kind: n,
@@ -6449,59 +6984,59 @@ function ol(e, t = !1) {
 }
 //#endregion
 //#region packages/docx/src/layout/page-border.ts
-function sl(e, t) {
+function Ol(e, t) {
 	switch (e.display) {
 		case "firstPage": return t;
 		case "notFirstPage": return !t;
 		default: return !0;
 	}
 }
-function cl(e) {
+function kl(e) {
 	return e !== void 0 && /^[0-9a-fA-F]{6}$/.test(e) ? `#${e}` : "#000000";
 }
-function ll(e) {
+function Al(e) {
 	return e !== void 0 && Number.isFinite(e.space) ? e.space : 0;
 }
-function ul(e, t, n, r) {
+function jl(e, t, n, r) {
 	let i = Number.isFinite(e.width) ? e.width : .5;
 	return Object.freeze({
 		edge: t,
 		from: Object.freeze(n),
 		to: Object.freeze(r),
-		color: cl(e.color),
+		color: kl(e.color),
 		widthPt: i,
-		...ri(e.style, i)
+		...ii(e.style, i)
 	});
 }
-function dl(e, t, n, r) {
-	if (!e || !sl(e, r)) return null;
-	let { geometry: i } = t, a = e.offsetFrom === "text", o = a ? i.marginLeft : 0, s = a ? i.pageWidth - i.marginRight : i.pageWidth, c = a ? Qc(i.marginTop) : 0, l = a ? i.pageHeight - Qc(i.marginBottom) : i.pageHeight, u = c + ll(e.top), d = l - ll(e.bottom), f = o + ll(e.left), p = s - ll(e.right), m = [];
-	if (e.top && m.push(ul(e.top, "top", {
+function Ml(e, t, n, r) {
+	if (!e || !Ol(e, r)) return null;
+	let { geometry: i } = t, a = e.offsetFrom === "text", o = a ? i.marginLeft : 0, s = a ? i.pageWidth - i.marginRight : i.pageWidth, c = a ? yl(i.marginTop) : 0, l = a ? i.pageHeight - yl(i.marginBottom) : i.pageHeight, u = c + Al(e.top), d = l - Al(e.bottom), f = o + Al(e.left), p = s - Al(e.right), m = [];
+	if (e.top && m.push(jl(e.top, "top", {
 		xPt: f,
 		yPt: u
 	}, {
 		xPt: p,
 		yPt: u
-	})), e.bottom && m.push(ul(e.bottom, "bottom", {
+	})), e.bottom && m.push(jl(e.bottom, "bottom", {
 		xPt: f,
 		yPt: d
 	}, {
 		xPt: p,
 		yPt: d
-	})), e.left && m.push(ul(e.left, "left", {
+	})), e.left && m.push(jl(e.left, "left", {
 		xPt: f,
 		yPt: u
 	}, {
 		xPt: f,
 		yPt: d
-	})), e.right && m.push(ul(e.right, "right", {
+	})), e.right && m.push(jl(e.right, "right", {
 		xPt: p,
 		yPt: u
 	}, {
 		xPt: p,
 		yPt: d
 	})), m.length === 0) return null;
-	let h = ei(Hr(t.textDirection), n);
+	let h = ti(Ur(t.textDirection), n);
 	return Object.freeze({
 		zOrder: e.zOrder === "back" ? "back" : "front",
 		logicalToPhysical: Object.freeze({ ...h.logicalToPhysical }),
@@ -6510,11 +7045,11 @@ function dl(e, t, n, r) {
 }
 //#endregion
 //#region packages/docx/src/layout/page-factory.ts
-function fl(e, t, n) {
+function Nl(e, t, n) {
 	return `page:${e}:region:${encodeURIComponent(t)}:column:${n}`;
 }
-function pl(e) {
-	return ml(e), {
+function Pl(e) {
+	return Fl(e), {
 		xPt: 0,
 		yPt: 0,
 		widthPt: e.widthPt,
@@ -6523,30 +7058,30 @@ function pl(e) {
 		contentBottomPt: e.contentBottomPt
 	};
 }
-function ml(e) {
+function Fl(e) {
 	if (!Number.isFinite(e.widthPt) || !Number.isFinite(e.heightPt) || !Number.isFinite(e.contentTopPt) || !Number.isFinite(e.contentBottomPt) || e.widthPt <= 0 || e.heightPt <= 0 || e.contentTopPt < 0 || e.contentTopPt > e.contentBottomPt || e.contentBottomPt > e.heightPt) throw RangeError("Effective page edges must satisfy 0 <= contentTopPt <= contentBottomPt <= heightPt");
 }
-function hl(e, t) {
+function Il(e, t) {
 	if (e.length === 0) throw RangeError(`${t} must not be empty`);
 }
-function gl(e, t) {
+function Ll(e, t) {
 	if (e && t === void 0) throw RangeError("Page-border finalization requires explicit section-owned page identity");
 	return t ?? !1;
 }
-function _l(e, t) {
+function Rl(e, t) {
 	return e.length === t.length && e.every((e, n) => {
 		let r = t[n];
 		return r !== void 0 && e.xPt === r.xPt && e.wPt === r.wPt;
 	});
 }
-function vl(e, t) {
+function zl(e, t) {
 	return e === t || e !== void 0 && t !== void 0 && e.start === t.start && e.countBy === t.countBy && e.distance === t.distance && e.restart === t.restart;
 }
-function yl(e, t) {
-	return e.geometry.pageWidth === t.geometry.pageWidth && e.geometry.pageHeight === t.geometry.pageHeight && e.geometry.marginTop === t.geometry.marginTop && e.geometry.marginRight === t.geometry.marginRight && e.geometry.marginBottom === t.geometry.marginBottom && e.geometry.marginLeft === t.geometry.marginLeft && e.geometry.headerDistance === t.geometry.headerDistance && e.geometry.footerDistance === t.geometry.footerDistance && _l(e.columns, t.columns) && e.columnSeparator === t.columnSeparator && e.textDirection === t.textDirection && e.sectionBidi === !0 == (t.sectionBidi === !0) && e.grid.kind === t.grid.kind && e.grid.linePitchPt === t.grid.linePitchPt && e.grid.charSpacePt === t.grid.charSpacePt && e.verticalAlignment === t.verticalAlignment && vl(e.lineNumbering, t.lineNumbering);
+function Bl(e, t) {
+	return e.geometry.pageWidth === t.geometry.pageWidth && e.geometry.pageHeight === t.geometry.pageHeight && e.geometry.marginTop === t.geometry.marginTop && e.geometry.marginRight === t.geometry.marginRight && e.geometry.marginBottom === t.geometry.marginBottom && e.geometry.marginLeft === t.geometry.marginLeft && e.geometry.headerDistance === t.geometry.headerDistance && e.geometry.footerDistance === t.geometry.footerDistance && Rl(e.columns, t.columns) && e.columnSeparator === t.columnSeparator && e.textDirection === t.textDirection && e.sectionBidi === !0 == (t.sectionBidi === !0) && e.grid.kind === t.grid.kind && e.grid.linePitchPt === t.grid.linePitchPt && e.grid.charSpacePt === t.grid.charSpacePt && e.verticalAlignment === t.verticalAlignment && zl(e.lineNumbering, t.lineNumbering);
 }
-function bl(e) {
-	if (Hr(e.section.textDirection) !== e.writingMode) throw RangeError("Section region writing mode must agree with its section text direction");
+function Vl(e) {
+	if (Ur(e.section.textDirection) !== e.writingMode) throw RangeError("Section region writing mode must agree with its section text direction");
 	let t = e.section.sectionBidi === !0 ? "rtl" : "ltr";
 	if (e.columnFlowDirection !== void 0 && e.columnFlowDirection !== t) throw RangeError("Section region column flow direction must agree with sectPr bidi");
 	let n = e.columnIndexes ?? e.section.columns.map((e, t) => t);
@@ -6555,35 +7090,35 @@ function bl(e) {
 		return i === void 0 || t.inlineStartPt !== i.xPt || t.inlineExtentPt !== i.wPt;
 	})) throw RangeError("Section region columns must equal its normalized section columns");
 }
-function xl(e) {
+function Hl(e) {
 	if (!Number.isInteger(e) || e < 0) throw RangeError("Layout page index must be a non-negative integer");
 }
-function Sl(e, t, n) {
+function Ul(e, t, n) {
 	let r = [], i = [], a = /* @__PURE__ */ new Map(), o = /* @__PURE__ */ new Set(), s = /* @__PURE__ */ new Set(), c, l = [];
 	for (let u of n) {
-		if (hl(u.id, "Section region id"), hl(u.sectionOccurrenceId, "Section occurrence id"), o.has(u.id) || s.has(u.sectionOccurrenceId)) throw RangeError("Section region and occurrence identities must be unique");
+		if (Il(u.id, "Section region id"), Il(u.sectionOccurrenceId, "Section occurrence id"), o.has(u.id) || s.has(u.sectionOccurrenceId)) throw RangeError("Section region and occurrence identities must be unique");
 		if (o.add(u.id), s.add(u.sectionOccurrenceId), c !== void 0 && c !== u.writingMode) throw RangeError("One physical page cannot mix writing modes");
-		c = u.writingMode, bl(u);
-		let n = Jr({
+		c = u.writingMode, Vl(u);
+		let n = Yr({
 			widthPt: u.section.geometry.pageWidth,
 			heightPt: u.section.geometry.pageHeight
 		}, u.writingMode);
 		if (n.widthPt !== t.widthPt || n.heightPt !== t.heightPt) throw RangeError(`Section regions on one physical page must use the same page box: expected ${n.widthPt}x${n.heightPt}, got ${t.widthPt}x${t.heightPt}`);
-		let d = qr(t, u.writingMode), f = d.widthPt, p = d.heightPt;
+		let d = Jr(t, u.writingMode), f = d.widthPt, p = d.heightPt;
 		if (!Number.isFinite(u.blockStartPt) || !Number.isFinite(u.blockEndPt) || u.blockStartPt < 0 || u.blockEndPt < u.blockStartPt || u.blockEndPt > p) throw RangeError("Section regions must be inside the logical page");
 		if (u.columns.length === 0) throw RangeError("Section region must contain a column");
-		let m = u.columnIndexes ?? u.section.columns.map((e, t) => t), h = 0, g = ei(u.writingMode, t), _ = u.columns.map((t, n) => {
+		let m = u.columnIndexes ?? u.section.columns.map((e, t) => t), h = 0, g = ti(u.writingMode, t), _ = u.columns.map((t, n) => {
 			let r = m[n];
 			if (!Number.isFinite(t.inlineStartPt) || !Number.isFinite(t.inlineExtentPt) || t.inlineStartPt < 0 || t.inlineExtentPt <= 0 || t.inlineStartPt + t.inlineExtentPt > f || t.inlineStartPt < h) throw RangeError("Columns must be ordered, disjoint, and inside the logical page");
 			h = t.inlineStartPt + t.inlineExtentPt;
-			let o = fl(e, u.id, r);
+			let o = Nl(e, u.id, r);
 			if (a.has(o)) throw RangeError(`Duplicate flow domain ${o}`);
 			let s = {
 				xPt: t.inlineStartPt,
 				yPt: u.blockStartPt,
 				widthPt: t.inlineExtentPt,
 				heightPt: u.blockEndPt - u.blockStartPt
-			}, c = Qr(g.logicalToPhysical, s);
+			}, c = $r(g.logicalToPhysical, s);
 			if (l.some((e) => c.xPt < e.xPt + e.widthPt && e.xPt < c.xPt + c.widthPt && c.yPt < e.yPt + e.heightPt && e.yPt < c.yPt + c.heightPt)) throw RangeError("Section flow domains on one page must be physically disjoint");
 			return l.push(c), i.push({
 				id: o,
@@ -6610,28 +7145,28 @@ function Sl(e, t, n) {
 		sectionByDomain: a
 	};
 }
-function Cl(e, t) {
+function Wl(e, t) {
 	if (e.kind === "paragraph") {
-		t(e), e.drawings.forEach((e) => Cl(e, t)), e.textBoxes.forEach((e) => Cl(e, t));
+		t(e), e.drawings.forEach((e) => Wl(e, t)), e.textBoxes.forEach((e) => Wl(e, t));
 		return;
 	}
 	if (e.kind === "table") {
-		wl(e, t);
+		Gl(e, t);
 		return;
 	}
-	e.kind === "textbox" && Tl(e, t);
+	e.kind === "textbox" && Kl(e, t);
 }
-function wl(e, t) {
-	for (let n of e.rows) for (let e of n.cells) for (let n of e.blocks) Cl(n.layout, t);
+function Gl(e, t) {
+	for (let n of e.rows) for (let e of n.cells) for (let n of e.blocks) Wl(n.layout, t);
 }
-function Tl(e, t) {
-	e.story.blocks.forEach((e) => Cl(e, t));
+function Kl(e, t) {
+	e.story.blocks.forEach((e) => Wl(e, t));
 }
-function El(e, t, n) {
+function ql(e, t, n) {
 	let r = [], i = /* @__PURE__ */ new Set();
 	for (let a of e) {
 		let e = n.get(a.flowDomainId) ?? t;
-		Cl(a, (t) => {
+		Wl(a, (t) => {
 			for (let n of t.bookmarkStarts ?? []) !n || i.has(n) || (i.add(n), r.push({
 				name: n,
 				nodeId: t.id,
@@ -6641,58 +7176,77 @@ function El(e, t, n) {
 	}
 	return r;
 }
-function Dl(e) {
-	xl(e.pageIndex), hl(e.sectionOccurrenceId, "Page-start section occurrence id");
-	let { regions: t, domains: n, sectionByDomain: r } = Sl(e.pageIndex, e.physicalPage, e.sectionRegions), i = e.sectionRegions[0], a = i?.pageBorders ?? e.pageBorders;
-	if (i !== void 0 && (e.sectionOccurrenceId !== i.sectionOccurrenceId || !yl(e.section, i.section))) throw RangeError("Page-start section context must equal the first section region");
+function Jl(e) {
+	let t = e.sectionRegions ?? [], n = new Map(t.map((e) => [e.id, e])), r = /* @__PURE__ */ new Map();
+	for (let e of t) for (let t of e.flowDomainIds) r.set(t, e.sectionOccurrenceId);
+	for (let i of e.flowDomains) {
+		if (i.kind !== "footnote" && i.kind !== "endnote") continue;
+		let e = i.sectionRegionId ? n.get(i.sectionRegionId) : t[0];
+		e && r.set(i.id, e.sectionOccurrenceId);
+	}
+	return r;
+}
+function Yl(e, t = Jl(e)) {
+	return ql(Ar(e), e.sectionOccurrenceId ?? "", t);
+}
+function Xl(e) {
+	return e.parityBlank ? e : Object.freeze({
+		...e,
+		bookmarkStarts: Object.freeze([...Yl(e)])
+	});
+}
+function Zl(e) {
+	Hl(e.pageIndex), Il(e.sectionOccurrenceId, "Page-start section occurrence id");
+	let { regions: t, domains: n, sectionByDomain: r } = Ul(e.pageIndex, e.physicalPage, e.sectionRegions), i = e.sectionRegions[0], a = i?.pageBorders ?? e.pageBorders;
+	if (i !== void 0 && (e.sectionOccurrenceId !== i.sectionOccurrenceId || !Bl(e.section, i.section))) throw RangeError("Page-start section context must equal the first section region");
 	return {
 		pageIndex: e.pageIndex,
-		geometry: pl(e.physicalPage),
+		geometry: Pl(e.physicalPage),
 		flowDomains: n,
 		section: e.section,
 		sectionOccurrenceId: e.sectionOccurrenceId,
 		parityBlank: !1,
-		bookmarkStarts: El(e.paint.map(({ node: e }) => e), e.sectionOccurrenceId, r),
+		bookmarkStarts: ql(e.paint.map(({ node: e }) => e), e.sectionOccurrenceId, r),
 		pageNumber: e.pageNumber,
 		sectionRegions: t,
-		columnSeparators: ni(t),
-		pageBorder: dl(a, e.section, e.physicalPage, gl(a, e.firstSectionOwnedPage)),
-		layers: Er(e.paint),
+		columnSeparators: ri(t),
+		pageBorder: Ml(a, e.section, e.physicalPage, Ll(a, e.firstSectionOwnedPage)),
+		layers: Dr(e.paint),
 		readingOrder: e.readingOrder.map((e) => e.id)
 	};
 }
-function Ol(e) {
-	return xl(e.pageIndex), hl(e.sectionOccurrenceId, "Page-start section occurrence id"), ml(e.physicalPage), Object.freeze({
+function Ql(e) {
+	return Hl(e.pageIndex), Il(e.sectionOccurrenceId, "Page-start section occurrence id"), Fl(e.physicalPage), Object.freeze({
 		...e,
 		sectionRegions: Object.freeze([]),
 		paint: Object.freeze([]),
 		readingOrder: Object.freeze([])
 	});
 }
-function kl(e, t) {
+function $l(e, t) {
 	return Object.freeze({
 		...e,
 		sectionRegions: Object.freeze([...e.sectionRegions, t])
 	});
 }
-function Al(e, t, n) {
+function eu(e, t, n) {
 	return Object.freeze({
 		...e,
 		paint: Object.freeze([...e.paint, t]),
 		readingOrder: n ? Object.freeze([...e.readingOrder, t.node]) : e.readingOrder
 	});
 }
-function jl(e, t, n) {
-	return Dl({
+function tu(e, t, n) {
+	return Zl({
 		...e,
 		pageNumber: t,
 		firstSectionOwnedPage: n
 	});
 }
-function Ml(e) {
-	return xl(e.pageIndex), hl(e.sectionOccurrenceId, "Page-start section occurrence id"), {
+function nu(e) {
+	return Hl(e.pageIndex), Il(e.sectionOccurrenceId, "Page-start section occurrence id"), {
 		pageIndex: e.pageIndex,
-		geometry: pl(e.physicalPage),
+		geometry: Pl(e.physicalPage),
 		flowDomains: [],
 		section: e.section,
 		sectionOccurrenceId: e.sectionOccurrenceId,
@@ -6701,14 +7255,14 @@ function Ml(e) {
 		pageNumber: e.pageNumber,
 		sectionRegions: [],
 		columnSeparators: [],
-		pageBorder: dl(e.pageBorders, e.section, e.physicalPage, gl(e.pageBorders, e.firstSectionOwnedPage)),
-		layers: Er([]),
+		pageBorder: Ml(e.pageBorders, e.section, e.physicalPage, Ll(e.pageBorders, e.firstSectionOwnedPage)),
+		layers: Dr([]),
 		readingOrder: []
 	};
 }
 //#endregion
 //#region packages/docx/src/layout/rect-union.ts
-function Nl(e) {
+function ru(e) {
 	if (e.length === 0) return null;
 	let t = Math.min(...e.map((e) => e.xPt)), n = Math.min(...e.map((e) => e.yPt)), r = Math.max(...e.map((e) => e.xPt + e.widthPt)), i = Math.max(...e.map((e) => e.yPt + e.heightPt));
 	return {
@@ -6720,7 +7274,7 @@ function Nl(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/invariants.ts
-var Pl = {
+var iu = {
 	FLOW_OVERLAP: !0,
 	BOTTOM_MARGIN_INVASION: !0,
 	FLOW_DOMAIN_INVASION: !0,
@@ -6730,45 +7284,45 @@ var Pl = {
 	MISSING_RESOURCE: !0,
 	NON_CONVERGENCE: !0,
 	UNSUPPORTED_FEATURE: !0
-}, Fl = {
+}, au = {
 	body: !0,
 	header: !0,
 	footer: !0,
 	footnote: !0,
 	endnote: !0,
 	textbox: !0
-}, Il = new Set(Object.keys(Pl)), Ll = new Set(Object.keys(Fl));
-function Rl(e, t, n = /* @__PURE__ */ new WeakSet()) {
+}, ou = new Set(Object.keys(iu)), su = new Set(Object.keys(au));
+function cu(e, t, n = /* @__PURE__ */ new WeakSet()) {
 	if (!(e === null || typeof e == "string" || typeof e == "boolean")) {
 		if (typeof e == "number") {
-			if (!Number.isFinite(e)) throw new H("INVALID_GEOMETRY", `${t} is not finite`);
+			if (!Number.isFinite(e)) throw new V("INVALID_GEOMETRY", `${t} is not finite`);
 			return;
 		}
-		if (typeof e != "object") throw new H("INVALID_GEOMETRY", `${t} contains ${typeof e}`);
-		if (n.has(e)) throw new H("INVALID_GEOMETRY", `${t} contains a cycle`);
+		if (typeof e != "object") throw new V("INVALID_GEOMETRY", `${t} contains ${typeof e}`);
+		if (n.has(e)) throw new V("INVALID_GEOMETRY", `${t} contains a cycle`);
 		n.add(e);
 		try {
 			if (Array.isArray(e)) {
 				let r = 0;
 				for (let i of Reflect.ownKeys(e)) {
 					if (i === "length") continue;
-					if (typeof i != "string") throw new H("INVALID_GEOMETRY", `${t} has a symbol key`);
+					if (typeof i != "string") throw new V("INVALID_GEOMETRY", `${t} has a symbol key`);
 					let a = Number(i);
-					if (!Number.isInteger(a) || a < 0 || String(a) !== i || a >= e.length) throw new H("INVALID_GEOMETRY", `${t}.${i} is not an array index`);
+					if (!Number.isInteger(a) || a < 0 || String(a) !== i || a >= e.length) throw new V("INVALID_GEOMETRY", `${t}.${i} is not an array index`);
 					let o = Object.getOwnPropertyDescriptor(e, i);
-					if (!o?.enumerable || !("value" in o)) throw new H("INVALID_GEOMETRY", `${t}[${i}] is not plain data`);
-					Rl(o.value, `${t}[${i}]`, n), r += 1;
+					if (!o?.enumerable || !("value" in o)) throw new V("INVALID_GEOMETRY", `${t}[${i}] is not plain data`);
+					cu(o.value, `${t}[${i}]`, n), r += 1;
 				}
-				if (r !== e.length) throw new H("INVALID_GEOMETRY", `${t} is sparse`);
+				if (r !== e.length) throw new V("INVALID_GEOMETRY", `${t} is sparse`);
 				return;
 			}
 			let r = Object.getPrototypeOf(e);
-			if (r !== Object.prototype && r !== null) throw new H("INVALID_GEOMETRY", `${t} is not a plain record`);
+			if (r !== Object.prototype && r !== null) throw new V("INVALID_GEOMETRY", `${t} is not a plain record`);
 			for (let r of Reflect.ownKeys(e)) {
-				if (typeof r != "string") throw new H("INVALID_GEOMETRY", `${t} has a symbol key`);
+				if (typeof r != "string") throw new V("INVALID_GEOMETRY", `${t} has a symbol key`);
 				let i = Object.getOwnPropertyDescriptor(e, r);
-				if (!i?.enumerable || !("value" in i)) throw new H("INVALID_GEOMETRY", `${t}.${r} is not plain data`);
-				Rl(i.value, `${t}.${r}`, n);
+				if (!i?.enumerable || !("value" in i)) throw new V("INVALID_GEOMETRY", `${t}.${r} is not plain data`);
+				cu(i.value, `${t}.${r}`, n);
 			}
 		} finally {
 			n.delete(e);
@@ -6776,20 +7330,20 @@ function Rl(e, t, n = /* @__PURE__ */ new WeakSet()) {
 	}
 }
 function J(e, t) {
-	if (!Number.isFinite(e)) throw new H("INVALID_GEOMETRY", `${t} is not finite`);
+	if (!Number.isFinite(e)) throw new V("INVALID_GEOMETRY", `${t} is not finite`);
 }
-function zl(e) {
+function lu(e) {
 	return typeof e == "object" && !!e && !Array.isArray(e);
 }
-function Bl(e, t) {
-	if (!zl(e)) throw new H("INVALID_GEOMETRY", `${t} is not a point`);
+function uu(e, t) {
+	if (!lu(e)) throw new V("INVALID_GEOMETRY", `${t} is not a point`);
 	J(e.xPt, `${t}.xPt`), J(e.yPt, `${t}.yPt`);
 }
-function Vl(e, t) {
-	if (Bl(e, t), J(e.widthPt, `${t}.widthPt`), J(e.heightPt, `${t}.heightPt`), e.widthPt < 0 || e.heightPt < 0) throw new H("INVALID_GEOMETRY", `${t} has a negative extent`);
+function du(e, t) {
+	if (uu(e, t), J(e.widthPt, `${t}.widthPt`), J(e.heightPt, `${t}.heightPt`), e.widthPt < 0 || e.heightPt < 0) throw new V("INVALID_GEOMETRY", `${t} has a negative extent`);
 }
-function Hl(e, t) {
-	if (!zl(e)) throw new H("INVALID_GEOMETRY", `${t} is not a matrix`);
+function fu(e, t) {
+	if (!lu(e)) throw new V("INVALID_GEOMETRY", `${t} is not a matrix`);
 	for (let n of [
 		"a",
 		"b",
@@ -6799,114 +7353,114 @@ function Hl(e, t) {
 		"f"
 	]) J(e[n], `${t}.${n}`);
 }
-function Ul(e, t) {
-	if (e !== "horizontal-tb" && e !== "vertical-rl" && e !== "vertical-lr") throw new H("INVALID_GEOMETRY", `${t} is unsupported`);
+function pu(e, t) {
+	if (e !== "horizontal-tb" && e !== "vertical-rl" && e !== "vertical-lr") throw new V("INVALID_GEOMETRY", `${t} is unsupported`);
 }
-function Wl(e, t) {
-	if (!zl(e)) throw new H("INVALID_GEOMETRY", `${t} is not a coordinate space`);
-	Ul(e.writingMode, `${t}.writingMode`), Hl(e.logicalToPhysical, `${t}.logicalToPhysical`), Hl(e.physicalToLogical, `${t}.physicalToLogical`);
+function mu(e, t) {
+	if (!lu(e)) throw new V("INVALID_GEOMETRY", `${t} is not a coordinate space`);
+	pu(e.writingMode, `${t}.writingMode`), fu(e.logicalToPhysical, `${t}.logicalToPhysical`), fu(e.physicalToLogical, `${t}.physicalToLogical`);
 }
-function Gl(e, t) {
+function hu(e, t) {
 	let { plan: n } = e;
-	if (Rl(n, `${t}.plan`), J(n.rect.x, `${t}.plan.rect.x`), J(n.rect.y, `${t}.plan.rect.y`), J(n.rect.w, `${t}.plan.rect.w`), J(n.rect.h, `${t}.plan.rect.h`), n.rect.w < 0 || n.rect.h < 0) throw new H("INVALID_GEOMETRY", `${t}.plan.rect has a negative extent`);
+	if (cu(n, `${t}.plan`), J(n.rect.x, `${t}.plan.rect.x`), J(n.rect.y, `${t}.plan.rect.y`), J(n.rect.w, `${t}.plan.rect.w`), J(n.rect.h, `${t}.plan.rect.h`), n.rect.w < 0 || n.rect.h < 0) throw new V("INVALID_GEOMETRY", `${t}.plan.rect has a negative extent`);
 	if (J(n.transform.rotationDeg, `${t}.plan.transform.rotationDeg`), n.geometry.kind === "preset") {
-		if (n.geometry.name.length === 0) throw new H("INVALID_GEOMETRY", `${t}.plan.geometry.name is empty`);
+		if (n.geometry.name.length === 0) throw new V("INVALID_GEOMETRY", `${t}.plan.geometry.name is empty`);
 		n.geometry.adjustments.forEach((e, n) => {
 			e !== null && J(e, `${t}.plan.geometry.adjustments[${n}]`);
 		});
 	} else n.geometry.subpaths.forEach((e, n) => {
 		e.forEach((e, r) => {
-			if (e.cmd.length === 0) throw new H("INVALID_GEOMETRY", `${t}.plan.geometry.subpaths[${n}][${r}].cmd is empty`);
+			if (e.cmd.length === 0) throw new V("INVALID_GEOMETRY", `${t}.plan.geometry.subpaths[${n}][${r}].cmd is empty`);
 		});
 	});
-	if (n.stroke && (J(n.stroke.width, `${t}.plan.stroke.width`), n.stroke.width < 0)) throw new H("INVALID_GEOMETRY", `${t}.plan.stroke.width is negative`);
+	if (n.stroke && (J(n.stroke.width, `${t}.plan.stroke.width`), n.stroke.width < 0)) throw new V("INVALID_GEOMETRY", `${t}.plan.stroke.width is negative`);
 }
-function Kl(e, t) {
+function gu(e, t) {
 	if (e <= t) return !0;
 	let n = 2 ** -52 * Math.max(1, Math.abs(e), Math.abs(t));
 	return e - t <= n;
 }
-function ql(e, t) {
-	return e < t && !Kl(t, e);
+function _u(e, t) {
+	return e < t && !gu(t, e);
 }
-function Jl(e, t) {
-	return ql(e.xPt, t.xPt + t.widthPt) && ql(t.xPt, e.xPt + e.widthPt) && ql(e.yPt, t.yPt + t.heightPt) && ql(t.yPt, e.yPt + e.heightPt);
+function vu(e, t) {
+	return _u(e.xPt, t.xPt + t.widthPt) && _u(t.xPt, e.xPt + e.widthPt) && _u(e.yPt, t.yPt + t.heightPt) && _u(t.yPt, e.yPt + e.heightPt);
 }
-function Yl(e, t) {
-	return Kl(e.xPt, t.xPt) && Kl(e.yPt, t.yPt) && Kl(t.xPt + t.widthPt, e.xPt + e.widthPt) && Kl(t.yPt + t.heightPt, e.yPt + e.heightPt);
+function yu(e, t) {
+	return gu(e.xPt, t.xPt) && gu(e.yPt, t.yPt) && gu(t.xPt + t.widthPt, e.xPt + e.widthPt) && gu(t.yPt + t.heightPt, e.yPt + e.heightPt);
 }
-function Xl(e, t) {
-	return Kl(e.xPt, t.xPt) && Kl(t.xPt + t.widthPt, e.xPt + e.widthPt);
+function bu(e, t) {
+	return gu(e.xPt, t.xPt) && gu(t.xPt + t.widthPt, e.xPt + e.widthPt);
 }
-function Zl(e, t, n) {
-	return Kl(e, n.yPt) && Kl(n.yPt + n.heightPt, t);
+function xu(e, t, n) {
+	return gu(e, n.yPt) && gu(n.yPt + n.heightPt, t);
 }
-function Ql(e, t) {
-	return Kl(e.yPt, t.yPt) && Kl(t.yPt + t.heightPt, e.yPt + e.heightPt);
+function Su(e, t) {
+	return gu(e.yPt, t.yPt) && gu(t.yPt + t.heightPt, e.yPt + e.heightPt);
 }
-function $l(e, t) {
+function Cu(e, t) {
 	return e.xPt === t.xPt && e.yPt === t.yPt && e.widthPt === t.widthPt && e.heightPt === t.heightPt;
 }
-function eu(e, t) {
+function wu(e, t) {
 	return e.a === t.a && e.b === t.b && e.c === t.c && e.d === t.d && e.e === t.e && e.f === t.f;
 }
-function tu(e, t) {
+function Tu(e, t) {
 	let n = e.pageBorder;
 	if (n === null) return;
-	if (n.zOrder !== "front" && n.zOrder !== "back") throw new H("INVALID_REFERENCE", `${t}.zOrder is invalid`);
-	Hl(n.logicalToPhysical, `${t}.logicalToPhysical`);
-	let r = ei(Hr(e.section.textDirection), e.geometry).logicalToPhysical;
-	if (!eu(n.logicalToPhysical, r)) throw new H("INVALID_GEOMETRY", `${t}.logicalToPhysical contradicts the page-start section`);
-	if (!Array.isArray(n.segments) || n.segments.length === 0) throw new H("INVALID_GEOMETRY", `${t}.segments is empty`);
+	if (n.zOrder !== "front" && n.zOrder !== "back") throw new V("INVALID_REFERENCE", `${t}.zOrder is invalid`);
+	fu(n.logicalToPhysical, `${t}.logicalToPhysical`);
+	let r = ti(Ur(e.section.textDirection), e.geometry).logicalToPhysical;
+	if (!wu(n.logicalToPhysical, r)) throw new V("INVALID_GEOMETRY", `${t}.logicalToPhysical contradicts the page-start section`);
+	if (!Array.isArray(n.segments) || n.segments.length === 0) throw new V("INVALID_GEOMETRY", `${t}.segments is empty`);
 	n.segments.forEach((e, n) => {
 		let r = `${t}.segments[${n}]`;
-		if (Bl(e.from, `${r}.from`), Bl(e.to, `${r}.to`), J(e.widthPt, `${r}.widthPt`), e.from.xPt !== e.to.xPt && e.from.yPt !== e.to.yPt) throw new H("INVALID_GEOMETRY", `${r} is not an axis-aligned page edge`);
-		if (!/^#[0-9a-fA-F]{6}$/.test(e.color)) throw new H("INVALID_REFERENCE", `${r}.color is invalid`);
+		if (uu(e.from, `${r}.from`), uu(e.to, `${r}.to`), J(e.widthPt, `${r}.widthPt`), e.from.xPt !== e.to.xPt && e.from.yPt !== e.to.yPt) throw new V("INVALID_GEOMETRY", `${r} is not an axis-aligned page edge`);
+		if (!/^#[0-9a-fA-F]{6}$/.test(e.color)) throw new V("INVALID_REFERENCE", `${r}.color is invalid`);
 	});
 }
-function nu(e, t, n) {
-	if (n.has(e)) throw new H("INVALID_REFERENCE", `duplicate retained node id ${e}`);
+function Eu(e, t, n) {
+	if (n.has(e)) throw new V("INVALID_REFERENCE", `duplicate retained node id ${e}`);
 	n.add(e), t.add(e);
 }
-function ru(e, t, n) {
-	if (nu(e.id, t, n), e.kind === "paragraph") {
-		e.drawings.forEach((e) => ru(e, t, n)), e.textBoxes.forEach((e) => ru(e, t, n));
+function Du(e, t, n) {
+	if (Eu(e.id, t, n), e.kind === "paragraph") {
+		e.drawings.forEach((e) => Du(e, t, n)), e.textBoxes.forEach((e) => Du(e, t, n));
 		return;
 	}
 	if (e.kind === "table") {
 		e.rows.forEach((e) => {
-			nu(e.id, t, n), e.cells.forEach((e) => {
-				nu(e.id, t, n), e.blocks.forEach((e) => ru(e.layout, t, n));
+			Eu(e.id, t, n), e.cells.forEach((e) => {
+				Eu(e.id, t, n), e.blocks.forEach((e) => Du(e.layout, t, n));
 			});
 		});
 		return;
 	}
 	if (e.kind === "note") {
-		e.story.blocks.forEach((e) => ru(e, t, n));
+		e.story.blocks.forEach((e) => Du(e, t, n));
 		return;
 	}
-	e.kind === "textbox" && e.story.blocks.forEach((e) => ru(e, t, n));
+	e.kind === "textbox" && e.story.blocks.forEach((e) => Du(e, t, n));
 }
-function iu(e, t) {
+function Ou(e, t) {
 	if (e.kind === "paragraph") {
-		let n = Nl(e.drawings.filter((e) => e.anchorLayer?.cellContainment === !0).map((e) => e.flowBounds));
-		if (e.cellContainmentBounds && Vl(e.cellContainmentBounds, `${t}.cellContainmentBounds`), n === null != (e.cellContainmentBounds === void 0) || n && e.cellContainmentBounds && !$l(n, e.cellContainmentBounds)) throw new H("INVALID_GEOMETRY", `${t}.cellContainmentBounds does not match its retained layoutInCell drawings`);
+		let n = ru(e.drawings.filter((e) => e.anchorLayer?.cellContainment === !0).map((e) => e.flowBounds));
+		if (e.cellContainmentBounds && du(e.cellContainmentBounds, `${t}.cellContainmentBounds`), n === null != (e.cellContainmentBounds === void 0) || n && e.cellContainmentBounds && !Cu(n, e.cellContainmentBounds)) throw new V("INVALID_GEOMETRY", `${t}.cellContainmentBounds does not match its retained layoutInCell drawings`);
 		let r = /* @__PURE__ */ new Set();
 		(e.anchorCollisions ?? []).forEach((e, n) => {
 			let i = `${t}.anchorCollisions[${n}]`;
-			if (e.occurrenceId.length === 0 || r.has(e.occurrenceId)) throw new H("INVALID_REFERENCE", `${i}.occurrenceId is empty or duplicated`);
-			if (r.add(e.occurrenceId), Vl(e.bounds, `${i}.bounds`), e.horizontalOwnership !== "page" && e.horizontalOwnership !== "host" || e.verticalOwnership !== "page" && e.verticalOwnership !== "host") throw new H("INVALID_REFERENCE", `${i} has invalid axis ownership`);
-		}), e.textBoxes.forEach((e, n) => iu(e, `${t}.textBoxes[${n}]`));
+			if (e.occurrenceId.length === 0 || r.has(e.occurrenceId)) throw new V("INVALID_REFERENCE", `${i}.occurrenceId is empty or duplicated`);
+			if (r.add(e.occurrenceId), du(e.bounds, `${i}.bounds`), e.horizontalOwnership !== "page" && e.horizontalOwnership !== "host" || e.verticalOwnership !== "page" && e.verticalOwnership !== "host") throw new V("INVALID_REFERENCE", `${i} has invalid axis ownership`);
+		}), e.textBoxes.forEach((e, n) => Ou(e, `${t}.textBoxes[${n}]`));
 		return;
 	}
 	if (e.kind === "table") {
-		e.rows.forEach((e, n) => e.cells.forEach((e, r) => e.blocks.forEach((e, i) => iu(e.layout, `${t}.rows[${n}].cells[${r}].blocks[${i}]`))));
+		e.rows.forEach((e, n) => e.cells.forEach((e, r) => e.blocks.forEach((e, i) => Ou(e.layout, `${t}.rows[${n}].cells[${r}].blocks[${i}]`))));
 		return;
 	}
-	e.kind === "textbox" && e.story.blocks.forEach((e, n) => iu(e, `${t}.story.blocks[${n}]`));
+	e.kind === "textbox" && e.story.blocks.forEach((e, n) => Ou(e, `${t}.story.blocks[${n}]`));
 }
-function au(e, t) {
-	if (e.orientation === "upright-physical" && !e.transform) throw new H("INVALID_GEOMETRY", `${t} upright physical drawing is missing its logical transform`);
+function ku(e, t) {
+	if (e.orientation === "upright-physical" && !e.transform) throw new V("INVALID_GEOMETRY", `${t} upright physical drawing is missing its logical transform`);
 	if (e.transform) for (let n of [
 		"a",
 		"b",
@@ -6915,15 +7469,15 @@ function au(e, t) {
 		"e",
 		"f"
 	]) J(e.transform[n], `${t}.transform.${n}`);
-	e.clip?.kind === "rect" && Vl(e.clip.rect, `${t}.clip.rect`), e.clip?.kind === "polygon" && e.clip.points.forEach((e, n) => Bl(e, `${t}.clip.points[${n}]`)), e.commands.forEach((e, n) => {
+	e.clip?.kind === "rect" && du(e.clip.rect, `${t}.clip.rect`), e.clip?.kind === "polygon" && e.clip.points.forEach((e, n) => uu(e, `${t}.clip.points[${n}]`)), e.commands.forEach((e, n) => {
 		let r = `${t}.commands[${n}]`;
 		if (e.kind !== "noop") {
 			if (e.kind === "drawingml-shape") {
-				Gl(e, r);
+				hu(e, r);
 				return;
 			}
 			if (e.kind === "drawingml-image-fill") {
-				if (Gl(e, r), e.resourceKey.length === 0) throw new H("INVALID_GEOMETRY", `${r}.resourceKey is empty`);
+				if (hu(e, r), e.resourceKey.length === 0) throw new V("INVALID_GEOMETRY", `${r}.resourceKey is empty`);
 				if (e.fillRect) for (let t of [
 					"l",
 					"t",
@@ -6932,9 +7486,9 @@ function au(e, t) {
 				]) J(e.fillRect[t], `${r}.fillRect.${t}`);
 				return;
 			}
-			if (Vl(e.rect, `${r}.rect`), e.kind === "stroke-rect" && (J(e.lineWidthPt, `${r}.lineWidthPt`), e.dashPt.forEach((e, t) => J(e, `${r}.dashPt[${t}]`))), e.kind === "text" && (J(e.fontSizePt, `${r}.fontSizePt`), J(e.fontWeight, `${r}.fontWeight`)), e.kind === "watermark-text") {
-				if (Vl(e.sourceBounds, `${r}.sourceBounds`), e.sourceBounds.widthPt <= 0 || e.sourceBounds.heightPt <= 0) throw new H("INVALID_GEOMETRY", `${r}.sourceBounds must have positive extents`);
-				if (J(e.opacity, `${r}.opacity`), J(e.rotationDeg, `${r}.rotationDeg`), J(e.fontSizePt, `${r}.fontSizePt`), e.opacity < 0 || e.opacity > 1 || e.fontSizePt <= 0) throw new H("INVALID_GEOMETRY", `${r} has invalid textPath paint metrics`);
+			if (du(e.rect, `${r}.rect`), e.kind === "stroke-rect" && (J(e.lineWidthPt, `${r}.lineWidthPt`), e.dashPt.forEach((e, t) => J(e, `${r}.dashPt[${t}]`))), e.kind === "text" && (J(e.fontSizePt, `${r}.fontSizePt`), J(e.fontWeight, `${r}.fontWeight`)), e.kind === "watermark-text") {
+				if (du(e.sourceBounds, `${r}.sourceBounds`), e.sourceBounds.widthPt <= 0 || e.sourceBounds.heightPt <= 0) throw new V("INVALID_GEOMETRY", `${r}.sourceBounds must have positive extents`);
+				if (J(e.opacity, `${r}.opacity`), J(e.rotationDeg, `${r}.rotationDeg`), J(e.fontSizePt, `${r}.fontSizePt`), e.opacity < 0 || e.opacity > 1 || e.fontSizePt <= 0) throw new V("INVALID_GEOMETRY", `${r} has invalid textPath paint metrics`);
 				e.spans.forEach((e, t) => {
 					J(e.advancePt, `${r}.spans[${t}].advancePt`), J(e.fontWeight, `${r}.spans[${t}].fontWeight`);
 				});
@@ -6942,27 +7496,27 @@ function au(e, t) {
 		}
 	});
 }
-function ou(e) {
-	Rl(e, "layout"), e.diagnostics.forEach((e, t) => {
+function Au(e) {
+	cu(e, "layout"), e.diagnostics.forEach((e, t) => {
 		let n = `diagnostics[${t}]`;
-		if (!Il.has(e.code)) throw new H("INVALID_REFERENCE", `${n}.code is unknown`);
-		if (e.severity !== "warning" && e.severity !== "error") throw new H("INVALID_REFERENCE", `${n}.severity is unknown`);
-		if (typeof e.message != "string" || e.message.length === 0) throw new H("INVALID_REFERENCE", `${n}.message is empty`);
-		if (e.source !== void 0 && (!Ll.has(e.source.story) || typeof e.source.storyInstance != "string" || e.source.storyInstance.length === 0 || !Array.isArray(e.source.path) || e.source.path.some((e) => !Number.isSafeInteger(e) || e < 0))) throw new H("INVALID_REFERENCE", `${n}.source is invalid`);
+		if (!ou.has(e.code)) throw new V("INVALID_REFERENCE", `${n}.code is unknown`);
+		if (e.severity !== "warning" && e.severity !== "error") throw new V("INVALID_REFERENCE", `${n}.severity is unknown`);
+		if (typeof e.message != "string" || e.message.length === 0) throw new V("INVALID_REFERENCE", `${n}.message is empty`);
+		if (e.source !== void 0 && (!su.has(e.source.story) || typeof e.source.storyInstance != "string" || e.source.storyInstance.length === 0 || !Array.isArray(e.source.path) || e.source.path.some((e) => !Number.isSafeInteger(e) || e < 0))) throw new V("INVALID_REFERENCE", `${n}.source is invalid`);
 	});
 	let t = /* @__PURE__ */ new Set();
 	e.pages.forEach((e, n) => {
-		if (!Number.isInteger(e.pageIndex) || e.pageIndex !== n) throw new H("INVALID_REFERENCE", `pages[${n}] has invalid page index ${e.pageIndex}`);
-		if (Vl(e.geometry, `pages[${n}].geometry`), J(e.geometry.contentTopPt, `pages[${n}].geometry.contentTopPt`), J(e.geometry.contentBottomPt, `pages[${n}].geometry.contentBottomPt`), e.geometry.widthPt <= 0 || e.geometry.heightPt <= 0 || e.geometry.contentTopPt < 0 || e.geometry.contentTopPt > e.geometry.contentBottomPt || e.geometry.contentBottomPt > e.geometry.heightPt) throw new H("INVALID_GEOMETRY", `pages[${n}] has invalid effective page edges`);
-		tu(e, `pages[${n}].pageBorder`);
+		if (!Number.isInteger(e.pageIndex) || e.pageIndex !== n) throw new V("INVALID_REFERENCE", `pages[${n}] has invalid page index ${e.pageIndex}`);
+		if (du(e.geometry, `pages[${n}].geometry`), J(e.geometry.contentTopPt, `pages[${n}].geometry.contentTopPt`), J(e.geometry.contentBottomPt, `pages[${n}].geometry.contentBottomPt`), e.geometry.widthPt <= 0 || e.geometry.heightPt <= 0 || e.geometry.contentTopPt < 0 || e.geometry.contentTopPt > e.geometry.contentBottomPt || e.geometry.contentBottomPt > e.geometry.heightPt) throw new V("INVALID_GEOMETRY", `pages[${n}] has invalid effective page edges`);
+		Tu(e, `pages[${n}].pageBorder`);
 		let r = /* @__PURE__ */ new Map();
 		if (e.flowDomains.forEach((e, t) => {
-			if (Vl(e.logicalBounds, `pages[${n}].flowDomains[${t}].logicalBounds`), Vl(e.physicalBounds, `pages[${n}].flowDomains[${t}].physicalBounds`), r.has(e.id)) throw new H("INVALID_REFERENCE", `duplicate flow domain ${e.id}`);
+			if (du(e.logicalBounds, `pages[${n}].flowDomains[${t}].logicalBounds`), du(e.physicalBounds, `pages[${n}].flowDomains[${t}].physicalBounds`), r.has(e.id)) throw new V("INVALID_REFERENCE", `duplicate flow domain ${e.id}`);
 			r.set(e.id, e);
-		}), e.parityBlank && (e.flowDomains.length > 0 || (e.sectionRegions?.length ?? 0) > 0 || (e.columnSeparators?.length ?? 0) > 0 || Or(e).length > 0 || e.layers.roots.length > 0 || e.readingOrder.length > 0 || (e.bookmarkStarts?.length ?? 0) > 0)) throw new H("INVALID_REFERENCE", `pages[${n}] parity blank retains page content`);
+		}), e.parityBlank && (e.flowDomains.length > 0 || (e.sectionRegions?.length ?? 0) > 0 || (e.columnSeparators?.length ?? 0) > 0 || kr(e).length > 0 || e.layers.roots.length > 0 || e.readingOrder.length > 0 || (e.bookmarkStarts?.length ?? 0) > 0)) throw new V("INVALID_REFERENCE", `pages[${n}] parity blank retains page content`);
 		let i = /* @__PURE__ */ new Set();
 		if (e.sectionOccurrenceId !== void 0) {
-			if (e.sectionOccurrenceId.length === 0) throw new H("INVALID_REFERENCE", `pages[${n}] has an empty section occurrence id`);
+			if (e.sectionOccurrenceId.length === 0) throw new V("INVALID_REFERENCE", `pages[${n}] has an empty section occurrence id`);
 			i.add(e.sectionOccurrenceId);
 		}
 		let a = /* @__PURE__ */ new Map();
@@ -6970,151 +7524,151 @@ function ou(e) {
 			let t = /* @__PURE__ */ new Set(), o = /* @__PURE__ */ new Set(), s = /* @__PURE__ */ new Map(), c = [], l;
 			if (e.sectionRegions.forEach((u, d) => {
 				let f = `pages[${n}].sectionRegions[${d}]`;
-				if (u.id.length === 0 || t.has(u.id)) throw new H("INVALID_REFERENCE", `${f} has an invalid region id`);
-				if (t.add(u.id), u.sectionOccurrenceId.length === 0) throw new H("INVALID_REFERENCE", `${f} has an empty section occurrence id`);
-				if (o.has(u.sectionOccurrenceId)) throw new H("INVALID_REFERENCE", `${f} has a duplicate section occurrence id`);
-				o.add(u.sectionOccurrenceId), i.add(u.sectionOccurrenceId), Wl(u.coordinateSpace, `${f}.coordinateSpace`);
+				if (u.id.length === 0 || t.has(u.id)) throw new V("INVALID_REFERENCE", `${f} has an invalid region id`);
+				if (t.add(u.id), u.sectionOccurrenceId.length === 0) throw new V("INVALID_REFERENCE", `${f} has an empty section occurrence id`);
+				if (o.has(u.sectionOccurrenceId)) throw new V("INVALID_REFERENCE", `${f} has a duplicate section occurrence id`);
+				o.add(u.sectionOccurrenceId), i.add(u.sectionOccurrenceId), mu(u.coordinateSpace, `${f}.coordinateSpace`);
 				let p = u.coordinateSpace.writingMode;
-				if (l !== void 0 && l !== p) throw new H("INVALID_GEOMETRY", `${f} mixes coordinate systems on one physical page`);
+				if (l !== void 0 && l !== p) throw new V("INVALID_GEOMETRY", `${f} mixes coordinate systems on one physical page`);
 				l = p;
 				let m;
 				try {
-					m = Hr(u.section.textDirection);
+					m = Ur(u.section.textDirection);
 				} catch (e) {
-					throw new H("INVALID_GEOMETRY", `${f}.section.textDirection is unsupported: ${e.message}`);
+					throw new V("INVALID_GEOMETRY", `${f}.section.textDirection is unsupported: ${e.message}`);
 				}
-				if (p !== m) throw new H("INVALID_GEOMETRY", `${f} writing mode contradicts its section text direction`);
-				let h = qr(e.geometry, p), g = Jr({
+				if (p !== m) throw new V("INVALID_GEOMETRY", `${f} writing mode contradicts its section text direction`);
+				let h = Jr(e.geometry, p), g = Yr({
 					widthPt: u.section.geometry.pageWidth,
 					heightPt: u.section.geometry.pageHeight
 				}, p);
-				if (g.widthPt !== e.geometry.widthPt || g.heightPt !== e.geometry.heightPt) throw new H("INVALID_GEOMETRY", `${f} section geometry does not match the upright physical page`);
-				if (J(u.blockStartPt, `${f}.blockStartPt`), J(u.blockEndPt, `${f}.blockEndPt`), u.columnFlowDirection !== "ltr" && u.columnFlowDirection !== "rtl") throw new H("INVALID_GEOMETRY", `${f} has an invalid column flow direction`);
+				if (g.widthPt !== e.geometry.widthPt || g.heightPt !== e.geometry.heightPt) throw new V("INVALID_GEOMETRY", `${f} section geometry does not match the upright physical page`);
+				if (J(u.blockStartPt, `${f}.blockStartPt`), J(u.blockEndPt, `${f}.blockEndPt`), u.columnFlowDirection !== "ltr" && u.columnFlowDirection !== "rtl") throw new V("INVALID_GEOMETRY", `${f} has an invalid column flow direction`);
 				let _ = u.section.sectionBidi === !0 ? "rtl" : "ltr";
-				if (u.columnFlowDirection !== _) throw new H("INVALID_GEOMETRY", `${f} column flow direction contradicts its section bidi`);
-				if (u.blockStartPt < 0 || u.blockEndPt < u.blockStartPt || u.blockEndPt > h.heightPt) throw new H("INVALID_GEOMETRY", `${f} has an invalid block interval`);
-				let v = ei(u.coordinateSpace.writingMode, e.geometry);
-				if (!eu(u.coordinateSpace.logicalToPhysical, v.logicalToPhysical) || !eu(u.coordinateSpace.physicalToLogical, v.physicalToLogical)) throw new H("INVALID_GEOMETRY", `${f} has an invalid coordinate transform`);
+				if (u.columnFlowDirection !== _) throw new V("INVALID_GEOMETRY", `${f} column flow direction contradicts its section bidi`);
+				if (u.blockStartPt < 0 || u.blockEndPt < u.blockStartPt || u.blockEndPt > h.heightPt) throw new V("INVALID_GEOMETRY", `${f} has an invalid block interval`);
+				let v = ti(u.coordinateSpace.writingMode, e.geometry);
+				if (!wu(u.coordinateSpace.logicalToPhysical, v.logicalToPhysical) || !wu(u.coordinateSpace.physicalToLogical, v.physicalToLogical)) throw new V("INVALID_GEOMETRY", `${f} has an invalid coordinate transform`);
 				let y = u.columnIndexes;
-				if (u.flowDomainIds.length !== y.length || y.some((e, t) => !Number.isInteger(e) || e < 0 || e >= u.section.columns.length || t > 0 && e <= y[t - 1])) throw new H("INVALID_GEOMETRY", `${f} columns contradict its section`);
+				if (u.flowDomainIds.length !== y.length || y.some((e, t) => !Number.isInteger(e) || e < 0 || e >= u.section.columns.length || t > 0 && e <= y[t - 1])) throw new V("INVALID_GEOMETRY", `${f} columns contradict its section`);
 				let b = 0;
 				u.flowDomainIds.forEach((t, n) => {
 					let i = r.get(t);
-					if (!i) throw new H("INVALID_REFERENCE", `${f} references missing flow domain ${t}`);
-					if (i.kind !== "body") throw new H("INVALID_REFERENCE", `${f} owns non-body flow domain ${t}`);
+					if (!i) throw new V("INVALID_REFERENCE", `${f} references missing flow domain ${t}`);
+					if (i.kind !== "body") throw new V("INVALID_REFERENCE", `${f} owns non-body flow domain ${t}`);
 					s.set(t, (s.get(t) ?? 0) + 1), a.set(t, u);
 					let o = i.logicalBounds, l = u.section.columns[y[n]];
-					if (o.widthPt <= 0 || o.heightPt < 0 || o.yPt !== u.blockStartPt || o.heightPt !== u.blockEndPt - u.blockStartPt || o.xPt < 0 || o.xPt < b || o.xPt + o.widthPt > h.widthPt || l === void 0 || o.xPt !== l.xPt || o.widthPt !== l.wPt) throw new H("INVALID_GEOMETRY", `${t} is not the section column's non-negative logical region`);
-					if (b = o.xPt + o.widthPt, !$l(Qr(u.coordinateSpace.logicalToPhysical, i.logicalBounds), i.physicalBounds)) throw new H("INVALID_GEOMETRY", `${t} physical bounds do not match its section region transform`);
-					if (!Yl(e.geometry, i.physicalBounds)) throw new H("INVALID_GEOMETRY", `${t} physical bounds leave the upright physical page`);
-					if (c.some((e) => e.regionId !== u.id && Jl(e.bounds, i.physicalBounds))) throw new H("INVALID_GEOMETRY", `${t} overlaps a body flow domain owned by another section region`);
+					if (o.widthPt <= 0 || o.heightPt < 0 || o.yPt !== u.blockStartPt || o.heightPt !== u.blockEndPt - u.blockStartPt || o.xPt < 0 || o.xPt < b || o.xPt + o.widthPt > h.widthPt || l === void 0 || o.xPt !== l.xPt || o.widthPt !== l.wPt) throw new V("INVALID_GEOMETRY", `${t} is not the section column's non-negative logical region`);
+					if (b = o.xPt + o.widthPt, !Cu($r(u.coordinateSpace.logicalToPhysical, i.logicalBounds), i.physicalBounds)) throw new V("INVALID_GEOMETRY", `${t} physical bounds do not match its section region transform`);
+					if (!yu(e.geometry, i.physicalBounds)) throw new V("INVALID_GEOMETRY", `${t} physical bounds leave the upright physical page`);
+					if (c.some((e) => e.regionId !== u.id && vu(e.bounds, i.physicalBounds))) throw new V("INVALID_GEOMETRY", `${t} overlaps a body flow domain owned by another section region`);
 					c.push({
 						regionId: u.id,
 						bounds: i.physicalBounds
 					});
 				});
 			}), e.flowDomains.filter((e) => e.kind === "body").forEach((e) => {
-				if (s.get(e.id) !== 1) throw new H("INVALID_REFERENCE", `${e.id} has invalid section region ownership`);
+				if (s.get(e.id) !== 1) throw new V("INVALID_REFERENCE", `${e.id} has invalid section region ownership`);
 			}), !e.parityBlank && e.sectionRegions.length > 0) {
 				let t = e.sectionRegions[0];
-				if (e.sectionOccurrenceId !== t.sectionOccurrenceId) throw new H("INVALID_REFERENCE", `pages[${n}] page-start section occurrence does not match its first region`);
-				if (!yl(e.section, t.section)) throw new H("INVALID_GEOMETRY", `pages[${n}] page-start section facts do not match its first region`);
+				if (e.sectionOccurrenceId !== t.sectionOccurrenceId) throw new V("INVALID_REFERENCE", `pages[${n}] page-start section occurrence does not match its first region`);
+				if (!Bl(e.section, t.section)) throw new V("INVALID_GEOMETRY", `pages[${n}] page-start section facts do not match its first region`);
 			}
 		}
-		let o = ni(e.sectionRegions ?? []);
+		let o = ri(e.sectionRegions ?? []);
 		if (!Array.isArray(e.columnSeparators) || e.columnSeparators.length !== o.length || e.columnSeparators.some((e, t) => {
 			let n = o[t];
 			return n === void 0 || e.start.xPt !== n.start.xPt || e.start.yPt !== n.start.yPt || e.end.xPt !== n.end.xPt || e.end.yPt !== n.end.yPt;
-		})) throw new H("INVALID_GEOMETRY", `pages[${n}].columnSeparators contradict the retained section regions`);
+		})) throw new V("INVALID_GEOMETRY", `pages[${n}].columnSeparators contradict the retained section regions`);
 		let s = new Map(e.sectionRegions.map((e) => [e.id, e]));
 		for (let t of e.flowDomains) {
 			if (t.kind !== "footnote" && t.kind !== "endnote") continue;
 			let n = t.sectionRegionId ? s.get(t.sectionRegionId) : e.sectionRegions[0];
-			if (!n) throw new H("INVALID_REFERENCE", `${t.id} references missing page story region ${t.sectionRegionId ?? "<default>"}`);
-			if (!$l(Qr(n.coordinateSpace.logicalToPhysical, t.logicalBounds), t.physicalBounds)) throw new H("INVALID_GEOMETRY", `${t.id} physical bounds do not match the page story transform`);
+			if (!n) throw new V("INVALID_REFERENCE", `${t.id} references missing page story region ${t.sectionRegionId ?? "<default>"}`);
+			if (!Cu($r(n.coordinateSpace.logicalToPhysical, t.logicalBounds), t.physicalBounds)) throw new V("INVALID_GEOMETRY", `${t.id} physical bounds do not match the page story transform`);
 			a.set(t.id, n);
 		}
-		for (let t of e.flowDomains) if (!a.has(t.id) && !$l(t.logicalBounds, t.physicalBounds)) throw new H("INVALID_GEOMETRY", `${t.id} has unequal logical and physical bounds without a section region`);
+		for (let t of e.flowDomains) if (!a.has(t.id) && !Cu(t.logicalBounds, t.physicalBounds)) throw new V("INVALID_GEOMETRY", `${t.id} has unequal logical and physical bounds without a section region`);
 		if (e.pageNumber) {
-			if (J(e.pageNumber.displayNumber, `pages[${n}].pageNumber.displayNumber`), !Number.isInteger(e.pageNumber.displayNumber)) throw new H("INVALID_GEOMETRY", `pages[${n}] page number is not an integer`);
-			if (e.pageNumber.format.length === 0 || !i.has(e.pageNumber.sectionOccurrenceId)) throw new H("INVALID_REFERENCE", `pages[${n}] has an invalid page number section owner`);
+			if (J(e.pageNumber.displayNumber, `pages[${n}].pageNumber.displayNumber`), !Number.isInteger(e.pageNumber.displayNumber)) throw new V("INVALID_GEOMETRY", `pages[${n}] page number is not an integer`);
+			if (e.pageNumber.format.length === 0 || !i.has(e.pageNumber.sectionOccurrenceId)) throw new V("INVALID_REFERENCE", `pages[${n}] has an invalid page number section owner`);
 		}
 		let c = [];
 		try {
-			kr(e);
+			Ar(e);
 		} catch (e) {
-			throw e instanceof Tr ? new H("INVALID_REFERENCE", e.message) : e;
+			throw e instanceof Er ? new V("INVALID_REFERENCE", e.message) : e;
 		}
 		let l = /* @__PURE__ */ new Map(), u = /* @__PURE__ */ new Set();
-		Or(e).forEach(({ node: e }, i) => {
+		kr(e).forEach(({ node: e }, i) => {
 			let o = `pages[${n}].nodes[${i}]`;
-			l.set(e.id, e), ru(e, u, t), iu(e, o), Vl(e.flowBounds, `${o}.flowBounds`), Vl(e.inkBounds, `${o}.inkBounds`), e.clipBounds && Vl(e.clipBounds, `${o}.clipBounds`), J(e.advancePt, `${o}.advancePt`), e.kind === "drawing" && au(e, o);
+			l.set(e.id, e), Du(e, u, t), Ou(e, o), du(e.flowBounds, `${o}.flowBounds`), du(e.inkBounds, `${o}.inkBounds`), e.clipBounds && du(e.clipBounds, `${o}.clipBounds`), J(e.advancePt, `${o}.advancePt`), e.kind === "drawing" && ku(e, o);
 			let s = r.get(e.flowDomainId);
-			if (!s) throw new H("INVALID_REFERENCE", `${e.id} references missing flow domain ${e.flowDomainId}`);
-			if (e.ordinaryFlow && s.kind === "body" && s.logicalBounds.heightPt === 0) throw new H("FLOW_DOMAIN_INVASION", `${e.id} claims ordinary flow in an empty body domain`);
+			if (!s) throw new V("INVALID_REFERENCE", `${e.id} references missing flow domain ${e.flowDomainId}`);
+			if (e.ordinaryFlow && s.kind === "body" && s.logicalBounds.heightPt === 0) throw new V("FLOW_DOMAIN_INVASION", `${e.id} claims ordinary flow in an empty body domain`);
 			if (!e.ordinaryFlow) return;
 			let d = s.kind === "body" ? a.get(s.id) : void 0;
 			if (s.kind === "body") {
-				if (!d) throw new H("INVALID_REFERENCE", `${e.id} references a body flow domain without a section region`);
-				if (e.flowBounds.yPt + e.flowBounds.heightPt > d.blockEndPt) throw new H("BOTTOM_MARGIN_INVASION", `${e.id} crosses logical block end`);
+				if (!d) throw new V("INVALID_REFERENCE", `${e.id} references a body flow domain without a section region`);
+				if (e.flowBounds.yPt + e.flowBounds.heightPt > d.blockEndPt) throw new V("BOTTOM_MARGIN_INVASION", `${e.id} crosses logical block end`);
 			}
-			if (!(d ? Zl(d.blockStartPt, d.blockEndPt, e.flowBounds) && (e.kind === "table" || Xl(s.logicalBounds, e.flowBounds)) : e.kind === "table" ? Ql(s.logicalBounds, e.flowBounds) : Yl(s.logicalBounds, e.flowBounds))) throw new H("FLOW_DOMAIN_INVASION", `${e.id} crosses flow domain ${s.id}`);
+			if (!(d ? xu(d.blockStartPt, d.blockEndPt, e.flowBounds) && (e.kind === "table" || bu(s.logicalBounds, e.flowBounds)) : e.kind === "table" ? Su(s.logicalBounds, e.flowBounds) : yu(s.logicalBounds, e.flowBounds))) throw new V("FLOW_DOMAIN_INVASION", `${e.id} crosses flow domain ${s.id}`);
 			c.push(e);
 		});
 		let d = /* @__PURE__ */ new Set();
 		if (e.readingOrder.forEach((e) => {
-			if (!l.has(e) || d.has(e)) throw new H("INVALID_REFERENCE", `invalid reading-order reference ${e}`);
+			if (!l.has(e) || d.has(e)) throw new V("INVALID_REFERENCE", `invalid reading-order reference ${e}`);
 			d.add(e);
 		}), e.bookmarkStarts !== void 0) {
-			let t = new Map([...a].map(([e, t]) => [e, t.sectionOccurrenceId])), r = El(kr(e), e.sectionOccurrenceId ?? "", t), o = r.every((e) => e.sectionOccurrenceId.length > 0 && i.has(e.sectionOccurrenceId)), s = e.bookmarkStarts.length === r.length && e.bookmarkStarts.every((e, t) => {
-				let n = r[t];
-				return n !== void 0 && e.name === n.name && e.nodeId === n.nodeId && e.sectionOccurrenceId === n.sectionOccurrenceId;
+			let t = Yl(e, new Map([...a].map(([e, t]) => [e, t.sectionOccurrenceId]))), r = t.every((e) => e.sectionOccurrenceId.length > 0 && i.has(e.sectionOccurrenceId)), o = e.bookmarkStarts.length === t.length && e.bookmarkStarts.every((e, n) => {
+				let r = t[n];
+				return r !== void 0 && e.name === r.name && e.nodeId === r.nodeId && e.sectionOccurrenceId === r.sectionOccurrenceId;
 			});
-			if (!o || !s) throw new H("INVALID_REFERENCE", `pages[${n}] bookmark metadata does not match its retained graph (invalid bookmark node or ownership)`);
+			if (!r || !o) throw new V("INVALID_REFERENCE", `pages[${n}] bookmark metadata does not match its retained graph (invalid bookmark node or ownership)`);
 		}
 		for (let e = 0; e < c.length; e += 1) for (let t = e + 1; t < c.length; t += 1) {
 			let n = c[e], i = c[t];
 			if (!n || !i) continue;
 			let a = r.get(n.flowDomainId), o = r.get(i.flowDomainId), s = n.flowDomainId === i.flowDomainId, l = a?.kind === "body" && (o?.kind === "footnote" || o?.kind === "endnote") || o?.kind === "body" && (a?.kind === "footnote" || a?.kind === "endnote"), u = a?.id !== o?.id && (a?.kind === "footnote" || a?.kind === "endnote") && (o?.kind === "footnote" || o?.kind === "endnote");
-			if ((s || l || u) && Jl(n.flowBounds, i.flowBounds)) throw new H("FLOW_OVERLAP", `${n.id} overlaps ${i.id}`);
+			if ((s || l || u) && vu(n.flowBounds, i.flowBounds)) throw new V("FLOW_OVERLAP", `${n.id} overlaps ${i.id}`);
 		}
 	});
 }
-function su(e) {
+function ju(e) {
 	try {
-		ou(e);
+		Au(e);
 	} catch (e) {
-		throw e instanceof H ? e : e instanceof TypeError || e instanceof RangeError ? new H("INVALID_GEOMETRY", e.message) : e;
+		throw e instanceof V ? e : e instanceof TypeError || e instanceof RangeError ? new V("INVALID_GEOMETRY", e.message) : e;
 	}
 }
-function cu(e, t) {
+function Mu(e, t) {
 	if (typeof e != "object" || !e || t.has(e)) return e;
 	t.add(e);
-	for (let n of Object.values(e)) cu(n, t);
+	for (let n of Object.values(e)) Mu(n, t);
 	return Object.freeze(e);
 }
-var lu = /* @__PURE__ */ new WeakSet(), uu = /* @__PURE__ */ new WeakSet();
-function du(e) {
-	if (lu.has(e)) return e;
-	let t = cu(e, /* @__PURE__ */ new WeakSet());
-	return lu.add(t), t;
+var Nu = /* @__PURE__ */ new WeakSet(), Pu = /* @__PURE__ */ new WeakSet();
+function Fu(e) {
+	if (Nu.has(e)) return e;
+	let t = Mu(e, /* @__PURE__ */ new WeakSet());
+	return Nu.add(t), t;
 }
-function fu(e) {
-	return lu.has(e) ? e : (Rl(e, "layout"), du(e));
+function Iu(e) {
+	return Nu.has(e) ? e : (cu(e, "layout"), Fu(e));
 }
-function pu(e) {
-	if (uu.has(e)) return e;
-	su(e);
-	let t = du(e);
-	return uu.add(t), t;
+function Lu(e) {
+	if (Pu.has(e)) return e;
+	ju(e);
+	let t = Fu(e);
+	return Pu.add(t), t;
 }
 //#endregion
 //#region packages/docx/src/layout/variant-store.ts
-function mu(e, t) {
+function Ru(e, t) {
 	if (!Number.isInteger(t) || t < 0 || t >= e.pages.length) throw RangeError(`Page index ${t} out of range (count: ${e.pages.length})`);
 	return e.pages[t];
 }
-var hu = class {
+var zu = class {
 	#e;
 	#t;
 	#n = /* @__PURE__ */ new Map();
@@ -7122,7 +7676,7 @@ var hu = class {
 	#i;
 	#a = null;
 	constructor(e, t, n) {
-		this.#e = e, this.#r = Object.freeze({ ...t }), this.#i = Fr(this.#r, this.#e), this.#t = n;
+		this.#e = e, this.#r = Object.freeze({ ...t }), this.#i = Ir(this.#r, this.#e), this.#t = n;
 	}
 	get defaultLayout() {
 		return this.layoutFor(this.#r);
@@ -7131,8 +7685,8 @@ var hu = class {
 		return this.select(e).layout;
 	}
 	select(e) {
-		let t = Object.isFrozen(e) ? e : Object.freeze({ ...e }), n = Fr(t, this.#e), r = this.#n.get(n);
-		return r || (r = fu(this.#t(t)), n !== this.#i && (this.#a !== null && this.#a !== n && this.#n.delete(this.#a), this.#a = n), this.#n.set(n, r)), Object.freeze({
+		let t = Object.isFrozen(e) ? e : Object.freeze({ ...e }), n = Ir(t, this.#e), r = this.#n.get(n);
+		return r || (r = Iu(this.#t(t)), n !== this.#i && (this.#a !== null && this.#a !== n && this.#n.delete(this.#a), this.#a = n), this.#n.set(n, r)), Object.freeze({
 			key: n,
 			options: t,
 			layout: r
@@ -7142,30 +7696,30 @@ var hu = class {
 		let n = this.select(e);
 		return Object.freeze({
 			...n,
-			page: mu(n.layout, t)
+			page: Ru(n.layout, t)
 		});
 	}
 	isDefault(e) {
-		return Fr(e, this.#e) === this.#i;
+		return Ir(e, this.#e) === this.#i;
 	}
 };
 //#endregion
 //#region packages/docx/src/layout/document-layout-variants.ts
-function gu(e) {
-	let { services: t, defaultCurrentDateMs: n, buildLayout: r } = e, i = Pr({ defaultCurrentDateMs: n }), a = e.source.fatalParse, o = a === null ? null : Mr(a.message, a.pageSize, t.text), s = new hu(t, i, o === null ? r : () => o);
-	return Zn(t, s), Object.freeze({
+function Bu(e) {
+	let { services: t, defaultCurrentDateMs: n, buildLayout: r } = e, i = Fr({ defaultCurrentDateMs: n }), a = e.source.fatalParse, o = a === null ? null : Nr(a.message, a.pageSize, t.text), s = new zu(t, i, o === null ? r : () => o);
+	return Qn(t, s), Object.freeze({
 		store: s,
 		defaultOptions: i
 	});
 }
-function _u(e, t, n) {
-	let r = Qn(e);
+function Vu(e, t, n) {
+	let r = $n(e);
 	if (!r) throw Error("Document layout variant store is not attached to the supplied services");
-	return r.selectPage(Pr(t), n);
+	return r.selectPage(Fr(t), n);
 }
 //#endregion
 //#region packages/docx/src/layout/affine.ts
-function vu(e, t) {
+function Hu(e, t) {
 	return Object.freeze({
 		a: e.a * t.a + e.c * t.b,
 		b: e.b * t.a + e.d * t.b,
@@ -7175,7 +7729,7 @@ function vu(e, t) {
 		f: e.b * t.e + e.d * t.f + e.f
 	});
 }
-function yu(e) {
+function Uu(e) {
 	return Object.freeze({
 		a: e,
 		b: 0,
@@ -7185,7 +7739,7 @@ function yu(e) {
 		f: 0
 	});
 }
-function bu(e, t) {
+function Wu(e, t) {
 	return Object.freeze({
 		a: 1,
 		b: 0,
@@ -7195,13 +7749,13 @@ function bu(e, t) {
 		f: t
 	});
 }
-function xu(e, t) {
+function Gu(e, t) {
 	return {
 		xPt: e.a * t.xPt + e.c * t.yPt + e.e,
 		yPt: e.b * t.xPt + e.d * t.yPt + e.f
 	};
 }
-function Su(e, t) {
+function Ku(e, t) {
 	let n = e.a * e.d - e.b * e.c;
 	if (!Number.isFinite(n) || n === 0) return null;
 	let r = t.xPt - e.e, i = t.yPt - e.f, a = {
@@ -7210,7 +7764,7 @@ function Su(e, t) {
 	};
 	return Number.isFinite(a.xPt) && Number.isFinite(a.yPt) ? a : null;
 }
-function Cu(e, t) {
+function qu(e, t) {
 	let n = e.a * e.d - e.b * e.c;
 	if (!Number.isFinite(n) || n === 0) return null;
 	let r = {
@@ -7221,7 +7775,7 @@ function Cu(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/text-index.ts
-var wu = Object.freeze({
+var Ju = Object.freeze({
 	a: 1,
 	b: 0,
 	c: 0,
@@ -7229,7 +7783,7 @@ var wu = Object.freeze({
 	e: 0,
 	f: 0
 });
-function Tu(e) {
+function Yu(e) {
 	let t = new Map(e.sectionRegions.map((e) => [e.id, e])), n = /* @__PURE__ */ new Map();
 	for (let t of e.sectionRegions) for (let e of t.flowDomainIds) n.set(e, t);
 	for (let r of e.flowDomains) {
@@ -7240,20 +7794,20 @@ function Tu(e) {
 	}
 	return n;
 }
-function Eu(e, t) {
-	return t.coordinateSpace === "upright-physical" ? wu : e.get(t.node.flowDomainId)?.coordinateSpace.logicalToPhysical ?? wu;
+function Xu(e, t) {
+	return t.coordinateSpace === "upright-physical" ? Ju : e.get(t.node.flowDomainId)?.coordinateSpace.logicalToPhysical ?? Ju;
 }
-function Du(e, t) {
+function Zu(e, t) {
 	let n = e.rootPointToPage.get(t.rootNodeId);
 	if (!n) throw Error(`Drawing entry ${t.node.id} references missing root ${t.rootNodeId}`);
 	let r = n;
-	for (let e of t.frames) e.kind === "transform" && (r = vu(r, e.transform));
+	for (let e of t.frames) e.kind === "transform" && (r = Hu(r, e.transform));
 	return r;
 }
-function Ou(e, t, n) {
+function Qu(e, t, n) {
 	let r = t.xPt - e.flowBounds.xPt, i = t.yPt - e.flowBounds.yPt;
 	return {
-		pointToPage: vu(n.pointToPage, bu(r, i)),
+		pointToPage: Hu(n.pointToPage, Wu(r, i)),
 		layoutTranslationPt: {
 			xPt: n.layoutTranslationPt.xPt + r,
 			yPt: n.layoutTranslationPt.yPt + i
@@ -7261,48 +7815,48 @@ function Ou(e, t, n) {
 		rootNodeId: n.rootNodeId
 	};
 }
-function ku(e, t) {
+function $u(e, t) {
 	return (t.textBoxIds ?? []).flatMap((t) => {
 		let n = e.get(t);
 		return n ? [n] : [];
 	});
 }
-function Au(e, t, n) {
+function ed(e, t, n) {
 	if (n.emittedTextBoxes.has(e.id)) return;
 	n.emittedTextBoxes.add(e.id);
 	let r = {
 		...t,
-		pointToPage: vu(t.pointToPage, e.transform)
+		pointToPage: Hu(t.pointToPage, e.transform)
 	};
-	for (let t of e.story.blocks) Fu(t, r, n);
+	for (let t of e.story.blocks) ad(t, r, n);
 }
-function ju(e, t, n, r) {
-	let i = ku(e, t);
+function td(e, t, n, r) {
+	let i = $u(e, t);
 	if (i.length === 0) return;
-	let a = Mu(t, n, r);
-	for (let e of i) Au(e, a, r);
+	let a = nd(t, n, r);
+	for (let e of i) ed(e, a, r);
 }
-function Mu(e, t, n) {
+function nd(e, t, n) {
 	let r = n.drawingEntries.get(e.id), i = t;
 	r && r.rootNodeId === t.rootNodeId && (i = {
-		pointToPage: Du(n, r),
+		pointToPage: Zu(n, r),
 		layoutTranslationPt: r.layoutTranslationPt,
 		rootNodeId: r.rootNodeId
 	});
 	let a = i.layoutTranslationPt, o = e.anchorLayer?.horizontalOwnership === "page" ? -a.xPt : 0, s = e.anchorLayer?.verticalOwnership === "page" ? -a.yPt : 0, c = o === 0 && s === 0 ? i : {
 		...i,
-		pointToPage: vu(i.pointToPage, bu(o, s))
+		pointToPage: Hu(i.pointToPage, Wu(o, s))
 	};
 	if (e.orientation === "upright-physical") {
 		if (!e.transform) throw Error(`Upright physical drawing ${e.id} is missing its logical transform`);
 		c = {
 			...c,
-			pointToPage: vu(c.pointToPage, e.transform)
+			pointToPage: Hu(c.pointToPage, e.transform)
 		};
 	}
 	return c;
 }
-function Nu(e, t, n) {
+function rd(e, t, n) {
 	for (let r of e.lines) for (let i of r.placements) i.kind === "text" && n.runs.push(Object.freeze({
 		placement: i,
 		pointToPage: t.pointToPage,
@@ -7319,52 +7873,52 @@ function Nu(e, t, n) {
 	}).sort((e, t) => e.runIndex - t.runIndex || e.index - t.index);
 	for (let { drawing: e } of a) {
 		for (let t of e.textBoxIds ?? []) i.add(t);
-		ju(r, e, t, n);
+		td(r, e, t, n);
 	}
-	for (let r of e.textBoxes) i.has(r.id) || Au(r, t, n);
+	for (let r of e.textBoxes) i.has(r.id) || ed(r, t, n);
 }
-function Pu(e, t, n) {
+function id(e, t, n) {
 	for (let r of e.rows) for (let e of r.cells) {
 		let r = "visualMergeOwnership" in e && e.visualMergeOwnership === "continuation";
 		if (!(e.verticalMerge === "continue" && !r)) for (let r of e.blocks) {
 			let i = r.layout;
-			Fu(i, Ou(i, {
+			ad(i, Qu(i, {
 				xPt: e.contentBounds.xPt + (i.kind === "table" ? i.flowBounds.xPt : 0),
 				yPt: e.flowBounds.yPt + r.offsetPt + (i.kind === "table" ? i.flowBounds.yPt : 0)
 			}, t), n);
 		}
 	}
-	for (let r of e.resolvedFloatingTables ?? []) Fu(r.child, Ou(r.child, {
+	for (let r of e.resolvedFloatingTables ?? []) ad(r.child, Qu(r.child, {
 		xPt: r.xPt - t.layoutTranslationPt.xPt,
 		yPt: r.yPt - t.layoutTranslationPt.yPt
 	}, t), n);
 }
-function Fu(e, t, n) {
+function ad(e, t, n) {
 	switch (e.kind) {
 		case "paragraph":
-			Nu(e, t, n);
+			rd(e, t, n);
 			return;
 		case "table":
-			Pu(e, t, n);
+			id(e, t, n);
 			return;
 		case "note":
-			for (let r of e.story.blocks) Fu(r, t, n);
+			for (let r of e.story.blocks) ad(r, t, n);
 			return;
 		case "textbox":
-			Au(e, t, n);
+			ed(e, t, n);
 			return;
 		case "drawing": {
-			let r = n.drawingEntries.get(e.id), i = Mu(e, t, n);
-			for (let e of r?.textBoxes ?? []) Au(e, i, n);
+			let r = n.drawingEntries.get(e.id), i = nd(e, t, n);
+			for (let e of r?.textBoxes ?? []) ed(e, i, n);
 			return;
 		}
 		default: throw Error(`Unknown text-index node: ${String(e)}`);
 	}
 }
-function Iu(e, t) {
+function od(e, t) {
 	let n = e.pages[t];
 	if (!n) throw RangeError(`Page index ${t} is out of range`);
-	let r = new Map(n.layers.roots.map((e) => [e.node.id, e])), i = Tu(n), a = new Map(n.layers.roots.map((e) => [e.node.id, Eu(i, e)])), o = /* @__PURE__ */ new Map();
+	let r = new Map(n.layers.roots.map((e) => [e.node.id, e])), i = Yu(n), a = new Map(n.layers.roots.map((e) => [e.node.id, Xu(i, e)])), o = /* @__PURE__ */ new Map();
 	for (let e of n.layers.paintOrder) e.kind === "drawing" && o.set(e.node.id, e);
 	let s = {
 		drawingEntries: o,
@@ -7377,7 +7931,7 @@ function Iu(e, t) {
 		if (!t) throw Error(`Reading-order node ${e} is not a page root`);
 		let n = a.get(e);
 		if (!n) throw Error(`Reading-order node ${e} has no page projection`);
-		Fu(t.node, {
+		ad(t.node, {
 			pointToPage: n,
 			layoutTranslationPt: {
 				xPt: 0,
@@ -7390,14 +7944,14 @@ function Iu(e, t) {
 }
 //#endregion
 //#region packages/docx/src/paint/affine.ts
-function Lu(e) {
+function sd(e) {
 	let t = Math.hypot(e.a, e.b), n = Math.hypot(e.c, e.d), r = e.a / t, i = e.b / t, a = e.c / n, o = e.d / n;
 	if (!(r === 1 && i === 0 && a === 0 && o === 1)) return r === 0 && i === 1 && a === -1 && o === 0 ? "rotate(90deg)" : r === 0 && i === -1 && a === 1 && o === 0 ? "rotate(-90deg)" : `matrix(${r}, ${i}, ${a}, ${o}, 0, 0)`;
 }
 //#endregion
 //#region packages/docx/src/text-run-projection.ts
-function Ru(e, t) {
-	let { placement: n } = e, r = xu(t, n.bounds), i = Math.hypot(t.a, t.b), a = Math.hypot(t.c, t.d), o = Lu(t), s = n.paintOps[0]?.letterSpacingPt ?? 0;
+function cd(e, t) {
+	let { placement: n } = e, r = Gu(t, n.bounds), i = Math.hypot(t.a, t.b), a = Math.hypot(t.c, t.d), o = sd(t), s = n.paintOps[0]?.letterSpacingPt ?? 0;
 	return {
 		...e.paragraphId === void 0 ? {} : { paragraphId: e.paragraphId },
 		text: n.text,
@@ -7406,32 +7960,32 @@ function Ru(e, t) {
 		w: n.bounds.widthPt * i,
 		h: n.bounds.heightPt * a,
 		fontSize: n.fontSizePt * a,
-		font: Re(n.fontRoute, n.fontSizePt * a, n.fontWeight, n.fontStyle),
+		font: ze(n.fontRoute, n.fontSizePt * a, n.fontWeight, n.fontStyle),
 		...s === 0 ? {} : { letterSpacingPx: s * i },
 		...o ? { transform: o } : {},
 		...n.hyperlink ? { hyperlink: n.hyperlink } : {},
 		...n.tateChuYoko ? { eastAsianVert: !0 } : {}
 	};
 }
-function zu(e, t, n) {
+function ld(e, t, n) {
 	if (!Number.isFinite(n.scale) || n.scale <= 0) throw RangeError(`Text projection scale must be positive: ${n.scale}`);
-	let r = yu(n.scale);
-	return Iu(e, t).map((e) => Ru(e, vu(r, e.pointToPage)));
+	let r = Uu(n.scale);
+	return od(e, t).map((e) => cd(e, Hu(r, e.pointToPage)));
 }
-function Bu(e, t, n) {
-	let r = _u(e, {
+function ud(e, t, n) {
+	let r = Vu(e, {
 		currentDate: n.currentDate,
 		defaultCurrentDateMs: n.defaultCurrentDateMs
 	}, t), i = (n.width ?? r.page.geometry.widthPt * 1.3333333333333333) / r.page.geometry.widthPt;
-	return zu(r.layout, t, { scale: i });
+	return ld(r.layout, t, { scale: i });
 }
 //#endregion
 //#region packages/docx/src/paint/browser-images.ts
-function Vu(e, t, n) {
+function dd(e, t, n) {
 	return `${e}${t ? `|clr:${t}` : ""}${n ? `|duo:${n.clr1}:${n.clr2}` : ""}`;
 }
-var Hu = "docx-color-effects";
-async function Uu(e, t) {
+var fd = "docx-color-effects";
+async function pd(e, t) {
 	let n = parseInt(t.slice(0, 2), 16), r = parseInt(t.slice(2, 4), 16), i = parseInt(t.slice(4, 6), 16), a = new OffscreenCanvas(e.width, e.height), o = a.getContext("2d");
 	if (!o) throw Error("2D canvas is unavailable for image color replacement");
 	o.drawImage(e, 0, 0);
@@ -7439,16 +7993,16 @@ async function Uu(e, t) {
 	for (let e = 0; e < s.data.length; e += 4) s.data[e] === n && s.data[e + 1] === r && s.data[e + 2] === i && (s.data[e + 3] = 0);
 	return o.putImageData(s, 0, 0), createImageBitmap(a);
 }
-async function Wu(e, n, r, i, a = 0, o = 0, s) {
+async function md(e, n, r, i, a = 0, o = 0, s) {
 	let c = await t(e, n, i, {
 		widthPt: a,
 		heightPt: o,
 		suppressBoundaryFrame: !0
 	});
-	return c ? !r && !s ? c : f(Hu, Vu(e, r, s), i, async () => {
+	return c ? !r && !s ? c : f(fd, dd(e, r, s), i, async () => {
 		let e = c;
 		try {
-			if (r && (e = await Uu(e, r)), s) {
+			if (r && (e = await pd(e, r)), s) {
 				let { w: t, h: n } = xe(e);
 				if (t > 0 && n > 0) {
 					let r = e;
@@ -7467,7 +8021,7 @@ async function Wu(e, n, r, i, a = 0, o = 0, s) {
 		}
 	}) : null;
 }
-function Gu(e) {
+function hd(e) {
 	let t = /* @__PURE__ */ new Map(), n = e.filter((e) => e.kind === "image" || e.kind === "picture-bullet").sort((e, t) => (e.documentOrder ?? 2 ** 53 - 1) - (t.documentOrder ?? 2 ** 53 - 1));
 	for (let e of n) {
 		let n = y(e.mimeType, e.srcRect, e.intrinsicSize.widthPt, e.intrinsicSize.heightPt), r = {
@@ -7479,14 +8033,14 @@ function Gu(e) {
 			widthPt: n.widthPt,
 			heightPt: n.heightPt,
 			hasCrop: e.srcRect != null
-		}, i = Vu(r.imagePath, r.colorReplaceFrom, r.duotone), a = t.get(i);
+		}, i = dd(r.imagePath, r.colorReplaceFrom, r.duotone), a = t.get(i);
 		a ? (a.widthPt = Math.max(a.widthPt, r.widthPt), a.heightPt = Math.max(a.heightPt, r.heightPt), a.hasCrop ||= r.hasCrop) : t.set(i, r);
 	}
 	return [...t.values()];
 }
-async function Ku(e, t) {
+async function gd(e, t) {
 	if (!t) return /* @__PURE__ */ new Map();
-	let n = await Promise.all(Gu(e).map(async (e) => {
+	let n = await Promise.all(hd(e).map(async (e) => {
 		let n = e.mimeType === "image/svg+xml", r = {
 			svgImagePath: e.svgImagePath,
 			srcRect: e.hasCrop || null
@@ -7494,52 +8048,52 @@ async function Ku(e, t) {
 		if (ye(r)) try {
 			i = await o(r.svgImagePath, t);
 		} catch (r) {
-			let a = n ? await o(e.imagePath, t) : await Wu(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone);
+			let a = n ? await o(e.imagePath, t) : await md(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone);
 			if (!a) throw r;
 			i = a;
 		}
-		else i = n ? await o(e.imagePath, t) : await Wu(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone);
-		return i == null ? null : [Vu(e.imagePath, e.colorReplaceFrom, e.duotone), i];
+		else i = n ? await o(e.imagePath, t) : await md(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone);
+		return i == null ? null : [dd(e.imagePath, e.colorReplaceFrom, e.duotone), i];
 	}));
 	return new Map(n.filter((e) => e !== null));
 }
 //#endregion
 //#region packages/docx/src/paint/column-separator-raster.ts
-function qu(e, t) {
+function _d(e, t) {
 	return Math.round(e * t) / t;
 }
-function Ju(e, t, n) {
+function vd(e, t, n) {
 	let r = e * t;
 	return (n % 2 == 0 ? Math.round(r) : Math.round(r - .5) + .5) / t;
 }
-function Yu(e, t, n) {
+function yd(e, t, n) {
 	let r = t * n, i = Math.max(1, Math.round(.5 * t)), a = Math.max(1, Math.round(i * n)), o = a / r;
 	if (e.start.xPt === e.end.xPt) {
-		let t = Ju(e.start.xPt, r, a);
+		let t = vd(e.start.xPt, r, a);
 		return {
 			segment: {
 				start: {
 					xPt: t,
-					yPt: qu(e.start.yPt, r)
+					yPt: _d(e.start.yPt, r)
 				},
 				end: {
 					xPt: t,
-					yPt: qu(e.end.yPt, r)
+					yPt: _d(e.end.yPt, r)
 				}
 			},
 			widthPt: o
 		};
 	}
 	if (e.start.yPt === e.end.yPt) {
-		let t = Ju(e.start.yPt, r, a);
+		let t = vd(e.start.yPt, r, a);
 		return {
 			segment: {
 				start: {
-					xPt: qu(e.start.xPt, r),
+					xPt: _d(e.start.xPt, r),
 					yPt: t
 				},
 				end: {
-					xPt: qu(e.end.xPt, r),
+					xPt: _d(e.end.xPt, r),
 					yPt: t
 				}
 			},
@@ -7553,7 +8107,7 @@ function Yu(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/paint/canvas-resource.ts
-function Xu(e, t, n, r, i) {
+function bd(e, t, n, r, i) {
 	if (r !== "upright-physical") {
 		i.resources.paint(e, t, n, i.ctx);
 		return;
@@ -7568,11 +8122,11 @@ function Xu(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/docx/src/paint/canvas-drawing.ts
-function Zu(e, t) {
+function xd(e, t) {
 	for (let n of e.commands) {
 		if (n.kind === "noop") continue;
 		if (n.kind === "drawingml-shape") {
-			Ke(t.ctx, n.plan, 1);
+			qe(t.ctx, n.plan, 1);
 			continue;
 		}
 		if (n.kind === "drawingml-image-fill") {
@@ -7588,14 +8142,14 @@ function Zu(e, t) {
 				widthPt: i * (1 - o.l - o.r),
 				heightPt: a * (1 - o.t - o.b)
 			};
-			s.widthPt > 0 && s.heightPt > 0 && z(t.ctx, n.plan, () => {
-				ze(t.ctx, n.plan), Xu(n.resourceKey, "image", s, void 0, t);
-			}), Ke(t.ctx, n.plan, 1);
+			s.widthPt > 0 && s.heightPt > 0 && Be(t.ctx, n.plan, () => {
+				Ve(t.ctx, n.plan), bd(n.resourceKey, "image", s, void 0, t);
+			}), qe(t.ctx, n.plan, 1);
 			continue;
 		}
 		if (n.kind === "resource") {
 			if (!t.resources) throw Error(`Missing retained resource painter for ${n.resourceKey}`);
-			Xu(n.resourceKey, n.resourceKind, n.rect, n.orientation, t);
+			bd(n.resourceKey, n.resourceKind, n.rect, n.orientation, t);
 			continue;
 		}
 		if (n.kind === "fill-rect") {
@@ -7613,18 +8167,18 @@ function Zu(e, t) {
 			let r = n.rect.xPt + n.rect.widthPt / 2, i = n.rect.yPt + n.rect.heightPt / 2;
 			t.ctx.translate(r, i), n.rotationDeg !== 0 && t.ctx.rotate(n.rotationDeg * Math.PI / 180), n.fitShape ? (t.ctx.scale(n.rect.widthPt / n.sourceBounds.widthPt, n.rect.heightPt / n.sourceBounds.heightPt), t.ctx.translate(-(n.sourceBounds.xPt + n.sourceBounds.widthPt / 2), -(n.sourceBounds.yPt + n.sourceBounds.heightPt / 2))) : t.ctx.translate(n.rect.xPt - r - n.sourceBounds.xPt, n.rect.yPt - i - n.sourceBounds.yPt), t.ctx.globalAlpha *= n.opacity, t.ctx.fillStyle = e, t.ctx.textAlign = "left", t.ctx.textBaseline = "alphabetic";
 			let a = 0;
-			for (let e of n.spans) t.ctx.font = Re(e.fontRoute, n.fontSizePt, e.fontWeight, e.fontStyle), t.ctx.fillText(e.text, a, 0), a += e.advancePt;
+			for (let e of n.spans) t.ctx.font = ze(e.fontRoute, n.fontSizePt, e.fontWeight, e.fontStyle), t.ctx.fillText(e.text, a, 0), a += e.advancePt;
 			t.ctx.restore();
 			continue;
 		}
-		t.ctx.fillStyle = n.fill, t.ctx.font = Re(n.fontRoute, n.fontSizePt, n.fontWeight, n.fontStyle), t.ctx.textAlign = n.align === "start" ? "left" : n.align === "end" ? "right" : "center", t.ctx.textBaseline = n.baseline;
+		t.ctx.fillStyle = n.fill, t.ctx.font = ze(n.fontRoute, n.fontSizePt, n.fontWeight, n.fontStyle), t.ctx.textAlign = n.align === "start" ? "left" : n.align === "end" ? "right" : "center", t.ctx.textBaseline = n.baseline;
 		let e = n.align === "start" ? n.rect.xPt : n.align === "end" ? n.rect.xPt + n.rect.widthPt : n.rect.xPt + n.rect.widthPt / 2, r = n.baseline === "top" ? n.rect.yPt : n.baseline === "bottom" ? n.rect.yPt + n.rect.heightPt : n.rect.yPt + n.rect.heightPt / 2;
 		t.ctx.fillText(n.text, e, r);
 	}
 }
 //#endregion
 //#region packages/docx/src/paint/canvas-border.ts
-function Qu(e, t, n) {
+function Sd(e, t, n) {
 	let r = e === "triple", i = /^(thinThick|thickThin|thinThickThin)(Small|Medium|Large)Gap$/.exec(e);
 	if (!r && !i) return null;
 	let a = r ? [
@@ -7647,25 +8201,25 @@ function Qu(e, t, n) {
 		spanDev: u
 	};
 }
-function $u(e) {
+function Cd(e) {
 	return [...e.bands].reverse().map((t) => ({
 		offsetDev: e.spanDev - t.offsetDev - t.widthDev,
 		widthDev: t.widthDev
 	}));
 }
-function ed(e, t, n) {
+function wd(e, t, n) {
 	if (t.style !== "compound") return !1;
-	let r = n.pointToCss ?? yu(n.scale);
+	let r = n.pointToCss ?? Uu(n.scale);
 	if (r.b !== 0 || r.c !== 0 || r.a <= 0 || r.d <= 0) return !1;
-	let i = xu(r, {
+	let i = Gu(r, {
 		xPt: e.xPt,
 		yPt: e.yPt
-	}), a = xu(r, {
+	}), a = Gu(r, {
 		xPt: e.xPt + e.widthPt,
 		yPt: e.yPt + e.heightPt
-	}), o = Qu(t.authoredStyle, t.widthPt * r.d, n.dpr), s = Qu(t.authoredStyle, t.widthPt * r.a, n.dpr);
+	}), o = Sd(t.authoredStyle, t.widthPt * r.d, n.dpr), s = Sd(t.authoredStyle, t.widthPt * r.a, n.dpr);
 	if (!o || !s || o.bands.length !== s.bands.length) return !1;
-	let c = $u(o), l = $u(s), u = (e, t, i, a) => {
+	let c = Cd(o), l = Cd(s), u = (e, t, i, a) => {
 		let o = [
 			{
 				xPt: e,
@@ -7683,7 +8237,7 @@ function ed(e, t, n) {
 				xPt: e + i,
 				yPt: t + a
 			}
-		].map((e) => Su(r, e));
+		].map((e) => Ku(r, e));
 		if (o.some((e) => e === null)) return !1;
 		let s = o.filter((e) => e !== null), c = s.map((e) => e.xPt), l = s.map((e) => e.yPt);
 		return n.ctx.fillRect(Math.min(...c), Math.min(...l), Math.max(...c) - Math.min(...c), Math.max(...l) - Math.min(...l)), !0;
@@ -7695,17 +8249,17 @@ function ed(e, t, n) {
 	}
 	return n.ctx.setLineDash([]), !0;
 }
-function td(e) {
+function Td(e) {
 	return 1 / e.dpr;
 }
-function nd(e, t, n = 0) {
+function Ed(e, t, n = 0) {
 	let r = n / t.scale, i = r > e.widthPt ? {
 		...e,
 		widthPt: r,
 		...typeof e.authoredStyle == "string" ? { dashPatternPt: Object.freeze(C(e.authoredStyle, r)) } : {}
 	} : e, { ctx: a } = t;
 	a.strokeStyle = i.color, a.lineWidth = i.widthPt, a.setLineDash("dashPatternPt" in i && i.dashPatternPt ? [...i.dashPatternPt] : []), a.beginPath();
-	let o = "path" in i && i.path?.length ? i.path : [i.from, i.to], s = o.length === 2 && (o[0].xPt === o[1].xPt || o[0].yPt === o[1].yPt), c = s && o[0].yPt === o[1].yPt, l = s && o[0].xPt === o[1].xPt, u = t.pointToCss ?? yu(t.scale), d = o.map((e) => xu(u, e)), f = s ? o[1].xPt - o[0].xPt : 0, p = s ? o[1].yPt - o[0].yPt : 0, m = u.a * f + u.c * p, h = u.b * f + u.d * p, g = s && h === 0, _ = s && m === 0, v = c ? Math.hypot(u.c, u.d) : l ? Math.hypot(u.a, u.b) : 0, y = i.style === "compound" && s && v > 0 ? Qu(i.authoredStyle, i.widthPt * v, t.dpr) : null;
+	let o = "path" in i && i.path?.length ? i.path : [i.from, i.to], s = o.length === 2 && (o[0].xPt === o[1].xPt || o[0].yPt === o[1].yPt), c = s && o[0].yPt === o[1].yPt, l = s && o[0].xPt === o[1].xPt, u = t.pointToCss ?? Uu(t.scale), d = o.map((e) => Gu(u, e)), f = s ? o[1].xPt - o[0].xPt : 0, p = s ? o[1].yPt - o[0].yPt : 0, m = u.a * f + u.c * p, h = u.b * f + u.d * p, g = s && h === 0, _ = s && m === 0, v = c ? Math.hypot(u.c, u.d) : l ? Math.hypot(u.a, u.b) : 0, y = i.style === "compound" && s && v > 0 ? Sd(i.authoredStyle, i.widthPt * v, t.dpr) : null;
 	if (y) {
 		a.fillStyle = i.color;
 		let e = (e, t, n, r) => {
@@ -7726,7 +8280,7 @@ function nd(e, t, n = 0) {
 					xPt: e + n,
 					yPt: t + r
 				}
-			].map((e) => Su(u, e));
+			].map((e) => Ku(u, e));
 			if (i.some((e) => e === null)) return;
 			let o = i.filter((e) => e !== null), s = o.map((e) => e.xPt), c = o.map((e) => e.yPt);
 			a.fillRect(Math.min(...s), Math.min(...c), Math.max(...s) - Math.min(...s), Math.max(...c) - Math.min(...c));
@@ -7763,11 +8317,11 @@ function nd(e, t, n = 0) {
 						xPt: e + n,
 						yPt: t + r
 					}
-				].map((e) => Su(u, e));
+				].map((e) => Ku(u, e));
 				if (i.some((e) => e === null)) return;
 				let o = i.filter((e) => e !== null), s = o.map((e) => e.xPt), c = o.map((e) => e.yPt);
 				a.fillRect(Math.min(...s), Math.min(...c), Math.max(...s) - Math.min(...s), Math.max(...c) - Math.min(...c));
-			}, { railDev: n, gapDev: r, spanDev: o } = qe(i.widthPt * v, t.dpr), s = n / t.dpr;
+			}, { railDev: n, gapDev: r, spanDev: o } = Je(i.widthPt * v, t.dpr), s = n / t.dpr;
 			if (g) {
 				let i = Math.round(d[0].yPt * t.dpr - o / 2), a = Math.min(d[0].xPt, d[1].xPt), c = Math.abs(d[1].xPt - d[0].xPt);
 				e(a, i / t.dpr, c, s), e(a, (i + n + r) / t.dpr, c, s);
@@ -7776,7 +8330,7 @@ function nd(e, t, n = 0) {
 				e(i / t.dpr, a, s, c), e((i + n + r) / t.dpr, a, s, c);
 			}
 		} else {
-			let { railDev: e, gapDev: n, spanDev: r } = qe(i.widthPt * v, t.dpr), s = e / t.dpr / v, l = n / t.dpr / v, u = r / t.dpr / v;
+			let { railDev: e, gapDev: n, spanDev: r } = Je(i.widthPt * v, t.dpr), s = e / t.dpr / v, l = n / t.dpr / v, u = r / t.dpr / v;
 			if (c) {
 				let e = Math.min(o[0].xPt, o[1].xPt), t = Math.abs(o[1].xPt - o[0].xPt);
 				a.fillRect(e, o[0].yPt - u / 2, t, s), a.fillRect(e, o[0].yPt - u / 2 + s + l, t, s);
@@ -7788,12 +8342,12 @@ function nd(e, t, n = 0) {
 		a.setLineDash([]);
 		return;
 	}
-	let b = Cu(u, _ && v > 0 ? {
-		xPt: oe(d[0].xPt, i.widthPt * v, t.dpr),
+	let b = qu(u, _ && v > 0 ? {
+		xPt: I(d[0].xPt, i.widthPt * v, t.dpr),
 		yPt: 0
 	} : g && v > 0 ? {
 		xPt: 0,
-		yPt: oe(d[0].yPt, i.widthPt * v, t.dpr)
+		yPt: I(d[0].yPt, i.widthPt * v, t.dpr)
 	} : {
 		xPt: 0,
 		yPt: 0
@@ -7808,7 +8362,7 @@ function nd(e, t, n = 0) {
 }
 //#endregion
 //#region packages/docx/src/paint/deferred-paint-frame.ts
-function rd(e, t) {
+function Dd(e, t) {
 	return (n) => () => {
 		e.save();
 		try {
@@ -7820,8 +8374,8 @@ function rd(e, t) {
 }
 //#endregion
 //#region packages/docx/src/paint/canvas-table.ts
-function id(e, t) {
-	let n = t.pointToCss ?? yu(t.scale);
+function Od(e, t) {
+	let n = t.pointToCss ?? Uu(t.scale);
 	if (n.b !== 0 || n.c !== 0) return e;
 	let r = [
 		{
@@ -7840,7 +8394,7 @@ function id(e, t) {
 			xPt: e.xPt + e.widthPt,
 			yPt: e.yPt + e.heightPt
 		}
-	].map((e) => xu(n, e)), i = r.map((e) => e.xPt), a = r.map((e) => e.yPt), o = Math.floor(Math.min(...i) * t.dpr) / t.dpr, s = Math.floor(Math.min(...a) * t.dpr) / t.dpr, c = Math.ceil(Math.max(...i) * t.dpr) / t.dpr, l = Math.ceil(Math.max(...a) * t.dpr) / t.dpr, u = [
+	].map((e) => Gu(n, e)), i = r.map((e) => e.xPt), a = r.map((e) => e.yPt), o = Math.floor(Math.min(...i) * t.dpr) / t.dpr, s = Math.floor(Math.min(...a) * t.dpr) / t.dpr, c = Math.ceil(Math.max(...i) * t.dpr) / t.dpr, l = Math.ceil(Math.max(...a) * t.dpr) / t.dpr, u = [
 		{
 			xPt: o,
 			yPt: s
@@ -7857,7 +8411,7 @@ function id(e, t) {
 			xPt: c,
 			yPt: l
 		}
-	].map((e) => Su(n, e));
+	].map((e) => Ku(n, e));
 	if (u.some((e) => e === null)) return e;
 	let d = u.filter((e) => e !== null), f = d.map((e) => e.xPt), p = d.map((e) => e.yPt);
 	return {
@@ -7867,11 +8421,11 @@ function id(e, t) {
 		heightPt: Math.max(...p) - Math.min(...p)
 	};
 }
-function ad(e, t, n, r = !0) {
+function kd(e, t, n, r = !0) {
 	let i = t.xPt - e.flowBounds.xPt, a = t.yPt - e.flowBounds.yPt, o = n.layoutTranslationPt ?? {
 		xPt: 0,
 		yPt: 0
-	}, s = vu(n.pointToCss ?? yu(n.scale), bu(i, a)), c = rd(n.ctx, () => n.ctx.translate(i, a)), l = {
+	}, s = Hu(n.pointToCss ?? Uu(n.scale), Wu(i, a)), c = Dd(n.ctx, () => n.ctx.translate(i, a)), l = {
 		...n,
 		pointToCss: s,
 		layoutTranslationPt: {
@@ -7880,21 +8434,21 @@ function ad(e, t, n, r = !0) {
 		}
 	};
 	c(() => {
-		e.kind === "paragraph" ? Sd(e, l) : ld(e, l, e.resolvedFloatingTables ?? [], r);
+		e.kind === "paragraph" ? Kd(e, l) : Nd(e, l, e.resolvedFloatingTables ?? [], r);
 	})();
 }
-function od(e, t) {
-	let n = td(t), r = /* @__PURE__ */ new Set();
-	for (let n of e.compoundBorderFrames ?? []) ed(n.bounds, n.border, t) && n.segmentIndexes.forEach((e) => r.add(e));
+function Ad(e, t) {
+	let n = Td(t), r = /* @__PURE__ */ new Set();
+	for (let n of e.compoundBorderFrames ?? []) wd(n.bounds, n.border, t) && n.segmentIndexes.forEach((e) => r.add(e));
 	e.borders.forEach((e, i) => {
-		r.has(i) || nd(e, t, n);
+		r.has(i) || Ed(e, t, n);
 	});
 }
-function sd(e, t, n) {
+function jd(e, t, n) {
 	let r = t.xPt - e.flowBounds.xPt, i = t.yPt - e.flowBounds.yPt, a = n.layoutTranslationPt ?? {
 		xPt: 0,
 		yPt: 0
-	}, o = vu(n.pointToCss ?? yu(n.scale), bu(r, i)), s = rd(n.ctx, () => n.ctx.translate(r, i)), c = {
+	}, o = Hu(n.pointToCss ?? Uu(n.scale), Wu(r, i)), s = Dd(n.ctx, () => n.ctx.translate(r, i)), c = {
 		...n,
 		pointToCss: o,
 		layoutTranslationPt: {
@@ -7903,23 +8457,23 @@ function sd(e, t, n) {
 		}
 	};
 	s(() => {
-		let t = () => od(e, c);
+		let t = () => Ad(e, c);
 		if (!e.clipBounds) {
 			t();
 			return;
 		}
-		rd(n.ctx, () => {
+		Dd(n.ctx, () => {
 			n.ctx.beginPath(), n.ctx.rect(e.clipBounds.xPt, e.clipBounds.yPt, e.clipBounds.widthPt, e.clipBounds.heightPt), n.ctx.clip();
 		})(t)();
 	})();
 }
-function cd(e, t, n, r) {
+function Md(e, t, n, r) {
 	for (let n of e.rows) for (let e of n.cells) {
 		let n = "visualMergeOwnership" in e && e.visualMergeOwnership === "continuation";
 		if (e.verticalMerge === "continue" && !n) continue;
 		e.background && (t.ctx.fillStyle = e.background.color, t.ctx.fillRect(e.flowBounds.xPt, e.flowBounds.yPt, e.flowBounds.widthPt, e.flowBounds.heightPt));
 		let r = (t, n = !0) => {
-			for (let r of e.blocks) ad(r.layout, {
+			for (let r of e.blocks) kd(r.layout, {
 				xPt: e.contentBounds.xPt + (r.layout.kind === "table" ? r.layout.flowBounds.xPt : 0),
 				yPt: e.flowBounds.yPt + r.offsetPt + (r.layout.kind === "table" ? r.layout.flowBounds.yPt : 0)
 			}, t, r.layout.kind !== "table" || n);
@@ -7928,48 +8482,48 @@ function cd(e, t, n, r) {
 			r(t);
 			continue;
 		}
-		if (rd(t.ctx, () => {
+		if (Dd(t.ctx, () => {
 			t.ctx.beginPath(), t.ctx.rect(e.clipBounds.xPt, e.clipBounds.yPt, e.clipBounds.widthPt, e.clipBounds.heightPt), t.ctx.clip();
 		})(() => r(t, !1))(), e.blocks.some((e) => e.layout.kind === "table")) {
-			let n = id(e.clipBounds, t);
-			rd(t.ctx, () => {
+			let n = Od(e.clipBounds, t);
+			Dd(t.ctx, () => {
 				t.ctx.beginPath(), t.ctx.rect(n.xPt, n.yPt, n.widthPt, n.heightPt), t.ctx.clip();
 			})(() => {
-				for (let n of e.blocks) n.layout.kind === "table" && sd(n.layout, {
+				for (let n of e.blocks) n.layout.kind === "table" && jd(n.layout, {
 					xPt: e.contentBounds.xPt + n.layout.flowBounds.xPt,
 					yPt: e.flowBounds.yPt + n.offsetPt + n.layout.flowBounds.yPt
 				}, t);
 			})();
 		}
 	}
-	dd(n, t), r && od(e, t);
+	Fd(n, t), r && Ad(e, t);
 }
-function ld(e, t, n, r) {
+function Nd(e, t, n, r) {
 	if (!e.clipBounds) {
-		cd(e, t, n, r);
+		Md(e, t, n, r);
 		return;
 	}
 	let i = e.clipBounds;
-	rd(t.ctx, () => {
+	Dd(t.ctx, () => {
 		t.ctx.beginPath(), t.ctx.rect(i.xPt, i.yPt, i.widthPt, i.heightPt), t.ctx.clip();
-	})(() => cd(e, t, n, r))();
+	})(() => Md(e, t, n, r))();
 }
-function ud(e, t, n) {
-	ld(e, t, n ?? e.resolvedFloatingTables ?? [], !0);
+function Pd(e, t, n) {
+	Nd(e, t, n ?? e.resolvedFloatingTables ?? [], !0);
 }
-function dd(e, t) {
+function Fd(e, t) {
 	let n = t.layoutTranslationPt ?? {
 		xPt: 0,
 		yPt: 0
 	};
-	for (let r of e) ad(r.child, {
+	for (let r of e) kd(r.child, {
 		xPt: r.xPt - n.xPt,
 		yPt: r.yPt - n.yPt
 	}, t);
 }
 //#endregion
 //#region packages/docx/src/paint/canvas-transform.ts
-function fd(e, t) {
+function Id(e, t) {
 	let n = e.transform;
 	if (n) {
 		n.call(e, t.a, t.b, t.c, t.d, t.e, t.f);
@@ -7982,7 +8536,7 @@ function fd(e, t) {
 }
 //#endregion
 //#region packages/docx/src/paint/canvas-text.ts
-function pd(e) {
+function Ld(e) {
 	if (e.text.length !== e.range.end - e.range.start) throw Error("UTF-16 text range is inconsistent");
 	if (e.clusters.length === 0) throw Error("Retained glyph slices are incomplete (clusters)");
 	let t = e.range.start;
@@ -8002,17 +8556,17 @@ function pd(e) {
 	let r = e.text.slice(n - e.range.start);
 	if (r !== "" && !/^\s+$/u.test(r)) throw Error(`Retained glyph slices are incomplete (paint end ${n}/${e.range.end})`);
 }
-function md(e, t) {
+function Rd(e, t) {
 	return e.kind === "explicit" ? e.color : e.kind === "auto" ? fe(e.background ?? "#FFFFFF") : t.defaultTextColor ?? "#000000";
 }
-function hd(e, t) {
-	return md(e.color, t);
+function zd(e, t) {
+	return Rd(e.color, t);
 }
-function gd(e, t, n = !1) {
+function Bd(e, t, n = !1) {
 	let { ctx: r } = t;
-	r.fillStyle = md(e.color, t), r.font = Re(e.fontRoute, e.fontSizePt, e.fontWeight, e.fontStyle), n ? (r.save(), r.translate(e.origin.xPt, e.origin.yPt), r.rotate(-Math.PI / 2), r.fillText(e.text, 0, 0), r.restore()) : r.fillText(e.text, e.origin.xPt, e.origin.yPt);
+	r.fillStyle = Rd(e.color, t), r.font = ze(e.fontRoute, e.fontSizePt, e.fontWeight, e.fontStyle), n ? (r.save(), r.translate(e.origin.xPt, e.origin.yPt), r.rotate(-Math.PI / 2), r.fillText(e.text, 0, 0), r.restore()) : r.fillText(e.text, e.origin.xPt, e.origin.yPt);
 }
-function _d(e, t) {
+function Vd(e, t) {
 	let { ctx: n } = t;
 	if (n.beginPath(), e.points.length > 0) {
 		let t = e.points[0];
@@ -8021,19 +8575,19 @@ function _d(e, t) {
 	}
 	e.stroke !== null && (n.strokeStyle = e.stroke, n.lineWidth = e.strokeWidthPt, n.stroke()), e.fill !== null && (n.fillStyle = e.fill, n.fill());
 }
-function vd(e, t) {
+function Hd(e, t) {
 	let n = new Map(e.textBoxes.map((e) => [e.id, e]));
 	return (t.textBoxIds ?? []).flatMap((e) => {
 		let t = n.get(e);
 		return t ? [t] : [];
 	});
 }
-function yd(e, t, n) {
+function Ud(e, t, n) {
 	let r = n.layoutTranslationPt, i = e.anchorLayer?.horizontalOwnership === "page" ? -(r?.xPt ?? 0) : 0, a = e.anchorLayer?.verticalOwnership === "page" ? -(r?.yPt ?? 0) : 0;
 	(i !== 0 || a !== 0) && (n.ctx.save(), n.ctx.translate(i, a));
 	let o = (n) => {
-		Zu(e, n);
-		for (let e of t) Cd(e, {
+		xd(e, n);
+		for (let e of t) qd(e, {
 			...n,
 			omitAnchoredDrawings: !1
 		});
@@ -8041,9 +8595,9 @@ function yd(e, t, n) {
 	try {
 		if (e.orientation === "upright-physical") {
 			if (!e.transform) throw Error("Upright physical drawing requires its retained logical transform");
-			let t = vu(n.pointToCss ?? yu(n.scale), e.transform);
-			rd(n.ctx, () => {
-				fd(n.ctx, e.transform);
+			let t = Hu(n.pointToCss ?? Uu(n.scale), e.transform);
+			Dd(n.ctx, () => {
+				Id(n.ctx, e.transform);
 			})(() => o({
 				...n,
 				pointToCss: t
@@ -8053,88 +8607,91 @@ function yd(e, t, n) {
 		(i !== 0 || a !== 0) && n.ctx.restore();
 	}
 }
-function bd(e, t, n) {
-	yd(t, vd(e, t), n);
+function Wd(e, t, n) {
+	Ud(t, Hd(e, t), n);
 }
-function xd(e, t) {
-	let { ctx: n } = t, r = new Set(e.drawings.flatMap((e) => e.textBoxIds ?? [])), i = (n) => bd(e, n, t), a = e.drawings.filter((e) => e.anchorLayer?.behindDoc === !0).sort((e, t) => e.anchorLayer.relativeHeight - t.anchorLayer.relativeHeight || e.anchorLayer.sourceOrder - t.anchorLayer.sourceOrder);
+function Gd(e, t) {
+	let { ctx: n } = t, r = new Set(e.drawings.flatMap((e) => e.textBoxIds ?? [])), i = (n) => Wd(e, n, t), a = e.drawings.filter((e) => e.anchorLayer?.behindDoc === !0).sort((e, t) => e.anchorLayer.relativeHeight - t.anchorLayer.relativeHeight || e.anchorLayer.sourceOrder - t.anchorLayer.sourceOrder);
 	if (!t.omitAnchoredDrawings) for (let e of a) i(e);
 	for (let t of e.lineNumbers ?? []) for (let e of t.paintOps) n.fillStyle = e.color, n.font = e.font, n.textAlign = e.textAlign, n.textBaseline = "alphabetic", n.fillText(e.text, e.origin.xPt, e.origin.yPt);
 	e.shading && (n.fillStyle = e.shading.color, n.fillRect(e.inkBounds.xPt, e.inkBounds.yPt, e.inkBounds.widthPt, e.inkBounds.heightPt));
-	for (let r of e.lines) for (let e of r.placements) {
-		if (e.kind === "resource") {
-			if (!t.resources) throw Error(`Missing retained resource painter for ${e.resourceKey}`);
-			if (t.textBoxVerticalMode) {
-				let r = t.textBoxVerticalMode === "vert270" ? Math.PI / 2 : -Math.PI / 2;
-				n.save(), n.translate(e.bounds.xPt + e.bounds.widthPt / 2, e.bounds.yPt + e.bounds.heightPt / 2), n.rotate(r), Xu(e.resourceKey, e.resourceKind, {
-					xPt: -e.bounds.heightPt / 2,
-					yPt: -e.bounds.widthPt / 2,
-					widthPt: e.bounds.heightPt,
-					heightPt: e.bounds.widthPt
-				}, e.orientation, t), n.restore();
-			} else Xu(e.resourceKey, e.resourceKind, e.bounds, e.orientation, t);
-			continue;
-		}
-		if (e.kind === "tab") {
-			if (e.leader !== "none") {
-				if (!e.leaderGlyphs) throw Error("Retained tab leader geometry is missing");
-				for (let n of e.leaderGlyphs) gd(n, t);
+	for (let r of e.lines) {
+		for (let e of r.barTabRules ?? []) Ed(e, t, Td(t));
+		for (let e of r.placements) {
+			if (e.kind === "resource") {
+				if (!t.resources) throw Error(`Missing retained resource painter for ${e.resourceKey}`);
+				if (t.textBoxVerticalMode) {
+					let r = t.textBoxVerticalMode === "vert270" ? Math.PI / 2 : -Math.PI / 2;
+					n.save(), n.translate(e.bounds.xPt + e.bounds.widthPt / 2, e.bounds.yPt + e.bounds.heightPt / 2), n.rotate(r), bd(e.resourceKey, e.resourceKind, {
+						xPt: -e.bounds.heightPt / 2,
+						yPt: -e.bounds.widthPt / 2,
+						widthPt: e.bounds.heightPt,
+						heightPt: e.bounds.widthPt
+					}, e.orientation, t), n.restore();
+				} else bd(e.resourceKey, e.resourceKind, e.bounds, e.orientation, t);
+				continue;
 			}
-			for (let n of e.decorations ?? []) nd(n, t);
-			continue;
+			if (e.kind === "tab") {
+				if (e.leader !== "none") {
+					if (!e.leaderGlyphs) throw Error("Retained tab leader geometry is missing");
+					for (let n of e.leaderGlyphs) Bd(n, t);
+				}
+				for (let n of e.decorations ?? []) Ed(n, t);
+				continue;
+			}
+			if (e.kind !== "text") continue;
+			if (Ld(e), e.unsupportedGeometry?.length) throw Error(`Unsupported retained typography geometry: ${e.unsupportedGeometry.join(", ")}`);
+			if (e.highlightFragments) for (let t of e.highlightFragments) n.fillStyle = t.color, n.fillRect(t.rect.xPt, t.rect.yPt, t.rect.widthPt, t.rect.heightPt);
+			else (e.background || e.highlight) && (n.fillStyle = e.highlight ?? e.background ?? "#000000", n.fillRect(e.bounds.xPt, e.bounds.yPt, e.bounds.widthPt, e.bounds.heightPt));
+			n.fillStyle = zd(e, t), n.font = ze(e.fontRoute, e.fontSizePt, e.fontWeight, e.fontStyle), n.textAlign = "left", n.textBaseline = "alphabetic";
+			let r = n.letterSpacing, i = n.fontKerning;
+			for (let t of e.paintOps) {
+				n.direction = t.direction, n.fontKerning = t.kerning;
+				let r = e.origin.xPt + t.offset.xPt, i = e.origin.yPt + t.offset.yPt, a = t.glyphOffsetPt?.xPt ?? 0, o = t.glyphOffsetPt?.yPt ?? 0;
+				if (t.glyphOrientation === "upright") {
+					n.save(), n.translate(r, i), n.rotate(-Math.PI / 2), (t.scaleX !== 1 || t.scaleY !== void 0) && (t.writingMode === "vertical-rl" ? n.scale(1, t.scaleX) : n.scale(t.scaleX, t.scaleY ?? 1)), n.textAlign = "center", n.textBaseline = "middle", n.letterSpacing = `${t.letterSpacingPt}px`;
+					let e = () => n.fillText(t.text, a, o);
+					t.verticalFeature ? D(n, e) : e(), n.restore();
+				} else t.glyphOrientation === "rotate" ? (n.save(), n.translate(r, i), t.scaleX !== 1 && n.scale(t.scaleX, 1), n.textAlign = "center", n.textBaseline = "middle", n.letterSpacing = `${t.letterSpacingPt / t.scaleX}px`, n.fillText(t.text, a, o), n.restore()) : t.scaleX === 1 ? (n.letterSpacing = `${t.letterSpacingPt}px`, n.fillText(t.text, r + a, i + o)) : (n.save(), n.translate(r + a, i + o), n.scale(t.scaleX, 1), n.letterSpacing = `${t.letterSpacingPt / t.scaleX}px`, n.fillText(t.text, 0, 0), n.restore());
+			}
+			if (n.letterSpacing = r, n.fontKerning = i, e.ruby) {
+				let n = t.textBoxVerticalMode === "eaVert" || t.textBoxVerticalMode === "mongolianVert";
+				for (let r of e.ruby.paintOps) Bd(r, t, n);
+			}
+			for (let n of e.emphasis?.glyphs ?? []) Bd(n, t);
+			for (let n of e.emphasis?.paths ?? []) Vd(n, t);
+			for (let n of e.decorations) Ed(n, t);
+			for (let n of e.runBorderFragments ?? []) Ed(n, t);
 		}
-		if (e.kind !== "text") continue;
-		if (pd(e), e.unsupportedGeometry?.length) throw Error(`Unsupported retained typography geometry: ${e.unsupportedGeometry.join(", ")}`);
-		if (e.highlightFragments) for (let t of e.highlightFragments) n.fillStyle = t.color, n.fillRect(t.rect.xPt, t.rect.yPt, t.rect.widthPt, t.rect.heightPt);
-		else (e.background || e.highlight) && (n.fillStyle = e.highlight ?? e.background ?? "#000000", n.fillRect(e.bounds.xPt, e.bounds.yPt, e.bounds.widthPt, e.bounds.heightPt));
-		n.fillStyle = hd(e, t), n.font = Re(e.fontRoute, e.fontSizePt, e.fontWeight, e.fontStyle), n.textAlign = "left", n.textBaseline = "alphabetic";
-		let r = n.letterSpacing, i = n.fontKerning;
-		for (let t of e.paintOps) {
-			n.direction = t.direction, n.fontKerning = t.kerning;
-			let r = e.origin.xPt + t.offset.xPt, i = e.origin.yPt + t.offset.yPt, a = t.glyphOffsetPt?.xPt ?? 0, o = t.glyphOffsetPt?.yPt ?? 0;
-			if (t.glyphOrientation === "upright") {
-				n.save(), n.translate(r, i), n.rotate(-Math.PI / 2), (t.scaleX !== 1 || t.scaleY !== void 0) && (t.writingMode === "vertical-rl" ? n.scale(1, t.scaleX) : n.scale(t.scaleX, t.scaleY ?? 1)), n.textAlign = "center", n.textBaseline = "middle", n.letterSpacing = `${t.letterSpacingPt}px`;
-				let e = () => n.fillText(t.text, a, o);
-				t.verticalFeature ? D(n, e) : e(), n.restore();
-			} else t.glyphOrientation === "rotate" ? (n.save(), n.translate(r, i), t.scaleX !== 1 && n.scale(t.scaleX, 1), n.textAlign = "center", n.textBaseline = "middle", n.letterSpacing = `${t.letterSpacingPt / t.scaleX}px`, n.fillText(t.text, a, o), n.restore()) : t.scaleX === 1 ? (n.letterSpacing = `${t.letterSpacingPt}px`, n.fillText(t.text, r + a, i + o)) : (n.save(), n.translate(r + a, i + o), n.scale(t.scaleX, 1), n.letterSpacing = `${t.letterSpacingPt / t.scaleX}px`, n.fillText(t.text, 0, 0), n.restore());
-		}
-		if (n.letterSpacing = r, n.fontKerning = i, e.ruby) {
-			let n = t.textBoxVerticalMode === "eaVert" || t.textBoxVerticalMode === "mongolianVert";
-			for (let r of e.ruby.paintOps) gd(r, t, n);
-		}
-		for (let n of e.emphasis?.glyphs ?? []) gd(n, t);
-		for (let n of e.emphasis?.paths ?? []) _d(n, t);
-		for (let n of e.decorations) nd(n, t);
-		for (let n of e.runBorderFragments ?? []) nd(n, t);
 	}
-	let o = td(t);
-	for (let n of e.borders) nd(n, t, o);
+	let o = Td(t);
+	for (let n of e.borders) Ed(n, t, o);
 	for (let t of e.drawings.filter((e) => !e.anchorLayer)) i(t);
 	let s = e.drawings.filter((e) => e.anchorLayer && !e.anchorLayer.behindDoc).sort((e, t) => e.anchorLayer.relativeHeight - t.anchorLayer.relativeHeight || e.anchorLayer.sourceOrder - t.anchorLayer.sourceOrder);
 	if (!t.omitAnchoredDrawings) for (let e of s) i(e);
-	for (let n of e.textBoxes) r.has(n.id) || Cd(n, {
+	for (let n of e.textBoxes) r.has(n.id) || qd(n, {
 		...t,
 		omitAnchoredDrawings: !1
 	});
 }
-function Sd(e, t) {
+function Kd(e, t) {
 	if (!e.clipBounds) {
-		xd(e, t);
+		Gd(e, t);
 		return;
 	}
 	let n = e.clipBounds;
-	rd(t.ctx, () => {
+	Dd(t.ctx, () => {
 		t.ctx.beginPath(), t.ctx.rect(n.xPt, n.yPt, n.widthPt, n.heightPt), t.ctx.clip();
-	})(() => xd(e, t))();
+	})(() => Gd(e, t))();
 }
-function Cd(e, t) {
+function qd(e, t) {
 	let n = (t) => {
-		for (let n of e.story.blocks) if (n.kind === "paragraph") Sd(n, t);
-		else if (n.kind === "table") ud(n, t, n.resolvedFloatingTables ?? []);
+		for (let n of e.story.blocks) if (n.kind === "paragraph") Kd(n, t);
+		else if (n.kind === "table") Pd(n, t, n.resolvedFloatingTables ?? []);
 		else throw Error(`Text-box story contains unsupported retained node: ${n.kind}`);
-	}, r = vu(t.pointToCss ?? yu(t.scale), e.transform), i = e.transform.a !== 1 || e.transform.b !== 0 || e.transform.c !== 0 || e.transform.d !== 1 || e.transform.e !== 0 || e.transform.f !== 0, a = rd(t.ctx, () => {
+	}, r = Hu(t.pointToCss ?? Uu(t.scale), e.transform), i = e.transform.a !== 1 || e.transform.b !== 0 || e.transform.c !== 0 || e.transform.d !== 1 || e.transform.e !== 0 || e.transform.f !== 0, a = Dd(t.ctx, () => {
 		i && (e.verticalMode ? (t.ctx.translate(e.transform.e, e.transform.f), t.ctx.rotate(e.verticalMode === "vert270" ? -Math.PI / 2 : Math.PI / 2)) : t.ctx.transform(e.transform.a, e.transform.b, e.transform.c, e.transform.d, e.transform.e, e.transform.f));
-	}), o = e.clipBounds ? rd(t.ctx, () => {
+	}), o = e.clipBounds ? Dd(t.ctx, () => {
 		t.ctx.beginPath(), t.ctx.rect(e.clipBounds.xPt, e.clipBounds.yPt, e.clipBounds.widthPt, e.clipBounds.heightPt), t.ctx.clip();
 	}) : null, s = t.documentDefaultTextColor ?? t.defaultTextColor ?? "#000000", c = {
 		...t,
@@ -8149,23 +8706,23 @@ function Cd(e, t) {
 }
 //#endregion
 //#region packages/docx/src/paint/page-border.ts
-function wd(e, t) {
-	let n = vu(t.pointToCss ?? yu(t.scale), e.logicalToPhysical), r = {
+function Jd(e, t) {
+	let n = Hu(t.pointToCss ?? Uu(t.scale), e.logicalToPhysical), r = {
 		...t,
 		pointToCss: n
 	};
-	rd(t.ctx, () => {
-		fd(t.ctx, e.logicalToPhysical);
+	Dd(t.ctx, () => {
+		Id(t.ctx, e.logicalToPhysical);
 	})(() => {
-		for (let t of e.segments) nd(t, r, .5);
+		for (let t of e.segments) Ed(t, r, .5);
 	})();
 }
 //#endregion
 //#region packages/docx/src/paint/canvas-page.ts
-var Td = Object.freeze({ paint(e, t) {
+var Yd = Object.freeze({ paint(e, t) {
 	throw Error(`Missing retained resource painter for ${e}: expected ${t}`);
 } });
-function Ed(e, t) {
+function Xd(e, t) {
 	return Object.freeze({ paint(n, r, i, a) {
 		switch (r) {
 			case "image":
@@ -8184,20 +8741,20 @@ function Ed(e, t) {
 		}
 	} });
 }
-function Dd(e, t) {
+function Zd(e, t) {
 	switch (e.kind) {
 		case "drawing":
-			Zu(e, t);
+			xd(e, t);
 			return;
 		case "paragraph":
-			Sd(e, t);
+			Kd(e, t);
 			return;
 		case "table":
-			ud(e, t, e.resolvedFloatingTables ?? []);
+			Pd(e, t, e.resolvedFloatingTables ?? []);
 			return;
 		case "note": {
-			e.separator.forEach((e) => nd(e, t));
-			let n = () => e.story.blocks.forEach((e) => Dd(e, t));
+			e.separator.forEach((e) => Ed(e, t));
+			let n = () => e.story.blocks.forEach((e) => Zd(e, t));
 			if (!e.story.clipBounds) {
 				n();
 				return;
@@ -8215,20 +8772,20 @@ function Dd(e, t) {
 		default: throw Error(`Unknown page paint node kind: ${String(e)}`);
 	}
 }
-function Od(e, t) {
+function Qd(e, t) {
 	let n = e.columnSeparators;
 	if (n.length === 0) return;
 	let { ctx: r } = t;
 	r.save(), r.strokeStyle = "#000000";
 	for (let e of n) {
-		let n = Yu(e, t.scale, t.dpr);
+		let n = yd(e, t.scale, t.dpr);
 		r.lineWidth = n.widthPt, r.beginPath(), r.moveTo(n.segment.start.xPt, n.segment.start.yPt), r.lineTo(n.segment.end.xPt, n.segment.end.yPt), r.stroke();
 	}
 	r.restore();
 }
-function kd(e, t, n, r) {
-	let i = n.get(e.flowDomainId), a = e.coordinateSpace === "upright-physical" ? void 0 : i?.coordinateSpace.logicalToPhysical, o = rd(t.ctx, () => {
-		a && (a.a !== 1 || a.b !== 0 || a.c !== 0 || a.d !== 1 || a.e !== 0 || a.f !== 0) && fd(t.ctx, a);
+function $d(e, t, n, r) {
+	let i = n.get(e.flowDomainId), a = e.coordinateSpace === "upright-physical" ? void 0 : i?.coordinateSpace.logicalToPhysical, o = Dd(t.ctx, () => {
+		a && (a.a !== 1 || a.b !== 0 || a.c !== 0 || a.d !== 1 || a.e !== 0 || a.f !== 0) && Id(t.ctx, a);
 	}), s = {
 		...t,
 		...a ? { pointToCss: {
@@ -8242,7 +8799,7 @@ function kd(e, t, n, r) {
 	};
 	o(() => r(s))();
 }
-function Ad(e, t) {
+function ef(e, t) {
 	if (e.kind === "transform") {
 		let n = t.transform;
 		if (n) n.call(t, e.transform.a, e.transform.b, e.transform.c, e.transform.d, e.transform.e, e.transform.f);
@@ -8252,9 +8809,9 @@ function Ad(e, t) {
 	}
 	t.beginPath(), t.rect(e.clip.xPt, e.clip.yPt, e.clip.widthPt, e.clip.heightPt), t.clip();
 }
-function jd(e, t) {
-	let n = t.pointToCss ?? yu(t.scale);
-	for (let t of e.frames) t.kind === "transform" && (n = vu(n, t.transform));
+function tf(e, t) {
+	let n = t.pointToCss ?? Uu(t.scale);
+	for (let t of e.frames) t.kind === "transform" && (n = Hu(n, t.transform));
 	let r = {
 		...t,
 		pointToCss: n,
@@ -8262,13 +8819,13 @@ function jd(e, t) {
 		omitAnchoredDrawings: !1
 	}, i = 0;
 	try {
-		for (let n of e.frames) t.ctx.save(), i += 1, Ad(n, t.ctx);
-		yd(e.node, e.textBoxes, r);
+		for (let n of e.frames) t.ctx.save(), i += 1, ef(n, t.ctx);
+		Ud(e.node, e.textBoxes, r);
 	} finally {
 		for (; i > 0;) t.ctx.restore(), --i;
 	}
 }
-function Md(e, t) {
+function nf(e, t) {
 	let n = new Map(e.sectionRegions.flatMap((e) => e.flowDomainIds.map((t) => [t, e]))), r = new Map(e.sectionRegions.map((e) => [e.id, e]));
 	for (let t of e.flowDomains) if (t.kind === "footnote" || t.kind === "endnote") {
 		let i = t.sectionRegionId ? r.get(t.sectionRegionId) : e.sectionRegions[0];
@@ -8276,16 +8833,16 @@ function Md(e, t) {
 		n.set(t.id, i);
 	}
 	let i = e.layers.paintOrder, a = i.findIndex((e) => e.sourceLayer !== "background" && e.sourceLayer !== "behindText" && e.sourceLayer !== "header"), o = a === -1 ? i.length : a, s = (e) => {
-		for (let r of e) kd(r, t, n, (e) => {
-			r.kind === "drawing" ? jd(r, e) : Dd(r.node, {
+		for (let r of e) $d(r, t, n, (e) => {
+			r.kind === "drawing" ? tf(r, e) : Zd(r.node, {
 				...e,
 				omitAnchoredDrawings: r.omitAnchoredDrawings
 			});
 		});
 	};
-	e.pageBorder?.zOrder === "back" && wd(e.pageBorder, t), s(i.slice(0, o)), Od(e, t), s(i.slice(o)), e.pageBorder?.zOrder !== "back" && e.pageBorder && wd(e.pageBorder, t);
+	e.pageBorder?.zOrder === "back" && Jd(e.pageBorder, t), s(i.slice(0, o)), Qd(e, t), s(i.slice(o)), e.pageBorder?.zOrder !== "back" && e.pageBorder && Jd(e.pageBorder, t);
 }
-async function Nd(e, t, n, r, i = Td) {
+async function rf(e, t, n, r, i = Yd) {
 	let a = e.pages[t];
 	if (!a) throw RangeError(`Page ${t} is outside the layout`);
 	let o = n.getContext("2d");
@@ -8293,7 +8850,7 @@ async function Nd(e, t, n, r, i = Td) {
 	let s = r.scale * r.dpr;
 	n.width = Math.ceil(a.geometry.widthPt * s), n.height = Math.ceil(a.geometry.heightPt * s), o.save();
 	try {
-		o.setTransform(1, 0, 0, 1, 0, 0), o.clearRect(0, 0, n.width, n.height), o.setTransform(s, 0, 0, s, 0, 0), Md(a, {
+		o.setTransform(1, 0, 0, 1, 0, 0), o.clearRect(0, 0, n.width, n.height), o.setTransform(s, 0, 0, s, 0, 0), nf(a, {
 			ctx: o,
 			scale: r.scale,
 			dpr: r.dpr,
@@ -8305,26 +8862,26 @@ async function Nd(e, t, n, r, i = Td) {
 }
 //#endregion
 //#region packages/docx/src/paint/resource-session.ts
-function Pd(e, t) {
+function af(e, t) {
 	if (typeof e != "string" || e.trim().length === 0) throw TypeError(`${t} must be a non-empty string`);
 }
-function Fd(e) {
-	return Pd(e, "unavailable paint resource reason"), Object.freeze({
+function of(e) {
+	return af(e, "unavailable paint resource reason"), Object.freeze({
 		status: "unavailable",
 		reason: e
 	});
 }
-function Id(e) {
+function sf(e) {
 	return typeof e == "object" && !!e && e.status === "unavailable" && typeof e.reason == "string" && e.reason.trim().length > 0;
 }
-function Ld(e) {
-	typeof e != "object" || !e || e.status !== "unavailable" || Pd(e.reason, "unavailable paint resource reason");
+function cf(e) {
+	typeof e != "object" || !e || e.status !== "unavailable" || af(e.reason, "unavailable paint resource reason");
 }
-function Rd(e, t) {
+function lf(e, t) {
 	let n = /* @__PURE__ */ new Map();
 	for (let r of t) {
 		if (n.has(r.resourceKey)) throw Error(`Duplicate paint resource handle: ${r.resourceKey}`);
-		Ld(r.handle), e.resolve(r.resourceKey, r.kind), n.set(r.resourceKey, Object.freeze({
+		cf(r.handle), e.resolve(r.resourceKey, r.kind), n.set(r.resourceKey, Object.freeze({
 			kind: r.kind,
 			handle: r.handle
 		}));
@@ -8343,8 +8900,8 @@ function Rd(e, t) {
 		}
 	});
 }
-function zd(e, t) {
-	return Rd(e, e.descriptors.map((e) => {
+function uf(e, t) {
+	return lf(e, e.descriptors.map((e) => {
 		if (e.kind === "chart") return {
 			resourceKey: e.resourceKey,
 			kind: e.kind,
@@ -8361,14 +8918,14 @@ function zd(e, t) {
 }
 //#endregion
 //#region packages/docx/src/paint/canonical-resource-handlers.ts
-function Bd(e) {
-	if (!Id(e.handle)) {
+function df(e) {
+	if (!sf(e.handle)) {
 		if (e.handle === void 0 || e.handle === null) throw Error(`Missing ${e.descriptor.kind} drawable for ${e.descriptor.resourceKey}`);
 		return e.handle;
 	}
 }
-function Vd(e, t, n) {
-	let r = e.descriptor, a = Bd(e);
+function ff(e, t, n) {
+	let r = e.descriptor, a = df(e);
 	if (!a) return;
 	let o = (e, o) => {
 		i(n, a, r.srcRect, e, o, t.widthPt, t.heightPt);
@@ -8377,13 +8934,13 @@ function Vd(e, t, n) {
 	let c = r.rotation ?? 0;
 	c === 0 && !r.flipH && !r.flipV ? o(t.xPt, t.yPt) : (n.save(), n.translate(t.xPt + t.widthPt / 2, t.yPt + t.heightPt / 2), n.rotate(c * Math.PI / 180), n.scale(r.flipH ? -1 : 1, r.flipV ? -1 : 1), o(-t.widthPt / 2, -t.heightPt / 2), n.restore()), s && n.restore();
 }
-function Hd(e, t, n) {
-	let r = Bd(e);
+function pf(e, t, n) {
+	let r = df(e);
 	r && n.drawImage(r, t.xPt, t.yPt, t.widthPt, t.heightPt);
 }
-var Ud = Object.freeze({
+var mf = Object.freeze({
 	image(e, t, n) {
-		Vd(e, t, n);
+		ff(e, t, n);
 	},
 	chart(e, t, n) {
 		c(n, e.descriptor.model, {
@@ -8394,28 +8951,28 @@ var Ud = Object.freeze({
 		}, 1);
 	},
 	math(e, t, n) {
-		Hd(e, t, n);
+		pf(e, t, n);
 	},
 	"picture-bullet"(e, t, n) {
-		Hd(e, t, n);
+		pf(e, t, n);
 	}
-}), Wd = /* @__PURE__ */ new WeakMap();
-function Gd(e) {
-	Wd.set(e, (Wd.get(e) ?? 0) + 1);
+}), hf = /* @__PURE__ */ new WeakMap();
+function gf(e) {
+	hf.set(e, (hf.get(e) ?? 0) + 1);
 }
-function Kd(e, t) {
+function _f(e, t) {
 	return (t ?? e.geometry.widthPt * 1.3333333333333333) / e.geometry.widthPt;
 }
-function qd(e) {
-	if (P(e)) return e.ownerDocument ?? (typeof document > "u" ? null : document);
+function vf(e) {
+	if (N(e)) return e.ownerDocument ?? (typeof document > "u" ? null : document);
 	let t = e.ownerDocument, n = t?.defaultView?.HTMLCanvasElement;
 	return n && e instanceof n ? t : null;
 }
-function Jd(e) {
-	return qd(e) !== null;
+function yf(e) {
+	return vf(e) !== null;
 }
-function Yd(e, t) {
-	let n = qd(e);
+function bf(e, t) {
+	let n = vf(e);
 	if (!t || n && e.isConnected) return { canvas: e };
 	let r = n ?? (typeof document > "u" ? void 0 : document);
 	if (!r) throw Error("OpenType vertical glyph paint requires an element-backed document surface");
@@ -8433,18 +8990,18 @@ function Yd(e, t) {
 		release: () => a.remove()
 	};
 }
-async function Xd(e, t, n, r) {
+async function xf(e, t, n, r) {
 	let i = r.fetchImage ? h(r.fetchImage) : void 0, a;
 	try {
-		let i = (Wd.get(n) ?? 0) + 1;
-		Wd.set(n, i);
-		let o = () => Wd.get(n) !== i, s = r.dpr ?? ne(), c = Yd(n, !r.parseError && t.layers.capabilities.requiresElementBackedVerticalGlyphPaint), l = c.canvas;
+		let i = (hf.get(n) ?? 0) + 1;
+		hf.set(n, i);
+		let o = () => hf.get(n) !== i, s = r.dpr ?? re(), c = bf(n, !r.parseError && t.layers.capabilities.requiresElementBackedVerticalGlyphPaint), l = c.canvas;
 		a = c.release;
 		let u = l.getContext("2d");
 		if (!u) throw Error("2D canvas is unavailable for DOCX paint");
-		let d = Kd(t, r.width), f = t.geometry.widthPt * d, p = t.geometry.heightPt * d, m = de(f * s, p * s), h = m.clamped ? s * m.scale : s;
-		if (n.width = m.width, n.height = m.height, l !== n && (l.width = m.width, l.height = m.height), Jd(n) && (n.style.width = `${f}px`, n.style.height = `${p}px`, n.style.display || (n.style.display = "block")), Jd(l) && l !== n && (l.style.width = `${f}px`, l.style.height = `${p}px`), u.scale(h, h), u.fillStyle = "#ffffff", u.fillRect(0, 0, f, p), r.parseError) {
-			await Nd(e, 0, n, {
+		let d = _f(t, r.width), f = t.geometry.widthPt * d, p = t.geometry.heightPt * d, m = de(f * s, p * s), h = m.clamped ? s * m.scale : s;
+		if (n.width = m.width, n.height = m.height, l !== n && (l.width = m.width, l.height = m.height), yf(n) && (n.style.width = `${f}px`, n.style.height = `${p}px`, n.style.display || (n.style.display = "block")), yf(l) && l !== n && (l.style.width = `${f}px`, l.style.height = `${p}px`), u.scale(h, h), u.fillStyle = "#ffffff", u.fillRect(0, 0, f, p), r.parseError) {
+			await rf(e, 0, n, {
 				scale: d,
 				dpr: h
 			});
@@ -8452,19 +9009,19 @@ async function Xd(e, t, n, r) {
 		}
 		let g;
 		try {
-			g = await Ku(r.registry.descriptors, r.fetchImage);
+			g = await gd(r.registry.descriptors, r.fetchImage);
 		} catch (e) {
 			if (o()) return;
 			throw e;
 		}
 		if (o()) return;
-		let _ = Ed(zd(r.registry, (e) => {
-			if (e.kind === "math") return r.privateResources?.keys.includes(e.resourceKey) ? r.privateResources.resolve(e.resourceKey) : Fd("optional math renderer unavailable");
-			if (e.kind === "image" || e.kind === "picture-bullet") return g.get(Vu(e.partPath, e.colorReplaceFrom, e.duotone)) ?? Fd(r.fetchImage ? "unsupported image format produced no drawable output" : "image byte source unavailable");
-		}), Ud);
+		let _ = Xd(uf(r.registry, (e) => {
+			if (e.kind === "math") return r.privateResources?.keys.includes(e.resourceKey) ? r.privateResources.resolve(e.resourceKey) : of("optional math renderer unavailable");
+			if (e.kind === "image" || e.kind === "picture-bullet") return g.get(dd(e.partPath, e.colorReplaceFrom, e.duotone)) ?? of(r.fetchImage ? "unsupported image format produced no drawable output" : "image byte source unavailable");
+		}), mf);
 		u.save();
 		try {
-			u.scale(d, d), Md(t, {
+			u.scale(d, d), nf(t, {
 				ctx: u,
 				scale: d,
 				dpr: h,
@@ -8489,7 +9046,7 @@ async function Xd(e, t, n, r) {
 }
 //#endregion
 //#region packages/docx/src/layout/body-layout-kernel.ts
-var Zd = class extends Error {
+var Sf = class extends Error {
 	code = "NOTE_CAPACITY_EXCEEDED";
 	constructor(e, t, n) {
 		super(`${e} story exceeds ${n} on page ${t}`), this.kind = e, this.pageIndex = t, this.containerId = n, this.name = "NoteCapacityExceededError";
@@ -8497,45 +9054,45 @@ var Zd = class extends Error {
 };
 //#endregion
 //#region packages/docx/src/layout/body-pagination.ts
-function Qd(e) {
+function Cf(e) {
 	return Object.freeze({
 		...e,
 		pages: Object.freeze([...e.pages])
 	});
 }
-function $d(e) {
-	let { kind: t, region: n, ...r } = e, i = Ol(r);
-	if (n && (i = kl(i, n)), t === "content" && i.sectionRegions.length === 0) throw RangeError("A content page draft requires an initial section region");
+function wf(e) {
+	let { kind: t, region: n, ...r } = e, i = Ql(r);
+	if (n && (i = $l(i, n)), t === "content" && i.sectionRegions.length === 0) throw RangeError("A content page draft requires an initial section region");
 	if (t === "parity-blank" && i.sectionRegions.length !== 0) throw RangeError("A parity blank cannot retain a section region");
 	return Object.freeze({
 		kind: t,
 		accumulator: i
 	});
 }
-function ef(e, t) {
+function Tf(e, t) {
 	if (t.kind !== "content" || t.accumulator.pageIndex !== e.pageIndex) throw Error("The initial body page must be owned by the active flow");
-	return Qd({
+	return Cf({
 		flow: e,
 		pages: [t],
 		footnoteReservePt: 0,
 		balanceTargetPt: null
 	});
 }
-function tf(e, t) {
+function Ef(e, t) {
 	if (t !== null && (!Number.isFinite(t) || t < 0)) throw RangeError("A body balance target must be finite and non-negative");
-	return Qd({
+	return Cf({
 		...e,
 		balanceTargetPt: t
 	});
 }
-function nf(e, t) {
+function Df(e, t) {
 	if (!Number.isFinite(t) || t < 0) throw RangeError("A footnote reserve increment must be finite and non-negative");
-	return t === 0 ? e : Qd({
+	return t === 0 ? e : Cf({
 		...e,
 		footnoteReservePt: e.footnoteReservePt + t
 	});
 }
-function rf(e, t, n) {
+function Of(e, t, n) {
 	let r = [...e.pages], i = t.state, a = !1;
 	for (let e of t.events) {
 		if (e.type === "place") throw Error("Occurrence acceptance owns place events");
@@ -8558,7 +9115,7 @@ function rf(e, t, n) {
 	}
 	let o = r.at(-1);
 	if (!o || o.kind !== "content" || o.accumulator.pageIndex !== i.pageIndex) throw Error("A page transition must end on the active content page");
-	return Qd({
+	return Cf({
 		...e,
 		flow: i,
 		pages: r,
@@ -8568,7 +9125,7 @@ function rf(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/layout/retained-geometry-translation.ts
-function af(e) {
+function kf(e) {
 	if (e.length === 0) return null;
 	let t = Math.min(...e.map((e) => e.xPt)), n = Math.min(...e.map((e) => e.yPt)), r = Math.max(...e.map((e) => e.xPt + e.widthPt)), i = Math.max(...e.map((e) => e.yPt + e.heightPt));
 	return {
@@ -8578,7 +9135,7 @@ function af(e) {
 		heightPt: i - n
 	};
 }
-function of(e) {
+function Af(e) {
 	return {
 		x: !e.horzSpecified || e.horzAnchor !== "page" && e.horzAnchor !== "margin",
 		y: e.vertAnchor !== "page" && e.vertAnchor !== "margin"
@@ -8598,14 +9155,14 @@ function X(e, t) {
 		yPt: e.yPt + t.yPt
 	};
 }
-function sf(e, t) {
+function jf(e, t) {
 	return {
 		...e,
 		from: Y(e.from, t),
 		to: Y(e.to, t)
 	};
 }
-function cf(e, t) {
+function Mf(e, t) {
 	return e.kind === "rect" ? {
 		...e,
 		rect: X(e.rect, t)
@@ -8614,7 +9171,7 @@ function cf(e, t) {
 		points: e.points.map((e) => Y(e, t))
 	};
 }
-function lf(e, t) {
+function Nf(e, t) {
 	return e.kind === "noop" ? e : e.kind === "drawingml-shape" || e.kind === "drawingml-image-fill" ? {
 		...e,
 		plan: {
@@ -8630,7 +9187,7 @@ function lf(e, t) {
 		rect: X(e.rect, t)
 	};
 }
-function uf(e, t) {
+function Pf(e, t) {
 	let n = e.orientation === "upright-physical" ? {
 		xPt: 0,
 		yPt: 0
@@ -8645,23 +9202,23 @@ function uf(e, t) {
 			e: e.transform.e + t.xPt,
 			f: e.transform.f + t.yPt
 		} } : {},
-		...e.clip ? { clip: cf(e.clip, t) } : {},
-		commands: e.commands.map((e) => lf(e, n))
+		...e.clip ? { clip: Mf(e.clip, t) } : {},
+		commands: e.commands.map((e) => Nf(e, n))
 	};
 }
-function df(e, t, n) {
+function Ff(e, t, n) {
 	let r = `${t.xPt}\u0000${t.yPt}`, i = n.drawingMemo.get(e);
 	if (i) {
 		if (i.key !== r) throw Error("incompatible projection ownership");
 		return i.value;
 	}
-	let a = uf(e, t);
+	let a = Pf(e, t);
 	return n.drawingMemo.set(e, {
 		key: r,
 		value: a
 	}), a;
 }
-function ff(e, t, n) {
+function If(e, t, n) {
 	return e.kind === "text" ? {
 		...e,
 		origin: Y(e.origin, t),
@@ -8694,7 +9251,7 @@ function ff(e, t, n) {
 				points: e.points.map((e) => Y(e, t))
 			})) } : {}
 		} } : {},
-		...e.runBorderFragments ? { runBorderFragments: e.runBorderFragments.map((e) => sf(e, t)) } : {}
+		...e.runBorderFragments ? { runBorderFragments: e.runBorderFragments.map((e) => jf(e, t)) } : {}
 	} : e.kind === "anchor-host" ? {
 		...e,
 		bounds: X(e.bounds, t),
@@ -8720,15 +9277,20 @@ function ff(e, t, n) {
 		bounds: X(e.bounds, t)
 	} : e;
 }
-function pf(e, t, n) {
+function Lf(e, t, n) {
 	return {
 		...e,
 		bounds: X(e.bounds, t),
 		baselinePt: e.baselinePt + t.yPt,
-		placements: e.placements.map((e) => ff(e, t, n))
+		placements: e.placements.map((e) => If(e, t, n)),
+		...e.barTabRules ? { barTabRules: e.barTabRules.map((e) => ({
+			...e,
+			from: Y(e.from, t),
+			to: Y(e.to, t)
+		})) } : {}
 	};
 }
-function mf(e, t) {
+function Rf(e, t) {
 	let n = e.axes[t];
 	return n.status === "resolved" && [
 		"page",
@@ -8739,8 +9301,8 @@ function mf(e, t) {
 		"bottomMargin"
 	].includes(n.referenceFrame);
 }
-function hf(e, t) {
-	let n = mf(e, "horizontal") ? 0 : t.xPt, r = mf(e, "vertical") ? 0 : t.yPt, i = {
+function zf(e, t) {
+	let n = Rf(e, "horizontal") ? 0 : t.xPt, r = Rf(e, "vertical") ? 0 : t.yPt, i = {
 		xPt: n,
 		yPt: r
 	}, a = {
@@ -8778,13 +9340,13 @@ function hf(e, t) {
 		}
 	};
 }
-function gf(e, t) {
-	return _f(e, t, {
+function Bf(e, t) {
+	return Vf(e, t, {
 		memo: /* @__PURE__ */ new WeakMap(),
 		drawingMemo: /* @__PURE__ */ new WeakMap()
 	});
 }
-function _f(e, t, n) {
+function Vf(e, t, n) {
 	let r = `${t.xPt}\u0000${t.yPt}`, i = n.memo.get(e);
 	if (i) {
 		if (i.key !== r) throw Error("incompatible projection ownership");
@@ -8801,16 +9363,16 @@ function _f(e, t, n) {
 			yPt: 0
 		} : e));
 	}
-	let c = e.drawings.map((e) => df(e, s.get(e.id) ?? t, n)), l = af(c.filter((e) => e.anchorLayer?.cellContainment === !0).map((e) => e.flowBounds)), u = {
+	let c = e.drawings.map((e) => Ff(e, s.get(e.id) ?? t, n)), l = kf(c.filter((e) => e.anchorLayer?.cellContainment === !0).map((e) => e.flowBounds)), u = {
 		...e,
 		flowBounds: X(e.flowBounds, t),
 		inkBounds: X(e.inkBounds, t),
 		...e.clipBounds ? { clipBounds: X(e.clipBounds, t) } : {},
-		lines: e.lines.map((e) => pf(e, t, s)),
-		borders: e.borders.map((e) => sf(e, t)),
+		lines: e.lines.map((e) => Lf(e, t, s)),
+		borders: e.borders.map((e) => jf(e, t)),
 		drawings: c,
 		...l ? { cellContainmentBounds: l } : {},
-		textBoxes: e.textBoxes.map((e) => yf(e, o.get(e.id) ?? t, n)),
+		textBoxes: e.textBoxes.map((e) => Uf(e, o.get(e.id) ?? t, n)),
 		exclusions: e.exclusions.map((e) => {
 			let n = e.anchorOccurrenceId ? a.get(e.anchorOccurrenceId) : void 0, r = {
 				xPt: n?.horizontalOwnership === "page" ? 0 : t.xPt,
@@ -8829,7 +9391,7 @@ function _f(e, t, n) {
 				yPt: e.verticalOwnership === "page" ? 0 : t.yPt
 			})
 		})) } : {},
-		...e.anchorFrames ? { anchorFrames: e.anchorFrames.map((e) => hf(e, t)) } : {},
+		...e.anchorFrames ? { anchorFrames: e.anchorFrames.map((e) => zf(e, t)) } : {},
 		...e.paragraphMark ? { paragraphMark: {
 			...e.paragraphMark,
 			bounds: X(e.paragraphMark.bounds, t)
@@ -8848,13 +9410,13 @@ function _f(e, t, n) {
 		value: u
 	}), u;
 }
-function vf(e, t) {
-	return yf(e, t, {
+function Hf(e, t) {
+	return Uf(e, t, {
 		memo: /* @__PURE__ */ new WeakMap(),
 		drawingMemo: /* @__PURE__ */ new WeakMap()
 	});
 }
-function yf(e, t, n) {
+function Uf(e, t, n) {
 	let r = e.verticalMode === void 0;
 	return {
 		...e,
@@ -8873,23 +9435,23 @@ function yf(e, t, n) {
 			inkBounds: X(e.story.inkBounds, t),
 			...e.story.clipBounds ? { clipBounds: X(e.story.clipBounds, t) } : {},
 			blocks: e.story.blocks.map((e) => {
-				if (e.kind === "paragraph") return _f(e, t, n);
-				if (e.kind === "table") return xf(e, t);
+				if (e.kind === "paragraph") return Vf(e, t, n);
+				if (e.kind === "table") return Gf(e, t);
 				throw Error(`Text-box story contains unsupported retained node: ${e.kind}`);
 			})
 		} : e.story
 	};
 }
-function bf(e, t) {
-	return gf(e, t);
+function Wf(e, t) {
+	return Bf(e, t);
 }
-function xf(e, t) {
+function Gf(e, t) {
 	return {
 		...e,
 		flowBounds: X(e.flowBounds, t),
 		inkBounds: X(e.inkBounds, t),
 		...e.clipBounds ? { clipBounds: X(e.clipBounds, t) } : {},
-		borders: e.borders.map((e) => sf(e, t)),
+		borders: e.borders.map((e) => jf(e, t)),
 		...e.compoundBorderFrames ? { compoundBorderFrames: e.compoundBorderFrames.map((e) => ({
 			...e,
 			bounds: X(e.bounds, t)
@@ -8912,25 +9474,25 @@ function xf(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/occurrence-projection.ts
-function Sf(e, t) {
+function Kf(e, t) {
 	return `${e}/occurrence/${encodeURIComponent(t).replaceAll("%3A", ":")}`;
 }
-function Cf(e) {
+function qf(e) {
 	if (!Number.isFinite(e.xPt) || !Number.isFinite(e.yPt)) throw RangeError("body occurrence translation must be finite");
 }
-function wf(e) {
+function Jf(e) {
 	if (e.occurrenceId.length === 0) throw RangeError("occurrenceId must not be empty");
 	if (e.destination.flowDomainId.length === 0) throw RangeError("flowDomainId must not be empty");
-	Cf(e.destination.translation);
+	qf(e.destination.translation);
 }
-function Tf(e, t) {
-	let n = of(e.positioning);
+function Yf(e, t) {
+	let n = Af(e.positioning);
 	return {
 		xPt: n.x ? t.xPt : 0,
 		yPt: n.y ? t.yPt : 0
 	};
 }
-function Ef(e) {
+function Xf(e) {
 	let t = /* @__PURE__ */ new WeakSet(), n = /* @__PURE__ */ new WeakSet(), r = (e) => {
 		if (t.has(e)) throw TypeError("body occurrence layout graph must be acyclic");
 		if (!n.has(e)) {
@@ -8945,15 +9507,15 @@ function Ef(e) {
 	};
 	r(e);
 }
-function Df(e, t) {
-	Ef(e);
+function Zf(e, t) {
+	Xf(e);
 	let n = /* @__PURE__ */ new WeakMap(), r = /* @__PURE__ */ new WeakMap(), i = (e) => `${e.xPt}\u0000${e.yPt}`, a = (e, t) => {
 		let n = i(t), a = r.get(e);
 		if (a) {
 			if (a.key !== n) throw Error("incompatible projection ownership");
 			return a.value;
 		}
-		let o = bf(e, t), s = Object.freeze({
+		let o = Wf(e, t), s = Object.freeze({
 			...o,
 			...e.sectionFlowOwnership === void 0 ? {} : { sectionFlowOwnership: e.sectionFlowOwnership }
 		});
@@ -8968,7 +9530,7 @@ function Df(e, t) {
 			return a.value;
 		}
 		let s = {
-			...xf(e, t),
+			...Gf(e, t),
 			...e.sectionFlowOwnership === void 0 ? {} : { sectionFlowOwnership: e.sectionFlowOwnership }
 		};
 		n.set(e, {
@@ -8981,7 +9543,7 @@ function Df(e, t) {
 			c.set(n.source, r ? {
 				xPt: 0,
 				yPt: 0
-			} : Tf(n.source, t)), r && l.add(n.source);
+			} : Yf(n.source, t)), r && l.add(n.source);
 		}
 		let u = /* @__PURE__ */ new Map(), d = (e) => {
 			let n = u.get(e);
@@ -8997,7 +9559,7 @@ function Df(e, t) {
 			};
 			return u.set(e, a), a;
 		}, f = (e.floatingTables ?? []).map(d), p = (e.resolvedFloatingTables ?? []).map((e) => {
-			let n = d(e.source), r = c.get(e.source) ?? Tf(e.source, t);
+			let n = d(e.source), r = c.get(e.source) ?? Yf(e.source, t);
 			return {
 				...e,
 				xPt: e.xPt + r.xPt,
@@ -9015,12 +9577,12 @@ function Df(e, t) {
 	};
 	return e.kind === "paragraph" ? a(e, t) : o(e, t);
 }
-function Of(e, t) {
-	return Cf(t), Df(e, t);
+function Qf(e, t) {
+	return qf(t), Zf(e, t);
 }
-function kf(e, t) {
-	wf(t);
-	let n = Df(e, t.destination.translation), r = encodeURIComponent(t.occurrenceId), i = /* @__PURE__ */ new WeakMap(), a = /* @__PURE__ */ new WeakMap(), o = /* @__PURE__ */ new WeakMap(), s = /* @__PURE__ */ new Map(), c = /* @__PURE__ */ new Map(), l = (e) => `${t.occurrenceId}/node/${encodeURIComponent(e)}`, u = (e) => `${t.occurrenceId}/anchor/${encodeURIComponent(e)}`, d = (e) => Sf(t.occurrenceId, e), f = (e, n) => `${t.destination.flowDomainId}/occurrence/${r}/${e}/${encodeURIComponent(n)}`, p = (e) => e.kind === "drawing" ? {
+function $f(e, t) {
+	Jf(t);
+	let n = Zf(e, t.destination.translation), r = encodeURIComponent(t.occurrenceId), i = /* @__PURE__ */ new WeakMap(), a = /* @__PURE__ */ new WeakMap(), o = /* @__PURE__ */ new WeakMap(), s = /* @__PURE__ */ new Map(), c = /* @__PURE__ */ new Map(), l = (e) => `${t.occurrenceId}/node/${encodeURIComponent(e)}`, u = (e) => `${t.occurrenceId}/anchor/${encodeURIComponent(e)}`, d = (e) => Kf(t.occurrenceId, e), f = (e, n) => `${t.destination.flowDomainId}/occurrence/${r}/${e}/${encodeURIComponent(n)}`, p = (e) => e.kind === "drawing" ? {
 		...e,
 		drawingId: l(e.drawingId)
 	} : e.kind === "anchor-host" && e.anchorOccurrenceId ? {
@@ -9168,7 +9730,7 @@ function kf(e, t) {
 	function x(e, t) {
 		return e.kind === "paragraph" ? g(e, t) : b(e, t);
 	}
-	let S = V(x(n, t.destination.flowDomainId), "DOCX body occurrence projection");
+	let S = B(x(n, t.destination.flowDomainId), "DOCX body occurrence projection");
 	if (S.kind !== "table" || e.kind !== "table") return S;
 	let C = Object.isFrozen(e.columnWidthsPt) ? e.columnWidthsPt : Object.freeze([...e.columnWidthsPt]);
 	return Object.freeze({
@@ -9178,21 +9740,21 @@ function kf(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/paginator.ts
-var Af = class extends Error {
+var ep = class extends Error {
 	code = "NEXT_COLUMN_DESTINATION_UNAVAILABLE";
 	constructor(e, t, n, r) {
 		super(`nextColumn requires a following column on the current page, but column ${e + 1} is unavailable (outgoing columns: ${t}, incoming columns: ${n}, reason: ${r})`), this.outgoingColumnIndex = e, this.outgoingColumnCount = t, this.incomingColumnCount = n, this.reason = r, this.name = "UnsupportedPageFlowTransitionError";
 	}
 };
-function jf(e, t) {
+function tp(e, t) {
 	return e.sectionBidi ? [...t].reverse() : [...t];
 }
-function Mf(e) {
-	let t = jf(e.section, e.columnSubset);
+function np(e) {
+	let t = tp(e.section, e.columnSubset);
 	return t[t.indexOf(e.columnIndex) + 1];
 }
-function Nf(e, t = {}) {
-	let n = Xc(e), r = Zc(e), i = t.pageContentStartBlockPt ?? n, a = t.pageContentEndBlockPt ?? r, o = t.regionStartBlockPt ?? i, s = t.regionEndBlockPt ?? a, c = t.cursorBlockPt ?? o, l = t.deepestColumnBlockPt ?? c, u = t.pageIndex ?? 0, d = Object.freeze([...t.columnSubset ?? e.columns.map((e, t) => t)]), f = jf(e, d), p = t.columnIndex ?? f[0] ?? -1;
+function rp(e, t = {}) {
+	let n = _l(e), r = vl(e), i = t.pageContentStartBlockPt ?? n, a = t.pageContentEndBlockPt ?? r, o = t.regionStartBlockPt ?? i, s = t.regionEndBlockPt ?? a, c = t.cursorBlockPt ?? o, l = t.deepestColumnBlockPt ?? c, u = t.pageIndex ?? 0, d = Object.freeze([...t.columnSubset ?? e.columns.map((e, t) => t)]), f = tp(e, d), p = t.columnIndex ?? f[0] ?? -1;
 	if (!Number.isInteger(u) || u < 0) throw RangeError("Page index must be a non-negative integer");
 	if (!Number.isInteger(p) || p < 0 || p >= e.columns.length) throw RangeError("Column index must identify a column in the active section");
 	if (d.length === 0 || d.some((t, n) => !Number.isInteger(t) || t < 0 || t >= e.columns.length || n > 0 && t <= d[n - 1]) || !d.includes(p)) throw RangeError("Column subset must be ordered, unique, and contain the active column");
@@ -9219,16 +9781,16 @@ function Nf(e, t = {}) {
 		section: e
 	});
 }
-function Pf(e, t) {
+function ip(e, t) {
 	return Object.freeze({
 		state: e,
 		events: Object.freeze(t.map((e) => Object.freeze({ ...e })))
 	});
 }
-function Ff(e, t, n) {
+function ap(e, t, n) {
 	if (!Number.isFinite(n) || n < 0) throw RangeError("A flow node charge must be a finite non-negative value");
 	let r = e.cursorBlockPt, i = r + n;
-	return Pf(Object.freeze({
+	return ip(Object.freeze({
 		...e,
 		pageHasContent: !0,
 		cursorBlockPt: i,
@@ -9240,16 +9802,16 @@ function Ff(e, t, n) {
 		blockEndPt: i
 	}]);
 }
-function If(e, t) {
-	let n = Math.max(e.deepestColumnBlockPt, e.cursorBlockPt), r = Mf(e);
-	if (r !== void 0) return Pf(Object.freeze({
+function op(e, t) {
+	let n = Math.max(e.deepestColumnBlockPt, e.cursorBlockPt), r = np(e);
+	if (r !== void 0) return ip(Object.freeze({
 		...e,
 		columnIndex: r,
 		cursorBlockPt: e.regionStartBlockPt,
 		deepestColumnBlockPt: n
 	}), [{ type: "next-column" }]);
 	let i = e.pageIndex + 1;
-	return Pf(Nf(e.section, { pageIndex: i }), [{
+	return ip(rp(e.section, { pageIndex: i }), [{
 		type: "next-page",
 		reason: t,
 		pageIndex: i,
@@ -9257,49 +9819,49 @@ function If(e, t) {
 		parityBlank: !1
 	}]);
 }
-function Lf(e, t) {
+function sp(e, t) {
 	return e.kind === t.kind && e.linePitchPt === t.linePitchPt && e.charSpacePt === t.charSpacePt;
 }
-function Rf(e, t) {
+function cp(e, t) {
 	return e.xPt === t.xPt && e.yPt === t.yPt && e.widthPt === t.widthPt && e.heightPt === t.heightPt;
 }
-function zf(e, t) {
+function lp(e, t) {
 	return e.xPt < t.xPt + t.widthPt && t.xPt < e.xPt + e.widthPt && e.yPt < t.yPt + t.heightPt && t.yPt < e.yPt + e.heightPt;
 }
-function Bf(e, t, n) {
+function up(e, t, n) {
 	let r = (n) => {
-		throw new Af(e.columnIndex, e.section.columns.length, t.columns.length, n);
-	}, i = Hr(e.section.textDirection), a = Hr(t.textDirection);
+		throw new ep(e.columnIndex, e.section.columns.length, t.columns.length, n);
+	}, i = Ur(e.section.textDirection), a = Ur(t.textDirection);
 	i !== a && r("writing-mode");
-	let o = Jr({
+	let o = Yr({
 		widthPt: e.section.geometry.pageWidth,
 		heightPt: e.section.geometry.pageHeight
-	}, i), s = Jr({
+	}, i), s = Yr({
 		widthPt: t.geometry.pageWidth,
 		heightPt: t.geometry.pageHeight
 	}, a);
 	(o.widthPt !== s.widthPt || o.heightPt !== s.heightPt) && r("page-extent");
-	let c = n.incomingPageContentStartBlockPt ?? Xc(t), l = n.incomingPageContentEndBlockPt ?? Zc(t);
-	(c !== e.pageContentStartBlockPt || l !== e.pageContentEndBlockPt) && r("block-band"), Lf(e.section.grid, t.grid) || r("grid");
-	let u = jf(e.section, e.columnSubset), d = u.indexOf(e.columnIndex), f = u[d + 1];
+	let c = n.incomingPageContentStartBlockPt ?? _l(t), l = n.incomingPageContentEndBlockPt ?? vl(t);
+	(c !== e.pageContentStartBlockPt || l !== e.pageContentEndBlockPt) && r("block-band"), sp(e.section.grid, t.grid) || r("grid");
+	let u = tp(e.section, e.columnSubset), d = u.indexOf(e.columnIndex), f = u[d + 1];
 	if (f === void 0) throw Error("nextColumn destination resolution requires a same-page successor");
-	let p = ei(i, o), m = e.section.columns[f], h = Qr(p.logicalToPhysical, {
+	let p = ti(i, o), m = e.section.columns[f], h = $r(p.logicalToPhysical, {
 		xPt: m.xPt,
 		yPt: e.regionStartBlockPt,
 		widthPt: m.wPt,
 		heightPt: e.regionEndBlockPt - e.regionStartBlockPt
-	}), g = t.columns.findIndex((t) => Rf(h, Qr(p.logicalToPhysical, {
+	}), g = t.columns.findIndex((t) => cp(h, $r(p.logicalToPhysical, {
 		xPt: t.xPt,
 		yPt: e.regionStartBlockPt,
 		widthPt: t.wPt,
 		heightPt: e.regionEndBlockPt - e.regionStartBlockPt
 	})));
 	g < 0 && r("physical-column");
-	let _ = jf(t, t.columns.map((e, t) => t)), v = _.indexOf(g);
+	let _ = tp(t, t.columns.map((e, t) => t)), v = _.indexOf(g);
 	v < 0 && r("physical-column");
 	let y = Object.freeze(_.slice(v).sort((e, t) => e - t)), b = Object.freeze(u.slice(0, d + 1).sort((e, t) => e - t)), x = (t, n) => {
 		let r = t.columns[n];
-		return Qr(p.logicalToPhysical, {
+		return $r(p.logicalToPhysical, {
 			xPt: r.xPt,
 			yPt: e.regionStartBlockPt,
 			widthPt: r.wPt,
@@ -9308,7 +9870,7 @@ function Bf(e, t, n) {
 	}, S = b.map((t) => x(e.section, t));
 	return y.some((e) => {
 		let n = x(t, e);
-		return S.some((e) => zf(e, n));
+		return S.some((e) => lp(e, n));
 	}) && r("physical-overlap"), Object.freeze({
 		targetColumnIndex: g,
 		targetColumnOrdinal: v,
@@ -9316,9 +9878,9 @@ function Bf(e, t, n) {
 		outgoingColumnSubset: b
 	});
 }
-function Vf(e, t, n) {
+function dp(e, t, n) {
 	let r = e.pageIndex + 1;
-	return Pf(Nf(t, { pageIndex: r }), [{
+	return ip(rp(t, { pageIndex: r }), [{
 		type: "next-page",
 		reason: n,
 		pageIndex: r,
@@ -9326,13 +9888,13 @@ function Vf(e, t, n) {
 		parityBlank: !1
 	}]);
 }
-function Hf(e, t) {
+function fp(e, t) {
 	let n = e % 2 == 0;
 	return t === "odd" ? n : !n;
 }
-function Uf(e, t, n, r) {
+function pp(e, t, n, r) {
 	let i = e.pageIndex + 1, a = [];
-	return r !== void 0 && !Hf(i, r) && (a.push({
+	return r !== void 0 && !fp(i, r) && (a.push({
 		type: "next-page",
 		reason: "parity",
 		pageIndex: i,
@@ -9344,15 +9906,15 @@ function Uf(e, t, n, r) {
 		pageIndex: i,
 		sectionOccurrenceId: t.sectionOccurrenceId,
 		parityBlank: !1
-	}), Pf(Nf(t, { pageIndex: i }), a);
+	}), ip(rp(t, { pageIndex: i }), a);
 }
-function Wf(e, t, n) {
-	return t === "lastRenderedPageBreak" ? Pf(e, []) : t === "column" ? If(e, "explicit-break") : t === "pageBreakBefore" && !e.pageHasContent && e.columnIndex === jf(e.section, e.columnSubset)[0] && e.cursorBlockPt === e.pageContentStartBlockPt ? Pf(e, []) : t === "page" ? Uf(e, e.section, "explicit-break", n) : Vf(e, e.section, "page-break-before");
+function mp(e, t, n) {
+	return t === "lastRenderedPageBreak" ? ip(e, []) : t === "column" ? op(e, "explicit-break") : t === "pageBreakBefore" && !e.pageHasContent && e.columnIndex === tp(e.section, e.columnSubset)[0] && e.cursorBlockPt === e.pageContentStartBlockPt ? ip(e, []) : t === "page" ? pp(e, e.section, "explicit-break", n) : dp(e, e.section, "page-break-before");
 }
-function Gf(e, t, n, r = {}) {
+function hp(e, t, n, r = {}) {
 	if (n === "continuous" && !r.hasFootnoteReferenceOnCurrentPage) {
 		let n = e.section.columns.length > 1 ? Math.max(e.cursorBlockPt, e.deepestColumnBlockPt) : e.cursorBlockPt;
-		return Pf(Nf(t, {
+		return ip(rp(t, {
 			pageIndex: e.pageIndex,
 			pageContentStartBlockPt: e.pageContentStartBlockPt,
 			pageContentEndBlockPt: e.pageContentEndBlockPt,
@@ -9370,15 +9932,15 @@ function Gf(e, t, n, r = {}) {
 		}]);
 	}
 	if (n === "nextColumn") {
-		if (Mf(e) === void 0) {
-			let n = Vf(e, t, "section-break");
-			return Pf(n.state, [...n.events, {
+		if (np(e) === void 0) {
+			let n = dp(e, t, "section-break");
+			return ip(n.state, [...n.events, {
 				type: "begin-section",
 				section: t
 			}]);
 		}
-		let n = Bf(e, t, r);
-		return Pf(Object.freeze({
+		let n = up(e, t, r);
+		return ip(Object.freeze({
 			...e,
 			columnIndex: n.targetColumnIndex,
 			columnSubset: n.columnSubset,
@@ -9395,21 +9957,21 @@ function Gf(e, t, n, r = {}) {
 		}]);
 	}
 	if (n === "continuous") {
-		let n = Vf(e, t, "section-break");
-		return Pf(n.state, [...n.events, {
+		let n = dp(e, t, "section-break");
+		return ip(n.state, [...n.events, {
 			type: "begin-section",
 			section: t
 		}]);
 	}
-	let i = Uf(e, t, "section-break", n === "oddPage" ? "odd" : n === "evenPage" ? "even" : void 0);
-	return Pf(i.state, [...i.events, {
+	let i = pp(e, t, "section-break", n === "oddPage" ? "odd" : n === "evenPage" ? "even" : void 0);
+	return ip(i.state, [...i.events, {
 		type: "begin-section",
 		section: t
 	}]);
 }
 //#endregion
 //#region packages/docx/src/line-fit-policy.ts
-function Kf(e, t, n, r) {
+function gp(e, t, n, r) {
 	let i = e, a = 0;
 	for (let o = e + 1; o <= t; o++) {
 		let e = r(o);
@@ -9421,66 +9983,66 @@ function Kf(e, t, n, r) {
 		fitValue: a
 	};
 }
-function qf(e) {
+function _p(e) {
 	return !e.widowControl || e.end >= e.totalLines ? { kind: "keep" } : e.totalLines - e.end === 1 && e.end - e.start >= 2 ? { kind: "dropLastLine" } : e.start === 0 && e.end - e.start === 1 && e.canRelocate ? { kind: "relocate" } : { kind: "keep" };
 }
-G({
+W({
 	id: "word-terminal-column-break",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/pagination.test.ts#ignores a terminal last-column break before a hard page boundary"
 	},
 	description: "The established pagination regression contract does not materialize a column transition when no body flow content occurs before the next forced page or non-continuous section boundary."
-}), G({
+}), W({
 	id: "word-pre-break-anchor-paragraph",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/pagination.test.ts#does not push an anchor-only pre-break paragraph to a new page just for its empty mark"
 	},
 	description: "The established pagination regression contract keeps an anchor-only paragraph immediately before an authored page break in the pre-break flow region without charging its otherwise visible paragraph mark."
-}), G({
+}), W({
 	id: "word-pre-break-inline-drawing-group",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/pagination.test.ts#moves a preceding image with its pre-break callout when the pair only fits fresh"
 	},
 	description: "The established pagination regression contract relocates a preceding inline DrawingML resource with an immediately following host-owned anchor paragraph before an authored page break when the pair fits only in a fresh flow region."
-}), G({
+}), W({
 	id: "word-continuous-section-mark-spacing",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/body-layout-input.test.ts#projects mutually exclusive collapsed-mark and drop-previous-after roles"
 	},
 	description: "The retained body input projects the established continuous-section empty-mark spacing behavior into one mutually exclusive role before pagination."
-}), G({
+}), W({
 	id: "word-contextual-spacing-per-side",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/contextual-spacing-body-paint.test.ts#paints the adjudicated six-case gap table"
 	},
 	description: "For same-style adjacent paragraphs, contextualSpacing removes only the contribution owned by each toggling side; a current-only toggle preserves the previous paragraph spaceAfter contribution."
-}), G({
+}), W({
 	id: "word-empty-keep-next-bridge",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/body-paginator-production.test.ts#bridges an undecorated empty keepNext mark through the following paragraph"
 	},
 	description: "Word print pagination treats an undecorated empty keep-with-next paragraph as a bridge: the following paragraph is admitted completely with the first indivisible content of its successor."
-}), G({
+}), W({
 	id: "word-automatic-keep-next-start-spacing",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/body-paginator-production.test.ts#suppresses leading spacing when a keepNext unit moves to an automatic page"
 	},
 	description: "When automatic overflow relocates a keep-with-next unit to a fresh physical page, suppress the leading paragraph space-before for that grouped relocation without changing ordinary overflow or authored-break spacing."
-}), G({
+}), W({
 	id: "word-trailing-space-after-fit-admission",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/paragraph-pagination.test.ts#admits final visible content when only authored spaceAfter crosses the region edge"
 	},
 	description: "Admit the final visible paragraph content at a flow-region edge when only its authored trailing space crosses the edge, while retaining that space for placement and paint."
-}), G({
+}), W({
 	id: "word-vertical-rl-final-line-baseline-admission",
 	evidence: {
 		kind: "office-observation",
@@ -9490,7 +10052,7 @@ G({
 		platform: "macOS 26.5.2"
 	},
 	description: "In a vertical-rl section, Word admits the final visible text column when its transformed baseline and retained visible ink remain inside the block-end edge even if the complete logical line box crosses that edge. The complete retained advance remains authoritative after admission."
-}), G({
+}), W({
 	id: "word-lowered-drop-cap-anchor-leading",
 	evidence: {
 		kind: "office-observation",
@@ -9501,24 +10063,24 @@ G({
 	},
 	description: "Word keeps the following anchor text below a baseline-lowered drop-cap glyph while preserving the drop cap exclusion height authored by framePr lines. ECMA-376 specifies those two inputs independently but does not prescribe this interaction."
 });
-function Jf(e) {
+function vp(e) {
 	return Math.max(0, e);
 }
-function Yf(e) {
+function yp(e) {
 	return e === "none";
 }
-function Xf(e) {
+function bp(e) {
 	return Math.max(0, e.advancePt - Math.min(e.authoredSpaceAfterPt, e.retainedSpaceAfterPt));
 }
-function Zf(e) {
+function xp(e) {
 	return e.origin.yPt + (e.inkBounds?.descentPt ?? 0);
 }
-function Qf(e) {
+function Sp(e) {
 	if (e.kind === "resource" || e.kind === "drawing") return e.bounds.yPt + e.bounds.heightPt;
 	if (e.kind === "anchor-host") return null;
 	if (e.kind === "tab") {
 		let t = e.leaderGlyphs ?? [];
-		return t.length > 0 ? Math.max(...t.map(Zf)) : null;
+		return t.length > 0 ? Math.max(...t.map(xp)) : null;
 	}
 	let t = e.paintOps ?? [], n = t.length > 0 ? t.map((t) => e.origin.yPt + t.offset.yPt + (t.blockAxisInkBounds?.endPt ?? t.inkBounds?.descentPt ?? 0)) : [e.origin.yPt];
 	for (let t of e.decorations) {
@@ -9531,20 +10093,20 @@ function Qf(e) {
 		let e = t.widthPt / 2;
 		n.push(t.from.yPt + e, t.to.yPt + e);
 	}
-	for (let t of e.emphasis?.glyphs ?? []) n.push(Zf(t));
-	for (let t of e.ruby?.paintOps ?? []) n.push(Zf(t));
+	for (let t of e.emphasis?.glyphs ?? []) n.push(xp(t));
+	for (let t of e.ruby?.paintOps ?? []) n.push(xp(t));
 	for (let t of e.emphasis?.paths ?? []) {
 		let e = t.stroke === null ? 0 : t.strokeWidthPt / 2;
 		for (let r of t.points) n.push(r.yPt + e);
 	}
 	return Math.max(...n);
 }
-function $f(e) {
+function Cp(e) {
 	if (e.writingMode !== "vertical-rl" || e.logicalLineBoxExtentPt <= e.availableBlockExtentPt) return e.logicalLineBoxExtentPt;
 	let t = e.paragraph.lines.at(-1);
 	if (!t || t.placements.some((e) => e.kind === "text" && (e.paintOps ?? []).some((e) => e.glyphOrientation !== void 0 && e.blockAxisInkBounds === void 0))) return e.logicalLineBoxExtentPt;
 	let n = t.placements.flatMap((e) => {
-		let t = Qf(e);
+		let t = Sp(e);
 		return t === null ? [] : [t];
 	});
 	if (n.length === 0 || e.paragraph.shading) return e.logicalLineBoxExtentPt;
@@ -9558,30 +10120,30 @@ function $f(e) {
 	}
 	return Math.max(0, Math.max(...n) - e.paragraph.flowBounds.yPt);
 }
-function ep(e) {
+function wp(e) {
 	return e.keepNext && e.inkless && e.undecoratedMark;
 }
-function tp(e, t) {
+function Tp(e, t) {
 	let n = e[t];
 	if (n?.kind !== "body-block" || n.block.kind !== "paragraph") return;
 	let r = e[t + 1], i = e[t + 2], a = n.block.inkless === !0 && r?.kind === "begin-section" && r.section.startType === "continuous";
 	return a && n.block.spaceBeforePt === 0 ? "collapse-mark" : a ? "suppress-before" : n.block.inkless === !0 && r?.kind === "body-block" && r.block.kind === "paragraph" && r.block.inkless === !0 && r.block.spaceBeforePt === 0 && i?.kind === "begin-section" && i.section.startType === "continuous" ? "drop-previous-after" : void 0;
 }
-function np(e) {
+function Ep(e) {
 	return e.drawings.length > 0 && e.lines.every((e) => e.placements.every((e) => e.kind === "drawing" || e.kind === "anchor-host"));
 }
-function rp(e) {
+function Dp(e) {
 	return e.lines.some((e) => e.placements.some((e) => (e.kind === "resource" && (e.resourceKind === "image" || e.resourceKind === "chart") || e.kind === "drawing") && e.advancePt > 0 && e.bounds !== void 0 && e.bounds.widthPt > 0 && e.bounds.heightPt > 0));
 }
-function ip(e, t) {
-	if (!np(e)) return null;
+function Op(e, t) {
+	if (!Ep(e)) return null;
 	let n = e.drawings.filter((e) => e.anchorLayer?.verticalOwnership === "host" && Number.isFinite(e.flowBounds.xPt) && Number.isFinite(e.flowBounds.yPt) && Number.isFinite(e.flowBounds.widthPt) && Number.isFinite(e.flowBounds.heightPt) && e.flowBounds.widthPt > 0 && e.flowBounds.heightPt > 0);
 	if (n.length !== e.drawings.length) return null;
 	let r = Math.max(...n.map((e) => e.flowBounds.yPt + e.flowBounds.heightPt));
 	return Math.max(0, r - t);
 }
-function ap(e) {
-	if (!np(e)) return null;
+function kp(e) {
+	if (!Ep(e)) return null;
 	let { paragraphMark: t, ...n } = e;
 	return Object.freeze({
 		...n,
@@ -9592,7 +10154,7 @@ function ap(e) {
 		})
 	});
 }
-function op(e) {
+function Ap(e) {
 	let t = /* @__PURE__ */ new Set(), n = !1;
 	for (let r = e.length - 1; r >= 0; --r) {
 		let i = e[r];
@@ -9613,109 +10175,8 @@ function op(e) {
 	return t;
 }
 //#endregion
-//#region packages/docx/src/layout/float-wrap-oracle.ts
-function sp(e, t) {
-	let n = e.map((e) => Object.freeze({ ...e })), r = Va(n);
-	return {
-		lineWindow: ({ topYPt: e, minimumStartWidthPt: n, squareMinimumStartWidthPt: i, probeHeightPt: a, paragraphXPt: o, maximumWidthPt: s, columnXPt: c, columnWidthPt: l }) => {
-			let u = ao(e, n, a, o, s, r, c, c + l, t ?? {
-				xLeftPt: o,
-				xRightPt: o + s,
-				readingDirection: "ltr"
-			}, i ?? n);
-			return {
-				topYPt: u.topY,
-				xOffsetPt: u.xOffset,
-				maximumWidthPt: u.maxWidth
-			};
-		},
-		skipTopAndBottomBands: ({ yPt: e, columnXPt: t, columnWidthPt: r }) => oo(e, n, t, t + r)
-	};
-}
-//#endregion
-//#region packages/docx/src/paragraph-measure.ts
-function cp(e) {
-	return {
-		type: e.lineGrid.active ? "lines" : null,
-		linePitchPt: e.lineGrid.active ? e.lineGrid.pitchPt : null,
-		charSpacePt: e.characterGrid.active ? e.characterGrid.deltaPt : null
-	};
-}
-function lp(e, t) {
-	if (!vs(t)) return e;
-	let n = t.linePitchPt;
-	return n <= 0 ? e : e <= n ? n : Math.ceil(e / n) * n;
-}
-function up(e, t, n, r, i, a) {
-	let o = cp(t), s = Math.max(1, n.availableWidthPt - t.physicalIndentLeftPt - t.physicalIndentRightPt), c = n.paragraphXPt + t.physicalIndentLeftPt, l = t.spaceBeforePt, u = t.spaceAfterPt, d = Object.freeze({ ...n }), f = r.fontFamilyClasses, p = i.documentHasEastAsianText === !0 || i.useFeLayout === !0, m = n.startYPt + (n.suppressSpaceBefore ? 0 : l);
-	n.wrap && (m = n.wrap.skipTopAndBottomBands({
-		yPt: m,
-		columnXPt: n.paragraphXPt,
-		columnWidthPt: n.availableWidthPt
-	}));
-	let h = () => {
-		let a = m, h = Ts(e, 1, o, t.hasRuby, p, r.context, f, t.lineSpacing, i.resolvedLocalFonts, i.layoutServices?.text, i.paragraphMarkShapeInput, i.useFeLayout === !0);
-		return n.wrap && (a = n.wrap.lineWindow({
-			topYPt: a,
-			minimumStartWidthPt: ns(e),
-			squareMinimumStartWidthPt: fa(ns(e), 1),
-			probeHeightPt: h,
-			paragraphXPt: c,
-			maximumWidthPt: s,
-			columnXPt: n.paragraphXPt,
-			columnWidthPt: n.availableWidthPt
-		}).topYPt), {
-			lines: [],
-			markOnly: !0,
-			requestedSpaceBeforePt: l,
-			requestedSpaceAfterPt: u,
-			uniformRubyAdvancePt: 0,
-			contentStartYPt: a,
-			contentEndYPt: a + h,
-			lastLineBelowBaselinePt: Ds(e, o, t.hasRuby, p, r.context, f, t.lineSpacing, i.resolvedLocalFonts, i.layoutServices?.text, i.paragraphMarkShapeInput, i.useFeLayout === !0),
-			placement: d
-		};
-	}, g = Js(e.runs, i);
-	if (g.length === 0) return h();
-	let _ = n.wrap ? {
-		startPageY: m,
-		paraX: c,
-		columnXPt: n.paragraphXPt,
-		columnWidthPt: n.availableWidthPt,
-		floats: [],
-		paragraphMarkLineStartWidth: fa(ns(e), 1),
-		lineWindow: (e) => n.wrap.lineWindow(e),
-		lineBoxH: (e, n, r, i, a, s) => xs(t.lineSpacing, e, n, 1, o, t.hasRuby, i ?? 0, t.hasRuby ? t.hasEastAsianText : a ?? !1, s),
-		pageH: n.maximumYPt
-	} : void 0, v = Ys(r.context, g, s, a ? 0 : t.firstIndentPt, 1, [...t.tabStops], _, f, t.physicalIndentLeftPt, t.kinsoku, t.characterGrid.active ? t.characterGrid.deltaPt : 0, t.defaultTabPt, s + t.physicalIndentRightPt, t.baseRtl, t.isJustified, t.stretchLastLine, a?.boundary, void 0, i.verticalGlyphMeasurement, t.overflowPunct !== !1);
-	if (v.length === 0) return h();
-	let y = t.hasRuby ? lp(Math.max(0, ...v.map((e) => xs(t.lineSpacing, e.ascent, e.descent, 1, o, !0, e.intendedSingle, t.hasEastAsianText))), o) : 0;
-	t.hasRuby && a?.uniformRubyAdvancePt !== void 0 && (y = Math.max(y, a.uniformRubyAdvancePt));
-	let b = [];
-	for (let e of v) {
-		let n = e.topY !== void 0 && e.topY > m ? e.topY : m, r = t.hasRuby ? y : xs(t.lineSpacing, e.ascent, e.descent, 1, o, !1, e.intendedSingle, e.eastAsian ?? !1, e.gridCountSingle);
-		b.push({
-			layout: e,
-			topYPt: n,
-			advancePt: r
-		}), m = n + r;
-	}
-	let x = b[b.length - 1];
-	return {
-		lines: b,
-		markOnly: !1,
-		requestedSpaceBeforePt: l,
-		requestedSpaceAfterPt: u,
-		uniformRubyAdvancePt: y,
-		contentStartYPt: b[0].topYPt,
-		contentEndYPt: m,
-		lastLineBelowBaselinePt: Es(x.advancePt, x.layout.ascent, x.layout.descent),
-		placement: d
-	};
-}
-//#endregion
 //#region packages/docx/src/text-distribute.ts
-function dp(e, t, n, r, i = -Infinity, a = !0, o = !1) {
+function jp(e, t, n, r, i = -Infinity, a = !0, o = !1) {
 	return Fe(e, t, {
 		firstContentSi: n,
 		lastDrawnSi: r,
@@ -9724,25 +10185,25 @@ function dp(e, t, n, r, i = -Infinity, a = !0, o = !1) {
 		...a ? {} : { isGapChar: () => !1 }
 	});
 }
-function fp(e) {
+function Mp(e) {
 	if (!e) return 0;
 	let t = 0;
 	for (let n of e.perSeg.values()) t += n.splitBefore.length + +!!n.trailingGap;
 	return e.perGap * t;
 }
-function pp(e, t, n, r, i) {
-	return t >= 0 ? null : dp(e, t, n, r, -i * .25, !1);
+function Np(e, t, n, r, i) {
+	return t >= 0 ? null : jp(e, t, n, r, -i * .25, !1);
 }
 //#endregion
 //#region packages/docx/src/arabic-joining.generated.ts
-var mp = [
+var Pp = [
 	"U",
 	"C",
 	"D",
 	"L",
 	"R",
 	"T"
-], hp = [
+], Fp = [
 	0,
 	173,
 	174,
@@ -10675,7 +11136,7 @@ var mp = [
 	917632,
 	917760,
 	918e3
-], gp = [
+], Ip = [
 	0,
 	5,
 	0,
@@ -11608,7 +12069,7 @@ var mp = [
 	0,
 	5,
 	0
-], _p = [
+], Lp = [
 	1587,
 	1588,
 	1589,
@@ -11626,7 +12087,7 @@ var mp = [
 	1917,
 	1918,
 	2223
-], vp = [
+], Rp = [
 	1580,
 	1581,
 	1582,
@@ -11649,7 +12110,7 @@ var mp = [
 	2241,
 	2245,
 	2246
-], yp = [
+], zp = [
 	1576,
 	1578,
 	1579,
@@ -11677,7 +12138,7 @@ var mp = [
 	2238,
 	2239,
 	2240
-], bp = [
+], Bp = [
 	1574,
 	1585,
 	1586,
@@ -11715,7 +12176,7 @@ var mp = [
 	2233,
 	2234,
 	69319
-], xp = [
+], Vp = [
 	1570,
 	1571,
 	1573,
@@ -11784,7 +12245,7 @@ var mp = [
 	2248,
 	69315,
 	69316
-], Sp = [
+], Hp = [
 	1572,
 	1593,
 	1594,
@@ -11829,52 +12290,52 @@ var mp = [
 ];
 //#endregion
 //#region packages/docx/src/arabic-joining.ts
-function Cp(e) {
-	let t = 0, n = hp.length - 1, r = -1;
+function Up(e) {
+	let t = 0, n = Fp.length - 1, r = -1;
 	for (; t <= n;) {
 		let i = t + (n - t >> 1);
-		hp[i] <= e ? (r = i, t = i + 1) : n = i - 1;
+		Fp[i] <= e ? (r = i, t = i + 1) : n = i - 1;
 	}
-	return r < 0 ? "U" : mp[gp[r]] ?? "U";
+	return r < 0 ? "U" : Pp[Ip[r]] ?? "U";
 }
-function wp(e) {
-	let t = Cp(e);
+function Wp(e) {
+	let t = Up(e);
 	return t === "D" || t === "L" || t === "C";
 }
-function Tp(e) {
-	let t = Cp(e);
+function Gp(e) {
+	let t = Up(e);
 	return t === "D" || t === "R" || t === "C";
 }
-var Ep = 1604, Dp = new Set([
+var Kp = 1604, qp = new Set([
 	1575,
 	1570,
 	1571,
 	1573,
 	1649
-]), Op = 1600, kp = new Set(_p), Ap = new Set(vp), jp = new Set(yp), Mp = new Set(bp), Np = new Set(xp), Pp = new Set(Sp), Fp = /* @__PURE__ */ function(e) {
+]), Jp = 1600, Yp = new Set(Lp), Xp = new Set(Rp), Zp = new Set(zp), Qp = new Set(Bp), $p = new Set(Vp), em = new Set(Hp), tm = /* @__PURE__ */ function(e) {
 	return e[e.Normal = 7] = "Normal", e[e.Waw = 8] = "Waw", e[e.BaRa = 9] = "BaRa", e[e.Alef = 10] = "Alef", e[e.HahDal = 11] = "HahDal", e[e.Seen = 12] = "Seen", e[e.Kashida = 13] = "Kashida", e;
-}(Fp || {});
-function Ip(e) {
-	let t = [...e].map((e) => e.codePointAt(0)), n = [], r = t.length > 0 && Cp(t[0]) !== "T" ? 0 : -1;
+}(tm || {});
+function nm(e) {
+	let t = [...e].map((e) => e.codePointAt(0)), n = [], r = t.length > 0 && Up(t[0]) !== "T" ? 0 : -1;
 	for (let e = 1; e < t.length; e++) {
 		let i = t[e];
-		if (Cp(i) !== "T") {
+		if (Up(i) !== "T") {
 			if (r >= 0) {
 				let a = t[r];
-				!(a === Ep && Dp.has(i)) && wp(a) && Tp(i) && n.push(e);
+				!(a === Kp && qp.has(i)) && Wp(a) && Gp(i) && n.push(e);
 			}
 			r = e;
 		}
 	}
 	return n;
 }
-function Lp(e, t, n) {
+function rm(e, t, n) {
 	let r = t - 1;
-	for (; r >= 0 && Cp(e[r]) === "T";) r--;
+	for (; r >= 0 && Up(e[r]) === "T";) r--;
 	let i = e[r], a = e[t];
-	return i === Op ? Fp.Kashida : kp.has(i) ? Fp.Seen : Ap.has(i) ? Fp.HahDal : Ro(t, n) && Np.has(a) ? Fp.Alef : jp.has(i) && Mp.has(a) ? Fp.BaRa : Ro(t, n) && Pp.has(a) ? Fp.Waw : Fp.Normal;
+	return i === Jp ? tm.Kashida : Yp.has(i) ? tm.Seen : Xp.has(i) ? tm.HahDal : qo(t, n) && $p.has(a) ? tm.Alef : Zp.has(i) && Qp.has(a) ? tm.BaRa : qo(t, n) && em.has(a) ? tm.Waw : tm.Normal;
 }
-function Rp(e) {
+function im(e) {
 	let t = [...e], n = [];
 	for (let e = 0; e < t.length;) {
 		for (; e < t.length && /\s/u.test(t[e]);) e++;
@@ -11882,10 +12343,10 @@ function Rp(e) {
 		let r = e + 1;
 		for (; r < t.length && !/\s/u.test(t[r]);) r++;
 		let i = t.slice(e, r), a = i.map((e) => e.codePointAt(0)), o = a.length - 1;
-		for (; o >= 0 && Cp(a[o]) === "T";) o--;
+		for (; o >= 0 && Up(a[o]) === "T";) o--;
 		let s = -1, c = -1;
-		for (let e of Ip(i.join(""))) {
-			let t = Lp(a, e, o);
+		for (let e of nm(i.join(""))) {
+			let t = rm(a, e, o);
 			t >= c && (s = e, c = t);
 		}
 		s >= 0 && n.push({
@@ -11897,21 +12358,21 @@ function Rp(e) {
 }
 //#endregion
 //#region packages/docx/src/kashida-justify.ts
-var zp = "ـ";
-function Bp(e, t) {
+var am = "ـ";
+function om(e, t) {
 	let n = [...e], r = "";
 	for (let e = 0; e < n.length; e++) {
 		let i = t.get(e) ?? 0;
-		i > 0 && (r += zp.repeat(i)), r += n[e];
+		i > 0 && (r += am.repeat(i)), r += n[e];
 	}
 	return r;
 }
-function Vp(e, t, n, r) {
+function sm(e, t, n, r) {
 	if (t <= .5) return null;
 	let i = [];
 	for (let t = 0; t < e.length; t++) {
 		let n = e[t].text;
-		if (n !== void 0) for (let { beforeCp: e, priority: r } of Rp(n)) i.push({
+		if (n !== void 0) for (let { beforeCp: e, priority: r } of im(n)) i.push({
 			si: t,
 			beforeCp: e,
 			priority: r,
@@ -11936,7 +12397,7 @@ function Vp(e, t, n, r) {
 			let l = i.get(o) ?? 0;
 			if (l >= a) continue;
 			i.set(o, l + 1);
-			let p = r(n, Bp(e[n].text, i)), m = p - u.get(n);
+			let p = r(n, om(e[n].text, i)), m = p - u.get(n);
 			m > 0 && m <= d + 1e-6 ? (u.set(n, p), d -= m, f++, t = !0) : l === 0 ? i.delete(o) : i.set(o, l);
 		}
 		if (!t) break;
@@ -11948,7 +12409,7 @@ function Vp(e, t, n, r) {
 			count: t
 		}));
 		r.length !== 0 && p.set(t, {
-			text: Bp(e[t].text, n),
+			text: om(e[t].text, n),
 			insertions: r,
 			advanceDeltaPx: u.get(t) - l.get(t)
 		});
@@ -11963,8 +12424,8 @@ function Vp(e, t, n, r) {
 }
 //#endregion
 //#region packages/docx/src/layout/shape-drawing-plan.ts
-var Hp = 1;
-function Up(e) {
+var cm = 1;
+function lm(e) {
 	return Object.freeze({
 		status: "unsupported",
 		command: Object.freeze({ kind: "noop" }),
@@ -11975,29 +12436,29 @@ function Up(e) {
 		})])
 	});
 }
-function Wp(e) {
+function um(e) {
 	return e ? {
 		type: e.type,
 		w: e.w,
 		len: e.len
 	} : void 0;
 }
-function Gp(e) {
+function dm(e) {
 	return !e.stroke || !e.strokeWidth || e.strokeWidth <= 0 ? null : {
 		color: e.stroke,
 		width: e.strokeWidth,
 		...e.strokeDash ? { dashStyle: e.strokeDash } : {},
 		...e.strokeCap ? { lineCap: e.strokeCap } : {},
-		...Wp(e.headEnd) ? { headEnd: Wp(e.headEnd) } : {},
-		...Wp(e.tailEnd) ? { tailEnd: Wp(e.tailEnd) } : {}
+		...um(e.headEnd) ? { headEnd: um(e.headEnd) } : {},
+		...um(e.tailEnd) ? { tailEnd: um(e.tailEnd) } : {}
 	};
 }
-function Kp(e, t, n, r, i) {
+function fm(e, t, n, r, i) {
 	let a = r !== void 0 && (r.textPathOk !== void 0 || r.on !== void 0 || r.fitShape !== void 0 || r.fitPath !== void 0 || r.trim !== void 0 || r.xScale !== void 0);
 	if (r !== void 0 && (!a || r.textPathOk === !0 && r.on === !0)) {
-		if (e.fill?.fillType === "image") return Up("VML textPath with a DrawingML image fill is not rendered");
-		if (r.fitPath === !0) return Up("VML textPath fitPath=true is not rendered");
-		if (r.xScale === !0) return Up("VML textPath xScale=true is not rendered");
+		if (e.fill?.fillType === "image") return lm("VML textPath with a DrawingML image fill is not rendered");
+		if (r.fitPath === !0) return lm("VML textPath fitPath=true is not rendered");
+		if (r.xScale === !0) return lm("VML textPath xScale=true is not rendered");
 		if (r.string.trim().length === 0) return Object.freeze({
 			status: "planned",
 			command: Object.freeze({ kind: "noop" })
@@ -12005,12 +12466,12 @@ function Kp(e, t, n, r, i) {
 		if (!n) throw Error("Shape textPath acquisition requires TextLayoutService");
 		let i = a ? r.fitShape === !0 : !0;
 		if (r.fontSizePt !== void 0 && (!Number.isFinite(r.fontSizePt) || r.fontSizePt < 0)) throw RangeError("VML textPath fontSizePt must be finite and non-negative");
-		if (!i && r.fontSizePt === void 0) return Up("VML textPath fitShape=false requires an authored font-size");
+		if (!i && r.fontSizePt === void 0) return lm("VML textPath fitShape=false requires an authored font-size");
 		if (r.fontSizePt === 0) return Object.freeze({
 			status: "planned",
 			command: Object.freeze({ kind: "noop" })
 		});
-		let o = r.fontSizePt ?? Hp, s = r.fontFamily ?? void 0, c = n.shape({
+		let o = r.fontSizePt ?? cm, s = r.fontFamily ?? void 0, c = n.shape({
 			text: r.string,
 			fontSizePt: o,
 			fonts: {
@@ -12023,7 +12484,7 @@ function Kp(e, t, n, r, i) {
 			style: r.italic ? "italic" : "normal",
 			measure: !0
 		});
-		if (r.trim === !0 && !c.inkBounds) return Up("VML textPath trim=true requires glyph ink bounds");
+		if (r.trim === !0 && !c.inkBounds) return lm("VML textPath trim=true requires glyph ink bounds");
 		let l = r.trim === !0 ? c.inkBounds?.xMinPt ?? 0 : 0, u = r.trim === !0 ? c.inkBounds?.xMaxPt ?? 0 : c.advancePt, d = r.trim === !0 ? c.inkBounds?.ascentPt ?? 0 : c.ascentPt, f = r.trim === !0 ? c.inkBounds?.descentPt ?? 0 : c.descentPt, p = {
 			xPt: l,
 			yPt: -d,
@@ -12031,9 +12492,9 @@ function Kp(e, t, n, r, i) {
 			heightPt: d + f
 		};
 		if (!Number.isFinite(c.advancePt) || Object.values(p).some((e) => !Number.isFinite(e)) || c.spans.some((e) => !Number.isFinite(e.advancePt))) throw Error("Shape textPath acquisition produced non-finite metrics");
-		return p.widthPt <= 0 || p.heightPt <= 0 || c.spans.length === 0 ? Up("VML textPath produced empty glyph metrics") : Object.freeze({
+		return p.widthPt <= 0 || p.heightPt <= 0 || c.spans.length === 0 ? lm("VML textPath produced empty glyph metrics") : Object.freeze({
 			status: "planned",
-			command: V({
+			command: B({
 				kind: "watermark-text",
 				rect: { ...t },
 				text: r.string,
@@ -12075,7 +12536,7 @@ function Kp(e, t, n, r, i) {
 			...e.fill,
 			...e.fill.fillType === "gradient" ? { stops: e.fill.stops.map((e) => ({ ...e })) } : {}
 		} : null,
-		stroke: Gp(e),
+		stroke: dm(e),
 		transform: {
 			rotationDeg: e.rotation ?? 0,
 			flipH: e.flipH ?? !1,
@@ -12095,7 +12556,7 @@ function Kp(e, t, n, r, i) {
 		if (!i) throw Error("DrawingML shape image fill requires a retained image resource key");
 		return Object.freeze({
 			status: "planned",
-			command: V({
+			command: B({
 				kind: "drawingml-image-fill",
 				plan: o,
 				resourceKey: i,
@@ -12110,7 +12571,7 @@ function Kp(e, t, n, r, i) {
 	}
 	return Object.freeze({
 		status: "planned",
-		command: V({
+		command: B({
 			kind: "drawingml-shape",
 			plan: o
 		}, "DrawingML shape command")
@@ -12118,7 +12579,7 @@ function Kp(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/docx/src/layout/textbox-input.ts
-function qp(e, t) {
+function pm(e, t) {
 	let n = e.fontFamily ?? null;
 	return {
 		fontSizePt: t,
@@ -12133,12 +12594,12 @@ function qp(e, t) {
 		complexScript: !1
 	};
 }
-function Jp(e, t = {
+function mm(e, t = {
 	story: "textbox",
 	storyInstance: "shape",
 	path: []
-}, n = qp) {
-	return V((e.textBlocks ?? []).map((e, r) => {
+}, n = pm) {
+	return B((e.textBlocks ?? []).map((e, r) => {
 		let i = {
 			story: "textbox",
 			storyInstance: t.storyInstance,
@@ -12199,7 +12660,7 @@ function Jp(e, t = {
 }
 //#endregion
 //#region packages/docx/src/layout/retained-typography.ts
-function Yp(e) {
+function hm(e) {
 	if (!Number.isFinite(e.advancePt) || e.advancePt <= 0) throw RangeError("Tab leader glyph advance must be finite and positive");
 	let t = Math.floor(e.interval.widthPt / e.advancePt), n = e.interval.widthPt - t * e.advancePt;
 	return Array.from({ length: t }, (t, r) => ({
@@ -12215,7 +12676,7 @@ function Yp(e) {
 		color: e.color
 	}));
 }
-function Xp(e) {
+function gm(e) {
 	let t;
 	if (e.raisePt !== void 0) t = e.baseOrigin.yPt - e.raisePt;
 	else if (e.baseInkTopPt !== void 0 && e.guideInkBottomFromBaselinePt !== void 0) t = e.baseInkTopPt - e.guideInkBottomFromBaselinePt;
@@ -12234,31 +12695,31 @@ function Xp(e) {
 		color: e.color
 	}));
 }
-function Zp(e) {
+function _m(e) {
 	return -(e.inkBounds?.ascentPt ?? e.ascentPt);
 }
-function Qp(e) {
+function vm(e) {
 	return e.inkBounds?.descentPt ?? e.descentPt;
 }
-function $p(e) {
+function ym(e) {
 	let t = e.inkBounds ? e.inkBounds.ascentPt + e.inkBounds.descentPt : Math.min(e.ascentPt, e.descentPt);
 	if (!Number.isFinite(t) || t <= 0) throw Error("Retained decoration probe requires positive selected-face ink");
 	return t;
 }
-function em(e) {
+function bm(e) {
 	return e === "double" || e === "dbl" ? "double" : e?.includes("dot") ? "dotted" : e?.includes("dash") ? "dashed" : e?.includes("wave") ? "wavy" : "solid";
 }
-function tm(e, t, n) {
+function xm(e, t, n) {
 	let r = Math.max(0, t.xPt - e.xPt), i = n * 2, a = Math.max(1, Math.ceil(r / i));
 	return Array.from({ length: a + 1 }, (t, i) => ({
 		xPt: e.xPt + r * i / a,
 		yPt: e.yPt + (i % 2 == 0 ? -n / 2 : n / 2)
 	}));
 }
-function nm(e) {
+function Sm(e) {
 	let t = [], n = e.origin.xPt + e.advancePt;
 	if (e.underline) {
-		let r = $p(e.underline.probe), i = e.origin.yPt + (Zp(e.underline.probe) + Qp(e.underline.probe)) / 2, a = e.origin.yPt + Qp(e.base) + r / 2, o = Math.max(i, a), s = em(e.underline.authoredStyle), c = {
+		let r = ym(e.underline.probe), i = e.origin.yPt + (_m(e.underline.probe) + vm(e.underline.probe)) / 2, a = e.origin.yPt + vm(e.base) + r / 2, o = Math.max(i, a), s = bm(e.underline.authoredStyle), c = {
 			kind: "underline",
 			...e.underline.authoredStyle === void 0 ? {} : { authoredStyle: e.underline.authoredStyle },
 			color: e.underline.color,
@@ -12302,16 +12763,16 @@ function nm(e) {
 				style: s,
 				from: i,
 				to: a,
-				...s === "wavy" ? { path: tm(i, a, r) } : {},
+				...s === "wavy" ? { path: xm(i, a, r) } : {},
 				...s === "dotted" ? { dashPatternPt: [r, r * 2] } : {},
 				...s === "dashed" ? { dashPatternPt: [r * 4, r * 3] } : {}
 			});
 		}
 	}
 	if (e.strike) {
-		let r = $p(e.strike.probe);
+		let r = ym(e.strike.probe);
 		if (e.strike.double && e.strike.doubleProbe) {
-			let i = e.origin.yPt + Zp(e.strike.doubleProbe) + r / 2, a = e.origin.yPt + Qp(e.strike.doubleProbe) - r / 2;
+			let i = e.origin.yPt + _m(e.strike.doubleProbe) + r / 2, a = e.origin.yPt + vm(e.strike.doubleProbe) - r / 2;
 			for (let o of [i, a]) t.push({
 				kind: "strikethrough",
 				color: e.color,
@@ -12327,7 +12788,7 @@ function nm(e) {
 				}
 			});
 		} else {
-			let i = e.origin.yPt + (Zp(e.strike.probe) + Qp(e.strike.probe)) / 2;
+			let i = e.origin.yPt + (_m(e.strike.probe) + vm(e.strike.probe)) / 2;
 			t.push({
 				kind: "strikethrough",
 				color: e.color,
@@ -12346,7 +12807,7 @@ function nm(e) {
 	}
 	return t;
 }
-function rm(e) {
+function Cm(e) {
 	let t = e.mark.inkBounds.xMaxPt - e.mark.inkBounds.xMinPt, n = e.mark.inkBounds.ascentPt + e.mark.inkBounds.descentPt;
 	if (!(t > 0) || !(n > 0)) throw Error("Retained emphasis glyph requires positive selected-face ink bounds");
 	let r = [];
@@ -12371,22 +12832,22 @@ function rm(e) {
 	}
 	return r;
 }
-function im(e, t) {
+function wm(e, t) {
 	return e.val === t.val && e.color === t.color && e.widthPt === t.widthPt && e.spacePt === t.spacePt && e.themeColor === t.themeColor && e.themeTint === t.themeTint && e.themeShade === t.themeShade && e.shadow === t.shadow && e.frame === t.frame;
 }
-function am(e) {
+function Tm(e) {
 	let t = [], n = 0;
 	for (; n < e.length;) {
 		let r = e[n], i = n + 1, a = r.bounds.xPt + r.bounds.widthPt + r.trailingSlackPt;
 		for (; i < e.length;) {
 			let t = e[i];
-			if (!im(r.border, t.border) || Math.abs(t.bounds.xPt - a) > 1e-6 || t.bounds.yPt !== r.bounds.yPt || t.bounds.heightPt !== r.bounds.heightPt) break;
+			if (!wm(r.border, t.border) || Math.abs(t.bounds.xPt - a) > 1e-6 || t.bounds.yPt !== r.bounds.yPt || t.bounds.heightPt !== r.bounds.heightPt) break;
 			a = t.bounds.xPt + t.bounds.widthPt + t.trailingSlackPt, i += 1;
 		}
 		let o = r.bounds.xPt - r.border.spacePt, s = r.bounds.yPt - r.border.spacePt, c = a + r.border.spacePt, l = r.bounds.yPt + r.bounds.heightPt + r.border.spacePt, u = {
 			color: r.border.color,
 			widthPt: r.border.widthPt,
-			...ri(r.border.val, r.border.widthPt)
+			...ii(r.border.val, r.border.widthPt)
 		};
 		t.push({
 			...u,
@@ -12438,7 +12899,7 @@ function am(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/anchor-compatibility.ts
-var om = G({
+var Em = W({
 	id: "word-zero-relative-size",
 	evidence: {
 		kind: "regression-test",
@@ -12446,42 +12907,42 @@ var om = G({
 	},
 	description: "Word 2010 accepts only positive wp14:pctWidth and wp14:pctHeight values under [MS-ODRAWXML] notes 125/126. Preserve an authored zero as acquisition evidence while resolving the object from wp:extent."
 });
-G({
+W({
 	id: "word-vertical-section-physical-drawing-layer",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/anchor-vertical-physical.test.ts#lands an upright-section anchor at the recorded physical centroid"
 	},
 	description: "Resolve anchored drawings in an upright vertical section against the physical page frame independently of the rotated text-flow coordinate space."
-}), G({
+}), W({
 	id: "word-page-level-float-prescan",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/page-anchor-prescan.test.ts#pre-scan REGISTERS a page-level (relativeFrom=\"margin\") wrap float on an earlier-scanned paragraph"
 	},
 	description: "A wrapping drawing whose vertical reference is page-level participates from page start so source-earlier paragraphs on that page see its exclusion."
-}), G({
+}), W({
 	id: "word-paragraph-anchor-pre-spacing-origin",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/anchor-paragraph-spacebefore.test.ts#anchors a wrapSquare paragraph float at the pre-spaceBefore paragraph top"
 	},
 	description: "Resolve a paragraph-relative anchored drawing from the paragraph top before applying the paragraph spaceBefore contribution."
-}), G({
+}), W({
 	id: "word-vertical-section-physical-header-footer",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/vertical-header-footer.test.ts#recovers the physical page box + margins from the logical (swapped) section"
 	},
 	description: "Paint a vertical section header and footer in the unrotated physical page frame rather than rotating them with the body text flow."
-}), G({
+}), W({
 	id: "word-frame-auto-wrap-around",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/frame-geometry.test.ts#wrap=\"around\" and \"auto\" → square float (auto ≡ around in Word)"
 	},
 	description: "Resolve an authored frame wrap value of auto through the same square side-wrap path as around."
-}), G({
+}), W({
 	id: "word-lower-layer-same-paragraph-anchor-composition",
 	evidence: {
 		kind: "office-observation",
@@ -12491,7 +12952,7 @@ G({
 		platform: "macOS 26.5.2"
 	},
 	description: "Word preserves a source-later, lower-z, page-owned drawing at its authored position when it belongs to the same anchor paragraph as already composed higher layers. This is a Word-observed compatibility override to ECMA-376 §20.4.2.3, not a normative OOXML rule."
-}), G({
+}), W({
 	id: "word-textbox-visible-anchor-extent",
 	evidence: {
 		kind: "office-observation",
@@ -12501,7 +12962,7 @@ G({
 		platform: "macOS 26.5.2"
 	},
 	description: "For DrawingML middle and bottom text anchoring, derive the positioned extent through the last visible retained block while preserving structural trailing empty paragraphs and terminal paragraph spacing in the complete story."
-}), G({
+}), W({
 	id: "word-overlapping-layout-in-cell-overlay",
 	evidence: {
 		kind: "regression-test",
@@ -12509,35 +12970,35 @@ G({
 	},
 	description: "Word leaves an overlap-permitted, non-wrapping layoutInCell drawing as an overlay instead of growing its automatic table row. This is an Office compatibility exception to the general resize behavior in ECMA-376 §20.4.2.3 layoutInCell; non-overlap drawings retain normative cell containment."
 });
-function sm(e, t) {
+function Dm(e, t) {
 	return !e || t !== "none";
 }
-function cm(e) {
+function Om(e) {
 	return e.shading || e.borders.length > 0 || e.resources.length > 0 || e.drawings.length > 0 || e.textBoxes.length > 0 || e.lineNumbers?.some((e) => e.paintOps.length > 0) ? !0 : e.lines.some((e) => e.placements.some((e) => e.kind === "text" || e.kind === "resource" || e.kind === "drawing" ? !0 : e.kind === "tab" && (e.leaderGlyphs?.length ?? 0) > 0));
 }
-function lm(e) {
+function km(e) {
 	let t = e.flowBounds.yPt, n;
 	for (let r of e.blocks) {
 		if (r.kind === "table") {
 			n = Math.max(n ?? t, r.flowBounds.yPt + r.advancePt);
 			continue;
 		}
-		r.kind !== "paragraph" || !cm(r) || (n = Math.max(n ?? t, r.flowBounds.yPt + Math.max(0, r.advancePt - r.spacing.afterPt)));
+		r.kind !== "paragraph" || !Om(r) || (n = Math.max(n ?? t, r.flowBounds.yPt + Math.max(0, r.advancePt - r.spacing.afterPt)));
 	}
 	return n === void 0 ? 0 : Math.max(0, n - t);
 }
-function um(e) {
+function Am(e) {
 	return e === 0;
 }
-function dm(e, t) {
+function jm(e, t) {
 	return e == null ? !t : e !== "paragraph" && e !== "line" && e !== "character";
 }
-function fm(e, t, n) {
+function Mm(e, t, n) {
 	return e === "page" && t !== null && n !== void 0 && t < n;
 }
 //#endregion
 //#region packages/docx/src/layout/anchor-frame.ts
-var pm = 21600;
+var Nm = 21600;
 function Z(e, t, n) {
 	return {
 		code: e,
@@ -12545,13 +13006,13 @@ function Z(e, t, n) {
 		message: n
 	};
 }
-function mm(e) {
+function Pm(e) {
 	return typeof e == "number" && Number.isFinite(e);
 }
-function hm(e) {
-	return mm(e.xPt) && mm(e.yPt) && mm(e.widthPt) && mm(e.heightPt) && e.widthPt >= 0 && e.heightPt >= 0;
+function Fm(e) {
+	return Pm(e.xPt) && Pm(e.yPt) && Pm(e.widthPt) && Pm(e.heightPt) && e.widthPt >= 0 && e.heightPt >= 0;
 }
-function gm(e) {
+function Im(e) {
 	return e.kind === "align" ? e.value : e.kind === "offset" ? e.valuePt : e.kind === "percent" ? e.fraction : null;
 }
 function Q(e, t, n, r = !1) {
@@ -12561,22 +13022,22 @@ function Q(e, t, n, r = !1) {
 		status: "unsupported",
 		relativeFrom: r ? "page" : i.relativeFrom,
 		choiceKind: r ? "simple-position" : i.choice.kind,
-		choiceValue: r ? e === "horizontal" ? t.simplePosition.xPt : t.simplePosition.yPt : gm(i.choice),
+		choiceValue: r ? e === "horizontal" ? t.simplePosition.xPt : t.simplePosition.yPt : Im(i.choice),
 		issueCode: n.code
 	};
 }
-function _m(e, t, n, r) {
+function Lm(e, t, n, r) {
 	let i = n[e];
-	return i === null ? { problem: Z("missing-reference-frame", r, `${e} frame is required`) } : hm(i) ? { base: {
+	return i === null ? { problem: Z("missing-reference-frame", r, `${e} frame is required`) } : Fm(i) ? { base: {
 		startPt: t === "horizontal" ? i.xPt : i.yPt,
 		endPt: t === "horizontal" ? i.xPt + i.widthPt : i.yPt + i.heightPt,
 		referenceFrame: e
 	} } : { problem: Z("invalid-reference-frame", r, `${e} frame must be finite and non-negative`) };
 }
-function vm(e, t, n, r) {
-	let i = _m("page", t, n, r);
+function Rm(e, t, n, r) {
+	let i = Lm("page", t, n, r);
 	if (!i.base) return i;
-	let a = _m("margin", t, n, r);
+	let a = Lm("margin", t, n, r);
 	if (!a.base) return a;
 	let o = n.page, s = n.margin, c = e === "leftMargin" || e === "rightMargin";
 	if (c !== (t === "horizontal")) return { problem: Z("unsupported-relative-from", r, `${e} is not valid for the ${t} axis`) };
@@ -12589,23 +13050,23 @@ function vm(e, t, n, r) {
 		referenceFrame: e
 	} };
 }
-function ym(e, t, n, r) {
-	if (t === "page" || t === "margin" || e === "horizontal" && (t === "column" || t === "character") || e === "vertical" && (t === "paragraph" || t === "line")) return _m(t, e, n, r);
-	if (e === "horizontal" && (t === "leftMargin" || t === "rightMargin") || e === "vertical" && (t === "topMargin" || t === "bottomMargin")) return vm(t, e, n, r);
+function zm(e, t, n, r) {
+	if (t === "page" || t === "margin" || e === "horizontal" && (t === "column" || t === "character") || e === "vertical" && (t === "paragraph" || t === "line")) return Lm(t, e, n, r);
+	if (e === "horizontal" && (t === "leftMargin" || t === "rightMargin") || e === "vertical" && (t === "topMargin" || t === "bottomMargin")) return Rm(t, e, n, r);
 	if (t === "insideMargin" || t === "outsideMargin") {
 		if (n.pageParity === null) return { problem: Z("missing-page-parity", r, `${t} requires explicit page parity`) };
 		let i = t === "insideMargin" == (n.pageParity === "odd");
 		return {
-			...vm(e === "horizontal" ? i ? "leftMargin" : "rightMargin" : i ? "topMargin" : "bottomMargin", e, n, r),
+			...Rm(e === "horizontal" ? i ? "leftMargin" : "rightMargin" : i ? "topMargin" : "bottomMargin", e, n, r),
 			parityRequired: !0
 		};
 	}
 	return { problem: Z("unsupported-relative-from", r, `${t} is not a valid ${e} reference`) };
 }
-function bm(e, t, n) {
+function Bm(e, t, n) {
 	let r = t.relativeSize[e], i = e === "horizontal" ? "width" : "height", a = (n = null) => {
 		let r = e === "horizontal" ? t.extent.widthStatus : t.extent.heightStatus, a = e === "horizontal" ? t.extent.widthPt : t.extent.heightPt;
-		return r === "missing" ? { problem: Z("missing-size", `extent.${i}`, `${i} is required`) } : r !== "valid" || !mm(a) || a <= 0 ? { problem: Z("invalid-size", `extent.${i}`, `${i} extent must be finite and positive`) } : { resolved: {
+		return r === "missing" ? { problem: Z("missing-size", `extent.${i}`, `${i} is required`) } : r !== "valid" || !Pm(a) || a <= 0 ? { problem: Z("invalid-size", `extent.${i}`, `${i} extent must be finite and positive`) } : { resolved: {
 			valuePt: a,
 			diagnostic: {
 				source: "extent",
@@ -12613,25 +13074,25 @@ function bm(e, t, n) {
 				relativeFrom: n?.relativeFrom ?? null,
 				referenceFrame: null,
 				fraction: n?.fraction ?? null,
-				...n === null ? {} : { compatibilityFallback: om.id }
+				...n === null ? {} : { compatibilityFallback: Em.id }
 			}
 		} };
 	};
 	if (r === null) return a();
 	let o = `relativeSize.${e}`;
 	if (r.fractionStatus === "missing" || r.fraction === null) return { problem: Z("missing-relative-size-fraction", `${o}.fraction`, "relative size fraction is required") };
-	if (r.fractionStatus !== "valid" || !mm(r.fraction)) return { problem: Z("invalid-relative-size-fraction", `${o}.fraction`, "relative size fraction must be finite") };
+	if (r.fractionStatus !== "valid" || !Pm(r.fraction)) return { problem: Z("invalid-relative-size-fraction", `${o}.fraction`, "relative size fraction must be finite") };
 	if (r.fraction < 0) return { problem: Z("invalid-relative-size-fraction", `${o}.fraction`, "relative size fraction must be non-negative") };
-	if (um(r.fraction)) return a({
+	if (Am(r.fraction)) return a({
 		relativeFrom: r.relativeFrom,
 		fraction: r.fraction
 	});
 	if (r.relativeFromStatus === "missing" || r.relativeFrom === null) return { problem: Z("missing-relative-size-reference", `${o}.relativeFrom`, "relative size reference is required") };
 	if (r.relativeFromStatus !== "valid") return { problem: Z("invalid-relative-size-reference", `${o}.relativeFrom`, "relative size reference is invalid") };
-	let s = ym(e, r.relativeFrom, n, `${o}.relativeFrom`);
+	let s = zm(e, r.relativeFrom, n, `${o}.relativeFrom`);
 	if (!s.base) return { problem: Z(s.problem?.code === "missing-reference-frame" ? "missing-relative-size-reference" : "invalid-relative-size-reference", `${o}.relativeFrom`, s.problem?.message ?? "relative size reference cannot be resolved") };
 	let c = (s.base.endPt - s.base.startPt) * r.fraction;
-	return !mm(c) || c < 0 ? { problem: Z("invalid-relative-size-fraction", `${o}.fraction`, "relative size result must be finite and non-negative") } : { resolved: {
+	return !Pm(c) || c < 0 ? { problem: Z("invalid-relative-size-fraction", `${o}.fraction`, "relative size result must be finite and non-negative") } : { resolved: {
 		valuePt: c,
 		diagnostic: {
 			source: "relative",
@@ -12642,7 +13103,7 @@ function bm(e, t, n) {
 		}
 	} };
 }
-function xm(e, t, n, r) {
+function Vm(e, t, n, r) {
 	let i = n[e], a = e;
 	if (i.relativeFromStatus === "missing" || i.relativeFrom === null) {
 		let t = Z("missing-relative-from", `${a}.relativeFrom`, `${e} relativeFrom is required`);
@@ -12658,7 +13119,7 @@ function xm(e, t, n, r) {
 			problem: t
 		};
 	}
-	let o = ym(e, i.relativeFrom, r, `${a}.relativeFrom`);
+	let o = zm(e, i.relativeFrom, r, `${a}.relativeFrom`);
 	if (!o.base) {
 		let t = o.problem;
 		return {
@@ -12683,7 +13144,7 @@ function xm(e, t, n, r) {
 	}
 	let c = o.base.endPt - o.base.startPt, l, u;
 	if (s.kind === "offset") {
-		if (!mm(s.valuePt)) {
+		if (!Pm(s.valuePt)) {
 			let t = Z("invalid-axis-value", `${a}.choice`, "offset must be finite");
 			return {
 				diagnostic: Q(e, n, t),
@@ -12692,7 +13153,7 @@ function xm(e, t, n, r) {
 		}
 		l = o.base.startPt + s.valuePt, u = s.valuePt;
 	} else if (s.kind === "percent") {
-		if (!mm(s.fraction)) {
+		if (!Pm(s.fraction)) {
 			let t = Z("invalid-axis-value", `${a}.choice`, "percentage must be finite");
 			return {
 				diagnostic: Q(e, n, t),
@@ -12736,7 +13197,7 @@ function xm(e, t, n, r) {
 			problem: t
 		};
 	}
-	if (!mm(l)) {
+	if (!Pm(l)) {
 		let t = Z("invalid-axis-value", `${a}.choice`, "resolved origin is not finite");
 		return {
 			diagnostic: Q(e, n, t),
@@ -12759,7 +13220,7 @@ function xm(e, t, n, r) {
 		}
 	};
 }
-function Sm(e, t, n) {
+function Hm(e, t, n) {
 	let r = e === "horizontal" ? n.xPt : n.yPt, i = e === "horizontal" ? n.xPt + n.widthPt : n.yPt + n.heightPt, a = r + t;
 	return {
 		valuePt: a,
@@ -12777,20 +13238,20 @@ function Sm(e, t, n) {
 		}
 	};
 }
-var Cm = [
+var Um = [
 	"top",
 	"right",
 	"bottom",
 	"left"
 ];
-function wm(e, t) {
+function Wm(e, t) {
 	return e[`${t}Status`];
 }
-function Tm(e, t) {
+function Gm(e, t) {
 	return e[`${t}Pt`];
 }
-function Em(e, t, n) {
-	let r = Cm.some((t) => wm(e, t) !== "missing");
+function Km(e, t, n) {
+	let r = Um.some((t) => Wm(e, t) !== "missing");
 	if (!n && !r) return { values: {
 		topPt: 0,
 		rightPt: 0,
@@ -12803,35 +13264,35 @@ function Em(e, t, n) {
 		bottomPt: 0,
 		leftPt: 0
 	};
-	for (let n of Cm) {
-		let r = wm(e, n), a = Tm(e, n);
-		if (r !== "valid" || !mm(a)) return { problem: Z("invalid-effect-extent", `${t}.${n}`, "present effectExtent requires four finite edge values") };
+	for (let n of Um) {
+		let r = Wm(e, n), a = Gm(e, n);
+		if (r !== "valid" || !Pm(a)) return { problem: Z("invalid-effect-extent", `${t}.${n}`, "present effectExtent requires four finite edge values") };
 		i[`${n}Pt`] = a;
 	}
 	return { values: i };
 }
-function Dm(e, t) {
+function qm(e, t) {
 	let n = {
 		topPt: 0,
 		rightPt: 0,
 		bottomPt: 0,
 		leftPt: 0
 	}, r = {};
-	for (let i of Cm) {
-		let a = wm(t, i), o = wm(e, i), s = a === "valid" || a === "invalid" ? {
+	for (let i of Um) {
+		let a = Wm(t, i), o = Wm(e, i), s = a === "valid" || a === "invalid" ? {
 			status: a,
-			value: Tm(t, i),
+			value: Gm(t, i),
 			source: "wrap"
 		} : o === "valid" || o === "invalid" ? {
 			status: o,
-			value: Tm(e, i),
+			value: Gm(e, i),
 			source: "anchor"
 		} : {
 			status: "missing",
 			value: null,
 			source: "implicit-zero"
 		};
-		if (s.status === "invalid" || s.status === "valid" && (!mm(s.value) || s.value < 0)) return { problem: Z("invalid-distance", `${s.source === "wrap" ? "wrap.distances" : "anchorDistances"}.${i}`, "wrap distance must be finite and non-negative") };
+		if (s.status === "invalid" || s.status === "valid" && (!Pm(s.value) || s.value < 0)) return { problem: Z("invalid-distance", `${s.source === "wrap" ? "wrap.distances" : "anchorDistances"}.${i}`, "wrap distance must be finite and non-negative") };
 		n[`${i}Pt`] = s.status === "missing" ? 0 : s.value, r[i] = s.source;
 	}
 	return { resolved: {
@@ -12839,24 +13300,24 @@ function Dm(e, t) {
 		sources: r
 	} };
 }
-function Om(e, t) {
+function Jm(e, t) {
 	let n = {
 		xPt: e.xPt - t.leftPt,
 		yPt: e.yPt - t.topPt,
 		widthPt: e.widthPt + t.leftPt + t.rightPt,
 		heightPt: e.heightPt + t.topPt + t.bottomPt
 	};
-	return hm(n) ? n : null;
+	return Fm(n) ? n : null;
 }
-function km(e, t) {
+function Ym(e, t) {
 	let n = e.wrap.polygon;
-	if (n === null || n.invalidPointCount !== 0 || n.coordinateSpace.width !== pm || n.coordinateSpace.height !== pm || n.points.length < 3) return { problem: Z("invalid-wrap-polygon", "wrap.polygon", "tight and through wrapping require a valid fixed 21600 by 21600 polygon") };
+	if (n === null || n.invalidPointCount !== 0 || n.coordinateSpace.width !== Nm || n.coordinateSpace.height !== Nm || n.points.length < 3) return { problem: Z("invalid-wrap-polygon", "wrap.polygon", "tight and through wrapping require a valid fixed 21600 by 21600 polygon") };
 	let r = [];
 	for (let [e, i] of n.points.entries()) {
-		if (!mm(i.x) || !mm(i.y)) return { problem: Z("invalid-wrap-polygon", `wrap.polygon.points.${e}`, "polygon coordinates must be finite") };
+		if (!Pm(i.x) || !Pm(i.y)) return { problem: Z("invalid-wrap-polygon", `wrap.polygon.points.${e}`, "polygon coordinates must be finite") };
 		r.push({
-			xPt: t.xPt + i.x / pm * t.widthPt,
-			yPt: t.yPt + i.y / pm * t.heightPt
+			xPt: t.xPt + i.x / Nm * t.widthPt,
+			yPt: t.yPt + i.y / Nm * t.heightPt
 		});
 	}
 	let i = r.map((e) => e.xPt), a = r.map((e) => e.yPt), o = Math.min(...i), s = Math.max(...i), c = Math.min(...a), l = Math.max(...a);
@@ -12873,7 +13334,7 @@ function km(e, t) {
 		}
 	};
 }
-function Am(e) {
+function Xm(e) {
 	return {
 		coordinateSpace: "anchor-frame",
 		groupApplication: "parser-resolved-child-frame",
@@ -12887,10 +13348,10 @@ function Am(e) {
 		}
 	};
 }
-function jm(e) {
-	return V(e, "anchor frame result");
+function Zm(e) {
+	return B(e, "anchor frame result");
 }
-function Mm(e) {
+function Qm(e) {
 	let { acquisition: t, frames: n } = e;
 	for (let e of [
 		"relativeHeight",
@@ -12902,7 +13363,7 @@ function Mm(e) {
 		let n = t.behavior[`${e}Status`], r = t.behavior[e];
 		if (n === "valid" && r !== null) continue;
 		let i = Z(n === "missing" ? "missing-required-behavior" : "invalid-required-behavior", `behavior.${e}`, `CT_Anchor requires a ${e} value`);
-		return jm({
+		return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -12912,7 +13373,7 @@ function Mm(e) {
 			issues: [i]
 		});
 	}
-	let r = [], i = bm("horizontal", t, n), a = bm("vertical", t, n);
+	let r = [], i = Bm("horizontal", t, n), a = Bm("vertical", t, n);
 	i.problem && r.push(i.problem), a.problem && r.push(a.problem);
 	let o, s, c = i.problem ?? a.problem;
 	if (c || !i.resolved || !a.resolved) {
@@ -12928,8 +13389,8 @@ function Mm(e) {
 			problem: e
 		};
 	} else if (t.simplePosition.status === "valid" && t.simplePosition.enabled === !0) {
-		let e = _m("page", "horizontal", n, "frames.page"), i = t.simplePosition.xPt, a = t.simplePosition.yPt;
-		if (!e.base || n.page === null || !hm(n.page)) {
+		let e = Lm("page", "horizontal", n, "frames.page"), i = t.simplePosition.xPt, a = t.simplePosition.yPt;
+		if (!e.base || n.page === null || !Fm(n.page)) {
 			let n = e.problem ?? Z("invalid-reference-frame", "frames.page", "simple positioning requires a valid page frame");
 			r.push(n), o = {
 				diagnostic: Q("horizontal", t, n, !0),
@@ -12938,7 +13399,7 @@ function Mm(e) {
 				diagnostic: Q("vertical", t, n, !0),
 				problem: n
 			};
-		} else if (t.simplePosition.xStatus !== "valid" || !mm(i)) {
+		} else if (t.simplePosition.xStatus !== "valid" || !Pm(i)) {
 			let e = t.simplePosition.xStatus === "invalid", n = Z(e ? "invalid-simple-position" : "missing-simple-coordinate", "simplePosition.x", e ? "simple position x is lexically invalid" : "simple position x is required");
 			r.push(n), o = {
 				diagnostic: Q("horizontal", t, n, !0),
@@ -12947,7 +13408,7 @@ function Mm(e) {
 				diagnostic: Q("vertical", t, n, !0),
 				problem: n
 			};
-		} else if (t.simplePosition.yStatus !== "valid" || !mm(a)) {
+		} else if (t.simplePosition.yStatus !== "valid" || !Pm(a)) {
 			let e = t.simplePosition.yStatus === "invalid", n = Z(e ? "invalid-simple-position" : "missing-simple-coordinate", "simplePosition.y", e ? "simple position y is lexically invalid" : "simple position y is required");
 			r.push(n), o = {
 				diagnostic: Q("horizontal", t, n, !0),
@@ -12956,9 +13417,9 @@ function Mm(e) {
 				diagnostic: Q("vertical", t, n, !0),
 				problem: n
 			};
-		} else o = Sm("horizontal", i, n.page), s = Sm("vertical", a, n.page);
+		} else o = Hm("horizontal", i, n.page), s = Hm("vertical", a, n.page);
 	} else {
-		let e = xm("horizontal", i.resolved.valuePt, t, n), c = xm("vertical", a.resolved.valuePt, t, n);
+		let e = Vm("horizontal", i.resolved.valuePt, t, n), c = Vm("vertical", a.resolved.valuePt, t, n);
 		o = {
 			...e,
 			diagnostic: e.diagnostic
@@ -12967,7 +13428,7 @@ function Mm(e) {
 			diagnostic: c.diagnostic
 		}, e.problem && r.push(e.problem), c.problem && r.push(c.problem);
 	}
-	if (r.length > 0 || !i.resolved || !a.resolved || o.valuePt === void 0 || s.valuePt === void 0) return jm({
+	if (r.length > 0 || !i.resolved || !a.resolved || o.valuePt === void 0 || s.valuePt === void 0) return Zm({
 		status: "unsupported",
 		occurrenceId: t.occurrenceId,
 		axes: {
@@ -12981,10 +13442,10 @@ function Mm(e) {
 		yPt: s.valuePt,
 		widthPt: i.resolved.valuePt,
 		heightPt: a.resolved.valuePt
-	}, u = Em(t.parentEffectExtent, "parentEffectExtent", !1);
+	}, u = Km(t.parentEffectExtent, "parentEffectExtent", !1);
 	if (u.problem || !u.values) {
 		let e = u.problem;
-		return jm({
+		return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -12994,10 +13455,10 @@ function Mm(e) {
 			issues: [e]
 		});
 	}
-	let d = Om(l, u.values);
+	let d = Jm(l, u.values);
 	if (d === null) {
 		let e = Z("invalid-effect-extent", "parentEffectExtent", "parent effect extents produce invalid ink bounds");
-		return jm({
+		return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -13009,7 +13470,7 @@ function Mm(e) {
 	}
 	if (t.wrap.kind === "missing" || t.wrap.kind === "invalid") {
 		let e = Z(t.wrap.kind === "missing" ? "missing-wrap-kind" : "invalid-wrap-kind", "wrap.kind", "exactly one valid wrap kind is required");
-		return jm({
+		return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -13019,8 +13480,8 @@ function Mm(e) {
 			issues: [e]
 		});
 	}
-	let f = Dm(t.anchorDistances, t.wrap.distances);
-	if (f.problem || !f.resolved) return jm({
+	let f = qm(t.anchorDistances, t.wrap.distances);
+	if (f.problem || !f.resolved) return Zm({
 		status: "unsupported",
 		occurrenceId: t.occurrenceId,
 		axes: {
@@ -13037,7 +13498,7 @@ function Mm(e) {
 	].includes(t.wrap.side ?? "") ? t.wrap.side : null;
 	if (p && m === null) {
 		let e = Z("invalid-wrap-side", "wrap.side", "square, tight, and through wrapping require an authored wrap side");
-		return jm({
+		return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -13047,10 +13508,10 @@ function Mm(e) {
 			issues: [e]
 		});
 	}
-	let h = u.values, g = Cm.some((e) => wm(t.parentEffectExtent, e) !== "missing") ? "parent" : "none";
+	let h = u.values, g = Um.some((e) => Wm(t.parentEffectExtent, e) !== "missing") ? "parent" : "none";
 	if (t.wrap.effectExtent !== null) {
-		let e = Em(t.wrap.effectExtent, "wrap.effectExtent", !0);
-		if (e.problem || !e.values) return jm({
+		let e = Km(t.wrap.effectExtent, "wrap.effectExtent", !0);
+		if (e.problem || !e.values) return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -13063,8 +13524,8 @@ function Mm(e) {
 	}
 	let _ = null, v = null, y = null;
 	if (t.wrap.kind === "tight" || t.wrap.kind === "through") {
-		let e = km(t, l);
-		if (e.problem || !e.polygon || !e.bounds) return jm({
+		let e = Ym(t, l);
+		if (e.problem || !e.polygon || !e.bounds) return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -13082,9 +13543,9 @@ function Mm(e) {
 			bottomPt: 0,
 			leftPt: 0
 		}, g = "none";
-	} else if (t.wrap.kind !== "none" && (y = Om(l, h), y === null)) {
+	} else if (t.wrap.kind !== "none" && (y = Jm(l, h), y === null)) {
 		let e = Z("invalid-effect-extent", "wrap.effectExtent", "wrapping effect extents produce invalid bounds");
-		return jm({
+		return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -13094,10 +13555,10 @@ function Mm(e) {
 			issues: [e]
 		});
 	}
-	let b = y === null ? null : Om(y, f.resolved.values);
+	let b = y === null ? null : Jm(y, f.resolved.values);
 	if (y !== null && b === null) {
 		let e = Z("invalid-distance", "wrap.distances", "distances produce invalid bounds");
-		return jm({
+		return Zm({
 			status: "unsupported",
 			occurrenceId: t.occurrenceId,
 			axes: {
@@ -13107,7 +13568,7 @@ function Mm(e) {
 			issues: [e]
 		});
 	}
-	return jm({
+	return Zm({
 		status: "resolved",
 		occurrenceId: t.occurrenceId,
 		axes: {
@@ -13134,19 +13595,19 @@ function Mm(e) {
 				coordinateSpace: v,
 				polygon: _
 			},
-			transform: Am(t.group)
+			transform: Xm(t.group)
 		}
 	});
 }
 //#endregion
 //#region packages/docx/src/layout/paragraph-spacing.ts
-function Nm(e, t, n, r) {
+function $m(e, t, n, r) {
 	if (!e) return r;
 	let i = !!(e.styleId && e.styleId === t.styleId), a = !!(i && e.contextualSpacing), o = !!(i && t.contextualSpacing);
 	return a && o ? 0 : o ? n : a ? Math.max(r - n, 0) : Math.max(n, r);
 }
-function Pm(e, t, n, r) {
-	let i = Nm(e, t, n, r), a = i <= n;
+function eh(e, t, n, r) {
+	let i = $m(e, t, n, r), a = i <= n;
 	return {
 		suppressBefore: a,
 		overlap: n + (a ? 0 : r) - i
@@ -13154,27 +13615,27 @@ function Pm(e, t, n, r) {
 }
 //#endregion
 //#region packages/docx/src/layout/pagination-fields.ts
-function Fm(e) {
+function th(e) {
 	return Object.freeze(e.pages.map((e) => Object.freeze({
 		pageIndex: e.pageIndex,
 		displayPageNumber: e.pageNumber.displayNumber,
 		pageNumberFormat: e.pageNumber.format
 	})));
 }
-function Im(e) {
+function nh(e) {
 	if (e.fieldType === "page") return "page";
 	if (/numPages/i.test(e.fieldType) || /NUMPAGES/i.test(e.instruction)) return "total-pages";
 }
-function Lm(e) {
-	return e.some((e) => e.type === "paragraph" ? e.runs.some((e) => e.type === "field" ? Im(e) !== void 0 : !1) : e.type === "table" ? e.rows.some((e) => e.cells.some((e) => Lm(e.content))) : !1);
+function rh(e) {
+	return e.some((e) => e.type === "paragraph" ? e.runs.some((e) => e.type === "field" ? nh(e) !== void 0 : !1) : e.type === "table" ? e.rows.some((e) => e.cells.some((e) => rh(e.content))) : !1);
 }
-function Rm(e, t = [], n = []) {
-	return Lm(e) || t.some((e) => Lm(e.content)) || n.some((e) => Lm(e));
+function ih(e, t = [], n = []) {
+	return rh(e) || t.some((e) => rh(e.content)) || n.some((e) => rh(e));
 }
 //#endregion
 //#region packages/docx/src/layout/paragraph-wrap-registry.ts
-var zm = /* @__PURE__ */ new WeakMap(), Bm = "table-final-frame:";
-function Vm(e) {
+var ah = /* @__PURE__ */ new WeakMap(), oh = "table-final-frame:";
+function sh(e) {
 	let t = new Set(e.drawings.flatMap((e) => {
 		let t = e.anchorLayer?.acquisitionOccurrenceId ?? e.anchorLayer?.occurrenceId;
 		return t === void 0 ? [] : [t];
@@ -13184,46 +13645,46 @@ function Vm(e) {
 		collisions: Object.freeze((e.anchorCollisions ?? []).filter((e) => !t.has(e.occurrenceId)))
 	});
 }
-function Hm(e) {
+function ch(e) {
 	return new Set((e.anchorFrames ?? []).flatMap((e) => e.status === "resolved" ? [e.occurrenceId] : []));
 }
-function Um(e) {
-	let t = Hm(e), n = (e.anchorCollisions ?? []).filter((e) => t.has(e.occurrenceId)), r = new Set(n.map((e) => e.occurrenceId));
+function lh(e) {
+	let t = ch(e), n = (e.anchorCollisions ?? []).filter((e) => t.has(e.occurrenceId)), r = new Set(n.map((e) => e.occurrenceId));
 	for (let e of t) if (!r.has(e)) throw Error(`Paragraph anchor omitted collision geometry: ${e}`);
 	return Object.freeze(n);
 }
-function Wm(e) {
-	let t = Hm(e);
+function uh(e) {
+	let t = ch(e);
 	return Object.freeze(e.exclusions.filter((e) => e.anchorOccurrenceId !== void 0 && t.has(e.anchorOccurrenceId)));
 }
-function Gm(e) {
+function dh(e) {
 	return Object.freeze({
 		flowDomainId: e,
 		collisions: Object.freeze([]),
 		exclusions: Object.freeze([])
 	});
 }
-function Km(e, t) {
-	let n = zm.get(e);
-	n || (n = /* @__PURE__ */ new Map(), zm.set(e, n));
+function fh(e, t) {
+	let n = ah.get(e);
+	n || (n = /* @__PURE__ */ new Map(), ah.set(e, n));
 	let r = n.get(t);
 	if (r) return r;
-	let i = Gm(t);
+	let i = dh(t);
 	return n.set(t, i), i;
 }
-function qm(e, t, n) {
-	let r = zm.get(e);
+function ph(e, t, n) {
+	let r = ah.get(e);
 	if (!r || r.get(t.flowDomainId) !== t) throw Error("Paragraph wrap registry transaction is stale");
-	r.set(t.flowDomainId, Jm(t, n));
+	r.set(t.flowDomainId, mh(t, n));
 }
-function Jm(e, t) {
+function mh(e, t) {
 	if (t.flowDomainId !== e.flowDomainId) throw Error("Paragraph wrap registry cannot cross flow domains");
-	let n = new Set(e.collisions.map((e) => e.occurrenceId)), r = Um(t);
+	let n = new Set(e.collisions.map((e) => e.occurrenceId)), r = lh(t);
 	for (let e of r) {
 		if (n.has(e.occurrenceId)) throw Error(`Paragraph wrap occurrence committed twice: ${e.occurrenceId}`);
 		n.add(e.occurrenceId);
 	}
-	let i = Wm(t), a = new Set(r.map((e) => e.occurrenceId)), o = /* @__PURE__ */ new Set();
+	let i = uh(t), a = new Set(r.map((e) => e.occurrenceId)), o = /* @__PURE__ */ new Set();
 	for (let e of i) {
 		let t = e.anchorOccurrenceId;
 		if (t === void 0 || !a.has(t)) throw Error("Owned paragraph wrap exclusion omitted its collision occurrence");
@@ -13238,30 +13699,30 @@ function Jm(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/paragraph.ts
-function Ym(e, t) {
+function hh(e, t) {
 	if (!Number.isFinite(e) || e < 0) throw RangeError(`${t} must be finite and non-negative`);
 	return e;
 }
-function Xm(e) {
+function gh(e) {
 	if (!(!e || e.type !== "text" && e.type !== "field")) return e.typographyInput;
 }
-function Zm(e) {
+function _h(e) {
 	switch (e) {
 		case "left": return "left";
 		case "right": return "right";
 		default: return "center";
 	}
 }
-function Qm(e) {
-	return Ym(e.measuredWidthPt, "segment.measuredWidthPt");
+function vh(e) {
+	return hh(e.measuredWidthPt, "segment.measuredWidthPt");
 }
-function $m(e) {
+function yh(e) {
 	return e.map((e) => e.kind === "text" && !e.fixedPitch ? { text: e.text } : {});
 }
-function eh(e) {
+function bh(e) {
 	return e === "lowKashida" ? "low" : e === "mediumKashida" ? "medium" : e === "highKashida" ? "high" : null;
 }
-function th(e, t) {
+function xh(e, t) {
 	if (!e.textLayoutService || !e.textShapeRequest) throw Error("Kashida acquisition requires the retained TextLayoutService authority");
 	let n = e.textLayoutService.shape({
 		...e.textShapeRequest,
@@ -13270,9 +13731,9 @@ function th(e, t) {
 	}), r = e.basePaintOps[0]?.scaleX ?? 1, i = e.basePaintOps[0]?.letterSpacingPt ?? 0;
 	return n.advancePt * r + [...t].length * i;
 }
-function nh(e, t) {
+function Sh(e, t) {
 	if (!e) return null;
-	let n = fp(e), r = /* @__PURE__ */ new Map(), i = 0;
+	let n = Mp(e), r = /* @__PURE__ */ new Map(), i = 0;
 	for (let [n, a] of e.perSeg) {
 		let e = t[n], o = a.splitBefore;
 		if (e?.kind === "text") {
@@ -13295,7 +13756,7 @@ function nh(e, t) {
 		perSeg: r
 	};
 }
-function rh(e, t, n) {
+function Ch(e, t, n) {
 	if (!t || t.splitBefore.length === 0) return {
 		clusters: e.clusters,
 		paintOps: e.basePaintOps
@@ -13389,7 +13850,7 @@ function rh(e, t, n) {
 		}))
 	};
 }
-function ih(e, t) {
+function wh(e, t) {
 	return e.flatMap((e) => {
 		let n = e.text.trimEnd();
 		if (n === "" || n.length === e.text.length) return [e];
@@ -13416,13 +13877,13 @@ function ih(e, t) {
 		}];
 	});
 }
-function ah(e, t) {
+function Th(e, t) {
 	return e === void 0 || t === void 0 ? e === t : e.length === t.length && e.every((e, n) => e === t[n]);
 }
-function oh(e, t) {
-	return e.kind === "underline" && e.kind === t.kind && e.authoredStyle === t.authoredStyle && e.style === t.style && e.color === t.color && e.widthPt === t.widthPt && e.to.xPt === t.from.xPt && ah(e.dashPatternPt, t.dashPatternPt);
+function Eh(e, t) {
+	return e.kind === "underline" && e.kind === t.kind && e.authoredStyle === t.authoredStyle && e.style === t.style && e.color === t.color && e.widthPt === t.widthPt && e.to.xPt === t.from.xPt && Th(e.dashPatternPt, t.dashPatternPt);
 }
-function sh(e, t) {
+function Dh(e, t) {
 	let n = Math.max(e.from.yPt, t.from.yPt), r = {
 		xPt: e.from.xPt,
 		yPt: n
@@ -13434,10 +13895,10 @@ function sh(e, t) {
 		...o,
 		from: r,
 		to: i,
-		...e.style === "wavy" ? { path: tm(r, i, e.widthPt) } : {}
+		...e.style === "wavy" ? { path: xm(r, i, e.widthPt) } : {}
 	};
 }
-function ch(e) {
+function Oh(e) {
 	let t = [];
 	e.forEach((n, r) => {
 		if (n.kind !== "text" && n.kind !== "tab" || !n.decorations) {
@@ -13446,12 +13907,12 @@ function ch(e) {
 		}
 		let i = [], a = [], o = /* @__PURE__ */ new Set();
 		for (let s of n.decorations) {
-			let n = t.filter((e) => !o.has(e) && oh(e.decoration, s)).sort((e, t) => Math.abs(e.decoration.from.yPt - s.from.yPt) - Math.abs(t.decoration.from.yPt - s.from.yPt))[0];
+			let n = t.filter((e) => !o.has(e) && Eh(e.decoration, s)).sort((e, t) => Math.abs(e.decoration.from.yPt - s.from.yPt) - Math.abs(t.decoration.from.yPt - s.from.yPt))[0];
 			if (n) {
 				o.add(n);
 				let t = e[n.placementIndex];
 				if (!t || t.kind !== "text" && t.kind !== "tab" || !t.decorations) throw Error("Continuous decoration owner left the retained line");
-				let r = [...t.decorations], i = sh(n.decoration, s);
+				let r = [...t.decorations], i = Dh(n.decoration, s);
 				r[n.decorationIndex] = i, e[n.placementIndex] = {
 					...t,
 					decorations: r
@@ -13474,16 +13935,16 @@ function ch(e) {
 		}, t = a;
 	});
 }
-function lh(e) {
-	let { line: t } = e, n = t.segments, r = e.baseRtl || ec(n), i = tc(n.map((e) => e.kind === "tab" ? { isTab: !0 } : e.kind === "text" ? {
+function kh(e) {
+	let { line: t } = e, n = t.segments, r = e.baseRtl || mc(n), i = hc(n.map((e) => e.kind === "tab" ? { isTab: !0 } : e.kind === "text" ? {
 		text: e.text,
 		rtl: e.rtl,
 		digitsAsAN: e.digitsAsAN
-	} : {}), e.baseRtl), a = n.reduce((e, t) => e + Qm(t), 0), o = e.paragraphXPt + t.xOffsetPt, s = Math.min(e.availableWidthPt, t.availableWidthPt), c = e.isFirstLine ? e.numbering ? Ym(e.numbering.bodyOffsetPt, "numbering.bodyOffsetPt") : e.firstLineIndentPt ?? 0 : 0, l = e.baseRtl ? 0 : c, u = (e.baseRtl ? s - c : s) - l - a, d = e.isLastLine || t.endsWithBreak, f = e.displayMathJustification === void 0 ? nc(e.alignment, e.baseRtl) : Zm(e.displayMathJustification), p = f === "justify" && (!d || e.stretchLastLine), m = p ? eh(e.alignment) : null;
+	} : {}), e.baseRtl), a = n.reduce((e, t) => e + vh(t), 0), o = e.paragraphXPt + t.xOffsetPt, s = Math.min(e.availableWidthPt, t.availableWidthPt), c = e.isFirstLine ? e.numbering ? hh(e.numbering.bodyOffsetPt, "numbering.bodyOffsetPt") : e.firstLineIndentPt ?? 0 : 0, l = e.baseRtl ? 0 : c, u = (e.baseRtl ? s - c : s) - l - a, d = e.isLastLine || t.endsWithBreak, f = e.displayMathJustification === void 0 ? gc(e.alignment, e.baseRtl) : _h(e.displayMathJustification), p = f === "justify" && (!d || e.stretchLastLine), m = p ? bh(e.alignment) : null;
 	if (m && u > 0) {
-		let e = Vp(n.map((e) => e.kind === "text" ? { text: e.text } : {}), u, m, (e, t) => {
+		let e = sm(n.map((e) => e.kind === "text" ? { text: e.text } : {}), u, m, (e, t) => {
 			let r = n[e];
-			return r?.kind === "text" ? th(r, t) : 0;
+			return r?.kind === "text" ? xh(r, t) : 0;
 		});
 		e && (n = n.map((t, n) => {
 			if (t.kind !== "text") return t;
@@ -13507,26 +13968,26 @@ function lh(e) {
 		let e = n.findIndex((e) => e.kind !== "text" || /\S/.test(e.text));
 		g = e < 0 ? 0 : e;
 	}
-	let _ = null, v = 0, y = 0, b = $m(n);
+	let _ = null, v = 0, y = 0, b = yh(n);
 	if (p) {
-		let i = nh(dp(b, u, g, r ? h : n.length, -(t.baselinePt - t.topPt) * .25, u > 0, e.alignment === "thaiDistribute" && u > 0), n);
-		_ = i?.perSeg ?? null, v = i?.perGap ?? 0, y = fp(i);
+		let i = Sh(jp(b, u, g, r ? h : n.length, -(t.baselinePt - t.topPt) * .25, u > 0, e.alignment === "thaiDistribute" && u > 0), n);
+		_ = i?.perSeg ?? null, v = i?.perGap ?? 0, y = Mp(i);
 	} else if (u < 0) {
-		let e = nh(pp(b, u, g, r ? h : n.length, t.baselinePt - t.topPt), n);
-		_ = e?.perSeg ?? null, v = e?.perGap ?? 0, y = fp(e);
+		let e = Sh(Np(b, u, g, r ? h : n.length, t.baselinePt - t.topPt), n);
+		_ = e?.perSeg ?? null, v = e?.perGap ?? 0, y = Mp(e);
 	}
 	let x = a + y, S = u - y, C = f === "right" ? S : f === "center" ? S / 2 : f === "justify" && e.baseRtl && !p ? S : 0, w = o + l, T = e.decimalAutoTabPt === void 0 ? C : Math.max(0, e.paragraphXPt + e.decimalAutoTabPt - x - w), E = w + T, D = [];
 	for (let e of i.order) {
 		let r = n[e];
 		if (!r) continue;
-		let a = _?.get(e), o = a?.internalStretch ?? 0, s = Qm(r) + o;
+		let a = _?.get(e), o = a?.internalStretch ?? 0, s = vh(r) + o;
 		if (r.kind === "tab") {
 			let e = {
 				xPt: E,
 				yPt: t.topPt,
 				widthPt: r.measuredWidthPt,
 				heightPt: t.advancePt
-			}, n = r.underline ? nm({
+			}, n = r.underline ? Sm({
 				origin: {
 					xPt: E,
 					yPt: t.baselinePt
@@ -13543,7 +14004,7 @@ function lh(e) {
 				advancePt: r.measuredWidthPt,
 				leader: r.leader,
 				...n?.length ? { decorations: n } : {},
-				...r.leader === "none" ? {} : r.leaderShape ? { leaderGlyphs: Yp({
+				...r.leader === "none" ? {} : r.leaderShape ? { leaderGlyphs: hm({
 					interval: e,
 					baselinePt: t.baselinePt,
 					...r.leaderShape
@@ -13589,22 +14050,22 @@ function lh(e) {
 			...r.anchorOccurrenceId ? { anchorOccurrenceId: r.anchorOccurrenceId } : {}
 		});
 		else {
-			let { measuredWidthPt: n, breakBefore: o, rtl: c, digitsAsAN: l, fixedPitch: u, textLayoutService: d, textShapeRequest: f, retainedGeometry: p, direction: m, ...h } = r, g = rh(r, a, v), _ = i.rtl[e] ? "rtl" : "ltr", y = _ === "rtl" ? ih(g.paintOps, g.clusters) : g.paintOps, b = r.text.trimEnd().length, x = _ === "rtl" ? (h.fitText?.trailingPadPt ?? 0) + r.clusters.filter((e) => e.range.start >= r.range.start + b).reduce((e, t) => e + t.advancePt, 0) : 0, S = a?.trailingGap ? v : 0, C = {
+			let { measuredWidthPt: n, breakBefore: o, rtl: c, digitsAsAN: l, fixedPitch: u, textLayoutService: d, textShapeRequest: f, retainedGeometry: p, direction: m, ...h } = r, g = Ch(r, a, v), _ = i.rtl[e] ? "rtl" : "ltr", y = _ === "rtl" ? wh(g.paintOps, g.clusters) : g.paintOps, b = r.text.trimEnd().length, x = _ === "rtl" ? (h.fitText?.trailingPadPt ?? 0) + r.clusters.filter((e) => e.range.start >= r.range.start + b).reduce((e, t) => e + t.advancePt, 0) : 0, S = a?.trailingGap ? v : 0, C = {
 				xPt: E + x,
 				yPt: t.baselinePt
 			}, w = g.paintOps[0]?.offset.yPt ?? 0, T = {
 				xPt: E,
 				yPt: t.baselinePt + w
-			}, O = p ? nm({
+			}, O = p ? Sm({
 				origin: T,
 				advancePt: s + S,
 				base: p.base,
-				color: Mh(h.color),
+				color: Qh(h.color),
 				...p.underline ? { underline: p.underline } : {},
 				...p.strike ? { strike: p.strike } : {}
 			}) : h.decorations, k = p?.emphasis ? {
 				authored: p.emphasis.authored,
-				glyphs: rm({
+				glyphs: Cm({
 					authored: p.emphasis.authored,
 					glyph: p.emphasis.glyph,
 					origin: {
@@ -13677,7 +14138,7 @@ function lh(e) {
 			if (e?.kind !== "text" || !e.runBorder) break;
 			n += 1;
 		}
-		let r = am(D.slice(e, n).map((e) => ({
+		let r = Tm(D.slice(e, n).map((e) => ({
 			bounds: e.bounds,
 			trailingSlackPt: e.ownedTrailingSlackPt ?? 0,
 			border: e.runBorder
@@ -13687,7 +14148,7 @@ function lh(e) {
 			runBorderFragments: r
 		}, e = n;
 	}
-	return ch(D), fn({
+	return Oh(D), pn({
 		range: t.range,
 		bounds: {
 			xPt: w + T,
@@ -13700,7 +14161,7 @@ function lh(e) {
 		placements: D
 	});
 }
-function uh(e) {
+function Ah(e) {
 	let t = e.continuation, n = t?.lineStart ?? 0, r = t?.lineEnd ?? e.lines.length;
 	if (n < 0 || r < n || r > e.lines.length) throw RangeError("Paragraph continuation line range is outside the retained lines");
 	let i = t?.continuesFromPrevious ? 0 : e.spacing.beforePt;
@@ -13712,14 +14173,14 @@ function uh(e) {
 				let t = e.lines[a - 1];
 				i += Math.max(0, r.bounds.yPt - ((t?.bounds.yPt ?? r.bounds.yPt) + (t?.advancePt ?? 0)));
 			}
-			i += Ym(r.advancePt, "line.advancePt");
+			i += hh(r.advancePt, "line.advancePt");
 		}
 	}
-	return e.lines.length === 0 && e.paragraphMark && (i += Ym(e.paragraphMark.bounds.heightPt, "paragraphMark.heightPt")), t?.continuesOnNext || (i += e.spacing.afterPt), i;
+	return e.lines.length === 0 && e.paragraphMark && (i += hh(e.paragraphMark.bounds.heightPt, "paragraphMark.heightPt")), t?.continuesOnNext || (i += e.spacing.afterPt), i;
 }
-function dh(e) {
-	let t = e.continuation?.lineStart ?? 0, n = e.continuation?.lineEnd ?? e.lines.length, r = e.lines.slice(t, n), i = e.continuation ? uh(e) : Ym(e.flowBounds.heightPt, "flowBounds.heightPt");
-	return fn({
+function jh(e) {
+	let t = e.continuation?.lineStart ?? 0, n = e.continuation?.lineEnd ?? e.lines.length, r = e.lines.slice(t, n), i = e.continuation ? Ah(e) : hh(e.flowBounds.heightPt, "flowBounds.heightPt");
+	return pn({
 		kind: "paragraph",
 		id: e.id,
 		source: e.source,
@@ -13752,13 +14213,13 @@ function dh(e) {
 		...e.continuation ? { continuation: e.continuation } : {}
 	});
 }
-function fh(e, t) {
+function Mh(e, t) {
 	return {
 		...e,
 		path: [...e.path, t]
 	};
 }
-function ph(e, t) {
+function Nh(e, t) {
 	if (e.status === "planned") return Object.freeze([]);
 	let n = Object.freeze({
 		...t,
@@ -13769,13 +14230,13 @@ function ph(e, t) {
 		source: n
 	})));
 }
-function mh(e) {
-	return ln(e);
+function Ph(e) {
+	return un(e);
 }
-function hh(e, t) {
-	return an("unavailable-drawing", fh(e, t));
+function Fh(e, t) {
+	return on("unavailable-drawing", Mh(e, t));
 }
-function gh(e, t) {
+function Ih(e, t) {
 	return Object.freeze({
 		code: "MISSING_RESOURCE",
 		severity: "warning",
@@ -13786,13 +14247,13 @@ function gh(e, t) {
 		message: `Drawing ${e} resource is unavailable`
 	});
 }
-function _h(e) {
-	return Im(e) || (/^date$/i.test(e.fieldType) ? "date" : /^time$/i.test(e.fieldType) ? "time" : "document");
+function Lh(e) {
+	return nh(e) || (/^date$/i.test(e.fieldType) ? "date" : /^time$/i.test(e.fieldType) ? "time" : "document");
 }
-function vh(e) {
+function Rh(e) {
 	return e.sourceRunIndex;
 }
-function yh(e) {
+function zh(e) {
 	if (!e.textLayoutService || !e.textShapeRequest) return;
 	let t = e.textLayoutService.shape({
 		...e.textShapeRequest,
@@ -13804,7 +14265,7 @@ function yh(e) {
 		descentPt: t.descentPt
 	};
 }
-var bh = Object.freeze({
+var Bh = Object.freeze({
 	yellow: "#FFFF00",
 	cyan: "#00FFFF",
 	green: "#00FF00",
@@ -13822,17 +14283,17 @@ var bh = Object.freeze({
 	black: "#000000",
 	white: "#FFFFFF"
 });
-function xh(e) {
-	return e.startsWith("#") ? e : bh[e] ?? "#FFFF00";
+function Vh(e) {
+	return e.startsWith("#") ? e : Bh[e] ?? "#FFFF00";
 }
-function Sh(e) {
-	let t = Oo(e.vertAlign, e.fontSize) + (e.lineRelativePosition ?? e.position ?? 0);
+function Hh(e) {
+	let t = Lo(e.vertAlign, e.fontSize) + (e.lineRelativePosition ?? e.position ?? 0);
 	return t === 0 ? 0 : -t;
 }
-function Ch(e, t, n, r, i, a, o) {
-	let s = vh(e), c = s === void 0 ? void 0 : t.runs[s], l = Xm(c);
+function Uh(e, t, n, r, i, a, o) {
+	let s = Rh(e), c = s === void 0 ? void 0 : t.runs[s], l = gh(c);
 	if (e.metricOnly) {
-		let t = yh(e);
+		let t = zh(e);
 		return {
 			kind: "anchor-host",
 			range: {
@@ -13855,7 +14316,7 @@ function Ch(e, t, n, r, i, a, o) {
 	} : e.colorAuto ? {
 		kind: "auto",
 		...e.background ? { background: `#${e.background}` } : {}
-	} : { kind: "default" }, d = e.fontRoute ?? R(e.fontFamily ? `"${e.fontFamily.replaceAll("\"", "\\\"")}"` : "sans-serif", e.fontFamily ? "native" : "generic"), f = e.ruby && e.textLayoutService && e.textShapeRequest ? e.textLayoutService.shape({
+	} : { kind: "default" }, d = e.fontRoute ?? Re(e.fontFamily ? `"${e.fontFamily.replaceAll("\"", "\\\"")}"` : "sans-serif", e.fontFamily ? "native" : "generic"), f = e.ruby && e.textLayoutService && e.textShapeRequest ? e.textLayoutService.shape({
 		...e.textShapeRequest,
 		text: e.text,
 		measure: !0
@@ -13876,7 +14337,7 @@ function Ch(e, t, n, r, i, a, o) {
 			fontStyle: n.font.style,
 			color: u
 		};
-	}) : [], h = l?.ruby?.raisePt.status === "valid" ? l.ruby.raisePt.value ?? void 0 : e.ruby?.hpsRaisePt, g = e.ruby && p ? Xp({
+	}) : [], h = l?.ruby?.raisePt.status === "valid" ? l.ruby.raisePt.value ?? void 0 : e.ruby?.hpsRaisePt, g = e.ruby && p ? gm({
 		baseOrigin: {
 			xPt: 0,
 			yPt: 0
@@ -13889,14 +14350,14 @@ function Ch(e, t, n, r, i, a, o) {
 			guideInkBottomFromBaselinePt: p.inkBounds.descentPt
 		} : {},
 		spans: m
-	}) : [], _ = Sh(e);
+	}) : [], _ = Hh(e);
 	return {
 		kind: "text",
 		text: e.text,
 		...s === void 0 ? {} : { sourceRunIndex: s },
 		...c?.type === "field" ? {
 			role: "field-result",
-			dependency: _h(c)
+			dependency: Lh(c)
 		} : {},
 		...c?.type === "text" && (c.noteRef?.kind === "footnote" || c.noteRef?.kind === "endnote") ? { noteReference: {
 			kind: c.noteRef.kind,
@@ -13930,7 +14391,7 @@ function Ch(e, t, n, r, i, a, o) {
 		}],
 		color: u,
 		fontRoute: d,
-		fontSizePt: ii(e, 1),
+		fontSizePt: ai(e, 1),
 		fontWeight: e.bold ? 700 : 400,
 		fontStyle: e.italic ? "italic" : "normal",
 		direction: e.rtl ? "rtl" : "ltr",
@@ -13959,7 +14420,7 @@ function Ch(e, t, n, r, i, a, o) {
 			paintOps: g
 		} } : {},
 		...e.emphasisMark ? { emphasisMark: e.emphasisMark } : {},
-		...e.highlight ? { highlight: xh(e.highlight) } : {},
+		...e.highlight ? { highlight: Vh(e.highlight) } : {},
 		...e.background ? { background: `#${e.background}` } : {},
 		...e.border ? { runBorder: {
 			val: l?.border?.val.value ?? e.border.style,
@@ -14006,7 +14467,7 @@ function Ch(e, t, n, r, i, a, o) {
 				xPt: 0,
 				yPt: _
 			},
-			letterSpacingPt: ls(e),
+			letterSpacingPt: ys(e),
 			scaleX: e.charScale ?? 1,
 			direction: e.rtl ? "rtl" : "ltr",
 			kerning: e.kerning === void 0 ? "auto" : e.fontSize >= e.kerning ? "normal" : "none",
@@ -14015,30 +14476,30 @@ function Ch(e, t, n, r, i, a, o) {
 		...e.hyperlink ? { hyperlink: e.hyperlink } : {}
 	};
 }
-function wh(e, t) {
+function Wh(e, t) {
 	let n = e.layout, r = n.visibleAscent ?? n.ascent, i = r + (n.visibleDescent ?? n.descent), a = t.lineSpacing?.rule === "auto" && !t.hasRuby && !t.lineGrid.active, o = a && (t.lineSpacing?.value ?? 1) < 1, s = a && !o ? Math.max(i, n.visibleIntendedSingle ?? n.intendedSingle) : e.advancePt;
 	return e.topYPt + (s - i) / 2 + r;
 }
-function Th(e, t, n) {
+function Gh(e, t, n) {
 	let r = e.numbering;
 	if (!r) return;
 	if (t.numberingMarkerGeometry) return t.numberingMarkerGeometry;
 	let i = e.numberingMarkerShapeInput, a = n.environment.layoutServices?.text;
-	if (!(!i || !a)) return uc(r, i, {
+	if (!(!i || !a)) return kc(r, i, {
 		authoredFirstIndentPt: e.indentFirst,
 		physicalIndentLeftPt: t.physicalIndentLeftPt,
 		tabStops: e.tabStops,
 		defaultTabPt: t.defaultTabPt
 	}, a);
 }
-function Eh(e, t, n, r, i) {
+function Kh(e, t, n, r, i) {
 	return i.bounds.widthPt <= 0 ? t.baseRtl ? n + r : n : t.baseRtl ? i.bounds.xPt + i.bounds.widthPt + e.bodyOffsetPt : i.bounds.xPt - e.bodyOffsetPt;
 }
-function Dh(e, t, n, r, i, a) {
+function qh(e, t, n, r, i, a) {
 	if (!e.shape || e.markerText === "") return [];
-	let o = e.shape, s = oc({
+	let o = e.shape, s = Tc({
 		baseRtl: n.baseRtl,
-		alignedLeadingEdgePt: Eh(e, n, r, i, a),
+		alignedLeadingEdgePt: Kh(e, n, r, i, a),
 		authoredFirstIndentPt: t.indentFirst,
 		markerShiftPt: e.markerShiftPt,
 		markerWidthPt: e.markerWidthPt
@@ -14119,11 +14580,11 @@ function Dh(e, t, n, r, i, a) {
 		};
 	});
 }
-function Oh(e) {
+function Jh(e) {
 	if (e) return e.startsWith("#") ? e : `#${e}`;
 }
-function kh(e, t, n) {
-	let r = Oh(t), i = Oh(n);
+function Yh(e, t, n) {
+	let r = Jh(t), i = Jh(n);
 	return e.map((e) => ({
 		...e,
 		placements: e.placements.map((e) => {
@@ -14139,14 +14600,14 @@ function kh(e, t, n) {
 		})
 	}));
 }
-function Ah(e) {
+function Xh(e) {
 	return e != null && e.style !== "none";
 }
-function jh(e, t, n, r, i, a, o) {
+function Zh(e, t, n, r, i, a, o) {
 	let s = n, c = n + r;
 	e.indentFirst < 0 && (e.bidi ? c -= e.indentFirst : s += e.indentFirst);
 	for (let e of t.flatMap((e) => e.placements)) !(e.kind === "text" && e.role === "numbering-marker" || e.kind === "resource" && e.resourceKind === "picture-bullet") || !e.bounds || (s = Math.min(s, e.bounds.xPt), c = Math.max(c, e.bounds.xPt + e.bounds.widthPt));
-	let l = e.borders, u = o.top === "none" ? null : l?.[o.top] ?? null, d = o.bottom === "none" ? null : l?.bottom ?? null, f = Ah(l?.left ?? null) ? l.left.space ?? 0 : 0, p = Ah(l?.right ?? null) ? l.right.space ?? 0 : 0, m = Ah(u) ? u.space ?? 0 : 0, h = Ah(d) ? d.space ?? 0 : 0;
+	let l = e.borders, u = o.top === "none" ? null : l?.[o.top] ?? null, d = o.bottom === "none" ? null : l?.bottom ?? null, f = Xh(l?.left ?? null) ? l.left.space ?? 0 : 0, p = Xh(l?.right ?? null) ? l.right.space ?? 0 : 0, m = Xh(u) ? u.space ?? 0 : 0, h = Xh(d) ? d.space ?? 0 : 0;
 	return {
 		xPt: s - f,
 		yPt: i - m,
@@ -14154,10 +14615,10 @@ function jh(e, t, n, r, i, a, o) {
 		heightPt: a + m + h
 	};
 }
-function Mh(e) {
+function Qh(e) {
 	return e.kind === "explicit" ? e.color : e.kind === "auto" ? fe(e.background ?? "#FFFFFF") : "#000000";
 }
-function Nh(e) {
+function $h(e) {
 	return e.inkBounds ?? {
 		xMinPt: 0,
 		xMaxPt: e.advancePt,
@@ -14165,10 +14626,10 @@ function Nh(e) {
 		descentPt: e.descentPt
 	};
 }
-function Ph(e) {
+function eg(e) {
 	return e === "circle" ? "○" : e === "comma" ? "﹅" : "•";
 }
-function Fh(e, t, n) {
+function tg(e, t, n) {
 	if (!(e.highlight || e.underline || e.strikethrough || e.doubleStrikethrough || e.emphasisMark)) return;
 	let r = e.textLayoutService, i = e.textShapeRequest;
 	if (!r || !i) throw Error("Retained typography geometry requires TextLayoutService");
@@ -14190,7 +14651,7 @@ function Fh(e, t, n) {
 		ascentPt: s.ascentPt,
 		descentPt: s.descentPt,
 		inkBounds: e.selectedFaceInkBounds
-	}, l = Mh(n), u = e.underline ? {
+	}, l = Qh(n), u = e.underline ? {
 		...e.underlineStyle ? { authoredStyle: e.underlineStyle } : {},
 		color: e.underlineColor && e.underlineColor !== "auto" ? `#${e.underlineColor}` : l,
 		probe: o("_")
@@ -14199,7 +14660,7 @@ function Fh(e, t, n) {
 		probe: o("-"),
 		...e.doubleStrikethrough ? { doubleProbe: o("=") } : {}
 	} : void 0, f = e.emphasisMark ? (() => {
-		let r = Ph(e.emphasisMark), o = a(r), s = o.spans[0];
+		let r = eg(e.emphasisMark), o = a(r), s = o.spans[0];
 		if (!s) throw Error("Emphasis shaping produced no selected-face span");
 		let c = (e.shapedClusters ?? []).map((n) => {
 			let r = e.text.slice(n.range.start, n.range.end);
@@ -14209,14 +14670,14 @@ function Fh(e, t, n) {
 					start: t + n.range.start,
 					end: t + n.range.end
 				},
-				ink: Nh(a(r))
+				ink: $h(a(r))
 			};
 		});
 		return {
 			authored: e.emphasisMark,
 			glyph: r,
 			mark: {
-				inkBounds: Nh(o),
+				inkBounds: $h(o),
 				fontRoute: s.fontRoute,
 				fontSizePt: i.fontSizePt,
 				fontWeight: s.font.weight,
@@ -14233,9 +14694,9 @@ function Fh(e, t, n) {
 		...f ? { emphasis: f } : {}
 	};
 }
-function Ih(e, t, n, r, i, a) {
+function ng(e, t, n, r, i, a) {
 	if (e.metricOnly) {
-		let t = yh(e);
+		let t = zh(e);
 		return {
 			kind: "anchor-host",
 			measuredWidthPt: 0,
@@ -14247,24 +14708,46 @@ function Ih(e, t, n, r, i, a) {
 			...i?.type === "anchorHost" && i.anchorOccurrenceId ? { anchorOccurrenceId: i.anchorOccurrenceId } : {}
 		};
 	}
-	let o = Ch(e, t, n, 0, 0, 0, 0);
+	let o = Uh(e, t, n, 0, 0, 0, 0);
 	if (o.kind !== "text") throw Error("Visible text segment projected as anchor host");
-	let s = e.fitTextPerGapPx ?? ls(e) + (e.snapToCharacterGrid === !1 ? 0 : r), c = e.charScale ?? 1, l = Sh(e), u = Fh(e, n, o.color), d = e.shapedClusters, f = d?.length && d[0]?.range.start === 0 && d.at(-1)?.range.end === e.text.length && d.every((e, t) => t === 0 || d[t - 1]?.range.end === e.range.start) && d.every((e) => e.range.start < e.range.end && Number.isFinite(e.offsetPt) && Number.isFinite(e.advancePt)) ? d : void 0;
+	let s = Os(e, r, 1), c = e.charScale ?? 1, l = Hh(e), u = tg(e, n, o.color), d = e.shapedClusters, f = d?.length && d[0]?.range.start === 0 && d.at(-1)?.range.end === e.text.length && d.every((e, t) => t === 0 || d[t - 1]?.range.end === e.range.start) && d.every((e) => e.range.start < e.range.end && Number.isFinite(e.offsetPt) && Number.isFinite(e.advancePt)) ? d : void 0;
 	if (e.text.length > 0 && !f) throw Error("Visible text acquisition requires complete authoritative grapheme clusters from TextLayoutService");
-	let p = (f ?? []).map((t, r) => {
-		let i = e.text.slice(0, t.range.start), a = e.text.slice(t.range.start, t.range.end), o = [...i].length, u = [...a].length, d = r === (f?.length ?? 0) - 1 ? e.fitTextTrailingPadPx ?? 0 : 0, p = e.punctuationCompressions?.filter((e) => e.end <= t.range.start).reduce((e, t) => e + t.adjustmentPt, 0) ?? 0, m = e.punctuationCompressions?.filter((e) => e.end > t.range.start && e.end <= t.range.end).reduce((e, t) => e + t.adjustmentPt, 0) ?? 0;
+	let p = (f ?? []).map((t, i) => {
+		let a = e.text.slice(0, t.range.start), o = e.text.slice(t.range.start, t.range.end), u = [...a].length, d = [...o].length, p = i === (f?.length ?? 0) - 1 ? e.fitTextTrailingPadPx ?? 0 : 0, m = e.punctuationCompressions?.filter((e) => e.end <= t.range.start).reduce((e, t) => e + t.adjustmentPt, 0) ?? 0, h = e.punctuationCompressions?.filter((e) => e.end > t.range.start && e.end <= t.range.end).reduce((e, t) => e + t.adjustmentPt, 0) ?? 0, g = Ss(e, a, r) * c, _ = Ss(e, o, r) * c;
 		return {
 			range: {
 				start: n + t.range.start,
 				end: n + t.range.end
 			},
 			offset: {
-				xPt: t.offsetPt * c + o * s + p,
+				xPt: t.offsetPt * c + u * s + g + m,
 				yPt: l
 			},
-			advancePt: t.advancePt * c + u * s + d + m
+			advancePt: t.advancePt * c + d * s + _ + p + h
 		};
-	}), { origin: m, bounds: h, advancePt: g, paintOps: _, clusters: v, ...y } = o, b = e.tateChuYoko && e.tateChuYokoCompress ? (() => {
+	}), m = e.snapGridLeadingPadPx ?? 0;
+	if (e.snapGridClass === "eastAsia" && e.snapGridCellPitchPx) {
+		let t = e.snapGridCellPitchPx, r = 0;
+		p = p.map((i) => {
+			e.text.slice(i.range.start - n, i.range.end - n);
+			let a = yo(i.advancePt, t), o = a * t, s = {
+				...i,
+				offset: {
+					xPt: r * t + (o - i.advancePt) / 2,
+					yPt: i.offset.yPt
+				},
+				advancePt: o
+			};
+			return r += a, s;
+		});
+	} else m !== 0 && (p = p.map((e) => ({
+		...e,
+		offset: {
+			xPt: e.offset.xPt + m,
+			yPt: e.offset.yPt
+		}
+	})));
+	let { origin: h, bounds: g, advancePt: _, paintOps: v, clusters: y, ...b } = o, x = e.tateChuYoko && e.tateChuYokoCompress ? (() => {
 		if (!e.textLayoutService || !e.textShapeRequest) throw Error("Tate-chu-yoko compression requires TextLayoutService");
 		let t = e.textLayoutService.shape({
 			...e.textShapeRequest,
@@ -14274,12 +14757,12 @@ function Ih(e, t, n, r, i, a) {
 			clusterGeometry: !1
 		}), n = t.ascentPt + t.descentPt;
 		return n > o.fontSizePt && n > 0 ? o.fontSizePt / n : 1;
-	})() : 1, x = e.punctuationCompressions?.some((t) => t.end < e.text.length) ?? !1, S = e.verticalRun ? (() => {
+	})() : 1, S = e.punctuationCompressions?.some((t) => t.end < e.text.length) ?? !1, C = e.verticalRun ? (() => {
 		if (!a) throw Error("Vertical glyph planning capability is required for vertical text");
-		let t = _[0];
+		let t = v[0];
 		return a.planRun({
 			text: e.text,
-			font: Re(o.fontRoute, o.fontSizePt, o.fontWeight, o.fontStyle),
+			font: ze(o.fontRoute, o.fontSizePt, o.fontWeight, o.fontStyle),
 			fontKerning: t.kerning,
 			fontSizePt: o.fontSizePt,
 			letterSpacingPt: s,
@@ -14303,16 +14786,16 @@ function Ih(e, t, n, r, i, a) {
 			...r.blockAxisInkBounds ? { blockAxisInkBounds: r.blockAxisInkBounds } : {},
 			...r.drawOffsetPt.xPt !== 0 || r.drawOffsetPt.yPt !== 0 ? { glyphOffsetPt: r.drawOffsetPt } : {}
 		}));
-	})() : e.tateChuYoko ? _.map((t) => ({
+	})() : e.tateChuYoko ? v.map((t) => ({
 		...t,
 		offset: {
 			xPt: t.offset.xPt + e.measuredWidth / 2,
 			yPt: t.offset.yPt
 		},
 		glyphOrientation: "upright",
-		...b === 1 ? {} : { scaleY: b }
-	})) : x ? (() => {
-		let t = _[0], r = [];
+		...x === 1 ? {} : { scaleY: x }
+	})) : S ? (() => {
+		let t = v[0], r = [];
 		for (let t of p) {
 			let i = t.range.end - n, a = e.punctuationCompressions?.find((e) => e.end === i)?.adjustmentPt ?? null, o = r.at(-1);
 			o && o.adjustmentPt === a ? o.end = t.range.end : r.push({
@@ -14332,15 +14815,29 @@ function Ih(e, t, n, r, i, a) {
 			offset: r.offset,
 			letterSpacingPt: s + (r.adjustmentPt ?? 0)
 		}));
-	})() : _;
+	})() : v, w = e.snapGridClass === "eastAsia" ? (() => {
+		let t = C[0];
+		return t ? p.map((r) => ({
+			...t,
+			text: e.text.slice(r.range.start - n, r.range.end - n),
+			range: r.range,
+			offset: r.offset
+		})) : C;
+	})() : m === 0 ? C : C.map((e) => ({
+		...e,
+		offset: {
+			xPt: e.offset.xPt + m,
+			yPt: e.offset.yPt
+		}
+	}));
 	return {
-		...y,
+		...b,
 		kind: "text",
 		measuredWidthPt: e.measuredWidth,
 		clusters: p,
-		basePaintOps: S.map((t) => ({
+		basePaintOps: w.map((t) => ({
 			...t,
-			letterSpacingPt: e.verticalRun && t.glyphOrientation !== "sideways" ? 0 : x ? t.letterSpacingPt : s,
+			letterSpacingPt: e.verticalRun && t.glyphOrientation !== "sideways" ? 0 : S ? t.letterSpacingPt : s,
 			...!e.verticalRun && e.selectedFaceInkBounds ? { inkBounds: e.selectedFaceInkBounds } : {},
 			...!e.verticalRun && e.selectedFaceInkBounds && t.glyphOrientation === void 0 ? { blockAxisInkBounds: {
 				startPt: (t.glyphOffsetPt?.yPt ?? 0) - e.selectedFaceInkBounds.ascentPt,
@@ -14350,16 +14847,16 @@ function Ih(e, t, n, r, i, a) {
 		breakBefore: e.breakBefore !== !1 && !e.joinPrev,
 		rtl: e.rtl,
 		digitsAsAN: e.digitsAsAN,
-		fixedPitch: e.fitTextRegionIndex !== void 0,
+		fixedPitch: e.fitTextRegionIndex !== void 0 || e.snapGridClass !== void 0,
 		...u ? { retainedGeometry: u } : {},
 		...e.textLayoutService ? { textLayoutService: e.textLayoutService } : {},
 		...e.textShapeRequest ? { textShapeRequest: e.textShapeRequest } : {}
 	};
 }
-function Lh(e, t) {
+function rg(e, t) {
 	let n = /* @__PURE__ */ new Map();
 	for (let e of t.lines) for (let t of e.layout.segments) {
-		let e = vh(t);
+		let e = Rh(t);
 		if (e === void 0) continue;
 		let r = "text" in t ? t.metricOnly ? 0 : t.text.length : "math" in t ? t.fallbackText.length : +("isTab" in t || "imagePath" in t);
 		n.set(e, (n.get(e) ?? 0) + r);
@@ -14376,15 +14873,15 @@ function Lh(e, t) {
 		runLengths: r
 	};
 }
-function Rh(e) {
+function ig(e) {
 	return "text" in e ? e.metricOnly ? 0 : e.text.length : "math" in e ? e.fallbackText.length : 1;
 }
-function zh(e, t, n, r, i, a, o, s, c, l, u, d = !1) {
+function ag(e, t, n, r, i, a, o, s, c, l, u, d = !1) {
 	let f = 0, p = /* @__PURE__ */ new Map(), m = e.lines.some((e) => e.layout.segments.some((e) => "isTab" in e)), h = t.tabStops?.reduce((e, t) => !e || t.pos < e.pos ? t : e, void 0), g = e.lines.flatMap((e) => e.layout.segments.flatMap((e) => "text" in e && !e.metricOnly ? [e.text] : [])).join("").trim(), _ = !m && h?.alignment === "decimal" && g !== "" && /^[+\-(]?[\d., ]+\)?%?$/u.test(g) ? h.pos - o.physicalIndentLeftPt : void 0;
 	return e.lines.map((m, h) => {
-		let g = m.layout, v = wh(m, o), y = Infinity, b = f, x = [];
+		let g = m.layout, v = Wh(m, o), y = Infinity, b = f, x = [];
 		for (let e of g.segments) {
-			let n = vh(e), r = n === void 0 ? void 0 : t.runs[n], c = Rh(e), m = n === void 0 ? f : (s.runStarts[n] ?? f) + (p.get(n) ?? 0);
+			let n = Rh(e), r = n === void 0 ? void 0 : t.runs[n], c = ig(e), m = n === void 0 ? f : (s.runStarts[n] ?? f) + (p.get(n) ?? 0);
 			if (n !== void 0 && p.set(n, (p.get(n) ?? 0) + c), y = Math.min(y, m), b = Math.max(b, m + c), "isTab" in e) {
 				let t = e, n = t.leader ?? "none", i, a, o = r?.type === "text" || r?.type === "field" ? r : void 0, s = o, u = (e) => {
 					if (!l) throw Error("Formatted tab acquisition requires TextLayoutService");
@@ -14450,7 +14947,7 @@ function zh(e, t, n, r, i, a, o, s, c, l, u, d = !1) {
 			} else if ("imagePath" in e) {
 				let t = e;
 				if (t.anchor) continue;
-				let n = vh(e), r = fh(i, n ?? 0);
+				let n = Rh(e), r = Mh(i, n ?? 0);
 				if (t.inlineShape) {
 					x.push({
 						kind: "inline-drawing",
@@ -14478,11 +14975,11 @@ function zh(e, t, n, r, i, a, o, s, c, l, u, d = !1) {
 						widthPt: t.widthPt,
 						heightPt: t.heightPt,
 						topOffsetPt: -t.heightPt,
-						drawingId: hh(i, n ?? 0)
+						drawingId: Fh(i, n ?? 0)
 					}), f = Math.max(f, m + c);
 					continue;
 				}
-				let o = t.chart ? "chart" : "image", s = t.chartResourceKey ?? (t.chart ? mh(r) : sn(r, t.imagePath));
+				let o = t.chart ? "chart" : "image", s = t.chartResourceKey ?? (t.chart ? Ph(r) : cn(r, t.imagePath));
 				x.push({
 					kind: "resource",
 					range: {
@@ -14512,11 +15009,11 @@ function zh(e, t, n, r, i, a, o, s, c, l, u, d = !1) {
 					heightPt: t.mathAscent + t.mathDescent,
 					topOffsetPt: -t.mathAscent
 				});
-			} else x.push(Ih(e, t, m, o.characterGrid.active ? o.characterGrid.deltaPt : 0, r, u));
+			} else x.push(ng(e, t, m, bc(o), r, u));
 			f = Math.max(f, m + c);
 		}
 		let S = g.segments.length === 1 && "math" in (g.segments[0] ?? {}) ? g.segments[0] : void 0;
-		return lh({
+		return kh({
 			paragraphXPt: n,
 			availableWidthPt: r,
 			alignment: t.alignment,
@@ -14544,32 +15041,55 @@ function zh(e, t, n, r, i, a, o, s, c, l, u, d = !1) {
 		});
 	});
 }
-function Bh(e, t) {
+function og(e, t, n, r, i) {
+	let a = i.filter((e) => e.alignment === "bar");
+	return a.length === 0 ? e : e.map((e) => ({
+		...e,
+		barTabRules: a.map((i) => {
+			let a = r ? t + n - i.pos : t + i.pos;
+			return {
+				from: {
+					xPt: a,
+					yPt: e.bounds.yPt
+				},
+				to: {
+					xPt: a,
+					yPt: e.bounds.yPt + e.bounds.heightPt
+				},
+				color: "#000000",
+				widthPt: 0,
+				authoredStyle: "single",
+				style: "solid"
+			};
+		})
+	}));
+}
+function sg(e, t) {
 	return {
 		start: e.start + t,
 		end: e.end + t
 	};
 }
-function Vh(e, t) {
+function cg(e, t) {
 	if (!Number.isFinite(t) || t < 0) throw RangeError("Paragraph continuation source range must be finite and non-negative");
 	let n = e[0];
 	if (!n) return e;
 	let r = t - n.range.start;
 	return r === 0 ? e : e.map((e) => ({
 		...e,
-		range: Bh(e.range, r),
+		range: sg(e.range, r),
 		placements: e.placements.map((e) => {
-			let t = Bh(e.range, r);
+			let t = sg(e.range, r);
 			return e.kind === "text" ? {
 				...e,
 				range: t,
 				clusters: e.clusters.map((e) => ({
 					...e,
-					range: Bh(e.range, r)
+					range: sg(e.range, r)
 				})),
 				paintOps: e.paintOps.map((e) => ({
 					...e,
-					range: Bh(e.range, r)
+					range: sg(e.range, r)
 				}))
 			} : {
 				...e,
@@ -14578,9 +15098,9 @@ function Vh(e, t) {
 		})
 	}));
 }
-function Hh(e, t, n, r, i) {
+function lg(e, t, n, r, i) {
 	let a = e.contentEndYPt - e.contentStartYPt;
-	return lh({
+	return kh({
 		paragraphXPt: n,
 		availableWidthPt: r,
 		alignment: t.alignment,
@@ -14603,7 +15123,7 @@ function Hh(e, t, n, r, i) {
 		}
 	});
 }
-function Uh(e, t) {
+function ug(e, t) {
 	let n = t.anchorFrames, r = e.anchorXRelativeFrom ?? (e.anchorXFromMargin ? "margin" : "page"), i = e.anchorYRelativeFrom ?? (e.anchorYFromPara ? "paragraph" : "page"), a = n?.page, o = n?.margin, s = a && o ? {
 		xPt: a.xPt,
 		yPt: a.yPt,
@@ -14639,16 +15159,16 @@ function Uh(e, t) {
 		heightPt: h
 	};
 }
-function Wh(e, t) {
-	return Uh(e, t) ?? {
+function dg(e, t) {
+	return ug(e, t) ?? {
 		xPt: e.anchorXPt + (e.anchorXFromMargin ? t.placement.paragraphXPt : 0),
 		yPt: e.anchorYPt + (e.anchorYFromPara ? t.placement.startYPt : 0),
 		widthPt: e.widthPt,
 		heightPt: e.heightPt
 	};
 }
-function Gh(e, t, n, r, i = !1) {
-	let a = fh(n.source, r), o = Kp(e, t, n.environment.layoutServices?.text, e.vmlTextPathInput, e.fill?.fillType === "image" ? sn(a, e.fill.imagePath) : void 0), s = [o.command], c = ph(o, a);
+function fg(e, t, n, r, i = !1) {
+	let a = Mh(n.source, r), o = fm(e, t, n.environment.layoutServices?.text, e.vmlTextPathInput, e.fill?.fillType === "image" ? cn(a, e.fill.imagePath) : void 0), s = [o.command], c = Nh(o, a);
 	return {
 		kind: "drawing",
 		id: `${n.id}:drawing:${r}`,
@@ -14670,11 +15190,11 @@ function Gh(e, t, n, r, i = !1) {
 		} }
 	};
 }
-function Kh(e, t, n) {
+function pg(e, t, n) {
 	if (!e.anchor || e.anchorAcquisitionInput) return null;
-	let r = Uh(e, t);
+	let r = ug(e, t);
 	if (!r) return null;
-	let i = e.anchorYRelativeFrom ?? (e.anchorYFromPara ? "paragraph" : "page"), a = fh(t.source, n);
+	let i = e.anchorYRelativeFrom ?? (e.anchorYFromPara ? "paragraph" : "page"), a = Mh(t.source, n);
 	return {
 		kind: "drawing",
 		id: `${t.id}:public-anchor-drawing:${n}`,
@@ -14687,7 +15207,7 @@ function Kh(e, t, n) {
 		commands: [{
 			kind: "resource",
 			resourceKind: e.type,
-			resourceKey: e.type === "image" ? sn(a, e.imagePath) : mh(a),
+			resourceKey: e.type === "image" ? cn(a, e.imagePath) : Ph(a),
 			rect: r,
 			...t.environment.verticalPageFrame ? { orientation: "upright-physical" } : {}
 		}],
@@ -14701,10 +15221,10 @@ function Kh(e, t, n) {
 		}
 	};
 }
-function qh(e) {
+function mg(e) {
 	return (e.type === "image" || e.type === "chart" || e.type === "shape" || e.type === "unavailableDrawing") && e.anchorAcquisitionInput !== void 0;
 }
-function Jh(e) {
+function hg(e) {
 	return [
 		{
 			xPt: e.xPt,
@@ -14724,7 +15244,7 @@ function Jh(e) {
 		}
 	];
 }
-function Yh(e, t, n) {
+function gg(e, t, n) {
 	let r = t.xPt - e.xPt, i = t.yPt - e.yPt, a = e.xPt + e.widthPt - t.xPt - t.widthPt, o = e.yPt + e.heightPt - t.yPt - t.heightPt;
 	return {
 		xPt: n.xPt - r,
@@ -14733,7 +15253,7 @@ function Yh(e, t, n) {
 		heightPt: Math.max(0, n.heightPt + i + o)
 	};
 }
-function Xh(e, t) {
+function _g(e, t) {
 	return {
 		a: t.a,
 		b: t.b,
@@ -14743,18 +15263,18 @@ function Xh(e, t) {
 		f: e.yPt + e.heightPt / 2
 	};
 }
-function Zh(e, t) {
+function vg(e, t) {
 	let n = [
-		Su(t, e),
-		Su(t, {
+		Ku(t, e),
+		Ku(t, {
 			xPt: e.xPt + e.widthPt,
 			yPt: e.yPt
 		}),
-		Su(t, {
+		Ku(t, {
 			xPt: e.xPt,
 			yPt: e.yPt + e.heightPt
 		}),
-		Su(t, {
+		Ku(t, {
 			xPt: e.xPt + e.widthPt,
 			yPt: e.yPt + e.heightPt
 		})
@@ -14768,12 +15288,12 @@ function Zh(e, t) {
 		heightPt: Math.max(...r.map((e) => e.yPt)) - a
 	};
 }
-function Qh(e, t) {
-	return Qr(t, e);
+function yg(e, t) {
+	return $r(t, e);
 }
-function $h(e, t) {
+function bg(e, t) {
 	let n = (e) => {
-		let n = $r(t, {
+		let n = ei(t, {
 			top: e.topPt,
 			right: e.rightPt,
 			bottom: e.bottomPt,
@@ -14794,9 +15314,9 @@ function $h(e, t) {
 		},
 		geometry: {
 			...e.geometry,
-			objectFrame: Qr(t, e.geometry.objectFrame),
-			inkBounds: Qr(t, e.geometry.inkBounds),
-			wrapBounds: e.geometry.wrapBounds ? Qr(t, e.geometry.wrapBounds) : null,
+			objectFrame: $r(t, e.geometry.objectFrame),
+			inkBounds: $r(t, e.geometry.inkBounds),
+			wrapBounds: e.geometry.wrapBounds ? $r(t, e.geometry.wrapBounds) : null,
 			size: {
 				horizontal: e.geometry.size.vertical,
 				vertical: e.geometry.size.horizontal
@@ -14805,17 +15325,17 @@ function $h(e, t) {
 			wrap: {
 				...e.geometry.wrap,
 				distances: n(e.geometry.wrap.distances),
-				distanceSources: $r(t, e.geometry.wrap.distanceSources),
+				distanceSources: ei(t, e.geometry.wrap.distanceSources),
 				effectExtent: n(e.geometry.wrap.effectExtent),
 				...e.geometry.wrap.polygon ? { polygon: {
 					...e.geometry.wrap.polygon,
-					points: e.geometry.wrap.polygon.points.map((e) => Zr(t, e))
+					points: e.geometry.wrap.polygon.points.map((e) => Qr(t, e))
 				} } : {}
 			}
 		}
 	};
 }
-function eg(e, t) {
+function xg(e, t) {
 	let n = e.geometry.objectFrame;
 	if (n.xPt === t.xPt && n.yPt === t.yPt && n.widthPt === t.widthPt && n.heightPt === t.heightPt) return e;
 	let r = n.widthPt === 0 ? 1 : t.widthPt / n.widthPt, i = n.heightPt === 0 ? 1 : t.heightPt / n.heightPt, a = e.geometry.wrap.polygon;
@@ -14824,8 +15344,8 @@ function eg(e, t) {
 		geometry: {
 			...e.geometry,
 			objectFrame: t,
-			inkBounds: Yh(e.geometry.inkBounds, n, t),
-			wrapBounds: e.geometry.wrapBounds ? Yh(e.geometry.wrapBounds, n, t) : null,
+			inkBounds: gg(e.geometry.inkBounds, n, t),
+			wrapBounds: e.geometry.wrapBounds ? gg(e.geometry.wrapBounds, n, t) : null,
 			wrap: {
 				...e.geometry.wrap,
 				polygon: a ? {
@@ -14839,24 +15359,24 @@ function eg(e, t) {
 		}
 	};
 }
-function tg(e, t, n) {
+function Sg(e, t, n) {
 	let r = e.group?.resolvedChildFrame;
 	if (!r) return t;
 	let i = e.extent.widthPt, a = e.extent.heightPt;
 	if (e.extent.widthStatus !== "valid" || e.extent.heightStatus !== "valid" || i === null || a === null || i <= 0 || a <= 0) throw Error("resolved grouped anchor requires its authored wp:extent");
-	let o = n === void 0 ? t : Qr(n.logicalToPhysical, t), s = o.widthPt / i, c = o.heightPt / a, l = {
+	let o = n === void 0 ? t : $r(n.logicalToPhysical, t), s = o.widthPt / i, c = o.heightPt / a, l = {
 		xPt: o.xPt + r.offsetXPt * s,
 		yPt: o.yPt + r.offsetYPt * c,
 		widthPt: r.widthPt * s,
 		heightPt: r.heightPt * c
 	};
-	return n === void 0 ? l : Qr(n.physicalToLogical, l);
+	return n === void 0 ? l : $r(n.physicalToLogical, l);
 }
-function ng(e, t, n = !1) {
+function Cg(e, t, n = !1) {
 	let r = e.axes[t];
 	return r.status !== "resolved" || n || r.referenceFrame === "paragraph" || r.referenceFrame === "line" || r.referenceFrame === "character" ? "host" : "page";
 }
-function rg(e, t, n, r, i, a, o, s, c, l) {
+function wg(e, t, n, r, i, a, o, s, c, l) {
 	let u = -1, d;
 	for (let t = 0; t < n.length; t += 1) {
 		let r = n[t]?.placements.find((t) => t.kind === "anchor-host" && t.anchorOccurrenceId === e);
@@ -14868,7 +15388,7 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 	if (!d || u < 0) return null;
 	let f = [...t].sort((e, t) => (e.run.anchorAcquisitionInput?.group?.sourceIndex ?? 0) - (t.run.anchorAcquisitionInput?.group?.sourceIndex ?? 0) || e.runIndex - t.runIndex), p = f[0];
 	if (!p?.run.anchorAcquisitionInput) return null;
-	let m = n[u], h = i.anchorFrames, g = p.run.anchorAcquisitionInput.behavior, _ = g.layoutInCellStatus === "valid" && g.layoutInCell === !0 && i.anchorCellBounds !== void 0 ? i.anchorCellBounds : null, v = Mm({
+	let m = n[u], h = i.anchorFrames, g = p.run.anchorAcquisitionInput.behavior, _ = g.layoutInCellStatus === "valid" && g.layoutInCell === !0 && i.anchorCellBounds !== void 0 ? i.anchorCellBounds : null, v = Qm({
 		acquisition: p.run.anchorAcquisitionInput,
 		frames: {
 			page: h?.page ? _ ? {
@@ -14900,15 +15420,15 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 		hostLineIndex: u,
 		hostRange: d.range
 	};
-	let y = i.environment.verticalPageFrame && h?.page ? Jr(h.page, i.environment.pageWritingMode) : void 0, b = y === void 0 ? void 0 : ei(i.environment.pageWritingMode, y), x = y === void 0 ? v : $h(v, b.physicalToLogical);
+	let y = i.environment.verticalPageFrame && h?.page ? Yr(h.page, i.environment.pageWritingMode) : void 0, b = y === void 0 ? void 0 : ti(i.environment.pageWritingMode, y), x = y === void 0 ? v : bg(v, b.physicalToLogical);
 	if (g.behindDocStatus !== "valid" || g.relativeHeightStatus !== "valid" || g.behindDoc === null || g.relativeHeight === null) throw Error("resolved anchor frame must retain required CT_Anchor behavior");
-	let S = x.geometry.objectFrame, C = y === void 0 ? void 0 : Xh(S, b.physicalToLogical), w = C ? {
+	let S = x.geometry.objectFrame, C = y === void 0 ? void 0 : _g(S, b.physicalToLogical), w = C ? {
 		...i.environment,
 		verticalCJK: !1,
 		verticalPageFrame: !1
 	} : i.environment, T = [], E = [], D = [], O = [], k = /* @__PURE__ */ new Map(), A = S;
 	if (p.run.type === "shape" && p.run.anchorAcquisitionInput.group === null) {
-		let t = fh(i.source, p.runIndex), n = C ? Zh(S, C) : S, r = fg(p.run, n, {
+		let t = Mh(i.source, p.runIndex), n = C ? vg(S, C) : S, r = Ng(p.run, n, {
 			id: `${i.id}:anchor-textbox:${e}:${p.runIndex}`,
 			source: t,
 			flowDomainId: i.flowDomainId,
@@ -14919,13 +15439,13 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 			acquireCompleteStory: i.acquireCompleteStory,
 			...C ? { coordinateSpace: "upright-physical" } : {}
 		});
-		r && (k.set(p.runIndex, r), A = C ? Qh(r.flowBounds, C) : r.flowBounds);
+		r && (k.set(p.runIndex, r), A = C ? yg(r.flowBounds, C) : r.flowBounds);
 	}
-	let j = eg(x, A);
+	let j = xg(x, A);
 	if (g.allowOverlapStatus !== "valid" || g.allowOverlap === null || g.layoutInCellStatus !== "valid" || g.layoutInCell === null) throw Error("resolved anchor frame must retain overlap and cell behavior");
-	let M = j.geometry.wrapBounds, N = !g.allowOverlap, ee = g.allowOverlap && i.ordinaryFlow && M !== null;
-	if (N || ee) {
-		let t = ng(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0), n = l.filter((e) => !fm(t, g.relativeHeight, e.relativeHeight)), r = (N ? [...c, ...n].filter((t) => t.occurrenceId !== e).map((e) => ({
+	let M = j.geometry.wrapBounds, ee = !g.allowOverlap, te = g.allowOverlap && i.ordinaryFlow && M !== null;
+	if (ee || te) {
+		let t = Cg(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0), n = l.filter((e) => !Mm(t, g.relativeHeight, e.relativeHeight)), r = (ee ? [...c, ...n].filter((t) => t.occurrenceId !== e).map((e) => ({
 			occurrenceId: e.occurrenceId,
 			bounds: e.bounds
 		})) : o.filter((t) => t.anchorOccurrenceId !== e).map((e) => ({
@@ -14937,7 +15457,7 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 			paragraphId: 0,
 			bounds: e.bounds,
 			exclusionBounds: e.bounds
-		})), a = i.anchorFrames?.page, s = N && g.layoutInCell && i.anchorCellBounds ? i.anchorCellBounds.xPt + i.anchorCellBounds.widthPt : a ? a.xPt + a.widthPt : Infinity, u = wa({
+		})), a = i.anchorFrames?.page, s = ee && g.layoutInCell && i.anchorCellBounds ? i.anchorCellBounds.xPt + i.anchorCellBounds.widthPt : a ? a.xPt + a.widthPt : Infinity, u = Ta({
 			moving: {
 				occurrenceId: e,
 				kind: "drawingml",
@@ -14946,7 +15466,7 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 				exclusionBounds: M ?? A
 			},
 			blockers: r,
-			avoidance: N ? { kind: "drawingml-normative" } : {
+			avoidance: ee ? { kind: "drawingml-normative" } : {
 				kind: "word-different-paragraph",
 				paragraphId: 1
 			},
@@ -14960,35 +15480,35 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 			};
 			else {
 				let e = k.get(p.runIndex);
-				e && k.set(p.runIndex, vf(e, u));
+				e && k.set(p.runIndex, Hf(e, u));
 			}
-			j = eg(x, A);
+			j = xg(x, A);
 		}
 	}
 	for (let { run: t, runIndex: n } of f) {
-		let r = fh(i.source, n), a = t.anchorAcquisitionInput, o = tg(a, A, b), s = C ? Zh(o, C) : o;
+		let r = Mh(i.source, n), a = t.anchorAcquisitionInput, o = Sg(a, A, b), s = C ? vg(o, C) : o;
 		if (t.type === "image") T.push({
 			kind: "resource",
 			resourceKind: "image",
-			resourceKey: sn(r, t.imagePath),
+			resourceKey: cn(r, t.imagePath),
 			rect: s
 		});
 		else if (t.type === "chart") T.push({
 			kind: "resource",
 			resourceKind: "chart",
-			resourceKey: mh(r),
+			resourceKey: Ph(r),
 			rect: s
 		});
-		else if (t.type === "unavailableDrawing") T.push({ kind: "noop" }), E.push(gh(t.resourceKind, r));
+		else if (t.type === "unavailableDrawing") T.push({ kind: "noop" }), E.push(Ih(t.resourceKind, r));
 		else {
-			let o = a.group?.resolvedChildFrame, c = Kp(o ? {
+			let o = a.group?.resolvedChildFrame, c = fm(o ? {
 				...t,
 				rotation: o.rotationDeg,
 				flipH: o.flipH,
 				flipV: o.flipV
-			} : t, s, i.environment.layoutServices?.text, t.vmlTextPathInput, t.fill?.fillType === "image" ? sn(r, t.fill.imagePath) : void 0);
-			T.push(c.command), E.push(...ph(c, r));
-			let l = `${i.id}:anchor-textbox:${e}:${n}`, u = k.get(n) ?? fg(t, s, {
+			} : t, s, i.environment.layoutServices?.text, t.vmlTextPathInput, t.fill?.fillType === "image" ? cn(r, t.fill.imagePath) : void 0);
+			T.push(c.command), E.push(...Nh(c, r));
+			let l = `${i.id}:anchor-textbox:${e}:${n}`, u = k.get(n) ?? Ng(t, s, {
 				id: l,
 				source: r,
 				flowDomainId: i.flowDomainId,
@@ -15002,10 +15522,10 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 			u && (D.push(u), O.push(l));
 		}
 	}
-	let P = {
+	let N = {
 		kind: "drawing",
 		id: `${i.id}:anchor-drawing:${e}`,
-		source: fh(i.source, p.runIndex),
+		source: Mh(i.source, p.runIndex),
 		flowDomainId: i.flowDomainId,
 		flowBounds: A,
 		inkBounds: j.geometry.inkBounds,
@@ -15022,41 +15542,45 @@ function rg(e, t, n, r, i, a, o, s, c, l) {
 			behindDoc: g.behindDoc,
 			relativeHeight: g.relativeHeight,
 			sourceOrder: p.runIndex,
-			horizontalOwnership: ng(j, "horizontal", g.layoutInCell && i.anchorCellBounds !== void 0),
-			verticalOwnership: ng(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0),
-			...g.layoutInCell && sm(g.allowOverlap, j.geometry.wrap.kind) && i.anchorCellBounds ? { cellContainment: !0 } : {}
+			horizontalOwnership: Cg(j, "horizontal", g.layoutInCell && i.anchorCellBounds !== void 0),
+			verticalOwnership: Cg(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0),
+			...g.layoutInCell && Dm(g.allowOverlap, j.geometry.wrap.kind) && i.anchorCellBounds ? { cellContainment: !0 } : {}
 		},
 		...O.length ? { textBoxIds: O } : {}
-	}, te = j.geometry.wrapBounds, ne = te && j.geometry.wrap.kind !== "none" ? {
+	}, ne = j.geometry.wrapBounds, re = ne && j.geometry.wrap.kind !== "none" ? {
 		id: `${i.id}:anchor-exclusion:${e}`,
 		wrap: j.geometry.wrap.kind,
 		...j.geometry.wrap.side ? { wrapSide: j.geometry.wrap.side } : {},
-		bounds: te,
-		polygon: j.geometry.wrap.polygon?.points ?? Jh(te),
+		bounds: ne,
+		polygon: j.geometry.wrap.polygon?.points ?? hg(ne),
 		anchorOccurrenceId: e,
-		verticalOwnership: ng(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0)
-	} : void 0, re = {
+		verticalOwnership: Cg(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0)
+	} : void 0, ie = {
 		occurrenceId: e,
 		bounds: A,
-		horizontalOwnership: ng(j, "horizontal", g.layoutInCell && i.anchorCellBounds !== void 0),
-		verticalOwnership: ng(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0),
+		horizontalOwnership: Cg(j, "horizontal", g.layoutInCell && i.anchorCellBounds !== void 0),
+		verticalOwnership: Cg(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0),
 		...g.relativeHeight === null ? {} : { relativeHeight: g.relativeHeight }
 	};
 	return {
 		result: j,
-		drawing: P,
-		exclusion: ne,
-		collision: re,
+		drawing: N,
+		exclusion: re,
+		collision: ie,
 		textBoxes: D,
-		...g.layoutInCell && sm(g.allowOverlap, j.geometry.wrap.kind) && i.anchorCellBounds ? { cellContainmentBounds: A } : {},
+		...g.layoutInCell && Dm(g.allowOverlap, j.geometry.wrap.kind) && i.anchorCellBounds ? { cellContainmentBounds: A } : {},
 		hostLineIndex: u,
 		hostRange: d.range
 	};
 }
-function ig(e, t) {
-	let n = t.bidi === !0, r = t.runs.some((e) => e.type === "text" && !!e.ruby), i = t.runs.some((e) => e.type === "text" && ai.test(e.text));
+function Tg(e, t) {
+	let n = t.bidi === !0, r = t.runs.some((e) => e.type === "text" && !!e.ruby), i = t.runs.some((e) => e.type === "text" && oi.test(e.text));
 	return {
 		...e,
+		rightIndentGrid: {
+			...e.rightIndentGrid,
+			paragraphAllowsAdjustment: t.adjustRightInd !== !1
+		},
 		physicalIndentLeftPt: n ? t.indentRight : t.indentLeft,
 		physicalIndentRightPt: n ? t.indentLeft : t.indentRight,
 		firstIndentPt: t.indentFirst,
@@ -15064,21 +15588,21 @@ function ig(e, t) {
 		spaceBeforePt: t.spaceBefore,
 		spaceAfterPt: t.spaceAfter,
 		baseRtl: n,
-		isJustified: rc(t.alignment),
-		stretchLastLine: ic(t.alignment),
-		tabStops: [...t.tabStops],
+		isJustified: _c(t.alignment),
+		stretchLastLine: vc(t.alignment),
+		tabStops: ul(t),
 		hasRuby: r,
 		hasEastAsianText: i
 	};
 }
-function ag(e) {
+function Eg(e) {
 	return e === "vert" || e === "vert270" || e === "eaVert" || e === "mongolianVert" ? e : void 0;
 }
-function og(e, t, n) {
+function Dg(e, t, n) {
 	let r = Math.max(0, t - n);
 	return e === "b" ? r : e === "ctr" ? r / 2 : 0;
 }
-function sg(e, t, n, r) {
+function Og(e, t, n, r) {
 	let i = t === "eaVert" || t === "mongolianVert", a = e.lines.map((e) => {
 		let a = t === "mongolianVert" ? e.placements.reduce((t, n) => n.kind === "text" && n.ruby ? Math.max(t, e.baselinePt - Math.min(e.baselinePt, ...n.ruby.paintOps.map((e) => e.origin.yPt))) : t, 0) : 0, o = (t === "mongolianVert" ? 2 * n.yPt + n.heightPt - e.baselinePt + r.bottomPt - r.leftPt + a : e.baselinePt) - e.baselinePt, s = e.bounds.yPt + o, c = e.placements.map((e) => {
 			if (e.kind !== "text") return "bounds" in e && e.bounds ? {
@@ -15089,7 +15613,7 @@ function sg(e, t, n, r) {
 				}
 			} : e;
 			let t = i ? e.clusters.map((t) => {
-				let n = e.text.slice(t.range.start - e.range.start, t.range.end - e.range.start), r = e.paintOps.find((e) => e.range.start <= t.range.start && e.range.end >= t.range.end) ?? e.paintOps[0], i = ai.test(n);
+				let n = e.text.slice(t.range.start - e.range.start, t.range.end - e.range.start), r = e.paintOps.find((e) => e.range.start <= t.range.start && e.range.end >= t.range.end) ?? e.paintOps[0], i = oi.test(n);
 				return {
 					...r,
 					text: n,
@@ -15101,7 +15625,7 @@ function sg(e, t, n, r) {
 					glyphOrientation: i ? "upright" : "sideways"
 				};
 			}) : e.paintOps;
-			return Ng({
+			return e_({
 				...e,
 				paintOps: t
 			}, o);
@@ -15121,13 +15645,13 @@ function sg(e, t, n, r) {
 		lines: a
 	};
 }
-function cg(e, t) {
-	let n = (e, n) => e.kind === "paragraph" ? sg(e, t === "mongolianVert" ? "eaVert" : t, n, {
+function kg(e, t) {
+	let n = (e, n) => e.kind === "paragraph" ? Og(e, t === "mongolianVert" ? "eaVert" : t, n, {
 		topPt: 0,
 		rightPt: 0,
 		bottomPt: 0,
 		leftPt: 0
-	}) : cg(e, t), r = {
+	}) : kg(e, t), r = {
 		...e,
 		rows: e.rows.map((e) => ({
 			...e,
@@ -15144,7 +15668,7 @@ function cg(e, t) {
 		if (n) return n;
 		let r = {
 			...e,
-			child: cg(e.child, t)
+			child: kg(e.child, t)
 		};
 		return i.set(e, r), r;
 	}, o = e.floatingTables?.map(a), s = e.resolvedFloatingTables?.map((e) => {
@@ -15161,17 +15685,17 @@ function cg(e, t) {
 		...s ? { resolvedFloatingTables: s } : {}
 	};
 }
-function lg(e, t, n, r) {
+function Ag(e, t, n, r) {
 	return {
 		...e,
 		blocks: e.blocks.map((e) => {
-			if (e.kind === "paragraph") return sg(e, t, n, r);
-			if (e.kind === "table") return cg(e, t);
+			if (e.kind === "paragraph") return Og(e, t, n, r);
+			if (e.kind === "table") return kg(e, t);
 			throw Error(`Text-box story contains unsupported retained node: ${e.kind}`);
 		})
 	};
 }
-function ug(e, t, n = !0) {
+function jg(e, t, n = !0) {
 	if (t === 0) return e;
 	let r = {
 		xPt: 0,
@@ -15183,21 +15707,21 @@ function ug(e, t, n = !0) {
 		inkBounds: X(e.inkBounds, r),
 		...e.clipBounds ? { clipBounds: n ? X(e.clipBounds, r) : e.clipBounds } : {},
 		blocks: e.blocks.map((e) => {
-			if (e.kind === "paragraph") return gf(e, r);
-			if (e.kind === "table") return dg(e, r);
+			if (e.kind === "paragraph") return Bf(e, r);
+			if (e.kind === "table") return Mg(e, r);
 			throw Error(`Text-box story contains unsupported retained node: ${e.kind}`);
 		})
 	};
 }
-function dg(e, t) {
-	let n = xf(e, t), r = /* @__PURE__ */ new Map(), i = (e) => {
+function Mg(e, t) {
+	let n = Gf(e, t), r = /* @__PURE__ */ new Map(), i = (e) => {
 		let n = r.get(e);
 		if (n) return n;
 		let i = {
 			...e,
 			anchorBounds: X(e.anchorBounds, t),
 			...e.columnBounds ? { columnBounds: X(e.columnBounds, t) } : {},
-			child: dg(e.child, t)
+			child: Mg(e.child, t)
 		};
 		return r.set(e, i), i;
 	}, a = e.floatingTables?.map(i), o = e.resolvedFloatingTables?.map((e) => {
@@ -15218,7 +15742,7 @@ function dg(e, t) {
 		...o ? { resolvedFloatingTables: o } : {}
 	};
 }
-function fg(e, t, n) {
+function Ng(e, t, n) {
 	let r = n.source, i = n.input ?? {
 		kind: "compatibility",
 		source: {
@@ -15226,14 +15750,14 @@ function fg(e, t, n) {
 			storyInstance: `${r.story}:${r.storyInstance}:${r.path.join(".")}`,
 			path: []
 		},
-		paragraphs: Jp(e, {
+		paragraphs: mm(e, {
 			story: "textbox",
 			storyInstance: `${r.story}:${r.storyInstance}:${r.path.join(".")}`,
 			path: []
 		})
 	}, a = i.source, o = i.kind === "complete" ? i.blockCount : i.paragraphs.length;
 	if (o === 0) return;
-	let s = ag(e.textVert), c = s ? {
+	let s = Eg(e.textVert), c = s ? {
 		xPt: -t.heightPt / 2,
 		yPt: -t.widthPt / 2,
 		widthPt: t.heightPt,
@@ -15263,7 +15787,7 @@ function fg(e, t, n) {
 		});
 	}
 	let p = c.yPt + u.topPt, m = null, h = l.map((t, r) => {
-		let i = t.runs.map((t) => ci({
+		let i = t.runs.map((t) => li({
 			text: t.text,
 			fontSizePt: t.fontSizePt,
 			color: t.color?.slice(1) ?? null,
@@ -15295,9 +15819,9 @@ function fg(e, t, n) {
 			contextualSpacing: t.contextualSpacing,
 			styleId: t.styleId,
 			runs: h
-		}, _ = ig(n.context, g), v = Nm(m, t, m?.spacing.afterPt ?? 0, t.spacing.beforePt);
+		}, _ = Tg(n.context, g), v = $m(m, t, m?.spacing.afterPt ?? 0, t.spacing.beforePt);
 		p += v;
-		let y = wg(g, {
+		let y = Gg(g, {
 			id: `${n.id}:paragraph:${r}`,
 			source: t.source,
 			flowDomainId: `${n.flowDomainId}:textbox`,
@@ -15314,7 +15838,7 @@ function fg(e, t, n) {
 			environment: n.environment,
 			exclusions: []
 		});
-		return p += y.advancePt - y.spacing.afterPt, m = t, s ? sg(y, s, d, u) : y;
+		return p += y.advancePt - y.spacing.afterPt, m = t, s ? Og(y, s, d, u) : y;
 	}), g = f ? Math.max(0, f.advancePt + u.topPt + u.bottomPt) : Math.max(0, p - c.yPt + u.bottomPt), _ = e.textAutofit === "sp" && o > 0 && (!s || l.every((e) => e.image === void 0)) && Number.isFinite(g) && g > 0 ? s ? {
 		...t,
 		widthPt: g
@@ -15329,19 +15853,19 @@ function fg(e, t, n) {
 	} : _;
 	if (s && _.widthPt !== t.widthPt && s !== "mongolianVert") {
 		let e = v.yPt - c.yPt;
-		h = h.map((t) => Fg(t, e));
+		h = h.map((t) => n_(t, e));
 	}
 	let y = {
 		xPt: v.xPt + u.leftPt,
 		yPt: v.yPt + u.topPt,
 		widthPt: Math.max(0, v.widthPt - u.leftPt - u.rightPt),
 		heightPt: Math.max(0, v.heightPt - u.topPt - u.bottomPt)
-	}, b = Nl(h.map((e) => e.flowBounds)) ?? {
+	}, b = ru(h.map((e) => e.flowBounds)) ?? {
 		xPt: y.xPt,
 		yPt: y.yPt,
 		widthPt: 0,
 		heightPt: 0
-	}, x = Nl(h.map((e) => e.inkBounds)) ?? {
+	}, x = ru(h.map((e) => e.inkBounds)) ?? {
 		xPt: y.xPt,
 		yPt: y.yPt,
 		widthPt: 0,
@@ -15354,8 +15878,8 @@ function fg(e, t, n) {
 		blocks: h,
 		advancePt: Math.max(0, g - u.topPt - u.bottomPt),
 		diagnostics: []
-	}, C = lm(S);
-	return f && s && (S = lg(ug(S, v.yPt - c.yPt), s, y, u)), S = ug(S, og(e.textAnchor, y.heightPt, C), !1), fn({
+	}, C = km(S);
+	return f && s && (S = Ag(jg(S, v.yPt - c.yPt), s, y, u)), S = jg(S, Dg(e.textAnchor, y.heightPt, C), !1), pn({
 		kind: "textbox",
 		id: n.id,
 		source: l[0]?.source ?? a,
@@ -15388,7 +15912,7 @@ function fg(e, t, n) {
 		...s ? { verticalMode: s } : {}
 	});
 }
-var pg = class extends H {
+var Pg = class extends V {
 	reason;
 	states;
 	occurrenceCapacity;
@@ -15396,10 +15920,10 @@ var pg = class extends H {
 		super("NON_CONVERGENCE", `parser-owned paragraph anchor reflow did not converge (${e}; ${n} occurrences; ${t.length} states)`), this.name = "ParagraphAnchorReflowNonConvergenceError", this.reason = e, this.states = Object.freeze([...t]), this.occurrenceCapacity = n;
 	}
 };
-function mg(e, t) {
+function Fg(e, t) {
 	if (t.length === 0) return e.placement;
 	if (e.placement.wrap) throw Error("Conflicting paragraph wrap authorities: placement.wrap and effective exclusions");
-	let n = e.anchorFrames?.page, r = sp(t.map((e, t) => ({
+	let n = e.anchorFrames?.page, r = yc(t.map((e, t) => ({
 		kind: "shape",
 		mode: e.wrap === "topAndBottom" ? "topAndBottom" : "square",
 		authoredWrap: e.wrap,
@@ -15429,7 +15953,7 @@ function mg(e, t) {
 		wrap: r
 	};
 }
-function hg(e, t) {
+function Ig(e, t) {
 	let n = /* @__PURE__ */ new Map();
 	for (let r of e.exclusions) {
 		let e = r.anchorOccurrenceId;
@@ -15440,8 +15964,8 @@ function hg(e, t) {
 	}
 	return Object.freeze([...n.values()]);
 }
-function gg(e) {
-	return an("paragraph-effective-wrap-exclusions", e.map((e) => ({
+function Lg(e) {
+	return on("paragraph-effective-wrap-exclusions", e.map((e) => ({
 		id: e.id,
 		...e.anchorOccurrenceId === void 0 ? {} : { occurrenceId: e.anchorOccurrenceId },
 		wrap: e.wrap,
@@ -15451,7 +15975,7 @@ function gg(e) {
 		...e.verticalOwnership === void 0 ? {} : { verticalOwnership: e.verticalOwnership }
 	})));
 }
-function _g(e) {
+function Rg(e) {
 	let t = /* @__PURE__ */ new Set();
 	for (let n of e) {
 		let e = n.anchorOccurrenceId;
@@ -15462,11 +15986,11 @@ function _g(e) {
 	}
 	return t;
 }
-function vg(e, t) {
-	let n = _g(e);
+function zg(e, t) {
+	let n = Rg(e);
 	return Object.freeze([...e, ...t.filter((e) => !e.anchorOccurrenceId || !n.has(e.anchorOccurrenceId))]);
 }
-function yg(e, t) {
+function Bg(e, t) {
 	let n = /* @__PURE__ */ new Set();
 	for (let t of e) {
 		if (n.has(t.occurrenceId)) throw Error(`Duplicate external anchor collision occurrence: ${t.occurrenceId}`);
@@ -15474,8 +15998,8 @@ function yg(e, t) {
 	}
 	return Object.freeze([...e, ...t.filter((e) => !n.has(e.occurrenceId))]);
 }
-function bg(e, t, n, r) {
-	let i = n.environment.layoutServices, a = n.environment.verticalGlyphMeasurement, o = n.anchorFrames, s = t.runs.some(qh), c = t.runs.some((e) => e.type === "shape" && e.textBoxInput?.kind === "complete"), { wrap: l, ...u } = n.placement, d = n.context, f = n.environment;
+function Vg(e, t, n, r) {
+	let i = n.environment.layoutServices, a = n.environment.verticalGlyphMeasurement, o = n.anchorFrames, s = t.runs.some(mg), c = t.runs.some((e) => e.type === "shape" && e.textBoxInput?.kind === "complete"), { wrap: l, ...u } = n.placement, d = n.context, f = n.environment;
 	return `paragraph-acquisition-v1:${JSON.stringify([
 		n.id,
 		[
@@ -15497,7 +16021,10 @@ function bg(e, t, n, r) {
 			d.lineGrid.active,
 			d.lineGrid.pitchPt,
 			d.characterGrid.active,
+			d.characterGrid.kind,
 			d.characterGrid.deltaPt,
+			d.rightIndentGrid.pitchPt,
+			d.rightIndentGrid.paragraphAllowsAdjustment,
 			d.physicalIndentLeftPt,
 			d.physicalIndentRightPt,
 			d.firstIndentPt,
@@ -15542,6 +16069,7 @@ function bg(e, t, n, r) {
 			f.verticalPageFrame ?? null,
 			f.documentHasEastAsianText,
 			f.useFeLayout ?? null,
+			f.balanceSingleByteDoubleByteWidth ?? null,
 			f.characterSpacingControl ?? null,
 			f.resolvedLocalFonts ? e.objectIdentity(f.resolvedLocalFonts) : null,
 			i?.text.fingerprint ?? null,
@@ -15583,7 +16111,7 @@ function bg(e, t, n, r) {
 		c && n.acquireCompleteStory ? e.objectIdentity(n.acquireCompleteStory) : null
 	])}`;
 }
-function xg(e) {
+function Hg(e) {
 	let t = e.src ? Object.freeze({ ...e.src }) : void 0;
 	return "text" in e ? Object.freeze({
 		...e,
@@ -15613,31 +16141,31 @@ function xg(e) {
 		...t ? { src: t } : {}
 	});
 }
-function Sg(e) {
+function Ug(e) {
 	return Object.freeze({
 		...e,
 		layout: Object.freeze({
 			...e.layout,
-			segments: Object.freeze(e.layout.segments.map(xg)),
+			segments: Object.freeze(e.layout.segments.map(Hg)),
 			...e.layout.consumedEnd ? { consumedEnd: Object.freeze({ ...e.layout.consumedEnd }) } : {}
 		})
 	});
 }
-function Cg(e, t, n) {
-	let r = t.environment.layoutServices ? ar(t.environment.layoutServices) : void 0, i = r ? bg(r, e, t, n) : void 0, a = i === void 0 ? void 0 : r.get(e, i);
+function Wg(e, t, n) {
+	let r = t.environment.layoutServices ? or(t.environment.layoutServices) : void 0, i = r ? Vg(r, e, t, n) : void 0, a = i === void 0 ? void 0 : r.get(e, i);
 	if (a) return a;
-	let o = _g(t.exclusions), s = new Set(e.runs.flatMap((e) => qh(e) ? [e.anchorAcquisitionInput.occurrenceId] : []));
+	let o = Rg(t.exclusions), s = new Set(e.runs.flatMap((e) => mg(e) ? [e.anchorAcquisitionInput.occurrenceId] : []));
 	for (let e of o) s.delete(e);
-	let c = s.size, l = Object.freeze([]), u = vg(t.exclusions, l);
+	let c = s.size, l = Object.freeze([]), u = zg(t.exclusions, l);
 	try {
-		let a = uo({
-			seedState: gg(u),
+		let a = fo({
+			seedState: Lg(u),
 			step: (r) => {
-				let i = vg(t.exclusions, r?.ownedExclusions ?? l), a = up(e, t.context, mg(t, i), t.measurer, {
+				let i = zg(t.exclusions, r?.ownedExclusions ?? l), a = Cc(e, t.context, Fg(t, i), t.measurer, {
 					...t.environment,
 					paragraphMarkShapeInput: e.paragraphMarkShapeInput
-				}, n), o = kg(e, t, a), c = hg(o, s), u = gg(vg(t.exclusions, c));
-				if (gg(o.exclusions) !== u) throw Error("Paragraph retained exclusions differ from the measured exclusion authority");
+				}, n), o = Xg(e, t, a), c = Ig(o, s), u = Lg(zg(t.exclusions, c));
+				if (Lg(o.exclusions) !== u) throw Error("Paragraph retained exclusions differ from the measured exclusion authority");
 				return Object.freeze({
 					measured: a,
 					layout: o,
@@ -15649,7 +16177,7 @@ function Cg(e, t, n) {
 			limit: 16
 		}).value, o = Object.freeze({
 			...a.measured,
-			lines: Object.freeze(a.measured.lines.map(Sg)),
+			lines: Object.freeze(a.measured.lines.map(Ug)),
 			placement: Object.freeze({ ...a.measured.placement })
 		}), c = Object.freeze({
 			measured: o,
@@ -15657,27 +16185,27 @@ function Cg(e, t, n) {
 		});
 		return i !== void 0 && r.set(e, i, c), c;
 	} catch (e) {
-		throw e instanceof lo ? new pg(e.reason, e.states, c) : e;
+		throw e instanceof uo ? new Pg(e.reason, e.states, c) : e;
 	}
 }
-function wg(e, t) {
-	return Cg(e, t).layout;
+function Gg(e, t) {
+	return Wg(e, t).layout;
 }
-function Tg(e) {
+function Kg(e) {
 	let t = 0;
 	for (let n of e.members) for (let e of n.fragment.lines) for (let n of e.placements) n.kind === "text" && (t = Math.max(t, -(n.positionPt ?? 0)));
 	return t;
 }
-var Eg = /* @__PURE__ */ new WeakMap();
-function Dg(e) {
-	return e === void 0 ? null : e instanceof Date ? { date: e.toISOString() } : e instanceof Set ? { set: [...e].map(Dg).sort((e, t) => JSON.stringify(e).localeCompare(JSON.stringify(t))) } : e instanceof Map ? { map: [...e.entries()].map(([e, t]) => [Dg(e), Dg(t)]).sort((e, t) => JSON.stringify(e[0]).localeCompare(JSON.stringify(t[0]))) } : Array.isArray(e) ? e.map(Dg) : e && typeof e == "object" ? Object.fromEntries(Object.entries(e).map(([e, t]) => [e, Dg(t)])) : e;
+var qg = /* @__PURE__ */ new WeakMap();
+function Jg(e) {
+	return e === void 0 ? null : e instanceof Date ? { date: e.toISOString() } : e instanceof Set ? { set: [...e].map(Jg).sort((e, t) => JSON.stringify(e).localeCompare(JSON.stringify(t))) } : e instanceof Map ? { map: [...e.entries()].map(([e, t]) => [Jg(e), Jg(t)]).sort((e, t) => JSON.stringify(e[0]).localeCompare(JSON.stringify(t[0]))) } : Array.isArray(e) ? e.map(Jg) : e && typeof e == "object" ? Object.fromEntries(Object.entries(e).map(([e, t]) => [e, Jg(t)])) : e;
 }
-function Og(e, t) {
+function Yg(e, t) {
 	if (t.contexts.length !== e.members.length || t.inputs.length !== e.members.length || t.borderEdges.length !== e.members.length || t.borderExtentsPt.length !== e.members.length) throw Error("Frame acquisition metadata must align with every group member");
 	if (!Number.isFinite(t.maximumWidthPt) || t.maximumWidthPt < 0) throw RangeError("Frame maximumWidthPt must be finite and non-negative");
-	let n = Eg.get(t.acquisitionSession);
-	n || (n = /* @__PURE__ */ new Map(), Eg.set(t.acquisitionSession, n));
-	let r = an("w:frame-acquisition", [
+	let n = qg.get(t.acquisitionSession);
+	n || (n = /* @__PURE__ */ new Map(), qg.set(t.acquisitionSession, n));
+	let r = on("w:frame-acquisition", [
 		e.id,
 		t.placementSignature,
 		t.maximumWidthPt,
@@ -15691,18 +16219,18 @@ function Og(e, t) {
 		t.environment.layoutServices?.images.fingerprint ?? null,
 		t.environment.layoutServices?.math.fingerprint ?? null,
 		t.environment.layoutServices?.verticalGlyphFingerprint ?? null,
-		Dg(t.contexts),
-		Dg(t.inputs),
-		Dg(t.borderEdges),
-		Dg(t.borderExtentsPt),
+		Jg(t.contexts),
+		Jg(t.inputs),
+		Jg(t.borderEdges),
+		Jg(t.borderExtentsPt),
 		t.containerShading ?? null,
-		Dg(t.anchorFrames)
+		Jg(t.anchorFrames)
 	]), i = n.get(r);
 	if (i) return i;
-	let a = e.framePr, o = a.w == null ? Math.max(0, ...e.members.map((e, n) => Tc(e, t.contexts[n], t.maximumWidthPt, t.measurer, t.environment, Th(t.inputs[n], t.contexts[n], t)))) : Math.max(0, a.w), s = Math.max(1, o), c = (() => {
-		let n = Gm(`body-frame:${e.id}`), r = 0, i = null, a = 0, o = 0, c = [];
+	let a = e.framePr, o = a.w == null ? Math.max(0, ...e.members.map((e, n) => Wc(e, t.contexts[n], t.maximumWidthPt, t.measurer, t.environment, Gh(t.inputs[n], t.contexts[n], t)))) : Math.max(0, a.w), s = Math.max(1, o), c = (() => {
+		let n = dh(`body-frame:${e.id}`), r = 0, i = null, a = 0, o = 0, c = [];
 		return e.members.forEach((l, u) => {
-			let d = t.contexts[u], f = Math.max(Nm(i, l, a, d.spaceBeforePt), o), p = {
+			let d = t.contexts[u], f = Math.max($m(i, l, a, d.spaceBeforePt), o), p = {
 				startYPt: r + f,
 				paragraphXPt: 0,
 				availableWidthPt: s,
@@ -15712,7 +16240,7 @@ function Og(e, t) {
 				story: "body",
 				storyInstance: "body",
 				path: [e.sourceIndices[u]]
-			}, { measured: g, layout: _ } = Cg(t.inputs[u], {
+			}, { measured: g, layout: _ } = Wg(t.inputs[u], {
 				id: `body-frame:${e.id}:${u}`,
 				source: h,
 				flowDomainId: `body-frame:${e.id}`,
@@ -15722,7 +16250,7 @@ function Og(e, t) {
 				measurer: t.measurer,
 				environment: {
 					...t.environment,
-					positionExtendsLineBox: Yf(e.framePr.dropCap)
+					positionExtendsLineBox: yp(e.framePr.dropCap)
 				},
 				exclusions: n.exclusions,
 				anchorCollisions: n.collisions,
@@ -15731,7 +16259,7 @@ function Og(e, t) {
 				trailingExtentPt: Math.max(d.spaceAfterPt, m),
 				anchorFrames: t.anchorFrames
 			});
-			n = Jm(n, _), c.push({
+			n = mh(n, _), c.push({
 				paragraph: l,
 				fragment: _,
 				source: h
@@ -15741,10 +16269,10 @@ function Og(e, t) {
 			members: c
 		};
 	})(), l = t.place(o, c.heightPt), u = Object.freeze(c.members.map((e) => {
-		let t = gf(e.fragment, {
+		let t = Bf(e.fragment, {
 			xPt: l.bounds.xPt,
 			yPt: l.bounds.yPt
-		}), n = dh(a.hRule === "exact" && a.h != null ? {
+		}), n = jh(a.hRule === "exact" && a.h != null ? {
 			...t,
 			clipBounds: l.bounds
 		} : t), r = Object.freeze({
@@ -15765,28 +16293,28 @@ function Og(e, t) {
 	});
 	return n.set(r, d), d;
 }
-function kg(e, t, n) {
+function Xg(e, t, n) {
 	let r = t.continuesFromPrevious ? {
 		...t.context,
 		firstIndentPt: 0
-	} : t.context, i = t.placement.paragraphXPt + r.physicalIndentLeftPt, a = t.placement.availableWidthPt - r.physicalIndentLeftPt - r.physicalIndentRightPt, o = Lh(e, n), s = t.continuesFromPrevious ? void 0 : Th(e, r, t), c = zh(n, e, i, a, t.source, t.id, r, o, s, t.environment.layoutServices?.text, t.environment.verticalGlyphMeasurement, t.environment.verticalPageFrame);
-	t.sourceRangeStart !== void 0 && (c = Vh(c, t.sourceRangeStart)), s && n.markOnly && c.length === 0 && (s.markerText !== "" || e.numbering?.picBulletImagePath) && (c = [Hh(n, e, i, a, r)]);
-	let l = [], u = [], d = [], f = [], p = [], m = [], h = [], g = e.runs.map((e, t) => e.type === "break" ? {
+	} : t.context, i = t.placement.paragraphXPt + r.physicalIndentLeftPt, a = dl(r, t.placement.availableWidthPt), o = t.placement.availableWidthPt - r.physicalIndentLeftPt - r.physicalIndentRightPt - a, s = rg(e, n), c = t.continuesFromPrevious ? void 0 : Gh(e, r, t), l = ag(n, e, i, o, t.source, t.id, r, s, c, t.environment.layoutServices?.text, t.environment.verticalGlyphMeasurement, t.environment.verticalPageFrame);
+	t.sourceRangeStart !== void 0 && (l = cg(l, t.sourceRangeStart)), l = og(l, t.placement.paragraphXPt, t.placement.availableWidthPt, r.baseRtl, r.tabStops), c && n.markOnly && l.length === 0 && (c.markerText !== "" || e.numbering?.picBulletImagePath) && (l = [lg(n, e, i, o, r)]);
+	let u = [], d = [], f = [], p = [], m = [], h = [], g = [], _ = e.runs.map((e, t) => e.type === "break" ? {
 		kind: "break",
 		breakKind: e.breakType,
-		offset: o.runStarts[t] ?? 0
-	} : void 0).filter((e) => e !== void 0), _ = /* @__PURE__ */ new Map();
+		offset: s.runStarts[t] ?? 0
+	} : void 0).filter((e) => e !== void 0), v = /* @__PURE__ */ new Map();
 	e.runs.forEach((e, t) => {
-		if (!qh(e)) return;
-		let n = _.get(e.anchorAcquisitionInput.occurrenceId) ?? [];
+		if (!mg(e)) return;
+		let n = v.get(e.anchorAcquisitionInput.occurrenceId) ?? [];
 		n.push({
 			run: e,
 			runIndex: t
-		}), _.set(e.anchorAcquisitionInput.occurrenceId, n);
+		}), v.set(e.anchorAcquisitionInput.occurrenceId, n);
 	});
-	for (let [r, i] of _) {
-		let a = rg(r, i, c, e, t, n.contentEndYPt - t.placement.startYPt, t.exclusions, p, t.anchorCollisions ?? [], m);
-		a && (f.push(a.result), a.cellContainmentBounds && h.push(a.cellContainmentBounds), a.drawing && (u.push(a.drawing), d.push(...a.textBoxes), a.exclusion && p.push(a.exclusion), a.collision && m.push(a.collision), c[a.hostLineIndex] && (c = c.map((e, t) => t === a.hostLineIndex ? {
+	for (let [r, i] of v) {
+		let a = wg(r, i, l, e, t, n.contentEndYPt - t.placement.startYPt, t.exclusions, m, t.anchorCollisions ?? [], h);
+		a && (p.push(a.result), a.cellContainmentBounds && g.push(a.cellContainmentBounds), a.drawing && (d.push(a.drawing), f.push(...a.textBoxes), a.exclusion && m.push(a.exclusion), a.collision && h.push(a.collision), l[a.hostLineIndex] && (l = l.map((e, t) => t === a.hostLineIndex ? {
 			...e,
 			placements: [...e.placements, {
 				kind: "drawing",
@@ -15797,18 +16325,18 @@ function kg(e, t, n) {
 			}]
 		} : e))));
 	}
-	if (s && c[0]) {
-		let n = Dh(s, e, t.context, i, a, c[0]);
-		n.length > 0 && (c = [{
-			...c[0],
-			placements: [...n, ...c[0].placements]
-		}, ...c.slice(1)]);
+	if (c && l[0]) {
+		let n = qh(c, e, t.context, i, o, l[0]);
+		n.length > 0 && (l = [{
+			...l[0],
+			placements: [...n, ...l[0].placements]
+		}, ...l.slice(1)]);
 	}
 	if (e.runs.forEach((e, n) => {
-		let r = fh(t.source, n);
+		let r = Mh(t.source, n);
 		if (e.type === "unavailableDrawing" && e.anchorAcquisitionInput === void 0) {
-			let i = hh(t.source, n), a = c.flatMap((e) => e.placements).find((e) => e.kind === "drawing" && e.drawingId === i);
-			a?.kind === "drawing" && u.push({
+			let i = Fh(t.source, n), a = l.flatMap((e) => e.placements).find((e) => e.kind === "drawing" && e.drawingId === i);
+			a?.kind === "drawing" && d.push({
 				kind: "drawing",
 				id: i,
 				source: r,
@@ -15818,55 +16346,55 @@ function kg(e, t, n) {
 				advancePt: 0,
 				ordinaryFlow: !1,
 				commands: Object.freeze([{ kind: "noop" }]),
-				diagnostics: Object.freeze([gh(e.resourceKind, r)])
+				diagnostics: Object.freeze([Ih(e.resourceKind, r)])
 			});
 		}
-		if (e.type === "image" && l.push({
+		if (e.type === "image" && u.push({
 			kind: "image",
-			resourceKey: sn(r, e.imagePath),
+			resourceKey: cn(r, e.imagePath),
 			intrinsicSize: {
 				widthPt: e.widthPt,
 				heightPt: e.heightPt
 			}
-		}), e.type === "chart" && l.push({
+		}), e.type === "chart" && u.push({
 			kind: "chart",
-			resourceKey: mh(r),
+			resourceKey: Ph(r),
 			intrinsicSize: {
 				widthPt: e.widthPt,
 				heightPt: e.heightPt
 			}
-		}), e.type === "math" && l.push({
+		}), e.type === "math" && u.push({
 			kind: "math",
-			resourceKey: e.resourceKey ?? an("math-resource", r),
+			resourceKey: e.resourceKey ?? on("math-resource", r),
 			intrinsicSize: {
-				widthPt: c.flatMap((e) => e.placements).find((e) => e.kind === "resource" && e.resourceKind === "math")?.bounds?.widthPt ?? 0,
+				widthPt: l.flatMap((e) => e.placements).find((e) => e.kind === "resource" && e.resourceKind === "math")?.bounds?.widthPt ?? 0,
 				heightPt: e.fontSize
 			}
 		}), (e.type === "image" || e.type === "chart") && !t.continuesFromPrevious) {
-			let r = Kh(e, t, n);
+			let r = pg(e, t, n);
 			if (r) {
-				u.push(r);
-				let e = c[0];
-				e && (c = [{
+				d.push(r);
+				let e = l[0];
+				e && (l = [{
 					...e,
 					placements: [...e.placements, {
 						kind: "drawing",
 						range: {
-							start: o.runStarts[n] ?? 0,
-							end: (o.runStarts[n] ?? 0) + (o.runLengths[n] ?? 1)
+							start: s.runStarts[n] ?? 0,
+							end: (s.runStarts[n] ?? 0) + (s.runLengths[n] ?? 1)
 						},
 						drawingId: r.id,
 						bounds: r.inkBounds,
 						advancePt: 0
 					}]
-				}, ...c.slice(1)]);
+				}, ...l.slice(1)]);
 			}
 		}
 		if (e.type === "shape" && !e.anchorAcquisitionInput && !t.continuesFromPrevious) {
-			let i = `${t.id}:drawing:${n}`, a = e.inline === !0 ? c.flatMap((e) => e.placements).find((e) => e.kind === "drawing" && e.drawingId === i) : void 0;
+			let i = `${t.id}:drawing:${n}`, a = e.inline === !0 ? l.flatMap((e) => e.placements).find((e) => e.kind === "drawing" && e.drawingId === i) : void 0;
 			if (e.inline === !0 && !a) throw Error(`Inline shape ${i} has no retained line placement`);
-			let s = a?.bounds ?? Wh(e, t), l = `${t.id}:textbox:${n}`, f = fg(e, s, {
-				id: l,
+			let o = a?.bounds ?? dg(e, t), c = `${t.id}:textbox:${n}`, u = Ng(e, o, {
+				id: c,
 				source: r,
 				flowDomainId: t.flowDomainId,
 				context: t.context,
@@ -15874,46 +16402,46 @@ function kg(e, t, n) {
 				environment: t.environment,
 				input: e.textBoxInput,
 				acquireCompleteStory: t.acquireCompleteStory
-			}), p = Gh(e, e.inline === !0 ? s : f?.flowBounds ?? s, t, n, e.inline === !0);
-			f && (d.push(f), p = {
+			}), p = fg(e, e.inline === !0 ? o : u?.flowBounds ?? o, t, n, e.inline === !0);
+			u && (f.push(u), p = {
 				...p,
-				textBoxIds: [l]
-			}), u.push(p);
-			let m = e.inline === !0 ? void 0 : c[0];
-			m && (c = [{
+				textBoxIds: [c]
+			}), d.push(p);
+			let m = e.inline === !0 ? void 0 : l[0];
+			m && (l = [{
 				...m,
 				placements: [...m.placements, {
 					kind: "drawing",
 					range: {
-						start: o.runStarts[n] ?? 0,
-						end: (o.runStarts[n] ?? 0) + (o.runLengths[n] ?? 1)
+						start: s.runStarts[n] ?? 0,
+						end: (s.runStarts[n] ?? 0) + (s.runLengths[n] ?? 1)
 					},
 					drawingId: p.id,
 					bounds: p.inkBounds,
 					advancePt: 0
 				}]
-			}, ...c.slice(1)]);
+			}, ...l.slice(1)]);
 		}
-	}), e.numbering?.picBulletImagePath && !t.continuesFromPrevious && l.push({
+	}), e.numbering?.picBulletImagePath && !t.continuesFromPrevious && u.push({
 		kind: "picture-bullet",
-		resourceKey: sn(t.source, e.numbering.picBulletImagePath),
+		resourceKey: cn(t.source, e.numbering.picBulletImagePath),
 		intrinsicSize: {
 			widthPt: e.numbering.picBulletWidthPt ?? e.numberingMarkerShapeInput?.fontSizePt ?? 0,
 			heightPt: e.numbering.picBulletHeightPt ?? e.numberingMarkerShapeInput?.fontSizePt ?? 0
 		}
-	}), e.numbering?.picBulletImagePath && c[0] && !t.continuesFromPrevious) {
-		if (!s) throw Error("Picture-bullet acquisition requires resolved marker font geometry");
-		let n = e.numbering.picBulletWidthPt ?? s.markerWidthPt, r = e.numbering.picBulletHeightPt ?? e.numberingMarkerShapeInput?.fontSizePt;
+	}), e.numbering?.picBulletImagePath && l[0] && !t.continuesFromPrevious) {
+		if (!c) throw Error("Picture-bullet acquisition requires resolved marker font geometry");
+		let n = e.numbering.picBulletWidthPt ?? c.markerWidthPt, r = e.numbering.picBulletHeightPt ?? e.numberingMarkerShapeInput?.fontSizePt;
 		if (r === void 0) throw Error("Picture-bullet acquisition requires resolved marker height");
-		let o = oc({
+		let a = Tc({
 			baseRtl: t.context.baseRtl,
-			alignedLeadingEdgePt: Eh(s, t.context, i, a, c[0]),
+			alignedLeadingEdgePt: Kh(c, t.context, i, o, l[0]),
 			authoredFirstIndentPt: e.indentFirst,
-			markerShiftPt: s.markerShiftPt,
+			markerShiftPt: c.markerShiftPt,
 			markerWidthPt: n
 		});
-		c = [{
-			...c[0],
+		l = [{
+			...l[0],
 			placements: [{
 				kind: "resource",
 				resourceKind: "picture-bullet",
@@ -15921,51 +16449,51 @@ function kg(e, t, n) {
 					start: -1,
 					end: 0
 				},
-				resourceKey: sn(t.source, e.numbering.picBulletImagePath),
+				resourceKey: cn(t.source, e.numbering.picBulletImagePath),
 				bounds: {
-					xPt: o,
-					yPt: c[0].baselinePt - r,
+					xPt: a,
+					yPt: l[0].baselinePt - r,
 					widthPt: n,
 					heightPt: r
 				},
 				advancePt: 0
-			}, ...c[0].placements]
-		}, ...c.slice(1)];
+			}, ...l[0].placements]
+		}, ...l.slice(1)];
 	}
-	c = kh(c, e.shading, t.containerShading);
-	let v = n.contentEndYPt - n.contentStartYPt, y = t.paragraphBorderEdges ?? {
+	l = Yh(l, e.shading, t.containerShading);
+	let y = n.contentEndYPt - n.contentStartYPt, b = t.paragraphBorderEdges ?? {
 		top: "top",
 		bottom: "bottom"
-	}, b = jh(e, c, i, a, n.contentStartYPt, v, y), x = e.borders ? [
-		...y.top === "none" ? [] : [[y.top, e.borders[y.top]]],
+	}, x = Zh(e, l, i, o, n.contentStartYPt, y, b), S = e.borders ? [
+		...b.top === "none" ? [] : [[b.top, e.borders[b.top]]],
 		["right", e.borders.right],
-		...y.bottom === "none" ? [] : [["bottom", e.borders.bottom]],
+		...b.bottom === "none" ? [] : [["bottom", e.borders.bottom]],
 		["left", e.borders.left]
-	] : [], S = e.borders ? x.flatMap(([e, t]) => {
-		if (!Ah(t)) return [];
-		let n = e === "top" || e === "between" || e === "bottom", r = e === "right" || e === "bottom", i = n ? b.yPt + (r ? b.heightPt : 0) : b.xPt + (r ? b.widthPt : 0);
+	] : [], C = e.borders ? S.flatMap(([e, t]) => {
+		if (!Xh(t)) return [];
+		let n = e === "top" || e === "between" || e === "bottom", r = e === "right" || e === "bottom", i = n ? x.yPt + (r ? x.heightPt : 0) : x.xPt + (r ? x.widthPt : 0);
 		return [{
 			edge: e,
 			from: n ? {
-				xPt: b.xPt,
+				xPt: x.xPt,
 				yPt: i
 			} : {
 				xPt: i,
-				yPt: b.yPt
+				yPt: x.yPt
 			},
 			to: n ? {
-				xPt: b.xPt + b.widthPt,
+				xPt: x.xPt + x.widthPt,
 				yPt: i
 			} : {
 				xPt: i,
-				yPt: b.yPt + b.heightPt
+				yPt: x.yPt + x.heightPt
 			},
 			color: t.color ? `#${t.color}` : "#000000",
 			widthPt: t.width,
-			...ri(t.style, t.width)
+			...ii(t.style, t.width)
 		}];
-	}) : [], C = t.trailingExtentPt ?? n.requestedSpaceAfterPt, w = Nl(h);
-	return dh({
+	}) : [], w = t.trailingExtentPt ?? n.requestedSpaceAfterPt, T = ru(g);
+	return jh({
 		kind: "paragraph",
 		id: t.id,
 		source: t.source,
@@ -15978,68 +16506,68 @@ function kg(e, t, n) {
 			xPt: t.placement.paragraphXPt,
 			yPt: t.placement.startYPt,
 			widthPt: t.placement.availableWidthPt,
-			heightPt: n.contentEndYPt - t.placement.startYPt + C
+			heightPt: n.contentEndYPt - t.placement.startYPt + w
 		},
-		inkBounds: { ...e.shading || e.borders ? b : {
+		inkBounds: { ...e.shading || e.borders ? x : {
 			xPt: i,
 			yPt: n.contentStartYPt,
-			widthPt: Math.max(0, ...c.map((e) => e.bounds.widthPt)),
-			heightPt: v
+			widthPt: Math.max(0, ...l.map((e) => e.bounds.widthPt)),
+			heightPt: y
 		} },
 		spacing: {
 			beforePt: t.placement.suppressSpaceBefore ? 0 : n.requestedSpaceBeforePt,
-			afterPt: C
+			afterPt: w
 		},
 		contextualSpacing: e.contextualSpacing ?? !1,
-		lines: c,
-		borders: S,
+		lines: l,
+		borders: C,
 		shading: e.shading ? { color: `#${e.shading}` } : void 0,
-		resources: l,
-		drawings: u,
-		textBoxes: d,
-		events: g,
-		exclusions: vg(t.exclusions, p),
-		...w ? { cellContainmentBounds: w } : {},
-		anchorCollisions: yg(t.anchorCollisions ?? [], m),
-		...f.length ? { anchorFrames: f } : {},
+		resources: u,
+		drawings: d,
+		textBoxes: f,
+		events: _,
+		exclusions: zg(t.exclusions, m),
+		...T ? { cellContainmentBounds: T } : {},
+		anchorCollisions: Bg(t.anchorCollisions ?? [], h),
+		...p.length ? { anchorFrames: p } : {},
 		paragraphMark: n.markOnly ? {
 			hidden: e.markVanish === !0,
 			bounds: {
 				xPt: i,
 				yPt: n.contentStartYPt,
 				widthPt: 0,
-				heightPt: v
+				heightPt: y
 			}
 		} : void 0
 	});
 }
-var Ag = (e, t) => Y(e, {
+var Zg = (e, t) => Y(e, {
 	xPt: 0,
 	yPt: t
-}), jg = (e, t) => X(e, {
+}), Qg = (e, t) => X(e, {
 	xPt: 0,
 	yPt: t
-}), Mg = (e, t) => uf(e, {
+}), $g = (e, t) => Pf(e, {
 	xPt: 0,
 	yPt: t
-}), Ng = (e, t) => ff(e, {
+}), e_ = (e, t) => If(e, {
 	xPt: 0,
 	yPt: t
-}), Pg = (e, t) => pf(e, {
+}), t_ = (e, t) => Lf(e, {
 	xPt: 0,
 	yPt: t
-}), Fg = (e, t) => gf(e, {
+}), n_ = (e, t) => Bf(e, {
 	xPt: 0,
 	yPt: t
-}), Ig = (e, t) => vf(e, {
+}), r_ = (e, t) => Hf(e, {
 	xPt: 0,
 	yPt: t
 });
-function Lg(e, t, n, r) {
+function i_(e, t, n, r) {
 	if (!e.shading && e.borders.length === 0) return null;
 	let i = t[0], a = t.at(-1);
 	if (!i || !a) return {
-		box: jg(e.inkBounds, n),
+		box: Qg(e.inkBounds, n),
 		borders: []
 	};
 	let o = e.inkBounds.yPt, s = o + e.inkBounds.heightPt, c = r.continuesFromPrevious ? Math.max(o, i.bounds.yPt) : o, l = r.continuesOnNext ? Math.min(s, a.bounds.yPt + a.advancePt) : s, u = {
@@ -16092,18 +16620,18 @@ function Lg(e, t, n, r) {
 			}
 		}] : [{
 			...e,
-			from: Ag(e.from, n),
-			to: Ag(e.to, n)
+			from: Zg(e.from, n),
+			to: Zg(e.to, n)
 		}])
 	};
 }
-function Rg(e, t, n = `${e.id}:${t.lineStart}-${t.lineEnd}`) {
-	let r = e.lines.slice(t.lineStart, t.lineEnd), i = r[0], a = r.at(-1), o = t.continuesFromPrevious && i ? e.flowBounds.yPt - i.bounds.yPt : 0, s = o === 0 ? r : r.map((e) => Pg(e, o)), c = s[0], l = s.at(-1), u = e.lines.map((e, n) => n >= t.lineStart && n < t.lineEnd ? s[n - t.lineStart] : e), d = c && l ? {
+function a_(e, t, n = `${e.id}:${t.lineStart}-${t.lineEnd}`) {
+	let r = e.lines.slice(t.lineStart, t.lineEnd), i = r[0], a = r.at(-1), o = t.continuesFromPrevious && i ? e.flowBounds.yPt - i.bounds.yPt : 0, s = o === 0 ? r : r.map((e) => t_(e, o)), c = s[0], l = s.at(-1), u = e.lines.map((e, n) => n >= t.lineStart && n < t.lineEnd ? s[n - t.lineStart] : e), d = c && l ? {
 		xPt: Math.min(...s.map((e) => e.bounds.xPt)),
 		yPt: c.bounds.yPt,
 		widthPt: Math.max(...s.map((e) => e.bounds.xPt + e.bounds.widthPt)) - Math.min(...s.map((e) => e.bounds.xPt)),
 		heightPt: l.bounds.yPt + l.bounds.heightPt - c.bounds.yPt
-	} : e.inkBounds, f = Lg(e, r, o, t), p = new Set(r.flatMap((e) => e.placements.flatMap((e) => e.kind === "drawing" ? [e.drawingId] : []))), m = e.drawings.filter((e) => p.has(e.id)).map((e) => e.anchorLayer?.verticalOwnership === "page" ? e : Mg(e, o)), h = Nl(m.filter((e) => e.anchorLayer?.cellContainment === !0).map((e) => e.flowBounds)), g = new Set(e.drawings.flatMap((e) => {
+	} : e.inkBounds, f = i_(e, r, o, t), p = new Set(r.flatMap((e) => e.placements.flatMap((e) => e.kind === "drawing" ? [e.drawingId] : []))), m = e.drawings.filter((e) => p.has(e.id)).map((e) => e.anchorLayer?.verticalOwnership === "page" ? e : $g(e, o)), h = ru(m.filter((e) => e.anchorLayer?.cellContainment === !0).map((e) => e.flowBounds)), g = new Set(e.drawings.flatMap((e) => {
 		if (e.anchorLayer?.verticalOwnership !== "host") return [];
 		let t = e.anchorLayer.acquisitionOccurrenceId ?? e.anchorLayer.occurrenceId;
 		return t === void 0 ? [] : [t];
@@ -16113,8 +16641,8 @@ function Rg(e, t, n = `${e.id}:${t.lineStart}-${t.lineEnd}`) {
 		return t === void 0 ? [] : [t];
 	})), v = new Set(r.flatMap((e) => e.placements.flatMap((e) => e.kind === "resource" ? [e.resourceKey] : [])));
 	for (let e of m) for (let t of e.commands) t.kind === "resource" && v.add(t.resourceKey);
-	let y = new Set(m.flatMap((e) => [e.id.replace(":drawing:", ":textbox:"), ...e.textBoxIds ?? []])), b = new Set(m.filter((e) => e.anchorLayer?.verticalOwnership === "page" || e.orientation === "upright-physical").flatMap((e) => e.textBoxIds ?? [])), x = new Set(m.map((e) => an("source-occurrence", e.source))), S = i?.range.start, C = a?.range.end, { bookmarkStarts: w, ...T } = e;
-	return dh({
+	let y = new Set(m.flatMap((e) => [e.id.replace(":drawing:", ":textbox:"), ...e.textBoxIds ?? []])), b = new Set(m.filter((e) => e.anchorLayer?.verticalOwnership === "page" || e.orientation === "upright-physical").flatMap((e) => e.textBoxIds ?? [])), x = new Set(m.map((e) => on("source-occurrence", e.source))), S = i?.range.start, C = a?.range.end, { bookmarkStarts: w, ...T } = e;
+	return jh({
 		...T,
 		kind: "paragraph",
 		id: n,
@@ -16124,7 +16652,7 @@ function Rg(e, t, n = `${e.id}:${t.lineStart}-${t.lineEnd}`) {
 			...e.flowBounds,
 			yPt: e.flowBounds.yPt
 		},
-		...e.clipBounds ? { clipBounds: jg(e.clipBounds, o) } : {},
+		...e.clipBounds ? { clipBounds: Qg(e.clipBounds, o) } : {},
 		spacing: {
 			beforePt: t.continuesFromPrevious ? 0 : e.spacing.beforePt,
 			afterPt: t.continuesOnNext ? 0 : e.spacing.afterPt
@@ -16132,42 +16660,42 @@ function Rg(e, t, n = `${e.id}:${t.lineStart}-${t.lineEnd}`) {
 		inkBounds: f?.box ?? d,
 		borders: f?.borders ?? e.borders.map((e) => ({
 			...e,
-			from: Ag(e.from, o),
-			to: Ag(e.to, o)
+			from: Zg(e.from, o),
+			to: Zg(e.to, o)
 		})),
 		resources: e.resources.filter((e) => v.has(e.resourceKey)),
 		drawings: m,
 		cellContainmentBounds: h ?? void 0,
-		textBoxes: e.textBoxes.filter((e) => y.has(e.id) || x.has(an("source-occurrence", e.source))).map((e) => b.has(e.id) ? e : Ig(e, o)),
+		textBoxes: e.textBoxes.filter((e) => y.has(e.id) || x.has(on("source-occurrence", e.source))).map((e) => b.has(e.id) ? e : r_(e, o)),
 		events: S === void 0 || C === void 0 ? [] : e.events.filter((e) => e.offset >= S && (e.offset < C || !t.continuesOnNext && e.offset === C)),
 		exclusions: e.exclusions.filter((e) => e.verticalOwnership === "page" || e.anchorOccurrenceId === void 0 || !g.has(e.anchorOccurrenceId) || _.has(e.anchorOccurrenceId)).map((e) => ({
 			...e,
-			bounds: e.verticalOwnership === "page" ? e.bounds : jg(e.bounds, o),
-			polygon: e.verticalOwnership === "page" ? e.polygon : e.polygon.map((e) => Ag(e, o))
+			bounds: e.verticalOwnership === "page" ? e.bounds : Qg(e.bounds, o),
+			polygon: e.verticalOwnership === "page" ? e.polygon : e.polygon.map((e) => Zg(e, o))
 		})),
 		anchorCollisions: (e.anchorCollisions ?? []).filter((e) => e.verticalOwnership === "page" || !g.has(e.occurrenceId) || _.has(e.occurrenceId)).map((e) => ({
 			...e,
-			bounds: e.verticalOwnership === "page" ? e.bounds : jg(e.bounds, o)
+			bounds: e.verticalOwnership === "page" ? e.bounds : Qg(e.bounds, o)
 		})),
 		...t.continuesOnNext ? { paragraphMark: void 0 } : e.paragraphMark ? { paragraphMark: {
 			...e.paragraphMark,
-			bounds: jg(e.paragraphMark.bounds, o)
+			bounds: Qg(e.paragraphMark.bounds, o)
 		} } : {},
 		continuation: t
 	});
 }
 //#endregion
 //#region packages/docx/src/layout/paragraph-pagination.ts
-function zg(e, t) {
+function o_(e, t) {
 	return e.segIndex - t.segIndex || e.charOffset - t.charOffset;
 }
-function Bg(e, t, n, r, i, a, o, s, c, l) {
+function s_(e, t, n, r, i, a, o, s, c, l) {
 	if (![r, i].every((e) => Number.isFinite(e) && e >= 0)) throw RangeError("Paragraph fragment extents must be finite and non-negative");
 	if (n.kind === "splittable" && n.lineEndBoundaries.length !== e.lines.length) throw RangeError("Splittable paragraph source boundaries must align with retained lines");
 	if (n.kind === "indivisible" && t.boundary !== null) throw RangeError("Indivisible paragraph cannot carry a continuation boundary");
 	let u = o.authoredSpaceAfterPt ?? 0;
 	if (!Number.isFinite(u) || u < 0) throw RangeError("Authored paragraph spaceAfter must be finite and non-negative");
-	let d = e.lines.length, f = (n) => Rg(e, {
+	let d = e.lines.length, f = (n) => a_(e, {
 		lineStart: 0,
 		lineEnd: n,
 		continuesFromPrevious: t.boundary !== null,
@@ -16178,12 +16706,12 @@ function Bg(e, t, n, r, i, a, o, s, c, l) {
 		return t;
 	}, m = (e) => l?.(e) ?? !0, h = (e, t) => {
 		if (!t) return e.advancePt;
-		let n = Xf({
+		let n = bp({
 			advancePt: e.advancePt,
 			retainedSpaceAfterPt: e.spacing.afterPt,
 			authoredSpaceAfterPt: u
 		});
-		return $f({
+		return Cp({
 			paragraph: e,
 			writingMode: o.writingMode ?? "horizontal-tb",
 			logicalLineBoxExtentPt: n,
@@ -16230,7 +16758,7 @@ function Bg(e, t, n, r, i, a, o, s, c, l) {
 		additionalReservePt: 0,
 		admittedBlockExtentPt: 0
 	};
-	let v = Kf(0, d, r, (e) => (() => {
+	let v = gp(0, d, r, (e) => (() => {
 		let t = f(e), n = p(t);
 		return m(n) ? h(t, e === d) + n : r + 1;
 	})()).end;
@@ -16245,7 +16773,7 @@ function Bg(e, t, n, r, i, a, o, s, c, l) {
 		v = 1;
 	}
 	for (;;) {
-		let e = qf({
+		let e = _p({
 			widowControl: o.widowControl,
 			start: 0,
 			end: v,
@@ -16263,7 +16791,7 @@ function Bg(e, t, n, r, i, a, o, s, c, l) {
 		--v;
 	}
 	let y = f(v), b = v < d ? n.lineEndBoundaries[v - 1] : null;
-	if (b !== null && t.boundary !== null && zg(b, t.boundary) <= 0) throw Error("Paragraph continuation source boundary did not advance");
+	if (b !== null && t.boundary !== null && o_(b, t.boundary) <= 0) throw Error("Paragraph continuation source boundary did not advance");
 	return {
 		fragment: y,
 		nextCursor: b === null ? null : Object.freeze({
@@ -16278,7 +16806,7 @@ function Bg(e, t, n, r, i, a, o, s, c, l) {
 }
 //#endregion
 //#region packages/docx/src/layout/note-reference-ownership.ts
-function Vg(e, t) {
+function c_(e, t) {
 	let n = /* @__PURE__ */ new Map();
 	if (!e) return n;
 	let r = new Set(e.map((e) => e.id));
@@ -16286,40 +16814,40 @@ function Vg(e, t) {
 		r.has(e) && !n.has(e) && n.set(e, n.size + 1);
 	}), n;
 }
-function Hg(e) {
+function l_(e) {
 	let t = /* @__PURE__ */ new Map();
 	if (!e) return t;
 	for (let n of e) t.set(n.id, n);
 	return t;
 }
-function Ug(e, t) {
+function u_(e, t) {
 	let n = [], r = /* @__PURE__ */ new Set();
 	for (let i of e) if (i.type === "paragraph" && "runs" in i) for (let e of i.runs) e.type !== "text" || e.noteRef?.kind !== t || e.noteRef.id.length === 0 || r.has(e.noteRef.id) || (r.add(e.noteRef.id), n.push(e.noteRef.id));
-	else if (i.type === "table" && "rows" in i) for (let e of i.rows) for (let i of e.cells) for (let e of Ug(i.content, t)) r.has(e) || (r.add(e), n.push(e));
+	else if (i.type === "table" && "rows" in i) for (let e of i.rows) for (let i of e.cells) for (let e of u_(i.content, t)) r.has(e) || (r.add(e), n.push(e));
 	return Object.freeze(n);
 }
-function Wg(e, t) {
+function d_(e, t) {
 	return Object.freeze([...new Set(e.flatMap((e) => e.placements.flatMap((e) => e.kind === "text" && e.noteReference?.kind === t ? [e.noteReference.id] : [])))]);
 }
-function Gg(e, t) {
-	return e.rows.flatMap((e) => e.cells.flatMap((e) => e.blocks.flatMap((e) => Kg(e.layout, t))));
+function f_(e, t) {
+	return e.rows.flatMap((e) => e.cells.flatMap((e) => e.blocks.flatMap((e) => p_(e.layout, t))));
 }
-function Kg(e, t) {
-	let n = e.kind === "paragraph" ? Wg(e.lines, t) : Gg(e, t);
+function p_(e, t) {
+	let n = e.kind === "paragraph" ? d_(e.lines, t) : f_(e, t);
 	return Object.freeze([...new Set(n)]);
 }
-function qg(e) {
-	return Wg(e, "footnote");
+function m_(e) {
+	return d_(e, "footnote");
 }
-function Jg(e) {
-	return Kg(e, "footnote");
+function h_(e) {
+	return p_(e, "footnote");
 }
-function Yg(e) {
-	return Kg(e, "endnote");
+function g_(e) {
+	return p_(e, "endnote");
 }
 //#endregion
 //#region packages/docx/src/layout/column-balancing.ts
-function Xg(e) {
+function __(e) {
 	if (!Number.isInteger(e.columnCount) || e.columnCount <= 0) throw RangeError("Column count must be a positive integer");
 	for (let t of e.fragments) if (!Number.isFinite(t.extentPt) || t.extentPt < 0) throw RangeError("Column balance fragment extents must be finite and non-negative");
 	if (e.fragments.length === 0) return Object.freeze({
@@ -16376,12 +16904,12 @@ function Xg(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/column-balance-frontier.ts
-function Zg(e) {
+function v_(e) {
 	let t = /* @__PURE__ */ new Map();
 	return e.sequence.forEach((e, n) => {
 		if (e.kind === "body-block") {
 			let r = e.block;
-			t.set(B(r.source), Object.freeze({
+			t.set(z(r.source), Object.freeze({
 				sequenceIndex: n,
 				keepLines: r.kind === "paragraph" && r.keepLines,
 				keepNext: r.kind === "paragraph" && r.keepNext,
@@ -16389,7 +16917,7 @@ function Zg(e) {
 			}));
 			return;
 		}
-		e.kind === "adjacent-table-group" && e.tables.forEach((e) => t.set(B(e.source), Object.freeze({
+		e.kind === "adjacent-table-group" && e.tables.forEach((e) => t.set(z(e.source), Object.freeze({
 			sequenceIndex: n,
 			keepLines: !1,
 			keepNext: !1,
@@ -16397,7 +16925,7 @@ function Zg(e) {
 		})));
 	}), t;
 }
-function Qg(e, t, n) {
+function y_(e, t, n) {
 	let r = t - e;
 	if (n.length <= 1) return Object.freeze([r]);
 	let i = [], a = e;
@@ -16407,16 +16935,16 @@ function Qg(e, t, n) {
 	}
 	return i[i.length - 1] = i.at(-1) + t - a, Object.freeze(i);
 }
-function $g(e, t, n, r) {
-	let i = new Set(r.flowDomainIds), a = new Map(n.layers.body.map((e) => [e.id, e])), o = Zg(e), s = [];
+function b_(e, t, n, r) {
+	let i = new Set(r.flowDomainIds), a = new Map(n.layers.body.map((e) => [e.id, e])), o = v_(e), s = [];
 	for (let e of t) {
 		if (!i.has(e.flowDomainId)) continue;
 		let t = a.get(e.nodeId);
 		if (!t || !t.ordinaryFlow) continue;
-		let n = B(t.source), r = o.get(n);
+		let n = z(t.source), r = o.get(n);
 		if (!r) continue;
 		let c = t.kind === "paragraph" && !r.keepLines && t.lines.length > 1 ? t.lines.map((e) => e.bounds.yPt + e.advancePt) : t.kind === "table" && t.rows.length > 1 ? t.rows.map((e) => e.flowBounds.yPt + e.advancePt) : [e.blockEndPt];
-		Qg(e.blockStartPt, e.blockEndPt, c).forEach((e) => s.push({
+		y_(e.blockStartPt, e.blockEndPt, c).forEach((e) => s.push({
 			extentPt: e,
 			breakAfter: "allowed",
 			sequenceIndex: r.sequenceIndex,
@@ -16436,7 +16964,7 @@ function $g(e, t, n, r) {
 		n.keepLines && t.slice(0, -1).forEach((e) => {
 			s[e].breakAfter = "forbidden";
 		});
-		for (let e = 0; e + 1 < r.length; e += 1) qf({
+		for (let e = 0; e + 1 < r.length; e += 1) _p({
 			widowControl: n.widowControl,
 			start: 0,
 			end: e + 1,
@@ -16459,16 +16987,16 @@ function $g(e, t, n, r) {
 		}
 	}), Object.freeze(s.map((e) => Object.freeze(e)));
 }
-function e_(e, t, n, r, i) {
-	let a = $g(e, t, r, i), o = n.get(r.pageIndex) ?? 0;
-	return Xg({
+function x_(e, t, n, r, i) {
+	let a = b_(e, t, r, i), o = n.get(r.pageIndex) ?? 0;
+	return __({
 		columnCount: i.flowDomainIds.length,
 		fragments: a
 	}).targetPt + o;
 }
 //#endregion
 //#region packages/docx/src/layout/section-flow-composition.ts
-function t_(e, t, n, r, i) {
+function S_(e, t, n, r, i) {
 	let a = t, o = e.lines.map((t, o) => {
 		let s = a++, c = String(s), l = i.measureLineNumberGlyph(c), u = Object.freeze({
 			xPt: e.flowBounds.xPt - r,
@@ -16501,7 +17029,7 @@ function t_(e, t, n, r, i) {
 		counterEnd: a
 	});
 }
-function n_(e, t, n) {
+function C_(e, t, n) {
 	let r = /* @__PURE__ */ new Map(), i, a = e.pages.map((e) => {
 		if (e.parityBlank) return e;
 		let a = [...e.layers.body];
@@ -16514,10 +17042,10 @@ function n_(e, t, n) {
 			for (let e of l) {
 				let n = a[e];
 				if (n.kind === "paragraph" && n.ordinaryFlow && y) {
-					let e = t_(n, b, Math.max(1, y.countBy), Gc(y.distance), t);
+					let e = S_(n, b, Math.max(1, y.countBy), fl(y.distance), t);
 					n = e.paragraph, b = e.counterEnd;
 				}
-				v !== 0 && (n.ordinaryFlow || n.sectionFlowOwnership === "host-flow") && (n.kind === "paragraph" || n.kind === "table") && (n = Of(n, {
+				v !== 0 && (n.ordinaryFlow || n.sectionFlowOwnership === "host-flow") && (n.kind === "paragraph" || n.kind === "table") && (n = Qf(n, {
 					xPt: 0,
 					yPt: v
 				})), a[e] = n;
@@ -16526,7 +17054,7 @@ function n_(e, t, n) {
 		}
 		return Object.freeze({
 			...e,
-			layers: Dr(e.layers, "body", a)
+			layers: Or(e.layers, "body", a)
 		});
 	});
 	return Object.freeze({
@@ -16536,21 +17064,21 @@ function n_(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/layout/section-page-identity.ts
-function r_(e) {
+function w_(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n of e) for (let e of n.sectionRegions) t.has(e.sectionOccurrenceId) || t.set(e.sectionOccurrenceId, n.pageIndex);
 	return t;
 }
-function i_(e, t) {
+function T_(e, t) {
 	let n = e[t];
 	return n ? t === 0 || e[t - 1]?.sectionOccurrenceId !== n.sectionOccurrenceId : !1;
 }
 //#endregion
 //#region packages/docx/src/layout/header-footer-reserve.ts
-function a_(e, t) {
+function E_(e, t) {
 	return t.titlePage && t.firstPageOfSection ? e.first : t.evenAndOddHeaders && t.displayPageNumber % 2 == 0 ? e.even : e.default;
 }
-function o_(e, t) {
+function D_(e, t) {
 	if (![
 		e.pageHeight,
 		e.marginTop,
@@ -16565,7 +17093,7 @@ function o_(e, t) {
 		blockEndPt: Math.max(n, Math.min(e.pageHeight, r))
 	});
 }
-function s_(e, t, n) {
+function O_(e, t, n) {
 	if (![
 		e,
 		t,
@@ -16574,29 +17102,29 @@ function s_(e, t, n) {
 	if (e < 0) throw RangeError("Story extent must be non-negative");
 	return e === 0 || t < 0 ? 0 : Math.max(0, e - (t - n));
 }
-function c_(e) {
+function k_(e) {
 	let t = (t) => {
 		let n = Object.freeze(e.measure(t).map((e) => Object.freeze({ ...e })));
 		return Object.freeze({
 			result: t,
 			reserves: n,
 			pageCount: n.length,
-			fingerprint: an("header-footer-reserve-v1", {
+			fingerprint: on("header-footer-reserve-v1", {
 				identity: e.identity(t),
 				reserves: n
 			})
 		});
 	}, n = t(e.seed);
-	return !e.requiresConvergence && n.reserves.every((e) => e.top === 0 && e.bottom === 0) ? n : fo(n, (n) => t(e.repaginate(n.reserves, n.result)), e.limit ?? 16);
+	return !e.requiresConvergence && n.reserves.every((e) => e.top === 0 && e.bottom === 0) ? n : po(n, (n) => t(e.repaginate(n.reserves, n.result)), e.limit ?? 16);
 }
 //#endregion
 //#region packages/docx/src/layout/flow.ts
-var l_ = class extends H {
+var A_ = class extends V {
 	constructor(e, t) {
 		super("INVALID_GEOMETRY", `${t} exceeds the available flow capacity`), this.containerId = e, this.layoutId = t, this.name = "FlowCapacityExceededError";
 	}
 };
-function u_(e, t) {
+function j_(e, t) {
 	if (e.length === 0) return {
 		xPt: t.xPt,
 		yPt: t.yPt,
@@ -16611,16 +17139,16 @@ function u_(e, t) {
 		heightPt: a - r
 	};
 }
-function d_(e, t, n) {
+function M_(e, t, n) {
 	let r = [], i = e.cursor, a = e.container.bounds;
 	if (![
 		a.xPt,
 		a.yPt,
 		a.widthPt,
 		a.heightPt
-	].every(Number.isFinite) || a.widthPt < 0 || a.heightPt < 0) throw new H("INVALID_GEOMETRY", `${e.container.id} has invalid bounds`);
+	].every(Number.isFinite) || a.widthPt < 0 || a.heightPt < 0) throw new V("INVALID_GEOMETRY", `${e.container.id} has invalid bounds`);
 	let o = e.container.bounds.yPt + e.container.bounds.heightPt, s = e.container.capacity === "unbounded" ? 2 ** 53 - 1 : o, c = e.container.bounds.xPt + e.container.bounds.widthPt;
-	if (!Number.isFinite(i.xPt) || !Number.isFinite(i.yPt) || i.xPt < a.xPt || i.xPt > c || i.yPt < a.yPt || i.yPt > o) throw new H("INVALID_GEOMETRY", `${e.container.id} has an invalid initial flow cursor`);
+	if (!Number.isFinite(i.xPt) || !Number.isFinite(i.yPt) || i.xPt < a.xPt || i.xPt > c || i.yPt < a.yPt || i.yPt > o) throw new V("INVALID_GEOMETRY", `${e.container.id} has an invalid initial flow cursor`);
 	for (let a of e.blocks) {
 		let l = {
 			container: e.container,
@@ -16632,9 +17160,9 @@ function d_(e, t, n) {
 				heightPt: Math.max(0, s - i.yPt)
 			}
 		}, u = a.kind === "paragraph" ? n.layoutParagraph(a, l, t) : n.layoutTable(a, l, t);
-		if (u.layout.flowDomainId !== e.container.id) throw new H("INVALID_REFERENCE", `${u.layout.id} belongs to ${u.layout.flowDomainId}, not ${e.container.id}`);
-		if (e.container.capacity !== "unbounded" && Number.isFinite(u.nextCursor.yPt) && u.nextCursor.yPt > o) throw new l_(e.container.id, u.layout.id);
-		if (!Number.isFinite(u.nextCursor.xPt) || !Number.isFinite(u.nextCursor.yPt) || u.nextCursor.xPt < e.container.bounds.xPt || u.nextCursor.xPt > c || u.nextCursor.yPt < i.yPt) throw new H("INVALID_GEOMETRY", `${u.layout.id} returned an invalid flow cursor`);
+		if (u.layout.flowDomainId !== e.container.id) throw new V("INVALID_REFERENCE", `${u.layout.id} belongs to ${u.layout.flowDomainId}, not ${e.container.id}`);
+		if (e.container.capacity !== "unbounded" && Number.isFinite(u.nextCursor.yPt) && u.nextCursor.yPt > o) throw new A_(e.container.id, u.layout.id);
+		if (!Number.isFinite(u.nextCursor.xPt) || !Number.isFinite(u.nextCursor.yPt) || u.nextCursor.xPt < e.container.bounds.xPt || u.nextCursor.xPt > c || u.nextCursor.yPt < i.yPt) throw new V("INVALID_GEOMETRY", `${u.layout.id} returned an invalid flow cursor`);
 		r.push(u.layout), i = u.nextCursor;
 	}
 	return {
@@ -16643,8 +17171,8 @@ function d_(e, t, n) {
 		blocks: r,
 		nextCursor: i,
 		flowDomainId: e.container.id,
-		flowBounds: u_(r.map((e) => e.flowBounds), e.container.bounds),
-		inkBounds: u_(r.map((e) => e.inkBounds), e.container.bounds),
+		flowBounds: j_(r.map((e) => e.flowBounds), e.container.bounds),
+		inkBounds: j_(r.map((e) => e.inkBounds), e.container.bounds),
 		...e.container.capacity === "unbounded" ? {} : { clipBounds: e.container.bounds },
 		advancePt: i.yPt - e.cursor.yPt,
 		ordinaryFlow: !0
@@ -16652,40 +17180,40 @@ function d_(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/layout/stories.ts
-var f_ = /* @__PURE__ */ new WeakMap(), p_ = (e) => "type" in e && e.type === "unsupportedTextBoxBlock";
-function m_(e, t) {
-	if (f_.has(e)) throw Error("Story block layout algorithms are already attached");
-	f_.set(e, Object.freeze({ ...t }));
+var N_ = /* @__PURE__ */ new WeakMap(), P_ = (e) => "type" in e && e.type === "unsupportedTextBoxBlock";
+function F_(e, t) {
+	if (N_.has(e)) throw Error("Story block layout algorithms are already attached");
+	N_.set(e, Object.freeze({ ...t }));
 }
-function h_(e, t) {
+function I_(e, t) {
 	return Object.freeze({
 		...e,
 		flowBounds: X(e.flowBounds, t),
 		inkBounds: X(e.inkBounds, t),
 		...e.clipBounds ? { clipBounds: X(e.clipBounds, t) } : {},
 		blocks: Object.freeze(e.blocks.map((e) => {
-			if (e.kind === "paragraph") return bf(e, t);
-			if (e.kind === "table") return xf(e, t);
+			if (e.kind === "paragraph") return Wf(e, t);
+			if (e.kind === "table") return Gf(e, t);
 			throw Error(`Story contains unsupported retained node: ${e.kind}`);
 		}))
 	});
 }
-function g_(e, t) {
+function L_(e, t) {
 	return Object.freeze({
 		...e,
 		flowBounds: X(e.flowBounds, t),
 		inkBounds: X(e.inkBounds, t),
 		...e.clipBounds ? { clipBounds: X(e.clipBounds, t) } : {},
-		separator: Object.freeze(e.separator.map((e) => sf(e, t))),
-		story: h_(e.story, t)
+		separator: Object.freeze(e.separator.map((e) => jf(e, t))),
+		story: I_(e.story, t)
 	});
 }
-function __(e, t) {
-	for (let t of e.blocks) if (!p_(t) && (t.source.story !== e.source.story || t.source.storyInstance !== e.source.storyInstance)) throw new H("INVALID_REFERENCE", `Story block ${t.source.story}:${t.source.storyInstance} is not owned by ${e.source.story}:${e.source.storyInstance}`);
-	let n = f_.get(t);
+function R_(e, t) {
+	for (let t of e.blocks) if (!P_(t) && (t.source.story !== e.source.story || t.source.storyInstance !== e.source.storyInstance)) throw new V("INVALID_REFERENCE", `Story block ${t.source.story}:${t.source.storyInstance} is not owned by ${e.source.story}:${e.source.storyInstance}`);
+	let n = N_.get(t);
 	if (!n) throw Error("Story block layout algorithms are not attached to the supplied services");
-	let r = e.blocks.filter(p_), i = d_({
-		blocks: e.blocks.filter((e) => !p_(e)),
+	let r = e.blocks.filter(P_), i = M_({
+		blocks: e.blocks.filter((e) => !P_(e)),
 		container: e.container,
 		cursor: {
 			xPt: e.container.bounds.xPt,
@@ -16714,49 +17242,49 @@ function __(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/body-paginator.ts
-var v_ = class extends Error {
+var z_ = class extends Error {
 	code = "FOOTNOTE_RESERVE_EXCEEDS_FRESH_PAGE";
 	constructor(e, t, n) {
 		super(`Body footnote admission cannot fit a fresh physical page (reserve: ${e}, charge: ${t}, fresh page: ${n})`), this.reservePt = e, this.admissionChargePt = t, this.freshPageExtentPt = n, this.name = "FootnoteAdmissionOverflowError";
 	}
 };
-function y_(e, t) {
+function B_(e, t) {
 	if (t.has(e)) return [];
 	t.add(e);
 	let n = e.diagnostics ?? [];
 	return e.kind === "paragraph" ? [
 		...n,
-		...e.drawings.flatMap((e) => y_(e, t)),
-		...e.textBoxes.flatMap((e) => y_(e, t))
+		...e.drawings.flatMap((e) => B_(e, t)),
+		...e.textBoxes.flatMap((e) => B_(e, t))
 	] : e.kind === "table" ? [
 		...n,
-		...e.rows.flatMap((e) => e.cells.flatMap((e) => e.blocks.flatMap((e) => y_(e.layout, t)))),
-		...(e.floatingTables ?? []).flatMap((e) => y_(e.child, t)),
-		...(e.resolvedFloatingTables ?? []).flatMap((e) => y_(e.child, t))
+		...e.rows.flatMap((e) => e.cells.flatMap((e) => e.blocks.flatMap((e) => B_(e.layout, t)))),
+		...(e.floatingTables ?? []).flatMap((e) => B_(e.child, t)),
+		...(e.resolvedFloatingTables ?? []).flatMap((e) => B_(e.child, t))
 	] : e.kind === "textbox" || e.kind === "note" ? [
 		...n,
 		...e.story.diagnostics,
-		...e.story.blocks.flatMap((e) => y_(e, t))
+		...e.story.blocks.flatMap((e) => B_(e, t))
 	] : n;
 }
-function b_(e, t, n) {
-	if (e > 0 && t > n) throw new v_(e, t, n);
+function V_(e, t, n) {
+	if (e > 0 && t > n) throw new z_(e, t, n);
 }
-function x_(e) {
+function H_(e) {
 	let t = /* @__PURE__ */ new Set(), n = (e) => {
 		for (let r of e.resolvedFloatingTables ?? []) t.add(r.occurrenceId), n(r.child);
 	};
 	return n(e), t;
 }
-function S_(e, t, n) {
+function U_(e, t, n) {
 	if (!e.floats) throw Error("Accepted floating table omitted its float registry delta");
-	let r = x_(t);
+	let r = H_(t);
 	return Object.freeze({
 		...e,
 		floats: Object.freeze({
 			...e.floats,
 			entries: Object.freeze(e.floats.entries.map((e) => {
-				let i = r.has(e.occurrenceId) ? Sf(n, e.occurrenceId) : t.ordinaryFlow ? null : n;
+				let i = r.has(e.occurrenceId) ? Kf(n, e.occurrenceId) : t.ordinaryFlow ? null : n;
 				return i === null ? e : Object.freeze({
 					...e,
 					occurrenceId: i,
@@ -16766,7 +17294,7 @@ function S_(e, t, n) {
 		})
 	});
 }
-function C_(e, t) {
+function W_(e, t) {
 	let n = new Set(t.drawings.flatMap((e) => {
 		let t = e.anchorLayer?.acquisitionOccurrenceId ?? e.anchorLayer?.occurrenceId;
 		return t === void 0 ? [] : [t];
@@ -16783,7 +17311,7 @@ function C_(e, t) {
 		}) } : {}
 	});
 }
-function w_(e) {
+function G_(e) {
 	let t = new Map([[e.initialSection.sectionOccurrenceId, e.initialSection]]);
 	for (let n = 0; n < e.sequence.length; n += 1) {
 		let r = e.sequence[n];
@@ -16791,12 +17319,12 @@ function w_(e) {
 	}
 	return t;
 }
-function T_(e, t) {
-	return rl(e.context, e.pageLayout, t);
+function K_(e, t) {
+	return wl(e.context, e.pageLayout, t);
 }
-function E_(e, t) {
-	let n = T_(e, t);
-	return Yc({
+function q_(e, t) {
+	let n = K_(e, t);
+	return gl({
 		sectionOccurrenceId: e.sectionOccurrenceId,
 		geometry: n.geometry,
 		columns: n.columns,
@@ -16805,14 +17333,14 @@ function E_(e, t) {
 		grid: n.grid
 	});
 }
-function D_(e, t, n, r = n.blockStartPt, i = T_(e, t).columns.map((e, t) => t)) {
-	let a = T_(e, t);
+function J_(e, t, n, r = n.blockStartPt, i = K_(e, t).columns.map((e, t) => t)) {
+	let a = K_(e, t);
 	return Object.freeze({
 		id: `page:${t}:section:${encodeURIComponent(e.sectionOccurrenceId)}`,
 		sectionOccurrenceId: e.sectionOccurrenceId,
 		section: a,
 		pageBorders: e.pageBordersAuthored ? e.pageBorders : null,
-		writingMode: Hr(a.textDirection),
+		writingMode: Ur(a.textDirection),
 		blockStartPt: r,
 		blockEndPt: n.blockEndPt,
 		columnFlowDirection: a.sectionBidi === !0 ? "rtl" : "ltr",
@@ -16827,8 +17355,8 @@ function D_(e, t, n, r = n.blockStartPt, i = T_(e, t).columns.map((e, t) => t)) 
 		}))
 	});
 }
-function O_(e, t) {
-	let n = Hr(e.textDirection), r = Jr({
+function Y_(e, t) {
+	let n = Ur(e.textDirection), r = Yr({
 		widthPt: e.geometry.pageWidth,
 		heightPt: e.geometry.pageHeight
 	}, n);
@@ -16842,36 +17370,36 @@ function O_(e, t) {
 		contentBottomPt: r.heightPt
 	});
 }
-function k_(e, t, n) {
-	return o_(T_(e, t).geometry, n);
+function X_(e, t, n) {
+	return D_(K_(e, t).geometry, n);
 }
-function A_(e, t, n) {
-	let r = T_(e, t);
-	return $d({
+function Z_(e, t, n) {
+	let r = K_(e, t);
+	return wf({
 		kind: "content",
 		pageIndex: t,
-		physicalPage: O_(r, n),
+		physicalPage: Y_(r, n),
 		sectionOccurrenceId: e.sectionOccurrenceId,
 		section: r,
-		region: D_(e, t, n)
+		region: J_(e, t, n)
 	});
 }
-function j_(e) {
+function Q_(e) {
 	let t = e.pages.at(-1), n = t?.accumulator.sectionRegions.at(-1);
 	if (!t || t.kind !== "content" || !n) throw Error("Missing active body region");
 	return n;
 }
-function M_(e) {
-	let t = j_(e), n = t.columnIndexes ?? t.section.columns.map((e, t) => t), r = (t.columnFlowDirection === "rtl" ? [...n].reverse() : [...n]).at(-1) === e.flow.columnIndex;
+function $_(e) {
+	let t = Q_(e), n = t.columnIndexes ?? t.section.columns.map((e, t) => t), r = (t.columnFlowDirection === "rtl" ? [...n].reverse() : [...n]).at(-1) === e.flow.columnIndex;
 	return e.balanceTargetPt === null || r ? t.blockEndPt : Math.min(t.blockEndPt, t.blockStartPt + e.balanceTargetPt);
 }
-function N_(e) {
-	let t = j_(e), n = t.columnIndexes ?? t.section.columns.map((e, t) => t), r = t.columns[n.indexOf(e.flow.columnIndex)];
+function ev(e) {
+	let t = Q_(e), n = t.columnIndexes ?? t.section.columns.map((e, t) => t), r = t.columns[n.indexOf(e.flow.columnIndex)];
 	if (!r) throw Error("Missing active body column");
 	return Object.freeze({
 		pageIndex: e.flow.pageIndex,
 		columnIndex: e.flow.columnIndex,
-		flowDomainId: fl(e.flow.pageIndex, t.id, e.flow.columnIndex),
+		flowDomainId: Nl(e.flow.pageIndex, t.id, e.flow.columnIndex),
 		section: t.section,
 		cursorPt: Object.freeze({
 			xPt: r.inlineStartPt,
@@ -16881,11 +17409,11 @@ function N_(e) {
 			xPt: r.inlineStartPt,
 			yPt: e.flow.cursorBlockPt,
 			widthPt: r.inlineExtentPt,
-			heightPt: Math.max(0, M_(e) - e.footnoteReservePt - e.flow.cursorBlockPt)
+			heightPt: Math.max(0, $_(e) - e.footnoteReservePt - e.flow.cursorBlockPt)
 		})
 	});
 }
-function P_(e, t) {
+function tv(e, t) {
 	let n = (t) => {
 		let n = e.get(t);
 		if (!n) throw Error(`Unknown body section ${t}`);
@@ -16896,25 +17424,25 @@ function P_(e, t) {
 			let r = n(e.sectionOccurrenceId), i = t[e.pageIndex] ?? {
 				top: 0,
 				bottom: 0
-			}, a = k_(r, e.pageIndex, i), o = Nf(E_(r, e.pageIndex), {
+			}, a = X_(r, e.pageIndex, i), o = rp(q_(r, e.pageIndex), {
 				pageIndex: e.pageIndex,
 				pageContentStartBlockPt: a.blockStartPt,
 				pageContentEndBlockPt: a.blockEndPt
 			});
 			return {
-				page: A_(r, e.pageIndex, a),
+				page: Z_(r, e.pageIndex, a),
 				flow: o
 			};
 		},
 		openParityBlankPage(e) {
-			let r = n(e.sectionOccurrenceId), i = T_(r, e.pageIndex), a = k_(r, e.pageIndex, t[e.pageIndex] ?? {
+			let r = n(e.sectionOccurrenceId), i = K_(r, e.pageIndex), a = X_(r, e.pageIndex, t[e.pageIndex] ?? {
 				top: 0,
 				bottom: 0
 			});
-			return $d({
+			return wf({
 				kind: "parity-blank",
 				pageIndex: e.pageIndex,
-				physicalPage: O_(i, a),
+				physicalPage: Y_(i, a),
 				sectionOccurrenceId: r.sectionOccurrenceId,
 				section: i,
 				pageBorders: r.pageBordersAuthored ? r.pageBorders : null
@@ -16947,21 +17475,21 @@ function P_(e, t) {
 			})(), l = Object.freeze([...a.slice(0, -1), c]);
 			return Object.freeze({
 				...e,
-				accumulator: kl(Object.freeze({
+				accumulator: $l(Object.freeze({
 					...e.accumulator,
 					sectionRegions: l
-				}), D_(i, r.pageIndex, s, r.regionStartBlockPt, t.columnSubset))
+				}), J_(i, r.pageIndex, s, r.regionStartBlockPt, t.columnSubset))
 			});
 		}
 	};
 }
-function F_(e, t, n, r, i, a, o, s) {
+function nv(e, t, n, r, i, a, o, s) {
 	let c = e.pages.at(-1);
 	if (!c || c.kind !== "content") throw Error("Body content requires an active page");
-	let l = j_(e), u = l.columnIndexes ?? l.section.columns.map((e, t) => t), d = l.columns[u.indexOf(e.flow.columnIndex)], f = fl(e.flow.pageIndex, l.id, e.flow.columnIndex), p = on(n, f, i);
+	let l = Q_(e), u = l.columnIndexes ?? l.section.columns.map((e, t) => t), d = l.columns[u.indexOf(e.flow.columnIndex)], f = Nl(e.flow.pageIndex, l.id, e.flow.columnIndex), p = sn(n, f, i);
 	if (a.has(p)) throw Error(`Duplicate body occurrence acceptance: ${p}`);
 	a.add(p);
-	let m = kf(t, {
+	let m = $f(t, {
 		occurrenceId: p,
 		destination: {
 			coordinateSpace: "logical-page-points",
@@ -16991,7 +17519,7 @@ function F_(e, t, n, r, i, a, o, s) {
 			..._.flowBounds,
 			heightPt: r
 		})
-	} : _, y = Ff(e.flow, v, r), b = y.events[0];
+	} : _, y = ap(e.flow, v, r), b = y.events[0];
 	if (!b || b.type !== "place") throw Error("Flow placement did not emit an allocation");
 	o.push(Object.freeze({
 		nodeId: v.id,
@@ -16999,7 +17527,7 @@ function F_(e, t, n, r, i, a, o, s) {
 		blockStartPt: b.blockStartPt,
 		blockEndPt: b.blockEndPt
 	}));
-	let x = Al(c.accumulator, {
+	let x = eu(c.accumulator, {
 		layer: "body",
 		node: v,
 		...s?.coordinateSpace === "upright-physical" ? { coordinateSpace: "upright-physical" } : {}
@@ -17013,10 +17541,10 @@ function F_(e, t, n, r, i, a, o, s) {
 		pages: Object.freeze(S)
 	});
 }
-function I_(e) {
+function rv(e) {
 	return e.boundary === null ? "root" : `paragraph:${e.boundary.segIndex}:${e.boundary.charOffset}`;
 }
-function L_(e, t) {
+function iv(e, t) {
 	for (let n = t; n < e.sequence.length; n += 1) {
 		let t = e.sequence[n];
 		if (t.kind === "consume-source") continue;
@@ -17035,10 +17563,10 @@ function L_(e, t) {
 	}
 	return !1;
 }
-function R_(e) {
+function av(e) {
 	return e.paragraphMark !== void 0 && e.lines.length === 0 && e.shading === void 0 && e.borders.length === 0 && e.resources.length === 0 && e.drawings.length === 0 && e.textBoxes.length === 0;
 }
-function z_(e) {
+function ov(e) {
 	return [
 		e.rowIndex,
 		e.rowFragmentIndex,
@@ -17046,17 +17574,17 @@ function z_(e) {
 			e.blockIndex,
 			e.paragraphLineStart,
 			e.nestedFragmentIndex,
-			e.nestedCursor === null ? null : z_(e.nestedCursor)
+			e.nestedCursor === null ? null : ov(e.nestedCursor)
 		])
 	];
 }
-function B_(e) {
+function sv(e) {
 	if (e === void 0) return "root";
-	if (e.kind === "table") return `table:${JSON.stringify(z_(e.cursor))}`;
+	if (e.kind === "table") return `table:${JSON.stringify(ov(e.cursor))}`;
 	let t = e.cursor.tableCursor;
-	return `adjacent-table:${e.cursor.tableIndex}:${e.cursor.sourceRowIndex}:${JSON.stringify(t === void 0 ? null : z_(t))}`;
+	return `adjacent-table:${e.cursor.tableIndex}:${e.cursor.sourceRowIndex}:${JSON.stringify(t === void 0 ? null : ov(t))}`;
 }
-function V_(e, t) {
+function cv(e, t) {
 	let n = e.cursorPt.yPt + t, r = e.availableBounds.yPt + e.availableBounds.heightPt;
 	return Object.freeze({
 		...e,
@@ -17071,16 +17599,16 @@ function V_(e, t) {
 		})
 	});
 }
-function H_(e, t) {
-	let n = r_(e.pages.map((e) => e.accumulator)), r = 0, i = null, a = e.pages.map((e) => {
+function lv(e, t) {
+	let n = w_(e.pages.map((e) => e.accumulator)), r = 0, i = null, a = e.pages.map((e) => {
 		let a = t.get(e.accumulator.sectionOccurrenceId), o = a.sectionOccurrenceId !== i;
-		a.sectionOccurrenceId !== i && a.pageNumbering.start !== null ? r = Kc(a.pageNumbering.start, e.accumulator.pageIndex, n.get(a.sectionOccurrenceId) ?? e.accumulator.pageIndex) : r += 1, i = a.sectionOccurrenceId;
+		a.sectionOccurrenceId !== i && a.pageNumbering.start !== null ? r = pl(a.pageNumbering.start, e.accumulator.pageIndex, n.get(a.sectionOccurrenceId) ?? e.accumulator.pageIndex) : r += 1, i = a.sectionOccurrenceId;
 		let s = {
 			displayNumber: r,
 			format: a.pageNumbering.format ?? "decimal",
 			sectionOccurrenceId: a.sectionOccurrenceId
 		};
-		return e.kind === "parity-blank" ? Ml({
+		return e.kind === "parity-blank" ? nu({
 			pageIndex: e.accumulator.pageIndex,
 			physicalPage: e.accumulator.physicalPage,
 			sectionOccurrenceId: e.accumulator.sectionOccurrenceId,
@@ -17088,42 +17616,42 @@ function H_(e, t) {
 			pageBorders: e.accumulator.pageBorders,
 			firstSectionOwnedPage: o,
 			pageNumber: s
-		}) : jl(e.accumulator, s, o);
+		}) : tu(e.accumulator, s, o);
 	}), o = /* @__PURE__ */ new WeakSet();
 	return {
 		pages: a,
-		diagnostics: a.flatMap((e) => Or(e).flatMap(({ node: e }) => y_(e, o)))
+		diagnostics: a.flatMap((e) => kr(e).flatMap(({ node: e }) => B_(e, o)))
 	};
 }
-function U_(e, t, n, r, i, a) {
-	let o = Kn(t);
+function uv(e, t, n, r, i, a) {
+	let o = qn(t);
 	if (!o) throw Error("Body layout kernel is not attached to the supplied services");
-	let s = w_(e), c = /* @__PURE__ */ new Set(), l = [], u = r[0] ?? {
+	let s = G_(e), c = /* @__PURE__ */ new Set(), l = [], u = r[0] ?? {
 		top: 0,
 		bottom: 0
-	}, d = k_(e.initialSection, 0, u), f = ef(Nf(E_(e.initialSection, 0), {
+	}, d = X_(e.initialSection, 0, u), f = Tf(rp(q_(e.initialSection, 0), {
 		pageContentStartBlockPt: d.blockStartPt,
 		pageContentEndBlockPt: d.blockEndPt
-	}), A_(e.initialSection, 0, d)), p = (e) => {
+	}), Z_(e.initialSection, 0, d)), p = (e) => {
 		let t = a.get(e.flow.section.sectionOccurrenceId);
 		return t?.pageIndex === e.flow.pageIndex ? t.targetPt : null;
 	};
-	f = tf(f, p(f));
-	let m = P_(s, r), h = null, g = o.openBodyLayoutSession({
+	f = Ef(f, p(f));
+	let m = tv(s, r), h = null, g = o.openBodyLayoutSession({
 		source: e.source,
 		section: e.initialSection.context,
-		initialLocation: N_(f)
+		initialLocation: ev(f)
 	}, t, n), _ = (e) => {
 		let t = s.get(e.flow.section.sectionOccurrenceId);
 		if (!t) throw Error(`Unknown body section ${e.flow.section.sectionOccurrenceId}`);
-		let n = e.flow.pageIndex + 1, i = k_(t, n, r[n] ?? {
+		let n = e.flow.pageIndex + 1, i = X_(t, n, r[n] ?? {
 			top: 0,
 			bottom: 0
 		});
 		return i.blockEndPt - i.blockStartPt;
 	}, v = (t, n) => {
 		if (i !== null) {
-			let e = N_(t);
+			let e = ev(t);
 			return Object.freeze([...i.values()].filter((t) => t.pageIndex === e.pageIndex && t.flowDomainId === e.flowDomainId).map(({ occurrenceId: e, paragraphSource: t }) => Object.freeze({
 				occurrenceId: e,
 				paragraphSource: t
@@ -17146,7 +17674,7 @@ function U_(e, t, n, r, i, a) {
 		let n = v(e, t);
 		if (n.length === 0) return;
 		if (!g.prescanPageAnchors) throw Error("Page-owned anchors require canonical prescan acquisition");
-		let r = N_(e), i = g.prescanPageAnchors({
+		let r = ev(e), i = g.prescanPageAnchors({
 			anchors: n,
 			location: r,
 			availableInlineExtentPt: r.availableBounds.widthPt
@@ -17156,11 +17684,11 @@ function U_(e, t, n, r, i, a) {
 	y(f, 0);
 	let b = (e, t, n = !1) => {
 		let r = f.flow.pageIndex, i = e.events.some((e) => e.type === "next-page" && e.reason === "overflow"), a = e.events.some((e) => e.type === "begin-section" && "placement" in e && e.placement === "same-page-column");
-		f = rf(f, e, m), f = tf(f, p(f));
-		let o = N_(f);
+		f = Of(f, e, m), f = Ef(f, p(f));
+		let o = ev(f);
 		f.flow.pageIndex === r ? (g.moveAcquisitionCursor(o), a && y(f, t)) : (h = i && n ? t : null, g.resetPageAcquisition(o), y(f, t));
-	}, x = /* @__PURE__ */ new Map(), S = /* @__PURE__ */ new Map(), C = /* @__PURE__ */ new Map(), w = (e) => (x.get(e)?.size ?? 0) > 0, T = (e, t, n) => E(n ?? Jg(e), t), E = (e, t) => {
-		let n = x.get(f.flow.pageIndex) ?? /* @__PURE__ */ new Set(), r = [...new Set(e)].filter((e) => !n.has(e)), i = N_(f);
+	}, x = /* @__PURE__ */ new Map(), S = /* @__PURE__ */ new Map(), C = /* @__PURE__ */ new Map(), w = (e) => (x.get(e)?.size ?? 0) > 0, T = (e, t, n) => E(n ?? h_(e), t), E = (e, t) => {
+		let n = x.get(f.flow.pageIndex) ?? /* @__PURE__ */ new Set(), r = [...new Set(e)].filter((e) => !n.has(e)), i = ev(f);
 		if (r.length > 0 && !g.layoutNotes) throw Error("Footnote layout requires a note-capable layout session");
 		let a = r.length === 0 ? Object.freeze([]) : g.layoutNotes({
 			kind: "footnote",
@@ -17188,29 +17716,29 @@ function U_(e, t, n, r, i, a) {
 		let r = x.get(f.flow.pageIndex);
 		r || (r = /* @__PURE__ */ new Set(), x.set(f.flow.pageIndex, r)), e.forEach((e) => r.add(e));
 		let i = C.get(f.flow.pageIndex) ?? [];
-		i.push(...t), C.set(f.flow.pageIndex, i), S.set(f.flow.pageIndex, (S.get(f.flow.pageIndex) ?? 0) + n), f = nf(f, n);
-	}, O = () => Math.max(0, M_(f) - f.footnoteReservePt - f.flow.deepestColumnBlockPt), k = (e) => e > O(), A = null, j = op(e.sequence);
+		i.push(...t), C.set(f.flow.pageIndex, i), S.set(f.flow.pageIndex, (S.get(f.flow.pageIndex) ?? 0) + n), f = Df(f, n);
+	}, O = () => Math.max(0, $_(f) - f.footnoteReservePt - f.flow.deepestColumnBlockPt), k = (e) => e > O(), A = null, j = Ap(e.sequence);
 	for (let t = 0; t < e.sequence.length; t += 1) {
 		let n = e.sequence[t];
 		if (n.kind === "consume-source") continue;
 		if (n.kind === "authored-break") {
 			if (A = null, n.break === "column" && !j.has(t)) continue;
-			b(Wf(f.flow, n.break, n.parity), t + 1);
+			b(mp(f.flow, n.break, n.parity), t + 1);
 			continue;
 		}
 		if (n.kind === "begin-section") {
 			A = null;
-			let e = Hr(j_(f).section.textDirection), i = Hr(T_(n.section, f.flow.pageIndex).textDirection), a = Jr({
-				widthPt: j_(f).section.geometry.pageWidth,
-				heightPt: j_(f).section.geometry.pageHeight
-			}, e), o = T_(n.section, f.flow.pageIndex), s = Jr({
+			let e = Ur(Q_(f).section.textDirection), i = Ur(K_(n.section, f.flow.pageIndex).textDirection), a = Yr({
+				widthPt: Q_(f).section.geometry.pageWidth,
+				heightPt: Q_(f).section.geometry.pageHeight
+			}, e), o = K_(n.section, f.flow.pageIndex), s = Yr({
 				widthPt: o.geometry.pageWidth,
 				heightPt: o.geometry.pageHeight
-			}, i), c = n.section.startType === "continuous" && (e !== i || a.widthPt !== s.widthPt || a.heightPt !== s.heightPt) ? "nextPage" : n.section.startType, l = k_(n.section, f.flow.pageIndex, r[f.flow.pageIndex] ?? {
+			}, i), c = n.section.startType === "continuous" && (e !== i || a.widthPt !== s.widthPt || a.heightPt !== s.heightPt) ? "nextPage" : n.section.startType, l = X_(n.section, f.flow.pageIndex, r[f.flow.pageIndex] ?? {
 				top: 0,
 				bottom: 0
 			});
-			b(Gf(f.flow, E_(n.section, f.flow.pageIndex), c, {
+			b(hp(f.flow, q_(n.section, f.flow.pageIndex), c, {
 				hasFootnoteReferenceOnCurrentPage: w(f.flow.pageIndex),
 				incomingPageContentStartBlockPt: l.blockStartPt,
 				incomingPageContentEndBlockPt: l.blockEndPt
@@ -17220,8 +17748,8 @@ function U_(e, t, n, r, i, a) {
 		let i = n.kind === "adjacent-table-group" ? n : n.block;
 		if (i.kind === "paragraph") {
 			if (i.continuousSectionRole === "collapse-mark") continue;
-			i.pageBreakBefore && b(Wf(f.flow, "pageBreakBefore"), t);
-			let n = A?.spaceAfterPt ?? 0, a = Pm(A, i, n, i.continuousSectionRole === "suppress-before" ? 0 : i.spaceBeforePt), o = i.continuousSectionRole === "drop-previous-after" ? n : a.overlap;
+			i.pageBreakBefore && b(mp(f.flow, "pageBreakBefore"), t);
+			let n = A?.spaceAfterPt ?? 0, a = eh(A, i, n, i.continuousSectionRole === "suppress-before" ? 0 : i.spaceBeforePt), o = i.continuousSectionRole === "drop-previous-after" ? n : a.overlap;
 			o > 0 && (f = Object.freeze({
 				...f,
 				flow: Object.freeze({
@@ -17231,7 +17759,7 @@ function U_(e, t, n, r, i, a) {
 			}));
 			let s = Object.freeze({ boundary: null });
 			for (; s;) {
-				let n = I_(s), o = N_(f), u = g.measureParagraph({
+				let n = rv(s), o = ev(f), u = g.measureParagraph({
 					input: i,
 					location: o,
 					availableInlineExtentPt: o.availableBounds.widthPt,
@@ -17240,18 +17768,18 @@ function U_(e, t, n, r, i, a) {
 				});
 				if (u.placement) {
 					let e = T(u.layout, o.availableBounds.widthPt, u.retainedFootnoteReferenceIds), r = u.relocationBlockExtentPt, a = u.placement.sectionFlowOwnership === "page" ? e.reservePt : (r ?? u.blockExtentPt) + e.reservePt, d = _(f), p = k(e.reservePt);
-					if (b_(e.reservePt, a, d), (a > o.availableBounds.heightPt || p) && a <= d && f.flow.pageHasContent) {
-						b(p ? Vf(f.flow, f.flow.section, "overflow") : If(f.flow, "overflow"), t);
+					if (V_(e.reservePt, a, d), (a > o.availableBounds.heightPt || p) && a <= d && f.flow.pageHasContent) {
+						b(p ? dp(f.flow, f.flow.section, "overflow") : op(f.flow, "overflow"), t);
 						continue;
 					}
-					f = F_(f, u.layout, i.source, u.blockExtentPt, n, c, l, u.placement), D(e.ids, e.layouts, e.reservePt), u.flowRegistryDelta && g.commitFlowRegistryDelta(u.flowRegistryDelta), s = null, g.moveAcquisitionCursor(N_(f));
+					f = nv(f, u.layout, i.source, u.blockExtentPt, n, c, l, u.placement), D(e.ids, e.layouts, e.reservePt), u.flowRegistryDelta && g.commitFlowRegistryDelta(u.flowRegistryDelta), s = null, g.moveAcquisitionCursor(ev(f));
 					continue;
 				}
 				if (s.boundary === null && i.keepNext && f.flow.pageHasContent) {
-					let n = u.blockExtentPt, r = new Set(Jg(u.layout)), a = !1, s = ep({
+					let n = u.blockExtentPt, r = new Set(h_(u.layout)), a = !1, s = wp({
 						keepNext: i.keepNext,
 						inkless: i.inkless === !0,
-						undecoratedMark: R_(u.layout)
+						undecoratedMark: av(u.layout)
 					});
 					for (let i = t + 1; i < e.sequence.length; i += 1) {
 						let t = e.sequence[i];
@@ -17271,13 +17799,13 @@ function U_(e, t, n, r, i, a) {
 					}
 					let c = E([...r], o.availableBounds.widthPt).reservePt, l = n + c;
 					if (a && l > o.availableBounds.heightPt && l <= _(f)) {
-						b(If(f.flow, "overflow"), t, !0);
+						b(op(f.flow, "overflow"), t, !0);
 						continue;
 					}
 				}
-				let d = e.sequence[t + 1], p = e.sequence[t + 2], m = d?.kind === "body-block" && d.block.kind === "paragraph" && p?.kind === "authored-break" && p.break === "page" && p.sameSourceParagraphAsPrevious !== !0, v = rp(u.layout);
+				let d = e.sequence[t + 1], p = e.sequence[t + 2], m = d?.kind === "body-block" && d.block.kind === "paragraph" && p?.kind === "authored-break" && p.break === "page" && p.sameSourceParagraphAsPrevious !== !0, v = Dp(u.layout);
 				if (s.boundary === null && v && m && f.flow.pageHasContent) {
-					let e = V_(o, u.blockExtentPt), n = g.measureParagraph({
+					let e = cv(o, u.blockExtentPt), n = g.measureParagraph({
 						input: d.block,
 						location: e,
 						availableInlineExtentPt: e.availableBounds.widthPt,
@@ -17285,58 +17813,60 @@ function U_(e, t, n, r, i, a) {
 						continuation: Object.freeze({ boundary: null })
 					});
 					g.moveAcquisitionCursor(o);
-					let r = ip(n.layout, e.cursorPt.yPt);
+					let r = Op(n.layout, e.cursorPt.yPt);
 					if (r !== null) {
 						let e = u.blockExtentPt + r;
 						if (e > o.availableBounds.heightPt && e <= _(f)) {
-							b(If(f.flow, "overflow"), t);
+							b(op(f.flow, "overflow"), t);
 							continue;
 						}
 					}
 				}
 				let y = e.sequence[t + 1], x = y?.kind === "authored-break" && y.break === "page";
 				if (s.boundary === null && x) {
-					let e = ap(u.layout);
+					let e = kp(u.layout);
 					if (e !== null) {
-						f = F_(f, e, i.source, 0, n, c, l), u.flowRegistryDelta && g.commitFlowRegistryDelta(u.flowRegistryDelta), s = null, g.moveAcquisitionCursor(N_(f));
+						f = nv(f, e, i.source, 0, n, c, l), u.flowRegistryDelta && g.commitFlowRegistryDelta(u.flowRegistryDelta), s = null, g.moveAcquisitionCursor(ev(f));
 						continue;
 					}
 				}
-				let S = T(u.layout, o.availableBounds.widthPt).reservePt, C = (r[f.flow.pageIndex]?.bottom ?? 0) === 0 && f.footnoteReservePt === 0, w = M_(f) === j_(f).blockEndPt, O = qc({
+				let S = T(u.layout, o.availableBounds.widthPt).reservePt, C = (r[f.flow.pageIndex]?.bottom ?? 0) === 0 && f.footnoteReservePt === 0, w = $_(f) === Q_(f).blockEndPt, O = y?.kind === "begin-section" && y.section.startType === "nextPage", A = ml({
 					hasContinuationBoundary: s.boundary !== null,
 					inkless: i.inkless === !0,
-					undecorated: R_(u.layout),
+					undecorated: av(u.layout),
 					keepNext: i.keepNext,
 					markReservePt: S,
 					pageBottomIsUnreserved: C,
 					physicalRegionBottomIsActive: w,
-					hasFollowingInk: L_(e, t + 1),
+					hasFollowingInk: iv(e, t + 1),
+					followsNextPageSectionBoundary: O,
+					markExtentPt: u.blockExtentPt,
 					markBelowBaselinePt: u.markBelowBaselinePt ?? 0
-				}), A = Bg(u.layout, s, u.fragmentation, o.availableBounds.heightPt + O, _(f), f.flow.pageHasContent, {
+				}), j = s_(u.layout, s, u.fragmentation, o.availableBounds.heightPt + A, _(f), f.flow.pageHasContent, {
 					keepLines: i.keepLines,
 					widowControl: i.widowControl,
 					authoredSpaceAfterPt: i.spaceAfterPt,
-					writingMode: j_(f).writingMode
+					writingMode: Q_(f).writingMode
 				}, (e) => T(e, o.availableBounds.widthPt).reservePt, u.uniformRubyAdvancePt, (e) => !k(e));
-				if (A.requiresFreshFlowRegion) {
-					b(If(f.flow, "overflow"), t);
+				if (j.requiresFreshFlowRegion) {
+					b(op(f.flow, "overflow"), t);
 					continue;
 				}
-				if (!A.fragment) throw Error("Paragraph acquisition made no progress");
-				f = F_(f, A.fragment, i.source, Math.min(A.admittedBlockExtentPt, o.availableBounds.heightPt), n, c, l, u.placement);
-				let j = T(A.fragment, o.availableBounds.widthPt);
-				if (b_(j.reservePt, A.fragment.advancePt + j.reservePt, _(f)), D(j.ids, j.layouts, j.reservePt), u.flowRegistryDelta) {
-					let e = C_(u.flowRegistryDelta, A.fragment);
+				if (!j.fragment) throw Error("Paragraph acquisition made no progress");
+				f = nv(f, j.fragment, i.source, Math.min(j.admittedBlockExtentPt, o.availableBounds.heightPt), n, c, l, u.placement);
+				let M = T(j.fragment, o.availableBounds.widthPt);
+				if (V_(M.reservePt, j.fragment.advancePt + M.reservePt, _(f)), D(M.ids, M.layouts, M.reservePt), u.flowRegistryDelta) {
+					let e = W_(u.flowRegistryDelta, j.fragment);
 					e && g.commitFlowRegistryDelta(e);
 				}
-				s = A.nextCursor, s && b(If(f.flow, "overflow"), t), o = N_(f), g.moveAcquisitionCursor(o);
+				s = j.nextCursor, s && b(op(f.flow, "overflow"), t), o = ev(f), g.moveAcquisitionCursor(o);
 			}
 			A = i;
 		} else {
 			A = null;
 			let e, n = !1;
 			for (; !n;) {
-				let r = B_(e), a = N_(f), o = (t) => g.measureTable({
+				let r = sv(e), a = ev(f), o = (t) => g.measureTable({
 					input: i,
 					location: a,
 					availableInlineExtentPt: a.availableBounds.widthPt,
@@ -17352,7 +17882,7 @@ function U_(e, t, n, r, i, a) {
 							...f.flow,
 							cursorBlockPt: u.retryAtBlockStartPt
 						})
-					}), g.moveAcquisitionCursor(N_(f));
+					}), g.moveAcquisitionCursor(ev(f));
 					continue;
 				}
 				let d = u.requiresFreshFlowRegion ? Object.freeze({
@@ -17370,7 +17900,7 @@ function U_(e, t, n, r, i, a) {
 						noteIds: d.ids,
 						reservePt: d.reservePt
 					});
-					if (m.has(e)) throw b_(p.reservePt, p.chargePt, _(f)), Error("Table footnote admission did not converge");
+					if (m.has(e)) throw V_(p.reservePt, p.chargePt, _(f)), Error("Table footnote admission did not converge");
 					m.add(e), s = Math.max(0, a.availableBounds.heightPt - d.reservePt), u = o(s), d = u.requiresFreshFlowRegion ? Object.freeze({
 						ids: Object.freeze([]),
 						layouts: Object.freeze([]),
@@ -17381,46 +17911,46 @@ function U_(e, t, n, r, i, a) {
 					}));
 				}
 				if (u.requiresFreshFlowRegion) {
-					b_(p.reservePt, p.chargePt, _(f));
+					V_(p.reservePt, p.chargePt, _(f));
 					let n = !f.flow.pageHasContent && u.nextCursor?.kind === "table" && u.nextCursor.floatingContinuationFrame === "fresh-text" && !(e?.kind === "table" && e.floatingContinuationFrame !== void 0);
 					if (u.nextCursor?.kind === "table" && u.nextCursor.floatingContinuationFrame !== void 0 && (e = u.nextCursor), n) continue;
-					b(If(f.flow, "overflow"), t);
+					b(op(f.flow, "overflow"), t);
 					continue;
 				}
 				if (k(d.reservePt) && f.flow.pageHasContent) {
-					b(Vf(f.flow, f.flow.section, "overflow"), t);
+					b(dp(f.flow, f.flow.section, "overflow"), t);
 					continue;
 				}
-				f = F_(f, u.layout, i.source, u.blockExtentPt, r, c, l, u.placement), D(d.ids, d.layouts, d.reservePt), u.flowRegistryDelta && g.commitFlowRegistryDelta(S_(u.flowRegistryDelta, u.layout, on(i.source, a.flowDomainId, r))), e = u.nextCursor ?? void 0, n = e === void 0, e && b(If(f.flow, "overflow"), t);
+				f = nv(f, u.layout, i.source, u.blockExtentPt, r, c, l, u.placement), D(d.ids, d.layouts, d.reservePt), u.flowRegistryDelta && g.commitFlowRegistryDelta(U_(u.flowRegistryDelta, u.layout, sn(i.source, a.flowDomainId, r))), e = u.nextCursor ?? void 0, n = e === void 0, e && b(op(f.flow, "overflow"), t);
 			}
 		}
-		g.moveAcquisitionCursor(N_(f));
+		g.moveAcquisitionCursor(ev(f));
 	}
 	let M = new Set([...S.keys(), ...C.keys()]);
 	for (let e of M) {
 		let t = S.get(e) ?? 0, n = (C.get(e) ?? []).reduce((e, t) => e + t.advancePt, 0);
-		if (t !== n) throw new H("INVALID_GEOMETRY", `Page ${e} footnote reserve ${t} does not equal retained advance ${n}`);
+		if (t !== n) throw new V("INVALID_GEOMETRY", `Page ${e} footnote reserve ${t} does not equal retained advance ${n}`);
 	}
 	return Object.freeze({
-		layout: H_(f, s),
+		layout: lv(f, s),
 		session: g,
 		allocations: Object.freeze(l),
 		footnoteReserveByPage: S,
 		footnoteLayoutsByPage: C
 	});
 }
-function W_(e, t) {
+function dv(e, t) {
 	return Object.freeze(e.layout.pages.map((n, r) => {
-		if (n.parityBlank || Hr(n.section.textDirection) !== "horizontal-tb") return Object.freeze({
+		if (n.parityBlank || Ur(n.section.textDirection) !== "horizontal-tb") return Object.freeze({
 			top: 0,
 			bottom: 0
 		});
 		let i = t.get(n.sectionOccurrenceId);
 		if (!i) throw Error(`Unknown body section ${n.sectionOccurrenceId}`);
 		let a = Math.max(0, n.section.geometry.pageWidth - Math.abs(n.section.geometry.marginLeft) - Math.abs(n.section.geometry.marginRight)), o = (t) => {
-			let o = a_(t === "header" ? i.headers : i.footers, {
+			let o = E_(t === "header" ? i.headers : i.footers, {
 				titlePage: i.titlePage,
-				firstPageOfSection: i_(e.layout.pages, r),
+				firstPageOfSection: T_(e.layout.pages, r),
 				evenAndOddHeaders: i.evenAndOddHeaders,
 				displayPageNumber: n.pageNumber.displayNumber
 			});
@@ -17443,12 +17973,12 @@ function W_(e, t) {
 			}).advancePt;
 		};
 		return Object.freeze({
-			top: s_(o("header"), n.section.geometry.marginTop, n.section.geometry.headerDistance),
-			bottom: s_(o("footer"), n.section.geometry.marginBottom, n.section.geometry.footerDistance)
+			top: O_(o("header"), n.section.geometry.marginTop, n.section.geometry.headerDistance),
+			bottom: O_(o("footer"), n.section.geometry.marginBottom, n.section.geometry.footerDistance)
 		});
 	}));
 }
-function G_(e, t, n, r) {
+function fv(e, t, n, r) {
 	let i = e.pages.map((i, a) => {
 		if (i.parityBlank) return i;
 		let o = n.get(i.sectionOccurrenceId);
@@ -17457,7 +17987,7 @@ function G_(e, t, n, r) {
 			if (!(Object.values(o.headers).some((e) => e !== null) || Object.values(o.footers).some((e) => e !== null) || (r.get(i.pageIndex)?.length ?? 0) > 0)) return i;
 			throw Error("Page-story composition requires a story-capable layout session");
 		}
-		let s = Hr(i.section.textDirection) !== "horizontal-tb", c = s ? el(i.section.geometry) : i.section.geometry, l = Math.abs(c.marginLeft), u = Math.max(0, c.pageWidth - Math.abs(c.marginLeft) - Math.abs(c.marginRight)), d = s ? "upright-physical" : "section-logical", f = s ? Object.freeze({
+		let s = Ur(i.section.textDirection) !== "horizontal-tb", c = s ? xl(i.section.geometry) : i.section.geometry, l = Math.abs(c.marginLeft), u = Math.max(0, c.pageWidth - Math.abs(c.marginLeft) - Math.abs(c.marginRight)), d = s ? "upright-physical" : "section-logical", f = s ? Object.freeze({
 			...i.section,
 			geometry: Object.freeze({ ...c }),
 			columns: Object.freeze([Object.freeze({
@@ -17465,9 +17995,9 @@ function G_(e, t, n, r) {
 				wPt: u
 			})]),
 			textDirection: "lrTb"
-		}) : i.section, p = (t) => a_(t === "header" ? o.headers : o.footers, {
+		}) : i.section, p = (t) => E_(t === "header" ? o.headers : o.footers, {
 			titlePage: o.titlePage,
-			firstPageOfSection: i_(e.pages, a),
+			firstPageOfSection: T_(e.pages, a),
 			evenAndOddHeaders: o.evenAndOddHeaders,
 			displayPageNumber: i.pageNumber.displayNumber
 		}), m = (e) => {
@@ -17488,12 +18018,12 @@ function G_(e, t, n, r) {
 					}
 				}
 			});
-			return h_(r, {
+			return I_(r, {
 				xPt: 0,
 				yPt: (e === "header" ? c.headerDistance : c.pageHeight - c.footerDistance - r.advancePt) - r.flowBounds.yPt
 			});
 		}, h = m("header"), g = m("footer"), _ = r.get(i.pageIndex) ?? [], v = _.reduce((e, t) => e + t.advancePt, 0), y = i.sectionRegions[0], b = (y?.blockEndPt ?? Math.max(0, i.section.geometry.pageHeight - Math.abs(i.section.geometry.marginBottom))) - v, x = b, S = _.map((e) => {
-			let t = g_(e, {
+			let t = L_(e, {
 				xPt: 0,
 				yPt: x - e.flowBounds.yPt
 			});
@@ -17503,7 +18033,7 @@ function G_(e, t, n, r) {
 			yPt: b,
 			widthPt: w - C,
 			heightPt: v
-		}), E = y ? Object.freeze(Qr(y.coordinateSpace.logicalToPhysical, T)) : T, D = [
+		}), E = y ? Object.freeze($r(y.coordinateSpace.logicalToPhysical, T)) : T, D = [
 			...h ? [Object.freeze({
 				id: `story:header:page:${i.pageIndex}`,
 				kind: "header",
@@ -17553,14 +18083,14 @@ function G_(e, t, n, r) {
 			...O.slice(A)
 		], M = -1;
 		for (let e = 0; e < j.length; e += 1) j[e].layer === "body" && (M = e);
-		let N = M < 0 ? j.length : M + 1, ee = [
-			...j.slice(0, N),
+		let ee = M < 0 ? j.length : M + 1, te = [
+			...j.slice(0, ee),
 			...S.map((e) => ({
 				layer: "notes",
 				node: e,
 				coordinateSpace: "section-logical"
 			})),
-			...j.slice(N),
+			...j.slice(ee),
 			...g?.blocks.map((e) => ({
 				layer: "footer",
 				node: e,
@@ -17570,7 +18100,7 @@ function G_(e, t, n, r) {
 		return Object.freeze({
 			...i,
 			flowDomains: Object.freeze([...i.flowDomains, ...D]),
-			layers: Er(ee),
+			layers: Dr(te),
 			readingOrder: Object.freeze([
 				...h?.blocks.map((e) => e.id) ?? [],
 				...i.readingOrder,
@@ -17584,7 +18114,7 @@ function G_(e, t, n, r) {
 		pages: Object.freeze(i)
 	});
 }
-function K_(e, t, n) {
+function pv(e, t, n) {
 	if (n.length === 0) return e;
 	let r = -1;
 	for (let t = e.pages.length - 1; t >= 0; --t) if (!e.pages[t].parityBlank) {
@@ -17645,7 +18175,7 @@ function K_(e, t, n) {
 			kind: "endnote",
 			...c ? { sectionRegionId: c.id } : {},
 			logicalBounds: u,
-			physicalBounds: c ? Object.freeze(Qr(c.coordinateSpace.logicalToPhysical, u)) : u
+			physicalBounds: c ? Object.freeze($r(c.coordinateSpace.logicalToPhysical, u)) : u
 		}), m = i.layers.roots.map((e) => e), h = -1;
 		for (let e = 0; e < m.length; e += 1) m[e].layer === "body" && (h = e);
 		h += 1, m.splice(h, 0, ...a.map((e) => ({
@@ -17662,14 +18192,14 @@ function K_(e, t, n) {
 		return y[r] = Object.freeze({
 			...i,
 			flowDomains: Object.freeze([...i.flowDomains, p]),
-			layers: Er(m),
+			layers: Dr(m),
 			readingOrder: Object.freeze(v)
 		}), Object.freeze({
 			...e,
 			pages: Object.freeze(y)
 		});
 	} catch (t) {
-		if (!(t instanceof Zd) || t.kind !== "endnote" || t.pageIndex !== i.pageIndex || t.containerId !== f) throw t;
+		if (!(t instanceof Sf) || t.kind !== "endnote" || t.pageIndex !== i.pageIndex || t.containerId !== f) throw t;
 		return Object.freeze({
 			...e,
 			diagnostics: Object.freeze([...e.diagnostics, Object.freeze({
@@ -17685,7 +18215,7 @@ function K_(e, t, n) {
 		});
 	}
 }
-function q_(e, t, n, r) {
+function mv(e, t, n, r) {
 	return Object.freeze({
 		...e,
 		diagnostics: Object.freeze([...e.diagnostics, Object.freeze({
@@ -17695,7 +18225,7 @@ function q_(e, t, n, r) {
 		})])
 	});
 }
-function J_(e) {
+function hv(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n of e.pages) for (let e of n.layers.body) if (e.kind === "paragraph") for (let r of e.drawings) {
 		let i = r.anchorLayer;
@@ -17710,28 +18240,28 @@ function J_(e) {
 	}
 	return t;
 }
-function Y_(e) {
+function gv(e) {
 	return JSON.stringify([...e].sort(([e], [t]) => e.localeCompare(t)));
 }
-function X_(e, t, n, r, i) {
-	if (!e.sequence.some((e) => e.kind === "body-block" && e.block.kind === "paragraph" && (e.block.pageOwnedAnchorOccurrenceIds?.length ?? 0) > 0)) return U_(e, t, n, r, null, i);
+function _v(e, t, n, r, i) {
+	if (!e.sequence.some((e) => e.kind === "body-block" && e.block.kind === "paragraph" && (e.block.pageOwnedAnchorOccurrenceIds?.length ?? 0) > 0)) return uv(e, t, n, r, null, i);
 	try {
-		return uo({
+		return fo({
 			step: (a) => {
-				let o = U_(e, t, n, r, a?.plan ?? null, i);
+				let o = uv(e, t, n, r, a?.plan ?? null, i);
 				return Object.freeze({
 					pass: o,
-					plan: J_(o.layout)
+					plan: hv(o.layout)
 				});
 			},
-			stateOf: (e) => Y_(e.plan),
+			stateOf: (e) => gv(e.plan),
 			limit: 16
 		}).value.pass;
 	} catch (e) {
-		throw e instanceof lo ? new H("NON_CONVERGENCE", e.reason === "cycle" ? "Page-anchor destination acquisition repeated an exact-state cycle" : "Page-anchor destination acquisition reached the operational pass limit 16") : e;
+		throw e instanceof uo ? new V("NON_CONVERGENCE", e.reason === "cycle" ? "Page-anchor destination acquisition repeated an exact-state cycle" : "Page-anchor destination acquisition reached the operational pass limit 16") : e;
 	}
 }
-function Z_(e) {
+function vv(e) {
 	let t = [], n = e.initialSection;
 	for (let r of e.sequence) r.kind === "begin-section" && (r.section.startType === "continuous" && t.push(Object.freeze({
 		outgoingSectionOccurrenceId: n.sectionOccurrenceId,
@@ -17739,7 +18269,7 @@ function Z_(e) {
 	})), n = r.section);
 	return Object.freeze(t);
 }
-function Q_(e, t, n) {
+function yv(e, t, n) {
 	for (let r of e.pages) for (let e = 0; e + 1 < r.sectionRegions.length; e += 1) {
 		let i = r.sectionRegions[e], a = r.sectionRegions[e + 1];
 		if (i.sectionOccurrenceId === t && a.sectionOccurrenceId === n) return Object.freeze({
@@ -17749,66 +18279,69 @@ function Q_(e, t, n) {
 	}
 	return null;
 }
-function $_(e, t, n, r) {
-	let i = /* @__PURE__ */ new Map(), a = X_(e, t, n, r, i);
-	for (let o of Z_(e)) {
-		let s = Q_(a.layout, o.outgoingSectionOccurrenceId, o.incomingSectionOccurrenceId);
+function bv(e, t, n, r) {
+	let i = /* @__PURE__ */ new Map(), a = _v(e, t, n, r, i);
+	for (let o of vv(e)) {
+		let s = yv(a.layout, o.outgoingSectionOccurrenceId, o.incomingSectionOccurrenceId);
 		if (s === null || s.outgoing.flowDomainIds.length < 2) continue;
-		let c = s.page.pageIndex, l = e_(e, a.allocations, a.footnoteReserveByPage, s.page, s.outgoing), u = new Map(i);
+		let c = s.page.pageIndex, l = x_(e, a.allocations, a.footnoteReserveByPage, s.page, s.outgoing), u = new Map(i);
 		u.set(o.outgoingSectionOccurrenceId, Object.freeze({
 			pageIndex: c,
 			targetPt: l
-		})), i = u, a = X_(e, t, n, r, i);
+		})), i = u, a = _v(e, t, n, r, i);
 	}
 	return a;
 }
-function ev(e, t, n) {
-	t = ir(t);
-	let r = w_(e), i = $_(e, t, n, []), a = c_({
+function xv(e, t, n) {
+	t = ar(t);
+	let r = G_(e), i = bv(e, t, n, []), a = k_({
 		seed: i,
-		measure: (e) => W_(e, r),
+		measure: (e) => dv(e, r),
 		repaginate: (r, i) => {
-			let a = Fm(i.layout);
-			return $_(e, or(t, {
+			let a = th(i.layout);
+			return bv(e, sr(t, {
 				totalPages: i.layout.pages.length,
 				resolveDestinationPage: (e) => a[e]
 			}), n, r);
 		},
-		identity: (e) => Fm(e.layout),
+		identity: (e) => th(e.layout),
 		requiresConvergence: i.session.hasPaginationFields
-	}).result, o = n_(a.layout, a.session, a.allocations), s = e.noteLayoutSettings ?? Object.freeze({
+	}).result, o = C_(a.layout, a.session, a.allocations), s = e.noteLayoutSettings ?? Object.freeze({
 		footnotePosition: "pageBottom",
 		endnotePosition: "docEnd"
-	}), c = G_(o, a.session, r, a.footnoteLayoutsByPage), l = c.pages.some((e) => e.layers.notes.some((e) => e.source.story === "footnote")) && s.footnotePosition !== "pageBottom" ? q_(c, "footnote", s.footnotePosition, "pageBottom") : c, u = new Set(o.pages.flatMap((e) => e.layers.body.flatMap((e) => e.kind === "paragraph" || e.kind === "table" ? Yg(e) : []))), d = (e.endnoteIds ?? []).filter((e) => u.has(e)), f = K_(l, a.session, d), p = d.length > 0 && s.endnotePosition !== "docEnd" ? q_(f, "endnote", s.endnotePosition, "docEnd") : f, m = e.parserDiagnostics ?? [];
-	return pu(m.length === 0 ? p : Object.freeze({
+	}), c = fv(o, a.session, r, a.footnoteLayoutsByPage), l = c.pages.some((e) => e.layers.notes.some((e) => e.source.story === "footnote")) && s.footnotePosition !== "pageBottom" ? mv(c, "footnote", s.footnotePosition, "pageBottom") : c, u = new Set(o.pages.flatMap((e) => e.layers.body.flatMap((e) => e.kind === "paragraph" || e.kind === "table" ? g_(e) : []))), d = (e.endnoteIds ?? []).filter((e) => u.has(e)), f = pv(l, a.session, d), p = d.length > 0 && s.endnotePosition !== "docEnd" ? mv(f, "endnote", s.endnotePosition, "docEnd") : f, m = e.parserDiagnostics ?? [], h = m.length === 0 ? p : Object.freeze({
 		...p,
 		diagnostics: Object.freeze([...m, ...p.diagnostics])
+	});
+	return Lu(Object.freeze({
+		...h,
+		pages: Object.freeze(h.pages.map(Xl))
 	}));
 }
 //#endregion
 //#region packages/docx/src/layout/document.ts
-function tv(e, t, n = Nr(void 0, Date.now())) {
-	return ev(e, t, n);
+function Sv(e, t, n = Pr(void 0, Date.now())) {
+	return xv(e, t, n);
 }
-function nv(e, t, n) {
-	if (Qn(e)) return;
+function Cv(e, t, n) {
+	if ($n(e)) return;
 	let r = n();
-	gu({
+	Bu({
 		source: r,
 		services: e,
 		defaultCurrentDateMs: t,
-		buildLayout: (t) => tv(r.bodyLayoutInput, e, t)
+		buildLayout: (t) => Sv(r.bodyLayoutInput, e, t)
 	});
 }
 //#endregion
 //#region packages/docx/src/paint/browser-math.ts
-function rv(e) {
+function wv(e) {
 	let t = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(e)}`, n = new Image();
 	return new Promise((e, r) => {
 		n.onload = () => e(n), n.onerror = r, n.src = t;
 	});
 }
-async function iv(e, t) {
+async function Tv(e, t) {
 	if (e.length === 0) return {
 		records: [],
 		drawables: /* @__PURE__ */ new Map()
@@ -17819,7 +18352,7 @@ async function iv(e, t) {
 		if (i.has(a.resourceKey)) throw Error(`Duplicate math occurrence: ${a.resourceKey}`);
 		i.add(a.resourceKey);
 		try {
-			let e = await t.mathMLToSvg(E(a.nodes, a.display)), i = await rv(Le(e.svg, "#000000"));
+			let e = await t.mathMLToSvg(E(a.nodes, a.display)), i = await wv(Le(e.svg, "#000000"));
 			n.push({
 				resourceKey: a.resourceKey,
 				widthEm: e.widthEm,
@@ -17849,7 +18382,7 @@ async function iv(e, t) {
 }
 //#endregion
 //#region packages/docx/src/frame-geometry.ts
-function av(e, t) {
+function Ev(e, t) {
 	switch (e) {
 		case "margin": return {
 			left: t.marginLeft,
@@ -17865,7 +18398,7 @@ function av(e, t) {
 		};
 	}
 }
-function ov(e, t, n, r) {
+function Dv(e, t, n, r) {
 	switch (e) {
 		case "margin": return {
 			start: r.marginTop,
@@ -17881,7 +18414,7 @@ function ov(e, t, n, r) {
 		};
 	}
 }
-function sv(e, t, n, r) {
+function Ov(e, t, n, r) {
 	switch (e) {
 		case "center": return t + (n - t - r) / 2;
 		case "right":
@@ -17889,7 +18422,7 @@ function sv(e, t, n, r) {
 		default: return t;
 	}
 }
-function cv(e, t, n) {
+function kv(e, t, n) {
 	switch (e) {
 		case "center": return t.start + (t.end - t.start - n) / 2;
 		case "bottom":
@@ -17897,20 +18430,20 @@ function cv(e, t, n) {
 		default: return t.start;
 	}
 }
-function lv(e, t, n) {
+function Av(e, t, n) {
 	return e + t <= n.end ? e : Math.max(n.start, n.end - t);
 }
-function uv(e, t, n, r, i, a) {
-	let o = e.dropCap === "drop" || e.dropCap === "margin", s = av(e.hAnchor, t), c = ov(e.vAnchor, n, i, t), l = e.w == null ? r : e.w, u;
+function jv(e, t, n, r, i, a) {
+	let o = e.dropCap === "drop" || e.dropCap === "margin", s = Ev(e.hAnchor, t), c = Dv(e.vAnchor, n, i, t), l = e.w == null ? r : e.w, u;
 	if (o) u = Math.max(1, e.lines) * a;
 	else {
 		let t = e.h ?? 0;
 		u = e.hRule === "exact" ? t : e.hRule === "atLeast" ? Math.max(t, i) : i;
 	}
 	let d;
-	d = e.dropCap === "drop" ? s.left : e.dropCap === "margin" ? s.left - l : e.xAlign ? sv(e.xAlign, s.left, s.right, l) : s.left + (e.x ?? 0);
+	d = e.dropCap === "drop" ? s.left : e.dropCap === "margin" ? s.left - l : e.xAlign ? Ov(e.xAlign, s.left, s.right, l) : s.left + (e.x ?? 0);
 	let f;
-	f = o ? c.start : e.yAlign && e.vAnchor !== "text" ? cv(e.yAlign, c, u) : c.start + (e.y ?? 0), (e.vAnchor === "page" || e.vAnchor === "margin") && (f = lv(f, u, c));
+	f = o ? c.start : e.yAlign && e.vAnchor !== "text" ? kv(e.yAlign, c, u) : c.start + (e.y ?? 0), (e.vAnchor === "page" || e.vAnchor === "margin") && (f = Av(f, u, c));
 	let p = e.wrap === "around" || e.wrap === "auto" ? e.hSpace : 0, m = e.vSpace;
 	return {
 		x: d,
@@ -17923,7 +18456,7 @@ function uv(e, t, n, r, i, a) {
 		exBottom: f + u + m
 	};
 }
-function dv(e, t) {
+function Mv(e, t) {
 	if (t.kind === "table" && t.tableOverlap === void 0) throw Error("Floating-table transport omitted tblOverlap");
 	let n = t.x, r = t.y;
 	if (t.avoidOverlap) {
@@ -17942,7 +18475,7 @@ function dv(e, t) {
 				widthPt: t.w + t.dl + t.dr,
 				heightPt: t.h + t.dt + t.db
 			}
-		}, a = wa({
+		}, a = Ta({
 			moving: t.kind === "table" ? {
 				...i,
 				kind: "table",
@@ -17951,11 +18484,11 @@ function dv(e, t) {
 				...i,
 				kind: t.kind === "frame" ? "frame" : "drawingml"
 			},
-			blockers: e.floats.map(va),
-			avoidance: t.kind === "table" ? ha(t.tableOverlap, t.paraId) : ga(t.allowOverlap ?? !0, t.paraId),
+			blockers: e.floats.map(ya),
+			avoidance: t.kind === "table" ? ga(t.tableOverlap, t.paraId) : _a(t.allowOverlap ?? !0, t.paraId),
 			rightBoundaryPt: e.pageWidth,
-			overlapEpsilonPt: pa,
-			rightBoundarySlackPt: ma
+			overlapEpsilonPt: ma,
+			rightBoundarySlackPt: ha
 		});
 		n = a.bounds.xPt, r = a.bounds.yPt;
 	}
@@ -17988,31 +18521,31 @@ function dv(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/floating-table-transaction.ts
-function fv(e) {
+function Nv(e) {
 	return e.xPt + e.widthPt;
 }
-function pv(e) {
+function Pv(e) {
 	return e.yPt + e.heightPt;
 }
-function mv(e, t, n, r) {
+function Fv(e, t, n, r) {
 	return e === "center" ? t + (n - t - r) / 2 : e === "right" || e === "outside" ? n - r : t;
 }
-function hv(e, t, n, r) {
+function Iv(e, t, n, r) {
 	return e === "center" ? t + (n - t - r) / 2 : e === "bottom" || e === "outside" ? n - r : t;
 }
-function gv(e, t, n, r, i = !1) {
-	let a = e.horzSpecified ? e.horzAnchor === "page" ? t.page : e.horzAnchor === "margin" ? t.margin : t.text : t.text, o = e.vertAnchor === "page" ? t.page : e.vertAnchor === "margin" ? t.margin : t.text, s = e.xAlign ? mv(e.xAlign, a.xPt, fv(a), n) : a.xPt + e.xPt, c = e.yAlign && e.vertAnchor !== "text" ? hv(e.yAlign, o.yPt, pv(o), r) : o.yPt + e.yPt;
-	return !i && (e.vertAnchor === "page" || e.vertAnchor === "margin") && c + r > pv(o) && (c = Math.max(o.yPt, pv(o) - r)), Object.freeze({
+function Lv(e, t, n, r, i = !1) {
+	let a = e.horzSpecified ? e.horzAnchor === "page" ? t.page : e.horzAnchor === "margin" ? t.margin : t.text : t.text, o = e.vertAnchor === "page" ? t.page : e.vertAnchor === "margin" ? t.margin : t.text, s = e.xAlign ? Fv(e.xAlign, a.xPt, Nv(a), n) : a.xPt + e.xPt, c = e.yAlign && e.vertAnchor !== "text" ? Iv(e.yAlign, o.yPt, Pv(o), r) : o.yPt + e.yPt;
+	return !i && (e.vertAnchor === "page" || e.vertAnchor === "margin") && c + r > Pv(o) && (c = Math.max(o.yPt, Pv(o) - r)), Object.freeze({
 		x: s,
 		y: c,
 		w: n,
 		h: r
 	});
 }
-function _v(e, t, n, r) {
-	return gv(e, t, n, r);
+function Rv(e, t, n, r) {
+	return Lv(e, t, n, r);
 }
-function vv(e, t, n) {
+function zv(e, t, n) {
 	let r = e.child.columnWidthsPt.reduce((e, t) => e + t, 0), i = e.child.advancePt, a = e.positioning, o = Object.freeze({
 		xPt: t,
 		yPt: n,
@@ -18036,11 +18569,11 @@ function vv(e, t, n) {
 		source: e
 	});
 }
-function yv(e, t) {
-	let n = e.child.columnWidthsPt.reduce((e, t) => e + t, 0), r = e.child.advancePt, i = _v(e.positioning, t, n, r), a = of(e.positioning);
-	return vv(e, a.x && e.acquiredTextOffsetPt ? t.text.xPt + e.acquiredTextOffsetPt.xPt : i.x, a.y && e.acquiredTextOffsetPt ? t.text.yPt + e.acquiredTextOffsetPt.yPt : i.y);
+function Bv(e, t) {
+	let n = e.child.columnWidthsPt.reduce((e, t) => e + t, 0), r = e.child.advancePt, i = Rv(e.positioning, t, n, r), a = Af(e.positioning);
+	return zv(e, a.x && e.acquiredTextOffsetPt ? t.text.xPt + e.acquiredTextOffsetPt.xPt : i.x, a.y && e.acquiredTextOffsetPt ? t.text.yPt + e.acquiredTextOffsetPt.yPt : i.y);
 }
-function bv(e, t, n) {
+function Vv(e, t, n) {
 	return Object.freeze({
 		coordinateSpace: e.coordinateSpace,
 		flowDomainId: e.flowDomainId,
@@ -18050,13 +18583,13 @@ function bv(e, t, n) {
 		entries: Object.freeze([...t])
 	});
 }
-function xv(e, t) {
+function Hv(e, t) {
 	if (t.coordinateSpace !== e.coordinateSpace || t.flowDomainId !== e.flowDomainId || t.entries !== e.baseEntries || t.nextParagraphId !== e.baseNextParagraphId) throw Error("Floating table registry delta base/domain mismatch");
 	let n = new Set(t.entries.map((e) => e.occurrenceId));
 	if (e.entries.some((e) => n.has(e.occurrenceId))) throw Error("Floating table registry delta was already committed");
 	if (e.nextParagraphId !== e.baseNextParagraphId + e.entries.length) throw Error("Floating table registry delta sequence mismatch");
 }
-function Sv(e, t, n = "logical-page-points", r = "logical-page") {
+function Uv(e, t, n = "logical-page-points", r = "logical-page") {
 	let i = /* @__PURE__ */ new Set();
 	for (let t of e) {
 		if (i.has(t.occurrenceId)) throw Error(`Duplicate float registry occurrence: ${t.occurrenceId}`);
@@ -18070,17 +18603,17 @@ function Sv(e, t, n = "logical-page-points", r = "logical-page") {
 		nextParagraphId: t
 	});
 }
-function Cv(e, t, n) {
+function Wv(e, t, n) {
 	let r = [...n.base, ...n.delta], i = r.find((t) => t.occurrenceId === e.occurrenceId);
 	if (i) return Object.freeze({
 		placement: Object.freeze({
-			...vv(e, i.bounds.xPt, i.bounds.yPt),
+			...zv(e, i.bounds.xPt, i.bounds.yPt),
 			bounds: i.bounds,
 			exclusionBounds: i.exclusionBounds
 		}),
 		transaction: n
 	});
-	let a = yv(e, t), o = wa({
+	let a = Bv(e, t), o = Ta({
 		moving: {
 			occurrenceId: e.occurrenceId,
 			kind: "table",
@@ -18089,12 +18622,12 @@ function Cv(e, t, n) {
 			bounds: a.bounds,
 			exclusionBounds: a.exclusionBounds
 		},
-		blockers: r.filter((e) => e.kind !== "shape" || e.wrap !== void 0).map(_a),
-		avoidance: ha(e.overlap, n.nextParagraphId),
-		rightBoundaryPt: fv(t.page),
-		overlapEpsilonPt: pa,
-		rightBoundarySlackPt: ma
-	}), s = vv(e, o.bounds.xPt, o.bounds.yPt), c = Object.freeze({
+		blockers: r.filter((e) => e.kind !== "shape" || e.wrap !== void 0).map(va),
+		avoidance: ga(e.overlap, n.nextParagraphId),
+		rightBoundaryPt: Nv(t.page),
+		overlapEpsilonPt: ma,
+		rightBoundarySlackPt: ha
+	}), s = zv(e, o.bounds.xPt, o.bounds.yPt), c = Object.freeze({
 		kind: "table",
 		occurrenceId: e.occurrenceId,
 		overlap: e.overlap,
@@ -18115,7 +18648,7 @@ function Cv(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/anchor-geometry.ts
-function wv(e, t, n) {
+function Gv(e, t, n) {
 	let r = n.pageWidth, i = n.marginLeft, a = n.marginRight;
 	switch (e ?? (t ? "margin" : "page")) {
 		case "page": return {
@@ -18149,7 +18682,7 @@ function wv(e, t, n) {
 		};
 	}
 }
-function Tv(e, t, n, r) {
+function Kv(e, t, n, r) {
 	let i = r.marginTop, a = r.marginBottom;
 	switch (e ?? (t ? "paragraph" : "page")) {
 		case "page": return {
@@ -18175,8 +18708,8 @@ function Tv(e, t, n, r) {
 		};
 	}
 }
-function Ev(e, t, n, r, i, a, o, s) {
-	let c = wv(a, t, i);
+function qv(e, t, n, r, i, a, o, s) {
+	let c = Gv(a, t, i);
 	if (o != null) return c.start + (c.end - c.start) * o + n;
 	if (!e) return c.start + n;
 	let l = c.end - c.start, u = s ?? r, d = s == null ? 0 : n;
@@ -18187,8 +18720,8 @@ function Ev(e, t, n, r, i, a, o, s) {
 		default: return c.start + d;
 	}
 }
-function Dv(e, t, n, r, i, a, o, s, c) {
-	let l = Tv(o, t, i, a);
+function Jv(e, t, n, r, i, a, o, s, c) {
+	let l = Kv(o, t, i, a);
 	if (s != null) return l.start + (l.end - l.start) * s + n;
 	if (!e) return l.start + n;
 	let u = l.end - l.start, d = c ?? r, f = c == null ? 0 : n;
@@ -18201,30 +18734,30 @@ function Dv(e, t, n, r, i, a, o, s, c) {
 }
 //#endregion
 //#region packages/docx/src/layout/section-orientation.ts
-function Ov(e) {
-	return kv(e.textDirection);
+function Yv(e) {
+	return Xv(e.textDirection);
 }
-function kv(e) {
-	return typeof e == "string" && tl(e);
+function Xv(e) {
+	return typeof e == "string" && Sl(e);
 }
-function Av(e) {
+function Zv(e) {
 	return e === "btLr";
 }
-function jv(e) {
+function Qv(e) {
 	return {
 		...e,
-		...$c(e)
+		...bl(e)
 	};
 }
-function Mv(e) {
+function $v(e) {
 	return {
 		...e,
-		...el(e)
+		...xl(e)
 	};
 }
 //#endregion
 //#region packages/docx/src/layout/measurement-environment.ts
-function Nv(e) {
+function ey(e) {
 	for (let t of e.body) {
 		if (t.type !== "paragraph") continue;
 		let e = t;
@@ -18233,7 +18766,7 @@ function Nv(e) {
 	}
 	return 10;
 }
-function Pv(e) {
+function ty(e) {
 	return {
 		pageIndex: e.pageIndex,
 		totalPages: e.totalPages,
@@ -18242,32 +18775,35 @@ function Pv(e) {
 		currentDateMs: e.currentDateMs,
 		noteNumbers: e.noteNumbers,
 		noteReferenceNumber: e.noteReferenceNumber,
-		pageWritingMode: Hr(e.sectionLayout.textDirection),
+		pageWritingMode: Ur(e.sectionLayout.textDirection),
 		verticalCJK: e.verticalCJK && !e.verticalAllRotated,
 		verticalPageFrame: e.verticalCJK === !0,
 		documentHasEastAsianText: e.docEastAsian,
 		useFeLayout: e.layoutSettings.compat.useFeLayout,
+		balanceSingleByteDoubleByteWidth: e.layoutSettings.compat.balanceSingleByteDoubleByteWidth,
 		characterSpacingControl: e.layoutSettings.characterSpacingControl,
 		resolvedLocalFonts: e.resolvedLocalFonts,
 		layoutServices: e.layoutServices,
 		verticalGlyphMeasurement: e.verticalGlyphMeasurement
 	};
 }
-function Fv(e, t) {
+function ny(e, t) {
+	let n = bc(t);
 	return {
-		type: e.sectionLayout.grid.kind === "none" ? null : e.sectionLayout.grid.kind,
+		type: n ? n.type : t.lineGrid.active ? e.sectionLayout.grid.kind : null,
 		linePitchPt: t.lineGrid.active ? t.lineGrid.pitchPt : null,
-		charSpacePt: t.characterGrid.active ? t.characterGrid.deltaPt : null
+		characterPitchPt: n?.characterPitchPt ?? null,
+		charSpacePt: n?.charSpacePt ?? null
 	};
 }
 //#endregion
 //#region packages/docx/src/layout/acquisition-state.ts
-var Iv = Object.freeze({
+var ry = Object.freeze({
 	story: "body",
 	containers: Object.freeze([]),
 	lineNumberingEligible: !0
 });
-function Lv(e) {
+function iy(e) {
 	let t = Math.max(0, e.pageH - e.marginTop - e.marginBottom);
 	return {
 		page: {
@@ -18291,141 +18827,141 @@ function Lv(e) {
 		pageParity: e.pageIndex % 2 == 0 ? "odd" : "even"
 	};
 }
-function Rv(e, t, n) {
-	return sc(n, {
+function ay(e, t, n) {
+	return Ec(n, {
 		numbering: t.numbering,
-		...t.numbering ? { markerInput: e.acquisitionInputs.numberingMarkerShapeInput(t.numbering, ns(t)) } : {},
+		...t.numbering ? { markerInput: e.acquisitionInputs.numberingMarkerShapeInput(t.numbering, ds(t)) } : {},
 		authoredFirstIndentPt: t.indentFirst,
 		tabStops: t.tabStops,
 		defaultTabPt: e.defaultTabPt,
 		service: e.layoutServices?.text
 	});
 }
-function zv(e, t) {
-	return Rv(e, t, Wc(e.layoutSettings, e.sectionLayout, Iv, t));
+function oy(e, t) {
+	return ay(e, t, ll(e.layoutSettings, e.sectionLayout, ry, t));
 }
-function Bv(e, t) {
-	return Rv(e, t, Wc(e.layoutSettings, e.sectionLayout, e.storyContext ?? Iv, t));
+function sy(e, t) {
+	return ay(e, t, ll(e.layoutSettings, e.sectionLayout, e.storyContext ?? ry, t));
 }
-function Vv(e) {
+function cy(e) {
 	return {
 		...e,
-		storyContext: Nc(e.storyContext ?? Iv)
+		storyContext: Qc(e.storyContext ?? ry)
 	};
 }
-function Hv(e, t) {
+function ly(e, t) {
 	let n = e.retainedTablesBySourceIndex?.get(t);
 	if (!n) throw Error("Table placement requires retained table acquisition");
 	return n;
 }
 //#endregion
 //#region packages/docx/src/layout/exact-length.ts
-function Uv(e, t) {
+function uy(e, t) {
 	let n = e < 0n ? -e : e, r = t < 0n ? -t : t;
 	for (; r !== 0n;) [n, r] = [r, n % r];
 	return n === 0n ? 1n : n;
 }
-function Wv(e, t) {
+function dy(e, t) {
 	if (t === 0n) throw RangeError("Exact length denominator must not be zero");
-	let n = t < 0n ? -1n : 1n, r = Uv(e, t);
+	let n = t < 0n ? -1n : 1n, r = uy(e, t);
 	return Object.freeze({
 		numerator: n * e / r,
 		denominator: n * t / r
 	});
 }
-var Gv = 768, Kv = 1100;
-function qv(e) {
+var fy = 768, py = 1100;
+function my(e) {
 	let t = /^([+-]?)(?:(\d+)(?:\.(\d*))?|\.(\d+))(?:[eE]([+-]?\d+))?$/.exec(e);
 	if (!t) return null;
 	let n = t[1] === "-", r = t[2] ?? "", i = t[3] ?? t[4] ?? "", a = Number(t[5] ?? "0");
 	if (!Number.isSafeInteger(a)) return null;
 	let o = `${r}${i}`, s = 0;
 	for (; s < o.length && o.charCodeAt(s) === 48;) s += 1;
-	if (s === o.length) return Wv(0n, 1n);
+	if (s === o.length) return dy(0n, 1n);
 	let c = o.length - 1;
 	for (; c > s && o.charCodeAt(c) === 48;) --c;
 	let l = o.slice(s, c + 1), u = o.length - 1 - c, d = a - i.length + u, f = d + l.length - 1;
-	if (l.length > Gv || Math.abs(f) > Kv) return null;
+	if (l.length > fy || Math.abs(f) > py) return null;
 	let p = BigInt(l), m = 1n;
-	return d >= 0 ? p *= 10n ** BigInt(d) : m = 10n ** BigInt(-d), n && (p = -p), Wv(p, m);
+	return d >= 0 ? p *= 10n ** BigInt(d) : m = 10n ** BigInt(-d), n && (p = -p), dy(p, m);
 }
-function Jv(e) {
+function hy(e) {
 	let t = /^(-?\d+)\/([1-9]\d*)$/.exec(e);
 	if (!t) throw RangeError(`Invalid exact length key: ${e}`);
-	return Wv(BigInt(t[1]), BigInt(t[2]));
+	return dy(BigInt(t[1]), BigInt(t[2]));
 }
-function Yv(e) {
-	let t = Wv(e.numerator, e.denominator);
+function gy(e) {
+	let t = dy(e.numerator, e.denominator);
 	return `${t.numerator}/${t.denominator}`;
 }
-function Xv(e) {
-	let t = qv(e);
-	return t ? Yv(t) : null;
+function _y(e) {
+	let t = my(e);
+	return t ? gy(t) : null;
 }
-function Zv(e) {
+function vy(e) {
 	if (!Number.isFinite(e) || e < 0) return null;
-	let t = qv(e.toString());
-	return t ? Yv(t) : null;
+	let t = my(e.toString());
+	return t ? gy(t) : null;
 }
-function Qv(e, t) {
+function yy(e, t) {
 	let n = e.toString(2).length - t.toString(2).length;
 	return (n >= 0 ? e < t << BigInt(n) : e << BigInt(-n) < t) && --n, n;
 }
-function $v(e, t, n) {
+function by(e, t, n) {
 	let r = n >= 0 ? e << BigInt(n) : e, i = n < 0 ? t << BigInt(-n) : t, a = r / i, o = r % i * 2n - i;
 	return o > 0n || o === 0n && a % 2n != 0n ? a + 1n : a;
 }
-function ey(e) {
-	let t = Jv(e);
+function xy(e) {
+	let t = hy(e);
 	if (t.numerator === 0n) return 0;
-	let n = t.numerator < 0n, r = n ? -t.numerator : t.numerator, i = Qv(r, t.denominator), a;
+	let n = t.numerator < 0n, r = n ? -t.numerator : t.numerator, i = yy(r, t.denominator), a;
 	if (i < -1022) {
-		let e = $v(r, t.denominator, 1074);
+		let e = by(r, t.denominator, 1074);
 		a = Number(e) * Number.MIN_VALUE;
 	} else {
-		let e = $v(r, t.denominator, 52 - i);
+		let e = by(r, t.denominator, 52 - i);
 		e === 1n << 53n && (e >>= 1n, i += 1), a = i > 1023 ? Infinity : Number(e) * 2 ** (i - 52);
 	}
 	return n ? -a : a;
 }
-function ty(e, t) {
-	let n = Jv(e), r = Jv(t);
-	return Yv(Wv(n.numerator * r.denominator + r.numerator * n.denominator, n.denominator * r.denominator));
+function Sy(e, t) {
+	let n = hy(e), r = hy(t);
+	return gy(dy(n.numerator * r.denominator + r.numerator * n.denominator, n.denominator * r.denominator));
 }
-function ny(e, t) {
-	let n = Jv(e), r = Jv(t);
-	return Yv(Wv(n.numerator * r.numerator, n.denominator * r.denominator));
+function Cy(e, t) {
+	let n = hy(e), r = hy(t);
+	return gy(dy(n.numerator * r.numerator, n.denominator * r.denominator));
 }
-function ry(e, t) {
-	let n = Jv(e), r = Jv(t);
-	return Yv(Wv(n.numerator * r.denominator - r.numerator * n.denominator, n.denominator * r.denominator));
+function wy(e, t) {
+	let n = hy(e), r = hy(t);
+	return gy(dy(n.numerator * r.denominator - r.numerator * n.denominator, n.denominator * r.denominator));
 }
-function iy(e, t) {
+function Ty(e, t) {
 	if (t === 0n) throw RangeError("Exact length divisor must not be zero");
-	let n = Jv(e);
-	return Yv(Wv(n.numerator, n.denominator * t));
+	let n = hy(e);
+	return gy(dy(n.numerator, n.denominator * t));
 }
-function ay(e, t) {
-	let n = Jv(e), r = Jv(t), i = n.numerator * r.denominator - r.numerator * n.denominator;
+function Ey(e, t) {
+	let n = hy(e), r = hy(t), i = n.numerator * r.denominator - r.numerator * n.denominator;
 	return i < 0n ? -1 : +(i > 0n);
 }
 //#endregion
 //#region packages/docx/src/layout/table-columns.ts
 var $ = 1e-9;
-function oy(e, t, n, r) {
+function Dy(e, t, n, r) {
 	let i = Number.isFinite(e) ? Math.max(0, e) : 0, a = Math.max(0, t), o = a + Math.max(1, n);
 	return {
 		startPt: a === 0 ? i : i / 2,
 		endPt: o >= Math.max(0, r) ? i : i / 2
 	};
 }
-function sy(e) {
+function Oy(e) {
 	return typeof e == "number" && Number.isFinite(e) ? Math.max(0, e) : 0;
 }
-function cy(e) {
+function ky(e) {
 	return e.map((e) => Math.abs(e) <= $ ? 0 : e);
 }
-function ly(e) {
+function Ay(e) {
 	let t = e.gridWidthsPt.length;
 	for (let n of e.rows) {
 		for (let e of n.cells) t = Math.max(t, e.columnStart + Math.max(1, e.columnSpan));
@@ -18434,18 +18970,18 @@ function ly(e) {
 	}
 	return t;
 }
-function uy(e, t, n) {
+function jy(e, t, n) {
 	let r = 0, i = Math.min(e.length, t + Math.max(1, n));
 	for (let n = Math.max(0, t); n < i; n += 1) r += e[n] ?? 0;
 	return r;
 }
-function dy(e, t) {
-	return e ? e.kind === "pct" ? sy(e.value) * t : sy(e.value) : null;
+function My(e, t) {
+	return e ? e.kind === "pct" ? Oy(e.value) * t : Oy(e.value) : null;
 }
-function fy(e, t, n, r) {
+function Ny(e, t, n, r) {
 	let i = Math.max(0, t), a = Math.max(1, Math.min(n, e.length - i));
 	if (a <= 0) return;
-	let o = uy(e, i, a);
+	let o = jy(e, i, a);
 	if (o <= $) {
 		e[i + a - 1] = r;
 		return;
@@ -18453,13 +18989,13 @@ function fy(e, t, n, r) {
 	let s = r / o;
 	for (let t = i; t < i + a; t += 1) e[t] = (e[t] ?? 0) * s;
 }
-function py(e, t, n, r) {
+function Py(e, t, n, r) {
 	let i = Math.max(0, t), a = Math.max(1, Math.min(n, e.length - i));
 	if (a <= 0) return;
-	let o = uy(e, i, a);
+	let o = jy(e, i, a);
 	r <= o + $ || (e[i + a - 1] += r - o);
 }
-function my(e, t) {
+function Fy(e, t) {
 	let n = [];
 	e.before && e.before.columnSpan > 0 && n.push({
 		start: 0,
@@ -18477,14 +19013,14 @@ function my(e, t) {
 		preferred: e.after.preferredWidth
 	}), n;
 }
-function hy(e, t) {
-	let n = Array.from({ length: t }, (t, n) => sy(e.gridWidthsPt[n] ?? 0)), r = n.reduce((e, t) => e + t, 0), i = e.tablePreferredWidthPt ?? (r > 0 ? r : sy(e.availableWidthPt));
+function Iy(e, t) {
+	let n = Array.from({ length: t }, (t, n) => Oy(e.gridWidthsPt[n] ?? 0)), r = n.reduce((e, t) => e + t, 0), i = e.tablePreferredWidthPt ?? (r > 0 ? r : Oy(e.availableWidthPt));
 	e.rows.forEach((e, r) => {
-		for (let a of my(e, t)) {
-			let e = dy(a.preferred, i);
-			e !== null && (r === 0 ? fy(n, a.start, a.span, e) : py(n, a.start, a.span, e));
+		for (let a of Fy(e, t)) {
+			let e = My(a.preferred, i);
+			e !== null && (r === 0 ? Ny(n, a.start, a.span, e) : Py(n, a.start, a.span, e));
 		}
-	}), e.tablePreferredWidthPt === null && gy(n, e.rows);
+	}), e.tablePreferredWidthPt === null && Ly(n, e.rows);
 	let a = e.tablePreferredWidthPt, o = n.reduce((e, t) => e + t, 0);
 	if (a !== null && a >= 0 && o <= $ && n.length > 0) return n.map(() => a / n.length);
 	if (a !== null && a >= 0 && o > $) {
@@ -18493,12 +19029,12 @@ function hy(e, t) {
 	}
 	return n;
 }
-function gy(e, t) {
+function Ly(e, t) {
 	let n = Array(e.length).fill(0);
 	for (let r of t) for (let t of r.cells) {
 		if (t.columnSpan !== 1 || t.preferredWidth?.kind !== "pct") continue;
 		let r = t.columnStart;
-		r < 0 || r >= e.length || (n[r] = Math.max(n[r] ?? 0, sy(t.preferredWidth.value)));
+		r < 0 || r >= e.length || (n[r] = Math.max(n[r] ?? 0, Oy(t.preferredWidth.value)));
 	}
 	let r = e.reduce((e, t) => e + t, 0), i = n.map((t, n) => t * r > e[n] + $), a = /* @__PURE__ */ new Set();
 	for (; i.some(Boolean);) {
@@ -18517,14 +19053,14 @@ function gy(e, t) {
 		i = c;
 	}
 }
-function _y(e, t, n) {
+function Ry(e, t, n) {
 	let r = Array(t).fill(0), i = Array(t).fill(0);
-	for (let n of e) for (let e of n.cells) e.columnSpan !== 1 || e.columnStart < 0 || e.columnStart >= t || (r[e.columnStart] = Math.max(r[e.columnStart] ?? 0, sy(e.minContentWidthPt)), i[e.columnStart] = Math.max(i[e.columnStart] ?? 0, sy(e.maxContentWidthPt)));
+	for (let n of e) for (let e of n.cells) e.columnSpan !== 1 || e.columnStart < 0 || e.columnStart >= t || (r[e.columnStart] = Math.max(r[e.columnStart] ?? 0, Oy(e.minContentWidthPt)), i[e.columnStart] = Math.max(i[e.columnStart] ?? 0, Oy(e.maxContentWidthPt)));
 	let a = Array(t).fill(!1);
 	for (let o of e) for (let e of o.cells) {
 		let o = e.columnStart;
 		if (e.columnSpan !== 1 || o < 0 || o >= t || a[o] || e.preferredWidth === null) continue;
-		let s = dy(e.preferredWidth, n);
+		let s = My(e.preferredWidth, n);
 		s !== null && (i[o] = Math.max(r[o] ?? 0, s), a[o] = !0);
 	}
 	for (let e = 0; e < t; e += 1) i[e] = Math.max(r[e] ?? 0, i[e] ?? 0);
@@ -18533,24 +19069,24 @@ function _y(e, t, n) {
 		maximums: i
 	};
 }
-function vy(e, t, n, r, i) {
+function zy(e, t, n, r, i) {
 	let a = Math.min(e.length, n + r), o = e.map((e, t) => t).filter((e) => e < n || e >= a), s = o.map((n) => Math.max(0, e[n] - (t[n] ?? 0))), c = s.reduce((e, t) => e + t, 0), l = Math.min(i, c);
 	return l <= $ || c <= $ ? 0 : (o.forEach((t, n) => {
 		e[t] -= l * ((s[n] ?? 0) / c);
 	}), l);
 }
-function yy(e, t, n, r) {
+function By(e, t, n, r) {
 	if (r <= $ || n <= 0) return;
-	let i = uy(e, t, n);
+	let i = jy(e, t, n);
 	for (let a = 0; a < n; a += 1) {
 		let o = t + a, s = i > $ ? (e[o] ?? 0) / i : 1 / n;
 		e[o] += r * s;
 	}
 }
-function by(e) {
-	let t = ly(e);
+function Vy(e) {
+	let t = Ay(e);
 	if (e.layout === "fixed") {
-		let n = hy(e, t).reduce((e, t) => e + t, 0);
+		let n = Iy(e, t).reduce((e, t) => e + t, 0);
 		return Object.freeze({
 			minWidthPt: n,
 			maxWidthPt: n
@@ -18559,8 +19095,8 @@ function by(e) {
 	let n = Array(t).fill(0), r = Array(t).fill(0), i = e.rows.flatMap((e) => e.cells).sort((e, t) => e.columnSpan - t.columnSpan), a = (e, t, n) => {
 		let r = Math.max(0, t.columnStart), i = Math.max(1, Math.min(t.columnSpan, e.length - r));
 		if (i <= 0) return;
-		let a = sy(n) - uy(e, r, i);
-		a > $ && yy(e, r, i, a);
+		let a = Oy(n) - jy(e, r, i);
+		a > $ && By(e, r, i, a);
 	};
 	for (let e of i) a(n, e, e.minContentWidthPt), a(r, e, Math.max(e.minContentWidthPt, e.maxContentWidthPt));
 	let o = n.reduce((e, t) => e + t, 0), s = Math.max(o, r.reduce((e, t) => e + t, 0));
@@ -18569,17 +19105,17 @@ function by(e) {
 		maxWidthPt: s
 	});
 }
-function xy(e, t, n, r) {
+function Hy(e, t, n, r) {
 	let i = Math.max(0, r.columnStart), a = Math.max(1, Math.min(r.columnSpan, e.length - i));
 	if (a <= 0) return;
-	let o = sy(r.minContentWidthPt), s = uy(e, i, a);
+	let o = Oy(r.minContentWidthPt), s = jy(e, i, a);
 	if (o <= s + $) return;
-	let c = a === 1 ? n[i] ?? o : Math.max(o, sy(r.maxContentWidthPt));
-	yy(e, i, a, vy(e, t, i, a, Math.max(0, c - s)));
-	let l = uy(e, i, a);
-	l < o - $ && yy(e, i, a, o - l);
+	let c = a === 1 ? n[i] ?? o : Math.max(o, Oy(r.maxContentWidthPt));
+	By(e, i, a, zy(e, t, i, a, Math.max(0, c - s)));
+	let l = jy(e, i, a);
+	l < o - $ && By(e, i, a, o - l);
 }
-function Sy(e, t, n, r) {
+function Uy(e, t, n, r) {
 	let i = e.reduce((e, t) => e + t, 0);
 	if (i <= r + $ || i <= $) return e;
 	let a = [...e], o = a.map((e, n) => Math.max(0, e - (t[n] ?? 0))), s = o.reduce((e, t) => e + t, 0), c = Math.min(i - r, s);
@@ -18588,60 +19124,60 @@ function Sy(e, t, n, r) {
 	});
 	for (let e of n) {
 		if (e.columnSpan <= 1) continue;
-		let n = Math.max(0, e.columnStart), r = Math.max(1, Math.min(e.columnSpan, a.length - n)), i = sy(e.minContentWidthPt) - uy(a, n, r);
+		let n = Math.max(0, e.columnStart), r = Math.max(1, Math.min(e.columnSpan, a.length - n)), i = Oy(e.minContentWidthPt) - jy(a, n, r);
 		if (i <= $) continue;
-		let o = vy(a, t, n, r, i);
-		yy(a, n, r, o), o < i - $ && yy(a, n, r, i - o);
+		let o = zy(a, t, n, r, i);
+		By(a, n, r, o), o < i - $ && By(a, n, r, i - o);
 	}
 	let l = a.reduce((e, t) => e + t, 0);
-	if (l <= r + $ || l <= $) return cy(a);
+	if (l <= r + $ || l <= $) return ky(a);
 	let u = Math.max(0, r) / l;
-	return cy(a.map((e) => e * u));
+	return ky(a.map((e) => e * u));
 }
-function Cy(e) {
-	let t = ly(e);
+function Wy(e) {
+	let t = Ay(e);
 	if (t === 0) return Object.freeze([]);
-	let n = hy(e, t);
+	let n = Iy(e, t);
 	if (e.layout === "fixed") {
 		if (e.availableWidthPt === null) return Object.freeze(n);
-		let t = n.reduce((e, t) => e + t, 0), r = sy(e.availableWidthPt);
+		let t = n.reduce((e, t) => e + t, 0), r = Oy(e.availableWidthPt);
 		if (t <= r + $ || t <= $) return Object.freeze(n);
 		let i = r / t;
-		return Object.freeze(cy(n.map((e) => e * i)));
+		return Object.freeze(ky(n.map((e) => e * i)));
 	}
-	let r = n.reduce((e, t) => e + t, 0), { minimums: i, maximums: a } = _y(e.rows, t, r), o = e.rows.flatMap((e) => e.cells);
+	let r = n.reduce((e, t) => e + t, 0), { minimums: i, maximums: a } = Ry(e.rows, t, r), o = e.rows.flatMap((e) => e.cells);
 	o.sort((e, t) => e.columnSpan - t.columnSpan);
-	for (let e of o) xy(n, i, a, e);
-	return Object.freeze(Sy(n, i, o, sy(e.availableWidthPt)));
+	for (let e of o) Hy(n, i, a, e);
+	return Object.freeze(Uy(n, i, o, Oy(e.availableWidthPt)));
 }
-function wy(e) {
-	let t = Cy(e), n = t.map((t, n) => {
+function Gy(e) {
+	let t = Wy(e), n = t.map((t, n) => {
 		let r = t !== e.gridWidthsPt[n];
-		return !r && e.gridWidthKeys?.[n] === null ? null : !r && e.gridWidthKeys?.[n] !== void 0 ? e.gridWidthKeys[n] : Zv(t) ?? "0/1";
+		return !r && e.gridWidthKeys?.[n] === null ? null : !r && e.gridWidthKeys?.[n] !== void 0 ? e.gridWidthKeys[n] : vy(t) ?? "0/1";
 	});
 	return Object.freeze({
 		widthsPt: Object.freeze([...t]),
 		widthKeys: Object.freeze(n)
 	});
 }
-function Ty(e) {
-	return wy(e).widthsPt;
+function Ky(e) {
+	return Gy(e).widthsPt;
 }
 //#endregion
 //#region packages/docx/src/layout/table-cell-blocks.ts
-function Ey(e, t) {
+function qy(e, t) {
 	if (t !== e.length - 1 || t === 0) return !1;
 	let n = e[t], r = e[t - 1];
 	return n?.type === "paragraph" && r?.type === "table" && n.runs.length === 0;
 }
-function Dy(e, t) {
+function Jy(e, t) {
 	let { cell: n, table: r, cellTotalWidthPt: i, outerState: a, sourcePath: o } = e, s = t.resolveContentWidthPt(n, r, i), c = t.createCellState(a, s, n), l = [];
 	for (let e = 0; e < n.content.length; e += 1) {
 		let r = n.content[e];
 		if (!r) continue;
 		let i = [...o, e];
 		if (r.type === "paragraph") {
-			let a = n.content[e - 1], o = n.content[e + 1], u = r, d = t.acquireParagraph(c, u, s, i, wc(a?.type === "paragraph" ? a : null, u, o?.type === "paragraph" ? o : null));
+			let a = n.content[e - 1], o = n.content[e + 1], u = r, d = t.acquireParagraph(c, u, s, i, Uc(a?.type === "paragraph" ? a : null, u, o?.type === "paragraph" ? o : null));
 			l.push(d), t.advanceState(c, d.advancePt);
 			continue;
 		}
@@ -18649,7 +19185,7 @@ function Dy(e, t) {
 		l.push(t.acquireNestedTable(c, a, s, i, {
 			fromPrevious: u.nestedSliceContinuesFromPrevious ?? !1,
 			onNext: u.nestedSliceContinuesOnNext ?? !1
-		}, (e, n, r, i, a) => Dy({
+		}, (e, n, r, i, a) => Jy({
 			cell: e,
 			table: n,
 			cellTotalWidthPt: r,
@@ -18659,77 +19195,77 @@ function Dy(e, t) {
 	}
 	return l;
 }
-G({
+W({
 	id: "word-exact-row-height-bottom-padding",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.180(d)"
 	},
 	description: "Word adds the largest bottom cell margin to an exact trHeight instead of treating that margin as part of the authored height."
-}), G({
+}), W({
 	id: "word-table-border-layer-cascade",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.169"
 	},
 	description: "During per-side border acquisition, none falls through to a lower-precedence layer while nil remains authored and blocks fallback only on that side."
-}), G({
+}), W({
 	id: "word-spaced-cell-inside-border-conflict",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §§2.1.136, 2.1.138"
 	},
 	description: "With non-zero cell spacing, Word retains the narrow conditional tcBorders insideH/insideV conflict against the corresponding table inside border."
-}), G({
+}), W({
 	id: "word-table-indent-all-alignments",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.155"
 	},
 	description: "Word applies tblInd as a signed leading-edge translation for every table alignment, reversing the translation for bidi visual order."
-}), G({
+}), W({
 	id: "word-exact-row-vertical-clip-only",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/table.test.ts#clips an overflowing merged owner when every row in its span is exact"
 	},
 	description: "Preserve the established exact-row overflow behavior that clips the owned vertical interval without clipping nested table ink horizontally to the cell box."
-}), G({
+}), W({
 	id: "word-over-page-cant-split-clip",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.120"
 	},
 	description: "Word starts an over-page cantSplit row on a fresh page and clips its overflow instead of synthesizing a row continuation."
-}), G({
+}), W({
 	id: "word-positioned-table-adjacency-exclusion",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.149(a)"
 	},
 	description: "Word excludes effectively positioned tables from the logical adjacent-table sequence before retained layout consumes the parser-owned sequence identity."
-}), G({
+}), W({
 	id: "word-table-border-weight-precedence",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.169"
 	},
 	description: "Use the documented Word border numbers for shared-cell conflict weight and force dotted and dashed borders to a complete weight of one."
-}), G({
+}), W({
 	id: "word-omitted-row-height-rule-at-least",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.180"
 	},
 	description: "Treat an omitted trHeight hRule as atLeast while retaining an explicitly authored auto rule as authored input."
-}), G({
+}), W({
 	id: "word-authored-auto-row-height-floor",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/table-row-height.test.ts#auto with @val — @val is honored as a lower bound"
 	},
 	description: "Preserve the established legacy-model behavior that an auto row with an authored height value uses that value as a lower bound."
-}), G({
+}), W({
 	id: "word-collapsed-border-row-track-footprint",
 	evidence: {
 		kind: "office-observation",
@@ -18739,56 +19275,56 @@ G({
 		platform: "macOS 26.5.2"
 	},
 	description: "For automatic and at-least table rows with collapsed cell boundaries, Word includes half of the winning top and bottom rule widths in each row track. Exact rows retain their authored complete height, and cell spacing keeps independent edges out of the collapsed footprint."
-}), G({
+}), W({
 	id: "word-effective-floating-table-positioning",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §2.1.162"
 	},
 	description: "Use parser-retained effective positioning status rather than lexical tblpPr presence to decide whether a table leaves ordinary flow."
-}), G({
+}), W({
 	id: "word-table-cell-spacing-scope-shadow",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §§2.1.152, 2.1.153, 2.1.154"
 	},
 	description: "At each table-cell-spacing precedence scope, pct, auto, and nil resolve to zero and shadow lower scopes instead of being treated as absent."
-}), G({
+}), W({
 	id: "word-table-margin-scope-shadow",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §§2.1.116, 2.1.125, 2.1.146, 2.1.177"
 	},
 	description: "Preserve the documented scope-specific treatment of non-dxa table cell margins: leading/trailing defaults may resolve to zero while cell/exception and nil top/bottom values remain ignored."
-}), G({
+}), W({
 	id: "word-first-row-table-exception-scope",
 	evidence: {
 		kind: "microsoft-note",
 		reference: "[MS-OI29500] §§2.1.156, 2.1.158, 2.1.167"
 	},
 	description: "Apply the supported first-row table-property exception facts at table scope, including authored preferred-width shadowing."
-}), G({
+}), W({
 	id: "word-trailing-structural-cell-marker",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/layout/compatibility.test.ts#drops only an empty trailing paragraph after a non-paragraph cell block"
 	},
 	description: "Exclude the required empty trailing cell paragraph from row-height and vertical-alignment measurements when it follows a visible non-paragraph block."
-}), G({
+}), W({
 	id: "word-cell-vertical-alignment-ink-block",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/cell-valign-leading-spacing.test.ts#inked block is vertically centred in the cell (midpoint = cell midpoint)"
 	},
 	description: "Center or bottom-align the visible cell ink block without charging the first paragraph spaceBefore or final paragraph spaceAfter at the cell edges."
-}), G({
+}), W({
 	id: "word-vertical-merge-terminal-border",
 	evidence: {
 		kind: "regression-test",
 		reference: "packages/docx/src/cell-border-conflict-render.test.ts#uses the final continuation cell border at the bottom of a vertical merge"
 	},
 	description: "Resolve the bottom edge of a vertically merged cell from its terminal continuation cell before applying shared-edge conflict rules."
-}), G({
+}), W({
 	id: "word-vertical-section-upright-block-table",
 	evidence: {
 		kind: "regression-test",
@@ -18796,33 +19332,34 @@ G({
 	},
 	description: "Paint a block table in an upright physical frame within a vertical section and charge its physical width as the body-flow advance."
 });
-function Oy(e, t) {
+function Yy(e, t) {
 	return Math.max(0, e ?? 0) + Math.max(0, ...t);
 }
-function ky(e, t) {
+function Xy(e, t) {
 	return (Math.max(0, e) + Math.max(0, t)) / 2;
 }
-function Ay(e) {
+function Zy(e) {
 	return e != null && e !== "none";
 }
-function jy(e, t, n) {
+function Qy(e, t, n) {
 	return n ? e - t : e + t;
 }
-function My(e) {
-	return e.spacingPt > 0 && !Ay(e.directStyle) && Ay(e.conditionalInsideStyle);
+function $y(e) {
+	return e.spacingPt > 0 && !Zy(e.directStyle) && Zy(e.conditionalInsideStyle);
 }
-function Ny(e, t) {
+function eb(e, t) {
+	let n = Math.min(e.xPt, t.xPt), r = Math.max(e.xPt + e.widthPt, t.xPt + t.widthPt);
 	return Object.freeze({
-		xPt: t.xPt,
+		xPt: n,
 		yPt: e.yPt,
-		widthPt: t.widthPt,
+		widthPt: r - n,
 		heightPt: e.heightPt
 	});
 }
-function Py(e) {
+function tb(e) {
 	return e.compatibility === "word" && e.availableHeightPt + e.epsilonPt >= e.freshPageHeightPt;
 }
-var Fy = Object.freeze([
+var nb = Object.freeze([
 	"single",
 	"thick",
 	"double",
@@ -18848,7 +19385,7 @@ var Fy = Object.freeze([
 	"threeDEngrave",
 	"outset",
 	"inset"
-]), Iy = Object.freeze({
+]), rb = Object.freeze({
 	single: 1,
 	thick: 2,
 	double: 3,
@@ -18873,28 +19410,28 @@ var Fy = Object.freeze([
 	outset: 26,
 	inset: 27
 });
-function Ly(e, t) {
-	return e === "dotted" || e === "dashed" ? 1 : Math.max(0, t) * 8 * (Iy[e] ?? 0);
+function ib(e, t) {
+	return e === "dotted" || e === "dashed" ? 1 : Math.max(0, t) * 8 * (rb[e] ?? 0);
 }
-function Ry(e, t) {
+function ab(e, t) {
 	return t ? e : "atLeast";
 }
-function zy(e, t) {
+function ob(e, t) {
 	return e === "pct" || e === "auto" || e === "nil" ? 0 : t;
 }
-function By(e) {
+function sb(e) {
 	return e.kind === "dxa" ? e.dxaValuePt : e.scope === "cell" || e.scope === "exception" ? null : (e.edge === "start" || e.edge === "end") && (e.kind === "pct" || e.kind === "auto" || e.kind === "nil") ? 0 : null;
 }
 //#endregion
 //#region packages/docx/src/cell-border-conflict.ts
-function Vy(e) {
-	return Ly(e.style, e.width);
+function cb(e) {
+	return ib(e.style, e.width);
 }
-function Hy(e) {
-	let t = Fy.indexOf(e);
-	return t === -1 ? Fy.length : t;
+function lb(e) {
+	let t = nb.indexOf(e);
+	return t === -1 ? nb.length : t;
 }
-function Uy(e) {
+function ub(e) {
 	if (!e) return {
 		r: 0,
 		g: 0,
@@ -18911,8 +19448,8 @@ function Uy(e) {
 		b: parseInt(t.slice(4, 6), 16)
 	};
 }
-function Wy(e, t) {
-	let n = Uy(e), r = Uy(t), i = (e) => e.r + e.b + 2 * e.g, a = (e) => e.b + 2 * e.g, o = (e) => e.g;
+function db(e, t) {
+	let n = ub(e), r = ub(t), i = (e) => e.r + e.b + 2 * e.g, a = (e) => e.b + 2 * e.g, o = (e) => e.g;
 	for (let e of [
 		i,
 		a,
@@ -18923,36 +19460,36 @@ function Wy(e, t) {
 	}
 	return 0;
 }
-function Gy(e, t) {
+function fb(e, t) {
 	let n = (e) => e && e.spec.style !== "nil" && e.spec.style !== "none" ? e : null, r = n(e), i = n(t);
 	if (!r && !i) return null;
 	if (!r) return i;
 	if (!i || r.source === "cell" && i.source === "table") return r;
 	if (i.source === "cell" && r.source === "table") return i;
-	let a = Vy(r.spec), o = Vy(i.spec);
+	let a = cb(r.spec), o = cb(i.spec);
 	if (a !== o) return a > o ? r : i;
-	let s = Hy(r.spec.style), c = Hy(i.spec.style);
+	let s = lb(r.spec.style), c = lb(i.spec.style);
 	if (s !== c) return s < c ? r : i;
-	let l = Wy(r.spec.color, i.spec.color);
+	let l = db(r.spec.color, i.spec.color);
 	return l === 0 || l < 0 ? r : i;
 }
 //#endregion
 //#region packages/docx/src/layout/table-border-layer.ts
-function Ky(...e) {
-	for (let t of e) if (t && Ay(t.authoredStyle)) return t;
+function pb(...e) {
+	for (let t of e) if (t && Zy(t.authoredStyle)) return t;
 	return null;
 }
 //#endregion
 //#region packages/docx/src/layout/table.ts
-function qy(e) {
+function mb(e) {
 	return Math.max(0, e.advancePt - e.spacing.beforePt - e.spacing.afterPt);
 }
-function Jy(e) {
+function hb(e) {
 	let t = [], n = 0, r = null, i = 0, a, o = 0, s = null, c = null;
 	for (let l of e) {
 		let e = l.layout;
 		if (e.kind === "paragraph") {
-			let u = e.spacing.beforePt, d = e.spacing.afterPt, f = r ? Nm(r, e, i, u) : u, p = l.structuralTrailing ? 0 : qy(e), m = n + (l.structuralTrailing ? 0 : f);
+			let u = e.spacing.beforePt, d = e.spacing.afterPt, f = r ? $m(r, e, i, u) : u, p = l.structuralTrailing ? 0 : mb(e), m = n + (l.structuralTrailing ? 0 : f);
 			if (t.push({
 				layout: e,
 				offsetPt: m,
@@ -18981,47 +19518,47 @@ function Jy(e) {
 		cellContainmentBottomPt: c
 	};
 }
-function Yy(e) {
+function gb(e) {
 	let t = e.cellContainmentTopPt ?? 0, n = e.cellContainmentBottomPt ?? 0;
 	return Math.max(e.flowHeightPt, n) - Math.min(0, t);
 }
-function Xy(e) {
-	return Yy(Jy(e));
+function _b(e) {
+	return gb(hb(e));
 }
-function Zy(e) {
+function vb(e) {
 	return Number.isFinite(e?.cellSpacingPt) ? Math.max(0, e?.cellSpacingPt ?? 0) : 0;
 }
-function Qy(e, t) {
-	let n = Zy(e[t]), r = Zy(e[t - 1]), i = Zy(e[t + 1]);
+function yb(e, t) {
+	let n = vb(e[t]), r = vb(e[t - 1]), i = vb(e[t + 1]);
 	return {
 		topPt: t === 0 ? n : Math.max(r, n) / 2,
 		bottomPt: t === e.length - 1 ? n : Math.max(n, i) / 2
 	};
 }
-function $y(e, t, n) {
-	return n.topPt + e.margins.topPt + Yy(t) + e.margins.bottomPt + n.bottomPt;
+function bb(e, t, n) {
+	return n.topPt + e.margins.topPt + gb(t) + e.margins.bottomPt + n.bottomPt;
 }
-function eb(e, t, n, r) {
+function xb(e, t, n, r) {
 	let i = t;
 	for (let a = t + 1; a < e.length && e[a]?.cells.find((e) => e.columnStart === n && e.columnSpan === r && e.verticalMerge === "continue"); a += 1) i = a;
 	return i;
 }
-function tb(e) {
-	return e.heightRule === "exact" ? Oy(e.heightPt, e.cells.map((e) => e.margins.bottomPt)) : e.heightRule === "atLeast" ? Math.max(0, e.heightPt ?? 0) : 0;
+function Sb(e) {
+	return e.heightRule === "exact" ? Yy(e.heightPt, e.cells.map((e) => e.margins.bottomPt)) : e.heightRule === "atLeast" ? Math.max(0, e.heightPt ?? 0) : 0;
 }
-function nb(e, t, n) {
-	let r = e.map((e) => tb(e)), i = e.map((n, r) => Math.max(0, ...n.cells.filter((e) => e.verticalMerge !== "continue").map((n) => {
-		let i = n.verticalMerge === "restart" ? eb(e, r, n.columnStart, n.columnSpan) : r, a = Qy(e, r), o = Qy(e, i);
-		return $y(n, t.get(n.id) ?? Jy([]), {
+function Cb(e, t, n) {
+	let r = e.map((e) => Sb(e)), i = e.map((n, r) => Math.max(0, ...n.cells.filter((e) => e.verticalMerge !== "continue").map((n) => {
+		let i = n.verticalMerge === "restart" ? xb(e, r, n.columnStart, n.columnSpan) : r, a = yb(e, r), o = yb(e, i);
+		return bb(n, t.get(n.id) ?? hb([]), {
 			topPt: a.topPt,
 			bottomPt: o.bottomPt
 		});
 	})));
 	e.forEach((n, i) => {
-		let a = Qy(e, i);
+		let a = yb(e, i);
 		for (let e of n.cells) {
 			if (e.verticalMerge !== "none") continue;
-			let o = $y(e, t.get(e.id) ?? Jy([]), a);
+			let o = bb(e, t.get(e.id) ?? hb([]), a);
 			n.heightRule !== "exact" && (r[i] = Math.max(r[i] ?? 0, o));
 		}
 	});
@@ -19029,10 +19566,10 @@ function nb(e, t, n) {
 	e.forEach((n, r) => {
 		for (let i of n.cells) i.verticalMerge === "restart" && a.push({
 			start: r,
-			end: eb(e, r, i.columnStart, i.columnSpan),
-			requiredPt: $y(i, t.get(i.id) ?? Jy([]), {
-				topPt: Qy(e, r).topPt,
-				bottomPt: Qy(e, eb(e, r, i.columnStart, i.columnSpan)).bottomPt
+			end: xb(e, r, i.columnStart, i.columnSpan),
+			requiredPt: bb(i, t.get(i.id) ?? hb([]), {
+				topPt: yb(e, r).topPt,
+				bottomPt: yb(e, xb(e, r, i.columnStart, i.columnSpan)).bottomPt
 			})
 		});
 	}), a.sort((e, t) => e.end - t.end || e.start - t.start);
@@ -19054,7 +19591,7 @@ function nb(e, t, n) {
 		contentHeights: i
 	};
 }
-function rb(e, t) {
+function wb(e, t) {
 	return e ? {
 		source: t,
 		spec: {
@@ -19064,10 +19601,10 @@ function rb(e, t) {
 		}
 	} : null;
 }
-function ib(e, t, n, r, i, a, o, s) {
+function Tb(e, t, n, r, i, a, o, s) {
 	let c = (e, t, n, r, i, a, o) => {
-		let s = Ky(e, o ? t : null);
-		return s ? rb(s, "cell") : rb(o ? Ky(r, a) : Ky(n, i), "table");
+		let s = pb(e, o ? t : null);
+		return s ? wb(s, "cell") : wb(o ? pb(r, a) : pb(n, i), "table");
 	}, l = c(e.borders.top, e.borders.insideH, n?.top ?? null, n?.insideH ?? null, t.top, t.insideH, r !== 0), u = c(e.borders.bottom, e.borders.insideH, n?.bottom ?? null, n?.insideH ?? null, t.bottom, t.insideH, i !== a - 1), d = c(e.borders.left, e.borders.insideV, n?.left ?? null, n?.insideV ?? null, t.left, t.insideV, e.columnStart !== 0), f = c(e.borders.right, e.borders.insideV, n?.right ?? null, n?.insideV ?? null, t.right, t.insideV, e.columnStart + e.columnSpan !== o);
 	return s ? {
 		top: l,
@@ -19081,26 +19618,26 @@ function ib(e, t, n, r, i, a, o, s) {
 		left: d
 	};
 }
-function ab(e) {
+function Eb(e) {
 	return e ? {
 		widthPt: e.spec.width,
 		color: e.spec.color ?? "#000000",
 		authoredStyle: e.spec.style
 	} : null;
 }
-function ob(e, t, n) {
-	let r = ab(Gy(e, t));
+function Db(e, t, n) {
+	let r = Eb(fb(e, t));
 	return r ? {
 		border: r,
 		edge: n
 	} : null;
 }
-function sb(e) {
+function Ob(e) {
 	let t = e.columnWidthsPt.length, n = [], r = e.rows.map(() => Array(t).fill(-1));
 	return e.rows.forEach((i, a) => {
 		for (let o of i.cells) {
 			if (o.verticalMerge === "continue") continue;
-			let i = o.verticalMerge === "restart" ? eb(e.rows, a, o.columnStart, o.columnSpan) : a, s = n.length;
+			let i = o.verticalMerge === "restart" ? xb(e.rows, a, o.columnStart, o.columnSpan) : a, s = n.length;
 			n.push({
 				input: o,
 				rowIndex: a,
@@ -19114,15 +19651,15 @@ function sb(e) {
 		occupancy: r
 	};
 }
-function cb(e, t) {
+function kb(e, t) {
 	return t.lastRowIndex === t.rowIndex ? t.input : e.rows[t.lastRowIndex]?.cells.find((e) => e.columnStart === t.input.columnStart && e.columnSpan === t.input.columnSpan && e.verticalMerge === "continue") ?? t.input;
 }
-function lb(e) {
-	let t = e.rows.length, n = e.columnWidthsPt.length, { owners: r, occupancy: i } = sb(e), a = (i, a = !1) => {
+function Ab(e) {
+	let t = e.rows.length, n = e.columnWidthsPt.length, { owners: r, occupancy: i } = Ob(e), a = (i, a = !1) => {
 		let o = r[i];
 		if (!o) return null;
-		let s = a ? cb(e, o) : o.input, c = a && s !== o.input ? o.lastRowIndex : o.rowIndex;
-		return ib(s, e.borders, e.rows[c]?.exceptionBorders ?? null, o.rowIndex, o.lastRowIndex, t, n, e.bidiVisual);
+		let s = a ? kb(e, o) : o.input, c = a && s !== o.input ? o.lastRowIndex : o.rowIndex;
+		return Tb(s, e.borders, e.rows[c]?.exceptionBorders ?? null, o.rowIndex, o.lastRowIndex, t, n, e.bidiVisual);
 	};
 	return {
 		horizontal: Array.from({ length: t + 1 }, (e, o) => Array.from({ length: n }, (e, n) => {
@@ -19143,36 +19680,36 @@ function lb(e) {
 		})),
 		vertical: Array.from({ length: n + 1 }, (r, o) => Array.from({ length: t }, (t, r) => {
 			let s = o > 0 ? i[r]?.[o - 1] ?? -1 : -1, c = o < n ? i[r]?.[o] ?? -1 : -1, l = e.bidiVisual ? c : s, u = e.bidiVisual ? s : c;
-			return l >= 0 && l === u ? null : ob(a(l)?.right ?? null, a(u)?.left ?? null, o === 0 ? e.bidiVisual ? "right" : "left" : o === n ? e.bidiVisual ? "left" : "right" : "between");
+			return l >= 0 && l === u ? null : Db(a(l)?.right ?? null, a(u)?.left ?? null, o === 0 ? e.bidiVisual ? "right" : "left" : o === n ? e.bidiVisual ? "left" : "right" : "between");
 		})),
 		occupancy: i
 	};
 }
-function ub(e, t) {
-	return t.horizontal.map((t, n) => Zy(e.rows[n - 1]) > 0 || Zy(e.rows[n]) > 0 ? 0 : t.reduce((e, t) => {
+function jb(e, t) {
+	return t.horizontal.map((t, n) => vb(e.rows[n - 1]) > 0 || vb(e.rows[n]) > 0 ? 0 : t.reduce((e, t) => {
 		if (!t) return e;
-		let n = ob(t.above.border, t.below.border, t.edge);
+		let n = Db(t.above.border, t.below.border, t.edge);
 		return Math.max(e, n?.border.widthPt ?? 0);
 	}, 0));
 }
-function db(e, t) {
-	let n = ub(e, t);
-	return e.rows.map((e, t) => e.heightRule === "exact" ? 0 : ky(n[t] ?? 0, n[t + 1] ?? 0));
+function Mb(e, t) {
+	let n = jb(e, t);
+	return e.rows.map((e, t) => e.heightRule === "exact" ? 0 : Xy(n[t] ?? 0, n[t + 1] ?? 0));
 }
-function fb(e) {
-	return db(e, lb(e));
+function Nb(e) {
+	return Mb(e, Ab(e));
 }
-function pb(e, t, n) {
+function Pb(e, t, n) {
 	return {
 		edge: e.edge,
 		from: t,
 		to: n,
 		color: e.border.color,
 		widthPt: e.border.widthPt,
-		...ri(e.border.authoredStyle, e.border.widthPt)
+		...ii(e.border.authoredStyle, e.border.widthPt)
 	};
 }
-var mb = Object.freeze({
+var Fb = Object.freeze({
 	top: null,
 	right: null,
 	bottom: null,
@@ -19180,17 +19717,17 @@ var mb = Object.freeze({
 	insideH: null,
 	insideV: null
 });
-function hb(e) {
-	let t = ab(e);
+function Ib(e) {
+	let t = Eb(e);
 	return t && t.authoredStyle !== "nil" && t.authoredStyle !== "none" ? t : null;
 }
-function gb(e, t, n, r, i) {
+function Lb(e, t, n, r, i) {
 	let a = [0];
 	for (let t of e.columnWidthsPt) a.push((a.at(-1) ?? 0) + t);
 	let o = [0];
 	for (let e of r) o.push((o.at(-1) ?? 0) + e);
 	let s = a.at(-1) ?? 0, c = (n, r) => (t[n] ?? 0) + (e.bidiVisual ? s - (a[r] ?? 0) : a[r] ?? 0), l = (e) => n + (o[e] ?? 0), u = [], d = (e, t, n, r) => {
-		!e || e.authoredStyle === "nil" || e.authoredStyle === "none" || u.push(pb({
+		!e || e.authoredStyle === "nil" || e.authoredStyle === "none" || u.push(Pb({
 			border: e,
 			edge: t
 		}, n, r));
@@ -19202,8 +19739,8 @@ function gb(e, t, n, r, i) {
 		f.add(o);
 		let s = e.rows[a.rowIndex];
 		if (!s) return;
-		let u = Zy(s), p = c(a.rowIndex, a.input.columnStart), m = c(a.rowIndex, Math.min(e.columnWidthsPt.length, a.input.columnStart + a.input.columnSpan)), { startPt: h, endPt: g } = oy(u, a.input.columnStart, a.input.columnSpan, e.columnWidthsPt.length), _ = Math.min(p, m) + (e.bidiVisual ? g : h), v = Math.max(p, m) - (e.bidiVisual ? h : g), y = l(a.rowIndex) + Qy(e.rows, a.rowIndex).topPt, b = l(a.lastRowIndex + 1) - Qy(e.rows, a.lastRowIndex).bottomPt, x = ib(a.input, mb, null, a.rowIndex, a.lastRowIndex, e.rows.length, e.columnWidthsPt.length, e.bidiVisual), S = r === "top" ? x.top : x.bottom, C = r === "top" ? y : b;
-		d(hb(S), i, {
+		let u = vb(s), p = c(a.rowIndex, a.input.columnStart), m = c(a.rowIndex, Math.min(e.columnWidthsPt.length, a.input.columnStart + a.input.columnSpan)), { startPt: h, endPt: g } = Dy(u, a.input.columnStart, a.input.columnSpan, e.columnWidthsPt.length), _ = Math.min(p, m) + (e.bidiVisual ? g : h), v = Math.max(p, m) - (e.bidiVisual ? h : g), y = l(a.rowIndex) + yb(e.rows, a.rowIndex).topPt, b = l(a.lastRowIndex + 1) - yb(e.rows, a.lastRowIndex).bottomPt, x = Tb(a.input, Fb, null, a.rowIndex, a.lastRowIndex, e.rows.length, e.columnWidthsPt.length, e.bidiVisual), S = r === "top" ? x.top : x.bottom, C = r === "top" ? y : b;
+		d(Ib(S), i, {
 			xPt: _,
 			yPt: C
 		}, {
@@ -19212,10 +19749,10 @@ function gb(e, t, n, r, i) {
 		});
 	};
 	return i.horizontal.forEach((n, r) => {
-		let a = r > 0 && Zy(e.rows[r - 1]) > 0, o = r < e.rows.length && Zy(e.rows[r]) > 0;
+		let a = r > 0 && vb(e.rows[r - 1]) > 0, o = r < e.rows.length && vb(e.rows[r]) > 0;
 		if (a || o) {
-			let a = Math.max(Zy(e.rows[r - 1]), Zy(e.rows[r])), u = o ? r : r - 1, f = t[u] ?? 0, m = r === 0 ? "top" : r === e.rows.length ? "bottom" : "between";
-			r === 0 || r === e.rows.length ? d(Ky(r === 0 ? e.rows[0]?.exceptionBorders?.top ?? null : e.rows.at(-1)?.exceptionBorders?.bottom ?? null, r === 0 ? e.borders.top : e.borders.bottom), m, {
+			let a = Math.max(vb(e.rows[r - 1]), vb(e.rows[r])), u = o ? r : r - 1, f = t[u] ?? 0, m = r === 0 ? "top" : r === e.rows.length ? "bottom" : "between";
+			r === 0 || r === e.rows.length ? d(pb(r === 0 ? e.rows[0]?.exceptionBorders?.top ?? null : e.rows.at(-1)?.exceptionBorders?.bottom ?? null, r === 0 ? e.borders.top : e.borders.bottom), m, {
 				xPt: f,
 				yPt: l(r)
 			}, {
@@ -19231,14 +19768,14 @@ function gb(e, t, n, r, i) {
 					directEdge: "top"
 				}].some(({ side: e, directEdge: t }) => {
 					let n = e.owner;
-					return n ? My({
+					return n ? $y({
 						spacingPt: a,
 						directStyle: n.input.borders[t]?.authoredStyle,
 						conditionalInsideStyle: n.input.borders.insideH?.authoredStyle
 					}) : !1;
 				})) return;
-				let f = c(u, n), p = c(u, n + 1), h = Ky(e.rows[r - 1]?.exceptionBorders?.insideH ?? null, e.borders.insideH), g = Ky(e.rows[r]?.exceptionBorders?.insideH ?? null, e.borders.insideH);
-				d(ob(rb(h, "table"), rb(g, "table"), m)?.border ?? null, m, {
+				let f = c(u, n), p = c(u, n + 1), h = pb(e.rows[r - 1]?.exceptionBorders?.insideH ?? null, e.borders.insideH), g = pb(e.rows[r]?.exceptionBorders?.insideH ?? null, e.borders.insideH);
+				d(Db(wb(h, "table"), wb(g, "table"), m)?.border ?? null, m, {
 					xPt: Math.min(f, p),
 					yPt: l(r)
 				}, {
@@ -19271,7 +19808,7 @@ function gb(e, t, n, r, i) {
 		for (let e = 1; e < g.length; e += 1) {
 			let t = g[e - 1] ?? 0, n = g[e] ?? t;
 			if (n <= t) continue;
-			let r = (t + n) / 2, i = h.filter((e) => r > e.leftPt && r < e.rightPt), a = ob(i.find((e) => e.side === "above")?.border ?? null, i.find((e) => e.side === "below")?.border ?? null, _);
+			let r = (t + n) / 2, i = h.filter((e) => r > e.leftPt && r < e.rightPt), a = Db(i.find((e) => e.side === "above")?.border ?? null, i.find((e) => e.side === "below")?.border ?? null, _);
 			a && f.push({
 				resolved: a,
 				leftPt: t,
@@ -19284,7 +19821,7 @@ function gb(e, t, n, r, i) {
 			let t = v.at(-1);
 			t && t.rightPt === e.leftPt && t.resolved.edge === e.resolved.edge && t.resolved.border.widthPt === e.resolved.border.widthPt && t.resolved.border.color === e.resolved.border.color && t.resolved.border.authoredStyle === e.resolved.border.authoredStyle ? t.rightPt = e.rightPt : v.push({ ...e });
 		}
-		for (let e of v) u.push(pb(e.resolved, {
+		for (let e of v) u.push(Pb(e.resolved, {
 			xPt: e.leftPt,
 			yPt: l(r)
 		}, {
@@ -19293,7 +19830,7 @@ function gb(e, t, n, r, i) {
 		}));
 	}), i.vertical.forEach((t, n) => {
 		t.forEach((t, r) => {
-			Zy(e.rows[r]) > 0 || t && u.push(pb(t, {
+			vb(e.rows[r]) > 0 || t && u.push(Pb(t, {
 				xPt: c(r, n),
 				yPt: l(r)
 			}, {
@@ -19302,16 +19839,16 @@ function gb(e, t, n, r, i) {
 			}));
 		});
 	}), e.rows.forEach((n, r) => {
-		let a = Zy(n);
+		let a = vb(n);
 		if (a <= 0) return;
 		let o = l(r), u = l(r + 1), f = t[r] ?? 0;
-		d(Ky(n.exceptionBorders?.left ?? null, e.borders.left), "left", {
+		d(pb(n.exceptionBorders?.left ?? null, e.borders.left), "left", {
 			xPt: f,
 			yPt: o
 		}, {
 			xPt: f,
 			yPt: u
-		}), d(Ky(n.exceptionBorders?.right ?? null, e.borders.right), "right", {
+		}), d(pb(n.exceptionBorders?.right ?? null, e.borders.right), "right", {
 			xPt: f + s,
 			yPt: o
 		}, {
@@ -19319,11 +19856,11 @@ function gb(e, t, n, r, i) {
 			yPt: u
 		});
 		let p = /* @__PURE__ */ new Set();
-		for (let e of n.cells) My({
+		for (let e of n.cells) $y({
 			spacingPt: a,
 			directStyle: e.borders.left?.authoredStyle,
 			conditionalInsideStyle: e.borders.insideV?.authoredStyle
-		}) && p.add(e.columnStart), My({
+		}) && p.add(e.columnStart), $y({
 			spacingPt: a,
 			directStyle: e.borders.right?.authoredStyle,
 			conditionalInsideStyle: e.borders.insideV?.authoredStyle
@@ -19332,7 +19869,7 @@ function gb(e, t, n, r, i) {
 			let a = i.occupancy[r]?.[t - 1] ?? -1, s = i.occupancy[r]?.[t] ?? -1;
 			if (!(a !== s && (a >= 0 || s >= 0))) continue;
 			let l = c(r, t);
-			p.has(t) || d(Ky(n.exceptionBorders?.insideV ?? null, e.borders.insideV), "between", {
+			p.has(t) || d(pb(n.exceptionBorders?.insideV ?? null, e.borders.insideV), "between", {
 				xPt: l,
 				yPt: o
 			}, {
@@ -19342,14 +19879,14 @@ function gb(e, t, n, r, i) {
 		}
 		for (let t of n.cells) {
 			if (t.verticalMerge === "continue") continue;
-			let n = t.verticalMerge === "restart" ? eb(e.rows, r, t.columnStart, t.columnSpan) : r, i = c(r, t.columnStart), o = c(r, Math.min(e.columnWidthsPt.length, t.columnStart + t.columnSpan)), { startPt: s, endPt: u } = oy(a, t.columnStart, t.columnSpan, e.columnWidthsPt.length), f = Math.min(i, o) + (e.bidiVisual ? u : s), p = Math.max(i, o) - (e.bidiVisual ? s : u), m = l(r) + Qy(e.rows, r).topPt, h = l(n + 1) - Qy(e.rows, n).bottomPt, g = ib(t, mb, null, r, n, e.rows.length, e.columnWidthsPt.length, e.bidiVisual);
-			d(hb(g.right), "right", {
+			let n = t.verticalMerge === "restart" ? xb(e.rows, r, t.columnStart, t.columnSpan) : r, i = c(r, t.columnStart), o = c(r, Math.min(e.columnWidthsPt.length, t.columnStart + t.columnSpan)), { startPt: s, endPt: u } = Dy(a, t.columnStart, t.columnSpan, e.columnWidthsPt.length), f = Math.min(i, o) + (e.bidiVisual ? u : s), p = Math.max(i, o) - (e.bidiVisual ? s : u), m = l(r) + yb(e.rows, r).topPt, h = l(n + 1) - yb(e.rows, n).bottomPt, g = Tb(t, Fb, null, r, n, e.rows.length, e.columnWidthsPt.length, e.bidiVisual);
+			d(Ib(g.right), "right", {
 				xPt: p,
 				yPt: m
 			}, {
 				xPt: p,
 				yPt: h
-			}), d(hb(g.left), "left", {
+			}), d(Ib(g.left), "left", {
 				xPt: f,
 				yPt: m
 			}, {
@@ -19359,11 +19896,11 @@ function gb(e, t, n, r, i) {
 		}
 	}), u;
 }
-function _b(e, t, n, r, i) {
+function Rb(e, t, n, r, i) {
 	let a = r.availableBounds, o = e === "center" ? a.xPt + (a.widthPt - i) / 2 : e === "right" ? a.xPt + a.widthPt - i : a.xPt;
-	return t === 0 ? o : jy(o, t, n);
+	return t === 0 ? o : Qy(o, t, n);
 }
-function vb(e, t) {
+function zb(e, t) {
 	if (t.length === 0) return e;
 	let n = Math.min(e.xPt, ...t.map((e) => Math.min(e.from.xPt, e.to.xPt) - e.widthPt / 2)), r = Math.min(e.yPt, ...t.map((e) => Math.min(e.from.yPt, e.to.yPt) - e.widthPt / 2)), i = Math.max(e.xPt + e.widthPt, ...t.map((e) => Math.max(e.from.xPt, e.to.xPt) + e.widthPt / 2)), a = Math.max(e.yPt + e.heightPt, ...t.map((e) => Math.max(e.from.yPt, e.to.yPt) + e.widthPt / 2));
 	return {
@@ -19373,7 +19910,7 @@ function vb(e, t) {
 		heightPt: a - r
 	};
 }
-function yb(e) {
+function Bb(e) {
 	let t = /* @__PURE__ */ new Map();
 	e.forEach((e, n) => {
 		if (e.style !== "compound" || !e.edge || e.edge === "between") return;
@@ -19417,7 +19954,7 @@ function yb(e) {
 	}
 	return n;
 }
-function bb(e, t) {
+function Vb(e, t) {
 	let n = Math.max(e.xPt, t.xPt), r = Math.max(e.yPt, t.yPt), i = Math.min(e.xPt + e.widthPt, t.xPt + t.widthPt), a = Math.min(e.yPt + e.heightPt, t.yPt + t.heightPt);
 	return i > n && a > r ? {
 		xPt: n,
@@ -19426,7 +19963,7 @@ function bb(e, t) {
 		heightPt: a - r
 	} : null;
 }
-function xb(e, t, n) {
+function Hb(e, t, n) {
 	let r = e.layout, i = t + (r.kind === "table" ? r.flowBounds.xPt : 0), a = n + e.offsetPt + (r.kind === "table" ? r.flowBounds.yPt : 0), o = i - r.flowBounds.xPt, s = a - r.flowBounds.yPt;
 	return {
 		xPt: r.inkBounds.xPt + o,
@@ -19435,20 +19972,20 @@ function xb(e, t, n) {
 		heightPt: r.inkBounds.heightPt
 	};
 }
-function Sb(e, t, n) {
-	let r = V(e, "TableLayoutInput");
+function Ub(e, t, n) {
+	let r = B(e, "TableLayoutInput");
 	if (r.columnWidthsPt.some((e) => !Number.isFinite(e) || e < 0)) throw TypeError("TableLayoutInput.columnWidthsPt must contain finite non-negative widths");
 	let i = /* @__PURE__ */ new Map();
 	r.rows.forEach((e) => e.cells.forEach((e) => {
-		i.set(e.id, Jy(e.verticalMerge === "continue" ? [] : e.blocks));
+		i.set(e.id, hb(e.verticalMerge === "continue" ? [] : e.blocks));
 	}));
-	let a = lb(r), o = nb(r.rows, i, db(r, a)), s = o.heights, c = r.columnWidthsPt.reduce((e, t) => e + t, 0), l = s.reduce((e, t) => e + t, 0), u = t.cursor.yPt, d = r.rows.map((e) => _b(e.alignment ?? r.alignment, Number.isFinite(e.indentPt) ? e.indentPt : r.indentPt, r.bidiVisual, t, c)), f = d[0] ?? _b(r.alignment, r.indentPt, r.bidiVisual, t, c), p = gb(r, d, u, s, a), m = yb(p), h = [0];
+	let a = Ab(r), o = Cb(r.rows, i, Mb(r, a)), s = o.heights, c = r.columnWidthsPt.reduce((e, t) => e + t, 0), l = s.reduce((e, t) => e + t, 0), u = t.cursor.yPt, d = r.rows.map((e) => Rb(e.alignment ?? r.alignment, Number.isFinite(e.indentPt) ? e.indentPt : r.indentPt, r.bidiVisual, t, c)), f = d[0] ?? Rb(r.alignment, r.indentPt, r.bidiVisual, t, c), p = Lb(r, d, u, s, a), m = Bb(p), h = [0];
 	for (let e of r.columnWidthsPt) h.push((h.at(-1) ?? 0) + e);
 	let g = [0];
 	for (let e of s) g.push((g.at(-1) ?? 0) + e);
 	let _ = (e, t) => (d[e] ?? f) + (r.bidiVisual ? c - (h[t] ?? 0) : h[t] ?? 0), v = r.rows.map((e, n) => {
-		let a = u + (g[n] ?? 0), l = s[n] ?? 0, p = d[n] ?? f, m = Qy(r.rows, n), h = Zy(e), v = e.cells.map((e) => {
-			let o = e.verticalMerge === "restart" ? eb(r.rows, n, e.columnStart, e.columnSpan) : n, s = Qy(r.rows, o), c = u + (g[o + 1] ?? g[n + 1] ?? 0) - s.bottomPt, d = _(n, e.columnStart), f = _(n, Math.min(r.columnWidthsPt.length, e.columnStart + e.columnSpan)), p = Math.min(d, f), v = Math.max(d, f), { startPt: y, endPt: b } = oy(h, e.columnStart, e.columnSpan, r.columnWidthsPt.length), x = p + (r.bidiVisual ? b : y), S = v - (r.bidiVisual ? y : b), C = Math.max(0, S - x), w = a + m.topPt, T = e.verticalMerge === "restart" ? Math.max(0, c - w) : Math.max(0, l - m.topPt - m.bottomPt), E = i.get(e.id) ?? Jy([]), D = Math.max(0, T - e.margins.topPt - e.margins.bottomPt), O = e.margins.topPt - Math.min(0, E.inkTopPt), k = E.inkHeightPt >= D ? O : e.vAlign === "center" ? e.margins.topPt + (D - E.inkHeightPt) / 2 - E.inkTopPt : e.vAlign === "bottom" ? T - e.margins.bottomPt - E.inkHeightPt - E.inkTopPt : O, A = {
+		let a = u + (g[n] ?? 0), l = s[n] ?? 0, p = d[n] ?? f, m = yb(r.rows, n), h = vb(e), v = e.cells.map((e) => {
+			let o = e.verticalMerge === "restart" ? xb(r.rows, n, e.columnStart, e.columnSpan) : n, s = yb(r.rows, o), c = u + (g[o + 1] ?? g[n + 1] ?? 0) - s.bottomPt, d = _(n, e.columnStart), f = _(n, Math.min(r.columnWidthsPt.length, e.columnStart + e.columnSpan)), p = Math.min(d, f), v = Math.max(d, f), { startPt: y, endPt: b } = Dy(h, e.columnStart, e.columnSpan, r.columnWidthsPt.length), x = p + (r.bidiVisual ? b : y), S = v - (r.bidiVisual ? y : b), C = Math.max(0, S - x), w = a + m.topPt, T = e.verticalMerge === "restart" ? Math.max(0, c - w) : Math.max(0, l - m.topPt - m.bottomPt), E = i.get(e.id) ?? hb([]), D = Math.max(0, T - e.margins.topPt - e.margins.bottomPt), O = e.margins.topPt - Math.min(0, E.inkTopPt), k = E.inkHeightPt >= D ? O : e.vAlign === "center" ? e.margins.topPt + (D - E.inkHeightPt) / 2 - E.inkTopPt : e.vAlign === "bottom" ? T - e.margins.bottomPt - E.inkHeightPt - E.inkTopPt : O, A = {
 				xPt: x + e.margins.leftPt,
 				yPt: w + k,
 				widthPt: Math.max(0, C - e.margins.leftPt - e.margins.rightPt),
@@ -19458,10 +19995,10 @@ function Sb(e, t, n) {
 				yPt: w,
 				widthPt: C,
 				heightPt: T
-			}, M = e.verticalMerge !== "continue" && r.rows.slice(n, o + 1).every((e) => e.heightRule === "exact") ? Ny(j, t.availableBounds) : void 0, N = e.verticalMerge === "continue" ? [] : E.blocks.map((e) => ({
+			}, M = e.verticalMerge !== "continue" && r.rows.slice(n, o + 1).every((e) => e.heightRule === "exact") ? eb(j, t.availableBounds) : void 0, ee = e.verticalMerge === "continue" ? [] : E.blocks.map((e) => ({
 				...e,
 				offsetPt: k + e.offsetPt
-			})), ee = Nl([j, ...N.map((e) => xb(e, A.xPt, j.yPt)).map((e) => M ? bb(e, M) : e).filter((e) => e !== null)]) ?? j;
+			})), te = ru([j, ...ee.map((e) => Hb(e, A.xPt, j.yPt)).map((e) => M ? Vb(e, M) : e).filter((e) => e !== null)]) ?? j;
 			return {
 				kind: "table-cell",
 				id: e.id,
@@ -19469,21 +20006,21 @@ function Sb(e, t, n) {
 				flowDomainId: r.flowDomainId,
 				ordinaryFlow: r.ordinaryFlow,
 				flowBounds: j,
-				inkBounds: ee,
+				inkBounds: te,
 				...M ? { clipBounds: M } : {},
 				contentBounds: A,
 				advancePt: T,
 				verticalMerge: e.verticalMerge,
 				vAlign: e.vAlign,
 				...e.background ? { background: e.background } : {},
-				blocks: N
+				blocks: ee
 			};
 		}), y = {
 			xPt: p,
 			yPt: a,
 			widthPt: c,
 			heightPt: l
-		}, b = Nl([y, ...v.map((e) => e.inkBounds)]) ?? y;
+		}, b = ru([y, ...v.map((e) => e.inkBounds)]) ?? y;
 		return {
 			kind: "table-row",
 			id: e.id,
@@ -19503,8 +20040,8 @@ function Sb(e, t, n) {
 		yPt: u,
 		widthPt: Math.max(0, b - y),
 		heightPt: l
-	}, S = Nl([x, ...v.map((e) => e.inkBounds)]) ?? x;
-	return V({
+	}, S = ru([x, ...v.map((e) => e.inkBounds)]) ?? x;
+	return B({
 		layout: {
 			kind: "table",
 			id: r.id,
@@ -19512,7 +20049,7 @@ function Sb(e, t, n) {
 			flowDomainId: r.flowDomainId,
 			ordinaryFlow: r.ordinaryFlow,
 			flowBounds: x,
-			inkBounds: vb(S, p),
+			inkBounds: zb(S, p),
 			advancePt: l,
 			columnWidthsPt: r.columnWidthsPt,
 			rows: v,
@@ -19527,12 +20064,12 @@ function Sb(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/layout/table-acquisition.ts
-function Cb(e, t) {
+function Wb(e, t) {
 	let n = e.findIndex((e, n) => n > t && e.type === "paragraph" && e.framePr == null);
 	if (n < 0) throw Error("A nested floating table requires a following regular paragraph anchor");
 	return n;
 }
-function wb(e) {
+function Gb(e) {
 	if (!e) return null;
 	let t = e.color ?? "000000";
 	return Object.freeze({
@@ -19541,25 +20078,25 @@ function wb(e) {
 		authoredStyle: e.style
 	});
 }
-function Tb(e) {
+function Kb(e) {
 	return Object.freeze({
-		top: wb(e.top),
-		right: wb(e.right),
-		bottom: wb(e.bottom),
-		left: wb(e.left),
-		insideH: wb(e.insideH),
-		insideV: wb(e.insideV)
+		top: Gb(e.top),
+		right: Gb(e.right),
+		bottom: Gb(e.bottom),
+		left: Gb(e.left),
+		insideH: Gb(e.insideH),
+		insideV: Gb(e.insideV)
 	});
 }
-function Eb(e, t) {
+function qb(e, t) {
 	if (e === "center") return "center";
 	let n = e === "right" || e === "end";
 	return (t ? !n : n) ? "right" : "left";
 }
-function Db(e) {
+function Jb(e) {
 	return e.lines.some((e) => e.placements.some((e) => e.kind === "text" && e.dependency === "page"));
 }
-function Ob(e, t, n, r, i, a) {
+function Yb(e, t, n, r, i, a) {
 	let o = Array.isArray(i) ? {
 		story: "body",
 		storyInstance: "body",
@@ -19579,11 +20116,11 @@ function Ob(e, t, n, r, i, a) {
 				left: n.marginLeft ?? e.cellMarginLeft
 			}, p = l, m = Math.min(Math.max(1, n.colSpan), Math.max(0, t.length - p));
 			l += m;
-			let _ = t.slice(p, p + m).reduce((e, t) => e + t, 0), v = oy(o?.cellSpacingPt ?? 0, p, m, t.length), y = [
+			let _ = t.slice(p, p + m).reduce((e, t) => e + t, 0), v = Dy(o?.cellSpacingPt ?? 0, p, m, t.length), y = [
 				...s,
 				i,
 				d
-			], b = `${u}:cell:${i}.${d}`, x = n.vMerge === !1 ? [] : Dy({
+			], b = `${u}:cell:${i}.${d}`, x = n.vMerge === !1 ? [] : Jy({
 				cell: n,
 				table: e,
 				cellTotalWidthPt: _,
@@ -19594,7 +20131,7 @@ function Ob(e, t, n, r, i, a) {
 				createCellState: a.createCellState,
 				acquireParagraph: (e, t, n, r, o) => a.acquireParagraph(e, t, n, r, `${u}:cell:${i}.${d}`, o, void 0, c(r)),
 				acquireNestedTable: (e, t, r, i) => {
-					let o = Ob(t, a.resolveColumns(t, r, e), r, e, c(i), a);
+					let o = Yb(t, a.resolveColumns(t, r, e), r, e, c(i), a);
 					h[o.layout.id] = o;
 					let s = a.tableFormat(t).positioning;
 					if (s) {
@@ -19605,7 +20142,7 @@ function Ob(e, t, n, r, i, a) {
 						}), d = {
 							hostCellId: b,
 							sourceBlockIndex: r,
-							anchorBlockIndex: Cb(n.content, r),
+							anchorBlockIndex: Wb(n.content, r),
 							tableId: o.layout.id,
 							overlap: l,
 							positioning: c,
@@ -19631,14 +20168,14 @@ function Ob(e, t, n, r, i, a) {
 				},
 				vAlign: n.vAlign,
 				...n.background ? { background: { color: n.background.startsWith("#") ? n.background : `#${n.background}` } } : {},
-				borders: Tb(n.borders),
+				borders: Kb(n.borders),
 				blocks: x.flatMap((e, t) => {
 					let r = n.content[t];
 					return r?.type === "table" && a.tableFormat(r).ordinaryFlow === !1 ? [] : [{
 						layout: e,
 						sourceBlockIndex: t,
-						...e.kind === "paragraph" && Db(e) ? { pageDependent: !0 } : {},
-						...Ey(n.content, t) ? { structuralTrailing: !0 } : {}
+						...e.kind === "paragraph" && Jb(e) ? { pageDependent: !0 } : {},
+						...qy(n.content, t) ? { structuralTrailing: !0 } : {}
 					}];
 				})
 			};
@@ -19651,30 +20188,30 @@ function Ob(e, t, n, r, i, a) {
 			heightPt: o?.height?.valuePt ?? null,
 			heightRule: _,
 			cellSpacingPt: o?.cellSpacingPt ?? 0,
-			exceptionBorders: o?.exception?.borders ? Tb(o.exception.borders) : null,
-			alignment: Eb(o?.justification ?? e.jc, f),
+			exceptionBorders: o?.exception?.borders ? Kb(o.exception.borders) : null,
+			alignment: qb(o?.justification ?? e.jc, f),
 			indentPt: m,
 			cells: p,
 			repeatedHeader: o?.repeatedHeader ?? n.isHeader === !0
 		};
-	}), v = V({
+	}), v = B({
 		kind: "table",
 		id: u,
 		source: c([...s]),
 		flowDomainId: u,
 		ordinaryFlow: d.ordinaryFlow,
-		alignment: Eb(e.jc, f),
+		alignment: qb(e.jc, f),
 		indentPt: m,
 		bidiVisual: f,
 		columnWidthsPt: t,
-		borders: Tb(e.borders),
+		borders: Kb(e.borders),
 		rows: _
 	}, "RetainedTableAcquisition.input"), y = {
 		xPt: 0,
 		yPt: 0,
 		widthPt: n,
 		heightPt: 1
-	}, b = Sb(v, {
+	}, b = Ub(v, {
 		container: {
 			id: u,
 			kind: "tableCell",
@@ -19690,30 +20227,30 @@ function Ob(e, t, n, r, i, a) {
 		input: v,
 		layout: b,
 		nestedById: Object.freeze(h),
-		floatingTables: V(g, "RetainedTableAcquisition.floatingTables")
+		floatingTables: B(g, "RetainedTableAcquisition.floatingTables")
 	});
 }
 //#endregion
 //#region packages/docx/src/layout/adjacent-table-layout-input.ts
-function kb(e, t, n) {
+function Xb(e, t, n) {
 	return t === n ? e : Object.freeze({
 		...e,
 		left: e.right,
 		right: e.left
 	});
 }
-function Ab(e, t, n) {
-	let r = kb(e.borders, e.bidiVisual, n), i = t.exceptionBorders == null ? null : kb(t.exceptionBorders, e.bidiVisual, n);
+function Zb(e, t, n) {
+	let r = Xb(e.borders, e.bidiVisual, n), i = t.exceptionBorders == null ? null : Xb(t.exceptionBorders, e.bidiVisual, n);
 	return i ? Object.freeze({
-		top: Ky(i.top, r.top),
-		right: Ky(i.right, r.right),
-		bottom: Ky(i.bottom, r.bottom),
-		left: Ky(i.left, r.left),
-		insideH: Ky(i.insideH, r.insideH),
-		insideV: Ky(i.insideV, r.insideV)
+		top: pb(i.top, r.top),
+		right: pb(i.right, r.right),
+		bottom: pb(i.bottom, r.bottom),
+		left: pb(i.left, r.left),
+		insideH: pb(i.insideH, r.insideH),
+		insideV: pb(i.insideV, r.insideV)
 	}) : r;
 }
-var jb = class {
+var Qb = class {
 	nodes = [Object.freeze({ kind: "zero" })];
 	interned = new Map([["Z", 0]]);
 	intern(e, t) {
@@ -19753,48 +20290,48 @@ var jb = class {
 		});
 	}
 };
-function Mb(e, t = 0) {
+function $b(e, t = 0) {
 	return Object.freeze({
 		position: e,
 		sym: t,
 		identity: `${e}|${t}`
 	});
 }
-function Nb(e, t, n) {
-	return Mb(ty(t.position, n.position), e.add(t.sym, n.sym));
+function ex(e, t, n) {
+	return $b(Sy(t.position, n.position), e.add(t.sym, n.sym));
 }
-function Pb(e, t, n) {
-	return Mb(ry(t.position, n.position), e.subtract(t.sym, n.sym));
+function tx(e, t, n) {
+	return $b(wy(t.position, n.position), e.subtract(t.sym, n.sym));
 }
-function Fb(e, t, n) {
-	return Mb(iy(t.position, n), e.divide(t.sym, n));
+function nx(e, t, n) {
+	return $b(Ty(t.position, n), e.divide(t.sym, n));
 }
-function Ib(e, t, n) {
-	let r = [Mb("0/1")];
+function rx(e, t, n) {
+	let r = [$b("0/1")];
 	return t.columnWidthsPt.forEach((i, a) => {
-		let o = t.columnWidthKeys?.[a], s = Zv(i) ?? "0/1", c = o === null ? Mb(s, e.token(n, a)) : Mb(o ?? s);
-		r.push(Nb(e, r.at(-1), c));
+		let o = t.columnWidthKeys?.[a], s = vy(i) ?? "0/1", c = o === null ? $b(s, e.token(n, a)) : $b(o ?? s);
+		r.push(ex(e, r.at(-1), c));
 	}), Object.freeze(r);
 }
-function Lb(e, t, n, r) {
-	let i = Pb(e, r, n);
-	return t.alignment === "right" ? i : t.alignment === "center" ? Fb(e, i, 2n) : Mb("0/1");
+function ix(e, t, n, r) {
+	let i = tx(e, r, n);
+	return t.alignment === "right" ? i : t.alignment === "center" ? nx(e, i, 2n) : $b("0/1");
 }
-function Rb(e, t, n, r, i) {
-	return Nb(e, i, r ? Pb(e, n, t) : t);
+function ax(e, t, n, r, i) {
+	return ex(e, i, r ? tx(e, n, t) : t);
 }
-function zb(e, t) {
+function ox(e, t) {
 	if (e.length === 0) throw RangeError("Adjacent table group id must not be empty");
 	if (t.length === 0) throw RangeError("Adjacent table group requires at least one table");
 	if (t.some((e) => !e.ordinaryFlow)) throw Error("An absolutely positioned table cannot join an adjacent table group");
-	let n = t[0], r = n.bidiVisual, i = new jb(), a = Mb("0/1"), o = t.map((e, t) => Ib(i, e, t)), s = o.map((e) => e.at(-1) ?? a), c = s.reduce((e, t) => ay(t.position, e.position) > 0 ? t : e, a), l = (e, t, n, a) => {
-		let o = Rb(i, e, t, n, a);
-		return r ? Pb(i, c, o) : o;
+	let n = t[0], r = n.bidiVisual, i = new Qb(), a = $b("0/1"), o = t.map((e, t) => rx(i, e, t)), s = o.map((e) => e.at(-1) ?? a), c = s.reduce((e, t) => Ey(t.position, e.position) > 0 ? t : e, a), l = (e, t, n, a) => {
+		let o = ax(i, e, t, n, a);
+		return r ? tx(i, c, o) : o;
 	}, u = [];
 	t.forEach((e, t) => {
 		let n = o[t], a = s[t], d = e.bidiVisual !== r;
 		e.rows.forEach((t) => {
-			let r = Lb(i, t, a, c), o = n.map((t) => l(t, a, e.bidiVisual, r));
+			let r = ix(i, t, a, c), o = n.map((t) => l(t, a, e.bidiVisual, r));
 			u.push({
 				input: e,
 				row: t,
@@ -19845,7 +20382,7 @@ function zb(e, t) {
 		}
 	}
 	for (let e of f.values()) for (let t of e.identities.keys()) e.firstSeen.has(t) || e.firstSeen.set(t, m++);
-	let h = [...f.values()].sort((e, t) => ay(e.position, t.position)), g = [], _ = /* @__PURE__ */ new Map();
+	let h = [...f.values()].sort((e, t) => Ey(e.position, t.position)), g = [], _ = /* @__PURE__ */ new Map();
 	for (let e of h) {
 		let t = new Map([...e.identities.keys()].map((e) => [e, 0]));
 		for (let n of e.edges.values()) for (let e of n) t.set(e, (t.get(e) ?? 0) + 1);
@@ -19891,8 +20428,8 @@ function zb(e, t) {
 	}
 	let v = g.slice(1).map((e, t) => {
 		let n = g[t];
-		return e.sym === n.sym ? ry(e.position, n.position) : null;
-	}), y = g.slice(1).map((e, t) => ey(ry(e.position, g[t].position))), b = (e, t) => {
+		return e.sym === n.sym ? wy(e.position, n.position) : null;
+	}), y = g.slice(1).map((e, t) => xy(wy(e.position, g[t].position))), b = (e, t) => {
 		let n = /* @__PURE__ */ new Map(), r = Array(e.length);
 		return e.forEach((e, i) => {
 			let a = n.get(e.identity) ?? 0;
@@ -19906,7 +20443,7 @@ function zb(e, t) {
 			if (n == null || i == null) throw RangeError(`Table cell ${e.id} exceeds its authored grid`);
 			let a = Math.min(n, i), s = Math.max(n, i);
 			if (s <= a) throw Error(`Table cell ${e.id} cannot be mapped into the logical group grid`);
-			let c = kb(e.borders, t.bidiVisual, r);
+			let c = Xb(e.borders, t.bidiVisual, r);
 			return Object.freeze({
 				...e,
 				columnStart: a,
@@ -19918,7 +20455,7 @@ function zb(e, t) {
 			...n,
 			logicalRowIndex: x++,
 			exceptionBorders: null,
-			sourceTableEdges: Ab(t, n, r),
+			sourceTableEdges: Zb(t, n, r),
 			indentPt: t.bidiVisual === r ? n.indentPt : -n.indentPt,
 			sourceOuterColumnStart: Math.min(s, c),
 			sourceOuterColumnEnd: Math.max(s, c),
@@ -19940,8 +20477,8 @@ function zb(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/table-pagination.ts
-var Bb = 1e-4;
-function Vb() {
+var sx = 1e-4;
+function cx() {
 	return Object.freeze({
 		blockIndex: 0,
 		paragraphLineStart: 0,
@@ -19949,25 +20486,25 @@ function Vb() {
 		nestedFragmentIndex: 0
 	});
 }
-function Hb() {
+function lx() {
 	return Object.freeze({
 		rowIndex: 0,
 		rowFragmentIndex: 0,
 		cells: Object.freeze([])
 	});
 }
-function Ub(e) {
+function ux(e) {
 	let t = 0;
 	for (; e.rows[t]?.repeatedHeader === !0;) t += 1;
 	return t;
 }
-function Wb(e, t) {
+function dx(e, t) {
 	let n = e.layout.rows[t];
 	return n ? e.input.rows[t]?.heightRule === "exact" ? Math.max(0, n.heightPt) : Math.max(0, n.heightPt, n.contentHeightPt) : 0;
 }
-function Gb(e, t, n, r) {
+function fx(e, t, n, r) {
 	let i = e.layout.rows.flatMap((e) => e.cells).find((e) => e.id === t.id);
-	if (!i) throw new H("INVALID_REFERENCE", `nested table fragment lost parent cell geometry: ${t.id}`);
+	if (!i) throw new V("INVALID_REFERENCE", `nested table fragment lost parent cell geometry: ${t.id}`);
 	let a = Object.freeze({
 		xPt: 0,
 		yPt: 0,
@@ -19991,33 +20528,33 @@ function Gb(e, t, n, r) {
 		})
 	});
 }
-function Kb(e, t, n, r) {
-	if (t === e.input.rows[n]) return Wb(e, n);
-	let i = Sb({
+function px(e, t, n, r) {
+	if (t === e.input.rows[n]) return dx(e, n);
+	let i = Ub({
 		...e.input,
 		id: `${e.input.id}:row-occurrence:${r.page.occurrenceId}:${t.logicalRowIndex}`,
 		rows: [t]
 	}, r.placement, r.services).layout;
 	return Math.max(0, i.rows[0]?.heightPt ?? i.advancePt);
 }
-function qb(e, t, n, r) {
-	return t === e.input.rows[n] ? Math.max(0, e.layout.rows[n]?.heightPt ?? 0) : Kb(e, t, n, r);
+function mx(e, t, n, r) {
+	return t === e.input.rows[n] ? Math.max(0, e.layout.rows[n]?.heightPt ?? 0) : px(e, t, n, r);
 }
-function Jb(e, t, n, r) {
-	let i = Sb({
+function hx(e, t, n, r) {
+	let i = Ub({
 		...e.input,
 		id: `${e.input.id}:completed-partial:${r.page.occurrenceId}:${t.logicalRowIndex}`,
 		rows: [t, ...e.input.rows.slice(n + 1)]
 	}, r.placement, r.services).layout;
 	return Math.max(0, i.rows[0]?.heightPt ?? 0);
 }
-function Yb(e) {
+function gx(e) {
 	return e.cells.map((e) => e.blocks.map((e) => ({
 		kind: "whole",
 		blockIndex: e.sourceBlockIndex
 	})));
 }
-function Xb(e, t, n, r) {
+function _x(e, t, n, r) {
 	let i = r.reacquirePageDependentBlock;
 	return !i || !t.cells.some((e) => e.blocks.some((e) => e.pageDependent === !0)) ? t : {
 		...t,
@@ -20037,24 +20574,24 @@ function Xb(e, t, n, r) {
 		}))
 	};
 }
-function Zb(e) {
+function vx(e) {
 	let t = e.positioning.horzSpecified && (e.positioning.horzAnchor === "page" || e.positioning.horzAnchor === "margin"), n = e.positioning.vertAnchor === "page" || e.positioning.vertAnchor === "margin";
 	return t || n;
 }
-function Qb(e, t, n, r, i) {
+function yx(e, t, n, r, i) {
 	return {
 		...t,
 		heightPt: null,
 		heightRule: "auto",
 		cells: t.cells.map((t, a) => {
-			let o = n.cells[a] ?? Vb();
+			let o = n.cells[a] ?? cx();
 			return {
 				...t,
 				blocks: t.blocks.slice(o.blockIndex).map((n, a) => {
 					if (a === 0 && o.nestedCursor && n.layout.kind === "table") {
 						let a = e.nestedById[n.layout.id];
 						if (a) {
-							let s = ux(a, o.nestedCursor, Gb(e, t, r, r.freshPageHeightPt)), c = i.get(t.id);
+							let s = jx(a, o.nestedCursor, fx(e, t, r, r.freshPageHeightPt)), c = i.get(t.id);
 							if (s.nextCursor && c !== void 0 && n.sourceBlockIndex < c) throw Error("Floating table anchor cannot follow an incomplete nested-table candidate");
 							if (s.fragment) return {
 								...n,
@@ -20064,14 +20601,14 @@ function Qb(e, t, n, r, i) {
 					}
 					return a !== 0 || o.paragraphLineStart === 0 || n.layout.kind !== "paragraph" ? n : {
 						...n,
-						layout: ax(n.layout, o.paragraphLineStart, n.layout.lines.length)
+						layout: Ex(n.layout, o.paragraphLineStart, n.layout.lines.length)
 					};
 				})
 			};
 		})
 	};
 }
-function $b(e, t, n, r, i, a, o, s, c) {
+function bx(e, t, n, r, i, a, o, s, c) {
 	let l = i.floatingTableFrames, u = i.reacquirePageDependentBlock, d = e.input.rows[t.logicalRowIndex];
 	if (!l || !u || !d) return {
 		row: t,
@@ -20094,7 +20631,7 @@ function $b(e, t, n, r, i, a, o, s, c) {
 			...i.placement.cursor,
 			yPt: i.placement.cursor.yPt + r
 		}
-	}, h = Qb(e, t, s, i, p), g = Sb({
+	}, h = yx(e, t, s, i, p), g = Ub({
 		...e.input,
 		id: `${e.input.id}:float-probe:${i.page.occurrenceId}:${t.logicalRowIndex}`,
 		rows: [h]
@@ -20130,15 +20667,15 @@ function $b(e, t, n, r, i, a, o, s, c) {
 			child: u
 		});
 	}, y = (n) => {
-		let r = Qb(e, n, s, i, p), c = n === t ? g : Sb({
+		let r = yx(e, n, s, i, p), c = n === t ? g : Ub({
 			...e.input,
 			id: `${e.input.id}:float-converge:${i.page.occurrenceId}:${t.logicalRowIndex}`,
 			rows: [r]
-		}, m, i.services).layout, u = Sv(a, o, i.floatingTableRegistry?.coordinateSpace ?? "logical-page-points", i.floatingTableRegistry?.flowDomainId ?? e.input.flowDomainId), d = [];
+		}, m, i.services).layout, u = Uv(a, o, i.floatingTableRegistry?.coordinateSpace ?? "logical-page-points", i.floatingTableRegistry?.flowDomainId ?? e.input.flowDomainId), d = [];
 		for (let e of f) {
 			let t = v(e, c, r);
-			if (!t || i.floatingTableRegistry?.coordinateSpace !== "upright-physical-page-points" && !Zb(t)) continue;
-			let n = Cv(t, {
+			if (!t || i.floatingTableRegistry?.coordinateSpace !== "upright-physical-page-points" && !vx(t)) continue;
+			let n = Wv(t, {
 				page: l.page,
 				margin: l.margin,
 				text: {
@@ -20193,7 +20730,7 @@ function $b(e, t, n, r, i, a, o, s, c) {
 		nextParagraphId: o
 	};
 	try {
-		let e = uo({
+		let e = fo({
 			seedState: x(t, S.resolved),
 			step: (e) => {
 				let t = b(e?.resolution.resolved ?? S.resolved), n = y(t);
@@ -20213,49 +20750,49 @@ function $b(e, t, n, r, i, a, o, s, c) {
 			nextParagraphId: e.resolution.transaction.nextParagraphId
 		};
 	} catch (e) {
-		throw e instanceof lo ? new H("NON_CONVERGENCE", `floating table final-frame reflow did not converge (${e.reason}; ${e.states.length} states)`) : e;
+		throw e instanceof uo ? new V("NON_CONVERGENCE", `floating table final-frame reflow did not converge (${e.reason}; ${e.states.length} states)`) : e;
 	}
 }
-function ex(e, t, n) {
+function xx(e, t, n) {
 	let r = e.input.rows[t.logicalRowIndex]?.cells.findIndex((e) => e.id === n.hostCellId) ?? -1;
 	return r >= 0 && (t.ranges[r]?.some((e) => e.blockIndex === n.anchorBlockIndex && (e.kind === "whole" || e.kind === "paragraph" && e.lineStart === 0 || e.kind === "nested-table" && e.childFragmentIndex === 0)) ?? !1);
 }
-function tx(e) {
+function Sx(e) {
 	return `${e.hostCellId}:${e.sourceBlockIndex}:${e.tableId}`;
 }
-function nx(e, t) {
-	return new Set(e.floatingTables.filter((n) => ex(e, t, n)).map(tx));
+function Cx(e, t) {
+	return new Set(e.floatingTables.filter((n) => xx(e, t, n)).map(Sx));
 }
-function rx(e, t) {
+function wx(e, t) {
 	return e.size === t.size && [...e].every((e) => t.has(e));
 }
-function ix(e, t, n = 0, r = !1, i = []) {
+function Tx(e, t, n = 0, r = !1, i = []) {
 	return {
 		input: e,
 		logicalRowIndex: e.logicalRowIndex,
 		fragmentIndex: n,
 		ownership: t,
-		ranges: Yb(e),
+		ranges: gx(e),
 		...r ? { clipAtPageEnd: !0 } : {},
 		...i.length ? { resolvedFloatingTables: i } : {}
 	};
 }
-function ax(e, t, n) {
-	return Rg(e, {
+function Ex(e, t, n) {
+	return a_(e, {
 		lineStart: t,
 		lineEnd: n,
 		continuesFromPrevious: t > 0,
 		continuesOnNext: n < e.lines.length
 	});
 }
-function ox(e, t, n, r, i) {
+function Dx(e, t, n, r, i) {
 	let a = null, o = n;
 	for (let s = n + 1; s <= e.lines.length; s += 1) {
-		let c = ax(e, n, s), l = {
+		let c = Ex(e, n, s), l = {
 			layout: c,
 			sourceBlockIndex: t
 		};
-		if (Xy([...r, l]) > i + Bb) break;
+		if (_b([...r, l]) > i + sx) break;
 		a = c, o = s;
 	}
 	return a ? {
@@ -20278,7 +20815,7 @@ function ox(e, t, n, r, i) {
 		advancePt: 0
 	};
 }
-function sx(e, t, n, r, i) {
+function Ox(e, t, n, r, i) {
 	if (t.verticalMerge === "continue") return {
 		input: t,
 		range: [],
@@ -20297,14 +20834,14 @@ function sx(e, t, n, r, i) {
 				continue;
 			}
 			if (d.lines.length === 0) {
-				if (Xy([...a, n]) > r + Bb) break;
+				if (_b([...a, n]) > r + sx) break;
 				a.push(n), o.push({
 					kind: "whole",
 					blockIndex: n.sourceBlockIndex
 				}), s += 1, c = 0;
 				continue;
 			}
-			let e = ox(d, n.sourceBlockIndex, c, a, r);
+			let e = Dx(d, n.sourceBlockIndex, c, a, r);
 			if (!e.block || !e.range) break;
 			if (a.push({
 				...e.block,
@@ -20318,7 +20855,7 @@ function sx(e, t, n, r, i) {
 		}
 		let f = e.nestedById[d.id];
 		if (f) {
-			let c = Math.max(0, r - Xy(a)), d = ux(f, l ?? Hb(), Gb(e, t, i, c));
+			let c = Math.max(0, r - _b(a)), d = jx(f, l ?? lx(), fx(e, t, i, c));
 			if (!d.fragment) break;
 			if (a.push({
 				layout: d.fragment,
@@ -20334,7 +20871,7 @@ function sx(e, t, n, r, i) {
 			s += 1, l = null, u = 0;
 			continue;
 		}
-		if (Xy([...a, n]) > r + Bb) break;
+		if (_b([...a, n]) > r + sx) break;
 		a.push(n), o.push({
 			kind: "whole",
 			blockIndex: n.sourceBlockIndex
@@ -20356,15 +20893,15 @@ function sx(e, t, n, r, i) {
 		complete: d
 	};
 }
-function cx(e, t, n, r, i) {
-	let a = t.cells.map((e, t) => n.cells[t] ?? Vb()), o = Math.max(0, ...t.cells.map((e) => e.margins.topPt + e.margins.bottomPt)), s = Math.max(0, t.cellSpacingPt) * 2, c = {
+function kx(e, t, n, r, i) {
+	let a = t.cells.map((e, t) => n.cells[t] ?? cx()), o = Math.max(0, ...t.cells.map((e) => e.margins.topPt + e.margins.bottomPt)), s = Math.max(0, t.cellSpacingPt) * 2, c = {
 		...t,
 		heightPt: null,
 		heightRule: "auto"
-	}, l = fb({
+	}, l = Nb({
 		...e.input,
 		rows: [c]
-	})[0] ?? 0, u = Math.max(0, r - o - s - l), d = t.cells.map((t, n) => sx(e, t, a[n], u, i));
+	})[0] ?? 0, u = Math.max(0, r - o - s - l), d = t.cells.map((t, n) => Ox(e, t, a[n], u, i));
 	if (!d.some((e, t) => e.next.blockIndex !== a[t]?.blockIndex || e.next.paragraphLineStart !== a[t]?.paragraphLineStart || e.next.nestedFragmentIndex !== a[t]?.nestedFragmentIndex)) return {
 		selected: null,
 		next: n,
@@ -20372,7 +20909,7 @@ function cx(e, t, n, r, i) {
 	};
 	let f = d.every((e) => e.complete);
 	return f && n.rowFragmentIndex === 0 ? {
-		selected: ix(t, "source"),
+		selected: Tx(t, "source"),
 		next: Object.freeze({
 			rowIndex: n.rowIndex + 1,
 			rowFragmentIndex: 0,
@@ -20404,8 +20941,8 @@ function cx(e, t, n, r, i) {
 		complete: f
 	};
 }
-function lx(e, t, n) {
-	let r = Sb({
+function Ax(e, t, n) {
+	let r = Ub({
 		...e.input,
 		id: `${e.input.id}:fragment:${n.page.occurrenceId}`,
 		rows: t.map((e) => e.input)
@@ -20476,7 +21013,7 @@ function lx(e, t, n) {
 		...n.floatingTableRegistry ? { resolvedFloatingTableCoordinateSpace: n.floatingTableRegistry.coordinateSpace } : {}
 	});
 }
-function ux(e, t, n) {
+function jx(e, t, n) {
 	if (t.rowIndex >= e.input.rows.length) return {
 		fragment: null,
 		nextCursor: null,
@@ -20484,35 +21021,35 @@ function ux(e, t, n) {
 	};
 	let r = [], i = n.floatingTableRegistry;
 	if (i && i.flowDomainId.length === 0) throw Error("Floating table registry coordinate/domain mismatch");
-	let a = Object.freeze([...i?.entries ?? []]), o = i?.nextParagraphId ?? 0, s = Math.max(0, n.availableHeightPt), c = Ub(e.input);
+	let a = Object.freeze([...i?.entries ?? []]), o = i?.nextParagraphId ?? 0, s = Math.max(0, n.availableHeightPt), c = ux(e.input);
 	if (t.rowIndex >= c && t.rowIndex > 0 && c > 0) for (let i = 0; i < c; i += 1) {
-		let c = $b(e, Xb(e, e.input.rows[i], "repeated-header", n), "repeated-header", n.availableHeightPt - s, n, a, o, Hb(), () => !0), l = c.row, u = Kb(e, l, i, n);
-		if (u > s + Bb) return {
+		let c = bx(e, _x(e, e.input.rows[i], "repeated-header", n), "repeated-header", n.availableHeightPt - s, n, a, o, lx(), () => !0), l = c.row, u = px(e, l, i, n);
+		if (u > s + sx) return {
 			fragment: null,
 			nextCursor: t,
 			requiresFreshPage: !0
 		};
-		r.push(ix(l, "repeated-header", 0, !1, c.resolved)), a = c.registry, o = c.nextParagraphId, s -= u;
+		r.push(Tx(l, "repeated-header", 0, !1, c.resolved)), a = c.registry, o = c.nextParagraphId, s -= u;
 	}
-	let l = t, u = t.rowIndex, d = t.rowFragmentIndex === 0 && t.cells.length === 0 && e.layout.rows.slice(t.rowIndex).reduce((e, t) => e + Math.max(0, t.heightPt), 0) <= s + Bb, f = !1;
+	let l = t, u = t.rowIndex, d = t.rowFragmentIndex === 0 && t.cells.length === 0 && e.layout.rows.slice(t.rowIndex).reduce((e, t) => e + Math.max(0, t.heightPt), 0) <= s + sx, f = !1;
 	for (; u < e.input.rows.length;) {
-		let i = "source", c = Xb(e, e.input.rows[u], i, n), p = u === t.rowIndex ? t : Object.freeze({
+		let i = "source", c = _x(e, e.input.rows[u], i, n), p = u === t.rowIndex ? t : Object.freeze({
 			rowIndex: u,
 			rowFragmentIndex: 0,
 			cells: Object.freeze([])
-		}), m = u !== t.rowIndex || t.rowFragmentIndex === 0, h = m ? $b(e, c, i, n.availableHeightPt - s, n, a, o, p, (e) => {
+		}), m = u !== t.rowIndex || t.rowFragmentIndex === 0, h = m ? bx(e, c, i, n.availableHeightPt - s, n, a, o, p, (e) => {
 			let t = c.cells.findIndex((t) => t.id === e.hostCellId), n = c.cells[t]?.blocks.findIndex((t) => t.sourceBlockIndex === e.anchorBlockIndex) ?? -1;
 			if (n < 0) return !1;
-			let r = p.cells[t] ?? Vb();
+			let r = p.cells[t] ?? cx();
 			return r.blockIndex < n || r.blockIndex === n && r.paragraphLineStart === 0;
 		}) : {
 			row: c,
 			resolved: Object.freeze([]),
 			registry: a,
 			nextParagraphId: o
-		}, g = h.row, _ = d || f ? qb(e, g, u, n) : Kb(e, g, u, n);
-		if (m && _ <= s + Bb) {
-			r.push(ix(g, "source", 0, !1, h.resolved)), a = h.registry, o = h.nextParagraphId, s -= _, u += 1, l = u < e.input.rows.length ? Object.freeze({
+		}, g = h.row, _ = d || f ? mx(e, g, u, n) : px(e, g, u, n);
+		if (m && _ <= s + sx) {
+			r.push(Tx(g, "source", 0, !1, h.resolved)), a = h.registry, o = h.nextParagraphId, s -= _, u += 1, l = u < e.input.rows.length ? Object.freeze({
 				rowIndex: u,
 				rowFragmentIndex: 0,
 				cells: Object.freeze([])
@@ -20521,18 +21058,18 @@ function ux(e, t, n) {
 		}
 		if (g.cantSplit) {
 			if (r.some((e) => e.ownership === "source")) break;
-			if (_ + (n.availableHeightPt - s) <= n.freshPageHeightPt + Bb || n.availableHeightPt + Bb < n.freshPageHeightPt) return {
+			if (_ + (n.availableHeightPt - s) <= n.freshPageHeightPt + sx || n.availableHeightPt + sx < n.freshPageHeightPt) return {
 				fragment: null,
 				nextCursor: t,
 				requiresFreshPage: !0
 			};
-			if (Py({
+			if (tb({
 				compatibility: n.compatibility,
 				availableHeightPt: n.availableHeightPt,
 				freshPageHeightPt: n.freshPageHeightPt,
-				epsilonPt: Bb
+				epsilonPt: sx
 			})) {
-				r.push(ix(g, "source", 0, !0, h.resolved)), a = h.registry, o = h.nextParagraphId, l = u + 1 < e.input.rows.length ? Object.freeze({
+				r.push(Tx(g, "source", 0, !0, h.resolved)), a = h.registry, o = h.nextParagraphId, l = u + 1 < e.input.rows.length ? Object.freeze({
 					rowIndex: u + 1,
 					rowFragmentIndex: 0,
 					cells: Object.freeze([])
@@ -20540,62 +21077,62 @@ function ux(e, t, n) {
 				break;
 			}
 		}
-		if (n.oversizedRowPolicy === "atomic" && r.every((e) => e.ownership === "repeated-header") && n.availableHeightPt + Bb >= n.freshPageHeightPt && _ > n.freshPageHeightPt + Bb) {
-			r.push(ix(g, "source", 0, !1, h.resolved)), a = h.registry, o = h.nextParagraphId, l = u + 1 < e.input.rows.length ? Object.freeze({
+		if (n.oversizedRowPolicy === "atomic" && r.every((e) => e.ownership === "repeated-header") && n.availableHeightPt + sx >= n.freshPageHeightPt && _ > n.freshPageHeightPt + sx) {
+			r.push(Tx(g, "source", 0, !1, h.resolved)), a = h.registry, o = h.nextParagraphId, l = u + 1 < e.input.rows.length ? Object.freeze({
 				rowIndex: u + 1,
 				rowFragmentIndex: 0,
 				cells: Object.freeze([])
 			}) : null;
 			break;
 		}
-		let v = cx(e, c, p, s, n), y = null, b = /* @__PURE__ */ new Set();
+		let v = kx(e, c, p, s, n), y = null, b = /* @__PURE__ */ new Set();
 		for (; v.selected;) {
-			let t = nx(e, v.selected), r = JSON.stringify([...t].sort());
+			let t = Cx(e, v.selected), r = JSON.stringify([...t].sort());
 			if (b.has(r)) throw Error("Floating table selected ownership did not converge");
-			b.add(r), y = $b(e, c, i, n.availableHeightPt - s, n, a, o, p, (e) => t.has(tx(e)));
-			let l = cx(e, y.row, p, s, n);
+			b.add(r), y = bx(e, c, i, n.availableHeightPt - s, n, a, o, p, (e) => t.has(Sx(e)));
+			let l = kx(e, y.row, p, s, n);
 			if (!l.selected) {
 				v = l;
 				break;
 			}
-			let u = nx(e, l.selected);
-			if (v = l, rx(t, u)) break;
+			let u = Cx(e, l.selected);
+			if (v = l, wx(t, u)) break;
 			y = null;
 		}
 		if (v.selected && y === null) throw Error("Floating table selected ownership did not converge");
 		if (v.selected) {
 			let t = y?.resolved ?? [];
-			if (t.some((t) => !ex(e, v.selected, t.source))) throw Error("Floating table transaction included an unowned occurrence");
+			if (t.some((t) => !xx(e, v.selected, t.source))) throw Error("Floating table transaction included an unowned occurrence");
 			let i = a.length, c = (y?.registry ?? a).slice(i);
 			if (r.push({
 				...v.selected,
 				...t.length ? { resolvedFloatingTables: Object.freeze(t) } : {}
 			}), a = Object.freeze([...a, ...c]), o += c.length, l = v.next.rowIndex >= e.input.rows.length ? null : v.next, v.complete && v.next.rowIndex < e.input.rows.length) {
-				s = Math.max(0, s - Jb(e, v.selected.input, u, n)), f = !0, u = v.next.rowIndex;
+				s = Math.max(0, s - hx(e, v.selected.input, u, n)), f = !0, u = v.next.rowIndex;
 				continue;
 			}
 		}
 		break;
 	}
 	if (r.filter((e) => e.ownership === "source").length === 0) {
-		if (!(n.availableHeightPt + Bb < n.freshPageHeightPt)) throw new H("NON_CONVERGENCE", "Table pagination cannot advance from a fresh page");
+		if (!(n.availableHeightPt + sx < n.freshPageHeightPt)) throw new V("NON_CONVERGENCE", "Table pagination cannot advance from a fresh page");
 		return {
 			fragment: null,
 			nextCursor: t,
 			requiresFreshPage: !0
 		};
 	}
-	let p = lx(e, r, n);
-	for (; p.advancePt > n.availableHeightPt + Bb;) {
+	let p = Ax(e, r, n);
+	for (; p.advancePt > n.availableHeightPt + sx;) {
 		let t = r.at(-1), i = r.filter((e) => e.ownership === "source").length;
 		if (!(t?.ownership === "source" && t.fragmentIndex === 0 && t.ranges.every((e) => e.every((e) => e.kind === "whole"))) || i <= 1) break;
 		r.pop(), l = Object.freeze({
 			rowIndex: t.logicalRowIndex,
 			rowFragmentIndex: 0,
 			cells: Object.freeze([])
-		}), p = lx(e, r, n);
+		}), p = Ax(e, r, n);
 	}
-	return p.advancePt > n.availableHeightPt + Bb && n.availableHeightPt + Bb < n.freshPageHeightPt && p.advancePt <= n.freshPageHeightPt + Bb ? {
+	return p.advancePt > n.availableHeightPt + sx && n.availableHeightPt + sx < n.freshPageHeightPt && p.advancePt <= n.freshPageHeightPt + sx ? {
 		fragment: null,
 		nextCursor: t,
 		requiresFreshPage: !0
@@ -20606,14 +21143,14 @@ function ux(e, t, n) {
 		floatingTablePlacements: p.resolvedFloatingTables,
 		...i ? { floatingTableRegistryDelta: (() => {
 			let e = a.slice(i.entries.length).filter((e) => p.resolvedFloatingTables.some((t) => t.occurrenceId === e.occurrenceId));
-			return bv(i, e, i.nextParagraphId + e.length);
+			return Vv(i, e, i.nextParagraphId + e.length);
 		})() } : {}
 	};
 }
 //#endregion
 //#region packages/docx/src/layout/registered-paragraph-acquisition.ts
-function dx(e, t, n, r) {
-	let i = Km(e, n.flowDomainId), a = Cg(t, {
+function Mx(e, t, n, r) {
+	let i = fh(e, n.flowDomainId), a = Wg(t, {
 		...n,
 		exclusions: Object.freeze([
 			...n.exclusions,
@@ -20626,15 +21163,15 @@ function dx(e, t, n, r) {
 			...r?.collisions ?? []
 		])
 	});
-	return qm(e, i, a.layout), a;
+	return ph(e, i, a.layout), a;
 }
 //#endregion
 //#region packages/docx/src/layout/paragraph-float-authority.ts
-function fx(e, t) {
+function Nx(e, t) {
 	return e.flatMap((e, n) => e.kind === "shape" && e.anchorOccurrenceId && e.authoredWrap === void 0 ? [] : [{
 		id: e.imageKey || `${t}:float:${n}`,
 		wrap: e.authoredWrap ?? (e.mode === "topAndBottom" ? "topAndBottom" : "square"),
-		wrapSide: Ma(e.side),
+		wrapSide: Na(e.side),
 		bounds: {
 			xPt: e.xLeft,
 			yPt: e.yTop,
@@ -20666,7 +21203,7 @@ function fx(e, t) {
 		} : {}
 	}]);
 }
-function px(e) {
+function Px(e) {
 	return e.flatMap((e) => e.kind !== "shape" || !e.anchorOccurrenceId ? [] : [{
 		occurrenceId: e.anchorOccurrenceId,
 		bounds: {
@@ -20681,7 +21218,7 @@ function px(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/drawingml-collision-registry.ts
-function mx(e) {
+function Fx(e) {
 	if (e.occurrenceId.length === 0) throw Error("DrawingML collision occurrence ID must not be empty");
 	let { xPt: t, yPt: n, widthPt: r, heightPt: i } = e.bounds;
 	if (![
@@ -20692,8 +21229,8 @@ function mx(e) {
 	].every(Number.isFinite) || r < 0 || i < 0) throw Error(`DrawingML collision bounds are invalid: ${e.occurrenceId}`);
 	if (e.horizontalOwnership !== "page" && e.horizontalOwnership !== "host" || e.verticalOwnership !== "page" && e.verticalOwnership !== "host") throw Error(`DrawingML collision ownership is invalid: ${e.occurrenceId}`);
 }
-function hx(e) {
-	return mx(e), Object.freeze({
+function Ix(e) {
+	return Fx(e), Object.freeze({
 		occurrenceId: e.occurrenceId,
 		bounds: Object.freeze({ ...e.bounds }),
 		horizontalOwnership: e.horizontalOwnership,
@@ -20701,34 +21238,34 @@ function hx(e) {
 		...e.relativeHeight === void 0 ? {} : { relativeHeight: e.relativeHeight }
 	});
 }
-function gx(e, t) {
+function Lx(e, t) {
 	return Object.freeze({
 		coordinateSpace: t,
 		flowDomainId: e,
 		entries: Object.freeze([])
 	});
 }
-function _x(e, t) {
+function Rx(e, t) {
 	return Object.freeze({
 		coordinateSpace: e.coordinateSpace,
 		flowDomainId: e.flowDomainId,
 		baseEntries: e.entries,
 		baseEntryCount: e.entries.length,
-		entries: Object.freeze(t.map(hx))
+		entries: Object.freeze(t.map(Ix))
 	});
 }
-function vx(e, t) {
+function zx(e, t) {
 	if (t.coordinateSpace !== e.coordinateSpace) throw Error("DrawingML collision registry coordinate space mismatch");
 	if (t.flowDomainId !== e.flowDomainId) throw Error("DrawingML collision registry flow domain mismatch");
 	if (t.baseEntries !== e.entries || t.baseEntryCount !== e.entries.length) throw Error("DrawingML collision registry delta is stale");
 	let n = new Set(e.entries.map((e) => e.occurrenceId));
 	for (let e of t.entries) {
-		if (mx(e), n.has(e.occurrenceId)) throw Error(`DrawingML collision occurrence committed twice: ${e.occurrenceId}`);
+		if (Fx(e), n.has(e.occurrenceId)) throw Error(`DrawingML collision occurrence committed twice: ${e.occurrenceId}`);
 		n.add(e.occurrenceId);
 	}
 }
-function yx(e, t) {
-	return vx(e, t), Object.freeze({
+function Bx(e, t) {
+	return zx(e, t), Object.freeze({
 		coordinateSpace: e.coordinateSpace,
 		flowDomainId: e.flowDomainId,
 		entries: Object.freeze([...e.entries, ...t.entries])
@@ -20736,21 +21273,21 @@ function yx(e, t) {
 }
 //#endregion
 //#region packages/docx/src/layout/anchor-classification.ts
-function bx(e, t) {
-	return dm(e, t);
+function Vx(e, t) {
+	return jm(e, t);
 }
-function xx(e) {
-	return Na(e.wrapMode) && bx(e.anchorYRelativeFrom ?? null, e.anchorYFromPara ?? !1);
+function Hx(e) {
+	return Pa(e.wrapMode) && Vx(e.anchorYRelativeFrom ?? null, e.anchorYFromPara ?? !1);
 }
 //#endregion
 //#region packages/docx/src/vertical-text.ts
-function Sx(e) {
+function Ux(e) {
 	let t = M(e);
 	return t === "U" || t === "Tu" ? "upright" : t === "Tr" ? "rotate" : "sideways";
 }
-var Cx = new Set([65294]);
-function wx(e) {
-	return Cx.has(e) ? {
+var Wx = new Set([65294]);
+function Gx(e) {
+	return Wx.has(e) ? {
 		dx: .4,
 		dy: -.4
 	} : {
@@ -20758,10 +21295,10 @@ function wx(e) {
 		dy: 0
 	};
 }
-function Tx(e) {
+function Kx(e) {
 	let t = [], n = "", r = null;
 	for (let i of e) {
-		let e = Sx(i.codePointAt(0) ?? 0);
+		let e = Ux(i.codePointAt(0) ?? 0);
 		r === null ? (r = e, n = i) : e === r ? n += i : (t.push({
 			text: n,
 			mode: r
@@ -20772,8 +21309,8 @@ function Tx(e) {
 		mode: r
 	}), t;
 }
-var Ex = () => !1;
-function Dx(e, t, n) {
+var qx = () => !1;
+function Jx(e, t, n) {
 	let r = e.textBaseline;
 	e.textBaseline = "alphabetic";
 	let i = e.measureText(t);
@@ -20781,7 +21318,7 @@ function Dx(e, t, n) {
 	let a = i.fontBoundingBoxAscent, o = i.fontBoundingBoxDescent;
 	return typeof a == "number" && typeof o == "number" && (a !== 0 || o !== 0) ? (a - o) / 2 : .38 * n;
 }
-function Ox(e, t) {
+function Yx(e, t) {
 	let n = e.textAlign, r = e.textBaseline;
 	e.textAlign = "center", e.textBaseline = "middle";
 	let i = e.measureText(t);
@@ -20789,14 +21326,14 @@ function Ox(e, t) {
 	let a = i.actualBoundingBoxAscent, o = i.actualBoundingBoxDescent;
 	return typeof a == "number" && typeof o == "number" ? (a - o) / 2 : 0;
 }
-function kx(e) {
-	return Sx(e) === "rotate" && ge(e) === null && !ae(e);
+function Xx(e) {
+	return Ux(e) === "rotate" && ge(e) === null && !oe(e);
 }
-function Ax(e) {
+function Zx(e) {
 	let t = M(e);
 	return t === "Tu" || t === "Tr";
 }
-function jx(e, t) {
+function Qx(e, t) {
 	let n = e.textAlign, r = e.textBaseline;
 	e.textAlign = "center", e.textBaseline = "middle";
 	let i = e.measureText(t);
@@ -20807,7 +21344,7 @@ function jx(e, t) {
 		shiftPx: (a - o) / 2
 	};
 }
-function Mx(e, t, n, r, i, a, o) {
+function $x(e, t, n, r, i, a, o) {
 	let s = e.textAlign, c = e.textBaseline, l = () => (e.textAlign = n === "sideways" ? "left" : "center", e.textBaseline = n === "sideways" ? "alphabetic" : "middle", e.measureText(t)), u;
 	try {
 		u = o ? D(e, l) : l();
@@ -20829,9 +21366,9 @@ function Mx(e, t, n, r, i, a, o) {
 		endPt: Math.max(p, m)
 	});
 }
-function Nx(e, t, n, r, i) {
+function eS(e, t, n, r, i) {
 	let a = e.measureText(t).width;
-	if (Ax(n) && r(n)) {
+	if (Zx(n) && r(n)) {
 		let n = ce(e, t);
 		return {
 			naturalPx: n.cellAdvancePx,
@@ -20839,8 +21376,8 @@ function Nx(e, t, n, r, i) {
 			rotateInkShiftPx: 0
 		};
 	}
-	if (i && kx(n)) {
-		let n = jx(e, t);
+	if (i && Xx(n)) {
+		let n = Qx(e, t);
 		if (n !== null && n.extentPx > a) return {
 			naturalPx: n.extentPx,
 			vert: null,
@@ -20853,14 +21390,14 @@ function Nx(e, t, n, r, i) {
 		rotateInkShiftPx: 0
 	};
 }
-function Px(e, t, n, r, i = 1, a = !1, o = Ex, s = "vertical-rl") {
-	let c = [], l = Dx(e, t, n), u = 0, d = 0;
-	for (let f of Tx(t)) {
+function tS(e, t, n, r, i = 1, a = !1, o = qx, s = "vertical-rl") {
+	let c = [], l = Jx(e, t, n), u = 0, d = 0;
+	for (let f of Kx(t)) {
 		if (f.mode === "sideways") {
 			let t = [...f.text].length, n = e.measureText(f.text).width * i + r * t, a = {
 				xPt: 0,
 				yPt: l
-			}, o = Mx(e, f.text, "sideways", a, i, s, !1);
+			}, o = $x(e, f.text, "sideways", a, i, s, !1);
 			c.push({
 				range: {
 					start: d,
@@ -20877,7 +21414,7 @@ function Px(e, t, n, r, i = 1, a = !1, o = Ex, s = "vertical-rl") {
 			continue;
 		}
 		for (let t of f.text) {
-			let l = t.codePointAt(0) ?? 0, f = Sx(l), p = f === "rotate" ? ge(l) : null, m = f === "rotate" && p === null && ae(l), h = Nx(e, t, l, o, a), g = h.naturalPx * i + r, _ = {
+			let l = t.codePointAt(0) ?? 0, f = Ux(l), p = f === "rotate" ? ge(l) : null, m = f === "rotate" && p === null && oe(l), h = eS(e, t, l, o, a), g = h.naturalPx * i + r, _ = {
 				start: d,
 				end: d + t.length
 			};
@@ -20885,7 +21422,7 @@ function Px(e, t, n, r, i = 1, a = !1, o = Ex, s = "vertical-rl") {
 				let n = {
 					xPt: 0,
 					yPt: 0
-				}, r = Mx(e, t, "upright", n, i, s, !0);
+				}, r = $x(e, t, "upright", n, i, s, !0);
 				c.push({
 					range: _,
 					text: t,
@@ -20897,13 +21434,13 @@ function Px(e, t, n, r, i = 1, a = !1, o = Ex, s = "vertical-rl") {
 					...r ? { blockAxisInkBounds: r } : {}
 				});
 			} else if (f === "upright" || p !== null || m) {
-				let r = p === null ? A(l) : null, a = p ?? r, o = a === null ? t : String.fromCodePoint(a), d = a === null ? wx(l) : {
+				let r = p === null ? A(l) : null, a = p ?? r, o = a === null ? t : String.fromCodePoint(a), d = a === null ? Gx(l) : {
 					dx: 0,
 					dy: 0
-				}, f = zo(r), m = d.dy === 0 && !f ? Ox(e, o) / n : 0, h = {
+				}, f = Jo(r), m = d.dy === 0 && !f ? Yx(e, o) / n : 0, h = {
 					xPt: d.dx * n,
 					yPt: (m + d.dy) * n
-				}, v = Mx(e, o, "upright", h, i, s, !1);
+				}, v = $x(e, o, "upright", h, i, s, !1);
 				c.push({
 					range: _,
 					text: o,
@@ -20918,7 +21455,7 @@ function Px(e, t, n, r, i = 1, a = !1, o = Ex, s = "vertical-rl") {
 				let n = {
 					xPt: 0,
 					yPt: 0
-				}, r = Mx(e, t, "rotate", n, i, s, !1);
+				}, r = $x(e, t, "rotate", n, i, s, !1);
 				c.push({
 					range: _,
 					text: t,
@@ -20935,24 +21472,24 @@ function Px(e, t, n, r, i = 1, a = !1, o = Ex, s = "vertical-rl") {
 	}
 	return c;
 }
-function Fx(e, t, n) {
+function nS(e, t, n) {
 	let r = 0;
-	for (let i of Tx(t)) {
+	for (let i of Kx(t)) {
 		if (i.mode === "sideways") {
 			r += e.measureText(i.text).width;
 			continue;
 		}
 		for (let t of i.text) {
-			let i = Nx(e, t, t.codePointAt(0) ?? 0, n, !0);
+			let i = eS(e, t, t.codePointAt(0) ?? 0, n, !0);
 			r += i.naturalPx;
 		}
 	}
 	return r - e.measureText(t).width;
 }
-function Ix(e, t) {
-	return Fx(e, t, (t) => pe(e, t));
+function rS(e, t) {
+	return nS(e, t, (t) => pe(e, t));
 }
-function Lx(e, t, n, r, i) {
+function iS(e, t, n, r, i) {
 	return {
 		x: t,
 		y: i - (e + n),
@@ -20962,31 +21499,31 @@ function Lx(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/docx/src/layout/production-body-layout.ts
-function Rx(e, t, n) {
-	Ac(e.blocks.body);
-	let r = e.acquisition, i = r.acquisitionInputs, a = r.effectiveTablePositioning, o = r.publicAnchorBridge, s = Xo(e.fonts.familyClasses, e.fonts.familyPitches), c = (e, t, n) => `${e}${t ? `|clr:${t}` : ""}${n ? `|duo:${n.clr1}:${n.clr2}` : ""}`;
+function aS(e, t, n) {
+	Yc(e.blocks.body);
+	let r = e.acquisition, i = r.acquisitionInputs, a = r.effectiveTablePositioning, o = r.publicAnchorBridge, s = as(e.fonts.familyClasses, e.fonts.familyPitches), c = (e, t, n) => `${e}${t ? `|clr:${t}` : ""}${n ? `|duo:${n.clr1}:${n.clr2}` : ""}`;
 	function l(e, t, n = {}, r, a = {}, s, c) {
-		let l = Hc(r, t), u = s;
+		let l = sl(r, t), u = s;
 		return {
 			ctx: e,
-			verticalGlyphMeasurement: Xn(u),
+			verticalGlyphMeasurement: Zn(u),
 			acquisitionInputs: i,
 			contentX: t.marginLeft,
 			contentW: t.pageWidth - t.marginLeft - t.marginRight,
 			y: 0,
 			pageH: t.pageHeight,
 			pageIndex: 0,
-			totalPages: sr(u).totalPages,
+			totalPages: cr(u).totalPages,
 			marginLeft: t.marginLeft,
 			marginRight: t.marginRight,
-			marginTop: Qc(t.marginTop),
-			marginBottom: Qc(t.marginBottom),
+			marginTop: yl(t.marginTop),
+			marginBottom: yl(t.marginBottom),
 			pageWidth: t.pageWidth,
 			floats: [],
 			floatParaSeq: 0,
 			layoutSettings: r,
 			sectionLayout: l,
-			storyContext: Iv,
+			storyContext: ry,
 			docEastAsian: r.documentHasEastAsianText,
 			fontFamilyClasses: n,
 			resolvedLocalFonts: a,
@@ -20996,7 +21533,7 @@ function Rx(e, t, n) {
 				tableFormat: i.tableFormatInput,
 				resolveColumns: p,
 				createCellState: (e, t, n) => ({
-					...Vv(e),
+					...cy(e),
 					contentX: 0,
 					contentW: t,
 					y: 0,
@@ -21015,7 +21552,7 @@ function Rx(e, t, n) {
 						...t,
 						runs: u
 					}, e, e.y);
-					let d = Bv(e, t), f = dx(e, e.acquisitionInputs.paragraphAcquisitionInput(t, l), {
+					let d = sy(e, t), f = Mx(e, e.acquisitionInputs.paragraphAcquisitionInput(t, l), {
 						id: `${l.story}:${l.storyInstance}:${l.path.join(".")}`,
 						source: l,
 						flowDomainId: i,
@@ -21032,9 +21569,9 @@ function Rx(e, t, n) {
 							context: e.ctx,
 							fontFamilyClasses: e.fontFamilyClasses
 						},
-						environment: Pv(e),
-						exclusions: fx(e.floats, i),
-						anchorCollisions: px(e.floats),
+						environment: ty(e),
+						exclusions: Nx(e.floats, i),
+						anchorCollisions: Px(e.floats),
 						anchorCellBounds: {
 							xPt: 0,
 							yPt: 0,
@@ -21043,9 +21580,9 @@ function Rx(e, t, n) {
 						},
 						containerShading: e.containerShading,
 						...a ? { paragraphBorderEdges: a } : {},
-						trailingExtentPt: Math.max(d.spaceAfterPt, a?.bottom === "none" ? 0 : vc(t.borders)),
+						trailingExtentPt: Math.max(d.spaceAfterPt, a?.bottom === "none" ? 0 : Lc(t.borders)),
 						continuesFromPrevious: !1,
-						anchorFrames: Lv(e),
+						anchorFrames: iy(e),
 						acquireCompleteStory: e.acquireCompleteTextBoxStory
 					}, s).layout;
 					return t.spaceBefore === 0 ? f : Object.freeze({
@@ -21069,7 +21606,7 @@ function Rx(e, t, n) {
 						yPt: e.y,
 						widthPt: e.contentW,
 						heightPt: t.child.advancePt
-					}, o = _v(t.positioning, {
+					}, o = Rv(t.positioning, {
 						page: {
 							xPt: 0,
 							yPt: 0,
@@ -21083,7 +21620,7 @@ function Rx(e, t, n) {
 							heightPt: Math.max(0, i - e.marginTop - e.marginBottom)
 						},
 						text: a
-					}, t.child.columnWidthsPt.reduce((e, t) => e + t, 0), t.child.advancePt), s = dv(e, {
+					}, t.child.columnWidthsPt.reduce((e, t) => e + t, 0), t.child.advancePt), s = Mv(e, {
 						x: o.x,
 						y: o.y,
 						w: o.w,
@@ -21114,20 +21651,20 @@ function Rx(e, t, n) {
 			kinsoku: r.kinsoku,
 			defaultTabPt: r.defaultTabPt,
 			get verticalCJK() {
-				return kv(this.sectionLayout.textDirection);
+				return Xv(this.sectionLayout.textDirection);
 			},
 			get verticalAllRotated() {
-				return kv(this.sectionLayout.textDirection) && Av(this.sectionLayout.textDirection);
+				return Xv(this.sectionLayout.textDirection) && Zv(this.sectionLayout.textDirection);
 			},
-			verticalPhys: Ov(t) ? (() => {
-				let e = Mv(t);
+			verticalPhys: Yv(t) ? (() => {
+				let e = $v(t);
 				return {
 					pageWidth: e.pageWidth,
 					pageHeight: e.pageHeight,
 					marginLeft: e.marginLeft,
 					marginRight: e.marginRight,
-					marginTop: Qc(e.marginTop),
-					marginBottom: Qc(e.marginBottom),
+					marginTop: yl(e.marginTop),
+					marginBottom: yl(e.marginBottom),
 					physicalPageWidthPt: e.pageWidth
 				};
 			})() : void 0
@@ -21166,11 +21703,11 @@ function Rx(e, t, n) {
 			if (!n || n.type !== "paragraph" && n.type !== "table") throw Error(`Body source does not identify a flow block: ${t.path.join(".")}`);
 			return n;
 		}, c = (t) => e.blocks.resolve(t), u = (e, t, n, r, i, a, o = Object.freeze({ boundary: null }), s) => {
-			let c = Mc(t) ?? {
+			let c = Zc(t) ?? {
 				top: "top",
 				bottom: "bottom"
-			}, l = zv(e, t);
-			return Cg(t, {
+			}, l = oy(e, t);
+			return Wg(t, {
 				id: `${n.story}:${n.storyInstance}:${n.path.join(".")}`,
 				source: n,
 				flowDomainId: r.flowDomainId,
@@ -21187,15 +21724,15 @@ function Rx(e, t, n) {
 					context: e.ctx,
 					fontFamilyClasses: e.fontFamilyClasses
 				},
-				environment: Pv(e),
-				exclusions: fx(e.floats, r.flowDomainId),
-				anchorCollisions: s ?? px(e.floats),
+				environment: ty(e),
+				exclusions: Nx(e.floats, r.flowDomainId),
+				anchorCollisions: s ?? Px(e.floats),
 				containerShading: e.containerShading,
 				paragraphBorderEdges: c,
-				trailingExtentPt: Math.max(l.spaceAfterPt, c.bottom === "none" ? 0 : vc(t.borders)),
+				trailingExtentPt: Math.max(l.spaceAfterPt, c.bottom === "none" ? 0 : Lc(t.borders)),
 				continuesFromPrevious: o.boundary !== null,
 				...o.sourceRangeStart === void 0 ? {} : { sourceRangeStart: o.sourceRangeStart },
-				anchorFrames: Lv(e),
+				anchorFrames: iy(e),
 				acquireCompleteStory: e.acquireCompleteTextBoxStory
 			}, o.boundary === null ? void 0 : {
 				boundary: o.boundary,
@@ -21209,18 +21746,18 @@ function Rx(e, t, n) {
 				...d.section.geometry,
 				textDirection: d.section.textDirection,
 				vAlign: d.section.verticalAlignment
-			}, y = l(t, kv(v.textDirection) ? jv(v) : v, s, e.documentLayoutSettings, n, g, _), b = e.blocks.footnotes, x = e.blocks.endnotes, S = Hg(b);
-			y.noteNumbers = new Map([...[...Vg(b, Ug(e.blocks.body, "footnote"))].map(([e, t]) => [`footnote:${e}`, t]), ...[...Vg(x, Ug(e.blocks.body, "endnote"))].map(([e, t]) => [`endnote:${e}`, t])]);
+			}, y = l(t, Xv(v.textDirection) ? Qv(v) : v, s, e.documentLayoutSettings, n, g, _), b = e.blocks.footnotes, x = e.blocks.endnotes, S = l_(b);
+			y.noteNumbers = new Map([...[...c_(b, u_(e.blocks.body, "footnote"))].map(([e, t]) => [`footnote:${e}`, t]), ...[...c_(x, u_(e.blocks.body, "endnote"))].map(([e, t]) => [`endnote:${e}`, t])]);
 			let C = d.initialLocation, w = (e) => `body:page:${e}:registry`, D = Object.freeze({
 				coordinateSpace: "logical-page-points",
 				flowDomainId: w(C.pageIndex),
 				entries: Object.freeze([]),
 				nextParagraphId: 0
-			}), O = gx(w(C.pageIndex), "logical-page-points"), k = (e, t) => {
+			}), O = Lx(w(C.pageIndex), "logical-page-points"), k = (e, t) => {
 				let n = t.section.geometry;
 				e.sectionLayout = t.section, e.pageIndex = t.pageIndex;
-				let r = sr(g).resolveDestinationPage?.(t.pageIndex);
-				e.displayPageNumber = r?.displayPageNumber ?? t.pageIndex + 1, e.pageNumberFormat = r?.pageNumberFormat ?? e.pageNumberFormat, e.pageWidth = n.pageWidth, e.pageH = n.pageHeight, e.marginLeft = n.marginLeft, e.marginRight = n.marginRight, e.marginTop = Qc(n.marginTop), e.marginBottom = Qc(n.marginBottom), e.contentX = t.availableBounds.xPt, e.contentW = t.availableBounds.widthPt, e.y = t.cursorPt.yPt;
+				let r = cr(g).resolveDestinationPage?.(t.pageIndex);
+				e.displayPageNumber = r?.displayPageNumber ?? t.pageIndex + 1, e.pageNumberFormat = r?.pageNumberFormat ?? e.pageNumberFormat, e.pageWidth = n.pageWidth, e.pageH = n.pageHeight, e.marginLeft = n.marginLeft, e.marginRight = n.marginRight, e.marginTop = yl(n.marginTop), e.marginBottom = yl(n.marginBottom), e.contentX = t.availableBounds.xPt, e.contentW = t.availableBounds.widthPt, e.y = t.cursorPt.yPt;
 			}, A = (e) => {
 				C = e, k(y, e);
 			};
@@ -21300,12 +21837,12 @@ function Rx(e, t, n) {
 						...r.geometry.wrap.polygon ? { wrapPolygon: r.geometry.wrap.polygon.points } : {}
 					})];
 				}));
-			}, N = (e) => {
+			}, ee = (e) => {
 				if (e.acquired.kind !== "paragraph") return e.acquired;
 				let t = c(e.acquired.source);
 				if (t.type !== "paragraph") throw Error("Table paragraph re-acquisition source kind mismatch");
 				let n = {
-					...Vv(y),
+					...cy(y),
 					contentX: 0,
 					contentW: e.acquired.flowBounds.widthPt,
 					y: e.acquired.flowBounds.yPt,
@@ -21313,7 +21850,7 @@ function Rx(e, t, n) {
 						kind: "table",
 						tableOverlap: "never",
 						mode: "square",
-						imageKey: `${Bm}${t}`,
+						imageKey: `${oh}${t}`,
 						imageX: e.xPt,
 						imageY: e.yPt,
 						imageW: e.widthPt,
@@ -21331,23 +21868,23 @@ function Rx(e, t, n) {
 					})),
 					floatParaSeq: e.floatingTableExclusions?.length ?? 0,
 					pageAnchorPrescanned: /* @__PURE__ */ new Set()
-				}, r = Vm(e.acquired);
+				}, r = sh(e.acquired);
 				return y.retainedTableAcquisition.acquireParagraph(n, t, e.acquired.flowBounds.widthPt, e.acquired.source.path, e.acquired.flowDomainId, void 0, r);
-			}, ee = Hg(e.blocks.endnotes), P = /* @__PURE__ */ new Map(), te = (t) => {
+			}, te = l_(e.blocks.endnotes), N = /* @__PURE__ */ new Map(), ne = (t) => {
 				if (t.path.length !== 0) throw Error("Story acquisition requires a story-root source");
 				return e.blocks.storyRoot(t);
-			}, ne = (t) => {
+			}, re = (t) => {
 				if (t.path.length === 0 || (t.path.length - 1) % 3 != 0) throw Error("Story block acquisition requires a canonical source path");
 				return e.blocks.resolve(t);
-			}, re = (e) => {
+			}, ie = (e) => {
 				let t = JSON.stringify({
 					source: e.source,
 					pageIndex: e.pageIndex,
 					section: e.section,
 					container: e.container
-				}), n = P.get(t);
+				}), n = N.get(t);
 				if (n) return n;
-				let r = te(e.source), i = e.source.story === "footnote" || e.source.story === "endnote" ? y.noteNumbers?.get(`${e.source.story}:${e.source.storyInstance}`) : void 0, a = sr(g), s = a.resolveDestinationPage?.(e.pageIndex), c = kv(e.section.textDirection), l = {
+				let r = ne(e.source), i = e.source.story === "footnote" || e.source.story === "endnote" ? y.noteNumbers?.get(`${e.source.story}:${e.source.storyInstance}`) : void 0, a = cr(g), s = a.resolveDestinationPage?.(e.pageIndex), c = Xv(e.section.textDirection), l = {
 					...y,
 					sectionLayout: e.section,
 					pageIndex: e.pageIndex,
@@ -21358,8 +21895,8 @@ function Rx(e, t, n) {
 					pageH: e.container.capacity === "unbounded" ? 2 ** 53 - 1 : e.section.geometry.pageHeight,
 					marginLeft: e.section.geometry.marginLeft,
 					marginRight: e.section.geometry.marginRight,
-					marginTop: Qc(e.section.geometry.marginTop),
-					marginBottom: Qc(e.section.geometry.marginBottom),
+					marginTop: yl(e.section.geometry.marginTop),
+					marginBottom: yl(e.section.geometry.marginBottom),
 					contentX: e.container.bounds.xPt,
 					contentW: e.container.bounds.widthPt,
 					y: e.container.bounds.yPt,
@@ -21369,7 +21906,7 @@ function Rx(e, t, n) {
 					pageAnchorPrescanned: /* @__PURE__ */ new Set(),
 					noteReferenceNumber: i,
 					verticalCJK: c,
-					verticalAllRotated: c && Av(e.section.textDirection),
+					verticalAllRotated: c && Zv(e.section.textDirection),
 					...c ? {} : { verticalPhys: void 0 },
 					storyContext: {
 						story: e.source.story,
@@ -21378,7 +21915,7 @@ function Rx(e, t, n) {
 					}
 				};
 				E(r, 0, l);
-				let u = rr(g);
+				let u = ir(g);
 				l.layoutServices = u;
 				let d = r.flatMap((t, n) => {
 					let r = {
@@ -21397,20 +21934,20 @@ function Rx(e, t, n) {
 					}];
 					if (t.type !== "table") throw Error(`Unsupported ${e.source.story} story block: ${t.type}`);
 					let i = l.retainedTableAcquisition, a = t;
-					return [Ob(a, p(a, e.container.bounds.widthPt, l), e.container.bounds.widthPt, l, r, i).input];
+					return [Yb(a, p(a, e.container.bounds.widthPt, l), e.container.bounds.widthPt, l, r, i).input];
 				}), f = null;
-				m_(u, {
+				F_(u, {
 					layoutParagraph(e, t) {
-						let n = ne(e.source);
+						let n = re(e.source);
 						if (n.type !== "paragraph") throw Error("Story paragraph source kind mismatch");
-						let i = e.source.path[0], a = i > 0 ? r[i - 1] : void 0, s = a?.type === "paragraph" ? a : null, c = r[i + 1], u = c?.type === "paragraph" ? c : null, d = f?.spaceAfter ?? 0, p = Pm(f, n, d, n.spaceBefore), m = Math.max(t.container.bounds.yPt, t.cursor.yPt - p.overlap);
+						let i = e.source.path[0], a = i > 0 ? r[i - 1] : void 0, s = a?.type === "paragraph" ? a : null, c = r[i + 1], u = c?.type === "paragraph" ? c : null, d = f?.spaceAfter ?? 0, p = eh(f, n, d, n.spaceBefore), m = Math.max(t.container.bounds.yPt, t.cursor.yPt - p.overlap);
 						l.y = m, l.contentX = t.container.bounds.xPt, l.contentW = t.container.bounds.widthPt;
 						let h = n.runs.filter((t, n) => o(e.source, n) !== null);
 						h.length > 0 && T(Object.freeze({
 							...n,
 							runs: Object.freeze(h)
 						}), l, l.y);
-						let g = Bv(l, n), _ = wc(s, n, u), v = dx(l, n, {
+						let g = sy(l, n), _ = Uc(s, n, u), v = Mx(l, n, {
 							id: `${e.source.story}:${e.source.storyInstance}:${e.source.path.join(".")}`,
 							source: e.source,
 							flowDomainId: t.container.id,
@@ -21427,14 +21964,14 @@ function Rx(e, t, n) {
 								context: l.ctx,
 								fontFamilyClasses: l.fontFamilyClasses
 							},
-							environment: Pv(l),
-							exclusions: fx(l.floats, t.container.id),
-							anchorCollisions: px(l.floats),
+							environment: ty(l),
+							exclusions: Nx(l.floats, t.container.id),
+							anchorCollisions: Px(l.floats),
 							containerShading: l.containerShading,
 							paragraphBorderEdges: _,
-							trailingExtentPt: Math.max(g.spaceAfterPt, _.bottom === "none" ? 0 : vc(n.borders)),
+							trailingExtentPt: Math.max(g.spaceAfterPt, _.bottom === "none" ? 0 : Lc(n.borders)),
 							continuesFromPrevious: !1,
-							anchorFrames: Lv(l),
+							anchorFrames: iy(l),
 							acquireCompleteStory: l.acquireCompleteTextBoxStory
 						});
 						f = n;
@@ -21449,14 +21986,14 @@ function Rx(e, t, n) {
 					},
 					layoutTable(e, t) {
 						f = null;
-						let n = Sb({
+						let n = Ub({
 							...e,
 							flowDomainId: t.container.id
 						}, t, u);
 						return l.y = n.nextCursor.yPt, n;
 					}
 				});
-				let m = __({
+				let m = R_({
 					source: e.source,
 					container: e.container,
 					blocks: Object.freeze(d)
@@ -21464,7 +22001,7 @@ function Rx(e, t, n) {
 					...m,
 					blocks: Object.freeze(m.blocks.map((t, n) => {
 						if (t.kind !== "paragraph" && t.kind !== "table") throw Error(`Shared story emitted unsupported node: ${t.kind}`);
-						return kf(t, {
+						return $f(t, {
 							occurrenceId: `${e.container.id}:block:${n}`,
 							destination: {
 								coordinateSpace: "logical-page-points",
@@ -21477,22 +22014,22 @@ function Rx(e, t, n) {
 						});
 					}))
 				});
-				return P.set(t, h), h;
+				return N.set(t, h), h;
 			};
 			y.acquireCompleteTextBoxStory = (e) => {
 				let t = e.coordinateSpace === "upright-physical" ? {
 					...y.sectionLayout,
-					geometry: el(y.sectionLayout.geometry),
+					geometry: xl(y.sectionLayout.geometry),
 					textDirection: "lrTb"
 				} : y.sectionLayout;
-				return re({
+				return ie({
 					source: e.source,
 					pageIndex: y.pageIndex,
 					section: t,
 					container: e.container
 				});
 			};
-			let ie = {
+			let ae = {
 				hasPaginationFields: e.hasPaginationFields,
 				measureParagraph(t) {
 					A(t.location);
@@ -21500,7 +22037,7 @@ function Rx(e, t, n) {
 					if (n.type !== "paragraph") throw Error("Paragraph source kind mismatch");
 					if (n.framePr) {
 						if (t.continuation.boundary !== null) throw Error("Body frame acquisition cannot continue across flow regions");
-						let r, i = jc(n);
+						let r, i = Xc(n);
 						if (!i) throw Error("Body frame acquisition requires an indexed adjacency group");
 						let a = h(n, i, y, m(e.blocks.body, n, y), (e) => {
 							r = e;
@@ -21508,7 +22045,7 @@ function Rx(e, t, n) {
 						if (!r) throw Error("Body frame acquisition omitted its retained group");
 						let o = r.members.find((e) => e.paragraph === n);
 						if (!o) throw Error("Body frame acquisition omitted its retained member");
-						let s = n === i.members.at(-1) && i.framePr.dropCap !== "none" ? Jf(Tg(r)) : 0, c = n.framePr.vAnchor === "page" || n.framePr.vAnchor === "margin", l = a.exclusionId ?? `frame:${t.input.source.path.join(":")}`, u = Object.freeze({
+						let s = n === i.members.at(-1) && i.framePr.dropCap !== "none" ? vp(Kg(r)) : 0, c = n.framePr.vAnchor === "page" || n.framePr.vAnchor === "margin", l = a.exclusionId ?? `frame:${t.input.source.path.join(":")}`, u = Object.freeze({
 							kind: "frame",
 							occurrenceId: l,
 							exclusionId: l,
@@ -21536,9 +22073,9 @@ function Rx(e, t, n) {
 								yPt: o.fragment.flowBounds.yPt,
 								sectionFlowOwnership: c ? "page" : "host-flow"
 							}),
-							...n === i.owner ? { retainedFootnoteReferenceIds: Object.freeze([...new Set(r.members.flatMap((e) => Jg(e.fragment)))]) } : {},
+							...n === i.owner ? { retainedFootnoteReferenceIds: Object.freeze([...new Set(r.members.flatMap((e) => h_(e.fragment)))]) } : {},
 							...c ? {} : { relocationBlockExtentPt: Math.max(0, a.y + a.h - t.location.cursorPt.yPt) },
-							...a.registerExclusion === !1 ? {} : { flowRegistryDelta: Object.freeze({ floats: bv(D, Object.freeze([u]), D.nextParagraphId + 1) }) }
+							...a.registerExclusion === !1 ? {} : { flowRegistryDelta: Object.freeze({ floats: Vv(D, Object.freeze([u]), D.nextParagraphId + 1) }) }
 						});
 					}
 					let r = {
@@ -21551,7 +22088,7 @@ function Rx(e, t, n) {
 						let t = e.layout.consumedEnd;
 						if (!t) throw Error("Measured line omitted its source boundary");
 						return t;
-					}), l = M(s), d = Object.freeze([...a, ...l]), f = Um(s);
+					}), l = M(s), d = Object.freeze([...a, ...l]), f = lh(s);
 					return Object.freeze({
 						layout: s,
 						blockExtentPt: s.advancePt,
@@ -21562,8 +22099,8 @@ function Rx(e, t, n) {
 						...o.markOnly ? { markBelowBaselinePt: o.lastLineBelowBaselinePt } : {},
 						...o.uniformRubyAdvancePt == null ? {} : { uniformRubyAdvancePt: o.uniformRubyAdvancePt },
 						...d.length === 0 && f.length === 0 ? {} : { flowRegistryDelta: Object.freeze({
-							...d.length === 0 ? {} : { floats: bv(D, d, D.nextParagraphId + d.length) },
-							...f.length === 0 ? {} : { drawingCollisions: _x(O, f) }
+							...d.length === 0 ? {} : { floats: Vv(D, d, D.nextParagraphId + d.length) },
+							...f.length === 0 ? {} : { drawingCollisions: Rx(O, f) }
 						}) }
 					});
 				},
@@ -21574,8 +22111,8 @@ function Rx(e, t, n) {
 							let n = i(t.source);
 							if (n.type !== "table") throw Error("Table source kind mismatch");
 							let r = t.source.path[0];
-							return f(y, n, e.availableInlineExtentPt, r), Hv(y, r).acquisition;
-						}), n = r(zb(e.input.logicalSequenceId, t.map((e) => e.input))), a = {
+							return f(y, n, e.availableInlineExtentPt, r), ly(y, r).acquisition;
+						}), n = r(ox(e.input.logicalSequenceId, t.map((e) => e.input))), a = {
 							container: {
 								id: e.location.flowDomainId,
 								kind: "body",
@@ -21596,7 +22133,7 @@ function Rx(e, t, n) {
 								widthPt: e.availableInlineExtentPt,
 								heightPt: e.freshPageBlockExtentPt
 							}
-						}, o = Sb(n, a, g).layout, s = {};
+						}, o = Ub(n, a, g).layout, s = {};
 						t.forEach((e) => Object.entries(e.nestedById).forEach(([e, t]) => {
 							if (s[e] && s[e] !== t) throw Error(`Adjacent table group has duplicate nested table id: ${e}`);
 							s[e] = t;
@@ -21610,11 +22147,11 @@ function Rx(e, t, n) {
 							tableIndex: 0,
 							sourceRowIndex: 0
 						}), u = e.input.tables.slice(0, l.tableIndex).reduce((e, t) => e + (t.rowCount ?? 0), 0) + l.sourceRowIndex, d = l.tableCursor ?? Object.freeze({
-							...Hb(),
+							...lx(),
 							rowIndex: u
 						});
 						if (d.rowIndex !== u) throw Error("Adjacent-table group and table-fragment cursors disagree");
-						let p = ux(c, d, {
+						let p = jx(c, d, {
 							availableHeightPt: e.availableBlockExtentPt,
 							freshPageHeightPt: e.freshPageBlockExtentPt,
 							placement: a,
@@ -21662,9 +22199,9 @@ function Rx(e, t, n) {
 					if (t.type !== "table") throw Error("Table source kind mismatch");
 					let n = e.input.source.path[0];
 					f(y, t, e.availableInlineExtentPt, n);
-					let o = Hv(y, n).acquisition;
+					let o = ly(y, n).acquisition;
 					if (e.cursor && e.cursor.kind !== "table") throw Error("Ordinary table acquisition received an adjacent-group cursor");
-					let s = e.cursor?.cursor ?? Hb(), c = y.pageH, l = y.acquisitionInputs.tableFormatInput(t).positioning;
+					let s = e.cursor?.cursor ?? lx(), c = y.pageH, l = y.acquisitionInputs.tableFormatInput(t).positioning;
 					if (l) {
 						let n = e.cursor?.kind === "table" && e.cursor.floatingContinuationFrame === "fresh-text" ? Object.freeze({
 							...l,
@@ -21690,15 +22227,15 @@ function Rx(e, t, n) {
 								widthPt: e.availableInlineExtentPt,
 								heightPt: o.layout.advancePt
 							})
-						}), a = _v(n, i, r, o.layout.advancePt);
-						if (e.cursor?.kind !== "table" && (n.vertAnchor === "page" || n.vertAnchor === "margin") && Ea({
+						}), a = Rv(n, i, r, o.layout.advancePt);
+						if (e.cursor?.kind !== "table" && (n.vertAnchor === "page" || n.vertAnchor === "margin") && Da({
 							bounds: {
 								xPt: a.x,
 								yPt: a.y,
 								widthPt: a.w,
 								heightPt: a.h
 							},
-							blockers: D.entries.map(_a),
+							blockers: D.entries.map(va),
 							overlapEpsilonPt: .01
 						}).defer) return Object.freeze({
 							layout: o.layout,
@@ -21712,13 +22249,13 @@ function Rx(e, t, n) {
 						});
 						let u = (n.vertAnchor === "page" || n.vertAnchor === "margin") && o.layout.advancePt > e.freshPageBlockExtentPt, d = u ? e.location.availableBounds.yPt + e.location.availableBounds.heightPt : n.vertAnchor === "page" ? i.page.yPt + i.page.heightPt : n.vertAnchor === "margin" ? i.margin.yPt + i.margin.heightPt : e.location.availableBounds.yPt + e.location.availableBounds.heightPt, f = u ? e.freshPageBlockExtentPt : n.vertAnchor === "page" ? i.page.heightPt : n.vertAnchor === "margin" ? i.margin.heightPt : e.freshPageBlockExtentPt, p;
 						try {
-							p = uo({
+							p = fo({
 								step: (r) => {
 									if (r?.kind === "fresh-flow-region" || r?.kind === "candidate" && r.resolved.placement.xPt === r.parentFrame.xPt && r.resolved.placement.yPt === r.parentFrame.yPt) return r;
 									let c = r?.resolved.placement ?? {
 										xPt: a.x,
 										yPt: a.y
-									}, l = Math.max(0, d - c.yPt), u = ux(o, s, {
+									}, l = Math.max(0, d - c.yPt), u = jx(o, s, {
 										availableHeightPt: l,
 										freshPageHeightPt: f,
 										placement: {
@@ -21758,7 +22295,7 @@ function Rx(e, t, n) {
 										},
 										floatingTableRegistry: D,
 										finalPlacementTranslationPt: c,
-										reacquirePageDependentBlock: N
+										reacquirePageDependentBlock: ee
 									});
 									if (!u.fragment || u.requiresFreshPage) return Object.freeze({
 										kind: "fresh-flow-region",
@@ -21778,7 +22315,7 @@ function Rx(e, t, n) {
 										positioning: n,
 										anchorBounds: i.text,
 										child: u.fragment
-									}), m = u.floatingTableRegistryDelta?.entries ?? [], h = u.floatingTableRegistryDelta?.nextParagraphId ?? D.nextParagraphId, _ = Cv(p, i, Sv(D.entries, h, D.coordinateSpace, D.flowDomainId)), v = JSON.stringify({
+									}), m = u.floatingTableRegistryDelta?.entries ?? [], h = u.floatingTableRegistryDelta?.nextParagraphId ?? D.nextParagraphId, _ = Wv(p, i, Uv(D.entries, h, D.coordinateSpace, D.flowDomainId)), v = JSON.stringify({
 										parentFrame: {
 											xPt: _.placement.xPt,
 											yPt: _.placement.yPt
@@ -21804,7 +22341,7 @@ function Rx(e, t, n) {
 								limit: 16
 							}).value;
 						} catch (e) {
-							throw e instanceof lo ? new H("NON_CONVERGENCE", e.reason === "cycle" ? "Floating table parent/child transaction repeated an exact-state cycle" : "Floating table parent/child transaction reached the operational pass limit 16") : e;
+							throw e instanceof uo ? new V("NON_CONVERGENCE", e.reason === "cycle" ? "Floating table parent/child transaction repeated an exact-state cycle" : "Floating table parent/child transaction reached the operational pass limit 16") : e;
 						}
 						if (p.kind === "fresh-flow-region") return Object.freeze({
 							layout: o.layout,
@@ -21834,7 +22371,7 @@ function Rx(e, t, n) {
 								cursor: m.nextCursor,
 								floatingContinuationFrame: "fresh-text"
 							}) : null,
-							flowRegistryDelta: Object.freeze({ floats: bv(D, Object.freeze([...v, ..._.transaction.delta]), _.transaction.nextParagraphId) }),
+							flowRegistryDelta: Object.freeze({ floats: Vv(D, Object.freeze([...v, ..._.transaction.delta]), _.transaction.nextParagraphId) }),
 							placement: Object.freeze({
 								coordinateSpace: "logical-body",
 								xPt: _.placement.xPt,
@@ -21855,7 +22392,7 @@ function Rx(e, t, n) {
 							}),
 							requiresFreshFlowRegion: !0
 						});
-						let r = t.physicalPageWidthPt - e.location.cursorPt.yPt - n, i = e.location.cursorPt.xPt, a = Math.max(o.layout.advancePt, t.pageHeight - t.marginTop - t.marginBottom), c = `upright-physical-page:${e.location.pageIndex}`, l = ux(o, Hb(), {
+						let r = t.physicalPageWidthPt - e.location.cursorPt.yPt - n, i = e.location.cursorPt.xPt, a = Math.max(o.layout.advancePt, t.pageHeight - t.marginTop - t.marginBottom), c = `upright-physical-page:${e.location.pageIndex}`, l = jx(o, lx(), {
 							availableHeightPt: a,
 							freshPageHeightPt: a,
 							placement: {
@@ -21918,7 +22455,7 @@ function Rx(e, t, n) {
 								xPt: r,
 								yPt: i
 							},
-							reacquirePageDependentBlock: N
+							reacquirePageDependentBlock: ee
 						});
 						if (!l.fragment || l.nextCursor || l.requiresFreshPage) throw Error("Upright table final-frame layout must remain atomic");
 						return Object.freeze({
@@ -21933,7 +22470,7 @@ function Rx(e, t, n) {
 							})
 						});
 					}
-					let u = ux(o, s, {
+					let u = jx(o, s, {
 						availableHeightPt: e.availableBlockExtentPt,
 						freshPageHeightPt: e.freshPageBlockExtentPt,
 						placement: {
@@ -21985,14 +22522,14 @@ function Rx(e, t, n) {
 							xPt: e.location.availableBounds.xPt,
 							yPt: e.location.cursorPt.yPt
 						},
-						reacquirePageDependentBlock: N
-					}), d = e.location.availableBounds.xPt + o.layout.flowBounds.xPt, p = d + o.layout.flowBounds.widthPt, m = u.fragment?.advancePt ?? 0, h = Ta({
+						reacquirePageDependentBlock: ee
+					}), d = e.location.availableBounds.xPt + o.layout.flowBounds.xPt, p = d + o.layout.flowBounds.widthPt, m = u.fragment?.advancePt ?? 0, h = Ea({
 						inlineStartPt: d,
 						inlineEndPt: p,
 						blockStartPt: e.location.cursorPt.yPt,
 						blockExtentPt: m,
-						blockers: D.entries.map(_a),
-						overlapEpsilonPt: pa
+						blockers: D.entries.map(va),
+						overlapEpsilonPt: ma
 					}).blockStartPt;
 					return h > e.location.cursorPt.yPt ? Object.freeze({
 						layout: o.layout,
@@ -22017,11 +22554,11 @@ function Rx(e, t, n) {
 						...u.floatingTableRegistryDelta ? { flowRegistryDelta: Object.freeze({ floats: u.floatingTableRegistryDelta }) } : {}
 					});
 				},
-				layoutStory: re,
+				layoutStory: ie,
 				layoutNotes(e) {
 					let t = [], n = e.container.bounds.yPt, r = e.firstOnPage;
 					for (let i of e.referenceIds) {
-						if (!(e.kind === "footnote" ? S : ee).has(i)) continue;
+						if (!(e.kind === "footnote" ? S : te).has(i)) continue;
 						let a = {
 							story: e.kind,
 							storyInstance: i,
@@ -22036,14 +22573,14 @@ function Rx(e, t, n) {
 							}
 						}, c;
 						try {
-							c = re({
+							c = ie({
 								source: a,
 								pageIndex: e.pageIndex,
 								section: e.section,
 								container: s
 							});
 						} catch (t) {
-							throw t instanceof l_ && t.containerId === s.id ? new Zd(e.kind, e.pageIndex, e.container.id) : t;
+							throw t instanceof A_ && t.containerId === s.id ? new Sf(e.kind, e.pageIndex, e.container.id) : t;
 						}
 						let l = Object.freeze(r ? [Object.freeze({
 							edge: "top",
@@ -22097,8 +22634,8 @@ function Rx(e, t, n) {
 							let r = i(n.source);
 							if (r.type !== "table") throw Error("Following table source kind mismatch");
 							let a = n.source.path[0];
-							return f(t, r, e.availableInlineExtentPt, a), Hv(t, a).acquisition;
-						}), a = Sb(r(zb(e.input.logicalSequenceId, n.map((e) => e.input))), {
+							return f(t, r, e.availableInlineExtentPt, a), ly(t, a).acquisition;
+						}), a = Ub(r(ox(e.input.logicalSequenceId, n.map((e) => e.input))), {
 							container: {
 								id: e.location.flowDomainId,
 								kind: "body",
@@ -22110,8 +22647,8 @@ function Rx(e, t, n) {
 						return Object.freeze({
 							fullExtentPt: a.advancePt,
 							leadContentExtentPt: a.rows[0]?.advancePt ?? a.advancePt,
-							fullFootnoteReferenceIds: Jg(a),
-							leadFootnoteReferenceIds: Jg({
+							fullFootnoteReferenceIds: h_(a),
+							leadFootnoteReferenceIds: h_({
 								...a,
 								rows: a.rows.slice(0, 1)
 							})
@@ -22124,26 +22661,26 @@ function Rx(e, t, n) {
 						return Object.freeze({
 							fullExtentPt: r.advancePt,
 							leadContentExtentPt: i ? i.bounds.yPt + i.advancePt - r.flowBounds.yPt : r.advancePt,
-							fullFootnoteReferenceIds: Jg(r),
-							leadFootnoteReferenceIds: i ? qg([i]) : []
+							fullFootnoteReferenceIds: h_(r),
+							leadFootnoteReferenceIds: i ? m_([i]) : []
 						});
 					}
 					if (n.type !== "table") throw Error("Following table source kind mismatch");
 					let a = e.input.source.path[0];
 					f(t, n, e.availableInlineExtentPt, a);
-					let o = Hv(t, a).acquisition.layout;
+					let o = ly(t, a).acquisition.layout;
 					return Object.freeze({
 						fullExtentPt: o.advancePt,
 						leadContentExtentPt: o.rows[0]?.advancePt ?? o.advancePt,
-						fullFootnoteReferenceIds: Jg(o),
-						leadFootnoteReferenceIds: Jg({
+						fullFootnoteReferenceIds: h_(o),
+						leadFootnoteReferenceIds: h_({
 							...o,
 							rows: o.rows.slice(0, 1)
 						})
 					});
 				},
 				prescanPageAnchors(e) {
-					let t = e.location.section.geometry, n = Qc(t.marginTop), r = Qc(t.marginBottom), a = Object.freeze({
+					let t = e.location.section.geometry, n = yl(t.marginTop), r = yl(t.marginBottom), a = Object.freeze({
 						page: Object.freeze({
 							xPt: 0,
 							yPt: 0,
@@ -22192,14 +22729,14 @@ function Rx(e, t, n) {
 							}
 							throw Error(`Page-anchor prescan occurrence acquisition mismatch: ${t.occurrenceId}`);
 						}
-						let d = Mm({
+						let d = Qm({
 							acquisition: l[0].run.anchorAcquisitionInput,
 							frames: a
 						});
 						if (d.status !== "resolved") throw Error(`Page-anchor prescan could not resolve occurrence: ${t.occurrenceId}`);
-						let f = kv(e.location.section.textDirection) ? (() => {
-							let t = Hr(e.location.section.textDirection);
-							return $h(d, Xr(t, Jr({
+						let f = Xv(e.location.section.textDirection) ? (() => {
+							let t = Ur(e.location.section.textDirection);
+							return bg(d, Zr(t, Yr({
 								widthPt: a.page.widthPt,
 								heightPt: a.page.heightPt
 							}, t)));
@@ -22247,7 +22784,7 @@ function Rx(e, t, n) {
 				measureLineNumberGlyph(n) {
 					let r = t.font;
 					try {
-						let r = e.fonts.defaultBodyFontSizePt, i = $o(!1, !1, r, null, {});
+						let r = e.fonts.defaultBodyFontSizePt, i = cs(!1, !1, r, null, {});
 						t.font = i;
 						let a = t.measureText(n);
 						return Object.freeze({
@@ -22266,7 +22803,7 @@ function Rx(e, t, n) {
 						flowDomainId: w(e.pageIndex),
 						entries: Object.freeze([]),
 						nextParagraphId: 0
-					}), O = gx(w(e.pageIndex), "logical-page-points"), A(e);
+					}), O = Lx(w(e.pageIndex), "logical-page-points"), A(e);
 				},
 				moveAcquisitionCursor: A,
 				flowRegistrySnapshot() {
@@ -22277,13 +22814,13 @@ function Rx(e, t, n) {
 				},
 				commitFlowRegistryDelta(e) {
 					if (!e.floats && !e.drawingCollisions) throw Error("Body flow registry delta must update at least one registry");
-					e.floats && xv(e.floats, {
+					e.floats && Hv(e.floats, {
 						coordinateSpace: D.coordinateSpace,
 						flowDomainId: D.flowDomainId,
 						entries: D.entries,
 						nextParagraphId: D.nextParagraphId
-					}), e.drawingCollisions && vx(O, e.drawingCollisions);
-					let t = e.drawingCollisions ? yx(O, e.drawingCollisions) : O, n = (e.floats?.entries ?? []).map((e) => {
+					}), e.drawingCollisions && zx(O, e.drawingCollisions);
+					let t = e.drawingCollisions ? Bx(O, e.drawingCollisions) : O, n = (e.floats?.entries ?? []).map((e) => {
 						let t = e.wrapDistances?.leftPt ?? e.bounds.xPt - e.exclusionBounds.xPt, n = e.wrapDistances?.topPt ?? e.bounds.yPt - e.exclusionBounds.yPt, r = e.wrapDistances?.rightPt ?? e.exclusionBounds.xPt + e.exclusionBounds.widthPt - e.bounds.xPt - e.bounds.widthPt, i = e.wrapDistances?.bottomPt ?? e.exclusionBounds.yPt + e.exclusionBounds.heightPt - e.bounds.yPt - e.bounds.heightPt, a = {
 							mode: e.wrap === "topAndBottom" ? "topAndBottom" : "square",
 							...e.kind === "shape" ? {
@@ -22326,14 +22863,14 @@ function Rx(e, t, n) {
 					}), y.floatParaSeq = e.floats.nextParagraphId), O = t;
 				}
 			};
-			return Object.freeze(ie);
+			return Object.freeze(ae);
 		} });
 	}
 	function d(e, t) {
-		return Fv(t, Bv(t, e));
+		return ny(t, sy(t, e));
 	}
 	function f(e, t, n, r) {
-		let i = e.retainedTablesBySourceIndex.get(r), a = p(t, n, e), o = e.retainedTableAcquisition, s = Ob(t, a, n, e, [r], o), c = i?.contentWidthPt === n ? Object.freeze({
+		let i = e.retainedTablesBySourceIndex.get(r), a = p(t, n, e), o = e.retainedTableAcquisition, s = Yb(t, a, n, e, [r], o), c = i?.contentWidthPt === n ? Object.freeze({
 			...s,
 			layout: Object.freeze({
 				...s.layout,
@@ -22357,7 +22894,7 @@ function Rx(e, t, n) {
 		let r = n.acquisitionInputs.tableFormatInput(e), i = Number.isFinite(e.tblInd) ? e.tblInd ?? 0 : 0, a = r.rows.map((e) => {
 			let t = e.exception;
 			return t?.indentAuthored ? t.indentPt ?? 0 : i;
-		}), o = n.storyContext?.story, s = n.storyContext?.containers.length === 0 && (o === "header" || o === "footer" || o === "body" && n.sectionLayout?.columns.length === 1), c = r.ordinaryFlow && s && !kv(n.sectionLayout.textDirection) && [i, ...a].some((e) => e < 0), l = r.rows.length === 0 ? [{
+		}), o = n.storyContext?.story, s = n.storyContext?.containers.length === 0 && (o === "header" || o === "footer" || o === "body" && n.sectionLayout?.columns.length === 1), c = r.ordinaryFlow && s && !Xv(n.sectionLayout.textDirection) && [i, ...a].some((e) => e < 0), l = r.rows.length === 0 ? [{
 			justification: e.jc,
 			indentPt: i
 		}] : r.rows.map((t, n) => ({
@@ -22377,9 +22914,9 @@ function Rx(e, t, n) {
 			return e.rows.forEach((t, n) => t.cells.forEach((t, a) => {
 				let o = r.rows[n]?.cells[a]?.marginsPt;
 				i.set(t, o ?? A(t, e));
-			})), (r) => dc(r, i.get(r) ?? A(r, e), {
+			})), (r) => Ac(r, i.get(r) ?? A(r, e), {
 				paragraph: (e) => {
-					let r = Wc(n.layoutSettings, n.sectionLayout, n.storyContext ?? Iv, e), i = e.numbering ? n.acquisitionInputs.numberingMarkerShapeInput(e.numbering, ns(e)) : void 0, a = sc(r, {
+					let r = ll(n.layoutSettings, n.sectionLayout, n.storyContext ?? ry, e), i = e.numbering ? n.acquisitionInputs.numberingMarkerShapeInput(e.numbering, ds(e)) : void 0, a = Ec(r, {
 						numbering: e.numbering,
 						...i ? { markerInput: i } : {},
 						authoredFirstIndentPt: e.indentFirst,
@@ -22387,21 +22924,21 @@ function Rx(e, t, n) {
 						defaultTabPt: n.defaultTabPt,
 						service: n.layoutServices?.text,
 						clusterGeometry: !1
-					}), o = a.numberingMarkerGeometry ?? (e.numbering && i && n.layoutServices?.text ? uc(e.numbering, i, {
+					}), o = a.numberingMarkerGeometry ?? (e.numbering && i && n.layoutServices?.text ? kc(e.numbering, i, {
 						authoredFirstIndentPt: e.indentFirst,
 						physicalIndentLeftPt: a.physicalIndentLeftPt,
 						tabStops: e.tabStops,
 						defaultTabPt: n.defaultTabPt
 					}, n.layoutServices.text, !1) : void 0);
-					return _c(e, a, t, {
+					return Ic(e, a, t, {
 						context: n.ctx,
 						fontFamilyClasses: n.fontFamilyClasses
-					}, Pv(n), o);
+					}, ty(n), o);
 				},
-				nestedTable: (e) => by(n.acquisitionInputs.tableColumnLayoutInput(e, t, m(e), t))
+				nestedTable: (e) => Vy(n.acquisitionInputs.tableColumnLayoutInput(e, t, m(e), t))
 			});
 		};
-		return [...Ty(n.acquisitionInputs.tableColumnLayoutInput(e, t, m(e, r), p ? null : n.acquisitionInputs.tableParticipatesInOrdinaryFlow(e) ? f : Math.max(t, n.pageWidth)))];
+		return [...Ky(n.acquisitionInputs.tableColumnLayoutInput(e, t, m(e, r), p ? null : n.acquisitionInputs.tableParticipatesInOrdinaryFlow(e) ? f : Math.max(t, n.pageWidth)))];
 	}
 	function m(e, t, n) {
 		let r = e.indexOf(t);
@@ -22409,26 +22946,26 @@ function Rx(e, t, n) {
 			let r = e[t];
 			if (r.type !== "paragraph") continue;
 			let i = r;
-			if (!i.framePr) return Ts(i, 1, d(i, n), zv(n, i).hasRuby, n.docEastAsian, n.ctx, n.fontFamilyClasses, i.lineSpacing, n.resolvedLocalFonts, n.layoutServices?.text, n.acquisitionInputs.paragraphMarkShapeInput(i), n.layoutSettings.compat.useFeLayout);
+			if (!i.framePr) return zs(i, 1, d(i, n), oy(n, i).hasRuby, n.docEastAsian, n.ctx, n.fontFamilyClasses, i.lineSpacing, n.resolvedLocalFonts, n.layoutServices?.text, n.acquisitionInputs.paragraphMarkShapeInput(i), n.layoutSettings.compat.useFeLayout);
 		}
 		let i = t;
-		return Ts(i, 1, d(i, n), zv(n, i).hasRuby, n.docEastAsian, n.ctx, n.fontFamilyClasses, i.lineSpacing, n.resolvedLocalFonts, n.layoutServices?.text, n.acquisitionInputs.paragraphMarkShapeInput(i), n.layoutSettings.compat.useFeLayout);
+		return zs(i, 1, d(i, n), oy(n, i).hasRuby, n.docEastAsian, n.ctx, n.fontFamilyClasses, i.lineSpacing, n.resolvedLocalFonts, n.layoutServices?.text, n.acquisitionInputs.paragraphMarkShapeInput(i), n.layoutSettings.compat.useFeLayout);
 	}
 	function h(e, t, n, r, i) {
 		let a = {
 			context: n.ctx,
 			fontFamilyClasses: n.fontFamilyClasses
-		}, o = Pv(n), s = t.members.map(Mc), c = av(t.framePr.hAnchor, n), l = {
+		}, o = ty(n), s = t.members.map(Zc), c = Ev(t.framePr.hAnchor, n), l = {
 			contentXPt: n.contentX,
 			contentWidthPt: n.contentW,
 			pageHeightPt: n.pageH,
 			yPt: n.y,
 			anchorLineHeightPt: r
-		}, u = Og(t, {
-			contexts: t.members.map((e) => zv(n, e)),
+		}, u = Yg(t, {
+			contexts: t.members.map((e) => oy(n, e)),
 			inputs: t.members,
 			borderEdges: s,
-			borderExtentsPt: t.members.map((e, t) => s[t]?.bottom === "none" ? 0 : vc(e.borders)),
+			borderExtentsPt: t.members.map((e, t) => s[t]?.bottom === "none" ? 0 : Lc(e.borders)),
 			measurer: a,
 			environment: o,
 			containerShading: n.containerShading,
@@ -22447,7 +22984,7 @@ function Rx(e, t, n) {
 				n.marginBottom
 			].join("|"),
 			place: (e, r) => {
-				let i = uv(t.framePr, n, l.yPt, e, r, l.anchorLineHeightPt);
+				let i = jv(t.framePr, n, l.yPt, e, r, l.anchorLineHeightPt);
 				return Object.freeze({
 					bounds: Object.freeze({
 						xPt: i.x,
@@ -22463,7 +23000,7 @@ function Rx(e, t, n) {
 					})
 				});
 			},
-			anchorFrames: Lv(n)
+			anchorFrames: iy(n)
 		});
 		i?.(u);
 		let d = {
@@ -22486,11 +23023,11 @@ function Rx(e, t, n) {
 	function g(e, t, n) {
 		if (t.verticalPhys) {
 			let n = g(e, C(t), t.contentX);
-			return Lx(n.x, n.y, n.w, n.h, t.verticalPhys.physicalPageWidthPt);
+			return iS(n.x, n.y, n.w, n.h, t.verticalPhys.physicalPageWidthPt);
 		}
 		let r = e.widthPt, i = e.heightPt, a = e.anchorXPt, o = e.anchorYPt, s = e.groupWidthPt ?? null, c = e.groupHeightPt ?? null;
 		if (e.widthPct != null) {
-			let n = wv(e.widthRelativeFrom, !1, t), i = (n.end - n.start) * e.widthPct;
+			let n = Gv(e.widthRelativeFrom, !1, t), i = (n.end - n.start) * e.widthPct;
 			if (e.groupWidthPt != null && e.groupWidthPt > 0) {
 				let t = i / e.groupWidthPt;
 				r = e.widthPt * t, a = e.anchorXPt * t;
@@ -22498,7 +23035,7 @@ function Rx(e, t, n) {
 			s = i;
 		}
 		if (e.heightPct != null) {
-			let r = Tv(e.heightRelativeFrom, !1, n, t), a = (r.end - r.start) * e.heightPct;
+			let r = Kv(e.heightRelativeFrom, !1, n, t), a = (r.end - r.start) * e.heightPct;
 			if (e.groupHeightPt != null && e.groupHeightPt > 0) {
 				let t = a / e.groupHeightPt;
 				i = e.heightPt * t, o = e.anchorYPt * t;
@@ -22506,13 +23043,13 @@ function Rx(e, t, n) {
 			c = a;
 		}
 		return {
-			x: Ev(e.anchorXAlign, e.anchorXFromMargin, a, r, t, e.anchorXRelativeFrom, e.pctPosH, s),
-			y: Dv(e.anchorYAlign, e.anchorYFromPara, o, i, n, t, e.anchorYRelativeFrom, e.pctPosV, c),
+			x: qv(e.anchorXAlign, e.anchorXFromMargin, a, r, t, e.anchorXRelativeFrom, e.pctPosH, s),
+			y: Jv(e.anchorYAlign, e.anchorYFromPara, o, i, n, t, e.anchorYRelativeFrom, e.pctPosV, c),
 			w: r,
 			h: i
 		};
 	}
-	let _ = (e, t, n) => w(e, t, n), v = (e, t, n) => g(e, t, n), y = (e) => Mv(e), b = (e) => jv(e), x = (e, t, n) => E(e, t, n);
+	let _ = (e, t, n) => w(e, t, n), v = (e, t, n) => g(e, t, n), y = (e) => $v(e), b = (e) => Qv(e), x = (e, t, n) => E(e, t, n);
 	function S(e) {
 		let t = e.verticalPhys;
 		return t ? {
@@ -22540,7 +23077,7 @@ function Rx(e, t, n) {
 	function w(e, t, n) {
 		let r = e.widthPt, i = e.heightPt, a = e.distLeft ?? 0, o = e.distRight ?? 0, s = e.distTop ?? 0, c = e.distBottom ?? 0;
 		if (t.verticalPhys) {
-			let n = S(t), l = Lx(Ev(e.anchorXAlign, e.anchorXFromMargin ?? !1, e.anchorXPt ?? 0, r, n, e.anchorXRelativeFrom ?? null, null, null), Dv(e.anchorYAlign, e.anchorYFromPara ?? !1, e.anchorYPt ?? 0, i, t.contentX, n, e.anchorYRelativeFrom ?? null, null, null), r, i, t.verticalPhys.physicalPageWidthPt);
+			let n = S(t), l = iS(qv(e.anchorXAlign, e.anchorXFromMargin ?? !1, e.anchorXPt ?? 0, r, n, e.anchorXRelativeFrom ?? null, null, null), Jv(e.anchorYAlign, e.anchorYFromPara ?? !1, e.anchorYPt ?? 0, i, t.contentX, n, e.anchorYRelativeFrom ?? null, null, null), r, i, t.verticalPhys.physicalPageWidthPt);
 			return {
 				x: l.x,
 				y: l.y,
@@ -22553,8 +23090,8 @@ function Rx(e, t, n) {
 			};
 		}
 		return {
-			x: Ev(e.anchorXAlign, e.anchorXFromMargin ?? !1, e.anchorXPt ?? 0, r, t, e.anchorXRelativeFrom ?? null, null, null),
-			y: Dv(e.anchorYAlign, e.anchorYFromPara ?? !1, e.anchorYPt ?? 0, i, n, t, e.anchorYRelativeFrom ?? null, null, null),
+			x: qv(e.anchorXAlign, e.anchorXFromMargin ?? !1, e.anchorXPt ?? 0, r, t, e.anchorXRelativeFrom ?? null, null, null),
+			y: Jv(e.anchorYAlign, e.anchorYFromPara ?? !1, e.anchorYPt ?? 0, i, n, t, e.anchorYRelativeFrom ?? null, null, null),
 			w: r,
 			h: i,
 			dl: a,
@@ -22567,15 +23104,15 @@ function Rx(e, t, n) {
 		let r = t.floatParaSeq++, i = t.pageAnchorPrescanned?.has(e) ?? !1;
 		for (let a of e.runs) if (a.type === "image") {
 			let e = a;
-			if (i && xx(e)) continue;
+			if (i && Hx(e)) continue;
 			D(e, t, n, r);
 		} else if (a.type === "chart") {
 			let e = a;
-			if (i && xx(e)) continue;
+			if (i && Hx(e)) continue;
 			O(e, t, n, r);
 		} else if (a.type === "shape") {
 			let e = a;
-			if (i && xx(e)) continue;
+			if (i && Hx(e)) continue;
 			k(e, t, n, r);
 		}
 	}
@@ -22595,16 +23132,16 @@ function Rx(e, t, n) {
 			if (n.pageAnchorPrescanned.has(i)) continue;
 			let a = !1;
 			for (let e of i.runs) if (e.type === "image") {
-				if (xx(e)) {
+				if (Hx(e)) {
 					a = !0;
 					break;
 				}
 			} else if (e.type === "chart") {
-				if (xx(e)) {
+				if (Hx(e)) {
 					a = !0;
 					break;
 				}
-			} else if (e.type === "shape" && xx(e)) {
+			} else if (e.type === "shape" && Hx(e)) {
 				a = !0;
 				break;
 			}
@@ -22612,24 +23149,24 @@ function Rx(e, t, n) {
 			let o = n.floatParaSeq++;
 			for (let e of i.runs) if (e.type === "image") {
 				let t = e;
-				if (!xx(t)) continue;
+				if (!Hx(t)) continue;
 				D(t, n, 0, o);
 			} else if (e.type === "chart") {
 				let t = e;
-				if (!xx(t)) continue;
+				if (!Hx(t)) continue;
 				O(t, n, 0, o);
 			} else if (e.type === "shape") {
 				let t = e;
-				if (!xx(t)) continue;
+				if (!Hx(t)) continue;
 				k(t, n, 0, o);
 			}
 			n.pageAnchorPrescanned.add(i);
 		}
 	}
 	function D(e, t, n, r) {
-		if (!e.anchor || !Na(e.wrapMode)) return;
+		if (!e.anchor || !Pa(e.wrapMode)) return;
 		let i = e.wrapMode === "topAndBottom" ? "topAndBottom" : "square", a = w(e, t, n), { w: o, h: s, dl: l, dr: u, dt: d, db: f } = a, p = e.allowOverlap ?? !0, m = c(e.imagePath, e.colorReplaceFrom, e.duotone);
-		dv(t, {
+		Mv(t, {
 			x: a.x,
 			y: a.y,
 			w: o,
@@ -22648,9 +23185,9 @@ function Rx(e, t, n) {
 		});
 	}
 	function O(e, t, n, r) {
-		if (!e.anchor || !Na(e.wrapMode)) return;
+		if (!e.anchor || !Pa(e.wrapMode)) return;
 		let i = w(e, t, n), { w: a, h: o, dl: s, dr: c, dt: l, db: u } = i;
-		a <= 0 || o <= 0 || dv(t, {
+		a <= 0 || o <= 0 || Mv(t, {
 			x: i.x,
 			y: i.y,
 			w: a,
@@ -22669,11 +23206,11 @@ function Rx(e, t, n) {
 		});
 	}
 	function k(e, t, n, r) {
-		if (!Na(e.wrapMode)) return;
+		if (!Pa(e.wrapMode)) return;
 		let { x: i, y: a, w: o, h: s } = g(e, t, n);
 		if (o <= 0 || s <= 0) return;
 		let c = e.wrapMode === "topAndBottom" ? "topAndBottom" : "square", l = e.distLeft ?? 0, u = e.distRight ?? 0, d = e.distTop ?? 0, f = e.distBottom ?? 0, p = !!t.verticalPhys;
-		dv(t, {
+		Mv(t, {
 			x: i,
 			y: a,
 			w: o,
@@ -22714,16 +23251,16 @@ function Rx(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/document-content.ts
-function* zx(e) {
+function* oS(e) {
 	e.textPath && (yield {
 		text: e.textPath.string,
 		fontFamilies: [e.textPath.fontFamily],
 		bold: e.textPath.bold,
 		italic: e.textPath.italic
 	});
-	for (let t of e.textBlocks ?? []) yield* Bx(t);
+	for (let t of e.textBlocks ?? []) yield* sS(t);
 }
-function* Bx(e) {
+function* sS(e) {
 	if (e.numbering && (yield {
 		text: e.numbering.text,
 		fontFamilies: [e.numbering.fontFamily, e.numbering.fontFamilyEastAsia],
@@ -22746,7 +23283,7 @@ function* Bx(e) {
 		italic: e.italic
 	};
 }
-function* Vx(e) {
+function* cS(e) {
 	if (e.type === "text") {
 		let t = e;
 		yield {
@@ -22781,14 +23318,14 @@ function* Vx(e) {
 			bold: t.boldCs ?? !1,
 			italic: t.italicCs ?? !1
 		};
-	} else e.type === "shape" ? yield* zx(e) : e.type === "anchorHost" && (yield {
+	} else e.type === "shape" ? yield* oS(e) : e.type === "anchorHost" && (yield {
 		text: "",
 		fontFamilies: [e.fontFamily, e.fontFamilyEastAsia],
 		bold: e.bold,
 		italic: e.italic
 	});
 }
-function* Hx(e) {
+function* lS(e) {
 	yield {
 		text: "",
 		fontFamilies: [e.defaultFontFamily, e.defaultFontFamilyEastAsia]
@@ -22796,28 +23333,28 @@ function* Hx(e) {
 		text: e.numbering.text,
 		fontFamilies: [e.numbering.fontFamily, e.numbering.fontFamilyEastAsia]
 	});
-	for (let t of e.runs) yield* Vx(t);
+	for (let t of e.runs) yield* cS(t);
 }
-function* Ux(e) {
-	for (let t of e.rows) for (let e of t.cells) yield* Gx(e.content);
+function* uS(e) {
+	for (let t of e.rows) for (let e of t.cells) yield* fS(e.content);
 }
-function* Wx(e) {
+function* dS(e) {
 	if (e) for (let t of [
 		e.default,
 		e.first,
 		e.even
-	]) t && (yield* Gx(t.body));
+	]) t && (yield* fS(t.body));
 }
-function* Gx(e) {
-	for (let t of e) t.type === "paragraph" ? yield* Hx(t) : t.type === "table" ? yield* Ux(t) : t.type === "sectionBreak" && (yield* Wx(t.headers), yield* Wx(t.footers));
+function* fS(e) {
+	for (let t of e) t.type === "paragraph" ? yield* lS(t) : t.type === "table" ? yield* uS(t) : t.type === "sectionBreak" && (yield* dS(t.headers), yield* dS(t.footers));
 }
-function* Kx(e) {
-	yield* Gx(e.body ?? []), yield* Wx(e.headers), yield* Wx(e.footers);
-	for (let t of [...e.footnotes ?? [], ...e.endnotes ?? []]) yield* Gx(t.content);
+function* pS(e) {
+	yield* fS(e.body ?? []), yield* dS(e.headers), yield* dS(e.footers);
+	for (let t of [...e.footnotes ?? [], ...e.endnotes ?? []]) yield* fS(t.content);
 }
-function qx(e) {
+function mS(e) {
 	let t = /* @__PURE__ */ new Set();
-	for (let n of Kx(e)) for (let e of n.fontFamilies) {
+	for (let n of pS(e)) for (let e of n.fontFamilies) {
 		let n = e?.trim();
 		n && t.add(n);
 	}
@@ -22825,42 +23362,42 @@ function qx(e) {
 }
 //#endregion
 //#region packages/docx/src/google-fonts.ts
-var Jx = {
+var hS = {
 	...ue,
 	...O
 };
-function* Yx(e) {
-	for (let t of Kx(e)) yield t.text;
+function* gS(e) {
+	for (let t of pS(e)) yield t.text;
 }
-function Xx(e) {
+function _S(e) {
 	let t = _e(e.majorFont) ?? _e(e.minorFont) ?? null;
 	return [
 		e.majorFont,
 		e.minorFont,
-		...N(Yx(e), t)
+		...ee(gS(e), t)
 	];
 }
 //#endregion
 //#region packages/docx/src/layout/font-service.ts
-function Zx(e) {
+function vS(e) {
 	return e.trim().toLocaleLowerCase("en-US");
 }
-function Qx(e) {
+function yS(e) {
 	return e == null || !Number.isFinite(e) ? 400 : Math.min(900, Math.max(100, Math.round(e / 100) * 100));
 }
-function $x(e) {
+function bS(e) {
 	return Object.freeze({
 		...e,
 		diagnostics: Object.freeze([...e.diagnostics])
 	});
 }
-function eS(e) {
+function xS(e) {
 	return `"${e.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"")}"`;
 }
-function tS(e, t) {
-	return `${eS(e)}, ${t}`;
+function SS(e, t) {
+	return `${xS(e)}, ${t}`;
 }
-function nS(e, t = {}) {
+function CS(e, t = {}) {
 	let n = {
 		embedded: 0,
 		local: 1,
@@ -22868,31 +23405,31 @@ function nS(e, t = {}) {
 		substitute: 3
 	}, r = e.filter((e) => e.requestedFamily.trim() && e.resolvedFamily.trim()).map((e) => Object.freeze({
 		...e,
-		weight: Qx(e.weight),
+		weight: yS(e.weight),
 		style: e.style ?? "normal"
-	})).sort((e, t) => Zx(e.requestedFamily).localeCompare(Zx(t.requestedFamily)) || n[e.source] - n[t.source] || e.resolvedFamily.localeCompare(t.resolvedFamily) || e.weight - t.weight || e.style.localeCompare(t.style)), i = /* @__PURE__ */ new Map();
+	})).sort((e, t) => vS(e.requestedFamily).localeCompare(vS(t.requestedFamily)) || n[e.source] - n[t.source] || e.resolvedFamily.localeCompare(t.resolvedFamily) || e.weight - t.weight || e.style.localeCompare(t.style)), i = /* @__PURE__ */ new Map();
 	for (let e of r) {
-		let t = Zx(e.requestedFamily);
+		let t = vS(e.requestedFamily);
 		i.set(t, [...i.get(t) ?? [], e]);
 	}
-	let a = Object.freeze(Object.fromEntries(Object.entries(t.nativeFamilyLists ?? {}).filter(([e, t]) => e.trim() && t.trim()).map(([e, t]) => [Zx(e), t]).sort(([e], [t]) => e.localeCompare(t)))), o = an("fonts", {
+	let a = Object.freeze(Object.fromEntries(Object.entries(t.nativeFamilyLists ?? {}).filter(([e, t]) => e.trim() && t.trim()).map(([e, t]) => [vS(e), t]).sort(([e], [t]) => e.localeCompare(t)))), o = on("fonts", {
 		faces: r,
 		nativeFamilyLists: a
 	});
 	return Object.freeze({
 		fingerprint: o,
 		resolve(e) {
-			let t = e.requestedFamily?.trim() || e.genericFamily || "sans-serif", n = Qx(e.weight), r = e.style ?? "normal", o = (i.get(Zx(t)) ?? []).find((e) => e.weight === n && e.style === r);
+			let t = e.requestedFamily?.trim() || e.genericFamily || "sans-serif", n = yS(e.weight), r = e.style ?? "normal", o = (i.get(vS(t)) ?? []).find((e) => e.weight === n && e.style === r);
 			if (o) {
 				let i = o.source === "substitute" ? [{
 					code: "UNSUPPORTED_FEATURE",
 					severity: "warning",
 					message: `ECMA-376 §17.8.2 implementation-dependent font substitution: ${t} resolved to ${o.resolvedFamily}`
-				}] : [], a = tS(o.resolvedFamily, e.genericFamily ?? "sans-serif");
-				return $x({
+				}] : [], a = SS(o.resolvedFamily, e.genericFamily ?? "sans-serif");
+				return bS({
 					requestedFamily: t,
 					resolvedFamily: o.resolvedFamily,
-					route: R(a, "registered"),
+					route: Re(a, "registered"),
 					source: o.source,
 					weight: n,
 					style: r,
@@ -22901,10 +23438,10 @@ function nS(e, t = {}) {
 				});
 			}
 			let s = e.genericFamily ?? "sans-serif", c = e.requestedFamily?.trim();
-			return $x(c ? {
+			return bS(c ? {
 				requestedFamily: t,
 				resolvedFamily: c,
-				route: R(a[Zx(c)] ?? tS(c, s), "native"),
+				route: Re(a[vS(c)] ?? SS(c, s), "native"),
 				source: "native",
 				weight: n,
 				style: r,
@@ -22913,7 +23450,7 @@ function nS(e, t = {}) {
 			} : {
 				requestedFamily: t,
 				resolvedFamily: s,
-				route: R(s, "generic"),
+				route: Re(s, "generic"),
 				source: "generic",
 				weight: n,
 				style: r,
@@ -22925,8 +23462,8 @@ function nS(e, t = {}) {
 }
 //#endregion
 //#region packages/docx/src/layout/production-services.ts
-function rS(e, t) {
-	let n = di(t.localMetrics), r = Object.freeze(Object.fromEntries(Object.entries(e.fontFamilyCharsets).map(([e, t]) => [e.trim().toLowerCase(), t]))), i = (e) => e.trim().replace(/^(['"])(.*)\1$/, "$2"), a = (e) => i(e).toLocaleLowerCase("en-US"), o = (e) => {
+function wS(e, t) {
+	let n = fi(t.localMetrics), r = Object.freeze(Object.fromEntries(Object.entries(e.fontFamilyCharsets).map(([e, t]) => [e.trim().toLowerCase(), t]))), i = (e) => e.trim().replace(/^(['"])(.*)\1$/, "$2"), a = (e) => i(e).toLocaleLowerCase("en-US"), o = (e) => {
 		let t = e.style.trim().toLocaleLowerCase("en-US");
 		return t === "normal" || t === "italic" ? t : null;
 	}, s = (e) => {
@@ -22969,7 +23506,7 @@ function rS(e, t) {
 			let e = t.toLocaleLowerCase("en-US");
 			if (r.has(e)) continue;
 			r.add(e);
-			let i = Jx[e], o = i?.loadFamily ?? t;
+			let i = hS[e], o = i?.loadFamily ?? t;
 			if (i) for (let e of n.filter((e) => e.family === a(o))) u.push({
 				requestedFamily: t,
 				resolvedFamily: e.displayFamily,
@@ -22985,11 +23522,11 @@ function rS(e, t) {
 		...e.fonts.renderedFamilies,
 		...e.fonts.majorFamily ? [e.fonts.majorFamily] : [],
 		...e.fonts.minorFamily ? [e.fonts.minorFamily] : []
-	])], p = gi({
-		fonts: nS(u, { nativeFamilyLists: Object.fromEntries(f.map((t) => [t, Qo(t, e.fonts.familyClasses, e.fonts.familyPitches)])) }),
+	])], p = _i({
+		fonts: CS(u, { nativeFamilyLists: Object.fromEntries(f.map((t) => [t, ss(t, e.fonts.familyClasses, e.fonts.familyPitches)])) }),
 		localMetrics: n,
 		eastAsiaFontCharsets: r,
-		genericFamilies: Object.fromEntries(f.map((t) => [t, li(t, e.fonts.familyClasses, e.fonts.familyPitches)])),
+		genericFamilies: Object.fromEntries(f.map((t) => [t, ui(t, e.fonts.familyClasses, e.fonts.familyPitches)])),
 		measurer: {
 			fingerprint: d ? "canvas-text-metrics-v1" : "deterministic-text-metrics-v1",
 			measure(e) {
@@ -23000,7 +23537,7 @@ function rS(e, t) {
 				};
 				let t = d.font, n = d.letterSpacing, r = d.fontKerning;
 				try {
-					d.font = Re(e.fontRoute, e.fontSizePt, e.weight, e.style), d.letterSpacing = `${e.letterSpacingPt}px`, e.kerning != null && (d.fontKerning = e.kerning ? "normal" : "none");
+					d.font = ze(e.fontRoute, e.fontSizePt, e.weight, e.style), d.letterSpacing = `${e.letterSpacingPt}px`, e.kerning != null && (d.fontKerning = e.kerning ? "normal" : "none");
 					let t = d.measureText(e.text), n = Number.isFinite(t.actualBoundingBoxLeft) && Number.isFinite(t.actualBoundingBoxRight), r = {
 						xMinPt: n ? -t.actualBoundingBoxLeft : 0,
 						xMaxPt: n ? t.actualBoundingBoxRight : t.width,
@@ -23022,7 +23559,7 @@ function rS(e, t) {
 			}
 		}
 	}), m = t.mathResources ?? e.mathOccurrences.map(({ display: e, source: t }) => ({
-		resourceKey: cn(t, e ? "display" : "inline"),
+		resourceKey: ln(t, e ? "display" : "inline"),
 		widthEm: 0,
 		ascentEm: 0,
 		descentEm: 0,
@@ -23034,47 +23571,47 @@ function rS(e, t) {
 		}]
 	})), h = e.imageMetadata, g = Object.freeze({
 		text: p,
-		images: An(h),
-		math: jn(m),
+		images: jn(h),
+		math: Mn(m),
 		verticalGlyphFingerprint: t.verticalGlyphMeasurement.fingerprint
-	}), _ = e.mathOccurrences.map(({ source: e, display: t }) => cn(e, t ? "display" : "inline")), v = m.map((e) => e.resourceKey), y = _.filter((e) => !v.includes(e)), b = v.filter((e) => !_.includes(e));
+	}), _ = e.mathOccurrences.map(({ source: e, display: t }) => ln(e, t ? "display" : "inline")), v = m.map((e) => e.resourceKey), y = _.filter((e) => !v.includes(e)), b = v.filter((e) => !_.includes(e));
 	if (y.length || b.length) throw Error(`Math metadata membership mismatch: missing [${y.join(", ")}]; extra [${b.join(", ")}]`);
-	return $n(g, t.mathDrawables ?? /* @__PURE__ */ new Map(), m.filter((e) => e.available !== !1).map((e) => e.resourceKey)), cr(g, e.paintResources), Yn(g, t.verticalGlyphMeasurement), g;
+	return er(g, t.mathDrawables ?? /* @__PURE__ */ new Map(), m.filter((e) => e.available !== !1).map((e) => e.resourceKey)), lr(g, e.paintResources), Xn(g, t.verticalGlyphMeasurement), g;
 }
 //#endregion
 //#region packages/docx/src/layout/table-source-acquisition.ts
-function iS(e, t) {
+function TS(e, t) {
 	if (e === null) return null;
 	let n = e.trim(), r = t && n.endsWith("%") ? n.slice(0, -1) : n;
 	if (r.length === 0) return null;
 	let i = Number(r);
 	return Number.isFinite(i) ? i : null;
 }
-function aS(e) {
+function ES(e) {
 	return e.value?.trim().endsWith("%") ? "pct" : e.kind ?? "dxa";
 }
-function oS(e) {
+function DS(e) {
 	if (!e) return null;
-	let t = e.value?.trim() ?? "", n = aS(e);
+	let t = e.value?.trim() ?? "", n = ES(e);
 	if (n === "dxa") {
-		let t = iS(e.value ?? "0", !1);
+		let t = TS(e.value ?? "0", !1);
 		return t === null ? null : {
 			kind: "dxa",
 			value: t / 20
 		};
 	}
 	if (n !== "pct") return null;
-	let r = iS(e.value ?? "0", !0);
+	let r = TS(e.value ?? "0", !0);
 	return r === null ? null : {
 		kind: "pct",
 		value: t.endsWith("%") ? r / 100 : r / 5e3
 	};
 }
-function sS(e) {
-	let t = oS(e);
+function OS(e) {
+	let t = DS(e);
 	return t?.kind === "dxa" ? t.value : null;
 }
-function cS(e) {
+function kS(e) {
 	return e.widthPt == null ? e.widthPct == null ? null : {
 		kind: "pct",
 		value: e.widthPct / 5e3
@@ -23083,87 +23620,87 @@ function cS(e) {
 		value: e.widthPt
 	};
 }
-function lS(e, t) {
+function AS(e, t) {
 	let n = e.format.firstRowException?.preferredWidth ?? null;
 	if (e.format.firstRowException?.preferredWidthAuthored) return n?.kind === "dxa" ? n.value > 0 ? n.value : null : n?.kind === "pct" && n.value > 0 ? n.value * t : null;
-	let r = oS(e.lexical.table?.preferredWidth);
+	let r = DS(e.lexical.table?.preferredWidth);
 	return r?.kind === "dxa" ? r.value > 0 ? r.value : null : r?.kind === "pct" ? r.value > 0 ? r.value * t : null : e.semantic.widthPt != null && e.semantic.widthPt > 0 ? e.semantic.widthPt : e.semantic.widthPct != null && e.semantic.widthPct > 0 ? e.semantic.widthPct / 5e3 * t : null;
 }
-var uS = Object.freeze({
+var jS = Object.freeze({
 	pt: "1/1",
 	in: "72/1",
 	cm: "3600/127",
 	mm: "360/127",
 	pc: "12/1",
 	pi: "12/1"
-}), dS = "18446744073709551615";
-function fS(e) {
+}), MS = "18446744073709551615";
+function NS(e) {
 	let t = e.replace(/[\u0009\u000a\u000d\u0020]+/g, " ").replace(/^ | $/g, ""), n = /^([+-]?)([0-9]+)$/.exec(t);
 	if (!n) return null;
 	let [, r, i] = n;
 	if (r === "-" && /[1-9]/.test(i)) return null;
 	let a = i.replace(/^0+/, "") || "0";
-	return a.length > 20 || a.length === 20 && a > dS ? null : t;
+	return a.length > 20 || a.length === 20 && a > MS ? null : t;
 }
-var pS = {
+var PS = {
 	key: "0/1",
 	widthPt: 0
 };
-function mS(e) {
-	let t = ey(e);
+function FS(e) {
+	let t = xy(e);
 	return Number.isFinite(t) ? {
 		key: e,
 		widthPt: t
-	} : pS;
+	} : PS;
 }
-function hS(e, t) {
+function IS(e, t) {
 	let n = Number(e);
-	if (!Number.isFinite(n)) return pS;
-	let r = Zv(n), i = r === null ? 0 : ey(ny(r, t));
+	if (!Number.isFinite(n)) return PS;
+	let r = vy(n), i = r === null ? 0 : xy(Cy(r, t));
 	return Number.isFinite(i) ? {
 		key: null,
 		widthPt: i
-	} : pS;
+	} : PS;
 }
-function gS(e) {
-	if (e == null) return pS;
-	let t = fS(e);
+function LS(e) {
+	if (e == null) return PS;
+	let t = NS(e);
 	if (t !== null) {
-		let e = Xv(t);
-		return e === null ? pS : mS(iy(e, 20n));
+		let e = _y(t);
+		return e === null ? PS : FS(Ty(e, 20n));
 	}
 	let n = /^([0-9]+(?:\.[0-9]+)?)(mm|cm|in|pt|pc|pi)$/.exec(e);
-	if (!n) return pS;
-	let r = uS[n[2]], i = Xv(n[1]);
-	return i === null ? hS(n[1], r) : mS(ny(i, r));
+	if (!n) return PS;
+	let r = jS[n[2]], i = _y(n[1]);
+	return i === null ? IS(n[1], r) : FS(Cy(i, r));
 }
-function _S(e) {
+function RS(e) {
 	let t = e.lexical.table?.grid;
 	if (!t) {
 		let t = e.semantic.colWidths.map((e) => Number.isFinite(e) && e >= 0 ? {
 			widthPt: e,
-			key: Zv(e) ?? "0/1"
-		} : pS);
+			key: vy(e) ?? "0/1"
+		} : PS);
 		return {
 			widthsPt: t.map((e) => e.widthPt),
 			widthKeys: t.map((e) => e.key)
 		};
 	}
-	let n = Math.max(t.requiredColumnCount, t.columns.length), r = Array.from({ length: n }, (e, n) => gS(t.columns[n]?.width ?? null));
+	let n = Math.max(t.requiredColumnCount, t.columns.length), r = Array.from({ length: n }, (e, n) => LS(t.columns[n]?.width ?? null));
 	return {
 		widthsPt: r.map((e) => e.widthPt),
 		widthKeys: r.map((e) => e.key)
 	};
 }
-function vS(e, t) {
-	let n = oS(e);
+function zS(e, t) {
+	let n = DS(e);
 	return n?.kind === "pct" ? {
 		kind: "dxa",
 		value: Math.max(0, n.value) * Math.max(0, t)
 	} : n;
 }
-function yS(e, t, n, r = t) {
-	let i = e.semantic, { widthsPt: a, widthKeys: o } = _S(e), s = e.format.firstRowException?.layout === "fixed" ? "fixed" : e.lexical.table?.layout?.kind ?? i.layout, c = e.lexical.table?.grid.authored ? e.lexical.table.grid.columns.length : null, l = i.rows.map((e) => {
+function BS(e, t, n, r = t) {
+	let i = e.semantic, { widthsPt: a, widthKeys: o } = RS(e), s = e.format.firstRowException?.layout === "fixed" ? "fixed" : e.lexical.table?.layout?.kind ?? i.layout, c = e.lexical.table?.grid.authored ? e.lexical.table.grid.columns.length : null, l = i.rows.map((e) => {
 		let t = Math.max(0, e.gridBefore ?? 0);
 		return c !== null && t > c ? 0 : t;
 	}), u = Math.max(c ?? 0, e.lexical.table?.grid.requiredColumnCount ?? 0, ...i.rows.map((e, t) => (l[t] ?? 0) + e.cells.reduce((e, t) => e + Math.max(1, t.colSpan), 0)));
@@ -23172,26 +23709,26 @@ function yS(e, t, n, r = t) {
 		availableWidthPt: r === null ? null : Math.max(0, r),
 		gridWidthsPt: a,
 		gridWidthKeys: o,
-		tablePreferredWidthPt: lS(e, t),
+		tablePreferredWidthPt: AS(e, t),
 		rows: i.rows.map((r, i) => {
 			let o = e.lexical.rows[i], d = l[i] ?? 0, f = Math.max(0, r.gridAfter ?? 0), p = d + r.cells.reduce((e, t) => e + Math.max(1, t.colSpan), 0), m = c !== null && p + f > u ? 0 : f, h = d;
 			return {
 				before: d > 0 ? {
 					columnSpan: d,
-					preferredWidth: vS(o?.row?.beforeWidth, t)
+					preferredWidth: zS(o?.row?.beforeWidth, t)
 				} : null,
 				after: m > 0 ? {
 					columnSpan: m,
-					preferredWidth: vS(o?.row?.afterWidth, t)
+					preferredWidth: zS(o?.row?.afterWidth, t)
 				} : null,
 				cells: r.cells.map((t, r) => {
 					let c = o?.cells[r] ?? null, l = Math.max(1, t.colSpan), u = s === "fixed" ? {
 						minWidthPt: 0,
 						maxWidthPt: 0
-					} : n(i, r), d = oy(e.format.rows[i]?.cellSpacingPt ?? 0, h, l, a.length), f = d.startPt + d.endPt, p = {
+					} : n(i, r), d = Dy(e.format.rows[i]?.cellSpacingPt ?? 0, h, l, a.length), f = d.startPt + d.endPt, p = {
 						columnStart: h,
 						columnSpan: l,
-						preferredWidth: oS(c?.preferredWidth) ?? cS(t),
+						preferredWidth: DS(c?.preferredWidth) ?? kS(t),
 						minContentWidthPt: Math.max(0, u.minWidthPt) + f,
 						maxContentWidthPt: Math.max(u.minWidthPt, u.maxWidthPt) + f
 					};
@@ -23203,23 +23740,23 @@ function yS(e, t, n, r = t) {
 }
 //#endregion
 //#region packages/docx/src/layout/layout-source-store.ts
-var bS = /* @__PURE__ */ new WeakSet();
-function xS(e) {
-	return typeof e == "object" && !!e && bS.has(e);
+var VS = /* @__PURE__ */ new WeakSet();
+function HS(e) {
+	return typeof e == "object" && !!e && VS.has(e);
 }
-function SS(e, t, n) {
+function US(e, t, n) {
 	let r = Object.keys(e).sort(), i = [...t].sort();
 	if (r.length !== i.length || r.some((e, t) => e !== i[t])) throw TypeError(`${n} has unexpected fields: ${r.join(",")}`);
 }
-function CS(e, t, n) {
+function WS(e, t, n) {
 	let r = [...t].filter((t) => !e.has(t)), i = [...e].filter((e) => !t.has(e));
 	if (r.length !== 0 || i.length !== 0) throw TypeError(`${n} membership mismatch; missing=${r.join(",")} extra=${i.join(",")}`);
 }
-function wS(e, t) {
+function GS(e, t) {
 	let n = (e) => {
 		e && t.storyRoot(e);
 	}, r = (e) => {
-		if (e.story !== "body" || e.storyInstance !== "body" || e.path.length !== 1 || t.body[e.path[0]] === void 0) throw TypeError(`Unknown body layout occurrence source: ${B(e)}`);
+		if (e.story !== "body" || e.storyInstance !== "body" || e.path.length !== 1 || t.body[e.path[0]] === void 0) throw TypeError(`Unknown body layout occurrence source: ${z(e)}`);
 	}, i = (e) => {
 		for (let t of [
 			e.headers.default,
@@ -23238,7 +23775,7 @@ function wS(e, t) {
 		for (let e of n.tables) if (t.resolve(e.source).type !== "table") throw TypeError("Adjacent table source kind mismatch");
 	} else n.kind === "begin-section" && i(n.section);
 }
-function TS(e, t, n, r, i) {
+function KS(e, t, n, r, i) {
 	let a = /* @__PURE__ */ new Set(), o = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Set(), c = /* @__PURE__ */ new Set(), l = /* @__PURE__ */ new Map(), u = (e, t = "image") => {
 		if (a.has(e)) throw TypeError(`Duplicate canonical image resource: ${e}`);
 		a.add(e), o.set(e, t);
@@ -23246,37 +23783,37 @@ function TS(e, t, n, r, i) {
 	for (let n of t.paragraphs) {
 		let t = e.resolve(n.source);
 		if (t.type === "paragraph") {
-			if (n.publicAnchorBridges.length !== t.runs.length) throw TypeError(`Paragraph anchor bridge cardinality mismatch: ${B(n.source)}`);
-			t.numbering?.picBulletImagePath && u(sn(n.source, t.numbering.picBulletImagePath), "picture-bullet"), t.runs.forEach((e, t) => {
+			if (n.publicAnchorBridges.length !== t.runs.length) throw TypeError(`Paragraph anchor bridge cardinality mismatch: ${z(n.source)}`);
+			t.numbering?.picBulletImagePath && u(cn(n.source, t.numbering.picBulletImagePath), "picture-bullet"), t.runs.forEach((e, t) => {
 				let r = {
 					...n.source,
 					path: [...n.source.path, t]
 				};
-				if (e.type === "image" && u(sn(r, e.imagePath)), e.type === "chart") {
+				if (e.type === "image" && u(cn(r, e.imagePath)), e.type === "chart") {
 					if (s.has(e.resourceKey)) throw TypeError(`Duplicate canonical chart resource: ${e.resourceKey}`);
 					s.add(e.resourceKey);
 				}
 				if (e.type === "math") {
 					if (c.has(e.resourceKey)) throw TypeError(`Duplicate canonical math resource: ${e.resourceKey}`);
-					c.add(e.resourceKey), l.set(e.resourceKey, B(e.source));
+					c.add(e.resourceKey), l.set(e.resourceKey, z(e.source));
 				}
-				if (e.type === "shape" && e.textBoxInput?.kind === "compatibility") for (let t of e.textBoxInput.paragraphs) t.image && u(sn({
+				if (e.type === "shape" && e.textBoxInput?.kind === "compatibility") for (let t of e.textBoxInput.paragraphs) t.image && u(cn({
 					...t.source,
 					path: [...t.source.path, 0]
 				}, t.image.imagePath));
-				e.type === "shape" && e.fill?.fillType === "image" && u(sn(r, e.fill.imagePath));
+				e.type === "shape" && e.fill?.fillType === "image" && u(cn(r, e.fill.imagePath));
 			});
 		}
 	}
 	let d = new Set(r.map((e) => e.resourceKey));
 	if (d.size !== r.length) throw TypeError("Duplicate image metadata resource");
-	CS(d, a, "Image metadata");
+	WS(d, a, "Image metadata");
 	let f = /* @__PURE__ */ new Set();
 	for (let e of n) {
 		if (f.has(e.resourceKey)) throw TypeError("Duplicate math occurrence resource");
-		if (f.add(e.resourceKey), l.get(e.resourceKey) !== B(e.source)) throw TypeError(`Math occurrence source mismatch: ${e.resourceKey}`);
+		if (f.add(e.resourceKey), l.get(e.resourceKey) !== z(e.source)) throw TypeError(`Math occurrence source mismatch: ${e.resourceKey}`);
 	}
-	CS(f, c, "Math occurrence");
+	WS(f, c, "Math occurrence");
 	let p = /* @__PURE__ */ new Set(), m = /* @__PURE__ */ new Set(), h = /* @__PURE__ */ new Set(), g = /* @__PURE__ */ new Set();
 	for (let e of i) {
 		if (p.has(e.resourceKey)) throw TypeError("Duplicate paint resource descriptor");
@@ -23284,15 +23821,15 @@ function TS(e, t, n, r, i) {
 			if (m.add(e.resourceKey), o.get(e.resourceKey) !== e.kind) throw TypeError(`Image paint resource kind mismatch: ${e.resourceKey}`);
 		} else e.kind === "chart" ? h.add(e.resourceKey) : g.add(e.resourceKey);
 	}
-	CS(p, new Set([
+	WS(p, new Set([
 		...a,
 		...s,
 		...c
-	]), "Paint resource"), CS(m, a, "Image paint resource"), CS(h, s, "Chart paint resource"), CS(g, c, "Math paint resource");
+	]), "Paint resource"), WS(m, a, "Image paint resource"), WS(h, s, "Chart paint resource"), WS(g, c, "Math paint resource");
 }
-function ES(e, t) {
-	let n = kS(e.blockRepository);
-	wS(t, n), pn(e.acquisitionFacts, "layout source acquisition facts"), pn(e.section, "layout source section"), pn(e.documentLayoutFacts, "layout source document facts"), pn(e.fonts, "layout source font facts"), pn(e.fontFamilyCharsets, "layout source font charsets"), pn(e.mathOccurrences, "layout source math facts"), pn(e.imageMetadata, "layout source image facts"), pn(e.paintDescriptors, "layout source paint descriptors"), e.fatalParse && pn(e.fatalParse, "layout source fatal parse fact");
+function qS(e, t) {
+	let n = XS(e.blockRepository);
+	GS(t, n), mn(e.acquisitionFacts, "layout source acquisition facts"), mn(e.section, "layout source section"), mn(e.documentLayoutFacts, "layout source document facts"), mn(e.fonts, "layout source font facts"), mn(e.fontFamilyCharsets, "layout source font charsets"), mn(e.mathOccurrences, "layout source math facts"), mn(e.imageMetadata, "layout source image facts"), mn(e.paintDescriptors, "layout source paint descriptors"), e.fatalParse && mn(e.fatalParse, "layout source fatal parse fact");
 	for (let [t, r] of [
 		["block repository", n],
 		["body blocks", n.body],
@@ -23310,19 +23847,19 @@ function ES(e, t) {
 	]) if (!Object.isFrozen(r)) throw TypeError(`Layout source ${t} must be sealed`);
 	let r = /* @__PURE__ */ new Map();
 	for (let t of e.acquisitionFacts.paragraphs) {
-		SS(t, [
+		US(t, [
 			"source",
 			"publicAnchorBridges",
 			"numberingMarkerFallbackFontSizePt"
 		], "Paragraph acquisition fact");
-		let e = B(t.source);
+		let e = z(t.source);
 		if (r.has(e)) throw TypeError(`Duplicate paragraph acquisition source: ${e}`);
 		r.set(e, t);
 	}
 	let i = /* @__PURE__ */ new Set(), a = /* @__PURE__ */ new WeakMap();
 	for (let t of e.acquisitionFacts.tables) {
-		SS(t, ["source", "input"], "Table acquisition fact");
-		let e = B(t.source);
+		US(t, ["source", "input"], "Table acquisition fact");
+		let e = z(t.source);
 		if (i.has(e)) throw TypeError(`Duplicate table acquisition source: ${e}`);
 		i.add(e);
 		let r = n.resolve(t.source);
@@ -23330,11 +23867,11 @@ function ES(e, t) {
 		a.set(r, t);
 	}
 	for (let e of n.sources) {
-		let t = n.resolve(e), a = B(e);
+		let t = n.resolve(e), a = z(e);
 		if (t.type === "paragraph" && !r.has(a)) throw TypeError(`Missing paragraph acquisition source: ${a}`);
 		if (t.type === "table" && !i.has(a)) throw TypeError(`Missing table acquisition source: ${a}`);
 	}
-	TS(n, e.acquisitionFacts, e.mathOccurrences, e.imageMetadata, e.paintDescriptors);
+	KS(n, e.acquisitionFacts, e.mathOccurrences, e.imageMetadata, e.paintDescriptors);
 	let o = /* @__PURE__ */ new WeakMap();
 	for (let t of e.acquisitionFacts.paragraphs) {
 		let e = n.resolve(t.source);
@@ -23345,9 +23882,9 @@ function ES(e, t) {
 			try {
 				e = n.storyRoot(t.textBoxInput.source);
 			} catch (e) {
-				throw TypeError(`Missing complete text-box story source: ${B(t.textBoxInput.source)}`, { cause: e });
+				throw TypeError(`Missing complete text-box story source: ${z(t.textBoxInput.source)}`, { cause: e });
 			}
-			if (e.length !== t.textBoxInput.blockCount) throw TypeError(`Complete text-box block count mismatch: ${B(t.textBoxInput.source)}`);
+			if (e.length !== t.textBoxInput.blockCount) throw TypeError(`Complete text-box block count mismatch: ${z(t.textBoxInput.source)}`);
 		}
 		if (e.numbering && e.numberingMarkerShapeInput && t.numberingMarkerFallbackFontSizePt !== null) {
 			let n = o.get(e.numbering);
@@ -23371,7 +23908,7 @@ function ES(e, t) {
 		tableColumnLayoutInput(e, t, n, r) {
 			let i = a.get(e);
 			if (!i) throw Error("Unknown table acquisition input");
-			return yS(i.input, t, (t, r) => n(e.rows[t].cells[r]), r);
+			return BS(i.input, t, (t, r) => n(e.rows[t].cells[r]), r);
 		},
 		tableParticipatesInOrdinaryFlow(e) {
 			let t = a.get(e);
@@ -23379,9 +23916,9 @@ function ES(e, t) {
 			return t.input.format.ordinaryFlow;
 		},
 		paragraphAcquisitionInput(e, t) {
-			if (!r.get(B(t))) throw Error(`Unknown paragraph acquisition source: ${B(t)}`);
+			if (!r.get(z(t))) throw Error(`Unknown paragraph acquisition source: ${z(t)}`);
 			let i = n.resolve(t);
-			if (i.type !== "paragraph") throw Error(`Paragraph source kind mismatch: ${B(t)}`);
+			if (i.type !== "paragraph") throw Error(`Paragraph source kind mismatch: ${z(t)}`);
 			return i;
 		}
 	}), c = Object.freeze({
@@ -23392,8 +23929,8 @@ function ES(e, t) {
 			return t.input.format.positioning === null ? null : e.tblpPr ?? null;
 		},
 		publicAnchorBridge(e, t) {
-			let n = r.get(B(e));
-			if (!n) throw Error(`Unknown paragraph acquisition source: ${B(e)}`);
+			let n = r.get(z(e));
+			if (!n) throw Error(`Unknown paragraph acquisition source: ${z(e)}`);
 			if (!Number.isSafeInteger(t) || t < 0 || t >= n.publicAnchorBridges.length) throw RangeError(`Unknown paragraph anchor bridge index: ${t}`);
 			return n.publicAnchorBridges[t] ?? null;
 		}
@@ -23431,24 +23968,24 @@ function ES(e, t) {
 		requiresDomVerticalGlyphLayout: e.requiresDomVerticalGlyphLayout,
 		fatalParse: e.fatalParse,
 		acquisition: c,
-		paintResources: Cn(e.paintDescriptors)
+		paintResources: wn(e.paintDescriptors)
 	});
-	return bS.add(d), d;
+	return VS.add(d), d;
 }
-function DS(e) {
+function JS(e) {
 	let { bodyLayoutInput: t, ...n } = e;
-	return ES(n, pn(t, "layout source body input"));
+	return qS(n, mn(t, "layout source body input"));
 }
-function OS(e) {
+function YS(e) {
 	return `${e.story}:${e.storyInstance}`;
 }
-function kS(e) {
-	pn(e.body, "layout source body blocks"), pn(e.stories, "layout source story blocks"), pn(e.footnotes, "layout source footnotes"), pn(e.endnotes, "layout source endnotes");
+function XS(e) {
+	mn(e.body, "layout source body blocks"), mn(e.stories, "layout source story blocks"), mn(e.footnotes, "layout source footnotes"), mn(e.endnotes, "layout source endnotes");
 	let t = /* @__PURE__ */ new Map();
 	for (let { source: n, body: r } of e.stories) {
 		if (n.path.length !== 0) throw TypeError("Story repository roots require an empty source path");
 		if (n.story !== "header" && n.story !== "footer" && n.story !== "textbox") throw TypeError(`Unsupported repository story kind: ${n.story}`);
-		let e = OS(n);
+		let e = YS(n);
 		if (t.has(e)) throw TypeError(`Duplicate story source: ${e}`);
 		t.set(e, r);
 	}
@@ -23470,7 +24007,7 @@ function kS(e) {
 			let e = i.get(n.storyInstance);
 			if (e) return e;
 		}
-		let a = t.get(OS(n));
+		let a = t.get(YS(n));
 		if (a) return a;
 		throw Error(`Unknown ${n.story} story source: ${n.storyInstance}`);
 	}, o = /* @__PURE__ */ new Map(), s = [], c = (e, t, n = []) => {
@@ -23480,7 +24017,7 @@ function kS(e) {
 			let a = {
 				...t,
 				path: i
-			}, l = B(a);
+			}, l = z(a);
 			if (o.has(l)) throw TypeError(`Duplicate block source: ${l}`);
 			o.set(l, e), s.push(Object.freeze({
 				...a,
@@ -23516,8 +24053,8 @@ function kS(e) {
 		endnotes: e.endnotes,
 		sources: Object.freeze(s),
 		resolve(e) {
-			let t = o.get(B(e));
-			if (!t) throw Error(`Unknown block source: ${B(e)}`);
+			let t = o.get(z(e));
+			if (!t) throw Error(`Unknown block source: ${z(e)}`);
 			return t;
 		},
 		storyRoot: a
@@ -23525,14 +24062,14 @@ function kS(e) {
 }
 //#endregion
 //#region packages/docx/src/local-font-metrics.ts
-function AS(e) {
+function ZS(e) {
 	let t = new Set((e.embeddedFonts ?? []).map((e) => {
 		let t = e.style === "bold" || e.style === "boldItalic" ? 700 : 400, n = e.style === "italic" || e.style === "boldItalic" ? "italic" : "normal";
-		return `${Jt(e.fontName)}:${t}:${n}`;
+		return `${Yt(e.fontName)}:${t}:${n}`;
 	})), n = [], r = /* @__PURE__ */ new Set(), i = (e) => {
 		let i = e?.trim();
 		if (!i) return;
-		let a = Jt(i);
+		let a = Yt(i);
 		if (!(a === "meiryo" || i === "メイリオ")) return;
 		let o = `${a}:400:normal`;
 		t.has(o) || r.has(o) || (r.add(o), n.push({
@@ -23541,28 +24078,28 @@ function AS(e) {
 			lineHeightMultiplier: 1.3
 		}));
 	};
-	for (let t of Kx(e)) if (!(t.bold || t.italic)) for (let e of t.fontFamilies) i(e);
+	for (let t of pS(e)) if (!(t.bold || t.italic)) for (let e of t.fontFamilies) i(e);
 	return n;
 }
-function jS(e) {
-	return Qt(AS(e));
+function QS(e) {
+	return $t(ZS(e));
 }
 //#endregion
 //#region packages/docx/src/layout/typography-input.ts
-function MS(e) {
+function $S(e) {
 	let t = e.__typographyAcquisition;
-	if (t !== void 0) return V({
+	if (t !== void 0) return B({
 		sourceText: "text" in e ? e.text : e.fallbackText,
 		...t
 	}, "DOCX run typography acquisition input");
 }
-function NS(e) {
+function eC(e) {
 	let t = e.__paragraphTypographyAcquisition;
-	if (t !== void 0) return V(t, "DOCX paragraph typography acquisition input");
+	if (t !== void 0) return B(t, "DOCX paragraph typography acquisition input");
 }
 //#endregion
 //#region packages/docx/src/layout/adjacent-tables.ts
-function PS(e, t) {
+function tC(e, t) {
 	let n = t[0].logicalTotalRows, r = 0;
 	for (let i of t) {
 		if (i.logicalTotalRows !== n || !Number.isInteger(i.rowCount) || i.rowCount < 0 || i.logicalRowOffset !== r) throw Error(`Parser-owned adjacent table sequence ${e} is inconsistent`);
@@ -23570,9 +24107,9 @@ function PS(e, t) {
 	}
 	if (r !== n) throw Error(`Parser-owned adjacent table sequence ${e} is incomplete`);
 }
-function FS(e) {
+function nC(e) {
 	let t = [], n = null, r = [], i = () => {
-		r.length > 0 && PS(n, r), r.length === 1 ? t.push(Object.freeze({
+		r.length > 0 && tC(n, r), r.length === 1 ? t.push(Object.freeze({
 			kind: "body-element",
 			element: r[0].element
 		})) : r.length > 1 && t.push(Object.freeze({
@@ -23600,7 +24137,7 @@ function FS(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/body-layout-input.ts
-function IS(e) {
+function rC(e) {
 	switch (e) {
 		case "continuous":
 		case "nextColumn":
@@ -23610,7 +24147,7 @@ function IS(e) {
 		default: return "nextPage";
 	}
 }
-function LS(e, t, n) {
+function iC(e, t, n) {
 	let r = n === null ? null : `section:${n}`, i = (n) => e[n] === null ? null : {
 		story: t,
 		storyInstance: r === null ? n : `${r}:${n}`,
@@ -23622,7 +24159,7 @@ function LS(e, t, n) {
 		even: i("even")
 	});
 }
-function RS(e) {
+function aC(e) {
 	return {
 		...e.geometry,
 		titlePage: e.titlePage,
@@ -23638,7 +24175,7 @@ function RS(e) {
 		lineNumbering: e.lineNumbering
 	};
 }
-function zS(e, t) {
+function oC(e, t) {
 	let n = e.markerBodyIndex;
 	return Object.freeze({
 		sectionOccurrenceId: e.sectionOccurrenceId,
@@ -23651,16 +24188,16 @@ function zS(e, t) {
 			storyInstance: "body",
 			path: Object.freeze([n])
 		}),
-		startType: IS(e.startType),
-		context: Object.freeze(ol(RS(e), e.sectionBidi)),
+		startType: rC(e.startType),
+		context: Object.freeze(Dl(aC(e), e.sectionBidi)),
 		pageNumbering: Object.freeze({
 			start: e.pageNumType?.start ?? null,
 			format: e.pageNumType?.fmt ?? null
 		}),
 		titlePage: e.titlePage,
 		evenAndOddHeaders: t.evenAndOddHeaders,
-		headers: LS(e.headers, "header", n),
-		footers: LS(e.footers, "footer", n),
+		headers: iC(e.headers, "header", n),
+		footers: iC(e.footers, "footer", n),
 		pageBordersAuthored: e.pageBordersAuthored,
 		pageBorders: e.pageBorders,
 		pageLayout: Object.freeze({
@@ -23673,8 +24210,8 @@ function zS(e, t) {
 		})
 	});
 }
-function BS(e) {
-	let t = new Map(e.sectionIndex.occurrences.map((t) => [t.sectionOccurrenceId, zS(t, e)])), n = e.sectionIndex.occurrences[0];
+function sC(e) {
+	let t = new Map(e.sectionIndex.occurrences.map((t) => [t.sectionOccurrenceId, oC(t, e)])), n = e.sectionIndex.occurrences[0];
 	if (!n) throw Error("DOCX body requires a final section owner");
 	let r = t.get(n.sectionOccurrenceId), i = e.sequence.map((e) => {
 		if (e.kind !== "begin-section") return e;
@@ -23685,7 +24222,7 @@ function BS(e) {
 			section: n
 		});
 	});
-	return V({
+	return B({
 		source: {
 			story: "body",
 			storyInstance: "body",
@@ -23694,7 +24231,7 @@ function BS(e) {
 		initialSection: r,
 		sequence: i.map((e, t) => {
 			if (e.kind !== "body-block" || e.block.kind !== "paragraph") return e;
-			let n = tp(i, t);
+			let n = Tp(i, t);
 			return n === void 0 ? e : Object.freeze({
 				...e,
 				block: Object.freeze({
@@ -23710,17 +24247,17 @@ function BS(e) {
 }
 //#endregion
 //#region packages/docx/src/layout/paragraph-visibility.ts
-function VS(e) {
+function cC(e) {
 	return !(e.runs ?? []).some((e) => e.type === "text" ? e.text.length > 0 : !0);
 }
 //#endregion
 //#region packages/docx/src/parser-model.ts
-var HS = /* @__PURE__ */ new WeakMap();
-function US(e) {
-	return HS.get(e) ?? [];
+var lC = /* @__PURE__ */ new WeakMap();
+function uC(e) {
+	return lC.get(e) ?? [];
 }
-function WS(e) {
-	let t = US(e);
+function dC(e) {
+	let t = uC(e);
 	if (t.length === 0) return e.runs;
 	let n = [], r = 0;
 	for (let i = 0; i <= e.runs.length; i += 1) {
@@ -23729,12 +24266,16 @@ function WS(e) {
 	}
 	return n;
 }
-function GS(e) {
-	return US(e).length > 0;
+function fC(e) {
+	return uC(e).length > 0;
 }
-function KS(e) {
+function pC(e) {
+	let t = e.__documentTypographySettings?.normalStyleFontSizePt;
+	return B({ normalStyleFontSizePt: typeof t == "number" && Number.isFinite(t) && t > 0 ? t : 10 }, "DOCX document typography settings input");
+}
+function mC(e) {
 	let t = e.__pageLayoutSettings;
-	return V({
+	return B({
 		mirrorMargins: t?.mirrorMargins === !0,
 		gutterAtTop: t?.gutterAtTop === !0,
 		bookFoldPrinting: t?.bookFoldPrinting === !0,
@@ -23742,70 +24283,70 @@ function KS(e) {
 		printTwoOnOne: t?.printTwoOnOne === !0
 	}, "DOCX page layout settings input");
 }
-function qS(e) {
+function hC(e) {
 	let t = e.__noteLayoutSettings;
-	return V({
+	return B({
 		footnotePosition: t?.footnotePosition ?? "pageBottom",
 		endnotePosition: t?.endnotePosition ?? "docEnd"
 	}, "DOCX note layout settings input");
 }
-function JS(e) {
+function gC(e) {
 	return Object.freeze(e ? Object.fromEntries(Object.entries(e).filter((e) => typeof e[1] == "number")) : {});
 }
-function YS(e) {
+function _C(e) {
 	return Object.freeze({
 		...e,
-		pageGeometry: JS(e.pageGeometry)
+		pageGeometry: gC(e.pageGeometry)
 	});
 }
-var XS = /* @__PURE__ */ new WeakMap(), ZS = /* @__PURE__ */ new WeakMap(), QS = /* @__PURE__ */ new WeakMap(), $S = /* @__PURE__ */ new WeakMap(), eC = /* @__PURE__ */ new WeakMap();
-function tC(e) {
-	let t = QS.get(e);
+var vC = /* @__PURE__ */ new WeakMap(), yC = /* @__PURE__ */ new WeakMap(), bC = /* @__PURE__ */ new WeakMap(), xC = /* @__PURE__ */ new WeakMap(), SC = /* @__PURE__ */ new WeakMap();
+function CC(e) {
+	let t = bC.get(e);
 	if (t) return t;
-	let n = V({
+	let n = B({
 		table: e.__tableLayout ?? null,
 		rows: e.rows.map((e) => ({
 			row: e.__tableRowLayout ?? null,
 			cells: e.cells.map((e) => e.__tableCellLayout ?? null)
 		}))
 	}, "DOCX table acquisition input");
-	return QS.set(e, n), n;
+	return bC.set(e, n), n;
 }
-var nC = (e) => e != null && Number.isFinite(e) ? e : null;
-function rC(e) {
-	return V({
+var wC = (e) => e != null && Number.isFinite(e) ? e : null;
+function TC(e) {
+	return B({
 		colWidths: (e.colWidths ?? []).map((e) => Number.isFinite(e) && e >= 0 ? e : 0),
 		layout: e.layout ?? null,
-		widthPt: nC(e.widthPt),
-		widthPct: nC(e.widthPct),
+		widthPt: wC(e.widthPt),
+		widthPct: wC(e.widthPct),
 		rows: e.rows.map((e) => ({
-			gridBefore: nC(e.gridBefore) ?? 0,
-			gridAfter: nC(e.gridAfter) ?? 0,
+			gridBefore: wC(e.gridBefore) ?? 0,
+			gridAfter: wC(e.gridAfter) ?? 0,
 			cells: e.cells.map((e) => ({
-				colSpan: nC(e.colSpan) ?? 1,
-				widthPt: nC(e.widthPt),
-				widthPct: nC(e.widthPct)
+				colSpan: wC(e.colSpan) ?? 1,
+				widthPt: wC(e.widthPt),
+				widthPct: wC(e.widthPct)
 			}))
 		}))
 	}, "DOCX table column semantic input");
 }
-function iC(e) {
-	let t = eC.get(e);
+function EC(e) {
+	let t = SC.get(e);
 	if (t) return t;
-	let n = fn({
-		semantic: rC(e),
-		lexical: tC(e),
-		format: _C(e)
+	let n = pn({
+		semantic: TC(e),
+		lexical: CC(e),
+		format: zC(e)
 	});
-	return eC.set(e, n), n;
+	return SC.set(e, n), n;
 }
-function aC(e) {
-	return iC(e).format.ordinaryFlow;
+function DC(e) {
+	return EC(e).format.ordinaryFlow;
 }
-function oC(e) {
-	return iC(e).format.positioning === null ? null : e.tblpPr ?? null;
+function OC(e) {
+	return EC(e).format.positioning === null ? null : e.tblpPr ?? null;
 }
-function sC(e) {
+function kC(e) {
 	return {
 		leftFromTextPt: e.leftFromText,
 		rightFromTextPt: e.rightFromText,
@@ -23820,53 +24361,53 @@ function sC(e) {
 		...e.tblpYSpec == null ? {} : { yAlign: e.tblpYSpec }
 	};
 }
-function cC(e, t) {
+function AC(e, t) {
 	if (e === null) return null;
 	let n = e.trim(), r = t && n.endsWith("%") ? n.slice(0, -1) : n;
 	if (r.length === 0) return null;
 	let i = Number(r);
 	return Number.isFinite(i) ? i : null;
 }
-function lC(e) {
-	let t = cC(e ?? null, !1);
+function jC(e) {
+	let t = AC(e ?? null, !1);
 	return t === null ? null : t / 20;
 }
-function uC(e) {
+function MC(e) {
 	return e === "exact" || e === "atLeast" ? e : "auto";
 }
-function dC(e) {
+function NC(e) {
 	return {
-		rule: Ry(uC(e.rule), e.ruleAuthored),
-		valuePt: lC(e.value)
+		rule: ab(MC(e.rule), e.ruleAuthored),
+		valuePt: jC(e.value)
 	};
 }
-function fC(e) {
+function PC(e) {
 	if (e.rowHeight === null || !Number.isFinite(e.rowHeight)) return null;
-	let t = uC(e.rowHeightRule);
+	let t = MC(e.rowHeightRule);
 	return {
 		rule: t === "auto" ? "atLeast" : t,
 		valuePt: e.rowHeight
 	};
 }
-function pC(...e) {
+function FC(...e) {
 	for (let t of e) {
 		if (!t) continue;
-		let e = zy(aS(t), sS(t));
+		let e = ob(ES(t), OS(t));
 		if (e !== null) return e;
 	}
 	return null;
 }
-function mC(e, t, n) {
+function IC(e, t, n) {
 	if (!e) return null;
-	let r = aS(e);
-	return By({
+	let r = ES(e);
+	return sb({
 		kind: r,
-		dxaValuePt: r === "dxa" ? lC(e.value ?? "0") : null,
+		dxaValuePt: r === "dxa" ? jC(e.value ?? "0") : null,
 		scope: t,
 		edge: n
 	});
 }
-function hC(e, t, n, r, i, a, o) {
+function LC(e, t, n, r, i, a, o) {
 	let s = e.bidiVisual === !0, c = (e, t) => {
 		let n = t === "left" ? s ? "end" : "start" : s ? "start" : "end";
 		return {
@@ -23875,7 +24416,7 @@ function hC(e, t, n, r, i, a, o) {
 		};
 	}, l = (e, ...t) => {
 		for (let n of t) {
-			let t = mC(n.width, n.scope, n.edge ?? e);
+			let t = IC(n.width, n.scope, n.edge ?? e);
 			if (t !== null) return t;
 		}
 		return null;
@@ -23935,52 +24476,52 @@ function hC(e, t, n, r, i, a, o) {
 		}) ?? e.cellMarginRight
 	};
 }
-function gC(e) {
+function RC(e) {
 	if (!e) return null;
-	let t = e.indent ? aS(e.indent) : null;
+	let t = e.indent ? ES(e.indent) : null;
 	return {
 		preferredWidthAuthored: e.preferredWidth != null,
-		preferredWidth: oS(e.preferredWidth),
+		preferredWidth: DS(e.preferredWidth),
 		layout: e.layout?.kind === "fixed" || e.layout?.kind === "autofit" ? e.layout.kind : null,
 		justification: e.justification,
 		indentAuthored: e.indent != null && (t === "dxa" || t === "nil"),
-		indentPt: t === "nil" ? 0 : sS(e.indent),
+		indentPt: t === "nil" ? 0 : OS(e.indent),
 		borders: e.borders
 	};
 }
-function _C(e) {
-	let t = $S.get(e);
+function zC(e) {
+	let t = xC.get(e);
 	if (t) return t;
-	let n = tC(e), r = n.table?.ordinaryFlow ?? e.tblpPr == null, i = e.rows.map((t, r) => {
+	let n = CC(e), r = n.table?.ordinaryFlow ?? e.tblpPr == null, i = e.rows.map((t, r) => {
 		let i = n.rows[r]?.row ?? null, a = i?.exception ?? null;
 		return {
-			height: i?.height ? dC(i.height) : fC(t),
+			height: i?.height ? NC(i.height) : PC(t),
 			cantSplit: t.cantSplit === !0,
 			repeatedHeader: t.isHeader === !0,
-			cellSpacingPt: pC(i?.cellSpacing, a?.cellSpacing, n.table?.cellSpacing, i?.styleCellSpacing) ?? 0,
+			cellSpacingPt: FC(i?.cellSpacing, a?.cellSpacing, n.table?.cellSpacing, i?.styleCellSpacing) ?? 0,
 			justification: i?.justification ?? a?.justification ?? null,
-			exception: gC(a),
-			cells: t.cells.map((t, o) => ({ marginsPt: hC(e, t, n.rows[r]?.cells[o] !== null && n.rows[r]?.cells[o] !== void 0, n.rows[r]?.cells[o]?.margins, a?.cellMargins, n.table?.cellMargins, i?.styleCellMargins) }))
+			exception: RC(a),
+			cells: t.cells.map((t, o) => ({ marginsPt: LC(e, t, n.rows[r]?.cells[o] !== null && n.rows[r]?.cells[o] !== void 0, n.rows[r]?.cells[o]?.margins, a?.cellMargins, n.table?.cellMargins, i?.styleCellMargins) }))
 		};
-	}), a = V({
+	}), a = B({
 		effectiveStyleId: n.table?.effectiveStyleId ?? null,
 		ordinaryFlow: r,
 		logicalSequenceId: n.table?.logicalSequenceId ?? null,
 		logicalRowOffset: n.table?.logicalRowOffset ?? 0,
 		logicalTotalRows: n.table?.logicalTotalRows ?? 0,
-		positioning: r || e.tblpPr == null ? null : sC(e.tblpPr),
+		positioning: r || e.tblpPr == null ? null : kC(e.tblpPr),
 		rows: i,
 		firstRowException: i[0]?.exception ?? null
 	}, "DOCX table format input");
-	return $S.set(e, a), a;
+	return xC.set(e, a), a;
 }
-function vC(e) {
+function BC(e) {
 	return Object.freeze(e.map((e) => {
 		if (e.type !== "table") return Object.freeze({
 			element: e,
 			table: null
 		});
-		let t = _C(e);
+		let t = zC(e);
 		return t.logicalSequenceId == null ? Object.freeze({
 			element: e,
 			table: null
@@ -23995,37 +24536,37 @@ function vC(e) {
 		});
 	}));
 }
-var yC = (e) => Object.freeze({
+var VC = (e) => Object.freeze({
 	story: "body",
 	storyInstance: "body",
 	path: Object.freeze([e])
-}), bC = new Set([
+}), HC = new Set([
 	"paragraph",
 	"line",
 	"character"
 ]);
-function xC(e, t, n) {
-	if (e.type !== "shape" && e.type !== "image" && e.type !== "chart" || MC(e) !== void 0 || !Na(e.wrapMode) || e.type !== "shape" && !e.anchor || e.widthPt <= 0 || e.heightPt <= 0) return null;
+function UC(e, t, n) {
+	if (e.type !== "shape" && e.type !== "image" && e.type !== "chart" || ew(e) !== void 0 || !Pa(e.wrapMode) || e.type !== "shape" && !e.anchor || e.widthPt <= 0 || e.heightPt <= 0) return null;
 	let r = e.anchorXRelativeFrom ?? (e.anchorXFromMargin ? "margin" : "page"), i = e.anchorYRelativeFrom ?? (e.anchorYFromPara ? "paragraph" : "page"), a = `${t.story}:${t.storyInstance}:${t.path.join(".")}`;
 	return Object.freeze({
 		occurrenceId: e.type === "shape" ? `public-shape:${a}:${n}` : `public-anchor:${a}:${n}`,
-		pageOwned: !bC.has(r) && !bC.has(i)
+		pageOwned: !HC.has(r) && !HC.has(i)
 	});
 }
-function SC(e, t) {
+function WC(e, t) {
 	let n = new Set([
 		"paragraph",
 		"line",
 		"character"
-	]), r = Object.freeze([...new Set(WS(e).flatMap((e, r) => {
+	]), r = Object.freeze([...new Set(dC(e).flatMap((e, r) => {
 		let i = e;
 		if (e.type !== "shape" && e.type !== "image" && e.type !== "chart" && i.type !== "unavailableDrawing") return [];
-		let a = MC(i);
+		let a = ew(i);
 		if (!a) {
-			let e = i.type === "unavailableDrawing" ? null : xC(i, t, r);
+			let e = i.type === "unavailableDrawing" ? null : UC(i, t, r);
 			return e?.pageOwned ? [e.occurrenceId] : [];
 		}
-		return a.horizontal.relativeFromStatus !== "valid" || a.vertical.relativeFromStatus !== "valid" || a.horizontal.relativeFrom === null || a.vertical.relativeFrom === null || a.wrap.kind === "none" || n.has(a.horizontal.relativeFrom) || n.has(a.vertical.relativeFrom) ? [] : [un(t, a.occurrenceId)];
+		return a.horizontal.relativeFromStatus !== "valid" || a.vertical.relativeFromStatus !== "valid" || a.horizontal.relativeFrom === null || a.vertical.relativeFrom === null || a.wrap.kind === "none" || n.has(a.horizontal.relativeFrom) || n.has(a.vertical.relativeFrom) ? [] : [dn(t, a.occurrenceId)];
 	}))]);
 	return Object.freeze({
 		kind: "paragraph",
@@ -24038,43 +24579,43 @@ function SC(e, t) {
 		spaceAfterPt: e.spaceAfter ?? 0,
 		contextualSpacing: e.contextualSpacing === !0,
 		styleId: e.styleId ?? null,
-		inkless: !GS(e) && VS(e),
+		inkless: !fC(e) && cC(e),
 		...r.length === 0 ? {} : { pageOwnedAnchorOccurrenceIds: r }
 	});
 }
-function CC(e) {
+function GC(e) {
 	return Object.freeze({
 		kind: "table",
 		source: e
 	});
 }
-function wC(e, t) {
+function KC(e, t) {
 	let n = 0;
-	return Object.freeze(FS(vC(e)).map((e) => {
+	return Object.freeze(nC(BC(e)).map((e) => {
 		if (e.kind === "adjacent-table-group") {
 			let t = n;
 			return n += e.tables.length, Object.freeze({
 				kind: "adjacent-table-group",
 				logicalSequenceId: e.logicalSequenceId,
-				source: yC(t),
+				source: VC(t),
 				tables: Object.freeze(e.tables.map((e, n) => Object.freeze({
-					...CC(yC(t + n)),
+					...GC(VC(t + n)),
 					rowCount: e.rows.length
 				})))
 			});
 		}
-		let r = e.element, i = n, a = yC(i);
-		if (n += 1, r.type === "paragraph") return r.markVanish === !0 && !GS(r) && VS(r) ? Object.freeze({
+		let r = e.element, i = n, a = VC(i);
+		if (n += 1, r.type === "paragraph") return r.markVanish === !0 && !fC(r) && cC(r) ? Object.freeze({
 			kind: "consume-source",
 			source: a,
 			reason: "hidden-paragraph"
 		}) : Object.freeze({
 			kind: "body-block",
-			block: SC(r, a)
+			block: WC(r, a)
 		});
 		if (r.type === "table") return Object.freeze({
 			kind: "body-block",
-			block: CC(a)
+			block: GC(a)
 		});
 		if (r.type === "pageBreak" || r.type === "columnBreak") return Object.freeze({
 			kind: "authored-break",
@@ -24091,20 +24632,20 @@ function wC(e, t) {
 		throw Error(`Unsupported body layout source at ${i}`);
 	}));
 }
-function TC(e, t, n, r = t) {
-	return yS(iC(e), t, (t, r) => n(e.rows[t].cells[r]), r);
+function qC(e, t, n, r = t) {
+	return BS(EC(e), t, (t, r) => n(e.rows[t].cells[r]), r);
 }
-function EC(e, t, n) {
+function JC(e, t, n) {
 	if (!t || typeof t != "object") return;
-	let r = ZS.get(e);
-	r || (r = /* @__PURE__ */ new WeakMap(), ZS.set(e, r)), r.set(t, n);
+	let r = yC.get(e);
+	r || (r = /* @__PURE__ */ new WeakMap(), yC.set(e, r)), r.set(t, n);
 }
-function DC(e) {
+function YC(e) {
 	let t = /* @__PURE__ */ new Map(), n = 0;
 	e.body.forEach((e, r) => {
 		if (e.type !== "sectionBreak") return;
 		let i = e.__sectionPlacement;
-		t.set(r, V({
+		t.set(r, B({
 			sectionId: i?.sectionId ?? `section:${n}`,
 			sectionBidi: i?.sectionBidi === !0,
 			vAlign: i?.vAlign ?? null,
@@ -24122,7 +24663,7 @@ function DC(e) {
 	let r = e.section?.__sectionPlacement;
 	return Object.freeze({
 		endingSections: t,
-		finalSection: V({
+		finalSection: B({
 			sectionId: r?.sectionId ?? `section:${n}`,
 			sectionBidi: r?.sectionBidi === !0,
 			vAlign: r?.vAlign ?? e.section?.vAlign ?? null,
@@ -24134,17 +24675,17 @@ function DC(e) {
 			rtlGutter: r?.rtlGutter ?? null,
 			pageBordersAuthored: r?.pageBordersAuthored ?? e.section?.pageBorders != null,
 			pageBorders: r?.pageBorders ?? e.section?.pageBorders ?? null,
-			pageGeometry: r?.pageGeometry ?? (e.section ? il(e.section) : {})
+			pageGeometry: r?.pageGeometry ?? (e.section ? Tl(e.section) : {})
 		}, "DOCX final-section placement input")
 	});
 }
-var OC = Object.freeze({
+var XC = Object.freeze({
 	default: null,
 	first: null,
 	even: null
 });
-function kC(e) {
-	let t = [], n = DC(e), r = 0;
+function ZC(e) {
+	let t = [], n = YC(e), r = 0;
 	e.body.forEach((e, i) => {
 		if (e.type !== "sectionBreak") return;
 		let a = n.endingSections.get(i) ?? n.finalSection, o = t.length;
@@ -24157,11 +24698,11 @@ function kC(e) {
 			final: !1,
 			startType: e.kind ?? "nextPage",
 			columns: e.columns ?? null,
-			authoredGeometry: JS(a.pageGeometry),
+			authoredGeometry: gC(a.pageGeometry),
 			textDirection: e.textDirection ?? null,
 			pageNumType: e.pageNumType ?? null,
-			headers: e.headers ?? OC,
-			footers: e.footers ?? OC,
+			headers: e.headers ?? XC,
+			footers: e.footers ?? XC,
 			titlePage: e.titlePage ?? !1,
 			sectionBidi: a.sectionBidi,
 			vAlign: a.vAlign,
@@ -24173,7 +24714,7 @@ function kC(e) {
 			rtlGutter: a.rtlGutter === !0,
 			pageBordersAuthored: a.pageBordersAuthored,
 			pageBorders: a.pageBorders,
-			placement: YS(a)
+			placement: _C(a)
 		}), r = i + 1;
 	});
 	let i = n.finalSection;
@@ -24186,11 +24727,11 @@ function kC(e) {
 		final: !0,
 		startType: e.section.sectionStart ?? "nextPage",
 		columns: e.section.columns ?? null,
-		authoredGeometry: i.pageGeometry == null ? il(e.section) : JS(i.pageGeometry),
+		authoredGeometry: i.pageGeometry == null ? Tl(e.section) : gC(i.pageGeometry),
 		textDirection: e.section.textDirection ?? null,
 		pageNumType: e.section.pageNumType ?? null,
-		headers: e.headers ?? OC,
-		footers: e.footers ?? OC,
+		headers: e.headers ?? XC,
+		footers: e.footers ?? XC,
 		titlePage: e.section.titlePage,
 		sectionBidi: i.sectionBidi,
 		vAlign: i.vAlign,
@@ -24202,9 +24743,9 @@ function kC(e) {
 		rtlGutter: i.rtlGutter === !0,
 		pageBordersAuthored: i.pageBordersAuthored,
 		pageBorders: i.pageBorders,
-		placement: YS(i)
+		placement: _C(i)
 	});
-	let a = Array(t.length), o = il(e.section), s = null, c = null;
+	let a = Array(t.length), o = Tl(e.section), s = null, c = null;
 	for (let e = t.length - 1; e >= 0; --e) {
 		let n = t[e], r = n.startType === "continuous" && s !== null ? s : o, i = n.authoredGeometry, l = {
 			pageWidth: i.pageWidth ?? r.pageWidth,
@@ -24222,15 +24763,15 @@ function kC(e) {
 			gutterPt: u
 		}, s = l, c = u;
 	}
-	return V({
+	return B({
 		bodyLength: e.body.length,
 		occurrences: a
 	}, "DOCX body section index input");
 }
-function AC(e) {
-	let t = kC(e), n = /* @__PURE__ */ new Map();
+function QC(e) {
+	let t = ZC(e), n = /* @__PURE__ */ new Map();
 	for (let e of t.occurrences) e.startBodyIndex !== 0 && n.set(e.startBodyIndex - 1, e);
-	let r = wC(e.body, (e) => {
+	let r = KC(e.body, (e) => {
 		let t = n.get(e);
 		if (!t) throw Error(`Missing incoming body section at ${e}`);
 		return Object.freeze({
@@ -24238,19 +24779,19 @@ function AC(e) {
 			startType: t.startType
 		});
 	});
-	return V({
+	return B({
 		sectionIndex: t,
 		evenAndOddHeaders: e.section.evenAndOddHeaders,
 		endnoteIds: (e.endnotes ?? []).map((e) => e.id),
-		noteLayoutSettings: qS(e),
-		pageLayoutSettings: KS(e),
-		parserDiagnostics: Vr(e.diagnostics, e.body.length),
+		noteLayoutSettings: hC(e),
+		pageLayoutSettings: mC(e),
+		parserDiagnostics: Hr(e.diagnostics, e.body.length),
 		sequence: r
 	}, "DOCX body layout acquisition input");
 }
-function jC(e) {
+function $C(e) {
 	let t = e.textPath;
-	if (t) return V({
+	if (t) return B({
 		string: t.string,
 		...t.fontFamily === void 0 ? {} : { fontFamily: t.fontFamily },
 		bold: t.bold ?? !1,
@@ -24264,12 +24805,12 @@ function jC(e) {
 		...t.fontSizePt === void 0 ? {} : { fontSizePt: t.fontSizePt }
 	}, "DOCX VML text path acquisition input");
 }
-function MC(e) {
+function ew(e) {
 	let t = e.__anchorAcquisition;
-	if (t !== void 0) return V(t, "DOCX anchor acquisition input");
+	if (t !== void 0) return B(t, "DOCX anchor acquisition input");
 }
-function NC(e, t) {
-	let n = VC(e).fontFacts, r = n?.rtl === !0 || n?.cs === !0, i = r ? n?.fontSizeCs ?? n?.fontSize ?? t : n?.fontSize ?? t, a = n?.fontFamily ?? e.fontFamily ?? null, o = {
+function tw(e, t) {
+	let n = lw(e).fontFacts, r = n?.rtl === !0 || n?.cs === !0, i = r ? n?.fontSizeCs ?? n?.fontSize ?? t : n?.fontSize ?? t, a = n?.fontFamily ?? e.fontFamily ?? null, o = {
 		ascii: a,
 		highAnsi: n?.fontFamilyHighAnsi ?? a,
 		eastAsia: n?.fontFamilyEastAsia ?? e.fontFamilyEastAsia ?? a,
@@ -24288,20 +24829,20 @@ function NC(e, t) {
 		kerning: n?.kerning == null ? void 0 : i >= n.kerning
 	});
 }
-function PC(e, t) {
+function nw(e, t) {
 	let n = e.textBoxContent;
-	return n === void 0 ? V({
+	return n === void 0 ? B({
 		kind: "compatibility",
 		source: t,
-		paragraphs: Jp(e, t, NC)
-	}, "DOCX public text box acquisition input") : V({
+		paragraphs: mm(e, t, tw)
+	}, "DOCX public text box acquisition input") : B({
 		kind: "complete",
 		source: t,
 		blockCount: n.length
 	}, "DOCX complete text box acquisition input");
 }
-function FC(e) {
-	let t = HC(e).paragraphMarkFontFacts;
+function rw(e) {
+	let t = uw(e).paragraphMarkFontFacts;
 	if (!t) return;
 	let n = t.rtl === !0 || t.cs === !0, r = e.runs.find((e) => e.type === "text" || e.type === "field")?.fontSize ?? e.defaultFontSize ?? 10, i = n ? t.fontSizeCs ?? t.fontSize ?? r : t.fontSize ?? r, a = t.fontFamily ?? e.defaultFontFamily ?? null, o = {
 		ascii: a,
@@ -24322,8 +24863,8 @@ function FC(e) {
 		kerning: t.kerning == null ? void 0 : i >= t.kerning
 	});
 }
-function IC(e, t) {
-	let n = e, { layoutLines: r, lineSlice: i, runs: a, paragraphMarkFontFacts: o, __paragraphTypographyAcquisition: s, __complexFieldBoundaries: c, ...l } = e, u = NS(n), d = e.__complexFieldBoundaries?.map((e) => ({
+function iw(e, t) {
+	let n = e, { layoutLines: r, lineSlice: i, runs: a, paragraphMarkFontFacts: o, __paragraphTypographyAcquisition: s, __complexFieldBoundaries: c, ...l } = e, u = eC(n), d = e.__complexFieldBoundaries?.map((e) => ({
 		occurrenceKey: [
 			"complex-field",
 			t.story,
@@ -24339,7 +24880,7 @@ function IC(e, t) {
 	})), f = l.numbering, p = f == null ? null : (({ fontFacts: e, ...t }) => t)(f), m = structuredClone({
 		...l,
 		numbering: p
-	}), h = US(n), g = [];
+	}), h = uC(n), g = [];
 	if (h.length === 0) n.runs.forEach((e, t) => {
 		g.push({
 			run: e,
@@ -24365,9 +24906,9 @@ function IC(e, t) {
 	let _ = g.map(({ run: e, originalRun: n }, r) => {
 		let i = e;
 		if (i.type === "unavailableDrawing") {
-			let e = MC(n), r = e === void 0 ? void 0 : V({
+			let e = ew(n), r = e === void 0 ? void 0 : B({
 				...e,
-				occurrenceId: un(t, e.occurrenceId)
+				occurrenceId: dn(t, e.occurrenceId)
 			}, "DOCX scoped unavailable drawing anchor acquisition input"), { __anchorAcquisition: a, ...o } = i;
 			return Object.freeze({
 				...o,
@@ -24385,26 +24926,26 @@ function IC(e, t) {
 				fontSize: e.fontSize,
 				...e.jc === void 0 ? {} : { jc: e.jc },
 				source: i.source ?? n,
-				resourceKey: i.resourceKey ?? cn(n, e.display ? "display" : "inline"),
-				fallbackText: q(e.nodes)
+				resourceKey: i.resourceKey ?? ln(n, e.display ? "display" : "inline"),
+				fallbackText: K(e.nodes)
 			});
 		}
 		if (e.type === "anchorHost") {
 			let { __anchorOccurrenceId: n, ...r } = e;
 			return Object.freeze({
 				...r,
-				...n === void 0 ? {} : { anchorOccurrenceId: un(t, n) }
+				...n === void 0 ? {} : { anchorOccurrenceId: dn(t, n) }
 			});
 		}
 		if (e.type === "shape" || e.type === "image" || e.type === "chart") {
-			let i = MC(n), a = i === void 0 ? void 0 : V({
+			let i = ew(n), a = i === void 0 ? void 0 : B({
 				...i,
-				occurrenceId: un(t, i.occurrenceId)
+				occurrenceId: dn(t, i.occurrenceId)
 			}, "DOCX scoped anchor acquisition input"), { __anchorAcquisition: o, ...s } = e;
 			if (e.type !== "shape") {
 				let n = e.type === "chart" ? (({ chart: e, ...n }) => ({
 					...n,
-					resourceKey: ln({
+					resourceKey: un({
 						...t,
 						path: [...t.path, r]
 					})
@@ -24414,10 +24955,10 @@ function IC(e, t) {
 					...a === void 0 ? {} : { anchorAcquisitionInput: a }
 				});
 			}
-			let c = n, l = jC(c), u = Object.freeze({
+			let c = n, l = $C(c), u = Object.freeze({
 				...t,
 				path: Object.freeze([...t.path, r])
-			}), d = PC(c, {
+			}), d = nw(c, {
 				story: "textbox",
 				storyInstance: `${u.story}:${u.storyInstance}:${u.path.join(".")}`,
 				path: []
@@ -24431,7 +24972,7 @@ function IC(e, t) {
 			});
 		}
 		if (e.type === "text" || e.type === "field") {
-			let t = MS(n), { __typographyAcquisition: r, ...i } = e;
+			let t = $S(n), { __typographyAcquisition: r, ...i } = e;
 			return Object.freeze({
 				...structuredClone(i),
 				...t === void 0 ? {} : { typographyInput: t }
@@ -24439,30 +24980,30 @@ function IC(e, t) {
 		}
 		return Object.freeze(structuredClone(e));
 	});
-	return fn({
+	return pn({
 		...m,
 		runs: _,
 		...d?.length ? { complexFieldBoundaries: d } : {},
-		numberingMarkerShapeInput: e.numbering ? NC(e.numbering, n.runs.find((e) => e.type === "text" || e.type === "field")?.fontSize ?? e.defaultFontSize ?? 10) : void 0,
-		paragraphMarkShapeInput: FC(e),
+		numberingMarkerShapeInput: e.numbering ? tw(e.numbering, n.runs.find((e) => e.type === "text" || e.type === "field")?.fontSize ?? e.defaultFontSize ?? 10) : void 0,
+		paragraphMarkShapeInput: rw(e),
 		...u === void 0 ? {} : { typographyInput: u }
 	});
 }
-function LC(e) {
-	return zC(e, !1);
+function aw(e) {
+	return sw(e, !1);
 }
-function RC(e) {
-	return zC(e, !0);
+function ow(e) {
+	return sw(e, !0);
 }
-function zC(e, t) {
+function sw(e, t) {
 	let n = [], r = (e, a, o, s) => {
 		if (e.type === "paragraph") {
 			let i = !1, c = [], l = [], u = e.runs.some((e) => e.type === "unavailableDrawing");
-			WS(e).forEach((e, d) => {
+			dC(e).forEach((e, d) => {
 				if (e.type === "unavailableDrawing") {
 					l.push(Object.freeze({
 						publicRunIndex: c.length,
-						run: V(e, "DOCX unavailable drawing parser sidecar")
+						run: B(e, "DOCX unavailable drawing parser sidecar")
 					})), u && (i = !0);
 					return;
 				}
@@ -24472,7 +25013,7 @@ function zC(e, t) {
 						story: a,
 						storyInstance: o,
 						path: Object.freeze([...s, d])
-					}), r = cn(t, e.display ? "display" : "inline");
+					}), r = ln(t, e.display ? "display" : "inline");
 					n.push(Object.freeze({
 						nodes: e.nodes,
 						display: e.display,
@@ -24519,7 +25060,7 @@ function zC(e, t) {
 				...e,
 				runs: c
 			} : e;
-			return l.length > 0 && HS.set(d, Object.freeze(l)), d;
+			return l.length > 0 && lC.set(d, Object.freeze(l)), d;
 		}
 		if (e.type === "table") {
 			if (t) return e.rows.forEach((e, t) => e.cells.forEach((e, n) => {
@@ -24627,75 +25168,75 @@ function zC(e, t) {
 		footers: c,
 		footnotes: u,
 		endnotes: d
-	} : e, p = DC(f);
-	XS.set(f, p), EC(f.body, f.section, p);
-	let m, h = () => m ??= AC(f), g = GC();
+	} : e, p = YC(f);
+	vC.set(f, p), JC(f.body, f.section, p);
+	let m, h = () => m ??= QC(f), g = pw();
 	return Object.freeze({
 		document: f,
 		mathOccurrences: Object.freeze(n),
-		fontFamilyCharsets: Object.freeze({ ...UC(f).fontFamilyCharsets ?? {} }),
+		fontFamilyCharsets: Object.freeze({ ...dw(f).fontFamilyCharsets ?? {} }),
 		get bodyLayoutInput() {
-			return BS(h());
+			return sC(h());
 		},
 		bodyModelGateway: Object.freeze({
 			acquisitionInputs: g,
 			get bodySectionIndex() {
 				return h().sectionIndex;
 			},
-			effectiveTablePositioning: oC,
-			publicAnchorBridge: xC
+			effectiveTablePositioning: OC,
+			publicAnchorBridge: UC
 		})
 	});
 }
-function BC(e) {
-	return LC(e).document;
+function cw(e) {
+	return aw(e).document;
 }
-function VC(e) {
+function lw(e) {
 	return e;
 }
-function HC(e) {
+function uw(e) {
 	return e;
 }
-function UC(e) {
+function dw(e) {
 	return e;
 }
-var WC = Object.freeze({
-	numberingMarkerShapeInput: NC,
-	paragraphMarkShapeInput: FC,
-	tableFormatInput: _C,
-	tableColumnLayoutInput: TC,
-	tableParticipatesInOrdinaryFlow: aC,
-	paragraphAcquisitionInput: IC
+var fw = Object.freeze({
+	numberingMarkerShapeInput: tw,
+	paragraphMarkShapeInput: rw,
+	tableFormatInput: zC,
+	tableColumnLayoutInput: qC,
+	tableParticipatesInOrdinaryFlow: DC,
+	paragraphAcquisitionInput: iw
 });
-function GC() {
+function pw() {
 	let e = /* @__PURE__ */ new WeakMap(), t = (t, n) => {
 		let r = e.get(t);
 		r || (r = /* @__PURE__ */ new Map(), e.set(t, r));
-		let i = B(n), a = r.get(i);
+		let i = z(n), a = r.get(i);
 		if (a) return a;
-		let o = IC(t, n);
+		let o = iw(t, n);
 		return r.set(i, o), o;
 	};
 	return Object.freeze({
-		...WC,
+		...fw,
 		paragraphAcquisitionInput: t
 	});
 }
 //#endregion
 //#region packages/docx/src/vertical-render-capability.ts
-var KC = new Set([
+var mw = new Set([
 	"tbRl",
 	"tbRlV",
 	"tbLrV"
 ]);
-function qC(e) {
+function hw(e) {
 	let t = [e], n = /* @__PURE__ */ new Set();
 	for (; t.length > 0;) {
 		let e = t.pop();
 		if (!(typeof e != "object" || !e || n.has(e))) {
 			if (n.add(e), !Array.isArray(e)) {
 				let t = e;
-				if (typeof t.textDirection == "string" && KC.has(t.textDirection)) return !0;
+				if (typeof t.textDirection == "string" && mw.has(t.textDirection)) return !0;
 			}
 			t.push(...Object.values(e));
 		}
@@ -24704,9 +25245,9 @@ function qC(e) {
 }
 //#endregion
 //#region packages/docx/src/layout-source-model-adapter.ts
-var JC = /* @__PURE__ */ new WeakMap();
-function YC(e) {
-	let t = al(), n = e.section ?? {}, r = (e, t) => Number.isFinite(e) ? e : t, i = (e) => ({
+var gw = /* @__PURE__ */ new WeakMap();
+function _w(e) {
+	let t = El(), n = e.section ?? {}, r = (e, t) => Number.isFinite(e) ? e : t, i = (e) => ({
 		default: e?.default ?? null,
 		first: e?.first ?? null,
 		even: e?.even ?? null
@@ -24730,7 +25271,7 @@ function YC(e) {
 		footers: i(e.footers)
 	};
 }
-function XC(e, t, n, r) {
+function vw(e, t, n, r) {
 	if (e) for (let i of [
 		"default",
 		"first",
@@ -24744,7 +25285,7 @@ function XC(e, t, n, r) {
 		});
 	}
 }
-function ZC(e, t, n, r = () => {}, i = () => {}) {
+function yw(e, t, n, r = () => {}, i = () => {}) {
 	let a = (e, o, s = []) => {
 		e.forEach((c, l) => {
 			let u = [...s, l];
@@ -24777,14 +25318,14 @@ function ZC(e, t, n, r = () => {}, i = () => {}) {
 					t,
 					n
 				]);
-			}))) : c.type === "sectionBreak" && (XC(c.headers, "header", `section:${l}`, a), XC(c.footers, "footer", `section:${l}`, a));
+			}))) : c.type === "sectionBreak" && (vw(c.headers, "header", `section:${l}`, a), vw(c.footers, "footer", `section:${l}`, a));
 		});
 	};
 	a(e.body, {
 		story: "body",
 		storyInstance: "body",
 		path: []
-	}), XC(e.headers, "header", null, a), XC(e.footers, "footer", null, a);
+	}), vw(e.headers, "header", null, a), vw(e.footers, "footer", null, a);
 	for (let t of e.footnotes ?? []) a(t.content, {
 		story: "footnote",
 		storyInstance: t.id,
@@ -24796,24 +25337,24 @@ function ZC(e, t, n, r = () => {}, i = () => {}) {
 		path: []
 	});
 }
-function QC(e) {
+function bw(e) {
 	let t = [], n = (e, n) => {
 		t.push({
 			source: n,
 			body: e
 		});
 	};
-	return XC(e.headers, "header", null, n), XC(e.footers, "footer", null, n), e.body.forEach((e, t) => {
-		e.type === "sectionBreak" && (XC(e.headers, "header", `section:${t}`, n), XC(e.footers, "footer", `section:${t}`, n));
+	return vw(e.headers, "header", null, n), vw(e.footers, "footer", null, n), e.body.forEach((e, t) => {
+		e.type === "sectionBreak" && (vw(e.headers, "header", `section:${t}`, n), vw(e.footers, "footer", `section:${t}`, n));
 	}), t;
 }
-function $C(e) {
-	return QC(e).map(({ body: e }) => e);
+function xw(e) {
+	return bw(e).map(({ body: e }) => e);
 }
-function ew(e) {
+function Sw(e) {
 	return e ?? Object.freeze([]);
 }
-function tw(e, t, n, r = []) {
+function Cw(e, t, n, r = []) {
 	let i = (e, t, r) => e && Object.fromEntries([
 		"default",
 		"first",
@@ -24822,7 +25363,7 @@ function tw(e, t, n, r = []) {
 		let a = e[i];
 		return [i, a ? {
 			...structuredClone(Object.fromEntries(Object.entries(a).filter(([e]) => e !== "body"))),
-			body: tw(a.body, {
+			body: Cw(a.body, {
 				story: t,
 				storyInstance: `${r}:${i}`,
 				path: []
@@ -24832,11 +25373,11 @@ function tw(e, t, n, r = []) {
 	return e.map((e, a) => {
 		let o = [...r, a];
 		if (e.type === "paragraph") {
-			let e = n.get(B({
+			let e = n.get(z({
 				...t,
 				path: o
 			}));
-			if (!e) throw Error(`Missing canonical paragraph source: ${B({
+			if (!e) throw Error(`Missing canonical paragraph source: ${z({
 				...t,
 				path: o
 			})}`);
@@ -24854,7 +25395,7 @@ function tw(e, t, n, r = []) {
 							let { __tableCellLayout: a, ...s } = e;
 							return {
 								...s,
-								content: tw(e.content, t, n, [
+								content: Cw(e.content, t, n, [
 									...o,
 									r,
 									i
@@ -24874,15 +25415,15 @@ function tw(e, t, n, r = []) {
 		};
 	});
 }
-function nw(e) {
+function ww(e) {
 	let { __sectionPlacement: t, ...n } = e;
 	return structuredClone(n);
 }
-function rw(e) {
+function Tw(e) {
 	let t = e;
 	return delete t.__sectionPlacement, t;
 }
-function iw(e, t, n) {
+function Ew(e, t, n) {
 	return Object.fromEntries([
 		"default",
 		"first",
@@ -24891,7 +25432,7 @@ function iw(e, t, n) {
 		let i = e[r];
 		return [r, i ? {
 			...structuredClone(Object.fromEntries(Object.entries(i).filter(([e]) => e !== "body"))),
-			body: tw(i.body, {
+			body: Cw(i.body, {
 				story: t,
 				storyInstance: r,
 				path: []
@@ -24899,7 +25440,7 @@ function iw(e, t, n) {
 		} : null];
 	}));
 }
-function aw(e, t, n, r = []) {
+function Dw(e, t, n, r = []) {
 	let i = (e, t, r) => {
 		if (!e) return e;
 		for (let i of [
@@ -24908,7 +25449,7 @@ function aw(e, t, n, r = []) {
 			"even"
 		]) {
 			let a = e[i];
-			a && (a.body = aw(a.body, {
+			a && (a.body = Dw(a.body, {
 				story: t,
 				storyInstance: `${r}:${i}`,
 				path: []
@@ -24919,11 +25460,11 @@ function aw(e, t, n, r = []) {
 	for (let e = 0; e < a.length; e += 1) {
 		let o = a[e], s = [...r, e];
 		if (o.type === "paragraph") {
-			let r = n.get(B({
+			let r = n.get(z({
 				...t,
 				path: s
 			}));
-			if (!r) throw Error(`Missing canonical paragraph source: ${B({
+			if (!r) throw Error(`Missing canonical paragraph source: ${z({
 				...t,
 				path: s
 			})}`);
@@ -24936,7 +25477,7 @@ function aw(e, t, n, r = []) {
 				let i = e;
 				delete i.__tableRowLayout, i.cells.forEach((e, i) => {
 					let a = e;
-					delete a.__tableCellLayout, a.content = aw(a.content, t, n, [
+					delete a.__tableCellLayout, a.content = Dw(a.content, t, n, [
 						...s,
 						r,
 						i
@@ -24951,14 +25492,14 @@ function aw(e, t, n, r = []) {
 	}
 	return a;
 }
-function ow(e, t, n) {
+function Ow(e, t, n) {
 	for (let r of [
 		"default",
 		"first",
 		"even"
 	]) {
 		let i = e[r];
-		i && (i.body = aw(i.body, {
+		i && (i.body = Dw(i.body, {
 			story: t,
 			storyInstance: r,
 			path: []
@@ -24966,29 +25507,29 @@ function ow(e, t, n) {
 	}
 	return e;
 }
-function sw(e) {
-	let t = JC.get(e);
+function kw(e) {
+	let t = gw.get(e);
 	if (t) return t;
-	let n = LC(YC(e));
-	return uw(n, n, !1, e);
+	let n = aw(_w(e));
+	return Mw(n, n, !1, e);
 }
-function cw(e, t) {
-	return JC.get(e) || uw(RC(YC(e)), RC(YC(t)), !0, e);
+function Aw(e, t) {
+	return gw.get(e) || Mw(ow(_w(e)), ow(_w(t)), !0, e);
 }
-function lw(e) {
-	let t = RC(YC(e));
-	return uw(t, t, !0, e).source;
+function jw(e) {
+	let t = ow(_w(e));
+	return Mw(t, t, !0, e).source;
 }
-function uw(e, t, n, r) {
-	let i = t.document, a = t.bodyModelGateway.acquisitionInputs, o = t.bodyLayoutInput, s = Lc(i), c = Dn(i, a, t.mathOccurrences, (e) => {
+function Mw(e, t, n, r) {
+	let i = t.document, a = t.bodyModelGateway.acquisitionInputs, o = t.bodyLayoutInput, s = nl(i, pC(i)), c = On(i, a, t.mathOccurrences, (e) => {
 		let t = e.numbering;
 		if (!t) throw Error("Picture-bullet metadata requires numbering");
-		let n = a.numberingMarkerShapeInput(t, ns(e));
+		let n = a.numberingMarkerShapeInput(t, ds(e));
 		return {
 			widthPt: t.picBulletWidthPt ?? n.fontSizePt,
 			heightPt: t.picBulletHeightPt ?? n.fontSizePt
 		};
-	}), l = ew(i.footnotes), u = ew(i.endnotes), d = Rm(i.body, l, [...$C(i), ...u.map((e) => e.content)]), f = qC(i), p = i.parseError === void 0 ? null : {
+	}), l = Sw(i.footnotes), u = Sw(i.endnotes), d = ih(i.body, l, [...xw(i), ...u.map((e) => e.content)]), f = hw(i), p = i.parseError === void 0 ? null : {
 		message: i.parseError,
 		pageSize: {
 			widthPt: i.section.pageWidth,
@@ -25000,13 +25541,13 @@ function uw(e, t, n, r) {
 		majorFamily: i.majorFont ?? null,
 		minorFamily: i.minorFont ?? null,
 		embeddedFonts: [...i.embeddedFonts ?? []],
-		renderedFamilies: qx(i),
-		preloadNames: Xx(i),
-		localMetricRequests: AS(i),
-		defaultBodyFontSizePt: Nv(i)
+		renderedFamilies: mS(i),
+		preloadNames: _S(i),
+		localMetricRequests: ZS(i),
+		defaultBodyFontSizePt: ey(i)
 	}, h = /* @__PURE__ */ new Map(), g = [], _ = [], v = [];
-	ZC(i, a, (e, r, i) => {
-		let a = B(r);
+	yw(i, a, (e, r, i) => {
+		let a = z(r);
 		if (h.has(a)) throw Error(`Duplicate paragraph source: ${a}`);
 		h.set(a, i);
 		let o = 0, s = i.runs.map((n, i) => {
@@ -25015,20 +25556,20 @@ function uw(e, t, n, r) {
 			return a ? t.bodyModelGateway.publicAnchorBridge(a, r, i) : null;
 		});
 		return g.push(Object.freeze({
-			source: fn({
+			source: pn({
 				...r,
 				path: [...r.path]
 			}),
 			publicAnchorBridges: Object.freeze(s),
-			numberingMarkerFallbackFontSizePt: e.numbering ? ns(e) : null
+			numberingMarkerFallbackFontSizePt: e.numbering ? ds(e) : null
 		})), n ? i : void 0;
 	}, (e, t) => {
 		_.push(Object.freeze({
-			source: fn({
+			source: pn({
 				...t,
 				path: [...t.path]
 			}),
-			input: iC(e)
+			input: EC(e)
 		}));
 	}, (e, t) => {
 		v.push({
@@ -25038,12 +25579,12 @@ function uw(e, t, n, r) {
 	}), Object.freeze({
 		...a,
 		paragraphAcquisitionInput(e, t) {
-			let n = h.get(B(t));
-			if (!n) throw Error(`Unknown paragraph acquisition source: ${B(t)}`);
+			let n = h.get(z(t));
+			if (!n) throw Error(`Unknown paragraph acquisition source: ${z(t)}`);
 			return n;
 		}
 	});
-	let y = n ? aw : tw, b = n ? ow : iw, x = {
+	let y = n ? Dw : Cw, b = n ? Ow : Ew, x = {
 		...i,
 		body: y(i.body, {
 			story: "body",
@@ -25072,20 +25613,20 @@ function uw(e, t, n, r) {
 		source: e,
 		body: y(t, e, h)
 	}));
-	fn(h);
-	let C = DS({
+	pn(h);
+	let C = JS({
 		bodyLayoutInput: o,
 		blockRepository: {
 			body: x.body,
-			stories: [...QC(x).map(({ source: e, body: t }) => ({
+			stories: [...bw(x).map(({ source: e, body: t }) => ({
 				source: e,
 				body: t
 			})), ...S],
 			footnotes: x.footnotes ?? [],
 			endnotes: x.endnotes ?? []
 		},
-		section: n ? rw(i.section) : nw(i.section),
-		documentLayoutFacts: fn({
+		section: n ? Tw(i.section) : ww(i.section),
+		documentLayoutFacts: pn({
 			...s,
 			kinsoku: {
 				enabled: s.kinsoku.enabled,
@@ -25093,7 +25634,7 @@ function uw(e, t, n, r) {
 				lineEndForbidden: [...s.kinsoku.lineEndForbidden].sort((e, t) => e - t)
 			}
 		}),
-		fonts: fn(m),
+		fonts: pn(m),
 		fontFamilyCharsets: t.fontFamilyCharsets,
 		acquisitionFacts: Object.freeze({
 			paragraphs: Object.freeze(g),
@@ -25104,23 +25645,23 @@ function uw(e, t, n, r) {
 		paintDescriptors: c.paintResources.descriptors,
 		hasPaginationFields: d,
 		requiresDomVerticalGlyphLayout: f,
-		fatalParse: p === null ? null : fn(p)
+		fatalParse: p === null ? null : pn(p)
 	}), w = Object.freeze({
 		document: e.document,
 		source: C
 	});
-	return JC.set(r, w), JC.set(e.document, w), w;
+	return gw.set(r, w), gw.set(e.document, w), w;
 }
-function dw(e) {
-	return sw(e).source;
+function Nw(e) {
+	return kw(e).source;
 }
 //#endregion
 //#region packages/docx/src/layout-runtime.ts
-function fw(e, t, n) {
-	return Rx(e, t, n).kernel;
+function Pw(e, t, n) {
+	return aS(e, t, n).kernel;
 }
-function pw(e, t = {}) {
-	let n = xS(e) ? e : dw(e), r = t.measureContext ?? (() => {
+function Fw(e, t = {}) {
+	let n = HS(e) ? e : Nw(e), r = t.measureContext ?? (() => {
 		if (typeof document < "u") {
 			let e = document.createElement("canvas").getContext("2d");
 			if (e !== null) return e;
@@ -25152,46 +25693,46 @@ function pw(e, t = {}) {
 		fingerprint: r === null ? "vertical-glyph-measurement:deterministic-v1" : s ? "vertical-glyph-measurement:dom-vert-probe-v2" : "vertical-glyph-measurement:no-dom-vert-probe-v1",
 		measureRunInkExtra(e) {
 			if (r === null) throw Error("Vertical glyph measurement requires a concrete text context");
-			return F(r, () => Ix(r, e));
+			return P(r, () => rS(r, e));
 		},
 		planRun(e) {
 			if (r === null) throw Error("Vertical glyph planning requires a concrete text context");
-			return F(r, () => {
+			return P(r, () => {
 				let t = r.font, n = r.fontKerning;
 				r.font = e.font, r.fontKerning = e.fontKerning;
 				try {
-					return Px(r, e.text, e.fontSizePt, e.letterSpacingPt, e.charScale, e.growTrRotateInk, (e) => pe(r, e), e.writingMode);
+					return tS(r, e.text, e.fontSizePt, e.letterSpacingPt, e.charScale, e.growTrRotateInk, (e) => pe(r, e), e.writingMode);
 				} finally {
 					r.font = t, r.fontKerning = n;
 				}
 			});
 		}
-	}), l = di(t.localMetrics), u = rS(n, {
+	}), l = fi(t.localMetrics), u = wS(n, {
 		...t,
 		localMetrics: l,
 		measureContext: i,
 		verticalGlyphMeasurement: c
 	});
-	return qn(u, n), Gn(u, fw(n, i, l)), u;
+	return Jn(u, n), Kn(u, Pw(n, i, l)), u;
 }
 //#endregion
 //#region packages/docx/src/renderer.ts
-function mw(e) {
-	return (Array.isArray(e) ? On(e) : dw(e).mathOccurrences).length > 0;
+function Iw(e) {
+	return (Array.isArray(e) ? kn(e) : Nw(e).mathOccurrences).length > 0;
 }
-async function hw(e, t) {
+async function Lw(e, t) {
 	if (Array.isArray(e)) throw TypeError("prepareMathRuns requires a document model so every story has an explicit structural source");
-	return iv(dw(e).mathOccurrences, t);
+	return Tv(Nw(e).mathOccurrences, t);
 }
-function gw(e, t, n, r) {
-	let i = r.layoutServices ?? pw(e, e.fatalParse === null ? { measureContext: t.getContext("2d") } : {}), a = Jn(i);
+function Rw(e, t, n, r) {
+	let i = r.layoutServices ?? Fw(e, e.fatalParse === null ? { measureContext: t.getContext("2d") } : {}), a = Yn(i);
 	if (a && a !== e) throw Error("Layout services belong to a different document source");
 	let o = r.defaultCurrentDateMs ?? Date.now();
-	nv(i, o, () => e);
-	let s = _u(i, {
+	Cv(i, o, () => e);
+	let s = Vu(i, {
 		currentDate: r.currentDate,
 		defaultCurrentDateMs: o
-	}, n), c = Kd(s.page, r.width);
+	}, n), c = _f(s.page, r.width);
 	return {
 		selection: s,
 		paintOptions: {
@@ -25201,34 +25742,34 @@ function gw(e, t, n, r) {
 			showTrackChanges: r.showTrackChanges,
 			fetchImage: r.fetchImage,
 			parseError: e.fatalParse !== null,
-			registry: lr(i),
-			privateResources: er(i),
-			textRuns: r.onTextRun ? zu(s.layout, n, { scale: c }) : [],
+			registry: ur(i),
+			privateResources: tr(i),
+			textRuns: r.onTextRun ? ld(s.layout, n, { scale: c }) : [],
 			onTextRun: r.onTextRun
 		}
 	};
 }
-async function _w(e, t, n, r = {}) {
-	let i = gw(e, t, n, r);
-	return Xd(i.selection.layout, i.selection.page, t, i.paintOptions);
+async function zw(e, t, n, r = {}) {
+	let i = Rw(e, t, n, r);
+	return xf(i.selection.layout, i.selection.page, t, i.paintOptions);
 }
 //#endregion
 //#region packages/docx/src/document-layout.ts
-function vw(e, t = pw(e), n) {
-	let r = xS(e) ? e : dw(e), i = Jn(t);
+function Bw(e, t = Fw(e), n) {
+	let r = HS(e) ? e : Nw(e), i = Yn(t);
 	if (i && i !== r) throw Error("Layout services belong to a different document source");
-	return tv(r.bodyLayoutInput, t, n);
+	return Sv(r.bodyLayoutInput, t, n);
 }
 //#endregion
 //#region packages/docx/src/render-worker-layout.ts
-function yw(e, t, n) {
-	let r = Jn(t);
+function Vw(e, t, n) {
+	let r = Yn(t);
 	if (r && r !== e) throw Error("Layout services belong to a different document source");
-	let i = gu({
+	let i = Bu({
 		source: e,
 		services: t,
 		defaultCurrentDateMs: n,
-		buildLayout: (n) => vw(e, t, n)
+		buildLayout: (n) => Bw(e, t, n)
 	});
 	return Object.freeze({
 		layoutServices: t,
@@ -25238,32 +25779,32 @@ function yw(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/document-pull-client.ts
-var bw = 1024 * 1024, xw = Math.max(b, S);
-async function Sw(e, t, n = {}) {
+var Hw = 1024 * 1024, Uw = Math.max(b, S);
+async function Ww(e, t, n = {}) {
 	let r = [];
-	return Ew(e, t, n, {
+	return Jw(e, t, n, {
 		acceptBody: (e) => {
 			r.push(...e);
 		},
 		complete: (e) => (e.body = r, e)
 	});
 }
-async function Cw(e, t, n = {}) {
+async function Gw(e, t, n = {}) {
 	let r = [];
-	return Ew(e, t, n, {
+	return Jw(e, t, n, {
 		acceptBody: (e) => {
 			r.push(...e);
 		},
-		complete: (e) => (e.body = r, lw(e))
+		complete: (e) => (e.body = r, jw(e))
 	});
 }
-async function ww(e, t, n = {}) {
-	let r = await Tw(e, t, n);
-	return cw(r.document, r.ownedLayoutDocument);
+async function Kw(e, t, n = {}) {
+	let r = await qw(e, t, n);
+	return Aw(r.document, r.ownedLayoutDocument);
 }
-async function Tw(e, t, n = {}) {
+async function qw(e, t, n = {}) {
 	let r = [], i = [];
-	return Ew(e, t, n, {
+	return Jw(e, t, n, {
 		acceptBody: (e) => {
 			let t = structuredClone(e);
 			for (let t of e) r.push(t);
@@ -25278,19 +25819,19 @@ async function Tw(e, t, n = {}) {
 		}
 	});
 }
-async function Ew(e, t, n, r) {
+async function Jw(e, t, n, r) {
 	let i = new p(e, {
 		...t,
-		maxByteCredit: xw,
+		maxByteCredit: Uw,
 		timeoutMs: n.timeoutMs
 	});
 	try {
 		for (;;) {
-			let e = await kw(i, n.signal);
+			let e = await Zw(i, n.signal);
 			try {
 				let t = e.usage ?? i.usageCheckpoint;
 				t && n.onUsage?.(t);
-				let a = Ow(e.payload);
+				let a = Xw(e.payload);
 				if (e.done !== (a.kind === "complete")) throw TypeError("DOCX document unit terminal flag does not match its payload");
 				if (a.kind === "body") {
 					r.acceptBody(a.body), await e.ack({ signal: n.signal });
@@ -25307,27 +25848,27 @@ async function Ew(e, t, n, r) {
 		throw await i.cancel("request-error").catch(() => void 0), e;
 	}
 }
-function Dw(e) {
+function Yw(e) {
 	return !!e && typeof e == "object" && e.protocol === "ooxml-pull-v1";
 }
-function Ow(e) {
+function Xw(e) {
 	let t = JSON.parse(new TextDecoder().decode(new Uint8Array(e)));
 	if (!t || typeof t != "object") throw TypeError("DOCX document unit must be an object");
 	let n = t;
 	if (n.kind === "body" && Array.isArray(n.body) || n.kind === "complete" && n.document && typeof n.document == "object") return n;
 	throw TypeError("DOCX document unit has an unknown shape");
 }
-async function kw(e, t) {
+async function Zw(e, t) {
 	try {
-		return await e.pull(bw, { signal: t });
+		return await e.pull(Hw, { signal: t });
 	} catch (n) {
-		let r = Aw(n);
+		let r = Qw(n);
 		if (r === void 0) throw n;
 		return e.pull(r, { signal: t });
 	}
 }
-function Aw(e) {
-	return k(e, bw, xw);
+function Qw(e) {
+	return k(e, Hw, Uw);
 }
 //#endregion
-export { Pn as _, yw as a, _w as c, jS as d, Jx as f, Nn as g, Bu as h, Sw as i, pw as l, Gd as m, ww as n, mw as o, Xx as p, Cw as r, hw as s, Dw as t, BC as u, Qn as v, $t as y };
+export { Fn as _, Vw as a, zw as c, QS as d, hS as f, Pn as g, ud as h, Ww as i, Fw as l, gf as m, Kw as n, Iw as o, _S as p, Gw as r, Lw as s, Yw as t, cw as u, $n as v, en as y };

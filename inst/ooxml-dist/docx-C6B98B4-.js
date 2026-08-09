@@ -2,7 +2,7 @@ import { t as e } from "./chunk-DmhlhrBa.js";
 import { B as t, Et as n, It as r, Lt as i, R as a, a as o, an as s, hn as c, ht as l, it as u, kt as d, mn as f, q as p, z as m } from "./line-metrics-BdCACYlq.js";
 import { _ as h, a as g, b as _, c as v, d as y, f as b, g as x, h as ee, i as S, l as te, m as C, n as ne, o as w, p as T, r as re, s as ie, t as ae, u as oe, v as E, x as se, y as ce } from "./canvas-viewer-mechanics-CwVSOYke.js";
 import { a as le, c as ue, i as de, o as fe, r as pe, s as me, t as he } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { _ as D, a as ge, c as O, d as k, f as A, g as j, h as M, l as N, m as P, n as F, o as I, p as L, s as _e, t as R, v as ve, y as z } from "./document-pull-client-AAnwzlig.js";
+import { _ as D, a as ge, c as O, d as k, f as A, g as j, h as M, l as N, m as P, n as F, o as I, p as L, s as _e, t as R, v as ve, y as z } from "./document-pull-client-B-3_7_YS.js";
 import { n as ye, r as B, t as V } from "./highlight-rect-CAkCWJ37.js";
 //#region packages/core/src/fonts/embedded.ts
 function be(e, t) {
@@ -163,7 +163,7 @@ var W = class e {
 				t = await e.arrayBuffer();
 			} else t = n;
 			t = se(await _(t, r.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let a = s === "worker" ? (await import("./render-worker-host-B8HAb_sK.js")).createRenderWorker() : new Te(), l;
+			let a = s === "worker" ? (await import("./render-worker-host-Dpv-nKHY.js")).createRenderWorker() : new Te(), l;
 			try {
 				if (l = new e(a, s, o, r.wasmUrl), l._metrics = c, await l._parse(t, i.policy, s === "worker" ? !!r.useGoogleFonts : !1, r.workerTimeoutMs, (e) => c.observeUsage(e)), s === "worker" && l._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), r.math && l._mode === "worker" && console.warn("[ooxml] the math engine is unavailable in mode: 'worker'; equations will be skipped. Use mode: 'main' for documents with equations."), l._mode === "main" && r.useGoogleFonts && l._document && (l._googleFontFaces = await de(L(l._document), A)), l._mode === "main" && l._document?.embeddedFonts?.length) {
 					let e = l;

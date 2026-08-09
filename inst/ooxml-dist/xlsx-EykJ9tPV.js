@@ -4695,7 +4695,7 @@ var Ha = class {
 	anchorCell = null;
 	activeCell = null;
 	selectionMode = "cells";
-	dragActive = !1;
+	dragPointerId = null;
 	get anchor() {
 		return this.anchorCell ? { ...this.anchorCell } : null;
 	}
@@ -4706,7 +4706,10 @@ var Ha = class {
 		return this.selectionMode;
 	}
 	get dragging() {
-		return this.dragActive;
+		return this.dragPointerId !== null;
+	}
+	get draggingPointerId() {
+		return this.dragPointerId;
 	}
 	setAnchor(e) {
 		this.anchorCell = e ? { ...e } : null;
@@ -4717,11 +4720,14 @@ var Ha = class {
 	setMode(e) {
 		this.selectionMode = e;
 	}
-	setDragging(e) {
-		this.dragActive = e;
+	beginDrag(e) {
+		this.dragPointerId = e;
+	}
+	endDrag(e) {
+		(e === void 0 || e === this.dragPointerId) && (this.dragPointerId = null);
 	}
 	reset() {
-		this.anchorCell = null, this.activeCell = null, this.selectionMode = "cells", this.dragActive = !1;
+		this.anchorCell = null, this.activeCell = null, this.selectionMode = "cells", this.dragPointerId = null;
 	}
 	select(e, t = "cells") {
 		this.anchorCell = { ...e }, this.activeCell = { ...e }, this.selectionMode = t;
@@ -4866,32 +4872,51 @@ var Ha = class {
 	showValidation(e, t) {
 		this.validation.style.left = `${e}px`, this.validation.style.top = `${t}px`, this.validation.style.display = "block";
 	}
-}, qa = Symbol("XlsxViewer.borrowedWorkbook"), Ja = 150, Ya = 280, Xa = 200, Za = 240, Qa = 200, $a = 30, eo = 50, to = 1, no = 1, ro = .45, io = "data-xlsx-viewer-styles", ao = ".xlsx-tab-strip::-webkit-scrollbar{display:none}.xlsx-tab-nav{background:transparent;transition:background 0.1s;}.xlsx-tab-nav:hover{background:rgba(0,0,0,0.08);}.xlsx-zoom-slider{-webkit-appearance:none;appearance:none;background:transparent;height:15px;margin:0;}.xlsx-zoom-slider::-webkit-slider-runnable-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:#808080;cursor:pointer;}.xlsx-zoom-slider:hover::-webkit-slider-thumb{background:#5f5f5f;}.xlsx-zoom-slider::-moz-range-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:#808080;cursor:pointer;}";
-function oo(e) {
-	if (!e.head || e.head.querySelector(`style[${io}]`)) return;
-	let t = e.createElement("style");
-	t.setAttribute(io, ""), t.textContent = ao, e.head.appendChild(t);
+};
+function qa(e, t) {
+	if (t <= 0) return 0;
+	let n = Math.min(40, t / 2);
+	return e < n ? -900 * Math.min(1, Math.max(0, (n - e) / n)) : e > t - n ? 900 * Math.min(1, Math.max(0, (e - (t - n)) / n)) : 0;
 }
-var so = "#1a73e8", co = 4, lo = 5;
-function uo(e, t, n, r) {
+function Ja(e, t, n, r) {
+	if (r === "all") return {
+		x: 0,
+		y: 0
+	};
+	let i = r === "rows" ? 0 : qa(e.x, t.width), a = r === "cols" ? 0 : qa(e.y, t.height);
+	return {
+		x: n ? -i : i,
+		y: a
+	};
+}
+//#endregion
+//#region packages/xlsx/src/viewer.ts
+var Ya = Symbol("XlsxViewer.borrowedWorkbook"), Xa = 150, Za = 280, Qa = 200, $a = 240, eo = 200, to = 30, no = 50, ro = 1, io = 1, ao = .45, oo = "data-xlsx-viewer-styles", so = ".xlsx-tab-strip::-webkit-scrollbar{display:none}.xlsx-tab-nav{background:transparent;transition:background 0.1s;}.xlsx-tab-nav:hover{background:rgba(0,0,0,0.08);}.xlsx-zoom-slider{-webkit-appearance:none;appearance:none;background:transparent;height:15px;margin:0;}.xlsx-zoom-slider::-webkit-slider-runnable-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:#808080;cursor:pointer;}.xlsx-zoom-slider:hover::-webkit-slider-thumb{background:#5f5f5f;}.xlsx-zoom-slider::-moz-range-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:#808080;cursor:pointer;}";
+function co(e) {
+	if (!e.head || e.head.querySelector(`style[${oo}]`)) return;
+	let t = e.createElement("style");
+	t.setAttribute(oo, ""), t.textContent = so, e.head.appendChild(t);
+}
+var lo = "#1a73e8", uo = 4, fo = 5;
+function po(e, t, n, r) {
 	for (let { index: i, edge: a } of t) if (!(a <= r) && Math.abs(e - a) <= n) return i;
 	return null;
 }
-function fo(e) {
+function mo(e) {
 	return {
 		border: `2px solid ${e}`,
 		background: `color-mix(in srgb, ${e} 8%, transparent)`
 	};
 }
-var po = "color-mix(in srgb, #ffb300 8%, transparent)", mo = "color-mix(in srgb, #fb8c00 8%, transparent)";
-function ho(e, t = {}) {
-	let n = e ? "#fb8c00" : "#ffb300", r = e ? t.active : t.match, i = r ?? (e ? mo : po);
+var ho = "color-mix(in srgb, #ffb300 8%, transparent)", go = "color-mix(in srgb, #fb8c00 8%, transparent)";
+function _o(e, t = {}) {
+	let n = e ? "#fb8c00" : "#ffb300", r = e ? t.active : t.match, i = r ?? (e ? go : ho);
 	return {
 		border: `2px solid ${r ?? n}`,
 		background: i
 	};
 }
-var go = class {
+var vo = class {
 	hostDocument;
 	hostWindow;
 	acquisition = new Ba();
@@ -4914,7 +4939,7 @@ var go = class {
 	stashedRowHeights = /* @__PURE__ */ new Map();
 	stashedColWidths = /* @__PURE__ */ new Map();
 	sizeOverrideStore = /* @__PURE__ */ new Map();
-	projectionId = no++;
+	projectionId = io++;
 	canvasArea;
 	scrollHost;
 	spacer;
@@ -4938,6 +4963,7 @@ var go = class {
 	sheetViews = /* @__PURE__ */ new Map();
 	opts;
 	_mountKind;
+	_nativeScrollbars;
 	_mode;
 	_borrowed = !1;
 	preparedWorkbook = null;
@@ -4965,8 +4991,11 @@ var go = class {
 	get isSelecting() {
 		return this.selectionController.dragging;
 	}
-	set isSelecting(e) {
-		this.selectionController.setDragging(e);
+	get selectionPointerId() {
+		return this.selectionController.draggingPointerId;
+	}
+	beginSelectionDrag(e) {
+		this.pendingTap?.pointerId !== e && (this.pendingTap = null), this.pendingClick?.pointerId !== e && (this.pendingClick = null), this.selectionController.beginDrag(e);
 	}
 	_pendingZoomAnchor = null;
 	selectionController = new Wa();
@@ -4977,6 +5006,9 @@ var go = class {
 	pendingTap = null;
 	pendingClick = null;
 	resizeDrag = null;
+	selectionAutoScrollPointer = null;
+	selectionAutoScrollFrame = null;
+	selectionAutoScrollLastTime = null;
 	commentPopup;
 	commentMap = /* @__PURE__ */ new Map();
 	hyperlinkMap = /* @__PURE__ */ new Map();
@@ -4991,21 +5023,21 @@ var go = class {
 		this.hostDocument = (n.kind === "sheet" ? n.canvas.ownerDocument : e.ownerDocument) ?? document;
 		let r = this.hostDocument.defaultView;
 		if (!r) throw Error("XlsxViewer requires a document with an active Window");
-		this.hostWindow = r, this.opts = t, this._mountKind = n.kind;
-		let i = t[qa];
+		this.hostWindow = r, this.opts = t, this._mountKind = n.kind, this._nativeScrollbars = t.showScrollbars ?? !0;
+		let i = t[Ya];
 		this._borrowed = i !== void 0, this._mode = n.kind === "sheet" ? n.mode : we("XlsxViewer", t.mode, i), this._hiddenSheetMode = t.hiddenSheetMode ?? "show", this.viewport = new Ha(t.cellScale ?? 1), this.wrapper = this.hostDocument.createElement("div"), this.wrapper.style.cssText = `position:relative;width:100%;height:100%;background:${n.kind === "composite" ? "#fff" : "transparent"};box-sizing:border-box;font-family:sans-serif;display:flex;flex-direction:column;`, this.gridRegion = this.hostDocument.createElement("div"), this.gridRegion.style.cssText = "position:relative;flex:1;min-height:0;overflow:hidden;";
 		let a = "position:absolute;top:0;left:0;z-index:3;display:none;background:#f5f5f5;";
-		if (this.cornerGutter = this.hostDocument.createElement("canvas"), this.cornerGutter.style.cssText = a, this.cornerGutter.setAttribute("data-xlsx-outline", "corner"), this.colGutter = this.hostDocument.createElement("canvas"), this.colGutter.style.cssText = a, this.colGutter.setAttribute("data-xlsx-outline", "col"), this.rowGutter = this.hostDocument.createElement("canvas"), this.rowGutter.style.cssText = a, this.rowGutter.setAttribute("data-xlsx-outline", "row"), this.canvasArea = this.hostDocument.createElement("div"), this.canvasArea.style.cssText = "position:absolute;inset:0;overflow:hidden;", this.canvas = n.kind === "sheet" ? n.canvas : this.hostDocument.createElement("canvas"), this.canvas.style.cssText = "position:absolute;top:0;left:0;z-index:0;display:block;", this.renderDispatcher = new Ua(this.canvas, this._mode === "worker", this.hostWindow), this.scrollHost = this.hostDocument.createElement("div"), this.scrollHost.setAttribute("data-xlsx-viewport-input", n.kind), this.scrollHost.style.cssText = `position:absolute;inset:0;overflow:${n.kind === "composite" ? "auto" : "clip"};z-index:2;background:transparent;`, this.spacer = this.hostDocument.createElement("div"), this.spacer.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;", n.kind === "composite" && this.scrollHost.appendChild(this.spacer), this.surface = new Ga(this.canvas, this.canvasArea, this.scrollHost), this.overlayHost = new Ka(this.canvasArea, this.canvas, this.scrollHost, {
-			commentMaxWidth: Ya,
-			commentMaxHeight: Xa,
-			validationMaxWidth: Za,
-			validationMaxHeight: Qa
-		}), this.selectionOverlay = this.overlayHost.selection, this.findOverlay = this.overlayHost.find, this.commentPopup = this.overlayHost.comment, this.validationPanel = this.overlayHost.validation, oo(this.hostDocument), n.kind === "composite") {
-			this.tabBar = this.hostDocument.createElement("div"), this.tabBar.style.cssText = `display:flex;align-items:flex-end;height:${$a}px;flex-shrink:0;background:#f0f0f0;border-top:1px solid #c8ccd0;`, this.navPrev = this.makeNavButton("◀", "Scroll tabs left", () => this.scrollTabs(-1)), this.navNext = this.makeNavButton("▶", "Scroll tabs right", () => this.scrollTabs(1)), this.navPrev.dataset.xlsxTabNav = "prev", this.navNext.dataset.xlsxTabNav = "next";
+		if (this.cornerGutter = this.hostDocument.createElement("canvas"), this.cornerGutter.style.cssText = a, this.cornerGutter.setAttribute("data-xlsx-outline", "corner"), this.colGutter = this.hostDocument.createElement("canvas"), this.colGutter.style.cssText = a, this.colGutter.setAttribute("data-xlsx-outline", "col"), this.rowGutter = this.hostDocument.createElement("canvas"), this.rowGutter.style.cssText = a, this.rowGutter.setAttribute("data-xlsx-outline", "row"), this.canvasArea = this.hostDocument.createElement("div"), this.canvasArea.style.cssText = "position:absolute;inset:0;overflow:hidden;", this.canvas = n.kind === "sheet" ? n.canvas : this.hostDocument.createElement("canvas"), this.canvas.style.cssText = "position:absolute;top:0;left:0;z-index:0;display:block;", this.renderDispatcher = new Ua(this.canvas, this._mode === "worker", this.hostWindow), this.scrollHost = this.hostDocument.createElement("div"), this.scrollHost.setAttribute("data-xlsx-viewport-input", n.kind), this.scrollHost.style.cssText = `position:absolute;inset:0;overflow:${this._nativeScrollbars ? "auto" : "clip"};z-index:2;background:transparent;`, this.spacer = this.hostDocument.createElement("div"), this.spacer.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;", this._nativeScrollbars && this.scrollHost.appendChild(this.spacer), this.surface = new Ga(this.canvas, this.canvasArea, this.scrollHost), this.overlayHost = new Ka(this.canvasArea, this.canvas, this.scrollHost, {
+			commentMaxWidth: Za,
+			commentMaxHeight: Qa,
+			validationMaxWidth: $a,
+			validationMaxHeight: eo
+		}), this.selectionOverlay = this.overlayHost.selection, this.findOverlay = this.overlayHost.find, this.commentPopup = this.overlayHost.comment, this.validationPanel = this.overlayHost.validation, co(this.hostDocument), n.kind === "composite") {
+			this.tabBar = this.hostDocument.createElement("div"), this.tabBar.style.cssText = `display:flex;align-items:flex-end;height:${to}px;flex-shrink:0;background:#f0f0f0;border-top:1px solid #c8ccd0;`, this.navPrev = this.makeNavButton("◀", "Scroll tabs left", () => this.scrollTabs(-1)), this.navNext = this.makeNavButton("▶", "Scroll tabs right", () => this.scrollTabs(1)), this.navPrev.dataset.xlsxTabNav = "prev", this.navNext.dataset.xlsxTabNav = "next";
 			let e = this.hostDocument.createElement("div");
-			e.style.cssText = `display:flex;flex-shrink:0;width:${eo}px;height:100%;`, e.appendChild(this.navPrev), e.appendChild(this.navNext), this.tabStrip = this.hostDocument.createElement("div"), this.tabStrip.style.cssText = `position:relative;display:block;flex:1;min-width:0;height:100%;margin-left:${to}px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;`, this.tabStrip.classList.add("xlsx-tab-strip"), this.tabStrip.addEventListener("scroll", () => this.updateNavButtons()), this.tabList = this.hostDocument.createElement("div"), this.tabList.style.cssText = `display:flex;align-items:flex-end;height:100%;gap:${to}px;box-sizing:border-box;`, this.tabList.style.width = "max-content", this.tabList.style.minWidth = "100%", this.tabStrip.appendChild(this.tabList), this.tabBar.appendChild(e), this.tabBar.appendChild(this.tabStrip), this.opts.showZoomSlider !== !1 && this.tabBar.appendChild(this.buildZoomControl());
+			e.style.cssText = `display:flex;flex-shrink:0;width:${no}px;height:100%;`, e.appendChild(this.navPrev), e.appendChild(this.navNext), this.tabStrip = this.hostDocument.createElement("div"), this.tabStrip.style.cssText = `position:relative;display:block;flex:1;min-width:0;height:100%;margin-left:${ro}px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;`, this.tabStrip.classList.add("xlsx-tab-strip"), this.tabStrip.addEventListener("scroll", () => this.updateNavButtons()), this.tabList = this.hostDocument.createElement("div"), this.tabList.style.cssText = `display:flex;align-items:flex-end;height:100%;gap:${ro}px;box-sizing:border-box;`, this.tabList.style.width = "max-content", this.tabList.style.minWidth = "100%", this.tabStrip.appendChild(this.tabList), this.tabBar.appendChild(e), this.tabBar.appendChild(this.tabStrip), this.opts.showZoomSlider !== !1 && this.tabBar.appendChild(this.buildZoomControl());
 		}
-		this.gridRegion.appendChild(this.canvasArea), this.wrapper.appendChild(this.gridRegion), n.kind === "composite" && this.wrapper.appendChild(this.tabBar), e.appendChild(this.wrapper), this.rowGutter.addEventListener("pointerdown", (e) => this.onGutterPointerDown(e, "row")), this.colGutter.addEventListener("pointerdown", (e) => this.onGutterPointerDown(e, "col")), n.kind === "composite" && this.surface.on("scroll", () => {
+		this.gridRegion.appendChild(this.canvasArea), this.wrapper.appendChild(this.gridRegion), n.kind === "composite" && this.wrapper.appendChild(this.tabBar), e.appendChild(this.wrapper), this.rowGutter.addEventListener("pointerdown", (e) => this.onGutterPointerDown(e, "row")), this.colGutter.addEventListener("pointerdown", (e) => this.onGutterPointerDown(e, "col")), this._nativeScrollbars && this.surface.on("scroll", () => {
 			if (this.pendingTap = null, this.hideCommentPopup(), this.hideValidationPanel(), this.scrollHost.clientWidth > 0) {
 				let e = this.scrollHost.scrollLeft, t = this.isRtl ? this.maxScrollLeft - e : e;
 				this.viewport.setViewportSize(this.scrollHost.clientWidth, this.scrollHost.clientHeight), this.viewport.setOffset(t, this.scrollHost.scrollTop);
@@ -5292,7 +5324,7 @@ var go = class {
 		return this.currentWorksheet?.rightToLeft === !0;
 	}
 	updateFooterDirection() {
-		this._mountKind === "composite" && (this.tabBar.style.flexDirection = this.isRtl ? "row-reverse" : "row", this.tabStrip.style.marginLeft = this.isRtl ? "0" : `${to}px`, this.tabStrip.style.marginRight = this.isRtl ? `${to}px` : "0", this.tabList.style.flexDirection = this.isRtl ? "row-reverse" : "row");
+		this._mountKind === "composite" && (this.tabBar.style.flexDirection = this.isRtl ? "row-reverse" : "row", this.tabStrip.style.marginLeft = this.isRtl ? "0" : `${ro}px`, this.tabStrip.style.marginRight = this.isRtl ? `${ro}px` : "0", this.tabList.style.flexDirection = this.isRtl ? "row-reverse" : "row");
 	}
 	get maxScrollLeft() {
 		return this.syncNativeViewportExtent(), this.viewport.maxX;
@@ -5301,16 +5333,16 @@ var go = class {
 		return this.syncNativeViewportExtent(), this.viewport.maxY;
 	}
 	syncNativeViewportExtent() {
-		this._mountKind === "composite" && (this.viewport.setViewportSize(this.scrollHost.clientWidth, this.scrollHost.clientHeight), this.viewport.ensureExtent(this.scrollHost.scrollWidth, this.scrollHost.scrollHeight));
+		this._nativeScrollbars && (this.viewport.setViewportSize(this.scrollHost.clientWidth, this.scrollHost.clientHeight), this.viewport.ensureExtent(this.scrollHost.scrollWidth, this.scrollHost.scrollHeight));
 	}
 	get viewportTop() {
-		return this._mountKind === "composite" && (this.syncNativeViewportExtent(), this.viewport.adoptNativeOffset(this.viewport.x, this.scrollHost.scrollTop)), this.viewport.y;
+		return this._nativeScrollbars && (this.syncNativeViewportExtent(), this.viewport.adoptNativeOffset(this.viewport.x, this.scrollHost.scrollTop)), this.viewport.y;
 	}
 	set viewportTop(e) {
-		this.viewport.setOffset(this.viewport.x, e), this._mountKind === "composite" && (this.scrollHost.scrollTop = this.viewport.y);
+		this.viewport.setOffset(this.viewport.x, e), this._nativeScrollbars && (this.scrollHost.scrollTop = this.viewport.y);
 	}
 	get effectiveScrollLeft() {
-		if (this._mountKind === "composite") {
+		if (this._nativeScrollbars) {
 			this.syncNativeViewportExtent();
 			let e = this.scrollHost.scrollLeft;
 			this.viewport.adoptNativeOffset(this.isRtl ? this.maxScrollLeft - e : e, this.viewport.y);
@@ -5318,16 +5350,16 @@ var go = class {
 		return this.viewport.x;
 	}
 	setViewportLeft(e) {
-		this.viewport.setOffset(e, this.viewport.y), this._mountKind === "composite" && (this.scrollHost.scrollLeft = this.isRtl ? Math.max(0, this.maxScrollLeft - this.viewport.x) : this.viewport.x);
+		this.viewport.setOffset(e, this.viewport.y), this._nativeScrollbars && (this.scrollHost.scrollLeft = this.isRtl ? Math.max(0, this.maxScrollLeft - this.viewport.x) : this.viewport.x);
 	}
 	screenX(e, t) {
 		return this.isRtl ? hr(e, t, this.canvasArea.clientWidth) : e;
 	}
 	resetHorizontalScroll() {
-		this.viewport.setOffset(0, this.viewport.y), this._mountKind === "composite" && (this.scrollHost.scrollLeft = this.isRtl ? this.maxScrollLeft : 0);
+		this.viewport.setOffset(0, this.viewport.y), this._nativeScrollbars && (this.scrollHost.scrollLeft = this.isRtl ? this.maxScrollLeft : 0);
 	}
 	reanchorHorizontalScroll() {
-		if (this._mountKind === "sheet" || !this.isRtl || this.scrollHost.clientWidth === 0) return;
+		if (!this._nativeScrollbars || !this.isRtl || this.scrollHost.clientWidth === 0) return;
 		let e = Math.max(0, this.maxScrollLeft - this.viewport.x);
 		Math.abs(this.scrollHost.scrollLeft - e) > 1 && (this.scrollHost.scrollLeft = e);
 	}
@@ -5453,7 +5485,7 @@ var go = class {
 					edge: t.x + t.w
 				}));
 			}
-			let o = uo(a, i, co, s);
+			let o = po(a, i, uo, s);
 			return o === null ? null : {
 				kind: "col",
 				index: o,
@@ -5473,7 +5505,7 @@ var go = class {
 					edge: t.y + t.h
 				}));
 			}
-			let a = uo(o, i, co, c);
+			let a = po(o, i, uo, c);
 			return a === null ? null : {
 				kind: "row",
 				index: a,
@@ -5488,10 +5520,10 @@ var go = class {
 		if (!n || !r) return;
 		let i = this.viewport.scale, a = this.canvasArea.getBoundingClientRect();
 		if (n.kind === "col") {
-			let t = this.screenX(e - a.left, 0), o = Math.max(lo, Math.round((t - n.originScaled) / i));
+			let t = this.screenX(e - a.left, 0), o = Math.max(fo, Math.round((t - n.originScaled) / i));
 			r.colWidths[n.index] = Qn(o, n.mdw), this.recordSizeOverride("col", n.index);
 		} else {
-			let e = t - a.top, o = Math.max(lo, Math.round((e - n.originScaled) / i));
+			let e = t - a.top, o = Math.max(fo, Math.round((e - n.originScaled) / i));
 			r.rowHeights[n.index] = er(o), this.recordSizeOverride("row", n.index);
 		}
 		ir.invalidate(r), this.updateSpacerSize(r), this.updateSelectionOverlay(), this.scheduleRender();
@@ -5562,7 +5594,7 @@ var go = class {
 		c < a && (u -= a - c, c = a), l < o && (d -= o - l, l = o);
 		let m = a + s.width, h = o + s.height;
 		if (p > r && c < m && (u -= m - c, c = m), f > n && l < h && (d -= h - l, l = h), u <= 0 || d <= 0) return;
-		let g = this.screenX(c, u), { border: _, background: v } = fo(this.opts.selectionColor ?? so), y = this.hostDocument.createElement("div");
+		let g = this.screenX(c, u), { border: _, background: v } = mo(this.opts.selectionColor ?? lo), y = this.hostDocument.createElement("div");
 		y.style.cssText = `position:absolute;left:${g}px;top:${l}px;width:${u}px;height:${d}px;box-sizing:border-box;border:${_};background:${v};pointer-events:none;`, this.overlayHost.appendSelection(y), this.maybeDrawValidationDropdown();
 	}
 	maybeDrawValidationDropdown() {
@@ -5587,7 +5619,7 @@ var go = class {
 		this.overlayHost.clearFind();
 		let e = this.currentWorksheet;
 		if (!e) return;
-		let t = this.viewport.scale, n = (e) => Math.round(e * t), r = n(50), i = n(22), a = e.freezeRows ?? 0, o = e.freezeCols ?? 0, s = br(e).roundedFrozenExtent(t), c = r + s.width, l = i + s.height, u = ho(!1, this.opts.findHighlightColors), d = ho(!0, this.opts.findHighlightColors);
+		let t = this.viewport.scale, n = (e) => Math.round(e * t), r = n(50), i = n(22), a = e.freezeRows ?? 0, o = e.freezeCols ?? 0, s = br(e).roundedFrozenExtent(t), c = r + s.width, l = i + s.height, u = _o(!1, this.opts.findHighlightColors), d = _o(!0, this.opts.findHighlightColors);
 		for (let e of this._find.sheetHighlights(this.currentSheet)) {
 			let t = this.getCellRect(e.row, e.col);
 			if (!t) continue;
@@ -5760,7 +5792,7 @@ var go = class {
 		}
 		this.commentPopupKey !== t && (this.hideCommentPopup(), this.commentPopupKey = t, this.commentPopupTimer = setTimeout(() => {
 			this.commentPopupTimer = null, this.renderCommentPopup(e, n);
-		}, Ja));
+		}, Xa));
 	}
 	renderCommentPopup(e, t) {
 		let n = this.getCellRect(e.row, e.col);
@@ -5804,7 +5836,7 @@ var go = class {
 			}, this.activeCell = {
 				row: 1,
 				col: 1
-			}, this.isSelecting = !1) : a.kind === "row" ? n && this.anchorCell && this.selectionMode === "rows" ? this.selectionController.extend({
+			}, this.selectionController.endDrag()) : a.kind === "row" ? n && this.anchorCell && this.selectionMode === "rows" ? this.selectionController.extend({
 				row: a.row,
 				col: 1
 			}) : (this.selectionMode = "rows", this.anchorCell = {
@@ -5813,7 +5845,7 @@ var go = class {
 			}, this.activeCell = {
 				row: a.row,
 				col: 1
-			}, i && (this.isSelecting = !0, this.scrollHost.setPointerCapture(r))) : n && this.anchorCell && this.selectionMode === "cols" ? this.selectionController.extend({
+			}, i && (this.beginSelectionDrag(r), this.scrollHost.setPointerCapture(r))) : n && this.anchorCell && this.selectionMode === "cols" ? this.selectionController.extend({
 				row: 1,
 				col: a.col
 			}) : (this.selectionMode = "cols", this.anchorCell = {
@@ -5822,15 +5854,102 @@ var go = class {
 			}, this.activeCell = {
 				row: 1,
 				col: a.col
-			}, i && (this.isSelecting = !0, this.scrollHost.setPointerCapture(r))), this.updateSelectionOverlay(), this.renderCurrentSheet(), this.opts.onSelectionChange?.(this.selection);
+			}, i && (this.beginSelectionDrag(r), this.scrollHost.setPointerCapture(r))), this.updateSelectionOverlay(), this.renderCurrentSheet(), this.opts.onSelectionChange?.(this.selection);
 			return;
 		}
 		let o = this.getCellAt(e, t);
-		o && (n && this.anchorCell && this.selectionMode === "cells" ? this.selectionController.extend(o) : (this.selectionMode = "cells", this.anchorCell = o, this.activeCell = o), i && (this.isSelecting = !0, this.scrollHost.setPointerCapture(r)), this.updateSelectionOverlay(), this.wb && this.renderCurrentSheet().catch((e) => this._reportRenderError(e)), this.opts.onSelectionChange?.(this.selection));
+		o && (n && this.anchorCell && this.selectionMode === "cells" ? this.selectionController.extend(o) : (this.selectionMode = "cells", this.anchorCell = o, this.activeCell = o), i && (this.beginSelectionDrag(r), this.scrollHost.setPointerCapture(r)), this.updateSelectionOverlay(), this.wb && this.renderCurrentSheet().catch((e) => this._reportRenderError(e)), this.opts.onSelectionChange?.(this.selection));
+	}
+	viewportInputBounds() {
+		let e = this.canvasArea.getBoundingClientRect(), t = e.left + this.scrollHost.clientLeft, n = e.top + this.scrollHost.clientTop, r = Math.max(0, e.width - this.scrollHost.clientLeft), i = Math.max(0, e.height - this.scrollHost.clientTop);
+		return {
+			left: t,
+			top: n,
+			width: Math.min(r, this.scrollHost.clientWidth || r),
+			height: Math.min(i, this.scrollHost.clientHeight || i)
+		};
+	}
+	extendDragSelection(e, t, n) {
+		let r = e, i = t, a = this.viewportInputBounds(), o = e < a.left || e >= a.left + a.width || t < a.top || t >= a.top + a.height;
+		if (n || o) {
+			let e = this.viewport.scale, t = Math.round(50 * e), n = Math.round(22 * e), o = a.left + (this.isRtl ? 0 : t), s = a.left + a.width - (this.isRtl ? t : 0);
+			r = Math.min(s - 1, Math.max(o + 1, r)), i = Math.min(a.top + a.height - 1, Math.max(a.top + n + 1, i));
+		}
+		if (this.selectionMode === "rows") {
+			let e = n ? null : this.getHeaderHit(r, i), t = e?.kind === "row" ? e.row : this.getCellAt(r, i)?.row;
+			return !t || t === this.activeCell?.row ? !1 : (this.selectionController.extend({
+				row: t,
+				col: 1
+			}), !0);
+		}
+		if (this.selectionMode === "cols") {
+			let e = n ? null : this.getHeaderHit(r, i), t = e?.kind === "col" ? e.col : this.getCellAt(r, i)?.col;
+			return !t || t === this.activeCell?.col ? !1 : (this.selectionController.extend({
+				row: 1,
+				col: t
+			}), !0);
+		}
+		let s = this.getCellAt(r, i);
+		return !s || s.row === this.activeCell?.row && s.col === this.activeCell?.col ? !1 : (this.selectionController.extend(s), !0);
+	}
+	selectionAutoScrollSpeed() {
+		let e = this.selectionAutoScrollPointer;
+		if (!e) return {
+			x: 0,
+			y: 0
+		};
+		let t = this.viewportInputBounds();
+		return Ja({
+			x: e.clientX - t.left,
+			y: e.clientY - t.top
+		}, {
+			width: t.width,
+			height: t.height
+		}, this.isRtl, this.selectionMode);
+	}
+	trackSelectionAutoScroll(e) {
+		if (e.pointerId !== this.selectionPointerId) return;
+		this.selectionAutoScrollPointer = {
+			clientX: e.clientX,
+			clientY: e.clientY,
+			pointerId: e.pointerId
+		};
+		let t = this.selectionAutoScrollSpeed();
+		if (t.x === 0 && t.y === 0) {
+			this.stopSelectionAutoScroll();
+			return;
+		}
+		this.selectionAutoScrollFrame === null && (this.selectionAutoScrollLastTime = null, this.selectionAutoScrollFrame = this.hostWindow.requestAnimationFrame((e) => this.runSelectionAutoScroll(e)));
+	}
+	runSelectionAutoScroll(e) {
+		this.selectionAutoScrollFrame = null;
+		let t = this.selectionAutoScrollPointer;
+		if (!t || t.pointerId !== this.selectionPointerId || !this.isSelecting || this._destroyed) {
+			this.stopSelectionAutoScroll();
+			return;
+		}
+		let n = this.selectionAutoScrollSpeed();
+		if (n.x === 0 && n.y === 0) {
+			this.stopSelectionAutoScroll();
+			return;
+		}
+		let r = this.selectionAutoScrollLastTime, i = r === null ? 1 / 60 : Math.min(.05, Math.max(0, e - r) / 1e3);
+		this.selectionAutoScrollLastTime = e;
+		let a = this.effectiveScrollLeft, o = this.viewportTop;
+		this.setViewportLeft(a + n.x * i), this.viewportTop = o + n.y * i;
+		let s = this.effectiveScrollLeft !== a || this.viewportTop !== o, c = s && this.extendDragSelection(t.clientX, t.clientY, !0);
+		if (s && (this.updateSelectionOverlay(), this.updateFindOverlay(), this.scheduleRender(), this.emitViewportChange(), c && this.opts.onSelectionChange?.(this.selection)), !s) {
+			this.stopSelectionAutoScroll();
+			return;
+		}
+		this.selectionAutoScrollFrame = this.hostWindow.requestAnimationFrame((e) => this.runSelectionAutoScroll(e));
+	}
+	stopSelectionAutoScroll() {
+		this.selectionAutoScrollFrame !== null && (this.hostWindow.cancelAnimationFrame(this.selectionAutoScrollFrame), this.selectionAutoScrollFrame = null), this.selectionAutoScrollPointer = null, this.selectionAutoScrollLastTime = null;
 	}
 	setupSelectionEvents() {
 		this.surface.on("pointerdown", (e) => {
-			if (e.button !== 0) return;
+			if (e.button !== 0 || this.isSelecting && e.pointerId !== this.selectionPointerId) return;
 			let t = this.opts.resizable ?? !0 ? this.getResizeTarget(e.clientX, e.clientY) : null;
 			if (t) {
 				e.preventDefault(), this.resizeDrag = {
@@ -5849,7 +5968,7 @@ var go = class {
 			}
 			let r = this.scrollHost.getBoundingClientRect(), i = e.clientX - r.left - this.scrollHost.clientLeft, a = e.clientY - r.top - this.scrollHost.clientTop;
 			if (i >= this.scrollHost.clientWidth || a >= this.scrollHost.clientHeight) return;
-			let o = this._mountKind === "composite" && (this.scrollHost.scrollWidth > this.scrollHost.clientWidth && this.scrollHost.clientHeight - a <= 16 || this.scrollHost.scrollHeight > this.scrollHost.clientHeight && this.scrollHost.clientWidth - i <= 16);
+			let o = this._nativeScrollbars && (this.scrollHost.scrollWidth > this.scrollHost.clientWidth && this.scrollHost.clientHeight - a <= 16 || this.scrollHost.scrollHeight > this.scrollHost.clientHeight && this.scrollHost.clientWidth - i <= 16);
 			if (e.pointerType !== "mouse" || o) {
 				this.pendingTap = {
 					x: e.clientX,
@@ -5890,28 +6009,7 @@ var go = class {
 				let t = this.getCellAt(e.clientX, e.clientY);
 				t ? this.scheduleCommentPopup(t) : this.hideCommentPopup(), this.scrollHost.style.cursor = t && this.hyperlinkAtCell(t) ? "pointer" : "";
 			}
-			if (this.isSelecting) {
-				if (this.selectionMode === "rows") {
-					let t = this.getHeaderHit(e.clientX, e.clientY), n = t?.kind === "row" ? t.row : this.getCellAt(e.clientX, e.clientY)?.row;
-					if (!n || n === this.activeCell?.row) return;
-					this.selectionController.extend({
-						row: n,
-						col: 1
-					});
-				} else if (this.selectionMode === "cols") {
-					let t = this.getHeaderHit(e.clientX, e.clientY), n = t?.kind === "col" ? t.col : this.getCellAt(e.clientX, e.clientY)?.col;
-					if (!n || n === this.activeCell?.col) return;
-					this.selectionController.extend({
-						row: 1,
-						col: n
-					});
-				} else {
-					let t = this.getCellAt(e.clientX, e.clientY);
-					if (!t || t.row === this.activeCell?.row && t.col === this.activeCell?.col) return;
-					this.selectionController.extend(t);
-				}
-				this.updateSelectionOverlay(), this.scheduleRender(), this.opts.onSelectionChange?.(this.selection);
-			}
+			!this.isSelecting || e.pointerId !== this.selectionPointerId || (this.trackSelectionAutoScroll(e), this.extendDragSelection(e.clientX, e.clientY, !1) && (this.updateSelectionOverlay(), this.scheduleRender(), this.opts.onSelectionChange?.(this.selection)));
 		}), this.surface.on("pointerup", (e) => {
 			if (this.resizeDrag && this.resizeDrag.pointerId === e.pointerId) {
 				this.scrollHost.releasePointerCapture(e.pointerId), this.resizeDrag = null;
@@ -5928,16 +6026,17 @@ var go = class {
 				}
 				this.pendingTap = null;
 			}
-			if (this.pendingClick && this.pendingClick.pointerId === e.pointerId) {
+			let t = e.pointerId === this.selectionPointerId;
+			if (t && this.stopSelectionAutoScroll(), this.pendingClick && this.pendingClick.pointerId === e.pointerId) {
 				let t = e.clientX - this.pendingClick.x, n = e.clientY - this.pendingClick.y, r = this.getCellAt(e.clientX, e.clientY);
 				t * t + n * n <= 64 && r && r.row === this.pendingClick.cell.row && r.col === this.pendingClick.cell.col && this.dispatchHyperlink(this.pendingClick.cell), this.pendingClick = null;
 			}
-			this.isSelecting = !1;
+			t && this.selectionController.endDrag(e.pointerId);
 		}), this.surface.on("pointercancel", (e) => {
-			this.resizeDrag && this.resizeDrag.pointerId === e.pointerId && (this.resizeDrag = null), this.pendingTap && this.pendingTap.pointerId === e.pointerId && (this.pendingTap = null), this.pendingClick && this.pendingClick.pointerId === e.pointerId && (this.pendingClick = null), this.isSelecting = !1;
+			this.resizeDrag && this.resizeDrag.pointerId === e.pointerId && (this.resizeDrag = null), this.pendingTap && this.pendingTap.pointerId === e.pointerId && (this.pendingTap = null), this.pendingClick && this.pendingClick.pointerId === e.pointerId && (this.pendingClick = null), e.pointerId === this.selectionPointerId && (this.stopSelectionAutoScroll(), this.selectionController.endDrag(e.pointerId));
 		}), this.surface.on("wheel", (e) => {
 			if (!(e.ctrlKey || e.metaKey)) {
-				if (this._mountKind === "sheet") {
+				if (!this._nativeScrollbars) {
 					e.preventDefault();
 					let t = e.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : e.deltaMode === WheelEvent.DOM_DELTA_PAGE ? Math.max(1, this.scrollHost.clientHeight) : 1, n = (e.shiftKey ? e.deltaY : e.deltaX) * t, r = (e.shiftKey ? 0 : e.deltaY) * t;
 					this.setViewportLeft(this.effectiveScrollLeft + n), this.viewportTop += r, this.scheduleRender(), this.updateSelectionOverlay(), this.updateFindOverlay(), this.emitViewportChange();
@@ -6003,12 +6102,12 @@ var go = class {
 		this.updateNavButtons();
 	}
 	tabStyle(e, t) {
-		let n = $a - 2, r = $a - 5, i = t ? `box-shadow:inset 0 -${e ? 2 : 3}px 0 0 ${t};` : "";
+		let n = to - 2, r = to - 5, i = t ? `box-shadow:inset 0 -${e ? 2 : 3}px 0 0 ${t};` : "";
 		return e ? `display:inline-block;flex:none;padding:0 14px;position:relative;border:1px solid #c8ccd0;border-bottom:none;border-radius:3px 3px 0 0;cursor:pointer;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis;outline:none;box-sizing:border-box;height:${n}px;font-size:13px;background:#fff;color:#000;border-bottom:1px solid #fff;font-weight:600;top:1px;` + i : `display:inline-block;flex:none;padding:0 14px;position:relative;border:1px solid #c8ccd0;border-bottom:none;border-radius:3px 3px 0 0;cursor:pointer;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis;outline:none;box-sizing:border-box;height:${r}px;font-size:11px;background:#e0e0e0;color:#555;` + i;
 	}
 	tabCss(e, t) {
 		let n = this.tabStyle(t, this.tabColors[e]);
-		return this._hiddenSheetMode !== "show" && this.wb?.isHidden(e) && (n += this._hiddenSheetMode === "skip" ? "display:none;" : `opacity:${ro};`), n;
+		return this._hiddenSheetMode !== "show" && this.wb?.isHidden(e) && (n += this._hiddenSheetMode === "skip" ? "display:none;" : `opacity:${ao};`), n;
 	}
 	buildZoomControl() {
 		let e = this.opts.zoomMin ?? .1, t = this.opts.zoomMax ?? 4, n = this.viewport.scale, r = this.hostDocument.createElement("div");
@@ -6157,7 +6256,7 @@ var go = class {
 	}
 	destroy() {
 		if (this._destroyed) return;
-		this._destroyed = !0, this.sheetRequestGeneration++, this.resizeObserver?.disconnect(), this.renderDispatcher.destroy(), this.surface.destroy(), this.hideCommentPopup(), this.hideValidationPanel(), this._find.invalidate(), this.releaseHostFonts();
+		this._destroyed = !0, this.stopSelectionAutoScroll(), this.sheetRequestGeneration++, this.resizeObserver?.disconnect(), this.renderDispatcher.destroy(), this.surface.destroy(), this.hideCommentPopup(), this.hideValidationPanel(), this._find.invalidate(), this.releaseHostFonts();
 		let e = this.wb?.[Ta];
 		typeof e == "function" && e.call(this.wb, this.projectionId), this.acquisition.destroy(), this.wrapper.remove();
 	}
@@ -6167,17 +6266,17 @@ var go = class {
 	destroyedError() {
 		return /* @__PURE__ */ Error(this._mountKind === "sheet" ? "XlsxSheetViewer is destroyed" : "XlsxViewer is destroyed");
 	}
-}, _o = class e extends go {
+}, yo = class e extends vo {
 	static fromWorkbook(t, n, r = {}) {
 		return new e(t, {
 			...r,
-			[qa]: n
+			[Ya]: n
 		});
 	}
 	constructor(e, t = {}) {
 		super(e, t, { kind: "composite" });
 	}
-}, vo = class e {
+}, bo = class e {
 	engine;
 	canvasMount;
 	destroyed = !1;
@@ -6186,16 +6285,16 @@ var go = class {
 	static fromWorkbook(t, n, r = {}) {
 		return new e(t, {
 			...r,
-			[qa]: n
+			[Ya]: n
 		});
 	}
 	constructor(e, t = {}) {
 		this.canvasElement = e;
-		let n = t[qa], r = we("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
+		let n = t[Ya], r = we("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
 		this.canvasMount = new De(e, {
 			wrapperCssText: `position:relative;display:inline-block;vertical-align:top;overflow:hidden;width:${e.style.width || `${i.width || e.width}px`};height:${e.style.height || `${i.height || e.height}px`};`,
 			restoreMode: "style-and-bitmap"
-		}), this.engine = new go(this.canvasMount.wrapper, {
+		}), this.engine = new vo(this.canvasMount.wrapper, {
 			...t,
 			onResourceMetrics: (e) => {
 				this.lastMetrics = e, t.onResourceMetrics?.(e);
@@ -6346,12 +6445,12 @@ var go = class {
 	destroyedError() {
 		return /* @__PURE__ */ Error("XlsxSheetViewer is destroyed");
 	}
-}, yo = /* @__PURE__ */ e({
+}, xo = /* @__PURE__ */ e({
 	OoxmlDecodedImageLimitError: () => d,
 	OoxmlError: () => re,
 	OoxmlResourceLimitError: () => te,
-	XlsxSheetViewer: () => vo,
-	XlsxViewer: () => _o,
+	XlsxSheetViewer: () => bo,
+	XlsxViewer: () => yo,
 	XlsxWorkbook: () => Ea,
 	autoResize: () => je,
 	isOoxmlDecodedImageLimitError: () => m,
@@ -6359,4 +6458,4 @@ var go = class {
 	resolveSharedStrings: () => Ue
 });
 //#endregion
-export { Ea as i, vo as n, _o as r, yo as t };
+export { Ea as i, bo as n, yo as r, xo as t };
