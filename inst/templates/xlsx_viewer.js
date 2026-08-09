@@ -1,206 +1,399 @@
-        import { XlsxViewer } from "/assets/xlsx.mjs";
+import { XlsxViewer } from "/assets/xlsx.mjs";
 
-        function colLetters(col) {
-            let n = col, s = "";
-            while (n > 0) {
-                const rem = (n - 1) % 26;
-                s = String.fromCharCode(65 + rem) + s;
-                n = Math.floor((n - 1) / 26);
-            }
-            return s;
+// Rewritten against the real API (dist/types/xlsx.d.ts) rather than the
+// private selectionController we originally reverse-engineered:
+//   - onSelectionChange(selection) replaces our pointerup/keyup polling
+//   - select(ref) actually moves the real selection (our old ref-box "go to
+//     cell" could only fake the display, since writing to the private
+//     selectionController directly corrupted state - see chat history)
+//   - scrollToCell(ref) brings it into view
+//   - sheetNames/sheetCount/sheetIndex/goToSheet/onSheetChange/onReady give
+//     us real sheet-tab navigation, which didn't exist before at all
+// Still no public method to read a cell's actual value/formula, so the
+// formula bar and count/sum/average stats still read the private
+// `currentWorksheet.rows[...].cells` structure - there's no alternative.
+
+function colLetters(col) {
+    let n = col, s = "";
+    while (n > 0) {
+        const rem = (n - 1) % 26;
+        s = String.fromCharCode(65 + rem) + s;
+        n = Math.floor((n - 1) / 26);
+    }
+    return s;
+}
+
+function findCell(ws, row, col) {
+    if (!ws) return null;
+    const rowObj = ws.rows.find(r => r.index === row);
+    if (!rowObj || !rowObj.cells) return null;
+    return rowObj.cells.find(c => c.col === col) || null;
+}
+
+function cellDisplay(cell) {
+    if (!cell) return { text: "", num: null, formula: null };
+    const formula = cell.formula ? "=" + cell.formula : null;
+    const v = cell.value;
+    if (v === null || v === undefined) return { text: "", num: null, formula: formula };
+    if (typeof v !== "object") return { text: String(v), num: typeof v === "number" ? v : null, formula: formula };
+
+    if (v.type === "number" && typeof v.number === "number") {
+        return { text: String(v.number), num: v.number, formula: formula };
+    }
+    if (v.type === "text" && "text" in v) {
+        return { text: String(v.text), num: null, formula: formula };
+    }
+    if (v.type === "bool" && "bool" in v) {
+        return { text: v.bool ? "TRUE" : "FALSE", num: null, formula: formula };
+    }
+    if (v.type === "error" && "error" in v) {
+        return { text: String(v.error), num: null, formula: formula };
+    }
+    if ("text" in v) return { text: String(v.text), num: null, formula: formula };
+    if ("number" in v) return { text: String(v.number), num: v.number, formula: formula };
+    if ("value" in v) return { text: String(v.value), num: typeof v.value === "number" ? v.value : null, formula: formula };
+    return { text: JSON.stringify(v), num: null, formula: formula };
+}
+
+function cellText(row, col) {
+    const cell = row && row.cells ? row.cells.find(c => c.col === col) : null;
+    return cellDisplay(cell).text;
+}
+
+function safeStringify(obj, maxDepth) {
+    const seen = new WeakSet();
+    function walk(val, depth) {
+        if (val === null || typeof val !== "object") return val;
+        if (seen.has(val)) return "[circular]";
+        if (depth > maxDepth) return "[maxdepth]";
+        seen.add(val);
+        if (Array.isArray(val)) return val.slice(0, 20).map(v => walk(v, depth + 1));
+        const out = {};
+        let names = [];
+        try { names = Object.getOwnPropertyNames(val); } catch (e) {}
+        for (const k of names) {
+            let v;
+            try { v = val[k]; } catch (e) { continue; }
+            if (typeof v === "function") continue;
+            out[k] = walk(v, depth + 1);
         }
+        const proto = Object.getPrototypeOf(val);
+        out["__ctor__"] = proto && proto.constructor ? proto.constructor.name : typeof val;
+        return out;
+    }
+    try { return JSON.stringify(walk(obj, 0), null, 2); }
+    catch (e) { return "stringify failed: " + e.message; }
+}
 
-        function lettersToCol(letters) {
-            let n = 0;
-            for (const ch of letters.toUpperCase()) {
-                n = n * 26 + (ch.charCodeAt(0) - 64);
-            }
-            return n;
-        }
+function listMethods(obj, label) {
+    let protoNames = [];
+    try { protoNames = Object.getOwnPropertyNames(Object.getPrototypeOf(obj)); } catch (e) {}
+    const protoFns = protoNames.filter(n => typeof obj[n] === "function");
+    let ownNames = [];
+    try { ownNames = Object.getOwnPropertyNames(obj); } catch (e) {}
+    const ownFns = ownNames.filter(n => typeof obj[n] === "function");
+    return "--- " + label + " methods ---\n" + protoFns.concat(ownFns).join("\n");
+}
 
-        function parseRef(text) {
-            const m = text.trim().toUpperCase().match(/^([A-Z]+)(\d+)(?::([A-Z]+)(\d+))?$/);
-            if (!m) return null;
-            const c1 = lettersToCol(m[1]), r1 = parseInt(m[2], 10);
-            if (m[3] && m[4]) {
-                const c2 = lettersToCol(m[3]), r2 = parseInt(m[4], 10);
-                return { r1: Math.min(r1, r2), r2: Math.max(r1, r2), c1: Math.min(c1, c2), c2: Math.max(c1, c2) };
-            }
-            return { r1: r1, r2: r1, c1: c1, c2: c1 };
-        }
+async function init() {
+    const container = document.getElementById("xlsx-container");
+    const refBox = document.getElementById("ref-box");
+    const formulaBox = document.getElementById("formula-box");
+    const statCount = document.getElementById("stat-count");
+    const statSum = document.getElementById("stat-sum");
+    const statAvg = document.getElementById("stat-avg");
+    const statHint = document.getElementById("stat-hint");
+    const clipHelper = document.getElementById("clip-helper");
+    const zoomIndicator = document.getElementById("zoom-indicator");
+    const loadStatus = document.getElementById("load-status");
+    const sheetTabs = document.getElementById("sheettabs");
 
-        function findCell(ws, row, col) {
-            if (!ws) return null;
-            const rowObj = ws.rows.find(r => r.index === row);
-            if (!rowObj || !rowObj.cells) return null;
-            return rowObj.cells.find(c => c.col === col) || null;
-        }
+    loadStatus.textContent = "Loading\u2026";
 
-        function cellDisplay(cell) {
-            if (!cell) return { text: "", num: null, formula: null };
-            const formula = cell.formula ? "=" + cell.formula : null;
-            const v = cell.value;
-            if (v === null || v === undefined) return { text: "", num: null, formula: formula };
-            if (typeof v !== "object") return { text: String(v), num: typeof v === "number" ? v : null, formula: formula };
+    let sel = null;
 
-            if (v.type === "number" && typeof v.number === "number") {
-                return { text: String(v.number), num: v.number, formula: formula };
-            }
-            if (v.type === "text" && "text" in v) {
-                return { text: String(v.text), num: null, formula: formula };
-            }
-            if (v.type === "bool" && "bool" in v) {
-                return { text: v.bool ? "TRUE" : "FALSE", num: null, formula: formula };
-            }
-            if (v.type === "error" && "error" in v) {
-                return { text: String(v.error), num: null, formula: formula };
-            }
-            if ("text" in v) return { text: String(v.text), num: null, formula: formula };
-            if ("number" in v) return { text: String(v.number), num: v.number, formula: formula };
-            if ("value" in v) return { text: String(v.value), num: typeof v.value === "number" ? v.value : null, formula: formula };
-            return { text: JSON.stringify(v), num: null, formula: formula };
-        }
+    const xlsx = new XlsxViewer(container, {
+        enableHyperlinks: true,
+        onSelectionChange: (selection) => {
+            if (!selection) return;
+            sel = {
+                r1: Math.min(selection.anchor.row, selection.active.row),
+                r2: Math.max(selection.anchor.row, selection.active.row),
+                c1: Math.min(selection.anchor.col, selection.active.col),
+                c2: Math.max(selection.anchor.col, selection.active.col),
+                activeRow: selection.active.row,
+                activeCol: selection.active.col
+            };
+            statHint.textContent = "";
+            updateBars();
+            doCopy();
+        },
+        onSheetChange: (index, total) => {
+            renderSheetTabs(index);
+        },
+        onReady: (sheetNames) => {
+            renderSheetTabs(xlsx.sheetIndex);
+        },
+        onScaleChange: (scale) => {
+            zoomIndicator.textContent = Math.round(scale * 100) + "%";
+        },
+        onError: (err) => console.error("[oxview] xlsx viewer error:", err)
+    });
 
-        function cellText(row, col) {
-            const cell = row && row.cells ? row.cells.find(c => c.col === col) : null;
-            return cellDisplay(cell).text;
-        }
+    const res = await fetch("./workbook.xlsx");
+    const blob = await res.blob();
+    const fileUrl = URL.createObjectURL(blob);
+    await xlsx.load(fileUrl);
+    URL.revokeObjectURL(fileUrl);
 
-        async function init() {
-            const container = document.getElementById("xlsx-container");
-            const refBox = document.getElementById("ref-box");
-            const formulaBox = document.getElementById("formula-box");
-            const statCount = document.getElementById("stat-count");
-            const statSum = document.getElementById("stat-sum");
-            const statAvg = document.getElementById("stat-avg");
-            const statHint = document.getElementById("stat-hint");
-            const clipHelper = document.getElementById("clip-helper");
-            const btnCopy = document.getElementById("btn-copy");
-            const xlsx = new XlsxViewer(container);
+    loadStatus.textContent = "Ready";
+    setTimeout(() => { loadStatus.textContent = ""; }, 3000);
 
-            const res = await fetch("./workbook.xlsx");
-            const blob = await res.blob();
-            const fileUrl = URL.createObjectURL(blob);
+    zoomIndicator.textContent = Math.round(xlsx.getScale() * 100) + "%";
+    renderSheetTabs(xlsx.sheetIndex);
 
-            await xlsx.load(fileUrl);
-            URL.revokeObjectURL(fileUrl);
-
-            let sel = null;
-            let manualSelectionActive = false;
-
-            function selFromController() {
-                const sc = xlsx.selectionController;
-                if (!sc) return null;
-                return {
-                    r1: Math.min(sc.anchorCell.row, sc.activeCell.row),
-                    r2: Math.max(sc.anchorCell.row, sc.activeCell.row),
-                    c1: Math.min(sc.anchorCell.col, sc.activeCell.col),
-                    c2: Math.max(sc.anchorCell.col, sc.activeCell.col),
-                    activeRow: sc.activeCell.row,
-                    activeCol: sc.activeCell.col
-                };
-            }
-
-            function extractSelection() {
-                const ws = xlsx.currentWorksheet;
-                if (!sel || !ws) return "";
-                const lines = [];
-                for (let r = sel.r1; r <= sel.r2; r++) {
-                    const rowObj = ws.rows.find(row => row.index === r);
-                    const vals = [];
-                    for (let c = sel.c1; c <= sel.c2; c++) {
-                        vals.push(cellText(rowObj, c));
-                    }
-                    lines.push(vals.join("\t"));
-                }
-                return lines.join("\n");
-            }
-
-            function updateBars() {
-                const ws = xlsx.currentWorksheet;
-                if (!sel || !ws) return;
-
-                const isRange = sel.r1 !== sel.r2 || sel.c1 !== sel.c2;
-                refBox.value = isRange
-                    ? colLetters(sel.c1) + sel.r1 + ":" + colLetters(sel.c2) + sel.r2
-                    : colLetters(sel.c1) + sel.r1;
-
-                const activeRow = sel.activeRow || sel.r1;
-                const activeCol = sel.activeCol || sel.c1;
-                const activeCellObj = findCell(ws, activeRow, activeCol);
-                const disp = cellDisplay(activeCellObj);
-                formulaBox.value = disp.formula || disp.text;
-
-                let count = 0, numCount = 0, sum = 0;
-                for (let r = sel.r1; r <= sel.r2; r++) {
-                    for (let c = sel.c1; c <= sel.c2; c++) {
-                        const cell = findCell(ws, r, c);
-                        if (!cell) continue;
-                        const d = cellDisplay(cell);
-                        if (d.text === "") continue;
-                        count++;
-                        if (d.num !== null) { numCount++; sum += d.num; }
-                    }
-                }
-                statCount.textContent = "Count: " + count;
-                statSum.textContent = numCount > 0 ? "Sum: " + (Math.round(sum * 100) / 100) : "";
-                statAvg.textContent = numCount > 0 ? "Average: " + (Math.round((sum / numCount) * 100) / 100) : "";
-            }
-
-            function doCopy() {
-                const text = extractSelection();
-                clipHelper.value = text;
-
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).catch(() => {
-                        clipHelper.focus();
-                        clipHelper.select();
-                        try { document.execCommand("copy"); } catch (e) {}
-                    });
-                } else {
-                    clipHelper.focus();
-                    clipHelper.select();
-                    try { document.execCommand("copy"); } catch (e) {}
-                }
-            }
-
-            function report() {
-                sel = selFromController();
-                updateBars();
-                doCopy();
-            }
-
-            window.addEventListener("pointerup", (ev) => {
-                if (!container.contains(ev.target)) return;
-                manualSelectionActive = false;
-                setTimeout(report, 50);
+    function renderSheetTabs(activeIndex) {
+        sheetTabs.innerHTML = "";
+        xlsx.sheetNames.forEach((name, i) => {
+            const tab = document.createElement("span");
+            tab.className = "sheet-tab" + (i === activeIndex ? " active" : "");
+            tab.textContent = name;
+            tab.addEventListener("click", () => {
+                xlsx.goToSheet(i).catch(e => console.error("[oxview] goToSheet failed:", e));
             });
-            window.addEventListener("keyup", (ev) => {
-                if (manualSelectionActive) return;
-                if (ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA") return;
-                setTimeout(report, 50);
-            });
+            sheetTabs.appendChild(tab);
+        });
+    }
 
-            refBox.addEventListener("keydown", (ev) => {
-                if (ev.key !== "Enter") return;
-                const parsed = parseRef(refBox.value);
-                if (!parsed) {
-                    statHint.textContent = "invalid ref, e.g. B2 or B2:D5";
-                    return;
-                }
-                statHint.textContent = "value shown, selection on canvas not moved (click a cell to resume live tracking)";
-                manualSelectionActive = true;
-                sel = { r1: parsed.r1, r2: parsed.r2, c1: parsed.c1, c2: parsed.c2,
-                         activeRow: parsed.r1, activeCol: parsed.c1 };
-                updateBars();
-                refBox.value = refBox.value.toUpperCase();
-                doCopy();
-            });
-
-            btnCopy.addEventListener("click", () => {
-                doCopy();
-                btnCopy.textContent = "Copied!";
-                setTimeout(() => { btnCopy.textContent = "Copy"; }, 1500);
-            });
+    function extractSelection() {
+        const ws = xlsx.currentWorksheet;
+        if (!sel || !ws) return "";
+        const lines = [];
+        for (let r = sel.r1; r <= sel.r2; r++) {
+            const rowObj = ws.rows.find(row => row.index === r);
+            const vals = [];
+            for (let c = sel.c1; c <= sel.c2; c++) {
+                vals.push(cellText(rowObj, c));
+            }
+            lines.push(vals.join("\t"));
         }
-        init().catch(console.error);
+        return lines.join("\n");
+    }
+
+    function updateBars() {
+        const ws = xlsx.currentWorksheet;
+        if (!sel || !ws) return;
+
+        const isRange = sel.r1 !== sel.r2 || sel.c1 !== sel.c2;
+        refBox.value = isRange
+            ? colLetters(sel.c1) + sel.r1 + ":" + colLetters(sel.c2) + sel.r2
+            : colLetters(sel.c1) + sel.r1;
+
+        const activeRow = sel.activeRow || sel.r1;
+        const activeCol = sel.activeCol || sel.c1;
+        const activeCellObj = findCell(ws, activeRow, activeCol);
+        const disp = cellDisplay(activeCellObj);
+        formulaBox.value = disp.formula || disp.text;
+
+        let count = 0, numCount = 0, sum = 0;
+        for (let r = sel.r1; r <= sel.r2; r++) {
+            for (let c = sel.c1; c <= sel.c2; c++) {
+                const cell = findCell(ws, r, c);
+                if (!cell) continue;
+                const d = cellDisplay(cell);
+                if (d.text === "") continue;
+                count++;
+                if (d.num !== null) { numCount++; sum += d.num; }
+            }
+        }
+        statCount.textContent = "Count: " + count;
+        statSum.textContent = numCount > 0 ? "Sum: " + (Math.round(sum * 100) / 100) : "";
+        statAvg.textContent = numCount > 0 ? "Average: " + (Math.round((sum / numCount) * 100) / 100) : "";
+    }
+
+    function doCopy() {
+        const text = extractSelection();
+        clipHelper.value = text;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).catch(() => {
+                clipHelper.focus();
+                clipHelper.select();
+                try { document.execCommand("copy"); } catch (e) {}
+            });
+        } else {
+            clipHelper.focus();
+            clipHelper.select();
+            try { document.execCommand("copy"); } catch (e) {}
+        }
+    }
+
+    // ---- ref box: real selection movement via select(), not a display fake ----
+
+    refBox.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter") return;
+        const ref = refBox.value.trim().toUpperCase();
+        if (!/^[A-Z]+\d+(:[A-Z]+\d+)?$/.test(ref)) {
+            statHint.textContent = "invalid ref, e.g. B2 or B2:D5";
+            return;
+        }
+        try {
+            xlsx.select(ref);
+            xlsx.scrollToCell(ref).catch(() => {});
+            refBox.value = ref;
+            // onSelectionChange fires from select() and updates everything else
+        } catch (e) {
+            statHint.textContent = "select() failed: " + e.message;
+        }
+    });
+
+    // ---- zoom ----
+
+    document.getElementById("btn-zoom-in").addEventListener("click", () => xlsx.zoomIn());
+    document.getElementById("btn-zoom-out").addEventListener("click", () => xlsx.zoomOut());
+    document.getElementById("btn-fit-width").addEventListener("click", () => xlsx.fitWidth());
+    document.getElementById("btn-fit-page").addEventListener("click", () => xlsx.fitPage());
+
+    // ---- search (Cmd/Ctrl+F) ----
+
+    const searchbar = document.getElementById("searchbar");
+    const searchInput = document.getElementById("search-input");
+
+    function openSearch() {
+        searchbar.style.display = "flex";
+        searchInput.focus();
+        searchInput.select();
+    }
+    function closeSearch() {
+        searchbar.style.display = "none";
+        xlsx.clearFind();
+    }
+
+    window.addEventListener("keydown", (ev) => {
+        if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "f") {
+            ev.preventDefault();
+            openSearch();
+        } else if (ev.key === "Escape" && searchbar.style.display !== "none") {
+            closeSearch();
+        }
+    });
+
+    document.getElementById("search-close").addEventListener("click", closeSearch);
+
+    searchInput.addEventListener("keydown", async (ev) => {
+        if (ev.key !== "Enter") return;
+        try {
+            const matches = await xlsx.findText(searchInput.value);
+            if (matches.length > 0) await xlsx.findNext();
+        } catch (e) {
+            console.error("[oxview] findText failed:", e);
+        }
+    });
+    document.getElementById("search-next").addEventListener("click", async () => {
+        try { await xlsx.findNext(); } catch (e) {}
+    });
+    document.getElementById("search-prev").addEventListener("click", async () => {
+        try { await xlsx.findPrev(); } catch (e) {}
+    });
+
+    // ---- hyperlink hover preview (Wikipedia-style URL tooltip) ----
+    // Can't reuse the docx trick (hijacking a per-run <span>'s native title
+    // attribute) since xlsx cells are canvas-rendered, not discrete DOM
+    // elements. Using the public getCellAt() hit-test instead, combined with
+    // our existing private cell lookup - unverified assumption: xlsx cells
+    // carry a `.hyperlink` field in the same {kind, url|ref} shape docx/pptx
+    // runs do, since it's the same underlying library architecture, but this
+    // hasn't been confirmed against a real workbook with hyperlinks yet.
+
+    let linkTooltip = document.getElementById("ox-link-tooltip");
+    if (!linkTooltip) {
+        linkTooltip = document.createElement("div");
+        linkTooltip.id = "ox-link-tooltip";
+        linkTooltip.style.cssText =
+            "position:fixed;z-index:2000;display:none;pointer-events:none;" +
+            "background:#222;color:#fff;font:12px/1.4 sans-serif;padding:3px 8px;" +
+            "border-radius:3px;max-width:60vw;overflow:hidden;text-overflow:ellipsis;" +
+            "white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.25);";
+        document.body.appendChild(linkTooltip);
+    }
+
+    let lastHoverCell = null;
+    container.addEventListener("mousemove", (ev) => {
+        let addr;
+        try {
+            addr = xlsx.getCellAt(ev.clientX, ev.clientY);
+        } catch (e) {
+            return;
+        }
+        if (!addr) {
+            linkTooltip.style.display = "none";
+            lastHoverCell = null;
+            return;
+        }
+        const key = addr.row + ":" + addr.col;
+        if (key !== lastHoverCell) {
+            lastHoverCell = key;
+            const ws = xlsx.currentWorksheet;
+            const cell = findCell(ws, addr.row, addr.col);
+            if (cell && cell.hyperlink) {
+                const label = cell.hyperlink.kind === "external"
+                    ? cell.hyperlink.url
+                    : "\u2192 " + cell.hyperlink.ref + " (in this workbook)";
+                linkTooltip.textContent = label;
+                linkTooltip.style.display = "block";
+            } else {
+                linkTooltip.style.display = "none";
+            }
+        }
+        if (linkTooltip.style.display !== "none") {
+            linkTooltip.style.left = (ev.clientX + 12) + "px";
+            linkTooltip.style.top = (ev.clientY + 16) + "px";
+        }
+    });
+    container.addEventListener("mouseleave", () => {
+        linkTooltip.style.display = "none";
+        lastHoverCell = null;
+    });
+
+    // ---- always-available debug panel, gated by ox_view_xlsx(x, debug = TRUE) ----
+
+    const debugPanel = document.getElementById("debugpanel");
+    const dbgOutput = document.getElementById("dbg-output");
+    const debugToggleBtn = document.getElementById("btn-debug-toggle");
+
+    const debugEnabled = new URLSearchParams(window.location.search).get("debug") === "1";
+    if (debugEnabled) debugToggleBtn.style.display = "inline-block";
+
+    debugToggleBtn.addEventListener("click", () => {
+        debugPanel.style.display = debugPanel.style.display === "none" ? "block" : "none";
+    });
+    document.getElementById("dbg-close").addEventListener("click", () => {
+        debugPanel.style.display = "none";
+    });
+    document.getElementById("dbg-dump").addEventListener("click", () => {
+        dbgOutput.value = "top-level keys: " + Object.getOwnPropertyNames(xlsx).join(", ") + "\n\n" + safeStringify(xlsx, 2);
+    });
+    document.getElementById("dbg-methods").addEventListener("click", () => {
+        dbgOutput.value = listMethods(xlsx, "viewer");
+    });
+    document.getElementById("dbg-call").addEventListener("click", () => {
+        const name = document.getElementById("dbg-name").value;
+        const raw = document.getElementById("dbg-arg").value;
+        const arg = raw === "" ? undefined : (isNaN(Number(raw)) ? raw : Number(raw));
+        try {
+            const result = arg === undefined ? xlsx[name]() : xlsx[name](arg);
+            if (result && typeof result.then === "function") {
+                dbgOutput.value = "pending promise\u2026";
+                result.then(
+                    (r) => { dbgOutput.value = "resolved: " + safeStringify(r, 2); },
+                    (e) => { dbgOutput.value = "rejected: " + e.message; }
+                );
+            } else {
+                dbgOutput.value = "returned: " + safeStringify(result, 2);
+            }
+        } catch (e) {
+            dbgOutput.value = "threw: " + e.message + "\n" + e.stack;
+        }
+    });
+}
+init().catch(console.error);

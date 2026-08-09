@@ -19,12 +19,45 @@
             flex: 1 1 auto; height: 24px; font-size: 12px; box-sizing: border-box;
             border: 1px solid #ccc; border-radius: 3px; padding: 0 6px;
         }
-        #btn-copy { height: 26px; font-size: 12px; cursor: pointer; flex: none; }
-        #xlsx-container { position: absolute; top: 32px; bottom: 22px; left: 0; right: 0; }
+        #toolbar2 {
+            position: absolute; top: 32px; left: 0; right: 0; height: 30px; background: #f7f7f7;
+            border-bottom: 1px solid #ccc; box-sizing: border-box; padding: 3px 8px; z-index: 999;
+            display: flex; align-items: center; gap: 6px; font-size: 12px;
+        }
+        #toolbar2 button {
+            height: 24px; font-size: 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;
+            background: #fff;
+        }
+        #toolbar2 button:hover { background: #e8e8e8; }
+        #zoom-indicator { color: #666; }
+        #xlsx-container { position: absolute; top: 62px; bottom: 44px; left: 0; right: 0; }
+        #sheettabs {
+            position: absolute; bottom: 22px; left: 0; right: 0; height: 22px; background: #f0f0f0;
+            border-top: 1px solid #ccc; box-sizing: border-box; overflow-x: auto; overflow-y: hidden;
+            white-space: nowrap; font-size: 11px; z-index: 999;
+        }
+        .sheet-tab {
+            display: inline-block; padding: 2px 10px; cursor: pointer; border-right: 1px solid #ddd;
+            height: 100%; box-sizing: border-box; line-height: 18px;
+        }
+        .sheet-tab:hover { background: #e8e8e8; }
+        .sheet-tab.active { background: #fff; font-weight: bold; border-bottom: 2px solid #0b5cff; }
         #statusbar {
             position: absolute; bottom: 0; left: 0; right: 0; height: 22px; background: #f0f0f0;
             border-top: 1px solid #ccc; box-sizing: border-box; padding: 2px 10px; z-index: 999;
             font-size: 11px; color: #333; display: flex; gap: 16px; align-items: center;
+        }
+        #searchbar {
+            position: absolute; top: 66px; right: 12px; background: #fff; border: 1px solid #ccc;
+            border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); padding: 6px; z-index: 998;
+            display: none; align-items: center; gap: 4px; font-size: 12px;
+        }
+        #searchbar input { height: 24px; font-size: 12px; width: 160px; box-sizing: border-box; }
+        #searchbar button { height: 24px; font-size: 12px; cursor: pointer; }
+        #debugpanel {
+            display: none; position: absolute; top: 66px; left: 12px; right: 12px; height: 35%;
+            background: #fff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 997; padding: 6px; box-sizing: border-box; font-family: monospace; font-size: 11px;
         }
     </style>
 </head>
@@ -32,14 +65,42 @@
     <div id="topbar">
         <input type="text" id="ref-box" placeholder="B2" />
         <input type="text" id="formula-box" readonly placeholder="Click a cell..." />
-        <button id="btn-copy">Copy</button>
+    </div>
+    <div id="toolbar2">
+        <button id="btn-zoom-out" title="Zoom out">&minus;</button>
+        <button id="btn-zoom-in" title="Zoom in">+</button>
+        <button id="btn-fit-width">Fit width</button>
+        <button id="btn-fit-page">Fit page</button>
+        <span id="zoom-indicator">100%</span>
+        <span style="flex:1 1 auto;"></span>
+        <span id="load-status" style="color:#666;"></span>
+        <button id="btn-debug-toggle" title="Toggle debug panel" style="margin-left:4px; display:none;">&#128027;</button>
+    </div>
+    <div id="debugpanel">
+        <div style="margin-bottom:4px;">
+            <button id="dbg-dump">Dump viewer</button>
+            <button id="dbg-methods">List methods</button>
+            <input id="dbg-arg" type="text" placeholder="arg" style="width:60px;" />
+            <button id="dbg-call">viewer[name](arg)</button>
+            <input id="dbg-name" type="text" placeholder="method name" style="width:140px;" />
+            <button id="dbg-close" style="float:right;">&times;</button>
+        </div>
+        <textarea id="dbg-output" readonly style="width:100%; height:calc(100% - 28px); box-sizing:border-box;
+            white-space:pre; overflow:auto;"></textarea>
     </div>
     <div id="xlsx-container"></div>
+    <div id="sheettabs"></div>
     <div id="statusbar">
         <span id="stat-count"></span>
         <span id="stat-sum"></span>
         <span id="stat-avg"></span>
         <span id="stat-hint" style="margin-left:auto; color:#888;"></span>
+    </div>
+    <div id="searchbar">
+        <input type="text" id="search-input" placeholder="Find in sheet..." />
+        <button id="search-prev" title="Previous match">&uarr;</button>
+        <button id="search-next" title="Next match">&darr;</button>
+        <button id="search-close" title="Close">&times;</button>
     </div>
     <textarea id="clip-helper" style="position:absolute; left:-9999px;"></textarea>
     <script type="module" src="./viewer.js"></script>

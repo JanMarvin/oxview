@@ -1,13 +1,13 @@
 Package: oxview
 Type: Package
 Title: Local Canvas Preview for xlsx, docx, and pptx Files
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: c(
   person("Jan Marvin", "Garbuszus", email = "jan.garbuszus@ruhr-uni-bochum.de", role = c("aut", "cre")),
   person("Yuki", "Yokotani", role = c("cph"), comment = "Author of included ooxml library")
   )
 Description: Renders .xlsx, .docx, and .pptx files using the bundled
-    '@silurus/ooxml' 0.76.1 JavaScript/WebAssembly viewer, served locally via
+    '@silurus/ooxml' JavaScript/WebAssembly viewer, served locally via
     'httpuv' and shown in the RStudio Viewer pane or default browser.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -18,6 +18,9 @@ Imports:
 Suggests:
     openxlsx2,
     curl,
-    testit
+    testit,
+    encharter,
+    rmarkdown,
+    knitr
 Roxygen: list(markdown = TRUE)
 Config/roxygen2/version: 8.1.0

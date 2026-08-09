@@ -1,0 +1,31 @@
+---
+title: "oxview docx showcase"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## A minimal showcase document
+
+This document exists purely to give `oxview::ox_view_docx()` something real
+to preview - headings, a table, a plot, and a hyperlink, all produced by
+knitting this file with **R Markdown**.
+
+### A table
+
+```{r}
+knitr::kable(mtcars[1:5, 1:4])
+```
+
+### A plot
+
+```{r}
+plot(mtcars$wt, mtcars$mpg, main = "Weight vs mpg", xlab = "wt (1000 lbs)", ylab = "mpg")
+```
+
+### A hyperlink
+
+See the [R Markdown documentation](https://rmarkdown.rstudio.com/) for more
+on what this format can do.

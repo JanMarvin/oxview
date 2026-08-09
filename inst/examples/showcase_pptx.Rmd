@@ -1,0 +1,30 @@
+---
+title: "oxview pptx showcase"
+output: powerpoint_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## A minimal showcase deck
+
+This deck exists purely to give `oxview::ox_view_pptx()` something real to
+preview, produced by knitting this file with **R Markdown**.
+
+## A table slide
+
+```{r}
+knitr::kable(mtcars[1:5, 1:4])
+```
+
+## A plot slide
+
+```{r}
+plot(mtcars$wt, mtcars$mpg, main = "Weight vs mpg", xlab = "wt (1000 lbs)", ylab = "mpg")
+```
+
+## A hyperlink slide
+
+See the [R Markdown documentation](https://rmarkdown.rstudio.com/) for more
+on what this format can do.

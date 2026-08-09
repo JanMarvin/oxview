@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Tracks @silurus/ooxml's version via the tracking-only package.json at the
+  # repo root (see that file's description). This is NOT a real Node project
+  # - nothing here is npm-installed or built. When a PR lands bumping the
+  # version, update `ooxml_ver` in inst/prepare_lib.R to match and re-run it
+  # to actually pull in the new vendored files; Dependabot only updates the
+  # manifest, not inst/ooxml-dist itself.
+  - package-ecosystem: "npm"
+    directory: "/.github/dependabot"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
