@@ -152,6 +152,7 @@ async function init() {
 
     const searchbar = document.getElementById("searchbar");
     const searchInput = document.getElementById("search-input");
+    const slideJump = document.getElementById("slide-jump");
 
     function openSearch() {
         searchbar.style.display = "flex";
@@ -169,10 +170,30 @@ async function init() {
             openSearch();
         } else if (ev.key === "Escape" && searchbar.style.display !== "none") {
             closeSearch();
+        } else if ((ev.metaKey || ev.ctrlKey) && (ev.key === "+" || ev.key === "=")) {
+            ev.preventDefault();
+            viewer.zoomIn();
+        } else if ((ev.metaKey || ev.ctrlKey) && ev.key === "-") {
+            ev.preventDefault();
+            viewer.zoomOut();
         }
     });
 
     document.getElementById("search-close").addEventListener("click", closeSearch);
+
+    slideJump.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter") return;
+        const p = parseInt(slideJump.value, 10);
+        if (isNaN(p)) {
+            slideJump.style.borderColor = "#e00";
+            setTimeout(() => { slideJump.style.borderColor = ""; }, 800);
+            return;
+        }
+        targetPage = Math.max(0, Math.min(viewer.slideCount - 1, p - 1));
+        suppressSyncUntil = Date.now() + 700;
+        pageIndicator.textContent = "Slide " + (targetPage + 1) + " / " + viewer.slideCount;
+        viewer.scrollToSlide(targetPage, { behavior: "smooth" });
+    });
 
     searchInput.addEventListener("keydown", async (ev) => {
         if (ev.key !== "Enter") return;

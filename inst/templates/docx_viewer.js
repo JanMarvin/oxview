@@ -160,6 +160,7 @@ async function init() {
 
     const searchbar = document.getElementById("searchbar");
     const searchInput = document.getElementById("search-input");
+    const pageJump = document.getElementById("page-jump");
 
     function openSearch() {
         searchbar.style.display = "flex";
@@ -177,10 +178,30 @@ async function init() {
             openSearch();
         } else if (ev.key === "Escape" && searchbar.style.display !== "none") {
             closeSearch();
+        } else if ((ev.metaKey || ev.ctrlKey) && (ev.key === "+" || ev.key === "=")) {
+            ev.preventDefault();
+            viewer.zoomIn();
+        } else if ((ev.metaKey || ev.ctrlKey) && ev.key === "-") {
+            ev.preventDefault();
+            viewer.zoomOut();
         }
     });
 
     document.getElementById("search-close").addEventListener("click", closeSearch);
+
+    pageJump.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter") return;
+        const p = parseInt(pageJump.value, 10);
+        if (isNaN(p)) {
+            pageJump.style.borderColor = "#e00";
+            setTimeout(() => { pageJump.style.borderColor = ""; }, 800);
+            return;
+        }
+        targetPage = Math.max(0, Math.min(viewer.pageCount - 1, p - 1));
+        suppressSyncUntil = Date.now() + 700;
+        pageIndicator.textContent = "Page " + (targetPage + 1) + " / " + viewer.pageCount;
+        viewer.scrollToPage(targetPage, { behavior: "smooth" });
+    });
 
     searchInput.addEventListener("keydown", async (ev) => {
         if (ev.key !== "Enter") return;

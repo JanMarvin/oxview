@@ -6,9 +6,9 @@
     <style>
         html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; }
         #topbar {
-            position: absolute; top: 0; left: 0; right: 0; height: 32px; background: #f0f0f0;
+            position: absolute; top: 0; left: 0; right: 0; min-height: 32px; background: #f0f0f0;
             border-bottom: 1px solid #ccc; box-sizing: border-box; padding: 3px 8px; z-index: 999;
-            display: flex; align-items: center; gap: 6px;
+            display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap;
         }
         #ref-box {
             width: 64px; height: 24px; font-size: 12px; box-sizing: border-box;
@@ -16,39 +16,37 @@
             background: #fff; flex: none;
         }
         #formula-box {
-            flex: 1 1 auto; height: 24px; font-size: 12px; box-sizing: border-box;
-            border: 1px solid #ccc; border-radius: 3px; padding: 0 6px;
+            flex: 1 1 240px; min-height: 24px; max-height: 150px; font-size: 12px; box-sizing: border-box;
+            border: 1px solid #ccc; border-radius: 3px; padding: 3px 6px; font-family: inherit;
+            resize: vertical; white-space: pre-wrap; word-break: break-word; overflow-y: auto;
         }
-        #toolbar2 {
-            position: absolute; top: 32px; left: 0; right: 0; height: 30px; background: #f7f7f7;
-            border-bottom: 1px solid #ccc; box-sizing: border-box; padding: 3px 8px; z-index: 999;
-            display: flex; align-items: center; gap: 6px; font-size: 12px;
-        }
-        #toolbar2 button {
-            height: 24px; font-size: 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;
-            background: #fff;
-        }
-        #toolbar2 button:hover { background: #e8e8e8; }
         #sheet-search {
             width: 140px; height: 24px; font-size: 12px; box-sizing: border-box;
-            border: 1px solid #ccc; border-radius: 3px; padding: 0 6px;
+            border: 1px solid #ccc; border-radius: 3px; padding: 0 6px; flex: none;
         }
-        #zoom-indicator { color: #666; }
-        #xlsx-container { position: absolute; top: 62px; bottom: 22px; left: 0; right: 0; }
+        #load-status { color: #666; font-size: 12px; flex: none; align-self: center; }
+        #btn-debug-toggle {
+            height: 24px; font-size: 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;
+            background: #fff; flex: none; display: none;
+        }
+        #xlsx-container { position: absolute; bottom: 22px; left: 0; right: 0; }
         #statusbar {
             position: absolute; bottom: 0; left: 0; right: 0; height: 22px; background: #f0f0f0;
             border-top: 1px solid #ccc; box-sizing: border-box; padding: 2px 10px; z-index: 999;
             font-size: 11px; color: #333; display: flex; gap: 16px; align-items: center;
         }
         #searchbar {
-            position: absolute; top: 66px; right: 12px; background: #fff; border: 1px solid #ccc;
+            position: absolute; right: 12px; background: #fff; border: 1px solid #ccc;
             border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); padding: 6px; z-index: 998;
             display: none; align-items: center; gap: 4px; font-size: 12px;
         }
-        #searchbar input { height: 24px; font-size: 12px; width: 160px; box-sizing: border-box; }
+        #searchbar input { height: 24px; font-size: 12px; box-sizing: border-box; }
+        #search-input { width: 160px; }
+        #sheet-jump { width: 130px; }
         #searchbar button { height: 24px; font-size: 12px; cursor: pointer; }
+        #searchbar .sep { width: 1px; height: 20px; background: #ccc; }
         #debugpanel {
-            display: none; position: absolute; top: 66px; left: 12px; right: 12px; height: 35%;
+            display: none; position: absolute; left: 12px; right: 12px; height: 35%;
             background: #fff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             z-index: 997; padding: 6px; box-sizing: border-box; font-family: monospace; font-size: 11px;
         }
@@ -57,18 +55,9 @@
 <body>
     <div id="topbar">
         <input type="text" id="ref-box" placeholder="B2" />
-        <input type="text" id="formula-box" readonly placeholder="Click a cell..." />
-    </div>
-    <div id="toolbar2">
-        <button id="btn-zoom-out" title="Zoom out">&minus;</button>
-        <button id="btn-zoom-in" title="Zoom in">+</button>
-        <span id="zoom-indicator">100%</span>
-        <span style="width:1px;height:20px;background:#ccc;"></span>
-        <input type="text" id="sheet-search" placeholder="Jump to sheet..." list="sheet-names" />
-        <datalist id="sheet-names"></datalist>
-        <span style="flex:1 1 auto;"></span>
-        <span id="load-status" style="color:#666;"></span>
-        <button id="btn-debug-toggle" title="Toggle debug panel" style="margin-left:4px; display:none;">&#128027;</button>
+        <textarea id="formula-box" readonly placeholder="Click a cell..." rows="1"></textarea>
+        <span id="load-status"></span>
+        <button id="btn-debug-toggle" title="Toggle debug panel">&#128027;</button>
     </div>
     <div id="debugpanel">
         <div style="margin-bottom:4px;">
@@ -90,6 +79,9 @@
         <span id="stat-hint" style="margin-left:auto; color:#888;"></span>
     </div>
     <div id="searchbar">
+        <input type="text" id="sheet-jump" placeholder="Jump to sheet..." list="sheet-names" />
+        <datalist id="sheet-names"></datalist>
+        <span class="sep"></span>
         <input type="text" id="search-input" placeholder="Find in sheet..." />
         <button id="search-prev" title="Previous match">&uarr;</button>
         <button id="search-next" title="Next match">&darr;</button>

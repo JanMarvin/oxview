@@ -160,8 +160,7 @@ ox_view_pptx <- function(x, slide = NULL, zoom = NULL, background = NULL,
 #' Dispatches to \code{\link{ox_view_xlsx}}, \code{\link{ox_view_docx}}, or
 #' \code{\link{ox_view_pptx}} based on \code{type} if given, otherwise on
 #' \code{x}'s file extension (or, for an openxlsx2 \code{wbWorkbook} object,
-#' always to the xlsx viewer). For per-format options like starting sheet,
-#' page, or zoom, call the format-specific function directly instead.
+#' always to the xlsx viewer).
 #'
 #' @inheritParams ox_view_xlsx
 #' @param x Path or URL to an .xlsx/.xlsm/.docx/.pptx file, or an
@@ -170,20 +169,33 @@ ox_view_pptx <- function(x, slide = NULL, zoom = NULL, background = NULL,
 #'   instead of guessing it from \code{x}'s extension. Useful when \code{x}
 #'   is a URL that doesn't end in the actual file extension (e.g. a download
 #'   endpoint with an opaque or query-string path).
+#' @param select What to select/open initially - forwarded to the
+#'   format-specific parameter that makes sense: sheet name/1-based index
+#'   (\code{sheet}) for xlsx, or a 1-based page/slide number
+#'   (\code{page}/\code{slide}) for docx/pptx. For finer control (e.g.
+#'   xlsx's separate \code{cell} parameter), call
+#'   \code{ox_view_xlsx()}/\code{ox_view_docx()}/\code{ox_view_pptx()}
+#'   directly instead.
 #' @export
-ox_view <- function(x, interactive = NA, browser = FALSE, debug = FALSE, type = NULL) {
+ox_view <- function(x, interactive = NA, browser = FALSE, debug = FALSE, type = NULL,
+                     zoom = NULL, select = NULL) {
   if (inherits(x, "wbWorkbook")) {
-    return(ox_view_xlsx(x, interactive = interactive, browser = browser, debug = debug))
+    return(ox_view_xlsx(x, sheet = select, zoom = zoom,
+                         interactive = interactive, browser = browser, debug = debug))
   }
   if (!is.character(x) || length(x) != 1) {
     stop("`x` must be a path or URL to a file, or an openxlsx2 wbWorkbook object.", call. = FALSE)
   }
   ext <- if (!is.null(type)) tolower(type) else tolower(tools::file_ext(sub("[?#].*$", "", x)))
+  select_int <- if (is.null(select)) NULL else suppressWarnings(as.integer(select))
   switch(ext,
          xlsx = ,
-         xlsm = ox_view_xlsx(x, interactive = interactive, browser = browser, debug = debug),
-         docx = ox_view_docx(x, interactive = interactive, browser = browser, debug = debug),
-         pptx = ox_view_pptx(x, interactive = interactive, browser = browser, debug = debug),
+         xlsm = ox_view_xlsx(x, sheet = select, zoom = zoom,
+                              interactive = interactive, browser = browser, debug = debug),
+         docx = ox_view_docx(x, page = select_int, zoom = zoom,
+                              interactive = interactive, browser = browser, debug = debug),
+         pptx = ox_view_pptx(x, slide = select_int, zoom = zoom,
+                              interactive = interactive, browser = browser, debug = debug),
          stop("Unrecognized file extension '.", ext, "' - expected xlsx, xlsm, docx, or pptx. ",
               "If `x` doesn't end in its real extension (e.g. a URL with an opaque path), ",
               "pass `type = \"docx\"` (or \"xlsx\"/\"pptx\") explicitly.", call. = FALSE)

@@ -104,10 +104,26 @@ async function init() {
     const statAvg = document.getElementById("stat-avg");
     const statHint = document.getElementById("stat-hint");
     const clipHelper = document.getElementById("clip-helper");
-    const zoomIndicator = document.getElementById("zoom-indicator");
     const loadStatus = document.getElementById("load-status");
-    const sheetSearch = document.getElementById("sheet-search");
+    const sheetJump = document.getElementById("sheet-jump");
     const sheetNamesList = document.getElementById("sheet-names");
+    const topbar = document.getElementById("topbar");
+    const debugPanel = document.getElementById("debugpanel");
+    const searchbar = document.getElementById("searchbar");
+
+    // The formula box is a resizable/auto-growing <textarea> now (multi-line
+    // formulas need it), so the top bar's height is no longer fixed - keep
+    // everything below it positioned correctly regardless of what caused the
+    // height change (auto-grow on new content, or the user manually dragging
+    // the textarea's resize handle).
+    function repositionBelowTopbar() {
+        const h = topbar.offsetHeight;
+        container.style.top = h + "px";
+        debugPanel.style.top = (h + 4) + "px";
+        searchbar.style.top = (h + 4) + "px";
+    }
+    new ResizeObserver(repositionBelowTopbar).observe(topbar);
+    repositionBelowTopbar();
 
     const qs = new URLSearchParams(window.location.search);
 
@@ -139,9 +155,6 @@ async function init() {
                 sheetNamesList.appendChild(opt);
             });
         },
-        onScaleChange: (scale) => {
-            zoomIndicator.textContent = Math.round(scale * 100) + "%";
-        },
         onError: (err) => console.error("[oxview] xlsx viewer error:", err)
     });
 
@@ -154,7 +167,6 @@ async function init() {
     loadStatus.textContent = "Ready";
     setTimeout(() => { loadStatus.textContent = ""; }, 3000);
 
-    zoomIndicator.textContent = Math.round(xlsx.getScale() * 100) + "%";
 
     // ---- apply sheet= / cell= / zoom= from the query string (set by
     // ox_view_xlsx(x, sheet=, cell=, zoom=)) ----
@@ -190,19 +202,6 @@ async function init() {
         }
     }
 
-    sheetSearch.addEventListener("keydown", (ev) => {
-        if (ev.key !== "Enter") return;
-        const name = sheetSearch.value.trim();
-        const idx = xlsx.sheetNames.findIndex(n => n.toLowerCase() === name.toLowerCase());
-        if (idx === -1) {
-            sheetSearch.style.borderColor = "#e00";
-            setTimeout(() => { sheetSearch.style.borderColor = ""; }, 800);
-            return;
-        }
-        xlsx.goToSheet(idx).catch(e => console.error("[oxview] goToSheet failed:", e));
-        sheetSearch.value = xlsx.sheetNames[idx];
-    });
-
     function extractSelection() {
         const ws = xlsx.currentWorksheet;
         if (!sel || !ws) return "";
@@ -216,6 +215,18 @@ async function init() {
             lines.push(vals.join("\t"));
         }
         return lines.join("\n");
+    }
+
+    function autoGrowFormulaBox() {
+        // reset height first so shrinking (shorter content) works too, not
+        // just growing - scrollHeight only ever reports the space needed for
+        // current content once the box isn't artificially tall already.
+        // CSS max-height + overflow-y:auto already caps this and adds a
+        // scrollbar beyond that, so no need to clamp it here too.
+        formulaBox.style.height = "auto";
+        formulaBox.style.height = (formulaBox.scrollHeight + 2) + "px";
+        // ResizeObserver on #topbar (set up above) handles repositioning
+        // everything below it automatically once this resolves
     }
 
     function updateBars() {
@@ -232,6 +243,7 @@ async function init() {
         const activeCellObj = findCell(ws, activeRow, activeCol);
         const disp = cellDisplay(activeCellObj);
         formulaBox.value = disp.formula || disp.text;
+        autoGrowFormulaBox();
 
         let count = 0, numCount = 0, sum = 0;
         for (let r = sel.r1; r <= sel.r2; r++) {
@@ -285,14 +297,8 @@ async function init() {
         }
     });
 
-    // ---- zoom ----
-
-    document.getElementById("btn-zoom-in").addEventListener("click", () => xlsx.zoomIn());
-    document.getElementById("btn-zoom-out").addEventListener("click", () => xlsx.zoomOut());
-
     // ---- search (Cmd/Ctrl+F) ----
 
-    const searchbar = document.getElementById("searchbar");
     const searchInput = document.getElementById("search-input");
 
     function openSearch() {
@@ -311,10 +317,29 @@ async function init() {
             openSearch();
         } else if (ev.key === "Escape" && searchbar.style.display !== "none") {
             closeSearch();
+        } else if ((ev.metaKey || ev.ctrlKey) && (ev.key === "+" || ev.key === "=")) {
+            ev.preventDefault();
+            xlsx.zoomIn();
+        } else if ((ev.metaKey || ev.ctrlKey) && ev.key === "-") {
+            ev.preventDefault();
+            xlsx.zoomOut();
         }
     });
 
     document.getElementById("search-close").addEventListener("click", closeSearch);
+
+    sheetJump.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter") return;
+        const name = sheetJump.value.trim();
+        const idx = xlsx.sheetNames.findIndex(n => n.toLowerCase() === name.toLowerCase());
+        if (idx === -1) {
+            sheetJump.style.borderColor = "#e00";
+            setTimeout(() => { sheetJump.style.borderColor = ""; }, 800);
+            return;
+        }
+        xlsx.goToSheet(idx).catch(e => console.error("[oxview] goToSheet failed:", e));
+        sheetJump.value = xlsx.sheetNames[idx];
+    });
 
     searchInput.addEventListener("keydown", async (ev) => {
         if (ev.key !== "Enter") return;
@@ -393,7 +418,6 @@ async function init() {
 
     // ---- always-available debug panel, gated by ox_view_xlsx(x, debug = TRUE) ----
 
-    const debugPanel = document.getElementById("debugpanel");
     const dbgOutput = document.getElementById("dbg-output");
     const debugToggleBtn = document.getElementById("btn-debug-toggle");
 
