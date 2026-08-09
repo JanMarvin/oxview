@@ -1,0 +1,69 @@
+# oxview
+
+`oxview` is an R package that bundles the
+[office-open-xml-viewer](https://github.com/yukiyokotani/office-open-xml-viewer)
+to provide preview functionality for `.docx`, `.pptx`, and `.xlsx` files
+directly within the RStudio Viewer pane.
+
+## Installation
+
+You can install the development version of `oxview` from
+[GitHub](https://github.com/) with:
+
+``` r
+
+# install.packages("remotes")
+remotes::install_github("JanMarvin/oxview")
+```
+
+## Usage
+
+``` r
+
+if (interactive()) {
+  oxview::ox_view(x = "https://github.com/JanMarvin/msoc/raw/refs/heads/main/inst/extdata/Untitled1.docx")
+  oxview::ox_view(x = "https://github.com/JanMarvin/msoc/raw/refs/heads/main/inst/extdata/Untitled1.pptx")
+  oxview::ox_view(x = "https://github.com/JanMarvin/msoc/raw/refs/heads/main/inst/extdata/Untitled1.xlsx")
+}
+```
+
+## Screenshots
+
+### xlsx
+
+![xlsx viewer screenshot](reference/figures/xlsx.png)
+
+xlsx viewer screenshot
+
+### docx
+
+![docx viewer screenshot](reference/figures/docx.png)
+
+docx viewer screenshot
+
+### pptx
+
+![pptx viewer screenshot](reference/figures/pptx.png)
+
+pptx viewer screenshot
+
+## License
+
+This package is licensed under the MIT license and is based on
+[`office-open-xml-viewer`](https://github.com/yukiyokotani/office-open-xml-viewer)
+(by Yuki Yokotani; COPYRIGHT 2026) released under the MIT license.
+
+# Package index
+
+## All functions
+
+- [`ox_start_server()`](ox_start_server.md) : Start (or reuse) the local
+  oxview preview server
+- [`ox_stop_server()`](ox_stop_server.md) : Stop the local oxview
+  preview server
+- [`ox_view()`](ox_view.md) : Preview an xlsx, docx, or pptx file
+- [`ox_view_docx()`](ox_view_docx.md) : Preview a .docx file
+- [`ox_view_pptx()`](ox_view_pptx.md) : Preview a .pptx file
+- [`ox_view_xlsx()`](ox_view_xlsx.md) : Preview an .xlsx / .xlsm file or
+  openxlsx2 workbook
+
