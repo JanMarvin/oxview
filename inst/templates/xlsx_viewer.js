@@ -1,17 +1,20 @@
 import { XlsxViewer } from "/assets/xlsx.mjs";
 
-// Rewritten against the real API (dist/types/xlsx.d.ts) rather than the
-// private selectionController we originally reverse-engineered:
-//   - onSelectionChange(selection) replaces our pointerup/keyup polling
-//   - select(ref) actually moves the real selection (our old ref-box "go to
-//     cell" could only fake the display, since writing to the private
-//     selectionController directly corrupted state - see chat history)
-//   - scrollToCell(ref) brings it into view
-//   - sheetNames/sheetCount/sheetIndex/goToSheet/onSheetChange/onReady give
-//     us real sheet-tab navigation, which didn't exist before at all
-// Still no public method to read a cell's actual value/formula, so the
-// formula bar and count/sum/average stats still read the private
-// `currentWorksheet.rows[...].cells` structure - there's no alternative.
+// v0.77 migration: select()/selection/onSelectionChange/CellRange were
+// removed upstream (breaking, no aliases kept) in favor of setSelection()/
+// selectionState/onSelectionStateChange/XlsxSelectionState. We also took
+// the opportunity to adopt the new getSelectionContext() public API for
+// the formula bar, count/sum/average stats, and copy - previously these
+// read the private `currentWorksheet.rows[...].cells` structure (the
+// biggest private-API dependency in this codebase); getSelectionContext()
+// gives the same cell values/formulas/display text through a real public
+// API (bounded to 10,000 cells - see MAX_SELECTION_CONTEXT_CELLS).
+//
+// The one thing that STILL needs the private worksheet structure: the
+// hyperlink hover tooltip, since getSelectionContext() only covers the
+// current *selection*, not an arbitrary hovered cell. No public "get this
+// specific cell's data" API exists for that, so findCell()/cellDisplay()
+// stick around for that one remaining use.
 
 function colLetters(col) {
     let n = col, s = "";
@@ -53,11 +56,6 @@ function cellDisplay(cell) {
     if ("number" in v) return { text: String(v.number), num: v.number, formula: formula };
     if ("value" in v) return { text: String(v.value), num: typeof v.value === "number" ? v.value : null, formula: formula };
     return { text: JSON.stringify(v), num: null, formula: formula };
-}
-
-function cellText(row, col) {
-    const cell = row && row.cells ? row.cells.find(c => c.col === col) : null;
-    return cellDisplay(cell).text;
 }
 
 function safeStringify(obj, maxDepth) {
@@ -129,20 +127,13 @@ async function init() {
 
     loadStatus.textContent = "Loading\u2026";
 
-    let sel = null;
+    let currentState = null;
 
     const xlsx = new XlsxViewer(container, {
         enableHyperlinks: true,
-        onSelectionChange: (selection) => {
-            if (!selection) return;
-            sel = {
-                r1: Math.min(selection.anchor.row, selection.active.row),
-                r2: Math.max(selection.anchor.row, selection.active.row),
-                c1: Math.min(selection.anchor.col, selection.active.col),
-                c2: Math.max(selection.anchor.col, selection.active.col),
-                activeRow: selection.active.row,
-                activeCol: selection.active.col
-            };
+        onSelectionStateChange: (state) => {
+            if (!state) return;
+            currentState = state;
             statHint.textContent = "";
             updateBars();
             doCopy();
@@ -195,27 +186,15 @@ async function init() {
     const initialCell = qs.get("cell");
     if (initialCell !== null) {
         try {
-            xlsx.select(initialCell);
+            xlsx.setSelection(initialCell);
             xlsx.scrollToCell(initialCell).catch(() => {});
         } catch (e) {
             console.warn("[oxview] initial cell select failed:", e);
         }
     }
 
-    function extractSelection() {
-        const ws = xlsx.currentWorksheet;
-        if (!sel || !ws) return "";
-        const lines = [];
-        for (let r = sel.r1; r <= sel.r2; r++) {
-            const rowObj = ws.rows.find(row => row.index === r);
-            const vals = [];
-            for (let c = sel.c1; c <= sel.c2; c++) {
-                vals.push(cellText(rowObj, c));
-            }
-            lines.push(vals.join("\t"));
-        }
-        return lines.join("\n");
-    }
+    // ---- formula bar / stats / copy, via getSelectionContext() (public,
+    // bounded to 10,000 cells) instead of the old private worksheet dig ----
 
     function autoGrowFormulaBox() {
         // reset height first so shrinking (shorter content) works too, not
@@ -229,36 +208,79 @@ async function init() {
         // everything below it automatically once this resolves
     }
 
+    function currentContext() {
+        try {
+            const ctx = xlsx.getSelectionContext();
+            return ctx && ctx.kind === "range" ? ctx : null;
+        } catch (e) {
+            console.warn("[oxview] getSelectionContext failed:", e);
+            return null;
+        }
+    }
+
     function updateBars() {
-        const ws = xlsx.currentWorksheet;
-        if (!sel || !ws) return;
+        if (!currentState) return;
+        const context = currentContext();
+        if (!context || context.cells.length === 0) return;
 
-        const isRange = sel.r1 !== sel.r2 || sel.c1 !== sel.c2;
+        let r1 = Infinity, r2 = -Infinity, c1 = Infinity, c2 = -Infinity;
+        for (const cell of context.cells) {
+            r1 = Math.min(r1, cell.address.row); r2 = Math.max(r2, cell.address.row);
+            c1 = Math.min(c1, cell.address.col); c2 = Math.max(c2, cell.address.col);
+        }
+
+        const isRange = r1 !== r2 || c1 !== c2;
         refBox.value = isRange
-            ? colLetters(sel.c1) + sel.r1 + ":" + colLetters(sel.c2) + sel.r2
-            : colLetters(sel.c1) + sel.r1;
+            ? colLetters(c1) + r1 + ":" + colLetters(c2) + r2
+            : colLetters(c1) + r1;
+        if (context.truncated) {
+            statHint.textContent = "selection truncated to " + context.maxCells + " cells";
+        }
 
-        const activeRow = sel.activeRow || sel.r1;
-        const activeCol = sel.activeCol || sel.c1;
-        const activeCellObj = findCell(ws, activeRow, activeCol);
-        const disp = cellDisplay(activeCellObj);
-        formulaBox.value = disp.formula || disp.text;
+        const active = currentState.activeCell;
+        const activeEntry = context.cells.find(c => c.address.row === active.row && c.address.col === active.col);
+        if (activeEntry) {
+            formulaBox.value = activeEntry.formula ? "=" + activeEntry.formula : activeEntry.displayText;
+        } else {
+            formulaBox.value = "";
+        }
         autoGrowFormulaBox();
 
         let count = 0, numCount = 0, sum = 0;
-        for (let r = sel.r1; r <= sel.r2; r++) {
-            for (let c = sel.c1; c <= sel.c2; c++) {
-                const cell = findCell(ws, r, c);
-                if (!cell) continue;
-                const d = cellDisplay(cell);
-                if (d.text === "") continue;
-                count++;
-                if (d.num !== null) { numCount++; sum += d.num; }
+        for (const cell of context.cells) {
+            if (cell.valueType === "empty") continue;
+            count++;
+            if (cell.valueType === "number" && typeof cell.value === "number") {
+                numCount++;
+                sum += cell.value;
             }
         }
         statCount.textContent = "Count: " + count;
         statSum.textContent = numCount > 0 ? "Sum: " + (Math.round(sum * 100) / 100) : "";
         statAvg.textContent = numCount > 0 ? "Average: " + (Math.round((sum / numCount) * 100) / 100) : "";
+    }
+
+    function extractSelection() {
+        const context = currentContext();
+        if (!context || context.cells.length === 0) return "";
+
+        const map = new Map();
+        let r1 = Infinity, r2 = -Infinity, c1 = Infinity, c2 = -Infinity;
+        for (const cell of context.cells) {
+            map.set(cell.address.row + ":" + cell.address.col, cell.displayText);
+            r1 = Math.min(r1, cell.address.row); r2 = Math.max(r2, cell.address.row);
+            c1 = Math.min(c1, cell.address.col); c2 = Math.max(c2, cell.address.col);
+        }
+
+        const lines = [];
+        for (let r = r1; r <= r2; r++) {
+            const vals = [];
+            for (let c = c1; c <= c2; c++) {
+                vals.push(map.get(r + ":" + c) || "");
+            }
+            lines.push(vals.join("\t"));
+        }
+        return lines.join("\n");
     }
 
     function doCopy() {
@@ -278,7 +300,7 @@ async function init() {
         }
     }
 
-    // ---- ref box: real selection movement via select(), not a display fake ----
+    // ---- ref box: real selection movement via setSelection() ----
 
     refBox.addEventListener("keydown", (ev) => {
         if (ev.key !== "Enter") return;
@@ -288,12 +310,12 @@ async function init() {
             return;
         }
         try {
-            xlsx.select(ref);
+            xlsx.setSelection(ref);
             xlsx.scrollToCell(ref).catch(() => {});
             refBox.value = ref;
-            // onSelectionChange fires from select() and updates everything else
+            // onSelectionStateChange fires from setSelection() and updates everything else
         } catch (e) {
-            statHint.textContent = "select() failed: " + e.message;
+            statHint.textContent = "setSelection() failed: " + e.message;
         }
     });
 
@@ -358,13 +380,14 @@ async function init() {
     });
 
     // ---- hyperlink hover preview (Wikipedia-style URL tooltip) ----
-    // Can't reuse the docx trick (hijacking a per-run <span>'s native title
-    // attribute) since xlsx cells are canvas-rendered, not discrete DOM
-    // elements. Using the public getCellAt() hit-test instead, combined with
-    // our existing private cell lookup - unverified assumption: xlsx cells
-    // carry a `.hyperlink` field in the same {kind, url|ref} shape docx/pptx
-    // runs do, since it's the same underlying library architecture, but this
-    // hasn't been confirmed against a real workbook with hyperlinks yet.
+    // Can't use getSelectionContext() here - it only covers the current
+    // selection, not an arbitrary hovered cell - so this still needs the
+    // private worksheet structure. Also still can't reuse the docx trick
+    // (hijacking a per-run <span>'s native title attribute) since xlsx
+    // cells are canvas-rendered, not discrete DOM elements; using the
+    // public getCellAt() hit-test instead. Unverified assumption carried
+    // over: xlsx cells carry a `.hyperlink` field in the same {kind,
+    // url|ref} shape docx/pptx runs do.
 
     let linkTooltip = document.getElementById("ox-link-tooltip");
     if (!linkTooltip) {

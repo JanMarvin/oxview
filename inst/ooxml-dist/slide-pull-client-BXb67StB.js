@@ -5184,19 +5184,23 @@ async function Mr(e, t, r, i, a = {}, s, l) {
 			});
 		})), d())) return e;
 	}
-	for (let n of t.elements) {
+	for (let [n, r] of t.elements.entries()) {
 		if (d()) return e;
-		if (n.type === "shape") cr(b, n, m, x, w, C, s, a.fetchImage);
-		else if (n.type === "picture") await Sr(b, n, m, d, a.fetchImage);
-		else if (n.type === "table") Er(b, n, m, w, C);
-		else if (n.type === "media") await Cr(b, n, m, d, a.fetchMedia, a.skipMediaControls, a.fetchImage);
-		else if (n.type === "chart") {
+		if (r.type === "shape") cr(b, r, m, x, w, C, s ? (e) => s({
+			...e,
+			elementIndex: n,
+			origin: t.elementSources?.[n]?.origin ?? "slide"
+		}) : void 0, a.fetchImage);
+		else if (r.type === "picture") await Sr(b, r, m, d, a.fetchImage);
+		else if (r.type === "table") Er(b, r, m, w, C);
+		else if (r.type === "media") await Cr(b, r, m, d, a.fetchMedia, a.skipMediaControls, a.fetchImage);
+		else if (r.type === "chart") {
 			let e = K * m;
-			b.save(), Tr(b, n, m), c(b, n.chart, {
-				x: J(n.x, m),
-				y: J(n.y, m),
-				w: J(n.width, m),
-				h: J(n.height, m)
+			b.save(), Tr(b, r, m), c(b, r.chart, {
+				x: J(r.x, m),
+				y: J(r.y, m),
+				w: J(r.width, m),
+				h: J(r.height, m)
 			}, e), b.restore();
 		}
 	}

@@ -1,4 +1,4 @@
 import { It as e, Lt as t, a as n, hn as r, mn as i } from "./line-metrics-BdCACYlq.js";
-import { y as a } from "./canvas-viewer-mechanics-CwVSOYke.js";
-import { a as o, i as s, n as c, o as l, r as u, s as d } from "./docx-C6B98B4-.js";
-export { d as DocxDocument, u as DocxScrollViewer, s as DocxViewer, e as OoxmlDecodedImageLimitError, i as OoxmlError, r as OoxmlResourceLimitError, a as autoResize, o as buildDocxHighlightLayer, l as buildDocxTextLayer, t as isOoxmlDecodedImageLimitError, c as noteText, n as openExternalHyperlink };
+import { w as a } from "./canvas-viewer-mechanics-DTkBvITv.js";
+import { a as o, c as s, i as c, n as l, o as u, r as d, s as f } from "./docx-B1gYS6eU.js";
+export { s as DocxDocument, d as DocxScrollViewer, c as DocxViewer, e as OoxmlDecodedImageLimitError, i as OoxmlError, r as OoxmlResourceLimitError, a as autoResize, u as buildDocxHighlightLayer, f as buildDocxTextLayer, t as isOoxmlDecodedImageLimitError, l as noteText, n as openExternalHyperlink, o as readDocxTextSelectionContext };
