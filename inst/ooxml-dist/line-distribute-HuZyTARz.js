@@ -1,4 +1,4 @@
-import { Jt as e, b as t, w as n, x as r, zt as i } from "./line-metrics-BdCACYlq.js";
+import { Yt as e, b as t, w as n, x as r, zt as i } from "./line-metrics-z9AdgPaZ.js";
 //#region packages/core/src/fonts/symbol-font.ts
 var a = {
 	167: "♣",
@@ -83,7 +83,43 @@ function f(e, t) {
 }
 //#endregion
 //#region packages/core/src/shape/custGeom.ts
-function p(e, t, n, r, i, a) {
+function p(e, t, n, r, i) {
+	let a = Infinity, o = Infinity, s = -Infinity, c = -Infinity, l = (e, t) => {
+		!Number.isFinite(e) || !Number.isFinite(t) || (a = Math.min(a, e), o = Math.min(o, t), s = Math.max(s, e), c = Math.max(c, t));
+	};
+	for (let a of e) {
+		let e = 0, o = 0;
+		for (let s of a) switch (s.cmd) {
+			case "moveTo":
+			case "lineTo":
+				e = s.x, o = s.y, l(t + e * r, n + o * i);
+				break;
+			case "cubicBezTo":
+				l(t + s.x1 * r, n + s.y1 * i), l(t + s.x2 * r, n + s.y2 * i), e = s.x, o = s.y, l(t + e * r, n + o * i);
+				break;
+			case "quadBezTo":
+				l(t + s.x1 * r, n + s.y1 * i), e = s.x, o = s.y, l(t + e * r, n + o * i);
+				break;
+			case "arcTo": {
+				let a = Math.abs(s.wr * r), c = Math.abs(s.hr * i);
+				if (a <= 0 || c <= 0) break;
+				let u = s.stAng * Math.PI / 180, d = s.swAng * Math.PI / 180, f = t + e * r, p = n + o * i, m = f - a * Math.cos(u), h = p - c * Math.sin(u);
+				l(m - a, h - c), l(m + a, h + c);
+				let g = u + d;
+				e = (m + a * Math.cos(g) - t) / r, o = (h + c * Math.sin(g) - n) / i;
+				break;
+			}
+			case "close": break;
+		}
+	}
+	return Number.isFinite(a) ? {
+		x: a,
+		y: o,
+		w: s - a,
+		h: c - o
+	} : null;
+}
+function m(e, t, n, r, i, a) {
 	for (let o of t) {
 		let t = 0, s = 0;
 		for (let c of o) switch (c.cmd) {
@@ -95,6 +131,9 @@ function p(e, t, n, r, i, a) {
 				break;
 			case "cubicBezTo":
 				e.bezierCurveTo(n + c.x1 * i, r + c.y1 * a, n + c.x2 * i, r + c.y2 * a, n + c.x * i, r + c.y * a), t = c.x, s = c.y;
+				break;
+			case "quadBezTo":
+				e.quadraticCurveTo(n + c.x1 * i, r + c.y1 * a, n + c.x * i, r + c.y * a), t = c.x, s = c.y;
 				break;
 			case "arcTo": {
 				let o = c.wr * i, l = c.hr * a;
@@ -111,11 +150,11 @@ function p(e, t, n, r, i, a) {
 }
 //#endregion
 //#region packages/core/src/shape/custgeom-endpoints.ts
-var m = 1e-9;
-function h(e) {
-	return e.cmd === "lineTo" || e.cmd === "cubicBezTo" || e.cmd === "arcTo";
+var h = 1e-9;
+function g(e) {
+	return e.cmd === "lineTo" || e.cmd === "cubicBezTo" || e.cmd === "quadBezTo" || e.cmd === "arcTo";
 }
-function g(e, t, n, r) {
+function _(e, t, n, r) {
 	let i = n === 0 ? 0 : n, a = r === 0 ? 0 : r;
 	return {
 		x: e,
@@ -125,7 +164,7 @@ function g(e, t, n, r) {
 		angle: Math.atan2(a, i)
 	};
 }
-function _(e, t, n) {
+function v(e, t, n) {
 	switch (n.cmd) {
 		case "lineTo": return {
 			dx: n.x - e,
@@ -133,7 +172,14 @@ function _(e, t, n) {
 		};
 		case "cubicBezTo": {
 			let r = n.x1 - e, i = n.y1 - t;
-			return Math.abs(r) < m && Math.abs(i) < m && (r = n.x2 - e, i = n.y2 - t), Math.abs(r) < m && Math.abs(i) < m && (r = n.x - e, i = n.y - t), {
+			return Math.abs(r) < h && Math.abs(i) < h && (r = n.x2 - e, i = n.y2 - t), Math.abs(r) < h && Math.abs(i) < h && (r = n.x - e, i = n.y - t), {
+				dx: r,
+				dy: i
+			};
+		}
+		case "quadBezTo": {
+			let r = n.x1 - e, i = n.y1 - t;
+			return Math.abs(r) < h && Math.abs(i) < h && (r = n.x - e, i = n.y - t), {
 				dx: r,
 				dy: i
 			};
@@ -151,11 +197,12 @@ function _(e, t, n) {
 		};
 	}
 }
-function v(e, t, n) {
+function y(e, t, n) {
 	switch (n.cmd) {
 		case "moveTo":
 		case "lineTo":
-		case "cubicBezTo": return {
+		case "cubicBezTo":
+		case "quadBezTo": return {
 			x: n.x,
 			y: n.y
 		};
@@ -176,8 +223,8 @@ function v(e, t, n) {
 		};
 	}
 }
-function y(e, t, n) {
-	let { x: r, y: i } = v(e, t, n);
+function b(e, t, n) {
+	let { x: r, y: i } = y(e, t, n);
 	switch (n.cmd) {
 		case "lineTo": return {
 			dx: n.x - e,
@@ -187,7 +234,16 @@ function y(e, t, n) {
 		};
 		case "cubicBezTo": {
 			let a = n.x - n.x2, o = n.y - n.y2;
-			return Math.abs(a) < m && Math.abs(o) < m && (a = n.x - n.x1, o = n.y - n.y1), Math.abs(a) < m && Math.abs(o) < m && (a = n.x - e, o = n.y - t), {
+			return Math.abs(a) < h && Math.abs(o) < h && (a = n.x - n.x1, o = n.y - n.y1), Math.abs(a) < h && Math.abs(o) < h && (a = n.x - e, o = n.y - t), {
+				dx: a,
+				dy: o,
+				x: r,
+				y: i
+			};
+		}
+		case "quadBezTo": {
+			let a = n.x - n.x1, o = n.y - n.y1;
+			return Math.abs(a) < h && Math.abs(o) < h && (a = n.x - e, o = n.y - t), {
 				dx: a,
 				dy: o,
 				x: r,
@@ -217,50 +273,50 @@ function y(e, t, n) {
 		};
 	}
 }
-function b(e) {
+function x(e) {
 	let t = 0, n = 0, r = !1;
-	for (let i of e) i.cmd === "moveTo" && (r = !0), {x: t, y: n} = v(t, n, i);
+	for (let i of e) i.cmd === "moveTo" && (r = !0), {x: t, y: n} = y(t, n, i);
 	return r ? {
 		x: t,
 		y: n
 	} : null;
 }
-function x(e) {
+function S(e) {
 	if (e.some((e) => e.cmd === "close")) return !0;
 	let t = e.find((e) => e.cmd === "moveTo");
 	if (!t) return !1;
-	let n = b(e);
-	return !n || !e.some(h) ? !1 : Math.abs(n.x - t.x) < m && Math.abs(n.y - t.y) < m;
+	let n = x(e);
+	return !n || !e.some(g) ? !1 : Math.abs(n.x - t.x) < h && Math.abs(n.y - t.y) < h;
 }
-function S(e) {
+function C(e) {
 	let t = {
 		start: null,
 		end: null
 	};
 	if (!e || e.length === 0) return t;
 	let n = e[0];
-	if (n && n.length > 0 && !x(n)) {
-		let e = n.find((e) => e.cmd === "moveTo"), r = n.find(h);
+	if (n && n.length > 0 && !S(n)) {
+		let e = n.find((e) => e.cmd === "moveTo"), r = n.find(g);
 		if (e && r) {
-			let n = _(e.x, e.y, r);
-			(Math.abs(n.dx) > m || Math.abs(n.dy) > m) && (t.start = g(e.x, e.y, -n.dx, -n.dy));
+			let n = v(e.x, e.y, r);
+			(Math.abs(n.dx) > h || Math.abs(n.dy) > h) && (t.start = _(e.x, e.y, -n.dx, -n.dy));
 		}
 	}
 	let r = e[e.length - 1];
-	if (r && r.length > 0 && !x(r)) {
+	if (r && r.length > 0 && !S(r)) {
 		let e = 0, n = 0, i = -1;
-		for (let e = 0; e < r.length; e++) h(r[e]) && (i = e);
+		for (let e = 0; e < r.length; e++) g(r[e]) && (i = e);
 		if (i >= 0) {
-			for (let t = 0; t < i; t++) ({x: e, y: n} = v(e, n, r[t]));
-			let a = y(e, n, r[i]);
-			(Math.abs(a.dx) > m || Math.abs(a.dy) > m) && (t.end = g(a.x, a.y, a.dx, a.dy));
+			for (let t = 0; t < i; t++) ({x: e, y: n} = y(e, n, r[t]));
+			let a = b(e, n, r[i]);
+			(Math.abs(a.dx) > h || Math.abs(a.dy) > h) && (t.end = _(a.x, a.y, a.dx, a.dy));
 		}
 	}
 	return t;
 }
 //#endregion
 //#region packages/core/src/shape/preset.ts
-function C(e, t, n, r, i, a, o, s = -Math.PI / 2) {
+function w(e, t, n, r, i, a, o, s = -Math.PI / 2) {
 	let c = a * 2;
 	for (let l = 0; l < c; l++) {
 		let c = s + l * Math.PI / a, u = l % 2 == 0 ? 1 : o, d = t + r * u * Math.cos(c), f = n + i * u * Math.sin(c);
@@ -268,43 +324,43 @@ function C(e, t, n, r, i, a, o, s = -Math.PI / 2) {
 	}
 	e.closePath();
 }
-function w(e, t, n, r, i, a, o = -Math.PI / 2) {
+function T(e, t, n, r, i, a, o = -Math.PI / 2) {
 	for (let s = 0; s < a; s++) {
 		let c = o + s * 2 * Math.PI / a, l = t + r * Math.cos(c), u = n + i * Math.sin(c);
 		s === 0 ? e.moveTo(l, u) : e.lineTo(l, u);
 	}
 	e.closePath();
 }
-function T(e, t, n, r, i, a, o) {
+function E(e, t, n, r, i, a, o) {
 	let s = (e) => Math.atan2(r * Math.sin(e), i * Math.cos(e)), c = s(a), l = s(a + o), u = t - r * Math.cos(c), d = n - i * Math.sin(c);
 	return e.ellipse(u, d, Math.abs(r), Math.abs(i), 0, c, l, o < 0), {
 		x: u + r * Math.cos(l),
 		y: d + i * Math.sin(l)
 	};
 }
-var E = {
+var D = {
 	oval: "ellipse",
 	rtriangle: "rttriangle",
 	roundrectangle: "roundrect",
 	flowchartsumingjunction: "flowchartsummingjunction"
-}, D = new Set(/* @__PURE__ */ "ellipse.rttriangle.triangle.diamond.trapezoid.roundrect.snip1rect.frame.irregularseal1.irregularseal2.star4.star8.star12.star16.star24.star32.line.straightconnector1.callout1.bordercallout1.leftuparrow.quadarrowcallout.mathequal.mathplus.mathminus.flowchartdecision.flowchartmanualinput.flowchartconnector.flowchartinputoutput.flowchartmerge.flowchartextract.flowchartpreparation.flowchartcollate".split(".")), O = new Set([
+}, O = new Set(/* @__PURE__ */ "ellipse.rttriangle.triangle.diamond.trapezoid.roundrect.snip1rect.frame.irregularseal1.irregularseal2.star4.star8.star12.star16.star24.star32.line.straightconnector1.callout1.bordercallout1.leftuparrow.quadarrowcallout.mathequal.mathplus.mathminus.flowchartdecision.flowchartmanualinput.flowchartconnector.flowchartinputoutput.flowchartmerge.flowchartextract.flowchartpreparation.flowchartcollate".split(".")), k = new Set([
 	"accentcallout1",
 	"accentbordercallout1",
 	"flowchartpredefinedprocess",
 	"flowchartsort",
 	"flowchartinternalstorage",
 	"flowchartsummingjunction"
-]), k = new Set([
+]), A = new Set([
 	"round2samerect",
 	"round2diagrect",
 	"dodecagon",
 	"star10"
 ]);
-function A(e, t, n, r, a, o, s = null, c = null, l = null, u = null) {
+function j(e, t, n, r, a, o, s = null, c = null, l = null, u = null) {
 	let d = n + a / 2, f = r + o / 2;
 	{
-		let d = t.toLowerCase(), f = E[d] ?? d;
-		if ((D.has(f) || O.has(f) || k.has(f)) && i(e, f, n, r, a, o, [
+		let d = t.toLowerCase(), f = D[d] ?? d;
+		if ((O.has(f) || k.has(f) || A.has(f)) && i(e, f, n, r, a, o, [
 			s,
 			c,
 			l,
@@ -318,29 +374,29 @@ function A(e, t, n, r, a, o, s = null, c = null, l = null, u = null) {
 			break;
 		}
 		case "pentagon":
-			w(e, d, f, a / 2, o / 2, 5);
+			T(e, d, f, a / 2, o / 2, 5);
 			break;
 		case "hexagon":
-			w(e, d, f, a / 2, o / 2, 6, 0);
+			T(e, d, f, a / 2, o / 2, 6, 0);
 			break;
 		case "heptagon":
-			w(e, d, f, a / 2, o / 2, 7);
+			T(e, d, f, a / 2, o / 2, 7);
 			break;
 		case "octagon":
-			w(e, d, f, a / 2, o / 2, 8, -Math.PI / 8);
+			T(e, d, f, a / 2, o / 2, 8, -Math.PI / 8);
 			break;
 		case "decagon":
-			w(e, d, f, a / 2, o / 2, 10);
+			T(e, d, f, a / 2, o / 2, 10);
 			break;
 		case "star5":
 		case "star":
-			C(e, d, f, a / 2, o / 2, 5, (s ?? 19098) / 5e4);
+			w(e, d, f, a / 2, o / 2, 5, (s ?? 19098) / 5e4);
 			break;
 		case "star6":
-			C(e, d, f, a / 2, o / 2, 6, (s ?? 28868) / 5e4, 0);
+			w(e, d, f, a / 2, o / 2, 6, (s ?? 28868) / 5e4, 0);
 			break;
 		case "star7":
-			C(e, d, f, a / 2, o / 2, 7, (s ?? 34142) / 5e4);
+			w(e, d, f, a / 2, o / 2, 7, (s ?? 34142) / 5e4);
 			break;
 		case "rightarrow": {
 			let t = o * Math.min(1, (s ?? 5e4) / 1e5), i = a * Math.min(1, (c ?? 5e4) / 1e5), l = r + (o - t) / 2;
@@ -750,27 +806,27 @@ function A(e, t, n, r, a, o, s = null, c = null, l = null, u = null) {
 			break;
 		}
 		case "curvedrightarrow": {
-			let t = Math.min(a, o), i = o / 2, u = 5e4 * o / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(d, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = 1e5 * (Math.sqrt(Math.max(0, h)) * a / (2 * m)) / t, _ = t * Math.min(g, Math.max(0, l ?? 25e3)) / 1e5, v = Math.sqrt(Math.max(0, a * a - _ * _)) * m / a, y = m + f, b = m + v, x = y + v, S = (p - f) / 2, C = b - S, w = x + S, E = o - p / 2, D = a - _, O = Math.atan2(_, v), k = -O, A = Math.PI - O;
-			e.moveTo(n, r + m), T(e, n, r + m, a, m, Math.PI, k), e.lineTo(n + D, r + C), e.lineTo(n + a, r + E), e.lineTo(n + D, r + w), e.lineTo(n + D, r + x), T(e, n + D, r + x, a, m, A, O), e.closePath();
+			let t = Math.min(a, o), i = o / 2, u = 5e4 * o / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(d, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = 1e5 * (Math.sqrt(Math.max(0, h)) * a / (2 * m)) / t, _ = t * Math.min(g, Math.max(0, l ?? 25e3)) / 1e5, v = Math.sqrt(Math.max(0, a * a - _ * _)) * m / a, y = m + f, b = m + v, x = y + v, S = (p - f) / 2, C = b - S, w = x + S, T = o - p / 2, D = a - _, O = Math.atan2(_, v), k = -O, A = Math.PI - O;
+			e.moveTo(n, r + m), E(e, n, r + m, a, m, Math.PI, k), e.lineTo(n + D, r + C), e.lineTo(n + a, r + T), e.lineTo(n + D, r + w), e.lineTo(n + D, r + x), E(e, n + D, r + x, a, m, A, O), e.closePath();
 			break;
 		}
 		case "curvedleftarrow": {
-			let t = Math.min(a, o), i = o / 2, u = 5e4 * o / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(d, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = Math.sqrt(Math.max(0, h)) * a / (2 * m), _ = 1e5 * g / t, v = t * Math.min(_, Math.max(0, l ?? 25e3)) / 1e5, y = Math.sqrt(Math.max(0, a * a - v * v)) * m / a, b = m + f, x = m + y, S = b + y, C = (p - f) / 2, w = x - C, E = S + C, D = o - p / 2, O = v, k = Math.atan2(v, y), A = f / 2, j = Math.atan2(A, g), M = j - k, N = k - j, P = -j;
+			let t = Math.min(a, o), i = o / 2, u = 5e4 * o / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(d, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = Math.sqrt(Math.max(0, h)) * a / (2 * m), _ = 1e5 * g / t, v = t * Math.min(_, Math.max(0, l ?? 25e3)) / 1e5, y = Math.sqrt(Math.max(0, a * a - v * v)) * m / a, b = m + f, x = m + y, S = b + y, C = (p - f) / 2, w = x - C, T = S + C, D = o - p / 2, O = v, k = Math.atan2(v, y), A = f / 2, j = Math.atan2(A, g), M = j - k, N = k - j, P = -j;
 			e.moveTo(n, r + D), e.lineTo(n + O, r + w), e.lineTo(n + O, r + x);
-			let F = T(e, n + O, r + x, a, m, k, M);
-			T(e, F.x, F.y, a, m, P, N), e.lineTo(n + O, r + E), e.closePath();
+			let F = E(e, n + O, r + x, a, m, k, M);
+			E(e, F.x, F.y, a, m, P, N), e.lineTo(n + O, r + T), e.closePath();
 			break;
 		}
 		case "curveduparrow": {
-			let t = Math.min(a, o), i = a / 2, u = 5e4 * a / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(1e5, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = Math.sqrt(Math.max(0, h)) * o / (2 * m), _ = 1e5 * g / t, v = t * Math.min(_, Math.max(0, l ?? 25e3)) / 1e5, y = Math.sqrt(Math.max(0, o * o - v * v)) * m / o, b = m + f, x = m + y, S = b + y, C = (p - f) / 2, w = x - C, E = S + C, D = a - p / 2, O = v, k = Math.atan2(v, y), A = f / 2, j = Math.atan2(A, g), M = j - k, N = k - j, P = Math.PI / 2 - k, F = Math.PI / 2 - j;
-			e.moveTo(n + D, r), e.lineTo(n + E, r + O), e.lineTo(n + S, r + O);
-			let I = T(e, n + S, r + O, m, o, P, N);
-			T(e, I.x, I.y, m, o, F, M), e.lineTo(n + w, r + O), e.closePath();
+			let t = Math.min(a, o), i = a / 2, u = 5e4 * a / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(1e5, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = Math.sqrt(Math.max(0, h)) * o / (2 * m), _ = 1e5 * g / t, v = t * Math.min(_, Math.max(0, l ?? 25e3)) / 1e5, y = Math.sqrt(Math.max(0, o * o - v * v)) * m / o, b = m + f, x = m + y, S = b + y, C = (p - f) / 2, w = x - C, T = S + C, D = a - p / 2, O = v, k = Math.atan2(v, y), A = f / 2, j = Math.atan2(A, g), M = j - k, N = k - j, P = Math.PI / 2 - k, F = Math.PI / 2 - j;
+			e.moveTo(n + D, r), e.lineTo(n + T, r + O), e.lineTo(n + S, r + O);
+			let I = E(e, n + S, r + O, m, o, P, N);
+			E(e, I.x, I.y, m, o, F, M), e.lineTo(n + w, r + O), e.closePath();
 			break;
 		}
 		case "curveddownarrow": {
-			let t = Math.min(a, o), i = a / 2, u = 5e4 * a / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(1e5, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = Math.sqrt(Math.max(0, h)) * o / (2 * m), _ = 1e5 * g / t, v = t * Math.min(_, Math.max(0, l ?? 25e3)) / 1e5, y = Math.sqrt(Math.max(0, o * o - v * v)) * m / o, b = m + f, x = m + y, S = b + y, C = (p - f) / 2, w = x - C, E = S + C, D = a - p / 2, O = o - v, k = Math.atan2(v, y), A = f / 2, j = Math.atan2(A, g), M = 3 * Math.PI / 2 + k;
-			3 * Math.PI / 2 - j, j - Math.PI / 2, Math.PI / 2 - j, e.moveTo(n + D, r + o), e.lineTo(n + w, r + O), e.lineTo(n + x, r + O), T(e, n + x, r + O, m, o, M, -k), e.lineTo(n + b, r), T(e, n + b, r, m, o, 3 * Math.PI / 2, k), e.lineTo(n + E, r + O), e.closePath();
+			let t = Math.min(a, o), i = a / 2, u = 5e4 * a / t, d = Math.min(u, Math.max(0, c ?? 5e4)), f = t * Math.min(1e5, Math.max(0, s ?? 25e3)) / 1e5, p = t * d / 1e5, m = i - (f + p) / 4, h = (2 * m) ** 2 - f ** 2, g = Math.sqrt(Math.max(0, h)) * o / (2 * m), _ = 1e5 * g / t, v = t * Math.min(_, Math.max(0, l ?? 25e3)) / 1e5, y = Math.sqrt(Math.max(0, o * o - v * v)) * m / o, b = m + f, x = m + y, S = b + y, C = (p - f) / 2, w = x - C, T = S + C, D = a - p / 2, O = o - v, k = Math.atan2(v, y), A = f / 2, j = Math.atan2(A, g), M = 3 * Math.PI / 2 + k;
+			3 * Math.PI / 2 - j, j - Math.PI / 2, Math.PI / 2 - j, e.moveTo(n + D, r + o), e.lineTo(n + w, r + O), e.lineTo(n + x, r + O), E(e, n + x, r + O, m, o, M, -k), e.lineTo(n + b, r), E(e, n + b, r, m, o, 3 * Math.PI / 2, k), e.lineTo(n + T, r + O), e.closePath();
 			break;
 		}
 		case "stripedrightarrow": {
@@ -818,7 +874,7 @@ function A(e, t, n, r, a, o, s = null, c = null, l = null, u = null) {
 }
 //#endregion
 //#region packages/core/src/shape/arrow.ts
-function j(e, t, n) {
+function M(e, t, n) {
 	let r = Math.max(.5, t.width * n), i = e.w === "sm" ? 4 : e.w === "lg" ? 8 : 6, a = e.len === "sm" ? 4 : e.len === "lg" ? 8 : 6;
 	return {
 		lw: r,
@@ -826,16 +882,21 @@ function j(e, t, n) {
 		len: r * a
 	};
 }
-var M = new Set([
+var N = new Set([
 	"triangle",
 	"stealth",
 	"diamond",
 	"oval"
 ]);
-function N(e, t, n) {
-	return M.has(e.type) ? j(e, t, n).len : 0;
-}
 function P(e, t, n) {
+	return N.has(e.type) ? M(e, t, n).len : 0;
+}
+function F(e, t, n) {
+	if (e.type === "none") return 0;
+	let { lw: r, halfW: i, len: a } = M(e, t, n);
+	return Math.max(a, i) + r / 2;
+}
+function I(e, t, n) {
 	if (n <= 0) return {
 		x: e.x,
 		y: e.y
@@ -851,32 +912,32 @@ function P(e, t, n) {
 		y: e.y + i * o
 	};
 }
-function F(t, n, r, i, a, o, s) {
+function L(t, n, r, i, a, o, s, c) {
 	if (a.type === "none") return;
-	let { lw: c, halfW: l, len: u } = j(a, o, s), d = e(o.color);
-	switch (t.save(), t.translate(n, r), t.rotate(i), t.fillStyle = d, t.strokeStyle = d, t.lineWidth = c, t.setLineDash([]), t.beginPath(), a.type) {
+	let { lw: l, halfW: u, len: d } = M(a, o, s), f = c ?? e(o.color);
+	switch (t.save(), t.translate(n, r), t.rotate(i), t.fillStyle = f, t.strokeStyle = f, t.lineWidth = l, t.setLineDash([]), t.beginPath(), a.type) {
 		case "triangle":
 		case "stealth":
-			t.moveTo(0, 0), t.lineTo(-u, -l), t.lineTo(-u, l), t.closePath(), t.fill();
+			t.moveTo(0, 0), t.lineTo(-d, -u), t.lineTo(-d, u), t.closePath(), t.fill();
 			break;
 		case "arrow":
-			t.moveTo(0, 0), t.lineTo(-u, -l), t.moveTo(0, 0), t.lineTo(-u, l), t.stroke();
+			t.lineCap = "round", t.lineJoin = "round", t.moveTo(-d, -u), t.lineTo(0, 0), t.lineTo(-d, u), t.stroke();
 			break;
 		case "diamond":
-			t.moveTo(0, 0), t.lineTo(-u / 2, -l), t.lineTo(-u, 0), t.lineTo(-u / 2, l), t.closePath(), t.fill();
+			t.moveTo(0, 0), t.lineTo(-d / 2, -u), t.lineTo(-d, 0), t.lineTo(-d / 2, u), t.closePath(), t.fill();
 			break;
 		case "oval":
-			t.ellipse(-u / 2, 0, u / 2, l, 0, 0, Math.PI * 2), t.fill();
+			t.ellipse(-d / 2, 0, d / 2, u, 0, 0, Math.PI * 2), t.fill();
 			break;
 	}
 	t.restore();
 }
 //#endregion
 //#region packages/core/src/text/line-distribute.ts
-var I = (e) => e === 32 || e === 12288;
-function L(e, i, a = {}) {
+var R = (e) => e === 32 || e === 12288;
+function z(e, i, a = {}) {
 	if (Math.abs(i) <= .5) return null;
-	let o = a.firstContentSi ?? 0, s = a.lastDrawnSi ?? e.length - 1, c = a.minPerGap ?? -Infinity, l = a.isGapChar ?? n, u = a.isWhitespace ?? I, d = a.seaClusterGaps ?? !1, f = [];
+	let o = a.firstContentSi ?? 0, s = a.lastDrawnSi ?? e.length - 1, c = a.minPerGap ?? -Infinity, l = a.isGapChar ?? n, u = a.isWhitespace ?? R, d = a.seaClusterGaps ?? !1, f = [];
 	for (let t = o; t < e.length; t++) {
 		let n = e[t];
 		if (n === void 0) continue;
@@ -938,4 +999,4 @@ function L(e, i, a = {}) {
 	};
 }
 //#endregion
-export { A as a, d as c, P as i, u as l, F as n, S as o, N as r, p as s, L as t, f as u };
+export { I as a, m as c, u as d, f, P as i, p as l, L as n, j as o, F as r, C as s, z as t, d as u };

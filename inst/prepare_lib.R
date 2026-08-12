@@ -2,7 +2,7 @@
 # vendors the @silurus/ooxml JS/WASM viewer (xlsx/docx/pptx canvas renderer)
 # run from the package root: source("inst/prepare_lib.R")
 
-ooxml_ver <- "0.77.0"
+ooxml_ver <- "0.78.0"
 
 tarball_url <- sprintf("https://registry.npmjs.org/@silurus/ooxml/-/ooxml-%s.tgz", ooxml_ver)
 
@@ -21,11 +21,6 @@ dist_files <- list.files(dist_dir, full.names = TRUE)
 # drop TypeScript declarations, not needed at runtime
 dist_files <- dist_files[basename(dist_files) != "types"]
 file.copy(dist_files, "inst/ooxml-dist", recursive = TRUE)
-
-upstream_license <- file.path(tmp_dir, "package", "LICENSE")
-if (file.exists(upstream_license)) {
-  file.copy(upstream_license, "inst/ooxml-dist/LICENSE.upstream", overwrite = TRUE)
-}
 
 ## Prune anything not actually reachable from the xlsx/docx/pptx entry
 ## points we use (we never import '.', './math', or './node'). Traced via
@@ -71,6 +66,11 @@ pruned <- .prune_unreachable("inst/ooxml-dist", c("xlsx.mjs", "docx.mjs", "pptx.
 message("prepare_lib.R: pruned ", length(pruned), " unreachable file(s): ",
         paste(pruned, collapse = ", "))
 
+upstream_license <- file.path(tmp_dir, "package", "LICENSE")
+lic <- "inst/ooxml-dist/LICENSE.upstream"
+if (file.exists(upstream_license)) {
+  file.copy(upstream_license, lic, overwrite = TRUE)
+}
 writeLines(ooxml_ver, "inst/ooxml-dist/VERSION")
 
 ## Rewrite (not patch) the Dependabot tracking manifest so its pinned

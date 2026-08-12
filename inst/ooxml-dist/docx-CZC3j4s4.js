@@ -1,8 +1,8 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { B as t, Et as n, It as r, Lt as i, R as a, a as o, an as s, hn as c, ht as l, it as u, kt as d, mn as f, q as p, z as m } from "./line-metrics-BdCACYlq.js";
-import { C as h, E as g, S as _, T as v, _ as y, a as b, b as x, c as S, d as ee, f as te, g as ne, h as re, i as C, l as w, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as T, w as fe, x as pe, y as E } from "./canvas-viewer-mechanics-DTkBvITv.js";
+import { B as t, Et as n, It as r, Lt as i, R as a, a as o, gn as s, hn as c, ht as l, it as u, kt as d, on as f, q as p, z as m } from "./line-metrics-z9AdgPaZ.js";
+import { C as h, E as g, S as _, T as v, _ as y, a as b, b as x, c as S, d as ee, f as te, g as ne, h as re, i as C, l as w, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as T, w as fe, x as pe, y as E } from "./canvas-viewer-mechanics-ChxLdOJg.js";
 import { a as me, c as he, i as ge, o as _e, r as ve, s as ye, t as be } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { C as xe, S as Se, _ as D, a as Ce, b as we, c as Te, d as Ee, f as De, g as Oe, h as ke, l as Ae, m as je, n as O, o as Me, p as Ne, s as Pe, t as k, v as A, w as Fe, x as j, y as Ie } from "./document-pull-client-iWr8-S7P.js";
+import { C as xe, S as Se, _ as D, a as Ce, b as we, c as Te, d as Ee, f as De, g as Oe, h as ke, l as Ae, m as je, n as O, o as Me, p as Ne, s as Pe, t as k, v as A, w as Fe, x as j, y as Ie } from "./document-pull-client-xsdVDuVD.js";
 import { n as Le, r as M, t as N } from "./highlight-rect-CAkCWJ37.js";
 //#region packages/core/src/fonts/embedded.ts
 function Re(e, t) {
@@ -341,7 +341,7 @@ var U = class e {
 				t = await e.arrayBuffer();
 			} else t = n;
 			t = g(await v(t, r.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let a = s === "worker" ? (await import("./render-worker-host-C96AiK8e.js")).createRenderWorker() : new Ue(), l;
+			let a = s === "worker" ? (await import("./render-worker-host-CBjWHxMb.js")).createRenderWorker() : new Ue(), l;
 			try {
 				if (l = new e(a, s, o, r.wasmUrl), l._metrics = c, await l._parse(t, i.policy, s === "worker" ? !!r.useGoogleFonts : !1, r.workerTimeoutMs, (e) => c.observeUsage(e)), s === "worker" && l._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), r.math && l._mode === "worker" && console.warn("[ooxml] the math engine is unavailable in mode: 'worker'; equations will be skipped. Use mode: 'main' for documents with equations."), l._mode === "main" && r.useGoogleFonts && l._document && (l._googleFontFaces = await ge(Ne(l._document), De)), l._mode === "main" && l._document?.embeddedFonts?.length) {
 					let e = l;
@@ -865,7 +865,7 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		await this.goToPage(this._currentPage - 1);
 	}
 	_naturalWidthPx() {
-		return !this._doc || this._doc.pageCount === 0 ? 0 : this._doc.pageSize(this._currentPage).widthPt * s;
+		return !this._doc || this._doc.pageCount === 0 ? 0 : this._doc.pageSize(this._currentPage).widthPt * f;
 	}
 	_renderWidth() {
 		if (this._scale === null) return this._opts.width;
@@ -904,8 +904,8 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		let t = this._doc.pageSize(this._currentPage), n = this._fitContainer();
 		if (!n) return;
 		let r = y({
-			contentWidth: t.widthPt * s,
-			contentHeight: t.heightPt * s,
+			contentWidth: t.widthPt * f,
+			contentHeight: t.heightPt * f,
 			containerWidth: n.clientWidth,
 			containerHeight: n.clientHeight
 		}, e);
@@ -1173,10 +1173,10 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		return this._doc?.pageCount ?? 0;
 	}
 	_pageWidthPx(e) {
-		return this._doc.pageSize(e).widthPt * s * this._scale;
+		return this._doc.pageSize(e).widthPt * f * this._scale;
 	}
 	_pageHeightPx(e) {
-		return this._doc.pageSize(e).heightPt * s * this._scale;
+		return this._doc.pageSize(e).heightPt * f * this._scale;
 	}
 	_fitWidthPx() {
 		if (this._opts.width && this._opts.width > 0) return this._opts.width;
@@ -1190,7 +1190,7 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		let e = this._fitWidthPx();
 		if (e <= 0) return 0;
 		let t = this._doc.pageSize(0).widthPt;
-		return t <= 0 ? 0 : e / (t * s);
+		return t <= 0 ? 0 : e / (t * f);
 	}
 	relayout() {
 		this._relayout();
@@ -1442,8 +1442,8 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 	_fit(e) {
 		if (!this._doc || this._doc.pageCount === 0) return;
 		let t = this._doc.pageSize(0), n = y({
-			contentWidth: t.widthPt * s,
-			contentHeight: t.heightPt * s,
+			contentWidth: t.widthPt * f,
+			contentHeight: t.heightPt * f,
 			containerWidth: this._fitWidthPx(),
 			containerHeight: this._scrollHost.clientHeight
 		}, e);
@@ -1708,8 +1708,8 @@ var ht = /* @__PURE__ */ e({
 	DocxScrollViewer: () => mt,
 	DocxViewer: () => ut,
 	OoxmlDecodedImageLimitError: () => r,
-	OoxmlError: () => f,
-	OoxmlResourceLimitError: () => c,
+	OoxmlError: () => c,
+	OoxmlResourceLimitError: () => s,
 	autoResize: () => fe,
 	buildDocxHighlightLayer: () => q,
 	buildDocxTextLayer: () => K,

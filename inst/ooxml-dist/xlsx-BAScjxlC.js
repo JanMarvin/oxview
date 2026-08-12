@@ -1,13 +1,13 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { $t as t, A as n, B as r, C as i, Ct as a, D as o, Dt as s, Et as c, Gt as l, Ht as u, It as d, J as f, Jt as p, Lt as m, M as h, O as g, Ot as _, Qt as v, R as y, S as b, T as x, Tt as S, V as C, _ as w, _t as T, a as E, an as D, c as O, cn as k, d as A, dn as j, en as M, f as N, fn as ee, g as P, gt as F, h as I, hn as te, ht as L, in as R, it as z, j as ne, kt as B, ln as re, m as V, mn as ie, mt as H, n as U, nn as ae, on as oe, p as se, pn as W, pt as G, q as ce, rn as K, s as le, sn as q, tn as ue, u as de, un as J, vt as fe, w as pe, y as me, z as Y } from "./line-metrics-BdCACYlq.js";
-import { C as he, E as ge, S as _e, T as ve, _ as ye, a as be, b as xe, d as Se, f as Ce, h as we, i as Te, l as Ee, m as De, p as Oe, t as ke, u as Ae, v as je, w as Me, x as Ne, y as Pe } from "./canvas-viewer-mechanics-DTkBvITv.js";
-import { a as Fe, i as Ie, t as Le } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { i as Re } from "./resource-measurement-E_S_iau4.js";
-import { t as ze } from "./mathjax-CMjda8Ip.js";
-import { n as Be, r as Ve, t as He } from "./visible-index-CgyJLAS_.js";
-import { a as Ue, c as We, d as Ge, i as Ke, l as qe, n as Je, o as Ye, s as Xe, t as Ze, u as Qe } from "./worksheet-pull-client-YzjJMOns.js";
+import { $t as t, A as n, B as r, C as i, Ct as a, D as o, Dt as s, Et as c, It as l, J as u, Kt as d, Lt as f, M as p, O as m, Ot as h, R as g, S as _, T as v, Tt as y, Ut as b, V as x, Xt as S, Yt as C, _ as w, _t as T, a as E, an as D, c as O, cn as k, d as A, dn as j, en as M, f as ee, fn as te, g as N, gn as P, gt as F, h as I, hn as L, ht as R, in as z, it as ne, j as B, kt as V, ln as re, m as H, mn as ie, mt as U, n as W, nn as ae, on as G, p as oe, pn as se, pt as ce, q as le, qt as ue, rn as de, s as fe, sn as pe, tn as K, u as q, un as me, vt as J, w as he, y as ge, z as _e } from "./line-metrics-z9AdgPaZ.js";
+import { C as Y, E as ve, S as ye, T as be, _ as xe, a as Se, b as Ce, d as we, f as Te, h as Ee, i as De, l as Oe, m as ke, p as Ae, t as je, u as Me, v as Ne, w as Pe, x as Fe, y as Ie } from "./canvas-viewer-mechanics-ChxLdOJg.js";
+import { a as Le, i as Re, t as ze } from "./bounded-raw-part-cache-C6ro6Ezf.js";
+import { i as Be } from "./resource-measurement-5g27Av6n.js";
+import { t as Ve } from "./mathjax-CMjda8Ip.js";
+import { n as He, r as Ue, t as We } from "./visible-index-CgyJLAS_.js";
+import { a as Ge, c as Ke, d as qe, i as Je, l as Ye, n as Xe, o as Ze, s as Qe, t as $e, u as et } from "./worksheet-pull-client-CMDRPZ5E.js";
 //#region packages/core/src/sparkline/renderer.ts
-function $e(e, t, n) {
+function tt(e, t, n) {
 	let { values: r } = n;
 	if (r.length === 0 || t.w <= 0 || t.h <= 0) return;
 	let i = n.colorSeries ?? "#5B9BD5", a = Math.min(2, t.w * .08), o = Math.max(2, t.h * .2), s = t.x + a, c = t.y + o, l = Math.max(1, t.w - a * 2), u = Math.max(1, t.h - o * 2), d = r.filter((e) => typeof e == "number");
@@ -16,11 +16,11 @@ function $e(e, t, n) {
 	m === h && (h = m + 1, --m);
 	let g = h - m, _ = (e) => c + u - (e - m) / g * u;
 	if (n.kind === "stem") {
-		nt(e, n, s, c, l, u);
+		it(e, n, s, c, l, u);
 		return;
 	}
 	if (n.kind === "column") {
-		tt(e, n, r, s, c, l, u, m, h);
+		rt(e, n, r, s, c, l, u, m, h);
 		return;
 	}
 	if (n.displayXAxis && m < 0 && h > 0) {
@@ -29,7 +29,7 @@ function $e(e, t, n) {
 		e.moveTo(s, t), e.lineTo(s + l, t), e.stroke(), e.restore();
 	}
 	let v = r.length, y = (e) => v === 1 ? s + l / 2 : s + e / (v - 1) * l;
-	e.save(), e.strokeStyle = i, e.lineCap = "round", e.lineJoin = "round", e.lineWidth = (n.lineWeight ?? .75) * D, e.beginPath();
+	e.save(), e.strokeStyle = i, e.lineCap = "round", e.lineJoin = "round", e.lineWidth = (n.lineWeight ?? .75) * G, e.beginPath();
 	let b = !1, x = n.displayEmptyCellsAs ?? "gap";
 	for (let t = 0; t < v; t++) {
 		let n = r[t];
@@ -44,7 +44,7 @@ function $e(e, t, n) {
 		b ? e.lineTo(i, a) : (e.moveTo(i, a), b = !0);
 	}
 	e.stroke(), e.restore();
-	let S = Math.max(1, Math.min(2.5, u * .12)), C = et(r, n);
+	let S = Math.max(1, Math.min(2.5, u * .12)), C = nt(r, n);
 	for (let t = 0; t < v; t++) {
 		let a = r[t];
 		if (a == null) continue;
@@ -52,7 +52,7 @@ function $e(e, t, n) {
 		(n.markers || o != null) && (e.save(), e.fillStyle = o ?? n.colorMarkers ?? i, e.beginPath(), e.arc(y(t), _(a), S, 0, Math.PI * 2), e.fill(), e.restore());
 	}
 }
-function et(e, t) {
+function nt(e, t) {
 	let n = e.map(() => null), r = e.map((e) => typeof e == "number" ? e : null), i = r.findIndex((e) => e != null), a = -1;
 	for (let e = r.length - 1; e >= 0; e--) if (r[e] != null) {
 		a = e;
@@ -67,10 +67,10 @@ function et(e, t) {
 	if (t.low && t.colorLow && !Number.isNaN(c)) for (let e = 0; e < r.length; e++) r[e] === c && (n[e] = t.colorLow);
 	return n;
 }
-function tt(e, t, n, r, i, a, o, s, c) {
+function rt(e, t, n, r, i, a, o, s, c) {
 	let l = n.length;
 	if (l === 0) return;
-	let u = s < 0 && c > 0 ? 0 : s, d = c - s, f = (e) => i + o - (e - s) / d * o, p = f(u), m = a / l, h = Math.min(1.5, m * .15), g = et(n, t);
+	let u = s < 0 && c > 0 ? 0 : s, d = c - s, f = (e) => i + o - (e - s) / d * o, p = f(u), m = a / l, h = Math.min(1.5, m * .15), g = nt(n, t);
 	for (let i = 0; i < l; i++) {
 		let a = n[i];
 		if (a == null) continue;
@@ -78,10 +78,10 @@ function tt(e, t, n, r, i, a, o, s, c) {
 		e.save(), e.fillStyle = o, e.fillRect(c, Math.min(p, s), l, Math.abs(p - s)), e.restore();
 	}
 }
-function nt(e, t, n, r, i, a) {
+function it(e, t, n, r, i, a) {
 	let o = t.values.length;
 	if (o === 0) return;
-	let s = r + a / 2, c = a / 2, l = i / o, u = Math.min(1.5, l * .15), d = et(t.values, t);
+	let s = r + a / 2, c = a / 2, l = i / o, u = Math.min(1.5, l * .15), d = nt(t.values, t);
 	for (let r = 0; r < o; r++) {
 		let i = t.values[r];
 		if (i == null || i === 0) continue;
@@ -91,16 +91,16 @@ function nt(e, t, n, r, i, a) {
 }
 //#endregion
 //#region packages/core/src/text/bidi/segments.ts
-function rt(e, t) {
-	return e === !0 ? "rtl" : e === !1 ? "ltr" : h().computeLevels(t, "auto").paragraphLevel === 1 ? "rtl" : "ltr";
+function at(e, t) {
+	return e === !0 ? "rtl" : e === !1 ? "ltr" : p().computeLevels(t, "auto").paragraphLevel === 1 ? "rtl" : "ltr";
 }
 //#endregion
 //#region packages/xlsx/src/worker.ts?worker&inline
-var it = "var e=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,n.unregister(this),e}free(){let e=this.__destroy_into_raw();_.__wbg_xlsxarchive_free(e,0)}acknowledge_sheet_cursor_terminal(){let e=_.xlsxarchive_acknowledge_sheet_cursor_terminal(this.__wbg_ptr);if(e[1])throw f(e[0])}assert_healthy(){let e=_.xlsxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw f(e[0])}cancel_sheet_cursor(){_.xlsxarchive_cancel_sheet_cursor(this.__wbg_ptr)}close_sheet_cursor(){_.xlsxarchive_close_sheet_cursor(this.__wbg_ptr)}extract_image(e){let t=d(e,_.__wbindgen_malloc,_.__wbindgen_realloc),n=g,i=_.xlsxarchive_extract_image(this.__wbg_ptr,t,n);if(i[3])throw f(i[2]);var a=r(i[0],i[1]).slice();return _.__wbindgen_free(i[0],i[1]*1,1),a}constructor(e,t,r,i){let a=u(e,_.__wbindgen_malloc),o=g,s=_.xlsxarchive_new(a,o,!l(t),l(t)?BigInt(0):t,!l(r),l(r)?BigInt(0):r,!l(i),l(i)?BigInt(0):i);if(s[2])throw f(s[1]);return this.__wbg_ptr=s[0]>>>0,n.register(this,this.__wbg_ptr,this),this}open_sheet_cursor(e,t){let n=d(t,_.__wbindgen_malloc,_.__wbindgen_realloc),r=g,i=_.xlsxarchive_open_sheet_cursor(this.__wbg_ptr,e,n,r);if(i[1])throw f(i[0])}parse(){let e=_.xlsxarchive_parse(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=r(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}pull_sheet_cursor(e){let t=_.xlsxarchive_pull_sheet_cursor(this.__wbg_ptr,e);if(t[3])throw f(t[2]);var n=r(t[0],t[1]).slice();return _.__wbindgen_free(t[0],t[1]*1,1),n}resource_usage(){let e=_.xlsxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=r(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}sheet_cursor_pull_finished(){return _.xlsxarchive_sheet_cursor_pull_finished(this.__wbg_ptr)!==0}sheet_cursor_resource_usage(){let e=_.xlsxarchive_sheet_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=r(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=_.xlsxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,f(i[2]);return e=n,t=r,o(n,r)}finally{_.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(e.prototype[Symbol.dispose]=e.prototype.free);function t(){return{__proto__:null,\"./xlsx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(o(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(o(e,t))}finally{_.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=d(n,_.__wbindgen_malloc,_.__wbindgen_realloc),i=g;a().setInt32(e+4,i,!0),a().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return o(e,t)},__wbindgen_init_externref_table:function(){let e=_.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const n=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>_.__wbg_xlsxarchive_free(e>>>0,1));function r(e,t){return e>>>=0,c().subarray(e/1,e/1+t)}let i=null;function a(){return(i===null||i.buffer.detached===!0||i.buffer.detached===void 0&&i.buffer!==_.memory.buffer)&&(i=new DataView(_.memory.buffer)),i}function o(e,t){return e>>>=0,ee(e,t)}let s=null;function c(){return(s===null||s.byteLength===0)&&(s=new Uint8Array(_.memory.buffer)),s}function l(e){return e==null}function u(e,t){let n=t(e.length*1,1)>>>0;return c().set(e,n/1),g=e.length,n}function d(e,t,n){if(n===void 0){let n=h.encode(e),r=t(n.length,1)>>>0;return c().subarray(r,r+n.length).set(n),g=n.length,r}let r=e.length,i=t(r,1)>>>0,a=c(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=c().subarray(i+o,i+r),a=h.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return g=o,i}function f(e){let t=_.__wbindgen_externrefs.get(e);return _.__externref_table_dealloc(e),t}let p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});p.decode();let m=0;function ee(e,t){return m+=t,m>=2146435072&&(p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),p.decode(),m=t),p.decode(c().subarray(e,e+t))}const h=new TextEncoder;`encodeInto`in h||(h.encodeInto=function(e,t){let n=h.encode(e);return t.set(n),{read:e.length,written:n.length}});let g=0,_;function v(e,t){return _=e.exports,i=null,s=null,_.__wbindgen_start(),_}async function te(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function y(e){if(_!==void 0)return _;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let n=t();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:r,module:i}=await te(await e,n);return v(r,i)}async function ne(e){return _=void 0,i=null,s=null,y(e)}var b=class e extends Error{code;constructor(t,n){super(n),this.name=`OoxmlError`,this.code=t,Object.setPrototypeOf(this,e.prototype)}},x=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}},re=class e extends RangeError{code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}};function ie(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var ae=class{state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},S=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function oe(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function se(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function C(e,t){return e({module_or_path:t})}var ce=class{runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new ae(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),le),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return this.runtime.run(e)}poison(){this.runtime.poison(new S(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):C(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,se(e)}};function le(e){return oe(e)?new S(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function w(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function ue(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return w(t.requiredBytes)&&w(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var T=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function de(e){if(e instanceof T)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!ue(r)))return new T(r)}const E=`OOXML_RESOURCE_LIMIT:`;function D(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function O(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return D(t.archiveEntryCount)&&D(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||D(t.largestInflatedEntryBytes))&&D(t.distinctInflatedBytes)&&D(t.operationInflatedBytes)}function k(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!O(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function fe(e){return e===`docx`||e===`xlsx`||e===`pptx`}function pe(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function A(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function j(e){return A(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function me(e){return!A(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const M=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}]]),he=new Set([...M.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),ge=new Set([...M.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function _e(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!fe(t.format)||!A(t.operation,256)||!j(t.resource)||!j(t.metric)||!D(t.limit)||!D(t.observed)||typeof t.configurable!=`boolean`||!O(t.usage)?!1:!(`part`in t)||me(t.part)}function N(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!pe(t.stage)||!_e(t.violation))return!1;let n=t.violation,r=M.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(he.has(n.resource)&&ge.has(n.metric))}function P(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function F(e){if(!N(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:P(t.usage)}};return N(n)?n:void 0}function I(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``}: ${t.metric} ${t.observed} > ${t.limit}`}function ve(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(E))return;let n;try{n=JSON.parse(t.slice(21))}catch{return}if(!n||typeof n!=`object`)return;let r=n;if(!(r.code!==`ooxml-resource-limit`||!N(r.details)))return new x(I(r.details),r.details)}function ye(e){if(e instanceof re)return{message:e.message,errorName:e.name,code:e.code,decodedImage:{metric:e.metric,limit:e.limit,observed:e.observed}};let t=de(e);if(t)return{message:t.message,errorName:t.name,code:t.code,insufficientCredit:{requiredBytes:t.requiredBytes,offeredBytes:t.offeredBytes}};let n=e instanceof b||e instanceof x?e:ve(e);if(n instanceof x){let e=F(n.details);return e?{message:typeof n.message==`string`?n.message:I(e),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:e}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(n instanceof b)return{message:typeof n.message==`string`?n.message:String(n.message),errorName:A(n.name,128)?n.name:`OoxmlError`,...j(n.code)?{code:n.code}:{}};let r=e instanceof Error?e.message:String(e);if(typeof r==`string`&&r.startsWith(E))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let i=e instanceof Error?e:Error(r),a=i;return{message:typeof i.message==`string`?i.message:String(i.message),errorName:A(i.name,128)?i.name:`Error`,...typeof a.code==`string`?{code:a.code}:{}}}function L(e){try{return ye(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}function be(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function xe(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const R=`ooxml-pull-v1`;function z(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function Se(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var Ce=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,z(this.maxRetainedBytes,`max retained lease bytes`),z(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},we=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){Se(e.sessionId),z(e.operationId,`operation id`),z(e.generation,`generation`),z(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&z(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=L(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(z(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:R,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){z(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(z(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:R,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:R,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};function Te(e,t){for(let n of e)for(let e of n.cells){let n=e.value;if(n.type===`shared`){let r=t[n.si];if(r){let t={type:`text`,text:r.text};r.runs!==void 0&&(t.runs=r.runs),r.phoneticRuns!==void 0&&(t.phoneticRuns=r.phoneticRuns),r.phoneticPr!==void 0&&(t.phoneticPr=r.phoneticPr),e.value=t}else e.value={type:`text`,text:``}}}return e}function Ee(e,t,n,r){let i=e instanceof ArrayBuffer?new Uint8Array(e):new Uint8Array(e.buffer,e.byteOffset,e.byteLength),a=JSON.parse(new TextDecoder().decode(i));if(!a||typeof a!=`object`||!(`kind`in a))throw Error(`worksheet cursor returned an invalid unit`);let o=a;if(t!==(o.kind===`finished`))throw Error(`worksheet cursor terminal marker mismatch`);if(o.kind===`rows`){if(!Array.isArray(o.rows))throw Error(`worksheet row unit is missing rows`);return n&&Te(o.rows,n),r?.(o.rows),{kind:`rows`,rows:o.rows}}if(o.kind===`finished`){if(!o.worksheet||typeof o.worksheet!=`object`)throw Error(`worksheet terminal unit is missing its worksheet`);return o.worksheet.rows=[],{kind:`finished`,worksheet:o.worksheet}}throw Error(`worksheet cursor returned an unknown unit kind`)}function B(e,t){if(!Number.isSafeInteger(e)||e<0)throw Error(`${t} must be a non-negative safe integer`)}function V(e,t,n){return B(e,`resource measurement`),B(t,`resource measurement`),B(n,`resource measurement limit`),e>n||t>n||t>n-e?n===2**53-1?n:n+1:e+t}function H(e,t=2**53-1){B(t,`resource measurement limit`);let n=0;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=3}else a=3;if(n=V(n,a,t),n>t)return n}return n}function U(e,t=2**53-1){B(t,`resource measurement limit`);let n=V(0,2,t);if(n>t)return n;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i===34||i===92||i===8||i===9||i===10||i===12||i===13)a=2;else if(i<=31)a=6;else if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=6}else a=i>=55296&&i<=57343?6:3;if(n=V(n,a,t),n>t)return n}return n}function W(e,t){return V(0,e,t)}function G(e,t=2**53-1,n=!1){if(B(t,`resource measurement limit`),e===null)return{jsonBytes:W(4,t),stringValueUtf8Bytes:0};if(typeof e==`string`)return{jsonBytes:U(e,t),stringValueUtf8Bytes:H(e,t)};if(typeof e==`boolean`)return{jsonBytes:W(e?4:5,t),stringValueUtf8Bytes:0};if(typeof e==`number`)return{jsonBytes:W((Number.isFinite(e)?String(Object.is(e,-0)?0:e):`null`).length,t),stringValueUtf8Bytes:0};if(typeof e==`bigint`)throw TypeError(`BigInt values cannot be serialized to JSON`);if(Array.isArray(e)){let n=W(2,t),r=0;for(let i=0;i<e.length;i+=1){i!==0&&(n=V(n,1,t));let a=G(e[i],t,!0);n=V(n,a.jsonBytes,t),r=V(r,a.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}if(typeof e==`object`){let n=W(2,t),r=0,i=0;for(let[a,o]of Object.entries(e)){if(o===void 0||typeof o==`function`||typeof o==`symbol`)continue;i++!==0&&(n=V(n,1,t)),n=V(n,U(a,t),t),n=V(n,1,t);let e=G(o,t);n=V(n,e.jsonBytes,t),r=V(r,e.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}return{jsonBytes:n?W(4,t):0,stringValueUtf8Bytes:0}}const K=1e5,q=25e4,J=33554432,Y=67108864,De=Object.freeze({archiveEntryCount:0,declaredInflatedBytes:0,distinctInflatedBytes:0,operationInflatedBytes:0});function Oe(e){let t=e.reduce((e,t)=>V(e,t.cells.length,q),0);return{rows:e.length,cells:t,ownedUtf8Bytes:e.reduce((e,t)=>t.cells.reduce((e,t)=>{let n=G(t.value,J).stringValueUtf8Bytes;return V(e,V(n,t.formula===void 0?0:H(t.formula,J),J),J)},e),0)}}function ke(e,t){let n=G(e,67108864);return{...t,jsonBytes:n.jsonBytes}}function Ae(e,t){return{rows:V(e.rows,t.rows,K),cells:V(e.cells,t.cells,q),ownedUtf8Bytes:V(e.ownedUtf8Bytes,t.ownedUtf8Bytes,J)}}function X(e,t,n,r,i,a,o){let s=n===`worksheet-json`?`serialization`:`parsing`;return new x(`OOXML resource limit exceeded${t?` for ${t}`:``}: ${r} ${a} > ${i}`,{stage:s,violation:{format:`xlsx`,operation:e,resource:n,metric:r,...t===void 0?{}:{part:t},limit:i,observed:Math.min(a,i+1),configurable:!1,usage:o??De}})}function Z(e,t,n,r){let i=[[`rows`,e.rows,K],[`cells`,e.cells,q],[`owned-utf8-bytes`,e.ownedUtf8Bytes,J]];for(let[e,a,o]of i)if(a>o)throw X(t,n,e===`owned-utf8-bytes`?`worksheet-cell-content`:`worksheet-model`,e,o,a,r)}function je(e,t,n,r){if(e>Y)throw X(t,n,`worksheet-json`,`bytes`,Y,e,r)}var Me=class{coordinator=new Ce;sessions=new Map;operationTail=Promise.resolve();pendingOpens=new Map;resourceFailure;constructor(e,t,n=e=>e(this.requireArchive()),r){this.archive=e,this.acceptWorksheet=t,this.executeArchive=n,this.prepareRows=r}reserveOpen(e){this.pendingOpens.set(e.sessionId,{identity:e,canceled:!1})}abandonOpen(e){this.pendingOpens.delete(e)}get pendingOpenCount(){return this.pendingOpens.size}async open(e,t,n){if(this.resourceFailure)throw this.resourceFailure;let r=this.pendingOpens.get(n.sessionId);if(!r||r.identity.operationId!==n.operationId||r.identity.generation!==n.generation)throw Error(`worksheet pull session open reservation is stale or missing`);let i,a=new Promise(e=>{i=e}),o=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(r.canceled)throw Error(`worksheet pull session open was canceled`);this.executeArchive(n=>n.open_sheet_cursor(e,t));let a=[],o={rows:0,cells:0,ownedUtf8Bytes:0},s,c=!1,l=new we({...n,maxByteCredit:67108864,coordinator:this.coordinator,driver:{pull:()=>{let e=this.executeArchive(e=>e.pull_sheet_cursor(128)),t=this.executeArchive(e=>e.sheet_cursor_pull_finished());if(this.acceptWorksheet){let n=Ee(e,t,void 0,this.prepareRows);try{if(n.kind===`rows`){let e=Ae(o,Oe(n.rows));Z(e,`get-worksheet-worker`,void 0,this.readResourceUsage()),a.push(...n.rows),o=e}else s=n.worksheet}catch(e){throw e instanceof x&&(this.resourceFailure??=e),e}}c=t;let n=be(e);return{payload:n,byteLength:n.byteLength,done:t,transfer:[n]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:()=>{if(!c)return;let t,r;try{if(this.acceptWorksheet){if(!s)throw Error(`worksheet terminal payload is missing`);s.rows=s.parseError?[]:a;let n=s.parseError?{rows:0,cells:0,ownedUtf8Bytes:0}:o,i=ke(s,n),c=this.readResourceUsage();Z(i,`get-worksheet-worker`,void 0,c),je(i.jsonBytes,`get-worksheet-worker`,void 0,c);let l=this.acceptWorksheet(e,s,i,c);typeof l==`function`?t=l:l&&({rollback:t,commit:r}=l)}this.executeArchive(e=>e.acknowledge_sheet_cursor_terminal()),r?.()}catch(e){throw t?.(),e instanceof x&&(this.resourceFailure??=e),e}c=!1,this.sessions.delete(n.sessionId),i()},cancel:()=>{try{this.archive()&&this.executeArchive(e=>e.cancel_sheet_cursor())}finally{this.sessions.delete(n.sessionId),i()}},close:()=>{try{this.archive()&&this.executeArchive(e=>e.close_sheet_cursor())}finally{this.sessions.delete(n.sessionId),i()}},resourceUsage:()=>this.readResourceUsage()}});this.sessions.set(n.sessionId,{host:l,identity:n}),this.pendingOpens.delete(n.sessionId)}));this.operationTail=o.then(()=>a,()=>void 0);try{await o}catch(e){throw this.pendingOpens.delete(n.sessionId),i(),e}}async postOpenedSafely(e,t,n){try{t()}catch(t){await this.closeIdentity(e);try{n(t)}catch{}}}dispatch(e,t){let n=this.sessions.get(e.sessionId);if(n)return n.host.dispatch(e,t);let r=this.pendingOpens.get(e.sessionId);if(r&&(e.kind===`cancel`||e.kind===`close`)){let n=r.identity.operationId===e.operationId&&r.identity.generation===e.generation;return n&&(r.canceled=!0),t(n?{protocol:R,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}:{protocol:R,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:{message:`stale lifecycle targets another pending worksheet operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`}}),Promise.resolve()}return e.kind===`cancel`||e.kind===`close`?(t({protocol:R,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}),Promise.resolve()):(t({protocol:R,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:L(Error(`worksheet pull session is not open`))}),Promise.resolve())}async dispatchSafely(e,t){try{await this.dispatch(e,t)}catch(n){try{t({protocol:R,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:L(n)})}catch{}}}run(e){let t=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;return e()})).catch(e=>{throw e instanceof x&&(this.resourceFailure??=e),e});return this.operationTail=t.then(()=>void 0,()=>void 0),t}async reset(){for(let e of this.pendingOpens.values())e.canceled=!0;let e=1;for(let{host:t,identity:n}of[...this.sessions.values()])await t.dispatch({protocol:R,kind:`close`,...n,requestId:e++},()=>void 0);this.sessions.clear(),await this.operationTail,this.pendingOpens.clear(),this.resourceFailure=void 0}requireArchive(){let e=this.archive();if(!e)throw Error(`Workbook not loaded`);return e}async closeIdentity(e){let t=this.sessions.get(e.sessionId);if(t){await t.host.dispatch({protocol:R,kind:`close`,...e,requestId:1},()=>void 0);return}let n=this.pendingOpens.get(e.sessionId);n&&n.identity.operationId===e.operationId&&n.identity.generation===e.generation&&(n.canceled=!0)}readResourceUsage(){try{return k(this.executeArchive(e=>e.sheet_cursor_resource_usage()))}catch(e){if(String(e).includes(`worksheet cursor usage is unavailable`))return;throw e}}};function Ne(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}const Q=new ce(y,{freeArchive:e=>e.free(),reinit:ne}),$=new Me(()=>Q.archive,void 0,e=>{let t=Q.archive;if(!t)throw Error(`Workbook not loaded`);return Q.run(()=>e(t))});self.onmessage=async t=>{let n=t.data;if(Ne(n)){await $.dispatchSafely(n,(e,t)=>self.postMessage(e,t));return}if(n.type===`init`){Q.setWasmInput(ie(n.wasmUrl)??n.wasmUrl);return}let r=n.id;n.type===`openSheetSession`&&$.reserveOpen(n);try{if(n.type===`openSheetSession`){await Q.ensureReady(),Q.archive&&Q.run(()=>Q.archive?.assert_healthy()),await $.open(n.sheetIndex,n.sheetName,n),await $.postOpenedSafely(n,()=>self.postMessage({type:`sheetSessionOpened`,id:r,sessionId:n.sessionId,operationId:n.operationId,generation:n.generation}),e=>self.postMessage({type:`error`,id:r,...L(e)}));return}n.type===`parse`&&await $.reset(),await $.run(async()=>{if(await Q.ensureReady(),n.type!==`parse`&&Q.archive){let e=Q.archive;Q.run(()=>e.assert_healthy())}if(n.type===`parse`){let[t,i,a]=xe(n.resourcePolicy),o=new Uint8Array(n.data),s=Q.run(()=>{let n=new e(o,t,i,a);return Q.setArchive(n),n.parse()}).buffer,c={type:`parsed`,id:r,workbookJson:s,usage:Q.run(()=>k(Q.archive.resource_usage()))};self.postMessage(c,[s]);return}let t=Q.archive;if(n.type===`extractImage`){if(!t)throw Error(`No xlsx loaded`);let e=Q.run(()=>t.extract_image(n.path).buffer),i={type:`imageExtracted`,id:r,bytes:e};self.postMessage(i,[e]);return}if(n.type===`resourceUsage`){if(!t)throw Error(`No xlsx loaded`);let e=Q.run(()=>k(t.resource_usage()));self.postMessage({type:`resourceUsage`,id:r,usage:e});return}if(n.type===`toMarkdown`){if(!t)throw Error(`No xlsx loaded`);let e={type:`markdownRendered`,id:r,markdown:Q.run(()=>t.to_markdown())};self.postMessage(e);return}})}catch(e){n.type===`openSheetSession`&&$.abandonOpen(n.sessionId);let t={type:`error`,id:r,...L(e)};try{self.postMessage(t)}catch{}}};", at = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", it], { type: "text/javascript;charset=utf-8" });
-function ot(e) {
+var ot = "var e=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,n.unregister(this),e}free(){let e=this.__destroy_into_raw();_.__wbg_xlsxarchive_free(e,0)}acknowledge_sheet_cursor_terminal(){let e=_.xlsxarchive_acknowledge_sheet_cursor_terminal(this.__wbg_ptr);if(e[1])throw f(e[0])}assert_healthy(){let e=_.xlsxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw f(e[0])}cancel_sheet_cursor(){_.xlsxarchive_cancel_sheet_cursor(this.__wbg_ptr)}close_sheet_cursor(){_.xlsxarchive_close_sheet_cursor(this.__wbg_ptr)}extract_image(e){let t=d(e,_.__wbindgen_malloc,_.__wbindgen_realloc),n=g,i=_.xlsxarchive_extract_image(this.__wbg_ptr,t,n);if(i[3])throw f(i[2]);var a=r(i[0],i[1]).slice();return _.__wbindgen_free(i[0],i[1]*1,1),a}constructor(e,t,r,i){let a=u(e,_.__wbindgen_malloc),o=g,s=_.xlsxarchive_new(a,o,!l(t),l(t)?BigInt(0):t,!l(r),l(r)?BigInt(0):r,!l(i),l(i)?BigInt(0):i);if(s[2])throw f(s[1]);return this.__wbg_ptr=s[0]>>>0,n.register(this,this.__wbg_ptr,this),this}open_sheet_cursor(e,t){let n=d(t,_.__wbindgen_malloc,_.__wbindgen_realloc),r=g,i=_.xlsxarchive_open_sheet_cursor(this.__wbg_ptr,e,n,r);if(i[1])throw f(i[0])}parse(){let e=_.xlsxarchive_parse(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=r(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}pull_sheet_cursor(e){let t=_.xlsxarchive_pull_sheet_cursor(this.__wbg_ptr,e);if(t[3])throw f(t[2]);var n=r(t[0],t[1]).slice();return _.__wbindgen_free(t[0],t[1]*1,1),n}resource_usage(){let e=_.xlsxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=r(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}sheet_cursor_pull_finished(){return _.xlsxarchive_sheet_cursor_pull_finished(this.__wbg_ptr)!==0}sheet_cursor_resource_usage(){let e=_.xlsxarchive_sheet_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=r(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=_.xlsxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,f(i[2]);return e=n,t=r,o(n,r)}finally{_.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(e.prototype[Symbol.dispose]=e.prototype.free);function t(){return{__proto__:null,\"./xlsx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(o(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(o(e,t))}finally{_.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=d(n,_.__wbindgen_malloc,_.__wbindgen_realloc),i=g;a().setInt32(e+4,i,!0),a().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return o(e,t)},__wbindgen_init_externref_table:function(){let e=_.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const n=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>_.__wbg_xlsxarchive_free(e>>>0,1));function r(e,t){return e>>>=0,c().subarray(e/1,e/1+t)}let i=null;function a(){return(i===null||i.buffer.detached===!0||i.buffer.detached===void 0&&i.buffer!==_.memory.buffer)&&(i=new DataView(_.memory.buffer)),i}function o(e,t){return e>>>=0,ee(e,t)}let s=null;function c(){return(s===null||s.byteLength===0)&&(s=new Uint8Array(_.memory.buffer)),s}function l(e){return e==null}function u(e,t){let n=t(e.length*1,1)>>>0;return c().set(e,n/1),g=e.length,n}function d(e,t,n){if(n===void 0){let n=h.encode(e),r=t(n.length,1)>>>0;return c().subarray(r,r+n.length).set(n),g=n.length,r}let r=e.length,i=t(r,1)>>>0,a=c(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=c().subarray(i+o,i+r),a=h.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return g=o,i}function f(e){let t=_.__wbindgen_externrefs.get(e);return _.__externref_table_dealloc(e),t}let p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});p.decode();let m=0;function ee(e,t){return m+=t,m>=2146435072&&(p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),p.decode(),m=t),p.decode(c().subarray(e,e+t))}const h=new TextEncoder;`encodeInto`in h||(h.encodeInto=function(e,t){let n=h.encode(e);return t.set(n),{read:e.length,written:n.length}});let g=0,_;function v(e,t){return _=e.exports,i=null,s=null,_.__wbindgen_start(),_}async function te(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function y(e){if(_!==void 0)return _;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let n=t();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:r,module:i}=await te(await e,n);return v(r,i)}async function ne(e){return _=void 0,i=null,s=null,y(e)}var b=class e extends Error{code;constructor(t,n){super(n),this.name=`OoxmlError`,this.code=t,Object.setPrototypeOf(this,e.prototype)}},x=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}},re=class e extends RangeError{code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}};function ie(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var ae=class{state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},S=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function oe(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function se(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function C(e,t){return e({module_or_path:t})}var ce=class{runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new ae(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),le),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return this.runtime.run(e)}poison(){this.runtime.poison(new S(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):C(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,se(e)}};function le(e){return oe(e)?new S(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function w(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function ue(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return w(t.requiredBytes)&&w(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var T=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function de(e){if(e instanceof T)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!ue(r)))return new T(r)}const E=`OOXML_RESOURCE_LIMIT:`;function D(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function O(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return D(t.archiveEntryCount)&&D(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||D(t.largestInflatedEntryBytes))&&D(t.distinctInflatedBytes)&&D(t.operationInflatedBytes)}function k(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!O(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function fe(e){return e===`docx`||e===`xlsx`||e===`pptx`}function pe(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function A(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function j(e){return A(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function me(e){return!A(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const M=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}]]),he=new Set([...M.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),ge=new Set([...M.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function _e(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!fe(t.format)||!A(t.operation,256)||!j(t.resource)||!j(t.metric)||!D(t.limit)||!D(t.observed)||typeof t.configurable!=`boolean`||!O(t.usage)?!1:!(`part`in t)||me(t.part)}function N(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!pe(t.stage)||!_e(t.violation))return!1;let n=t.violation,r=M.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(he.has(n.resource)&&ge.has(n.metric))}function P(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function F(e){if(!N(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:P(t.usage)}};return N(n)?n:void 0}function I(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``}: ${t.metric} ${t.observed} > ${t.limit}`}function ve(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(E))return;let n;try{n=JSON.parse(t.slice(21))}catch{return}if(!n||typeof n!=`object`)return;let r=n;if(!(r.code!==`ooxml-resource-limit`||!N(r.details)))return new x(I(r.details),r.details)}function ye(e){if(e instanceof re)return{message:e.message,errorName:e.name,code:e.code,decodedImage:{metric:e.metric,limit:e.limit,observed:e.observed}};let t=de(e);if(t)return{message:t.message,errorName:t.name,code:t.code,insufficientCredit:{requiredBytes:t.requiredBytes,offeredBytes:t.offeredBytes}};let n=e instanceof b||e instanceof x?e:ve(e);if(n instanceof x){let e=F(n.details);return e?{message:typeof n.message==`string`?n.message:I(e),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:e}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(n instanceof b)return{message:typeof n.message==`string`?n.message:String(n.message),errorName:A(n.name,128)?n.name:`OoxmlError`,...j(n.code)?{code:n.code}:{}};let r=e instanceof Error?e.message:String(e);if(typeof r==`string`&&r.startsWith(E))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let i=e instanceof Error?e:Error(r),a=i;return{message:typeof i.message==`string`?i.message:String(i.message),errorName:A(i.name,128)?i.name:`Error`,...typeof a.code==`string`?{code:a.code}:{}}}function L(e){try{return ye(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}function be(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function xe(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const R=`ooxml-pull-v1`;function z(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function Se(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var Ce=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,z(this.maxRetainedBytes,`max retained lease bytes`),z(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},we=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){Se(e.sessionId),z(e.operationId,`operation id`),z(e.generation,`generation`),z(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&z(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=L(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(z(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:R,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){z(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(z(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:R,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:R,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};function Te(e,t){for(let n of e)for(let e of n.cells){let n=e.value;if(n.type===`shared`){let r=t[n.si];if(r){let t={type:`text`,text:r.text};r.runs!==void 0&&(t.runs=r.runs),r.phoneticRuns!==void 0&&(t.phoneticRuns=r.phoneticRuns),r.phoneticPr!==void 0&&(t.phoneticPr=r.phoneticPr),e.value=t}else e.value={type:`text`,text:``}}}return e}function Ee(e,t,n,r){let i=e instanceof ArrayBuffer?new Uint8Array(e):new Uint8Array(e.buffer,e.byteOffset,e.byteLength),a=JSON.parse(new TextDecoder().decode(i));if(!a||typeof a!=`object`||!(`kind`in a))throw Error(`worksheet cursor returned an invalid unit`);let o=a;if(t!==(o.kind===`finished`))throw Error(`worksheet cursor terminal marker mismatch`);if(o.kind===`rows`){if(!Array.isArray(o.rows))throw Error(`worksheet row unit is missing rows`);return n&&Te(o.rows,n),r?.(o.rows),{kind:`rows`,rows:o.rows}}if(o.kind===`finished`){if(!o.worksheet||typeof o.worksheet!=`object`)throw Error(`worksheet terminal unit is missing its worksheet`);return o.worksheet.rows=[],{kind:`finished`,worksheet:o.worksheet}}throw Error(`worksheet cursor returned an unknown unit kind`)}function B(e,t){if(!Number.isSafeInteger(e)||e<0)throw Error(`${t} must be a non-negative safe integer`)}function V(e,t,n){return B(e,`resource measurement`),B(t,`resource measurement`),B(n,`resource measurement limit`),e>n||t>n||t>n-e?n===2**53-1?n:n+1:e+t}function H(e,t=2**53-1){B(t,`resource measurement limit`);let n=0;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=3}else a=3;if(n=V(n,a,t),n>t)return n}return n}function U(e,t=2**53-1){B(t,`resource measurement limit`);let n=V(0,2,t);if(n>t)return n;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i===34||i===92||i===8||i===9||i===10||i===12||i===13)a=2;else if(i<=31)a=6;else if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=6}else a=i>=55296&&i<=57343?6:3;if(n=V(n,a,t),n>t)return n}return n}function W(e,t){return V(0,e,t)}function G(e,t=2**53-1,n=!1){if(B(t,`resource measurement limit`),e===null)return{jsonBytes:W(4,t),stringValueUtf8Bytes:0};if(typeof e==`string`)return{jsonBytes:U(e,t),stringValueUtf8Bytes:H(e,t)};if(typeof e==`boolean`)return{jsonBytes:W(e?4:5,t),stringValueUtf8Bytes:0};if(typeof e==`number`)return{jsonBytes:W((Number.isFinite(e)?String(Object.is(e,-0)?0:e):`null`).length,t),stringValueUtf8Bytes:0};if(typeof e==`bigint`)throw TypeError(`BigInt values cannot be serialized to JSON`);if(Array.isArray(e)){let n=W(2,t),r=0;for(let i=0;i<e.length;i+=1){i!==0&&(n=V(n,1,t));let a=G(e[i],t,!0);n=V(n,a.jsonBytes,t),r=V(r,a.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}if(typeof e==`object`){let n=W(2,t),r=0,i=0;for(let[a,o]of Object.entries(e)){if(o===void 0||typeof o==`function`||typeof o==`symbol`)continue;i++!==0&&(n=V(n,1,t)),n=V(n,U(a,t),t),n=V(n,1,t);let e=G(o,t);n=V(n,e.jsonBytes,t),r=V(r,e.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}return{jsonBytes:n?W(4,t):0,stringValueUtf8Bytes:0}}const K=1e5,q=25e4,J=33554432,Y=67108864,De=Object.freeze({archiveEntryCount:0,declaredInflatedBytes:0,distinctInflatedBytes:0,operationInflatedBytes:0});function Oe(e){let t=e.reduce((e,t)=>V(e,t.cells.length,q),0);return{rows:e.length,cells:t,ownedUtf8Bytes:e.reduce((e,t)=>t.cells.reduce((e,t)=>{let n=G(t.value,J).stringValueUtf8Bytes;return V(e,V(n,t.formula===void 0?0:H(t.formula,J),J),J)},e),0)}}function ke(e,t){let n=G(e,67108864);return{...t,jsonBytes:n.jsonBytes}}function Ae(e,t){return{rows:V(e.rows,t.rows,K),cells:V(e.cells,t.cells,q),ownedUtf8Bytes:V(e.ownedUtf8Bytes,t.ownedUtf8Bytes,J)}}function X(e,t,n,r,i,a,o){let s=n===`worksheet-json`?`serialization`:`parsing`;return new x(`OOXML resource limit exceeded${t?` for ${t}`:``}: ${r} ${a} > ${i}`,{stage:s,violation:{format:`xlsx`,operation:e,resource:n,metric:r,...t===void 0?{}:{part:t},limit:i,observed:Math.min(a,i+1),configurable:!1,usage:o??De}})}function Z(e,t,n,r){let i=[[`rows`,e.rows,K],[`cells`,e.cells,q],[`owned-utf8-bytes`,e.ownedUtf8Bytes,J]];for(let[e,a,o]of i)if(a>o)throw X(t,n,e===`owned-utf8-bytes`?`worksheet-cell-content`:`worksheet-model`,e,o,a,r)}function je(e,t,n,r){if(e>Y)throw X(t,n,`worksheet-json`,`bytes`,Y,e,r)}var Me=class{coordinator=new Ce;sessions=new Map;operationTail=Promise.resolve();pendingOpens=new Map;resourceFailure;constructor(e,t,n=e=>e(this.requireArchive()),r){this.archive=e,this.acceptWorksheet=t,this.executeArchive=n,this.prepareRows=r}reserveOpen(e){this.pendingOpens.set(e.sessionId,{identity:e,canceled:!1})}abandonOpen(e){this.pendingOpens.delete(e)}get pendingOpenCount(){return this.pendingOpens.size}async open(e,t,n){if(this.resourceFailure)throw this.resourceFailure;let r=this.pendingOpens.get(n.sessionId);if(!r||r.identity.operationId!==n.operationId||r.identity.generation!==n.generation)throw Error(`worksheet pull session open reservation is stale or missing`);let i,a=new Promise(e=>{i=e}),o=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(r.canceled)throw Error(`worksheet pull session open was canceled`);this.executeArchive(n=>n.open_sheet_cursor(e,t));let a=[],o={rows:0,cells:0,ownedUtf8Bytes:0},s,c=!1,l=new we({...n,maxByteCredit:67108864,coordinator:this.coordinator,driver:{pull:()=>{let e=this.executeArchive(e=>e.pull_sheet_cursor(128)),t=this.executeArchive(e=>e.sheet_cursor_pull_finished());if(this.acceptWorksheet){let n=Ee(e,t,void 0,this.prepareRows);try{if(n.kind===`rows`){let e=Ae(o,Oe(n.rows));Z(e,`get-worksheet-worker`,void 0,this.readResourceUsage()),a.push(...n.rows),o=e}else s=n.worksheet}catch(e){throw e instanceof x&&(this.resourceFailure??=e),e}}c=t;let n=be(e);return{payload:n,byteLength:n.byteLength,done:t,transfer:[n]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:()=>{if(!c)return;let t,r;try{if(this.acceptWorksheet){if(!s)throw Error(`worksheet terminal payload is missing`);s.rows=s.parseError?[]:a;let n=s.parseError?{rows:0,cells:0,ownedUtf8Bytes:0}:o,i=ke(s,n),c=this.readResourceUsage();Z(i,`get-worksheet-worker`,void 0,c),je(i.jsonBytes,`get-worksheet-worker`,void 0,c);let l=this.acceptWorksheet(e,s,i,c);typeof l==`function`?t=l:l&&({rollback:t,commit:r}=l)}this.executeArchive(e=>e.acknowledge_sheet_cursor_terminal()),r?.()}catch(e){throw t?.(),e instanceof x&&(this.resourceFailure??=e),e}c=!1,this.sessions.delete(n.sessionId),i()},cancel:()=>{try{this.archive()&&this.executeArchive(e=>e.cancel_sheet_cursor())}finally{this.sessions.delete(n.sessionId),i()}},close:()=>{try{this.archive()&&this.executeArchive(e=>e.close_sheet_cursor())}finally{this.sessions.delete(n.sessionId),i()}},resourceUsage:()=>this.readResourceUsage()}});this.sessions.set(n.sessionId,{host:l,identity:n}),this.pendingOpens.delete(n.sessionId)}));this.operationTail=o.then(()=>a,()=>void 0);try{await o}catch(e){throw this.pendingOpens.delete(n.sessionId),i(),e}}async postOpenedSafely(e,t,n){try{t()}catch(t){await this.closeIdentity(e);try{n(t)}catch{}}}dispatch(e,t){let n=this.sessions.get(e.sessionId);if(n)return n.host.dispatch(e,t);let r=this.pendingOpens.get(e.sessionId);if(r&&(e.kind===`cancel`||e.kind===`close`)){let n=r.identity.operationId===e.operationId&&r.identity.generation===e.generation;return n&&(r.canceled=!0),t(n?{protocol:R,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}:{protocol:R,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:{message:`stale lifecycle targets another pending worksheet operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`}}),Promise.resolve()}return e.kind===`cancel`||e.kind===`close`?(t({protocol:R,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}),Promise.resolve()):(t({protocol:R,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:L(Error(`worksheet pull session is not open`))}),Promise.resolve())}async dispatchSafely(e,t){try{await this.dispatch(e,t)}catch(n){try{t({protocol:R,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:L(n)})}catch{}}}run(e){let t=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;return e()})).catch(e=>{throw e instanceof x&&(this.resourceFailure??=e),e});return this.operationTail=t.then(()=>void 0,()=>void 0),t}async reset(){for(let e of this.pendingOpens.values())e.canceled=!0;let e=1;for(let{host:t,identity:n}of[...this.sessions.values()])await t.dispatch({protocol:R,kind:`close`,...n,requestId:e++},()=>void 0);this.sessions.clear(),await this.operationTail,this.pendingOpens.clear(),this.resourceFailure=void 0}requireArchive(){let e=this.archive();if(!e)throw Error(`Workbook not loaded`);return e}async closeIdentity(e){let t=this.sessions.get(e.sessionId);if(t){await t.host.dispatch({protocol:R,kind:`close`,...e,requestId:1},()=>void 0);return}let n=this.pendingOpens.get(e.sessionId);n&&n.identity.operationId===e.operationId&&n.identity.generation===e.generation&&(n.canceled=!0)}readResourceUsage(){try{return k(this.executeArchive(e=>e.sheet_cursor_resource_usage()))}catch(e){if(String(e).includes(`worksheet cursor usage is unavailable`))return;throw e}}};function Ne(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}const Q=new ce(y,{freeArchive:e=>e.free(),reinit:ne}),$=new Me(()=>Q.archive,void 0,e=>{let t=Q.archive;if(!t)throw Error(`Workbook not loaded`);return Q.run(()=>e(t))});self.onmessage=async t=>{let n=t.data;if(Ne(n)){await $.dispatchSafely(n,(e,t)=>self.postMessage(e,t));return}if(n.type===`init`){Q.setWasmInput(ie(n.wasmUrl)??n.wasmUrl);return}let r=n.id;n.type===`openSheetSession`&&$.reserveOpen(n);try{if(n.type===`openSheetSession`){await Q.ensureReady(),Q.archive&&Q.run(()=>Q.archive?.assert_healthy()),await $.open(n.sheetIndex,n.sheetName,n),await $.postOpenedSafely(n,()=>self.postMessage({type:`sheetSessionOpened`,id:r,sessionId:n.sessionId,operationId:n.operationId,generation:n.generation}),e=>self.postMessage({type:`error`,id:r,...L(e)}));return}n.type===`parse`&&await $.reset(),await $.run(async()=>{if(await Q.ensureReady(),n.type!==`parse`&&Q.archive){let e=Q.archive;Q.run(()=>e.assert_healthy())}if(n.type===`parse`){let[t,i,a]=xe(n.resourcePolicy),o=new Uint8Array(n.data),s=Q.run(()=>{let n=new e(o,t,i,a);return Q.setArchive(n),n.parse()}).buffer,c={type:`parsed`,id:r,workbookJson:s,usage:Q.run(()=>k(Q.archive.resource_usage()))};self.postMessage(c,[s]);return}let t=Q.archive;if(n.type===`extractImage`){if(!t)throw Error(`No xlsx loaded`);let e=Q.run(()=>t.extract_image(n.path).buffer),i={type:`imageExtracted`,id:r,bytes:e};self.postMessage(i,[e]);return}if(n.type===`resourceUsage`){if(!t)throw Error(`No xlsx loaded`);let e=Q.run(()=>k(t.resource_usage()));self.postMessage({type:`resourceUsage`,id:r,usage:e});return}if(n.type===`toMarkdown`){if(!t)throw Error(`No xlsx loaded`);let e={type:`markdownRendered`,id:r,markdown:Q.run(()=>t.to_markdown())};self.postMessage(e);return}})}catch(e){n.type===`openSheetSession`&&$.abandonOpen(n.sessionId);let t={type:`error`,id:r,...L(e)};try{self.postMessage(t)}catch{}}};", st = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", ot], { type: "text/javascript;charset=utf-8" });
+function ct(e) {
 	let t;
 	try {
-		if (t = at && (self.URL || self.webkitURL).createObjectURL(at), !t) throw "";
+		if (t = st && (self.URL || self.webkitURL).createObjectURL(st), !t) throw "";
 		let n = new Worker(t, {
 			type: "module",
 			name: e?.name
@@ -109,7 +109,7 @@ function ot(e) {
 			(self.URL || self.webkitURL).revokeObjectURL(t);
 		}), n;
 	} catch {
-		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(it), {
+		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(ot), {
 			type: "module",
 			name: e?.name
 		});
@@ -117,19 +117,19 @@ function ot(e) {
 }
 //#endregion
 //#region packages/xlsx/src/wasm/xlsx_parser_bg.wasm?url
-var st = new URL("xlsx_parser_bg.wasm", import.meta.url).href;
+var lt = new URL("xlsx_parser_bg.wasm", import.meta.url).href;
 //#endregion
 //#region packages/xlsx/src/sheet-visibility.ts
-function ct(e, t) {
+function ut(e, t) {
 	return !Number.isInteger(t) || t < 0 || t >= e.length ? "visible" : e[t].visibility ?? "visible";
 }
 //#endregion
 //#region packages/xlsx/src/phonetic.ts
-function lt(e) {
+function dt(e) {
 	return Array.from(e);
 }
-function ut(e, t, n, r, i) {
-	let a = lt(t), o = a.length, s = [];
+function ft(e, t, n, r, i) {
+	let a = dt(t), o = a.length, s = [];
 	for (let t of e) {
 		let e = t.sb, c = t.eb;
 		if (!(e < c) || e >= o) continue;
@@ -148,23 +148,23 @@ function ut(e, t, n, r, i) {
 function X(e) {
 	return Array.isArray(e) ? e : [e];
 }
-function dt(e) {
+function pt(e) {
 	return Array.isArray(e) ? e[0] ?? 0 : e;
 }
-var ft = 8;
-function pt(e, t) {
+var mt = 8;
+function ht(e, t) {
 	try {
-		return mt(bt(e, t));
+		return gt(St(e, t));
 	} catch {
 		return !1;
 	}
 }
-function mt(e) {
-	let t = dt(e);
+function gt(e) {
+	let t = pt(e);
 	return typeof t == "boolean" ? t : typeof t == "number" ? t !== 0 : typeof t == "string" ? t.length > 0 && t.toUpperCase() !== "FALSE" : !1;
 }
 function Z(e) {
-	let t = dt(e);
+	let t = pt(e);
 	if (typeof t == "number") return t;
 	if (typeof t == "boolean") return +!!t;
 	if (t == null) return 0;
@@ -172,10 +172,10 @@ function Z(e) {
 	return isNaN(n) ? 0 : n;
 }
 function Q(e) {
-	let t = dt(e);
+	let t = pt(e);
 	return t == null ? "" : typeof t == "boolean" ? t ? "TRUE" : "FALSE" : String(t);
 }
-var ht = new Set([
+var _t = new Set([
 	"<",
 	">",
 	"=",
@@ -187,7 +187,7 @@ var ht = new Set([
 	"^",
 	"%"
 ]);
-function gt(e) {
+function vt(e) {
 	let t = [], n = 0, r = e;
 	for (; n < r.length;) {
 		let e = r[n];
@@ -248,7 +248,7 @@ function gt(e) {
 			}), n = e;
 			continue;
 		}
-		if (ht.has(e)) {
+		if (_t.has(e)) {
 			(e === "<" || e === ">") && (r[n + 1] === "=" || e === "<" && r[n + 1] === ">") ? (t.push({
 				kind: "op",
 				text: r.slice(n, n + 2)
@@ -258,12 +258,12 @@ function gt(e) {
 			}), n++);
 			continue;
 		}
-		if (e === "$" || _t(e)) {
+		if (e === "$" || yt(e)) {
 			let e = n;
-			for (; e < r.length && (r[e] === "$" || vt(r[e]));) e++;
+			for (; e < r.length && (r[e] === "$" || bt(r[e]));) e++;
 			let i = r.slice(n, e);
 			n = e;
-			let a = yt(i);
+			let a = xt(i);
 			if (a) t.push({
 				kind: "ref",
 				text: i,
@@ -285,13 +285,13 @@ function gt(e) {
 	}
 	return t;
 }
-function _t(e) {
+function yt(e) {
 	return e >= "A" && e <= "Z" || e >= "a" && e <= "z" || e === "_";
 }
-function vt(e) {
-	return _t(e) || e >= "0" && e <= "9" || e === ".";
+function bt(e) {
+	return yt(e) || e >= "0" && e <= "9" || e === ".";
 }
-function yt(e) {
+function xt(e) {
 	let t = 0, n = !1, r = !1;
 	e[t] === "$" && (n = !0, t++);
 	let i = t;
@@ -311,42 +311,42 @@ function yt(e) {
 		row: s
 	};
 }
-function bt(e, t) {
-	return Ct({
-		toks: gt(e),
+function St(e, t) {
+	return Tt({
+		toks: vt(e),
 		pos: 0
 	}, t);
 }
-function xt(e) {
+function Ct(e) {
 	return e.toks[e.pos];
 }
-function St(e) {
+function wt(e) {
 	return e.toks[e.pos++];
 }
-function Ct(e, t) {
-	return wt(e, t);
+function Tt(e, t) {
+	return Et(e, t);
 }
-function wt(e, t) {
-	let n = Tt(e, t), r = xt(e);
+function Et(e, t) {
+	let n = Dt(e, t), r = Ct(e);
 	if (r && r.kind === "op" && (r.text === "<" || r.text === ">" || r.text === "<=" || r.text === ">=" || r.text === "=" || r.text === "<>")) {
-		St(e);
-		let i = Tt(e, t);
-		return Et(r.text, n, i);
+		wt(e);
+		let i = Dt(e, t);
+		return Ot(r.text, n, i);
 	}
 	return n;
 }
-function Tt(e, t) {
-	let n = Dt(e, t);
+function Dt(e, t) {
+	let n = kt(e, t);
 	for (;;) {
-		let r = xt(e);
+		let r = Ct(e);
 		if (!r || r.kind !== "op" || r.text !== "&") break;
-		St(e);
-		let i = Dt(e, t);
+		wt(e);
+		let i = kt(e, t);
 		n = Q(n) + Q(i);
 	}
 	return n;
 }
-function Et(e, t, n) {
+function Ot(e, t, n) {
 	let r = typeof t == "string" && isNaN(parseFloat(t)) ? null : Z(t), i = typeof n == "string" && isNaN(parseFloat(n)) ? null : Z(n);
 	if (r !== null && i !== null) switch (e) {
 		case "<": return r < i;
@@ -367,24 +367,24 @@ function Et(e, t, n) {
 	}
 	return !1;
 }
-function Dt(e, t) {
-	let n = Ot(e, t);
+function kt(e, t) {
+	let n = At(e, t);
 	for (;;) {
-		let r = xt(e);
+		let r = Ct(e);
 		if (!r || r.kind !== "op" || r.text !== "+" && r.text !== "-") break;
-		St(e);
-		let i = Ot(e, t);
+		wt(e);
+		let i = At(e, t);
 		n = r.text === "+" ? Z(n) + Z(i) : Z(n) - Z(i);
 	}
 	return n;
 }
-function Ot(e, t) {
-	let n = kt(e, t);
+function At(e, t) {
+	let n = jt(e, t);
 	for (;;) {
-		let r = xt(e);
+		let r = Ct(e);
 		if (!r || r.kind !== "op" || r.text !== "*" && r.text !== "/") break;
-		St(e);
-		let i = kt(e, t);
+		wt(e);
+		let i = jt(e, t);
 		if (r.text === "*") n = Z(n) * Z(i);
 		else {
 			let e = Z(i);
@@ -393,41 +393,41 @@ function Ot(e, t) {
 	}
 	return n;
 }
-function kt(e, t) {
-	let n = xt(e);
-	return n && n.kind === "op" && n.text === "-" ? (St(e), -Z(kt(e, t))) : n && n.kind === "op" && n.text === "+" ? (St(e), Z(kt(e, t))) : At(e, t);
+function jt(e, t) {
+	let n = Ct(e);
+	return n && n.kind === "op" && n.text === "-" ? (wt(e), -Z(jt(e, t))) : n && n.kind === "op" && n.text === "+" ? (wt(e), Z(jt(e, t))) : Mt(e, t);
 }
-function At(e, t) {
-	let n = St(e);
+function Mt(e, t) {
+	let n = wt(e);
 	if (!n) return 0;
 	if (n.kind === "num") return parseFloat(n.text);
 	if (n.kind === "str") return n.text;
 	if (n.kind === "bool") return n.text === "TRUE";
 	if (n.kind === "lparen") {
-		let n = Ct(e, t), r = St(e);
+		let n = Tt(e, t), r = wt(e);
 		if (!r || r.kind !== "rparen") throw Error("missing )");
 		return n;
 	}
 	if (n.kind === "ref") {
-		if (xt(e)?.kind === "colon") {
-			St(e);
-			let r = St(e);
+		if (Ct(e)?.kind === "colon") {
+			wt(e);
+			let r = wt(e);
 			if (r?.kind !== "ref" || !r.ref) throw Error("range: expected ref after :");
-			return Nt(n.ref, r.ref, t);
+			return Ft(n.ref, r.ref, t);
 		}
-		return Mt(n.ref, t);
+		return Pt(n.ref, t);
 	}
 	if (n.kind === "name") {
-		if (xt(e)?.kind === "lparen") {
-			St(e);
+		if (Ct(e)?.kind === "lparen") {
+			wt(e);
 			let r = [];
-			if (xt(e)?.kind !== "rparen") for (r.push(Ct(e, t)); xt(e)?.kind === "comma";) St(e), r.push(Ct(e, t));
-			let i = St(e);
+			if (Ct(e)?.kind !== "rparen") for (r.push(Tt(e, t)); Ct(e)?.kind === "comma";) wt(e), r.push(Tt(e, t));
+			let i = wt(e);
 			if (!i || i.kind !== "rparen") throw Error("missing )");
-			return Ft(n.text, r, t);
+			return Lt(n.text, r, t);
 		}
 		let r = t.definedNames.get(n.text);
-		return r && t.depth < ft ? bt(jt(r.formula), {
+		return r && t.depth < mt ? St(Nt(r.formula), {
 			...t,
 			anchorRow: 1,
 			anchorCol: 1,
@@ -436,20 +436,20 @@ function At(e, t) {
 	}
 	return 0;
 }
-function jt(e) {
+function Nt(e) {
 	let t = e.match(/^(?:'[^']*'|[A-Za-z_][A-Za-z0-9_.]*)!(.*)$/);
 	return t ? t[1] : e;
 }
-function Mt(e, t) {
+function Pt(e, t) {
 	let n = e.colAbs ? e.col : e.col + (t.col - t.anchorCol), r = e.rowAbs ? e.row : e.row + (t.row - t.anchorRow);
-	return Pt(t.cellIndex.get(`${r}:${n}`));
+	return It(t.cellIndex.get(`${r}:${n}`));
 }
-function Nt(e, t, n) {
+function Ft(e, t, n) {
 	let r = e.colAbs ? e.col : e.col + (n.col - n.anchorCol), i = e.rowAbs ? e.row : e.row + (n.row - n.anchorRow), a = t.colAbs ? t.col : t.col + (n.col - n.anchorCol), o = t.rowAbs ? t.row : t.row + (n.row - n.anchorRow), s = Math.min(r, a), c = Math.max(r, a), l = Math.min(i, o), u = Math.max(i, o), d = [], f = 4096;
-	for (let e = l; e <= u && d.length < f; e++) for (let t = s; t <= c && d.length < f; t++) d.push(Pt(n.cellIndex.get(`${e}:${t}`)));
+	for (let e = l; e <= u && d.length < f; e++) for (let t = s; t <= c && d.length < f; t++) d.push(It(n.cellIndex.get(`${e}:${t}`)));
 	return d;
 }
-function Pt(e) {
+function It(e) {
 	if (!e) return null;
 	switch (e.value.type) {
 		case "number": return e.value.number;
@@ -459,29 +459,29 @@ function Pt(e) {
 		default: return null;
 	}
 }
-function Ft(e, t, n) {
+function Lt(e, t, n) {
 	switch (e.toUpperCase()) {
-		case "AND": return t.flatMap(X).every((e) => mt(e));
-		case "OR": return t.flatMap(X).some((e) => mt(e));
-		case "NOT": return !mt(t[0]);
-		case "IF": return mt(t[0]) ? t[1] ?? !0 : t[2] ?? !1;
+		case "AND": return t.flatMap(X).every((e) => gt(e));
+		case "OR": return t.flatMap(X).some((e) => gt(e));
+		case "NOT": return !gt(t[0]);
+		case "IF": return gt(t[0]) ? t[1] ?? !0 : t[2] ?? !1;
 		case "IFERROR": return t[0] == null ? t[1] ?? 0 : t[0];
 		case "IFS":
-			for (let e = 0; e + 1 < t.length; e += 2) if (mt(t[e])) return t[e + 1];
+			for (let e = 0; e + 1 < t.length; e += 2) if (gt(t[e])) return t[e + 1];
 			return null;
 		case "TRUE": return !0;
 		case "FALSE": return !1;
 		case "ISBLANK": {
-			let e = dt(t[0]);
+			let e = pt(t[0]);
 			return e == null || e === "";
 		}
-		case "ISNUMBER": return typeof dt(t[0]) == "number";
-		case "ISTEXT": return typeof dt(t[0]) == "string";
-		case "ISNONTEXT": return typeof dt(t[0]) != "string";
+		case "ISNUMBER": return typeof pt(t[0]) == "number";
+		case "ISTEXT": return typeof pt(t[0]) == "string";
+		case "ISNONTEXT": return typeof pt(t[0]) != "string";
 		case "ISERROR":
 		case "ISERR":
-		case "ISNA": return dt(t[0]) == null;
-		case "ISLOGICAL": return typeof dt(t[0]) == "boolean";
+		case "ISNA": return pt(t[0]) == null;
+		case "ISLOGICAL": return typeof pt(t[0]) == "boolean";
 		case "ROUNDDOWN": {
 			let e = Z(t[0]), n = 10 ** Z(t[1]);
 			return (e >= 0 ? Math.floor(e * n) : Math.ceil(e * n)) / n;
@@ -546,10 +546,10 @@ function Ft(e, t, n) {
 		case "COUNT": return t.flatMap(X).filter((e) => typeof e == "number").length;
 		case "COUNTA": return t.flatMap(X).filter((e) => e != null && e !== "").length;
 		case "COUNTBLANK": return t.flatMap(X).filter((e) => e == null || e === "").length;
-		case "COUNTIF": return It(X(t[0]), t[1]);
-		case "SUMIF": return Lt(X(t[0]), t[1], t[2] === void 0 ? null : X(t[2]));
+		case "COUNTIF": return Rt(X(t[0]), t[1]);
+		case "SUMIF": return zt(X(t[0]), t[1], t[2] === void 0 ? null : X(t[2]));
 		case "AVERAGEIF": {
-			let e = X(t[0]), n = Lt(e, t[1], t[2] === void 0 ? null : X(t[2])), r = It(e, t[1]);
+			let e = X(t[0]), n = zt(e, t[1], t[2] === void 0 ? null : X(t[2])), r = Rt(e, t[1]);
 			return r === 0 ? null : Z(n) / r;
 		}
 		case "LEN": return Q(t[0]).length;
@@ -577,44 +577,44 @@ function Ft(e, t, n) {
 		case "CONCATENATE":
 		case "CONCAT": return t.flatMap(X).map((e) => e == null ? "" : typeof e == "boolean" ? e ? "TRUE" : "FALSE" : String(e)).join("");
 		case "T": {
-			let e = dt(t[0]);
+			let e = pt(t[0]);
 			return typeof e == "string" ? e : "";
 		}
 		case "N": {
-			let e = dt(t[0]);
+			let e = pt(t[0]);
 			return typeof e == "number" ? e : typeof e == "boolean" ? +!!e : 0;
 		}
 		case "VALUE": return Z(t[0]);
 		case "ROW": return n.row;
 		case "COLUMN": return n.col;
-		case "TODAY": return zt();
-		case "NOW": return Bt();
-		case "DATE": return Vt(Z(t[0]), Z(t[1]), Z(t[2]));
-		case "YEAR": return Ut(Z(t[0])).y;
-		case "MONTH": return Ut(Z(t[0])).m;
-		case "DAY": return Ut(Z(t[0])).d;
+		case "TODAY": return Vt();
+		case "NOW": return Ht();
+		case "DATE": return Ut(Z(t[0]), Z(t[1]), Z(t[2]));
+		case "YEAR": return Gt(Z(t[0])).y;
+		case "MONTH": return Gt(Z(t[0])).m;
+		case "DAY": return Gt(Z(t[0])).d;
 		case "WEEKDAY": {
-			let e = Ht(Z(t[0])).getUTCDay(), n = Z(t[1] ?? 1);
+			let e = Wt(Z(t[0])).getUTCDay(), n = Z(t[1] ?? 1);
 			return n === 2 ? e === 0 ? 7 : e : n === 3 ? e === 0 ? 6 : e - 1 : e + 1;
 		}
 		default: return 0;
 	}
 }
-function It(e, t) {
-	let n = Rt(t), r = 0;
+function Rt(e, t) {
+	let n = Bt(t), r = 0;
 	for (let t of e) n(t) && r++;
 	return r;
 }
-function Lt(e, t, n) {
-	let r = Rt(t), i = n ?? e, a = 0;
+function zt(e, t, n) {
+	let r = Bt(t), i = n ?? e, a = 0;
 	for (let t = 0; t < e.length; t++) if (r(e[t])) {
 		let e = i[t];
 		typeof e == "number" && (a += e);
 	}
 	return a;
 }
-function Rt(e) {
-	let t = dt(e);
+function Bt(e) {
+	let t = pt(e);
 	if (typeof t != "string") {
 		let e = typeof t == "number" ? t : null;
 		return (n) => e !== null && typeof n == "number" ? n === e : n === t;
@@ -640,21 +640,21 @@ function Rt(e) {
 		}
 	};
 }
-function zt() {
+function Vt() {
 	let e = /* @__PURE__ */ new Date();
-	return ae(new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate())), !1);
+	return de(new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate())), !1);
 }
-function Bt() {
-	return ae(new Date(Date.now()), !1);
+function Ht() {
+	return de(new Date(Date.now()), !1);
 }
-function Vt(e, t, n) {
-	return Math.floor(ae(new Date(Date.UTC(e, t - 1, n)), !1));
+function Ut(e, t, n) {
+	return Math.floor(de(new Date(Date.UTC(e, t - 1, n)), !1));
 }
-function Ht(e) {
-	return ue(Math.floor(e), !1);
+function Wt(e) {
+	return ae(Math.floor(e), !1);
 }
-function Ut(e) {
-	let t = Ht(e);
+function Gt(e) {
+	let t = Wt(e);
 	return {
 		y: t.getUTCFullYear(),
 		m: t.getUTCMonth() + 1,
@@ -663,9 +663,9 @@ function Ut(e) {
 }
 //#endregion
 //#region packages/xlsx/src/number-format.ts
-var Wt = /* @__PURE__ */ new Map();
-function Gt(e) {
-	let t = e ?? "", n = Wt.get(t);
+var Kt = /* @__PURE__ */ new Map();
+function qt(e) {
+	let t = e ?? "", n = Kt.get(t);
 	if (n) return n;
 	let r = new Intl.DateTimeFormat(e, {
 		year: "numeric",
@@ -673,9 +673,9 @@ function Gt(e) {
 		day: "numeric",
 		timeZone: "UTC"
 	});
-	return Wt.set(t, r), r;
+	return Kt.set(t, r), r;
 }
-function Kt(e) {
+function Jt(e) {
 	switch (e.type) {
 		case "empty": return "";
 		case "text": return e.text;
@@ -685,20 +685,20 @@ function Kt(e) {
 		case "shared": return "";
 	}
 }
-function qt(e, t, n, r = !1) {
-	return Jt(e, t, n, r).text;
+function Yt(e, t, n, r = !1) {
+	return Xt(e, t, n, r).text;
 }
-function Jt(e, t, n, r = !1) {
+function Xt(e, t, n, r = !1) {
 	let i = t.cellXfs[e.styleIndex ?? 0]?.numFmtId ?? 0, a = t.numFmts?.find((e) => e.numFmtId === i)?.formatCode ?? null, o = n?.numFmtId ?? i, s = n?.formatCode ?? a;
 	if (e.value.type !== "number") {
-		let t = Kt(e.value);
-		return { text: s ? Yt(t, s) : t };
+		let t = Jt(e.value);
+		return { text: s ? Zt(t, s) : t };
 	}
-	let c = Xt(e.formula);
-	return pn(c ?? e.value.number, o, s, c === null ? r : !1);
+	let c = Qt(e.formula);
+	return hn(c ?? e.value.number, o, s, c === null ? r : !1);
 }
-function Yt(e, t) {
-	let n = gn(t), r;
+function Zt(e, t) {
+	let n = vn(t), r;
 	if (n.length >= 4) r = n[3];
 	else {
 		let t = n[n.length - 1];
@@ -720,12 +720,12 @@ function Yt(e, t) {
 	}
 	return i;
 }
-function Xt(e) {
+function Qt(e) {
 	if (!e) return null;
 	let t = e.trim().replace(/^=/, "").toUpperCase().replace(/\s+/g, "");
-	return t === "TODAY()" ? zt() : t === "NOW()" ? Bt() : null;
+	return t === "TODAY()" ? Vt() : t === "NOW()" ? Ht() : null;
 }
-var Zt = {
+var $t = {
 	15: "d-mmm-yy",
 	16: "d-mmm",
 	17: "mmm-yy",
@@ -748,7 +748,7 @@ var Zt = {
 	56: "m\"月\"d\"日\"",
 	57: "[$-411]ge.m.d",
 	58: "[$-411]ggge\"年\"m\"月\"d\"日\""
-}, Qt = [
+}, en = [
 	"January",
 	"February",
 	"March",
@@ -761,7 +761,7 @@ var Zt = {
 	"October",
 	"November",
 	"December"
-], $t = [
+], tn = [
 	"Sunday",
 	"Monday",
 	"Tuesday",
@@ -769,7 +769,7 @@ var Zt = {
 	"Thursday",
 	"Friday",
 	"Saturday"
-], en = [
+], nn = [
 	"日",
 	"月",
 	"火",
@@ -777,7 +777,7 @@ var Zt = {
 	"木",
 	"金",
 	"土"
-], tn = [
+], rn = [
 	"日曜日",
 	"月曜日",
 	"火曜日",
@@ -785,7 +785,7 @@ var Zt = {
 	"木曜日",
 	"金曜日",
 	"土曜日"
-], nn = [
+], an = [
 	{
 		start: new Date(Date.UTC(2019, 4, 1)),
 		abbr: "R",
@@ -817,14 +817,14 @@ var Zt = {
 		long: "明治"
 	}
 ];
-function rn(e) {
-	for (let t of nn) if (e.getTime() >= t.start.getTime()) return {
+function on(e) {
+	for (let t of an) if (e.getTime() >= t.start.getTime()) return {
 		abbr: t.abbr,
 		short: t.short,
 		long: t.long,
 		year: e.getUTCFullYear() - t.start.getUTCFullYear() + 1
 	};
-	let t = nn[nn.length - 1];
+	let t = an[an.length - 1];
 	return {
 		abbr: t.abbr,
 		short: t.short,
@@ -832,8 +832,8 @@ function rn(e) {
 		year: e.getUTCFullYear()
 	};
 }
-function an(e, t, n = !1) {
-	let r = ue(e, n), i = r.getUTCFullYear(), a = r.getUTCMonth() + 1, o = r.getUTCDate(), s = r.getUTCDay(), c = r.getUTCHours(), l = r.getUTCMinutes(), u = r.getUTCSeconds(), d = t.split(";")[0], f = /am\/pm|a\/p/i.test(d), p = null, m = () => p ??= rn(r), h = "", g = 0, _ = !1;
+function sn(e, t, n = !1) {
+	let r = ae(e, n), i = r.getUTCFullYear(), a = r.getUTCMonth() + 1, o = r.getUTCDate(), s = r.getUTCDay(), c = r.getUTCHours(), l = r.getUTCMinutes(), u = r.getUTCSeconds(), d = t.split(";")[0], f = /am\/pm|a\/p/i.test(d), p = null, m = () => p ??= on(r), h = "", g = 0, _ = !1;
 	for (; g < d.length;) {
 		let t = d[g];
 		if (t === "\"") {
@@ -861,11 +861,11 @@ function an(e, t, n = !1) {
 			let e = 0;
 			for (; g < d.length && d[g].toLowerCase() === "m";) e++, g++;
 			let t = d.slice(g).replace(/\[[^\]]*\]/g, "");
-			_ || /^:s/i.test(t) ? h += e >= 2 ? String(l).padStart(2, "0") : String(l) : e === 1 ? h += String(a) : e === 2 ? h += String(a).padStart(2, "0") : e === 3 ? h += Qt[a - 1].slice(0, 3) : e === 4 ? h += Qt[a - 1] : h += Qt[a - 1][0], _ = !1;
+			_ || /^:s/i.test(t) ? h += e >= 2 ? String(l).padStart(2, "0") : String(l) : e === 1 ? h += String(a) : e === 2 ? h += String(a).padStart(2, "0") : e === 3 ? h += en[a - 1].slice(0, 3) : e === 4 ? h += en[a - 1] : h += en[a - 1][0], _ = !1;
 		} else if (t === "d" || t === "D") {
 			let e = 0;
 			for (; g < d.length && d[g].toLowerCase() === "d";) e++, g++;
-			e === 1 ? h += String(o) : e === 2 ? h += String(o).padStart(2, "0") : e === 3 ? h += $t[s].slice(0, 3) : h += $t[s], _ = !1;
+			e === 1 ? h += String(o) : e === 2 ? h += String(o).padStart(2, "0") : e === 3 ? h += tn[s].slice(0, 3) : h += tn[s], _ = !1;
 		} else if (t === "h" || t === "H") {
 			let e = 0;
 			for (; g < d.length && d[g].toLowerCase() === "h";) e++, g++;
@@ -892,61 +892,61 @@ function an(e, t, n = !1) {
 			h += e >= 2 ? String(t).padStart(2, "0") : String(t), _ = !1;
 		} else if (t === "A" || t === "a") {
 			let e = d.slice(g).toUpperCase();
-			e.startsWith("AAAA") ? (h += tn[s], g += 4) : e.startsWith("AAA") ? (h += en[s], g += 3) : e.startsWith("AM/PM") ? (h += c < 12 ? "AM" : "PM", g += 5) : e.startsWith("A/P") ? (h += c < 12 ? "A" : "P", g += 3) : (h += t, g++), _ = !1;
+			e.startsWith("AAAA") ? (h += rn[s], g += 4) : e.startsWith("AAA") ? (h += nn[s], g += 3) : e.startsWith("AM/PM") ? (h += c < 12 ? "AM" : "PM", g += 5) : e.startsWith("A/P") ? (h += c < 12 ? "A" : "P", g += 3) : (h += t, g++), _ = !1;
 		} else h += t, g++, t !== ":" && t !== "/" && t !== "-" && t !== "." && t !== " " && (_ = !1);
 	}
 	return h;
 }
-function on(e) {
+function cn(e) {
 	if (/\[[hms]+\]/i.test(e)) return !0;
 	let t = e.replace(/"[^"]*"/g, "").replace(/\[[^\]]*\]/g, "");
 	return /[yd]/i.test(t) || /a{3,}/i.test(t);
 }
-var sn = 11, cn = 6;
-function ln(e) {
+var ln = 11, un = 6;
+function dn(e) {
 	return e.includes(".") ? e.replace(/0+$/, "").replace(/\.$/, "") : e;
 }
-function un(e) {
+function fn(e) {
 	return `${e >= 0 ? "+" : "-"}${Math.abs(e).toString().padStart(2, "0")}`;
 }
-function dn(e) {
-	let [t, n] = e.toExponential(cn - 1).split("e");
-	return `${ln(t)}E${un(Number(n))}`;
+function pn(e) {
+	let [t, n] = e.toExponential(un - 1).split("e");
+	return `${dn(t)}E${fn(Number(n))}`;
 }
-function fn(e) {
+function mn(e) {
 	if (!Number.isFinite(e)) return String(e);
 	if (e === 0) return "0";
-	let t = e < 0, n = Math.abs(e), r = Number(n.toExponential(sn - 1).split("e")[1]), i = r >= sn || r < -5 ? dn(n) : ln(n.toPrecision(sn));
+	let t = e < 0, n = Math.abs(e), r = Number(n.toExponential(ln - 1).split("e")[1]), i = r >= ln || r < -5 ? pn(n) : dn(n.toPrecision(ln));
 	return t ? `-${i}` : i;
 }
-function pn(e, t, n, r = !1) {
+function hn(e, t, n, r = !1) {
 	if (t === 14 && !n) {
-		let t = typeof navigator > "u" ? void 0 : navigator.language, n = ue(e, r);
-		return { text: Gt(t).format(n) };
+		let t = typeof navigator > "u" ? void 0 : navigator.language, n = ae(e, r);
+		return { text: qt(t).format(n) };
 	}
-	let i = Zt[t];
-	if (i) return { text: an(e, i, r) };
-	if (n && n.trim().toLowerCase() === "general") return { text: fn(e) };
-	if (n) return on(n) ? { text: an(e, n, r) } : En(e, n);
+	let i = $t[t];
+	if (i) return { text: sn(e, i, r) };
+	if (n && n.trim().toLowerCase() === "general") return { text: mn(e) };
+	if (n) return cn(n) ? { text: sn(e, n, r) } : On(e, n);
 	switch (t) {
-		case 0: return { text: fn(e) };
-		case 1: return En(e, "0");
-		case 2: return En(e, "0.00");
-		case 3: return En(e, "#,##0");
-		case 4: return En(e, "#,##0.00");
-		case 9: return En(e, "0%");
-		case 10: return En(e, "0.00%");
-		case 11: return En(e, "0.00E+00");
-		case 37: return En(e, "#,##0 ;(#,##0)");
-		case 38: return En(e, "#,##0 ;[Red](#,##0)");
-		case 39: return En(e, "#,##0.00;(#,##0.00)");
-		case 40: return En(e, "#,##0.00;[Red](#,##0.00)");
-		case 48: return En(e, "##0.0E+0");
+		case 0: return { text: mn(e) };
+		case 1: return On(e, "0");
+		case 2: return On(e, "0.00");
+		case 3: return On(e, "#,##0");
+		case 4: return On(e, "#,##0.00");
+		case 9: return On(e, "0%");
+		case 10: return On(e, "0.00%");
+		case 11: return On(e, "0.00E+00");
+		case 37: return On(e, "#,##0 ;(#,##0)");
+		case 38: return On(e, "#,##0 ;[Red](#,##0)");
+		case 39: return On(e, "#,##0.00;(#,##0.00)");
+		case 40: return On(e, "#,##0.00;[Red](#,##0.00)");
+		case 48: return On(e, "##0.0E+0");
 		case 49: return { text: String(e) };
-		default: return { text: fn(e) };
+		default: return { text: mn(e) };
 	}
 }
-var mn = {
+var gn = {
 	black: "#000000",
 	blue: "#0000FF",
 	cyan: "#00FFFF",
@@ -955,8 +955,8 @@ var mn = {
 	red: "#FF0000",
 	white: "#FFFFFF",
 	yellow: "#FFFF00"
-}, hn = /* @__PURE__ */ "#000000.#FFFFFF.#FF0000.#00FF00.#0000FF.#FFFF00.#FF00FF.#00FFFF.#000000.#FFFFFF.#FF0000.#00FF00.#0000FF.#FFFF00.#FF00FF.#00FFFF.#800000.#008000.#000080.#808000.#800080.#008080.#C0C0C0.#808080.#9999FF.#993366.#FFFFCC.#CCFFFF.#660066.#FF8080.#0066CC.#CCCCFF.#000080.#FF00FF.#FFFF00.#00FFFF.#800080.#800000.#008080.#0000FF.#00CCFF.#CCFFFF.#CCFFCC.#FFFF99.#99CCFF.#FF99CC.#CC99FF.#FFCC99.#3366FF.#33CCCC.#99CC00.#FFCC00.#FF9900.#FF6600.#666699.#969696.#003366.#339966.#003300.#333300.#993300.#993366.#333399.#333333".split(".");
-function gn(e) {
+}, _n = /* @__PURE__ */ "#000000.#FFFFFF.#FF0000.#00FF00.#0000FF.#FFFF00.#FF00FF.#00FFFF.#000000.#FFFFFF.#FF0000.#00FF00.#0000FF.#FFFF00.#FF00FF.#00FFFF.#800000.#008000.#000080.#808000.#800080.#008080.#C0C0C0.#808080.#9999FF.#993366.#FFFFCC.#CCFFFF.#660066.#FF8080.#0066CC.#CCCCFF.#000080.#FF00FF.#FFFF00.#00FFFF.#800080.#800000.#008080.#0000FF.#00CCFF.#CCFFFF.#CCFFCC.#FFFF99.#99CCFF.#FF99CC.#CC99FF.#FFCC99.#3366FF.#33CCCC.#99CC00.#FFCC00.#FF9900.#FF6600.#666699.#969696.#003366.#339966.#003300.#333300.#993300.#993366.#333399.#333333".split(".");
+function vn(e) {
 	let t = [], n = "", r = 0;
 	for (; r < e.length;) {
 		let i = e[r];
@@ -971,7 +971,7 @@ function gn(e) {
 	}
 	return t.push(n), t;
 }
-function _n(e) {
+function yn(e) {
 	let t = "", n, r, i = 0;
 	for (; i < e.length;) {
 		let a = e[i];
@@ -986,10 +986,10 @@ function _n(e) {
 				continue;
 			}
 			let s = e.slice(i + 1, o), c = s.toLowerCase(), l = c.match(/^color(\d{1,2})$/), u = s.match(/^(<=|>=|<>|<|>|=)\s*(-?[0-9.]+(?:[eE][-+]?\d+)?)$/);
-			if (c in mn) n = mn[c];
+			if (c in gn) n = gn[c];
 			else if (l) {
 				let e = parseInt(l[1], 10);
-				e >= 1 && e <= 56 && (n = hn[e + 7] ?? n);
+				e >= 1 && e <= 56 && (n = _n[e + 7] ?? n);
 			} else u ? r = {
 				op: u[1],
 				value: Number(u[2])
@@ -1003,7 +1003,7 @@ function _n(e) {
 		condition: r
 	};
 }
-function vn(e, t) {
+function bn(e, t) {
 	switch (e.op) {
 		case "<": return t < e.value;
 		case "<=": return t <= e.value;
@@ -1013,7 +1013,7 @@ function vn(e, t) {
 		case "<>": return t !== e.value;
 	}
 }
-function yn(e) {
+function xn(e) {
 	let t = [], n = "", r = "", i = !1, a = !1, o, s = !1, c = 0, l = 0, u = (e) => {
 		if (!e) return;
 		!a && !s && (c = n.replace(/,/g, "").length);
@@ -1087,20 +1087,20 @@ function yn(e) {
 		fraction: h
 	};
 }
-function bn(e) {
+function Sn(e) {
 	return e.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-function xn(e, t, n) {
+function Cn(e, t, n) {
 	let r = t.split(""), i = e.split(""), a = [], o = i.length - 1, s = [];
 	for (let e = r.length - 1; e >= 0; e--) o >= 0 ? (a.unshift(i[o]), s.unshift(i[o]), o--) : r[e] === "0" ? (a.unshift("0"), s.unshift("0")) : r[e] === "?" && a.unshift(" ");
 	for (; o >= 0;) a.unshift(i[o]), s.unshift(i[o]), o--;
 	if (n) {
-		let e = bn(s.join(""));
+		let e = Sn(s.join(""));
 		return (a.length - s.length > 0 ? a.slice(0, a.length - s.length).join("") : "") + e;
 	}
 	return a.join("");
 }
-function Sn(e, t) {
+function wn(e, t) {
 	let n = t.length;
 	if (n === 0) return "";
 	let r = e.padEnd(n, "0").slice(0, n).split("");
@@ -1112,7 +1112,7 @@ function Sn(e, t) {
 	}
 	return r.join("");
 }
-function Cn(e, t, n) {
+function Tn(e, t, n) {
 	if (n !== null) return [Math.round(e * n), n];
 	let r = 10 ** Math.max(t, 1) - 1, i = 0, a = 1, o = Math.abs(e), s = [0, 1], c = [1, 1];
 	for (let t = 0; t < 100; t++) {
@@ -1125,12 +1125,12 @@ function Cn(e, t, n) {
 	}
 	return [i, a];
 }
-function wn(e, t, n) {
-	let r = yn(t), i = n ? Math.abs(e) : e;
+function En(e, t, n) {
+	let r = xn(t), i = n ? Math.abs(e) : e;
 	r.hasPercent && (i *= 100), r.commaScale > 0 && (i /= 1e3 ** r.commaScale);
 	let a = i < 0 ? "-" : "", o = Math.abs(i);
 	if (r.fraction) {
-		let e = Math.floor(o), t = o - e, { wholeSpec: n, numSpec: i, denSpec: s, fixedDen: c } = r.fraction, l = n.length > 0, [u, d] = Cn(t, s.length, c), f = (e, t) => {
+		let e = Math.floor(o), t = o - e, { wholeSpec: n, numSpec: i, denSpec: s, fixedDen: c } = r.fraction, l = n.length > 0, [u, d] = Tn(t, s.length, c), f = (e, t) => {
 			let n = String(e), r = t.includes("0") ? "0" : " ";
 			for (; n.length < t.length;) n = r + n;
 			return n;
@@ -1156,14 +1156,14 @@ function wn(e, t, n) {
 	}
 	if (r.exp) {
 		let e = Math.max(r.intSpec.length, 1), t = r.fracSpec.length, n = 0, i = 0;
-		o !== 0 && (i = Math.floor(Math.log10(o)), i = Math.floor(i / e) * e, n = o / 10 ** i, parseFloat(M(n, t)) >= 10 ** e && (i += e, n = o / 10 ** i));
-		let [s, c = ""] = M(n, t).split(".");
-		return a + Tn(r, xn(s, r.intSpec, !1), Sn(c, r.fracSpec), "E" + (i < 0 ? "-" : r.exp.plus ? "+" : "") + String(Math.abs(i)).padStart(r.exp.width, "0"));
+		o !== 0 && (i = Math.floor(Math.log10(o)), i = Math.floor(i / e) * e, n = o / 10 ** i, parseFloat(K(n, t)) >= 10 ** e && (i += e, n = o / 10 ** i));
+		let [s, c = ""] = K(n, t).split(".");
+		return a + Dn(r, Cn(s, r.intSpec, !1), wn(c, r.fracSpec), "E" + (i < 0 ? "-" : r.exp.plus ? "+" : "") + String(Math.abs(i)).padStart(r.exp.width, "0"));
 	}
-	let s = r.fracSpec.length, [c, l = ""] = M(o, s).split("."), u = c.replace(/^0+/, ""), d = /[0]/.test(r.intSpec) || r.intSpec === "" && !1;
-	return u === "" && d && (u = "0"), a + Tn(r, xn(u, r.intSpec, r.grouping), Sn(l, r.fracSpec), "");
+	let s = r.fracSpec.length, [c, l = ""] = K(o, s).split("."), u = c.replace(/^0+/, ""), d = /[0]/.test(r.intSpec) || r.intSpec === "" && !1;
+	return u === "" && d && (u = "0"), a + Dn(r, Cn(u, r.intSpec, r.grouping), wn(l, r.fracSpec), "");
 }
-function Tn(e, t, n, r) {
+function Dn(e, t, n, r) {
 	let i = t.split(""), a = [];
 	e.parts.forEach((e, t) => {
 		e.kind === "intph" && a.push(t);
@@ -1187,12 +1187,12 @@ function Tn(e, t, n, r) {
 	}
 	return f;
 }
-function En(e, t) {
-	let n = gn(t).map(_n), r = n.some((e) => e.condition), i, a = !1;
+function On(e, t) {
+	let n = vn(t).map(yn), r = n.some((e) => e.condition), i, a = !1;
 	if (r) {
 		let t = !1;
 		for (let r of n) if (r.condition) {
-			if (vn(r.condition, e)) {
+			if (bn(r.condition, e)) {
 				i = r, t = !0;
 				break;
 			}
@@ -1200,7 +1200,7 @@ function En(e, t) {
 		if (!i) return { text: "#" };
 		a = t && e < 0;
 	} else e > 0 ? i = n[0] : e < 0 ? n.length > 1 ? (i = n[1], a = !0) : i = n[0] : i = n.length > 2 ? n[2] : n[0];
-	let o = wn(e, i.body, a);
+	let o = En(e, i.body, a);
 	return i.color ? {
 		text: o,
 		color: i.color
@@ -1208,10 +1208,10 @@ function En(e, t) {
 }
 //#endregion
 //#region packages/xlsx/src/renderer-coordinate-index.ts
-var Dn = f;
-function On(e, t) {
-	let n = Dn;
-	return new te(`XLSX renderer ${e.resource} exceeded its hard limit of ${n} entries`, {
+var kn = u;
+function An(e, t) {
+	let n = kn;
+	return new P(`XLSX renderer ${e.resource} exceeded its hard limit of ${n} entries`, {
 		stage: "rendering",
 		violation: {
 			format: "xlsx",
@@ -1230,7 +1230,7 @@ function On(e, t) {
 		}
 	});
 }
-function kn(e, t, n = 0) {
+function jn(e, t, n = 0) {
 	let { top: r, bottom: i, left: a, right: o } = e;
 	if (i < r || o < a) return 0;
 	if (![
@@ -1238,44 +1238,44 @@ function kn(e, t, n = 0) {
 		i,
 		a,
 		o
-	].every(Number.isSafeInteger) || !Number.isSafeInteger(n) || n < 0) throw On(t, Dn + 1);
-	let s = i - r + 1, c = o - a + 1, l = Dn + n;
-	if (!Number.isSafeInteger(s) || !Number.isSafeInteger(c) || s > l || c > Math.floor(l / s)) throw On(t, Dn + 1);
+	].every(Number.isSafeInteger) || !Number.isSafeInteger(n) || n < 0) throw An(t, kn + 1);
+	let s = i - r + 1, c = o - a + 1, l = kn + n;
+	if (!Number.isSafeInteger(s) || !Number.isSafeInteger(c) || s > l || c > Math.floor(l / s)) throw An(t, kn + 1);
 	let u = s * c - n;
-	if (u > Dn) throw On(t, u);
+	if (u > kn) throw An(t, u);
 	return u;
 }
-function An(e, t, n, r) {
-	if (!e.has(t) && e.size >= Dn) throw On(r, e.size + 1);
+function Mn(e, t, n, r) {
+	if (!e.has(t) && e.size >= kn) throw An(r, e.size + 1);
 	e.set(t, n);
 }
-function jn(e, t) {
+function Nn(e, t) {
 	let n = /* @__PURE__ */ new Map();
-	for (let r of e) for (let e of r.cells) An(n, `${e.row}:${e.col}`, e, t);
+	for (let r of e) for (let e of r.cells) Mn(n, `${e.row}:${e.col}`, e, t);
 	return n;
 }
-function Mn(e, t, n) {
-	if (!e.has(t) && e.size >= Dn) throw On(n, e.size + 1);
+function Pn(e, t, n) {
+	if (!e.has(t) && e.size >= kn) throw An(n, e.size + 1);
 	e.add(t);
 }
 //#endregion
 //#region packages/xlsx/src/conditional-format.ts
-function Nn(e, t, n) {
+function Fn(e, t, n) {
 	for (let r of e) if (t >= r.top && t <= r.bottom && n >= r.left && n <= r.right) return !0;
 	return !1;
 }
-function Pn(e) {
+function In(e) {
 	return e && e.value.type === "number" ? e.value.number : null;
 }
-function Fn(e) {
+function Ln(e) {
 	return e && e.value.type === "text" ? e.value.text : null;
 }
-function In(e, t) {
+function Rn(e, t) {
 	let n = [];
-	for (let r of e.rows) for (let e of r.cells) e.value.type === "number" && Nn(t, e.row, e.col) && n.push(e.value.number);
+	for (let r of e.rows) for (let e of r.cells) e.value.type === "number" && Fn(t, e.row, e.col) && n.push(e.value.number);
 	return n;
 }
-function Ln(e, t) {
+function zn(e, t) {
 	let n = t.length ? Math.min(...t) : 0, r = t.length ? Math.max(...t) : 0, i = e.value == null ? NaN : parseFloat(e.value);
 	switch (e.kind) {
 		case "min": return n;
@@ -1293,18 +1293,18 @@ function Ln(e, t) {
 		default: return isNaN(i) ? 0 : i;
 	}
 }
-function Rn(e, t = zn(e)) {
+function Bn(e, t = Vn(e)) {
 	let n = [], r = /* @__PURE__ */ new Map();
 	for (let t of e.definedNames ?? []) r.set(t.name, t);
 	for (let t of e.conditionalFormats ?? []) {
-		let r = In(e, t.sqref);
+		let r = Rn(e, t.sqref);
 		for (let e of t.rules) {
 			let i = {
 				rule: e,
 				sqref: t.sqref
 			};
-			if (e.type === "colorScale") i.scaleStops = e.stops.map((e) => Ln(e, r));
-			else if (e.type === "dataBar") i.barMin = Ln(e.min, r), i.barMax = Ln(e.max, r);
+			if (e.type === "colorScale") i.scaleStops = e.stops.map((e) => zn(e, r));
+			else if (e.type === "dataBar") i.barMin = zn(e.min, r), i.barMax = zn(e.max, r);
 			else if (e.type === "top10") {
 				let t = [...r].sort((e, t) => e - t), n = t.length;
 				if (n > 0) {
@@ -1323,7 +1323,7 @@ function Rn(e, t = zn(e)) {
 						i.avgStdDev = Math.sqrt(e);
 					}
 				}
-			} else e.type === "iconSet" && (i.iconThresholds = e.cfvos.map((e) => Ln(e, r)));
+			} else e.type === "iconSet" && (i.iconThresholds = e.cfvos.map((e) => zn(e, r)));
 			n.push(i);
 		}
 	}
@@ -1334,13 +1334,13 @@ function Rn(e, t = zn(e)) {
 		definedNames: r
 	};
 }
-function zn(e) {
-	return jn(e.rows, {
+function Vn(e) {
+	return Nn(e.rows, {
 		resource: "worksheet-cell-index",
 		operation: "index-worksheet-cells"
 	});
 }
-function Bn(e, t, n) {
+function Hn(e, t, n) {
 	switch (t) {
 		case "greaterThan": return e > (n[0] ?? 0);
 		case "greaterThanOrEqual": return e >= (n[0] ?? 0);
@@ -1353,13 +1353,13 @@ function Bn(e, t, n) {
 		default: return !1;
 	}
 }
-function Vn(e) {
+function Un(e) {
 	let t = e.trim();
 	if (t.length >= 2 && t.startsWith("\"") && t.endsWith("\"")) return { text: t.slice(1, -1).replace(/""/g, "\"") };
 	let n = parseFloat(t);
 	return isNaN(n) ? { text: t } : { num: n };
 }
-function Hn(e, t, n) {
+function Wn(e, t, n) {
 	let r = n[0] ?? "", i = n[1] ?? "", a = (e) => e.toLowerCase();
 	switch (t) {
 		case "equal": return a(e) === a(r);
@@ -1373,21 +1373,21 @@ function Hn(e, t, n) {
 		default: return !1;
 	}
 }
-function Un(e, t, n) {
+function Gn(e, t, n) {
 	let r = e.replace("#", ""), i = t.replace("#", ""), a = parseInt(r.slice(0, 2), 16), o = parseInt(r.slice(2, 4), 16), s = parseInt(r.slice(4, 6), 16), c = parseInt(i.slice(0, 2), 16), l = parseInt(i.slice(2, 4), 16), u = parseInt(i.slice(4, 6), 16), d = Math.round(a + (c - a) * n), f = Math.round(o + (l - o) * n), p = Math.round(s + (u - s) * n);
 	return `#${d.toString(16).padStart(2, "0").toUpperCase()}${f.toString(16).padStart(2, "0").toUpperCase()}${p.toString(16).padStart(2, "0").toUpperCase()}`;
 }
-function Wn(e, t, n) {
+function Kn(e, t, n) {
 	if (!t.length) return "#FFFFFF";
 	if (e <= n[0]) return t[0].color;
 	if (e >= n[n.length - 1]) return t[t.length - 1].color;
 	for (let r = 1; r < n.length; r++) if (e <= n[r]) {
 		let i = n[r - 1], a = n[r], o = a === i ? 0 : (e - i) / (a - i);
-		return Un(t[r - 1].color, t[r].color, o);
+		return Gn(t[r - 1].color, t[r].color, o);
 	}
 	return t[t.length - 1].color;
 }
-function Gn(e, t) {
+function qn(e, t) {
 	if (t && (t.fill && !e.fill && (e.fill = t.fill), t.font?.color && e.fontColor == null && (e.fontColor = t.font.color), t.font?.bold && e.fontBold == null && (e.fontBold = !0), t.font?.italic && e.fontItalic == null && (e.fontItalic = !0), t.font?.underline && e.fontUnderline == null && (e.fontUnderline = !0), t.font?.strike && e.fontStrike == null && (e.fontStrike = !0), t.numFmt && e.numFmt == null && (e.numFmt = {
 		numFmtId: t.numFmt.numFmtId,
 		formatCode: t.numFmt.formatCode || null
@@ -1403,16 +1403,16 @@ function Gn(e, t) {
 		};
 	}
 }
-function Kn(e, t, n, r, i) {
+function Jn(e, t, n, r, i) {
 	let a = {};
 	if (!r.compiled.length) return a;
 	for (let o of r.compiled) {
-		if (!Nn(o.sqref, t, n)) continue;
-		let s = o.rule, c = Pn(e);
+		if (!Fn(o.sqref, t, n)) continue;
+		let s = o.rule, c = In(e);
 		if (s.type === "expression") {
 			let e = o.sqref[0];
 			if (!e) continue;
-			if (pt(s.formula, {
+			if (ht(s.formula, {
 				row: t,
 				col: n,
 				anchorRow: e.top,
@@ -1420,19 +1420,19 @@ function Kn(e, t, n, r, i) {
 				cellIndex: r.cellIndex,
 				definedNames: r.definedNames,
 				depth: 0
-			}) && (Gn(a, s.dxfId == null ? null : i[s.dxfId]), s.stopIfTrue)) break;
+			}) && (qn(a, s.dxfId == null ? null : i[s.dxfId]), s.stopIfTrue)) break;
 			continue;
 		}
 		if (s.type === "cellIs") {
-			let t = s.formulas.map(Vn), n = Fn(e), r = !1;
-			c != null && t.every((e) => e.num != null) ? r = Bn(c, s.operator, t.map((e) => e.num)) : n != null && t.every((e) => e.text != null) && (r = Hn(n, s.operator, t.map((e) => e.text))), r && Gn(a, s.dxfId == null ? null : i[s.dxfId]);
+			let t = s.formulas.map(Un), n = Ln(e), r = !1;
+			c != null && t.every((e) => e.num != null) ? r = Hn(c, s.operator, t.map((e) => e.num)) : n != null && t.every((e) => e.text != null) && (r = Wn(n, s.operator, t.map((e) => e.text))), r && qn(a, s.dxfId == null ? null : i[s.dxfId]);
 		} else if (s.type === "top10") {
 			if (c == null || o.top10Threshold == null) continue;
-			(o.top10IsTop ? c >= o.top10Threshold : c <= o.top10Threshold) && Gn(a, s.dxfId == null ? null : i[s.dxfId]);
+			(o.top10IsTop ? c >= o.top10Threshold : c <= o.top10Threshold) && qn(a, s.dxfId == null ? null : i[s.dxfId]);
 		} else if (s.type === "aboveAverage") {
 			if (c == null || o.avgValue == null) continue;
 			let e = o.avgStdDev == null ? 0 : o.avgStdDev * (s.stdDev ?? 1), t = o.avgIsAbove ? o.avgValue + e : o.avgValue - e, n = s.equalAverage === !0;
-			(o.avgIsAbove ? n ? c >= t : c > t : n ? c <= t : c < t) && Gn(a, s.dxfId == null ? null : i[s.dxfId]);
+			(o.avgIsAbove ? n ? c >= t : c > t : n ? c <= t : c < t) && qn(a, s.dxfId == null ? null : i[s.dxfId]);
 		} else if (s.type === "iconSet") {
 			if (c == null || !o.iconThresholds?.length) continue;
 			let e = o.iconThresholds, t = e.length, n = 0;
@@ -1449,7 +1449,7 @@ function Kn(e, t, n, r, i) {
 			};
 		} else if (s.type === "colorScale") {
 			if (c == null || !o.scaleStops || a.fill) continue;
-			let e = Wn(c, s.stops, o.scaleStops);
+			let e = Kn(c, s.stops, o.scaleStops);
 			a.fill = {
 				patternType: "solid",
 				fgColor: e,
@@ -1469,21 +1469,21 @@ function Kn(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/xlsx/src/bidi-line.ts
-function qn(e, t) {
-	return e === 2 ? !0 : e === 1 ? !1 : rt(void 0, t) === "rtl";
+function Yn(e, t) {
+	return e === 2 ? !0 : e === 1 ? !1 : at(void 0, t) === "rtl";
 }
-var Jn = (e) => {
+var Xn = (e) => {
 	let t = e.text;
 	return typeof t == "string" ? t : void 0;
 };
-function Yn(e, t) {
-	let n = e === 2 || ne(t);
+function Zn(e, t) {
+	let n = e === 2 || B(t);
 	return {
 		needBidi: n,
-		baseRtl: n && qn(e, t)
+		baseRtl: n && Yn(e, t)
 	};
 }
-function Xn(e, t) {
+function Qn(e, t) {
 	let r = e.length;
 	if (r === 0) return {
 		order: [],
@@ -1492,31 +1492,31 @@ function Xn(e, t) {
 	let i = "", a = Array(r);
 	for (let t = 0; t < r; t++) {
 		a[t] = i.length;
-		let n = Jn(e[t]) ?? "";
+		let n = Xn(e[t]) ?? "";
 		i += n.length > 0 ? n : "￼";
 	}
-	let { levels: o, paragraphLevel: s } = h().computeLevels(i, t ? "rtl" : "ltr"), { order: c, segLevels: l } = n(o, s, a), u = Array(r);
+	let { levels: o, paragraphLevel: s } = p().computeLevels(i, t ? "rtl" : "ltr"), { order: c, segLevels: l } = n(o, s, a), u = Array(r);
 	for (let e = 0; e < r; e++) u[e] = (l[e] & 1) == 1;
 	return {
 		order: c,
 		rtl: u
 	};
 }
-function Zn(e, t = 8) {
+function $n(e, t = 8) {
 	return Math.trunc((256 * e + Math.trunc(128 / t)) / 256 * t);
 }
-function Qn(e, t = 8) {
+function er(e, t = 8) {
 	return e / t;
 }
-function $n(e) {
-	return Math.round(e * D);
+function tr(e) {
+	return Math.round(e * G);
 }
-function er(e) {
-	return e / D;
+function nr(e) {
+	return e / G;
 }
 //#endregion
 //#region packages/xlsx/src/internal/grid-axis-geometry.ts
-var tr = class e {
+var rr = class e {
 	indices;
 	cumulativeDelta;
 	customPx;
@@ -1590,7 +1590,7 @@ var tr = class e {
 		}
 		return a;
 	}
-}, nr = 1048576, rr = 16384, ir = class e {
+}, ir = 1048576, ar = 16384, or = class e {
 	static cache = /* @__PURE__ */ new WeakMap();
 	static forWorksheet(t, n) {
 		let r = this.cache.get(t);
@@ -1615,7 +1615,7 @@ var tr = class e {
 	freezeCols;
 	scaledCache = null;
 	constructor(e, t) {
-		this.maximumDigitWidth = t, this.freezeRows = Math.min(nr, Math.max(0, e.freezeRows ?? 0)), this.freezeCols = Math.min(rr, Math.max(0, e.freezeCols ?? 0)), this.col = new tr(e.colWidths, Zn(e.defaultColWidth, t), (e) => Zn(e, t), rr), this.row = new tr(e.rowHeights, $n(e.defaultRowHeight), $n, nr);
+		this.maximumDigitWidth = t, this.freezeRows = Math.min(ir, Math.max(0, e.freezeRows ?? 0)), this.freezeCols = Math.min(ar, Math.max(0, e.freezeCols ?? 0)), this.col = new rr(e.colWidths, $n(e.defaultColWidth, t), (e) => $n(e, t), ar), this.row = new rr(e.rowHeights, tr(e.defaultRowHeight), tr, ir);
 	}
 	logicalFrozenExtent() {
 		return {
@@ -1639,15 +1639,15 @@ var tr = class e {
 	}
 	logicalContentExtent(e, t, n, r) {
 		return {
-			width: n + this.col.offsetOf(Math.min(rr, t) + 1),
-			height: r + this.row.offsetOf(Math.min(nr, e) + 1)
+			width: n + this.col.offsetOf(Math.min(ar, t) + 1),
+			height: r + this.row.offsetOf(Math.min(ir, e) + 1)
 		};
 	}
 	roundedContentExtent(e, t, n, r, i) {
 		let a = this.axesAtScale(n);
 		return {
-			width: Math.round(r * n) + a.col.offsetOf(Math.min(rr, t) + 1),
-			height: Math.round(i * n) + a.row.offsetOf(Math.min(nr, e) + 1)
+			width: Math.round(r * n) + a.col.offsetOf(Math.min(ar, t) + 1),
+			height: Math.round(i * n) + a.row.offsetOf(Math.min(ir, e) + 1)
 		};
 	}
 	cellAt(e, t, n) {
@@ -1736,7 +1736,7 @@ var tr = class e {
 };
 //#endregion
 //#region packages/xlsx/src/a1.ts
-function ar(e) {
+function sr(e) {
 	let t = /^\$?([A-Z]+)\$?(\d+)$/.exec(e.trim());
 	if (!t) return null;
 	let n = t[1], r = 0;
@@ -1747,7 +1747,7 @@ function ar(e) {
 		col: r
 	};
 }
-function or(e, t) {
+function cr(e, t) {
 	let n = "", r = t;
 	for (; r > 0;) {
 		let e = (r - 1) % 26;
@@ -1757,19 +1757,19 @@ function or(e, t) {
 }
 //#endregion
 //#region packages/xlsx/src/vertical-text.ts
-function sr(e, t, n, r, i, a = !1) {
-	let o = t.codePointAt(0) ?? 0, s = N(o);
-	if (a && se(o)) {
+function lr(e, t, n, r, i, a = !1) {
+	let o = t.codePointAt(0) ?? 0, s = ee(o);
+	if (a && oe(o)) {
 		e.save(), e.translate(n, r + i / 2), e.textAlign = "center", e.textBaseline = "middle", O(e, () => e.fillText(t, 0, 0)), e.restore();
 		return;
 	}
 	if (s === "Tr") {
-		let a = de(o);
+		let a = q(o);
 		if (a !== null) {
 			e.fillText(String.fromCodePoint(a), n, r);
 			return;
 		}
-		if (V(o)) {
+		if (H(o)) {
 			e.fillText(t, n, r);
 			return;
 		}
@@ -1781,38 +1781,38 @@ function sr(e, t, n, r, i, a = !1) {
 }
 //#endregion
 //#region packages/xlsx/src/internal/cell-anchor-geometry.ts
-function cr(e) {
+function ur(e) {
 	return e.editAs === "oneCell" && (e.nativeExtCx ?? 0) > 0 && (e.nativeExtCy ?? 0) > 0;
 }
 //#endregion
 //#region packages/xlsx/src/renderer.ts
-function lr(e, t) {
+function dr(e, t) {
 	return t ? `${e}|duo:${t.clr1}:${t.clr2}` : e;
 }
-var ur = oe.map((e) => `"${e}"`).join(", "), dr = q.map((e) => `"${e}"`).join(", "), fr = `"Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${ur}, sans-serif`, pr = `"Cambria", "Caladea", "Times New Roman", "Liberation Serif", "Noto Naskh Arabic", "Noto Sans Arabic", ${dr}, serif`, mr = "\"Courier New\", \"Liberation Mono\", monospace";
-function hr(e) {
-	let t = e ? J(e) : null, n = j(e);
-	if (!t) return n === "serif" ? pr : n === "mono" ? mr : fr;
+var fr = pe.map((e) => `"${e}"`).join(", "), pr = k.map((e) => `"${e}"`).join(", "), mr = `"Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${fr}, sans-serif`, hr = `"Cambria", "Caladea", "Times New Roman", "Liberation Serif", "Noto Naskh Arabic", "Noto Sans Arabic", ${pr}, serif`, gr = "\"Courier New\", \"Liberation Mono\", monospace";
+function _r(e) {
+	let t = e ? j(e) : null, n = te(e);
+	if (!t) return n === "serif" ? hr : n === "mono" ? gr : mr;
 	let r = n === "serif";
-	return `${re(t, r ? "serif" : "sans").map((e) => `"${e}"`).join(", ")}, "Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${r ? dr : ur}, ${r ? "serif" : "sans-serif"}`;
+	return `${me(t, r ? "serif" : "sans").map((e) => `"${e}"`).join(", ")}, "Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${r ? pr : fr}, ${r ? "serif" : "sans-serif"}`;
 }
-function gr(e) {
-	return e ? `"${e}", ${hr(e)}` : fr;
+function vr(e) {
+	return e ? `"${e}", ${_r(e)}` : mr;
 }
-var _r = 11;
-function vr(e, t, n) {
+var yr = 11;
+function br(e, t, n) {
 	return n - e - t;
 }
-function yr(e, t, n, r) {
-	return r ? vr(e, t, n) : e;
+function xr(e, t, n, r) {
+	return r ? br(e, t, n) : e;
 }
-var br = "#7a7a7a";
-function xr(e, t) {
-	let n = t * D, r = typeof OffscreenCanvas < "u" ? new OffscreenCanvas(1, 1) : typeof document < "u" ? document.createElement("canvas") : null;
+var Sr = "#7a7a7a";
+function Cr(e, t) {
+	let n = t * G, r = typeof OffscreenCanvas < "u" ? new OffscreenCanvas(1, 1) : typeof document < "u" ? document.createElement("canvas") : null;
 	if (!r) return 8;
 	let i = r.getContext("2d");
 	if (!i) return 8;
-	i.font = `${n}px ${gr(e)}`;
+	i.font = `${n}px ${vr(e)}`;
 	let a = 0;
 	for (let e of "0123456789") {
 		let t = i.measureText(e).width;
@@ -1820,22 +1820,22 @@ function xr(e, t) {
 	}
 	return Math.round(a) || 8;
 }
-function Sr(e) {
-	return !e.defaultFontFamily || !e.defaultFontSize ? 8 : xr(e.defaultFontFamily, e.defaultFontSize);
+function wr(e) {
+	return !e.defaultFontFamily || !e.defaultFontSize ? 8 : Cr(e.defaultFontFamily, e.defaultFontSize);
 }
 function $(e) {
-	return ir.forWorksheetMeasured(e, () => Sr(e));
+	return or.forWorksheetMeasured(e, () => wr(e));
 }
-function Cr(e, t, n, r, i, a, o) {
+function Tr(e, t, n, r, i, a, o) {
 	if (!(i <= 0 || a <= 0)) {
 		if (o) {
 			let a = e.createLinearGradient(n, r, n + i, r);
-			a.addColorStop(0, p(t, .85)), a.addColorStop(1, p(t, .15)), e.fillStyle = a;
-		} else e.fillStyle = p(t);
+			a.addColorStop(0, C(t, .85)), a.addColorStop(1, C(t, .15)), e.fillStyle = a;
+		} else e.fillStyle = C(t);
 		e.fillRect(n, r, i, a);
 	}
 }
-function wr(e) {
+function Er(e) {
 	switch (e) {
 		case "solid": return 1;
 		case "darkGray": return .75;
@@ -1858,7 +1858,7 @@ function wr(e) {
 		default: return 1;
 	}
 }
-var Tr = /* @__PURE__ */ new Map(), Er = {
+var Dr = /* @__PURE__ */ new Map(), Or = {
 	gray0625: [
 		128,
 		0,
@@ -2020,42 +2020,42 @@ var Tr = /* @__PURE__ */ new Map(), Er = {
 		153
 	]
 };
-function Dr(e, n, r, i) {
-	let a = e.getTransform(), o = Math.max(1, Math.round(Math.hypot(a.a, a.b))), s = Math.max(1, Math.round(Math.hypot(a.c, a.d))), c = `${n}|${r}|${i}|${o}|${s}`;
-	if (Tr.has(c)) return Tr.get(c);
-	let l = Er[n];
-	if (!l) return Tr.set(c, null), null;
-	let u = l.length, d = t(u, u);
-	if (!d) return Tr.set(c, null), null;
-	let f = d.getContext("2d");
-	if (!f) return Tr.set(c, null), null;
-	f.fillStyle = p(i), f.fillRect(0, 0, u, u), f.fillStyle = p(r);
-	for (let e = 0; e < u; e++) {
-		let t = l[e];
-		for (let n = 0; n < u; n++) t & 1 << u - 1 - n && f.fillRect(n, e, 1, 1);
+function kr(e, t, n, r) {
+	let i = e.getTransform(), a = Math.max(1, Math.round(Math.hypot(i.a, i.b))), o = Math.max(1, Math.round(Math.hypot(i.c, i.d))), s = `${t}|${n}|${r}|${a}|${o}`;
+	if (Dr.has(s)) return Dr.get(s);
+	let c = Or[t];
+	if (!c) return Dr.set(s, null), null;
+	let l = c.length, u = M(l, l);
+	if (!u) return Dr.set(s, null), null;
+	let d = u.getContext("2d");
+	if (!d) return Dr.set(s, null), null;
+	d.fillStyle = C(r), d.fillRect(0, 0, l, l), d.fillStyle = C(n);
+	for (let e = 0; e < l; e++) {
+		let t = c[e];
+		for (let n = 0; n < l; n++) t & 1 << l - 1 - n && d.fillRect(n, e, 1, 1);
 	}
-	let m = e.createPattern(d, "repeat");
-	if (m && typeof DOMMatrix < "u" && (o >= 2 || s >= 2)) {
+	let f = e.createPattern(u, "repeat");
+	if (f && typeof DOMMatrix < "u" && (a >= 2 || o >= 2)) {
 		let e = new DOMMatrix();
-		e.scaleSelf(1 / o, 1 / s), m.setTransform(e);
+		e.scaleSelf(1 / a, 1 / o), f.setTransform(e);
 	}
-	return Tr.set(c, m), m;
+	return Dr.set(s, f), f;
 }
-function Or(e, t, n, r, i, a) {
-	if (t.gradient && t.gradient.stops.length > 0) return e.fillStyle = kr(e, t.gradient, n, r, i, a), e.fillRect(n, r, i, a), !0;
+function Ar(e, t, n, r, i, a) {
+	if (t.gradient && t.gradient.stops.length > 0) return e.fillStyle = jr(e, t.gradient, n, r, i, a), e.fillRect(n, r, i, a), !0;
 	let o = t.patternType;
 	if (!o || o === "none") return !1;
 	let s = t.fgColor ?? "000000", c = t.bgColor ?? "FFFFFF";
-	if (o === "solid") return e.fillStyle = p(s), e.fillRect(n, r, i, a), !0;
-	let l = Dr(e, o, s, c);
+	if (o === "solid") return e.fillStyle = C(s), e.fillRect(n, r, i, a), !0;
+	let l = kr(e, o, s, c);
 	if (l) e.fillStyle = l;
 	else {
-		let t = wr(o);
-		e.fillStyle = t >= 1 ? p(s) : Mr(s, c, t);
+		let t = Er(o);
+		e.fillStyle = t >= 1 ? C(s) : Pr(s, c, t);
 	}
 	return e.fillRect(n, r, i, a), !0;
 }
-function kr(e, t, n, r, i, a) {
+function jr(e, t, n, r, i, a) {
 	let o;
 	if (t.gradientType === "path") {
 		let s = n + i * (t.left + (1 - t.right - t.left) / 2), c = r + a * (t.top + (1 - t.bottom - t.top) / 2), l = Math.hypot(Math.max(s - n, n + i - s), Math.max(c - r, r + a - c));
@@ -2066,32 +2066,32 @@ function kr(e, t, n, r, i, a) {
 	}
 	for (let e of t.stops) {
 		let t = Math.min(1, Math.max(0, e.position));
-		o.addColorStop(t, p(e.color));
+		o.addColorStop(t, C(e.color));
 	}
 	return o;
 }
-var Ar = ar;
-function jr(e, t, n, r, i) {
+var Mr = sr;
+function Nr(e, t, n, r, i) {
 	let a = Math.max(4, Math.min(8, Math.min(r, i) * .18));
 	e.save(), e.fillStyle = "#D40000", e.beginPath(), e.moveTo(t + r - a, n), e.lineTo(t + r, n), e.lineTo(t + r, n + a), e.closePath(), e.fill(), e.restore();
 }
-function Mr(e, t, n) {
+function Pr(e, t, n) {
 	let r = e.replace("#", ""), i = t.replace("#", ""), a = parseInt(r.slice(0, 2), 16), o = parseInt(r.slice(2, 4), 16), s = parseInt(r.slice(4, 6), 16), c = parseInt(i.slice(0, 2), 16), l = parseInt(i.slice(2, 4), 16), u = parseInt(i.slice(4, 6), 16), d = Math.min(1, Math.max(0, n));
 	return `rgb(${Math.round(a * d + c * (1 - d))},${Math.round(o * d + l * (1 - d))},${Math.round(s * d + u * (1 - d))})`;
 }
-function Nr(e, t, n = 1, r) {
-	let i = Math.round(e * D * n * t);
-	return r ? Math.max(i, Math.round(U(r, e * D * t))) : i;
+function Fr(e, t, n = 1, r) {
+	let i = Math.round(e * G * n * t);
+	return r ? Math.max(i, Math.round(W(r, e * G * t))) : i;
 }
-function Pr(e, t = 1) {
-	return `${e.italic ? "italic " : ""}${e.bold ? "bold " : ""}${Math.max(1, Math.round(e.size * D * t))}px ${gr(e.name)}`;
+function Ir(e, t = 1) {
+	return `${e.italic ? "italic " : ""}${e.bold ? "bold " : ""}${Math.max(1, Math.round(e.size * G * t))}px ${vr(e.name)}`;
 }
-function Fr(e, t, n, r, i, a, o, s, c, l) {
+function Lr(e, t, n, r, i, a, o, s, c, l) {
 	if (t.length === 0) return;
 	let u = n?.fontId ?? 0, d = a.fonts[u] ?? a.fonts[0];
 	if (!d) return;
 	let f = n?.alignment ?? "left";
-	e.save(), e.font = Pr(d, c), e.textBaseline = "top", e.textAlign = "left", e.fillStyle = l;
+	e.save(), e.font = Ir(d, c), e.textBaseline = "top", e.textAlign = "left", e.fillStyle = l;
 	let p = s + Math.round(2 * c);
 	if (f === "noControl") {
 		let n = o;
@@ -2099,7 +2099,7 @@ function Fr(e, t, n, r, i, a, o, s, c, l) {
 		e.restore();
 		return;
 	}
-	let m = ut(t, r, o, f, (t) => Ir(e, t, i));
+	let m = ft(t, r, o, f, (t) => Rr(e, t, i));
 	for (let t of m) {
 		let n = e.measureText(t.text).width, r = [...t.text];
 		if (t.spread === "distribute" && r.length > 1 && n < t.width) {
@@ -2115,23 +2115,23 @@ function Fr(e, t, n, r, i, a, o, s, c, l) {
 	}
 	e.restore();
 }
-function Ir(e, t, n) {
+function Rr(e, t, n) {
 	let r = e.font;
 	e.font = n;
 	let i = e.measureText(t).width;
 	return e.font = r, i;
 }
-function Lr(e, t, n, r, i, a, o = 1) {
+function zr(e, t, n, r, i, a, o = 1) {
 	if (e.save(), e.strokeStyle = i, e.lineWidth = .5, e.beginPath(), a) {
-		let i = r - 1, a = r + 1, s = i + H(i, .5, o), c = a + H(a, .5, o);
+		let i = r - 1, a = r + 1, s = i + U(i, .5, o), c = a + U(a, .5, o);
 		e.moveTo(t, s), e.lineTo(n, s), e.moveTo(t, c), e.lineTo(n, c);
 	} else {
-		let i = r + H(r, .5, o);
+		let i = r + U(r, .5, o);
 		e.moveTo(t, i), e.lineTo(n, i);
 	}
 	e.stroke(), e.restore();
 }
-function Rr(e, t) {
+function Br(e, t) {
 	let n = t.font;
 	return n ? {
 		bold: n.bold,
@@ -2145,7 +2145,7 @@ function Rr(e, t) {
 		vertAlign: n.vertAlign
 	} : e;
 }
-function zr(e, t) {
+function Vr(e, t) {
 	let n = e.cellXfs[t] ?? e.cellXfs[0] ?? {
 		fontId: 0,
 		fillId: 0,
@@ -2161,7 +2161,7 @@ function zr(e, t) {
 			italic: !1,
 			underline: !1,
 			strike: !1,
-			size: _r,
+			size: yr,
 			color: null,
 			name: null
 		},
@@ -2179,26 +2179,26 @@ function zr(e, t) {
 		xf: n
 	};
 }
-function Br(e, t, n) {
+function Hr(e, t, n) {
 	let r = [];
-	for (let i of t.split("\n")) r.push(...Wr(e, i, n));
+	for (let i of t.split("\n")) r.push(...Kr(e, i, n));
 	return r;
 }
-function Vr(e, t) {
+function Ur(e, t) {
 	if (e.length === 0 || t.length === 0) return 0;
 	let n = [...e, ...t], r = e.length;
-	return r - o(n, r, g, 1);
+	return r - o(n, r, m, 1);
 }
-function Hr(e, t) {
+function Wr(e, t) {
 	let n = t;
 	for (; n < e.length;) {
 		let t = e[e.length - n - 1], r = e[e.length - n], i = t?.codePointAt(0), a = r?.codePointAt(0);
-		if (i !== void 0 && a !== void 0 && x(i) && x(a)) n++;
+		if (i !== void 0 && a !== void 0 && v(i) && v(a)) n++;
 		else break;
 	}
 	return n >= e.length ? t : n;
 }
-function Ur(e, t) {
+function Gr(e, t) {
 	if (e.length === 0 || t.length === 0) return 0;
 	let n = t[0].codePointAt(0), r = e.length - 1, a = e[r].codePointAt(0);
 	if (a === void 0 || n === void 0 || a === 8203 || n === 8203 || !i(a, n)) return 0;
@@ -2209,11 +2209,11 @@ function Ur(e, t) {
 	}
 	return r === 0 ? 0 : e.length - r;
 }
-function Wr(e, t, n) {
+function Kr(e, t, n) {
 	let r = [], i = [], a = 0;
 	for (; a < t.length;) {
 		let e = t[a], n = e.codePointAt(0) ?? 0;
-		if (pe(n)) i.push(e), a += n > 65535 ? 2 : 1;
+		if (he(n)) i.push(e), a += n > 65535 ? 2 : 1;
 		else if (e === " ") {
 			let e = a;
 			for (; e < t.length && t[e] === " ";) e++;
@@ -2222,10 +2222,10 @@ function Wr(e, t, n) {
 			let e = a;
 			for (; e < t.length;) {
 				let n = t[e], r = n.codePointAt(0) ?? 0;
-				if (n === " " || pe(r)) break;
+				if (n === " " || he(r)) break;
 				e += r > 65535 ? 2 : 1;
 			}
-			let n = t.slice(a, e), r = I(n) ? b(n) : null;
+			let n = t.slice(a, e), r = I(n) ? _(n) : null;
 			if (r && r.length > 0) {
 				let e = 0;
 				for (let t of r) i.push(n.slice(e, t)), e = t;
@@ -2245,7 +2245,7 @@ function Wr(e, t, n) {
 		else {
 			let e = t.replace(/^ +/, "");
 			e === "" && (e = t);
-			let n = [...o], i = Vr(n, [...e]);
+			let n = [...o], i = Ur(n, [...e]);
 			if (i > 0) {
 				let t = n.length - i;
 				r.push(n.slice(0, t).join("")), o = n.slice(t).join("") + e;
@@ -2254,7 +2254,7 @@ function Wr(e, t, n) {
 	}
 	return r.push(o), r;
 }
-function Gr(e, t, n, r, i) {
+function qr(e, t, n, r, i) {
 	let a = [], o = [], s = 0, c = 0, l = null, u = n.size, d = n.name, f = 0, p = () => {
 		o.length !== 0 && (a.push({
 			segments: o,
@@ -2266,7 +2266,7 @@ function Gr(e, t, n, r, i) {
 		if (o.length === 0) {
 			a.push({
 				segments: [],
-				maxFontSize: u || _r,
+				maxFontSize: u || yr,
 				maxFontFamily: d,
 				para: f
 			});
@@ -2275,17 +2275,17 @@ function Gr(e, t, n, r, i) {
 		p();
 	}, h = (t, n) => {
 		if (!t) return;
-		u = n.size, d = n.name, e.font = Pr(Jr(n), r);
+		u = n.size, d = n.name, e.font = Ir(Xr(n), r);
 		let a = e.measureText(t).width;
 		if (o.length > 0 && s + a > i) {
-			let i = o.flatMap((e) => [...e.text]), a = Vr(i, [...t]);
-			a > 0 ? a = Hr(i, a) : !I(t) && !I(o[o.length - 1]?.text ?? "") && !/^\s/u.test(t) && !/\s$/u.test(i.at(-1) ?? "") && (a = Ur(i, [...t]));
+			let i = o.flatMap((e) => [...e.text]), a = Ur(i, [...t]);
+			a > 0 ? a = Wr(i, a) : !I(t) && !I(o[o.length - 1]?.text ?? "") && !/^\s/u.test(t) && !/\s$/u.test(i.at(-1) ?? "") && (a = Gr(i, [...t]));
 			let u = o[o.length - 1], d = [...u.text];
 			a > d.length && (a = d.length);
 			let f = null;
 			if (a > 0) {
 				let t = d.slice(0, d.length - a), n = d.slice(d.length - a);
-				if (e.font = Pr(Jr(u.font), r), t.length === 0) o.pop();
+				if (e.font = Ir(Xr(u.font), r), t.length === 0) o.pop();
 				else {
 					let n = t.join("");
 					u.text = n, u.width = e.measureText(n).width;
@@ -2297,7 +2297,7 @@ function Gr(e, t, n, r, i) {
 					width: e.measureText(i).width
 				};
 			}
-			p(), f && (o.push(f), s += f.width, f.font.size > c && (c = f.font.size, l = f.font.name)), e.font = Pr(Jr(n), r);
+			p(), f && (o.push(f), s += f.width, f.font.size > c && (c = f.font.size, l = f.font.name)), e.font = Ir(Xr(n), r);
 		}
 		o.push({
 			text: t,
@@ -2305,32 +2305,32 @@ function Gr(e, t, n, r, i) {
 			width: a
 		}), s += a, n.size > c && (c = n.size, l = n.name);
 	}, g = (t, n) => {
-		let a = b(t);
+		let a = _(t);
 		if (a.length === 0) {
 			h(t, n);
 			return;
 		}
-		e.font = Pr(Jr(n), r);
-		let o = (t) => e.measureText(t).width, c = me(t), l = t.length, u = 0;
+		e.font = Ir(Xr(n), r);
+		let o = (t) => e.measureText(t).width, c = ge(t), l = t.length, u = 0;
 		for (; u < l;) {
-			let e = i - s, r = P(t, a, u, e, o, c);
+			let e = i - s, r = N(t, a, u, e, o, c);
 			if (r <= u) {
 				if (s > 0) {
 					p();
 					continue;
 				}
-				let n = a.find((e) => e > u) ?? l, i = t.slice(u, n), d = w(i), f = P(i, d, 0, e, o, c);
+				let n = a.find((e) => e > u) ?? l, i = t.slice(u, n), d = w(i), f = N(i, d, 0, e, o, c);
 				f <= 0 && (f = d.length > 0 ? d[0] : i.length), r = u + f;
 			}
 			h(t.slice(u, r), n), u = r, u < l && p();
 		}
 	};
 	for (let e of t) {
-		let t = Rr(n, e), r = [], i = 0;
+		let t = Br(n, e), r = [], i = 0;
 		for (; i < e.text.length;) {
 			let t = e.text[i], n = t.codePointAt(0) ?? 0;
 			if (n === 10) r.push("\n"), i += 1;
-			else if (pe(n)) r.push(t), i += n > 65535 ? 2 : 1;
+			else if (he(n)) r.push(t), i += n > 65535 ? 2 : 1;
 			else if (t === " ") {
 				let t = i;
 				for (; t < e.text.length && e.text[t] === " ";) t++;
@@ -2339,7 +2339,7 @@ function Gr(e, t, n, r, i) {
 				let t = i;
 				for (; t < e.text.length;) {
 					let n = e.text[t], r = n.codePointAt(0) ?? 0;
-					if (n === " " || n === "\n" || pe(r)) break;
+					if (n === " " || n === "\n" || he(r)) break;
 					t += r > 65535 ? 2 : 1;
 				}
 				r.push(e.text.slice(i, t)), i = t;
@@ -2349,7 +2349,7 @@ function Gr(e, t, n, r, i) {
 	}
 	return (o.length > 0 || a.length > 0) && m(), a;
 }
-function Kr(e, t, n) {
+function Jr(e, t, n) {
 	return e === "middle" ? {
 		underline: t + Math.round(n * .55),
 		strike: t
@@ -2361,7 +2361,7 @@ function Kr(e, t, n) {
 		strike: t + Math.round(n * .5)
 	};
 }
-function qr(e) {
+function Yr(e) {
 	let { alignV: t, cy: n, cellH: r, paddingY: i } = e;
 	return t === "top" ? {
 		baseline: "top",
@@ -2374,36 +2374,36 @@ function qr(e) {
 		textY: n + r - i
 	};
 }
-function Jr(e) {
+function Xr(e) {
 	return e.vertAlign === "superscript" || e.vertAlign === "subscript" ? {
 		...e,
 		size: e.size * .65
 	} : e;
 }
-function Yr(e, t, n, r, i, a, o, s) {
+function Zr(e, t, n, r, i, a, o, s) {
 	e.textAlign = "left", e.textBaseline = i;
-	let c = s.needBidi ? Xn(t, s.baseRtl ?? !1) : null, l = e, u = n;
+	let c = s.needBidi ? Qn(t, s.baseRtl ?? !1) : null, l = e, u = n;
 	for (let n = 0; n < t.length; n++) {
 		let d = c ? c.order[n] : n;
 		if (c) try {
 			l.direction = c.rtl[d] ? "rtl" : "ltr";
 		} catch {}
-		let f = t[d], m = Jr(f.font);
-		e.font = Pr(m, a);
-		let h = s.fontColor ?? f.font.color;
-		e.fillStyle = h ? p(h) : "#000000";
-		let g = Nr(f.font.size, a), _ = 0;
-		f.font.vertAlign === "superscript" ? _ = -Math.round(g * .35) : f.font.vertAlign === "subscript" && (_ = Math.round(g * .1)), e.fillText(f.text, u, r + _);
-		let v = Nr(m.size, a);
+		let f = t[d], p = Xr(f.font);
+		e.font = Ir(p, a);
+		let m = s.fontColor ?? f.font.color;
+		e.fillStyle = m ? C(m) : "#000000";
+		let h = Fr(f.font.size, a), g = 0;
+		f.font.vertAlign === "superscript" ? g = -Math.round(h * .35) : f.font.vertAlign === "subscript" && (g = Math.round(h * .1)), e.fillText(f.text, u, r + g);
+		let _ = Fr(p.size, a);
 		if (f.font.underline || f.font.strike) {
-			let t = Kr(i, r, v);
+			let t = Jr(i, r, _);
 			if (f.font.underline) {
-				let n = h ? p(h) : "#000000", r = f.font.underlineStyle === "double" || f.font.underlineStyle === "doubleAccounting";
-				Lr(e, u, u + f.width, t.underline + _, n, r, o);
+				let n = m ? C(m) : "#000000", r = f.font.underlineStyle === "double" || f.font.underlineStyle === "doubleAccounting";
+				zr(e, u, u + f.width, t.underline + g, n, r, o);
 			}
 			if (f.font.strike) {
-				let n = t.strike + _, r = n + H(n, .5, o);
-				e.save(), e.strokeStyle = h ? p(h) : "#000000", e.lineWidth = .5, e.beginPath(), e.moveTo(u, r), e.lineTo(u + f.width, r), e.stroke(), e.restore();
+				let n = t.strike + g, r = n + U(n, .5, o);
+				e.save(), e.strokeStyle = m ? C(m) : "#000000", e.lineWidth = .5, e.beginPath(), e.moveTo(u, r), e.lineTo(u + f.width, r), e.stroke(), e.restore();
 			}
 		}
 		u += f.width;
@@ -2412,31 +2412,31 @@ function Yr(e, t, n, r, i, a, o, s) {
 		l.direction = "ltr";
 	} catch {}
 }
-function Xr(e, t, n, r, i, a, o, s) {
+function Qr(e, t, n, r, i, a, o, s) {
 	let { alignH: c, cx: l, cellW: u, leftPad: d, paddingX: f } = n, p = t.reduce((e, t) => e + t.width, 0), m;
 	m = c === "right" ? l + u - f - p : c === "center" ? l + u / 2 - p / 2 : l + d;
-	let { needBidi: h, baseRtl: g } = Yn(a.readingOrder, t.map((e) => e.text).join(""));
-	Yr(e, t, m, o, s, r, i, {
+	let { needBidi: h, baseRtl: g } = Zn(a.readingOrder, t.map((e) => e.text).join(""));
+	Zr(e, t, m, o, s, r, i, {
 		fontColor: a.fontColor,
 		needBidi: h,
 		baseRtl: g
 	});
 }
-function Zr(e, t, n, r, i, a, o, s, c) {
-	Xr(e, t.map((t) => {
-		let r = Rr(n, t);
-		return e.font = Pr(Jr(r), i), {
+function $r(e, t, n, r, i, a, o, s, c) {
+	Qr(e, t.map((t) => {
+		let r = Br(n, t);
+		return e.font = Ir(Xr(r), i), {
 			text: t.text,
 			font: r,
 			width: e.measureText(t.text).width
 		};
 	}), r, i, a, o, s, c);
 }
-function Qr(e, t, n, r, i, a, o = {}) {
-	let { baseline: s, textY: c } = qr(r);
-	Zr(e, t, n, r, i, a, o, c, s);
+function ei(e, t, n, r, i, a, o = {}) {
+	let { baseline: s, textY: c } = Yr(r);
+	$r(e, t, n, r, i, a, o, c, s);
 }
-function $r(e, t, n, r, i, a, o = {}) {
+function ti(e, t, n, r, i, a, o = {}) {
 	let { alignV: s, cy: c, cellH: l, paddingY: u } = r, d = [[]];
 	for (let e of t) {
 		let t = e.text.split("\n");
@@ -2447,61 +2447,61 @@ function $r(e, t, n, r, i, a, o = {}) {
 	}
 	let f = n.size, p = n.name, m = d.map((e) => {
 		if (e.length === 0) return {
-			pt: f || _r,
+			pt: f || yr,
 			family: p
 		};
 		let t = 0, r = null;
 		for (let i of e) {
-			let e = Rr(n, i);
+			let e = Br(n, i);
 			e.size > t && (t = e.size, r = e.name), f = e.size, p = e.name;
 		}
 		return {
 			pt: t,
 			family: r
 		};
-	}).map((e) => Nr(e.pt, i, 1.2, e.family ?? void 0)), h = m.reduce((e, t) => e + t, 0), g;
+	}).map((e) => Fr(e.pt, i, 1.2, e.family ?? void 0)), h = m.reduce((e, t) => e + t, 0), g;
 	g = s === "top" ? c + u : s === "center" ? c + (l - h) / 2 : c + l - h - u;
 	for (let t = 0; t < d.length; t++) {
 		let s = d[t];
-		s.length > 0 && Zr(e, s, n, r, i, a, o, g, "top"), g += m[t];
+		s.length > 0 && $r(e, s, n, r, i, a, o, g, "top"), g += m[t];
 	}
 }
-function ei(e, t, n, r, i, a, o = {}) {
-	t.some((e) => e.text.includes("\n")) ? $r(e, t, n, r, i, a, o) : Qr(e, t, n, r, i, a, o);
+function ni(e, t, n, r, i, a, o = {}) {
+	t.some((e) => e.text.includes("\n")) ? ti(e, t, n, r, i, a, o) : ei(e, t, n, r, i, a, o);
 }
-function ti(e, t, n, r, i, a) {
-	let { alignV: o, cy: s, cellH: c, leftPad: l, paddingX: u, paddingY: d } = i, f = Br(e, t, i.cellW - l - u);
+function ri(e, t, n, r, i, a) {
+	let { alignV: o, cy: s, cellH: c, leftPad: l, paddingX: u, paddingY: d } = i, f = Hr(e, t, i.cellW - l - u);
 	if (f.length === 1) {
-		let { baseline: t, textY: r } = qr(i);
+		let { baseline: t, textY: r } = Yr(i);
 		e.textBaseline = t, e.fillText(f[0], n, r);
 		return;
 	}
-	let p = Nr(r.size, a, 1.2, r.name ?? void 0), m = f.length * p, h;
+	let p = Fr(r.size, a, 1.2, r.name ?? void 0), m = f.length * p, h;
 	h = o === "top" ? s + d : o === "center" ? s + (c - m) / 2 : s + c - m - d, e.textBaseline = "top";
 	for (let t = 0; t < f.length; t++) e.fillText(f[t], n, h + t * p);
 }
-function ni(e, t, n, r, i, a, o = {}) {
-	let { alignH: s, alignV: c, cx: l, cy: u, cellW: d, cellH: f, leftPad: p, paddingX: m, paddingY: h } = r, g = Gr(e, t, n, i, d - p - m);
+function ii(e, t, n, r, i, a, o = {}) {
+	let { alignH: s, alignV: c, cx: l, cy: u, cellW: d, cellH: f, leftPad: p, paddingX: m, paddingY: h } = r, g = qr(e, t, n, i, d - p - m);
 	if (g.length === 1) {
-		let { baseline: t, textY: n } = qr(r);
-		Xr(e, g[0].segments, r, i, a, o, n, t);
+		let { baseline: t, textY: n } = Yr(r);
+		Qr(e, g[0].segments, r, i, a, o, n, t);
 		return;
 	}
-	let _ = g.reduce((e, t) => e + Nr(t.maxFontSize, i, 1.2, t.maxFontFamily ?? void 0), 0), v;
+	let _ = g.reduce((e, t) => e + Fr(t.maxFontSize, i, 1.2, t.maxFontFamily ?? void 0), 0), v;
 	v = c === "top" ? u + h : c === "center" ? u + (f - _) / 2 : u + f - _ - h;
-	let y = t.map((e) => e.text).join("").split("\n").map((e) => Yn(o.readingOrder, e));
+	let y = t.map((e) => e.text).join("").split("\n").map((e) => Zn(o.readingOrder, e));
 	for (let t of g) {
 		let n = t.segments.reduce((e, t) => e + t.width, 0), r;
 		r = s === "right" ? l + d - m - n : s === "center" ? l + d / 2 - n / 2 : l + p;
 		let { needBidi: c, baseRtl: u } = y[t.para];
-		Yr(e, t.segments, r, v, "top", i, a, {
+		Zr(e, t.segments, r, v, "top", i, a, {
 			fontColor: o.fontColor,
 			needBidi: c,
 			baseRtl: u
-		}), v += Nr(t.maxFontSize, i, 1.2, t.maxFontFamily ?? void 0);
+		}), v += Fr(t.maxFontSize, i, 1.2, t.maxFontFamily ?? void 0);
 	}
 }
-function ri(e) {
+function ai(e) {
 	let t = "";
 	for (; e > 0;) {
 		let n = (e - 1) % 26;
@@ -2509,47 +2509,47 @@ function ri(e) {
 	}
 	return t;
 }
-var ii = [
+var oi = [
 	"#FF0000",
 	"#FFFF00",
 	"#00B050"
-], ai = [
+], si = [
 	"#FF0000",
 	"#FF6600",
 	"#FFFF00",
 	"#00B050"
-], oi = [
+], ci = [
 	"#FF0000",
 	"#FF6600",
 	"#FFFF00",
 	"#92D050",
 	"#00B050"
 ];
-function si(e, t, n, r, i, a) {
+function li(e, t, n, r, i, a) {
 	if (t === "NoIcons") return;
-	let o = t || "3TrafficLights1", s = parseInt(o[0]) || 3, c = s === 5 ? oi : s === 4 ? ai : ii, l = c[Math.max(0, Math.min(n, c.length - 1))];
+	let o = t || "3TrafficLights1", s = parseInt(o[0]) || 3, c = s === 5 ? ci : s === 4 ? si : oi, l = c[Math.max(0, Math.min(n, c.length - 1))];
 	if (e.save(), e.fillStyle = l, o.includes("Arrow")) {
 		let t = a / 2;
 		e.beginPath(), n === s - 1 ? (e.moveTo(r + t, i), e.lineTo(r + a, i + a), e.lineTo(r, i + a)) : n === 0 ? (e.moveTo(r, i), e.lineTo(r + a, i), e.lineTo(r + t, i + a)) : (e.moveTo(r, i + a * .3), e.lineTo(r + a, i + t), e.lineTo(r, i + a * .7)), e.closePath(), e.fill();
 	} else o.includes("Flag") ? (e.beginPath(), e.moveTo(r, i), e.lineTo(r + a, i), e.lineTo(r, i + a), e.closePath(), e.fill()) : (e.beginPath(), e.arc(r + a / 2, i + a / 2, a / 2, 0, Math.PI * 2), e.fill());
 	e.restore();
 }
-function ci(e, t, n, r, i) {
+function ui(e, t, n, r, i) {
 	let a = Math.max(6, Math.round(Math.min(r, i) * .45)), o = t + r - a - 1, s = n + i - a - 1;
 	e.save(), e.fillStyle = "#D0D0D0", e.fillRect(o, s, a, a), e.fillStyle = "#444444";
 	let c = a * .55, l = o + (a - c) / 2, u = s + (a - c * .5) / 2;
 	e.beginPath(), e.moveTo(l, u), e.lineTo(l + c, u), e.lineTo(l + c / 2, u + c * .5), e.closePath(), e.fill(), e.restore();
 }
-function li(e) {
-	let t = /* @__PURE__ */ new Map(), n = hi("worksheet-table-style-index", "expand-styled-table-coordinates");
+function di(e) {
+	let t = /* @__PURE__ */ new Map(), n = _i("worksheet-table-style-index", "expand-styled-table-coordinates");
 	for (let r of e.tables ?? []) {
 		if (!r.styleName) continue;
 		let { top: e, bottom: i, left: a, right: o } = r.range;
-		kn(r.range, n);
+		jn(r.range, n);
 		let s = r.accentColor || "#808080", c = !!r.isCustom, l = Math.max(0, r.headerRowCount ?? 1), u = Math.max(0, r.totalsRowCount ?? 0), d = e + l - 1, f = i - u + 1;
 		for (let p = e; p <= i; p++) {
 			let m = l > 0 && p <= d, h = u > 0 && p >= f, g = !m && !h ? p - d - 1 : -1, _ = r.showRowStripes && g >= 0 ? g % 2 == 1 ? r.band1HorizontalDxf : r.band2HorizontalDxf : void 0;
-			for (let l = a; l <= o; l++) An(t, `${p}:${l}`, {
+			for (let l = a; l <= o; l++) Mn(t, `${p}:${l}`, {
 				accent: s,
 				isCustom: c,
 				isHeader: m,
@@ -2570,7 +2570,7 @@ function li(e) {
 	}
 	return t;
 }
-function ui(e, t, n, r) {
+function fi(e, t, n, r) {
 	let i = t?.border?.horizontal, a = t?.border?.top, o = t?.border?.bottom, s = t?.border?.left, c = t?.border?.right, l = n?.border?.bottom, u = n?.border?.top;
 	if (i || a || o || s || c || l || u) {
 		let t = {
@@ -2591,8 +2591,8 @@ function ui(e, t, n, r) {
 		topEdge: e.isTopEdge
 	};
 }
-function di(e) {
-	let t = /* @__PURE__ */ new Map(), n = hi("worksheet-sparkline-index", "index-sparkline-coordinates");
+function pi(e) {
+	let t = /* @__PURE__ */ new Map(), n = _i("worksheet-sparkline-index", "index-sparkline-coordinates");
 	for (let r of e.sparklineGroups ?? []) {
 		let e = Infinity, i = -Infinity;
 		if (r.minAxisType === "group" || r.maxAxisType === "group") {
@@ -2601,7 +2601,7 @@ function di(e) {
 		}
 		for (let a of r.sparklines) {
 			let o = a.values.filter((e) => typeof e == "number"), s = o.length ? Math.min(...o) : 0, c = o.length ? Math.max(...o) : 1, l = r.minAxisType === "custom" && typeof r.manualMin == "number" ? r.manualMin : r.minAxisType === "group" ? e : s, u = r.maxAxisType === "custom" && typeof r.manualMax == "number" ? r.manualMax : r.maxAxisType === "group" ? i : c;
-			An(t, `${a.row}:${a.col}`, {
+			Mn(t, `${a.row}:${a.col}`, {
 				kind: r.kind,
 				values: a.values,
 				min: l,
@@ -2628,109 +2628,112 @@ function di(e) {
 	}
 	return t;
 }
-function fi(e) {
+function mi(e) {
 	let t = e.replace("#", "");
 	if (t.length < 6) return "#F2F2F2";
 	let n = parseInt(t.slice(0, 2), 16), r = parseInt(t.slice(2, 4), 16), i = parseInt(t.slice(4, 6), 16), a = (e) => Math.round(e * .2 + 255 * .8), o = (e) => e.toString(16).padStart(2, "0").toUpperCase();
 	return `#${o(a(n))}${o(a(r))}${o(a(i))}`;
 }
-function pi(e, t, n, r, i, a, o, s, c, l, u, d, f, m, h, g) {
-	if (h <= 0 || g <= 0) return;
-	let { styles: _, cellMap: v, mergeAnchorMap: y, mergeSkipSet: b, cfContext: x, cs: S, dpr: C } = t, w = i.length, T = a.length, E = new Set(s), D = new Set(o), O = (e, n) => t.rtl ? vr(e, n, t.canvasW) : e, k = [], A = -c;
+function hi(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
+	if (m <= 0 || h <= 0) return;
+	let { styles: g, cellMap: _, mergeAnchorMap: v, mergeSkipSet: y, cfContext: b, cs: x, dpr: S } = t, w = i.length, T = a.length, E = new Set(s), D = new Set(o), O = (e, n) => t.rtl ? br(e, n, t.canvasW) : e, k = [], A = -c;
 	for (let e = 0; e < w; e++) k.push(A), A += i[e];
 	let j = [], M = -l;
 	for (let e = 0; e < T; e++) j.push(M), M += a[e];
-	e.save(), e.beginPath(), e.rect(O(f, h), m, h, g), e.clip();
-	let N = [], ee = [], P = [];
+	e.save(), e.beginPath(), e.rect(O(f, m), p, m, h), e.clip();
+	let ee = [], te = [], N = [];
 	for (let i of t.worksheet.mergeCells ?? []) {
 		let a = i.top, f = i.left;
 		if (E.has(a) && D.has(f) || !s.some((e) => e >= i.top && e <= i.bottom) || !o.some((e) => e >= i.left && e <= i.right)) continue;
-		let m = t.mergeAnchorMap.get(`${a}:${f}`);
-		if (!m) continue;
-		let h = u - c + t.colAxis.offsetOf(f) - t.colAxis.offsetOf(r), g = d - l + t.rowAxis.offsetOf(a) - t.rowAxis.offsetOf(n), v = m.totalW, y = m.totalH;
-		h = O(h, v);
-		let b = `${a}:${f}`, w = t.cellMap.get(b), { font: T, fill: k, border: A, xf: j } = zr(_, w?.styleIndex ?? 0), M = Kn(w, a, f, x, _.dxfs ?? []);
-		if (Or(e, M.fill ?? k, h, g, v, y), M.dataBar && M.dataBar.ratio > 0) {
-			let t = Math.max(0, (v - 4) * M.dataBar.ratio);
-			Cr(e, M.dataBar.color, h + 2, g + 2, t, y - 4, M.dataBar.gradient);
+		let p = t.mergeAnchorMap.get(`${a}:${f}`);
+		if (!p) continue;
+		let m = u - c + t.colAxis.offsetOf(f) - t.colAxis.offsetOf(r), h = d - l + t.rowAxis.offsetOf(a) - t.rowAxis.offsetOf(n), _ = p.totalW, v = p.totalH;
+		m = O(m, _);
+		let y = `${a}:${f}`, w = t.cellMap.get(y), { font: T, fill: k, border: A, xf: j } = Vr(g, w?.styleIndex ?? 0), M = Jn(w, a, f, b, g.dxfs ?? []);
+		if (Ar(e, M.fill ?? k, m, h, _, v), M.dataBar && M.dataBar.ratio > 0) {
+			let t = Math.max(0, (_ - 4) * M.dataBar.ratio);
+			Tr(e, M.dataBar.color, m + 2, h + 2, t, v - 4, M.dataBar.gradient);
 		}
-		let N = Ii(Fi(A, a, f, m.right, m.bottom, t.cellMap, _), M.border);
-		if (ee.push(() => Li(e, N, h, g, v, y, C)), !w) continue;
-		let P = Jt(w, _, M.numFmt, t.worksheet.date1904), F = P.text;
-		if (!F || F === "0" && t.worksheet.showZeros === !1) continue;
-		let I = T.bold || !!M.fontBold, te = T.italic || !!M.fontItalic, L = T.underline || !!M.fontUnderline, R = T.strike || !!M.fontStrike, z = I !== T.bold || te !== T.italic || L !== T.underline || R !== T.strike ? {
+		let ee = Gi(Wi(A, a, f, p.right, p.bottom, t.cellMap, g), M.border);
+		if (te.push(() => qi(e, ee, m, h, _, v, S)), !w) continue;
+		let N = Xt(w, g, M.numFmt, t.worksheet.date1904), P = N.text;
+		if (!P || P === "0" && t.worksheet.showZeros === !1) continue;
+		let F = T.bold || !!M.fontBold, I = T.italic || !!M.fontItalic, L = T.underline || !!M.fontUnderline, R = T.strike || !!M.fontStrike, z = F !== T.bold || I !== T.italic || L !== T.underline || R !== T.strike ? {
 			...T,
-			bold: I,
-			italic: te,
+			bold: F,
+			italic: I,
 			underline: L,
 			strike: R
 		} : T;
-		e.font = Pr(z, S);
-		let ne = t.hyperlinkMap.get(b) ? "#0563C1" : M.fontColor ?? P.color ?? T.color;
-		e.fillStyle = ne ? p(ne) : "#000000";
-		let B = w.value.type === "number", re = j.alignH ?? (B ? "right" : "left"), V = j.alignV ?? "bottom", ie = j.indent ? Math.round(j.indent * 3 * t.mdw) : 0, H = 3 + (re === "left" || !j.alignH ? ie : 0);
-		e.save(), e.beginPath(), e.rect(h, g, v, y), e.clip();
+		e.font = Ir(z, x);
+		let ne = t.hyperlinkMap.get(y) ? "#0563C1" : M.fontColor ?? N.color ?? T.color;
+		e.fillStyle = ne ? C(ne) : "#000000";
+		let B = w.value.type === "number", V = j.alignH ?? (B ? "right" : "left"), re = j.alignV ?? "bottom", H = j.indent ? Math.round(j.indent * 3 * t.mdw) : 0, ie = 3 + (V === "left" || !j.alignH ? H : 0);
+		e.save(), e.beginPath(), e.rect(m, h, _, v), e.clip();
 		let U;
-		re === "right" ? (U = h + v - 3, e.textAlign = "right") : re === "center" ? (U = h + v / 2, e.textAlign = "center") : (U = h + H, e.textAlign = "left");
-		let ae = w.value.type === "text" ? w.value.runs : void 0, oe = ae && ae.length > 0;
-		if (j.wrapText && oe) ni(e, ae, z, {
-			alignH: re,
-			alignV: V,
-			cx: h,
-			cy: g,
-			cellW: v,
-			cellH: y,
-			leftPad: H,
+		V === "right" ? (U = m + _ - 3, e.textAlign = "right") : V === "center" ? (U = m + _ / 2, e.textAlign = "center") : (U = m + ie, e.textAlign = "left");
+		let W = w.value.type === "text" ? w.value.runs : void 0, ae = W && W.length > 0;
+		if (j.wrapText && ae) ii(e, W, z, {
+			alignH: V,
+			alignV: re,
+			cx: m,
+			cy: h,
+			cellW: _,
+			cellH: v,
+			leftPad: ie,
 			paddingX: 3,
 			paddingY: 2
-		}, S, C, {
+		}, x, S, {
 			fontColor: M.fontColor,
 			readingOrder: j.readingOrder
 		});
-		else if (j.wrapText) ti(e, F, U, z, {
-			alignH: re,
-			alignV: V,
-			cx: h,
-			cy: g,
-			cellW: v,
-			cellH: y,
-			leftPad: H,
+		else if (j.wrapText) ri(e, P, U, z, {
+			alignH: V,
+			alignV: re,
+			cx: m,
+			cy: h,
+			cellW: _,
+			cellH: v,
+			leftPad: ie,
 			paddingX: 3,
 			paddingY: 2
-		}, S);
-		else if (oe) ei(e, ae, z, {
-			alignH: re,
-			alignV: V,
-			cx: h,
-			cy: g,
-			cellW: v,
-			cellH: y,
-			leftPad: H,
+		}, x);
+		else if (ae) ni(e, W, z, {
+			alignH: V,
+			alignV: re,
+			cx: m,
+			cy: h,
+			cellW: _,
+			cellH: v,
+			leftPad: ie,
 			paddingX: 3,
 			paddingY: 2
-		}, S, C, {
+		}, x, S, {
 			fontColor: M.fontColor,
 			readingOrder: j.readingOrder
 		});
 		else {
-			let { baseline: t, textY: n } = qr({
-				alignH: re,
-				alignV: V,
-				cx: h,
-				cy: g,
-				cellW: v,
-				cellH: y,
-				leftPad: H,
+			let { baseline: t, textY: n } = Yr({
+				alignH: V,
+				alignV: re,
+				cx: m,
+				cy: h,
+				cellW: _,
+				cellH: v,
+				leftPad: ie,
 				paddingX: 3,
 				paddingY: 2
 			});
-			e.textBaseline = t, e.fillText(F, U, n);
+			e.textBaseline = t, e.fillText(P, U, n);
 		}
 		e.restore();
 	}
 	for (let n = 0; n < T; n++) {
 		let r = s[n], c = d + j[n], l = a[n];
-		if (c + l <= m || c >= m + g) continue;
+		if ((c + l <= p || c >= p + h) && !o.some((e) => {
+			let t = v.get(`${r}:${e}`);
+			return t != null && c + t.totalH > p && c < p + h;
+		})) continue;
 		let T = /* @__PURE__ */ new Set(), E = /* @__PURE__ */ new Set(), D = -1, A = (e) => {
 			if (D >= 0 && e - D >= 2) {
 				for (let t = D; t < e - 1; t++) T.add(t);
@@ -2742,356 +2745,410 @@ function pi(e, t, n, r, i, a, o, s, c, l, u, d, f, m, h, g) {
 			let t = !1, n = !1;
 			if (e < w) {
 				let i = `${r}:${o[e]}`;
-				if (!b.has(i) && !y.has(i)) {
-					let e = v.get(i);
-					t = zr(_, e?.styleIndex ?? 0).xf.alignH === "centerContinuous", n = !!(e && e.value && e.value.type !== "empty");
+				if (!y.has(i) && !v.has(i)) {
+					let e = _.get(i);
+					t = Vr(g, e?.styleIndex ?? 0).xf.alignH === "centerContinuous", n = !!(e && e.value && e.value.type !== "empty");
 				}
 			}
 			t ? n && D >= 0 && e > D ? (A(e), D = e) : D < 0 && (D = e) : A(e);
 		}
 		for (let a = 0; a < w; a++) {
-			let s = o[a], d = u + k[a], m = i[a];
-			if (d + m <= f || d >= f + h) continue;
-			let g = `${r}:${s}`;
-			if (b.has(g)) continue;
-			let D = y.get(g), A = D ? D.totalW : m, j = D ? D.totalH : l, M = O(d, A), F = v.get(g), { font: I, fill: te, border: L, xf: R } = zr(_, F?.styleIndex ?? 0), z = Kn(F, r, s, x, _.dxfs ?? []), ne = z.fill ?? te, B = t.tableStyleMap.get(g), re = _.dxfs ?? [], V = (e) => e == null ? void 0 : re[e], ie = V(B?.wholeTableDxf), U = V(B?.headerRowDxf), ae = V(B?.totalRowDxf), oe = V(B?.firstColumnDxf), W = V(B?.lastColumnDxf), G = V(B?.stripeDxf), ce = B?.isHeader && U?.fill?.fgColor ? U : B?.isTotals && ae?.fill?.fgColor ? ae : B?.isLastCol && W?.fill?.fgColor ? W : B?.isFirstCol && oe?.fill?.fgColor ? oe : G?.fill?.fgColor ? G : !B?.isHeader && !B?.isTotals && ie?.fill?.fgColor ? ie : void 0;
-			if (Or(e, ne, M, c, A, j) || (B && ce?.fill?.fgColor ? (e.fillStyle = p(ce.fill.fgColor), e.fillRect(M, c, A, j)) : B && !B.isCustom && B.isBanded && (e.fillStyle = fi(B.accent), e.fillRect(M, c, A, j))), t.commentCells.has(g) && jr(e, M, c, A, j), z.dataBar && z.dataBar.ratio > 0) {
-				let t = Math.max(0, (A - 4) * z.dataBar.ratio);
-				Cr(e, z.dataBar.color, M + 2, c + 2, t, j - 4, z.dataBar.gradient);
+			let s = o[a], d = u + k[a], D = i[a], A = `${r}:${s}`;
+			if (y.has(A)) continue;
+			let j = v.get(A), M = j ? j.totalW : D, P = j ? j.totalH : l, F = d + M <= f || d >= f + m;
+			if (c + P <= p || c >= p + h || F && !t.overflowTextAnchors.has(A)) continue;
+			let I = O(d, M), L = _.get(A), { font: R, fill: z, border: ne, xf: B } = Vr(g, L?.styleIndex ?? 0), V = Jn(L, r, s, b, g.dxfs ?? []), re = V.fill ?? z, H = t.tableStyleMap.get(A), ie = g.dxfs ?? [], W = (e) => e == null ? void 0 : ie[e], ae = W(H?.wholeTableDxf), G = W(H?.headerRowDxf), se = W(H?.totalRowDxf), ce = W(H?.firstColumnDxf), le = W(H?.lastColumnDxf), ue = W(H?.stripeDxf), de = H?.isHeader && G?.fill?.fgColor ? G : H?.isTotals && se?.fill?.fgColor ? se : H?.isLastCol && le?.fill?.fgColor ? le : H?.isFirstCol && ce?.fill?.fgColor ? ce : ue?.fill?.fgColor ? ue : !H?.isHeader && !H?.isTotals && ae?.fill?.fgColor ? ae : void 0;
+			if (Ar(e, re, I, c, M, P) || (H && de?.fill?.fgColor ? (e.fillStyle = C(de.fill.fgColor), e.fillRect(I, c, M, P)) : H && !H.isCustom && H.isBanded && (e.fillStyle = mi(H.accent), e.fillRect(I, c, M, P))), t.commentCells.has(A) && Nr(e, I, c, M, P), V.dataBar && V.dataBar.ratio > 0) {
+				let t = Math.max(0, (M - 4) * V.dataBar.ratio);
+				Tr(e, V.dataBar.color, I + 2, c + 2, t, P - 4, V.dataBar.gradient);
 			}
-			let K = t.sparklineMap.get(g);
-			if (K && $e(e, {
-				x: M,
+			let pe = t.sparklineMap.get(A);
+			if (pe && tt(e, {
+				x: I,
 				y: c,
-				w: A,
-				h: j
-			}, K), t.worksheet.showGridlines !== !1) {
+				w: M,
+				h: P
+			}, pe), t.worksheet.showGridlines !== !1) {
 				if (e.strokeStyle = "#d0d0d0", e.lineWidth = .5, e.beginPath(), !T.has(a)) {
-					let t = M + A + H(M + A, .5, C);
-					e.moveTo(t, c), e.lineTo(t, c + j);
+					let t = I + M + U(I + M, .5, S);
+					e.moveTo(t, c), e.lineTo(t, c + P);
 				}
-				let t = c + j + H(c + j, .5, C);
-				if (e.moveTo(M, t), e.lineTo(M + A, t), n === 0) {
-					let t = c + H(c, .5, C);
-					e.moveTo(M, t), e.lineTo(M + A, t);
+				let t = c + P + U(c + P, .5, S);
+				if (e.moveTo(I, t), e.lineTo(I + M, t), n === 0) {
+					let t = c + U(c, .5, S);
+					e.moveTo(I, t), e.lineTo(I + M, t);
 				}
 				if (a === 0) {
-					let t = M + H(M, .5, C);
-					e.moveTo(t, c), e.lineTo(t, c + j);
+					let t = I + U(I, .5, S);
+					e.moveTo(t, c), e.lineTo(t, c + P);
 				}
 				e.stroke();
 			}
-			let q = Ii(D ? Fi(L, r, s, D.right, D.bottom, v, _) : L, z.border);
-			(T.has(a) || E.has(a)) && (q = {
-				...q,
-				left: E.has(a) ? null : q.left,
-				right: T.has(a) ? null : q.right
+			let K = Gi(j ? Wi(ne, r, s, j.right, j.bottom, _, g) : ne, V.border);
+			(T.has(a) || E.has(a)) && (K = {
+				...K,
+				left: E.has(a) ? null : K.left,
+				right: T.has(a) ? null : K.right
 			});
-			let ue = v.get(`${r - 1}:${s}`), de = ue ? zr(_, ue.styleIndex ?? 0).border.bottom : null;
-			if (de?.style && (n === 0 || q.top?.style) && (q = {
-				...q,
-				top: Vi(q.top, de)
+			let q = _.get(`${r - 1}:${s}`), me = q ? Vr(g, q.styleIndex ?? 0).border.bottom : null;
+			if (me?.style && (n === 0 || K.top?.style) && (K = {
+				...K,
+				top: Zi(K.top, me)
 			}), !E.has(a)) {
-				let e = v.get(`${r}:${s - 1}`), t = e ? zr(_, e.styleIndex ?? 0).border.right : null;
-				t?.style && (a === 0 || q.left?.style) && (q = {
-					...q,
-					left: Vi(q.left, t)
+				let e = _.get(`${r}:${s - 1}`), t = e ? Vr(g, e.styleIndex ?? 0).border.right : null;
+				t?.style && (a === 0 || K.left?.style) && (K = {
+					...K,
+					left: Zi(K.left, t)
 				});
 			}
-			let J = B ? ui(B, ie, U, s) : null, fe = t.autoFilterCells.has(g), pe = () => {
+			let J = H ? fi(H, ae, G, s) : null, he = t.autoFilterCells.has(A), ge = () => {
 				if (J) {
-					if (J.kind === "dxf") Li(e, J.border, M, c, A, j, C);
+					if (J.kind === "dxf") qi(e, J.border, I, c, M, P, S);
 					else if (J.kind === "accent") {
-						let t = .5 / C;
-						if (e.strokeStyle = J.color, e.lineWidth = J.lineWidth, e.beginPath(), e.moveTo(M, c + j - t), e.lineTo(M + A, c + j - t), J.topEdge) {
-							let t = c + H(c, J.lineWidth, C);
-							e.moveTo(M, t), e.lineTo(M + A, t);
+						let t = .5 / S;
+						if (e.strokeStyle = J.color, e.lineWidth = J.lineWidth, e.beginPath(), e.moveTo(I, c + P - t), e.lineTo(I + M, c + P - t), J.topEdge) {
+							let t = c + U(c, J.lineWidth, S);
+							e.moveTo(I, t), e.lineTo(I + M, t);
 						}
 						e.stroke();
 					}
 				}
-				fe && ci(e, M, c, m, j);
+				he && ui(e, I, c, D, P);
 			};
-			if (D) {
-				let t = q;
-				ee.push(() => Li(e, t, M, c, A, j, C)), pe();
+			if (j) {
+				let t = K;
+				te.push(() => qi(e, t, I, c, M, P, S)), ge();
 			} else {
-				let t = q;
-				P.push(() => {
-					Li(e, t, M, c, A, j, C), pe();
+				let t = K;
+				N.push(() => {
+					qi(e, t, I, c, M, P, S), ge();
 				});
 			}
-			if (!F) continue;
-			let me = Jt(F, _, z.numFmt, t.worksheet.date1904), Y = me.text;
-			!Y || Y === "0" && t.worksheet.showZeros === !1 || N.push(() => {
-				let n = B?.isHeader ? U : B?.isTotals ? ae : B?.isLastCol && W ? W : B?.isFirstCol && oe ? oe : G || (B ? ie : void 0), l = B ? B.isCustom ? !!n?.font?.bold : B.isHeader || B.isTotals : !1, u = I.bold || !!z.fontBold || l, d = I.italic || !!z.fontItalic, f = I.underline || !!z.fontUnderline, m = I.strike || !!z.fontStrike, h = u !== I.bold || d !== I.italic || f !== I.underline || m !== I.strike ? {
-					...I,
+			if (!L) continue;
+			let _e = Xt(L, g, V.numFmt, t.worksheet.date1904), Y = _e.text;
+			!Y || Y === "0" && t.worksheet.showZeros === !1 || ee.push(() => {
+				let n = H?.isHeader ? G : H?.isTotals ? se : H?.isLastCol && le ? le : H?.isFirstCol && ce ? ce : ue || (H ? ae : void 0), l = H ? H.isCustom ? !!n?.font?.bold : H.isHeader || H.isTotals : !1, u = R.bold || !!V.fontBold || l, d = R.italic || !!V.fontItalic, f = R.underline || !!V.fontUnderline, p = R.strike || !!V.fontStrike, m = u !== R.bold || d !== R.italic || f !== R.underline || p !== R.strike ? {
+					...R,
 					bold: u,
 					italic: d,
 					underline: f,
-					strike: m
-				} : I;
-				e.font = Pr(h, S);
-				let x = t.hyperlinkMap.get(g), T = n?.font?.color ?? null, E = x ? "#0563C1" : z.fontColor ?? me.color ?? T ?? I.color;
-				e.fillStyle = E ? p(E) : "#000000";
-				let O = F.value.type === "number", k = R.alignH ?? (O ? "right" : "left"), N = R.alignV ?? "bottom", ee = R.indent ? Math.round(R.indent * 3 * t.mdw) : 0, P = z.iconSet ? Math.max(8, Math.round(Math.min(A, j) * .55)) : 0, te = P > 0 ? P + 4 : 0, L = 3 + (k === "left" || !R.alignH ? ee : 0) + te, ne = A, re = a;
-				if (k === "centerContinuous" && !D) for (let e = a + 1; e < w; e++) {
+					strike: p
+				} : R;
+				e.font = Ir(m, x);
+				let h = t.hyperlinkMap.get(A), b = n?.font?.color ?? null, T = h ? "#0563C1" : V.fontColor ?? _e.color ?? b ?? R.color;
+				e.fillStyle = T ? C(T) : "#000000";
+				let E = L.value.type === "number", D = B.alignH ?? (E ? "right" : "left"), O = B.alignV ?? "bottom", k = B.indent ? Math.round(B.indent * 3 * t.mdw) : 0, ee = V.iconSet ? Math.max(8, Math.round(Math.min(M, P) * .55)) : 0, te = ee > 0 ? ee + 4 : 0, N = 3 + (D === "left" || !B.alignH ? k : 0) + te, F = M, z = a;
+				if (D === "centerContinuous" && !j) for (let e = a + 1; e < w; e++) {
 					let t = `${r}:${o[e]}`;
-					if (b.has(t) || y.has(t)) break;
-					let n = v.get(t);
-					if (n && n.value.type !== "empty" || zr(_, n?.styleIndex ?? 0).xf.alignH !== "centerContinuous") break;
-					ne += i[e], re = e;
+					if (y.has(t) || v.has(t)) break;
+					let n = _.get(t);
+					if (n && n.value.type !== "empty" || Vr(g, n?.styleIndex ?? 0).xf.alignH !== "centerContinuous") break;
+					F += i[e], z = e;
 				}
-				let V = t.rtl ? M - (ne - A) : M, ce = k === "centerContinuous" ? V : M, K = k === "centerContinuous" ? ne : A, q = Y.includes("\n");
-				if (!D && !R.wrapText && !R.textRotation && !O && !q) {
-					let n = e.measureText(Y).width, s = k === "centerContinuous", c = s ? n + 6 : n + L + 3, l = s ? ne : A;
+				let ne = t.rtl ? I - (F - M) : I, re = D === "centerContinuous" ? ne : I, ie = D === "centerContinuous" ? F : M, W = Y.includes("\n");
+				if (!j && !B.wrapText && !B.textRotation && !E && !W) {
+					let n = e.measureText(Y).width, s = D === "centerContinuous", c = s ? n + 6 : n + N + 3, l = s ? F : M;
 					if (c > l) {
 						let e = c - l, n = 0, u = 0;
-						k === "right" ? u = e : k === "center" || s ? (u = e / 2, n = e / 2) : n = e;
-						let d = t.rtl ? -1 : 1, f = t.rtl ? a - 1 : re + 1, p = t.rtl ? 1 : -1, m = t.rtl ? re + 1 : a - 1;
+						D === "right" ? u = e : D === "center" || s ? (u = e / 2, n = e / 2) : n = e;
+						let d = t.rtl ? -1 : 1, f = t.rtl ? a - 1 : z + 1, p = t.rtl ? 1 : -1, m = t.rtl ? z + 1 : a - 1;
 						if (n > 0) {
 							let e = n;
 							for (let t = f; t >= 0 && t < w && e > 0; t += d) {
 								let n = `${r}:${o[t]}`;
-								if (b.has(n) || y.has(n)) break;
-								let a = v.get(n);
+								if (y.has(n) || v.has(n)) break;
+								let a = _.get(n);
 								if (a && a.value.type !== "empty") break;
-								K += i[t], e -= i[t];
+								ie += i[t], e -= i[t];
 							}
 						}
 						if (u > 0) {
 							let e = u;
 							for (let t = m; t >= 0 && t < w && e > 0; t += p) {
 								let n = `${r}:${o[t]}`;
-								if (b.has(n) || y.has(n)) break;
-								let a = v.get(n);
+								if (y.has(n) || v.has(n)) break;
+								let a = _.get(n);
 								if (a && a.value.type !== "empty") break;
-								ce -= i[t], K += i[t], e -= i[t];
+								re -= i[t], ie += i[t], e -= i[t];
 							}
 						}
 					}
 				}
-				let ue = Y, de = 0;
-				if (k === "fill" && !O && Y.length > 0) {
-					let t = Math.max(1, A - 6), n = e.measureText(Y).width;
+				let de = Y, pe = 0;
+				if (D === "fill" && !E && Y.length > 0) {
+					let t = Math.max(1, M - 6), n = e.measureText(Y).width;
 					if (n > 0 && n < t) {
 						let e = Math.max(1, Math.floor(t / n));
-						ue = Y.repeat(e);
+						de = Y.repeat(e);
 					}
 				}
-				if (k === "distributed" || k === "justify" && !R.wrapText && !q) {
-					let t = Math.max(1, A - 6), n = e.measureText(ue).width, r = Math.max(1, [...ue].length - 1);
-					n < t && (de = Math.max(0, (t - n) / r));
+				if (D === "distributed" || D === "justify" && !B.wrapText && !W) {
+					let t = Math.max(1, M - 6), n = e.measureText(de).width, r = Math.max(1, [...de].length - 1);
+					n < t && (pe = Math.max(0, (t - n) / r));
 				}
-				let J, fe;
-				k === "right" ? (J = M + A - 3, fe = "right") : k === "center" ? (J = M + A / 2, fe = "center") : k === "centerContinuous" ? (J = V + ne / 2, fe = "center") : k === "distributed" || k === "justify" && !R.wrapText && !q ? (J = M + 3, fe = "left") : (J = M + L, fe = "left");
-				let pe = R.textRotation ?? 0, he = pe === 255, ge = pe > 0 && pe !== 255;
-				if (z.iconSet && P > 0 && (e.save(), e.beginPath(), e.rect(M, c, A, j), e.clip(), si(e, z.iconSet.name, z.iconSet.index, M + 2, c + (j - P) / 2, P), e.restore()), e.save(), e.beginPath(), e.rect(ce, c, K, j), e.clip(), he) {
-					let t = Nr(I.size, S, 1.1), n = [...Y].length * t, r = N === "top" ? c + 2 : N === "center" ? c + (j - n) / 2 : c + j - n - 2;
+				let K, q;
+				D === "right" ? (K = I + M - 3, q = "right") : D === "center" ? (K = I + M / 2, q = "center") : D === "centerContinuous" ? (K = ne + F / 2, q = "center") : D === "distributed" || D === "justify" && !B.wrapText && !W ? (K = I + 3, q = "left") : (K = I + N, q = "left");
+				let me = B.textRotation ?? 0, J = me === 255, he = me > 0 && me !== 255;
+				if (V.iconSet && ee > 0 && (e.save(), e.beginPath(), e.rect(I, c, M, P), e.clip(), li(e, V.iconSet.name, V.iconSet.index, I + 2, c + (P - ee) / 2, ee), e.restore()), e.save(), e.beginPath(), e.rect(re, c, ie, P), e.clip(), J) {
+					let t = Fr(R.size, x, 1.1), n = [...Y].length * t, r = O === "top" ? c + 2 : O === "center" ? c + (P - n) / 2 : c + P - n - 2;
 					e.textAlign = "center", e.textBaseline = "top";
 					for (let n of Y) {
-						let i = n.codePointAt(0) ?? 0, a = se(i) && le(e, i);
-						sr(e, n, M + A / 2, r, t, a), r += t;
+						let i = n.codePointAt(0) ?? 0, a = oe(i) && fe(e, i);
+						lr(e, n, I + M / 2, r, t, a), r += t;
 					}
 					e.restore();
 					return;
 				}
-				if (ge) {
-					let t = pe <= 90 ? -(pe * Math.PI / 180) : (pe - 90) * Math.PI / 180;
-					e.translate(M + A / 2, c + j / 2), e.rotate(t), e.textAlign = "center", e.textBaseline = "middle", e.fillText(Y, 0, 0), e.restore();
+				if (he) {
+					let t = me <= 90 ? -(me * Math.PI / 180) : (me - 90) * Math.PI / 180;
+					e.translate(I + M / 2, c + P / 2), e.rotate(t), e.textAlign = "center", e.textBaseline = "middle", e.fillText(Y, 0, 0), e.restore();
 					return;
 				}
-				if (R.shrinkToFit) {
-					let t = e.measureText(Y).width, n = A - L - 3;
+				if (B.shrinkToFit) {
+					let t = e.measureText(Y).width, n = M - N - 3;
 					if (t > n && t > 0) {
-						let r = n / t, i = k === "right" ? M + A - 3 : k === "center" ? M + A / 2 : M + L;
+						let r = n / t, i = D === "right" ? I + M - 3 : D === "center" ? I + M / 2 : I + N;
 						e.transform(r, 0, 0, 1, i * (1 - r), 0);
 					}
 				}
-				if (e.textAlign = fe, de > 0) try {
-					e.letterSpacing = `${de}px`;
+				if (e.textAlign = q, pe > 0) try {
+					e.letterSpacing = `${pe}px`;
 				} catch {}
 				try {
-					e.direction = qn(R.readingOrder, Y) ? "rtl" : "ltr";
+					e.direction = Yn(B.readingOrder, Y) ? "rtl" : "ltr";
 				} catch {}
-				let _e = F.value.type === "text" ? F.value.runs : void 0, ve = _e && _e.length > 0;
-				if (R.wrapText && ve) ni(e, _e, h, {
-					alignH: k,
-					alignV: N,
-					cx: M,
+				let ge = L.value.type === "text" ? L.value.runs : void 0, ve = ge && ge.length > 0;
+				if (B.wrapText && ve) ii(e, ge, m, {
+					alignH: D,
+					alignV: O,
+					cx: I,
 					cy: c,
-					cellW: A,
-					cellH: j,
-					leftPad: L,
+					cellW: M,
+					cellH: P,
+					leftPad: N,
 					paddingX: 3,
 					paddingY: 2
-				}, S, C, {
-					fontColor: z.fontColor,
-					readingOrder: R.readingOrder
+				}, x, S, {
+					fontColor: V.fontColor,
+					readingOrder: B.readingOrder
 				});
-				else if (R.wrapText) ti(e, Y, J, h, {
-					alignH: k,
-					alignV: N,
-					cx: M,
+				else if (B.wrapText) ri(e, Y, K, m, {
+					alignH: D,
+					alignV: O,
+					cx: I,
 					cy: c,
-					cellW: A,
-					cellH: j,
-					leftPad: L,
+					cellW: M,
+					cellH: P,
+					leftPad: N,
 					paddingX: 3,
 					paddingY: 2
-				}, S);
-				else if (ve) ei(e, _e, h, {
-					alignH: k,
-					alignV: N,
-					cx: M,
+				}, x);
+				else if (ve) ni(e, ge, m, {
+					alignH: D,
+					alignV: O,
+					cx: I,
 					cy: c,
-					cellW: A,
-					cellH: j,
-					leftPad: L,
+					cellW: M,
+					cellH: P,
+					leftPad: N,
 					paddingX: 3,
 					paddingY: 2
-				}, S, C, {
-					fontColor: z.fontColor,
-					readingOrder: R.readingOrder
+				}, x, S, {
+					fontColor: V.fontColor,
+					readingOrder: B.readingOrder
 				});
 				else {
-					let t = h.vertAlign, n = Nr(I.size, S), r = 0;
+					let t = m.vertAlign, n = Fr(R.size, x), r = 0;
 					t === "superscript" ? r = -Math.round(n * .35) : t === "subscript" && (r = Math.round(n * .1));
 					let i = t ? {
-						...h,
-						size: h.size * .65
-					} : h;
-					t && (e.font = Pr(i, S));
+						...m,
+						size: m.size * .65
+					} : m;
+					t && (e.font = Ir(i, x));
 					let a = null, o = () => a ??= e.measureText(Y), s = () => {
-						let e = Math.min(o().width, K - L - 3);
+						let e = Math.min(o().width, ie - N - 3);
 						return {
-							x: k === "right" ? M + A - 3 - e : k === "center" ? M + A / 2 - e / 2 : M + L,
+							x: D === "right" ? I + M - 3 - e : D === "center" ? I + M / 2 - e / 2 : I + N,
 							width: e
 						};
-					}, l = Nr(i.size, S);
-					if (h.underline || x) {
-						let { x: t, width: n } = s(), i = (N === "top" ? c + 2 + l + 1 : N === "center" ? c + j / 2 + Math.round(l * .55) : c + j - 2 + 1) + r, a = x ? "#0563C1" : E ? p(E) : "#000000", o = h.underlineStyle === "double" || h.underlineStyle === "doubleAccounting";
-						Lr(e, t, t + n, i, a, o, C);
+					}, l = Fr(i.size, x);
+					if (m.underline || h) {
+						let { x: t, width: n } = s(), i = (O === "top" ? c + 2 + l + 1 : O === "center" ? c + P / 2 + Math.round(l * .55) : c + P - 2 + 1) + r, a = h ? "#0563C1" : T ? C(T) : "#000000", o = m.underlineStyle === "double" || m.underlineStyle === "doubleAccounting";
+						zr(e, t, t + n, i, a, o, S);
 					}
-					if (h.strike) {
-						let { x: t, width: n } = s(), i = (N === "top" ? c + 2 + Math.round(l * .5) : N === "center" ? c + j / 2 : c + j - 2 - Math.round(l * .35)) + r, a = i + H(i, .5, C);
-						e.save(), e.strokeStyle = E ? p(E) : "#000000", e.lineWidth = .5, e.beginPath(), e.moveTo(t, a), e.lineTo(t + n, a), e.stroke(), e.restore();
+					if (m.strike) {
+						let { x: t, width: n } = s(), i = (O === "top" ? c + 2 + Math.round(l * .5) : O === "center" ? c + P / 2 : c + P - 2 - Math.round(l * .35)) + r, a = i + U(i, .5, S);
+						e.save(), e.strokeStyle = T ? C(T) : "#000000", e.lineWidth = .5, e.beginPath(), e.moveTo(t, a), e.lineTo(t + n, a), e.stroke(), e.restore();
 					}
 					if (Y.includes("\n")) {
-						let t = Y.split("\n"), n = Nr(I.size, S, 1.2, I.name ?? void 0), i = t.length * n, a;
-						N === "top" ? (a = c + 2, e.textBaseline = "top") : N === "center" ? (a = c + (j - i) / 2, e.textBaseline = "top") : (a = c + j - i - 2, e.textBaseline = "top");
-						for (let i = 0; i < t.length; i++) e.fillText(t[i], J, a + i * n + r);
+						let t = Y.split("\n"), n = Fr(R.size, x, 1.2, R.name ?? void 0), i = t.length * n, a;
+						O === "top" ? (a = c + 2, e.textBaseline = "top") : O === "center" ? (a = c + (P - i) / 2, e.textBaseline = "top") : (a = c + P - i - 2, e.textBaseline = "top");
+						for (let i = 0; i < t.length; i++) e.fillText(t[i], K, a + i * n + r);
 					} else {
-						let { baseline: t, textY: n } = qr({
-							alignH: k,
-							alignV: N,
-							cx: M,
+						let { baseline: t, textY: n } = Yr({
+							alignH: D,
+							alignV: O,
+							cx: I,
 							cy: c,
-							cellW: A,
-							cellH: j,
-							leftPad: L,
+							cellW: M,
+							cellH: P,
+							leftPad: N,
 							paddingX: 3,
 							paddingY: 2
 						});
-						e.textBaseline = t, e.fillText(ue, J, n + r);
+						e.textBaseline = t, e.fillText(de, K, n + r);
 					}
 				}
-				let ye = F.value.type === "text" ? F.value.phoneticRuns : void 0;
-				if (F.showPhonetic && ye && ye.length > 0 && !Y.includes("\n")) {
-					let t = Pr(h, S), n = Ir(e, Y, t), r;
-					r = k === "right" ? M + A - 3 - n : k === "center" ? M + A / 2 - n / 2 : M + L;
-					let i = E ? p(E) : "#000000";
-					Fr(e, ye, F.value.type === "text" ? F.value.phoneticPr : void 0, Y, t, _, r, c, S, i);
+				let ye = L.value.type === "text" ? L.value.phoneticRuns : void 0;
+				if (L.showPhonetic && ye && ye.length > 0 && !Y.includes("\n")) {
+					let t = Ir(m, x), n = Rr(e, Y, t), r;
+					r = D === "right" ? I + M - 3 - n : D === "center" ? I + M / 2 - n / 2 : I + N;
+					let i = T ? C(T) : "#000000";
+					Lr(e, ye, L.value.type === "text" ? L.value.phoneticPr : void 0, Y, t, g, r, c, x, i);
 				}
 				e.restore(), Y && t.onTextRun && t.onTextRun({
 					sheetName: t.worksheet.name,
-					cellRef: or(r, s),
+					cellRef: cr(r, s),
 					text: Y,
-					x: M,
+					x: I,
 					y: c,
-					width: A,
-					height: j,
+					width: M,
+					height: P,
 					row: r,
 					col: s
 				});
 			});
 		}
 	}
-	for (let e of P) e();
-	for (let e of ee) e();
 	for (let e of N) e();
+	for (let e of te) e();
+	for (let e of ee) e();
 	e.restore();
 }
-var mi = /* @__PURE__ */ new WeakMap();
-function hi(e, t) {
+var gi = /* @__PURE__ */ new WeakMap();
+function _i(e, t) {
 	return {
 		resource: e,
 		operation: t
 	};
 }
-function gi(e) {
-	let t = mi.get(e);
+function vi(e) {
+	let t = gi.get(e);
 	if (t) return t;
-	let n = hi("worksheet-cell-index", "index-worksheet-cells"), r = jn(e.rows, n), i = /* @__PURE__ */ new Set(), a = hi("worksheet-merge-skip-index", "expand-merged-cell-coordinates");
-	for (let t of e.mergeCells ?? []) {
-		kn(t, a, 1);
-		for (let e = t.top; e <= t.bottom; e++) for (let n = t.left; n <= t.right; n++) e === t.top && n === t.left || Mn(i, `${e}:${n}`, a);
+	let n = _i("worksheet-cell-index", "index-worksheet-cells"), r = Nn(e.rows, n), i = /* @__PURE__ */ new Map();
+	for (let t of e.rows) {
+		let e = t.cells.filter((e) => e.value.type !== "empty").map((e) => e.col).sort((e, t) => e - t);
+		e.length > 0 && i.set(t.index, e);
 	}
-	let o = /* @__PURE__ */ new Set();
+	let a = /* @__PURE__ */ new Set(), o = _i("worksheet-merge-skip-index", "expand-merged-cell-coordinates");
+	for (let t of e.mergeCells ?? []) {
+		jn(t, o, 1);
+		for (let e = t.top; e <= t.bottom; e++) for (let n = t.left; n <= t.right; n++) e === t.top && n === t.left || Pn(a, `${e}:${n}`, o);
+	}
+	let s = /* @__PURE__ */ new Set();
 	if (e.autoFilter) {
-		let t = e.autoFilter, n = hi("worksheet-auto-filter-index", "expand-auto-filter-coordinates");
-		kn({
+		let t = e.autoFilter, n = _i("worksheet-auto-filter-index", "expand-auto-filter-coordinates");
+		jn({
 			top: t.top,
 			bottom: t.top,
 			left: t.left,
 			right: t.right
 		}, n);
-		for (let e = t.left; e <= t.right; e++) Mn(o, `${t.top}:${e}`, n);
+		for (let e = t.left; e <= t.right; e++) Pn(s, `${t.top}:${e}`, n);
 	}
-	let s = /* @__PURE__ */ new Map(), c = hi("worksheet-hyperlink-index", "index-hyperlink-coordinates");
-	for (let t of e.hyperlinks ?? []) t.url && An(s, `${t.row}:${t.col}`, t.url, c);
-	let l = /* @__PURE__ */ new Set(), u = hi("worksheet-comment-index", "index-comment-coordinates");
+	let c = /* @__PURE__ */ new Map(), l = _i("worksheet-hyperlink-index", "index-hyperlink-coordinates");
+	for (let t of e.hyperlinks ?? []) t.url && Mn(c, `${t.row}:${t.col}`, t.url, l);
+	let u = /* @__PURE__ */ new Set(), d = _i("worksheet-comment-index", "index-comment-coordinates");
 	for (let t of e.commentRefs ?? []) {
-		let e = Ar(t);
-		e && Mn(l, `${e.row}:${e.col}`, u);
+		let e = Mr(t);
+		e && Pn(u, `${e.row}:${e.col}`, d);
 	}
-	let d = {
+	let f = {
 		cellMap: r,
-		cfContext: Rn(e, r),
-		mergeSkipSet: i,
-		autoFilterCells: o,
-		hyperlinkMap: s,
-		commentCells: l,
-		tableStyleMap: li(e),
-		sparklineMap: di(e)
+		nonEmptyColsByRow: i,
+		cfContext: Bn(e, r),
+		mergeSkipSet: a,
+		autoFilterCells: s,
+		hyperlinkMap: c,
+		commentCells: u,
+		tableStyleMap: di(e),
+		sparklineMap: pi(e)
 	};
-	return mi.set(e, d), d;
+	return gi.set(e, f), f;
 }
-function _i(e, t) {
-	mi.set(t, gi(e));
+function yi(e, t) {
+	let n = 0, r = e.length;
+	for (; n < r;) {
+		let i = n + r >> 1;
+		e[i] < t ? n = i + 1 : r = i;
+	}
+	return n > 0 ? e[n - 1] : void 0;
 }
-function vi(e, t, n, r, i = {}) {
+function bi(e, t) {
+	let n = 0, r = e.length;
+	for (; n < r;) {
+		let i = n + r >> 1;
+		e[i] <= t ? n = i + 1 : r = i;
+	}
+	return n < e.length ? e[n] : void 0;
+}
+function xi(e, t, n, r) {
+	return (e.mergeCells ?? []).some((e) => t >= e.top && t <= e.bottom && e.right >= n && e.left <= r);
+}
+function Si(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g) {
+	let _ = d, v = f, y = /* @__PURE__ */ new Set(), b = (i, u, d, f) => {
+		let p = `${i}:${u}`, _ = r.get(p);
+		if (!_ || _.value.type === "empty" || s.has(p)) return !1;
+		let { font: v, xf: y } = Vr(n, _.styleIndex ?? 0), b = Jn(_, i, u, a, n.dxfs ?? []), x = Xt(_, n, b.numFmt, t.date1904).text;
+		if (!x || x === "0" && t.showZeros === !1 || _.value.type === "number" || y.wrapText || y.textRotation || x.includes("\n")) return !1;
+		let S = o.get(p), C = S?.isHeader ? S.headerRowDxf : S?.isTotals ? S.totalRowDxf : S?.isLastCol && S.lastColumnDxf != null ? S.lastColumnDxf : S?.isFirstCol && S.firstColumnDxf != null ? S.firstColumnDxf : S?.stripeDxf ?? S?.wholeTableDxf, w = C == null ? void 0 : n.dxfs?.[C], T = !!S && !S.isCustom && (S.isHeader || S.isTotals), E = v.bold || !!b.fontBold || T || !!w?.font?.bold, D = v.italic || !!b.fontItalic;
+		e.font = Ir(E !== v.bold || D !== v.italic ? {
+			...v,
+			bold: E,
+			italic: D
+		} : v, m);
+		let O = y.alignH ?? "left", k = y.indent ? Math.round(y.indent * 3 * h) : 0, A = c.sizeOf(u), j = l.sizeOf(i), M = b.iconSet ? Math.max(8, Math.round(Math.min(A, j) * .55)) : 0, ee = M > 0 ? M + 4 : 0, te = 3 + (O === "left" || !y.alignH ? k : 0) + ee, N = e.measureText(x).width + te + 3, P = Math.max(0, N - A);
+		return P <= 0 ? !1 : (O === "center" || O === "centerContinuous" ? P / 2 : ((g ? d === "higher" ? "left" : "right" : d === "higher" ? "right" : "left") == "left" ? O === "right" : O !== "right") ? P : 0) > f;
+	};
+	for (let e of u) {
+		let n = i.get(e);
+		if (!n) continue;
+		let a = yi(n, d), o = r.get(`${e}:${d}`);
+		a != null && a >= p && (!o || o.value.type === "empty") && !xi(t, e, a + 1, d) && b(e, a, "higher", c.offsetOf(d) - c.offsetOf(a + 1)) && (_ = Math.min(_, a), y.add(`${e}:${a}`));
+		let s = bi(n, f), l = r.get(`${e}:${f}`);
+		s != null && s <= 16384 && (!l || l.value.type === "empty") && !xi(t, e, f, s - 1) && b(e, s, "lower", c.offsetOf(s) - c.offsetOf(f + 1)) && (v = Math.max(v, s), y.add(`${e}:${s}`));
+	}
+	return {
+		startCol: _,
+		endCol: v,
+		anchorKeys: y
+	};
+}
+function Ci(e, t) {
+	gi.set(t, vi(e));
+}
+function wi(e, t, n, r, i = {}) {
 	let a = i.dpr ?? 1, o = i.cellScale ?? 1, s = $(t), c = s.maximumDigitWidth, l = e.canvas.width / a, u = e.canvas.height / a;
 	e.clearRect(0, 0, l, u), e.fillStyle = "#ffffff", e.fillRect(0, 0, l, u);
-	let d = (e) => Math.round(e * o), f = d(50), p = d(22), { row: m, col: h, rows: g, cols: _ } = r, v = (i.scrollOffsetX ?? 0) * o, y = (i.scrollOffsetY ?? 0) * o, { col: b, row: x } = s.axesAtScale(o), S = b.bandsToCover(1, i.freezeCols ?? 0, Math.max(0, l - f)), C = x.bandsToCover(1, i.freezeRows ?? 0, Math.max(0, u - p)), w = C.at(-1)?.index ?? 0, T = S.at(-1)?.index ?? 0, E = S.map(({ index: e }) => e), D = C.map(({ index: e }) => e), O = S.map(({ size: e }) => e), k = C.map(({ size: e }) => e), A = O.reduce((e, t) => e + t, 0), j = k.reduce((e, t) => e + t, 0), M = b.bandsToCover(h, Math.min(16384, h + _ - 1)), N = x.bandsToCover(m, Math.min(1048576, m + g - 1)), ee = M.map(({ index: e }) => e), P = N.map(({ index: e }) => e), F = M.map(({ size: e }) => e), I = N.map(({ size: e }) => e), { cellMap: te, cfContext: L, mergeSkipSet: R, autoFilterCells: z, hyperlinkMap: ne, commentCells: B, tableStyleMap: re, sparklineMap: V } = gi(t), ie = /* @__PURE__ */ new Map(), U = hi("worksheet-merge-anchor-index", "index-merge-anchor-coordinates");
+	let d = (e) => Math.round(e * o), f = d(50), p = d(22), { row: m, col: h, rows: g, cols: _ } = r, v = (i.scrollOffsetX ?? 0) * o, y = (i.scrollOffsetY ?? 0) * o, { col: b, row: x } = s.axesAtScale(o), S = b.bandsToCover(1, i.freezeCols ?? 0, Math.max(0, l - f)), C = x.bandsToCover(1, i.freezeRows ?? 0, Math.max(0, u - p)), w = C.at(-1)?.index ?? 0, T = S.at(-1)?.index ?? 0, E = S.map(({ index: e }) => e), D = C.map(({ index: e }) => e), O = S.map(({ size: e }) => e), k = C.map(({ size: e }) => e), A = O.reduce((e, t) => e + t, 0), j = k.reduce((e, t) => e + t, 0), M = b.bandsToCover(h, Math.min(16384, h + _ - 1)), ee = x.bandsToCover(m, Math.min(1048576, m + g - 1)), te = M.map(({ index: e }) => e), N = ee.map(({ index: e }) => e), P = M.map(({ size: e }) => e), F = ee.map(({ size: e }) => e), { cellMap: I, cfContext: L, mergeSkipSet: R, autoFilterCells: z, hyperlinkMap: ne, commentCells: B, tableStyleMap: V, sparklineMap: re, nonEmptyColsByRow: H } = vi(t), ie = /* @__PURE__ */ new Map(), W = _i("worksheet-merge-anchor-index", "index-merge-anchor-coordinates");
 	for (let e of t.mergeCells ?? []) {
 		let t = b.offsetOf(e.right + 1) - b.offsetOf(e.left), n = x.offsetOf(e.bottom + 1) - x.offsetOf(e.top);
-		An(ie, `${e.top}:${e.left}`, {
+		Mn(ie, `${e.top}:${e.left}`, {
 			totalW: t,
 			totalH: n,
 			right: e.right,
 			bottom: e.bottom
-		}, U);
+		}, W);
 	}
-	let ae = {
+	let ae = te[0] ?? h, G = te.at(-1) ?? Math.min(16384, h + _ - 1), oe = Si(e, t, n, I, H, L, V, ie, b, x, [...new Set([...D, ...N])], ae, G, T + 1, o, c, t.rightToLeft === !0), se = b.bandsToCover(oe.startCol, oe.endCol), ce = se.map(({ index: e }) => e), le = se.map(({ size: e }) => e), ue = v + b.offsetOf(ae) - b.offsetOf(oe.startCol), de = {
 		worksheet: t,
 		styles: n,
-		cellMap: te,
+		cellMap: I,
 		mergeAnchorMap: ie,
 		mergeSkipSet: R,
 		cfContext: L,
-		colWidths: F,
-		rowHeights: I,
+		colWidths: le,
+		rowHeights: F,
 		colAxis: b,
 		rowAxis: x,
 		frozenColWidths: O,
@@ -3105,40 +3162,41 @@ function vi(e, t, n, r, i = {}) {
 		autoFilterCells: z,
 		hyperlinkMap: ne,
 		commentCells: B,
-		tableStyleMap: re,
-		sparklineMap: V,
+		tableStyleMap: V,
+		sparklineMap: re,
+		overflowTextAnchors: oe.anchorKeys,
 		mdw: c,
 		onTextRun: i.onTextRun,
 		rtl: t.rightToLeft === !0,
 		canvasW: l
-	}, oe = f, se = p, W = oe + A, G = se + j, ce = Math.max(0, l - W), K = Math.max(0, u - G);
-	w > 0 && T > 0 && pi(e, ae, 1, 1, O, k, E, D, 0, 0, oe, se, oe, se, A, j), w > 0 && pi(e, ae, 1, h, F, k, ee, D, v, 0, W, se, W, se, ce, j), T > 0 && pi(e, ae, m, 1, O, I, E, P, 0, y, oe, G, oe, G, A, K), pi(e, ae, m, h, F, I, ee, P, v, y, W, G, W, G, ce, K), t.images && t.images.length > 0 && i.loadedImages && Si(e, t, b, x, i.loadedImages, o, m, h, v, y, W, G, ce, K, t.rightToLeft === !0, l), t.shapeGroups && t.shapeGroups.length > 0 && Ci(e, t, b, x, o, m, h, v, y, W, G, ce, K, i.loadedImages, t.rightToLeft === !0, l), t.charts && t.charts.length > 0 && Hi(e, t, b, x, o, m, h, v, y, W, G, ce, K, t.rightToLeft === !0, l), t.slicers && t.slicers.length > 0 && ta(e, t, b, x, o, m, h, v, y, W, G, ce, K, t.rightToLeft === !0, l), yi(e, l, u, m, h, g, _, F, I, ee, P, v, y, O, k, E, D, A, j, f, p, o, a, i.selectedRowRange ?? null, i.selectedColRange ?? null, t.rightToLeft === !0);
-	let le = t.rightToLeft === !0;
+	}, fe = f, pe = p, K = fe + A, q = pe + j, me = Math.max(0, l - K), J = Math.max(0, u - q);
+	w > 0 && T > 0 && hi(e, de, 1, 1, O, k, E, D, 0, 0, fe, pe, fe, pe, A, j), w > 0 && hi(e, de, 1, oe.startCol, le, k, ce, D, ue, 0, K, pe, K, pe, me, j), T > 0 && hi(e, de, m, 1, O, F, E, N, 0, y, fe, q, fe, q, A, J), hi(e, de, m, oe.startCol, le, F, ce, N, ue, y, K, q, K, q, me, J), Ei(e, t, b, x, i.loadedImages, o, m, h, v, y, K, q, me, J, t.rightToLeft === !0, l), t.slicers && t.slicers.length > 0 && da(e, t, b, x, o, m, h, v, y, K, q, me, J, t.rightToLeft === !0, l), Ti(e, l, u, m, h, g, _, P, F, te, N, v, y, O, k, E, D, A, j, f, p, o, a, i.selectedRowRange ?? null, i.selectedColRange ?? null, t.rightToLeft === !0);
+	let he = t.rightToLeft === !0;
 	if (w > 0) {
-		e.save(), e.strokeStyle = br, e.lineWidth = .5, e.beginPath();
-		let t = G + H(G, .5, a);
-		le ? (e.moveTo(0, t), e.lineTo(l - f, t)) : (e.moveTo(f, t), e.lineTo(l, t)), e.stroke(), e.restore();
+		e.save(), e.strokeStyle = Sr, e.lineWidth = .5, e.beginPath();
+		let t = q + U(q, .5, a);
+		e.moveTo(0, t), e.lineTo(l, t), e.stroke(), e.restore();
 	}
 	if (T > 0) {
-		e.save(), e.strokeStyle = br, e.lineWidth = .5, e.beginPath();
-		let t = le ? l - W : W, n = t + H(t, .5, a);
+		e.save(), e.strokeStyle = Sr, e.lineWidth = .5, e.beginPath();
+		let t = he ? l - K : K, n = t + U(t, .5, a);
 		e.moveTo(n, p), e.lineTo(n, u), e.stroke(), e.restore();
 	}
 }
-function yi(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b, x, S, C, w, T) {
-	let E = "#f8f9fa", D = "#e8eaed", O = "#caddf6", k = "#c8ccd0", A = "#5b9bd5", j = "#444", M = (e) => !w || e < w.start || e > w.end ? E : w.strong ? O : D, N = (e) => !w || e < w.start || e > w.end ? k : w.strong ? A : k, ee = (e) => !C || e < C.start || e > C.end ? E : C.strong ? O : D, P = (e) => !C || e < C.start || e > C.end ? k : C.strong ? A : k, F = `${Math.max(1, Math.round(11 * x))}px ${fr}`, I = y + _, te = b + v, L = .5 / S, R = (e, n) => T ? vr(e, n, t) : e, z = T ? t - y : 0;
+function Ti(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b, x, S, C, w, T) {
+	let E = "#f8f9fa", D = "#e8eaed", O = "#caddf6", k = "#c8ccd0", A = "#5b9bd5", j = "#444", M = (e) => !w || e < w.start || e > w.end ? E : w.strong ? O : D, ee = (e) => !w || e < w.start || e > w.end ? k : w.strong ? A : k, te = (e) => !C || e < C.start || e > C.end ? E : C.strong ? O : D, N = (e) => !C || e < C.start || e > C.end ? k : C.strong ? A : k, P = `${Math.max(1, Math.round(11 * x))}px ${mr}`, F = y + _, I = b + v, L = .5 / S, R = (e, n) => T ? br(e, n, t) : e, z = T ? t - y : 0;
 	e.fillStyle = E, e.fillRect(z, 0, y, b), e.strokeStyle = k, e.lineWidth = .5, e.beginPath();
-	let ne = T ? z + H(z, .5, S) : z + y - L;
-	e.moveTo(ne, 0), e.lineTo(ne, b), e.moveTo(z, b - L), e.lineTo(z + y, b - L), e.stroke(), e.font = F, e.fillStyle = j;
+	let ne = T ? z + U(z, .5, S) : z + y - L;
+	e.moveTo(ne, 0), e.lineTo(ne, b), e.moveTo(z, b - L), e.lineTo(z + y, b - L), e.stroke(), e.font = P, e.fillStyle = j;
 	let B = (t, n, r) => {
 		let i = R(n, r);
-		e.fillStyle = M(t), e.fillRect(i, 0, r, b), e.strokeStyle = N(t), e.lineWidth = .5, e.beginPath();
-		let a = i + H(i, .5, S);
-		e.moveTo(a, 0), e.lineTo(a, b), e.moveTo(i, b - L), e.lineTo(i + r, b - L), e.stroke(), e.fillStyle = j, e.textAlign = "center", e.textBaseline = "middle", e.fillText(ri(t), i + r / 2, b / 2);
-	}, re = (t, n, r) => {
+		e.fillStyle = M(t), e.fillRect(i, 0, r, b), e.strokeStyle = ee(t), e.lineWidth = .5, e.beginPath();
+		let a = i + U(i, .5, S);
+		e.moveTo(a, 0), e.lineTo(a, b), e.moveTo(i, b - L), e.lineTo(i + r, b - L), e.stroke(), e.fillStyle = j, e.textAlign = "center", e.textBaseline = "middle", e.fillText(ai(t), i + r / 2, b / 2);
+	}, V = (t, n, r) => {
 		let i = z;
-		e.fillStyle = ee(t), e.fillRect(i, n, y, r), e.strokeStyle = P(t), e.lineWidth = .5, e.beginPath();
-		let a = n + H(n, .5, S), o = T ? i + H(i, .5, S) : i + y - L;
+		e.fillStyle = te(t), e.fillRect(i, n, y, r), e.strokeStyle = N(t), e.lineWidth = .5, e.beginPath();
+		let a = n + U(n, .5, S), o = T ? i + U(i, .5, S) : i + y - L;
 		e.moveTo(o, n), e.lineTo(o, n + r), e.moveTo(i, a), e.lineTo(i + y, a), e.stroke(), e.fillStyle = j, e.textBaseline = "middle";
 		let s = Math.max(2, Math.round(4 * x));
 		T ? (e.textAlign = "left", e.fillText(String(t), i + s, n + r / 2)) : (e.textAlign = "right", e.fillText(String(t), i + y - s, n + r / 2));
@@ -3149,78 +3207,103 @@ function yi(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b, x, S,
 		for (let e = 0; e < p.length; e++) B(h[e], t, p[e]), t += p[e];
 		e.restore();
 	}
-	e.save(), e.beginPath(), e.rect(R(I, t - I), 0, t - I, b), e.clip();
-	let V = I - d;
+	e.save(), e.beginPath(), e.rect(R(F, t - F), 0, t - F, b), e.clip();
+	let re = F - d;
 	for (let e = 0; e < s.length; e++) {
 		let n = s[e];
-		V + n > I && V < t && B(l[e], V, n), V += n;
+		re + n > F && re < t && B(l[e], re, n), re += n;
 	}
 	if (e.restore(), m.length > 0) {
 		e.save(), e.beginPath(), e.rect(z, b, y, v), e.clip();
 		let t = b;
-		for (let e = 0; e < m.length; e++) re(g[e], t, m[e]), t += m[e];
+		for (let e = 0; e < m.length; e++) V(g[e], t, m[e]), t += m[e];
 		e.restore();
 	}
-	e.save(), e.beginPath(), e.rect(z, te, y, n - te), e.clip();
-	let ie = te - f;
+	e.save(), e.beginPath(), e.rect(z, I, y, n - I), e.clip();
+	let H = I - f;
 	for (let e = 0; e < c.length; e++) {
 		let t = c[e];
-		ie + t > te && ie < n && re(u[e], ie, t), ie += t;
+		H + t > I && H < n && V(u[e], H, t), H += t;
 	}
 	e.restore();
 }
-function bi(e, t) {
+function Ei(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
+	let g = [], _ = 0;
+	if (i) for (let e of t.images ?? []) g.push({
+		kind: "image",
+		zOrder: e.zOrder ?? 2 ** 53 - 1,
+		fallbackOrder: _++,
+		anchor: e
+	});
+	for (let e of t.shapeGroups ?? []) for (let t of e.shapes) g.push({
+		kind: "shape",
+		zOrder: t.zOrder ?? 2 ** 53 - 1,
+		fallbackOrder: _++,
+		anchor: e,
+		shape: t
+	});
+	for (let e of t.charts ?? []) g.push({
+		kind: "chart",
+		zOrder: e.zOrder ?? 2 ** 53 - 1,
+		fallbackOrder: _++,
+		anchor: e
+	});
+	g.sort((e, t) => e.zOrder - t.zOrder || e.fallbackOrder - t.fallbackOrder);
+	for (let _ of g) _.kind === "image" ? ki(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, [_.anchor]) : _.kind === "shape" ? Ai(e, t, n, r, a, o, s, c, l, u, d, f, p, i, m, h, [{
+		..._.anchor,
+		shapes: [_.shape]
+	}]) : Qi(e, t, n, r, a, o, s, c, l, u, d, f, p, m, h, [_.anchor]);
+}
+function Di(e, t) {
 	return e.offsetOf(t);
 }
-function xi(e, t) {
+function Oi(e, t) {
 	return e.offsetOf(t);
 }
-function Si(e, t, n, r, i, o, s, c, l, u, d, f, p, m, h, g) {
+function ki(e, t, n, r, i, o, s, c, l, u, d, f, p, m, h, g, _ = t.images) {
 	if (p <= 0 || m <= 0) return;
-	let _ = bi(n, c), v = xi(r, s);
+	let v = Di(n, c), y = Oi(r, s);
 	e.save(), e.beginPath();
-	let y = yr(d, p, g, h);
-	e.rect(y, f, p, m), e.clip();
-	for (let s of t.images) {
-		let t = i.get(lr(s.imagePath, s.duotone));
-		if (!t) continue;
-		let c = s.fromCol + 1, b = s.fromRow + 1, x = bi(n, c) + s.fromColOff * o / R, S = xi(r, b) + s.fromRowOff * o / R, C, w;
-		if (cr(s)) C = s.nativeExtCx * o / R, w = s.nativeExtCy * o / R;
+	let b = xr(d, p, g, h);
+	e.rect(b, f, p, m), e.clip();
+	for (let t of _) {
+		let s = i.get(dr(t.imagePath, t.duotone));
+		if (!s) continue;
+		let c = t.fromCol + 1, _ = t.fromRow + 1, x = Di(n, c) + t.fromColOff * o / D, S = Oi(r, _) + t.fromRowOff * o / D, C, w;
+		if (ur(t)) C = t.nativeExtCx * o / D, w = t.nativeExtCy * o / D;
 		else {
-			let e = s.toCol + 1, t = s.toRow + 1, i = bi(n, e) + s.toColOff * o / R, a = xi(r, t) + s.toRowOff * o / R;
-			C = i - x, w = a - S;
+			let e = t.toCol + 1, i = t.toRow + 1, a = Di(n, e) + t.toColOff * o / D, s = Oi(r, i) + t.toRowOff * o / D;
+			C = a - x, w = s - S;
 		}
 		if (C <= 0 || w <= 0) continue;
-		let T = yr(d + (x - _) - l, C, g, h), E = f + (S - v) - u;
-		T + C < y || T > y + p || E + w < f || E > f + m || (s.alpha != null && s.alpha < 1 ? (e.save(), e.globalAlpha = s.alpha, a(e, t, s.srcRect, T, E, C, w), e.restore()) : a(e, t, s.srcRect, T, E, C, w));
+		let T = xr(d + (x - v) - l, C, g, h), E = f + (S - y) - u;
+		T + C < b || T > b + p || E + w < f || E > f + m || (t.alpha != null && t.alpha < 1 ? (e.save(), e.globalAlpha = t.alpha, a(e, s, t.srcRect, T, E, C, w), e.restore()) : a(e, s, t.srcRect, T, E, C, w));
 	}
 	e.restore();
 }
-function Ci(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
-	if (d <= 0 || f <= 0) return;
-	let g = t.shapeGroups;
-	if (!g || g.length === 0) return;
-	let _ = bi(n, o), v = xi(r, a);
+function Ai(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.shapeGroups ?? []) {
+	if (d <= 0 || f <= 0 || g.length === 0) return;
+	let _ = Di(n, o), v = Oi(r, a);
 	e.save(), e.beginPath();
-	let y = yr(l, d, h, m);
+	let y = xr(l, d, h, m);
 	e.rect(y, u, d, f), e.clip();
 	for (let t of g) {
-		let a = t.fromCol + 1, o = t.fromRow + 1, g = bi(n, a) + t.fromColOff * i / R, b = xi(r, o) + t.fromRowOff * i / R, x, S;
-		if (cr(t)) x = t.nativeExtCx * i / R, S = t.nativeExtCy * i / R;
+		let a = t.fromCol + 1, o = t.fromRow + 1, g = Di(n, a) + t.fromColOff * i / D, b = Oi(r, o) + t.fromRowOff * i / D, x, S;
+		if (ur(t)) x = t.nativeExtCx * i / D, S = t.nativeExtCy * i / D;
 		else {
-			let e = t.toCol + 1, a = t.toRow + 1, o = bi(n, e) + t.toColOff * i / R, s = xi(r, a) + t.toRowOff * i / R;
+			let e = t.toCol + 1, a = t.toRow + 1, o = Di(n, e) + t.toColOff * i / D, s = Oi(r, a) + t.toRowOff * i / D;
 			x = o - g, S = s - b;
 		}
 		if (x <= 0 || S <= 0) continue;
-		let C = yr(l + (g - _) - s, x, h, m), w = u + (b - v) - c;
+		let C = xr(l + (g - _) - s, x, h, m), w = u + (b - v) - c;
 		if (!(C + x < y || C > y + d) && !(w + S < u || w > u + f)) for (let n of t.shapes) {
 			let t = C + n.x * x, r = w + n.y * S, a = n.w * x, o = n.h * S;
-			a <= 0 || o <= 0 || wi(e, n, t, r, a, o, i, p);
+			a <= 0 || o <= 0 || ji(e, n, t, r, a, o, i, p);
 		}
 	}
 	e.restore();
 }
-function wi(e, t, n, r, i, o, s, c) {
+function ji(e, t, n, r, i, o, s, c) {
 	if (e.save(), t.rot !== 0 || t.flipH || t.flipV ? (e.translate(n + i / 2, r + o / 2), e.rotate(t.rot * Math.PI / 180), e.scale(t.flipH ? -1 : 1, t.flipV ? -1 : 1), e.translate(-i / 2, -o / 2)) : e.translate(n, r), t.geom.type === "custom") for (let n of t.geom.paths) {
 		if (n.w <= 0 || n.h <= 0) continue;
 		let r = i / n.w, a = o / n.h;
@@ -3258,24 +3341,25 @@ function wi(e, t, n, r, i, o, s, c) {
 				e.closePath(), s = l, c = u;
 				break;
 		}
-		Pi(e, t);
+		Vi(e, t, i, o);
 	}
 	else if (t.geom.type === "preset") {
-		let n = t.fillColor ?? null, r = t.strokeColor && t.strokeWidth > 0 ? () => {
-			e.strokeStyle = t.strokeColor, e.lineWidth = Math.max(.5, t.strokeWidth / R), e.stroke();
-		} : null;
-		u(e, t.geom.name, 0, 0, i, o, t.geom.adj ?? [], n, r, () => {}) || (e.beginPath(), e.rect(0, 0, i, o), Pi(e, t));
+		let n = S(t.fill ?? (t.fillColor ? {
+			fillType: "solid",
+			color: t.fillColor
+		} : null), e, 0, 0, i, o, t.rot), r = t.strokeColor && t.strokeWidth > 0 ? () => Ui(e, t, i, o) : null;
+		b(e, t.geom.name, 0, 0, i, o, t.geom.adj ?? [], n, r, () => {}) || (e.beginPath(), e.rect(0, 0, i, o), Vi(e, t, i, o));
 	} else if (t.geom.type === "image") {
-		let n = c?.get(lr(t.geom.imagePath, t.geom.duotone));
+		let n = c?.get(dr(t.geom.imagePath, t.geom.duotone));
 		if (n) {
 			let r = t.geom.alpha;
 			r != null && r < 1 ? (e.save(), e.globalAlpha = r, a(e, n, t.geom.srcRect, 0, 0, i, o), e.restore()) : a(e, n, t.geom.srcRect, 0, 0, i, o);
 		}
 	}
-	t.text && Ni(e, t.text, i, o, s), e.restore();
+	t.text && Bi(e, t.text, i, o, s), e.restore();
 }
-var Ti = /* @__PURE__ */ new WeakMap();
-function Ei(e, t) {
+var Mi = /* @__PURE__ */ new WeakMap();
+function Ni(e, t) {
 	let n = e.tinted.get(t);
 	if (n) return n;
 	let r = e.img.naturalWidth || 1, i = e.img.naturalHeight || 1, a = document.createElement("canvas");
@@ -3283,18 +3367,18 @@ function Ei(e, t) {
 	let o = a.getContext("2d");
 	return o ? (o.drawImage(e.img, 0, 0, r, i), o.globalCompositeOperation = "source-in", o.fillStyle = t, o.fillRect(0, 0, r, i), e.tinted.set(t, a), a) : e.img;
 }
-function Di(e) {
+function Pi(e) {
 	let t = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(e)}`, n = new Image();
 	return new Promise((e, r) => {
 		n.onload = () => e(n), n.onerror = r, n.src = t;
 	});
 }
-var Oi = 256;
-function ki(e, t, n) {
-	let r = Math.max(1, Math.round(t * Oi)), i = Math.max(1, Math.round(n * Oi));
+var Fi = 256;
+function Ii(e, t, n) {
+	let r = Math.max(1, Math.round(t * Fi)), i = Math.max(1, Math.round(n * Fi));
 	return e.replace(/<svg([^>]*?)>/, (e, t) => `<svg${t.replace(/\s(?:width|height)="[^"]*"/g, "")} width="${r}" height="${i}">`);
 }
-function Ai(e) {
+function Li(e) {
 	let t = [];
 	for (let n of e.shapeGroups ?? []) for (let e of n.shapes) for (let n of e.text?.paragraphs ?? []) for (let e of n.runs) e.type === "math" && t.push({
 		nodes: e.nodes,
@@ -3302,17 +3386,17 @@ function Ai(e) {
 	});
 	return t;
 }
-function ji(e) {
-	for (let t of e.shapeGroups ?? []) for (let e of t.shapes) for (let t of e.text?.paragraphs ?? []) for (let e of t.runs) if (e.type === "math" && !Ti.has(e.nodes)) return !0;
+function Ri(e) {
+	for (let t of e.shapeGroups ?? []) for (let e of t.shapes) for (let t of e.text?.paragraphs ?? []) for (let e of t.runs) if (e.type === "math" && !Mi.has(e.nodes)) return !0;
 	return !1;
 }
-async function Mi(e, t) {
-	let n = Ai(e).filter((e) => !Ti.has(e.nodes));
+async function zi(e, t) {
+	let n = Li(e).filter((e) => !Mi.has(e.nodes));
 	if (n.length !== 0) {
 		await t.loadMathJax();
-		for (let e of n) if (!Ti.has(e.nodes)) try {
-			let n = await t.mathMLToSvg(T(e.nodes, e.display)), r = await Di(ki(ze(n.svg, "#000000"), n.widthEm, n.ascentEm + n.descentEm));
-			Ti.set(e.nodes, {
+		for (let e of n) if (!Mi.has(e.nodes)) try {
+			let n = await t.mathMLToSvg(T(e.nodes, e.display)), r = await Pi(Ii(Ve(n.svg, "#000000"), n.widthEm, n.ascentEm + n.descentEm));
+			Mi.set(e.nodes, {
 				img: r,
 				widthEm: n.widthEm,
 				ascentEm: n.ascentEm,
@@ -3322,12 +3406,12 @@ async function Mi(e, t) {
 		} catch {}
 	}
 }
-function Ni(e, t, n, r, i) {
+function Bi(e, t, n, r, i) {
 	if (n <= 0 || r <= 0 || t.paragraphs.length === 0) return;
-	let a = t.lIns / R * i, o = t.rIns / R * i, s = t.tIns / R * i, c = t.bIns / R * i, l = Math.max(0, n - a - o), u = Math.max(0, r - s - c);
+	let a = t.lIns / D * i, o = t.rIns / D * i, s = t.tIns / D * i, c = t.bIns / D * i, l = Math.max(0, n - a - o), u = Math.max(0, r - s - c);
 	if (l <= 0 || u <= 0) return;
 	let d = (e) => {
-		let t = (e.size > 0 ? e.size : _r) * D * i, n = gr(e.fontFace);
+		let t = (e.size > 0 ? e.size : yr) * G * i, n = vr(e.fontFace);
 		return {
 			font: `${e.italic ? "italic " : ""}${e.bold ? "bold " : ""}${t}px ${n}`,
 			px: t
@@ -3339,13 +3423,13 @@ function Ni(e, t, n, r, i) {
 		return e.font = r, i > 0 ? i : n * .85;
 	}, p = t.wrap !== "none", m = [];
 	for (let n of t.paragraphs) {
-		let r = n.align || "l", a = (n.marL ?? 0) / R * i, o = (n.marR ?? 0) / R * i, s = (n.indent ?? 0) / R * i, c = Math.max(0, s), u = Math.max(0, l - a - o), h = !1, g = () => h ? a : a + c, _ = () => h ? u : u - c, v = [], y = 0, b = 0, x = 0, S = !1, C = n.spaceLine?.type === "pct", w = (e) => {
+		let r = n.align || "l", a = (n.marL ?? 0) / D * i, o = (n.marR ?? 0) / D * i, s = (n.indent ?? 0) / D * i, c = Math.max(0, s), u = Math.max(0, l - a - o), h = !1, g = () => h ? a : a + c, _ = () => h ? u : u - c, v = [], y = 0, b = 0, x = 0, S = !1, C = n.spaceLine?.type === "pct", w = (e) => {
 			let r = e;
-			return n.spaceLine && (n.spaceLine.type === "pct" ? r *= n.spaceLine.val / 1e5 : r = n.spaceLine.val * D * i), t.autoFit === "norm" && t.lnSpcReduction != null && n.spaceLine?.type !== "pts" && (r *= 1 - t.lnSpcReduction), r;
+			return n.spaceLine && (n.spaceLine.type === "pct" ? r *= n.spaceLine.val / 1e5 : r = n.spaceLine.val * G * i), t.autoFit === "norm" && t.lnSpcReduction != null && n.spaceLine?.type !== "pts" && (r *= 1 - t.lnSpcReduction), r;
 		}, T = () => {
 			if (b === 0) {
-				let e = (E || _r) * D * i, t = Math.max(U(O, e), U(k, e)), n = e * 1.2;
-				b = C ? n : Math.max(n, t), x = f(`${e}px ${gr(O)}`, e);
+				let e = (E || yr) * G * i, t = Math.max(W(O, e), W(k, e)), n = e * 1.2;
+				b = C ? n : Math.max(n, t), x = f(`${e}px ${vr(O)}`, e);
 			}
 			b = w(b), m.push({
 				segs: v,
@@ -3363,9 +3447,9 @@ function Ni(e, t, n, r, i) {
 				continue;
 			}
 			if (t.type === "math") {
-				let e = Ti.get(t.nodes);
+				let e = Mi.get(t.nodes);
 				if (!e) continue;
-				let n = (t.fontSize ?? (E || _r)) * D * i, o = e.widthEm * n, s = e.ascentEm * n, c = e.descentEm * n, l = t.color ?? "#000000";
+				let n = (t.fontSize ?? (E || yr)) * G * i, o = e.widthEm * n, s = e.ascentEm * n, c = e.descentEm * n, l = t.color ?? "#000000";
 				if (t.display) {
 					T(), m.push({
 						segs: [{
@@ -3395,13 +3479,13 @@ function Ni(e, t, n, r, i) {
 				}), y += o, b = Math.max(b, s + c), x = Math.max(x, s), S = !0;
 				continue;
 			}
-			E = t.size > 0 ? t.size : _r, O = t.fontFace, k = t.fontFaceEa;
-			let { font: n, px: o } = d(t), s = t.color ?? "#000000", c = Math.max(U(t.fontFace, o), U(t.fontFaceEa, o)), l = o * 1.2, g = C ? l : Math.max(l, c);
+			E = t.size > 0 ? t.size : yr, O = t.fontFace, k = t.fontFaceEa;
+			let { font: n, px: o } = d(t), s = t.color ?? "#000000", c = Math.max(W(t.fontFace, o), W(t.fontFaceEa, o)), l = o * 1.2, g = C ? l : Math.max(l, c);
 			b = Math.max(b, g), x = Math.max(x, f(n, o)), e.font = n;
-			let A = t.text.split("\n");
-			for (let t = 0; t < A.length; t++) {
+			let D = t.text.split("\n");
+			for (let t = 0; t < D.length; t++) {
 				t > 0 && T();
-				let r = A[t];
+				let r = D[t];
 				if (!r) continue;
 				if (!p) {
 					let t = e.measureText(r).width;
@@ -3456,7 +3540,7 @@ function Ni(e, t, n, r, i) {
 			for (let r of t.segs) {
 				if (r.kind === "text") e.font = r.font, e.fillStyle = r.color, e.fillText(r.text, i, n);
 				else {
-					let t = Ei(r.render, r.color);
+					let t = Ni(r.render, r.color);
 					e.drawImage(t, i, n - r.ascent, r.w, r.ascent + r.descent);
 				}
 				i += r.w;
@@ -3469,15 +3553,45 @@ function Ni(e, t, n, r, i) {
 		_ += t.height;
 	}
 }
-function Pi(e, t) {
-	t.fillColor && (e.fillStyle = t.fillColor, e.fill()), t.strokeColor && t.strokeWidth > 0 && (e.strokeStyle = t.strokeColor, e.lineWidth = Math.max(.5, t.strokeWidth / R), e.stroke());
+function Vi(e, t, n, r) {
+	let i = S(t.fill ?? (t.fillColor ? {
+		fillType: "solid",
+		color: t.fillColor
+	} : null), e, 0, 0, n, r, t.rot);
+	i && (e.fillStyle = i, e.fill()), Ui(e, t, n, r);
 }
-function Fi(e, t, n, r, i, a, o) {
+function Hi(e) {
+	return !e.strokeColor || e.strokeWidth <= 0 ? null : {
+		color: e.strokeColor,
+		width: e.strokeWidth,
+		...e.strokeFill ? { fill: e.strokeFill } : {},
+		...e.strokeDashStyle ? { dashStyle: e.strokeDashStyle } : {},
+		...e.strokeCustomDash?.length ? { customDash: e.strokeCustomDash } : {},
+		...e.strokeLineCap ? { lineCap: e.strokeLineCap } : {},
+		...e.strokeLineJoin ? { lineJoin: e.strokeLineJoin } : {},
+		...e.strokeMiterLimit === void 0 ? {} : { miterLimit: e.strokeMiterLimit },
+		...e.strokeAlignment ? { alignment: e.strokeAlignment } : {},
+		...e.strokeCmpd ? { cmpd: e.strokeCmpd } : {},
+		...e.strokeHeadEnd ? { headEnd: e.strokeHeadEnd } : {},
+		...e.strokeTailEnd ? { tailEnd: e.strokeTailEnd } : {}
+	};
+}
+function Ui(e, t, n, r) {
+	let i = Hi(t);
+	if (i) {
+		if (ue(e, i, 1 / D), i.fill) {
+			let a = S(i.fill, e, 0, 0, n, r, t.rot);
+			a && (e.strokeStyle = a);
+		}
+		e.stroke();
+	}
+}
+function Wi(e, t, n, r, i, a, o) {
 	if (r === n && i === t) return e;
 	let s = (e, r) => {
 		if (e === t && r === n) return null;
 		let i = a.get(`${e}:${r}`);
-		return i ? zr(o, i.styleIndex ?? 0).border : null;
+		return i ? Vr(o, i.styleIndex ?? 0).border : null;
 	}, c = s(t, r), l = s(i, n), u = s(i, r), d = (e, ...t) => {
 		if (e?.style) return e;
 		for (let e of t) if (e?.style) return e;
@@ -3492,7 +3606,7 @@ function Fi(e, t, n, r, i, a, o) {
 		diagonalDown: e.diagonalDown ?? null
 	};
 }
-function Ii(e, t) {
+function Gi(e, t) {
 	if (!t) return e;
 	let n = (e, t) => t && t.style ? t : e ?? null;
 	return {
@@ -3504,7 +3618,15 @@ function Ii(e, t) {
 		diagonalDown: n(e.diagonalDown, t.diagonalDown)
 	};
 }
-function Li(e, t, n, r, i, a, o = 1) {
+function Ki(e, t, n, r, i = 1) {
+	return {
+		outerStart: n ? e - i : e,
+		outerEnd: r ? t + i : t,
+		innerStart: n ? e + i : e,
+		innerEnd: r ? t - i : t
+	};
+}
+function qi(e, t, n, r, i, a, o = 1) {
 	let s = [
 		{
 			edge: t.top,
@@ -3555,36 +3677,36 @@ function Li(e, t, n, r, i, a, o = 1) {
 			kind: "d"
 		}
 	];
-	for (let { edge: t, x1: c, y1: l, x2: u, y2: d, kind: f } of s) {
-		if (!t || !t.style || t.style === "none") continue;
-		let s = t.color ? p(t.color) : "#000000";
-		if (t.style === "double" && f === "d") {
+	for (let { edge: c, x1: l, y1: u, x2: d, y2: f, kind: p } of s) {
+		if (!c || !c.style || c.style === "none") continue;
+		let s = c.color ? C(c.color) : "#000000";
+		if (c.style === "double" && p === "d") {
 			e.strokeStyle = s, e.lineWidth = 1, e.setLineDash([]);
-			let t = u - c, n = d - l, r = Math.hypot(t, n), i = -n / r * 1, a = t / r * 1;
-			e.beginPath(), e.moveTo(c + i, l + a), e.lineTo(u + i, d + a), e.moveTo(c - i, l - a), e.lineTo(u - i, d - a), e.stroke();
+			let t = d - l, n = f - u, r = Math.hypot(t, n), i = -n / r * 1, a = t / r * 1;
+			e.beginPath(), e.moveTo(l + i, u + a), e.lineTo(d + i, f + a), e.moveTo(l - i, u - a), e.lineTo(d - i, f - a), e.stroke();
 			continue;
 		}
-		if (t.style === "double" && f !== "d") {
-			if (e.strokeStyle = s, e.lineWidth = 1, e.setLineDash([]), e.beginPath(), f === "h") {
-				let t = l === r, o = t ? r - 1 : r + a + 1, s = t ? r + 1 : r + a - 1;
-				e.moveTo(n - 1, o), e.lineTo(n + i + 1, o), e.moveTo(n + 1, s), e.lineTo(n + i - 1, s);
+		if (c.style === "double" && p !== "d") {
+			if (e.strokeStyle = s, e.lineWidth = 1, e.setLineDash([]), e.beginPath(), p === "h") {
+				let o = u === r, s = o ? r - 1 : r + a + 1, c = o ? r + 1 : r + a - 1, l = Ki(n, n + i, !!t.left?.style && t.left.style !== "none", !!t.right?.style && t.right.style !== "none", 1);
+				e.moveTo(l.outerStart, s), e.lineTo(l.outerEnd, s), e.moveTo(l.innerStart, c), e.lineTo(l.innerEnd, c);
 			} else {
-				let t = c === n, o = t ? n - 1 : n + i + 1, s = t ? n + 1 : n + i - 1;
-				e.moveTo(o, r - 1), e.lineTo(o, r + a + 1), e.moveTo(s, r + 1), e.lineTo(s, r + a - 1);
+				let o = l === n, s = o ? n - 1 : n + i + 1, c = o ? n + 1 : n + i - 1, u = Ki(r, r + a, !!t.top?.style && t.top.style !== "none", !!t.bottom?.style && t.bottom.style !== "none", 1);
+				e.moveTo(s, u.outerStart), e.lineTo(s, u.outerEnd), e.moveTo(c, u.innerStart), e.lineTo(c, u.innerEnd);
 			}
 			e.stroke();
 			continue;
 		}
 		e.beginPath(), e.strokeStyle = s;
-		let m = Ri(t.style);
+		let m = Ji(c.style);
 		e.lineWidth = m;
-		let h = zi(t.style);
+		let h = Yi(c.style);
 		e.setLineDash(h);
-		let g = f === "v" ? H(c, m, o) : 0, _ = f === "h" ? H(l, m, o) : 0;
-		e.moveTo(c + g, l + _), e.lineTo(u + g, d + _), e.stroke(), e.setLineDash([]);
+		let g = p === "v" ? U(l, m, o) : 0, _ = p === "h" ? U(u, m, o) : 0;
+		e.moveTo(l + g, u + _), e.lineTo(d + g, f + _), e.stroke(), e.setLineDash([]);
 	}
 }
-function Ri(e) {
+function Ji(e) {
 	switch (e) {
 		case "thick": return 3;
 		case "medium":
@@ -3596,10 +3718,10 @@ function Ri(e) {
 		default: return 1;
 	}
 }
-function zi(e) {
-	return v(e);
+function Yi(e) {
+	return t(e);
 }
-function Bi(e) {
+function Xi(e) {
 	switch (e) {
 		case "double": return 13;
 		case "thick": return 12;
@@ -3617,21 +3739,21 @@ function Bi(e) {
 		default: return 0;
 	}
 }
-function Vi(e, t) {
-	let n = Bi(e?.style), r = Bi(t?.style);
+function Zi(e, t) {
+	let n = Xi(e?.style), r = Xi(t?.style);
 	return n === 0 && r === 0 ? null : n >= r ? e ?? null : t ?? null;
 }
-function Hi(e, t, n, r, i, a, o, s, c, u, d, f, p, m, h) {
+function Qi(e, t, n, r, i, a, o, s, c, l, u, f, p, m, h, g = t.charts) {
 	if (f <= 0 || p <= 0) return;
-	let g = bi(n, o), _ = xi(r, a), v = yr(u, f, h, m);
-	for (let a of t.charts) {
-		let t = a.fromCol + 1, o = a.fromRow + 1, y = a.toCol + 1, b = a.toRow + 1, x = bi(n, t) + a.fromColOff * i / R, S = xi(r, o) + a.fromRowOff * i / R, C = bi(n, y) + a.toColOff * i / R, w = xi(r, b) + a.toRowOff * i / R, T = C - x, E = w - S;
+	let _ = Di(n, o), v = Oi(r, a), y = xr(l, f, h, m);
+	for (let t of g) {
+		let a = t.fromCol + 1, o = t.fromRow + 1, g = t.toCol + 1, b = t.toRow + 1, x = Di(n, a) + t.fromColOff * i / D, S = Oi(r, o) + t.fromRowOff * i / D, C = Di(n, g) + t.toColOff * i / D, w = Oi(r, b) + t.toRowOff * i / D, T = C - x, E = w - S;
 		if (T <= 0 || E <= 0) continue;
-		let O = yr(u + (x - g) - s, T, h, m), k = d + (S - _) - c;
-		if (O + T < v || O > v + f || k + E < d || k > d + p) continue;
-		e.save(), e.beginPath(), e.rect(v, d, f, p), e.clip();
-		let A = D * i;
-		l(e, a.chart, {
+		let O = xr(l + (x - _) - s, T, h, m), k = u + (S - v) - c;
+		if (O + T < y || O > y + f || k + E < u || k > u + p) continue;
+		e.save(), e.beginPath(), e.rect(y, u, f, p), e.clip();
+		let A = G * i;
+		d(e, t.chart, {
 			x: O,
 			y: k,
 			w: T,
@@ -3639,52 +3761,52 @@ function Hi(e, t, n, r, i, a, o, s, c, u, d, f, p, m, h) {
 		}, A), e.restore();
 	}
 }
-var Ui = "600 12px \"Meiryo UI\", \"Segoe UI\", sans-serif", Wi = "11px \"Meiryo UI\", \"Segoe UI\", sans-serif", Gi = "#FFFFFF", Ki = "#BFBFBF", qi = "#F2F2F2", Ji = "#404040", Yi = "#FFFFFF", Xi = "#000000", Zi = "#A5A5A5", Qi = "#E7E6E6", $i = "#A6A6A6", ea = "#C6C6C6";
-function ta(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m) {
+var $i = "600 12px \"Meiryo UI\", \"Segoe UI\", sans-serif", ea = "11px \"Meiryo UI\", \"Segoe UI\", sans-serif", ta = "#FFFFFF", na = "#BFBFBF", ra = "#F2F2F2", ia = "#404040", aa = "#FFFFFF", oa = "#000000", sa = "#A5A5A5", ca = "#E7E6E6", la = "#A6A6A6", ua = "#C6C6C6";
+function da(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m) {
 	if (d <= 0 || f <= 0) return;
 	let h = t.slicers;
 	if (!h) return;
-	let g = bi(n, o), _ = xi(r, a), v = yr(l, d, m, p);
+	let g = Di(n, o), _ = Oi(r, a), v = xr(l, d, m, p);
 	for (let t of h) {
-		let a = t.fromCol + 1, o = t.fromRow + 1, h = t.toCol + 1, y = t.toRow + 1, b = bi(n, a) + t.fromColOff * i / R, x = xi(r, o) + t.fromRowOff * i / R, S = bi(n, h) + t.toColOff * i / R, C = xi(r, y) + t.toRowOff * i / R, w = S - b, T = C - x;
+		let a = t.fromCol + 1, o = t.fromRow + 1, h = t.toCol + 1, y = t.toRow + 1, b = Di(n, a) + t.fromColOff * i / D, x = Oi(r, o) + t.fromRowOff * i / D, S = Di(n, h) + t.toColOff * i / D, C = Oi(r, y) + t.toRowOff * i / D, w = S - b, T = C - x;
 		if (w <= 0 || T <= 0) continue;
-		let E = yr(l + (b - g) - s, w, m, p), D = u + (x - _) - c;
-		E + w < v || E > v + d || D + T < u || D > u + f || (e.save(), e.beginPath(), e.rect(v, u, d, f), e.clip(), na(e, t.caption, t.items, E, D, w, T, i, t.style), e.restore());
+		let E = xr(l + (b - g) - s, w, m, p), O = u + (x - _) - c;
+		E + w < v || E > v + d || O + T < u || O > u + f || (e.save(), e.beginPath(), e.rect(v, u, d, f), e.clip(), fa(e, t.caption, t.items, E, O, w, T, i, t.style), e.restore());
 	}
 }
-function na(e, t, n, r, i, a, o, s, c) {
+function fa(e, t, n, r, i, a, o, s, c) {
 	let l = c != null;
-	e.fillStyle = c?.whole?.fillColor ?? Gi, e.fillRect(r, i, a, o);
-	let u = l ? c.whole?.borderColor : Ki;
+	e.fillStyle = c?.whole?.fillColor ?? ta, e.fillRect(r, i, a, o);
+	let u = l ? c.whole?.borderColor : na;
 	u && (e.strokeStyle = u, e.lineWidth = 1, e.strokeRect(r + .5, i + .5, a - 1, o - 1));
-	let d = Math.max(20 * s, 14), f = l ? c.header?.fillColor : qi;
-	f && (e.fillStyle = f, e.fillRect(r + 1, i + 1, a - 2, d)), e.fillStyle = c?.header?.fontColor ?? Ji, e.font = ia(c?.header, Ui, s), e.textBaseline = "middle", e.textAlign = "left";
+	let d = Math.max(20 * s, 14), f = l ? c.header?.fillColor : ra;
+	f && (e.fillStyle = f, e.fillRect(r + 1, i + 1, a - 2, d)), e.fillStyle = c?.header?.fontColor ?? ia, e.font = ma(c?.header, $i, s), e.textBaseline = "middle", e.textAlign = "left";
 	let p = 6 * s;
-	if (oa(e, t, r + p, i + d / 2 + 1, a - 2 * p), n.length === 0) return;
+	if (ga(e, t, r + p, i + d / 2 + 1, a - 2 * p), n.length === 0) return;
 	let m = Math.max(1, Math.round(2 * s)), h = 4 * s, g = r + h, _ = i + d + h, v = a - 2 * h, y = o - d - 2 * h;
 	if (v <= 0 || y <= 0) return;
 	let b = Math.max(18 * s, 16), x = Math.max(1, Math.floor((y + m) / (b + m))), S = Math.min(n.length, x), C = Math.min(b, (y - m * (S - 1)) / S);
 	if (C <= 0) return;
-	e.font = aa(Wi, s);
+	e.font = ha(ea, s);
 	let w = 8 * s;
 	for (let t = 0; t < S; t++) {
-		let r = n[t], i = _ + t * (C + m), a = r.selected, o = a ? c?.selectedItemWithData : c?.unselectedItemWithData, u = o?.fillColor ?? (a ? Yi : Qi), d = l ? o?.borderColor : a ? Zi : ea;
-		e.fillStyle = u, l ? (ra(e, g, i, v, C, Math.min(4 * s, C / 4)), e.fill(), d && (e.strokeStyle = d, e.lineWidth = 1, e.stroke())) : (e.fillRect(g, i, v, C), d && (e.strokeStyle = d, e.lineWidth = 1, e.strokeRect(g + .5, i + .5, v - 1, C - 1))), e.font = ia(o, Wi, s), e.fillStyle = o?.fontColor ?? (a ? Xi : $i), oa(e, r.name, g + w, i + C / 2 + 1, v - 2 * w);
+		let r = n[t], i = _ + t * (C + m), a = r.selected, o = a ? c?.selectedItemWithData : c?.unselectedItemWithData, u = o?.fillColor ?? (a ? aa : ca), d = l ? o?.borderColor : a ? sa : ua;
+		e.fillStyle = u, l ? (pa(e, g, i, v, C, Math.min(4 * s, C / 4)), e.fill(), d && (e.strokeStyle = d, e.lineWidth = 1, e.stroke())) : (e.fillRect(g, i, v, C), d && (e.strokeStyle = d, e.lineWidth = 1, e.strokeRect(g + .5, i + .5, v - 1, C - 1))), e.font = ma(o, ea, s), e.fillStyle = o?.fontColor ?? (a ? oa : la), ga(e, r.name, g + w, i + C / 2 + 1, v - 2 * w);
 	}
 }
-function ra(e, t, n, r, i, a) {
+function pa(e, t, n, r, i, a) {
 	let o = Math.max(0, Math.min(a, r / 2, i / 2));
 	e.beginPath(), e.moveTo(t + o, n), e.lineTo(t + r - o, n), e.quadraticCurveTo(t + r, n, t + r, n + o), e.lineTo(t + r, n + i - o), e.quadraticCurveTo(t + r, n + i, t + r - o, n + i), e.lineTo(t + o, n + i), e.quadraticCurveTo(t, n + i, t, n + i - o), e.lineTo(t, n + o), e.quadraticCurveTo(t, n, t + o, n), e.closePath();
 }
-function ia(e, t, n) {
-	if (!e) return aa(t, n);
+function ma(e, t, n) {
+	if (!e) return ha(t, n);
 	let r = Math.round((e.fontSize ?? 11) * n);
 	return `${e.fontBold ? "bold " : ""}${r}px ${e.fontFamily ? `"${e.fontFamily}", "Segoe UI", sans-serif` : "\"Meiryo UI\", \"Segoe UI\", sans-serif"}`;
 }
-function aa(e, t) {
+function ha(e, t) {
 	return e.replace(/(\d+(?:\.\d+)?)px/, (e, n) => `${Math.round(Number(n) * t)}px`);
 }
-function oa(e, t, n, r, i) {
+function ga(e, t, n, r, i) {
 	if (i <= 0) return;
 	let a = t;
 	if (e.measureText(a).width > i) {
@@ -3695,16 +3817,16 @@ function oa(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/xlsx/src/render-orchestrator.ts
-var sa = Symbol("xlsx-render-commit-guard");
-function ca(e, t) {
+var _a = Symbol("xlsx-render-commit-guard");
+function va(e, t) {
 	return {
 		...e,
-		[sa]: t
+		[_a]: t
 	};
 }
-function la(e, t, n, r, i) {
+function ya(e, t, n, r, i) {
 	if (!n) return !0;
-	let a = r ?? $(t), o = i?.scale ?? 1, { col: s, row: c } = a.axesAtScale(o), l = (e, t, n) => e.offsetOf(t + 1) + n * o / R, u = l(s, e.fromCol, e.fromColOff), d = l(c, e.fromRow, e.fromRowOff), f = cr(e), p = f ? u + e.nativeExtCx * o / R : l(s, e.toCol, e.toColOff), m = f ? d + e.nativeExtCy * o / R : l(c, e.toRow, e.toRowOff);
+	let a = r ?? $(t), o = i?.scale ?? 1, { col: s, row: c } = a.axesAtScale(o), l = (e, t, n) => e.offsetOf(t + 1) + n * o / D, u = l(s, e.fromCol, e.fromColOff), d = l(c, e.fromRow, e.fromRowOff), f = ur(e), p = f ? u + e.nativeExtCx * o / D : l(s, e.toCol, e.toColOff), m = f ? d + e.nativeExtCy * o / D : l(c, e.toRow, e.toRowOff);
 	if (p <= u || m <= d) return !1;
 	let h = i ? a.effectiveFrozenBands({
 		scale: o,
@@ -3723,8 +3845,8 @@ function la(e, t, n, r, i) {
 	};
 	return g(u, p, s.offsetOf(h.cols + 1), s.offsetOf(n.col), s.offsetOf(n.col + n.cols)) && g(d, m, c.offsetOf(h.rows + 1), c.offsetOf(n.row), c.offsetOf(n.row + n.rows));
 }
-async function ua(e, t, n, r, i = 0, a = 0, o = null, c = null, l) {
-	let u = t === "image/svg+xml", d = S(t, o, i, a), f = () => Re(e, t, c, r, {
+async function ba(e, t, n, r, i = 0, a = 0, o = null, c = null, l) {
+	let u = t === "image/svg+xml", d = y(t, o, i, a), f = () => Be(e, t, c, r, {
 		widthPt: d.widthPt,
 		heightPt: d.heightPt,
 		offscreenFactory: l
@@ -3732,14 +3854,14 @@ async function ua(e, t, n, r, i = 0, a = 0, o = null, c = null, l) {
 		svgImagePath: n,
 		srcRect: o
 	};
-	if (fe(p)) try {
+	if (J(p)) try {
 		return await s(p.svgImagePath, r);
 	} catch {
 		return u ? s(e, r) : f();
 	}
 	return u ? s(e, r) : f();
 }
-async function da(e, t, n, r) {
+async function xa(e, t, n, r) {
 	if (t.clear(), !n) return;
 	let i = n, a = /* @__PURE__ */ new Map(), o = r?.viewport ? $(e) : void 0, s = r?.viewport && r.width !== void 0 && r.height !== void 0 ? {
 		width: r.width,
@@ -3748,71 +3870,71 @@ async function da(e, t, n, r) {
 		freezeRows: r.freezeRows ?? e.freezeRows ?? 0,
 		freezeCols: r.freezeCols ?? e.freezeCols ?? 0
 	} : void 0;
-	if (e.images) for (let t of e.images) la(t, e, r?.viewport, o, s) && a.set(lr(t.imagePath, t.duotone), {
+	if (e.images) for (let t of e.images) ya(t, e, r?.viewport, o, s) && a.set(dr(t.imagePath, t.duotone), {
 		imagePath: t.imagePath,
 		mimeType: t.mimeType,
 		svgImagePath: t.svgImagePath,
-		widthPt: t.nativeExtCx > 0 ? t.nativeExtCx / K : 0,
-		heightPt: t.nativeExtCy > 0 ? t.nativeExtCy / K : 0,
+		widthPt: t.nativeExtCx > 0 ? t.nativeExtCx / z : 0,
+		heightPt: t.nativeExtCy > 0 ? t.nativeExtCy / z : 0,
 		srcRect: t.srcRect ?? null,
 		duotone: t.duotone ?? null
 	});
 	if (e.shapeGroups) {
-		for (let t of e.shapeGroups) if (la(t, e, r?.viewport, o, s)) for (let e of t.shapes) e.geom.type === "image" && a.set(lr(e.geom.imagePath, e.geom.duotone), {
+		for (let t of e.shapeGroups) if (ya(t, e, r?.viewport, o, s)) for (let e of t.shapes) e.geom.type === "image" && a.set(dr(e.geom.imagePath, e.geom.duotone), {
 			imagePath: e.geom.imagePath,
 			mimeType: e.geom.mimeType,
 			svgImagePath: e.geom.svgImagePath,
-			widthPt: t.nativeExtCx > 0 ? t.nativeExtCx * e.w / K : 0,
-			heightPt: t.nativeExtCy > 0 ? t.nativeExtCy * e.h / K : 0,
+			widthPt: t.nativeExtCx > 0 ? t.nativeExtCx * e.w / z : 0,
+			heightPt: t.nativeExtCy > 0 ? t.nativeExtCy * e.h / z : 0,
 			srcRect: e.geom.srcRect ?? null,
 			duotone: e.geom.duotone ?? null
 		});
 	}
 	a.size !== 0 && await Promise.all([...a.entries()].map(async ([e, n]) => {
 		try {
-			let a = await ua(n.imagePath, n.mimeType, n.svgImagePath, i, n.widthPt, n.heightPt, n.srcRect, n.duotone, r?.offscreenFactory);
+			let a = await ba(n.imagePath, n.mimeType, n.svgImagePath, i, n.widthPt, n.heightPt, n.srcRect, n.duotone, r?.offscreenFactory);
 			t.set(e, a);
 		} catch (n) {
-			if (m(n)) throw n;
+			if (f(n)) throw n;
 			t.delete(e);
 		}
 	}));
 }
-async function fa(e, t, n, r = {}) {
-	let i = r.fetchImage ? _(r.fetchImage) : void 0;
+async function Sa(e, t, n, r = {}) {
+	let i = r.fetchImage ? h(r.fetchImage) : void 0;
 	try {
-		await pa(e, t, n, r);
+		await Ca(e, t, n, r);
 	} finally {
 		i?.();
 	}
 }
-async function pa(e, t, n, r = {}) {
+async function Ca(e, t, n, r = {}) {
 	let { ws: i, styles: a } = e, o = F(t) ? t.clientWidth || 800 : t.width, s = F(t) ? t.clientHeight || 600 : t.height, c = r.width ?? o, l = r.height ?? s, u = /* @__PURE__ */ new Map();
-	if (await da(i, u, r.fetchImage, {
+	if (await xa(i, u, r.fetchImage, {
 		viewport: n,
 		width: c,
 		height: l,
 		cellScale: r.cellScale,
 		freezeRows: r.freezeRows,
 		freezeCols: r.freezeCols
-	}), e.math && ji(i) && await Mi(i, e.math), r[sa]?.() === !1) return;
-	let d = r.dpr ?? L(), f = G(c * d, l * d), p = f.clamped ? d * f.scale : d, m = f.width, h = f.height;
+	}), e.math && Ri(i) && await zi(i, e.math), r[_a]?.() === !1) return;
+	let d = r.dpr ?? R(), f = ce(c * d, l * d), p = f.clamped ? d * f.scale : d, m = f.width, h = f.height;
 	if (t.width !== m && (t.width = m), t.height !== h && (t.height = h), F(t)) {
 		let e = `${c}px`, n = `${l}px`;
 		t.style.width !== e && (t.style.width = e), t.style.height !== n && (t.style.height = n);
 	}
 	let g = t.getContext("2d");
 	if (g.setTransform(p, 0, 0, p, 0, 0), i.parseError) {
-		ma(g, c, l, i.name, i.parseError);
+		wa(g, c, l, i.name, i.parseError);
 		return;
 	}
-	vi(g, i, a, n, {
+	wi(g, i, a, n, {
 		...r,
 		dpr: p,
 		loadedImages: u
 	});
 }
-function ma(e, t, n, r, i) {
+function wa(e, t, n, r, i) {
 	e.save(), e.fillStyle = "#f7f7f8", e.fillRect(0, 0, t, n);
 	let a = t / 2, o = Math.min(t, n), s = Math.max(20, o * .1);
 	e.fillStyle = "#b23b3b", e.textAlign = "center", e.textBaseline = "middle", e.font = `${s}px sans-serif`, e.fillText("⚠", a, n * .32);
@@ -3832,21 +3954,21 @@ function ma(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/xlsx/src/google-fonts.ts
-var ha = {
-	...W,
-	...k
+var Ta = {
+	...ie,
+	...re
 };
-function* ga(e) {
+function* Ea(e) {
 	for (let t of e?.sharedStrings ?? []) if (t.runs && t.runs.length > 0) for (let e of t.runs) yield e.text;
 	else yield t.text;
 }
-function _a(e) {
+function Da(e) {
 	let t = /* @__PURE__ */ new Set(), n = null;
-	for (let r of e?.styles?.fonts ?? []) r.name && (t.add(r.name), n ??= J(r.name));
-	for (let r of ee(ga(e), n)) t.add(r);
+	for (let r of e?.styles?.fonts ?? []) r.name && (t.add(r.name), n ??= j(r.name));
+	for (let r of se(Ea(e), n)) t.add(r);
 	return t;
 }
-function va(e) {
+function Oa(e) {
 	let t = (e ?? "").trim();
 	if (!t) return {
 		kind: "unresolved",
@@ -3861,9 +3983,9 @@ function va(e) {
 		let e = t.slice(0, i);
 		e.startsWith("'") && e.endsWith("'") && e.length >= 2 && (e = e.slice(1, -1).replace(/''/g, "'")), n = e, r = t.slice(i + 1);
 	}
-	let [a, o] = r.split(":"), s = ar(a ?? "");
+	let [a, o] = r.split(":"), s = sr(a ?? "");
 	if (s) {
-		let e = o ? ar(o) : s;
+		let e = o ? sr(o) : s;
 		if (e) {
 			let t = {
 				row: Math.min(s.row, e.row),
@@ -3885,7 +4007,7 @@ function va(e) {
 		formula: t
 	};
 }
-function ya(e, t) {
+function ka(e, t) {
 	if (e.kind === "inline") return {
 		kind: "values",
 		values: e.values
@@ -3904,7 +4026,7 @@ function ya(e, t) {
 		values: n
 	};
 }
-function ba(e) {
+function Aa(e) {
 	let { cell: t, panel: n, viewport: r, rtl: i } = e, a = t.y + t.h + 2, o = t.y - 2 - n.h, s;
 	s = a + n.h <= r.h ? a : o >= 0 ? o : a, s = Math.max(0, Math.min(s, r.h - n.h));
 	let c = i ? t.x + t.w - n.w : t.x;
@@ -3915,7 +4037,7 @@ function ba(e) {
 }
 //#endregion
 //#region packages/xlsx/src/worker-protocol.ts
-function xa(e, t) {
+function ja(e, t) {
 	if (!t) return;
 	let n = !1;
 	if (t.rows) for (let [r, i] of Object.entries(t.rows)) {
@@ -3926,32 +4048,32 @@ function xa(e, t) {
 		let t = Number(r);
 		i === null ? Object.hasOwn(e.colWidths, t) && (delete e.colWidths[t], n = !0) : e.colWidths[t] !== i && (e.colWidths[t] = i, n = !0);
 	}
-	n && ir.invalidate(e);
+	n && or.invalidate(e);
 }
-function Sa(e, t) {
+function Ma(e, t) {
 	if (!t) return e;
 	let n = {
 		...e,
 		rowHeights: { ...e.rowHeights },
 		colWidths: { ...e.colWidths }
 	};
-	return xa(n, t), n;
+	return ja(n, t), n;
 }
-var Ca = Symbol("xlsx-viewer-render-context");
-function wa(e, t, n) {
+var Na = Symbol("xlsx-viewer-render-context");
+function Pa(e, t, n) {
 	if (!Number.isFinite(t) || t <= 0) throw Error("XLSX maximum digit width must be a finite positive number");
 	return {
 		...e,
-		[Ca]: {
+		[Na]: {
 			maximumDigitWidth: t,
 			worksheet: n?.worksheet,
 			projection: n?.projection
 		}
 	};
 }
-function Ta(e) {
-	let t = e[Ca], n = { ...e };
-	return delete n[Ca], t ? {
+function Fa(e) {
+	let t = e[Na], n = { ...e };
+	return delete n[Na], t ? {
 		opts: n,
 		layoutMetrics: { maximumDigitWidth: t.maximumDigitWidth },
 		worksheet: t.worksheet,
@@ -3960,16 +4082,16 @@ function Ta(e) {
 }
 //#endregion
 //#region packages/xlsx/src/workbook.ts
-var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-projection"), Oa = class e {
+var Ia = Symbol("retain-xlsx-viewer-fonts"), La = Symbol("release-xlsx-viewer-projection"), Ra = class e {
 	metrics = null;
 	worker;
 	bridge;
 	parsedWorkbook = null;
 	sheetCache = /* @__PURE__ */ new Map();
 	sheetLoads = /* @__PURE__ */ new Map();
-	rawParts = new Le({
+	rawParts = new ze({
 		maxEntries: 64,
-		maxBytes: ce
+		maxBytes: le
 	});
 	queuedImageLoads = /* @__PURE__ */ new Map();
 	_fetchImage = (e, t) => this.getImageWithinArchiveOperation(e, t);
@@ -3991,11 +4113,11 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 	};
 	resourceFailure = null;
 	constructor(e, t, n) {
-		this.worker = e, this._mode = t, this.bridge = new he(this.worker, {
+		this.worker = e, this._mode = t, this.bridge = new Y(this.worker, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
-			toError: (e) => "type" in e && e.type === "error" ? z(e) : void 0
+			toError: (e) => "type" in e && e.type === "error" ? ne(e) : void 0
 		});
-		let r = new URL(n ?? st, location.href).href;
+		let r = new URL(n ?? lt, location.href).href;
 		this.bridge.post({
 			type: "init",
 			wasmUrl: r
@@ -4005,7 +4127,7 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 		return this._mode;
 	}
 	static async load(t, n = {}) {
-		let i = r(n), a = n.mode ?? "main", o = new y({
+		let i = r(n), a = n.mode ?? "main", o = new g({
 			enabled: !0,
 			format: "xlsx",
 			mode: a,
@@ -4021,21 +4143,21 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 				if (!e.ok) throw Error(`Failed to fetch: ${e.status} ${e.statusText}`);
 				s = await e.arrayBuffer();
 			} else s = t;
-			s = ge(await ve(s, n.password));
+			s = ve(await be(s, n.password));
 			let c = s === r;
 			o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let l = a === "worker" ? (await import("./render-worker-host-BozYMmxO.js")).createRenderWorker() : new ot(), u;
+			let l = a === "worker" ? (await import("./render-worker-host-Ivhx3KII.js")).createRenderWorker() : new ct(), u;
 			try {
 				return u = new e(l, a, n.wasmUrl), u.metrics = o, await u._load(s, n, i.policy, (e) => o.observeUsage(e), c), o.checkpoint("workbook index ready"), o.succeed({ sheets: u.sheetCount }), u;
 			} catch (e) {
 				let t = u;
-				throw _e(l, t ? () => t.destroy() : void 0), e;
+				throw ye(l, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw o.fail(e), e;
 		}
 	}
-	async _load(e, t = {}, n = C(t), r, i = !1) {
+	async _load(e, t = {}, n = x(t), r, i = !1) {
 		this.resourceFailure = null, this.retainedSheetUsage = {
 			rows: 0,
 			cells: 0,
@@ -4063,20 +4185,20 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 		}
 		this.ensureWorksheetPullClient();
 		let s = this.parsedWorkbook?.workbook.parseError;
-		s && console.warn(`[ooxml] xlsx opened with a degraded part: ${s}`), t.useGoogleFonts && (this.googleFontNames = [..._a(this.parsedWorkbook)], typeof document < "u" && document.fonts && await this.retainFontsInSet(document.fonts));
+		s && console.warn(`[ooxml] xlsx opened with a degraded part: ${s}`), t.useGoogleFonts && (this.googleFontNames = [...Da(this.parsedWorkbook)], typeof document < "u" && document.fonts && await this.retainFontsInSet(document.fonts));
 	}
 	async retainFontsInSet(e) {
 		if (this.googleFontNames.length === 0 || this.fontsDestroyed) return () => void 0;
 		let t = this.retainedFontSets.get(e);
 		if (t) t.refs++;
 		else {
-			let n = Ie(this.googleFontNames, ha, e);
+			let n = Re(this.googleFontNames, Ta, e);
 			t = {
 				refs: 1,
 				faces: null,
 				loading: n
 			}, this.retainedFontSets.set(e, t), n.then((e) => {
-				t.faces = e, this.fontsDestroyed && Fe(e);
+				t.faces = e, this.fontsDestroyed && Le(e);
 			});
 		}
 		await t.loading;
@@ -4085,10 +4207,10 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 			if (n) return;
 			n = !0;
 			let r = this.retainedFontSets.get(e);
-			r === t && (r.refs--, !(r.refs > 0) && (this.retainedFontSets.delete(e), r.faces ? Fe(r.faces) : r.loading.then(Fe)));
+			r === t && (r.refs--, !(r.refs > 0) && (this.retainedFontSets.delete(e), r.faces ? Le(r.faces) : r.loading.then(Le)));
 		};
 	}
-	async [Ea](e) {
+	async [Ia](e) {
 		return await this.retainFontsInSet(e.fonts);
 	}
 	get sheetNames() {
@@ -4101,7 +4223,7 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 		return this.parsedWorkbook?.workbook.sheets.map((e) => e.tabColor ?? null) ?? [];
 	}
 	sheetVisibility(e) {
-		return ct(this.parsedWorkbook?.workbook.sheets ?? [], e);
+		return ut(this.parsedWorkbook?.workbook.sheets ?? [], e);
 	}
 	isHidden(e) {
 		return this.sheetVisibility(e) !== "visible";
@@ -4123,7 +4245,7 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 	async getResourceMetrics() {
 		let e = this.metrics;
 		if (!e) throw Error("Workbook not loaded");
-		return Y(e, async (e) => (await this.bridge.request((e) => ({
+		return _e(e, async (e) => (await this.bridge.request((e) => ({
 			type: "resourceUsage",
 			id: e
 		}), void 0, { timeoutMs: e })).usage);
@@ -4143,38 +4265,38 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 		try {
 			for await (let s of n.stream(e, t)) {
 				if (s.kind === "rows") {
-					let e = Ye(i, Ge(s.rows));
-					qe(e, "get-worksheet", void 0, s.usage), r.push(...s.rows), i = e;
+					let e = Ze(i, qe(s.rows));
+					Ye(e, "get-worksheet", void 0, s.usage), r.push(...s.rows), i = e;
 					continue;
 				}
 				let e = s.worksheet;
 				e.rows = e.parseError ? [] : r;
-				let t = Qe(e, e.parseError ? {
+				let t = et(e, e.parseError ? {
 					rows: 0,
 					cells: 0,
 					ownedUtf8Bytes: 0
 				} : i);
-				qe(t, "get-worksheet", void 0, s.usage), We(t.jsonBytes, "get-worksheet", void 0, s.usage);
-				let n = Ue(this.retainedSheetUsage ?? {
+				Ye(t, "get-worksheet", void 0, s.usage), Ke(t.jsonBytes, "get-worksheet", void 0, s.usage);
+				let n = Ge(this.retainedSheetUsage ?? {
 					rows: 0,
 					cells: 0,
 					ownedUtf8Bytes: 0,
 					jsonBytes: 0
 				}, t);
-				Xe(n, "get-worksheet", void 0, s.usage), a = e, o = n;
+				Qe(n, "get-worksheet", void 0, s.usage), a = e, o = n;
 			}
 			if (!a || !o) throw Error(`XLSX worksheet ${e} did not produce a terminal model`);
 			return this.retainedSheetUsage = o, this.sheetCache.set(e, a), a;
 		} catch (e) {
-			throw e instanceof te && (this.resourceFailure ??= e), e;
+			throw e instanceof P && (this.resourceFailure ??= e), e;
 		}
 	}
 	ensureWorksheetPullClient() {
 		if (this.worksheetPullClient) return this.worksheetPullClient;
 		if (!this.parsedWorkbook) throw Error("Workbook not loaded");
-		return this.worksheetPullClient = new Ze({
+		return this.worksheetPullClient = new $e({
 			generation: this.generation || 1,
-			transport: this.bridge.transport(Je),
+			transport: this.bridge.transport(Xe),
 			sharedStrings: this.parsedWorkbook.sharedStrings,
 			timeoutMs: this.workerTimeoutMs,
 			open: async (e, t, n, r) => {
@@ -4194,7 +4316,7 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 			try {
 				return await e();
 			} catch (e) {
-				throw e instanceof te && (this.resourceFailure ??= e), e;
+				throw e instanceof P && (this.resourceFailure ??= e), e;
 			}
 		}, n = (this.archiveOperationTail ?? Promise.resolve()).then(t, t);
 		return this.archiveOperationTail = n.then(() => void 0, () => void 0), n;
@@ -4229,8 +4351,8 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 	}
 	async resolveValidationList(e, t) {
 		if (this.assertResourceHealthy(), !this.parsedWorkbook) throw Error("Workbook not loaded");
-		let n = va(t);
-		if (n.kind !== "range") return ya(n, () => null);
+		let n = Oa(t);
+		if (n.kind !== "range") return ka(n, () => null);
 		let r = e;
 		if (n.sheet) {
 			let e = this.sheetNames.findIndex((e) => e.toLowerCase() === n.sheet?.toLowerCase());
@@ -4242,21 +4364,21 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 		}
 		let i = await this.getWorksheet(r), a = this.parsedWorkbook.styles, o = /* @__PURE__ */ new Map();
 		for (let e of i.rows) for (let t of e.cells) o.set(`${t.row}:${t.col}`, t);
-		return ya(n, (e, t) => {
+		return ka(n, (e, t) => {
 			let n = o.get(`${e}:${t}`);
-			return n ? qt(n, a, null, i.date1904) : null;
+			return n ? Yt(n, a, null, i.date1904) : null;
 		});
 	}
 	cellText(e, t) {
-		return this.parsedWorkbook ? qt(t, this.parsedWorkbook.styles, null, e.date1904) : "";
+		return this.parsedWorkbook ? Yt(t, this.parsedWorkbook.styles, null, e.date1904) : "";
 	}
 	async renderViewport(e, t, n, r = {}) {
 		if (this.assertResourceHealthy(), this._mode === "worker") throw Error("renderViewport(canvas) is unavailable in mode: 'worker'; use renderViewportToBitmap() and paint it via an ImageBitmapRenderingContext");
 		if (!this.parsedWorkbook) throw Error("Workbook not loaded");
-		let i = this.parsedWorkbook.styles, a = Ta(r), { sizeOverrides: o, ...s } = a.opts;
+		let i = this.parsedWorkbook.styles, a = Fa(r), { sizeOverrides: o, ...s } = a.opts;
 		return this.withWorksheetArchiveOperation(t, (t) => {
-			let r = a.worksheet ?? Sa(t, o);
-			return r !== t && _i(t, r), a.layoutMetrics && ir.forWorksheet(r, a.layoutMetrics.maximumDigitWidth), fa({
+			let r = a.worksheet ?? Ma(t, o);
+			return r !== t && Ci(t, r), a.layoutMetrics && or.forWorksheet(r, a.layoutMetrics.maximumDigitWidth), Sa({
 				ws: r,
 				styles: i,
 				math: this.math
@@ -4268,9 +4390,9 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 	}
 	async renderViewportToBitmap(e, t, n) {
 		this.assertResourceHealthy();
-		let r = Ta(n), i = {
+		let r = Fa(n), i = {
 			...r.opts,
-			dpr: n.dpr ?? L()
+			dpr: n.dpr ?? R()
 		};
 		if (this._mode === "worker") {
 			if (!Number.isInteger(e) || e < 0 || e >= this.sheetCount) throw Error(`Sheet index ${e} out of range (count: ${this.sheetCount})`);
@@ -4287,7 +4409,7 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 		let a = new OffscreenCanvas(1, 1);
 		return await this.renderViewport(a, e, t, i), a.transferToImageBitmap();
 	}
-	[Da](e) {
+	[La](e) {
 		this._mode === "worker" && this.bridge.post({
 			type: "releaseViewProjection",
 			projectionId: e
@@ -4317,8 +4439,8 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 	}
 	destroy() {
 		this.generation = (this.generation ?? 1) + 1, this.worksheetPullClient?.cancelAll("closed").catch(() => void 0), this.worksheetPullClient = null, this.bridge.terminate(), this.parsedWorkbook = null, this.sheetCache.clear(), this.sheetLoads.clear(), this.fontsDestroyed = !0;
-		for (let e of this.retainedFontSets.values()) e.faces && Fe(e.faces);
-		this.retainedFontSets.clear(), this.googleFontNames = [], B(this._fetchImage), c(this._fetchImage), this.rawParts.clear(), this.queuedImageLoads?.clear();
+		for (let e of this.retainedFontSets.values()) e.faces && Le(e.faces);
+		this.retainedFontSets.clear(), this.googleFontNames = [], V(this._fetchImage), c(this._fetchImage), this.rawParts.clear(), this.queuedImageLoads?.clear();
 	}
 	assertResourceHealthy() {
 		if (this.resourceFailure) throw this.resourceFailure;
@@ -4326,58 +4448,58 @@ var Ea = Symbol("retain-xlsx-viewer-fonts"), Da = Symbol("release-xlsx-viewer-pr
 };
 //#endregion
 //#region packages/xlsx/src/data-validation.ts
-function ka(e, t, n) {
+function za(e, t, n) {
 	if (!e) return !1;
 	for (let r of e.split(/\s+/)) {
 		if (!r) continue;
-		let [e, i] = r.split(":"), a = ar(e);
+		let [e, i] = r.split(":"), a = sr(e);
 		if (!a) continue;
 		if (!i) {
 			if (a.row === t && a.col === n) return !0;
 			continue;
 		}
-		let o = ar(i);
+		let o = sr(i);
 		if (!o) continue;
 		let s = Math.min(a.row, o.row), c = Math.max(a.row, o.row), l = Math.min(a.col, o.col), u = Math.max(a.col, o.col);
 		if (t >= s && t <= c && n >= l && n <= u) return !0;
 	}
 	return !1;
 }
-function Aa(e, t, n) {
+function Ba(e, t, n) {
 	if (!e) return null;
-	for (let r of e) if (r.validationType === "list" && ka(r.sqref, t, n)) return r;
+	for (let r of e) if (r.validationType === "list" && za(r.sqref, t, n)) return r;
 	return null;
 }
 //#endregion
 //#region packages/xlsx/src/element-context.ts
-function ja(e, t) {
-	let n = t.colAxis.offsetOf(e.fromCol + 1) + e.fromColOff * t.scale / R, r = t.rowAxis.offsetOf(e.fromRow + 1) + e.fromRowOff * t.scale / R, i, a;
-	if (cr(e)) i = e.nativeExtCx * t.scale / R, a = e.nativeExtCy * t.scale / R;
+function Va(e, t) {
+	let n = t.colAxis.offsetOf(e.fromCol + 1) + e.fromColOff * t.scale / D, r = t.rowAxis.offsetOf(e.fromRow + 1) + e.fromRowOff * t.scale / D, i, a;
+	if (ur(e)) i = e.nativeExtCx * t.scale / D, a = e.nativeExtCy * t.scale / D;
 	else {
-		let o = t.colAxis.offsetOf(e.toCol + 1) + e.toColOff * t.scale / R, s = t.rowAxis.offsetOf(e.toRow + 1) + e.toRowOff * t.scale / R;
+		let o = t.colAxis.offsetOf(e.toCol + 1) + e.toColOff * t.scale / D, s = t.rowAxis.offsetOf(e.toRow + 1) + e.toRowOff * t.scale / D;
 		i = o - n, a = s - r;
 	}
 	if (i <= 0 || a <= 0) return null;
 	let o = t.colAxis.offsetOf(t.startCol), s = t.rowAxis.offsetOf(t.startRow);
 	return {
-		x: yr(t.scrollAreaX + (n - o) - t.scrollOffsetX, i, t.canvasWidth, t.rtl),
+		x: xr(t.scrollAreaX + (n - o) - t.scrollOffsetX, i, t.canvasWidth, t.rtl),
 		y: t.scrollAreaY + (r - s) - t.scrollOffsetY,
 		width: i,
 		height: a
 	};
 }
-function Ma(e, t) {
+function Ha(e, t) {
 	return e.x >= t.x && e.x <= t.x + t.width && e.y >= t.y && e.y <= t.y + t.height;
 }
-function Na(e, t) {
-	let n = yr(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
+function Ua(e, t) {
+	let n = xr(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
 	return e.x + e.width >= n && e.x <= n + t.scrollAreaW && e.y + e.height >= t.scrollAreaY && e.y <= t.scrollAreaY + t.scrollAreaH;
 }
-function Pa(e, t) {
-	let n = yr(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
+function Wa(e, t) {
+	let n = xr(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
 	return e.x >= n && e.x <= n + t.scrollAreaW && e.y >= t.scrollAreaY && e.y <= t.scrollAreaY + t.scrollAreaH;
 }
-function Fa(e, t) {
+function Ga(e, t) {
 	let n = $(e), r = t.cellScale, { col: i, row: a } = n.axesAtScale(r), o = Math.round(50 * r), s = Math.round(22 * r), c = i.bandsToCover(1, t.freezeCols, Math.max(0, t.width - o)), l = a.bandsToCover(1, t.freezeRows, Math.max(0, t.height - s)), u = c.reduce((e, t) => e + t.size, 0), d = l.reduce((e, t) => e + t.size, 0);
 	return {
 		colAxis: i,
@@ -4395,11 +4517,11 @@ function Fa(e, t) {
 		canvasWidth: t.width
 	};
 }
-function Ia(e, t, n) {
-	let r = Fa(e, n), i, a = 0;
+function Ka(e, t, n) {
+	let r = Ga(e, n), i, a = 0;
 	if (i = t.elementType === "chart" ? e.charts[t.elementIndex] : t.elementType === "image" ? e.images[t.elementIndex] : (e.shapeGroups ?? [])[t.elementIndex], !i) return null;
-	let o = ja(i, r);
-	if (!o || !Na(o, r)) return null;
+	let o = Va(i, r);
+	if (!o || !Ua(o, r)) return null;
 	if (t.elementType === "shape") {
 		let n = (e.shapeGroups ?? [])[t.elementIndex], r = t.shapeIndex === void 0 ? void 0 : n?.shapes[t.shapeIndex];
 		r && (o = {
@@ -4409,7 +4531,7 @@ function Ia(e, t, n) {
 			height: r.h * o.height
 		}, a = r.rot);
 	}
-	let s = yr(r.scrollAreaX, r.scrollAreaW, r.canvasWidth, r.rtl);
+	let s = xr(r.scrollAreaX, r.scrollAreaW, r.canvasWidth, r.rtl);
 	return {
 		rect: o,
 		clip: {
@@ -4421,7 +4543,7 @@ function Ia(e, t, n) {
 		rotation: a
 	};
 }
-function La(e) {
+function qa(e) {
 	return {
 		from: {
 			row: e.fromRow + 1,
@@ -4437,7 +4559,7 @@ function La(e) {
 		}
 	};
 }
-function Ra(e, t) {
+function Ja(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -4445,7 +4567,7 @@ function Ra(e, t) {
 	}
 	return e.slice(0, n);
 }
-function za(e, t) {
+function Ya(e, t) {
 	if (!e.text) return {
 		truncated: !1,
 		textCharacters: 0
@@ -4460,7 +4582,7 @@ function za(e, t) {
 			n.push("\n"), r++;
 		}
 		for (let e of o.runs) {
-			let a = e.type === "text" ? e.text : e.type === "break" ? "\n" : "[equation]", o = Ra(a, Math.max(0, t - r));
+			let a = e.type === "text" ? e.text : e.type === "break" ? "\n" : "[equation]", o = Ja(a, Math.max(0, t - r));
 			if (n.push(o), r += o.length, o.length < a.length) {
 				i = !0;
 				break;
@@ -4474,7 +4596,7 @@ function za(e, t) {
 		textCharacters: r
 	};
 }
-function Ba(e, t, n, r, i, a, o, s) {
+function Xa(e, t, n, r, i, a, o, s) {
 	return {
 		format: "xlsx",
 		kind: "element",
@@ -4482,7 +4604,7 @@ function Ba(e, t, n, r, i, a, o, s) {
 		sheetName: e.name,
 		elementType: n,
 		elementIndex: r,
-		anchor: La(i),
+		anchor: qa(i),
 		...a === void 0 ? {} : { text: a },
 		truncated: o,
 		truncationReasons: o ? ["text"] : [],
@@ -4490,19 +4612,19 @@ function Ba(e, t, n, r, i, a, o, s) {
 		maxTextCharacters: s
 	};
 }
-function Va(e, t, n, r, i) {
+function Za(e, t, n, r, i) {
 	for (let a = e.charts.length - 1; a >= 0; a--) {
-		let o = e.charts[a], s = ja(o, r);
-		if (!s || !Na(s, r) || !Ma(n, s)) continue;
-		let c = Se(o.chart, i);
+		let o = e.charts[a], s = Va(o, r);
+		if (!s || !Ua(s, r) || !Ha(n, s)) continue;
+		let c = we(o.chart, i);
 		return {
-			...Ba(e, t, "chart", a, o, c.text, c.truncated, c.maxTextCharacters),
+			...Xa(e, t, "chart", a, o, c.text, c.truncated, c.maxTextCharacters),
 			seriesCount: o.chart.series.length
 		};
 	}
 	return null;
 }
-function Ha(e, t, n) {
+function Qa(e, t, n) {
 	let r = {
 		x: t.x + n.x * t.width,
 		y: t.y + n.y * t.height,
@@ -4514,21 +4636,21 @@ function Ha(e, t, n) {
 		y: u
 	};
 }
-function Ua(e, t, n, r, i) {
+function $a(e, t, n, r, i) {
 	let a = e.shapeGroups ?? [];
 	for (let o = a.length - 1; o >= 0; o--) {
-		let s = a[o], c = ja(s, r);
-		if (!(!c || !Na(c, r))) for (let r = s.shapes.length - 1; r >= 0; r--) {
+		let s = a[o], c = Va(s, r);
+		if (!(!c || !Ua(c, r))) for (let r = s.shapes.length - 1; r >= 0; r--) {
 			let a = s.shapes[r];
-			if (!Ma(Ha(n, c, a), {
+			if (!Ha(Qa(n, c, a), {
 				x: c.x + a.x * c.width,
 				y: c.y + a.y * c.height,
 				width: a.w * c.width,
 				height: a.h * c.height
 			})) continue;
-			let l = za(a, i);
+			let l = Ya(a, i);
 			return {
-				...Ba(e, t, "shape", o, s, l.text, l.truncated, i),
+				...Xa(e, t, "shape", o, s, l.text, l.truncated, i),
 				shapeIndex: r,
 				shapeCount: s.shapes.length,
 				...a.geom.type === "image" ? { mimeType: a.geom.mimeType } : {}
@@ -4537,26 +4659,26 @@ function Ua(e, t, n, r, i) {
 	}
 	return null;
 }
-function Wa(e, t, n, r, i) {
+function eo(e, t, n, r, i) {
 	for (let a = e.images.length - 1; a >= 0; a--) {
-		let o = e.images[a], s = ja(o, r);
-		if (!(!s || !Na(s, r) || !Ma(n, s))) return {
-			...Ba(e, t, "image", a, o, void 0, !1, i),
+		let o = e.images[a], s = Va(o, r);
+		if (!(!s || !Ua(s, r) || !Ha(n, s))) return {
+			...Xa(e, t, "image", a, o, void 0, !1, i),
 			mimeType: o.svgImagePath ? "image/svg+xml" : o.mimeType
 		};
 	}
 	return null;
 }
-function Ga(e, t, n, r, i = Ae) {
+function to(e, t, n, r, i = Me) {
 	if (!Number.isFinite(n.x) || !Number.isFinite(n.y)) throw RangeError("XLSX hit-test point must contain finite coordinates.");
 	if (!Number.isFinite(i) || i < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	let a = Math.min(Ae, Math.floor(i)), o = Fa(e, r);
-	return Pa(n, o) ? Va(e, t, n, o, a) ?? Ua(e, t, n, o, a) ?? Wa(e, t, n, o, a) : null;
+	let a = Math.min(Me, Math.floor(i)), o = Ga(e, r);
+	return Wa(n, o) ? Za(e, t, n, o, a) ?? $a(e, t, n, o, a) ?? eo(e, t, n, o, a) : null;
 }
-function Ka(e, t) {
+function no(e, t) {
 	let n = t ?? e.maxTextCharacters;
 	if (!Number.isFinite(n) || n < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	let r = Math.min(Ae, Math.floor(n)), i = e.text === void 0 ? void 0 : Ra(e.text, r), a = e.truncated || e.text !== void 0 && i.length < e.text.length;
+	let r = Math.min(Me, Math.floor(n)), i = e.text === void 0 ? void 0 : Ja(e.text, r), a = e.truncated || e.text !== void 0 && i.length < e.text.length;
 	return {
 		...structuredClone(e),
 		...i === void 0 ? {} : { text: i },
@@ -4568,17 +4690,17 @@ function Ka(e, t) {
 }
 //#endregion
 //#region packages/xlsx/src/selection.ts
-var qa = 128, Ja = 1e4, Ya = 8 * 1024 * 1024;
-function Xa(e) {
-	return e.areas.reduce((e, t) => e + (t.kind === "cells" ? (t.bottom - t.top + 1) * (t.right - t.left + 1) : t.kind === "rows" ? (t.lastRow - t.firstRow + 1) * rr : t.kind === "columns" ? (t.lastColumn - t.firstColumn + 1) * nr : nr * rr), 0);
+var ro = 128, io = 1e4, ao = 8 * 1024 * 1024;
+function oo(e) {
+	return e.areas.reduce((e, t) => e + (t.kind === "cells" ? (t.bottom - t.top + 1) * (t.right - t.left + 1) : t.kind === "rows" ? (t.lastRow - t.firstRow + 1) * ar : t.kind === "columns" ? (t.lastColumn - t.firstColumn + 1) * ir : ir * ar), 0);
 }
-function Za(e, t) {
+function so(e, t) {
 	return Number.isInteger(e) && e >= 1 && e <= t;
 }
-function Qa(e) {
+function co(e) {
 	switch (e.kind) {
 		case "cells":
-			if (!Za(e.top, 1048576) || !Za(e.bottom, 1048576) || !Za(e.left, 16384) || !Za(e.right, 16384)) throw RangeError("Cell selection bounds must be inside the XLSX grid.");
+			if (!so(e.top, 1048576) || !so(e.bottom, 1048576) || !so(e.left, 16384) || !so(e.right, 16384)) throw RangeError("Cell selection bounds must be inside the XLSX grid.");
 			return {
 				kind: "cells",
 				top: Math.min(e.top, e.bottom),
@@ -4587,14 +4709,14 @@ function Qa(e) {
 				right: Math.max(e.left, e.right)
 			};
 		case "rows":
-			if (!Za(e.firstRow, 1048576) || !Za(e.lastRow, 1048576)) throw RangeError("Row selection bounds must be inside the XLSX grid.");
+			if (!so(e.firstRow, 1048576) || !so(e.lastRow, 1048576)) throw RangeError("Row selection bounds must be inside the XLSX grid.");
 			return {
 				kind: "rows",
 				firstRow: Math.min(e.firstRow, e.lastRow),
 				lastRow: Math.max(e.firstRow, e.lastRow)
 			};
 		case "columns":
-			if (!Za(e.firstColumn, 16384) || !Za(e.lastColumn, 16384)) throw RangeError("Column selection bounds must be inside the XLSX grid.");
+			if (!so(e.firstColumn, 16384) || !so(e.lastColumn, 16384)) throw RangeError("Column selection bounds must be inside the XLSX grid.");
 			return {
 				kind: "columns",
 				firstColumn: Math.min(e.firstColumn, e.lastColumn),
@@ -4603,7 +4725,7 @@ function Qa(e) {
 		case "sheet": return { kind: "sheet" };
 	}
 }
-function $a(e, t) {
+function lo(e, t) {
 	switch (e.kind) {
 		case "cells": return t.row >= e.top && t.row <= e.bottom && t.col >= e.left && t.col <= e.right;
 		case "rows": return t.row >= e.firstRow && t.row <= e.lastRow;
@@ -4611,37 +4733,42 @@ function $a(e, t) {
 		case "sheet": return !0;
 	}
 }
-function eo(e, t) {
-	if (!Za(e.row, 1048576) || !Za(e.col, 16384)) throw RangeError(`${t} must be inside the XLSX grid.`);
+function uo(e, t) {
+	if (!so(e.row, 1048576) || !so(e.col, 16384)) throw RangeError(`${t} must be inside the XLSX grid.`);
 	return {
 		row: e.row,
 		col: e.col
 	};
 }
-function to(e) {
+function fo(e) {
 	if (!Array.isArray(e.areas) || e.areas.length === 0) throw TypeError("A selection must contain at least one area.");
 	if (e.areas.length > 128) throw RangeError("A selection may contain at most 128 areas.");
 	if (!Number.isInteger(e.activeAreaIndex) || e.activeAreaIndex < 0 || e.activeAreaIndex >= e.areas.length) throw RangeError("activeAreaIndex must identify an area in the selection.");
-	let t = e.areas.map(Qa), n = eo(e.activeCell, "activeCell"), r = eo(e.extensionAnchor, "extensionAnchor"), i = t[e.activeAreaIndex];
-	if (!$a(i, n)) throw RangeError("activeCell must be inside the active selection area.");
-	if (!$a(i, r)) throw RangeError("extensionAnchor must be inside the active selection area.");
+	let t = e.areas.map(co), n = [], r = /* @__PURE__ */ new Map(), i = 0;
+	for (let a = 0; a < t.length; a++) {
+		let o = t[a], s = o.kind === "cells" ? `c:${o.top}:${o.left}:${o.bottom}:${o.right}` : o.kind === "rows" ? `r:${o.firstRow}:${o.lastRow}` : o.kind === "columns" ? `k:${o.firstColumn}:${o.lastColumn}` : "s", c = r.get(s);
+		c === void 0 && (c = n.length, r.set(s, c), n.push(o)), a === e.activeAreaIndex && (i = c);
+	}
+	let a = uo(e.activeCell, "activeCell"), o = uo(e.extensionAnchor, "extensionAnchor"), s = n[i];
+	if (!lo(s, a)) throw RangeError("activeCell must be inside the active selection area.");
+	if (!lo(s, o)) throw RangeError("extensionAnchor must be inside the active selection area.");
 	return {
-		areas: t,
-		activeAreaIndex: e.activeAreaIndex,
-		activeCell: n,
-		extensionAnchor: r
+		areas: n,
+		activeAreaIndex: i,
+		activeCell: a,
+		extensionAnchor: o
 	};
 }
-function no(e) {
+function po(e) {
 	let t = 0;
 	for (let n of e) t = t * 26 + n.charCodeAt(0) - 64;
 	return t >= 1 && t <= 16384 ? t : null;
 }
-function ro(e) {
+function mo(e) {
 	let t = e.trim().toUpperCase(), n = /^\$?(\d+):\$?(\d+)$/.exec(t);
 	if (n) {
 		let e = Number(n[1]), t = Number(n[2]);
-		if (!Za(e, 1048576) || !Za(t, 1048576)) return null;
+		if (!so(e, 1048576) || !so(t, 1048576)) return null;
 		let r = Math.min(e, t);
 		return {
 			areas: [{
@@ -4662,7 +4789,7 @@ function ro(e) {
 	}
 	let r = /^\$?([A-Z]+):\$?([A-Z]+)$/.exec(t);
 	if (r) {
-		let e = no(r[1]), t = no(r[2]);
+		let e = po(r[1]), t = po(r[2]);
 		if (e === null || t === null) return null;
 		let n = Math.min(e, t);
 		return {
@@ -4684,7 +4811,7 @@ function ro(e) {
 	}
 	let i = t.split(":");
 	if (i.length > 2) return null;
-	let a = ar(i[0]), o = i.length === 2 ? ar(i[1]) : a;
+	let a = sr(i[0]), o = i.length === 2 ? sr(i[1]) : a;
 	if (!a || !o) return null;
 	let s = {
 		kind: "cells",
@@ -4703,12 +4830,12 @@ function ro(e) {
 		extensionAnchor: c
 	};
 }
-function io(e, t) {
+function ho(e, t) {
 	return e === t ? !0 : !e || !t || e.activeAreaIndex !== t.activeAreaIndex || e.areas.length !== t.areas.length || e.activeCell.row !== t.activeCell.row || e.activeCell.col !== t.activeCell.col || e.extensionAnchor.row !== t.extensionAnchor.row || e.extensionAnchor.col !== t.extensionAnchor.col ? !1 : e.areas.every((e, n) => JSON.stringify(e) === JSON.stringify(t.areas[n]));
 }
 //#endregion
 //#region packages/xlsx/src/find.ts
-var ao = class {
+var go = class {
 	_matches = [];
 	_active = -1;
 	_generation = 0;
@@ -4738,7 +4865,7 @@ var ao = class {
 		return t ? {
 			sheet: t.sheet,
 			sheetName: t.sheetName,
-			ref: or(t.row, t.col),
+			ref: cr(t.row, t.col),
 			row: t.row,
 			col: t.col
 		} : null;
@@ -4768,7 +4895,7 @@ var ao = class {
 			if (n !== this._generation) return [];
 			let o = this._sheetName(a);
 			for (let n of r) {
-				let r = we(De([{ text: n.text }]), e, t);
+				let r = Ee(ke([{ text: n.text }]), e, t);
 				for (let e of r) {
 					let t = e.slices[0], r = n.text.slice(t.start, t.end);
 					i.push({
@@ -4784,10 +4911,10 @@ var ao = class {
 		return n === this._generation ? (this._matches = i, this._active = -1, this.matches()) : [];
 	}
 	next() {
-		return this._active = Ce(this._active, this._matches.length), this._activePublic();
+		return this._active = Te(this._active, this._matches.length), this._activePublic();
 	}
 	prev() {
-		return this._active = Oe(this._active, this._matches.length), this._activePublic();
+		return this._active = Ae(this._active, this._matches.length), this._activePublic();
 	}
 	_activePublic() {
 		let e = this._locationAt(this._active);
@@ -4798,7 +4925,7 @@ var ao = class {
 		} : null;
 	}
 };
-function oo(e) {
+function _o(e) {
 	let { cell: t, popup: n, viewport: r, rtl: i } = e, a = t.x + t.w + 8, o = t.x - 8 - n.w, s = a + n.w <= r.w, c = o >= 0, l;
 	l = i ? c ? o : s ? a : o : s ? a : c ? o : a, l = Math.max(0, Math.min(l, r.w - n.w));
 	let u = t.y;
@@ -4807,10 +4934,64 @@ function oo(e) {
 		top: u
 	};
 }
-function so(e) {
+function vo(e) {
+	return 8 + (e - 1) * 14;
+}
+function yo(e) {
 	return e > 0 ? (e + 1) * 19 : 0;
 }
-function co(e, t) {
+function bo(e, t, n, r, i, a, o, s, c = !1) {
+	if (e === "row") {
+		let e = Math.min(s, i + a), c = Math.min(s, i), l = s;
+		return r > 0 && n <= r ? l = e : r > 0 && t > r && (c = e), {
+			x: 0,
+			y: c,
+			w: o,
+			h: Math.max(0, l - c)
+		};
+	}
+	if (!c) {
+		let e = Math.min(o, i + a), c = Math.min(o, i), l = o;
+		return r > 0 && n <= r ? l = e : r > 0 && t > r && (c = e), {
+			x: c,
+			y: 0,
+			w: Math.max(0, l - c),
+			h: s
+		};
+	}
+	let l = Math.max(0, o - i), u = Math.max(0, l - a), d = 0, f = l;
+	return r > 0 && n <= r ? d = u : r > 0 && t > r && (f = u), {
+		x: d,
+		y: 0,
+		w: Math.max(0, f - d),
+		h: s
+	};
+}
+function xo(e, t, n, r, i) {
+	let a = Math.min(n, r), o = Math.max(n, r);
+	return e === "row" ? [{
+		x1: t,
+		y1: a,
+		x2: t,
+		y2: o
+	}, {
+		x1: t,
+		y1: n,
+		x2: t + i / 2,
+		y2: n
+	}] : [{
+		x1: a,
+		y1: t,
+		x2: o,
+		y2: t
+	}, {
+		x1: n,
+		y1: t,
+		x2: n,
+		y2: t + i / 2
+	}];
+}
+function So(e, t) {
 	let n = /* @__PURE__ */ new Map(), r = /* @__PURE__ */ new Map(), i = 0, a = 0;
 	for (let t of e) t.level > 0 && n.set(t.index, t.level), t.collapsed && r.set(t.index, !0), t.index > i && (i = t.index), t.level > a && (a = t.level);
 	let o = i, s = [];
@@ -4824,15 +5005,15 @@ function co(e, t) {
 		for (let i = 1; i <= o + 1; i++) c(i) >= e ? n ? n.end = i : n = {
 			start: i,
 			end: i
-		} : n &&= (s.push(lo(e, n, t, r, c)), null);
-		n && s.push(lo(e, n, t, r, c));
+		} : n &&= (s.push(Co(e, n, t, r, c)), null);
+		n && s.push(Co(e, n, t, r, c));
 	}
 	return {
 		maxLevel: a,
 		groups: s
 	};
 }
-function lo(e, t, n, r, i) {
+function Co(e, t, n, r, i) {
 	let a = null;
 	if (n) {
 		let n = t.end + 1;
@@ -4850,7 +5031,7 @@ function lo(e, t, n, r, i) {
 		collapsed: o
 	};
 }
-function uo(e, t) {
+function wo(e, t) {
 	let n = !e.collapsed, r = /* @__PURE__ */ new Map();
 	for (let e of t) r.set(e.index, e);
 	let i = [], a = [];
@@ -4858,7 +5039,7 @@ function uo(e, t) {
 	else {
 		let n = /* @__PURE__ */ new Set();
 		for (let r of t) r.index >= e.start && r.index <= e.end && r.collapsed && n.add(r.index);
-		for (let t = e.start; t <= e.end; t++) fo(t, e, r, n) || a.push(t);
+		for (let t = e.start; t <= e.end; t++) To(t, e, r, n) || a.push(t);
 	}
 	return {
 		hide: i,
@@ -4866,7 +5047,7 @@ function uo(e, t) {
 		nowCollapsed: n
 	};
 }
-function fo(e, t, n, r) {
+function To(e, t, n, r) {
 	let i = n.get(e)?.level ?? 0;
 	if (i <= t.level) return !1;
 	for (let e of r) {
@@ -4875,7 +5056,7 @@ function fo(e, t, n, r) {
 	}
 	return !1;
 }
-function po(e, t) {
+function Eo(e, t) {
 	let n = [], r = [];
 	for (let i of e) i.level >= t ? n.push(i.index) : r.push(i.index);
 	return {
@@ -4883,7 +5064,7 @@ function po(e, t) {
 		show: r
 	};
 }
-function mo(e) {
+function Do(e) {
 	let t = [];
 	for (let n of e.rows) {
 		let e = n.outlineLevel ?? 0, r = n.collapsed ?? !1;
@@ -4896,7 +5077,7 @@ function mo(e) {
 	}
 	return t;
 }
-function ho(e) {
+function Oo(e) {
 	let t = e.colOutlineLevels ?? {}, n = e.colCollapsed ?? {}, r = e.colHidden ?? {}, i = /* @__PURE__ */ new Set();
 	for (let e of Object.keys(t)) i.add(Number(e));
 	for (let e of Object.keys(n)) i.add(Number(e));
@@ -4909,14 +5090,14 @@ function ho(e) {
 	});
 	return a;
 }
-function go(e, t) {
+function ko(e, t) {
 	let n = e.outlinePr;
 	return n ? t === "row" ? n.summaryBelow : n.summaryRight : !0;
 }
 //#endregion
 //#region packages/xlsx/src/internal/sheet-viewer-runtime.ts
-var _o = class {
-	owner = new be("SheetAcquisition");
+var Ao = class {
+	owner = new Se("SheetAcquisition");
 	get current() {
 		return this.owner.current;
 	}
@@ -4930,7 +5111,7 @@ var _o = class {
 		this.owner.close();
 	}
 };
-function vo(e) {
+function jo(e) {
 	return {
 		...e,
 		rows: e.rows.map((e) => ({ ...e })),
@@ -4939,7 +5120,7 @@ function vo(e) {
 		colCollapsed: e.colCollapsed ? { ...e.colCollapsed } : void 0
 	};
 }
-var yo = class {
+var Mo = class {
 	offsetX = 0;
 	offsetY = 0;
 	contentWidth = 0;
@@ -4985,7 +5166,7 @@ var yo = class {
 	reset() {
 		this.offsetX = 0, this.offsetY = 0;
 	}
-}, bo = class {
+}, No = class {
 	animationFrame = null;
 	activeRender = !1;
 	pendingRender = null;
@@ -4998,7 +5179,7 @@ var yo = class {
 		this.frameScheduler = typeof r.requestAnimationFrame == "function" && typeof r.cancelAnimationFrame == "function" ? {
 			requestAnimationFrame: (e) => r.requestAnimationFrame(e),
 			cancelAnimationFrame: (e) => r.cancelAnimationFrame(e)
-		} : null, this.staticDispatcher = e ? new Te(e, t) : null;
+		} : null, this.staticDispatcher = e ? new De(e, t) : null;
 	}
 	begin() {
 		return this.staticDispatcher ? this.staticDispatcher.begin() : ++this.generation;
@@ -5050,7 +5231,7 @@ var yo = class {
 	destroy() {
 		this.destroyed || (this.destroyed = !0, this.pendingRender = null, this.animationFrame !== null && this.frameScheduler && (this.frameScheduler.cancelAnimationFrame(this.animationFrame), this.animationFrame = null), this.staticDispatcher?.destroy(), this.generation++);
 	}
-}, xo = class {
+}, Po = class {
 	state = null;
 	dragPointerId = null;
 	get anchor() {
@@ -5082,10 +5263,10 @@ var yo = class {
 		this.state = null, this.dragPointerId = null;
 	}
 	setState(e) {
-		this.state = e ? to(e) : null;
+		this.state = e ? fo(e) : null;
 	}
 	select(e, t = "cells") {
-		this.state = to({
+		this.state = fo({
 			areas: [t === "rows" ? {
 				kind: "rows",
 				firstRow: e.row,
@@ -5105,6 +5286,38 @@ var yo = class {
 			activeCell: e,
 			extensionAnchor: e
 		});
+	}
+	add(e, t = "cells") {
+		if (!this.state) return this.select(e, t), !0;
+		let n = this.state.areas.findIndex((n) => (t === "rows" ? n.kind === "rows" : t === "cols" ? n.kind === "columns" : t === "all" ? n.kind === "sheet" : n.kind === "cells") && lo(n, e));
+		if (n >= 0) return this.state = fo({
+			...this.state,
+			activeAreaIndex: n,
+			activeCell: e,
+			extensionAnchor: e
+		}), !1;
+		if (this.state.areas.length >= 128) return !1;
+		let r = t === "rows" ? {
+			kind: "rows",
+			firstRow: e.row,
+			lastRow: e.row
+		} : t === "cols" ? {
+			kind: "columns",
+			firstColumn: e.col,
+			lastColumn: e.col
+		} : t === "all" ? { kind: "sheet" } : {
+			kind: "cells",
+			top: e.row,
+			left: e.col,
+			bottom: e.row,
+			right: e.col
+		}, i = [...this.state.areas, r];
+		return this.state = fo({
+			areas: i,
+			activeAreaIndex: i.length - 1,
+			activeCell: e,
+			extensionAnchor: e
+		}), !0;
 	}
 	extend(e) {
 		if (!this.state) {
@@ -5128,18 +5341,9 @@ var yo = class {
 			bottom: Math.max(t.row, e.row),
 			right: Math.max(t.col, e.col)
 		}, i = [...this.state.areas];
-		i[this.state.activeAreaIndex] = r;
-		let a = n.kind === "rows" ? {
-			row: e.row,
-			col: this.state.activeCell.col
-		} : n.kind === "columns" ? {
-			row: this.state.activeCell.row,
-			col: e.col
-		} : n.kind === "sheet" ? this.state.activeCell : e;
-		this.state = to({
+		i[this.state.activeAreaIndex] = r, this.state = fo({
 			...this.state,
-			areas: i,
-			activeCell: a
+			areas: i
 		});
 	}
 	snapshot() {
@@ -5203,7 +5407,7 @@ var yo = class {
 			};
 		}
 	}
-}, So = class {
+}, Fo = class {
 	cleanups = [];
 	ownerDocument;
 	ownerWindow;
@@ -5238,7 +5442,7 @@ var yo = class {
 	destroy() {
 		for (let e of this.cleanups.splice(0)) e();
 	}
-}, Co = class {
+}, Io = class {
 	selection;
 	find;
 	comment;
@@ -5272,17 +5476,17 @@ var yo = class {
 		this.validation.style.left = `${e}px`, this.validation.style.top = `${t}px`, this.validation.style.display = "block";
 	}
 };
-function wo(e, t) {
+function Lo(e, t) {
 	if (t <= 0) return 0;
 	let n = Math.min(40, t / 2);
 	return e < n ? -900 * Math.min(1, Math.max(0, (n - e) / n)) : e > t - n ? 900 * Math.min(1, Math.max(0, (e - (t - n)) / n)) : 0;
 }
-function To(e, t, n, r) {
+function Ro(e, t, n, r) {
 	if (r === "all") return {
 		x: 0,
 		y: 0
 	};
-	let i = r === "rows" ? 0 : wo(e.x, t.width), a = r === "cols" ? 0 : wo(e.y, t.height);
+	let i = r === "rows" ? 0 : Lo(e.x, t.width), a = r === "cols" ? 0 : Lo(e.y, t.height);
 	return {
 		x: n ? -i : i,
 		y: a
@@ -5290,13 +5494,13 @@ function To(e, t, n, r) {
 }
 //#endregion
 //#region packages/xlsx/src/viewer.ts
-var Eo = Symbol("XlsxViewer.borrowedWorkbook"), Do = 150, Oo = 280, ko = 200, Ao = 240, jo = 200, Mo = 30, No = 50, Po = 1, Fo = 1, Io = .45, Lo = "data-xlsx-viewer-styles", Ro = ".xlsx-tab-strip::-webkit-scrollbar{display:none}[data-xlsx-viewport-input]:focus{outline:none}[data-xlsx-viewport-input]:focus-visible:not([data-xlsx-pointer-focus]){outline:2px solid #1a73e8;outline-offset:-2px}.xlsx-tab-nav{background:transparent;transition:background 0.1s;}.xlsx-tab-nav:hover{background:rgba(0,0,0,0.08);}.xlsx-zoom-slider{-webkit-appearance:none;appearance:none;background:transparent;height:15px;margin:0;}.xlsx-zoom-slider::-webkit-slider-runnable-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:#808080;cursor:pointer;}.xlsx-zoom-slider:hover::-webkit-slider-thumb{background:#5f5f5f;}.xlsx-zoom-slider::-moz-range-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:#808080;cursor:pointer;}";
-function zo(e) {
-	if (!e.head || e.head.querySelector(`style[${Lo}]`)) return;
+var zo = Symbol("XlsxViewer.borrowedWorkbook"), Bo = 150, Vo = 280, Ho = 200, Uo = 240, Wo = 200, Go = 30, Ko = 50, qo = 1, Jo = 1, Yo = .45, Xo = "data-xlsx-viewer-styles", Zo = ".xlsx-tab-strip::-webkit-scrollbar{display:none}[data-xlsx-viewport-input]:focus{outline:none}.xlsx-tab-nav{background:transparent;transition:background 0.1s;}.xlsx-tab-nav:hover{background:rgba(0,0,0,0.08);}.xlsx-zoom-slider{-webkit-appearance:none;appearance:none;background:transparent;height:15px;margin:0;}.xlsx-zoom-slider::-webkit-slider-runnable-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:#808080;cursor:pointer;}.xlsx-zoom-slider:hover::-webkit-slider-thumb{background:#5f5f5f;}.xlsx-zoom-slider::-moz-range-track{height:4px;background:#c4c4c4;border-radius:2px;}.xlsx-zoom-slider::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:#808080;cursor:pointer;}";
+function Qo(e) {
+	if (!e.head || e.head.querySelector(`style[${Xo}]`)) return;
 	let t = e.createElement("style");
-	t.setAttribute(Lo, ""), t.textContent = Ro, e.head.appendChild(t);
+	t.setAttribute(Xo, ""), t.textContent = Zo, e.head.appendChild(t);
 }
-function Bo(e) {
+function $o(e) {
 	let t = [...e].sort((e, t) => e.first - t.first || e.last - t.last), n = [];
 	for (let e of t) {
 		let t = n.at(-1);
@@ -5307,7 +5511,7 @@ function Bo(e) {
 	}
 	return n;
 }
-function Vo(e, t) {
+function es(e, t) {
 	let n = 0, r = e.length - 1;
 	for (; n <= r;) {
 		let i = n + r >>> 1, a = e[i];
@@ -5317,7 +5521,7 @@ function Vo(e, t) {
 	}
 	return !1;
 }
-function Ho(e, t, n) {
+function ts(e, t, n) {
 	let r = 0, i = e.length;
 	for (; r < i;) {
 		let a = r + i >>> 1;
@@ -5325,12 +5529,12 @@ function Ho(e, t, n) {
 	}
 	return r;
 }
-function Uo(e, t) {
+function ns(e, t) {
 	for (let n = 1; n < e.length; n++) if (t(e[n - 1]) > t(e[n])) return [...e].sort((e, n) => t(e) - t(n));
 	return e;
 }
-var Wo = "#1a73e8", Go = 4, Ko = 5, qo = 25e4, Jo = 8 * 1024 * 1024, Yo = 1 * 1024 * 1024, Xo = 65536, Zo = 65536, Qo = 100;
-function $o(e, t) {
+var rs = "#1a73e8", is = 4, as = 5, os = 25e4, ss = 8 * 1024 * 1024, cs = 1 * 1024 * 1024, ls = 65536, us = 65536, ds = 100;
+function fs(e, t) {
 	let n = Math.min(e.length, Math.max(0, t));
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -5338,7 +5542,7 @@ function $o(e, t) {
 	}
 	return e.slice(0, n);
 }
-function es(e, t) {
+function ps(e, t) {
 	let n = 0, r = !1;
 	for (let t = 0; t < e.length; t++) {
 		let i = e.charCodeAt(t);
@@ -5346,28 +5550,74 @@ function es(e, t) {
 	}
 	return e.length + (r ? n + 2 : 0) > t ? null : r ? `"${e.replace(/"/g, "\"\"")}"` : e;
 }
-function ts(e, t, n, r) {
+function ms(e, t, n, r) {
 	for (let { index: i, edge: a } of t) if (!(a <= r) && Math.abs(e - a) <= n) return i;
 	return null;
 }
-function ns(e) {
+function hs(e) {
 	return {
 		border: `2px solid ${e}`,
 		background: `color-mix(in srgb, ${e} 8%, transparent)`
 	};
 }
-var rs = "color-mix(in srgb, #ffb300 8%, transparent)", is = "color-mix(in srgb, #fb8c00 8%, transparent)";
-function as(e, t = {}) {
-	let n = e ? "#fb8c00" : "#ffb300", r = e ? t.active : t.match, i = r ?? (e ? is : rs);
+function gs(e) {
+	let t = [];
+	for (let n of e) {
+		let e = n.x + n.width, r = n.y + n.height;
+		n.top && t.push({
+			axis: "h",
+			fixed: n.y,
+			start: n.x,
+			end: e
+		}), n.right && t.push({
+			axis: "v",
+			fixed: e,
+			start: n.y,
+			end: r
+		}), n.bottom && t.push({
+			axis: "h",
+			fixed: r,
+			start: n.x,
+			end: e
+		}), n.left && t.push({
+			axis: "v",
+			fixed: n.x,
+			start: n.y,
+			end: r
+		});
+	}
+	let n = /* @__PURE__ */ new Map();
+	for (let e of t) {
+		let t = `${e.axis}:${e.fixed}`, r = n.get(t);
+		r ? r.push(e) : n.set(t, [e]);
+	}
+	let r = [];
+	for (let e of n.values()) {
+		let t = [...new Set(e.flatMap(({ start: e, end: t }) => [e, t]))].sort((e, t) => e - t), n = null, i = 0, a = () => {
+			if (n === null || i <= n) return;
+			let { axis: t, fixed: a } = e[0];
+			r.push(t === "h" ? `M${n} ${a}H${i}` : `M${a} ${n}V${i}`), n = null;
+		};
+		for (let r = 0; r + 1 < t.length; r++) {
+			let o = t[r], s = t[r + 1], c = e.some((e) => e.start < s && e.end > o);
+			c && n !== null && o === i ? i = s : (a(), c && (n = o, i = s));
+		}
+		a();
+	}
+	return r.join("");
+}
+var _s = 0, vs = "color-mix(in srgb, #ffb300 8%, transparent)", ys = "color-mix(in srgb, #fb8c00 8%, transparent)";
+function bs(e, t = {}) {
+	let n = e ? "#fb8c00" : "#ffb300", r = e ? t.active : t.match, i = r ?? (e ? ys : vs);
 	return {
 		border: `2px solid ${r ?? n}`,
 		background: i
 	};
 }
-var os = class {
+var xs = class {
 	hostDocument;
 	hostWindow;
-	acquisition = new _o();
+	acquisition = new Ao();
 	viewport;
 	renderDispatcher;
 	wrapper;
@@ -5387,7 +5637,7 @@ var os = class {
 	stashedRowHeights = /* @__PURE__ */ new Map();
 	stashedColWidths = /* @__PURE__ */ new Map();
 	sizeOverrideStore = /* @__PURE__ */ new Map();
-	projectionId = Fo++;
+	projectionId = Jo++;
 	canvasArea;
 	scrollHost;
 	spacer;
@@ -5437,7 +5687,7 @@ var os = class {
 		this.pendingTap?.pointerId !== e && (this.pendingTap = null), this.pendingClick?.pointerId !== e && (this.pendingClick = null), this.selectionController.beginDrag(e);
 	}
 	_pendingZoomAnchor = null;
-	selectionController = new xo();
+	selectionController = new Po();
 	lastNotifiedSelectionState = null;
 	emittingSelectionChange = !1;
 	pendingSelectionChange = !1;
@@ -5474,18 +5724,18 @@ var os = class {
 		let r = this.hostDocument.defaultView;
 		if (!r) throw Error("XlsxViewer requires a document with an active Window");
 		this.hostWindow = r, this.opts = t, this._mountKind = n.kind, this._nativeScrollbars = t.showScrollbars ?? !0;
-		let i = t[Eo];
-		this._borrowed = i !== void 0, this._mode = n.kind === "sheet" ? n.mode : Ee("XlsxViewer", t.mode, i), this._hiddenSheetMode = t.hiddenSheetMode ?? "show", this.viewport = new yo(t.cellScale ?? 1), this.wrapper = this.hostDocument.createElement("div"), this.wrapper.style.cssText = `position:relative;width:100%;height:100%;background:${n.kind === "composite" ? "#fff" : "transparent"};box-sizing:border-box;font-family:sans-serif;display:flex;flex-direction:column;`, this.gridRegion = this.hostDocument.createElement("div"), this.gridRegion.style.cssText = "position:relative;flex:1;min-height:0;overflow:hidden;";
+		let i = t[zo];
+		this._borrowed = i !== void 0, this._mode = n.kind === "sheet" ? n.mode : Oe("XlsxViewer", t.mode, i), this._hiddenSheetMode = t.hiddenSheetMode ?? "show", this.viewport = new Mo(t.cellScale ?? 1), this.wrapper = this.hostDocument.createElement("div"), this.wrapper.style.cssText = `position:relative;width:100%;height:100%;background:${n.kind === "composite" ? "#fff" : "transparent"};box-sizing:border-box;font-family:sans-serif;display:flex;flex-direction:column;`, this.gridRegion = this.hostDocument.createElement("div"), this.gridRegion.style.cssText = "position:relative;flex:1;min-height:0;overflow:hidden;";
 		let a = "position:absolute;top:0;left:0;z-index:3;display:none;background:#f5f5f5;";
-		if (this.cornerGutter = this.hostDocument.createElement("canvas"), this.cornerGutter.style.cssText = a, this.cornerGutter.setAttribute("data-xlsx-outline", "corner"), this.colGutter = this.hostDocument.createElement("canvas"), this.colGutter.style.cssText = a, this.colGutter.setAttribute("data-xlsx-outline", "col"), this.rowGutter = this.hostDocument.createElement("canvas"), this.rowGutter.style.cssText = a, this.rowGutter.setAttribute("data-xlsx-outline", "row"), this.canvasArea = this.hostDocument.createElement("div"), this.canvasArea.style.cssText = "position:absolute;inset:0;overflow:hidden;", this.canvas = n.kind === "sheet" ? n.canvas : this.hostDocument.createElement("canvas"), this.canvas.style.cssText = "position:absolute;top:0;left:0;z-index:0;display:block;", this.renderDispatcher = new bo(this.canvas, this._mode === "worker", this.hostWindow), this.scrollHost = this.hostDocument.createElement("div"), this.scrollHost.setAttribute("data-xlsx-viewport-input", n.kind), this.scrollHost.tabIndex = 0, this.scrollHost.style.cssText = `position:absolute;inset:0;overflow:${this._nativeScrollbars ? "auto" : "clip"};z-index:2;background:transparent;`, this.spacer = this.hostDocument.createElement("div"), this.spacer.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;", this._nativeScrollbars && this.scrollHost.appendChild(this.spacer), this.surface = new So(this.canvas, this.canvasArea, this.scrollHost), this.overlayHost = new Co(this.canvasArea, this.canvas, this.scrollHost, {
-			commentMaxWidth: Oo,
-			commentMaxHeight: ko,
-			validationMaxWidth: Ao,
-			validationMaxHeight: jo
-		}), this.selectionOverlay = this.overlayHost.selection, this.findOverlay = this.overlayHost.find, this.commentPopup = this.overlayHost.comment, this.validationPanel = this.overlayHost.validation, zo(this.hostDocument), n.kind === "composite") {
-			this.tabBar = this.hostDocument.createElement("div"), this.tabBar.style.cssText = `display:flex;align-items:flex-end;height:${Mo}px;flex-shrink:0;background:#f0f0f0;border-top:1px solid #c8ccd0;`, this.navPrev = this.makeNavButton("◀", "Scroll tabs left", () => this.scrollTabs(-1)), this.navNext = this.makeNavButton("▶", "Scroll tabs right", () => this.scrollTabs(1)), this.navPrev.dataset.xlsxTabNav = "prev", this.navNext.dataset.xlsxTabNav = "next";
+		if (this.cornerGutter = this.hostDocument.createElement("canvas"), this.cornerGutter.style.cssText = a, this.cornerGutter.setAttribute("data-xlsx-outline", "corner"), this.colGutter = this.hostDocument.createElement("canvas"), this.colGutter.style.cssText = a, this.colGutter.setAttribute("data-xlsx-outline", "col"), this.rowGutter = this.hostDocument.createElement("canvas"), this.rowGutter.style.cssText = a, this.rowGutter.setAttribute("data-xlsx-outline", "row"), this.canvasArea = this.hostDocument.createElement("div"), this.canvasArea.style.cssText = "position:absolute;inset:0;overflow:hidden;", this.canvas = n.kind === "sheet" ? n.canvas : this.hostDocument.createElement("canvas"), this.canvas.style.cssText = "position:absolute;top:0;left:0;z-index:0;display:block;", this.renderDispatcher = new No(this.canvas, this._mode === "worker", this.hostWindow), this.scrollHost = this.hostDocument.createElement("div"), this.scrollHost.setAttribute("data-xlsx-viewport-input", n.kind), this.scrollHost.tabIndex = 0, this.scrollHost.style.cssText = `position:absolute;inset:0;overflow:${this._nativeScrollbars ? "auto" : "clip"};z-index:2;background:transparent;`, this.spacer = this.hostDocument.createElement("div"), this.spacer.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;", this._nativeScrollbars && this.scrollHost.appendChild(this.spacer), this.surface = new Fo(this.canvas, this.canvasArea, this.scrollHost), this.overlayHost = new Io(this.canvasArea, this.canvas, this.scrollHost, {
+			commentMaxWidth: Vo,
+			commentMaxHeight: Ho,
+			validationMaxWidth: Uo,
+			validationMaxHeight: Wo
+		}), this.selectionOverlay = this.overlayHost.selection, this.findOverlay = this.overlayHost.find, this.commentPopup = this.overlayHost.comment, this.validationPanel = this.overlayHost.validation, Qo(this.hostDocument), n.kind === "composite") {
+			this.tabBar = this.hostDocument.createElement("div"), this.tabBar.style.cssText = `display:flex;align-items:flex-end;height:${Go}px;flex-shrink:0;background:#f0f0f0;border-top:1px solid #c8ccd0;`, this.navPrev = this.makeNavButton("◀", "Scroll tabs left", () => this.scrollTabs(-1)), this.navNext = this.makeNavButton("▶", "Scroll tabs right", () => this.scrollTabs(1)), this.navPrev.dataset.xlsxTabNav = "prev", this.navNext.dataset.xlsxTabNav = "next";
 			let e = this.hostDocument.createElement("div");
-			e.style.cssText = `display:flex;flex-shrink:0;width:${No}px;height:100%;`, e.appendChild(this.navPrev), e.appendChild(this.navNext), this.tabStrip = this.hostDocument.createElement("div"), this.tabStrip.style.cssText = `position:relative;display:block;flex:1;min-width:0;height:100%;margin-left:${Po}px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;`, this.tabStrip.classList.add("xlsx-tab-strip"), this.tabStrip.addEventListener("scroll", () => this.updateNavButtons()), this.tabList = this.hostDocument.createElement("div"), this.tabList.style.cssText = `display:flex;align-items:flex-end;height:100%;gap:${Po}px;box-sizing:border-box;`, this.tabList.style.width = "max-content", this.tabList.style.minWidth = "100%", this.tabStrip.appendChild(this.tabList), this.tabBar.appendChild(e), this.tabBar.appendChild(this.tabStrip), this.opts.showZoomSlider !== !1 && this.tabBar.appendChild(this.buildZoomControl());
+			e.style.cssText = `display:flex;flex-shrink:0;width:${Ko}px;height:100%;`, e.appendChild(this.navPrev), e.appendChild(this.navNext), this.tabStrip = this.hostDocument.createElement("div"), this.tabStrip.style.cssText = `position:relative;display:block;flex:1;min-width:0;height:100%;margin-left:${qo}px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;`, this.tabStrip.classList.add("xlsx-tab-strip"), this.tabStrip.addEventListener("scroll", () => this.updateNavButtons()), this.tabList = this.hostDocument.createElement("div"), this.tabList.style.cssText = `display:flex;align-items:flex-end;height:100%;gap:${qo}px;box-sizing:border-box;`, this.tabList.style.width = "max-content", this.tabList.style.minWidth = "100%", this.tabStrip.appendChild(this.tabList), this.tabBar.appendChild(e), this.tabBar.appendChild(this.tabStrip), this.opts.showZoomSlider !== !1 && this.tabBar.appendChild(this.buildZoomControl());
 		}
 		this.gridRegion.appendChild(this.canvasArea), this.wrapper.appendChild(this.gridRegion), n.kind === "composite" && this.wrapper.appendChild(this.tabBar), e.appendChild(this.wrapper), this.rowGutter.addEventListener("pointerdown", (e) => this.onGutterPointerDown(e, "row")), this.colGutter.addEventListener("pointerdown", (e) => this.onGutterPointerDown(e, "col")), this._nativeScrollbars && this.surface.on("scroll", () => {
 			if (this.pendingTap = null, this.pendingElementClick = null, this.hideCommentPopup(), this.hideValidationPanel(), this.scrollHost.clientWidth > 0) {
@@ -5501,7 +5751,7 @@ var os = class {
 			};
 			this.viewport.setViewportSize(this.scrollHost.clientWidth, this.scrollHost.clientHeight), this.setViewportLeft(e.x), this.viewportTop = e.y, this.reanchorHorizontalScroll(), this.layoutGutters(), this.scheduleRender(), this.updateSelectionOverlay(), this.updateFindOverlay(), this.updateNavButtons();
 		});
-		o.observe(this.gridRegion), this.resizeObserver = o, this.setupSelectionEvents(), this._find = new ao(() => this.sheetCount, (e) => this.wb?.sheetNames[e] ?? "", (e) => this._collectSheetCells(e)), i && (this.acquisition.install(i, !1), this._mountKind === "composite" && this.activateWorkbook(i).catch((e) => this._reportRenderError(e)));
+		o.observe(this.gridRegion), this.resizeObserver = o, this.setupSelectionEvents(), this._find = new go(() => this.sheetCount, (e) => this.wb?.sheetNames[e] ?? "", (e) => this._collectSheetCells(e)), i && (this.acquisition.install(i, !1), this._mountKind === "composite" && this.activateWorkbook(i).catch((e) => this._reportRenderError(e)));
 	}
 	async _collectSheetCells(e) {
 		let t = this.wb;
@@ -5520,7 +5770,7 @@ var os = class {
 	async load(e) {
 		if (this.assertOpen(), this._borrowed) throw Error(`${this._mountKind === "sheet" ? "XlsxSheetViewer" : "XlsxViewer"}.load() is unsupported on a Viewer created by fromWorkbook(); the borrowed workbook is already loaded.`);
 		try {
-			let t = await this.acquisition.replace(() => Oa.load(e, {
+			let t = await this.acquisition.replace(() => Ra.load(e, {
 				password: this.opts.password,
 				useGoogleFonts: this.opts.useGoogleFonts,
 				maxZipEntryBytes: this.opts.maxZipEntryBytes,
@@ -5546,7 +5796,7 @@ var os = class {
 	}
 	async ensureHostFonts(e) {
 		if (this.fontBinding?.workbook === e) return !0;
-		let t = e[Ea];
+		let t = e[Ia];
 		if (typeof t != "function") return !0;
 		let n = ++this.fontBindingGeneration, r = await t.call(e, this.hostDocument);
 		return this._destroyed || n !== this.fontBindingGeneration || this.wb !== e ? (r(), !1) : (this.fontBinding?.release(), this.fontBinding = {
@@ -5576,7 +5826,7 @@ var os = class {
 		try {
 			if (!await this.ensureHostFonts(n)) return;
 			let t = await n.getWorksheet(e);
-			r = this.sheetViews.get(e) ?? vo(t), this.sheetViews.set(e, r);
+			r = this.sheetViews.get(e) ?? jo(t), this.sheetViews.set(e, r);
 		} catch (e) {
 			if (!this.isCurrentSheetRequest(t, n)) return;
 			throw e;
@@ -5587,12 +5837,12 @@ var os = class {
 		return !this._destroyed && e === this.sheetRequestGeneration && this.wb === t;
 	}
 	buildOutline(e) {
-		this.stashedRowHeights.clear(), this.stashedColWidths.clear(), this.rowOutlineBands = mo(e), this.colOutlineBands = ho(e);
-		let t = co(this.rowOutlineBands, go(e, "row")), n = co(this.colOutlineBands, go(e, "col"));
+		this.stashedRowHeights.clear(), this.stashedColWidths.clear(), this.rowOutlineBands = Do(e), this.colOutlineBands = Oo(e);
+		let t = So(this.rowOutlineBands, ko(e, "row")), n = So(this.colOutlineBands, ko(e, "col"));
 		this.rowOutline = t.maxLevel > 0 ? t : null, this.colOutline = n.maxLevel > 0 ? n : null;
 	}
 	layoutGutters() {
-		let e = this.viewport.scale, t = this.rowOutline ? Math.round(so(this.rowOutline.maxLevel) * e) : 0, n = this.colOutline ? Math.round(so(this.colOutline.maxLevel) * e) : 0;
+		let e = this.viewport.scale, t = this.rowOutline ? Math.round(yo(this.rowOutline.maxLevel) * e) : 0, n = this.colOutline ? Math.round(yo(this.colOutline.maxLevel) * e) : 0;
 		this.gutter = {
 			w: t,
 			h: n
@@ -5610,45 +5860,55 @@ var os = class {
 		this.currentWorksheet && (this.gutter.h > 0 && this.colOutline && this.paintAxisGutter("col"), this.gutter.w > 0 && this.rowOutline && this.paintAxisGutter("row"), (this.gutter.w > 0 || this.gutter.h > 0) && this.paintCornerGutter());
 	}
 	paintAxisGutter(e) {
-		if (!this.currentWorksheet) return;
-		let t = this.viewport.scale, n = e === "row", r = n ? this.rowGutter : this.colGutter, i = n ? this.rowOutline : this.colOutline;
-		if (!i) return;
-		let a = parseFloat(r.style.width) || 0, o = parseFloat(r.style.height) || 0;
-		if (a <= 0 || o <= 0) return;
-		let s = this.surface.sizeCanvas(r, a, o), c = r.getContext("2d");
-		if (!c) return;
-		c.setTransform(s, 0, 0, s, 0, 0), c.clearRect(0, 0, a, o), c.fillStyle = "#f5f5f5", c.fillRect(0, 0, a, o);
-		let l = 19 * t;
-		c.strokeStyle = "#808080", c.lineWidth = 1, c.fillStyle = "#404040";
-		for (let e of i.groups) {
-			let r = (e.level - 1 + .5) * l, i = n ? this.getCellRect(e.start, 1) : this.getCellRect(1, e.start), a = n ? this.getCellRect(e.end, 1) : this.getCellRect(1, e.end);
-			if (!i || !a) continue;
-			let o = n ? i.y : this.screenX(i.x, i.w), s = n ? a.y + a.h : this.screenX(a.x, a.w) + a.w, u = Math.min(o, s), d = Math.max(o, s);
-			if (!e.collapsed && d - u > 1) {
-				if (c.beginPath(), n) {
-					c.moveTo(r, u), c.lineTo(r, d);
-					let t = e.summary != null && e.summary > e.end ? d : u;
-					c.lineTo(r + l / 2, t);
-				} else {
-					c.moveTo(u, r), c.lineTo(d, r);
-					let t = e.summary != null && e.summary > e.end ? d : u;
-					c.lineTo(t, r + l / 2);
-				}
-				c.stroke();
+		let t = this.currentWorksheet;
+		if (!t) return;
+		let n = this.viewport.scale, r = e === "row", i = r ? this.rowGutter : this.colGutter, a = r ? this.rowOutline : this.colOutline;
+		if (!a) return;
+		let o = parseFloat(i.style.width) || 0, s = parseFloat(i.style.height) || 0;
+		if (o <= 0 || s <= 0) return;
+		let c = this.surface.sizeCanvas(i, o, s), l = i.getContext("2d");
+		if (!l) return;
+		l.setTransform(c, 0, 0, c, 0, 0), l.clearRect(0, 0, o, s), l.fillStyle = "#f5f5f5", l.fillRect(0, 0, o, s);
+		let u = 19 * n;
+		l.strokeStyle = "#808080", l.lineWidth = 1, l.fillStyle = "#404040";
+		let d = $(t), f = d.effectiveFrozenBands({
+			scale: n,
+			width: this.canvasArea.clientWidth,
+			height: this.canvasArea.clientHeight,
+			headerWidth: 50,
+			headerHeight: 22,
+			rows: t.freezeRows ?? 0,
+			cols: t.freezeCols ?? 0
+		}), p = d.axesAtScale(n), m = r ? f.rows : f.cols, h = r ? p.row.offsetOf(f.rows + 1) : p.col.offsetOf(f.cols + 1), g = (r ? 22 : 50) * n, _ = (n, i) => bo(e, n, i, m, g, h, o, s, !r && t.rightToLeft === !0), v = (e, t) => {
+			let n = _(e, t);
+			return n.w <= 0 || n.h <= 0 ? !1 : (l.save(), l.beginPath(), l.rect(n.x, n.y, n.w, n.h), l.clip(), !0);
+		};
+		for (let t of a.groups) {
+			let i = (t.level - 1 + .5) * u, a = r ? this.getCellRect(t.start, 1) : this.getCellRect(1, t.start), o = r ? this.getCellRect(t.end, 1) : this.getCellRect(1, t.end);
+			if (!a || !o) continue;
+			let s = r ? a.y : this.screenX(a.x, a.w), c = r ? o.y + o.h : this.screenX(o.x, o.w) + o.w, d = Math.min(s, c), f = Math.max(s, c);
+			if (!t.collapsed && f - d > 1 && v(t.start, t.end)) {
+				l.beginPath();
+				for (let t of xo(e, i, s, c, u)) l.moveTo(t.x1, t.y1), l.lineTo(t.x2, t.y2);
+				l.stroke(), l.restore();
 			}
-			if (e.summary != null) {
-				let i = n ? this.getCellRect(e.summary, 1) : this.getCellRect(1, e.summary);
-				if (i) {
-					let a = n ? i.y + i.h / 2 : this.screenX(i.x, i.w) + i.w / 2;
-					this.drawToggleBox(c, n ? r : a, n ? a : r, e.collapsed, t);
+			if (t.summary != null) {
+				let e = r ? this.getCellRect(t.summary, 1) : this.getCellRect(1, t.summary);
+				if (e) {
+					let a = r ? e.y + e.h / 2 : this.screenX(e.x, e.w) + e.w / 2;
+					v(t.summary, t.summary) && (this.drawToggleBox(l, r ? i : a, r ? a : i, t.collapsed, n), l.restore());
 				}
 			}
 		}
-		let u = n ? 22 * t / 2 : 50 * t / 2;
-		for (let e = 1; e <= i.maxLevel + 1; e++) {
-			let r = (e - .5) * l;
-			if (r + l / 2 > (n ? a : o) + .5) break;
-			this.drawLevelButton(c, n ? r : u, n ? u : r, String(e), t);
+		let y = r ? 22 * n / 2 : 50 * n / 2;
+		for (let e = 1; e <= a.maxLevel + 1; e++) {
+			let t = vo(e) * n;
+			if (t + 12 * n / 2 > (r ? o : s) + .5) break;
+			this.drawLevelButton(l, r ? t : y, r ? y : t, String(e), n);
+		}
+		if (m > 0) {
+			let e = r ? g + h : t.rightToLeft === !0 ? o - g - h : g + h;
+			l.save(), l.strokeStyle = "#7a7a7a", l.lineWidth = .5, l.beginPath(), r ? (l.moveTo(0, e), l.lineTo(o, e)) : (l.moveTo(e, 0), l.lineTo(e, s)), l.stroke(), l.restore();
 		}
 	}
 	drawToggleBox(e, t, n, r, i) {
@@ -5656,7 +5916,7 @@ var os = class {
 		e.save(), e.fillStyle = "#ffffff", e.strokeStyle = "#808080", e.lineWidth = 1, e.fillRect(o + .5, s + .5, a, a), e.strokeRect(o + .5, s + .5, a, a), e.strokeStyle = "#404040", e.beginPath(), e.moveTo(o + 2.5, s + a / 2 + .5), e.lineTo(o + a - 1.5, s + a / 2 + .5), r && (e.moveTo(o + a / 2 + .5, s + 2.5), e.lineTo(o + a / 2 + .5, s + a - 1.5)), e.stroke(), e.restore();
 	}
 	drawLevelButton(e, t, n, r, i) {
-		let a = Math.round(11 * i), o = Math.round(t - a / 2), s = Math.round(n - a / 2);
+		let a = Math.round(12 * i), o = Math.round(t - a / 2), s = Math.round(n - a / 2);
 		e.save(), e.font = `${Math.round(9 * i)}px sans-serif`, e.textAlign = "center", e.textBaseline = "middle", e.fillStyle = "#ffffff", e.strokeStyle = "#808080", e.lineWidth = 1, e.fillRect(o + .5, s + .5, a, a), e.strokeRect(o + .5, s + .5, a, a), e.fillStyle = "#404040", e.fillText(r, t, n + .5), e.restore();
 	}
 	paintCornerGutter() {
@@ -5672,8 +5932,8 @@ var os = class {
 		let i = (n ? this.rowGutter : this.colGutter).getBoundingClientRect(), a = e.clientX - i.left, o = e.clientY - i.top, s = this.viewport.scale, c = 19 * s, l = 7 * s, u = n ? 22 * s / 2 : 50 * s / 2;
 		if ((n ? o : a) <= (n ? 22 : 50) * s) {
 			for (let i = 1; i <= r.maxLevel + 1; i++) {
-				let r = (i - .5) * c, s = n ? r : u, d = n ? u : r;
-				if (Math.abs(a - s) <= l && Math.abs(o - d) <= l) {
+				let r = vo(i) * s, c = n ? r : u, l = n ? u : r, d = 12 * s / 2;
+				if (Math.abs(a - c) <= d && Math.abs(o - l) <= d) {
 					e.preventDefault(), this.applyLevelButton(i, t);
 					return;
 				}
@@ -5694,15 +5954,33 @@ var os = class {
 	applyGroupToggle(e, t) {
 		let n = this.currentWorksheet;
 		if (!n) return;
-		let { hide: r, show: i, nowCollapsed: a } = uo(e, t === "row" ? this.rowOutlineBands : this.colOutlineBands);
+		let { hide: r, show: i, nowCollapsed: a } = wo(e, t === "row" ? this.rowOutlineBands : this.colOutlineBands);
 		for (let e of r) this.setBandHidden(t, e, !0);
 		for (let e of i) this.setBandHidden(t, e, !1);
-		e.summary != null && this.setBandCollapsed(t, e.summary, a), this.afterOutlineMutation(n);
+		e.summary != null && this.setBandCollapsed(t, e.summary, a), this.afterOutlineMutation(n, a && e.summary != null ? {
+			axis: t,
+			summary: e.summary
+		} : void 0);
+	}
+	scrollOutlineSummaryToStart(e, t) {
+		let n = this.currentWorksheet;
+		if (!n) return;
+		let r = this.viewport.scale, i = $(n).scrollOffsetForCell(e === "row" ? t : 1, e === "col" ? t : 1, {
+			scale: r,
+			viewportWidth: this.canvasArea.clientWidth,
+			viewportHeight: this.canvasArea.clientHeight,
+			currentX: this.effectiveScrollLeft,
+			currentY: this.viewportTop,
+			headerWidth: 50,
+			headerHeight: 22,
+			align: "start"
+		});
+		e === "row" ? this.viewportTop = i.y : this.setViewportLeft(i.x);
 	}
 	applyLevelButton(e, t) {
 		let n = this.currentWorksheet;
 		if (!n) return;
-		let { hide: r, show: i } = po(t === "row" ? this.rowOutlineBands : this.colOutlineBands, e);
+		let { hide: r, show: i } = Eo(t === "row" ? this.rowOutlineBands : this.colOutlineBands, e);
 		for (let e of r) this.setBandHidden(t, e, !0);
 		for (let e of i) this.setBandHidden(t, e, !1);
 		let a = t === "row" ? this.rowOutline : this.colOutline;
@@ -5757,19 +6035,19 @@ var os = class {
 			e && (e.collapsed = n);
 		} else r.colCollapsed = r.colCollapsed ?? {}, n ? r.colCollapsed[t] = !0 : delete r.colCollapsed[t];
 	}
-	afterOutlineMutation(e) {
-		ir.invalidate(e), this.buildOutlineLayoutOnly(e), this.updateSpacerSize(e), this.updateSelectionOverlay(), this.scheduleRender();
+	afterOutlineMutation(e, t) {
+		or.invalidate(e), this.buildOutlineLayoutOnly(e), this.updateSpacerSize(e), t && this.scrollOutlineSummaryToStart(t.axis, t.summary), this.updateSelectionOverlay(), this.updateFindOverlay(), this.scheduleRender(), t && this.emitViewportChange();
 	}
 	buildOutlineLayoutOnly(e) {
-		this.rowOutlineBands = mo(e), this.colOutlineBands = ho(e);
-		let t = co(this.rowOutlineBands, go(e, "row")), n = co(this.colOutlineBands, go(e, "col"));
+		this.rowOutlineBands = Do(e), this.colOutlineBands = Oo(e);
+		let t = So(this.rowOutlineBands, ko(e, "row")), n = So(this.colOutlineBands, ko(e, "col"));
 		this.rowOutline = t.maxLevel > 0 ? t : null, this.colOutline = n.maxLevel > 0 ? n : null;
 	}
 	get isRtl() {
 		return this.currentWorksheet?.rightToLeft === !0;
 	}
 	updateFooterDirection() {
-		this._mountKind === "composite" && (this.tabBar.style.flexDirection = this.isRtl ? "row-reverse" : "row", this.tabStrip.style.marginLeft = this.isRtl ? "0" : `${Po}px`, this.tabStrip.style.marginRight = this.isRtl ? `${Po}px` : "0", this.tabList.style.flexDirection = this.isRtl ? "row-reverse" : "row");
+		this._mountKind === "composite" && (this.tabBar.style.flexDirection = this.isRtl ? "row-reverse" : "row", this.tabStrip.style.marginLeft = this.isRtl ? "0" : `${qo}px`, this.tabStrip.style.marginRight = this.isRtl ? `${qo}px` : "0", this.tabList.style.flexDirection = this.isRtl ? "row-reverse" : "row");
 	}
 	get maxScrollLeft() {
 		return this.syncNativeViewportExtent(), this.viewport.maxX;
@@ -5798,7 +6076,7 @@ var os = class {
 		this.viewport.setOffset(e, this.viewport.y), this._nativeScrollbars && (this.scrollHost.scrollLeft = this.isRtl ? Math.max(0, this.maxScrollLeft - this.viewport.x) : this.viewport.x);
 	}
 	screenX(e, t) {
-		return this.isRtl ? vr(e, t, this.canvasArea.clientWidth) : e;
+		return this.isRtl ? br(e, t, this.canvasArea.clientWidth) : e;
 	}
 	resetHorizontalScroll() {
 		this.viewport.setOffset(0, this.viewport.y), this._nativeScrollbars && (this.scrollHost.scrollLeft = this.isRtl ? this.maxScrollLeft : 0);
@@ -5846,14 +6124,14 @@ var os = class {
 		this.reanchorHorizontalScroll(), this.layoutGutters(), this.currentWorksheet && this.updateSpacerSize(this.currentWorksheet), await this.renderCurrentSheet(), this.updateSelectionOverlay(), this.updateFindOverlay();
 	}
 	async scrollToCell(e, t = {}) {
-		let n = ar(e);
+		let n = sr(e);
 		!n || !this.currentWorksheet || (this._scrollCellIntoView(n.row, n.col, t.align ?? "nearest"), await this.renderCurrentSheet(), this.updateSelectionOverlay(), this.updateFindOverlay(), this.emitViewportChange());
 	}
 	_stepSheet(e) {
-		return this._hiddenSheetMode === "skip" && this.wb ? Be(this.currentSheet, e, (e) => this.wb.isHidden(e), this.sheetCount) : this.currentSheet + e;
+		return this._hiddenSheetMode === "skip" && this.wb ? He(this.currentSheet, e, (e) => this.wb.isHidden(e), this.sheetCount) : this.currentSheet + e;
 	}
 	_initialSheet() {
-		return this._hiddenSheetMode === "skip" && this.wb ? Ve(0, (e) => this.wb.isHidden(e), this.sheetCount) : 0;
+		return this._hiddenSheetMode === "skip" && this.wb ? Ue(0, (e) => this.wb.isHidden(e), this.sheetCount) : 0;
 	}
 	getCellAt(e, t) {
 		if (this._destroyed) return null;
@@ -5899,7 +6177,7 @@ var os = class {
 		let n = this.currentWorksheet, r = this.elementContextViewport();
 		if (!n || !r) return null;
 		let i = this.canvasArea.getBoundingClientRect();
-		return Ga(n, this.currentSheet, {
+		return to(n, this.currentSheet, {
 			x: e - i.left,
 			y: t - i.top
 		}, r);
@@ -5923,32 +6201,32 @@ var os = class {
 		if (this._destroyed) throw Error("XlsxViewer has been destroyed");
 		let t;
 		if (typeof e == "string") {
-			if (t = ro(e), !t) throw SyntaxError(`Invalid XLSX selection reference: ${e}`);
-		} else t = e ? to(e) : null;
+			if (t = mo(e), !t) throw SyntaxError(`Invalid XLSX selection reference: ${e}`);
+		} else t = e ? fo(e) : null;
 		this.commitSelection(t);
 	}
 	getSelectionContext(e = {}) {
-		if (this.assertOpen(), this.elementContext) return Ka(this.elementContext, e.maxTextCharacters);
+		if (this.assertOpen(), this.elementContext) return no(this.elementContext, e.maxTextCharacters);
 		let t = this.currentWorksheet, n = this.selectionState;
 		if (!t || !n) return null;
 		let r = e.maxCells ?? 1e3;
 		if (!Number.isFinite(r) || r < 0) throw RangeError("maxCells must be a finite non-negative number.");
-		let i = Math.min(Ja, Math.floor(r)), a = e.maxTextCharacters ?? Yo;
+		let i = Math.min(io, Math.floor(r)), a = e.maxTextCharacters ?? cs;
 		if (!Number.isFinite(a) || a < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-		let o = Math.min(Ya, Math.floor(a)), s = 0, c = !1, l = (e) => {
+		let o = Math.min(ao, Math.floor(a)), s = 0, c = !1, l = (e) => {
 			let t = typeof e == "string" ? [e] : e, n = [], r = 0;
 			for (let e = 0; e < t.length; e++) {
-				let i = t[e], a = typeof i == "string" ? i : i.text, l = Math.max(0, Math.min(Zo - r, o - s)), u = $o(a, l);
+				let i = t[e], a = typeof i == "string" ? i : i.text, l = Math.max(0, Math.min(us - r, o - s)), u = fs(a, l);
 				if (n.push(u), r += u.length, s += u.length, u.length < a.length || e + 1 < t.length && l === 0) {
 					c = !0;
 					break;
 				}
 			}
 			return n.join("");
-		}, u = n.areas.some((e) => e.kind === "sheet"), d = Bo(n.areas.flatMap((e) => e.kind === "rows" ? [{
+		}, u = n.areas.some((e) => e.kind === "sheet"), d = $o(n.areas.flatMap((e) => e.kind === "rows" ? [{
 			first: e.firstRow,
 			last: e.lastRow
-		}] : [])), f = Bo(n.areas.flatMap((e) => e.kind === "columns" ? [{
+		}] : [])), f = $o(n.areas.flatMap((e) => e.kind === "columns" ? [{
 			first: e.firstColumn,
 			last: e.lastColumn
 		}] : [])), p = n.areas.flatMap((e) => e.kind === "cells" ? [e] : []), m = p.flatMap((e, t) => [{
@@ -5961,14 +6239,14 @@ var os = class {
 			active: !1
 		}]).sort((e, t) => e.row - t.row || Number(e.active) - Number(t.active)), h = /* @__PURE__ */ new Set(), g = 0, _ = [], v = [], y = !1, b = u || f.length > 0 ? [{
 			first: 1,
-			last: nr
-		}] : Bo([...d, ...p.map((e) => ({
+			last: ir
+		}] : $o([...d, ...p.map((e) => ({
 			first: e.top,
 			last: e.bottom
 		}))]), x = this.selectionContextRows.get(t);
-		x || (x = Uo(t.rows, (e) => e.index), this.selectionContextRows.set(t, x));
+		x || (x = ns(t.rows, (e) => e.index), this.selectionContextRows.set(t, x));
 		cellScan: for (let e of b) {
-			let n = Ho(x, e.first, (e) => e.index);
+			let n = ts(x, e.first, (e) => e.index);
 			for (; n < x.length;) {
 				let r = x[n++];
 				if (r.index > e.last) break;
@@ -5977,18 +6255,18 @@ var os = class {
 					let e = m[g++];
 					e.active ? h.add(e.index) : h.delete(e.index), a = !0;
 				}
-				a && (_ = Bo([...h].map((e) => ({
+				a && (_ = $o([...h].map((e) => ({
 					first: p[e].left,
 					last: p[e].right
 				}))));
-				let o = u || Vo(d, r.index) ? [{
+				let o = u || es(d, r.index) ? [{
 					first: 1,
-					last: rr
-				}] : Bo([...f, ..._]);
+					last: ar
+				}] : $o([...f, ..._]);
 				for (let e of o) {
 					let n = this.selectionContextCells.get(r);
-					n || (n = Uo(r.cells, (e) => e.col), this.selectionContextCells.set(r, n));
-					let a = Ho(n, e.first, (e) => e.col);
+					n || (n = ns(r.cells, (e) => e.col), this.selectionContextCells.set(r, n));
+					let a = ts(n, e.first, (e) => e.col);
 					for (; a < n.length;) {
 						let r = n[a++];
 						if (r.col > e.last) break;
@@ -6020,7 +6298,7 @@ var os = class {
 			sheetIndex: this.currentSheet,
 			sheetName: t.name,
 			selection: n,
-			coordinateCountUpperBound: Xa(n),
+			coordinateCountUpperBound: oo(n),
 			cells: v,
 			truncated: S.length > 0,
 			truncationReasons: S,
@@ -6032,7 +6310,7 @@ var os = class {
 	commitSelection(e) {
 		this.setElementContext(null);
 		let t = this.selectionState;
-		io(t, e) || (this.hideValidationPanel(), this.selectionController.setState(e), this.updateSelectionOverlay(), this.wb && this.scheduleRender(), this.emitSelectionChange());
+		ho(t, e) || (this.hideValidationPanel(), this.selectionController.setState(e), this.updateSelectionOverlay(), this.wb && this.scheduleRender(), this.emitSelectionChange());
 	}
 	setElementContext(e) {
 		return JSON.stringify(this.elementContext) === JSON.stringify(e) ? !1 : (this.elementContext = e ? structuredClone(e) : null, this.updateSelectionOverlay(), this.scheduleSelectionContextNotification(), !0);
@@ -6041,22 +6319,22 @@ var os = class {
 		if (!this.opts.onSelectionContextChange || this._destroyed || this.selectionContextNotificationFrame !== null || this.selectionContextNotificationMicrotask) return;
 		let e = () => {
 			if (this.selectionContextNotificationFrame = null, this.selectionContextNotificationMicrotask = !1, this._destroyed) return;
-			let e = this.getSelectionContext({ maxTextCharacters: Xo });
+			let e = this.getSelectionContext({ maxTextCharacters: ls });
 			this.opts.onSelectionContextChange?.(e ? structuredClone(e) : null);
 		};
 		typeof this.hostWindow.requestAnimationFrame == "function" ? this.selectionContextNotificationFrame = this.hostWindow.requestAnimationFrame(e) : (this.selectionContextNotificationMicrotask = !0, queueMicrotask(e));
 	}
 	emitSelectionChange() {
 		let e = this.selectionState;
-		if (io(e, this.lastNotifiedSelectionState) || this.scheduleSelectionContextNotification(), this.emittingSelectionChange) {
+		if (ho(e, this.lastNotifiedSelectionState) || this.scheduleSelectionContextNotification(), this.emittingSelectionChange) {
 			this.pendingSelectionChange = !0, this.scheduleSelectionNotification();
 			return;
 		}
-		if (this.pendingSelectionChange = !1, io(e, this.lastNotifiedSelectionState)) {
+		if (this.pendingSelectionChange = !1, ho(e, this.lastNotifiedSelectionState)) {
 			this.finishSelectionNotificationChain();
 			return;
 		}
-		if (this.selectionNotificationCount >= Qo) {
+		if (this.selectionNotificationCount >= ds) {
 			this.lastNotifiedSelectionState = e ? structuredClone(e) : null, this.finishSelectionNotificationChain();
 			return;
 		}
@@ -6064,7 +6342,7 @@ var os = class {
 		try {
 			this.opts.onSelectionStateChange?.(e ? structuredClone(e) : null);
 		} finally {
-			this.emittingSelectionChange = !1, this.pendingSelectionChange || !io(this.selectionState, this.lastNotifiedSelectionState) ? this.scheduleSelectionNotification() : this.finishSelectionNotificationChain();
+			this.emittingSelectionChange = !1, this.pendingSelectionChange || !ho(this.selectionState, this.lastNotifiedSelectionState) ? this.scheduleSelectionNotification() : this.finishSelectionNotificationChain();
 		}
 	}
 	scheduleSelectionNotification() {
@@ -6115,7 +6393,7 @@ var os = class {
 					edge: t.x + t.w
 				}));
 			}
-			let o = ts(a, i, Go, s);
+			let o = ms(a, i, is, s);
 			return o === null ? null : {
 				kind: "col",
 				index: o,
@@ -6135,7 +6413,7 @@ var os = class {
 					edge: t.y + t.h
 				}));
 			}
-			let a = ts(o, i, Go, c);
+			let a = ms(o, i, is, c);
 			return a === null ? null : {
 				kind: "row",
 				index: a,
@@ -6150,19 +6428,19 @@ var os = class {
 		if (!n || !r) return;
 		let i = this.viewport.scale, a = this.canvasArea.getBoundingClientRect();
 		if (n.kind === "col") {
-			let t = this.screenX(e - a.left, 0), o = Math.max(Ko, Math.round((t - n.originScaled) / i));
-			r.colWidths[n.index] = Qn(o, n.mdw), this.recordSizeOverride("col", n.index);
+			let t = this.screenX(e - a.left, 0), o = Math.max(as, Math.round((t - n.originScaled) / i));
+			r.colWidths[n.index] = er(o, n.mdw), this.recordSizeOverride("col", n.index);
 		} else {
-			let e = t - a.top, o = Math.max(Ko, Math.round((e - n.originScaled) / i));
-			r.rowHeights[n.index] = er(o), this.recordSizeOverride("row", n.index);
+			let e = t - a.top, o = Math.max(as, Math.round((e - n.originScaled) / i));
+			r.rowHeights[n.index] = nr(o), this.recordSizeOverride("row", n.index);
 		}
-		ir.invalidate(r), this.updateSpacerSize(r), this.updateSelectionOverlay(), this.scheduleRender();
+		or.invalidate(r), this.updateSpacerSize(r), this.updateSelectionOverlay(), this.scheduleRender();
 	}
 	setSelectionColor(e) {
 		this.opts.selectionColor = e, this.updateSelectionOverlay();
 	}
 	async setHiddenSheetMode(e) {
-		this._hiddenSheetMode = e, this.buildTabs(), e === "skip" && this.wb && this.wb.isHidden(this.currentSheet) ? await this.showSheet(Ve(this.currentSheet, (e) => this.wb.isHidden(e), this.sheetCount)) : this.updateTabActive(this.currentSheet);
+		this._hiddenSheetMode = e, this.buildTabs(), e === "skip" && this.wb && this.wb.isHidden(this.currentSheet) ? await this.showSheet(Ue(this.currentSheet, (e) => this.wb.isHidden(e), this.sheetCount)) : this.updateTabActive(this.currentSheet);
 	}
 	get hiddenSheetMode() {
 		return this._hiddenSheetMode;
@@ -6170,7 +6448,7 @@ var os = class {
 	get visibleSheetCount() {
 		if (!this.wb) return 0;
 		let e = this.wb;
-		return He((t) => e.isHidden(t), this.sheetCount);
+		return We((t) => e.isHidden(t), this.sheetCount);
 	}
 	async copySelection() {
 		this.assertOpen();
@@ -6203,12 +6481,12 @@ var os = class {
 			c1: n.left,
 			c2: n.right
 		}, l = o - a + 1, u = c - s + 1;
-		if (l > Math.floor(qo / u)) return {
+		if (l > Math.floor(os / u)) return {
 			status: "too-large",
 			limit: "cells"
 		};
 		let d = l * u, f = Math.max(0, l - 1) + l * Math.max(0, u - 1);
-		if (f > Jo) return {
+		if (f > ss) return {
 			status: "too-large",
 			limit: "text"
 		};
@@ -6217,7 +6495,7 @@ var os = class {
 			if (n.col < s || n.col > c) continue;
 			let r = n.value, i = this.wb?.cellText(e, n) ?? "";
 			if (this.wb || (r.type === "text" ? i = r.runs ? r.runs.map((e) => e.text).join("") : r.text : r.type === "number" ? i = String(r.number) : r.type === "bool" ? i = r.bool ? "TRUE" : "FALSE" : r.type === "error" && (i = r.error)), i) {
-				let e = es(i, Jo - f);
+				let e = ps(i, ss - f);
 				if (e === null) return {
 					status: "too-large",
 					limit: "text"
@@ -6272,12 +6550,12 @@ var os = class {
 			end: Math.min(o, i + d)
 		}, {
 			first: l.cols + 1,
-			last: rr,
+			last: ar,
 			start: Math.min(o, i + d),
 			end: o
 		}] : [{
 			first: 1,
-			last: rr,
+			last: ar,
 			start: i,
 			end: o
 		}], m = l.rows > 0 ? [{
@@ -6287,15 +6565,15 @@ var os = class {
 			end: Math.min(s, a + f)
 		}, {
 			first: l.rows + 1,
-			last: nr,
+			last: ir,
 			start: Math.min(s, a + f),
 			end: s
 		}] : [{
 			first: 1,
-			last: nr,
+			last: ir,
 			start: a,
 			end: s
-		}], { border: h, background: g } = ns(this.opts.selectionColor ?? Wo), _ = /* @__PURE__ */ new Set(), v = [], y = [];
+		}], h = this.opts.selectionColor ?? rs, { background: g } = hs(h), _ = /* @__PURE__ */ new Set(), v = [], y = [];
 		for (let t of e.areas) {
 			let e = t.kind === "cells" ? {
 				top: t.top,
@@ -6310,14 +6588,14 @@ var os = class {
 				top: t.firstRow,
 				bottom: t.lastRow,
 				left: 1,
-				right: rr,
+				right: ar,
 				topEdge: !0,
 				bottomEdge: !0,
 				leftEdge: !1,
 				rightEdge: !1
 			} : t.kind === "columns" ? {
 				top: 1,
-				bottom: nr,
+				bottom: ir,
 				left: t.firstColumn,
 				right: t.lastColumn,
 				topEdge: !1,
@@ -6326,63 +6604,90 @@ var os = class {
 				rightEdge: !0
 			} : {
 				top: 1,
-				bottom: nr,
+				bottom: ir,
 				left: 1,
-				right: rr,
+				right: ar,
 				topEdge: !1,
 				bottomEdge: !1,
 				leftEdge: !1,
 				rightEdge: !1
 			};
-			for (let n of m) for (let r of p) {
-				if (r.end <= r.start || n.end <= n.start) continue;
-				let i = Math.max(e.top, n.first), a = Math.min(e.bottom, n.last), o = Math.max(e.left, r.first), s = Math.min(e.right, r.last);
-				if (i > a || o > s) continue;
-				let c = this.getCellRect(i, o), l = this.getCellRect(a, s);
-				if (!c || !l) continue;
-				let u = c.x, d = c.y, f = l.x + l.w, p = l.y + l.h, m = Math.max(u, r.start), g = Math.max(d, n.start), b = Math.min(f, r.end), x = Math.min(p, n.end), S = b - m, C = x - g;
-				if (S <= 0 || C <= 0) continue;
-				let w = e.topEdge && i === e.top && d >= n.start ? h : "none", T = e.bottomEdge && a === e.bottom && p <= n.end ? h : "none", E = e.leftEdge && o === e.left && u >= r.start ? h : "none", D = e.rightEdge && s === e.right && f <= r.end ? h : "none", O = this.screenX(m, S), k = this.isRtl ? D : E, A = this.isRtl ? E : D, j = [
-					O,
-					g,
+			for (let t of m) for (let n of p) {
+				if (n.end <= n.start || t.end <= t.start) continue;
+				let r = Math.max(e.top, t.first), i = Math.min(e.bottom, t.last), a = Math.max(e.left, n.first), o = Math.min(e.right, n.last);
+				if (r > i || a > o) continue;
+				let s = this.getCellRect(r, a), c = this.getCellRect(i, o);
+				if (!s || !c) continue;
+				let l = s.x, u = s.y, d = c.x + c.w, f = c.y + c.h, p = Math.max(l, n.start), m = Math.max(u, t.start), h = Math.min(d, n.end), g = Math.min(f, t.end), b = h - p, x = g - m;
+				if (b <= 0 || x <= 0) continue;
+				let S = e.topEdge && r === e.top && u >= t.start, C = e.bottomEdge && i === e.bottom && f <= t.end, w = e.leftEdge && a === e.left && l >= n.start, T = e.rightEdge && o === e.right && d <= n.end, E = this.screenX(p, b), D = this.isRtl ? T : w, O = this.isRtl ? w : T, k = [
+					E,
+					m,
+					b,
+					x,
 					S,
+					O,
 					C,
-					w,
-					A,
-					T,
-					k
+					D
 				].join("|");
-				if (_.has(j)) continue;
-				_.add(j), v.push(`M${O} ${g}h${S}v${C}h${-S}Z`);
-				let M = this.hostDocument.createElement("div");
-				M.setAttribute("data-xlsx-selection-fragment", t.kind), M.style.cssText = `position:absolute;left:${O}px;top:${g}px;width:${S}px;height:${C}px;box-sizing:border-box;border-top:${w};border-right:${A};border-bottom:${T};border-left:${k};background:transparent;pointer-events:none;`, y.push(M);
+				_.has(k) || (_.add(k), v.push(`M${E} ${m}h${b}v${x}h${-b}Z`), y.push({
+					x: E,
+					y: m,
+					width: b,
+					height: x,
+					top: S,
+					right: O,
+					bottom: C,
+					left: D
+				}));
 			}
 		}
 		if (v.length > 0) {
-			let e = "http://www.w3.org/2000/svg", t = this.hostDocument.createElementNS(e, "svg");
-			t.setAttribute("data-xlsx-selection-fill", ""), t.style.cssText = "position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;";
-			let n = this.hostDocument.createElementNS(e, "path");
-			n.setAttribute("d", v.join("")), n.setAttribute("fill", g), t.appendChild(n), this.overlayHost.appendSelection(t);
+			let t = "http://www.w3.org/2000/svg", n = this.hostDocument.createElementNS(t, "svg");
+			n.setAttribute("data-xlsx-selection-fill", ""), n.style.cssText = "position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;";
+			let r = e.areas.length > 1, i = this.getCellRect(e.activeCell.row, e.activeCell.col), a = `xlsx-selection-mask-${++_s}`, c = this.hostDocument.createElementNS(t, "defs"), l = this.hostDocument.createElementNS(t, "mask");
+			l.setAttribute("id", a), l.setAttribute("maskUnits", "userSpaceOnUse"), l.setAttribute("x", "0"), l.setAttribute("y", "0"), l.setAttribute("width", String(o)), l.setAttribute("height", String(s));
+			let u = this.hostDocument.createElementNS(t, "path");
+			if (u.setAttribute("d", v.join("")), u.setAttribute("fill", "#fff"), l.appendChild(u), i) for (let e of m) for (let n of p) {
+				let r = Math.max(i.x, n.start), a = Math.max(i.y, e.start), o = Math.min(i.x + i.w, n.end), s = Math.min(i.y + i.h, e.end);
+				if (o <= r || s <= a) continue;
+				let c = this.hostDocument.createElementNS(t, "rect");
+				c.setAttribute("data-xlsx-active-cell-cutout", ""), c.setAttribute("x", String(this.screenX(r, o - r))), c.setAttribute("y", String(a)), c.setAttribute("width", String(o - r)), c.setAttribute("height", String(s - a)), c.setAttribute("fill", "#000"), l.appendChild(c);
+			}
+			c.appendChild(l), n.appendChild(c);
+			let d = this.hostDocument.createElementNS(t, "rect");
+			d.setAttribute("x", "0"), d.setAttribute("y", "0"), d.setAttribute("width", String(o)), d.setAttribute("height", String(s)), d.setAttribute("fill", g), d.setAttribute("mask", `url(#${a})`), n.appendChild(d);
+			let f = r ? "" : gs(y);
+			if (f) {
+				let e = this.hostDocument.createElementNS(t, "path");
+				e.setAttribute("data-xlsx-selection-border", ""), e.setAttribute("d", f), e.setAttribute("fill", "none"), e.setAttribute("stroke", h), e.setAttribute("stroke-width", "2"), e.setAttribute("stroke-linecap", "square"), e.setAttribute("stroke-linejoin", "miter"), n.appendChild(e);
+			}
+			if (i && r) for (let e of m) for (let r of p) {
+				let a = Math.max(i.x, r.start), o = Math.max(i.y, e.start), s = Math.min(i.x + i.w, r.end), c = Math.min(i.y + i.h, e.end);
+				if (s <= a || c <= o) continue;
+				let l = this.hostDocument.createElementNS(t, "rect");
+				l.setAttribute("data-xlsx-active-cell-border", ""), l.setAttribute("x", String(this.screenX(a, s - a))), l.setAttribute("y", String(o)), l.setAttribute("width", String(s - a)), l.setAttribute("height", String(c - o)), l.setAttribute("fill", "none"), l.setAttribute("stroke", h), l.setAttribute("stroke-width", "1"), n.appendChild(l);
+			}
+			this.overlayHost.appendSelection(n);
 		}
-		for (let e of y) this.overlayHost.appendSelection(e);
 		this.maybeDrawValidationDropdown();
 	}
 	drawElementContextOverlay() {
 		let e = this.elementContext, t = this.currentWorksheet, n = this.elementContextViewport();
 		if (!e || !t || !n || e.sheetIndex !== this.currentSheet) return;
-		let r = Ia(t, e, n);
+		let r = Ka(t, e, n);
 		if (!r) return;
 		let i = this.hostDocument.createElement("div");
 		i.setAttribute("data-xlsx-element-context-clip", ""), i.style.cssText = `position:absolute;left:${r.clip.x}px;top:${r.clip.y}px;width:${r.clip.width}px;height:${r.clip.height}px;overflow:hidden;pointer-events:none;`;
 		let a = this.hostDocument.createElement("div");
 		a.setAttribute("data-xlsx-element-context-outline", e.elementType);
-		let o = this.opts.selectionColor ?? Wo;
+		let o = this.opts.selectionColor ?? rs;
 		a.style.cssText = `position:absolute;left:${r.rect.x - r.clip.x}px;top:${r.rect.y - r.clip.y}px;width:${r.rect.width}px;height:${r.rect.height}px;box-sizing:border-box;border:2px solid ${o};background:color-mix(in srgb, ${o} 6%, transparent);transform:rotate(${r.rotation}deg);transform-origin:center;pointer-events:none;`, i.appendChild(a), this.overlayHost.appendSelection(i);
 	}
 	maybeDrawValidationDropdown() {
 		if (this.validationArrowRect = null, this.selectionMode !== "cells") return;
 		let e = this.currentWorksheet, t = this.activeCell;
-		if (!e || !t || !Aa(e.dataValidations, t.row, t.col)) return;
+		if (!e || !t || !Ba(e.dataValidations, t.row, t.col)) return;
 		let n = this.getCellRect(t.row, t.col);
 		if (!n) return;
 		let r = this.viewport.scale, i = Math.round(50 * r), a = Math.round(22 * r), o = Math.max(14, Math.min(n.h, 22 * r)), s = n.x + n.w, c = n.y;
@@ -6401,7 +6706,7 @@ var os = class {
 		this.overlayHost.clearFind();
 		let e = this.currentWorksheet;
 		if (!e) return;
-		let t = this.viewport.scale, n = (e) => Math.round(e * t), r = n(50), i = n(22), a = e.freezeRows ?? 0, o = e.freezeCols ?? 0, s = $(e).roundedFrozenExtent(t), c = r + s.width, l = i + s.height, u = as(!1, this.opts.findHighlightColors), d = as(!0, this.opts.findHighlightColors);
+		let t = this.viewport.scale, n = (e) => Math.round(e * t), r = n(50), i = n(22), a = e.freezeRows ?? 0, o = e.freezeCols ?? 0, s = $(e).roundedFrozenExtent(t), c = r + s.width, l = i + s.height, u = bs(!1, this.opts.findHighlightColors), d = bs(!0, this.opts.findHighlightColors);
 		for (let e of this._find.sheetHighlights(this.currentSheet)) {
 			let t = this.getCellRect(e.row, e.col);
 			if (!t) continue;
@@ -6453,7 +6758,7 @@ var os = class {
 			this.hideValidationPanel();
 			return;
 		}
-		let r = Aa(e.dataValidations, t.row, t.col);
+		let r = Ba(e.dataValidations, t.row, t.col);
 		r && (this.hideValidationPanel(), this.validationPanelKey = n, this.openValidationPanel(t, r.formula1));
 	}
 	async openValidationPanel(e, t) {
@@ -6498,7 +6803,7 @@ var os = class {
 		if (!t) return;
 		let n = this.screenX(t.x, t.w);
 		this.validationPanel.style.left = "-9999px", this.validationPanel.style.top = "-9999px", this.validationPanel.style.display = "block";
-		let r = ba({
+		let r = Aa({
 			cell: {
 				x: n,
 				y: t.y,
@@ -6531,7 +6836,7 @@ var os = class {
 	buildCommentMap(e) {
 		this.commentMap = /* @__PURE__ */ new Map();
 		for (let t of e.comments ?? []) {
-			let e = ar(t.cellRef);
+			let e = sr(t.cellRef);
 			e && this.commentMap.set(`${e.row}:${e.col}`, t);
 		}
 	}
@@ -6574,7 +6879,7 @@ var os = class {
 		}
 		this.commentPopupKey !== t && (this.hideCommentPopup(), this.commentPopupKey = t, this.commentPopupTimer = setTimeout(() => {
 			this.commentPopupTimer = null, this.renderCommentPopup(e, n);
-		}, Do));
+		}, Bo));
 	}
 	renderCommentPopup(e, t) {
 		let n = this.getCellRect(e.row, e.col);
@@ -6587,7 +6892,7 @@ var os = class {
 		r.textContent = t.text, this.commentPopup.appendChild(r);
 		let i = this.screenX(n.x, n.w);
 		this.commentPopup.style.left = "-9999px", this.commentPopup.style.top = "-9999px", this.commentPopup.style.display = "block";
-		let a = oo({
+		let a = _o({
 			cell: {
 				x: i,
 				y: n.y,
@@ -6609,29 +6914,48 @@ var os = class {
 	hideCommentPopup() {
 		this.commentPopupTimer !== null && (clearTimeout(this.commentPopupTimer), this.commentPopupTimer = null), this.commentPopupKey = null, this.overlayHost.hideComment();
 	}
-	applyPointerSelection(e, t, n, r, i) {
-		let a = this.getHeaderHit(e, t);
-		if (a) {
-			a.kind === "corner" ? (this.selectionController.select({
+	applyPointerSelection(e, t, n, r, i, a) {
+		let o = this.getHeaderHit(e, t);
+		if (o) {
+			if (o.kind === "corner") this.selectionController.select({
 				row: 1,
 				col: 1
-			}, "all"), this.selectionController.endDrag()) : a.kind === "row" ? n && this.anchorCell && this.selectionMode === "rows" ? this.selectionController.extend({
-				row: a.row,
+			}, "all"), this.selectionController.endDrag();
+			else if (o.kind === "row") if (n && this.anchorCell && this.selectionMode === "rows") this.selectionController.extend({
+				row: o.row,
 				col: 1
-			}) : (this.selectionController.select({
-				row: a.row,
-				col: 1
-			}, "rows"), i && (this.beginSelectionDrag(r), this.scrollHost.setPointerCapture(r))) : n && this.anchorCell && this.selectionMode === "cols" ? this.selectionController.extend({
+			});
+			else {
+				let e = r ? this.selectionController.add({
+					row: o.row,
+					col: 1
+				}, "rows") : (this.selectionController.select({
+					row: o.row,
+					col: 1
+				}, "rows"), !0);
+				a && e && (this.beginSelectionDrag(i), this.scrollHost.setPointerCapture(i));
+			}
+			else if (n && this.anchorCell && this.selectionMode === "cols") this.selectionController.extend({
 				row: 1,
-				col: a.col
-			}) : (this.selectionController.select({
-				row: 1,
-				col: a.col
-			}, "cols"), i && (this.beginSelectionDrag(r), this.scrollHost.setPointerCapture(r))), this.updateSelectionOverlay(), this.renderCurrentSheet().catch((e) => this._reportRenderError(e)), this.emitSelectionChange();
+				col: o.col
+			});
+			else {
+				let e = r ? this.selectionController.add({
+					row: 1,
+					col: o.col
+				}, "cols") : (this.selectionController.select({
+					row: 1,
+					col: o.col
+				}, "cols"), !0);
+				a && e && (this.beginSelectionDrag(i), this.scrollHost.setPointerCapture(i));
+			}
+			this.updateSelectionOverlay(), this.renderCurrentSheet().catch((e) => this._reportRenderError(e)), this.emitSelectionChange();
 			return;
 		}
-		let o = this.getCellAt(e, t);
-		o && (n && this.anchorCell && this.selectionMode === "cells" ? this.selectionController.extend(o) : this.selectionController.select(o, "cells"), i && (this.beginSelectionDrag(r), this.scrollHost.setPointerCapture(r)), this.updateSelectionOverlay(), this.wb && this.renderCurrentSheet().catch((e) => this._reportRenderError(e)), this.emitSelectionChange());
+		let s = this.getCellAt(e, t);
+		if (!s) return;
+		let c = !0;
+		n && this.anchorCell && this.selectionMode === "cells" ? this.selectionController.extend(s) : c = r ? this.selectionController.add(s, "cells") : (this.selectionController.select(s, "cells"), !0), a && c && (this.beginSelectionDrag(i), this.scrollHost.setPointerCapture(i)), this.updateSelectionOverlay(), this.wb && this.renderCurrentSheet().catch((e) => this._reportRenderError(e)), this.emitSelectionChange();
 	}
 	viewportInputBounds() {
 		let e = this.canvasArea.getBoundingClientRect(), t = e.left + this.scrollHost.clientLeft, n = e.top + this.scrollHost.clientTop, r = Math.max(0, e.width - this.scrollHost.clientLeft), i = Math.max(0, e.height - this.scrollHost.clientTop);
@@ -6672,7 +6996,7 @@ var os = class {
 			y: 0
 		};
 		let t = this.viewportInputBounds();
-		return To({
+		return Ro({
 			x: e.clientX - t.left,
 			y: e.clientY - t.top
 		}, {
@@ -6728,12 +7052,12 @@ var os = class {
 		if (r?.kind === "row") return n.areas.some((e) => e.kind === "sheet" || e.kind === "rows" && r.row >= e.firstRow && r.row <= e.lastRow);
 		if (r?.kind === "col") return n.areas.some((e) => e.kind === "sheet" || e.kind === "columns" && r.col >= e.firstColumn && r.col <= e.lastColumn);
 		let i = this.getCellAt(e, t);
-		return i !== null && n.areas.some((e) => $a(e, i));
+		return i !== null && n.areas.some((e) => lo(e, i));
 	}
 	resolveContextMenuContext(e) {
 		if (this._destroyed) return Promise.resolve(null);
 		let t = this.elementContextAt(e.clientX, e.clientY);
-		t ? this.setElementContext(t) : (this.setElementContext(null), this.contextMenuTargetIsSelected(e.clientX, e.clientY) || this.applyPointerSelection(e.clientX, e.clientY, !1, -1, !1));
+		t ? this.setElementContext(t) : (this.setElementContext(null), this.contextMenuTargetIsSelected(e.clientX, e.clientY) || this.applyPointerSelection(e.clientX, e.clientY, !1, !1, -1, !1));
 		let n = this.getSelectionContext();
 		return Promise.resolve(n ? structuredClone(n) : null);
 	}
@@ -6745,7 +7069,7 @@ var os = class {
 				getContext: () => t ??= this.resolveContextMenuContext(e)
 			});
 		}), this.surface.on("pointerdown", (e) => {
-			if (this.scrollHost.setAttribute("data-xlsx-pointer-focus", ""), this.scrollHost.focus?.({ preventScroll: !0 }), e.button !== 0 || this.isSelecting && e.pointerId !== this.selectionPointerId) return;
+			if (this.scrollHost.focus?.({ preventScroll: !0 }), e.button !== 0 || this.isSelecting && e.pointerId !== this.selectionPointerId) return;
 			let t = this.opts.resizable ?? !0 ? this.getResizeTarget(e.clientX, e.clientY) : null;
 			if (t) {
 				e.preventDefault(), this.resizeDrag = {
@@ -6779,6 +7103,7 @@ var os = class {
 					x: e.clientX,
 					y: e.clientY,
 					shiftKey: e.shiftKey,
+					additiveKey: e.ctrlKey || e.metaKey,
 					pointerId: e.pointerId
 				};
 				return;
@@ -6789,9 +7114,7 @@ var os = class {
 				y: e.clientY,
 				pointerId: e.pointerId,
 				cell: c
-			} : null, this.applyPointerSelection(e.clientX, e.clientY, e.shiftKey, e.pointerId, !0);
-		}), this.surface.on("blur", () => {
-			this.scrollHost.removeAttribute("data-xlsx-pointer-focus");
+			} : null, this.applyPointerSelection(e.clientX, e.clientY, e.shiftKey, e.ctrlKey || e.metaKey, e.pointerId, !0);
 		}), this.surface.on("pointermove", (e) => {
 			if (this.resizeDrag && this.resizeDrag.pointerId === e.pointerId) {
 				e.preventDefault(), this.applyResize(e.clientX, e.clientY);
@@ -6836,7 +7159,7 @@ var os = class {
 			if (this.pendingTap && this.pendingTap.pointerId === e.pointerId) {
 				let t = e.clientX - this.pendingTap.x, n = e.clientY - this.pendingTap.y;
 				if (t * t + n * n <= 64) {
-					if (this.applyPointerSelection(e.clientX, e.clientY, this.pendingTap.shiftKey, e.pointerId, !1), e.pointerType !== "mouse" && this.activeCell) {
+					if (this.applyPointerSelection(e.clientX, e.clientY, this.pendingTap.shiftKey, this.pendingTap.additiveKey, e.pointerId, !1), e.pointerType !== "mouse" && this.activeCell) {
 						let e = `${this.activeCell.row}:${this.activeCell.col}`, t = this.commentMap.get(e);
 						t ? (this.hideCommentPopup(), this.renderCommentPopup(this.activeCell, t)) : this.hideCommentPopup();
 					}
@@ -6866,7 +7189,7 @@ var os = class {
 			this._pendingZoomAnchor = Number.isFinite(t) && Number.isFinite(n) ? {
 				x: t,
 				y: n
-			} : null, this.setScale(Ne(this.viewport.scale, e.deltaY));
+			} : null, this.setScale(Fe(this.viewport.scale, e.deltaY));
 		}, { passive: !1 }), this.surface.on("pointerleave", () => this.hideCommentPopup()), this.keydownHandler = (e) => {
 			if ((e.ctrlKey || e.metaKey) && e.key === "c") {
 				if (e.defaultPrevented || e.isComposing) return;
@@ -6927,12 +7250,12 @@ var os = class {
 		this.updateNavButtons();
 	}
 	tabStyle(e, t) {
-		let n = Mo - 2, r = Mo - 5, i = t ? `box-shadow:inset 0 -${e ? 2 : 3}px 0 0 ${t};` : "";
+		let n = Go - 2, r = Go - 5, i = t ? `box-shadow:inset 0 -${e ? 2 : 3}px 0 0 ${t};` : "";
 		return e ? `display:inline-block;flex:none;padding:0 14px;position:relative;border:1px solid #c8ccd0;border-bottom:none;border-radius:3px 3px 0 0;cursor:pointer;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis;outline:none;box-sizing:border-box;height:${n}px;font-size:13px;background:#fff;color:#000;border-bottom:1px solid #fff;font-weight:600;top:1px;` + i : `display:inline-block;flex:none;padding:0 14px;position:relative;border:1px solid #c8ccd0;border-bottom:none;border-radius:3px 3px 0 0;cursor:pointer;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis;outline:none;box-sizing:border-box;height:${r}px;font-size:11px;background:#e0e0e0;color:#555;` + i;
 	}
 	tabCss(e, t) {
 		let n = this.tabStyle(t, this.tabColors[e]);
-		return this._hiddenSheetMode !== "show" && this.wb?.isHidden(e) && (n += this._hiddenSheetMode === "skip" ? "display:none;" : `opacity:${Io};`), n;
+		return this._hiddenSheetMode !== "show" && this.wb?.isHidden(e) && (n += this._hiddenSheetMode === "skip" ? "display:none;" : `opacity:${Yo};`), n;
 	}
 	buildZoomControl() {
 		let e = this.opts.zoomMin ?? .1, t = this.opts.zoomMax ?? 4, n = this.viewport.scale, r = this.hostDocument.createElement("div");
@@ -6958,8 +7281,8 @@ var os = class {
 			if (this.viewport.setScale(i), this.zoomSlider && (this.zoomSlider.value = String(this.zoomScaleToPos(i, t, n))), this.zoomLabel && (this.zoomLabel.textContent = `${r}%`), this.currentWorksheet) {
 				let e = this.effectiveScrollLeft, t = this.viewportTop;
 				if (this.layoutGutters(), this.updateSpacerSize(this.currentWorksheet), o) {
-					this.viewportTop = xe(t, o.y, a, i, { maxScroll: this.maxScrollTop });
-					let n = this.screenX(o.x, 0), r = this.maxScrollLeft, s = xe(e, n, a, i, { maxScroll: r });
+					this.viewportTop = Ce(t, o.y, a, i, { maxScroll: this.maxScrollTop });
+					let n = this.screenX(o.x, 0), r = this.maxScrollLeft, s = Ce(e, n, a, i, { maxScroll: r });
 					this.setViewportLeft(s);
 				} else this.setViewportLeft(e);
 			}
@@ -6970,10 +7293,10 @@ var os = class {
 		return this.viewport.scale;
 	}
 	zoomIn() {
-		this.setScale(je(this.getScale()));
+		this.setScale(Ne(this.getScale()));
 	}
 	zoomOut() {
-		this.setScale(Pe(this.getScale()));
+		this.setScale(Ie(this.getScale()));
 	}
 	fitWidth() {
 		this._fit("width");
@@ -6984,7 +7307,7 @@ var os = class {
 	_fit(e) {
 		let t = this.currentWorksheet;
 		if (!t) return;
-		let { width: n, height: r } = this._naturalContentExtent(t), i = ye({
+		let { width: n, height: r } = this._naturalContentExtent(t), i = xe({
 			contentWidth: n,
 			contentHeight: r,
 			containerWidth: this.canvasArea.clientWidth,
@@ -7051,7 +7374,7 @@ var os = class {
 			freezeCols: s,
 			selectedRowRange: f,
 			selectedColRange: p
-		}, h = this.wireSizeOverrides(), g = wa(h ? {
+		}, h = this.wireSizeOverrides(), g = Pa(h ? {
 			...m,
 			sizeOverrides: h.overrides
 		} : m, $(t).maximumDigitWidth, {
@@ -7064,7 +7387,7 @@ var os = class {
 		if (this._mode === "worker") {
 			let t = await this.workbook.renderViewportToBitmap(this.currentSheet, l, g);
 			if (!this.renderDispatcher.commitBitmap(e, t, n, r)) return;
-		} else if (await this.workbook.renderViewport(this.canvas, this.currentSheet, l, ca(g, () => !this._destroyed && this.renderDispatcher.isCurrent(e))), !this.renderDispatcher.isCurrent(e) || this._destroyed) return;
+		} else if (await this.workbook.renderViewport(this.canvas, this.currentSheet, l, va(g, () => !this._destroyed && this.renderDispatcher.isCurrent(e))), !this.renderDispatcher.isCurrent(e) || this._destroyed) return;
 		this.renderGutters();
 	}
 	computeHeaderHighlight() {
@@ -7083,7 +7406,7 @@ var os = class {
 	destroy() {
 		if (this._destroyed) return;
 		this._destroyed = !0, this.selectionContextNotificationFrame !== null && (this.hostWindow.cancelAnimationFrame(this.selectionContextNotificationFrame), this.selectionContextNotificationFrame = null), this.selectionContextNotificationMicrotask = !1, this.stopSelectionAutoScroll(), this.sheetRequestGeneration++, this.resizeObserver?.disconnect(), this.renderDispatcher.destroy(), this.surface.destroy(), this.hideCommentPopup(), this.hideValidationPanel(), this._find.invalidate(), this.releaseHostFonts();
-		let e = this.wb?.[Da];
+		let e = this.wb?.[La];
 		typeof e == "function" && e.call(this.wb, this.projectionId), this.currentWorksheet = null, this.elementContext = null, this.pendingElementClick = null, this.selectionController.reset(), this.lastNotifiedSelectionState = null, this.finishSelectionNotificationChain(), this.acquisition.destroy(), this.wrapper.remove();
 	}
 	assertOpen() {
@@ -7092,17 +7415,17 @@ var os = class {
 	destroyedError() {
 		return /* @__PURE__ */ Error(this._mountKind === "sheet" ? "XlsxSheetViewer is destroyed" : "XlsxViewer is destroyed");
 	}
-}, ss = class e extends os {
+}, Ss = class e extends xs {
 	static fromWorkbook(t, n, r = {}) {
 		return new e(t, {
 			...r,
-			[Eo]: n
+			[zo]: n
 		});
 	}
 	constructor(e, t = {}) {
 		super(e, t, { kind: "composite" });
 	}
-}, cs = class e {
+}, Cs = class e {
 	engine;
 	canvasMount;
 	destroyed = !1;
@@ -7111,16 +7434,16 @@ var os = class {
 	static fromWorkbook(t, n, r = {}) {
 		return new e(t, {
 			...r,
-			[Eo]: n
+			[zo]: n
 		});
 	}
 	constructor(e, t = {}) {
 		this.canvasElement = e;
-		let n = t[Eo], r = Ee("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
-		this.canvasMount = new ke(e, {
+		let n = t[zo], r = Oe("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
+		this.canvasMount = new je(e, {
 			wrapperCssText: `position:relative;display:inline-block;vertical-align:top;overflow:hidden;width:${e.style.width || `${i.width || e.width}px`};height:${e.style.height || `${i.height || e.height}px`};`,
 			restoreMode: "style-and-bitmap"
-		}), this.engine = new os(this.canvasMount.wrapper, {
+		}), this.engine = new xs(this.canvasMount.wrapper, {
 			...t,
 			onResourceMetrics: (e) => {
 				this.lastMetrics = e, t.onResourceMetrics?.(e);
@@ -7277,20 +7600,20 @@ var os = class {
 	destroyedError() {
 		return /* @__PURE__ */ Error("XlsxSheetViewer is destroyed");
 	}
-}, ls = /* @__PURE__ */ e({
+}, ws = /* @__PURE__ */ e({
 	MAX_SELECTION_AREAS: () => 128,
-	MAX_SELECTION_CONTEXT_CELLS: () => Ja,
-	MAX_SELECTION_CONTEXT_TEXT_CHARACTERS: () => Ya,
-	OoxmlDecodedImageLimitError: () => d,
-	OoxmlError: () => ie,
-	OoxmlResourceLimitError: () => te,
-	XlsxSheetViewer: () => cs,
-	XlsxViewer: () => ss,
-	XlsxWorkbook: () => Oa,
-	autoResize: () => Me,
-	isOoxmlDecodedImageLimitError: () => m,
+	MAX_SELECTION_CONTEXT_CELLS: () => io,
+	MAX_SELECTION_CONTEXT_TEXT_CHARACTERS: () => ao,
+	OoxmlDecodedImageLimitError: () => l,
+	OoxmlError: () => L,
+	OoxmlResourceLimitError: () => P,
+	XlsxSheetViewer: () => Cs,
+	XlsxViewer: () => Ss,
+	XlsxWorkbook: () => Ra,
+	autoResize: () => Pe,
+	isOoxmlDecodedImageLimitError: () => f,
 	openExternalHyperlink: () => E,
-	resolveSharedStrings: () => Ke
+	resolveSharedStrings: () => Je
 });
 //#endregion
-export { Ja as a, qa as i, cs as n, Ya as o, ss as r, Oa as s, ls as t };
+export { io as a, ro as i, Cs as n, ao as o, Ss as r, Ra as s, ws as t };
