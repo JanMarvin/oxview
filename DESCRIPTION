@@ -1,7 +1,7 @@
 Package: oxview
 Type: Package
 Title: Local Canvas Preview for xlsx, docx, and pptx Files
-Version: 0.4.2
+Version: 0.4.3
 Authors@R: c(
   person("Jan Marvin", "Garbuszus", email = "jan.garbuszus@ruhr-uni-bochum.de", role = c("aut", "cre")),
   person("Yuki", "Yokotani", role = c("cph"), comment = "Author of included ooxml library")

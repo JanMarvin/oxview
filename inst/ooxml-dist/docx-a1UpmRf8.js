@@ -1,9 +1,10 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { B as t, Et as n, It as r, Lt as i, R as a, a as o, gn as s, hn as c, ht as l, it as u, kt as d, on as f, q as p, z as m } from "./line-metrics-z9AdgPaZ.js";
-import { C as h, E as g, S as _, T as v, _ as y, a as b, b as x, c as S, d as ee, f as te, g as ne, h as re, i as C, l as w, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as T, w as fe, x as pe, y as E } from "./canvas-viewer-mechanics-ChxLdOJg.js";
+import { B as t, Et as n, It as r, Lt as i, R as a, a as o, ht as s, it as c, kt as l, on as u, q as d, sn as f, z as p } from "./line-metrics-DjKxiIUD.js";
+import { C as m, E as h, S as g, T as _, _ as v, a as y, b, c as x, d as ee, f as te, g as ne, h as re, i as S, l as C, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as w, w as fe, x as pe, y as T } from "./canvas-viewer-mechanics-D9tsuHnG.js";
 import { a as me, c as he, i as ge, o as _e, r as ve, s as ye, t as be } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { C as xe, S as Se, _ as D, a as Ce, b as we, c as Te, d as Ee, f as De, g as Oe, h as ke, l as Ae, m as je, n as O, o as Me, p as Ne, s as Pe, t as k, v as A, w as Fe, x as j, y as Ie } from "./document-pull-client-xsdVDuVD.js";
-import { n as Le, r as M, t as N } from "./highlight-rect-CAkCWJ37.js";
+import { C as xe, S as Se, _ as E, a as Ce, b as we, c as Te, d as Ee, f as De, g as Oe, h as ke, l as Ae, m as je, n as D, o as Me, p as Ne, s as Pe, t as O, v as k, w as Fe, x as A, y as Ie } from "./document-pull-client-YiU8M4LO.js";
+import { _ as j } from "./dash-Cyc-sevN.js";
+import { n as Le, r as M, t as N } from "./highlight-rect-cCvVU-MW.js";
 //#region packages/core/src/fonts/embedded.ts
 function Re(e, t) {
 	let n = ze(t), r = e.slice(), i = Math.min(32, r.length);
@@ -177,16 +178,16 @@ function $e(e) {
 }
 function et(e) {
 	let t = $e(e), n = [
-		A(e.pointToPage, t),
-		A(e.pointToPage, {
+		k(e.pointToPage, t),
+		k(e.pointToPage, {
 			xPt: t.xPt + t.widthPt,
 			yPt: t.yPt
 		}),
-		A(e.pointToPage, {
+		k(e.pointToPage, {
 			xPt: t.xPt,
 			yPt: t.yPt + t.heightPt
 		}),
-		A(e.pointToPage, {
+		k(e.pointToPage, {
 			xPt: t.xPt + t.widthPt,
 			yPt: t.yPt + t.heightPt
 		})
@@ -214,7 +215,7 @@ function nt(e, t) {
 }
 function rt(e, t, n) {
 	for (let n of e.clips) {
-		let e = D(n.pointToPage, t);
+		let e = E(n.pointToPage, t);
 		if (!e || !B(n.bounds, e)) return !1;
 	}
 	return "drawing" in e ? nt(e.drawing, n) : B(e.placement.bounds, n);
@@ -262,7 +263,7 @@ function ot(e, t, n, r, i = {}) {
 	if (!Number.isFinite(n.xPt) || !Number.isFinite(n.yPt)) throw RangeError("DOCX hit-test point must contain finite page coordinates.");
 	let a = z(i.maxTextCharacters), o = Oe(e, t);
 	for (let e = o.length - 1; e >= 0; e--) {
-		let i = o[e], s = D(i.pointToPage, n);
+		let i = o[e], s = E(i.pointToPage, n);
 		if (!s || !rt(i, n, s)) continue;
 		let c = at(i, t, e, n, r, a);
 		if (c) return c;
@@ -295,21 +296,23 @@ var U = class e {
 	_meta = null;
 	_bookmarkPages = null;
 	_mode = "main";
+	_threeD;
+	_regionMap;
 	_worker;
 	_bridge;
 	_rawParts = new be({
 		maxEntries: 64,
-		maxBytes: p
+		maxBytes: d
 	});
 	_embeddedFontFaces = [];
 	_googleFontFaces = [];
 	_localMetricFontFaces = [];
 	_fetchImage = (e, t) => this.getImage(e, t);
 	constructor(e, t, n, r) {
-		this._worker = e, this._mode = t, we(this, n), this._bridge = new h(this._worker, {
+		this._worker = e, this._mode = t, we(this, n), this._bridge = new m(this._worker, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
 			toError: (e) => {
-				if (!("protocol" in e || e.type !== "error")) return Object.assign(u(e), {
+				if (!("protocol" in e || e.type !== "error")) return Object.assign(c(e), {
 					...e.reason === void 0 ? {} : { reason: e.reason },
 					...e.outgoingColumnIndex === void 0 ? {} : { outgoingColumnIndex: e.outgoingColumnIndex },
 					...e.outgoingColumnCount === void 0 ? {} : { outgoingColumnCount: e.outgoingColumnCount },
@@ -340,10 +343,10 @@ var U = class e {
 				if (!e.ok) throw Error(`Failed to fetch: ${e.status} ${e.statusText}`);
 				t = await e.arrayBuffer();
 			} else t = n;
-			t = g(await v(t, r.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let a = s === "worker" ? (await import("./render-worker-host-CBjWHxMb.js")).createRenderWorker() : new Ue(), l;
+			t = h(await _(t, r.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
+			let a = s === "worker" ? (await import("./render-worker-host-BjEPZBwf.js")).createRenderWorker() : new Ue(), l;
 			try {
-				if (l = new e(a, s, o, r.wasmUrl), l._metrics = c, await l._parse(t, i.policy, s === "worker" ? !!r.useGoogleFonts : !1, r.workerTimeoutMs, (e) => c.observeUsage(e)), s === "worker" && l._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), r.math && l._mode === "worker" && console.warn("[ooxml] the math engine is unavailable in mode: 'worker'; equations will be skipped. Use mode: 'main' for documents with equations."), l._mode === "main" && r.useGoogleFonts && l._document && (l._googleFontFaces = await ge(Ne(l._document), De)), l._mode === "main" && l._document?.embeddedFonts?.length) {
+				if (l = new e(a, s, o, r.wasmUrl), l._metrics = c, await l._parse(t, i.policy, s === "worker" ? !!r.useGoogleFonts : !1, r.workerTimeoutMs, (e) => c.observeUsage(e)), s === "worker" && l._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), r.math && l._mode === "worker" && console.warn("[ooxml] the math engine is unavailable in mode: 'worker'; equations will be skipped. Use mode: 'main' for documents with equations."), r.threeD && l._mode === "worker" && console.warn("[ooxml] the 3-D chart addon is unavailable in mode: 'worker'; charts use their 2-D family fallback. Use mode: 'main' for authored 3-D charts."), l._threeD = l._mode === "worker" ? void 0 : r.threeD, r.regionMap && l._mode === "worker" && console.warn("[ooxml] the Region Map addon is unavailable in mode: 'worker'; geospatial charts use the unsupported-chart placeholder. Use mode: 'main' for Region Maps."), l._regionMap = l._mode === "worker" ? void 0 : r.regionMap, l._mode === "main" && r.useGoogleFonts && l._document && (l._googleFontFaces = await ge(Ne(l._document), De)), l._mode === "main" && l._document?.embeddedFonts?.length) {
 					let e = l;
 					l._embeddedFontFaces = await Ke(l._document, (t) => e.getFontBytes(t));
 				}
@@ -351,7 +354,7 @@ var U = class e {
 				l._mode === "main" && l._document && (n = await Ee(l._document), l._localMetricFontFaces = n.faces);
 				let u;
 				if (l._mode === "main" && r.math && l._document && Me(l._document) && (u = await Pe(l._document, r.math)), l._mode === "main" && l._document && l._source) {
-					let e = j(l);
+					let e = A(l);
 					e.services = Ae(l._source, {
 						localMetrics: n?.metrics,
 						useGoogleFonts: !!r.useGoogleFonts,
@@ -366,7 +369,7 @@ var U = class e {
 				return await l._resourceUsage(r.workerTimeoutMs ?? 1e3).then((e) => c.observeUsage(e), () => void 0), c.checkpoint("model and layout ready"), c.succeed({ pages: l.pageCount }), l;
 			} catch (e) {
 				let t = l;
-				throw _(a, t ? () => t.destroy() : void 0), e;
+				throw g(a, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw c.fail(e), e;
@@ -379,7 +382,7 @@ var U = class e {
 			data: e,
 			resourcePolicy: t,
 			useGoogleFonts: n,
-			defaultCurrentDateMs: j(this).defaultCurrentDateMs
+			defaultCurrentDateMs: A(this).defaultCurrentDateMs
 		} : {
 			type: "parse",
 			id: r,
@@ -388,14 +391,14 @@ var U = class e {
 		}, [e], { timeoutMs: r });
 		if ("protocol" in a) throw Error("DOCX parse open returned a pull-protocol response");
 		if (this._mode === "worker") if ("usage" in a && a.usage && i?.(a.usage), a.type === "mainThreadVerticalFallback") {
-			let e = await O(this._bridge.transport(k), a, {
+			let e = await D(this._bridge.transport(O), a, {
 				timeoutMs: r,
 				onUsage: i
 			});
 			this._source = e.source, this._document = e.document, this._meta = null, this._mode = "main";
 		} else this._meta = a.meta;
 		else {
-			let e = a, t = await O(this._bridge.transport(k), e, {
+			let e = a, t = await D(this._bridge.transport(O), e, {
 				timeoutMs: r,
 				onUsage: i
 			});
@@ -403,7 +406,7 @@ var U = class e {
 		}
 	}
 	destroy() {
-		this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, j(this).services = null, this._bookmarkPages = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (He(this._embeddedFontFaces), this._embeddedFontFaces = []), this._googleFontFaces.length > 0 && (me(this._googleFontFaces), this._googleFontFaces = []), this._localMetricFontFaces.length > 0 && (Fe(this._localMetricFontFaces), this._localMetricFontFaces = []), d(this._fetchImage), n(this._fetchImage);
+		this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, A(this).services = null, this._bookmarkPages = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (He(this._embeddedFontFaces), this._embeddedFontFaces = []), this._googleFontFaces.length > 0 && (me(this._googleFontFaces), this._googleFontFaces = []), this._localMetricFontFaces.length > 0 && (Fe(this._localMetricFontFaces), this._localMetricFontFaces = []), l(this._fetchImage), n(this._fetchImage);
 	}
 	async getImage(e, t) {
 		return this._rawParts.get(e, t, () => this._bridge.request((t) => ({
@@ -432,7 +435,7 @@ var U = class e {
 	async getResourceMetrics() {
 		let e = this._metrics;
 		if (!e) throw Error("Document not loaded");
-		return m(e, (e) => this._resourceUsage(e));
+		return p(e, (e) => this._resourceUsage(e));
 	}
 	async toMarkdown() {
 		return (await this._bridge.request((e) => ({
@@ -462,7 +465,7 @@ var U = class e {
 	}
 	_getLayout() {
 		if (!this._document) return null;
-		let e = j(this).services;
+		let e = A(this).services;
 		if (!e) throw Error("Document layout services are not initialized");
 		let t = Se(e);
 		if (!t) throw Error("Document layout variant store is not initialized");
@@ -509,14 +512,16 @@ var U = class e {
 		return Te(this._source, e, t, {
 			...n,
 			fetchImage: this._fetchImage,
-			layoutServices: j(this).services ?? void 0,
-			defaultCurrentDateMs: j(this).defaultCurrentDateMs
+			layoutServices: A(this).services ?? void 0,
+			defaultCurrentDateMs: A(this).defaultCurrentDateMs,
+			threeD: this._threeD,
+			regionMap: this._regionMap
 		});
 	}
 	async renderPageToBitmap(e, t = {}) {
 		let { onTextRun: n, ...r } = t, i = {
 			...r,
-			dpr: r.dpr ?? l()
+			dpr: r.dpr ?? s()
 		};
 		if (this._mode === "worker") {
 			let t = await this._bridge.request((t) => ({
@@ -542,7 +547,7 @@ var U = class e {
 			pageIndex: e,
 			opts: n
 		}))).runs;
-		let r = j(this), i = r.services;
+		let r = A(this), i = r.services;
 		if (!i) throw Error("Document layout services are not initialized");
 		return ke(i, e, {
 			currentDate: n.currentDate,
@@ -558,7 +563,7 @@ var U = class e {
 			point: t,
 			opts: n
 		}))).context;
-		let r = j(this), i = r.services;
+		let r = A(this), i = r.services;
 		if (!i) throw Error("Document layout services are not initialized");
 		return st(i, e, t, {
 			...n,
@@ -806,13 +811,13 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 	constructor(e, t = {}) {
 		this._canvas = e, this._opts = t;
 		let n = t[Q];
-		this._borrowed = n !== void 0, this._mode = w("DocxViewer", t.mode, n), this._documentOwner = new b("DocxViewer", n ?? null, !1);
+		this._borrowed = n !== void 0, this._mode = C("DocxViewer", t.mode, n), this._documentOwner = new y("DocxViewer", n ?? null, !1);
 		let r = e.ownerDocument?.defaultView ?? (typeof window < "u" ? window : null);
 		if (!r) throw Error("DocxViewer requires a canvas with an active Window");
 		this._hostWindow = r, this._canvasMount = new ue(e, {
 			wrapperCssText: "position:relative;display:inline-block;vertical-align:top;",
 			forceDisplayBlock: !0
-		}), this._wrapper = this._canvasMount.wrapper, this._renderDispatcher = new C(e, this._mode === "worker"), this._errorRouter = new ce("DocxViewer", t.onError);
+		}), this._wrapper = this._canvasMount.wrapper, this._renderDispatcher = new S(e, this._mode === "worker"), this._errorRouter = new ce("DocxViewer", t.onError);
 		let i = new ae(this._wrapper, t.enableTextSelection === !0, t.enableElementSelection === !0);
 		this._textLayer = i.textLayer, this._highlightLayer = i.highlightLayer, this._elementLayer = i.elementLayer, this._textLayer && (t.onSelectionContextChange || t.enableElementSelection) && (this._selectionChangeListener = () => this._emitSelectionContextChange(), this._wrapper.ownerDocument.addEventListener("selectionchange", this._selectionChangeListener)), t.enableElementSelection && (this._elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
@@ -833,6 +838,8 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 				workerTimeoutMs: this._opts.workerTimeoutMs,
 				wasmUrl: this._opts.wasmUrl,
 				math: this._opts.math,
+				threeD: this._opts.threeD,
+				regionMap: this._opts.regionMap,
 				mode: this._mode
 			}), () => {
 				this._invalidateElementContext(!1), t = !0, this._renderDispatcher.begin(), this._find.invalidate();
@@ -865,7 +872,7 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		await this.goToPage(this._currentPage - 1);
 	}
 	_naturalWidthPx() {
-		return !this._doc || this._doc.pageCount === 0 ? 0 : this._doc.pageSize(this._currentPage).widthPt * f;
+		return !this._doc || this._doc.pageCount === 0 ? 0 : this._doc.pageSize(this._currentPage).widthPt * j;
 	}
 	_renderWidth() {
 		if (this._scale === null) return this._opts.width;
@@ -888,10 +895,10 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		this._scale = t, await this._render(), n && this._opts.onScaleChange?.(t);
 	}
 	async zoomIn() {
-		await this.setScale(T(this.getScale()));
+		await this.setScale(w(this.getScale()));
 	}
 	async zoomOut() {
-		await this.setScale(E(this.getScale()));
+		await this.setScale(T(this.getScale()));
 	}
 	async fitWidth() {
 		await this._fit("width");
@@ -903,9 +910,9 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		if (!this._doc || this._doc.pageCount === 0) return;
 		let t = this._doc.pageSize(this._currentPage), n = this._fitContainer();
 		if (!n) return;
-		let r = y({
-			contentWidth: t.widthPt * f,
-			contentHeight: t.heightPt * f,
+		let r = v({
+			contentWidth: t.widthPt * j,
+			contentHeight: t.heightPt * j,
 			containerWidth: n.clientWidth,
 			containerHeight: n.clientHeight
 		}, e);
@@ -958,11 +965,11 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 	_redrawElementOutline() {
 		let e = this._elementContext, t = this._doc;
 		if (!e || !t || e.pageIndex !== this._currentPage) {
-			S(this._elementLayer, null);
+			x(this._elementLayer, null);
 			return;
 		}
 		let n = t.pageSize(e.pageIndex);
-		S(this._elementLayer, {
+		x(this._elementLayer, {
 			x: e.bounds.xPt / n.widthPt,
 			y: e.bounds.yPt / n.heightPt,
 			width: e.bounds.widthPt / n.widthPt,
@@ -1127,7 +1134,7 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		if (e.tagName === "CANVAS") throw Error("DocxScrollViewer takes a container element (e.g. a <div>), not a <canvas> — the viewer creates and manages its own canvases. Pass a block container; for the single-page canvas API use DocxViewer.");
 		this._container = e, this._opts = t, this._pageShadow = t.pageShadow ?? ft;
 		let n = t[pt];
-		this._borrowed = n !== void 0, n ? (this._documentOwner = new b("DocxScrollViewer", n, !1), this._mode = w("DocxScrollViewer", t.mode, n)) : (this._documentOwner = new b("DocxScrollViewer"), this._mode = w("DocxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), t.enableTextSelection && (t.onSelectionContextChange || t.enableElementSelection) && (this._selectionChangeListener = () => this._emitSelectionContextChange(), this._wrapper.ownerDocument.addEventListener("selectionchange", this._selectionChangeListener)), t.enableElementSelection && (this._elementClickListener = (e) => {
+		this._borrowed = n !== void 0, n ? (this._documentOwner = new y("DocxScrollViewer", n, !1), this._mode = C("DocxScrollViewer", t.mode, n)) : (this._documentOwner = new y("DocxScrollViewer"), this._mode = C("DocxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), t.enableTextSelection && (t.onSelectionContextChange || t.enableElementSelection) && (this._selectionChangeListener = () => this._emitSelectionContextChange(), this._wrapper.ownerDocument.addEventListener("selectionchange", this._selectionChangeListener)), t.enableElementSelection && (this._elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
 		}, this._scrollHost.addEventListener("click", this._elementClickListener)), t.onContextMenu && (this._contextMenuListener = (e) => this._onContextMenu(e), this._scrollHost.addEventListener("contextmenu", this._contextMenuListener)), this._scrollListener = () => this._onScroll(), this._scrollHost.addEventListener("scroll", this._scrollListener), this._opts.enableZoom !== !1 && (this._wheelListener = (e) => {
 			if (!(e.ctrlKey || e.metaKey) || (e.preventDefault(), e.deltaY === 0)) return;
@@ -1153,6 +1160,8 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 				workerTimeoutMs: this._opts.workerTimeoutMs,
 				wasmUrl: this._opts.wasmUrl,
 				math: this._opts.math,
+				threeD: this._opts.threeD,
+				regionMap: this._opts.regionMap,
 				mode: this._mode
 			}), (e) => {
 				if (this._invalidateElementContext(!1), t = !0, this._find.invalidate(), this._findActive = !1, e) {
@@ -1173,10 +1182,10 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		return this._doc?.pageCount ?? 0;
 	}
 	_pageWidthPx(e) {
-		return this._doc.pageSize(e).widthPt * f * this._scale;
+		return this._doc.pageSize(e).widthPt * j * this._scale;
 	}
 	_pageHeightPx(e) {
-		return this._doc.pageSize(e).heightPt * f * this._scale;
+		return this._doc.pageSize(e).heightPt * j * this._scale;
 	}
 	_fitWidthPx() {
 		if (this._opts.width && this._opts.width > 0) return this._opts.width;
@@ -1190,7 +1199,7 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		let e = this._fitWidthPx();
 		if (e <= 0) return 0;
 		let t = this._doc.pageSize(0).widthPt;
-		return t <= 0 ? 0 : e / (t * f);
+		return t <= 0 ? 0 : e / (t * j);
 	}
 	relayout() {
 		this._relayout();
@@ -1297,11 +1306,11 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 			elementLayer: a,
 			renderedPage: -1,
 			renderedScale: -1,
-			dispatcher: new C(n, this._mode === "worker")
+			dispatcher: new S(n, this._mode === "worker")
 		};
 	}
 	_recycleSlot(e, t) {
-		this._slots.delete(e), t.dispatcher.destroy(), this._destroyed || (t.dispatcher = new C(t.canvas, this._mode === "worker")), t.textLayer && (t.textLayer.innerHTML = "", t.textLayer.style.transform = "", t.textLayer.style.transformOrigin = ""), t.highlightLayer.innerHTML = "", t.highlightLayer.style.transform = "", t.highlightLayer.style.transformOrigin = "", S(t.elementLayer, null), t.renderedPage = -1, t.renderedScale = -1, t.wrapper.remove(), this._free.push(t);
+		this._slots.delete(e), t.dispatcher.destroy(), this._destroyed || (t.dispatcher = new S(t.canvas, this._mode === "worker")), t.textLayer && (t.textLayer.innerHTML = "", t.textLayer.style.transform = "", t.textLayer.style.transformOrigin = ""), t.highlightLayer.innerHTML = "", t.highlightLayer.style.transform = "", t.highlightLayer.style.transformOrigin = "", x(t.elementLayer, null), t.renderedPage = -1, t.renderedScale = -1, t.wrapper.remove(), this._free.push(t);
 	}
 	_positionSlot(e, t, n) {
 		e.wrapper.style.top = `${n.offsets[t]}px`;
@@ -1420,7 +1429,7 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		let g = Math.max(0, h.totalHeight - this._scrollHost.clientHeight), _ = (h.offsets[u] ?? 0) + f * (this._heights[u] || 0), v = l < (s.offsets[0] ?? 0) ? c : _ - o;
 		if (this._scrollHost.scrollTop = Math.min(g, Math.max(0, v)), i) {
 			let e = Math.max(0, (this._spacer.offsetWidth || 0) - this._scrollHost.clientWidth);
-			this._scrollHost.scrollLeft = x(m, i.x - p, a, r, { maxScroll: e });
+			this._scrollHost.scrollLeft = b(m, i.x - p, a, r, { maxScroll: e });
 		}
 		this._previewVisible(), this._scheduleSettle(), this._opts.onScaleChange?.(r);
 	}
@@ -1428,10 +1437,10 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		return this._scaleEstablished ? this._scale : this._pendingScale ?? 1;
 	}
 	zoomIn() {
-		this.setScale(T(this.getScale()));
+		this.setScale(w(this.getScale()));
 	}
 	zoomOut() {
-		this.setScale(E(this.getScale()));
+		this.setScale(T(this.getScale()));
 	}
 	fitWidth() {
 		this._fit("width");
@@ -1441,9 +1450,9 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 	}
 	_fit(e) {
 		if (!this._doc || this._doc.pageCount === 0) return;
-		let t = this._doc.pageSize(0), n = y({
-			contentWidth: t.widthPt * f,
-			contentHeight: t.heightPt * f,
+		let t = this._doc.pageSize(0), n = v({
+			contentWidth: t.widthPt * j,
+			contentHeight: t.heightPt * j,
 			containerWidth: this._fitWidthPx(),
 			containerHeight: this._scrollHost.clientHeight
 		}, e);
@@ -1487,7 +1496,7 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 		}
 		let o = document.createElement("canvas");
 		o.style.cssText = "display:block;background:#fff;", this._applyPageShadow(o);
-		let s = new C(o, !1), c = s.begin(), l = [], u = !!this._opts.enableTextSelection && !!t.textLayer, d = u || this._findActive, f = d ? (e) => l.push(e) : void 0;
+		let s = new S(o, !1), c = s.begin(), l = [], u = !!this._opts.enableTextSelection && !!t.textLayer, d = u || this._findActive, f = d ? (e) => l.push(e) : void 0;
 		this._doc.renderPage(o, e, {
 			width: r,
 			dpr: n,
@@ -1634,11 +1643,11 @@ var Q = Symbol("DocxViewer.borrowedDocument"), ut = class e {
 	_redrawElementOutlineForSlot(e, t) {
 		let n = this._elementContext, r = this._doc;
 		if (!n || !r || n.pageIndex !== e) {
-			S(t.elementLayer, null);
+			x(t.elementLayer, null);
 			return;
 		}
 		let i = r.pageSize(e);
-		S(t.elementLayer, {
+		x(t.elementLayer, {
 			x: n.bounds.xPt / i.widthPt,
 			y: n.bounds.yPt / i.heightPt,
 			width: n.bounds.widthPt / i.widthPt,
@@ -1708,8 +1717,8 @@ var ht = /* @__PURE__ */ e({
 	DocxScrollViewer: () => mt,
 	DocxViewer: () => ut,
 	OoxmlDecodedImageLimitError: () => r,
-	OoxmlError: () => c,
-	OoxmlResourceLimitError: () => s,
+	OoxmlError: () => u,
+	OoxmlResourceLimitError: () => f,
 	autoResize: () => fe,
 	buildDocxHighlightLayer: () => q,
 	buildDocxTextLayer: () => K,
