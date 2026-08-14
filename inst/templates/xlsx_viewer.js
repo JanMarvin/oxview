@@ -1,4 +1,6 @@
 import { XlsxViewer } from "/assets/xlsx.mjs";
+import { threeD } from "/assets/three-d.mjs";
+import { regionMap } from "/assets/region-map.mjs";
 
 // v0.77 migration: select()/selection/onSelectionChange/CellRange were
 // removed upstream (breaking, no aliases kept) in favor of setSelection()/
@@ -100,6 +102,8 @@ async function init() {
     let currentState = null;
 
     const xlsx = new XlsxViewer(container, {
+        threeD,
+        regionMap,
         enableHyperlinks: true,
         enableElementSelection: true,
         onSelectionStateChange: (state) => {

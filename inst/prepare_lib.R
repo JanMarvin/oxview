@@ -62,7 +62,7 @@ file.copy(dist_files, "inst/ooxml-dist", recursive = TRUE)
   invisible(unreachable)
 }
 
-pruned <- .prune_unreachable("inst/ooxml-dist", c("xlsx.mjs", "docx.mjs", "pptx.mjs"))
+pruned <- .prune_unreachable("inst/ooxml-dist", c("xlsx.mjs", "docx.mjs", "pptx.mjs", "region-map.mjs", "three-d.mjs"))
 message("prepare_lib.R: pruned ", length(pruned), " unreachable file(s): ",
         paste(pruned, collapse = ", "))
 
