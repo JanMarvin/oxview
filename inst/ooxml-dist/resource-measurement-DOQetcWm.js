@@ -1,20 +1,20 @@
-import { At as e, Mt as t, wt as n, yt as r } from "./line-metrics-DjKxiIUD.js";
+import { Et as e, Mt as t, Pt as n, xt as r } from "./line-metrics-BY-aNaLO.js";
 //#region packages/core/src/image/duotone-bitmap-by-path.ts
 function i(e, t) {
 	return t ? `${e}|duo:${t.clr1}:${t.clr2}` : e;
 }
 var a = "duotone";
 async function o(o, s, c, l, u = {}) {
-	let { offscreenFactory: d, ...f } = u, p = await e(o, s, l, f);
-	return !c || !p ? p : t(a, i(o, c), l, async () => {
-		let { w: e, h: t } = n(p);
-		if (e <= 0 || t <= 0) return {
+	let { offscreenFactory: d, ...f } = u, p = await t(o, s, l, f);
+	return !c || !p ? p : n(a, i(o, c), l, async () => {
+		let { w: t, h: n } = e(p);
+		if (t <= 0 || n <= 0) return {
 			bitmap: p,
 			owned: !1
 		};
 		let i = await r(p, c, {
-			width: e,
-			height: t,
+			width: t,
+			height: n,
 			offscreenFactory: d
 		});
 		return {

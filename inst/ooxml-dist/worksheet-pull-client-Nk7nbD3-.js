@@ -1,8 +1,8 @@
-import { $ as e, F as t, I as n, N as r, P as i, Q as a, X as o, Y as s, Z as c, et as l, nt as u, ot as d, rt as f, sn as p, tt as m } from "./line-metrics-DjKxiIUD.js";
-import { n as h, r as g, t as _ } from "./resource-measurement-D8EiTm_E.js";
-import { t as v } from "./transfer-3QEJrsJa.js";
+import { $ as e, F as t, I as n, N as r, P as i, Q as a, X as o, Y as s, Z as c, et as l, ln as u, nt as d, ot as f, rt as p, tt as m } from "./line-metrics-BY-aNaLO.js";
+import { n as h, r as g, t as _ } from "./resource-measurement-DOQetcWm.js";
+import { t as v } from "./transfer-CKZ79zFw.js";
 //#region packages/xlsx/src/worksheet-resource-limits.ts
-var y = u, b = e, x = l, S = m, C = a, w = s, T = o, E = c, D = Object.freeze({
+var y = d, b = e, x = l, S = m, C = a, w = s, T = o, E = c, D = Object.freeze({
 	archiveEntryCount: 0,
 	declaredInflatedBytes: 0,
 	distinctInflatedBytes: 0,
@@ -45,7 +45,7 @@ function j(e, t, n = {}) {
 }
 function M(e, t, n, r, i, a, o) {
 	let s = n === "worksheet-json" ? "serialization" : "parsing";
-	return new p(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
+	return new u(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
 		stage: s,
 		violation: {
 			format: "xlsx",
@@ -172,7 +172,7 @@ var z = 64 * 1024 * 1024, B = class {
 				rows: 0,
 				cells: 0,
 				ownedUtf8Bytes: 0
-			}, c, l = !1, u = new t({
+			}, c, l = !1, d = new t({
 				...r,
 				maxByteCredit: z,
 				coordinator: this.coordinator,
@@ -187,7 +187,7 @@ var z = 64 * 1024 * 1024, B = class {
 									N(e, "get-worksheet-worker", void 0, this.readResourceUsage()), o.push(...n.rows), s = e;
 								} else c = n.worksheet;
 							} catch (e) {
-								throw e instanceof p && (this.resourceFailure ??= e), e;
+								throw e instanceof u && (this.resourceFailure ??= e), e;
 							}
 						}
 						l = t;
@@ -218,7 +218,7 @@ var z = 64 * 1024 * 1024, B = class {
 							}
 							this.executeArchive((e) => e.acknowledge_sheet_cursor_terminal()), n?.();
 						} catch (e) {
-							throw t?.(), e instanceof p && (this.resourceFailure ??= e), e;
+							throw t?.(), e instanceof u && (this.resourceFailure ??= e), e;
 						}
 						l = !1, this.sessions.delete(r.sessionId), a();
 					},
@@ -240,7 +240,7 @@ var z = 64 * 1024 * 1024, B = class {
 				}
 			});
 			this.sessions.set(r.sessionId, {
-				host: u,
+				host: d,
 				identity: r
 			}), this.pendingOpens.delete(r.sessionId);
 		}));
@@ -304,7 +304,7 @@ var z = 64 * 1024 * 1024, B = class {
 			operationId: e.operationId,
 			generation: e.generation,
 			requestId: e.requestId,
-			error: d(/* @__PURE__ */ Error("worksheet pull session is not open"))
+			error: f(/* @__PURE__ */ Error("worksheet pull session is not open"))
 		}), Promise.resolve());
 	}
 	async dispatchSafely(e, t) {
@@ -319,7 +319,7 @@ var z = 64 * 1024 * 1024, B = class {
 					operationId: e.operationId,
 					generation: e.generation,
 					requestId: e.requestId,
-					error: d(n)
+					error: f(n)
 				});
 			} catch {}
 		}
@@ -329,7 +329,7 @@ var z = 64 * 1024 * 1024, B = class {
 			if (this.resourceFailure) throw this.resourceFailure;
 			return e();
 		})).catch((e) => {
-			throw e instanceof p && (this.resourceFailure ??= e), e;
+			throw e instanceof u && (this.resourceFailure ??= e), e;
 		});
 		return this.operationTail = t.then(() => void 0, () => void 0), t;
 	}
@@ -365,7 +365,7 @@ var z = 64 * 1024 * 1024, B = class {
 	}
 	readResourceUsage() {
 		try {
-			return f(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
+			return p(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
 		} catch (e) {
 			if (String(e).includes("worksheet cursor usage is unavailable")) return;
 			throw e;

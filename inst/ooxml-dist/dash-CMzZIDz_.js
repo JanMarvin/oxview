@@ -332,29 +332,52 @@ function v(e, t, n, r) {
 }
 //#endregion
 //#region packages/core/src/units.ts
-var y = 12700, b = 9525, x = 4 / 3, S = 91440, C = 45720, w = "…";
+var y = 12700, b = 9525, x = 4 / 3, S = 91440, C = 45720;
+//#endregion
+//#region packages/core/src/chart/axis-style.ts
+function w(e, t) {
+	return e ? Math.max(.5, e / y) * t : 1;
+}
 function T(e, t, n) {
+	return {
+		color: e ? `#${e}` : "#aaa",
+		width: w(t, n)
+	};
+}
+function E(e, t, n) {
+	return {
+		color: e ? `#${e}` : "#e0e0e0",
+		width: t ? w(t, n) : .5
+	};
+}
+function D(e) {
+	return e.catAxisCrossBetween !== "midCat";
+}
+//#endregion
+//#region packages/core/src/chart/text-elide.ts
+var O = "…";
+function k(e, t, n) {
 	if (t === "" || n <= 0) return "";
 	if (e.measureText(t).width <= n) return t;
-	if (e.measureText(w).width > n) return "";
+	if (e.measureText(O).width > n) return "";
 	let r = 0, i = t.length - 1, a = 0;
 	for (; r <= i;) {
 		let o = r + i >> 1;
-		e.measureText(t.slice(0, o) + w).width <= n ? (a = o, r = o + 1) : i = o - 1;
+		e.measureText(t.slice(0, o) + O).width <= n ? (a = o, r = o + 1) : i = o - 1;
 	}
 	let o = a > 0 ? t.charCodeAt(a - 1) : 0;
-	return o >= 55296 && o <= 56319 && a--, t.slice(0, a) + w;
+	return o >= 55296 && o <= 56319 && a--, t.slice(0, a) + O;
 }
 //#endregion
 //#region packages/core/src/chart/rich-data-label.ts
-var E = 4096, D = 4, O = E;
-function k(e, t, r, i) {
+var A = 4096, j = 4, M = A;
+function N(e, t, r, i) {
 	let a = [[]], o = 0, s = (e) => {
 		if (!e) return null;
 		let t = e.startsWith("#") ? e.slice(1) : e;
 		return /^[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$/.test(t) ? `#${t}` : null;
 	};
-	outer: for (let c = 0; c < t.runs.length && c < O; c++) {
+	outer: for (let c = 0; c < t.runs.length && c < M; c++) {
 		let l = t.runs[c], u = n(l.fontSizeHpt, t.ptToPx) ?? r, d = l.fontFace?.trim().replaceAll("\"", ""), f = d && !d.startsWith("+") ? d : null, p = d && t.fontFamilyForFace ? t.fontFamilyForFace(d) : f ? `"${f}", Calibri, Arial, sans-serif` : t.fontFamily, m = `${l.bold ?? t.fallbackBold ? "bold " : ""}${u}px ${p}`, h = s(l.color) ?? i, g = "", _ = () => {
 			g &&= (e.font = m, a[a.length - 1].push({
 				text: g,
@@ -371,12 +394,12 @@ function k(e, t, r, i) {
 			}
 			v = !1;
 			let t = e === "\r" ? "\n" : e;
-			if (e === "\r" && (v = !0), o >= E) {
+			if (e === "\r" && (v = !0), o >= A) {
 				_();
 				break outer;
 			}
 			if (o++, t === "\n") {
-				if (_(), a.length >= D) break outer;
+				if (_(), a.length >= j) break outer;
 				a.push([]);
 			} else g += t;
 		}
@@ -392,7 +415,7 @@ function k(e, t, r, i) {
 		height: c.reduce((e, t) => e + t, 0)
 	};
 }
-function A(e, t, n, r, i = "center", a = "middle") {
+function P(e, t, n, r, i = "center", a = "middle") {
 	let o = a === "top" ? r : a === "bottom" ? r - t.height : r - t.height / 2;
 	for (let r = 0; r < t.lines.length; r++) {
 		let s = t.lines[r], c = t.lineWidths[r], l = i === "left" ? n : i === "right" ? n - c : n - c / 2, u = a === "top" ? o : a === "bottom" ? o + t.lineHeights[r] : o + t.lineHeights[r] / 2;
@@ -402,20 +425,35 @@ function A(e, t, n, r, i = "center", a = "middle") {
 }
 //#endregion
 //#region packages/core/src/chart/data-label-content.ts
-function j(e) {
+function F(e) {
 	if (e.customText) return e.customText;
 	let n = [];
-	return e.showCategory && e.category && n.push(e.category), e.showSeries && e.seriesName && n.push(e.seriesName), e.showValue && e.sourceValue != null && n.push(t(e.sourceValue, e.formatCode ?? null, e.date1904)), e.showPercent && e.percentRatio != null && n.push(t(e.percentRatio, e.percentFormatCode ?? e.formatCode ?? "0%", e.date1904)), n.filter((e) => e !== "").join(e.separator ?? e.defaultSeparator ?? " ");
+	if (e.showCategory && e.category && n.push(e.category), e.showSeries && e.seriesName && n.push(e.seriesName), e.showValue && e.sourceValue != null) {
+		let r = e.valueDivisor != null && Number.isFinite(e.valueDivisor) && e.valueDivisor > 0 ? e.valueDivisor : 1;
+		n.push(t(e.sourceValue / r, e.formatCode ?? null, e.date1904));
+	}
+	return e.showPercent && e.percentRatio != null && n.push(t(e.percentRatio, e.percentFormatCode ?? e.formatCode ?? "0%", e.date1904)), n.filter((e) => e !== "").join(e.separator ?? e.defaultSeparator ?? " ");
+}
+//#endregion
+//#region packages/core/src/chart/legend-frame.ts
+function I(e, t, n, r) {
+	if (!(!t.legendFillColor && !t.legendLineColor)) {
+		if (e.save(), t.legendFillColor && (e.fillStyle = `#${t.legendFillColor}`, e.fillRect(n.x, n.y, n.w, n.h)), t.legendLineColor && n.w > 0 && n.h > 0) {
+			let i = w(t.legendLineWidthEmu, r);
+			e.strokeStyle = `#${t.legendLineColor}`, e.lineWidth = i, e.lineCap = "butt", e.lineJoin = "miter", e.setLineDash([]), e.strokeRect(n.x + i / 2, n.y + i / 2, Math.max(0, n.w - i), Math.max(0, n.h - i));
+		}
+		e.restore();
+	}
 }
 //#endregion
 //#region packages/core/src/chart/data-label-layout.ts
-var M = (e) => [
+var L = (e) => [
 	e.x,
 	e.y,
 	e.w,
 	e.h
 ].every(Number.isFinite) && e.w > 0 && e.h > 0;
-function N(e, t) {
+function R(e, t) {
 	let n = Math.max(e.x, t.x), r = Math.max(e.y, t.y), i = Math.min(e.x + e.w, t.x + t.w), a = Math.min(e.y + e.h, t.y + t.h);
 	return i > n && a > r ? {
 		x: n,
@@ -424,11 +462,11 @@ function N(e, t) {
 		h: a - r
 	} : null;
 }
-function P(e, t, n) {
+function z(e, t, n) {
 	return Math.min(Math.max(e, t), n);
 }
-function F(t, n, r, i, a, o = n) {
-	if (!M(n) || !M(o) || !Number.isFinite(i) || i <= 0 || ![r.w, r.h].every(Number.isFinite) || r.w < 0 || r.h <= 0) return null;
+function B(t, n, r, i, a, o = n) {
+	if (!L(n) || !L(o) || !Number.isFinite(i) || i <= 0 || ![r.w, r.h].every(Number.isFinite) || r.w < 0 || r.h <= 0) return null;
 	let s = i * .5, c = n, l, u, d = !1, f = "center", p = "middle";
 	if (t.kind === "point") {
 		if (![
@@ -461,7 +499,7 @@ function F(t, n, r, i, a, o = n) {
 			t.rect.w,
 			t.rect.h
 		].every(Number.isFinite) || t.rect.w <= 0 || t.rect.h <= 0) return null;
-		let e = N(t.rect, n);
+		let e = R(t.rect, n);
 		if (!e) return null;
 		let i = t.position ?? "ctr";
 		l = e.x + e.w / 2, u = e.y + e.h / 2, i === "inBase" ? (c = {
@@ -509,7 +547,7 @@ function F(t, n, r, i, a, o = n) {
 		].every(Number.isFinite) || t.rect.w < 0 || t.rect.h < 0) return null;
 		let e = t.position ?? "outEnd", i = e === "inBase" || e === "inEnd" || e === "ctr";
 		if (d = !i, i) {
-			let e = N(t.rect, n);
+			let e = R(t.rect, n);
 			if (!e) return null;
 			c = e;
 		} else if (t.orientation === "vertical" && t.rect.w <= 0 || t.orientation === "horizontal" && t.rect.h <= 0) return null;
@@ -534,10 +572,10 @@ function F(t, n, r, i, a, o = n) {
 		let t = e(a, o, g);
 		if (!t) return null;
 		g = t, f = "center", p = "middle";
-		let r = N(t, n);
+		let r = R(t, n);
 		if (!r || (c = r, c.w < m || c.h < h)) return null;
 	}
-	let _ = Math.min(Math.max(m, g.w), c.w), v = Math.min(Math.max(h, g.h), c.h), y = _ / 2, b = v / 2, x = d || a ? g.x + g.w / 2 : P(g.x + g.w / 2, c.x + y, c.x + c.w - y), S = d || a ? g.y + g.h / 2 : P(g.y + g.h / 2, c.y + b, c.y + c.h - b);
+	let _ = Math.min(Math.max(m, g.w), c.w), v = Math.min(Math.max(h, g.h), c.h), y = _ / 2, b = v / 2, x = d || a ? g.x + g.w / 2 : z(g.x + g.w / 2, c.x + y, c.x + c.w - y), S = d || a ? g.y + g.h / 2 : z(g.y + g.h / 2, c.y + b, c.y + c.h - b);
 	return [x, S].every(Number.isFinite) ? {
 		x: f === "left" ? x - y : f === "right" ? x + y : x,
 		y: p === "top" ? S - b : p === "bottom" ? S + b : S,
@@ -549,8 +587,8 @@ function F(t, n, r, i, a, o = n) {
 		rect: g
 	} : null;
 }
-var I = 4096, L = 4;
-function R(e, t, n) {
+var V = 4096, H = 4;
+function U(e, t, n) {
 	if (n(e) <= t) return e;
 	if (n("…") > t) return "";
 	let r = 0, i = Array.from(e), a = i.length;
@@ -560,10 +598,10 @@ function R(e, t, n) {
 	}
 	return `${i.slice(0, r).join("")}…`;
 }
-function z(e) {
+function W(e) {
 	let t = "", n = 0;
 	for (let r of e) {
-		if (n >= I) return {
+		if (n >= V) return {
 			value: t,
 			truncated: !0
 		};
@@ -574,13 +612,13 @@ function z(e) {
 		truncated: !1
 	};
 }
-function B(e, t, n, r, i) {
+function G(e, t, n, r, i) {
 	if (![
 		t,
 		n,
 		r
 	].every(Number.isFinite) || t <= 0 || n < r || r <= 0) return [];
-	let a = Math.max(1, Math.min(L, Math.floor(n / r))), o = z(e), s = o.value.split(/\r?\n/), c = [], l = o.truncated, u = (e) => {
+	let a = Math.max(1, Math.min(H, Math.floor(n / r))), o = W(e), s = o.value.split(/\r?\n/), c = [], l = o.truncated, u = (e) => {
 		let n = [], r = "";
 		for (let a of Array.from(e)) {
 			let e = `${r}${a}`;
@@ -611,14 +649,14 @@ function B(e, t, n, r, i) {
 	}
 	l ||= c.length > a;
 	let d = c.slice(0, a);
-	return l && d.length > 0 && !d[d.length - 1].endsWith("…") && (d[d.length - 1] = R(`${d[d.length - 1]}…`, t, i)), d;
+	return l && d.length > 0 && !d[d.length - 1].endsWith("…") && (d[d.length - 1] = U(`${d[d.length - 1]}…`, t, i)), d;
 }
 //#endregion
 //#region packages/core/src/draw/dash.ts
-function V(e, t) {
+function K(e, t) {
 	return e.map((e) => e * t);
 }
-var H = {
+var q = {
 	dotted: [1, 2],
 	dashed: [3, 2],
 	dashSmallGap: [3, 1],
@@ -643,11 +681,11 @@ var H = {
 		2
 	]
 };
-function U(e, t) {
-	let n = H[e];
-	return n ? V(n, t) : [];
+function J(e, t) {
+	let n = q[e];
+	return n ? K(n, t) : [];
 }
-var W = {
+var Y = {
 	hair: [1, 1],
 	dashed: [4, 3],
 	mediumDashed: [4, 3],
@@ -687,11 +725,11 @@ var W = {
 		3
 	]
 };
-function G(e) {
-	let t = W[e];
-	return t ? V(t, 1) : [];
+function X(e) {
+	let t = Y[e];
+	return t ? K(t, 1) : [];
 }
-var K = {
+var Z = {
 	dash: [6, 3],
 	dot: [1.5, 3],
 	dashDot: [
@@ -732,17 +770,17 @@ var K = {
 		2
 	]
 };
-function q(e, t) {
-	let n = K[e];
-	return n ? V(n, t) : [];
+function Q(e, t) {
+	let n = Z[e];
+	return n ? K(n, t) : [];
 }
-function J(e, t) {
-	let n = q(e, t);
+function $(e, t) {
+	let n = Q(e, t);
 	if (n.length > 0) return n;
 	let r = e.trim().split(/[\s,]+/).map(Number);
-	return r.length >= 2 && r.every((e) => Number.isFinite(e) && e >= 0) && r.some((e) => e > 0) ? (r.length % 2 != 0 && r.pop(), V(r, t)) : [];
+	return r.length >= 2 && r.every((e) => Number.isFinite(e) && e >= 0) && r.some((e) => e > 0) ? (r.length % 2 != 0 && r.pop(), K(r, t)) : [];
 }
-var Y = {
+var ee = {
 	dotted: [1.5, 3],
 	dottedHeavy: [1.5, 3],
 	dash: [6, 3],
@@ -778,9 +816,9 @@ var Y = {
 		3
 	]
 };
-function X(e, t) {
-	let n = Y[e];
-	return n ? V(n, t) : [];
+function te(e, t) {
+	let n = ee[e];
+	return n ? K(n, t) : [];
 }
 //#endregion
-export { i as C, _ as S, g as T, x as _, G as a, r as b, F as c, k as d, T as f, b as g, y as h, J as i, j as l, C as m, q as n, z as o, S as p, X as r, B as s, U as t, A as u, a as v, p as w, v as x, o as y };
+export { g as A, a as C, _ as D, v as E, i as O, x as S, r as T, E as _, X as a, y as b, B as c, P as d, N as f, T as g, D as h, $ as i, p as k, I as l, w as m, Q as n, W as o, k as p, te as r, G as s, J as t, F as u, S as v, o as w, b as x, C as y };

@@ -1,6 +1,7 @@
 import { r as e, y as t } from "./chart-number-format-tjYUR9eS.js";
+import { t as n } from "./renderer-module-contract-BNGz8HvO.js";
 //#region packages/core/src/chart/region-map-natural-earth.generated.ts
-var n = [
+var r = [
 	{
 		n: "Fiji",
 		a2: "FJ",
@@ -12423,7 +12424,7 @@ var n = [
 			[30.83, 3.51]
 		]]]
 	}
-], r = [
+], i = [
 	1,
 	.9986,
 	.9954,
@@ -12443,7 +12444,7 @@ var n = [
 	.6213,
 	.5722,
 	.5322
-], i = [
+], a = [
 	0,
 	.062,
 	.124,
@@ -12463,42 +12464,42 @@ var n = [
 	.9394,
 	.9761,
 	1
-], a = (e) => e * Math.PI / 180, o = 1e4;
-function s(e, t) {
-	let n = t === "mercator" || t === "miller" || t === "albers" || t === "robinson" ? t : "robinson", o = a(Math.max(-180, Math.min(180, e[0]))), s = Math.max(-89.999, Math.min(89.999, e[1])), c = a(s);
+], o = (e) => e * Math.PI / 180, s = 1e4;
+function c(e, t) {
+	let n = t === "mercator" || t === "miller" || t === "albers" || t === "robinson" ? t : "robinson", r = o(Math.max(-180, Math.min(180, e[0]))), s = Math.max(-89.999, Math.min(89.999, e[1])), c = o(s);
 	if (n === "mercator") {
-		let e = a(Math.max(-85, Math.min(85, s)));
+		let e = o(Math.max(-85, Math.min(85, s)));
 		return {
-			x: o,
+			x: r,
 			y: -Math.log(Math.tan(Math.PI / 4 + e / 2))
 		};
 	}
 	if (n === "miller") return {
-		x: o,
+		x: r,
 		y: -1.25 * Math.log(Math.tan(Math.PI / 4 + .4 * c))
 	};
 	if (n === "albers") {
-		let e = a(20), t = a(50), n = .5 * (Math.sin(e) + Math.sin(t)), r = Math.cos(e) ** 2 + 2 * n * Math.sin(e), i = Math.sqrt(r) / n, s = Math.sqrt(Math.max(0, r - 2 * n * Math.sin(c))) / n, l = n * o;
+		let e = o(20), t = o(50), n = .5 * (Math.sin(e) + Math.sin(t)), i = Math.cos(e) ** 2 + 2 * n * Math.sin(e), a = Math.sqrt(i) / n, s = Math.sqrt(Math.max(0, i - 2 * n * Math.sin(c))) / n, l = n * r;
 		return {
 			x: s * Math.sin(l),
-			y: i - s * Math.cos(l)
+			y: a - s * Math.cos(l)
 		};
 	}
 	let l = Math.abs(s), u = Math.min(17, Math.floor(l / 5)), d = Math.min(1, (l - u * 5) / 5), f = (e) => e[u] + (e[u + 1] - e[u]) * d;
 	return {
-		x: .8487 * o * f(r),
-		y: -1.3523 * Math.sign(s) * f(i)
+		x: .8487 * r * f(i),
+		y: -1.3523 * Math.sign(s) * f(a)
 	};
 }
-function c(e) {
+function l(e) {
 	return e.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
 }
-var l = /* @__PURE__ */ new Map(), u = /* @__PURE__ */ new Map(), d = /* @__PURE__ */ new Map(), f = /* @__PURE__ */ new Map();
-for (let e of n) if (l.set(c(e.n), e), e.a2 && u.set(c(e.a2), e), e.a3 && d.set(c(e.a3), e), e.p) {
-	let t = c(e.p);
-	f.has(t) || f.set(t, e);
+var u = /* @__PURE__ */ new Map(), d = /* @__PURE__ */ new Map(), f = /* @__PURE__ */ new Map(), p = /* @__PURE__ */ new Map();
+for (let e of r) if (u.set(l(e.n), e), e.a2 && d.set(l(e.a2), e), e.a3 && f.set(l(e.a3), e), e.p) {
+	let t = l(e.p);
+	p.has(t) || p.set(t, e);
 }
-var p = {
+var m = {
 	unitedstatesofamerica: "United States",
 	usa: "United States",
 	uk: "United Kingdom",
@@ -12510,27 +12511,27 @@ var p = {
 	drcongo: "Democratic Republic of the Congo",
 	congodemocraticrepublic: "Democratic Republic of the Congo"
 };
-function m(e, t) {
-	let n = (e) => l.get(e) ?? u.get(e) ?? d.get(e) ?? f.get(e), r = t ? n(c(t)) : void 0;
-	if (r) return r;
-	let i = c(e);
-	return n(i) ?? (p[i] ? n(c(p[i])) : void 0);
-}
 function h(e, t) {
+	let n = (e) => u.get(e) ?? d.get(e) ?? f.get(e) ?? p.get(e), r = t ? n(l(t)) : void 0;
+	if (r) return r;
+	let i = l(e);
+	return n(i) ?? (m[i] ? n(l(m[i])) : void 0);
+}
+function g(e, t) {
 	let n = (e ?? "").replace(/^#/, "").slice(0, 6);
 	return /^[0-9a-f]{6}$/i.test(n) ? [
 		0,
 		2,
 		4
-	].map((e) => Number.parseInt(n.slice(e, e + 2), 16)) : h(t, "000000");
+	].map((e) => Number.parseInt(n.slice(e, e + 2), 16)) : g(t, "000000");
 }
-function g(e) {
+function _(e) {
 	return `#${e.map((e) => Math.round(Math.max(0, Math.min(255, e))).toString(16).padStart(2, "0")).join("").toUpperCase()}`;
 }
-function _(e, t, n) {
-	return g(e.map((e, r) => e + (t[r] - e) * Math.max(0, Math.min(1, n))));
+function v(e, t, n) {
+	return _(e.map((e, r) => e + (t[r] - e) * Math.max(0, Math.min(1, n))));
 }
-function v([e, t, n]) {
+function y([e, t, n]) {
 	let r = e / 255, i = t / 255, a = n / 255, o = Math.max(r, i, a), s = Math.min(r, i, a), c = (o + s) / 2, l = o - s;
 	if (l === 0) return [
 		0,
@@ -12544,7 +12545,7 @@ function v([e, t, n]) {
 		c
 	];
 }
-function y(e, t, n) {
+function b(e, t, n) {
 	let r = (1 - Math.abs(2 * n - 1)) * t, i = (e % 360 + 360) % 360 / 60, a = r * (1 - Math.abs(i % 2 - 1)), [o, s, c] = i < 1 ? [
 		r,
 		a,
@@ -12576,34 +12577,34 @@ function y(e, t, n) {
 		c + l
 	].map((e) => e * 255);
 }
-function b(e) {
-	let [t, n, r] = v(h(e, "4472C4"));
+function x(e) {
+	let [t, n, r] = y(g(e, "4472C4"));
 	return {
-		min: g(y(t, n, r * .2 + .8)),
-		max: g(y(t, n, r * .75))
+		min: _(b(t, n, r * .2 + .8)),
+		max: _(b(t, n, r * .75))
 	};
 }
-function x(e, t, n) {
+function S(e, t, n) {
 	let r = Math.max(0, Math.min(1, n)), i = e + (t - e) * r;
 	if (Number.isFinite(i)) return i;
 	let a = Math.max(Math.abs(e), Math.abs(t));
 	return !(a > 0) || !Number.isFinite(a) ? 0 : (e / a * (1 - r) + t / a * r) * a;
 }
-function S(e, t, n) {
+function C(e, t, n) {
 	if (t === n) return .5;
 	let r = (e - t) / (n - t);
 	if (Number.isFinite(r)) return r;
 	let i = Math.max(Math.abs(e), Math.abs(t), Math.abs(n));
 	return !(i > 0) || !Number.isFinite(i) ? .5 : (e / i - t / i) / (n / i - t / i);
 }
-function C(e, t, n, r) {
-	return !e || e.kind === "extremeValue" ? t : e.kind === "percent" && Number.isFinite(e.value) ? x(n, r, e.value / 100) : e.kind === "number" && Number.isFinite(e.value) ? e.value : t;
+function w(e, t, n, r) {
+	return !e || e.kind === "extremeValue" ? t : e.kind === "percent" && Number.isFinite(e.value) ? S(n, r, e.value / 100) : e.kind === "number" && Number.isFinite(e.value) ? e.value : t;
 }
-function w(e, t, n) {
+function T(e, t, n) {
 	let r = Infinity, i = -Infinity;
 	for (let t of e) Number.isFinite(t) && (r = Math.min(r, t), i = Math.max(i, t));
 	(!Number.isFinite(r) || !Number.isFinite(i)) && (r = 0, i = 1);
-	let a = b(n), o = g(h(t?.minColor, a.min)), s = t?.stopCount === 3 && t.midColor ? g(h(t.midColor, "5B9BD5")) : void 0, c = g(h(t?.maxColor, a.max)), l = C(t?.minPosition, r, r, i), u = C(t?.maxPosition, i, r, i), d = C(t?.midPosition, (l + u) / 2, r, i), f = Math.min(l, u), p = Math.max(l, u);
+	let a = x(n), o = _(g(t?.minColor, a.min)), s = t?.stopCount === 3 && t.midColor ? _(g(t.midColor, "5B9BD5")) : void 0, c = _(g(t?.maxColor, a.max)), l = w(t?.minPosition, r, r, i), u = w(t?.maxPosition, i, r, i), d = w(t?.midPosition, (l + u) / 2, r, i), f = Math.min(l, u), p = Math.max(l, u);
 	return {
 		min: r,
 		max: i,
@@ -12611,28 +12612,28 @@ function w(e, t, n) {
 		midColor: s,
 		maxColor: c,
 		color(e) {
-			return s ? e <= d ? _(h(o, o), h(s, s), S(e, f, d)) : _(h(s, s), h(c, c), S(e, d, p)) : _(h(o, o), h(c, c), S(e, f, p));
+			return s ? e <= d ? v(g(o, o), g(s, s), C(e, f, d)) : v(g(s, s), g(c, c), C(e, d, p)) : v(g(o, o), g(c, c), C(e, f, p));
 		}
 	};
 }
-function T(e) {
+function E(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n = 0; n < e.rows.length; n++) {
 		let r = e.rows[n];
 		if (!Number.isFinite(r.value)) continue;
-		let i = m(r.label, r.entityId);
+		let i = h(r.label, r.entityId);
 		if (!i) continue;
 		let a = t.get(i) ?? 0, o = r.value, s = a + o, c = Number.isFinite(s) ? s : a > 0 && o > 0 ? Number.MAX_VALUE : a < 0 && o < 0 ? -Number.MAX_VALUE : 0;
 		t.set(i, c);
 	}
 	return t;
 }
-function E(e, t, n, r, i) {
+function D(e, t, n, r, i) {
 	if (!t.title && !t.titlePresent) return;
 	let a = t.titleFontFace || t.themeMajorFontLatin || "sans-serif";
 	e.font = `${t.titleFontBold ?? !0 ? "bold " : ""}${r}px ${JSON.stringify(a)}`, e.fillStyle = t.titleFontColor ? `#${t.titleFontColor}` : "#333333", e.textAlign = "center", e.textBaseline = "top", e.fillText(t.title ?? "", n.x + n.w / 2, n.y + i);
 }
-function D(t, n, r, i, a, o, s, c) {
+function O(t, n, r, i, a, o, s, c) {
 	let l = n.series[0]?.name ?? "", u = Math.max(8, (n.legendFontSizeHpt ?? 900) / 100 * c);
 	t.font = `${n.legendFontBold ? "bold " : ""}${u}px ${JSON.stringify(n.legendFontFace || n.themeMinorFontLatin || "sans-serif")}`, t.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", t.textAlign = "center", t.textBaseline = "top", l && t.fillText(l, i + o / 2, a);
 	let d = Math.min(o * .58, 240), f = Math.max(6, Math.min(12, s * .25)), p = i + (o - d) / 2, m = a + (l ? u + 2 : 0), h = t.createLinearGradient(p, 0, p + d, 0);
@@ -12640,39 +12641,39 @@ function D(t, n, r, i, a, o, s, c) {
 	let g = n.series[0]?.valFormatCode ?? null;
 	t.fillText(e(r.min, g, n.date1904), p, m + f + 2), t.textAlign = "right", t.fillText(e(r.max, g, n.date1904), p + d, m + f + 2);
 }
-function O(e, t, n, r) {
+function k(e, t, n, r) {
 	e.fillStyle = "#666666", e.font = `${Math.max(9, 9 * n)}px sans-serif`, e.textAlign = "center", e.textBaseline = "middle", e.fillText(r, t.x + t.w / 2, t.y + t.h / 2);
 }
-function k(e, r, i, a) {
-	if (r.chartType !== "regionMap" || !r.chartexRegionMap) return !1;
-	let c = r.chartexRegionMap;
-	if (c.rows.length > o) return O(e, i, a, "(chart values exceed rendering limit)"), !0;
-	if (c.geography?.cachePresent) return O(e, i, a, "(region map cache is unavailable offline)"), !0;
-	let l = c.geography?.viewedRegionType;
-	if (l != null && l !== "world") return O(e, i, a, "(region map detail is unavailable offline)"), !0;
-	let u = T(c), d = w([...u.values()], c.colors, r.chartexAccents?.[0]), f = t(r, i.h, a, .02, .015);
-	E(e, r, i, f.fontPx, f.topPad);
-	let p = r.showLegend ? Math.max(32, i.h * .16) : 0, h = i.w * .03, g = i.h * .035, _ = {
-		x: i.x + h,
+function A(e, n, i, a) {
+	if (n.chartType !== "regionMap" || !n.chartexRegionMap) return !1;
+	let o = n.chartexRegionMap;
+	if (o.rows.length > s) return k(e, i, a, "(chart values exceed rendering limit)"), !0;
+	if (o.geography?.cachePresent) return k(e, i, a, "(region map cache is unavailable offline)"), !0;
+	let l = o.geography?.viewedRegionType;
+	if (l != null && l !== "world") return k(e, i, a, "(region map detail is unavailable offline)"), !0;
+	let u = E(o), d = T([...u.values()], o.colors, n.chartexAccents?.[0]), f = t(n, i.h, a, .02, .015);
+	D(e, n, i, f.fontPx, f.topPad);
+	let p = n.showLegend ? Math.max(32, i.h * .16) : 0, m = i.w * .03, g = i.h * .035, _ = {
+		x: i.x + m,
 		y: i.y + f.bandH + p,
-		w: Math.max(1, i.w - h * 2),
+		w: Math.max(1, i.w - m * 2),
 		h: Math.max(1, i.h - f.bandH - p - g)
 	};
-	r.showLegend && D(e, r, d, i.x, i.y + f.bandH, i.w, p, a);
-	let v = c.geography?.projectionType, y = Infinity, b = Infinity, x = -Infinity, S = -Infinity;
-	for (let e of n) for (let t of e.g) for (let e of t) for (let t of e) {
-		let e = s(t, v);
+	n.showLegend && O(e, n, d, i.x, i.y + f.bandH, i.w, p, a);
+	let v = o.geography?.projectionType, y = Infinity, b = Infinity, x = -Infinity, S = -Infinity;
+	for (let e of r) for (let t of e.g) for (let e of t) for (let t of e) {
+		let e = c(t, v);
 		y = Math.min(y, e.x), x = Math.max(x, e.x), b = Math.min(b, e.y), S = Math.max(S, e.y);
 	}
-	let C = Math.min(_.w / Math.max(Number.MIN_VALUE, x - y), _.h / Math.max(Number.MIN_VALUE, S - b)), k = _.x + (_.w - (x - y) * C) / 2 - y * C, A = _.y + (_.h - (S - b) * C) / 2 - b * C, j = (e) => {
-		let t = s(e, v);
+	let C = Math.min(_.w / Math.max(Number.MIN_VALUE, x - y), _.h / Math.max(Number.MIN_VALUE, S - b)), w = _.x + (_.w - (x - y) * C) / 2 - y * C, A = _.y + (_.h - (S - b) * C) / 2 - b * C, j = (e) => {
+		let t = c(e, v);
 		return {
-			x: k + t.x * C,
+			x: w + t.x * C,
 			y: A + t.y * C
 		};
 	}, M = /* @__PURE__ */ new Map();
 	e.lineWidth = Math.max(.35, .55 * a), e.strokeStyle = "#FFFFFF";
-	for (let t of n) {
+	for (let t of r) {
 		e.beginPath();
 		let n = {
 			minX: Infinity,
@@ -12690,19 +12691,19 @@ function k(e, r, i, a) {
 		}
 		e.fillStyle = u.has(t) ? d.color(u.get(t)) : "#E0E0E0", e.fill("evenodd"), e.stroke(), M.set(t, n);
 	}
-	if (c.regionLabelLayout && c.regionLabelLayout !== "none") {
-		e.font = `${Math.max(7, (r.dataLabelFontSizeHpt ?? 800) / 100 * a)}px ${JSON.stringify(r.dataLabelFontFace || r.themeMinorFontLatin || "sans-serif")}`, e.fillStyle = r.dataLabelFontColor ? `#${r.dataLabelFontColor}` : "#404040", e.textAlign = "center", e.textBaseline = "middle";
-		for (let t of c.rows) {
-			let n = m(t.label, t.entityId), r = n ? M.get(n) : void 0;
+	if (o.regionLabelLayout && o.regionLabelLayout !== "none") {
+		e.font = `${Math.max(7, (n.dataLabelFontSizeHpt ?? 800) / 100 * a)}px ${JSON.stringify(n.dataLabelFontFace || n.themeMinorFontLatin || "sans-serif")}`, e.fillStyle = n.dataLabelFontColor ? `#${n.dataLabelFontColor}` : "#404040", e.textAlign = "center", e.textBaseline = "middle";
+		for (let t of o.rows) {
+			let n = h(t.label, t.entityId), r = n ? M.get(n) : void 0;
 			if (!n || !r || !t.label) continue;
 			let i = j(n.l), a = e.measureText(t.label).width <= Math.max(0, r.maxX - r.minX - 4);
-			(c.regionLabelLayout === "showAll" || a) && e.fillText(t.label, i.x, i.y);
+			(o.regionLabelLayout === "showAll" || a) && e.fillText(t.label, i.x, i.y);
 		}
 	}
-	return c.geography?.attribution && (e.font = `${Math.max(7, 7 * a)}px sans-serif`, e.fillStyle = "#777777", e.textAlign = "right", e.textBaseline = "bottom", e.fillText(c.geography.attribution, i.x + i.w - 4, i.y + i.h - 2)), !0;
+	return o.geography?.attribution && (e.font = `${Math.max(7, 7 * a)}px sans-serif`, e.fillStyle = "#777777", e.textAlign = "right", e.textBaseline = "bottom", e.fillText(o.geography.attribution, i.x + i.w - 4, i.y + i.h - 2)), !0;
 }
 //#endregion
 //#region src/region-map.ts
-var A = { render: k };
+var j = n({ render: A }, "regionMap");
 //#endregion
-export { A as regionMap };
+export { j as regionMap };

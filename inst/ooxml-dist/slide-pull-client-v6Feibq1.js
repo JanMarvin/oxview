@@ -1,13 +1,12 @@
-import { $t as e, A as t, At as n, Bt as r, C as i, D as a, Dt as o, Ft as s, Gt as c, Ht as l, K as u, Kt as d, Lt as f, M as p, N as m, Nt as h, O as g, Ot as _, Qt as v, Rt as y, S as b, St as x, Tt as S, Ut as C, Vt as w, Wt as T, Xt as E, Yt as D, Zt as O, _ as k, _t as A, an as j, bt as M, c as N, ct as P, d as F, en as I, f as L, g as R, gt as z, h as B, ht as V, i as H, j as U, jt as W, m as G, mt as K, n as q, nn as J, p as ee, pt as te, qt as ne, r as re, rn as ie, s as ae, tn as oe, u as se, vt as ce, w as le, xt as ue, y as de } from "./line-metrics-DjKxiIUD.js";
-import { a as fe, c as pe, d as me, i as he, l as ge, n as _e, o as ve, r as ye, s as be, t as xe, u as Se } from "./line-distribute-pDqovJpT.js";
-import { h as Y, r as Ce } from "./dash-Cyc-sevN.js";
-import { i as we } from "./resource-measurement-D8EiTm_E.js";
-import { t as Te } from "./mathjax-Dqo857oC.js";
+import { $t as e, A as t, At as n, Bt as r, C as i, Ct as a, D as o, Dt as s, Ft as c, Gt as l, Ht as u, Jt as d, K as f, Kt as p, Lt as m, M as h, Mt as g, N as _, Nt as v, O as y, Qt as b, S as x, St as S, Ut as C, Wt as w, Yt as T, Zt as E, _ as D, _t as O, an as k, bt as A, c as j, ct as M, d as N, en as P, f as F, g as I, gt as L, h as R, ht as z, i as B, in as V, j as H, kt as U, m as W, mt as G, n as K, nn as q, p as ee, pt as J, qt as te, r as ne, rn as re, s as ie, sn as ae, tn as oe, u as se, vt as ce, w as le, wt as ue, y as de, yt as fe, zt as pe } from "./line-metrics-BY-aNaLO.js";
+import { a as me, c as he, d as ge, i as _e, l as ve, n as ye, o as be, r as xe, s as Se, t as Ce, u as we } from "./line-distribute-vYf5DWek.js";
+import { b as Y, r as Te } from "./dash-CMzZIDz_.js";
+import { i as Ee } from "./resource-measurement-DOQetcWm.js";
 //#region packages/pptx/src/types.ts
-function Ee(e) {
+function De(e) {
 	return e;
 }
-var De = {
+var Oe = {
 	textarchdown: {
 		adj: [["adj", "val 0"]],
 		gd: [
@@ -2389,22 +2388,22 @@ var De = {
 			]
 		}]
 	}
-}, Oe = Math.PI * 2 / 216e5, ke = De, Ae = /* @__PURE__ */ new Map();
-function je(e) {
-	return e.toLowerCase() in ke;
-}
+}, ke = Math.PI * 2 / 216e5, Ae = Oe, je = /* @__PURE__ */ new Map();
 function Me(e) {
-	let t = Ae.get(e);
-	if (t) return t;
-	let n = ke[e];
-	return n ? (t = {
-		adj: n.adj.map(([e, t]) => [e, T(t)]),
-		gd: n.gd.map(([e, t]) => [e, T(t)]),
-		paths: n.paths
-	}, Ae.set(e, t), t) : null;
+	return e.toLowerCase() in Ae;
 }
-var Ne = 48;
-function Pe(e, t, n, r) {
+function Ne(e) {
+	let t = je.get(e);
+	if (t) return t;
+	let n = Ae[e];
+	return n ? (t = {
+		adj: n.adj.map(([e, t]) => [e, p(t)]),
+		gd: n.gd.map(([e, t]) => [e, p(t)]),
+		paths: n.paths
+	}, je.set(e, t), t) : null;
+}
+var Pe = 48;
+function Fe(e, t, n, r) {
 	let i = e.w == null ? 1 : n / e.w, a = e.h == null ? 1 : r / e.h, o = (e) => e * i, s = (e) => e * a, c = [], l = 0, u = 0;
 	for (let n of e.cmds) switch (n[0]) {
 		case "m":
@@ -2421,8 +2420,8 @@ function Pe(e, t, n, r) {
 			break;
 		case "C": {
 			let e = o(t.resolve(n[1])), r = s(t.resolve(n[2])), i = o(t.resolve(n[3])), a = s(t.resolve(n[4])), d = o(t.resolve(n[5])), f = s(t.resolve(n[6]));
-			for (let t = 1; t <= Ne; t++) {
-				let n = t / Ne, o = 1 - n, s = o * o * o * l + 3 * o * o * n * e + 3 * o * n * n * i + n * n * n * d, p = o * o * o * u + 3 * o * o * n * r + 3 * o * n * n * a + n * n * n * f;
+			for (let t = 1; t <= Pe; t++) {
+				let n = t / Pe, o = 1 - n, s = o * o * o * l + 3 * o * o * n * e + 3 * o * n * n * i + n * n * n * d, p = o * o * o * u + 3 * o * o * n * r + 3 * o * n * n * a + n * n * n * f;
 				c.push({
 					x: s,
 					y: p
@@ -2433,8 +2432,8 @@ function Pe(e, t, n, r) {
 		}
 		case "Q": {
 			let e = o(t.resolve(n[1])), r = s(t.resolve(n[2])), i = o(t.resolve(n[3])), a = s(t.resolve(n[4]));
-			for (let t = 1; t <= Ne; t++) {
-				let n = t / Ne, o = 1 - n, s = o * o * l + 2 * o * n * e + n * n * i, d = o * o * u + 2 * o * n * r + n * n * a;
+			for (let t = 1; t <= Pe; t++) {
+				let n = t / Pe, o = 1 - n, s = o * o * l + 2 * o * n * e + n * n * i, d = o * o * u + 2 * o * n * r + n * n * a;
 				c.push({
 					x: s,
 					y: d
@@ -2444,9 +2443,9 @@ function Pe(e, t, n, r) {
 			break;
 		}
 		case "a": {
-			let e = t.resolve(n[1]), r = t.resolve(n[2]), o = e * i, s = r * a, d = t.resolve(n[3]) * Oe, f = t.resolve(n[4]) * Oe, p = (t) => Math.atan2(e * Math.sin(t), r * Math.cos(t)), m = Math.PI * 2, h = p(d), g = Math.trunc(f / m), _ = f - g * m, v = p(d + _) - h;
+			let e = t.resolve(n[1]), r = t.resolve(n[2]), o = e * i, s = r * a, d = t.resolve(n[3]) * ke, f = t.resolve(n[4]) * ke, p = (t) => Math.atan2(e * Math.sin(t), r * Math.cos(t)), m = Math.PI * 2, h = p(d), g = Math.trunc(f / m), _ = f - g * m, v = p(d + _) - h;
 			_ > 0 && v < 0 ? v += m : _ < 0 && v > 0 && (v -= m);
-			let y = v + g * m, b = l - o * Math.cos(h), x = u - s * Math.sin(h), S = Math.max(Ne, Math.ceil(Math.abs(y) / m * 96));
+			let y = v + g * m, b = l - o * Math.cos(h), x = u - s * Math.sin(h), S = Math.max(Pe, Math.ceil(Math.abs(y) / m * 96));
 			for (let e = 1; e <= S; e++) {
 				let t = h + y * e / S;
 				c.push({
@@ -2461,7 +2460,7 @@ function Pe(e, t, n, r) {
 	}
 	return c;
 }
-function Fe(e) {
+function Ie(e) {
 	let t = [0];
 	for (let n = 1; n < e.length; n++) {
 		let r = e[n].x - e[n - 1].x, i = e[n].y - e[n - 1].y;
@@ -2469,23 +2468,23 @@ function Fe(e) {
 	}
 	return t;
 }
-function Ie(e, t, n, r) {
-	let i = Me(e.toLowerCase());
+function Le(e, t, n, r) {
+	let i = Ne(e.toLowerCase());
 	if (!i || i.paths.length === 0) return null;
-	let a = c({
+	let a = te({
 		w: n,
 		h: r,
 		adj: t
-	}, i.adj, i.gd), o = i.paths.length === 1, s = Pe(i.paths[0], a, n, r), l = o ? s : Pe(i.paths[i.paths.length - 1], a, n, r);
+	}, i.adj, i.gd), o = i.paths.length === 1, s = Fe(i.paths[0], a, n, r), c = o ? s : Fe(i.paths[i.paths.length - 1], a, n, r);
 	return {
 		top: s,
-		bottom: l,
-		topLen: Fe(s),
-		bottomLen: Fe(l),
+		bottom: c,
+		topLen: Ie(s),
+		bottomLen: Ie(c),
 		singleEdge: o
 	};
 }
-function Le(e, t, n) {
+function Re(e, t, n) {
 	let r = t[t.length - 1];
 	if (e.length === 1 || r === 0) return {
 		x: e[0].x,
@@ -2506,17 +2505,17 @@ function Le(e, t, n) {
 		ty: f / p
 	};
 }
-function Re(e) {
+function ze(e) {
 	return e.topLen[e.topLen.length - 1] ?? 0;
 }
-function ze(e, t) {
+function Be(e, t) {
 	if (!e.singleEdge) return 1;
-	let n = Re(e);
+	let n = ze(e);
 	return n <= 0 ? 1 : Math.max(0, Math.min(1, t / n));
 }
-function Be(e, t, n, r) {
+function Ve(e, t, n, r) {
 	if (e.singleEdge) {
-		let i = Le(e.top, e.topLen, t), a = Math.atan2(i.ty, i.tx), o = i.ty, s = -i.tx, c = n * (1 - r);
+		let i = Re(e.top, e.topLen, t), a = Math.atan2(i.ty, i.tx), o = i.ty, s = -i.tx, c = n * (1 - r);
 		return {
 			x: i.x - o * c,
 			y: i.y - s * c,
@@ -2525,7 +2524,7 @@ function Be(e, t, n, r) {
 			shear: 0
 		};
 	}
-	let i = Le(e.top, e.topLen, t), a = Le(e.bottom, e.bottomLen, t), o = a.x - i.x, s = a.y - i.y, c = i.x + o * r, l = i.y + s * r, u = i.tx + a.tx, d = i.ty + a.ty, f = Math.atan2(d, u), p = Math.cos(f), m = Math.sin(f), h = (p * o + m * s) / (n > 0 ? n : 1), g = (-m * o + p * s) / (n > 0 ? n : 1);
+	let i = Re(e.top, e.topLen, t), a = Re(e.bottom, e.bottomLen, t), o = a.x - i.x, s = a.y - i.y, c = i.x + o * r, l = i.y + s * r, u = i.tx + a.tx, d = i.ty + a.ty, f = Math.atan2(d, u), p = Math.cos(f), m = Math.sin(f), h = (p * o + m * s) / (n > 0 ? n : 1), g = (-m * o + p * s) / (n > 0 ? n : 1);
 	return {
 		x: c,
 		y: l,
@@ -2536,16 +2535,16 @@ function Be(e, t, n, r) {
 }
 //#endregion
 //#region packages/core/src/shape/effects.ts
-function Ve(e, t) {
+function He(e, t) {
 	return [t === "tl" || t === "l" || t === "bl" ? e.x : t === "tr" || t === "r" || t === "br" ? e.x + e.w : e.x + e.w / 2, t === "tl" || t === "t" || t === "tr" ? e.y : t === "l" || t === "ctr" || t === "r" ? e.y + e.h / 2 : e.y + e.h];
 }
-function He(e, t) {
+function Ue(e, t) {
 	return e * t;
 }
-function Ue(e) {
+function We(e) {
 	return e.getContext("2d") ?? null;
 }
-function We(e, t, n, r) {
+function Ge(e, t, n, r) {
 	let i = Math.max(0, Math.floor(e.x - t)), a = Math.max(0, Math.floor(e.y - t)), o = Math.min(n, Math.ceil(e.x + e.w + t)), s = Math.min(r, Math.ceil(e.y + e.h + t));
 	return {
 		x: i,
@@ -2554,7 +2553,7 @@ function We(e, t, n, r) {
 		h: Math.max(1, s - a)
 	};
 }
-function Ge(e, t) {
+function Ke(e, t) {
 	if (t.x === 0 && t.y === 0) return e;
 	let n = t.x, r = t.y;
 	return new Proxy(e, {
@@ -2570,67 +2569,67 @@ function Ge(e, t) {
 		}
 	});
 }
-function Ke(e, t, n, r, i, a, o, s = 0, c) {
-	let l = Math.max(0, He(r.blur, i)), u = He(r.dist, i), d = r.rotWithShape === !1 ? 0 : s, f = (r.dir + d) * Math.PI / 180, p = Math.cos(f) * u, m = Math.sin(f) * u, h = We(n, Math.ceil(l * 3 + Math.max(Math.abs(p), Math.abs(m))) + 2, a, o), g = O(h.w, h.h);
-	if (!g) return !1;
-	let _ = Ue(g);
+function qe(t, n, r, i, a, o, s, c = 0, l) {
+	let u = Math.max(0, Ue(i.blur, a)), d = Ue(i.dist, a), f = i.rotWithShape === !1 ? 0 : c, p = (i.dir + f) * Math.PI / 180, m = Math.cos(p) * d, h = Math.sin(p) * d, g = Ge(r, Math.ceil(u * 3 + Math.max(Math.abs(m), Math.abs(h))) + 2, o, s), _ = e(g.w, g.h);
 	if (!_) return !1;
-	t(Ge(_, h)), _.save(), _.setTransform(1, 0, 0, 1, 0, 0), _.globalCompositeOperation = "source-in", _.fillStyle = D(r.color, r.alpha), _.fillRect(0, 0, h.w, h.h), _.restore(), e.save(), l > 0 && (e.filter = `blur(${l}px)`);
-	let [v, y] = c ?? Ve(n, r.algn ?? "b"), b = r.sx ?? 1, x = r.sy ?? 1, S = Math.tan((r.kx ?? 0) * Math.PI / 180), C = Math.tan((r.ky ?? 0) * Math.PI / 180);
-	return e.translate(p, m), e.translate(v, y), d !== 0 && e.rotate(d * Math.PI / 180), e.transform(b, C, S, x, 0, 0), d !== 0 && e.rotate(-d * Math.PI / 180), e.translate(-v, -y), e.drawImage(g, h.x, h.y), e.restore(), !0;
+	let v = We(_);
+	if (!v) return !1;
+	n(Ke(v, g)), v.save(), v.setTransform(1, 0, 0, 1, 0, 0), v.globalCompositeOperation = "source-in", v.fillStyle = E(i.color, i.alpha), v.fillRect(0, 0, g.w, g.h), v.restore(), t.save(), u > 0 && (t.filter = `blur(${u}px)`);
+	let [y, b] = l ?? He(r, i.algn ?? "b"), x = i.sx ?? 1, S = i.sy ?? 1, C = Math.tan((i.kx ?? 0) * Math.PI / 180), w = Math.tan((i.ky ?? 0) * Math.PI / 180);
+	return t.translate(m, h), t.translate(y, b), f !== 0 && t.rotate(f * Math.PI / 180), t.transform(x, w, C, S, 0, 0), f !== 0 && t.rotate(-f * Math.PI / 180), t.translate(-y, -b), t.drawImage(_, g.x, g.y), t.restore(), !0;
 }
-function qe(e, t, n, r, i, a, o) {
-	let s = He(r.blur, i), c = He(r.dist, i), l = r.dir * Math.PI / 180, u = Math.cos(l) * c, d = Math.sin(l) * c, f = We(n, Math.ceil(3 * s + Math.abs(c)) + 2, a, o), p = O(f.w, f.h);
-	if (!p) return;
-	let m = Ue(p);
+function Je(t, n, r, i, a, o, s) {
+	let c = Ue(i.blur, a), l = Ue(i.dist, a), u = i.dir * Math.PI / 180, d = Math.cos(u) * l, f = Math.sin(u) * l, p = Ge(r, Math.ceil(3 * c + Math.abs(l)) + 2, o, s), m = e(p.w, p.h);
 	if (!m) return;
-	let h = Ge(m, f);
-	h.save(), h.fillStyle = D(r.color, r.alpha), t(h), h.restore(), h.save(), h.globalCompositeOperation = "destination-out", h.filter = s > 0 ? `blur(${s}px)` : "none", h.translate(u, d), h.fillStyle = "#000", t(h), h.restore(), h.save(), h.globalCompositeOperation = "destination-in", h.filter = "none", h.fillStyle = "#000", t(h), h.restore(), e.save(), e.drawImage(p, f.x, f.y), e.restore();
+	let h = We(m);
+	if (!h) return;
+	let g = Ke(h, p);
+	g.save(), g.fillStyle = E(i.color, i.alpha), n(g), g.restore(), g.save(), g.globalCompositeOperation = "destination-out", g.filter = c > 0 ? `blur(${c}px)` : "none", g.translate(d, f), g.fillStyle = "#000", n(g), g.restore(), g.save(), g.globalCompositeOperation = "destination-in", g.filter = "none", g.fillStyle = "#000", n(g), g.restore(), t.save(), t.drawImage(m, p.x, p.y), t.restore();
 }
-function Je(e, t, n, r, i, a, o, s) {
-	let c = He(r.radius, i);
-	if (c <= 0) {
-		t(e);
+function Ye(t, n, r, i, a, o, s, c) {
+	let l = Ue(i.radius, a);
+	if (l <= 0) {
+		n(t);
 		return;
 	}
-	let l = We(n, Math.ceil(c) + 2, a, o), u = n.x - l.x, d = n.y - l.y, f = O(l.w, l.h);
-	if (!f) {
-		t(e);
-		return;
-	}
-	let p = Ue(f);
+	let u = Ge(r, Math.ceil(l) + 2, o, s), d = r.x - u.x, f = r.y - u.y, p = e(u.w, u.h);
 	if (!p) {
-		t(e);
+		n(t);
 		return;
 	}
-	let m = Ge(p, l), h = s ?? t;
-	t(m);
-	let g = O(l.w, l.h), _ = O(l.w, l.h), v = g ? Ue(g) : null, y = _ ? Ue(_) : null;
-	if (g && v && _ && y) {
-		let t = Ge(v, l);
-		t.fillStyle = "#000", h(t), y.drawImage(f, u, d, n.w, n.h, u - c, d - c, n.w + c * 2, n.h + c * 2), y.drawImage(f, 0, 0), y.globalCompositeOperation = "destination-in", y.filter = `blur(${c / 3}px)`, y.drawImage(g, 0, 0), y.filter = "none", y.globalCompositeOperation = "source-over", e.save(), e.drawImage(_, l.x, l.y), e.restore();
+	let m = We(p);
+	if (!m) {
+		n(t);
 		return;
 	}
-	e.save(), e.drawImage(f, 0, 0), e.restore();
+	let h = Ke(m, u), g = c ?? n;
+	n(h);
+	let _ = e(u.w, u.h), v = e(u.w, u.h), y = _ ? We(_) : null, b = v ? We(v) : null;
+	if (_ && y && v && b) {
+		let e = Ke(y, u);
+		e.fillStyle = "#000", g(e), b.drawImage(p, d, f, r.w, r.h, d - l, f - l, r.w + l * 2, r.h + l * 2), b.drawImage(p, 0, 0), b.globalCompositeOperation = "destination-in", b.filter = `blur(${l / 3}px)`, b.drawImage(_, 0, 0), b.filter = "none", b.globalCompositeOperation = "source-over", t.save(), t.drawImage(v, u.x, u.y), t.restore();
+		return;
+	}
+	t.save(), t.drawImage(p, 0, 0), t.restore();
 }
-function Ye(e, t, n, r, i, a, o) {
-	let s = O(a, o);
-	if (!s) return;
-	let c = Ue(s);
+function Xe(t, n, r, i, a, o, s) {
+	let c = e(o, s);
 	if (!c) return;
-	let l = He(r.blur, i);
-	c.save(), l > 0 && (c.filter = `blur(${l}px)`), t(c), c.restore(), c.save(), c.globalCompositeOperation = "destination-in";
-	let u = n.y, d = n.y + n.h, f = c.createLinearGradient(0, d, 0, u), p = Xe(r.stPos), m = Xe(r.endPos);
-	f.addColorStop(0, `rgba(0,0,0,${r.stA})`), p > 0 && f.addColorStop(p, `rgba(0,0,0,${r.stA})`), m < 1 && m > p && f.addColorStop(m, `rgba(0,0,0,${r.endA})`), f.addColorStop(1, `rgba(0,0,0,${r.endA})`), c.fillStyle = f, c.fillRect(0, 0, a, o), c.restore();
-	let h = He(r.dist, i), g = r.dir * Math.PI / 180, _ = Math.cos(g) * h, v = Math.sin(g) * h;
-	e.save(), e.translate(n.x + _, d + v), e.scale(r.sx, r.sy), e.translate(-n.x, -d), e.drawImage(s, 0, 0), e.restore();
+	let l = We(c);
+	if (!l) return;
+	let u = Ue(i.blur, a);
+	l.save(), u > 0 && (l.filter = `blur(${u}px)`), n(l), l.restore(), l.save(), l.globalCompositeOperation = "destination-in";
+	let d = r.y, f = r.y + r.h, p = l.createLinearGradient(0, f, 0, d), m = Ze(i.stPos), h = Ze(i.endPos);
+	p.addColorStop(0, `rgba(0,0,0,${i.stA})`), m > 0 && p.addColorStop(m, `rgba(0,0,0,${i.stA})`), h < 1 && h > m && p.addColorStop(h, `rgba(0,0,0,${i.endA})`), p.addColorStop(1, `rgba(0,0,0,${i.endA})`), l.fillStyle = p, l.fillRect(0, 0, o, s), l.restore();
+	let g = Ue(i.dist, a), _ = i.dir * Math.PI / 180, v = Math.cos(_) * g, y = Math.sin(_) * g;
+	t.save(), t.translate(r.x + v, f + y), t.scale(i.sx, i.sy), t.translate(-r.x, -f), t.drawImage(c, 0, 0), t.restore();
 }
-function Xe(e) {
+function Ze(e) {
 	return e < 0 ? 0 : e > 1 ? 1 : e;
 }
 //#endregion
 //#region packages/core/src/shape/scene3d-camera.ts
-var Ze = 26, Qe = {
+var Qe = 26, $e = {
 	orthographicFront: {
 		kind: "orthographic",
 		baseLat: 0,
@@ -2643,52 +2642,52 @@ var Ze = 26, Qe = {
 		baseLat: 0,
 		baseLon: 0,
 		baseRev: 0,
-		fovDeg: Ze
+		fovDeg: Qe
 	},
 	perspectiveRelaxed: {
 		kind: "perspective",
 		baseLat: 0,
 		baseLon: 0,
 		baseRev: 0,
-		fovDeg: Ze
+		fovDeg: Qe
 	},
 	perspectiveRelaxedModerately: {
 		kind: "perspective",
 		baseLat: 0,
 		baseLon: 0,
 		baseRev: 0,
-		fovDeg: Ze
+		fovDeg: Qe
 	},
 	perspectiveAbove: {
 		kind: "perspective",
 		baseLat: -20,
 		baseLon: 0,
 		baseRev: 0,
-		fovDeg: Ze
+		fovDeg: Qe
 	},
 	perspectiveBelow: {
 		kind: "perspective",
 		baseLat: 20,
 		baseLon: 0,
 		baseRev: 0,
-		fovDeg: Ze
+		fovDeg: Qe
 	},
 	perspectiveLeft: {
 		kind: "perspective",
 		baseLat: 0,
 		baseLon: -20,
 		baseRev: 0,
-		fovDeg: Ze
+		fovDeg: Qe
 	},
 	perspectiveRight: {
 		kind: "perspective",
 		baseLat: 0,
 		baseLon: 20,
 		baseRev: 0,
-		fovDeg: Ze
+		fovDeg: Qe
 	}
 };
-function $e(e, t) {
+function et(e, t) {
 	let n = Array(9).fill(0);
 	for (let r = 0; r < 3; r++) for (let i = 0; i < 3; i++) {
 		let a = 0;
@@ -2697,35 +2696,35 @@ function $e(e, t) {
 	}
 	return n;
 }
-function et(e) {
-	let t = e * Math.PI / 180, n = Math.cos(t), r = Math.sin(t);
-	return [
-		1,
-		0,
-		0,
-		0,
-		n,
-		-r,
-		0,
-		r,
-		n
-	];
-}
 function tt(e) {
 	let t = e * Math.PI / 180, n = Math.cos(t), r = Math.sin(t);
 	return [
-		n,
-		0,
-		r,
-		0,
 		1,
 		0,
+		0,
+		0,
+		n,
 		-r,
 		0,
+		r,
 		n
 	];
 }
 function nt(e) {
+	let t = e * Math.PI / 180, n = Math.cos(t), r = Math.sin(t);
+	return [
+		n,
+		0,
+		r,
+		0,
+		1,
+		0,
+		-r,
+		0,
+		n
+	];
+}
+function rt(e) {
 	let t = e * Math.PI / 180, n = Math.cos(t), r = Math.sin(t);
 	return [
 		n,
@@ -2739,22 +2738,22 @@ function nt(e) {
 		1
 	];
 }
-function rt(e, t, n, r) {
+function it(e, t, n, r) {
 	return [
 		e[0] * t + e[1] * n + e[2] * r,
 		e[3] * t + e[4] * n + e[5] * r,
 		e[6] * t + e[7] * n + e[8] * r
 	];
 }
-function it(e, t) {
+function at(e, t) {
 	let n = t ? t.lat : e.baseLat, r = t ? t.lon : e.baseLon;
-	return $e(nt(-(t ? t.rev : e.baseRev)), $e(et(-n), tt(-r)));
+	return et(rt(-(t ? t.rev : e.baseRev)), et(tt(-n), nt(-r)));
 }
-function at(e) {
-	return Qe[e] || (e.startsWith("perspective") ? Qe.perspectiveFront : Qe.orthographicFront);
+function ot(e) {
+	return $e[e] || (e.startsWith("perspective") ? $e.perspectiveFront : $e.orthographicFront);
 }
-function ot(e, t, n) {
-	let r = at(e.prst), i = it(r, e.rot);
+function st(e, t, n) {
+	let r = ot(e.prst), i = at(r, e.rot);
 	if (t <= 0 || n <= 0) return {
 		corners: [
 			{
@@ -2786,11 +2785,11 @@ function ot(e, t, n) {
 	if (r.kind === "perspective") {
 		let t = e.fov ?? r.fovDeg, n = Math.max(1, Math.min(179, t)) * Math.PI / 180, a = l / Math.tan(n / 2);
 		u = s.map(([e, t]) => {
-			let [n, r, o] = rt(i, e, t, 0), s = a - o, c = a / (Math.abs(s) < 1e-6 ? 1e-6 * Math.sign(s || 1) : s);
+			let [n, r, o] = it(i, e, t, 0), s = a - o, c = a / (Math.abs(s) < 1e-6 ? 1e-6 * Math.sign(s || 1) : s);
 			return [n * c, r * c];
 		});
 	} else u = s.map(([e, t]) => {
-		let [n, r] = rt(i, e, t, 0);
+		let [n, r] = it(i, e, t, 0);
 		return [n, r];
 	});
 	u = u.map(([e, t]) => [e * c, t * c]);
@@ -2813,18 +2812,18 @@ function ot(e, t, n) {
 		isIdentity: _
 	};
 }
-function st(e) {
-	let { isIdentity: t } = ot(e, 1e3, 1e3);
+function ct(e) {
+	let { isIdentity: t } = st(e, 1e3, 1e3);
 	return !t;
 }
-function ct(e, t, n, r) {
-	let i = at(e.prst), a = it(i, e.rot);
+function lt(e, t, n, r) {
+	let i = ot(e.prst), a = at(i, e.rot);
 	if (t <= 0 || n <= 0 || r === 0) return {
 		x: 0,
 		y: 0
 	};
 	let o = t / 2, s = n / 2, c = Math.max(o, s), l = e.zoom ?? 1, u = (t) => {
-		let [n, r, o] = rt(a, 0, 0, t);
+		let [n, r, o] = it(a, 0, 0, t);
 		if (i.kind === "perspective") {
 			let t = e.fov ?? i.fovDeg, a = Math.max(1, Math.min(179, t)) * Math.PI / 180, s = c / Math.tan(a / 2), u = s - o, d = s / (Math.abs(u) < 1e-6 ? 1e-6 * Math.sign(u || 1) : u);
 			return [n * d * l, r * d * l];
@@ -2838,7 +2837,7 @@ function ct(e, t, n, r) {
 }
 //#endregion
 //#region packages/core/src/shape/scene3d-draw.ts
-function lt(e, t, n, r) {
+function ut(e, t, n, r) {
 	let i = e.x, a = e.y, o = t.x, s = t.y, c = n.x, l = n.y, u = r.x, d = r.y, f = o - c, p = u - c, m = i - o + c - u, h = s - l, g = d - l, _ = a - s + l - d, v, y;
 	if (Math.abs(m) < 1e-12 && Math.abs(_) < 1e-12) v = 0, y = 0;
 	else {
@@ -2858,15 +2857,15 @@ function lt(e, t, n, r) {
 		1
 	];
 }
-function ut(e, t, n) {
+function dt(e, t, n) {
 	let r = e[6] * t + e[7] * n + e[8];
 	return {
 		x: (e[0] * t + e[1] * n + e[2]) / r,
 		y: (e[3] * t + e[4] * n + e[5]) / r
 	};
 }
-var dt = 1;
-function ft(e, t) {
+var ft = 1;
+function pt(e, t) {
 	let [n, r, i, a, o, s] = e, [c, l, u, d, f, p] = t;
 	return [
 		n * c + i * l,
@@ -2877,13 +2876,13 @@ function ft(e, t) {
 		r * f + a * p + s
 	];
 }
-function pt(e, t, n, r, i, a, o, s, c, l, u, d, f) {
+function mt(e, t, n, r, i, a, o, s, c, l, u, d, f) {
 	let p = c - o, m = l - s;
 	if (p <= 0 || m <= 0) return;
-	let h = (d.x - u.x) / p, g = (d.y - u.y) / p, _ = (f.x - u.x) / m, v = (f.y - u.y) / m, y = (Math.hypot(d.x - u.x, d.y - u.y) || 1) * a, b = (Math.hypot(f.x - u.x, f.y - u.y) || 1) * a, x = dt * p / y, S = dt * m / b, C = Math.max(0, o - x), w = Math.max(0, s - S), T = Math.min(n, c + x), E = Math.min(r, l + S), D = T - C, O = E - w;
+	let h = (d.x - u.x) / p, g = (d.y - u.y) / p, _ = (f.x - u.x) / m, v = (f.y - u.y) / m, y = (Math.hypot(d.x - u.x, d.y - u.y) || 1) * a, b = (Math.hypot(f.x - u.x, f.y - u.y) || 1) * a, x = ft * p / y, S = ft * m / b, C = Math.max(0, o - x), w = Math.max(0, s - S), T = Math.min(n, c + x), E = Math.min(r, l + S), D = T - C, O = E - w;
 	if (D <= 0 || O <= 0) return;
 	e.save();
-	let [k, A, j, M, N, P] = ft(i, [
+	let [k, A, j, M, N, P] = pt(i, [
 		h,
 		g,
 		_,
@@ -2893,22 +2892,22 @@ function pt(e, t, n, r, i, a, o, s, c, l, u, d, f) {
 	]);
 	e.setTransform(k, A, j, M, N, P), e.drawImage(t, C, w, D, O, C, w, D, O), e.restore();
 }
-function mt(e, t, n, r, i, a, o, s, c, l, u, d, f) {
-	let p = ut(o, s, c), m = ut(o, l, c), h = ut(o, s, u), g = ut(o, l, u), _ = (s + l) / 2, v = (c + u) / 2, y = ut(o, _, v), b = {
+function ht(e, t, n, r, i, a, o, s, c, l, u, d, f) {
+	let p = dt(o, s, c), m = dt(o, l, c), h = dt(o, s, u), g = dt(o, l, u), _ = (s + l) / 2, v = (c + u) / 2, y = dt(o, _, v), b = {
 		x: (p.x + m.x + h.x + g.x) / 4,
 		y: (p.y + m.y + h.y + g.y) / 4
-	}, x = gt(i), S = Math.hypot(y.x - b.x, y.y - b.y) * x;
+	}, x = _t(i), S = Math.hypot(y.x - b.x, y.y - b.y) * x;
 	if (f <= 0 || S <= d) {
-		pt(e, t, n, r, i, a, s * n, c * r, l * n, u * r, p, m, h);
+		mt(e, t, n, r, i, a, s * n, c * r, l * n, u * r, p, m, h);
 		return;
 	}
-	l - s >= u - c ? (mt(e, t, n, r, i, a, o, s, c, _, u, d, f - 1), mt(e, t, n, r, i, a, o, _, c, l, u, d, f - 1)) : (mt(e, t, n, r, i, a, o, s, c, l, v, d, f - 1), mt(e, t, n, r, i, a, o, s, v, l, u, d, f - 1));
+	l - s >= u - c ? (ht(e, t, n, r, i, a, o, s, c, _, u, d, f - 1), ht(e, t, n, r, i, a, o, _, c, l, u, d, f - 1)) : (ht(e, t, n, r, i, a, o, s, c, l, v, d, f - 1), ht(e, t, n, r, i, a, o, s, v, l, u, d, f - 1));
 }
-function ht(e, t, n, r, i, a = .5) {
+function gt(e, t, n, r, i, a = .5) {
 	if (n <= 0 || r <= 0) return;
 	let [o, s, c, l] = i;
 	if (Math.abs(o.x * s.y - s.x * o.y + s.x * c.y - c.x * s.y + c.x * l.y - l.x * c.y + l.x * o.y - o.x * l.y) / 2 < 1e-6) return;
-	let u = lt(i[0], i[1], i[2], i[3]);
+	let u = ut(i[0], i[1], i[2], i[3]);
 	if (!u) return;
 	let d = t.getTransform(), f = [
 		d.a,
@@ -2917,14 +2916,14 @@ function ht(e, t, n, r, i, a = .5) {
 		d.d,
 		d.e,
 		d.f
-	], p = gt(f);
-	St(e, t, n, r, i, f, p, u, a, 14) || (bt(), t.save(), t.beginPath(), t.moveTo(i[0].x, i[0].y), t.lineTo(i[1].x, i[1].y), t.lineTo(i[2].x, i[2].y), t.lineTo(i[3].x, i[3].y), t.closePath(), t.clip(), mt(t, e, n, r, f, p, u, 0, 0, 1, 1, a, 14), t.restore());
+	], p = _t(f);
+	Ct(e, t, n, r, i, f, p, u, a, 14) || (xt(), t.save(), t.beginPath(), t.moveTo(i[0].x, i[0].y), t.lineTo(i[1].x, i[1].y), t.lineTo(i[2].x, i[2].y), t.lineTo(i[3].x, i[3].y), t.closePath(), t.clip(), ht(t, e, n, r, f, p, u, 0, 0, 1, 1, a, 14), t.restore());
 }
-function gt(e) {
+function _t(e) {
 	return Math.sqrt(Math.abs(e[0] * e[3] - e[1] * e[2])) || 1;
 }
-function _t(e, t, n) {
-	let r = lt(e[0], e[1], e[2], e[3]);
+function vt(e, t, n) {
+	let r = ut(e[0], e[1], e[2], e[3]);
 	if (!r) return null;
 	let i = [
 		[-t, -n],
@@ -2934,52 +2933,52 @@ function _t(e, t, n) {
 	], a = [];
 	for (let [e, t] of i) {
 		if (!(r[6] * e + r[7] * t + r[8] > 1e-9)) return null;
-		a.push(ut(r, e, t));
+		a.push(dt(r, e, t));
 	}
 	return a;
 }
-function vt(e, t, n) {
-	let r = lt(e[0], e[1], e[2], e[3]);
-	return r && r[6] * t + r[7] * n + r[8] > 1e-9 ? ut(r, t, n) : null;
+function yt(e, t, n) {
+	let r = ut(e[0], e[1], e[2], e[3]);
+	return r && r[6] * t + r[7] * n + r[8] > 1e-9 ? dt(r, t, n) : null;
 }
-var yt = !1;
-function bt() {
-	yt || (yt = !0, typeof console < "u" && typeof console.warn == "function" && console.warn("[ooxml] scene3d: no offscreen canvas available — using the direct warp fallback (per-cell bleed only, no supersample). Textured-source seams may be faintly visible; the silhouette and geometry are unaffected."));
+var bt = !1;
+function xt() {
+	bt || (bt = !0, typeof console < "u" && typeof console.warn == "function" && console.warn("[ooxml] scene3d: no offscreen canvas available — using the direct warp fallback (per-cell bleed only, no supersample). Textured-source seams may be faintly visible; the silhouette and geometry are unaffected."));
 }
-var xt = 2;
-function St(e, t, n, r, i, a, o, s, c, l) {
-	let u = i.map((e) => ({
-		x: a[0] * e.x + a[2] * e.y + a[4],
-		y: a[1] * e.x + a[3] * e.y + a[5]
-	})), d = Infinity, f = Infinity, p = -Infinity, m = -Infinity;
-	for (let e of u) e.x < d && (d = e.x), e.y < f && (f = e.y), e.x > p && (p = e.x), e.y > m && (m = e.y);
-	d = Math.floor(d) - 1, f = Math.floor(f) - 1, p = Math.ceil(p) + 1, m = Math.ceil(m) + 1;
-	let h = p - d, g = m - f;
-	if (h <= 0 || g <= 0) return !1;
-	let _ = Math.max(1, Math.ceil(h * xt)), v = Math.max(1, Math.ceil(g * xt)), y = O(_, v);
-	if (!y || y.width !== _ || y.height !== v) return !1;
-	let b = y.getContext("2d") ?? null;
-	if (!b) return !1;
-	let x = xt, S = [
-		a[0] * x,
-		a[1] * x,
-		a[2] * x,
-		a[3] * x,
-		(a[4] - d) * x,
-		(a[5] - f) * x
+var St = 2;
+function Ct(t, n, r, i, a, o, s, c, l, u) {
+	let d = a.map((e) => ({
+		x: o[0] * e.x + o[2] * e.y + o[4],
+		y: o[1] * e.x + o[3] * e.y + o[5]
+	})), f = Infinity, p = Infinity, m = -Infinity, h = -Infinity;
+	for (let e of d) e.x < f && (f = e.x), e.y < p && (p = e.y), e.x > m && (m = e.x), e.y > h && (h = e.y);
+	f = Math.floor(f) - 1, p = Math.floor(p) - 1, m = Math.ceil(m) + 1, h = Math.ceil(h) + 1;
+	let g = m - f, _ = h - p;
+	if (g <= 0 || _ <= 0) return !1;
+	let v = Math.max(1, Math.ceil(g * St)), y = Math.max(1, Math.ceil(_ * St)), b = e(v, y);
+	if (!b || b.width !== v || b.height !== y) return !1;
+	let x = b.getContext("2d") ?? null;
+	if (!x) return !1;
+	let S = St, C = [
+		o[0] * S,
+		o[1] * S,
+		o[2] * S,
+		o[3] * S,
+		(o[4] - f) * S,
+		(o[5] - p) * S
 	];
-	b.save(), b.setTransform(S[0], S[1], S[2], S[3], S[4], S[5]), b.beginPath(), b.moveTo(i[0].x, i[0].y), b.lineTo(i[1].x, i[1].y), b.lineTo(i[2].x, i[2].y), b.lineTo(i[3].x, i[3].y), b.closePath(), b.clip(), mt(b, e, n, r, S, o, s, 0, 0, 1, 1, c * x, l), b.restore(), t.save(), t.setTransform(1, 0, 0, 1, 0, 0);
-	let C = t.imageSmoothingEnabled, w = t.imageSmoothingQuality;
-	return t.imageSmoothingEnabled = !0, t.imageSmoothingQuality = "high", t.drawImage(y, 0, 0, h * x, g * x, d, f, h, g), t.imageSmoothingEnabled = C, t.imageSmoothingQuality = w, t.restore(), !0;
+	x.save(), x.setTransform(C[0], C[1], C[2], C[3], C[4], C[5]), x.beginPath(), x.moveTo(a[0].x, a[0].y), x.lineTo(a[1].x, a[1].y), x.lineTo(a[2].x, a[2].y), x.lineTo(a[3].x, a[3].y), x.closePath(), x.clip(), ht(x, t, r, i, C, s, c, 0, 0, 1, 1, l * S, u), x.restore(), n.save(), n.setTransform(1, 0, 0, 1, 0, 0);
+	let w = n.imageSmoothingEnabled, T = n.imageSmoothingQuality;
+	return n.imageSmoothingEnabled = !0, n.imageSmoothingQuality = "high", n.drawImage(b, 0, 0, g * S, _ * S, f, p, g, _), n.imageSmoothingEnabled = w, n.imageSmoothingQuality = T, n.restore(), !0;
 }
 //#endregion
 //#region packages/core/src/shape/bevel-shading.ts
-function Ct(e, t) {
+function wt(e, t) {
 	if (t <= 0) return () => 1;
 	let n = (e) => Math.max(0, Math.min(1, e / t));
 	switch (e) {
 		case "hardEdge": {
-			let e = jt;
+			let e = Mt;
 			return (t) => {
 				let r = Math.min(1, n(t) / e);
 				return r * r * (3 - 2 * r);
@@ -2999,7 +2998,7 @@ function Ct(e, t) {
 		};
 	}
 }
-function wt(e) {
+function Tt(e) {
 	let t = e.length, n = new Float64Array(t);
 	if (t === 0) return n;
 	let r = new Int32Array(t), i = new Float64Array(t + 1), a = 0;
@@ -3017,7 +3016,7 @@ function wt(e) {
 	}
 	return n;
 }
-function Tt(e, t = 3) {
+function Et(e, t = 3) {
 	if (e <= 0) return Array(t).fill(1);
 	let n = Math.sqrt(12 * e * e / t + 1), r = Math.floor(n);
 	r % 2 == 0 && r--;
@@ -3025,7 +3024,7 @@ function Tt(e, t = 3) {
 	for (let e = 0; e < t; e++) s.push(e < o ? r : i);
 	return s;
 }
-function Et(e, t, n, r, i, a) {
+function Dt(e, t, n, r, i, a) {
 	let o = 1 / (2 * i + 1);
 	if (a) for (let a = 0; a < r; a++) {
 		let r = a * n, s = 0;
@@ -3046,29 +3045,29 @@ function Et(e, t, n, r, i, a) {
 		}
 	}
 }
-function Dt(e, t, n, r) {
+function Ot(e, t, n, r) {
 	let i = Float64Array.from(e);
 	if (r <= 0 || t <= 0 || n <= 0) return i;
 	let a = new Float64Array(t * n);
-	for (let e of Tt(r, 3)) {
+	for (let e of Et(r, 3)) {
 		let r = Math.max(1, (e - 1) / 2);
-		Et(i, a, t, n, r, !0), Et(a, i, t, n, r, !1);
+		Dt(i, a, t, n, r, !0), Dt(a, i, t, n, r, !1);
 	}
 	return i;
 }
-function Ot(e, t, n, r = 128) {
+function kt(e, t, n, r = 128) {
 	let i = new Float64Array(t * n);
 	for (let a = 0; a < t * n; a++) i[a] = (e[a] ?? 0) >= r ? 0x56bc75e2d63100000 : 0;
 	let a = new Float64Array(n);
 	for (let e = 0; e < t; e++) {
 		for (let r = 0; r < n; r++) a[r] = i[r * t + e];
-		let r = wt(a);
+		let r = Tt(a);
 		for (let a = 0; a < n; a++) i[a * t + e] = r[a];
 	}
 	let o = new Float64Array(t);
 	for (let e = 0; e < n; e++) {
 		for (let n = 0; n < t; n++) o[n] = i[e * t + n];
-		let n = wt(o);
+		let n = Tt(o);
 		for (let r = 0; r < t; r++) i[e * t + r] = n[r];
 	}
 	for (let e = 0; e < n; e++) for (let r = 0; r < t; r++) {
@@ -3080,15 +3079,15 @@ function Ot(e, t, n, r = 128) {
 	for (let e = 0; e < t * n; e++) i[e] = Math.sqrt(i[e]);
 	return i;
 }
-var kt = .25, At = .35, jt = .5;
-function Mt(e, t, n, r, i, a) {
+var At = .25, jt = .35, Mt = .5;
+function Nt(e, t, n, r, i, a) {
 	let o = new Float32Array(t * n * 3), s = new Uint8Array(t * n), c = new Float32Array(t * n);
 	if (t <= 0 || n <= 0) return {
 		normals: o,
 		bandMask: s,
 		bandWeight: c
 	};
-	let l = Ot(e, t, n), u = Ct(i, r), d = (n, r) => (e[r * t + n] ?? 0) >= 128, f = (r > 0 ? a / r : 0) * r, p = Dt(l, t, n, Math.max(1, r * kt)), m = (e) => {
+	let l = kt(e, t, n), u = wt(i, r), d = (n, r) => (e[r * t + n] ?? 0) >= 128, f = (r > 0 ? a / r : 0) * r, p = Ot(l, t, n, Math.max(1, r * At)), m = (e) => {
 		let t = u(Math.max(0, e - .5));
 		return u(e + .5) - t;
 	};
@@ -3103,9 +3102,9 @@ function Mt(e, t, n, r, i, a) {
 			o[a * 3 + 2] = 1;
 			continue;
 		}
-		let g = u / r, _ = 1 - At, v = 1;
+		let g = u / r, _ = 1 - jt, v = 1;
 		if (g > _) {
-			let e = Math.min(1, (g - _) / At);
+			let e = Math.min(1, (g - _) / jt);
 			v = 1 - e * e * (3 - 2 * e);
 		}
 		c[a] = v;
@@ -3120,7 +3119,7 @@ function Mt(e, t, n, r, i, a) {
 		bandWeight: c
 	};
 }
-var Nt = 35 * Math.PI / 180, Pt = 12 * Math.PI / 180, Ft = {
+var Pt = 35 * Math.PI / 180, Ft = 12 * Math.PI / 180, It = {
 	t: {
 		x: 0,
 		y: -1
@@ -3154,22 +3153,22 @@ var Nt = 35 * Math.PI / 180, Pt = 12 * Math.PI / 180, Ft = {
 		y: 1
 	}
 };
-function It(e, t, n) {
+function Lt(e, t, n) {
 	let r = n * Math.PI / 180, i = Math.cos(r), a = Math.sin(r);
 	return {
 		x: e * i - t * a,
 		y: e * a + t * i
 	};
 }
-function Lt(e, t, n) {
-	let r = Ft[t] ?? Ft.t;
-	return n && n.rev && (r = It(r.x, r.y, n.rev)), zt(r.x, r.y, Nt);
+function Rt(e, t, n) {
+	let r = It[t] ?? It.t;
+	return n && n.rev && (r = Lt(r.x, r.y, n.rev)), Bt(r.x, r.y, Pt);
 }
-function Rt(e) {
+function zt(e) {
 	let t = Math.hypot(e.x, e.y) || 1;
-	return zt(-e.x / t, -e.y / t, Pt);
+	return Bt(-e.x / t, -e.y / t, Ft);
 }
-function zt(e, t, n) {
+function Bt(e, t, n) {
 	let r = Math.hypot(e, t) || 1, i = Math.cos(n), a = Math.sin(n), o = e / r * i, s = t / r * i, c = a, l = Math.hypot(o, s, c) || 1;
 	return {
 		x: o / l,
@@ -3177,7 +3176,7 @@ function zt(e, t, n) {
 		z: c / l
 	};
 }
-var Bt = 2, Vt = {
+var Vt = 2, Ht = {
 	matte: {
 		ambient: .62,
 		diffuse: .45,
@@ -3190,8 +3189,8 @@ var Bt = 2, Vt = {
 		specular: .35,
 		shininess: 22
 	}
-}, Ht = .8;
-function Ut(e) {
+}, Ut = .8;
+function Wt(e) {
 	switch (e) {
 		case "plastic":
 		case "metal":
@@ -3202,8 +3201,8 @@ function Ut(e) {
 		default: return "matte";
 	}
 }
-function Wt(e, t, n = !0) {
-	let r = Vt[e], i = {
+function Gt(e, t, n = !0) {
+	let r = Ht[e], i = {
 		light: t,
 		material: e,
 		ambient: r.ambient,
@@ -3211,9 +3210,9 @@ function Wt(e, t, n = !0) {
 		specular: r.specular,
 		shininess: r.shininess
 	};
-	return n && (i.fillLight = Rt(t), i.fillDiffuse = i.diffuse * Ht), i;
+	return n && (i.fillLight = zt(t), i.fillDiffuse = i.diffuse * Ut), i;
 }
-function Gt(e, t) {
+function Kt(e, t) {
 	let n = e.x * t.light.x + e.y * t.light.y + e.z * t.light.z, r = t.diffuse * Math.max(0, n), i = 0;
 	if (t.fillLight && t.fillDiffuse) {
 		let n = e.x * t.fillLight.x + e.y * t.fillLight.y + e.z * t.fillLight.z;
@@ -3226,7 +3225,7 @@ function Gt(e, t) {
 	}
 	return Math.max(0, t.ambient + r + i + a);
 }
-function Kt(e, t, n) {
+function qt(e, t, n) {
 	if (!e) return {
 		x: 0,
 		y: 0,
@@ -3241,16 +3240,16 @@ function Kt(e, t, n) {
 		h: Math.max(0, o - i)
 	};
 }
-function qt(e, t, n) {
+function Jt(e, t, n) {
 	let r = e.canvas.width, i = e.canvas.height;
 	if (r <= 0 || i <= 0) return;
 	let a = t.widthPx;
 	if (a < .75) return;
-	let { x: o, y: s, w: c, h: l } = Kt(n, r, i);
+	let { x: o, y: s, w: c, h: l } = qt(n, r, i);
 	if (c <= 0 || l <= 0) return;
 	let u = e.getImageData(o, s, c, l), d = u.data, f = new Uint8ClampedArray(c * l);
 	for (let e = 0; e < c * l; e++) f[e] = d[e * 4 + 3];
-	let { bandMask: p, bandWeight: m, normals: h } = Mt(f, c, l, a, t.prst, t.heightPx), g = Wt(t.material, t.light), _ = Gt({
+	let { bandMask: p, bandWeight: m, normals: h } = Nt(f, c, l, a, t.prst, t.heightPx), g = Gt(t.material, t.light), _ = Kt({
 		x: 0,
 		y: 0,
 		z: 1
@@ -3261,13 +3260,13 @@ function qt(e, t, n) {
 		if (n <= 0) continue;
 		let r = h[e * 3], i = h[e * 3 + 1], a = h[e * 3 + 2];
 		t.bottom && (r = -r, i = -i);
-		let o = 1 + (Gt({
+		let o = 1 + (Kt({
 			x: r,
 			y: i,
 			z: a
 		}, g) / _ - 1) * n, s = e * 4;
 		if (o >= 1) {
-			let e = Math.min(1, (o - 1) * Bt);
+			let e = Math.min(1, (o - 1) * Vt);
 			for (let t = 0; t < 3; t++) {
 				let n = Math.min(255, d[s + t] * o);
 				d[s + t] = n + (255 - n) * e;
@@ -3276,12 +3275,12 @@ function qt(e, t, n) {
 	}
 	e.putImageData(u, o, s);
 }
-function Jt(e, t, n) {
+function Yt(e, t, n) {
 	let r = e.canvas.width, i = e.canvas.height;
 	if (r <= 0 || i <= 0) return;
 	let a = t.offsetX, o = t.offsetY, s = Math.hypot(a, o);
 	if (s < .75) return;
-	let { x: c, y: l, w: u, h: d } = Kt(n, r, i);
+	let { x: c, y: l, w: u, h: d } = qt(n, r, i);
 	if (u <= 0 || d <= 0) return;
 	let f = e.getImageData(c, l, u, d), p = f.data, m = new Uint8ClampedArray(u * d);
 	for (let e = 0; e < u * d; e++) m[e] = p[e * 4 + 3];
@@ -3305,8 +3304,8 @@ function Jt(e, t, n) {
 }
 //#endregion
 //#region packages/core/src/text/underline.ts
-function Yt(e, t, n, r, i, a, o, s = 1) {
-	let c = Math.max(1, i * .05), l = o === "heavy" || (o?.endsWith("Heavy") ?? !1) ? c * 1.8 : c, u = n + Math.max(2, l), d = K(u, l, s);
+function Xt(e, t, n, r, i, a, o, s = 1) {
+	let c = Math.max(1, i * .05), l = o === "heavy" || (o?.endsWith("Heavy") ?? !1) ? c * 1.8 : c, u = n + Math.max(2, l), d = J(u, l, s);
 	if (e.strokeStyle = a, e.lineWidth = l, e.setLineDash([]), o && o.startsWith("wavy")) {
 		let n = l, i = l * 6;
 		e.beginPath(), e.moveTo(t, u);
@@ -3327,14 +3326,14 @@ function Yt(e, t, n, r, i, a, o, s = 1) {
 	}
 	if (o === "dbl") {
 		let n = l * 1.4, i = u - n / 2, a = u + n / 2;
-		e.beginPath(), e.moveTo(t, i + K(i, l, s)), e.lineTo(t + r, i + K(i, l, s)), e.moveTo(t, a + K(a, l, s)), e.lineTo(t + r, a + K(a, l, s)), e.stroke();
+		e.beginPath(), e.moveTo(t, i + J(i, l, s)), e.lineTo(t + r, i + J(i, l, s)), e.moveTo(t, a + J(a, l, s)), e.lineTo(t + r, a + J(a, l, s)), e.stroke();
 		return;
 	}
-	e.setLineDash(Ce(o ?? "sng", l)), e.beginPath(), e.moveTo(t, u + d), e.lineTo(t + r, u + d), e.stroke(), e.setLineDash([]);
+	e.setLineDash(Te(o ?? "sng", l)), e.beginPath(), e.moveTo(t, u + d), e.lineTo(t + r, u + d), e.stroke(), e.setLineDash([]);
 }
 //#endregion
 //#region packages/core/src/text/highlight-box.ts
-function Xt(e, t) {
+function Zt(e, t) {
 	return {
 		top: e - t * .85,
 		height: t * 1.1
@@ -3342,7 +3341,7 @@ function Xt(e, t) {
 }
 //#endregion
 //#region packages/core/src/text/justify-positions.ts
-function Zt(e, t, n, r, i = 0) {
+function Qt(e, t, n, r, i = 0) {
 	let a = [], o = 0, s = 0;
 	for (let c of t) a.push({
 		text: e.slice(o, c).join(""),
@@ -3355,14 +3354,14 @@ function Zt(e, t, n, r, i = 0) {
 }
 //#endregion
 //#region packages/pptx/src/reflection-blur.ts
-var Qt = .5;
-function $t(e, t) {
+var $t = .5;
+function en(e, t) {
 	if (!(t > 0) || !(e.h > 0)) return [{
 		y: e.y,
 		h: Math.max(0, e.h),
 		radius: 0
 	}];
-	let n = Math.max(4, Math.min(24, Math.ceil(t / Qt) + 1)), r = e.y + e.h, i = [];
+	let n = Math.max(4, Math.min(24, Math.ceil(t / $t) + 1)), r = e.y + e.h, i = [];
 	for (let a = 0; a < n; a++) {
 		let o = Math.sqrt(a / (n - 1)), s = a === 0 ? 0 : Math.sqrt((a - 1) / (n - 1)), c = a === n - 1 ? 1 : Math.sqrt((a + 1) / (n - 1)), l = a === 0 ? 0 : (s + o) / 2, u = a === n - 1 ? 1 : (o + c) / 2, d = r - u * e.h;
 		i.push({
@@ -3373,20 +3372,20 @@ function $t(e, t) {
 	}
 	return i;
 }
-function en(e, t, n, r, i) {
-	for (let a of $t(n, r)) e.save(), e.beginPath(), e.rect(0, a.y, i, a.h), e.clip(), e.filter = a.radius > 0 ? `blur(${a.radius}px)` : "none", e.drawImage(t, 0, 0), e.restore();
+function tn(e, t, n, r, i) {
+	for (let a of en(n, r)) e.save(), e.beginPath(), e.rect(0, a.y, i, a.h), e.clip(), e.filter = a.radius > 0 ? `blur(${a.radius}px)` : "none", e.drawImage(t, 0, 0), e.restore();
 }
 //#endregion
 //#region packages/pptx/src/hyperlink.ts
-function tn(e, t) {
+function nn(e, t) {
 	let n = e !== void 0 && e !== "" ? e : void 0, r = t !== void 0 && t !== "" ? t : void 0;
 	if (n === void 0 && r === void 0) return;
 	if (r !== void 0) return {
 		kind: "internal",
 		ref: n ?? r
 	};
-	let i = n, a = H(i);
-	return a !== null && re.includes(a) ? {
+	let i = n, a = B(i);
+	return a !== null && ne.includes(a) ? {
 		kind: "external",
 		url: i
 	} : {
@@ -3396,7 +3395,7 @@ function tn(e, t) {
 }
 //#endregion
 //#region packages/pptx/src/media-chrome.ts
-function nn(e, t, n, r, i, a) {
+function rn(e, t, n, r, i, a) {
 	let o = Math.max(18, Math.min(32, Math.min(r, i) * .25));
 	if (e.save(), e.shadowColor = "rgba(0, 0, 0, 0.3)", e.shadowBlur = o * .35, e.fillStyle = "rgba(20, 20, 20, 0.7)", e.beginPath(), e.arc(t, n, o, 0, Math.PI * 2), e.fill(), e.shadowColor = "transparent", e.shadowBlur = 0, e.fillStyle = "#fff", a === "paused") {
 		e.beginPath();
@@ -3410,18 +3409,18 @@ function nn(e, t, n, r, i, a) {
 }
 //#endregion
 //#region packages/pptx/src/bidi-line.ts
-var rn = (e) => {
+var an = (e) => {
 	let t = e.text;
 	return typeof t == "string" ? t : void 0;
-}, an = (e) => "isTab" in e;
-function on(e) {
+}, on = (e) => "isTab" in e;
+function sn(e) {
 	for (let t of e) {
-		let e = rn(t);
-		if (e !== void 0 && U(e)) return !0;
+		let e = an(t);
+		if (e !== void 0 && H(e)) return !0;
 	}
 	return !1;
 }
-function sn(e, n) {
+function cn(e, n) {
 	let r = e.length;
 	if (r === 0) return {
 		order: [],
@@ -3430,14 +3429,14 @@ function sn(e, n) {
 	let i = "", a = Array(r), o;
 	for (let t = 0; t < r; t++) {
 		a[t] = i.length;
-		let n = rn(e[t]) ?? "";
-		if (i += n.length > 0 ? n : "￼", an(e[t])) {
+		let n = an(e[t]) ?? "";
+		if (i += n.length > 0 ? n : "￼", on(e[t])) {
 			for (o ??= []; o.length < i.length;) o.push(null);
 			o[a[t]] = "S";
 		}
 	}
 	if (o) for (; o.length < i.length;) o.push(null);
-	let { levels: s, paragraphLevel: c } = p().computeLevels(i, n ? "rtl" : "ltr", o), { order: l, segLevels: u } = t(s, c, a), d = Array(r);
+	let { levels: s, paragraphLevel: c } = h().computeLevels(i, n ? "rtl" : "ltr", o), { order: l, segLevels: u } = t(s, c, a), d = Array(r);
 	for (let e = 0; e < r; e++) d[e] = (u[e] & 1) == 1;
 	return {
 		order: l,
@@ -3446,11 +3445,11 @@ function sn(e, n) {
 }
 //#endregion
 //#region packages/pptx/src/cjk-wrap.ts
-function cn(e, t, n, r, i = 0, o = !1) {
+function ln(e, t, n, r, i = 0, a = !1) {
 	if (e.length === 0) return 0;
 	let s = t === 0, c = 0, l = t;
 	for (let t of e) {
-		let e = c > 0 || o ? i : 0;
+		let e = c > 0 || a ? i : 0;
 		if (l + e + t.w > n) {
 			if (c > 0 || !s) break;
 			l += e + t.w, c++;
@@ -3458,20 +3457,20 @@ function cn(e, t, n, r, i = 0, o = !1) {
 		}
 		l += e + t.w, c++;
 	}
-	return c === 0 ? 0 : c >= e.length ? e.length : a(e.map((e) => e.ch), c, r, +!!s);
+	return c === 0 ? 0 : c >= e.length ? e.length : o(e.map((e) => e.ch), c, r, +!!s);
 }
 //#endregion
 //#region packages/pptx/src/text-justify.ts
-var ln = (e) => /\s/.test(String.fromCodePoint(e));
-function un(e, t, n, r, i) {
+var un = (e) => /\s/.test(String.fromCodePoint(e));
+function dn(e, t, n, r, i) {
 	if (r === "just" && i) return null;
 	let a = t - n;
 	if (a <= .5) return null;
-	let o = xe(e, a, {
+	let o = Ce(e, a, {
 		firstContentSi: 0,
 		lastDrawnSi: e.length,
 		isGapChar: le,
-		isWhitespace: ln,
+		isWhitespace: un,
 		seaClusterGaps: r === "thaiDist"
 	});
 	if (!o) return null;
@@ -3492,7 +3491,7 @@ function un(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/pptx/src/table-border-conflict.ts
-function dn(e) {
+function fn(e) {
 	if (!e) return {
 		r: 0,
 		g: 0,
@@ -3509,37 +3508,37 @@ function dn(e) {
 		b: parseInt(t.slice(4, 6), 16)
 	};
 }
-function fn(e) {
-	let t = dn(e);
+function pn(e) {
+	let t = fn(e);
 	return .299 * t.r + .587 * t.g + .114 * t.b;
 }
-function pn(e, t) {
+function mn(e, t) {
 	if (!e && !t) return null;
 	if (!e) return t;
 	if (!t) return e;
 	if (e.width !== t.width) return e.width > t.width ? e : t;
-	let n = fn(e.color), r = fn(t.color);
+	let n = pn(e.color), r = pn(t.color);
 	return n === r || n < r ? e : t;
 }
 //#endregion
 //#region packages/pptx/src/smartart-fallback-contrast.ts
-function mn(e) {
-	let t = M(e.length === 8 ? e.slice(0, 6) : e);
+function hn(e) {
+	let t = S(e.length === 8 ? e.slice(0, 6) : e);
 	if (!t) return null;
-	let n = ue(t[0], t[1], t[2]);
+	let n = a(t[0], t[1], t[2]);
 	if (e.length !== 8) return n;
 	let r = Number.parseInt(e.slice(6, 8), 16);
 	if (Number.isNaN(r)) return null;
 	let i = r / 255;
 	return i * n + (1 - i);
 }
-function hn(e) {
+function gn(e) {
 	if (!e) return null;
-	if (e.fillType === "solid") return mn(e.color);
+	if (e.fillType === "solid") return hn(e.color);
 	if (e.fillType === "gradient") {
 		let t = e.stops.map((e) => ({
 			p: Math.min(1, Math.max(0, e.position)),
-			l: mn(e.color)
+			l: hn(e.color)
 		})).filter((e) => e.l !== null).sort((e, t) => e.p - t.p);
 		if (t.length === 0) return null;
 		let n = t[0], r = t[t.length - 1], i = n.l * n.p + r.l * (1 - r.p);
@@ -3548,18 +3547,18 @@ function hn(e) {
 	}
 	return null;
 }
-function gn(e) {
+function _n(e) {
 	return e.name === "SmartArt" && e.id === void 0;
 }
-function _n(e, t) {
-	let n = hn(e);
+function vn(e, t) {
+	let n = gn(e);
 	if (n === null || n >= .5) return null;
-	let r = mn(t.replace(/^#/, ""));
+	let r = hn(t.replace(/^#/, ""));
 	return r !== null && r >= .5 ? null : "#FFFFFF";
 }
 //#endregion
 //#region packages/pptx/src/tab-layout.ts
-function vn(e, t, n, r, i, a = 0) {
+function yn(e, t, n, r, i, a = 0) {
 	let o = e.map((e) => e.width), s = (t) => {
 		let n = 0;
 		for (let r = t; r < e.length && !e[r].isTab; r++) n += o[r];
@@ -3587,8 +3586,8 @@ function vn(e, t, n, r, i, a = 0) {
 }
 //#endregion
 //#region packages/pptx/src/vertical-text.ts
-var yn = () => !1;
-function bn(e, t, n) {
+var bn = () => !1;
+function xn(e, t, n) {
 	let r = e.textBaseline;
 	e.textBaseline = "alphabetic";
 	let i = e.measureText(t);
@@ -3596,7 +3595,7 @@ function bn(e, t, n) {
 	let a = i.fontBoundingBoxAscent, o = i.fontBoundingBoxDescent;
 	return typeof a == "number" && typeof o == "number" && (a !== 0 || o !== 0) ? (a - o) / 2 : .38 * n;
 }
-function xn(e, t) {
+function Sn(e, t) {
 	let n = e.textAlign, r = e.textBaseline;
 	e.textAlign = "center", e.textBaseline = "middle";
 	let i = e.measureText(t);
@@ -3604,15 +3603,15 @@ function xn(e, t) {
 	let a = i.actualBoundingBoxAscent, o = i.actualBoundingBoxDescent;
 	return typeof a == "number" && typeof o == "number" ? (a - o) / 2 : 0;
 }
-function Sn(e, t, n, r, i, a, o = "fill", s = yn) {
-	let c = e.textAlign, l = e.textBaseline, u = o === "stroke" ? e.strokeText.bind(e) : e.fillText.bind(e), d = r - bn(e, t, i), f = 0;
+function Cn(e, t, n, r, i, a, o = "fill", s = bn) {
+	let c = e.textAlign, l = e.textBaseline, u = o === "stroke" ? e.strokeText.bind(e) : e.fillText.bind(e), d = r - xn(e, t, i), f = 0;
 	for (let o of t) {
-		let t = o.codePointAt(0) ?? 0, l = L(t), p = e.measureText(o).width + a, m = l === "Tr" ? se(t) : null, h = l === "Tr" && m === null && G(t), g = l === "U" || l === "Tu" || m !== null || h;
+		let t = o.codePointAt(0) ?? 0, l = F(t), p = e.measureText(o).width + a, m = l === "Tr" ? se(t) : null, h = l === "Tr" && m === null && W(t), g = l === "U" || l === "Tu" || m !== null || h;
 		if (ee(t) && s(t)) {
 			let t = n + f + p / 2;
-			e.save(), e.translate(t, d), e.rotate(-Math.PI / 2), e.textAlign = "center", e.textBaseline = "middle", N(e, () => u(o, 0, 0)), e.restore();
+			e.save(), e.translate(t, d), e.rotate(-Math.PI / 2), e.textAlign = "center", e.textBaseline = "middle", j(e, () => u(o, 0, 0)), e.restore();
 		} else if (g) {
-			let r = m === null && l === "Tu" ? F(t) : null, a = m === null ? r : m, s = a === null ? o : String.fromCodePoint(a), c = n + f + p / 2, h = r === null ? xn(e, s) / i : 0;
+			let r = m === null && l === "Tu" ? N(t) : null, a = m === null ? r : m, s = a === null ? o : String.fromCodePoint(a), c = n + f + p / 2, h = r === null ? Sn(e, s) / i : 0;
 			e.save(), e.translate(c, d), e.rotate(-Math.PI / 2), e.textAlign = "center", e.textBaseline = "middle", u(s, 0, h * i), e.restore();
 		} else if (l === "Tr") {
 			let t = n + f + p / 2;
@@ -3622,43 +3621,30 @@ function Sn(e, t, n, r, i, a, o = "fill", s = yn) {
 	}
 	e.textAlign = c, e.textBaseline = l;
 }
-function Cn(e, t, n, r, i, a, o = "fill") {
-	Sn(e, t, n, r, i, a, o, (t) => ae(e, t));
+function wn(e, t, n, r, i, a, o = "fill") {
+	Cn(e, t, n, r, i, a, o, (t) => ie(e, t));
 }
 //#endregion
 //#region packages/pptx/src/renderer.ts
 function X(e, t) {
 	return e * t;
 }
-var Z = D;
-function wn(e, t, n, r, i, a, o) {
-	let { top: s, height: c } = Xt(n, i);
+var Z = E;
+function Tn(e, t, n, r, i, a, o) {
+	let { top: s, height: c } = Zt(n, i);
 	e.fillStyle = a, e.fillRect(t, s, r, c), e.fillStyle = o;
 }
-function Tn(e, t, n, r, i, a, o = 0) {
-	return E(e, t, n, r, i, a, o);
+function En(e, t, n, r, i, a, o = 0) {
+	return b(e, t, n, r, i, a, o);
 }
-var En = /* @__PURE__ */ new WeakMap();
-function Dn(e, t) {
+var Dn = /* @__PURE__ */ new WeakMap();
+function On(e, t) {
 	let n = e.tinted.get(t);
 	if (n) return n;
-	let r = e.img.naturalWidth || 1, i = e.img.naturalHeight || 1, a = document.createElement("canvas");
-	a.width = r, a.height = i;
-	let o = a.getContext("2d");
-	return o ? (o.drawImage(e.img, 0, 0, r, i), o.globalCompositeOperation = "source-in", o.fillStyle = t, o.fillRect(0, 0, r, i), e.tinted.set(t, a), a) : e.img;
+	let r = O(e.raster, t);
+	return e.tinted.set(t, r), r;
 }
-function On(e) {
-	let t = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(e)}`, n = new Image();
-	return new Promise((e, r) => {
-		n.onload = () => e(n), n.onerror = r, n.src = t;
-	});
-}
-var kn = 256;
-function An(e, t, n) {
-	let r = Math.max(1, Math.round(t * kn)), i = Math.max(1, Math.round(n * kn));
-	return e.replace(/<svg([^>]*?)>/, (e, t) => `<svg${t.replace(/\s(?:width|height)="[^"]*"/g, "")} width="${r}" height="${i}">`);
-}
-function jn(e) {
+function kn(e) {
 	let t = [], n = (e) => {
 		if (e) for (let n of e.paragraphs) for (let e of n.runs) e.type === "math" && t.push({
 			nodes: e.nodes,
@@ -3669,14 +3655,14 @@ function jn(e) {
 	else if (t.type === "table") for (let e of t.rows) for (let t of e.cells) n(t.textBody);
 	return t;
 }
-async function Mn(e, t) {
-	let n = jn(e);
+async function An(e, t) {
+	let n = kn(e);
 	if (n.length !== 0) {
 		await t.loadMathJax();
-		for (let e of n) if (!En.has(e.nodes)) try {
-			let n = await t.mathMLToSvg(A(e.nodes, e.display)), r = await On(An(Te(n.svg, "#000000"), n.widthEm, n.ascentEm + n.descentEm));
-			En.set(e.nodes, {
-				img: r,
+		for (let e of n) if (!Dn.has(e.nodes)) try {
+			let n = await t.mathMLToSvg(fe(e.nodes, e.display)), r = await L(n, "#000000");
+			Dn.set(e.nodes, {
+				raster: r,
 				widthEm: n.widthEm,
 				ascentEm: n.ascentEm,
 				descentEm: n.descentEm,
@@ -3685,10 +3671,10 @@ async function Mn(e, t) {
 		} catch {}
 	}
 }
-function Nn(e, t) {
+function jn(e, t) {
 	return e ? e.startsWith("+") ? e === "+mj-lt" || e === "+mj-ea" || e === "+mj-cs" ? t.themeMajorFont ?? "sans-serif" : t.themeMinorFont ?? "sans-serif" : e.split(",")[0].trim() || (t.themeMinorFont ?? "sans-serif") : t.themeMinorFont ?? "sans-serif";
 }
-var Pn = new Set([
+var Mn = new Set([
 	"serif",
 	"sans-serif",
 	"monospace",
@@ -3696,11 +3682,11 @@ var Pn = new Set([
 	"fantasy",
 	"system-ui"
 ]);
-function Fn(e) {
-	let t = ie(e);
+function Nn(e) {
+	let t = k(e);
 	return t === "mono" ? "monospace" : t === "serif" ? "serif" : "sans-serif";
 }
-var In = {
+var Pn = {
 	calibri: "Carlito",
 	"calibri light": "Carlito",
 	cambria: "Caladea",
@@ -3712,103 +3698,103 @@ var In = {
 	"simplified arabic": "Noto Naskh Arabic",
 	"arabic typesetting": "Noto Naskh Arabic",
 	"univers next arabic": "Noto Sans Arabic"
-}, Ln = "\"Noto Naskh Arabic\", \"Noto Sans Arabic\"";
-function Rn(e) {
-	if (In[e.toLowerCase()]?.includes("Arabic")) return !0;
+}, Fn = "\"Noto Naskh Arabic\", \"Noto Sans Arabic\"";
+function In(e) {
+	if (Pn[e.toLowerCase()]?.includes("Arabic")) return !0;
 	let t = e.toLowerCase();
 	return /arabic|naskh|kufi|nastaliq|amiri|scheherazade|lateef|aldhabi|urdu|farsi|العرب|[؀-ۿ]/.test(t);
 }
-function zn(e) {
+function Ln(e) {
 	return e.map((e) => `"${e}"`).join(", ");
 }
-function Bn(t) {
-	let n = Fn(t), r = In[t.toLowerCase()], i = r ? `"${r}", ` : "";
-	if (Rn(t)) return `"${t}", ${i}${Ln}, ${n}`;
-	let a = n === "serif" ? "serif" : "sans", o = J(t);
-	return `"${t}", ${i}${o ? `${zn(oe(o, a))}, ` : ""}${`${zn(a === "serif" ? e : v)}, `}${n}`;
+function Rn(e) {
+	let t = Nn(e), n = Pn[e.toLowerCase()], r = n ? `"${n}", ` : "";
+	if (In(e)) return `"${e}", ${r}${Fn}, ${t}`;
+	let i = t === "serif" ? "serif" : "sans", a = V(e);
+	return `"${e}", ${r}${a ? `${Ln(re(a, i))}, ` : ""}${`${Ln(i === "serif" ? oe : P)}, `}${t}`;
 }
-function Vn(e) {
+function zn(e) {
 	return e ? e.kind === "external" ? `e:${e.url}` : `i:${e.ref}` : "";
 }
-function Hn(e) {
+function Bn(e) {
 	let t = e.toLowerCase();
 	return /\b(thin|hairline)\b/.test(t) ? 100 : /\b(extra[- ]?light|ultra[- ]?light)\b/.test(t) ? 200 : /\blight\b/.test(t) ? 300 : /\b(black|heavy)\b/.test(t) ? 900 : /\b(extra[- ]?bold|ultra[- ]?bold)\b/.test(t) ? 800 : /\b(semi[- ]?bold|demi[- ]?bold)\b/.test(t) ? 600 : /\bbold\b/.test(t) ? 700 : /\bmedium\b/.test(t) ? 600 : null;
 }
-function Un(e, t, n, r, i, a, o, s) {
-	let c = Math.max(0, r.blur * i), l = Math.ceil(c * 3) + 2, u = Math.max(0, Math.floor(n.x - l)), d = Math.max(0, Math.floor(n.y - l)), f = Math.min(o, Math.ceil(n.x + n.w + l)), p = Math.min(s, Math.ceil(n.y + n.h + l)), m = Math.max(1, f - u), h = Math.max(1, p - d), g = O(m, h), _ = g?.getContext("2d");
-	if (!g || !_) return;
-	_.save(), _.setTransform(a.a, a.b, a.c, a.d, a.e - u, a.f - d), t(_), _.restore();
-	let v = n.y - d, y = v + n.h, b = g, x = _;
-	if (c > 0) {
-		let e = O(m, h), t = e?.getContext("2d");
-		e && t && (b = e, x = t);
+function Vn(t, n, r, i, a, o, s, c) {
+	let l = Math.max(0, i.blur * a), u = Math.ceil(l * 3) + 2, d = Math.max(0, Math.floor(r.x - u)), f = Math.max(0, Math.floor(r.y - u)), p = Math.min(s, Math.ceil(r.x + r.w + u)), m = Math.min(c, Math.ceil(r.y + r.h + u)), h = Math.max(1, p - d), g = Math.max(1, m - f), _ = e(h, g), v = _?.getContext("2d");
+	if (!_ || !v) return;
+	v.save(), v.setTransform(o.a, o.b, o.c, o.d, o.e - d, o.f - f), n(v), v.restore();
+	let y = r.y - f, b = y + r.h, x = _, S = v;
+	if (l > 0) {
+		let t = e(h, g), n = t?.getContext("2d");
+		t && n && (x = t, S = n);
 	}
-	b !== g && en(x, g, {
-		x: n.x - u,
-		y: v,
-		w: n.w,
-		h: n.h
-	}, c, m);
-	let S = Math.max(0, Math.min(1, r.stPos)), C = Math.max(0, Math.min(1, r.endPos)), w = Math.max(1, y - v);
+	x !== _ && tn(S, _, {
+		x: r.x - d,
+		y,
+		w: r.w,
+		h: r.h
+	}, l, h);
+	let C = Math.max(0, Math.min(1, i.stPos)), w = Math.max(0, Math.min(1, i.endPos)), T = Math.max(1, b - y);
 	try {
-		let e = x.getImageData(0, 0, m, h);
-		for (let t = 0; t < h; t++) {
-			let n = Math.max(0, Math.min(1, (y - (t + .5)) / w)), i;
-			if (n <= S) i = r.stA;
-			else if (n >= C || C <= S) i = r.endA;
+		let e = S.getImageData(0, 0, h, g);
+		for (let t = 0; t < g; t++) {
+			let n = Math.max(0, Math.min(1, (b - (t + .5)) / T)), r;
+			if (n <= C) r = i.stA;
+			else if (n >= w || w <= C) r = i.endA;
 			else {
-				let e = (n - S) / (C - S);
-				i = r.stA + (r.endA - r.stA) * e;
+				let e = (n - C) / (w - C);
+				r = i.stA + (i.endA - i.stA) * e;
 			}
-			let a = Math.max(0, Math.min(1, i));
-			for (let n = t * m * 4 + 3; n < (t + 1) * m * 4; n += 4) e.data[n] = Math.round(e.data[n] * a);
+			let a = Math.max(0, Math.min(1, r));
+			for (let n = t * h * 4 + 3; n < (t + 1) * h * 4; n += 4) e.data[n] = Math.round(e.data[n] * a);
 		}
-		x.putImageData(e, 0, 0);
+		S.putImageData(e, 0, 0);
 	} catch {
-		x.save(), x.globalCompositeOperation = "destination-in", x.fillStyle = `rgba(0,0,0,${Math.max(0, Math.min(1, r.stA))})`, x.fillRect(0, 0, m, h), x.restore();
+		S.save(), S.globalCompositeOperation = "destination-in", S.fillStyle = `rgba(0,0,0,${Math.max(0, Math.min(1, i.stA))})`, S.fillRect(0, 0, h, g), S.restore();
 	}
-	let T = r.dist * i, E = r.dir * Math.PI / 180, D = n.y + n.h;
-	e.save(), e.setTransform(1, 0, 0, 1, 0, 0), e.translate(n.x + Math.cos(E) * T, D + Math.sin(E) * T), e.scale(r.sx, r.sy), e.translate(-n.x, -D), e.drawImage(b, u, d), e.restore();
+	let E = i.dist * a, D = i.dir * Math.PI / 180, O = r.y + r.h;
+	t.save(), t.setTransform(1, 0, 0, 1, 0, 0), t.translate(r.x + Math.cos(D) * E, O + Math.sin(D) * E), t.scale(i.sx, i.sy), t.translate(-r.x, -O), t.drawImage(x, d, f), t.restore();
 }
-function Wn(e, t, n, r, i) {
-	let a = t ? "italic " : "", o = Nn(r, i), s = Hn(o), c = e ? "bold " : s ? `${s} ` : "";
-	return Pn.has(o) ? `${a}${c}${n}px ${o}` : `${a}${c}${n}px ${Bn(o)}`;
+function Hn(e, t, n, r, i) {
+	let a = t ? "italic " : "", o = jn(r, i), s = Bn(o), c = e ? "bold " : s ? `${s} ` : "";
+	return Mn.has(o) ? `${a}${c}${n}px ${o}` : `${a}${c}${n}px ${Rn(o)}`;
 }
-function Gn(e) {
-	return e.bullet.type === "char" || e.bullet.type === "autoNum" || Ee(e.bullet).type === "blip";
+function Un(e) {
+	return e.bullet.type === "char" || e.bullet.type === "autoNum" || De(e.bullet).type === "blip";
 }
-function Kn(e, t) {
+function Wn(e, t) {
 	return e ? 0 : Math.max(0, t);
 }
-function qn(e, t, n, r, i, a, o) {
+function Gn(e, t, n, r, i, a, o) {
 	let s = (t.defaultFontSize ?? 18) * Y * a;
 	for (let c of t.paragraphs) {
-		let l = X(c.marL, a), u = X(c.marR, a), d = X(c.indent, a), f = Kn(Gn(c), d), p = n - r - i - l - u - f, m = 0;
+		let l = X(c.marL, a), u = X(c.marR, a), d = X(c.indent, a), f = Wn(Un(c), d), p = n - r - i - l - u - f, m = 0;
 		for (let n of c.runs) {
 			if (n.type !== "text") continue;
-			let r = n.fontSize == null ? c.defFontSize == null ? s : c.defFontSize * Y * a : n.fontSize * Y * a, i = Nn(n.fontFamily ?? c.defFontFamily ?? null, o);
-			e.font = Wn(n.bold ?? c.defBold ?? t.defaultBold ?? !1, n.italic ?? c.defItalic ?? t.defaultItalic ?? !1, r, i, o);
+			let r = n.fontSize == null ? c.defFontSize == null ? s : c.defFontSize * Y * a : n.fontSize * Y * a, i = jn(n.fontFamily ?? c.defFontFamily ?? null, o);
+			e.font = Hn(n.bold ?? c.defBold ?? t.defaultBold ?? !1, n.italic ?? c.defItalic ?? t.defaultItalic ?? !1, r, i, o);
 			let l = (n.letterSpacing ?? 0) * Y * a;
 			if (m += Q(e, n.text, l), m > p) return !0;
 		}
 	}
 	return !1;
 }
-function Jn(e) {
+function Kn(e) {
 	for (let t of e) if (le(t.codePointAt(0) ?? 0)) return !0;
 	return !1;
 }
-function Yn(e) {
+function qn(e) {
 	let t = 0;
 	for (let n of e) t++;
 	return t;
 }
-var Xn = /* @__PURE__ */ new WeakMap();
-function Zn(e) {
-	let t = Xn.get(e);
+var Jn = /* @__PURE__ */ new WeakMap();
+function Yn(e) {
+	let t = Jn.get(e);
 	if (t != null) return t;
 	let n = e, r = n.letterSpacing;
-	if (typeof r != "string") return Xn.set(e, !1), !1;
+	if (typeof r != "string") return Jn.set(e, !1), !1;
 	let i = !1;
 	try {
 		n.letterSpacing = "0px";
@@ -3823,11 +3809,11 @@ function Zn(e) {
 			n.letterSpacing = r;
 		} catch {}
 	}
-	return Xn.set(e, i), i;
+	return Jn.set(e, i), i;
 }
 function Q(e, t, n) {
 	let r = e, i = r.letterSpacing;
-	if (n !== 0 && Zn(e)) try {
+	if (n !== 0 && Yn(e)) try {
 		r.letterSpacing = `${n}px`;
 		let i = e.measureText(t).width;
 		if (Number.isFinite(i)) return t.length > 0 ? i - n : i;
@@ -3836,38 +3822,38 @@ function Q(e, t, n) {
 			r.letterSpacing = i;
 		} catch {}
 	}
-	let a = Math.max(0, Yn(t) - 1);
+	let a = Math.max(0, qn(t) - 1);
 	return e.measureText(t).width + n * a;
 }
-function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
+function Xn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 	themeMajorFont: null,
 	themeMinorFont: null,
 	dpr: 1
 }, p = 0) {
-	let m = [], h = /* @__PURE__ */ new Map(), _ = !0;
-	for (let e = t.runs.length - 1; e >= 0 && _; e--) {
+	let m = [], h = /* @__PURE__ */ new Map(), g = !0;
+	for (let e = t.runs.length - 1; e >= 0 && g; e--) {
 		let n = t.runs[e];
 		if (n.type === "break") continue;
 		if (n.type === "math") break;
 		let r = n.text.replace(/ +$/u, "");
-		r !== n.text && h.set(n, r), (r.length > 0 || n.fieldType != null) && (_ = !1);
+		r !== n.text && h.set(n, r), (r.length > 0 || n.fieldType != null) && (g = !1);
 	}
-	let v = () => n - (m.length === 0 ? p : 0), y = { segments: [] }, x = 0, S = !1, C = t.rtl === !0, w = X(t.marR, o), T = (t.tabStops ?? []).map((e) => ({
+	let _ = () => n - (m.length === 0 ? p : 0), v = { segments: [] }, b = 0, S = !1, C = t.rtl === !0, w = X(t.marR, o), T = (t.tabStops ?? []).map((e) => ({
 		pos: X(e.pos, o),
 		algn: e.algn
-	})), E = X(t.defTabSz ?? 914400, o), D = !1, O = [], A = 0, j = () => C ? w : s + (m.length === 0 ? p : 0), M = (e = 0) => {
-		let t = vn(e > 0 ? [...O, {
+	})), E = X(t.defTabSz ?? 914400, o), O = !1, k = [], A = 0, j = () => C ? w : s + (m.length === 0 ? p : 0), M = (e = 0) => {
+		let t = yn(e > 0 ? [...k, {
 			isTab: !1,
 			width: e
-		}] : O, T, j(), Infinity, A, E), n = 0;
+		}] : k, T, j(), Infinity, A, E), n = 0;
 		for (let e of t) n += e;
 		return n;
 	}, N = (e) => {
-		let t = v();
-		return Number.isFinite(t) ? D ? M(e) <= t : x + e <= t : !0;
+		let t = _();
+		return Number.isFinite(t) ? O ? M(e) <= t : b + e <= t : !0;
 	}, P = () => {
-		let e = v();
-		if (!D) return e - x;
+		let e = _();
+		if (!O) return e - b;
 		if (!Number.isFinite(e)) return Infinity;
 		if (M(0) >= e) return 0;
 		let t = 0, n = e;
@@ -3877,25 +3863,25 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 		}
 		return t;
 	}, F = (e = !1) => {
-		e && (y.endsWithBreak = !0), m.push(y), y = { segments: [] }, x = 0, D = !1, O = [], S = !1;
-	}, I = (t, n, r, i) => {
+		e && (v.endsWithBreak = !0), m.push(v), v = { segments: [] }, b = 0, O = !1, k = [], S = !1;
+	}, L = (t, n, r, i) => {
 		e.font = n;
-		let a = Q(e, t, r), o = y.segments.at(-1);
+		let a = Q(e, t, r), o = v.segments.at(-1);
 		return !o || o.isTab || o.math || o.sourceRunId !== i ? a : o.font === n && (o.letterSpacingPx ?? 0) === r ? Q(e, o.text + t, r) - Q(e, o.text, r) : a + r;
-	}, L = (t, n, r, i, a, o, s, c) => {
+	}, z = (t, n, r, i, a, o, s, c) => {
 		if (!t) return;
 		e.font = n;
-		let l = c?.letterSpacingPx ?? 0, u = c?.sourceRunId, d = c?.strikeDouble, f = c?.underlineStyle, p = c?.underlineColor, m = c?.shadow, h = c?.reflection, g = c?.outline, _ = c?.highlight, v = c?.fontFamily, b = c?.hyperlink, S = (e) => !e.math && !e.isTab && e.font === n && e.color === i && e.underline === a && (e.underlineStyle ?? "") === (f ?? "") && (e.underlineColor ?? "") === (p ?? "") && e.strikethrough === o && (e.strikeDouble ?? !1) === (d ?? !1) && (e.letterSpacingPx ?? 0) === l && e.baseline === s && e.shadow === m && e.reflection === h && e.outline === g && (e.highlight ?? "") === (_ ?? "") && (e.fontFamily ?? "") === (v ?? "") && Vn(e.hyperlink) === Vn(b) && (l === 0 || e.sourceRunId === u), C = y.segments.at(-1), w = Q(e, t, l);
-		if (C && S(C) ? w = Q(e, C.text + t, l) - Q(e, C.text, l) : C && !C.isTab && !C.math && u != null && C.sourceRunId === u && (w += l), x += w, O.push({
+		let l = c?.letterSpacingPx ?? 0, u = c?.sourceRunId, d = c?.strikeDouble, f = c?.underlineStyle, p = c?.underlineColor, m = c?.shadow, h = c?.reflection, g = c?.outline, _ = c?.highlight, y = c?.fontFamily, x = c?.hyperlink, S = (e) => !e.math && !e.isTab && e.font === n && e.color === i && e.underline === a && (e.underlineStyle ?? "") === (f ?? "") && (e.underlineColor ?? "") === (p ?? "") && e.strikethrough === o && (e.strikeDouble ?? !1) === (d ?? !1) && (e.letterSpacingPx ?? 0) === l && e.baseline === s && e.shadow === m && e.reflection === h && e.outline === g && (e.highlight ?? "") === (_ ?? "") && (e.fontFamily ?? "") === (y ?? "") && zn(e.hyperlink) === zn(x) && (l === 0 || e.sourceRunId === u), C = v.segments.at(-1), w = Q(e, t, l);
+		if (C && S(C) ? w = Q(e, C.text + t, l) - Q(e, C.text, l) : C && !C.isTab && !C.math && u != null && C.sourceRunId === u && (w += l), b += w, k.push({
 			isTab: !1,
 			width: w
 		}), C && S(C)) C.text += t;
 		else {
 			let e = C && !C.isTab && !C.math && u != null && C.sourceRunId === u ? l : 0;
-			y.segments.push({
+			v.segments.push({
 				text: t,
 				font: n,
-				fontFamily: v,
+				fontFamily: y,
 				sizePx: r,
 				color: i,
 				underline: a,
@@ -3911,17 +3897,17 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 				reflection: h,
 				outline: g,
 				highlight: _,
-				hyperlink: b
+				hyperlink: x
 			});
 		}
-	}, z = () => {
-		let e = y.segments.at(-1);
+	}, B = () => {
+		let e = v.segments.at(-1);
 		if (!e || e.math) return !1;
 		let t = /^(.*\s)(\S+)$/s.exec(e.text), n;
 		if (t) e.text = t[1], n = t[2];
-		else if (y.segments.length > 1) y.segments.pop(), n = e.text;
+		else if (v.segments.length > 1) v.segments.pop(), n = e.text;
 		else return !1;
-		return F(), L(n, e.font, e.sizePx, e.color, e.underline, e.strikethrough, e.baseline, {
+		return F(), z(n, e.font, e.sizePx, e.color, e.underline, e.strikethrough, e.baseline, {
 			strikeDouble: e.strikeDouble,
 			letterSpacingPx: e.letterSpacingPx,
 			underlineStyle: e.underlineStyle,
@@ -3940,11 +3926,11 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 			continue;
 		}
 		if (s.type === "math") {
-			let e = En.get(s.nodes), t = s.fontSize == null ? r : s.fontSize * Y * o * u, n = e ? e.widthEm * t : 0, i = e ? e.ascentEm * t : 0, c = e ? e.descentEm * t : 0;
-			(s.display && x > 0 || !N(n) && x > 0) && F(), O.push({
+			let e = Dn.get(s.nodes), t = s.fontSize == null ? r : s.fontSize * Y * o * u, n = e ? e.widthEm * t : 0, i = e ? e.ascentEm * t : 0, c = e ? e.descentEm * t : 0;
+			(s.display && b > 0 || !N(n) && b > 0) && F(), k.push({
 				isTab: !1,
 				width: n
-			}), y.segments.push({
+			}), v.segments.push({
 				text: "",
 				font: `${t}px sans-serif`,
 				sizePx: t,
@@ -3958,12 +3944,12 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 					ascent: i,
 					descent: c
 				}
-			}), x += n, s.display && F();
+			}), b += n, s.display && F();
 			continue;
 		}
-		let p = s.fontSize == null ? r : s.fontSize * Y * o * u, m = Nn(s.fontFamily ?? t.defFontFamily ?? null, f), _ = s.fontFamilyEa ? Nn(s.fontFamilyEa, f) : null, C = s.fontFamilySym ? Nn(s.fontFamilySym, f) : null, w;
+		let p = s.fontSize == null ? r : s.fontSize * Y * o * u, m = jn(s.fontFamily ?? t.defFontFamily ?? null, f), g = s.fontFamilyEa ? jn(s.fontFamilyEa, f) : null, C = s.fontFamilySym ? jn(s.fontFamilySym, f) : null, w;
 		w = s.color ? Z(s.color) : s.hyperlink && f.themeHlinkColor ? Z(f.themeHlinkColor) : a;
-		let T = s.bold ?? t.defBold ?? c, E = s.italic ?? t.defItalic ?? l, j = Wn(T, E, p, m, f), M = _ ? Wn(T, E, p, _, f) : j;
+		let T = s.bold ?? t.defBold ?? c, E = s.italic ?? t.defItalic ?? l, j = Hn(T, E, p, m, f), M = g ? Hn(T, E, p, g, f) : j;
 		e.font = j;
 		let V = s.caps, H = h.get(s) ?? s.text;
 		(V === "all" || V === "small") && (H = H.toUpperCase());
@@ -3977,14 +3963,14 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 			outline: s.outline,
 			fontFamily: m,
 			highlight: s.highlight ? Z(s.highlight) : void 0,
-			hyperlink: tn(s.hyperlink),
+			hyperlink: nn(s.hyperlink),
 			sourceRunId: n
-		}, J = U.split(/(\s+)/);
-		for (let r of J) {
+		}, ee = U.split(/(\s+)/);
+		for (let r of ee) {
 			if (!r) continue;
 			if (/^\t+$/.test(r)) {
-				D || (e.font = j, A = e.measureText(" ").width);
-				for (let e of r) y.segments.push({
+				O || (e.font = j, A = e.measureText(" ").width);
+				for (let e of r) v.segments.push({
 					text: "",
 					isTab: !0,
 					font: j,
@@ -3993,31 +3979,31 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 					color: w,
 					underline: !1,
 					strikethrough: !1
-				}), O.push({
+				}), k.push({
 					isTab: !0,
 					width: 0
 				});
-				D = !0;
+				O = !0;
 				continue;
 			}
 			e.font = j;
-			let a = I(r, j, K, n), o = /^\s+$/.test(r), c = /[-]/;
-			if (c.test(r) && (C != null || Se(m))) {
+			let a = L(r, j, K, n), o = /^\s+$/.test(r), c = /[-]/;
+			if (c.test(r) && (C != null || we(m))) {
 				let t = C ?? m;
 				for (let i of r) {
 					let r = i, a = j;
 					if (c.test(i)) {
-						let e = me(i, t);
-						e === i ? a = Wn(T, E, p, t, f) : (r = e, a = Wn(T, E, p, "sans-serif", f));
+						let e = ge(i, t);
+						e === i ? a = Hn(T, E, p, t, f) : (r = e, a = Hn(T, E, p, "sans-serif", f));
 					}
-					e.font = a, !N(I(r, a, K, n)) && x > 0 && F(), L(r, a, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
+					e.font = a, !N(L(r, a, K, n)) && b > 0 && F(), z(r, a, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
 				}
 				continue;
 			}
-			if (Jn(r) && (!B(r) || t.eaLnBrk === !1)) {
+			if (Kn(r) && (!R(r) || t.eaLnBrk === !1)) {
 				let i = [];
 				for (let t of r) {
-					let n = le(t.codePointAt(0) ?? 0) && _ != null, r = n ? M : j, a = n ? _ : m;
+					let n = le(t.codePointAt(0) ?? 0) && g != null, r = n ? M : j, a = n ? g : m;
 					e.font = r, i.push({
 						ch: t,
 						w: Q(e, t, 0),
@@ -4026,9 +4012,9 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 					});
 				}
 				if (t.eaLnBrk === !1) {
-					let e = y.segments.at(-1), t = !!e && !e.isTab && !e.math && e.sourceRunId === n, r = i.reduce((e, t) => e + t.w, 0) + Math.max(0, i.length - 1) * K + (t && i.length > 0 ? K : 0);
-					x > 0 && !N(r) && F();
-					for (let e of i) L(e.ch, e.font, p, w, W, s.strikethrough, s.baseline ?? void 0, {
+					let e = v.segments.at(-1), t = !!e && !e.isTab && !e.math && e.sourceRunId === n, r = i.reduce((e, t) => e + t.w, 0) + Math.max(0, i.length - 1) * K + (t && i.length > 0 ? K : 0);
+					b > 0 && !N(r) && F();
+					for (let e of i) z(e.ch, e.font, p, w, W, s.strikethrough, s.baseline ?? void 0, {
 						...q,
 						fontFamily: e.family
 					});
@@ -4036,9 +4022,9 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 				}
 				let a = i;
 				for (; a.length > 0;) {
-					let e = Number.isFinite(v()) ? v() - P() : x, t = y.segments.at(-1), r = !!t && !t.isTab && !t.math && t.sourceRunId === n, i = cn(a, e, v(), g, K, r);
+					let e = Number.isFinite(_()) ? _() - P() : b, t = v.segments.at(-1), r = !!t && !t.isTab && !t.math && t.sourceRunId === n, i = ln(a, e, _(), y, K, r);
 					if (i === 0) {
-						if (x > 0) {
+						if (b > 0) {
 							F();
 							continue;
 						}
@@ -4046,7 +4032,7 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 					}
 					for (let e = 0; e < i; e++) {
 						let t = a[e];
-						L(t.ch, t.font, p, w, W, s.strikethrough, s.baseline ?? void 0, {
+						z(t.ch, t.font, p, w, W, s.strikethrough, s.baseline ?? void 0, {
 							...q,
 							fontFamily: t.family
 						});
@@ -4055,12 +4041,12 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 				}
 				continue;
 			}
-			if (B(r)) {
-				let t = b(r, {
+			if (R(r)) {
+				let t = x(r, {
 					cjk: !0,
-					kinsoku: g
-				}), i = _ != null && M !== j, a = (e) => i && le(e.codePointAt(0) ?? 0), o = (t) => {
-					let r = 0, i = y.segments.at(-1), o = !!i && !i.isTab && !i.math && i.sourceRunId === n, s = "", c = null, l = () => {
+					kinsoku: y
+				}), i = g != null && M !== j, a = (e) => i && le(e.codePointAt(0) ?? 0), o = (t) => {
+					let r = 0, i = v.segments.at(-1), o = !!i && !i.isTab && !i.math && i.sourceRunId === n, s = "", c = null, l = () => {
 						s !== "" && (e.font = c ? M : j, r += Q(e, s, K), o && (r += K), o = !0, s = "");
 					};
 					for (let e of t) {
@@ -4071,8 +4057,8 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 				}, c = (e) => {
 					let t = "", n = null, r = () => {
 						if (t === "") return;
-						let e = n ? M : j, r = n ? _ : m;
-						L(t, e, p, w, W, s.strikethrough, s.baseline ?? void 0, {
+						let e = n ? M : j, r = n ? g : m;
+						z(t, e, p, w, W, s.strikethrough, s.baseline ?? void 0, {
 							...q,
 							fontFamily: r
 						}), t = "";
@@ -4084,57 +4070,57 @@ function Qn(e, t, n, r, a, o, s, c = !1, l = !1, u = 1, d, f = {
 					r();
 				}, l = de(r), u = r.length, d = 0;
 				for (; d < u;) {
-					let e = P(), n = R(r, t, d, e, o, l);
+					let e = P(), n = I(r, t, d, e, o, l);
 					if (n <= d) {
-						if (x > 0) {
+						if (b > 0) {
 							F();
 							continue;
 						}
-						let i = t.find((e) => e > d) ?? u, a = r.slice(d, i), s = k(a), c = R(a, s, 0, e, o, l);
+						let i = t.find((e) => e > d) ?? u, a = r.slice(d, i), s = D(a), c = I(a, s, 0, e, o, l);
 						c <= 0 && (c = s.length > 0 ? s[0] : a.length), n = d + c;
 					}
 					c(r.slice(d, n)), d = n, d < u && F();
 				}
 				continue;
 			}
-			if (N(a)) L(r, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q), o && (S = !0);
-			else if (o) x > 0 && F();
-			else if (a > v()) {
-				x > 0 && F();
-				for (let t of r) e.font = j, !N(I(t, j, K, n)) && x > 0 && F(), L(t, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
-			} else if (!S) L(r, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
+			if (N(a)) z(r, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q), o && (S = !0);
+			else if (o) b > 0 && F();
+			else if (a > _()) {
+				b > 0 && F();
+				for (let t of r) e.font = j, !N(L(t, j, K, n)) && b > 0 && F(), z(t, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
+			} else if (!S) z(r, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
 			else {
-				let e = y.segments.at(-1)?.text ?? "", t = r.codePointAt(0), n = [...e].at(-1)?.codePointAt(0), a = /\S$/u.test(e) && /^\S/u.test(r) && n !== 8203 && t !== 8203, o = t !== void 0 && g.lineStartForbidden.has(t) && a, c = n !== void 0 && t !== void 0 && a && !B(e) && !B(r) && i(n, t);
-				(o || c) && z() || F(), L(r, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
+				let e = v.segments.at(-1)?.text ?? "", t = r.codePointAt(0), n = [...e].at(-1)?.codePointAt(0), a = /\S$/u.test(e) && /^\S/u.test(r) && n !== 8203 && t !== 8203, o = t !== void 0 && y.lineStartForbidden.has(t) && a, c = n !== void 0 && t !== void 0 && a && !R(e) && !R(r) && i(n, t);
+				(o || c) && B() || F(), z(r, j, p, w, W, s.strikethrough, s.baseline ?? void 0, q);
 			}
 		}
 	}
-	return m.push(y), m;
+	return m.push(v), m;
 }
-async function $n(e, t, n, r, i, a, o) {
+async function Zn(e, t, n, r, i, a, o) {
 	if (t && t.fillType === "image") {
 		if (e.fillStyle = "#FFFFFF", e.fillRect(0, 0, n, r), !t.imagePath || !t.mimeType || !o) return;
 		try {
-			let s = await we(t.imagePath, t.mimeType, t.duotone, o, {
+			let s = await Ee(t.imagePath, t.mimeType, t.duotone, o, {
 				widthPt: n / i / Y,
 				heightPt: r / i / Y
 			});
 			if (a() || !s) return;
-			if (e.save(), e.beginPath(), e.rect(0, 0, n, r), e.clip(), t.alpha != null && (e.globalAlpha = t.alpha), t.tile) nr(e, s, t.tile, n, r, i);
+			if (e.save(), e.beginPath(), e.rect(0, 0, n, r), e.clip(), t.alpha != null && (e.globalAlpha = t.alpha), t.tile) er(e, s, t.tile, n, r, i);
 			else {
 				let i = t.fillRect ?? {}, a = i.l ?? 0, o = i.t ?? 0, c = i.r ?? 0, l = i.b ?? 0, u = a * n, d = o * r, f = n * (1 - a - c), p = r * (1 - o - l);
 				e.drawImage(s, u, d, f, p);
 			}
 			e.restore();
 		} catch (e) {
-			if (f(e)) throw e;
+			if (pe(e)) throw e;
 		}
 		return;
 	}
-	e.fillStyle = Tn(t, e, 0, 0, n, r) ?? "#FFFFFF", e.fillRect(0, 0, n, r);
+	e.fillStyle = En(t, e, 0, 0, n, r) ?? "#FFFFFF", e.fillRect(0, 0, n, r);
 }
-var er = 9525;
-function tr(e, t, n, r, i) {
+var Qn = 9525;
+function $n(e, t, n, r, i) {
 	let a;
 	a = e === "t" || e === "ctr" || e === "b" ? (t - r) / 2 : e === "tr" || e === "r" || e === "br" ? t - r : 0;
 	let o;
@@ -4143,134 +4129,134 @@ function tr(e, t, n, r, i) {
 		ay: o
 	};
 }
-function nr(e, t, n, r, i, a) {
-	let o = t.width * er * n.sx * a, s = t.height * er * n.sy * a;
-	if (!(o > 0) || !(s > 0)) return;
-	let c = n.flip === "x" || n.flip === "xy", l = n.flip === "y" || n.flip === "xy", u = O(o * (c ? 2 : 1), s * (l ? 2 : 1));
-	if (!u) return;
-	let d = u.getContext("2d");
+function er(t, n, r, i, a, o) {
+	let s = n.width * Qn * r.sx * o, c = n.height * Qn * r.sy * o;
+	if (!(s > 0) || !(c > 0)) return;
+	let l = r.flip === "x" || r.flip === "xy", u = r.flip === "y" || r.flip === "xy", d = e(s * (l ? 2 : 1), c * (u ? 2 : 1));
 	if (!d) return;
-	let f = (e, n, r, i) => {
-		d.save(), d.translate(e + (r ? o : 0), n + (i ? s : 0)), d.scale(r ? -1 : 1, i ? -1 : 1), d.drawImage(t, 0, 0, o, s), d.restore();
+	let f = d.getContext("2d");
+	if (!f) return;
+	let p = (e, t, r, i) => {
+		f.save(), f.translate(e + (r ? s : 0), t + (i ? c : 0)), f.scale(r ? -1 : 1, i ? -1 : 1), f.drawImage(n, 0, 0, s, c), f.restore();
 	};
-	f(0, 0, !1, !1), c && f(o, 0, !0, !1), l && f(0, s, !1, !0), c && l && f(o, s, !0, !0);
-	let p = e.createPattern(u, "repeat");
-	if (!p) return;
-	let { ax: m, ay: h } = tr(n.algn ?? "tl", r, i, o, s), g = m + X(n.tx, a), _ = h + X(n.ty, a);
-	typeof p.setTransform == "function" && typeof DOMMatrix < "u" ? (p.setTransform(new DOMMatrix().translateSelf(g, _)), e.fillStyle = p, e.fillRect(0, 0, r, i)) : (e.save(), e.translate(g, _), e.fillStyle = p, e.fillRect(-g, -_, r, i), e.restore());
+	p(0, 0, !1, !1), l && p(s, 0, !0, !1), u && p(0, c, !1, !0), l && u && p(s, c, !0, !0);
+	let m = t.createPattern(d, "repeat");
+	if (!m) return;
+	let { ax: h, ay: g } = $n(r.algn ?? "tl", i, a, s, c), _ = h + X(r.tx, o), v = g + X(r.ty, o);
+	typeof m.setTransform == "function" && typeof DOMMatrix < "u" ? (m.setTransform(new DOMMatrix().translateSelf(_, v)), t.fillStyle = m, t.fillRect(0, 0, i, a)) : (t.save(), t.translate(_, v), t.fillStyle = m, t.fillRect(-_, -v, i, a), t.restore());
 }
-function rr(e, t, n) {
+function tr(e, t, n) {
 	if (!t) return;
 	let r = t.dir * Math.PI / 180, i = X(t.dist, n);
 	e.shadowColor = Z(t.color, t.alpha), e.shadowBlur = 0, e.shadowOffsetX = Math.cos(r) * i, e.shadowOffsetY = Math.sin(r) * i;
 }
-function ir(e, t, n) {
+function nr(e, t, n) {
 	t && (e.shadowColor = Z(t.color, t.alpha), e.shadowBlur = X(t.radius, n), e.shadowOffsetX = 0, e.shadowOffsetY = 0);
 }
-function ar(e) {
+function rr(e) {
 	e.shadowColor = "transparent", e.shadowBlur = 0, e.shadowOffsetX = 0, e.shadowOffsetY = 0;
 }
-var or = 8, sr = 1, cr = 1, lr = 256;
-function ur(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m) {
-	if (r <= 0) return;
-	let h = e.measureText(t), g = h.actualBoundingBoxAscent > 0 ? h.actualBoundingBoxAscent : r, _ = h.actualBoundingBoxDescent > 0 ? h.actualBoundingBoxDescent : r * .25, v = h.actualBoundingBoxLeft > 0 ? h.actualBoundingBoxLeft : 0, y = h.actualBoundingBoxRight > 0 ? h.actualBoundingBoxRight : r, b = r * l * i, x = Math.min(lr, Math.max(1, Math.round(b / or))), S = (e) => pr(e, a, r, o, s, c, u, d), C = S(x), w = hr(C, a, o, s, c, u, d, l, i, -g, _);
-	for (; w > cr && x < lr;) {
-		let e = Math.min(lr, x * 2), t = S(e), n = hr(t, a, o, s, c, u, d, l, i, -g, _);
-		if (n >= w * .75) {
-			C = t;
+var ir = 8, ar = 1, or = 1, sr = 256;
+function cr(t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
+	if (i <= 0) return;
+	let g = t.measureText(n), _ = g.actualBoundingBoxAscent > 0 ? g.actualBoundingBoxAscent : i, v = g.actualBoundingBoxDescent > 0 ? g.actualBoundingBoxDescent : i * .25, y = g.actualBoundingBoxLeft > 0 ? g.actualBoundingBoxLeft : 0, b = g.actualBoundingBoxRight > 0 ? g.actualBoundingBoxRight : i, x = i * u * a, S = Math.min(sr, Math.max(1, Math.round(x / ir))), C = (e) => dr(e, o, i, s, c, l, d, f), w = C(S), T = pr(w, o, s, c, l, d, f, u, a, -_, v);
+	for (; T > or && S < sr;) {
+		let e = Math.min(sr, S * 2), t = C(e), n = pr(t, o, s, c, l, d, f, u, a, -_, v);
+		if (n >= T * .75) {
+			w = t;
 			break;
 		}
-		x = e, C = t, w = n;
+		S = e, w = t, T = n;
 	}
-	let T = 1e4, E = sr / (l * i), D = C.length - 1, k = (e, t, n) => e === 0 ? -T : t - n - E, A = (e, t, n) => e === D ? T : t - n + E, j = (e, r) => {
-		e.fillStyle = r;
-		for (let r = 0; r <= D; r++) {
-			let { s0: i, s1: a, g: o } = C[r], s = (i + a) / 2;
-			e.save(), e.translate(f + o.x, p + o.y), e.rotate(o.angle), o.shear !== 0 && e.transform(1, 0, o.shear, 1, 0, 0), (l !== 1 || o.vScale !== 1) && e.scale(l, o.vScale), e.beginPath();
-			let c = k(r, i, s), u = A(r, a, s);
-			e.rect(c, -T, u - c, 2 * T), e.clip(), e.fillText(t, -s + n / 2, 0), e.restore();
+	let E = 1e4, D = ar / (u * a), O = w.length - 1, k = (e, t, n) => e === 0 ? -E : t - n - D, A = (e, t, n) => e === O ? E : t - n + D, j = (e, t) => {
+		e.fillStyle = t;
+		for (let t = 0; t <= O; t++) {
+			let { s0: i, s1: a, g: o } = w[t], s = (i + a) / 2;
+			e.save(), e.translate(p + o.x, m + o.y), e.rotate(o.angle), o.shear !== 0 && e.transform(1, 0, o.shear, 1, 0, 0), (u !== 1 || o.vScale !== 1) && e.scale(u, o.vScale), e.beginPath();
+			let c = k(t, i, s), l = A(t, a, s);
+			e.rect(c, -E, l - c, 2 * E), e.clip(), e.fillText(n, -s + r / 2, 0), e.restore();
 		}
-	}, M = dr(m), N = typeof e.globalAlpha == "number" ? e.globalAlpha : 1;
+	}, M = lr(h), N = typeof t.globalAlpha == "number" ? t.globalAlpha : 1;
 	if (M >= 1 && N >= 1) {
-		j(e, m);
+		j(t, h);
 		return;
 	}
 	if (M <= 0 || N <= 0) return;
-	let P = typeof e.getTransform == "function" ? e.getTransform() : null;
+	let P = typeof t.getTransform == "function" ? t.getTransform() : null;
 	if (!P) {
-		j(e, m);
+		j(t, h);
 		return;
 	}
 	let F = Infinity, I = Infinity, L = -Infinity, R = -Infinity;
-	for (let e = 0; e <= D; e++) {
-		let { s0: t, s1: r, g: i } = C[e], a = (t + r) / 2, o = -a + n / 2, s = Math.max(k(e, t, a), o - v), c = Math.min(A(e, r, a), o + y);
+	for (let e = 0; e <= O; e++) {
+		let { s0: t, s1: n, g: i } = w[e], a = (t + n) / 2, o = -a + r / 2, s = Math.max(k(e, t, a), o - y), c = Math.min(A(e, n, a), o + b);
 		if (!(c <= s)) for (let [e, t] of [
-			[s, -g],
-			[c, -g],
-			[s, _],
-			[c, _]
+			[s, -_],
+			[c, -_],
+			[s, v],
+			[c, v]
 		]) {
-			let n = mr(i, l, e, t), r = f + n.x, a = p + n.y, o = P.a * r + P.c * a + P.e, s = P.b * r + P.d * a + P.f;
+			let n = fr(i, u, e, t), r = p + n.x, a = m + n.y, o = P.a * r + P.c * a + P.e, s = P.b * r + P.d * a + P.f;
 			o < F && (F = o), o > L && (L = o), s < I && (I = s), s > R && (R = s);
 		}
 	}
 	if (!(L > F && R > I)) return;
-	let z = Math.floor(F - 2), B = Math.floor(I - 2), V = O(Math.ceil(L + 2) - z, Math.ceil(R + 2) - B), H = V ? V.getContext("2d") : null;
+	let z = Math.floor(F - 2), B = Math.floor(I - 2), V = e(Math.ceil(L + 2) - z, Math.ceil(R + 2) - B), H = V ? V.getContext("2d") : null;
 	if (!V || !H) {
-		j(e, m);
+		j(t, h);
 		return;
 	}
-	H.font = e.font, H.textAlign = "left", H.textBaseline = "alphabetic", H.setTransform(P.a, P.b, P.c, P.d, P.e - z, P.f - B), j(H, fr(m)), e.save(), e.setTransform(1, 0, 0, 1, 0, 0), e.globalAlpha = N * M, e.drawImage(V, z, B), e.restore();
+	H.font = t.font, H.textAlign = "left", H.textBaseline = "alphabetic", H.setTransform(P.a, P.b, P.c, P.d, P.e - z, P.f - B), j(H, ur(h)), t.save(), t.setTransform(1, 0, 0, 1, 0, 0), t.globalAlpha = N * M, t.drawImage(V, z, B), t.restore();
 }
-function dr(e) {
+function lr(e) {
 	let t = /^rgba?\(\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*,\s*([\d.]+)\s*\)$/i.exec(e);
 	if (!t) return 1;
 	let n = parseFloat(t[1]);
 	return Number.isFinite(n) ? Math.min(1, Math.max(0, n)) : 1;
 }
-function fr(e) {
+function ur(e) {
 	let t = /^rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/i.exec(e);
 	return t ? `rgb(${t[1]}, ${t[2]}, ${t[3]})` : e;
 }
-function pr(e, t, n, r, i, a, o, s) {
+function dr(e, t, n, r, i, a, o, s) {
 	let c = Array(e);
 	for (let l = 0; l < e; l++) {
 		let u = l / e * n, d = (l + 1) / e * n;
 		c[l] = {
 			s0: u,
 			s1: d,
-			g: Be(t, (r + (u + d) / 2) / i * a, o, s)
+			g: Ve(t, (r + (u + d) / 2) / i * a, o, s)
 		};
 	}
 	return c;
 }
-function mr(e, t, n, r) {
+function fr(e, t, n, r) {
 	let i = n * t, a = r * e.vScale, o = i + e.shear * a, s = Math.cos(e.angle), c = Math.sin(e.angle);
 	return {
 		x: e.x + s * o - c * a,
 		y: e.y + c * o + s * a
 	};
 }
-function hr(e, t, n, r, i, a, o, s, c, l, u) {
+function pr(e, t, n, r, i, a, o, s, c, l, u) {
 	let d = 0;
 	for (let f of e) {
 		let e = (f.s0 + f.s1) / 2;
 		for (let p of [f.s0, f.s1]) {
-			let m = Be(t, (n + p) / r * i, a, o);
+			let m = Ve(t, (n + p) / r * i, a, o);
 			for (let t of [l, u]) {
-				let n = mr(m, s, 0, t), r = mr(f.g, s, p - e, t), i = Math.hypot(r.x - n.x, r.y - n.y) * c;
+				let n = fr(m, s, 0, t), r = fr(f.g, s, p - e, t), i = Math.hypot(r.x - n.x, r.y - n.y) * c;
 				i > d && (d = i);
 			}
 		}
 	}
 	return d;
 }
-function gr(e, t, n, r, i, a, o, s, c, l, u) {
-	let d = i, f = a, p = Math.max(1, o), m = Math.max(1, s), h = Ie(n, r, p, m);
+function mr(e, t, n, r, i, a, o, s, c, l, u) {
+	let d = i, f = a, p = Math.max(1, o), m = Math.max(1, s), h = Le(n, r, p, m);
 	if (!h) return;
 	let g = t.defaultBold ?? !1, _ = t.defaultItalic ?? !1, v = (t.defaultFontSize ?? 18) * Y * c, y = [];
 	for (let n of t.paragraphs) {
-		let t = Qn(e, n, Infinity, n.defFontSize == null ? v : n.defFontSize * Y * c, n.defColor ? Z(n.defColor) : l, c, 0, g, _, 1, void 0, u, 0);
+		let t = Xn(e, n, Infinity, n.defFontSize == null ? v : n.defFontSize * Y * c, n.defColor ? Z(n.defColor) : l, c, 0, g, _, 1, void 0, u, 0);
 		for (let e of t) y.push(e);
 	}
 	if (y.length === 0) return;
@@ -4289,10 +4275,10 @@ function gr(e, t, n, r, i, a, o, s, c, l, u) {
 			}
 			e.font = t.font;
 			let n = t.letterSpacingPx ?? 0, r = e.measureText(t.text);
-			a += r.width + n * Yn(t.text), o = Math.max(o, t.sizePx), r.actualBoundingBoxAscent > 0 && (s = Math.max(s, r.actualBoundingBoxAscent)), r.actualBoundingBoxDescent > 0 && (c = Math.max(c, r.actualBoundingBoxDescent));
+			a += r.width + n * qn(t.text), o = Math.max(o, t.sizePx), r.actualBoundingBoxAscent > 0 && (s = Math.max(s, r.actualBoundingBoxAscent)), r.actualBoundingBoxDescent > 0 && (c = Math.max(c, r.actualBoundingBoxDescent));
 		}
 		if (a <= 0) continue;
-		let l = s + c > 0 ? s + c : o, u = h.singleEdge ? .8 : l > 0 ? s / l : .8, g = h.singleEdge ? 1 : p / a, _ = h.singleEdge ? m : l / (i - r), v = ze(h, a), b = 0;
+		let l = s + c > 0 ? s + c : o, u = h.singleEdge ? .8 : l > 0 ? s / l : .8, g = h.singleEdge ? 1 : p / a, _ = h.singleEdge ? m : l / (i - r), v = Be(h, a), b = 0;
 		for (let t of n.segments) {
 			if (t.math) {
 				b += t.math.width;
@@ -4303,17 +4289,17 @@ function gr(e, t, n, r, i, a, o, s, c, l, u) {
 			for (let s of o) {
 				let o = e.measureText(s).width + n, c = r + u * (i - r);
 				if (!h.singleEdge && o > 0) {
-					ur(e, s, n, o, x(), h, b, a, v, g, _, c, d, f, t.color), b += o;
+					cr(e, s, n, o, x(), h, b, a, v, g, _, c, d, f, t.color), b += o;
 					continue;
 				}
-				let l = Be(h, (b + o / 2) / a * v, _, c);
+				let l = Ve(h, (b + o / 2) / a * v, _, c);
 				e.save(), e.translate(d + l.x, f + l.y), e.rotate(l.angle), l.shear !== 0 && e.transform(1, 0, l.shear, 1, 0, 0), (g !== 1 || l.vScale !== 1) && e.scale(g, l.vScale), e.fillText(s, -o / 2 + n / 2, 0), e.restore(), b += o;
 			}
 		}
 	}
 	e.restore();
 }
-function _r(e, t, n, r, i, a, o) {
+function hr(e, t, n, r, i, a, o) {
 	let s = Math.min(r, i);
 	switch (e) {
 		case "rightarrow":
@@ -4343,17 +4329,17 @@ function _r(e, t, n, r, i, a, o) {
 		default: return null;
 	}
 }
-function vr(e, t) {
-	return e.defaultTextColor ? Z(e.defaultTextColor) : t.smartArtFallbackTextColor != null && gn(e) ? t.smartArtFallbackTextColor : null;
+function gr(e, t) {
+	return e.defaultTextColor ? Z(e.defaultTextColor) : t.smartArtFallbackTextColor != null && _n(e) ? t.smartArtFallbackTextColor : null;
 }
-function yr(e, t, n) {
+function _r(e, t, n) {
 	return {
 		outerRotation: e,
 		localFlipH: t,
 		localFlipV: n
 	};
 }
-function br(e, t, n, r, i) {
+function vr(e, t, n, r, i) {
 	let a = [
 		{
 			x: t,
@@ -4382,7 +4368,7 @@ function br(e, t, n, r, i) {
 		h: l - s
 	};
 }
-var xr = {
+var yr = {
 	tl: [0, 0],
 	t: [.5, 0],
 	tr: [1, 0],
@@ -4393,15 +4379,15 @@ var xr = {
 	b: [.5, 1],
 	br: [1, 1]
 };
-function Sr(e, t, n) {
+function br(e, t, n) {
 	return [e.a * t + e.c * n + e.e, e.b * t + e.d * n + e.f];
 }
-function Cr(e, t, n, r, i, a) {
-	let [o, s] = xr[a ?? "b"];
-	return Sr(e, t + o * r, n + s * i);
+function xr(e, t, n, r, i, a) {
+	let [o, s] = yr[a ?? "b"];
+	return br(e, t + o * r, n + s * i);
 }
-function wr(e, t, n, r, i, a, o, s) {
-	let c = ot(e, i, a).corners, l = (o > 0 ? _t(c, o / i, o / a) ?? c : c).map((e) => Sr(t, n + e.x, r + e.y)), u = l.map(([e]) => e), d = l.map(([, e]) => e), f = Math.min(...u), p = Math.min(...d), m = Math.max(...u), h = Math.max(...d), [g, _] = xr[s ?? "b"], v = vt(c, g, _);
+function Sr(e, t, n, r, i, a, o, s) {
+	let c = st(e, i, a).corners, l = (o > 0 ? vt(c, o / i, o / a) ?? c : c).map((e) => br(t, n + e.x, r + e.y)), u = l.map(([e]) => e), d = l.map(([, e]) => e), f = Math.min(...u), p = Math.min(...d), m = Math.max(...u), h = Math.max(...d), [g, _] = yr[s ?? "b"], v = yt(c, g, _);
 	return {
 		bbox: {
 			x: f,
@@ -4409,22 +4395,22 @@ function wr(e, t, n, r, i, a, o, s) {
 			w: m - f,
 			h: h - p
 		},
-		anchor: v ? Sr(t, n + v.x, r + v.y) : Cr(t, n, r, i, a, s)
+		anchor: v ? br(t, n + v.x, r + v.y) : xr(t, n, r, i, a, s)
 	};
 }
-function Tr(e, t, n, r) {
-	let i = Math.floor(n.x) - 1, a = Math.floor(n.y) - 1, o = Math.max(1, Math.ceil(n.x + n.w) - i + 1), s = Math.max(1, Math.ceil(n.y + n.h) - a + 1);
-	if (r && (i + o <= 0 || a + s <= 0 || i >= r.w || a >= r.h) || te(o, s).clamped) return e;
-	let c = null;
+function Cr(t, n, r, i) {
+	let a = Math.floor(r.x) - 1, o = Math.floor(r.y) - 1, s = Math.max(1, Math.ceil(r.x + r.w) - a + 1), c = Math.max(1, Math.ceil(r.y + r.h) - o + 1);
+	if (i && (a + s <= 0 || o + c <= 0 || a >= i.w || o >= i.h) || ce(s, c).clamped) return t;
+	let l = null;
 	try {
-		c = O(o, s);
+		l = e(s, c);
 	} catch {
-		return e;
+		return t;
 	}
-	let l = c?.getContext("2d");
-	if (!c || !l) return e;
-	l.setTransform(t.a, t.b, t.c, t.d, t.e - i, t.f - a), e(l);
-	let u = {
+	let u = l?.getContext("2d");
+	if (!l || !u) return t;
+	u.setTransform(n.a, n.b, n.c, n.d, n.e - a, n.f - o), t(u);
+	let d = {
 		a: 1,
 		b: 0,
 		c: 0,
@@ -4433,10 +4419,10 @@ function Tr(e, t, n, r) {
 		f: 0
 	};
 	return (e) => {
-		e.save(), e.setTransform(u), e.drawImage(c, i, a), e.restore();
+		e.save(), e.setTransform(d), e.drawImage(l, a, o), e.restore();
 	};
 }
-function Er(e, t, n, r, i, a, o, s, c, l = !0, u = r) {
+function wr(e, t, n, r, i, a, o, s, c, l = !0, u = r) {
 	let d = e.canvas.width || 0, f = e.canvas.height || 0, p = d > 0 && f > 0, m = {
 		a: 1,
 		b: 0,
@@ -4451,33 +4437,33 @@ function Er(e, t, n, r, i, a, o, s, c, l = !0, u = r) {
 	}, v = (e) => {
 		h(e), u(e);
 	}, y = !1;
-	t.shadow && p ? (e.save(), e.setTransform(m), y = !Ke(e, g, i, t.shadow, s, d, f, Math.atan2(c.b, c.a) * 180 / Math.PI, a), e.restore()) : t.shadow && (y = !0), t.reflection && p && (e.save(), e.setTransform(m), Ye(e, g, i, t.reflection, s, d, f), e.restore()), y ? rr(e, t.shadow ?? null, o) : t.glow && ir(e, t.glow, o), t.softEdge && p ? (e.save(), e.setTransform(m), Je(e, g, i, t.softEdge, s, d, f, _), e.restore()) : n(e), (y || t.glow) && ar(e), t.innerShadow && l && p && (e.save(), e.setTransform(m), qe(e, v, i, t.innerShadow, s, d, f), e.restore());
+	t.shadow && p ? (e.save(), e.setTransform(m), y = !qe(e, g, i, t.shadow, s, d, f, Math.atan2(c.b, c.a) * 180 / Math.PI, a), e.restore()) : t.shadow && (y = !0), t.reflection && p && (e.save(), e.setTransform(m), Xe(e, g, i, t.reflection, s, d, f), e.restore()), y ? tr(e, t.shadow ?? null, o) : t.glow && nr(e, t.glow, o), t.softEdge && p ? (e.save(), e.setTransform(m), Ye(e, g, i, t.softEdge, s, d, f, _), e.restore()) : n(e), (y || t.glow) && rr(e), t.innerShadow && l && p && (e.save(), e.setTransform(m), Je(e, v, i, t.innerShadow, s, d, f), e.restore());
 }
-function Dr(e, t, n, i = "#000000", a, o = {
+function Tr(e, t, n, r = "#000000", i, a = {
 	themeMajorFont: null,
 	themeMinorFont: null,
 	dpr: 1
-}, s, c) {
-	let u = X(t.x, n), d = X(t.y, n), f = X(t.width, n), p = X(t.height, n), m = s && t.id !== void 0 ? (e) => s({
+}, o, s) {
+	let c = X(t.x, n), d = X(t.y, n), f = X(t.width, n), p = X(t.height, n), m = o && t.id !== void 0 ? (e) => o({
 		...e,
 		shapeId: t.id
-	}) : s;
+	}) : o;
 	if (p === 0 && t.textBody?.verticalAnchor === "b") {
-		if (t.stroke && (e.save(), Wr(e, t.stroke, n, {
-			x: u,
+		if (t.stroke && (e.save(), Hr(e, t.stroke, n, {
+			x: c,
 			y: d,
 			w: f,
 			h: 1
-		}, t.rotation), e.beginPath(), e.moveTo(u, d), e.lineTo(u + f, d), e.stroke(), e.restore()), t.textBody) {
-			let r = vr(t, o);
-			Nr(e, t.textBody, u, d, f, p, n, r, t.rotation, t.flipH, t.flipV, i, a, o, m, !1, c);
+		}, t.rotation), e.beginPath(), e.moveTo(c, d), e.lineTo(c + f, d), e.stroke(), e.restore()), t.textBody) {
+			let o = gr(t, a);
+			jr(e, t.textBody, c, d, f, p, n, o, t.rotation, t.flipH, t.flipV, r, i, a, m, !1, s);
 		}
 		return;
 	}
-	let h = t.scene3d && st(t.scene3d.camera) ? t.scene3d : null;
+	let h = t.scene3d && ct(t.scene3d.camera) ? t.scene3d : null;
 	if (h && f > 0 && p > 0) {
-		let r = e.getTransform(), s = Math.abs(r.a * r.d - r.b * r.c), c = s > 0 ? Math.sqrt(s) : 1, l = Pr(t.sp3d, t.scene3d?.lightRig, t.sp3d?.prstMaterial, n, c), m = Fr(t.sp3d, h.camera, f, p, n, c), g = yr(t.rotation, t.flipH, t.flipV);
-		e.save(), g.outerRotation !== 0 && (e.translate(u + f / 2, d + p / 2), e.rotate(g.outerRotation * Math.PI / 180), e.translate(-(u + f / 2), -(d + p / 2)));
+		let o = e.getTransform(), s = Math.abs(o.a * o.d - o.b * o.c), l = s > 0 ? Math.sqrt(s) : 1, u = Mr(t.sp3d, t.scene3d?.lightRig, t.sp3d?.prstMaterial, n, l), m = Nr(t.sp3d, h.camera, f, p, n, l), g = _r(t.rotation, t.flipH, t.flipV);
+		e.save(), g.outerRotation !== 0 && (e.translate(c + f / 2, d + p / 2), e.rotate(g.outerRotation * Math.PI / 180), e.translate(-(c + f / 2), -(d + p / 2)));
 		let _ = {
 			...t,
 			x: 0,
@@ -4499,21 +4485,21 @@ function Dr(e, t, n, i = "#000000", a, o = {
 			..._,
 			fill: null,
 			stroke: null
-		}, b = (t.stroke ? t.stroke.width * n / 2 : 0) + (t.sp3d?.contourW ? t.sp3d.contourW * n : 0) + (m ? Math.hypot(m.offsetX, m.offsetY) / c : 0) + 2, x = (e, t, r) => Ir(e, h.camera, u, d, f, p, (e) => {
-			Dr(e, t, n, i, a, o, void 0);
-		}, r ? {
-			bevels: l,
+		}, b = (t.stroke ? t.stroke.width * n / 2 : 0) + (t.sp3d?.contourW ? t.sp3d.contourW * n : 0) + (m ? Math.hypot(m.offsetX, m.offsetY) / l : 0) + 2, x = (e, t, o) => Pr(e, h.camera, c, d, f, p, (e) => {
+			Tr(e, t, n, r, i, a, void 0);
+		}, o ? {
+			bevels: u,
 			extrusion: m ?? void 0,
 			edgePadCss: b
 		} : {}), S = (e) => x(e, v, !0), C = (e) => !t.textBody || x(e, y, !1);
 		if (t.shadow || t.innerShadow || t.glow || t.softEdge || t.reflection) {
-			let r = e.getTransform(), i = Math.abs(r.a * r.d - r.b * r.c), a = i > 0 ? Math.sqrt(i) : 1, o = wr(h.camera, r, u, d, f, p, b, t.shadow?.algn), s = !1, c = Tr((e) => {
+			let r = e.getTransform(), i = Math.abs(r.a * r.d - r.b * r.c), a = i > 0 ? Math.sqrt(i) : 1, o = Sr(h.camera, r, c, d, f, p, b, t.shadow?.algn), s = !1, l = Cr((e) => {
 				s = S(e) || s;
 			}, r, o.bbox, {
 				w: e.canvas.width || 0,
 				h: e.canvas.height || 0
 			});
-			if (Er(e, t, c, c, o.bbox, o.anchor, n, n * a, r, !!t.fill), s) {
+			if (wr(e, t, l, l, o.bbox, o.anchor, n, n * a, r, !!t.fill), s) {
 				C(e), e.restore();
 				return;
 			}
@@ -4523,9 +4509,9 @@ function Dr(e, t, n, i = "#000000", a, o = {
 		}
 		e.restore();
 	}
-	e.save(), (t.rotation !== 0 || t.flipH || t.flipV) && (e.translate(u + f / 2, d + p / 2), e.rotate(t.rotation * Math.PI / 180), t.flipH && e.scale(-1, 1), t.flipV && e.scale(1, -1), e.translate(-(u + f / 2), -(d + p / 2)));
-	let g = t.geometry.toLowerCase(), _ = Tn(t.fill, e, u, d, f, p, t.rotation);
-	t.shadow || ir(e, t.glow ?? null, n);
+	e.save(), (t.rotation !== 0 || t.flipH || t.flipV) && (e.translate(c + f / 2, d + p / 2), e.rotate(t.rotation * Math.PI / 180), t.flipH && e.scale(-1, 1), t.flipV && e.scale(1, -1), e.translate(-(c + f / 2), -(d + p / 2)));
+	let g = t.geometry.toLowerCase(), _ = En(t.fill, e, c, d, f, p, t.rotation);
+	t.shadow || nr(e, t.glow ?? null, n);
 	let v = new Set([
 		"line",
 		"straightconnector1",
@@ -4550,22 +4536,22 @@ function Dr(e, t, n, i = "#000000", a, o = {
 		"accentbordercallout1",
 		"accentbordercallout2",
 		"accentbordercallout3"
-	]), b = (e) => y.has(e) || e === "line" || e === "straightconnector1" || e.startsWith("bentconnector"), x = !t.custGeom && l(g), S = (r, i, a = {
-		x: u,
+	]), b = (e) => y.has(e) || e === "line" || e === "straightconnector1" || e.startsWith("bentconnector"), x = !t.custGeom && w(g), S = (r, i, a = {
+		x: c,
 		y: d,
 		w: f,
 		h: p
 	}) => {
-		let { x: o, y: s, w: c, h: l } = a, m = i ?? (r === e && o === u && s === d && c === f && l === p ? _ : Tn(t.fill, r, o, s, c, l, t.rotation)), h = i ? null : t.stroke ? () => {
-			Wr(r, t.stroke, n, {
+		let { x: o, y: s, w: u, h: m } = a, h = i ?? (r === e && o === c && s === d && u === f && m === p ? _ : En(t.fill, r, o, s, u, m, t.rotation)), v = i ? null : t.stroke ? () => {
+			Hr(r, t.stroke, n, {
 				x: o,
 				y: s,
-				w: c,
-				h: l
+				w: u,
+				h: m
 			}, t.rotation), r.stroke();
-		} : null, v = () => ar(r);
+		} : null, y = () => rr(r);
 		if (x && !i) {
-			C(r, g, o, s, c, l, [
+			l(r, g, o, s, u, m, [
 				t.adj,
 				t.adj2,
 				t.adj3,
@@ -4574,11 +4560,11 @@ function Dr(e, t, n, i = "#000000", a, o = {
 				t.adj6,
 				t.adj7,
 				t.adj8
-			], m, h, v, b(g) ? { skipTrailingStroke: !0 } : void 0);
+			], h, v, y, b(g) ? { skipTrailingStroke: !0 } : void 0);
 			return;
 		}
-		r.beginPath(), t.custGeom && t.custGeom.length > 0 ? Or(r, t.custGeom, o, s, c, l) : ve(r, g, o, s, c, l, t.adj, t.adj2, t.adj3, t.adj4), m && g !== "arc" && (r.fillStyle = m, g === "donut" || g === "smileyface" || g === "frame" ? r.fill("evenodd") : r.fill(), i || v()), h && h();
-	}, T = e.getTransform(), E = Math.abs(T.a * T.d - T.b * T.c), D = E > 0 ? Math.sqrt(E) : 1, O = (t.shadow || t.reflection || t.softEdge || t.innerShadow ? x ? w(g, u, d, f, p, [
+		r.beginPath(), t.custGeom && t.custGeom.length > 0 ? Er(r, t.custGeom, o, s, u, m) : be(r, g, o, s, u, m, t.adj, t.adj2, t.adj3, t.adj4), h && g !== "arc" && (r.fillStyle = h, g === "donut" || g === "smileyface" || g === "frame" ? r.fill("evenodd") : r.fill(), i || y()), v && v();
+	}, T = e.getTransform(), E = Math.abs(T.a * T.d - T.b * T.c), D = E > 0 ? Math.sqrt(E) : 1, O = (t.shadow || t.reflection || t.softEdge || t.innerShadow ? x ? C(g, c, d, f, p, [
 		t.adj,
 		t.adj2,
 		t.adj3,
@@ -4587,20 +4573,20 @@ function Dr(e, t, n, i = "#000000", a, o = {
 		t.adj6,
 		t.adj7,
 		t.adj8
-	]) : t.custGeom && t.custGeom.length > 0 ? ge(t.custGeom, u, d, f, p) : null : null) ?? {
-		x: u,
+	]) : t.custGeom && t.custGeom.length > 0 ? ve(t.custGeom, c, d, f, p) : null : null) ?? {
+		x: c,
 		y: d,
 		w: f,
 		h: p
-	}, k = t.stroke ? t.stroke.width * n / 2 : 0, A = t.stroke ? Math.max(t.stroke.headEnd ? ye(t.stroke.headEnd, t.stroke, n) : 0, t.stroke.tailEnd ? ye(t.stroke.tailEnd, t.stroke, n) : 0) : 0, j = t.sp3d?.contourW ? t.sp3d.contourW * n : 0, M = Math.max(k, A, j), N = M > 0 ? {
+	}, k = t.stroke ? t.stroke.width * n / 2 : 0, A = t.stroke ? Math.max(t.stroke.headEnd ? xe(t.stroke.headEnd, t.stroke, n) : 0, t.stroke.tailEnd ? xe(t.stroke.tailEnd, t.stroke, n) : 0) : 0, j = t.sp3d?.contourW ? t.sp3d.contourW * n : 0, M = Math.max(k, A, j), N = M > 0 ? {
 		x: O.x - M,
 		y: O.y - M,
 		w: O.w + M * 2,
 		h: O.h + M * 2
-	} : O, P = br(T, N.x, N.y, N.w, N.h), F = n * D, I = h ? [] : Pr(t.sp3d, t.scene3d?.lightRig, t.sp3d?.prstMaterial, n, D), L = (t.stroke ? t.stroke.width * n / 2 : 0) + 2, R = (e) => {
-		let i = t.stroke?.fill ? Tn(t.stroke.fill, e, u, d, f, p, t.rotation) ?? void 0 : void 0;
+	} : O, P = vr(T, N.x, N.y, N.w, N.h), F = n * D, I = h ? [] : Mr(t.sp3d, t.scene3d?.lightRig, t.sp3d?.prstMaterial, n, D), L = (t.stroke ? t.stroke.width * n / 2 : 0) + 2, R = (e) => {
+		let r = t.stroke?.fill ? En(t.stroke.fill, e, c, d, f, p, t.rotation) ?? void 0 : void 0;
 		if (t.stroke && (v.has(g) || y.has(g))) {
-			let a = r(g, u, d, f, p, [
+			let i = u(g, c, d, f, p, [
 				t.adj,
 				t.adj2,
 				t.adj3,
@@ -4610,23 +4596,23 @@ function Dr(e, t, n, i = "#000000", a, o = {
 				t.adj7,
 				t.adj8
 			]);
-			if (!a) return;
-			let o = t.stroke.cmpd, s = g === "line" || g === "straightconnector1";
-			if (b(g) && a.vertices.length >= 2 && !(o && s)) {
-				let r = a.vertices.map((e) => ({
+			if (!i) return;
+			let a = t.stroke.cmpd, o = g === "line" || g === "straightconnector1";
+			if (b(g) && i.vertices.length >= 2 && !(a && o)) {
+				let r = i.vertices.map((e) => ({
 					x: e.x,
 					y: e.y
 				}));
 				if (t.stroke.tailEnd) {
-					let e = he(t.stroke.tailEnd, t.stroke, n);
-					r[r.length - 1] = fe(r[r.length - 1], r[r.length - 2], e);
+					let e = _e(t.stroke.tailEnd, t.stroke, n);
+					r[r.length - 1] = me(r[r.length - 1], r[r.length - 2], e);
 				}
 				if (t.stroke.headEnd) {
-					let e = he(t.stroke.headEnd, t.stroke, n);
-					r[0] = fe(r[0], r[1], e);
+					let e = _e(t.stroke.headEnd, t.stroke, n);
+					r[0] = me(r[0], r[1], e);
 				}
-				Wr(e, t.stroke, n, {
-					x: u,
+				Hr(e, t.stroke, n, {
+					x: c,
 					y: d,
 					w: f,
 					h: p
@@ -4634,46 +4620,46 @@ function Dr(e, t, n, i = "#000000", a, o = {
 				for (let t = 1; t < r.length; t++) e.lineTo(r[t].x, r[t].y);
 				e.stroke();
 			}
-			o && s && Ur(e, a.start, a.end, t.stroke, o, n, t.rotation), t.stroke.tailEnd && _e(e, a.end.x, a.end.y, a.end.angle, t.stroke.tailEnd, t.stroke, n, i), t.stroke.headEnd && _e(e, a.start.x, a.start.y, a.start.angle, t.stroke.headEnd, t.stroke, n, i);
+			a && o && Vr(e, i.start, i.end, t.stroke, a, n, t.rotation), t.stroke.tailEnd && ye(e, i.end.x, i.end.y, i.end.angle, t.stroke.tailEnd, t.stroke, n, r), t.stroke.headEnd && ye(e, i.start.x, i.start.y, i.start.angle, t.stroke.headEnd, t.stroke, n, r);
 			return;
 		}
 		if (!t.stroke || !t.custGeom || t.custGeom.length === 0 || (!t.stroke.headEnd || t.stroke.headEnd.type === "none") && (!t.stroke.tailEnd || t.stroke.tailEnd.type === "none")) return;
-		let { start: a, end: o } = be(t.custGeom);
-		a && t.stroke.headEnd && t.stroke.headEnd.type !== "none" && _e(e, u + a.x * f, d + a.y * p, Math.atan2(a.dy * p, a.dx * f), t.stroke.headEnd, t.stroke, n, i), o && t.stroke.tailEnd && t.stroke.tailEnd.type !== "none" && _e(e, u + o.x * f, d + o.y * p, Math.atan2(o.dy * p, o.dx * f), t.stroke.tailEnd, t.stroke, n, i);
+		let { start: i, end: a } = Se(t.custGeom);
+		i && t.stroke.headEnd && t.stroke.headEnd.type !== "none" && ye(e, c + i.x * f, d + i.y * p, Math.atan2(i.dy * p, i.dx * f), t.stroke.headEnd, t.stroke, n, r), a && t.stroke.tailEnd && t.stroke.tailEnd.type !== "none" && ye(e, c + a.x * f, d + a.y * p, Math.atan2(a.dy * p, a.dx * f), t.stroke.tailEnd, t.stroke, n, r);
 	}, z = (e) => {
-		if (I.length > 0 && Lr(e, u, d, f, p, I, (e, t, n, r, i) => S(e, void 0, {
+		if (I.length > 0 && Fr(e, c, d, f, p, I, (e, t, n, r, i) => S(e, void 0, {
 			x: t,
 			y: n,
 			w: r,
 			h: i
 		}), void 0, L)) {
-			R(e), ar(e);
+			R(e), rr(e);
 			return;
 		}
 		S(e), R(e);
 	};
-	if (Er(e, t, z, z, P, Cr(T, u, d, f, p, t.shadow?.algn), n, F, T, !!_, (e) => S(e, "#000")), t.textBody) {
-		let r = vr(t, o);
+	if (wr(e, t, z, z, P, xr(T, c, d, f, p, t.shadow?.algn), n, F, T, !!_, (e) => S(e, "#000")), t.textBody) {
+		let o = gr(t, a);
 		if (e.save(), t.flipH || t.flipV) {
-			let n = u + f / 2, r = d + p / 2;
+			let n = c + f / 2, r = d + p / 2;
 			e.translate(n, r), t.flipH && e.scale(-1, 1), t.flipV && e.scale(1, -1), e.translate(-n, -r);
 		}
-		let s = u, l = d, h = f, _ = p;
-		if (t.textRect) s = X(t.textRect.x, n), l = X(t.textRect.y, n), h = X(t.textRect.width, n), _ = X(t.textRect.height, n);
+		let l = c, u = d, h = f, _ = p;
+		if (t.textRect) l = X(t.textRect.x, n), u = X(t.textRect.y, n), h = X(t.textRect.width, n), _ = X(t.textRect.height, n);
 		else if (g === "ellipse") {
 			let e = f * (1 - 1 / Math.SQRT2) / 2, t = p * (1 - 1 / Math.SQRT2) / 2;
-			s = u + e, l = d + t, h = f / Math.SQRT2, _ = p / Math.SQRT2;
+			l = c + e, u = d + t, h = f / Math.SQRT2, _ = p / Math.SQRT2;
 		} else {
-			let e = _r(g, u, d, f, p, t.adj, t.adj2);
-			e && (s = e.tx, l = e.ty, h = e.tw, _ = e.th);
+			let e = hr(g, c, d, f, p, t.adj, t.adj2);
+			e && (l = e.tx, u = e.ty, h = e.tw, _ = e.th);
 		}
-		Nr(e, t.textBody, s, l, h, _, n, r, t.rotation, !1, !1, i, a, o, m, !1, c), e.restore();
+		jr(e, t.textBody, l, u, h, _, n, o, t.rotation, !1, !1, r, i, a, m, !1, s), e.restore();
 	}
 	e.restore();
 }
-var Or = pe;
-function kr(e, t) {
-	let n = `${e}`, r = e >= 1 && e <= 26 ? String.fromCharCode(96 + e) : n, i = e >= 1 && e <= 26 ? String.fromCharCode(64 + e) : n, a = Ar(e).toLowerCase(), o = Ar(e), s = n.replace(/[0-9]/g, (e) => String.fromCharCode(65296 + (e.charCodeAt(0) - 48)));
+var Er = he;
+function Dr(e, t) {
+	let n = `${e}`, r = e >= 1 && e <= 26 ? String.fromCharCode(96 + e) : n, i = e >= 1 && e <= 26 ? String.fromCharCode(64 + e) : n, a = Or(e).toLowerCase(), o = Or(e), s = n.replace(/[0-9]/g, (e) => String.fromCharCode(65296 + (e.charCodeAt(0) - 48)));
 	switch (t) {
 		case "arabicPlain": return n;
 		case "arabicPeriod": return `${n}.`;
@@ -4700,7 +4686,7 @@ function kr(e, t) {
 		default: return `${n}.`;
 	}
 }
-function Ar(e) {
+function Or(e) {
 	let t = [
 		1e3,
 		900,
@@ -4733,28 +4719,28 @@ function Ar(e) {
 	for (let i = 0; i < t.length; i++) for (; e >= t[i];) r += n[i], e -= t[i];
 	return r;
 }
-function jr(e) {
+function kr(e) {
 	for (let t of e.runs) if (t.type === "text" && t.text !== "" || t.type === "math") return !0;
 	return !1;
 }
-function Mr(e, t) {
-	let n = jr(e);
-	if (e.bullet.type === "char") return t.clear(), n ? me(e.bullet.char, e.bullet.fontFamily ?? null) : "";
+function Ar(e, t) {
+	let n = kr(e);
+	if (e.bullet.type === "char") return t.clear(), n ? ge(e.bullet.char, e.bullet.fontFamily ?? null) : "";
 	if (e.bullet.type === "autoNum") {
 		if (!n) return "";
 		let r = e.lvl;
-		return t.has(r) ? t.set(r, t.get(r) + 1) : t.set(r, e.bullet.startAt ?? 1), kr(t.get(r), e.bullet.numType);
+		return t.has(r) ? t.set(r, t.get(r) + 1) : t.set(r, e.bullet.startAt ?? 1), Dr(t.get(r), e.bullet.numType);
 	}
 	return t.clear(), "";
 }
-function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000", f, p = {
+function jr(e, t, n, r, i, a, o, s = null, l = 0, u = !1, d = !1, f = "#000000", p, m = {
 	themeMajorFont: null,
 	themeMinorFont: null,
 	dpr: 1
-}, m, g = !1, _, v = !1) {
+}, h, g = !1, _, v = !1) {
 	let y = t.vert === "vert" || t.vert === "eaVert", b = t.vert === "vert270";
 	if (y || b) {
-		let l = n + i / 2, u = r + a / 2, h = y ? 90 : -90, v = m ? (e) => m({
+		let c = n + i / 2, u = r + a / 2, d = y ? 90 : -90, v = h ? (e) => h({
 			...e,
 			inShapeX: e.inShapeX - a / 2 + i / 2,
 			inShapeY: e.inShapeY - i / 2 + a / 2,
@@ -4762,25 +4748,25 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 			shapeY: r,
 			shapeW: i,
 			shapeH: a,
-			rotation: c,
-			textBodyRotation: h
+			rotation: l,
+			textBodyRotation: d
 		}) : void 0;
 		if (g) return i;
-		e.save(), e.translate(l, u), e.rotate(b ? -Math.PI / 2 : Math.PI / 2), Nr(e, {
+		e.save(), e.translate(c, u), e.rotate(b ? -Math.PI / 2 : Math.PI / 2), jr(e, {
 			...t,
 			vert: "horz"
-		}, -a / 2, -i / 2, a, i, o, s, 0, !1, !1, d, f, p, v, !1, _, t.vert === "eaVert"), e.restore();
+		}, -a / 2, -i / 2, a, i, o, s, 0, !1, !1, f, p, m, v, !1, _, t.vert === "eaVert"), e.restore();
 		return;
 	}
 	let x = t.textWarp;
-	if (!g && x && je(x.preset)) {
-		gr(e, t, x.preset, x.adj ?? [], n, r, i, a, o, s ?? d, p);
+	if (!g && x && Me(x.preset)) {
+		mr(e, t, x.preset, x.adj ?? [], n, r, i, a, o, s ?? f, m);
 		return;
 	}
-	let S = X(t.lIns, o), C = X(t.rIns, o), w = X(t.tIns, o), T = X(t.bIns, o), E = t.wrap !== "none", D = t.autoFit === "sp" ? E && qn(e, t, i, S, C, o, p) : E, O = Math.max(1, t.numCol ?? 1), k = X(t.spcCol ?? 0, o), A = t.defaultBold ?? !1, j = t.defaultItalic ?? !1, M = s ?? d, N = (r) => {
+	let S = X(t.lIns, o), C = X(t.rIns, o), w = X(t.tIns, o), T = X(t.bIns, o), E = t.wrap !== "none", D = t.autoFit === "sp" ? E && Gn(e, t, i, S, C, o, m) : E, O = Math.max(1, t.numCol ?? 1), k = X(t.spcCol ?? 0, o), A = t.defaultBold ?? !1, j = t.defaultItalic ?? !1, M = s ?? f, N = (r) => {
 		let a = (t.defaultFontSize ?? 18) * Y * o * r, s = [], c = 0, l = /* @__PURE__ */ new Map();
 		for (let u = 0; u < t.paragraphs.length; u++) {
-			let d = t.paragraphs[u], m = X(d.marL, o), h = X(d.marR, o), g = X(d.indent, o), _ = d.defFontSize == null ? a : d.defFontSize * Y * o * r, v = d.defColor ? Z(d.defColor) : M, y = Gn(d), b = (() => {
+			let d = t.paragraphs[u], f = X(d.marL, o), h = X(d.marR, o), g = X(d.indent, o), _ = d.defFontSize == null ? a : d.defFontSize * Y * o * r, v = d.defColor ? Z(d.defColor) : M, y = Un(d), b = (() => {
 				for (let e of d.runs) if (e.type === "text" && e.fontSize != null) return e.fontSize;
 				return null;
 			})(), x = b == null ? _ : b * Y * o * r, w = (() => {
@@ -4789,15 +4775,15 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 			})(), T = w ? Z(w) : v, E = (() => {
 				for (let e of d.runs) if (e.type === "text" && e.fontFamily) return e.fontFamily;
 				return d.defFontFamily ?? null;
-			})(), N = "", P = Wn(!1, !1, x, "sans-serif", p), F = T, I = null;
-			N = Mr(d, l);
-			let L = Ee(d.bullet);
+			})(), N = "", P = Hn(!1, !1, x, "sans-serif", m), F = T, I = null;
+			N = Ar(d, l);
+			let L = De(d.bullet);
 			if (L.type === "char") {
 				let e = L;
-				P = Wn(!1, !1, e.sizePts == null ? e.sizePct == null ? x : x * (e.sizePct / 100) : e.sizePts * Y * o * r, N === e.char ? Nn(e.fontFamily ?? null, p) : "sans-serif", p), F = e.color ? Z(e.color) : T;
+				P = Hn(!1, !1, e.sizePts == null ? e.sizePct == null ? x : x * (e.sizePct / 100) : e.sizePts * Y * o * r, N === e.char ? jn(e.fontFamily ?? null, m) : "sans-serif", m), F = e.color ? Z(e.color) : T;
 			} else if (L.type === "autoNum") {
 				let e = L;
-				P = Wn(!1, !1, e.sizePts == null ? e.sizePct == null ? x : x * (e.sizePct / 100) : e.sizePts * Y * o * r, Nn(e.fontFamily ?? E, p), p), F = L.color ? Z(L.color) : T;
+				P = Hn(!1, !1, e.sizePts == null ? e.sizePct == null ? x : x * (e.sizePct / 100) : e.sizePts * Y * o * r, jn(e.fontFamily ?? E, m), m), F = L.color ? Z(L.color) : T;
 			} else if (L.type === "blip") {
 				let e = L, t = e.sizePts == null ? e.sizePct == null ? x : x * (e.sizePct / 100) : e.sizePts * Y * o * r;
 				I = {
@@ -4806,13 +4792,13 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 					sizePx: t
 				};
 			}
-			let R = O > 1 ? (i - S - C - (O - 1) * k) / O : i - S - C, z = n + S + m, B = n + S + m + g, V = R - m - h, H = Qn(e, d, D ? V : Infinity, _, v, o, m, A, j, r, f, p, Kn(y, g)), U = d.spaceBefore == null ? 0 : d.spaceBefore / 100 * Y * o * r, W = d.spaceAfter == null ? 0 : d.spaceAfter / 100 * Y * o * r;
+			let R = O > 1 ? (i - S - C - (O - 1) * k) / O : i - S - C, z = n + S + f, B = n + S + f + g, V = R - f - h, H = Xn(e, d, D ? V : Infinity, _, v, o, f, A, j, r, p, m, Wn(y, g)), U = d.spaceBefore == null ? 0 : d.spaceBefore / 100 * Y * o * r, W = d.spaceAfter == null ? 0 : d.spaceAfter / 100 * Y * o * r;
 			for (let n = 0; n < H.length; n++) {
 				let r = H[n], i = n === 0, a = n === H.length - 1, l = 0, f = 0;
 				for (let e of r.segments) {
 					let t = e.math ? Math.max(e.sizePx, (e.math.ascent + e.math.descent) / 1.2) : e.sizePx;
 					if (t > l && (l = t), !e.math) {
-						let t = q(e.fontFamily, e.sizePx);
+						let t = K(e.fontFamily, e.sizePx);
 						t > f && (f = t);
 					}
 				}
@@ -4824,7 +4810,7 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 				i && I && I.sizePx > l && (l = I.sizePx);
 				let p = l * 1.2, m = Math.max(p, f), h;
 				h = d.spaceLine ? d.spaceLine.type === "pct" ? p * (d.spaceLine.val / 1e5) : d.spaceLine.val * Y * o : m, t.autoFit === "norm" && t.lnSpcReduction != null && d.spaceLine?.type !== "pts" && (h *= 1 - t.lnSpcReduction);
-				let v = h + (a ? W : 0), b = i && u > 0 ? U : 0, x = i ? Kn(y, g) : 0, S = r.segments.some((e) => e.text && e.text.length > 0 || e.math != null), C = i && S ? I : null;
+				let v = h + (a ? W : 0), b = i && u > 0 ? U : 0, x = i ? Wn(y, g) : 0, S = r.segments.some((e) => e.text && e.text.length > 0 || e.math != null), C = i && S ? I : null;
 				s.push({
 					line: r,
 					linePx: v,
@@ -4866,15 +4852,15 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 	a === 0 && I === "b" ? (R = w + F + T, L = r - R) : R = t.autoFit === "sp" ? Math.max(a, w + F + T) : a;
 	let z, B = Math.max(0, R - w - T);
 	z = I === "ctr" ? L + w + (B - F) / 2 : I === "b" ? L + R - T - F : L + w, e.save(), e.textAlign = "left", e.textBaseline = "alphabetic";
-	let V = z, H = O > 1 ? (i - S - C - (O - 1) * k) / O + k : 0, U = Math.max(0, R - w - T), W = P[P.length - 1], G = W ? Math.max(0, W.linePx - W.lineHeight) : 0, J = F - G, ee = a === 0 || J <= U + .5, te = O > 1 && !ee ? Math.ceil(P.length / O) : P.length, ne = 0, re = 0;
+	let V = z, H = O > 1 ? (i - S - C - (O - 1) * k) / O + k : 0, U = Math.max(0, R - w - T), W = P[P.length - 1], G = W ? Math.max(0, W.linePx - W.lineHeight) : 0, q = F - G, ee = a === 0 || q <= U + .5, te = O > 1 && !ee ? Math.ceil(P.length / O) : P.length, ne = 0, re = 0;
 	for (let s of P) {
-		let { line: l, linePx: u, lineHeight: d, topGapPx: f, textXOffset: g, bulletLabel: y, bulletFont: b, bulletColor: x, bulletImage: S, alignment: C, isLastLine: w } = s;
-		O > 1 && ne < O - 1 && re >= te && (ne++, re = 0, z = V), z += f, re++;
-		let T = (t.rtlCol ? O - 1 - ne : ne) * H, E = s.textX + T, D = s.bulletX + T, k = s.textMaxW, A = s.para.rtl === !0, j = A || on(l.segments), M = l.segments.some((e) => e.isTab);
+		let { line: u, linePx: d, lineHeight: f, topGapPx: p, textXOffset: g, bulletLabel: y, bulletFont: b, bulletColor: x, bulletImage: S, alignment: C, isLastLine: w } = s;
+		O > 1 && ne < O - 1 && re >= te && (ne++, re = 0, z = V), z += p, re++;
+		let T = (t.rtlCol ? O - 1 - ne : ne) * H, E = s.textX + T, D = s.bulletX + T, k = s.textMaxW, A = s.para.rtl === !0, j = A || sn(u.segments), M = u.segments.some((e) => e.isTab);
 		if (M) {
 			let t = X(s.para.marL, o), n = X(s.para.marR, o), r = A ? n : t + g, i = k + t + n;
-			e.font = l.segments.find((e) => e.isTab).font;
-			let a = e.measureText(" ").width, c = vn(l.segments.map((t) => {
+			e.font = u.segments.find((e) => e.isTab).font;
+			let a = e.measureText(" ").width, c = yn(u.segments.map((t) => {
 				if (t.isTab) return {
 					isTab: !0,
 					width: 0
@@ -4893,10 +4879,10 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 				pos: X(e.pos, o),
 				algn: e.algn
 			})), r, i, a, X(s.para.defTabSz ?? 914400, o));
-			for (let e = 0; e < l.segments.length; e++) l.segments[e].isTab && (l.segments[e].tabWidthPx = c[e]);
+			for (let e = 0; e < u.segments.length; e++) u.segments[e].isTab && (u.segments[e].tabWidthPx = c[e]);
 		}
-		let N = 0, P = d * .8;
-		for (let t of l.segments) {
+		let N = 0, P = f * .8;
+		for (let t of u.segments) {
 			if (t.isTab) {
 				N += t.tabWidthPx ?? 0;
 				continue;
@@ -4912,7 +4898,7 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 		let F = z + P, I = E + k, L = 0, R = null;
 		if (j && A) {
 			if (y) e.font = b, L = e.measureText(y).width;
-			else if (S && _ && (R = h(S.imagePath, _), R)) {
+			else if (S && _ && (R = c(S.imagePath, _), R)) {
 				let e = S.sizePx;
 				L = R.height > 0 ? e * (R.width / R.height) : e;
 			}
@@ -4922,7 +4908,7 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 			e.direction = "rtl", e.fillText(y, I - L, F), e.direction = t;
 		} else e.fillText(y, D, F);
 		if (S && _) {
-			let t = h(S.imagePath, _);
+			let t = c(S.imagePath, _);
 			if (t) {
 				let n = S.sizePx, r = t.height > 0 ? n * (t.width / t.height) : n, i = F - n;
 				j && A ? e.drawImage(t, I - r, i, r, n) : e.drawImage(t, D, i, r, n);
@@ -4930,42 +4916,42 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 		}
 		let B = E + g, U;
 		U = M ? A ? E + k - L - N : B : C === "ctr" ? B + (k - g - N) / 2 : C === "r" ? E + k - L - N : B;
-		let W = C === "just" || C === "justLow" ? "just" : C === "thaiDist" ? "thaiDist" : C === "dist" ? "dist" : null, G = w || (l.endsWithBreak ?? !1), q = (W && !j && !M ? un(l.segments, k - g, N, W, G) : null) ?? l.segments, J = j ? sn(l.segments, A) : null, ee = (e, t) => {
+		let W = C === "just" || C === "justLow" ? "just" : C === "thaiDist" ? "thaiDist" : C === "dist" ? "dist" : null, G = w || (u.endsWithBreak ?? !1), K = (W && !j && !M ? dn(u.segments, k - g, N, W, G) : null) ?? u.segments, q = j ? cn(u.segments, A) : null, ee = (e, t) => {
 			if (Math.abs(e - t) !== 1) return 0;
-			let n = l.segments[Math.min(e, t)], r = l.segments[Math.max(e, t)];
+			let n = u.segments[Math.min(e, t)], r = u.segments[Math.max(e, t)];
 			return n.isTab || n.math || r.isTab || r.math || n.sourceRunId == null || n.sourceRunId !== r.sourceRunId ? 0 : r.leadingLetterSpacingPx ?? 0;
-		}, ie = q.length;
+		}, ie = K.length;
 		for (let t = 0; t < ie; t++) {
-			let s = J ? J.order[t] : t, l = q[s], u = J ? J.rtl[s] : !1;
+			let s = q ? q.order[t] : t, c = K[s], u = q ? q.rtl[s] : !1;
 			if (j && (e.direction = u ? "rtl" : "ltr"), t > 0) {
-				let e = J ? J.order[t - 1] : t - 1;
+				let e = q ? q.order[t - 1] : t - 1;
 				U += ee(e, s);
 			}
-			if (l.isTab) {
-				U += l.tabWidthPx ?? 0;
+			if (c.isTab) {
+				U += c.tabWidthPx ?? 0;
 				continue;
 			}
-			let f = l.jext ?? 0, h = l.splitBefore, g = l.perGap ?? 0, _ = h && h.length > 0 ? h.length * g : 0;
-			if (l.math) {
-				let t = En.get(l.math.nodes), n = l.math.width, r = l.math.ascent + l.math.descent;
+			let d = c.jext ?? 0, p = c.splitBefore, g = c.perGap ?? 0, _ = p && p.length > 0 ? p.length * g : 0;
+			if (c.math) {
+				let t = Dn.get(c.math.nodes), n = c.math.width, r = c.math.ascent + c.math.descent;
 				if (t && n > 0 && r > 0) {
-					let i = F - l.math.ascent, a = Dn(t, l.color);
+					let i = F - c.math.ascent, a = On(t, c.color);
 					e.drawImage(a, U, i, n, r);
 				}
-				U += n, U += f;
+				U += n, U += d;
 				continue;
 			}
-			e.font = l.font, e.fillStyle = l.color;
-			let y = F + (l.baseline ? -(l.baseline / 1e5) * l.sizePx : 0), b = l.letterSpacingPx ?? 0;
-			if (l.highlight && l.text) {
-				let t = Q(e, l.text, b) + _ + f;
-				wn(e, U, y, t, l.sizePx, l.highlight, l.color);
+			e.font = c.font, e.fillStyle = c.color;
+			let y = F + (c.baseline ? -(c.baseline / 1e5) * c.sizePx : 0), b = c.letterSpacingPx ?? 0;
+			if (c.highlight && c.text) {
+				let t = Q(e, c.text, b) + _ + d;
+				Tn(e, U, y, t, c.sizePx, c.highlight, c.color);
 			}
-			let x = l.shadow, S = (e, t, n, r) => {
+			let x = c.shadow, S = (e, t, n, r) => {
 				let i = r === "fill" ? e.fillText.bind(e) : e.strokeText.bind(e);
-				if (b !== 0 && Yn(t) > 1) {
+				if (b !== 0 && qn(t) > 1) {
 					let r = e, a = r.letterSpacing;
-					if (Zn(e)) {
+					if (Yn(e)) {
 						r.letterSpacing = `${b}px`, i(t, n, y);
 						try {
 							r.letterSpacing = a;
@@ -4978,17 +4964,17 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 						}
 					}
 				} else i(t, n, y);
-			}, C = (t) => Q(e, t, b), w = h && h.length > 0 ? Zt([...l.text], h, g, C) : null, T = [...l.text], E = !!h && h.length === T.length - 1 && T.length > 1, D = (e, t) => {
+			}, C = (t) => Q(e, t, b), w = p && p.length > 0 ? Qt([...c.text], p, g, C) : null, T = [...c.text], E = !!p && p.length === T.length - 1 && T.length > 1, D = (e, t) => {
 				if (v) {
 					let n = E ? b + g : b;
-					Cn(e, l.text, U, y, l.sizePx, n, t);
+					wn(e, c.text, U, y, c.sizePx, n, t);
 					return;
 				}
 				if (E) {
 					let n = t === "fill" ? e.fillText.bind(e) : e.strokeText.bind(e), r = b + g;
-					if (Zn(e)) {
+					if (Yn(e)) {
 						let t = e, i = t.letterSpacing;
-						t.letterSpacing = `${r}px`, n(l.text, U, y);
+						t.letterSpacing = `${r}px`, n(c.text, U, y);
 						try {
 							t.letterSpacing = i;
 						} catch {}
@@ -5000,21 +4986,21 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 						}
 					}
 				} else if (w) for (let { text: n, dx: r } of w) S(e, n, U + r, t);
-				else S(e, l.text, U, t);
-			}, O = l.reflection;
-			if (O && l.text) {
+				else S(e, c.text, U, t);
+			}, O = c.reflection;
+			if (O && c.text) {
 				let t = e.canvas.width || 0, n = e.canvas.height || 0;
 				if (t > 0 && n > 0) {
-					e.font = l.font;
-					let r = e.measureText(l.text), i = Number.isFinite(r.actualBoundingBoxAscent) ? r.actualBoundingBoxAscent : l.sizePx * .8, a = Number.isFinite(r.actualBoundingBoxDescent) ? r.actualBoundingBoxDescent : l.sizePx * .2, s = Number.isFinite(r.actualBoundingBoxLeft) ? r.actualBoundingBoxLeft : 0, c = Number.isFinite(r.actualBoundingBoxRight) ? r.actualBoundingBoxRight : r.width, u = e.getTransform(), d = Math.abs(u.a * u.d - u.b * u.c), f = d > 0 ? Math.sqrt(d) : 1;
-					Un(e, (e) => {
-						e.font = l.font, e.fillStyle = l.color, D(e, "fill");
+					e.font = c.font;
+					let r = e.measureText(c.text), i = Number.isFinite(r.actualBoundingBoxAscent) ? r.actualBoundingBoxAscent : c.sizePx * .8, a = Number.isFinite(r.actualBoundingBoxDescent) ? r.actualBoundingBoxDescent : c.sizePx * .2, s = Number.isFinite(r.actualBoundingBoxLeft) ? r.actualBoundingBoxLeft : 0, l = Number.isFinite(r.actualBoundingBoxRight) ? r.actualBoundingBoxRight : r.width, u = e.getTransform(), d = Math.abs(u.a * u.d - u.b * u.c), f = d > 0 ? Math.sqrt(d) : 1;
+					Vn(e, (e) => {
+						e.font = c.font, e.fillStyle = c.color, D(e, "fill");
 					}, {
 						x: (U - s) * f,
 						y: (y - i) * f,
-						w: Math.max(1, s + c) * f,
+						w: Math.max(1, s + l) * f,
 						h: Math.max(1, i + a) * f
-					}, O, o * f, u, t, n), e.font = l.font, e.fillStyle = l.color;
+					}, O, o * f, u, t, n), e.font = c.font, e.fillStyle = c.color;
 				}
 			}
 			if (x) {
@@ -5022,44 +5008,44 @@ function Nr(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 				e.save(), e.shadowColor = Z(x.color, x.alpha), e.shadowBlur = X(x.blur, o), e.shadowOffsetX = Math.cos(t) * n, e.shadowOffsetY = Math.sin(t) * n;
 			}
 			D(e, "fill"), x && e.restore();
-			let k = l.outline;
-			k && k.width > 0 && (e.save(), e.lineWidth = Math.max(.5, X(k.width, o)), e.strokeStyle = k.color ? `#${k.color}` : l.color, e.lineJoin = "round", D(e, "stroke"), e.restore()), e.font = l.font;
-			let A = Q(e, l.text, b) + _;
-			if (m && l.text && m({
-				text: l.text,
+			let k = c.outline;
+			k && k.width > 0 && (e.save(), e.lineWidth = Math.max(.5, X(k.width, o)), e.strokeStyle = k.color ? `#${k.color}` : c.color, e.lineJoin = "round", D(e, "stroke"), e.restore()), e.font = c.font;
+			let A = Q(e, c.text, b) + _;
+			if (h && c.text && h({
+				text: c.text,
 				inShapeX: U - n,
 				inShapeY: z - r,
-				w: A + f,
-				h: d,
-				fontSize: l.sizePx,
-				font: l.font,
+				w: A + d,
+				h: f,
+				fontSize: c.sizePx,
+				font: c.font,
 				shapeX: n,
 				shapeY: r,
 				shapeW: i,
 				shapeH: a,
-				rotation: c,
-				hyperlink: l.hyperlink
-			}), l.underline && Yt(e, U, y, A + f, l.sizePx, l.underlineColor ?? l.color, l.underlineStyle, p.dpr), l.strikethrough) {
-				let t = Math.max(1, l.sizePx * .05);
-				e.strokeStyle = l.color, e.lineWidth = t, e.setLineDash([]);
-				let n = y - l.sizePx * .32;
-				if (l.strikeDouble) {
+				rotation: l,
+				hyperlink: c.hyperlink
+			}), c.underline && Xt(e, U, y, A + d, c.sizePx, c.underlineColor ?? c.color, c.underlineStyle, m.dpr), c.strikethrough) {
+				let t = Math.max(1, c.sizePx * .05);
+				e.strokeStyle = c.color, e.lineWidth = t, e.setLineDash([]);
+				let n = y - c.sizePx * .32;
+				if (c.strikeDouble) {
 					let r = t * .9, i = n - r, a = n + r;
-					e.beginPath(), e.moveTo(U, i + K(i, t, p.dpr)), e.lineTo(U + A + f, i + K(i, t, p.dpr)), e.moveTo(U, a + K(a, t, p.dpr)), e.lineTo(U + A + f, a + K(a, t, p.dpr)), e.stroke();
+					e.beginPath(), e.moveTo(U, i + J(i, t, m.dpr)), e.lineTo(U + A + d, i + J(i, t, m.dpr)), e.moveTo(U, a + J(a, t, m.dpr)), e.lineTo(U + A + d, a + J(a, t, m.dpr)), e.stroke();
 				} else {
-					let r = n + K(n, t, p.dpr);
-					e.beginPath(), e.moveTo(U, r), e.lineTo(U + A + f, r), e.stroke();
+					let r = n + J(n, t, m.dpr);
+					e.beginPath(), e.moveTo(U, r), e.lineTo(U + A + d, r), e.stroke();
 				}
 			}
-			U += A, U += f;
+			U += A, U += d;
 		}
-		j && (e.direction = "ltr"), z += u;
+		j && (e.direction = "ltr"), z += d;
 	}
 	e.restore();
 }
-function Pr(e, t, n, r, i) {
+function Mr(e, t, n, r, i) {
 	if (!e) return [];
-	let a = Lt(t?.rig ?? "threePt", t?.dir ?? "t", t?.rot), o = Ut(n), s = r * i, c = [];
+	let a = Rt(t?.rig ?? "threePt", t?.dir ?? "t", t?.rot), o = Wt(n), s = r * i, c = [];
 	return e.bevelT && e.bevelT.w > 0 && e.bevelT.h > 0 && c.push({
 		widthPx: e.bevelT.w * s,
 		heightPx: e.bevelT.h * s,
@@ -5075,9 +5061,9 @@ function Pr(e, t, n, r, i) {
 		bottom: !0
 	}), c;
 }
-function Fr(e, t, n, r, i, a) {
+function Nr(e, t, n, r, i, a) {
 	if (!e || !e.extrusionH || e.extrusionH <= 0) return null;
-	let o = e.extrusionH * i * a, s = ct(t, n * a, r * a, o);
+	let o = e.extrusionH * i * a, s = lt(t, n * a, r * a, o);
 	if (Math.hypot(s.x, s.y) < .75) return null;
 	let c = [
 		64,
@@ -5098,66 +5084,66 @@ function Fr(e, t, n, r, i, a) {
 		rgb: c
 	};
 }
-function Ir(e, t, n, r, i, a, o, s = {}) {
-	if (i <= 0 || a <= 0) return !1;
-	let c = e.getTransform(), l = Math.abs(c.a * c.d - c.b * c.c), u = l > 0 ? Math.sqrt(l) : 1, d = Math.max(0, Math.ceil((s.edgePadCss ?? 0) * u)), f = ot(t, i, a), p = f.corners;
-	if (d > 0) {
-		let e = d / u, t = _t(f.corners, e / i, e / a);
-		t ? p = t : d = 0;
+function Pr(t, n, r, i, a, o, s, c = {}) {
+	if (a <= 0 || o <= 0) return !1;
+	let l = t.getTransform(), u = Math.abs(l.a * l.d - l.b * l.c), d = u > 0 ? Math.sqrt(u) : 1, f = Math.max(0, Math.ceil((c.edgePadCss ?? 0) * d)), p = st(n, a, o), m = p.corners;
+	if (f > 0) {
+		let e = f / d, t = vt(p.corners, e / a, e / o);
+		t ? m = t : f = 0;
 	}
-	let m = d / u, h = Math.max(1, Math.ceil(i * u) + 2 * d), g = Math.max(1, Math.ceil(a * u) + 2 * d), _ = O(h, g);
+	let h = f / d, g = Math.max(1, Math.ceil(a * d) + 2 * f), _ = Math.max(1, Math.ceil(o * d) + 2 * f), v = e(g, _);
+	if (!v) return !1;
+	let y = v.getContext("2d");
+	if (!y) return !1;
+	y.save(), y.scale(d, d), y.translate(h, h), s(y, 0, 0, a, o), y.restore();
+	let b = Math.ceil(a * d), x = Math.ceil(o * d), S = (e) => ({
+		x: f - e,
+		y: f - e,
+		w: b + 2 * e,
+		h: x + 2 * e
+	});
+	if (c.extrusion) {
+		let e = Math.ceil(Math.hypot(c.extrusion.offsetX, c.extrusion.offsetY)) + 2;
+		Yt(y, c.extrusion, S(e));
+	}
+	if (c.bevels && c.bevels.length > 0) for (let e of c.bevels) Jt(y, e, S(Math.ceil(e.widthPx) + 2));
+	return c.paintEdges && (y.save(), y.scale(d, d), y.translate(h, h), c.paintEdges(y, 0, 0, a, o), y.restore()), gt(v, t, g, _, m.map((e) => ({
+		x: r + e.x,
+		y: i + e.y
+	}))), !0;
+}
+function Fr(t, n, r, i, a, o, s, c, l = 0) {
+	if (i <= 0 || a <= 0 || o.length === 0) return !1;
+	let u = t.getTransform(), d = Math.abs(u.a * u.d - u.b * u.c), f = d > 0 ? Math.sqrt(d) : 1, p = Math.max(0, Math.ceil(l * f)), m = p / f, h = Math.max(1, Math.ceil(i * f) + 2 * p), g = Math.max(1, Math.ceil(a * f) + 2 * p), _ = e(h, g);
 	if (!_) return !1;
 	let v = _.getContext("2d");
 	if (!v) return !1;
-	v.save(), v.scale(u, u), v.translate(m, m), o(v, 0, 0, i, a), v.restore();
-	let y = Math.ceil(i * u), b = Math.ceil(a * u), x = (e) => ({
-		x: d - e,
-		y: d - e,
-		w: y + 2 * e,
-		h: b + 2 * e
-	});
-	if (s.extrusion) {
-		let e = Math.ceil(Math.hypot(s.extrusion.offsetX, s.extrusion.offsetY)) + 2;
-		Jt(v, s.extrusion, x(e));
-	}
-	if (s.bevels && s.bevels.length > 0) for (let e of s.bevels) qt(v, e, x(Math.ceil(e.widthPx) + 2));
-	return s.paintEdges && (v.save(), v.scale(u, u), v.translate(m, m), s.paintEdges(v, 0, 0, i, a), v.restore()), ht(_, e, h, g, p.map((e) => ({
-		x: n + e.x,
-		y: r + e.y
-	}))), !0;
-}
-function Lr(e, t, n, r, i, a, o, s, c = 0) {
-	if (r <= 0 || i <= 0 || a.length === 0) return !1;
-	let l = e.getTransform(), u = Math.abs(l.a * l.d - l.b * l.c), d = u > 0 ? Math.sqrt(u) : 1, f = Math.max(0, Math.ceil(c * d)), p = f / d, m = Math.max(1, Math.ceil(r * d) + 2 * f), h = Math.max(1, Math.ceil(i * d) + 2 * f), g = O(m, h);
-	if (!g) return !1;
-	let _ = g.getContext("2d");
-	if (!_) return !1;
-	_.save(), _.scale(d, d), _.translate(p, p), o(_, 0, 0, r, i), _.restore();
-	let v = Math.ceil(r * d), y = Math.ceil(i * d);
-	for (let e of a) {
+	v.save(), v.scale(f, f), v.translate(m, m), s(v, 0, 0, i, a), v.restore();
+	let y = Math.ceil(i * f), b = Math.ceil(a * f);
+	for (let e of o) {
 		let t = Math.ceil(e.widthPx) + 2;
-		qt(_, e, {
-			x: f - t,
-			y: f - t,
-			w: v + 2 * t,
-			h: y + 2 * t
+		Jt(v, e, {
+			x: p - t,
+			y: p - t,
+			w: y + 2 * t,
+			h: b + 2 * t
 		});
 	}
-	return s && (_.save(), _.scale(d, d), _.translate(p, p), s(_, 0, 0, r, i), _.restore()), e.drawImage(g, t - p, n - p, m / d, h / d), !0;
+	return c && (v.save(), v.scale(f, f), v.translate(m, m), c(v, 0, 0, i, a), v.restore()), t.drawImage(_, n - m, r - m, h / f, g / f), !0;
 }
-var Rr = /* @__PURE__ */ new WeakMap();
-function zr(e) {
-	let t = Rr.get(e);
+var Ir = /* @__PURE__ */ new WeakMap();
+function Lr(e) {
+	let t = Ir.get(e);
 	return t || (t = async (t, n) => {
 		let r = await e(t);
 		return r.type === n ? r : new Blob([r], { type: n });
-	}, Rr.set(e, t)), t;
+	}, Ir.set(e, t)), t;
 }
-function Br(e, t, n = zr(t)) {
-	return W("base", e.posterPath, n, async () => {
+function Rr(e, t, n = Lr(t)) {
+	return v("base", e.posterPath, n, async () => {
 		let n = await t(e.posterPath), r = e.posterMimeType || n.type || "application/octet-stream";
 		return {
-			bitmap: await s(n.type === r ? n : new Blob([n], { type: r })),
+			bitmap: await m(n.type === r ? n : new Blob([n], { type: r })),
 			owned: !0
 		};
 	}).then((e) => {
@@ -5165,39 +5151,39 @@ function Br(e, t, n = zr(t)) {
 		return e;
 	});
 }
-async function Vr(e, t, n, r, i) {
-	if (i) try {
-		let a = t.mimeType === "image/svg+xml", { widthPt: s, heightPt: c } = S(t.mimeType, t.srcRect, t.width / Y, t.height / Y), u;
-		if (ce(t)) try {
-			u = await o(t.svgImagePath, i);
+async function zr(e, t, n, i, a) {
+	if (a) try {
+		let o = t.mimeType === "image/svg+xml", { widthPt: c, heightPt: l } = s(t.mimeType, t.srcRect, t.width / Y, t.height / Y), u;
+		if (A(t)) try {
+			u = await U(t.svgImagePath, a);
 		} catch {
-			u = a ? await o(t.imagePath, i) : await we(t.imagePath, t.mimeType, t.duotone, i, {
-				widthPt: s,
-				heightPt: c
+			u = o ? await U(t.imagePath, a) : await Ee(t.imagePath, t.mimeType, t.duotone, a, {
+				widthPt: c,
+				heightPt: l
 			});
 		}
-		else u = a ? await o(t.imagePath, i) : await we(t.imagePath, t.mimeType, t.duotone, i, {
-			widthPt: s,
-			heightPt: c
+		else u = o ? await U(t.imagePath, a) : await Ee(t.imagePath, t.mimeType, t.duotone, a, {
+			widthPt: c,
+			heightPt: l
 		});
-		if (!u || r()) return;
+		if (!u || i()) return;
 		e.save(), t.alpha != null && (e.globalAlpha *= t.alpha);
 		let d = X(t.x, n), f = X(t.y, n), p = X(t.width, n), m = X(t.height, n);
 		(t.rotation !== 0 || t.flipH || t.flipV) && (e.translate(d + p / 2, f + m / 2), e.rotate(t.rotation * Math.PI / 180), t.flipH && e.scale(-1, 1), t.flipV && e.scale(1, -1), e.translate(-(d + p / 2), -(f + m / 2)));
-		let h = x(u, t.srcRect), g = (e, n, r, i, a) => {
-			t.custGeom && t.custGeom.length > 0 ? Or(e, t.custGeom, n, r, i, a) : t.prstGeom && y(e, t.prstGeom, n, r, i, a, t.prstAdjust ?? []) || e.rect(n, r, i, a);
+		let h = ue(u, t.srcRect), g = (e, n, i, a, o) => {
+			t.custGeom && t.custGeom.length > 0 ? Er(e, t.custGeom, n, i, a, o) : t.prstGeom && r(e, t.prstGeom, n, i, a, o, t.prstAdjust ?? []) || e.rect(n, i, a, o);
 		}, _ = (e, t, n, r, i) => {
 			e.beginPath(), g(e, t, n, r, i);
 		}, v = (e, n, r, i, a) => {
 			(t.prstGeom || t.custGeom && t.custGeom.length > 0) && (_(e, n, r, i, a), e.clip());
-		}, b = (e, r, i, a, o) => {
-			t.stroke && (e.save(), Wr(e, t.stroke, n, {
+		}, y = (e, r, i, a, o) => {
+			t.stroke && (e.save(), Hr(e, t.stroke, n, {
 				x: r,
 				y: i,
 				w: a,
 				h: o
 			}, t.rotation), _(e, r, i, a, o), e.stroke(), e.restore());
-		}, C = (e, r, i, a, o) => {
+		}, b = (e, r, i, a, o) => {
 			let s = t.sp3d;
 			if (s && (s.contourW ?? 0) > 0 && s.contourClr) {
 				let t = Math.max(.5, s.contourW * n);
@@ -5205,56 +5191,56 @@ async function Vr(e, t, n, r, i) {
 				let c = t * 2 + Math.max(a, o);
 				e.rect(r - c, i - c, a + 2 * c, o + 2 * c), g(e, r, i, a, o), e.clip("evenodd"), e.beginPath(), _(e, r, i, a, o), e.strokeStyle = Z(s.contourClr), e.lineWidth = t * 2, e.setLineDash([]), e.stroke(), e.restore();
 			}
-		}, T = t.scene3d && st(t.scene3d.camera) ? t.scene3d : null, E = (e, t, n, r, i) => {
+		}, x = t.scene3d && ct(t.scene3d.camera) ? t.scene3d : null, S = (e, t, n, r, i) => {
 			e.save(), v(e, t, n, r, i), h ? e.drawImage(u, h.sx, h.sy, h.sw, h.sh, t, n, r, i) : e.drawImage(u, t, n, r, i), e.restore();
-		}, D = (e, t, n, r, i) => {
-			E(e, t, n, r, i), b(e, t, n, r, i), C(e, t, n, r, i);
-		}, O = (e, t, n, r, i) => {
-			E(e, t, n, r, i), b(e, t, n, r, i);
-		}, k = e.getTransform(), A = Math.abs(k.a * k.d - k.b * k.c), j = A > 0 ? Math.sqrt(A) : 1, M = Pr(t.sp3d, t.scene3d?.lightRig, t.sp3d ? t.sp3d.prstMaterial : void 0, n, j), N = T ? Fr(t.sp3d, T.camera, p, m, n, j) : null, P = t.stroke ? t.stroke.width * n / 2 : 0, F = t.sp3d?.contourW ? t.sp3d.contourW * n : 0, I = N ? Math.hypot(N.offsetX, N.offsetY) / j : 0, L = P + F + I + 2, R = (e) => {
-			if (T) {
-				if (Ir(e, T.camera, d, f, p, m, O, {
-					bevels: M,
-					extrusion: N ?? void 0,
-					paintEdges: C,
-					edgePadCss: L
+		}, T = (e, t, n, r, i) => {
+			S(e, t, n, r, i), y(e, t, n, r, i), b(e, t, n, r, i);
+		}, E = (e, t, n, r, i) => {
+			S(e, t, n, r, i), y(e, t, n, r, i);
+		}, D = e.getTransform(), O = Math.abs(D.a * D.d - D.b * D.c), k = O > 0 ? Math.sqrt(O) : 1, j = Mr(t.sp3d, t.scene3d?.lightRig, t.sp3d ? t.sp3d.prstMaterial : void 0, n, k), M = x ? Nr(t.sp3d, x.camera, p, m, n, k) : null, N = t.stroke ? t.stroke.width * n / 2 : 0, P = t.sp3d?.contourW ? t.sp3d.contourW * n : 0, F = M ? Math.hypot(M.offsetX, M.offsetY) / k : 0, I = N + P + F + 2, L = (e) => {
+			if (x) {
+				if (Pr(e, x.camera, d, f, p, m, E, {
+					bevels: j,
+					extrusion: M ?? void 0,
+					paintEdges: b,
+					edgePadCss: I
 				})) return;
-			} else if (M.length > 0 && Lr(e, d, f, p, m, M, O, C, L)) return;
-			D(e, d, f, p, m);
-		}, z = (e, t, n, r, i, a) => {
+			} else if (j.length > 0 && Fr(e, d, f, p, m, j, E, b, I)) return;
+			T(e, d, f, p, m);
+		}, R = (e, t, n, r, i, a) => {
 			e.save(), v(e, n, r, i, a), e.fillStyle = t, e.fillRect(n, r, i, a), e.restore();
-		}, B = (e, t) => {
-			T && Ir(e, T.camera, d, f, p, m, (e, n, r, i, a) => z(e, t, n, r, i, a)) || z(e, t, d, f, p, m);
-		}, V = e.getTransform(), H = Math.abs(V.a * V.d - V.b * V.c), U = H > 0 ? Math.sqrt(H) : 1, W = P + F, G = (t.custGeom && t.custGeom.length > 0 ? ge(t.custGeom, d, f, p, m) : t.prstGeom && l(t.prstGeom.toLowerCase()) ? w(t.prstGeom.toLowerCase(), d, f, p, m, t.prstAdjust ?? []) : null) ?? {
+		}, z = (e, t) => {
+			x && Pr(e, x.camera, d, f, p, m, (e, n, r, i, a) => R(e, t, n, r, i, a)) || R(e, t, d, f, p, m);
+		}, B = e.getTransform(), V = Math.abs(B.a * B.d - B.b * B.c), H = V > 0 ? Math.sqrt(V) : 1, W = N + P, G = (t.custGeom && t.custGeom.length > 0 ? ve(t.custGeom, d, f, p, m) : t.prstGeom && w(t.prstGeom.toLowerCase()) ? C(t.prstGeom.toLowerCase(), d, f, p, m, t.prstAdjust ?? []) : null) ?? {
 			x: d,
 			y: f,
 			w: p,
 			h: m
-		}, K = T ? wr(T.camera, V, d, f, p, m, L, t.shadow?.algn) : {
-			bbox: br(V, G.x - W, G.y - W, G.w + W * 2, G.h + W * 2),
-			anchor: Cr(V, d, f, p, m, t.shadow?.algn)
-		}, q = n * U, J = !!(t.shadow || t.innerShadow || t.glow || t.softEdge || t.reflection), ee = (e) => B(e, "#000");
-		Er(e, t, T && J ? Tr(R, V, K.bbox, {
+		}, K = x ? Sr(x.camera, B, d, f, p, m, I, t.shadow?.algn) : {
+			bbox: vr(B, G.x - W, G.y - W, G.w + W * 2, G.h + W * 2),
+			anchor: xr(B, d, f, p, m, t.shadow?.algn)
+		}, q = n * H, ee = !!(t.shadow || t.innerShadow || t.glow || t.softEdge || t.reflection), J = (e) => z(e, "#000");
+		wr(e, t, x && ee ? Cr(L, B, K.bbox, {
 			w: e.canvas.width || 0,
 			h: e.canvas.height || 0
-		}) : R, T && J ? Tr(ee, V, K.bbox, {
+		}) : L, x && ee ? Cr(J, B, K.bbox, {
 			w: e.canvas.width || 0,
 			h: e.canvas.height || 0
-		}) : ee, K.bbox, K.anchor, n, q, V), e.restore();
+		}) : J, K.bbox, K.anchor, n, q, B), e.restore();
 	} catch (e) {
-		if (f(e)) throw e;
+		if (pe(e)) throw e;
 	}
 }
-async function Hr(e, t, n, r, i, a, o) {
+async function Br(e, t, n, r, i, a, o) {
 	let s = X(t.x, n), c = X(t.y, n), l = X(t.width, n), u = X(t.height, n), d;
 	if (t.posterPath && i) try {
-		d = await Br(t, i, o);
+		d = await Rr(t, i, o);
 	} catch (e) {
-		if (f(e)) throw e;
+		if (pe(e)) throw e;
 	}
-	r() || (e.save(), Gr(e, t, n), d ? e.drawImage(d, s, c, l, u) : (e.fillStyle = t.mediaKind === "video" ? "#111" : "#f0f0f0", e.fillRect(s, c, l, u)), a || nn(e, s + l / 2, c + u / 2, l, u, "paused"), e.restore());
+	r() || (e.save(), Ur(e, t, n), d ? e.drawImage(d, s, c, l, u) : (e.fillStyle = t.mediaKind === "video" ? "#111" : "#f0f0f0", e.fillRect(s, c, l, u)), a || rn(e, s + l / 2, c + u / 2, l, u, "paused"), e.restore());
 }
-function Ur(e, t, n, r, i, a, o) {
+function Vr(e, t, n, r, i, a, o) {
 	let s = Math.max(.5, X(r.width, a)), c = n.x - t.x, l = n.y - t.y, u = Math.hypot(c, l);
 	if (u === 0) return;
 	let d = -l / u, f = c / u, p;
@@ -5304,30 +5290,30 @@ function Ur(e, t, n, r, i, a, o) {
 			break;
 		default: return;
 	}
-	e.save(), e.globalCompositeOperation = "destination-out", e.strokeStyle = "#000", e.lineWidth = s + .5, e.setLineDash([]), e.beginPath(), e.moveTo(t.x, t.y), e.lineTo(n.x, n.y), e.stroke(), e.globalCompositeOperation = "source-over", e.strokeStyle = (r.fill ? Tn(r.fill, e, Math.min(t.x, n.x), Math.min(t.y, n.y), Math.max(1, Math.abs(n.x - t.x)), Math.max(1, Math.abs(n.y - t.y)), o) : null) ?? Z(r.color);
+	e.save(), e.globalCompositeOperation = "destination-out", e.strokeStyle = "#000", e.lineWidth = s + .5, e.setLineDash([]), e.beginPath(), e.moveTo(t.x, t.y), e.lineTo(n.x, n.y), e.stroke(), e.globalCompositeOperation = "source-over", e.strokeStyle = (r.fill ? En(r.fill, e, Math.min(t.x, n.x), Math.min(t.y, n.y), Math.max(1, Math.abs(n.x - t.x)), Math.max(1, Math.abs(n.y - t.y)), o) : null) ?? Z(r.color);
 	for (let r of p) {
 		let i = d * (s * r.offset), a = f * (s * r.offset);
 		e.lineWidth = Math.max(.5, s * r.widthFrac), e.beginPath(), e.moveTo(t.x + i, t.y + a), e.lineTo(n.x + i, n.y + a), e.stroke();
 	}
 	e.restore();
 }
-function Wr(e, t, n, r, i = 0) {
-	if (ne(e, t, n), t?.fill && r) {
-		let n = Tn(t.fill, e, r.x, r.y, r.w, r.h, i);
+function Hr(e, t, n, r, i = 0) {
+	if (T(e, t, n), t?.fill && r) {
+		let n = En(t.fill, e, r.x, r.y, r.w, r.h, i);
 		n && (e.strokeStyle = n);
 	}
 }
-function Gr(e, t, n) {
+function Ur(e, t, n) {
 	if (t.rotation === 0 && !t.flipH && !t.flipV) return;
 	let r = X(t.x, n), i = X(t.y, n), a = X(t.width, n), o = X(t.height, n);
 	e.translate(r + a / 2, i + o / 2), e.rotate(t.rotation * Math.PI / 180), t.flipH && e.scale(-1, 1), t.flipV && e.scale(1, -1), e.translate(-(r + a / 2), -(i + o / 2));
 }
-function Kr(e, t, n, r, i = {
+function Wr(e, t, n, r, i = {
 	themeMajorFont: null,
 	themeMinorFont: null,
 	dpr: 1
 }) {
-	e.save(), Gr(e, t, n);
+	e.save(), Ur(e, t, n);
 	let a = X(t.x, n), o = X(t.y, n), s = t.cols.map((e) => X(e, n)), c = s.length, l = (e, t) => {
 		let n = 0;
 		for (let r = 0; r < t; r++) n += s[e + r] ?? 0;
@@ -5338,7 +5324,7 @@ function Kr(e, t, n, r, i = {
 		for (let t = 0; t < o.cells.length; t++) {
 			let s = o.cells[t];
 			if (s.hMerge || s.vMerge || (s.rowSpan || 1) > 1 || !s.textBody) continue;
-			let c = l(t, s.gridSpan || 1), d = Nr(e, s.textBody, 0, 0, c, 0, n, null, 0, !1, !1, "#000000", r, i, void 0, !0) || 0;
+			let c = l(t, s.gridSpan || 1), d = jr(e, s.textBody, 0, 0, c, 0, n, null, 0, !1, !1, "#000000", r, i, void 0, !0) || 0;
 			d > u[a] && (u[a] = d);
 		}
 	}
@@ -5349,7 +5335,7 @@ function Kr(e, t, n, r, i = {
 			if (s.hMerge || s.vMerge) continue;
 			let c = s.rowSpan || 1;
 			if (c <= 1 || !s.textBody) continue;
-			let d = l(t, s.gridSpan || 1), f = Nr(e, s.textBody, 0, 0, d, 0, n, null, 0, !1, !1, "#000000", r, i, void 0, !0) || 0, p = 0;
+			let d = l(t, s.gridSpan || 1), f = jr(e, s.textBody, 0, 0, d, 0, n, null, 0, !1, !1, "#000000", r, i, void 0, !0) || 0, p = 0;
 			for (let e = 0; e < c && a + e < u.length; e++) p += u[a + e];
 			if (f > p) {
 				let e = (f - p) / c;
@@ -5394,10 +5380,10 @@ function Kr(e, t, n, r, i = {
 		}
 	}
 	for (let { cell: a, colX: o, rowY: s, cellW: c, cellH: l } of h) {
-		let u = Tn(a.fill, e, o, s, c, l, t.rotation);
+		let u = En(a.fill, e, o, s, c, l, t.rotation);
 		if (u && (e.fillStyle = u, e.fillRect(o, s, c, l)), a.textBody) {
 			let t = a.textColor ? Z(a.textColor) : null;
-			Nr(e, a.textBody, o, s, c, l, n, t, 0, !1, !1, "#000000", r, i);
+			jr(e, a.textBody, o, s, c, l, n, t, 0, !1, !1, "#000000", r, i);
 		}
 	}
 	let _ = i.dpr, v = (e, t) => {
@@ -5405,13 +5391,13 @@ function Kr(e, t, n, r, i = {
 		let n = g[e][t];
 		return n < 0 ? null : h[n];
 	}, y = (r, i, a, o, s) => {
-		Wr(e, r, n, {
+		Hr(e, r, n, {
 			x: Math.min(i, o),
 			y: Math.min(a, s),
 			w: Math.max(1, Math.abs(o - i)),
 			h: Math.max(1, Math.abs(s - a))
 		}, t.rotation);
-		let c = i === o ? K(i, e.lineWidth, _) : 0, l = a === s ? K(a, e.lineWidth, _) : 0;
+		let c = i === o ? J(i, e.lineWidth, _) : 0, l = a === s ? J(a, e.lineWidth, _) : 0;
 		e.beginPath(), e.moveTo(i + c, a + l), e.lineTo(o + c, s + l), e.stroke();
 	};
 	for (let r of h) {
@@ -5426,7 +5412,7 @@ function Kr(e, t, n, r, i = {
 			for (; a < n;) {
 				let r = g[e][a], o = a + 1;
 				for (; o < n && g[e][o] === r;) o++;
-				let s = v(e, a), c = pn(i.borderB, s ? s.cell.borderT : null);
+				let s = v(e, a), c = mn(i.borderB, s ? s.cell.borderT : null);
 				if (c) {
 					let e = p(a, o - a);
 					y(c, e, t, e + l(a, o - a), t);
@@ -5442,16 +5428,16 @@ function Kr(e, t, n, r, i = {
 			for (; t <= r.lastRi;) {
 				let n = g[t][x], i = t;
 				for (; i + 1 <= r.lastRi && g[i + 1][x] === n;) i++;
-				let a = v(t, x), o = pn(h, a ? S(a.cell) : null);
+				let a = v(t, x), o = mn(h, a ? S(a.cell) : null);
 				o && y(o, e, m[t], e, m[i] + u[i]), t = i + 1;
 			}
 		}
-		i.diagonalTL && (Wr(e, i.diagonalTL, n, {
+		i.diagonalTL && (Hr(e, i.diagonalTL, n, {
 			x: a,
 			y: o,
 			w: s,
 			h: d
-		}, t.rotation), e.beginPath(), e.moveTo(a, o), e.lineTo(a + s, o + d), e.stroke()), i.diagonalTR && (Wr(e, i.diagonalTR, n, {
+		}, t.rotation), e.beginPath(), e.moveTo(a, o), e.lineTo(a + s, o + d), e.stroke()), i.diagonalTR && (Hr(e, i.diagonalTR, n, {
 			x: a,
 			y: o,
 			w: s,
@@ -5460,14 +5446,14 @@ function Kr(e, t, n, r, i = {
 	}
 	e.restore();
 }
-function qr(e, t, n, r) {
+function Gr(e, t, n, r) {
 	e.save(), e.globalAlpha = t.opacity, e.fillStyle = t.color, e.fillRect(0, 0, n, r), e.restore();
 }
-var Jr = /* @__PURE__ */ new WeakMap();
-function Yr(e) {
-	Jr.set(e, (Jr.get(e) ?? 0) + 1);
+var Kr = /* @__PURE__ */ new WeakMap();
+function qr(e) {
+	Kr.set(e, (Kr.get(e) ?? 0) + 1);
 }
-function Xr(e, t, n, r, i) {
+function Jr(e, t, n, r, i) {
 	e.save(), e.fillStyle = "#f7f7f8", e.fillRect(0, 0, t, n);
 	let a = Math.max(12, Math.min(t, n) * .04);
 	e.strokeStyle = "#c8ccd2", e.lineWidth = Math.max(1, Math.min(t, n) * .004), e.setLineDash([e.lineWidth * 6, e.lineWidth * 5]), e.strokeRect(a, a, t - a * 2, n - a * 2), e.setLineDash([]);
@@ -5487,86 +5473,86 @@ function Xr(e, t, n, r, i) {
 	for (let t of f.slice(0, 4)) e.fillText(t, o, h), h += m;
 	e.restore();
 }
-async function Zr(e, t, n, r, i = {}, a) {
-	let o = i.fetchImage ?? (i.fetchMedia ? zr(i.fetchMedia) : void 0), s = o ? _(o) : void 0;
+async function Yr(e, t, r, i, a = {}, o) {
+	let s = a.fetchImage ?? (a.fetchMedia ? Lr(a.fetchMedia) : void 0), c = s ? n(s) : void 0;
 	try {
-		return await Qr(e, t, n, r, i, a, o);
+		return await Xr(e, t, r, i, a, o, s);
 	} finally {
-		s?.();
+		c?.();
 	}
 }
-async function Qr(e, t, r, i, a = {}, s, c) {
-	let l = (Jr.get(e) ?? 0) + 1;
-	Jr.set(e, l);
-	let u = () => Jr.get(e) !== l, p = a.width ?? ((z(e) ? e.offsetWidth : 0) || 960), m = p / r, h = Math.round(p), g = Math.round(i * m), _ = a.dpr ?? V(), v = te(h * _, g * _), y = v.clamped ? _ * v.scale : _;
-	e.width = v.width, e.height = v.height, z(e) && (e.style.width = `${h}px`, e.style.display || (e.style.display = "block"));
-	let b = e.getContext("2d");
-	if (!b) throw Error("Could not get 2D context");
-	if (b.scale(y, y), t.parseError) return Xr(b, h, g, t.slideNumber, t.parseError), e;
-	let x = a.defaultTextColor ? `#${a.defaultTextColor}` : "#000000", C = {
-		themeMajorFont: a.majorFont ?? null,
-		themeMinorFont: a.minorFont ?? null,
-		themeHlinkColor: a.hlinkColor ?? null,
-		dpr: y,
-		smartArtFallbackTextColor: _n(t.background, x)
+async function Xr(e, t, n, r, i = {}, a, o) {
+	let c = (Kr.get(e) ?? 0) + 1;
+	Kr.set(e, c);
+	let l = () => Kr.get(e) !== c, u = i.width ?? ((z(e) ? e.offsetWidth : 0) || 960), f = u / n, p = Math.round(u), m = Math.round(r * f), h = i.dpr ?? G(), _ = ce(p * h, m * h), v = _.clamped ? h * _.scale : h;
+	e.width = _.width, e.height = _.height, z(e) && (e.style.width = `${p}px`, e.style.display || (e.style.display = "block"));
+	let y = e.getContext("2d");
+	if (!y) throw Error("Could not get 2D context");
+	if (y.scale(v, v), t.parseError) return Jr(y, p, m, t.slideNumber, t.parseError), e;
+	let b = i.defaultTextColor ? `#${i.defaultTextColor}` : "#000000", x = {
+		themeMajorFont: i.majorFont ?? null,
+		themeMinorFont: i.minorFont ?? null,
+		themeHlinkColor: i.hlinkColor ?? null,
+		dpr: v,
+		smartArtFallbackTextColor: vn(t.background, b)
 	};
-	if (await $n(b, t.background, h, g, m, u, a.fetchImage), u() || (a.math && await Mn(t, a.math), u())) return e;
-	let w = t.slideNumber;
-	for (let e of t.elements) if (e.type === "picture" && a.fetchImage) {
+	if (await Zn(y, t.background, p, m, f, l, i.fetchImage), l() || (i.math && await An(t, i.math), l())) return e;
+	let S = t.slideNumber;
+	for (let e of t.elements) if (e.type === "picture" && i.fetchImage) {
 		let t = e, n = t.mimeType === "image/svg+xml";
-		if (ce(t)) o(t.svgImagePath, a.fetchImage).catch(() => void 0);
-		else if (n) o(t.imagePath, a.fetchImage).catch(() => void 0);
+		if (A(t)) U(t.svgImagePath, i.fetchImage).catch(() => void 0);
+		else if (n) U(t.imagePath, i.fetchImage).catch(() => void 0);
 		else {
-			let e = S(t.mimeType, t.srcRect, t.width / Y, t.height / Y);
-			we(t.imagePath, t.mimeType, t.duotone, a.fetchImage, {
+			let e = s(t.mimeType, t.srcRect, t.width / Y, t.height / Y);
+			Ee(t.imagePath, t.mimeType, t.duotone, i.fetchImage, {
 				widthPt: e.widthPt,
 				heightPt: e.heightPt
 			}).catch(() => void 0);
 		}
 	} else if (e.type === "media") {
 		let t = e;
-		t.posterPath && a.fetchMedia && Br(t, a.fetchMedia, c).catch(() => void 0);
+		t.posterPath && i.fetchMedia && Rr(t, i.fetchMedia, o).catch(() => void 0);
 	}
-	if (a.fetchImage) {
-		let r = a.fetchImage, i = /* @__PURE__ */ new Set();
+	if (i.fetchImage) {
+		let n = i.fetchImage, r = /* @__PURE__ */ new Set();
 		for (let e of t.elements) if (!(e.type !== "shape" || !e.textBody)) for (let t of e.textBody.paragraphs) {
-			let e = Ee(t.bullet);
-			e.type === "blip" && i.add(`${e.imagePath} ${e.mimeType}`);
+			let e = De(t.bullet);
+			e.type === "blip" && r.add(`${e.imagePath} ${e.mimeType}`);
 		}
-		if (i.size > 0 && (await Promise.all([...i].map((e) => {
-			let [t, i] = e.split(" ");
-			return n(t, i, r).catch((e) => {
-				if (f(e)) throw e;
+		if (r.size > 0 && (await Promise.all([...r].map((e) => {
+			let [t, r] = e.split(" ");
+			return g(t, r, n).catch((e) => {
+				if (pe(e)) throw e;
 			});
-		})), u())) return e;
+		})), l())) return e;
 	}
 	for (let [n, r] of t.elements.entries()) {
-		if (u()) return e;
-		if (r.type === "shape") Dr(b, r, m, x, w, C, s ? (e) => s({
+		if (l()) return e;
+		if (r.type === "shape") Tr(y, r, f, b, S, x, a ? (e) => a({
 			...e,
 			elementIndex: n,
 			origin: t.elementSources?.[n]?.origin ?? "slide"
-		}) : void 0, a.fetchImage);
-		else if (r.type === "picture") await Vr(b, r, m, u, a.fetchImage);
-		else if (r.type === "table") Kr(b, r, m, w, C);
-		else if (r.type === "media") await Hr(b, r, m, u, a.fetchMedia, a.skipMediaControls, a.fetchImage);
+		}) : void 0, i.fetchImage);
+		else if (r.type === "picture") await zr(y, r, f, l, i.fetchImage);
+		else if (r.type === "table") Wr(y, r, f, S, x);
+		else if (r.type === "media") await Br(y, r, f, l, i.fetchMedia, i.skipMediaControls, i.fetchImage);
 		else if (r.type === "chart") {
-			let e = Y * m;
-			b.save(), Gr(b, r, m), d(b, r.chart, {
-				x: X(r.x, m),
-				y: X(r.y, m),
-				w: X(r.width, m),
-				h: X(r.height, m)
-			}, e, r.rotation, a.threeD, a.regionMap), b.restore();
+			let e = Y * f;
+			y.save(), Ur(y, r, f), d(y, r.chart, {
+				x: X(r.x, f),
+				y: X(r.y, f),
+				w: X(r.width, f),
+				h: X(r.height, f)
+			}, e, r.rotation, i.threeD, i.regionMap), y.restore();
 		}
 	}
-	return u() || a.dim && qr(b, a.dim, h, g), e;
+	return l() || i.dim && Gr(y, i.dim, p, m), e;
 }
 //#endregion
 //#region packages/pptx/src/google-fonts.ts
-var $r = {
-	...j,
-	...I
+var Zr = {
+	...ae,
+	...q
 };
 Object.freeze({
 	archiveEntryCount: 0,
@@ -5577,7 +5563,7 @@ Object.freeze({
 function $(e, t) {
 	if (e !== null && typeof e != "string") throw Error(`invalid PPTX presentation bootstrap ${t}`);
 }
-function ei(e, t) {
+function Qr(e, t) {
 	if (!e || typeof e != "object" || Array.isArray(e)) throw Error(`invalid PPTX presentation bootstrap slide at ${t}`);
 	let n = e;
 	if (n.index !== t) throw Error(`invalid PPTX presentation bootstrap slide index ${n.index}`);
@@ -5587,7 +5573,7 @@ function ei(e, t) {
 		...n.partName === void 0 ? {} : { partName: n.partName }
 	});
 }
-function ti(e) {
+function $r(e) {
 	if (!e || typeof e != "object" || Array.isArray(e)) throw Error("invalid PPTX presentation bootstrap payload");
 	let t = e;
 	if (!Number.isSafeInteger(t.slideCount) || (t.slideCount ?? -1) < 0 || !Number.isSafeInteger(t.slideWidth) || (t.slideWidth ?? 0) <= 0 || !Number.isSafeInteger(t.slideHeight) || (t.slideHeight ?? 0) <= 0 || !Array.isArray(t.slides) || t.slides.length !== t.slideCount) throw Error("invalid PPTX presentation bootstrap dimensions or slide count");
@@ -5600,10 +5586,10 @@ function ti(e) {
 		minorFont: t.minorFont,
 		hlinkColor: t.hlinkColor,
 		folHlinkColor: t.folHlinkColor,
-		slides: Object.freeze(t.slides.map(ei))
+		slides: Object.freeze(t.slides.map(Qr))
 	});
 }
-function ni(e) {
+function ei(e) {
 	return Object.freeze({
 		type: "media",
 		x: e.x,
@@ -5620,7 +5606,7 @@ function ni(e) {
 		mimeType: e.mimeType
 	});
 }
-function ri(e, t) {
+function ti(e, t) {
 	if (!e || typeof e != "object" || Array.isArray(e)) throw Error(`invalid PPTX presentation preflight media at slide ${t}`);
 	let n = e;
 	for (let e of [
@@ -5631,9 +5617,9 @@ function ri(e, t) {
 		"rotation"
 	]) if (typeof n[e] != "number" || !Number.isFinite(n[e])) throw Error(`invalid PPTX presentation preflight media ${e} at slide ${t}`);
 	if (n.type !== "media" || typeof n.flipH != "boolean" || typeof n.flipV != "boolean" || n.mediaKind !== "audio" && n.mediaKind !== "video" || typeof n.posterPath != "string" || typeof n.posterMimeType != "string" || typeof n.mediaPath != "string" || typeof n.mimeType != "string") throw Error(`invalid PPTX presentation preflight media fields at slide ${t}`);
-	return ni(n);
+	return ei(n);
 }
-function ii(e) {
+function ni(e) {
 	if (!e || typeof e != "object" || Array.isArray(e)) throw Error("invalid PPTX presentation preflight payload");
 	let t = e;
 	if (!Number.isSafeInteger(t.slideCount) || (t.slideCount ?? -1) < 0 || !Number.isSafeInteger(t.slideWidth) || (t.slideWidth ?? 0) <= 0 || !Number.isSafeInteger(t.slideHeight) || (t.slideHeight ?? 0) <= 0 || !Array.isArray(t.slides) || t.slides.length !== t.slideCount || !Array.isArray(t.fontPreloadNames)) throw Error("invalid PPTX presentation preflight dimensions or slide count");
@@ -5647,7 +5633,7 @@ function ii(e) {
 			...n.partName === void 0 ? {} : { partName: n.partName },
 			notes: n.notes,
 			hidden: n.hidden,
-			mediaElements: Object.freeze(n.mediaElements.map((e) => ri(e, t)))
+			mediaElements: Object.freeze(n.mediaElements.map((e) => ti(e, t)))
 		});
 	}), r = t.fontPreloadNames.map((e, t) => {
 		if (e !== null && typeof e != "string") throw Error(`invalid PPTX presentation preflight font at ${t}`);
@@ -5666,7 +5652,7 @@ function ii(e) {
 		fontPreloadNames: Object.freeze(r)
 	});
 }
-function ai(e, t) {
+function ri(e, t) {
 	for (let n of e.slides) for (let e of n.mediaElements) {
 		if (e.mediaPath === t) return e.mimeType;
 		if (e.posterPath === t) return e.posterMimeType;
@@ -5675,7 +5661,7 @@ function ai(e, t) {
 }
 //#endregion
 //#region packages/pptx/src/slide-pull-client.ts
-var oi = 1024 * 1024, si = class {
+var ii = 1024 * 1024, ai = class {
 	active = /* @__PURE__ */ new Set();
 	nextSessionId = 1;
 	constructor(e) {
@@ -5688,15 +5674,15 @@ var oi = 1024 * 1024, si = class {
 			sessionId: r,
 			operationId: r,
 			generation: this.options.generation ?? 1
-		}, a = new m(this.options.transport, {
+		}, a = new _(this.options.transport, {
 			...i,
-			maxByteCredit: u,
+			maxByteCredit: f,
 			timeoutMs: n
 		});
 		this.active.add(a);
 		try {
 			await this.options.open(e, i, n);
-			let r = await li(a);
+			let r = await si(a);
 			try {
 				let e = r.usage ?? a.usageCheckpoint;
 				e && this.options.onUsage?.(e);
@@ -5719,20 +5705,20 @@ var oi = 1024 * 1024, si = class {
 		if (!Number.isSafeInteger(e) || e < 0 || e >= this.options.slideCount) throw RangeError(`Slide index ${e} out of range (count: ${this.options.slideCount})`);
 	}
 };
-function ci(e) {
+function oi(e) {
 	return !!e && typeof e == "object" && e.protocol === "ooxml-pull-v1";
 }
-async function li(e) {
+async function si(e) {
 	try {
-		return await e.pull(oi);
+		return await e.pull(ii);
 	} catch (t) {
-		let n = ui(t);
+		let n = ci(t);
 		if (n === void 0) throw t;
 		return e.pull(n);
 	}
 }
-function ui(e) {
-	return P(e, oi, u);
+function ci(e) {
+	return M(e, ii, f);
 }
 //#endregion
-export { ii as a, Zr as c, ti as i, nn as l, ci as n, $r as o, ai as r, Yr as s, si as t };
+export { ni as a, Yr as c, $r as i, rn as l, oi as n, Zr as o, ri as r, qr as s, ai as t };
