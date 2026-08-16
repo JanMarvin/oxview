@@ -25,6 +25,7 @@ async function init() {
     const bgParam = qs.get("background");
 
     const viewer = new PptxScrollViewer(container, {
+        enableElementSelection: true,
         enableTextSelection: true,
         background: bgParam || undefined,
         onVisibleSlideChange: (topIndex, total) => {

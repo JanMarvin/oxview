@@ -33,6 +33,7 @@ async function init() {
     const bgParam = qs.get("background");
 
     const viewer = new DocxScrollViewer(container, {
+        enableElementSelection: true,
         enableTextSelection: true,
         background: bgParam || undefined,
         onVisiblePageChange: (topIndex, total) => {
