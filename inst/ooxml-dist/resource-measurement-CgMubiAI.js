@@ -1,4 +1,4 @@
-import { Et as e, Mt as t, Pt as n, xt as r } from "./line-metrics-BY-aNaLO.js";
+import { Et as e, Mt as t, Pt as n, xt as r } from "./line-metrics-DdEJYxjx.js";
 //#region packages/core/src/image/duotone-bitmap-by-path.ts
 function i(e, t) {
 	return t ? `${e}|duo:${t.clr1}:${t.clr2}` : e;

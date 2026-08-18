@@ -1,4 +1,4 @@
-import { r as e, y as t } from "./chart-number-format-tjYUR9eS.js";
+import { b as e, r as t } from "./chart-number-format-qLhnk6hj.js";
 import { t as n } from "./renderer-module-contract-BNGz8HvO.js";
 //#region packages/core/src/chart/region-map-natural-earth.generated.ts
 var r = [
@@ -12633,33 +12633,33 @@ function D(e, t, n, r, i) {
 	let a = t.titleFontFace || t.themeMajorFontLatin || "sans-serif";
 	e.font = `${t.titleFontBold ?? !0 ? "bold " : ""}${r}px ${JSON.stringify(a)}`, e.fillStyle = t.titleFontColor ? `#${t.titleFontColor}` : "#333333", e.textAlign = "center", e.textBaseline = "top", e.fillText(t.title ?? "", n.x + n.w / 2, n.y + i);
 }
-function O(t, n, r, i, a, o, s, c) {
+function O(e, n, r, i, a, o, s, c) {
 	let l = n.series[0]?.name ?? "", u = Math.max(8, (n.legendFontSizeHpt ?? 900) / 100 * c);
-	t.font = `${n.legendFontBold ? "bold " : ""}${u}px ${JSON.stringify(n.legendFontFace || n.themeMinorFontLatin || "sans-serif")}`, t.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", t.textAlign = "center", t.textBaseline = "top", l && t.fillText(l, i + o / 2, a);
-	let d = Math.min(o * .58, 240), f = Math.max(6, Math.min(12, s * .25)), p = i + (o - d) / 2, m = a + (l ? u + 2 : 0), h = t.createLinearGradient(p, 0, p + d, 0);
-	h.addColorStop(0, r.minColor), r.midColor && h.addColorStop(.5, r.midColor), h.addColorStop(1, r.maxColor), t.fillStyle = h, t.fillRect(p, m, d, f), t.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", t.textBaseline = "top", t.textAlign = "left";
+	e.font = `${n.legendFontBold ? "bold " : ""}${u}px ${JSON.stringify(n.legendFontFace || n.themeMinorFontLatin || "sans-serif")}`, e.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", e.textAlign = "center", e.textBaseline = "top", l && e.fillText(l, i + o / 2, a);
+	let d = Math.min(o * .58, 240), f = Math.max(6, Math.min(12, s * .25)), p = i + (o - d) / 2, m = a + (l ? u + 2 : 0), h = e.createLinearGradient(p, 0, p + d, 0);
+	h.addColorStop(0, r.minColor), r.midColor && h.addColorStop(.5, r.midColor), h.addColorStop(1, r.maxColor), e.fillStyle = h, e.fillRect(p, m, d, f), e.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", e.textBaseline = "top", e.textAlign = "left";
 	let g = n.series[0]?.valFormatCode ?? null;
-	t.fillText(e(r.min, g, n.date1904), p, m + f + 2), t.textAlign = "right", t.fillText(e(r.max, g, n.date1904), p + d, m + f + 2);
+	e.fillText(t(r.min, g, n.date1904), p, m + f + 2), e.textAlign = "right", e.fillText(t(r.max, g, n.date1904), p + d, m + f + 2);
 }
 function k(e, t, n, r) {
 	e.fillStyle = "#666666", e.font = `${Math.max(9, 9 * n)}px sans-serif`, e.textAlign = "center", e.textBaseline = "middle", e.fillText(r, t.x + t.w / 2, t.y + t.h / 2);
 }
-function A(e, n, i, a) {
+function A(t, n, i, a) {
 	if (n.chartType !== "regionMap" || !n.chartexRegionMap) return !1;
 	let o = n.chartexRegionMap;
-	if (o.rows.length > s) return k(e, i, a, "(chart values exceed rendering limit)"), !0;
-	if (o.geography?.cachePresent) return k(e, i, a, "(region map cache is unavailable offline)"), !0;
+	if (o.rows.length > s) return k(t, i, a, "(chart values exceed rendering limit)"), !0;
+	if (o.geography?.cachePresent) return k(t, i, a, "(region map cache is unavailable offline)"), !0;
 	let l = o.geography?.viewedRegionType;
-	if (l != null && l !== "world") return k(e, i, a, "(region map detail is unavailable offline)"), !0;
-	let u = E(o), d = T([...u.values()], o.colors, n.chartexAccents?.[0]), f = t(n, i.h, a, .02, .015);
-	D(e, n, i, f.fontPx, f.topPad);
+	if (l != null && l !== "world") return k(t, i, a, "(region map detail is unavailable offline)"), !0;
+	let u = E(o), d = T([...u.values()], o.colors, n.chartexAccents?.[0]), f = e(n, i.h, a, .02, .015);
+	D(t, n, i, f.fontPx, f.topPad);
 	let p = n.showLegend ? Math.max(32, i.h * .16) : 0, m = i.w * .03, g = i.h * .035, _ = {
 		x: i.x + m,
 		y: i.y + f.bandH + p,
 		w: Math.max(1, i.w - m * 2),
 		h: Math.max(1, i.h - f.bandH - p - g)
 	};
-	n.showLegend && O(e, n, d, i.x, i.y + f.bandH, i.w, p, a);
+	n.showLegend && O(t, n, d, i.x, i.y + f.bandH, i.w, p, a);
 	let v = o.geography?.projectionType, y = Infinity, b = Infinity, x = -Infinity, S = -Infinity;
 	for (let e of r) for (let t of e.g) for (let e of t) for (let t of e) {
 		let e = c(t, v);
@@ -12672,35 +12672,35 @@ function A(e, n, i, a) {
 			y: A + t.y * C
 		};
 	}, M = /* @__PURE__ */ new Map();
-	e.lineWidth = Math.max(.35, .55 * a), e.strokeStyle = "#FFFFFF";
-	for (let t of r) {
-		e.beginPath();
+	t.lineWidth = Math.max(.35, .55 * a), t.strokeStyle = "#FFFFFF";
+	for (let e of r) {
+		t.beginPath();
 		let n = {
 			minX: Infinity,
 			minY: Infinity,
 			maxX: -Infinity,
 			maxY: -Infinity
 		};
-		for (let r of t.g) for (let t of r) {
+		for (let r of e.g) for (let e of r) {
 			let r;
-			for (let i = 0; i < t.length; i++) {
-				let a = t[i], o = j(a);
-				n.minX = Math.min(n.minX, o.x), n.maxX = Math.max(n.maxX, o.x), n.minY = Math.min(n.minY, o.y), n.maxY = Math.max(n.maxY, o.y), i === 0 || r && Math.abs(a[0] - r[0]) > 180 ? e.moveTo(o.x, o.y) : e.lineTo(o.x, o.y), r = a;
+			for (let i = 0; i < e.length; i++) {
+				let a = e[i], o = j(a);
+				n.minX = Math.min(n.minX, o.x), n.maxX = Math.max(n.maxX, o.x), n.minY = Math.min(n.minY, o.y), n.maxY = Math.max(n.maxY, o.y), i === 0 || r && Math.abs(a[0] - r[0]) > 180 ? t.moveTo(o.x, o.y) : t.lineTo(o.x, o.y), r = a;
 			}
-			e.closePath();
+			t.closePath();
 		}
-		e.fillStyle = u.has(t) ? d.color(u.get(t)) : "#E0E0E0", e.fill("evenodd"), e.stroke(), M.set(t, n);
+		t.fillStyle = u.has(e) ? d.color(u.get(e)) : "#E0E0E0", t.fill("evenodd"), t.stroke(), M.set(e, n);
 	}
 	if (o.regionLabelLayout && o.regionLabelLayout !== "none") {
-		e.font = `${Math.max(7, (n.dataLabelFontSizeHpt ?? 800) / 100 * a)}px ${JSON.stringify(n.dataLabelFontFace || n.themeMinorFontLatin || "sans-serif")}`, e.fillStyle = n.dataLabelFontColor ? `#${n.dataLabelFontColor}` : "#404040", e.textAlign = "center", e.textBaseline = "middle";
-		for (let t of o.rows) {
-			let n = h(t.label, t.entityId), r = n ? M.get(n) : void 0;
-			if (!n || !r || !t.label) continue;
-			let i = j(n.l), a = e.measureText(t.label).width <= Math.max(0, r.maxX - r.minX - 4);
-			(o.regionLabelLayout === "showAll" || a) && e.fillText(t.label, i.x, i.y);
+		t.font = `${Math.max(7, (n.dataLabelFontSizeHpt ?? 800) / 100 * a)}px ${JSON.stringify(n.dataLabelFontFace || n.themeMinorFontLatin || "sans-serif")}`, t.fillStyle = n.dataLabelFontColor ? `#${n.dataLabelFontColor}` : "#404040", t.textAlign = "center", t.textBaseline = "middle";
+		for (let e of o.rows) {
+			let n = h(e.label, e.entityId), r = n ? M.get(n) : void 0;
+			if (!n || !r || !e.label) continue;
+			let i = j(n.l), a = t.measureText(e.label).width <= Math.max(0, r.maxX - r.minX - 4);
+			(o.regionLabelLayout === "showAll" || a) && t.fillText(e.label, i.x, i.y);
 		}
 	}
-	return o.geography?.attribution && (e.font = `${Math.max(7, 7 * a)}px sans-serif`, e.fillStyle = "#777777", e.textAlign = "right", e.textBaseline = "bottom", e.fillText(o.geography.attribution, i.x + i.w - 4, i.y + i.h - 2)), !0;
+	return o.geography?.attribution && (t.font = `${Math.max(7, 7 * a)}px sans-serif`, t.fillStyle = "#777777", t.textAlign = "right", t.textBaseline = "bottom", t.fillText(o.geography.attribution, i.x + i.w - 4, i.y + i.h - 2)), !0;
 }
 //#endregion
 //#region src/region-map.ts

@@ -88,7 +88,7 @@ function l(e, t, n) {
 			r += 90;
 			break;
 	}
-	return t != null && Number.isFinite(t) && (r += t / 6e4, i = !0), i ? r * Math.PI / 180 : e === "left" ? -Math.PI / 2 : e === "right" ? Math.PI / 2 : 0;
+	return t != null && Number.isFinite(t) && (r += t / 6e4, i = !0), i ? r * Math.PI / 180 : e === "left" || e === "right" ? -Math.PI / 2 : 0;
 }
 function u(e) {
 	return Math.max(8, e * .02);
@@ -246,21 +246,31 @@ function O(e) {
 }
 //#endregion
 //#region packages/core/src/chart/chart-number-format.ts
-function k(e) {
+var k = /* @__PURE__ */ new Map();
+function A(e, t = !1, n = typeof navigator > "u" ? void 0 : navigator.language) {
+	let r = n ?? "", i = k.get(r);
+	return i || (i = new Intl.DateTimeFormat(n, {
+		year: "numeric",
+		month: "numeric",
+		day: "numeric",
+		timeZone: "UTC"
+	}), k.set(r, i)), i.format(T(e, t));
+}
+function j(e) {
 	return Number.isInteger(e) ? String(e) : D(e, 6).replace(/\.?0+$/, "");
 }
-function A(e, t, n = !1) {
-	if (!t || t.trim().toLowerCase() === "general") return k(e);
-	if (M(t)) return N(e, t, n);
-	let r = P(t), i;
-	return i = e > 0 ? r[0] ?? t : e < 0 ? r[1] ?? r[0] ?? t : r[2] ?? r[0] ?? t, i === "" ? "" : (e < 0 && r.length < 2 ? "-" : "") + F(Math.abs(e), i);
+function M(e, t, n = !1) {
+	if (!t || t.trim().toLowerCase() === "general") return j(e);
+	if (P(t)) return F(e, t, n);
+	let r = I(t), i;
+	return i = e > 0 ? r[0] ?? t : e < 0 ? r[1] ?? r[0] ?? t : r[2] ?? r[0] ?? t, i === "" ? "" : (e < 0 && r.length < 2 ? "-" : "") + L(Math.abs(e), i);
 }
-function j(e, t, n = !1) {
+function N(e, t, n = !1) {
 	if (!t || e.trim() === "") return e;
 	let r = Number(e);
-	return Number.isFinite(r) ? A(r, t, n) : e;
+	return Number.isFinite(r) ? M(r, t, n) : e;
 }
-function M(e) {
+function P(e) {
 	let t = !1;
 	for (let n = 0; n < e.length; n++) {
 		let r = e[n];
@@ -282,7 +292,7 @@ function M(e) {
 	}
 	return !1;
 }
-function N(e, t, n = !1) {
+function F(e, t, n = !1) {
 	let r = T(Math.floor(e), n), i = r.getUTCFullYear(), a = r.getUTCMonth() + 1, o = r.getUTCDate(), s = (e - Math.floor(e)) * 86400, c = Math.floor(s / 3600), l = Math.floor(s % 3600 / 60), u = Math.floor(s % 60), d = "", f = !1, p = 0;
 	for (; p < t.length;) {
 		let e = t[p];
@@ -312,7 +322,37 @@ function N(e, t, n = !1) {
 		if (e === "m" || e === "M") {
 			let e = 0;
 			for (; p < t.length && (t[p] === "m" || t[p] === "M");) e++, p++;
-			d.match(/[Hh]+\W*$/) ? d += e >= 2 ? String(l).padStart(2, "0") : String(l) : d += e >= 2 ? String(a).padStart(2, "0") : String(a);
+			if (d.match(/[Hh]+\W*$/)) d += e >= 2 ? String(l).padStart(2, "0") : String(l);
+			else {
+				let t = [
+					"Jan",
+					"Feb",
+					"Mar",
+					"Apr",
+					"May",
+					"Jun",
+					"Jul",
+					"Aug",
+					"Sep",
+					"Oct",
+					"Nov",
+					"Dec"
+				], n = [
+					"January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+					"September",
+					"October",
+					"November",
+					"December"
+				];
+				d += e >= 5 ? n[a - 1][0] : e === 4 ? n[a - 1] : e === 3 ? t[a - 1] : e === 2 ? String(a).padStart(2, "0") : String(a);
+			}
 			continue;
 		}
 		if (e === "d" || e === "D") {
@@ -337,7 +377,7 @@ function N(e, t, n = !1) {
 	}
 	return d;
 }
-function P(e) {
+function I(e) {
 	let t = [], n = "";
 	for (let r = 0; r < e.length; r++) {
 		let i = e[r];
@@ -363,7 +403,7 @@ function P(e) {
 	}
 	return t.push(n), t;
 }
-function F(e, t) {
+function L(e, t) {
 	let n = [], r = 0, i = !1, a = !1;
 	for (; r < t.length;) {
 		let e = t[r];
@@ -424,12 +464,12 @@ function F(e, t) {
 	if (!i) return n.map((e) => e.text).join("");
 	let o = a ? e * 100 : e, s = "";
 	for (let e of n) e.kind === "num" && (s += e.text);
-	let c = I(o, s), l = !1;
+	let c = R(o, s), l = !1;
 	return n.map((e) => e.kind === "lit" ? e.text : l ? "" : (l = !0, c)).join("");
 }
-function I(e, t) {
+function R(e, t) {
 	let n = t.indexOf("."), r = n >= 0 ? t.slice(0, n) : t, i = n >= 0 ? t.slice(n + 1) : "", a = /,/.test(r), o = (i.match(/[#0?]/g) ?? []).length, s = (r.replace(/,/g, "").match(/0/g) ?? []).length, [c, l = ""] = D(e, o).split("."), u = c.padStart(s, "0"), d = a ? u.replace(/\B(?=(\d{3})+(?!\d))/g, ",") : u;
 	return o === 0 ? d : `${d}.${l.padEnd(o, "0")}`;
 }
 //#endregion
-export { _ as C, b as S, y as _, T as a, x as b, c, m as d, h as f, o as g, s as h, D as i, u as l, d as m, k as n, E as o, g as p, A as r, v as s, j as t, l as u, n as v, e as x, a as y };
+export { b as C, e as S, o as _, D as a, a as b, v as c, l as d, m as f, s as g, d as h, A as i, c as l, g as m, j as n, T as o, h as p, M as r, E as s, N as t, u, y as v, _ as w, x, n as y };

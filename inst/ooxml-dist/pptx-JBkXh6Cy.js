@@ -1,10 +1,10 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { a as t, c as n, i as r, l as i, n as a, o, r as s, s as c, t as l } from "./slide-pull-client-v6Feibq1.js";
-import { B as u, G as d, Ot as f, R as p, Rt as m, a as h, at as g, cn as _, ht as v, it as y, jt as b, ln as x, mt as S, q as C, z as w, zt as ee } from "./line-metrics-BY-aNaLO.js";
-import { C as te, E as ne, S as re, T as ie, _ as T, a as E, b as ae, c as D, d as oe, f as se, g as ce, h as le, i as O, l as k, m as ue, n as de, o as fe, p as pe, r as me, s as he, t as ge, v as A, w as _e, x as ve, y as j } from "./canvas-viewer-mechanics-BdMdqj1R.js";
+import { a as t, c as n, i as r, l as i, n as a, o, r as s, s as c, t as l } from "./slide-pull-client-m2blvngt.js";
+import { B as u, G as d, Ot as f, R as p, Rt as m, a as h, at as g, cn as _, ht as v, it as y, jt as b, ln as x, mt as S, q as C, z as w, zt as ee } from "./line-metrics-DdEJYxjx.js";
+import { C as te, E as ne, S as re, T as ie, _ as T, a as E, b as ae, c as D, d as oe, f as se, g as ce, h as le, i as O, l as k, m as ue, n as de, o as fe, p as pe, r as me, s as he, t as ge, v as A, w as _e, x as ve, y as j } from "./canvas-viewer-mechanics-D-r6wHY_.js";
 import { a as ye, i as be, n as xe, t as Se } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { x as M } from "./dash-CMzZIDz_.js";
-import { n as Ce } from "./resource-measurement-DOQetcWm.js";
+import { M } from "./three-d-C28kqDym.js";
+import { n as Ce } from "./resource-measurement-CgMubiAI.js";
 import { n as we } from "./renderer-module-contract-BNGz8HvO.js";
 import { n as Te, r as N, t as Ee } from "./visible-index-BjesVGhg.js";
 import { n as De, r as P, t as F } from "./highlight-rect-BuX5rWP4.js";
@@ -765,7 +765,7 @@ var X = class e {
 				s = await e.arrayBuffer();
 			} else s = t;
 			s = ne(await ie(s, n.password)), a.setSourceBytes(s.byteLength), a.checkpoint("container ready");
-			let c = i === "worker" ? (await import("./render-worker-host-D9mO9qMj.js")).createRenderWorker() : new et(), l = i === "worker" ? we(n) : void 0, u;
+			let c = i === "worker" ? (await import("./render-worker-host-CM1JXVqg.js")).createRenderWorker() : new et(), l = i === "worker" ? we(n) : void 0, u;
 			try {
 				return u = new e(c, i, n.wasmUrl), u._metrics = a, n.math && i === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), n.threeD && i === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._math = i === "worker" ? void 0 : n.math, u._threeD = i === "worker" ? void 0 : n.threeD, n.regionMap && i === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = i === "worker" ? void 0 : n.regionMap, await u._parse(s, r.policy, i === "worker" ? !!n.useGoogleFonts : !1, n.workerTimeoutMs, (e) => a.observeUsage(e), l), a.checkpoint("presentation preflight ready"), i === "main" && n.useGoogleFonts && u._preflight && (u._googleFontFaces = await be(u._preflight.fontPreloadNames, o)), a.succeed({ slides: u.slideCount }), u;
 			} catch (e) {

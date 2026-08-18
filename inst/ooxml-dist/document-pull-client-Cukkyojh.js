@@ -1,7 +1,7 @@
-import { A as e, At as t, Bt as n, C as r, D as i, Dt as a, E as o, Et as s, Gt as c, Ht as l, It as u, Jt as d, M as f, Mt as p, N as m, O as h, Pt as g, Qt as _, S as v, Tt as y, U as b, W as x, Wt as S, Xt as C, Yt as w, _ as T, an as E, bt as D, c as O, ct as k, d as A, en as j, f as M, g as ee, gt as te, h as N, ht as ne, in as P, j as re, k as ie, kt as F, l as ae, m as oe, mt as se, n as ce, nn as le, o as ue, on as de, pt as fe, rn as pe, s as me, sn as he, t as ge, tn as _e, u as ve, v as ye, vt as be, w as xe, xt as Se, y as Ce, yt as we } from "./line-metrics-BY-aNaLO.js";
+import { A as e, At as t, Bt as n, C as r, D as i, Dt as a, E as o, Et as s, Gt as c, Ht as l, It as u, Jt as d, M as f, Mt as p, N as m, O as h, Pt as g, Qt as _, S as v, Tt as y, U as b, W as x, Wt as S, Xt as C, Yt as w, _ as T, an as E, bt as D, c as O, ct as k, d as A, en as j, f as M, g as ee, gt as te, h as N, ht as ne, in as P, j as re, k as ie, kt as F, l as ae, m as oe, mt as se, n as ce, nn as le, o as ue, on as de, pt as fe, rn as pe, s as me, sn as he, t as ge, tn as _e, u as ve, v as ye, vt as be, w as xe, xt as Se, y as Ce, yt as we } from "./line-metrics-DdEJYxjx.js";
 import { c as Te, o as Ee, r as De, s as Oe } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { a as I, c as ke, d as Ae, f as je, i as Me, n as Ne, o as L, s as Pe, t as Fe, u as Ie } from "./line-distribute-vYf5DWek.js";
-import { t as Le } from "./dash-CMzZIDz_.js";
+import { a as I, c as ke, d as Ae, f as je, i as Me, n as Ne, o as L, s as Pe, t as Fe, u as Ie } from "./line-distribute-Bvtp0Gt6.js";
+import { u as Le } from "./three-d-C28kqDym.js";
 //#region packages/core/src/fonts/canvas-route.ts
 function Re(e, t) {
 	let n = e.trim();
@@ -17950,8 +17950,8 @@ function vv(e, t, n, r, i, a) {
 		r || (r = /* @__PURE__ */ new Set(), x.set(f.flow.pageIndex, r)), e.forEach((e) => r.add(e));
 		let i = C.get(f.flow.pageIndex) ?? [];
 		i.push(...t), C.set(f.flow.pageIndex, i), S.set(f.flow.pageIndex, (S.get(f.flow.pageIndex) ?? 0) + n), f = Pf(f, n);
-	}, O = () => Math.max(0, sv(f) - f.footnoteReservePt - f.flow.deepestColumnBlockPt), k = (e) => e > O(), A = null, j = Lp(e.sequence);
-	for (let t = 0; t < e.sequence.length; t += 1) {
+	}, O = () => Math.max(0, sv(f) - f.footnoteReservePt - f.flow.deepestColumnBlockPt), k = (e) => e > O(), A = null, j = Lp(e.sequence), M = null;
+	bodyEntries: for (let t = 0; t < e.sequence.length; t += 1) {
 		let n = e.sequence[t];
 		if (n.kind === "consume-source") continue;
 		if (n.kind === "authored-break") {
@@ -17971,11 +17971,26 @@ function vv(e, t, n, r, i, a) {
 				top: 0,
 				bottom: 0
 			});
-			b(Sp(f.flow, tv(n.section, f.flow.pageIndex), c, {
-				hasFootnoteReferenceOnCurrentPage: w(f.flow.pageIndex),
-				incomingPageContentStartBlockPt: l.blockStartPt,
-				incomingPageContentEndBlockPt: l.blockEndPt
-			}), t + 1);
+			try {
+				b(Sp(f.flow, tv(n.section, f.flow.pageIndex), c, {
+					hasFootnoteReferenceOnCurrentPage: w(f.flow.pageIndex),
+					incomingPageContentStartBlockPt: l.blockStartPt,
+					incomingPageContentEndBlockPt: l.blockEndPt
+				}), t + 1);
+			} catch (e) {
+				if (!(e instanceof sp) || f.flow.pageIndex === 0) throw e;
+				let t = f.flow.pageIndex;
+				f = Object.freeze({
+					...f,
+					pages: Object.freeze(f.pages.filter((e) => e.accumulator.pageIndex < t))
+				}), M = Object.freeze({
+					code: "UNSUPPORTED_FEATURE",
+					severity: "error",
+					source: n.source,
+					message: `Document layout stopped after the last complete page because a nextColumn section could not be placed safely (${e.reason})`
+				});
+				break bodyEntries;
+			}
 			continue;
 		}
 		let i = n.kind === "adjacent-table-group" ? n : n.block;
@@ -18159,17 +18174,19 @@ function vv(e, t, n, r, i, a) {
 		}
 		g.moveAcquisitionCursor(cv(f));
 	}
-	let M = new Set([...S.keys(), ...C.keys()]);
-	for (let e of M) {
+	let ee = new Set([...S.keys(), ...C.keys()]);
+	for (let e of ee) {
 		let t = S.get(e) ?? 0, n = (C.get(e) ?? []).reduce((e, t) => e + t.advancePt, 0);
 		if (t !== n) throw new H("INVALID_GEOMETRY", `Page ${e} footnote reserve ${t} does not equal retained advance ${n}`);
 	}
+	let te = _v(f, s), N = new Set(te.pages.map((e) => e.pageIndex)), ne = new Set(te.pages.flatMap((e) => Or(e).map(({ node: e }) => e.id))), P = new Map([...S].filter(([e]) => N.has(e))), re = new Map([...C].filter(([e]) => N.has(e)));
 	return Object.freeze({
-		layout: _v(f, s),
+		layout: te,
 		session: g,
-		allocations: Object.freeze(l),
-		footnoteReserveByPage: S,
-		footnoteLayoutsByPage: C
+		allocations: Object.freeze(l.filter((e) => ne.has(e.nodeId))),
+		footnoteReserveByPage: P,
+		footnoteLayoutsByPage: re,
+		terminalDiagnostic: M
 	});
 }
 function yv(e, t) {
@@ -18514,14 +18531,15 @@ function Dv(e, t, n) {
 }
 function Ov(e, t, n, r) {
 	let i = /* @__PURE__ */ new Map(), a = Tv(e, t, n, r, i);
+	if (a.terminalDiagnostic !== null) return a;
 	for (let o of Ev(e)) {
 		let s = Dv(a.layout, o.outgoingSectionOccurrenceId, o.incomingSectionOccurrenceId);
 		if (s === null || s.outgoing.flowDomainIds.length < 2) continue;
 		let c = s.page.pageIndex, l = k_(e, a.allocations, a.footnoteReserveByPage, s.page, s.outgoing), u = new Map(i);
-		u.set(o.outgoingSectionOccurrenceId, Object.freeze({
+		if (u.set(o.outgoingSectionOccurrenceId, Object.freeze({
 			pageIndex: c,
 			targetPt: l
-		})), i = u, a = Tv(e, t, n, r, i);
+		})), i = u, a = Tv(e, t, n, r, i), a.terminalDiagnostic !== null) return a;
 	}
 	return a;
 }
@@ -18542,7 +18560,7 @@ function kv(e, t, n) {
 	}).result, o = j_(a.layout, a.session, a.allocations), s = e.noteLayoutSettings ?? Object.freeze({
 		footnotePosition: "pageBottom",
 		endnotePosition: "docEnd"
-	}), c = bv(o, a.session, r, a.footnoteLayoutsByPage), l = c.pages.some((e) => e.layers.notes.some((e) => e.source.story === "footnote")) && s.footnotePosition !== "pageBottom" ? Sv(c, "footnote", s.footnotePosition, "pageBottom") : c, u = new Set(o.pages.flatMap((e) => e.layers.body.flatMap((e) => e.kind === "paragraph" || e.kind === "table" ? w_(e) : []))), d = (e.endnoteIds ?? []).filter((e) => u.has(e)), f = xv(l, a.session, d), p = d.length > 0 && s.endnotePosition !== "docEnd" ? Sv(f, "endnote", s.endnotePosition, "docEnd") : f, m = e.parserDiagnostics ?? [], h = m.length === 0 ? p : Object.freeze({
+	}), c = bv(o, a.session, r, a.footnoteLayoutsByPage), l = c.pages.some((e) => e.layers.notes.some((e) => e.source.story === "footnote")) && s.footnotePosition !== "pageBottom" ? Sv(c, "footnote", s.footnotePosition, "pageBottom") : c, u = new Set(o.pages.flatMap((e) => e.layers.body.flatMap((e) => e.kind === "paragraph" || e.kind === "table" ? w_(e) : []))), d = (e.endnoteIds ?? []).filter((e) => u.has(e)), f = xv(l, a.session, d), p = d.length > 0 && s.endnotePosition !== "docEnd" ? Sv(f, "endnote", s.endnotePosition, "docEnd") : f, m = [...e.parserDiagnostics ?? [], ...a.terminalDiagnostic === null ? [] : [a.terminalDiagnostic]], h = m.length === 0 ? p : Object.freeze({
 		...p,
 		diagnostics: Object.freeze([...m, ...p.diagnostics])
 	});

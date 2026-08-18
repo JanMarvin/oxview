@@ -1,9 +1,9 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { B as t, Ot as n, R as r, Rt as i, a, cn as o, it as s, jt as c, ln as l, mt as u, q as d, z as f, zt as p } from "./line-metrics-BY-aNaLO.js";
-import { C as m, E as h, S as g, T as _, _ as v, a as y, b, c as x, d as ee, f as te, g as ne, h as re, i as S, l as C, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as w, w as fe, x as pe, y as T } from "./canvas-viewer-mechanics-BdMdqj1R.js";
+import { B as t, Ot as n, R as r, Rt as i, a, cn as o, it as s, jt as c, ln as l, mt as u, q as d, z as f, zt as p } from "./line-metrics-DdEJYxjx.js";
+import { C as m, E as h, S as g, T as _, _ as v, a as y, b, c as x, d as ee, f as te, g as ne, h as re, i as S, l as C, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as w, w as fe, x as pe, y as T } from "./canvas-viewer-mechanics-D-r6wHY_.js";
 import { a as me, c as he, i as ge, o as _e, r as ve, s as ye, t as be } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { C as xe, S as Se, _ as E, a as Ce, b as we, c as Te, d as Ee, f as De, g as Oe, h as ke, l as Ae, m as je, n as D, o as Me, p as Ne, s as Pe, t as O, v as k, w as Fe, x as A, y as Ie } from "./document-pull-client-Dk2EnTL7.js";
-import { S as j } from "./dash-CMzZIDz_.js";
+import { C as xe, S as Se, _ as E, a as Ce, b as we, c as Te, d as Ee, f as De, g as Oe, h as ke, l as Ae, m as je, n as D, o as Me, p as Ne, s as Pe, t as O, v as k, w as Fe, x as A, y as Ie } from "./document-pull-client-Cukkyojh.js";
+import { N as j } from "./three-d-C28kqDym.js";
 import { n as Le } from "./renderer-module-contract-BNGz8HvO.js";
 import { n as Re, r as M, t as N } from "./highlight-rect-BuX5rWP4.js";
 //#region packages/core/src/fonts/embedded.ts
@@ -345,7 +345,7 @@ var U = class e {
 				t = await e.arrayBuffer();
 			} else t = n;
 			t = h(await _(t, i.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let r = s === "worker" ? (await import("./render-worker-host-BVOjz-oV.js")).createRenderWorker() : new We(), l = s === "worker" ? Le(i) : void 0, u;
+			let r = s === "worker" ? (await import("./render-worker-host-Br7ZDyGE.js")).createRenderWorker() : new We(), l = s === "worker" ? Le(i) : void 0, u;
 			try {
 				if (u = new e(r, s, o, i.wasmUrl), u._metrics = c, await u._parse(t, a.policy, s === "worker" ? !!i.useGoogleFonts : !1, i.workerTimeoutMs, (e) => c.observeUsage(e), l), s === "worker" && u._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), i.math && u._mode === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), i.threeD && u._mode === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._threeD = u._mode === "worker" ? void 0 : i.threeD, i.regionMap && u._mode === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = u._mode === "worker" ? void 0 : i.regionMap, u._mode === "main" && i.useGoogleFonts && u._document && (u._googleFontFaces = await ge(Ne(u._document), De)), u._mode === "main" && u._document?.embeddedFonts?.length) {
 					let e = u;

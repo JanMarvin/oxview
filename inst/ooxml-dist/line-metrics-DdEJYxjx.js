@@ -1,13 +1,13 @@
-import { C as e, S as t, _ as n, b as r, c as i, d as a, f as o, g as s, h as c, l, m as u, n as d, p as f, r as p, s as m, t as h, u as g, v as _, x as v } from "./chart-number-format-tjYUR9eS.js";
-import { A as y, C as b, D as x, E as S, O as C, S as w, T, _ as E, b as D, c as O, d as k, f as A, g as ee, h as j, i as te, k as M, l as N, m as P, o as ne, p as re, s as F, u as ie, w as ae } from "./dash-CMzZIDz_.js";
-import { t as I } from "./mathjax-DgAl7Yi5.js";
+import { C as e, S as t, _ as n, c as r, d as i, f as a, g as o, h as s, i as c, l, m as u, n as d, o as f, p, r as m, s as h, t as g, u as _, v, w as y, x as b, y as x } from "./chart-number-format-qLhnk6hj.js";
+import { B as S, C, D as w, E as T, F as E, H as D, I as O, L as k, N as A, O as j, P as ee, R as M, S as te, T as N, V as P, _ as ne, a as re, b as F, c as ie, d as ae, g as oe, h as I, j as se, l as ce, n as L, o as le, p as R, s as z, v as B, w as ue, x as de, y as fe, z as pe } from "./three-d-C28kqDym.js";
+import { t as me } from "./mathjax-DgAl7Yi5.js";
 //#region packages/core/src/errors/ooxml-error.ts
-var oe = class e extends Error {
+var V = class e extends Error {
 	code;
 	constructor(t, n) {
 		super(n), this.name = "OoxmlError", this.code = t, Object.setPrototypeOf(this, e.prototype);
 	}
-}, se = class e extends Error {
+}, he = class e extends Error {
 	code = "ooxml-resource-limit";
 	details;
 	constructor(t, n) {
@@ -34,7 +34,7 @@ var oe = class e extends Error {
 			violation: i
 		}), Object.setPrototypeOf(this, e.prototype);
 	}
-}, ce = "https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap", L = "https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap", R = "https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap", z = {
+}, ge = "https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap", H = "https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap", U = "https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap", _e = {
 	calibri: {
 		url: "https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap",
 		loadFamily: "Carlito"
@@ -52,11 +52,11 @@ var oe = class e extends Error {
 		loadFamily: "Caladea"
 	},
 	"franklin gothic book": {
-		url: R,
+		url: U,
 		loadFamily: "Libre Franklin"
 	},
 	"franklin gothic medium": {
-		url: R,
+		url: U,
 		loadFamily: "Libre Franklin"
 	},
 	"nunito sans": { url: "https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" },
@@ -70,47 +70,47 @@ var oe = class e extends Error {
 	"playfair display": { url: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" },
 	ubuntu: { url: "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" },
 	"sakkal majalla": {
-		url: ce,
+		url: ge,
 		loadFamily: "Noto Naskh Arabic"
 	},
 	"traditional arabic": {
-		url: ce,
+		url: ge,
 		loadFamily: "Noto Naskh Arabic"
 	},
 	"simplified arabic": {
-		url: ce,
+		url: ge,
 		loadFamily: "Noto Naskh Arabic"
 	},
 	"arabic typesetting": {
-		url: ce,
+		url: ge,
 		loadFamily: "Noto Naskh Arabic"
 	},
 	"univers next arabic": {
-		url: L,
+		url: H,
 		loadFamily: "Noto Sans Arabic"
 	},
 	"noto naskh arabic": {
-		url: ce,
+		url: ge,
 		loadFamily: "Noto Naskh Arabic"
 	},
 	"noto sans arabic": {
-		url: L,
+		url: H,
 		loadFamily: "Noto Sans Arabic"
 	}
 };
 //#endregion
 //#region packages/core/src/fonts/scripts.ts
-function B(e) {
+function W(e) {
 	if (!e) return null;
 	let t = e.toLowerCase();
 	return /[ᄀ-ᇿ㄰-㆏가-힯]/.test(e) ? "kr" : /[぀-ヿ]/.test(e) ? "jp" : /jhenghei|微軟正黑|新細明|細明|pmingliu|mingliu|dfkai|標楷|華康|cns11643|kaiti tc|ming\s*liu/.test(t) || /新細明體|細明體|標楷體|微軟正黑體|華康/.test(e) ? "tc" : /simsun|nsimsun|simhei|simkai|simfang|yahei|dengxian|fangsong|kaiti|youyuan|lisu|stsong|stkaiti|stfangsong|stheiti|stxihei|stzhongsong|songti sc|heiti sc|微软雅黑/.test(t) || /宋体|黑体|楷体|仿宋|等线|微软雅黑|隶书|幼圆/.test(e) ? "sc" : /malgun|batang|gulim|dotum|gungsuh|nanum|new gulim|hancom|hy(gothic|graphic|namu)?/.test(t) ? "kr" : /\bmeiryo\b|\byu\s*(gothic|mincho)\b|yugothic|yumincho|hiragino|\bms\s*(gothic|mincho|pgothic|pmincho|ui\s*gothic)\b|\bms[pg]?(gothic|mincho)\b|ipa(ex)?(gothic|mincho)|noto\s+(sans|serif)\s+jp|游ゴシック|游明朝|ＭＳ|メイリオ|ヒラギノ/.test(t) || /游ゴシック|游明朝|ＭＳ ゴシック|ＭＳ 明朝|ＭＳ Ｐゴシック|メイリオ|ヒラギノ/.test(e) ? "jp" : null;
 }
-function V(e) {
+function G(e) {
 	if (!e) return "sans";
 	let t = e.toLowerCase();
 	return /mono|courier|consolas|等幅|gothic_m/.test(t) ? "mono" : /roman|times|cambria|caladea|georgia|garamond|century(?!\s*gothic)|palatino|antiqua|didot|bodoni|playfair|source serif|noto serif|min\s*cho|明朝体|明朝|song|sung|simsun|nsimsun|batang|gungsuh|ming\s*liu|mingliu|pmingliu|fang\s*song|fangsong|kai\s*ti|kaiti|simkai|simfang|stsong|stkaiti|stfangsong|stzhongsong|新細明|細明|宋体|楷体|楷體|仿宋|標楷|游明朝|ＭＳ 明朝|ms mincho|yu mincho|hiragino mincho|ヒラギノ明朝/.test(t) || /新細明體|細明體|宋体|明朝|楷体|楷體|仿宋|標楷體|游明朝|ＭＳ 明朝/.test(e) ? "serif" : "sans";
 }
-function le(e, t) {
+function ve(e, t) {
 	let n = t === "serif" ? "Noto Serif" : "Noto Sans", r = {
 		jp: [
 			"jp",
@@ -144,27 +144,27 @@ function le(e, t) {
 	};
 	return r[e].map((e) => `${n} ${i[e]}`);
 }
-var ue = [
+var ye = [
 	"Noto Sans",
 	"Noto Sans Hebrew",
 	"Noto Sans Thai",
 	"Noto Sans Devanagari"
-], de = ["Noto Serif", "Noto Serif Hebrew"], fe = (e) => `https://fonts.googleapis.com/css2?family=${e}:wght@400;700&display=swap`, H = {
-	"noto sans kr": { url: fe("Noto+Sans+KR") },
-	"noto sans sc": { url: fe("Noto+Sans+SC") },
-	"noto sans tc": { url: fe("Noto+Sans+TC") },
-	"noto sans jp": { url: fe("Noto+Sans+JP") },
-	"noto serif kr": { url: fe("Noto+Serif+KR") },
-	"noto serif sc": { url: fe("Noto+Serif+SC") },
-	"noto serif tc": { url: fe("Noto+Serif+TC") },
-	"noto serif jp": { url: fe("Noto+Serif+JP") },
-	"noto sans": { url: fe("Noto+Sans") },
-	"noto serif": { url: fe("Noto+Serif") },
-	"noto sans devanagari": { url: fe("Noto+Sans+Devanagari") },
-	"noto sans thai": { url: fe("Noto+Sans+Thai") },
-	"noto sans hebrew": { url: fe("Noto+Sans+Hebrew") },
-	"noto serif hebrew": { url: fe("Noto+Serif+Hebrew") }
-}, pe = class e {
+], be = ["Noto Serif", "Noto Serif Hebrew"], K = (e) => `https://fonts.googleapis.com/css2?family=${e}:wght@400;700&display=swap`, q = {
+	"noto sans kr": { url: K("Noto+Sans+KR") },
+	"noto sans sc": { url: K("Noto+Sans+SC") },
+	"noto sans tc": { url: K("Noto+Sans+TC") },
+	"noto sans jp": { url: K("Noto+Sans+JP") },
+	"noto serif kr": { url: K("Noto+Serif+KR") },
+	"noto serif sc": { url: K("Noto+Serif+SC") },
+	"noto serif tc": { url: K("Noto+Serif+TC") },
+	"noto serif jp": { url: K("Noto+Serif+JP") },
+	"noto sans": { url: K("Noto+Sans") },
+	"noto serif": { url: K("Noto+Serif") },
+	"noto sans devanagari": { url: K("Noto+Sans+Devanagari") },
+	"noto sans thai": { url: K("Noto+Sans+Thai") },
+	"noto sans hebrew": { url: K("Noto+Sans+Hebrew") },
+	"noto serif hebrew": { url: K("Noto+Serif+Hebrew") }
+}, J = class e {
 	hasHan = !1;
 	hasHangul = !1;
 	hasKana = !1;
@@ -207,28 +207,23 @@ var ue = [
 		return this.hasCyrGreek && e.push("Noto Sans", "Noto Serif"), this.hasArabic && e.push("Noto Naskh Arabic", "Noto Sans Arabic"), this.hasThai && e.push("Noto Sans Thai"), this.hasHebrew && e.push("Noto Sans Hebrew", "Noto Serif Hebrew"), this.hasDevanagari && e.push("Noto Sans Devanagari"), e;
 	}
 };
-function U(e, t) {
-	let n = new pe(t);
+function xe(e, t) {
+	let n = new J(t);
 	return n.addText(e), n.names();
 }
-//#endregion
-//#region packages/core/src/chart/category-spacing.ts
-function me(e, t) {
-	return e ?? (t === "legacy" ? 150 : 33);
-}
-function he(e) {
+function Se(e) {
 	return e != null && Number.isFinite(e) ? e : null;
 }
-function W(e) {
+function Ce(e) {
 	return Object.is(e, -0) ? "0" : String(Number.isInteger(e) ? e : Number(e.toPrecision(6)));
 }
-function ge(e, t) {
+function we(e, t) {
 	if (e.length > 1048576) return { kind: "tooManyInputPoints" };
-	let n = t.intervalClosed === "r" ? "r" : "l", r = he(t.underflow), i = he(t.overflow);
+	let n = t.intervalClosed === "r" ? "r" : "l", r = Se(t.underflow), i = Se(t.overflow);
 	r != null && i != null && r >= i && (r = null, i = null);
 	let a = (e) => r != null && (n === "r" ? e <= r : e < r), o = (e) => i != null && (n === "r" ? e > i : e >= i), s = Infinity, c = -Infinity, l = 0, u = 0, d = 0;
 	for (let t of e) {
-		let e = he(t);
+		let e = Se(t);
 		e != null && (a(e) ? u++ : o(e) ? d++ : (l++, s = Math.min(s, e), c = Math.max(c, e)));
 	}
 	if (l + u + d === 0) return {
@@ -237,26 +232,26 @@ function ge(e, t) {
 		counts: []
 	};
 	let f = [], p = [];
-	if (r != null && (f.push(`${n === "r" ? "≤" : "<"} ${W(r)}`), p.push(u)), l > 0) {
+	if (r != null && (f.push(`${n === "r" ? "≤" : "<"} ${Ce(r)}`), p.push(u)), l > 0) {
 		let u = r ?? s, d = i ?? c, m = d - u;
-		if (!Number.isFinite(m)) f.push(`${W(u)} – ${W(d)}`), p.push(l);
+		if (!Number.isFinite(m)) f.push(`${Ce(u)} – ${Ce(d)}`), p.push(l);
 		else {
-			let s = he(t.binSize), c;
+			let s = Se(t.binSize), c;
 			c = s != null && s > 0 && m > 0 ? Math.max(1, Math.ceil(m / s)) : t.binCount != null && Number.isFinite(t.binCount) && t.binCount > 0 ? Math.max(1, Math.floor(t.binCount)) : Math.max(1, Math.ceil(Math.sqrt(l)));
 			let d = m <= 0 ? 1 : Math.min(512, c), h = m > 0 && s != null && s > 0 && c <= 512, g = m === 0 ? 1 : h ? s : m / d, _ = Array(d).fill(0);
 			for (let t of e) {
-				let e = he(t);
+				let e = Se(t);
 				if (e == null || a(e) || o(e)) continue;
 				let r = h ? (e - u) / g : m === 0 ? 0 : (e - u) / m * d, i = n === "r" ? Math.ceil(r) - 1 : Math.floor(r), s = Math.max(0, Math.min(d - 1, i));
 				_[s]++;
 			}
 			for (let e = 0; e < d; e++) {
 				let t = h ? u + g * e : u + e / d * m, a = h ? t + g : u + m * ((e + 1) / d), o = i == null ? a : Math.min(a, i), s = n === "r" && (r != null || e > 0) ? ">" : "≥", c = n === "l" && (i != null || e < d - 1) ? "<" : "≤";
-				f.push(`${s} ${W(t)} – ${c} ${W(o)}`), p.push(_[e]);
+				f.push(`${s} ${Ce(t)} – ${c} ${Ce(o)}`), p.push(_[e]);
 			}
 		}
 	}
-	return i != null && (f.push(`${n === "r" ? ">" : "≥"} ${W(i)}`), p.push(d)), {
+	return i != null && (f.push(`${n === "r" ? ">" : "≥"} ${Ce(i)}`), p.push(d)), {
 		kind: "bins",
 		categories: f,
 		counts: p
@@ -264,12 +259,12 @@ function ge(e, t) {
 }
 //#endregion
 //#region packages/core/src/chart/box-whisker.ts
-var _e = .06;
-function G(e) {
+var Te = .06;
+function Ee(e) {
 	let t = Math.floor(e.length / 2);
 	return e.length % 2 == 1 ? e[t] : e[t - 1] / 2 + e[t] / 2;
 }
-function K(e) {
+function De(e) {
 	let t = 0;
 	for (let n of e) t = Math.max(t, Math.abs(n));
 	if (t === 0) return 0;
@@ -277,15 +272,15 @@ function K(e) {
 	for (let r of e) n += r / t;
 	return n / e.length * t;
 }
-function q(e, t, n) {
+function Oe(e, t, n) {
 	if (!Number.isFinite(t)) return n < 0 ? -Number.MAX_VALUE : Number.MAX_VALUE;
 	let r = e + n * t;
 	return Number.isFinite(r) ? r : n < 0 ? -Number.MAX_VALUE : Number.MAX_VALUE;
 }
-function J(e, t) {
+function ke(e, t) {
 	let n = e.filter((e) => typeof e == "number" && Number.isFinite(e)).sort((e, t) => e - t);
 	if (n.length === 0) return null;
-	let r = Math.floor(n.length / 2), i = G(n), a = t === "inclusive" && n.length % 2 == 1, o = n.slice(0, r + +!!a), s = n.slice(r + +(n.length % 2 == 1 && !a)), c = G(o.length > 0 ? o : n), l = G(s.length > 0 ? s : n), u = (l - c) * 1.5, d = q(c, u, -1), f = q(l, u, 1), p = [], m = [];
+	let r = Math.floor(n.length / 2), i = Ee(n), a = t === "inclusive" && n.length % 2 == 1, o = n.slice(0, r + +!!a), s = n.slice(r + +(n.length % 2 == 1 && !a)), c = Ee(o.length > 0 ? o : n), l = Ee(s.length > 0 ? s : n), u = (l - c) * 1.5, d = Oe(c, u, -1), f = Oe(l, u, 1), p = [], m = [];
 	for (let e of n) e < d || e > f ? m.push(e) : p.push(e);
 	return {
 		q1: c,
@@ -295,19 +290,19 @@ function J(e, t) {
 		upperFence: f,
 		whiskerLo: p[0] ?? n[0],
 		whiskerHi: p[p.length - 1] ?? n[n.length - 1],
-		mean: K(n),
+		mean: De(n),
 		outliers: m,
 		inner: p
 	};
 }
-function ve(e, t) {
+function Ae(e, t) {
 	let n = 0;
 	for (let r of e) for (let e of r) if (n += e.length, !Number.isSafeInteger(n) || n > t) return t + 1;
 	return n;
 }
-function ye(e, t, n, r, i, a, o) {
+function je(e, t, n, r, i, a, o) {
 	if (!Number.isFinite(e) || !Number.isFinite(t) || t <= 0 || !Number.isInteger(n) || n <= 0 || !Number.isInteger(r) || r <= 0 || !Number.isInteger(i) || i < 0 || i >= n || !Number.isInteger(a) || a < 0 || a >= r || !Number.isFinite(o) || o < 0) return null;
-	let s = t / n, c = s / (r + o / 100), l = c * r, u = c * _e, d = c - u, f = e + s * (i + .5) - l / 2 + a * c + u / 2;
+	let s = t / n, c = s / (r + o / 100), l = c * r, u = c * Te, d = c - u, f = e + s * (i + .5) - l / 2 + a * c + u / 2;
 	return {
 		boxX: f,
 		boxWidth: d,
@@ -316,7 +311,7 @@ function ye(e, t, n, r, i, a, o) {
 }
 //#endregion
 //#region packages/core/src/chart/pareto-layout.ts
-function be(e, t) {
+function Me(e, t) {
 	return e == null ? e : e.flatMap((e) => {
 		let n = t.get(e.idx);
 		return n == null ? [] : [{
@@ -325,10 +320,10 @@ function be(e, t) {
 		}];
 	});
 }
-function xe(e, t) {
+function Ne(e, t) {
 	return e == null ? e : t.map((t) => e[t] ?? null);
 }
-function Se(e, t) {
+function Pe(e, t) {
 	let n = e.values.map((e, t) => ({
 		value: e,
 		sourceIndex: t
@@ -340,11 +335,11 @@ function Se(e, t) {
 	})), s = o.map((e) => e.sourceIndex), c = new Map(s.map((e, t) => [e, t])), l = o.map((e) => e.category), u = {
 		...e,
 		categories: l,
-		catFormatCodes: xe(e.catFormatCodes, s),
-		dataPointColors: xe(e.dataPointColors, s),
-		dataLabelColors: xe(e.dataLabelColors, s),
-		dataPointOverrides: be(e.dataPointOverrides, c),
-		dataLabelOverrides: be(e.dataLabelOverrides, c)
+		catFormatCodes: Ne(e.catFormatCodes, s),
+		dataPointColors: Ne(e.dataPointColors, s),
+		dataLabelColors: Ne(e.dataLabelColors, s),
+		dataPointOverrides: Me(e.dataPointOverrides, c),
+		dataLabelOverrides: Me(e.dataLabelOverrides, c)
 	};
 	return {
 		points: o,
@@ -360,8 +355,71 @@ function Se(e, t) {
 	};
 }
 //#endregion
+//#region packages/core/src/chart/date-axis.ts
+var Fe = 1e4;
+function Ie(e) {
+	return e === "days" || e === "months" || e === "years" ? e : null;
+}
+function Le(e, t) {
+	switch (t) {
+		case "years": return new Date(Date.UTC(e.getUTCFullYear(), 0, 1));
+		case "months": return new Date(Date.UTC(e.getUTCFullYear(), e.getUTCMonth(), 1));
+		case "days": return new Date(Date.UTC(e.getUTCFullYear(), e.getUTCMonth(), e.getUTCDate()));
+	}
+}
+function Re(e, t, n) {
+	if (n === "days") return new Date(e.getTime() + t * 864e5);
+	let r = new Date(e.getTime());
+	return n === "months" ? r.setUTCMonth(r.getUTCMonth() + t) : r.setUTCFullYear(r.getUTCFullYear() + t), r;
+}
+function ze(e, t) {
+	switch (t) {
+		case "years": return e.getUTCFullYear();
+		case "months": return e.getUTCFullYear() * 12 + e.getUTCMonth();
+		case "days": return Math.floor(e.getTime() / 864e5);
+	}
+}
+function Be(e) {
+	let t = e.categories.map((e) => Number(e));
+	if (t.length === 0 || t.some((e) => !Number.isFinite(e))) return null;
+	let n = e.date1904 === !0, r = Ie(e.baseTimeUnit) ?? "days", i = Ie(e.majorTimeUnit) ?? r, a = Ie(e.minorTimeUnit) ?? r, o = (e, t) => e == null || !(e > 0) || !Number.isFinite(e) || t !== "days" && !Number.isInteger(e) ? null : e, s = o(e.majorUnit, i), c = o(e.minorUnit, a), l = (e) => ze(f(e, n), r), u = Array(t.length), d = Infinity, p = -Infinity, m = Infinity, g = -Infinity;
+	for (let e = 0; e < t.length; e++) {
+		let n = t[e], r = l(n);
+		u[e] = r, d = Math.min(d, r), p = Math.max(p, r), m = Math.min(m, n), g = Math.max(g, n);
+	}
+	let _ = e.explicitMin, v = e.explicitMax, y = _ != null && Number.isFinite(_) ? l(_) : null, b = v != null && Number.isFinite(v) ? l(v) : null, x = e.crossBetween !== !1, S = y ?? d, C = (b ?? p) + +!!x;
+	C > S || (S -= .5, C += .5);
+	let w = C - S, T = (e) => (l(e) - S) / w, E = e.reversed ? (e) => 1 - T(e) : T, D = (e) => (l(e) + (x ? .5 : 0) - S) / w, O = e.reversed ? (e) => 1 - D(e) : D, k = t.map(O), A = t.map(() => 1 / w), j = _ != null && Number.isFinite(_) ? _ : m, ee = v != null && Number.isFinite(v) ? v : g, M = (e, t) => {
+		if (t == null) return [];
+		let r = Le(f(j, n), e), i = h(r, n);
+		for (let a = 0; i < j && a < Fe; a++) {
+			let a = Re(r, t, e), o = h(a, n);
+			if (!(o > i)) return [];
+			r = a, i = o;
+		}
+		if (i < j) return [];
+		let a = [];
+		for (let o = 0; i <= ee && o < Fe; o++) {
+			a.push({
+				serial: i,
+				fraction: E(i)
+			});
+			let o = Re(r, t, e), s = h(o, n);
+			if (!(s > i)) break;
+			r = o, i = s;
+		}
+		return a;
+	}, te = M(i, s), N = new Set(te.map((e) => l(e.serial)));
+	return {
+		positions: k,
+		categoryBandFractions: A,
+		majorTicks: te,
+		minorTicks: c == null ? [] : M(a, c).filter((e) => !N.has(l(e.serial)))
+	};
+}
+//#endregion
 //#region packages/core/src/chart/trendline-label.ts
-function Ce(e, n, r, i, a, o, s) {
+function Ve(t, n, r, i, a, o, s) {
 	if (![
 		r,
 		i,
@@ -374,7 +432,7 @@ function Ce(e, n, r, i, a, o, s) {
 		h: u
 	};
 	if (o) {
-		let n = t(o, e, f);
+		let n = e(o, t, f);
 		if (n) return {
 			...n,
 			automatic: !1
@@ -387,11 +445,11 @@ function Ce(e, n, r, i, a, o, s) {
 }
 //#endregion
 //#region packages/core/src/canvas/aux-canvas.ts
-function we(e, t) {
+function He(e, t) {
 	return [Math.max(1, Math.ceil(e)), Math.max(1, Math.ceil(t))];
 }
-function Te(e, t) {
-	let [n, r] = we(e, t);
+function Ue(e, t) {
+	let [n, r] = He(e, t);
 	if (typeof OffscreenCanvas < "u") return new OffscreenCanvas(n, r);
 	if (typeof document < "u") {
 		let e = document.createElement("canvas");
@@ -399,8 +457,8 @@ function Te(e, t) {
 	}
 	return null;
 }
-function Ee(e, t, n) {
-	let [r, i] = we(t, n);
+function We(e, t, n) {
+	let [r, i] = He(t, n);
 	if (typeof OffscreenCanvas < "u") try {
 		return new OffscreenCanvas(r, i);
 	} catch {}
@@ -417,7 +475,7 @@ function Ee(e, t, n) {
 }
 //#endregion
 //#region packages/core/src/shape/pattern-bitmaps.ts
-var De = {
+var Ge = {
 	pct5: [
 		0,
 		16,
@@ -799,34 +857,34 @@ var De = {
 		90
 	]
 };
-function Oe(e, t, n) {
-	let r = De[e];
+function Ke(e, t, n) {
+	let r = Ge[e];
 	if (!r) return null;
-	let i = Te(8, 8);
+	let i = Ue(8, 8);
 	if (!i) return null;
 	let a = i.getContext("2d");
 	if (!a) return null;
-	a.fillStyle = ke(n), a.fillRect(0, 0, 8, 8), a.fillStyle = ke(t);
+	a.fillStyle = qe(n), a.fillRect(0, 0, 8, 8), a.fillStyle = qe(t);
 	for (let e = 0; e < 8; e++) {
 		let t = r[e];
 		for (let n = 0; n < 8; n++) t & 1 << 7 - n && a.fillRect(n, e, 1, 1);
 	}
 	return i;
 }
-function ke(e) {
+function qe(e) {
 	return `rgba(${parseInt(e.slice(0, 2), 16)},${parseInt(e.slice(2, 4), 16)},${parseInt(e.slice(4, 6), 16)},${e.length >= 8 ? parseInt(e.slice(6, 8), 16) / 255 : 1})`;
 }
 //#endregion
 //#region packages/core/src/shape/paint.ts
-var Ae = 512;
-function je(e, t, n, r, i, a, o) {
+var Je = 512;
+function Ye(e, t, n, r, i, a, o) {
 	let s = e.tileRect;
 	if (!s || (s.l ?? 0) === 0 && (s.t ?? 0) === 0 && (s.r ?? 0) === 0 && (s.b ?? 0) === 0) return null;
 	let c = n + i * (s.l ?? 0), l = r + a * (s.t ?? 0), u = i * (1 - (s.l ?? 0) - (s.r ?? 0)), d = a * (1 - (s.t ?? 0) - (s.b ?? 0));
 	if (!Number.isFinite(u) || !Number.isFinite(d) || Math.abs(u) < 1e-9 || Math.abs(d) < 1e-9) return null;
-	let f = Math.min(1, Ae / Math.abs(u), Ae / Math.abs(d)), p = Math.max(1, Math.ceil(Math.abs(u) * f)), m = Math.max(1, Math.ceil(Math.abs(d) * f)), h = Ee(t, p, m), g = h?.getContext("2d");
+	let f = Math.min(1, Je / Math.abs(u), Je / Math.abs(d)), p = Math.max(1, Math.ceil(Math.abs(u) * f)), m = Math.max(1, Math.ceil(Math.abs(d) * f)), h = We(t, p, m), g = h?.getContext("2d");
 	if (!h || !g) return null;
-	let _ = Fe({
+	let _ = $e({
 		...e,
 		tileRect: void 0,
 		flip: void 0
@@ -835,7 +893,7 @@ function je(e, t, n, r, i, a, o) {
 	g.fillStyle = _, g.fillRect(0, 0, p, m);
 	let v = e.flip === "x" || e.flip === "xy", y = e.flip === "y" || e.flip === "xy", b = h;
 	if (v || y) {
-		let e = Ee(t, p * (v ? 2 : 1), m * (y ? 2 : 1)), n = e?.getContext("2d");
+		let e = We(t, p * (v ? 2 : 1), m * (y ? 2 : 1)), n = e?.getContext("2d");
 		if (!e || !n) return null;
 		for (let e = 0; e < (y ? 2 : 1); e += 1) for (let t = 0; t < (v ? 2 : 1); t += 1) n.save(), n.translate(t * p, e * m), n.scale(t === 1 ? -1 : 1, e === 1 ? -1 : 1), n.drawImage(h, t === 1 ? -p : 0, e === 1 ? -m : 0), n.restore();
 		b = e;
@@ -850,26 +908,26 @@ function je(e, t, n, r, i, a, o) {
 		f: l
 	}), x);
 }
-function Me(e, t = 1) {
+function Xe(e, t = 1) {
 	let n = e.charCodeAt(0) === 35 ? e.slice(1) : e;
 	return `rgba(${parseInt(n.slice(0, 2), 16)},${parseInt(n.slice(2, 4), 16)},${parseInt(n.slice(4, 6), 16)},${n.length >= 8 ? parseInt(n.slice(6, 8), 16) / 255 : t})`;
 }
-function Ne(e) {
+function Ze(e) {
 	let t = e.charCodeAt(0) === 35 ? e.slice(1) : e, n = parseInt(t.slice(0, 2), 16), r = parseInt(t.slice(2, 4), 16), i = parseInt(t.slice(4, 6), 16);
 	return .299 * n + .587 * r + .114 * i;
 }
-function Pe(e) {
-	return e && Ne(e) < 128 ? "#FFFFFF" : "#000000";
+function Qe(e) {
+	return e && Ze(e) < 128 ? "#FFFFFF" : "#000000";
 }
-function Fe(e, t, n, r, i, a, o = 0) {
+function $e(e, t, n, r, i, a, o = 0) {
 	if (!e || e.fillType === "none") return null;
-	if (e.fillType === "solid") return Me(e.color);
-	if (e.fillType === "pattern") return Le(e, t);
+	if (e.fillType === "solid") return Xe(e.color);
+	if (e.fillType === "pattern") return tt(e, t);
 	if (e.fillType === "gradient") {
 		let s = e.stops;
 		if (s.length === 0) return null;
-		if (s.length === 1) return Me(s[0].color);
-		let c = je(e, t, n, r, i, a, o);
+		if (s.length === 1) return Xe(s[0].color);
+		let c = Ye(e, t, n, r, i, a, o);
 		if (c) return c;
 		let l, u = e.tileRect, d = n + i * (u?.l ?? 0), f = r + a * (u?.t ?? 0), p = i * (1 - (u?.l ?? 0) - (u?.r ?? 0)), m = a * (1 - (u?.t ?? 0) - (u?.b ?? 0));
 		if (e.gradType === "radial") {
@@ -885,36 +943,36 @@ function Fe(e, t, n, r, i, a, o = 0) {
 			let a = d + p / 2, s = f + m / 2, c = (Math.abs(r) * p + Math.abs(i) * m) / 2;
 			l = t.createLinearGradient(a - r * c, s - i * c, a + r * c, s + i * c);
 		}
-		for (let e of s) l.addColorStop(Math.min(1, Math.max(0, e.position)), Me(e.color));
+		for (let e of s) l.addColorStop(Math.min(1, Math.max(0, e.position)), Xe(e.color));
 		return l;
 	}
 	return null;
 }
-var Ie = /* @__PURE__ */ new WeakMap();
-function Le(e, t) {
-	let n = `${e.preset}|${e.fg}|${e.bg}`, r = Ie.get(t);
-	r || (r = /* @__PURE__ */ new Map(), Ie.set(t, r));
+var et = /* @__PURE__ */ new WeakMap();
+function tt(e, t) {
+	let n = `${e.preset}|${e.fg}|${e.bg}`, r = et.get(t);
+	r || (r = /* @__PURE__ */ new Map(), et.set(t, r));
 	let i = r.get(n);
 	if (i) return i;
-	let a = Oe(e.preset, e.fg, e.bg);
-	if (!a) return Me(e.fg);
+	let a = Ke(e.preset, e.fg, e.bg);
+	if (!a) return Xe(e.fg);
 	let o = t.createPattern(a, "repeat");
-	return o ? (r.set(n, o), o) : Me(e.fg);
+	return o ? (r.set(n, o), o) : Xe(e.fg);
 }
-function Re(e, t, n) {
+function nt(e, t, n) {
 	if (!t) {
 		e.strokeStyle = "transparent", e.lineWidth = 0, e.setLineDash([]), e.lineCap = "butt", e.lineJoin = "miter", e.miterLimit = 10;
 		return;
 	}
-	e.strokeStyle = Me(t.color);
+	e.strokeStyle = Xe(t.color);
 	let r = Math.max(.5, t.width * n);
 	e.lineWidth = r;
-	let i = t.customDash ? t.customDash.flatMap((e) => [Math.max(0, e.dash) * r, Math.max(0, e.space) * r]) : t.dashStyle ? te(t.dashStyle, r) : [], a = t.lineCap ?? "butt", o = i.some((e, t) => t % 2 == 0 && e === 0);
+	let i = t.customDash ? t.customDash.flatMap((e) => [Math.max(0, e.dash) * r, Math.max(0, e.space) * r]) : t.dashStyle ? R(t.dashStyle, r) : [], a = t.lineCap ?? "butt", o = i.some((e, t) => t % 2 == 0 && e === 0);
 	e.lineCap = a === "butt" && o ? "square" : a, e.lineJoin = t.lineJoin ?? "miter", e.miterLimit = t.miterLimit ?? 10, e.setLineDash(i);
 }
 //#endregion
 //#region packages/core/src/chart/renderer.ts
-var ze = [
+var rt = [
 	"4472C4",
 	"ED7D31",
 	"A9D18E",
@@ -927,7 +985,7 @@ var ze = [
 	"636363",
 	"255E91",
 	"967300"
-], Be = [
+], it = [
 	"5B9BD5",
 	"ED7D31",
 	"A5A5A5",
@@ -935,66 +993,66 @@ var ze = [
 	"4472C4",
 	"70AD47"
 ];
-function Ve(e, t) {
-	return t?.color ? `#${t.color}` : `#${ze[e % ze.length]}`;
+function at(e, t) {
+	return t?.color ? `#${t.color}` : `#${rt[e % rt.length]}`;
 }
-function He(e) {
+function ot(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n of e ?? []) t.has(n.idx) || t.set(n.idx, n);
 	return t;
 }
-function Ue(e, t, n = !0) {
+function st(e, t, n = !0) {
 	let r = t.dataPointColors?.[e];
-	return r ? `#${r}` : t.color === "00000000" ? "#00000000" : n ? `#${ze[e % ze.length]}` : Ve(e, t);
+	return r ? `#${r}` : t.color === "00000000" ? "#00000000" : n ? `#${rt[e % rt.length]}` : at(e, t);
 }
-function We(e, t) {
+function ct(e, t) {
 	return t && (t.startsWith("+mj") ? e.themeMajorFontLatin ?? null : t.startsWith("+mn") ? e.themeMinorFontLatin ?? null : t);
 }
 function Y(e, t, n) {
-	let r = n === "major" ? e.themeMajorFontLatin : e.themeMinorFontLatin, i = We(e, t) ?? r;
+	let r = n === "major" ? e.themeMajorFontLatin : e.themeMinorFontLatin, i = ct(e, t) ?? r;
 	return i ? `"${i}", Calibri, Arial, sans-serif` : "sans-serif";
 }
-function Ge(e, t, n = !1, r = !1) {
+function lt(e, t, n = !1, r = !1) {
 	return `${r ? "italic " : ""}${n ? "bold " : ""}${e}px ${t}`;
 }
-function Ke(e) {
+function ut(e) {
 	return e === "pie" || e === "doughnut";
 }
-function qe(e) {
+function dt(e) {
 	return !!e.varyColors && e.series.length === 1 && typeof e.chartType == "string" && /Bar/.test(e.chartType);
 }
-function X(e, t, n, r = !1) {
-	if (r || Ke(e)) {
+function ft(e, t, n, r = !1) {
+	if (r || ut(e)) {
 		let e = t[0];
-		return e ? Ue(n, e) : `#${ze[n % ze.length]}`;
+		return e ? st(n, e) : `#${rt[n % rt.length]}`;
 	}
-	return Ve(n, t[n]);
+	return at(n, t[n]);
 }
-function Z(e, n, r, i, a, o, s, c, l, u, d = "sans-serif", f, p, m, h) {
-	e.save(), e.font = Ge(o, d, s, c), e.fillStyle = l;
-	let _ = m ? n : re(e, n, u), v = g(a, f, p), y = r, b = i;
-	if (m && h) {
-		let n = e.measureText(_).width, a = Math.abs(Math.cos(v)), s = Math.abs(Math.sin(v)), c = n * a + o * s, l = n * s + o * a, u = {
+function pt(t, n, r, a, o, s, c, l, u, d, f = "sans-serif", p, m, h, g) {
+	t.save(), t.font = lt(s, f, c, l), t.fillStyle = u;
+	let _ = h ? n : ue(t, n, d), v = i(o, p, m), y = r, b = a;
+	if (h && g) {
+		let n = t.measureText(_).width, i = Math.abs(Math.cos(v)), o = Math.abs(Math.sin(v)), c = n * i + s * o, l = n * o + s * i, u = {
 			x: r - c / 2,
-			y: i - l / 2,
+			y: a - l / 2,
 			w: c,
 			h: l
-		}, d = t({
-			...m,
+		}, d = e({
+			...h,
 			w: void 0,
 			h: void 0
-		}, h, u);
+		}, g, u);
 		d && (y = d.x + d.w / 2, b = d.y + d.h / 2);
 	}
-	e.translate(y, b), v !== 0 && e.rotate(v), e.textAlign = "center", e.textBaseline = "middle", e.fillText(_, 0, 0), e.restore();
+	t.translate(y, b), v !== 0 && t.rotate(v), t.textAlign = "center", t.textBaseline = "middle", t.fillText(_, 0, 0), t.restore();
 }
-function Je(e) {
+function mt(e) {
 	return e ? `#${e}` : "#555";
 }
-function Ye(e, t, n, r, i, a, o, s, c, u, d, f, p, m, h = !1) {
-	let g = (t, p, m, h, g, _, v, y, b, x) => {
-		if (p === "left") {
-			Z(e, t, n + d + l(i) + m / 2, s + u / 2, p, m, h, g, _, u, v, y, b, x, {
+function ht(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m = !1) {
+	let h = (t, f, p, m, h, g, v, y, b, x) => {
+		if (f === "left") {
+			pt(e, t, n + u + _(i) + p / 2, s + l / 2, f, p, m, h, g, l, v, y, b, x, {
 				x: n,
 				y: r,
 				w: i,
@@ -1002,71 +1060,155 @@ function Ye(e, t, n, r, i, a, o, s, c, u, d, f, p, m, h = !1) {
 			});
 			return;
 		}
-		Z(e, t, o + c / 2, r + a - f - l(a) - m / 2, p, m, h, g, _, c, v, y, b, x, {
+		pt(e, t, o + c / 2, r + a - d - _(a) - p / 2, f, p, m, h, g, c, v, y, b, x, {
 			x: n,
 			y: r,
 			w: i,
 			h: a
 		});
 	};
-	t.valAxisTitle && g(t.valAxisTitle, h ? "horizontal" : "left", m, t.valAxisTitleFontBold ?? !0, t.valAxisTitleFontItalic ?? !1, Je(t.valAxisTitleFontColor), Y(t, t.valAxisTitleFontFace, "major"), t.valAxisTitleRotation, t.valAxisTitleVerticalMode, t.valAxisTitleManualLayout), t.catAxisTitle && g(t.catAxisTitle, h ? "left" : "horizontal", p, t.catAxisTitleFontBold ?? !0, t.catAxisTitleFontItalic ?? !1, Je(t.catAxisTitleFontColor), Y(t, t.catAxisTitleFontFace, "major"), t.catAxisTitleRotation, t.catAxisTitleVerticalMode, t.catAxisTitleManualLayout);
+	t.valAxisTitle && h(t.valAxisTitle, m ? "horizontal" : "left", p, t.valAxisTitleFontBold ?? !0, t.valAxisTitleFontItalic ?? !1, mt(t.valAxisTitleFontColor), Y(t, t.valAxisTitleFontFace, "major"), t.valAxisTitleRotation, t.valAxisTitleVerticalMode, t.valAxisTitleManualLayout), t.catAxisTitle && h(t.catAxisTitle, m ? "left" : "horizontal", f, t.catAxisTitleFontBold ?? !0, t.catAxisTitleFontItalic ?? !1, mt(t.catAxisTitleFontColor), Y(t, t.catAxisTitleFontFace, "major"), t.catAxisTitleRotation, t.catAxisTitleVerticalMode, t.catAxisTitleManualLayout);
 }
-function Q(e) {
+function gt(e, t) {
+	if (!e.dataTable) return 0;
+	let n = x(e.dataTable.fontSizeHpt, t) ?? 9 * t, r = Math.max(1, n * 1.2) + 4 * t;
+	return (e.series.length + 1) * r;
+}
+function _t(e, t, n) {
+	let r = t.dataTable;
+	if (!r) return 0;
+	let i = x(r.fontSizeHpt, n) ?? 9 * n, a = Y(t, r.fontFace, "minor");
+	e.save(), e.font = lt(i, a, r.fontBold ?? !1, r.fontItalic ?? !1);
+	let o = t.series.reduce((t, n) => Math.max(t, e.measureText(n.name).width), 0);
+	e.restore();
+	let s = r.showKeys ? Math.max(12 * n, i * 1.7) : 0, c = r.showKeys ? 4 * n : 0;
+	return o + s + c + 6 * n;
+}
+function vt(e, t, n, r) {
+	let i = t.dataTable;
+	if (!i) return null;
+	let a = x(i.fontSizeHpt, r) ?? 9 * r, o = Math.max(1, a * 1.2), s = o + 4 * r, l = Y(t, i.fontFace, "minor");
+	e.save(), e.font = lt(a, l, i.fontBold ?? !1, i.fontItalic ?? !1);
+	let u = t.series.find((e) => e.catFormatCode)?.catFormatCode ?? t.catAxisFormatCode, d = t.series.find((e) => e.catFormatBuiltinId != null)?.catFormatBuiltinId, f = Pn(t).map((i) => {
+		let a = i.trim() === "" ? NaN : Number(i);
+		return gn(e, d === 14 && Number.isFinite(a) ? c(a, t.date1904) : g(i, u, t.date1904), Math.max(1, n - 4 * r));
+	});
+	e.restore();
+	let p = Math.max(1, ...f.map((e) => e.length)) * o + 4 * r;
+	return {
+		fontPx: a,
+		lineHeight: o,
+		headerLines: f,
+		headerHeight: p,
+		rowHeight: s,
+		totalHeight: p + t.series.length * s
+	};
+}
+function yt(e, t, n, r, i, a, o, s) {
+	let c = t.dataTable;
+	if (!c || !n || t.categories.length === 0) return;
+	let l = Pn(t), u = a / l.length, d = Y(t, c.fontFace, "minor"), f = lt(n.fontPx, d, c.fontBold ?? !1, c.fontItalic ?? !1), p = c.showKeys ? Math.max(12 * s, n.fontPx * 1.7) : 0, h = c.showKeys ? 4 * s : 0;
+	e.save(), e.font = f;
+	let g = t.series.reduce((t, n) => Math.max(t, e.measureText(n.name).width), 0) + p + h + 6 * s, _ = Math.min(Math.max(0, r - o), g), v = r - _, y = _ + a, b = i + n.totalHeight;
+	e.beginPath(), e.rect(v, i, y, n.totalHeight), e.clip(), e.fillStyle = c.fontColor ? `#${c.fontColor}` : "#000000", e.textAlign = "center", e.textBaseline = "middle";
+	for (let t = 0; t < l.length; t++) {
+		let a = r + (t + .5) * u, o = n.headerLines[t] ?? [""], s = o.length * n.lineHeight, c = i + (n.headerHeight - s) / 2 + n.lineHeight / 2;
+		o.forEach((t, r) => {
+			e.fillText(t, a, c + r * n.lineHeight);
+		});
+	}
+	for (let a = 0; a < t.series.length; a++) {
+		let o = t.series[a], d = i + n.headerHeight + a * n.rowHeight + n.rowHeight / 2;
+		if (_ > 0) {
+			let n = v + 3 * s + p + h;
+			if (e.textAlign = "left", e.fillText(ue(e, o.name, Math.max(0, r - n - 2 * s)), n, d), c.showKeys && p > 0) {
+				let n = at(a, o), r = v + 3 * s;
+				o.seriesType === "line" || t.chartType === "line" ? (e.strokeStyle = o.lineColor ? `#${o.lineColor}` : n, e.lineWidth = o.lineWidthEmu == null ? Math.max(1, 1.5 * s) : N(o.lineWidthEmu, s), e.beginPath(), e.moveTo(r, d), e.lineTo(r + p, d), e.stroke(), o.showMarker !== !1 && (e.fillStyle = o.markerFill ? `#${o.markerFill}` : n, e.beginPath(), e.arc(r + p / 2, d, Math.max(2, 2 * s), 0, Math.PI * 2), e.fill())) : (e.fillStyle = o.color ? `#${o.color}` : n, e.fillRect(r, d - 3 * s, p, 6 * s)), e.fillStyle = c.fontColor ? `#${c.fontColor}` : "#000000";
+			}
+		}
+		e.textAlign = "center";
+		for (let t = 0; t < l.length; t++) {
+			let n = o.values[t], i = n == null ? "" : m(n, o.valFormatCode);
+			e.fillText(i, r + (t + .5) * u, d);
+		}
+	}
+	if (c.lineHidden !== !0) {
+		if (e.strokeStyle = c.lineColor ? `#${c.lineColor}` : "#808080", e.lineWidth = c.lineWidthEmu == null ? Math.max(.5, s * .75) : N(c.lineWidthEmu, s), e.setLineDash([]), c.showHorizontalBorder) {
+			let r = i + n.headerHeight;
+			for (let i = 0; i < t.series.length; i++) e.beginPath(), e.moveTo(v, r), e.lineTo(v + y, r), e.stroke(), r += n.rowHeight;
+		}
+		if (c.showVerticalBorder) {
+			e.beginPath(), e.moveTo(r, i), e.lineTo(r, b), e.stroke();
+			for (let t = 1; t < l.length; t++) {
+				let n = r + t * u;
+				e.beginPath(), e.moveTo(n, i), e.lineTo(n, b), e.stroke();
+			}
+		}
+		if (c.showOutline) {
+			let t = e.lineWidth / 2;
+			e.strokeRect(v + t, i + t, Math.max(0, y - e.lineWidth), Math.max(0, n.totalHeight - e.lineWidth));
+		}
+	}
+	e.restore();
+}
+function bt(e) {
 	return e && (e === "line" || e === "stackedLine" || e === "stackedLinePct" || e === "radar" || e === "scatter" || e === "stock") ? "line" : "fill";
 }
-function Xe(e, t, n) {
+function xt(e, t, n) {
 	if (e !== "scatter") return !1;
 	let r = t ?? "marker";
 	return (r === "line" || r === "lineMarker" || r === "lineNoMarker" || r === "smooth" || r === "smoothMarker" || r === "smoothNoMarker") && n.lineHidden !== !0;
 }
-function Ze(e, t, n, r) {
+function St(e, t, n, r) {
 	let i = n[r];
 	if (!i) return null;
-	let a = i.seriesType ?? e, o = a === "line" || a === "stackedLine" || a === "stackedLinePct", s = a === "scatter";
-	if (!o && !s || s && (t === "lineNoMarker" || t === "smoothNoMarker")) return null;
-	let c = i.markerSymbol ?? "circle";
-	if (c === "none" || i.showMarker === !1) return null;
-	let l = Ve(r, i), u = i.markerFill ?? l.replace(/^#/, ""), d = s ? Xe("scatter", t, i) : i.lineHidden !== !0;
+	let a = i.seriesType ?? e, o = a === "stock", s = a === "line" || a === "stackedLine" || a === "stackedLinePct" || o, c = a === "scatter";
+	if (!s && !c || c && (t === "lineNoMarker" || t === "smoothNoMarker")) return null;
+	let l = i.markerSymbol ?? (o ? "none" : "circle");
+	if (l === "none" || i.showMarker === !1) return null;
+	let u = at(r, i), d = i.markerFill ?? u.replace(/^#/, ""), f = c ? xt("scatter", t, i) : i.lineHidden !== !0;
 	return {
-		symbol: c,
-		fill: u,
+		symbol: l,
+		fill: d,
 		line: i.markerLine ?? null,
 		lineWidthEmu: i.markerLineWidthEmu ?? null,
-		withLine: d
+		withLine: f
 	};
 }
-function Qe(e, t, n, r, i, a, o, s = null, c = void 0, l = null, u = null, d = null, f = null, p = null, m = 1, h = 0) {
-	if (s && !s.withLine) {
-		Mn(e, r + a / 2, i + o / 2, s.symbol, o * .58, s.fill, s.line, 1, s.lineWidthEmu == null ? void 0 : P(s.lineWidthEmu, m));
-		return;
-	}
-	if (e.fillStyle = n, t === "line") {
-		if (!(l != null || u != null || d != null || f != null || p != null)) {
-			e.strokeStyle = n;
-			let t = e.lineWidth;
-			e.lineWidth = Math.max(1.5, o * .15), e.beginPath();
-			let c = i + o / 2;
-			e.moveTo(r, c), e.lineTo(r + a, c), e.stroke(), e.lineWidth = t, s && Mn(e, r + a / 2, i + o / 2, s.symbol, o * .58, s.fill, s.line, 1, s.lineWidthEmu == null ? void 0 : P(s.lineWidthEmu, m));
+function X(e, t, n, r, i, a, o, s = null, c = void 0, l = null, u = null, d = null, f = null, p = null, m = 1, h = 0) {
+	if (t !== "none") {
+		if (s && !s.withLine) {
+			dr(e, r + a / 2, i + o / 2, s.symbol, o * .58, s.fill, s.line, 1, s.lineWidthEmu == null ? void 0 : N(s.lineWidthEmu, m));
 			return;
 		}
-		e.save(), e.strokeStyle = l ? `#${l}` : n, e.lineWidth = u == null ? Math.max(1.5, o * .15) : P(u, m), e.setLineDash(Bn(d ?? void 0)), e.lineCap = f === "rnd" ? "round" : f === "sq" ? "square" : "butt", e.lineJoin = p === "round" || p === "bevel" ? p : "miter", e.beginPath();
-		let t = i + o / 2;
-		e.moveTo(r, t), e.lineTo(r + a, t), e.stroke(), s && Mn(e, r + a / 2, i + o / 2, s.symbol, o * .58, s.fill, s.line, 1, s.lineWidthEmu == null ? void 0 : P(s.lineWidthEmu, m)), e.restore();
-	} else if (c !== null && (c && (e.fillStyle = c.fillType === "solid" ? c.color.startsWith("#") ? c.color : `#${c.color}` : Fe(c, e, r, i, a, o, h) ?? n), e.fillRect(r, i, a, o)), l) {
-		let t = P(u, m);
-		e.save(), e.strokeStyle = `#${l}`, e.lineWidth = t, e.setLineDash(Bn(d ?? void 0)), e.lineCap = f === "rnd" ? "round" : f === "sq" ? "square" : "butt", e.lineJoin = p === "round" || p === "bevel" ? p : "miter", e.strokeRect(r + t / 2, i + t / 2, Math.max(0, a - t), Math.max(0, o - t)), e.restore();
+		if (e.fillStyle = n, t === "line") {
+			if (!(l != null || u != null || d != null || f != null || p != null)) {
+				e.strokeStyle = n;
+				let t = e.lineWidth;
+				e.lineWidth = Math.max(1.5, o * .15), e.beginPath();
+				let c = i + o / 2;
+				e.moveTo(r, c), e.lineTo(r + a, c), e.stroke(), e.lineWidth = t, s && dr(e, r + a / 2, i + o / 2, s.symbol, o * .58, s.fill, s.line, 1, s.lineWidthEmu == null ? void 0 : N(s.lineWidthEmu, m));
+				return;
+			}
+			e.save(), e.strokeStyle = l ? `#${l}` : n, e.lineWidth = u == null ? Math.max(1.5, o * .15) : N(u, m), e.setLineDash(yr(d ?? void 0, e.lineWidth)), e.lineCap = f === "rnd" ? "round" : f === "sq" ? "square" : "butt", e.lineJoin = p === "round" || p === "bevel" ? p : "miter", e.beginPath();
+			let t = i + o / 2;
+			e.moveTo(r, t), e.lineTo(r + a, t), e.stroke(), s && dr(e, r + a / 2, i + o / 2, s.symbol, o * .58, s.fill, s.line, 1, s.lineWidthEmu == null ? void 0 : N(s.lineWidthEmu, m)), e.restore();
+		} else if (c !== null && (c && (e.fillStyle = c.fillType === "solid" ? c.color.startsWith("#") ? c.color : `#${c.color}` : $e(c, e, r, i, a, o, h) ?? n), e.fillRect(r, i, a, o)), l) {
+			let t = N(u, m);
+			e.save(), e.strokeStyle = `#${l}`, e.lineWidth = t, e.setLineDash(yr(d ?? void 0, e.lineWidth)), e.lineCap = f === "rnd" ? "round" : f === "sq" ? "square" : "butt", e.lineJoin = p === "round" || p === "bevel" ? p : "miter", e.strokeRect(r + t / 2, i + t / 2, Math.max(0, a - t), Math.max(0, o - t)), e.restore();
+		}
 	}
 }
-function $e(e, t, n, r = !1, i = [], a = [], o = !0) {
-	if (r || Ke(t)) {
+function Z(e, t, n, r = !1, i = [], a = [], o = !0) {
+	if (r || ut(t)) {
 		let n = e[0], s = n ? n.values.length : 0, c = n?.categories ?? i, l = new Map(n?.dataPointOverrides?.map((e) => [e.idx, e]) ?? []);
 		return Array.from({ length: s }, (i, s) => {
 			let u = l.get(s), d = (u?.lineHidden ?? n?.lineHidden) !== !0;
 			return {
 				label: (c[s] ?? `Item ${s + 1}`).toString(),
-				color: Ke(t) && n ? Ue(s, n, o) : X(t, e, s, r),
+				color: ut(t) && n ? st(s, n, o) : ft(t, e, s, r),
 				marker: null,
-				swatchStyle: Q(t),
+				swatchStyle: bt(t),
 				fillPaint: u?.fillHidden === !0 ? null : s < a.length ? a[s] : void 0,
 				outlineColor: d ? u?.lineColor ?? n?.lineColor ?? null : null,
 				outlineWidthEmu: d ? u?.lineWidthEmu ?? n?.lineWidthEmu ?? null : null,
@@ -1077,12 +1219,12 @@ function $e(e, t, n, r = !1, i = [], a = [], o = !0) {
 		});
 	}
 	return e.map((r, i) => {
-		let o = Q(r.seriesType ?? t), s = r.lineHidden !== !0, c = s ? r.lineColor ?? null : null;
+		let o = r.seriesType ?? t, s = r.lineHidden !== !0, c = s ? r.lineColor ?? null : null, l = St(t, n, e, i), u = o === "stock" && !s && !l ? "none" : bt(o);
 		return {
 			label: r.name || `Series ${i + 1}`,
-			color: o === "line" && c ? `#${c}` : X(t, e, i),
-			marker: Ze(t, n, e, i),
-			swatchStyle: o,
+			color: u === "line" && c ? `#${c}` : ft(t, e, i),
+			marker: l,
+			swatchStyle: u,
 			fillPaint: i < a.length ? a[i] : r.fillPattern ?? void 0,
 			outlineColor: c,
 			outlineWidthEmu: s ? r.lineWidthEmu ?? null : null,
@@ -1092,224 +1234,232 @@ function $e(e, t, n, r = !1, i = [], a = [], o = !0) {
 		};
 	});
 }
-var et = {
+var Ct = {
 	fontFamily: "sans-serif",
 	color: "#333",
 	bold: !1,
 	sizePx: null
-}, tt = 4, nt = 12, rt = 4, it = 4, at = it * 2, ot = 4, st = 8, ct = .01, lt = 7;
-function ut(e, t) {
+}, Q = 4, wt = 12, Tt = 4, Et = 4, Dt = Et * 2, Ot = 4, kt = 8, At = .01, jt = 7;
+function Mt(e, t) {
 	return e.sizePx ?? 10 * t;
 }
-function dt(e, t, n) {
-	return e.map((e) => e.swatchStyle === "line" ? t * 1.6 : lt * n);
-}
-function ft(e, t, n) {
-	return e.swatchStyle === "line" ? t : lt * n;
-}
-function pt(e, t, n) {
-	if (!(n > 0)) return [];
-	let r = Gt(e, t, n);
-	return r.length <= 2 ? r : [r[0], re(e, r.slice(1).join(" "), n)];
-}
-function mt(e, t, n, r, i, a) {
-	if (!t.showLegend) return null;
-	let o = gt(t, a), c = $e(t.series, t.chartType, t.scatterStyle, qe(t), t.categories, [], t.varyColors !== !1), l = ut(o, a), u = dt(c, l, a);
-	e.save(), e.font = `${o.bold ? "bold " : ""}${l}px ${o.fontFamily}`;
-	let d = c.map((t, n) => u[n] + tt + e.measureText(t.label).width);
-	e.restore();
-	let f = t.legendPos ?? "r", p = f === "t" || f === "b";
-	return s(t, n, r, i, {
-		itemWidths: d,
-		rowHeight: l + rt,
-		itemGap: nt,
-		horizontalPadding: p ? at : st,
-		verticalPadding: ot
+function Nt(e, t, n) {
+	return e.map((e) => {
+		if (e.swatchStyle === "fill") return jt * n;
+		let r = t * 1.6;
+		if (e.swatchStyle !== "line" || !e.outlineDash) return r;
+		let i = e.outlineWidthEmu == null ? Math.max(1.5, t * .15) : N(e.outlineWidthEmu, n), a = yr(e.outlineDash, i), o = a.length > 0 ? a.reduce((e, t) => e + t, 0) + a[0] : 0;
+		return Math.max(r, o);
 	});
 }
-function ht(e, t, n, r, i, a, o = "vertical", s, c = et, l, u = !1, d = [], f = 1, p = [], m = 0, h = !0) {
-	let g = tt, _ = $e(t, s, l, u, d, p, h), y = c.bold ? "bold " : "", b = ut(c, f);
-	e.font = `${y}${b}px ${c.fontFamily}`, e.textBaseline = "middle";
-	let x = b + rt, S = dt(_, b, f), C = _.map((t, n) => S[n] + g + e.measureText(t.label).width);
-	if (o === "horizontal") {
-		let t = v(C, i, nt).slice(0, Math.max(0, Math.floor((a - ot) / x))), o = r + ot / 2;
-		for (let r = 0; r < t.length; r++) {
-			let a = t[r], s = a.map((e) => Math.min(i, C[e])), l = s.reduce((e, t) => e + t, 0) + nt * Math.max(0, a.length - 1), u = n + Math.max(0, (i - l) / 2), d = o + r * x + x / 2;
-			for (let t = 0; t < a.length; t++) {
-				let n = a[t], r = S[n], i = s[t];
-				if (i < r) {
-					u += i + nt;
+function Pt(e, t, n) {
+	return e.swatchStyle === "fill" ? jt * n : t;
+}
+function Ft(e, t, n) {
+	if (!(n > 0)) return [];
+	let r = gn(e, t, n);
+	return r.length <= 2 ? r : [r[0], ue(e, r.slice(1).join(" "), n)];
+}
+function It(e, t, r, i, a, o) {
+	if (!t.showLegend) return null;
+	let s = Rt(t, o), c = Z(mn(t), t.chartType, t.scatterStyle, dt(t), t.categories, [], t.varyColors !== !1), l = Mt(s, o), u = Nt(c, l, o);
+	e.save(), e.font = `${s.bold ? "bold " : ""}${l}px ${s.fontFamily}`;
+	let d = c.map((t, n) => u[n] + Q + e.measureText(t.label).width);
+	e.restore();
+	let f = t.legendPos ?? "r", p = f === "t" || f === "b";
+	return n(t, r, i, a, {
+		itemWidths: d,
+		rowHeight: l + Tt,
+		itemGap: wt,
+		horizontalPadding: p ? Dt : kt,
+		verticalPadding: Ot
+	});
+}
+function Lt(e, n, r, i, a, o, s = "vertical", c, l = Ct, u, d = !1, f = [], p = 1, m = [], h = 0, g = !0) {
+	let _ = Q, v = Z(n, c, u, d, f, m, g), y = l.bold ? "bold " : "", b = Mt(l, p);
+	e.font = `${y}${b}px ${l.fontFamily}`, e.textBaseline = "middle";
+	let x = b + Tt, S = Nt(v, b, p), C = v.map((t, n) => S[n] + _ + e.measureText(t.label).width);
+	if (s === "horizontal") {
+		let n = t(C, a, wt).slice(0, Math.max(0, Math.floor((o - Ot) / x))), s = i + Ot / 2;
+		for (let t = 0; t < n.length; t++) {
+			let i = n[t], o = i.map((e) => Math.min(a, C[e])), c = o.reduce((e, t) => e + t, 0) + wt * Math.max(0, i.length - 1), u = r + Math.max(0, (a - c) / 2), d = s + t * x + x / 2;
+			for (let t = 0; t < i.length; t++) {
+				let n = i[t], r = S[n], a = o[t];
+				if (a < r) {
+					u += a + wt;
 					continue;
 				}
-				let o = Math.max(0, i - r - g + ct), l = re(e, _[n].label, o), p = ft(_[n], b, f);
-				Qe(e, _[n].swatchStyle, _[n].color, u, d - p / 2, r, p, _[n].marker, _[n].fillPaint, _[n].outlineColor, _[n].outlineWidthEmu, _[n].outlineDash, _[n].outlineCap, _[n].outlineJoin, f, m), e.fillStyle = c.color, e.textAlign = "left", e.fillText(l, u + r + g, d), u += i + nt;
+				let s = Math.max(0, a - r - _ + At), c = ue(e, v[n].label, s), f = Pt(v[n], b, p);
+				X(e, v[n].swatchStyle, v[n].color, u, d - f / 2, r, f, v[n].marker, v[n].fillPaint, v[n].outlineColor, v[n].outlineWidthEmu, v[n].outlineDash, v[n].outlineCap, v[n].outlineJoin, p, h), e.fillStyle = l.color, e.textAlign = "left", e.fillText(c, u + r + _, d), u += a + wt;
 			}
 		}
 		return;
 	}
-	let w = i - Math.max(...S, 0) - g, T = !u && !Ke(s), E = _.map((t) => T ? pt(e, t.label, w) : [re(e, t.label, w)]), D = E.map((e) => e.length * b + rt), O = 0, k = 0;
-	for (; O < _.length && k + D[O] <= a;) k += D[O], O++;
-	let A = O === _.length ? r + (a - k) / 2 : r;
+	let w = a - Math.max(...S, 0) - _, T = !d && !ut(c), E = v.map((t) => T ? Ft(e, t.label, w) : [ue(e, t.label, w)]), D = E.map((e) => e.length * b + Tt), O = 0, k = 0;
+	for (; O < v.length && k + D[O] <= o;) k += D[O], O++;
+	let A = O === v.length ? i + (o - k) / 2 : i;
 	for (let t = 0; t < O; t++) {
-		let r = S[t], a = D[t];
-		if (i < r) {
-			A += a;
+		let n = S[t], i = D[t];
+		if (a < n) {
+			A += i;
 			continue;
 		}
-		let o = ft(_[t], b, f);
-		Qe(e, _[t].swatchStyle, _[t].color, n, A + (a - o) / 2, r, o, _[t].marker, _[t].fillPaint, _[t].outlineColor, _[t].outlineWidthEmu, _[t].outlineDash, _[t].outlineCap, _[t].outlineJoin, f, m), e.fillStyle = c.color, e.textAlign = "left", E[t].forEach((t, i) => e.fillText(t, n + r + g, A + b * (i + .5))), A += a;
+		let o = Pt(v[t], b, p);
+		X(e, v[t].swatchStyle, v[t].color, r, A + (i - o) / 2, n, o, v[t].marker, v[t].fillPaint, v[t].outlineColor, v[t].outlineWidthEmu, v[t].outlineDash, v[t].outlineCap, v[t].outlineJoin, p, h), e.fillStyle = l.color, e.textAlign = "left", E[t].forEach((t, i) => e.fillText(t, r + n + _, A + b * (i + .5))), A += i;
 	}
 }
-function gt(e, t) {
-	let n = We(e, e.legendFontFace) ?? e.themeMinorFontLatin;
+function Rt(e, t) {
+	let n = ct(e, e.legendFontFace) ?? e.themeMinorFontLatin;
 	return {
 		fontFamily: n ? `"${n}", Calibri, Arial, sans-serif` : "sans-serif",
 		color: e.legendFontColor ? `#${e.legendFontColor}` : "#333",
 		bold: e.legendFontBold ?? !1,
-		sizePx: _(e.legendFontSizeHpt, t)
+		sizePx: x(e.legendFontSizeHpt, t)
 	};
 }
-function _t(e, n, r, i, a, o, s, c, l, u, d, f, p, m = [], h = 0) {
+function zt(t, n, r, i, a, o, s, c, l, u, d, f, p, m = [], h = 0) {
 	if (!r) return;
-	let g = gt(n, p), _ = qe(n), v = Math.min(st / 2, Math.max(0, r.reserveW) / 2), y = Math.max(0, r.reserveW - v * 2), b = r.side === "r" ? {
-		x: i + o - r.reserveW + v,
+	let g = Rt(n, p), _ = mn(n), v = dt(n), y = Math.min(kt / 2, Math.max(0, r.reserveW) / 2), b = Math.max(0, r.reserveW - y * 2), x = r.side === "r" ? {
+		x: i + o - r.reserveW + y,
 		y: l,
-		w: y,
+		w: b,
 		h: d
 	} : r.side === "l" ? {
-		x: i + v,
+		x: i + y,
 		y: l,
-		w: y,
+		w: b,
 		h: d
 	} : r.side === "t" ? {
-		x: i + it,
+		x: i + Et,
 		y: a + f,
-		w: Math.max(0, o - at),
+		w: Math.max(0, o - Dt),
 		h: r.reserveH
 	} : {
-		x: i + it,
+		x: i + Et,
 		y: a + s - r.reserveH,
-		w: Math.max(0, o - at),
+		w: Math.max(0, o - Dt),
 		h: r.reserveH
-	}, x = r.side === "t" || r.side === "b" ? "horizontal" : "vertical", S = n.legendManualLayout, C = S && S.w > 0 && S.h > 0 ? t(S, {
+	}, S = r.side === "t" || r.side === "b" ? "horizontal" : "vertical", C = n.legendManualLayout, w = C && C.w > 0 && C.h > 0 ? e(C, {
 		x: i,
 		y: a,
 		w: o,
 		h: s
-	}, b) : null;
-	if (C) {
-		let t = C.w >= C.h ? "horizontal" : "vertical";
-		N(e, n, C, p), ht(e, n.series, C.x, C.y, C.w, C.h, t, n.chartType, g, n.scatterStyle, _, n.categories, p, m, h, n.varyColors !== !1);
+	}, x) : null;
+	if (w) {
+		let e = w.w >= w.h ? "horizontal" : "vertical";
+		B(t, n, w, p), Lt(t, _, w.x, w.y, w.w, w.h, e, n.chartType, g, n.scatterStyle, v, n.categories, p, m, h, n.varyColors !== !1);
 		return;
 	}
-	N(e, n, b, p), ht(e, n.series, b.x, b.y, b.w, b.h, x, n.chartType, g, n.scatterStyle, _, n.categories, p, m, h, n.varyColors !== !1);
+	B(t, n, x, p), Lt(t, _, x.x, x.y, x.w, x.h, S, n.chartType, g, n.scatterStyle, v, n.categories, p, m, h, n.varyColors !== !1);
 }
-function vt(e, t, n, r, i, a, o, s = !1, c = !1, l = "major", u = 1) {
+function Bt(e, t, n, r, i, a, o, s = !1, c = !1, l = "major", u = 1) {
 	if (c || t === "none" || !t) return;
-	let d = yt(l, o, u), f = t === "cross" ? d / 2 : d, p = e.strokeStyle, m = e.lineWidth;
-	if (e.strokeStyle = a ?? "#888", e.lineWidth = o ?? 1, e.beginPath(), n === "val") {
+	let d = Vt(l, o, u), f = t === "cross" ? d / 2 : d, p = e.strokeStyle, m = e.lineWidth, h = e.getLineDash?.() ?? [];
+	if (e.strokeStyle = a ?? "#888", e.lineWidth = o ?? 1, e.setLineDash([]), e.beginPath(), n === "val") {
 		let n = r, a = i, o = s ? 1 : -1, c = t === "out" || t === "cross" ? o * f : 0, l = t === "in" || t === "cross" ? -o * f : 0;
 		e.moveTo(n + c, a), e.lineTo(n + l, a);
 	} else {
 		let n = r, a = i, o = s ? -1 : 1, c = t === "out" || t === "cross" ? o * f : 0, l = t === "in" || t === "cross" ? -o * f : 0;
 		e.moveTo(a, n + c), e.lineTo(a, n + l);
 	}
-	e.stroke(), e.strokeStyle = p, e.lineWidth = m;
+	e.stroke(), e.strokeStyle = p, e.lineWidth = m, e.setLineDash(h);
 }
-function yt(e, t, n) {
+function Vt(e, t, n) {
 	let r = (e === "minor" ? 4 : 6) * n;
 	return t ? Math.max(r, t + 2 * n) : r;
 }
-function bt(e, t, n, r) {
+function Ht(e, t, n, r) {
 	if (e !== "out" && e !== "cross") return 0;
-	let i = yt(t, n, r);
+	let i = Vt(t, n, r);
 	return e === "cross" ? i / 2 : i;
 }
-function xt(e, t, n, r, i, a) {
+function Ut(e, t, n, r, i, a) {
 	a && a.explicit ? (e.strokeStyle = a.color, e.lineWidth = a.width) : (e.strokeStyle = i ? "#aaa" : a?.color ?? "#e0e0e0", e.lineWidth = i ? 1 : a?.width ?? .5);
 	let o = a?.dash ?? [], s = o.length > 0 && e.getLineDash ? e.getLineDash() : [];
 	o.length > 0 && e.setLineDash(o), e.beginPath(), e.moveTo(t, r), e.lineTo(t + n, r), e.stroke(), o.length > 0 && e.setLineDash(s);
 }
-function St(e, t) {
-	let { color: n, width: r } = E(e.valAxisGridlineColor, e.valAxisGridlineWidthEmu, t);
+function Wt(e, t) {
+	let { color: n, width: r } = j(e.valAxisGridlineColor, e.valAxisGridlineWidthEmu, t);
 	return {
 		color: n,
 		width: r,
 		explicit: e.valAxisGridlineColor != null || e.valAxisGridlineWidthEmu != null || e.valAxisGridlineDash != null,
-		dash: Bn(e.valAxisGridlineDash ?? void 0)
+		dash: yr(e.valAxisGridlineDash ?? void 0, r)
 	};
 }
-function Ct(e, t) {
-	let { color: n, width: r } = E(e.valAxisMinorGridlineColor, e.valAxisMinorGridlineWidthEmu, t);
+function Gt(e, t) {
+	let { color: n, width: r } = j(e.valAxisMinorGridlineColor, e.valAxisMinorGridlineWidthEmu, t);
 	return {
 		color: n,
 		width: r,
 		explicit: e.valAxisMinorGridlineColor != null,
-		dash: Bn(e.valAxisMinorGridlineDash ?? void 0)
+		dash: yr(e.valAxisMinorGridlineDash ?? void 0, r)
 	};
 }
-function wt(e, t) {
-	let { color: n, width: r } = E(e.minorGridlineColor, e.minorGridlineWidthEmu, t);
+function Kt(e, t) {
+	let { color: n, width: r } = j(e.minorGridlineColor, e.minorGridlineWidthEmu, t);
 	return {
 		color: n,
 		width: r,
 		explicit: e.minorGridlineColor != null || e.minorGridlineWidthEmu != null || e.minorGridlineDash != null,
-		dash: Bn(e.minorGridlineDash ?? void 0)
+		dash: yr(e.minorGridlineDash ?? void 0, r)
 	};
 }
-function Tt(e, t) {
-	let { color: n, width: r } = E(e.majorGridlineColor, e.majorGridlineWidthEmu, t);
+function qt(e, t) {
+	let { color: n, width: r } = j(e.majorGridlineColor, e.majorGridlineWidthEmu, t);
 	return {
 		color: n,
 		width: r,
 		explicit: e.majorGridlineColor != null || e.majorGridlineWidthEmu != null || e.majorGridlineDash != null,
-		dash: Bn(e.majorGridlineDash ?? void 0)
+		dash: yr(e.majorGridlineDash ?? void 0, r)
 	};
 }
-function Et(e) {
+function Jt(e) {
 	return e.catAxisMajorGridlines === !0;
 }
-function Dt(e, t) {
+function Yt(e, t) {
+	let n = j(e.catAxisGridlineColor, e.catAxisGridlineWidthEmu, t);
 	return {
-		...E(e.catAxisGridlineColor, e.catAxisGridlineWidthEmu, t),
-		dash: Bn(e.catAxisGridlineDash ?? void 0)
+		...n,
+		dash: yr(e.catAxisGridlineDash ?? void 0, n.width)
 	};
 }
-function Ot(e, t) {
+function Xt(e, t) {
+	let n = j(e.catAxisMinorGridlineColor, e.catAxisMinorGridlineWidthEmu, t);
 	return {
-		...E(e.catAxisMinorGridlineColor, e.catAxisMinorGridlineWidthEmu, t),
-		dash: Bn(e.catAxisMinorGridlineDash ?? void 0)
+		...n,
+		dash: yr(e.catAxisMinorGridlineDash ?? void 0, n.width)
 	};
 }
-function kt(e, t) {
+function Zt(e, t) {
 	if (t <= 0) return [];
-	let n = j(e), r = [], i = n ? t : t - 1;
+	let n = T(e), r = [], i = n ? t : t - 1;
 	for (let e = 0; e <= i; e++) r.push(n ? e / t : t === 1 ? .5 : e / (t - 1));
 	return r;
 }
-function At(e) {
+function Qt(e) {
 	return e.valAxisOrientation === "maxMin";
 }
-function jt(e) {
+function $t(e) {
 	return e.catAxisOrientation === "maxMin";
 }
-function Mt(e) {
+function en(e) {
 	return e.valAxisMajorGridlines !== !1;
 }
-function Nt(e, t) {
+function tn(e, t) {
 	return e == null || !t ? e : e * 100;
 }
-function Pt(e, t, n) {
-	return p((n ? t / 100 : t) / Ft(e.valAxisDisplayUnits), n ? e.valAxisFormatCode ?? "0%" : e.valAxisFormatCode, e.date1904);
+function nn(e, t, n) {
+	return m((n ? t / 100 : t) / rn(e.valAxisDisplayUnits), n ? e.valAxisFormatCode ?? "0%" : e.valAxisFormatCode, e.date1904);
 }
-function Ft(e) {
+function rn(e) {
 	let t = e?.divisor;
 	return t != null && Number.isFinite(t) && t > 0 ? t : 1;
 }
-function It(e, t, n, r) {
-	return p(e / Ft(r), t, n);
+function an(e, t, n, r) {
+	return m(e / rn(r), t, n);
 }
-function Lt(e) {
+function on(e) {
 	return e.builtInUnit ? {
 		hundreds: "Hundreds",
 		thousands: "Thousands",
@@ -1322,7 +1472,7 @@ function Lt(e) {
 		trillions: "Trillions"
 	}[e.builtInUnit] ?? e.builtInUnit : d(e.divisor);
 }
-function Rt(e, n, r, i) {
+function sn(t, n, r, i) {
 	let a = [
 		{
 			units: n.valAxisDisplayUnits,
@@ -1352,28 +1502,28 @@ function Rt(e, n, r, i) {
 	for (let { units: o, vertical: s, fallbackX: c, fallbackY: l } of a) {
 		let a = o?.label;
 		if (!o || !a) continue;
-		let u = a.text ?? Lt(o), d = _(a.fontSizeHpt, i) ?? 10 * i;
-		e.save(), e.font = Ge(d, Y(n, a.fontFace, "minor"), a.fontBold ?? !1, a.fontItalic ?? !1);
-		let f = a.rotation == null ? s ? -Math.PI / 2 : 0 : a.rotation / 6e4 * Math.PI / 180, p = e.measureText(u).width, m = Math.abs(Math.cos(f)) * p + Math.abs(Math.sin(f)) * d, h = Math.abs(Math.sin(f)) * p + Math.abs(Math.cos(f)) * d, g = {
+		let u = a.text ?? on(o), d = x(a.fontSizeHpt, i) ?? 10 * i;
+		t.save(), t.font = lt(d, Y(n, a.fontFace, "minor"), a.fontBold ?? !1, a.fontItalic ?? !1);
+		let f = a.rotation == null ? s ? -Math.PI / 2 : 0 : a.rotation / 6e4 * Math.PI / 180, p = t.measureText(u).width, m = Math.abs(Math.cos(f)) * p + Math.abs(Math.sin(f)) * d, h = Math.abs(Math.sin(f)) * p + Math.abs(Math.cos(f)) * d, g = {
 			x: c - m / 2,
 			y: l - h / 2,
 			w: m,
 			h
-		}, v = a.manualLayout ? t({
+		}, _ = a.manualLayout ? e({
 			...a.manualLayout,
 			w: void 0,
 			h: void 0
 		}, r, g) : g;
-		if (!v) {
-			e.restore();
+		if (!_) {
+			t.restore();
 			continue;
 		}
-		let y = v.x + v.w / 2, b = v.y + v.h / 2;
-		a.boxStyle?.fill && (e.fillStyle = `#${a.boxStyle.fill}`, e.fillRect(v.x, v.y, v.w, v.h)), a.boxStyle?.borderColor && (e.strokeStyle = `#${a.boxStyle.borderColor}`, e.lineWidth = a.boxStyle.borderWidthEmu ? Math.max(.5, a.boxStyle.borderWidthEmu / D * i) : 1, e.strokeRect(v.x, v.y, v.w, v.h)), e.translate(y, b), f !== 0 && e.rotate(f), e.fillStyle = a.fontColor ? `#${a.fontColor}` : "#595959", e.textAlign = "center", e.textBaseline = "middle", e.fillText(u, 0, 0), e.restore();
+		let v = _.x + _.w / 2, y = _.y + _.h / 2;
+		a.boxStyle?.fill && (t.fillStyle = `#${a.boxStyle.fill}`, t.fillRect(_.x, _.y, _.w, _.h)), a.boxStyle?.borderColor && (t.strokeStyle = `#${a.boxStyle.borderColor}`, t.lineWidth = a.boxStyle.borderWidthEmu ? Math.max(.5, a.boxStyle.borderWidthEmu / se * i) : 1, t.strokeRect(_.x, _.y, _.w, _.h)), t.translate(v, y), f !== 0 && t.rotate(f), t.fillStyle = a.fontColor ? `#${a.fontColor}` : "#595959", t.textAlign = "center", t.textBaseline = "middle", t.fillText(u, 0, 0), t.restore();
 	}
 }
-function zt(e, t, n, r, i = !1, a = "vertical") {
-	let o = At(e), s = e.valAxisLogBase, c = Nt(e.valMin, i) ?? (i ? t : e.valMin), l = Nt(e.valMax, i) ?? (i ? n : e.valMax), u = Nt(e.valAxisMajorUnit, i), d = i && !(s != null && isFinite(s) && s >= 2) && !(u != null && isFinite(u) && u > 0) ? b(t, n, a, r) : u, f = e.valAxisMinorTickMark != null && e.valAxisMinorTickMark !== "none", p = y({
+function cn(e, t, n, r, i = !1, a = "vertical") {
+	let o = Qt(e), s = e.valAxisLogBase, c = tn(e.valMin, i) ?? (i ? t : e.valMin), l = tn(e.valMax, i) ?? (i ? n : e.valMax), u = tn(e.valAxisMajorUnit, i), d = i && !(s != null && isFinite(s) && s >= 2) && !(u != null && isFinite(u) && u > 0) ? ee(t, n, a, r) : u, f = e.valAxisMinorTickMark != null && e.valAxisMinorTickMark !== "none", p = D({
 		dataMin: t,
 		dataMax: n,
 		explicitMin: c,
@@ -1381,7 +1531,7 @@ function zt(e, t, n, r, i = !1, a = "vertical") {
 		axisLenPt: r,
 		axisOrientation: a,
 		majorUnit: d,
-		minorUnit: Nt(e.valAxisMinorUnit, i),
+		minorUnit: tn(e.valAxisMinorUnit, i),
 		needMinor: e.valAxisMinorGridlines === !0 || f,
 		logBase: s,
 		reversed: o
@@ -1396,90 +1546,121 @@ function zt(e, t, n, r, i = !1, a = "vertical") {
 		frac: p.fraction
 	};
 }
-function Bt(e) {
-	return d(Number(e.toPrecision(6)));
+function ln(e, t) {
+	return t && t.trim().toLowerCase() !== "general" ? m(e, t) : d(Number(e.toPrecision(6)));
 }
-function Vt(e, t) {
+function un(e, t, n) {
 	if (e.labelText) return e.labelText.split(/\r?\n/);
 	if (!t) return [];
-	let n = [];
+	let r = e.labelFormatSourceLinked === !0 ? n : e.labelFormatCode, i = [];
 	if (e.dispEq) {
 		let e = t.intercept < 0 ? "−" : "+";
-		n.push(`y = ${Bt(t.slope)}x ${e} ${Bt(Math.abs(t.intercept))}`);
+		i.push(`y = ${ln(t.slope, r)}x ${e} ${ln(Math.abs(t.intercept), r)}`);
 	}
-	return e.dispRSqr && n.push(`R² = ${Bt(t.rSquared)}`), n;
+	return e.dispRSqr && i.push(`R² = ${ln(t.rSquared, r)}`), i;
 }
-function Ht(e, t, n, r, i) {
+function dn(e, t, n, r, i, a) {
 	if (!i) return;
-	let a = Vt(t, n);
-	if (a.length === 0) return;
-	let { chart: o, chartRect: s, plotRect: c } = i, l = _(t.labelFontSizeHpt, r) ?? _(o.dataLabelFontSizeHpt, r) ?? 10 * r;
-	e.font = Ge(l, Y(o, t.labelFontFace ?? o.dataLabelFontFace, "minor"), t.labelFontBold ?? o.dataLabelFontBold ?? !1, t.labelFontItalic ?? !1);
-	let u = l * 1.2, d = Ce(s, c, Math.max(...a.map((t) => e.measureText(t).width)), a.length * u, l, t.labelManualLayout, i.automaticAnchor);
-	if (!d) return;
-	e.save(), d.automatic && (e.beginPath(), e.rect(c.x, c.y, c.w, c.h), e.clip()), t.labelBox?.fill && (e.fillStyle = `#${t.labelBox.fill}`, e.fillRect(d.x, d.y, d.w, d.h)), t.labelBox?.borderColor && (e.strokeStyle = `#${t.labelBox.borderColor}`, e.lineWidth = t.labelBox.borderWidthEmu ? Math.max(.5, t.labelBox.borderWidthEmu / D * r) : 1, e.strokeRect(d.x, d.y, d.w, d.h));
-	let f = t.labelTextAlign;
-	e.textAlign = f === "r" ? "right" : f === "ctr" ? "center" : "left", e.textBaseline = "top";
-	let p = t.labelFontColor ?? o.dataLabelFontColor;
-	e.fillStyle = p ? `#${p}` : "#595959";
-	let m = e.textAlign === "right" ? d.x + d.w : e.textAlign === "center" ? d.x + d.w / 2 : d.x, h = d.automatic ? a.length : Math.min(a.length, Math.floor(d.h / u));
-	for (let t = 0; t < h; t++) e.fillText(re(e, a[t], d.w), m, d.y + t * u);
+	let o = un(t, n, a);
+	if (o.length === 0) return;
+	let { chart: s, chartRect: c, plotRect: l } = i, u = x(t.labelFontSizeHpt, r) ?? x(s.dataLabelFontSizeHpt, r) ?? 10 * r;
+	e.font = lt(u, Y(s, t.labelFontFace ?? s.dataLabelFontFace, "minor"), t.labelFontBold ?? s.dataLabelFontBold ?? !1, t.labelFontItalic ?? !1);
+	let d = u * 1.2, f = Ve(c, l, Math.max(...o.map((t) => e.measureText(t).width)), o.length * d, u, t.labelManualLayout, i.automaticAnchor);
+	if (!f) return;
+	e.save(), f.automatic && (e.beginPath(), e.rect(l.x, l.y, l.w, l.h), e.clip()), t.labelBox?.fill && (e.fillStyle = `#${t.labelBox.fill}`, e.fillRect(f.x, f.y, f.w, f.h)), t.labelBox?.borderColor && (e.strokeStyle = `#${t.labelBox.borderColor}`, e.lineWidth = t.labelBox.borderWidthEmu ? Math.max(.5, t.labelBox.borderWidthEmu / se * r) : 1, e.strokeRect(f.x, f.y, f.w, f.h));
+	let p = t.labelTextAlign;
+	e.textAlign = p === "r" ? "right" : p === "ctr" ? "center" : "left", e.textBaseline = "top";
+	let m = t.labelFontColor ?? s.dataLabelFontColor;
+	e.fillStyle = m ? `#${m}` : "#595959";
+	let h = e.textAlign === "right" ? f.x + f.w : e.textAlign === "center" ? f.x + f.w / 2 : f.x, g = f.automatic ? o.length : Math.min(o.length, Math.floor(f.h / d));
+	for (let t = 0; t < g; t++) e.fillText(ue(e, o[t], f.w), h, f.y + t * d);
 	e.restore();
 }
-function Ut(e, t, n, r, i, a, o, s) {
-	let c = t.trendLines;
-	if (!c || c.length === 0) return;
-	let l = [], u = [];
+function fn(e, t, n, r, i, a, o, s, c) {
+	let l = t.trendLines;
+	if (!l || l.length === 0) return;
+	let u = [], d = [];
 	for (let e = 0; e < t.values.length; e++) {
 		let n = t.values[e], r = o ? o[e] : e;
-		n != null && r != null && Number.isFinite(n) && Number.isFinite(r) && (l.push(r), u.push(n));
+		n != null && r != null && Number.isFinite(n) && Number.isFinite(r) && (u.push(r), d.push(n));
 	}
-	if (l.length < 2) return;
-	let d = e.getLineDash ? e.getLineDash() : [];
-	for (let t of c) {
-		let o = S(l, u, t.trendlineType, {
-			period: t.period,
-			order: t.order,
-			intercept: t.intercept,
-			forward: t.forward,
-			backward: t.backward
+	if (u.length < 2) return;
+	let f = e.getLineDash ? e.getLineDash() : [];
+	for (let o of l) {
+		let l = M(u, d, o.trendlineType, {
+			period: o.period,
+			order: o.order,
+			intercept: o.intercept,
+			forward: o.forward,
+			backward: o.backward
 		});
-		if (o.xs.length < 2 || ![...o.xs, ...o.ys].every(Number.isFinite)) continue;
-		let c = t.trendlineType === "linear" ? x(l, u, t.intercept) : null, d = c && [
-			c.slope,
-			c.intercept,
-			c.rSquared
-		].every(Number.isFinite) ? c : null, f = o.xs, p = o.ys;
-		if (t.trendlineType === "linear") {
-			let e = (o.ys[1] - o.ys[0]) / (o.xs[1] - o.xs[0] || 1), n = t.backward ?? 0, r = t.forward ?? 0;
-			f = [o.xs[0] - n, o.xs[1] + r], p = [o.ys[0] - e * n, o.ys[1] + e * r];
+		if (l.xs.length < 2 || ![...l.xs, ...l.ys].every(Number.isFinite)) continue;
+		let f = o.trendlineType === "linear" ? pe(u, d, o.intercept) : null, p = f && [
+			f.slope,
+			f.intercept,
+			f.rSquared
+		].every(Number.isFinite) ? f : null, m = l.xs, h = l.ys;
+		if (o.trendlineType === "linear") {
+			let e = (l.ys[1] - l.ys[0]) / (l.xs[1] - l.xs[0] || 1), t = o.backward ?? 0, n = o.forward ?? 0;
+			m = [l.xs[0] - t, l.xs[1] + n], h = [l.ys[0] - e * t, l.ys[1] + e * n];
 		}
-		if (![...f, ...p].every(Number.isFinite)) continue;
-		let m = f.map((e, t) => ({
+		if (![...m, ...h].every(Number.isFinite)) continue;
+		let g = m.map((e, t) => c ? c(e, h[t]) : {
 			x: r(e),
-			y: i(p[t])
-		}));
-		if (m.every((e) => Number.isFinite(e.x) && Number.isFinite(e.y))) {
-			if (!t.lineHidden) {
-				s?.clipLineToPlot && (e.save(), e.beginPath(), e.rect(s.plotRect.x, s.plotRect.y, s.plotRect.w, s.plotRect.h), e.clip()), e.strokeStyle = t.lineColor ? `#${t.lineColor}` : n, e.lineWidth = t.lineWidthEmu ? P(t.lineWidthEmu, a) : 1.5, e.setLineDash(Bn(t.lineDash ?? void 0)), e.beginPath();
-				for (let t = 0; t < m.length; t++) {
-					let { x: n, y: r } = m[t];
+			y: i(h[t])
+		});
+		if (g.every((e) => Number.isFinite(e.x) && Number.isFinite(e.y))) {
+			if (!o.lineHidden) {
+				s?.clipLineToPlot && (e.save(), e.beginPath(), e.rect(s.plotRect.x, s.plotRect.y, s.plotRect.w, s.plotRect.h), e.clip()), e.strokeStyle = o.lineColor ? `#${o.lineColor}` : n, e.lineWidth = o.lineWidthEmu ? N(o.lineWidthEmu, a) : 1.5, e.setLineDash(yr(o.lineDash ?? void 0, e.lineWidth)), e.beginPath();
+				for (let t = 0; t < g.length; t++) {
+					let { x: n, y: r } = g[t];
 					t === 0 ? e.moveTo(n, r) : e.lineTo(n, r);
 				}
 				e.stroke(), s?.clipLineToPlot && e.restore();
 			}
-			Ht(e, t, d, a, s ? {
+			dn(e, o, p, a, s ? {
 				...s,
-				automaticAnchor: m.at(-1)
-			} : void 0);
+				automaticAnchor: g.at(-1)
+			} : void 0, t.valFormatCode);
 		}
 	}
-	e.setLineDash(d);
+	e.setLineDash(f);
 }
-function Wt(e, t, n) {
-	return _(e, n) ?? Math.max(8, t * .045);
+function pn(e) {
+	let t = (e) => {
+		switch (e) {
+			case "exp": return "Exponential";
+			case "log": return "Logarithmic";
+			case "poly": return "Polynomial";
+			case "power": return "Power";
+			case "movingAvg": return "Moving Average";
+			default: return "Linear";
+		}
+	}, n = [];
+	for (let r of e) for (let e of r.trendLines ?? []) {
+		if (e.lineHidden === !0) continue;
+		let i = r.lineColor ?? r.color;
+		n.push({
+			name: e.name ?? `${t(e.trendlineType)} (${r.name || "Series"})`,
+			color: e.lineColor ?? i,
+			lineColor: e.lineColor ?? i,
+			lineWidthEmu: e.lineWidthEmu,
+			lineHidden: !1,
+			chartexStyle: { lineDash: e.lineDash },
+			values: [],
+			seriesType: "line",
+			showMarker: !1
+		});
+	}
+	return n;
 }
-function Gt(e, t, n, r = 0) {
+function mn(e) {
+	return ut(e.chartType) || dt(e) ? e.series : e.series.flatMap((e) => [e, ...pn([e])]);
+}
+function hn(e, t, n) {
+	return x(e, n) ?? Math.max(8, t * .045);
+}
+function gn(e, t, n, r = 0) {
 	let i = t.trim().split(/\s+/).filter(Boolean);
 	if (i.length === 0) return [""];
 	let a = [], o = "", s = (t) => {
@@ -1506,121 +1687,225 @@ function Gt(e, t, n, r = 0) {
 	for (let e of i) s(e);
 	return o && a.push(o), a.length ? a : [""];
 }
-function Kt(e, t) {
+function _n(e, t) {
 	return /^[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)%?$/.test(e) ? t * .15 : 0;
 }
-function qt(e) {
+function vn(e) {
 	return e.catAxisTickLabelPos !== "none";
 }
-var Jt = 54e5;
-function Yt(e) {
+var yn = 54e5;
+function bn(e) {
 	let t = e.catAxisLabelRotation;
-	return t == null || t === 0 || Math.abs(t) > Jt ? 0 : t / 6e4 * (Math.PI / 180);
+	return t == null || t === 0 || Math.abs(t) > yn ? 0 : t / 6e4 * (Math.PI / 180);
 }
-function Xt(e, t, n, r, i) {
+function xn(e, t, n, r, i) {
 	if (i === 0) {
 		e.fillText(t, n, r);
 		return;
 	}
 	e.save(), e.translate(n, r), e.rotate(i), e.textAlign = "right", e.textBaseline = "middle", e.fillText(t, 0, 0), e.restore();
 }
-function Zt(e, t, n) {
-	if (!e) return null;
-	function* r() {
-		for (let e of t) e.useSecondaryAxis === !0 && (yield* e.values);
+function Sn(e, t, n = $t(e)) {
+	return e.catAxisIsDate === !0 ? Be({
+		categories: t,
+		date1904: e.date1904,
+		baseTimeUnit: e.catAxisBaseTimeUnit,
+		majorTimeUnit: e.catAxisMajorTimeUnit,
+		majorUnit: e.catAxisMajorUnit,
+		minorTimeUnit: e.catAxisMinorTimeUnit,
+		minorUnit: e.catAxisMinorUnit,
+		explicitMin: e.catAxisMin,
+		explicitMax: e.catAxisMax,
+		crossBetween: T(e),
+		reversed: n
+	}) : null;
+}
+function Cn(e, t, n, r) {
+	for (let i of e.errBars ?? []) {
+		if (i.dir !== t) continue;
+		let a = i.barType === "plus" || i.barType === "both", o = i.barType === "minus" || i.barType === "both", s = Math.max(e.values.length, i.plus.length, i.minus.length);
+		for (let e = 0; e < s; e++) {
+			let t = n(e);
+			if (t == null || !Number.isFinite(t)) continue;
+			let s = i.plus[e], c = i.minus[e];
+			a && s != null && Number.isFinite(s) && r(t + s), o && c != null && Number.isFinite(c) && r(t - c);
+		}
 	}
-	let { min: i, max: a } = T(r()), o = y({
-		dataMin: i,
-		dataMax: a,
-		explicitMin: e.min,
-		explicitMax: e.max,
+}
+function wn(e, t, n, r = "y", i = !1, a = !1) {
+	if (!e) return null;
+	let o = Infinity, s = -Infinity, c = (e) => {
+		Number.isFinite(e) && (o = Math.min(o, e), s = Math.max(s, e));
+	};
+	a && c(0);
+	for (let e of t) if (e.useSecondaryAxis === !0) {
+		for (let t of e.values) t != null && c(t);
+		Cn(e, r, (t) => e.values[t] ?? null, c);
+	}
+	(!Number.isFinite(o) || !Number.isFinite(s)) && (o = 0, s = 1);
+	let l = D({
+		dataMin: o,
+		dataMax: s,
+		explicitMin: tn(e.min, i),
+		explicitMax: tn(e.max, i),
 		axisLenPt: n,
 		axisOrientation: "vertical",
-		majorUnit: e.majorUnit,
-		minorUnit: e.minorUnit,
+		majorUnit: tn(e.majorUnit, i),
+		minorUnit: tn(e.minorUnit, i),
 		needMinor: e.minorGridlines === !0 || e.minorTickMark != null && e.minorTickMark !== "none",
 		logBase: e.logBase,
 		reversed: e.orientation === "maxMin"
-	}), { min: s, max: c, majorUnit: l } = o;
+	}), { min: u, max: d, majorUnit: f } = l;
 	return {
-		min: s,
-		max: c,
-		step: l,
-		majorLines: o.majorTicks,
-		minorTicks: o.minorTicks,
-		makeToY: (e, t) => (n) => e + t - o.fraction(n) * t
+		min: u,
+		max: d,
+		step: f,
+		majorLines: l.majorTicks,
+		minorTicks: l.minorTicks,
+		makeToY: (e, t) => (n) => e + t - l.fraction(n) * t
 	};
 }
-function Qt(e, t, n, r, i, a, o) {
+function Tn(e, t, n, r, i, a, o) {
 	if (!t.hidden) {
 		if (e.save(), t.minorGridlines) {
-			let s = wt(t, o);
-			for (let t of n.minorTicks) xt(e, i, a, r(t), !1, s);
+			let s = Kt(t, o);
+			for (let t of n.minorTicks) Ut(e, i, a, r(t), !1, s);
 		}
 		if (t.majorGridlines) {
-			let s = Tt(t, o);
-			for (let t of n.majorLines) xt(e, i, a, r(t), !1, s);
+			let s = qt(t, o);
+			for (let t of n.majorLines) Ut(e, i, a, r(t), !1, s);
 		}
 		e.restore();
 	}
 }
-function $t(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m) {
-	let h = o + c, { color: g, width: _ } = ee(n.lineColor, n.lineWidthEmu, u);
-	if (n.lineHidden || (e.strokeStyle = g, e.lineWidth = _, e.beginPath(), e.moveTo(h, s), e.lineTo(h, s + l), e.stroke()), !n.hidden) {
+function En(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h = !1) {
+	let g = o + c, { color: _, width: v } = w(n.lineColor, n.lineWidthEmu, u);
+	if (!n.lineHidden) {
+		let t = e.getLineDash?.() ?? [];
+		e.strokeStyle = _, e.lineWidth = v, e.setLineDash([]), e.beginPath(), e.moveTo(g, s), e.lineTo(g, s + l), e.stroke(), e.setLineDash(t);
+	}
+	if (!n.hidden) {
 		e.font = `${n.fontItalic ? "italic " : ""}${n.fontBold ? "bold " : ""}${d}px ${Y(t, n.fontFace, "minor")}`, e.fillStyle = n.fontColor ? `#${n.fontColor}` : p, e.textAlign = "left", e.textBaseline = "middle";
 		for (let t of r.majorLines) {
 			let r = i(t);
-			vt(e, n.majorTickMark, "val", h, r, g, _, !0, n.lineHidden, "major", u), n.tickLabelPos !== "none" && e.fillText(It(t, n.formatCode ?? null, m, n.displayUnits), h + 14, r);
+			Bt(e, n.majorTickMark, "val", g, r, _, v, !0, n.lineHidden, "major", u), n.tickLabelPos !== "none" && e.fillText(an(h ? t / 100 : t, n.formatCode ?? null, m, n.displayUnits), g + 14, r);
 		}
-		if (n.minorTickMark && n.minorTickMark !== "none") for (let t of r.minorTicks) vt(e, n.minorTickMark, "val", h, i(t), g, _, !0, n.lineHidden, "minor", u);
+		if (n.minorTickMark && n.minorTickMark !== "none") for (let t of r.minorTicks) Bt(e, n.minorTickMark, "val", g, i(t), _, v, !0, n.lineHidden, "minor", u);
 	}
-	n.title && en(e, t, n, a, o, s, c, l, f, u);
+	n.title && Dn(e, t, n, a, o, s, c, l, f, u);
 }
-function en(e, t, n, r, a, o, s, c, l, u) {
+function Dn(e, t, n, r, i, a, o, s, c, u) {
 	if (!n.title) return;
-	let d = i(n.titleFontSizeHpt, u), f = n.titleFontColor ? `#${n.titleFontColor}` : n.fontColor ? `#${n.fontColor}` : "#555";
-	Z(e, n.title, a + s + l + d * .6, o + c / 2, "right", d, n.titleFontBold ?? !0, n.titleFontItalic ?? !1, f, c, Y(t, n.titleFontFace, "major"), n.titleRotation, n.titleVerticalMode, n.titleManualLayout, r);
+	let d = l(n.titleFontSizeHpt, u), f = n.titleFontColor ? `#${n.titleFontColor}` : n.fontColor ? `#${n.fontColor}` : "#555";
+	pt(e, n.title, i + o + c + d * .6, a + s / 2, "right", d, n.titleFontBold ?? !0, n.titleFontItalic ?? !1, f, s, Y(t, n.titleFontFace, "major"), n.titleRotation, n.titleVerticalMode, n.titleManualLayout, r);
 }
-function tn(e, t, n, r, a, o, s, c, l) {
+function On(e, t, n, r, i, a, o, s, c) {
 	if (n.hidden || r.length === 0) return;
-	let { color: u, width: d } = ee(n.lineColor, n.lineWidthEmu, l);
-	n.lineHidden || (e.strokeStyle = u, e.lineWidth = d, e.beginPath(), e.moveTo(o, s), e.lineTo(o + c, s), e.stroke());
-	let p = n.orientation === "maxMin", m = Math.max(1, Math.floor(n.tickLabelSkip ?? 1)), g = Math.max(1, Math.floor(n.tickMarkSkip ?? 1)), v = r.length, y = (e) => o + ((p ? v - 1 - e : e) + .5) / v * c;
+	let { color: d, width: f } = w(n.lineColor, n.lineWidthEmu, c);
+	if (!n.lineHidden) {
+		let t = e.getLineDash?.() ?? [];
+		e.strokeStyle = d, e.lineWidth = f, e.setLineDash([]), e.beginPath(), e.moveTo(a, o), e.lineTo(a + s, o), e.stroke(), e.setLineDash(t);
+	}
+	let p = n.orientation === "maxMin", m = Math.max(1, Math.floor(n.tickLabelSkip ?? 1)), h = Math.max(1, Math.floor(n.tickMarkSkip ?? 1)), _ = r.length, v = (e) => a + ((p ? _ - 1 - e : e) + .5) / _ * s;
 	if (!n.lineHidden && n.majorTickMark !== "none") {
-		let r = j(t), i = r ? v : v - 1;
-		for (let t = 0; t <= i; t += g) {
-			let a = p ? i - t : t, f = r ? a / v : v === 1 ? .5 : a / (v - 1);
-			vt(e, n.majorTickMark, "cat", s, o + f * c, u, d, !0, n.lineHidden, "major", l);
+		let r = T(t), i = r ? _ : _ - 1;
+		for (let t = 0; t <= i; t += h) {
+			let l = p ? i - t : t, u = r ? l / _ : _ === 1 ? .5 : l / (_ - 1);
+			Bt(e, n.majorTickMark, "cat", o, a + u * s, d, f, !0, n.lineHidden, "major", c);
 		}
 	}
-	let b = _(n.fontSizeHpt, l) ?? 9 * l;
+	let y = x(n.fontSizeHpt, c) ?? 9 * c;
 	if (n.tickLabelPos !== "none") {
-		e.font = Ge(b, Y(t, n.fontFace, "minor"), n.fontBold ?? !1, n.fontItalic ?? !1), e.fillStyle = n.fontColor ? `#${n.fontColor}` : "#555", e.textAlign = "center", e.textBaseline = "bottom";
-		let i = Math.max(1, c / v - 4);
-		for (let a = 0; a < v; a += m) e.fillText(re(e, h(r[a], n.formatCode, t.date1904), i), y(a), s - f(b));
+		e.font = lt(y, Y(t, n.fontFace, "minor"), n.fontBold ?? !1, n.fontItalic ?? !1), e.fillStyle = n.fontColor ? `#${n.fontColor}` : "#555", e.textAlign = "center", e.textBaseline = "bottom";
+		let i = Math.max(1, s / _ - 4);
+		for (let a = 0; a < _; a += m) e.fillText(ue(e, g(r[a], n.formatCode, t.date1904), i), v(a), o - u(y));
 	}
 	if (n.title) {
-		let r = i(n.titleFontSizeHpt, l);
-		Z(e, n.title, o + c / 2, s - (n.tickLabelPos === "none" ? 0 : b + f(b)) - r / 2 - 4, "horizontal", r, n.titleFontBold ?? !0, n.titleFontItalic ?? !1, n.titleFontColor ? `#${n.titleFontColor}` : "#555", c, Y(t, n.titleFontFace, "major"), n.titleRotation, n.titleVerticalMode, n.titleManualLayout, a);
+		let r = l(n.titleFontSizeHpt, c);
+		pt(e, n.title, a + s / 2, o - (n.tickLabelPos === "none" ? 0 : y + u(y)) - r / 2 - 4, "horizontal", r, n.titleFontBold ?? !0, n.titleFontItalic ?? !1, n.titleFontColor ? `#${n.titleFontColor}` : "#555", s, Y(t, n.titleFontFace, "major"), n.titleRotation, n.titleVerticalMode, n.titleManualLayout, i);
 	}
 }
-function nn(e, t, n, r, i, a) {
-	if (!t.title) return;
-	let o = We(t, t.titleFontFace), s = o ? `"${o}", Calibri, Arial, sans-serif` : "Calibri, Arial, sans-serif";
-	e.font = `${t.titleFontBold ?? !0 ? "bold " : ""}${a}px ${s}`, e.fillStyle = t.titleFontColor ? `#${t.titleFontColor}` : "#333", e.textAlign = "center", e.textBaseline = "top", e.fillText(t.title, n + i / 2, r);
+function kn(e, t, n) {
+	let r = n / (e.titleFontSizeHpt != null && e.titleFontSizeHpt >= 100 && e.titleFontSizeHpt <= 4e5 ? e.titleFontSizeHpt / 100 : 14), i = x(t.fontSizeHpt, r) ?? n, a = ct(e, t.fontFace ?? e.titleFontFace);
+	return {
+		font: lt(i, a ? `"${a}", Calibri, Arial, sans-serif` : "Calibri, Arial, sans-serif", t.bold ?? (e.titleRichRuns?.length ? !1 : e.titleFontBold ?? !0), t.italic ?? !1),
+		fontSize: i,
+		color: t.color ? `#${t.color}` : e.titleFontColor ? `#${e.titleFontColor}` : "#333"
+	};
 }
-function rn(e, n, r, i, a, o, s, c) {
+function An(e, t, n, r) {
+	let i = t.titleRichRuns?.length ? t.titleRichRuns : t.title ? [{ text: t.title }] : [], a = [{
+		pieces: [],
+		width: 0,
+		height: r
+	}], o = () => {
+		let e = {
+			pieces: [],
+			width: 0,
+			height: r
+		};
+		return a.push(e), e;
+	}, s = a[0];
+	for (let a of i) {
+		let i = kn(t, a, r);
+		for (let t of a.text.split(/(\n|[\t ]+)/).filter((e) => e.length > 0)) {
+			if (t === "\n") {
+				s = o();
+				continue;
+			}
+			e.font = i.font;
+			let r = e.measureText(t).width, a = /^[\t ]+$/.test(t);
+			!a && s.pieces.length > 0 && s.width + r > n && (s = o()), !(a && s.pieces.length === 0) && (s.pieces.push({
+				text: t,
+				width: r,
+				font: i.font,
+				color: i.color
+			}), s.width += r, s.height = Math.max(s.height, i.fontSize));
+		}
+	}
+	return a;
+}
+function jn(e, t, n, r, i) {
+	let o = a(t, r, i);
+	if (o.bandH === 0 || !t.titleRichRuns?.length) return o;
+	let s = e.font, c = An(e, t, Math.max(1, n), o.fontPx);
+	e.font = s;
+	let l = c.reduce((e, t) => e + t.height, 0);
+	return {
+		...o,
+		bandH: o.topPad + l + o.bottomPad
+	};
+}
+function Mn(e, t, n, r, i, a) {
+	if (!t.title) return;
+	if (!t.titleRichRuns?.length) {
+		let o = ct(t, t.titleFontFace), s = o ? `"${o}", Calibri, Arial, sans-serif` : "Calibri, Arial, sans-serif";
+		e.font = `${t.titleFontBold ?? !0 ? "bold " : ""}${a}px ${s}`, e.fillStyle = t.titleFontColor ? `#${t.titleFontColor}` : "#333", e.textAlign = "center", e.textBaseline = "top", e.fillText(t.title, n + i / 2, r);
+		return;
+	}
+	e.save();
+	let o = An(e, t, Math.max(1, i), a);
+	e.textAlign = "left", e.textBaseline = "top";
+	let s = r;
+	for (let t of o) {
+		let r = n + (i - t.width) / 2;
+		for (let n of t.pieces) e.font = n.font, e.fillStyle = n.color, e.fillText(n.text, r, s), r += n.width;
+		s += t.height;
+	}
+	e.restore();
+}
+function Nn(t, n, r, i, a, o, s, c) {
 	if (!n.title) return;
 	let l = n.titleManualLayout;
 	if (l) {
-		let u = We(n, n.titleFontFace), d = u ? `"${u}", Calibri, Arial, sans-serif` : "Calibri, Arial, sans-serif";
-		e.font = `${n.titleFontBold ?? !0 ? "bold " : ""}${c}px ${d}`;
-		let f = e.measureText(n.title).width, p = {
-			x: r + (a - f) / 2,
+		let u = ct(n, n.titleFontFace), d = u ? `"${u}", Calibri, Arial, sans-serif` : "Calibri, Arial, sans-serif";
+		t.font = `${n.titleFontBold ?? !0 ? "bold " : ""}${c}px ${d}`;
+		let f = An(t, n, Math.max(1, a), c), p = Math.min(a, Math.max(...f.map((e) => e.width), 0)), m = {
+			x: r + (a - p) / 2,
 			y: s,
-			w: f,
+			w: p,
 			h: c
-		}, m = t({
+		}, h = e({
 			...l,
 			w: void 0,
 			h: void 0
@@ -1629,15 +1914,15 @@ function rn(e, n, r, i, a, o, s, c) {
 			y: i,
 			w: a,
 			h: o
-		}, p);
-		if (m) {
-			nn(e, n, m.x, m.y, m.w, c);
+		}, m);
+		if (h) {
+			Mn(t, n, h.x, h.y, h.w, c);
 			return;
 		}
 	}
-	nn(e, n, r, s, a, c);
+	Mn(t, n, r, s, a, c);
 }
-function an(e) {
+function Pn(e) {
 	if (e.categories.length > 0) return e.categories;
 	let t = e.series[0];
 	if (t?.categories && t.categories.length > 0) return t.categories;
@@ -1645,7 +1930,7 @@ function an(e) {
 	for (let t of e.series) t.values.length > n && (n = t.values.length);
 	return n > 0 ? Array.from({ length: n }, (e, t) => String(t + 1)) : [];
 }
-function on(e, t) {
+function Fn(e, t) {
 	let n = Math.max(e.x, t.x), r = Math.max(e.y, t.y), i = Math.min(e.x + e.w, t.x + t.w), a = Math.min(e.y + e.h, t.y + t.h);
 	return i > n && a > r ? {
 		x: n,
@@ -1654,8 +1939,8 @@ function on(e, t) {
 		h: a - r
 	} : null;
 }
-function sn(e, t, n, r, i, a, o, s, c, l, u, d, f, p = !1, m) {
-	Ln(e, t, {
+function In(e, t, n, r, i, a, o, s, c, l, u, d, f, p = !1, m) {
+	gr(e, t, {
 		kind: "bar",
 		rect: o === "vertical" ? {
 			x: n,
@@ -1673,693 +1958,1168 @@ function sn(e, t, n, r, i, a, o, s, c, l, u, d, f, p = !1, m) {
 		position: s ?? "outEnd"
 	}, u, l, c ? `#${c}` : "#333", f, d, m);
 }
-function cn(e) {
+function Ln(e) {
 	return 7 * e;
 }
-function ln(t, s, d, p, g = {}) {
-	let { x: v, y: b, w: x, h: S } = d, C = s.chartType === "clusteredBarH" || s.chartType === "stackedBarH" || s.chartType === "stackedBarHPct", w = s.chartType.startsWith("stacked"), E = s.chartType === "stackedBarPct" || s.chartType === "stackedBarHPct", D = s.series.filter((e) => e.seriesType !== "line" && e.seriesType !== "scatter"), O = s.series.filter((e) => e.seriesType === "line"), k = s.series.filter((e) => e.seriesType === "scatter"), A = new Map(s.series.map((e, t) => [e, t])), te = s.series.some((e) => e.useSecondaryAxis === !0), M = !C && s.secondaryValAxis && te ? s.secondaryValAxis : null, N = M ? D.filter((e) => e.useSecondaryAxis === !0) : [], ne = M ? D.filter((e) => e.useSecondaryAxis !== !0) : D, F = N.length > 0 ? s.secondaryCatAxis : null, ie = N[0]?.categories?.length ? N[0].categories : s.categories, ae = an(s), I = ae.length;
-	if (I === 0) return;
-	let oe = qe(s), se = D.map((e) => new Map((e.dataPointOverrides ?? []).map((e) => [e.idx, e]))), ce = D.map((e) => new Map((e.dataLabelOverrides ?? []).map((e) => [e.idx, e]))), L = D.map((e, t) => Wn(e, t)), R = s.chartexDataPointStyle != null || s.chartexColorPalette != null || D.some((e) => e.chartexStyle != null), z = R ? {
-		...s,
-		series: D.map((e, t) => {
-			let n = L[t], r = e.color ?? Yn(s, n, D.length, e.chartexStyle);
-			return rr(s, e.name, e, s.chartexDataPointStyle, n, D.length, r);
-		})
-	} : s, B = a(s, S, p), V = B.fontPx, le = B.topPad, ue = B.bandH, de = Wt(s.catAxisFontSizeHpt, S, p), fe = Wt(s.valAxisFontSizeHpt, S, p), H = mt(t, z, x, S, .22, p), { legRightW: pe, legLeftW: U, legTopH: he, legBottomH: W } = c(H), ge = u(s, x, S, p), _e = ge.catFontPx, G = ge.valFontPx, K = C ? s.valAxisTitle ? G + l(S) + 4 : 0 : ge.catBandH, q = C ? s.catAxisTitle ? _e + l(x) + 4 : 0 : ge.valBandW, J = _(F?.fontSizeHpt, p) ?? 9 * p, ve = F && !F.hidden && F.tickLabelPos !== "none" ? J + f(J) + 2 : 0, ye = F?.title ? i(F.titleFontSizeHpt, p) + 6 : 0, be = ue + he + fe / 2 + 2 + ve + ye, xe = C ? (s.valAxisHidden ? S * .02 : o(fe)) + K + W : o(de) + K + W, Se = S - be - xe, Ce = 0;
-	if (C && !s.catAxisHidden && qt(s)) {
-		let n = s.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, Se / I * .5)) : de;
-		t.save(), t.font = `${n}px ${Y(s, s.catAxisFontFace, "minor")}`;
-		for (let e of ae) Ce = Math.max(Ce, t.measureText(h(e, s.catAxisFormatCode, s.date1904)).width);
-		t.restore(), Ce += (s.catAxisFontSizeHpt == null ? 4 : e(n)) + m * p;
+function Rn(e, t, n, i, a = {}) {
+	let { x: c, y: d, w: f, h: m } = n, h = t.chartType === "clusteredBarH" || t.chartType === "stackedBarH" || t.chartType === "stackedBarHPct", S = t.chartType.startsWith("stacked"), E = t.chartType === "stackedBarPct" || t.chartType === "stackedBarHPct", O = t.series.filter((e) => e.seriesType !== "line" && e.seriesType !== "scatter" && e.seriesType !== "area"), A = (e) => e.barGroupDirection == null ? h : e.barGroupDirection === "bar", j = O.filter((e) => A(e) === h), ee = (e) => e.useSecondaryAxis === !0 ? "secondary-default" : "primary-default", M = (e) => e.barGroupIndex == null ? ee(e) : `group-${e.barGroupIndex}`, te = (e) => e.barGroupGrouping ?? (E ? "percentStacked" : S ? "stacked" : "clustered"), P = (e) => {
+		let t = te(e);
+		return t === "stacked" || t === "percentStacked";
+	}, ne = (e) => te(e) === "percentStacked", re = t.series.filter((e) => e.seriesType === "line"), F = t.series.filter((e) => e.seriesType === "area"), ie = t.series.filter((e) => e.seriesType === "scatter"), ae = new Map(t.series.map((e, t) => [e, t])), oe = t.series.some((e) => e.useSecondaryAxis === !0), I = !h && t.secondaryValAxis && oe ? t.secondaryValAxis : null, se = I ? j.filter((e) => e.useSecondaryAxis === !0) : [], ce = I ? j.filter((e) => e.useSecondaryAxis !== !0) : j, L = se.length > 0 ? t.secondaryCatAxis : null, le = se[0]?.categories?.length ? se[0].categories : t.categories, R = Pn(t), z = R.length;
+	if (z === 0) return;
+	let B = /* @__PURE__ */ new Map();
+	for (let e of j) {
+		let t = M(e), n = B.get(t);
+		n ? n.push(e) : B.set(t, [e]);
 	}
-	let we = Math.min(Ce, Math.max(0, x / 2 - q - U)), Te = C ? x - ((s.catAxisHidden ? x * .03 : we) + q + U) - (pe + x * .03) : 0, Ee = s.valAxisHidden ? void 0 : (C ? Te : Se) / p, De = 0, Oe = 0;
-	for (let e = 0; e < I; e++) {
-		let t = 0, n = 0;
-		for (let r of ne) {
-			let i = r.values[e] ?? 0;
-			w ? i >= 0 ? t += i : n += i : (De = Math.max(De, i), Oe = Math.min(Oe, i));
-		}
-		w && (De = Math.max(De, t), Oe = Math.min(Oe, n));
-	}
-	if (!E) {
-		for (let e of O) if (!(M && e.useSecondaryAxis === !0)) for (let t = 0; t < I; t++) {
-			let n = e.values[t];
-			n != null && (De = Math.max(De, n), Oe = Math.min(Oe, n));
-		}
-	}
-	E && (De = De > 0 ? 100 : 0, Oe = Oe < 0 ? -100 : 0), s.valMax != null && (De = E ? s.valMax * 100 : s.valMax), s.valMin != null && (Oe = E ? s.valMin * 100 : s.valMin), De === 0 && Oe === 0 && (De = 1);
-	let ke = zt(s, Oe, De, Ee, E, C ? "horizontal" : "vertical"), { step: Ae } = ke, je = Zt(M, s.series, Se / p), Me = Math.max(8, Math.min(11, S / 20)), Ne = s.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, Se / 20)) : fe, Pe = t.font, Ie = 0, Le = 0;
-	if (!C && !s.valAxisHidden) {
-		t.font = `${Ne}px ${Y(s, s.valAxisFontFace, "minor")}`;
-		let e = 0;
-		for (let n of ke.majorLines) {
-			let r = Pt(s, n, E);
-			e = Math.max(e, t.measureText(r).width);
-		}
-		Ie = e, Le = Ie + 16;
-	}
-	let Re = _(M?.fontSizeHpt, p) ?? Me, ze = 0;
-	if (M && !M.hidden) {
-		t.font = `${Re}px ${Y(s, M.fontFace, "minor")}`;
-		let e = 0;
-		for (let n of je?.majorLines ?? []) e = Math.max(e, t.measureText(It(n, M.formatCode ?? null, s.date1904, M.displayUnits)).width);
-		ze = e + 18;
-	}
-	t.font = Pe;
-	let Be = M && M.title ? i(M.titleFontSizeHpt, p) + 8 : 0, He = {
-		t: be,
-		r: pe + x * .03 + ze + Be,
-		b: xe,
-		l: C ? (s.catAxisHidden ? x * .03 : we) + q + U : U + q + Le
-	}, We = C ? {
-		t: 0,
-		r: s.valAxisHidden ? 0 : Ne / 2,
-		b: s.valAxisHidden ? 0 : Ne + K,
-		l: s.catAxisHidden ? 0 : Ce + q
-	} : n({
-		valAxisHidden: s.valAxisHidden,
-		catAxisHidden: s.catAxisHidden,
-		valLabelWidth: Ie,
-		valLabelFontPx: Ne,
-		catLabelFontPx: de,
-		valLabelGapPx: s.valAxisFontSizeHpt == null ? 12 : e(Ne),
-		catLabelGapPx: s.catAxisFontSizeHpt == null ? 3 : f(de),
-		outerTextMarginPx: m * p,
-		valTitleBandW: q,
-		catTitleBandH: K,
-		secondaryBandW: ze + Be
+	let de = (e) => B.get(M(e)) ?? [e], fe = (e, t) => de(e).reduce((e, n) => e + Math.abs(n.values[t] ?? 0), 0) || 1, pe = (e, t) => ne(e) ? 100 / fe(e, t) : 1, me = (e) => ne(e) ? (e.errBars ?? []).map((t) => ({
+		...t,
+		plus: t.plus.map((t, n) => t == null ? t : t * pe(e, n)),
+		minus: t.minus.map((t, n) => t == null ? t : t * pe(e, n))
+	})) : e.errBars ?? [], V = dt(t), he = j.map((e) => new Map((e.dataPointOverrides ?? []).map((e) => [e.idx, e]))), ge = j.map((e) => new Map((e.dataLabelOverrides ?? []).map((e) => [e.idx, e]))), H = j.map((e, t) => wr(e, t)), U = t.chartexDataPointStyle != null || t.chartexColorPalette != null, _e = /* @__PURE__ */ new Map();
+	U && j.forEach((e, n) => {
+		let r = H[n], i = e.color ?? kr(t, r, j.length, e.chartexStyle);
+		_e.set(e, Lr(t, e.name, e, t.chartexDataPointStyle, r, j.length, i));
 	});
-	rn(t, s, v, b, x, S, b + le, V);
-	let Ke = r(s, v, b, x, S, p, {
-		titleBand: B,
-		legendSideReserveFrac: .22,
-		legendReserve: H,
-		pad: He,
-		honorPlotAreaManualLayout: !0,
-		manualOuterInsets: We
-	}), { px0: X, py0: Z, pw: Je } = Ke.plotRect, { ph: Q } = Ke.plotRect;
-	if (Je <= 0 || Q <= 0) return;
-	let Xe = Yt(s), Ze = [];
-	if (!C && !s.catAxisHidden && qt(s) && Xe === 0) {
-		let e = Je / I, n = s.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, e * .5)) : de;
-		t.save(), t.font = Ge(n, Y(s, s.catAxisFontFace, "minor"), s.catAxisFontBold ?? !1, s.catAxisFontItalic ?? !1);
-		for (let r of ae) {
-			let i = h(r, s.catAxisFormatCode, s.date1904);
-			Ze.push(Gt(t, i, Math.max(1, e), Kt(i, n)));
-		}
-		t.restore();
-		let r = Math.max(1, ...Ze.map((e) => e.length));
-		!(s.plotAreaManualLayout?.layoutTarget === "inner" && s.plotAreaManualLayout.w != null && s.plotAreaManualLayout.h != null) && r > 1 && (Q = Math.max(1, Q - (r - 1) * (n + 2)));
+	let W = {
+		...t,
+		series: (U ? j : t.series).map((e) => _e.get(e) ?? e)
+	}, G = jn(e, t, f, m, i), ve = G.fontPx, ye = G.topPad, be = G.bandH, K = hn(t.catAxisFontSizeHpt, m, i), q = hn(t.valAxisFontSizeHpt, m, i), J = !h && t.catAxisNoMultiLevelLabels !== !0 && (t.categoryLevels?.length ?? 0) > 1 ? t.categoryLevels : null, xe = J ? (J.length - 1) * (K + 4) : 0, Se = h ? 0 : gt(t, i), Ce = h ? 0 : _t(e, t, i), we = It(e, W, f, m, .22, i), { legRightW: Te, legLeftW: Ee, legTopH: De, legBottomH: Oe } = o(we), ke = s(t, f, m, i), Ae = ke.catFontPx, je = ke.valFontPx, Me = h ? t.valAxisTitle ? je + _(m) + 4 : 0 : ke.catBandH, Ne = h ? t.catAxisTitle ? Ae + _(f) + 4 : 0 : ke.valBandW, Pe = x(L?.fontSizeHpt, i) ?? 9 * i, Fe = L && !L.hidden && L.tickLabelPos !== "none" ? Pe + u(Pe) + 2 : 0, Ie = L?.title ? l(L.titleFontSizeHpt, i) + 6 : 0, Le = be + De + q / 2 + 2 + Fe + Ie, Re = h ? (t.valAxisHidden ? m * .02 : p(q)) + Me + Oe : p(K) + xe + Se + Me + Oe, ze = m - Le - Re, Be = 0;
+	if (h && !t.catAxisHidden && vn(t)) {
+		let n = t.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, ze / z * .5)) : K;
+		e.save(), e.font = `${n}px ${Y(t, t.catAxisFontFace, "minor")}`;
+		for (let n of R) Be = Math.max(Be, e.measureText(g(n, t.catAxisFormatCode, t.date1904)).width);
+		e.restore(), Be += (t.catAxisFontSizeHpt == null ? 4 : y(n)) + r * i;
 	}
-	s.plotAreaBg && (t.fillStyle = `#${s.plotAreaBg}`, t.fillRect(X, Z, Je, Q));
-	let Qe = (e) => Z + Q - ke.frac(e) * Q, $e = (e) => X + ke.frac(e) * Je, et = Qe(0), tt = $e(0), nt = Qe, rt = je ? je.makeToY(Z, Q) : Qe, it = St(s, p);
-	t.textBaseline = "middle";
-	let at = s.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, Q / 20)) : fe;
-	t.font = `${at}px ${Y(s, s.valAxisFontFace, "minor")}`;
-	let ot = s.valAxisFontColor ? `#${s.valAxisFontColor}` : "#555";
-	if (t.fillStyle = ot, !s.valAxisHidden) {
-		let n = Ct(s, p);
-		for (let e of ke.minorLines) if (!C) xt(t, X, Je, Qe(e), !1, n);
-		else {
-			let r = $e(e);
-			t.strokeStyle = n.color, t.lineWidth = n.width;
-			let i = n.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-			n.dash.length > 0 && t.setLineDash(n.dash), t.beginPath(), t.moveTo(r, Z), t.lineTo(r, Z + Q), t.stroke(), n.dash.length > 0 && t.setLineDash(i);
+	let Ve = Math.min(Be, Math.max(0, f / 2 - Ne - Ee)), He = h ? f - ((t.catAxisHidden ? f * .03 : Ve) + Ne + Ee) - (Te + f * .03) : 0, Ue = t.valAxisHidden ? void 0 : (h ? He : ze) / i, We = (e, t) => {
+		let n = j[e], r = n?.values[t] ?? 0;
+		if (!n || !P(n)) return r;
+		let i = de(n), a = ne(n), o = 1;
+		a && (o = i.reduce((e, n) => e + Math.abs(n.values[t] ?? 0), 0) || 1);
+		let s = a ? r / o * 100 : r, c = 0, l = i.indexOf(n);
+		for (let e = 0; e <= l; e++) {
+			let n = i[e]?.values[t] ?? 0, r = a ? n / o * 100 : n;
+			s < 0 == r < 0 && (c += r);
 		}
-		let r = Mt(s), i = s.valAxisTickLabelPos !== "none";
-		for (let n of ke.majorLines) {
-			let a = Math.abs(n) < Ae * 1e-9, o = Pt(s, n, E);
-			if (C) {
-				let e = $e(n);
-				if (r) {
-					t.strokeStyle = it.explicit ? it.color : a ? "#aaa" : it.color, t.lineWidth = it.explicit ? it.width : a ? 1 : it.width;
-					let n = it.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-					it.dash.length > 0 && t.setLineDash(it.dash), t.beginPath(), t.moveTo(e, Z), t.lineTo(e, Z + Q), t.stroke(), it.dash.length > 0 && t.setLineDash(n);
-				}
-				if (i) {
-					t.textAlign = "center";
-					let n = s.valAxisFontSizeHpt == null ? 10 : f(at);
-					t.fillText(o, e, Z + Q + n);
-				}
-			} else {
-				let c = Qe(n);
-				if (r && xt(t, X, Je, c, a, it), i) {
-					t.textAlign = "right";
-					let n = g.gapPolicy === "chartex" ? cn(p) : s.valAxisFontSizeHpt == null ? 12 : e(at);
-					t.fillText(o, X - n, c);
-				}
+		return c;
+	}, Ge = ce.some(ne), Ke = 0, qe = 0;
+	for (let e = 0; e < z; e++) {
+		let t = /* @__PURE__ */ new Map();
+		for (let e of ce) {
+			let n = M(e), r = t.get(n);
+			r ? r.push(e) : t.set(n, [e]);
+		}
+		for (let n of t.values()) {
+			let t = n[0], r = P(t), i = ne(t), a = i && n.reduce((t, n) => t + Math.abs(n.values[e] ?? 0), 0) || 1, o = 0, s = 0;
+			for (let t of n) {
+				let n = t.values[e] ?? 0, c = i ? n / a * 100 : n;
+				r ? c >= 0 ? o += c : s += c : (Ke = Math.max(Ke, c), qe = Math.min(qe, c));
 			}
+			r && (Ke = Math.max(Ke, o), qe = Math.min(qe, s));
 		}
 	}
-	if (M && je && Qt(t, M, je, rt, X, Je, p), !s.catAxisHidden && Et(s)) {
-		let e = Dt(s, p);
-		t.strokeStyle = e.color, t.lineWidth = e.width;
-		let n = e.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-		e.dash.length > 0 && t.setLineDash(e.dash);
-		for (let e of kt(s, I)) {
-			if (t.beginPath(), C) {
-				let n = Z + e * Q;
-				t.moveTo(X, n), t.lineTo(X + Je, n);
-			} else {
-				let n = X + e * Je;
-				t.moveTo(n, Z), t.lineTo(n, Z + Q);
-			}
-			t.stroke();
-		}
-		e.dash.length > 0 && t.setLineDash(n);
+	for (let e of [...re, ...F]) if (!(I && e.useSecondaryAxis === !0)) for (let t = 0; t < z; t++) {
+		let n = e.values[t];
+		if (n == null) continue;
+		let r = Ge ? n * 100 : n;
+		Ke = Math.max(Ke, r), qe = Math.min(qe, r);
 	}
-	let { color: st, width: ct } = ee(s.catAxisLineColor, s.catAxisLineWidthEmu, p), { color: lt, width: ut } = ee(s.valAxisLineColor, s.valAxisLineWidthEmu, p), dt = (e, n, r, i, a, o) => {
-		t.strokeStyle = a, t.lineWidth = o, t.beginPath(), t.moveTo(e, n), t.lineTo(r, i), t.stroke();
-	}, ft = !s.catAxisHidden && !s.catAxisLineHidden, pt = !s.valAxisHidden && !s.valAxisLineHidden && s.valAxisLineColor != null, ht = () => {
-		if (C ? (ft && dt(X, Z, X, Z + Q, st, ct), pt && dt(X, Z + Q, X + Je, Z + Q, lt, ut)) : (ft && dt(X, Z + Q, X + Je, Z + Q, st, ct), pt && dt(X, Z, X, Z + Q, lt, ut)), !s.valAxisHidden && s.valAxisMajorTickMark && s.valAxisMajorTickMark !== "none") for (let e of ke.majorLines) C ? vt(t, s.valAxisMajorTickMark, "cat", Z + Q, $e(e), lt, ut, !1, s.valAxisLineHidden, "major", p) : vt(t, s.valAxisMajorTickMark, "val", X, Qe(e), lt, ut, !1, s.valAxisLineHidden, "major", p);
-		if (!s.valAxisHidden && s.valAxisMinorTickMark && s.valAxisMinorTickMark !== "none") for (let e of ke.minorTicks) C ? vt(t, s.valAxisMinorTickMark, "cat", Z + Q, $e(e), lt, ut, !1, s.valAxisLineHidden, "minor", p) : vt(t, s.valAxisMinorTickMark, "val", X, Qe(e), lt, ut, !1, s.valAxisLineHidden, "minor", p);
-		if (!s.catAxisHidden && s.catAxisMajorTickMark && s.catAxisMajorTickMark !== "none") {
-			let e = j(s), n = e ? I : I - 1;
-			for (let r = 0; r <= n; r++) {
-				let n = e ? r / I : I === 1 ? .5 : r / (I - 1);
-				C ? vt(t, s.catAxisMajorTickMark, "val", X, Z + n * Q, st, ct, !1, s.catAxisLineHidden, "major", p) : vt(t, s.catAxisMajorTickMark, "cat", Z + Q, X + n * Je, st, ct, !1, s.catAxisLineHidden, "major", p);
-			}
-		}
-	}, gt = C ? Q / I : Je / I, yt = jt(s), bt = (e) => C ? yt ? e : I - 1 - e : yt ? I - 1 - e : e, wt = w ? 0 : s.barOverlap ?? 0, Tt = me(s.barGapWidth, g.gapPolicy ?? "legacy"), Ot = (e) => {
-		let t = w ? 1 : Math.max(1, e), n = gt / (1 + (t - 1) * (1 - wt / 100) + Tt / 100), r = w ? 0 : n * (1 - wt / 100);
-		return {
-			barW: n,
-			clusterGap: r,
-			catStart: (gt - (n + (t - 1) * r)) / 2
-		};
-	}, At = Ot(ne.length), Nt = Ot(N.length);
-	for (let e = 0; e < I; e++) {
-		let n = 0, r = 0, i = 0;
-		if (E) {
-			for (let t of D) i += Math.abs(t.values[e] ?? 0);
-			i === 0 && (i = 1);
-		}
-		for (let a = 0; a < D.length; a++) {
-			let o = D[a], c = M != null && o.useSecondaryAxis === !0, l = Math.max(0, (c ? N : ne).indexOf(o)), { barW: u, clusterGap: d, catStart: f } = c ? Nt : At, m = c && je ? je.makeToY(Z, Q) : Qe, h = je ? F?.crossesAt != null && Number.isFinite(F.crossesAt) ? Math.max(je.min, Math.min(je.max, F.crossesAt)) : F?.crosses === "max" ? je.max : F?.crosses === "min" ? je.min : Math.max(je.min, Math.min(je.max, 0)) : 0, g = c ? m(h) : et, y = o.values[e] ?? 0, T = E ? y / i * 100 : y, O = T < 0, k = se[a].get(e), A = k?.color ?? o.dataPointColors?.[e], ee = A ? `#${A}` : oe ? Ue(e, o) : Ve(a, o), j = k?.fillHidden ? null : k?.color ? {
-				fillType: "solid",
-				color: k.color
-			} : R ? Qn(s, L[a], D.length, o.chartexStyle, o.color) : void 0, te = () => {
-				if (k?.lineHidden != null || k?.lineColor != null || k?.lineWidthEmu != null || k?.lineDash != null) {
-					if (k?.lineHidden) return !1;
-					let e = Kn(s, s.chartexDataPointStyle, "line", L[a], D.length) ?? o.lineColor ?? ee;
-					return t.strokeStyle = `#${k?.lineColor ?? e.replace(/^#/, "")}`, t.lineWidth = k?.lineWidthEmu == null ? o.lineWidthEmu == null ? 1 : P(o.lineWidthEmu, p) : P(k.lineWidthEmu, p), t.setLineDash(Bn(k?.lineDash)), !0;
-				}
-				return R ? nr(t, s, s.chartexDataPointStyle, o, L[a], D.length, ee, p) : !o.lineColor || o.lineHidden ? !1 : (t.strokeStyle = `#${o.lineColor}`, t.lineWidth = P(o.lineWidthEmu, p), t.setLineDash([]), !0);
+	for (let e of ce) {
+		let t = j.indexOf(e);
+		for (let n of me(e)) Cn({
+			...e,
+			errBars: [n]
+		}, h ? "x" : "y", (n) => e.values[n] == null ? null : We(t, n), (e) => {
+			Ke = Math.max(Ke, e), qe = Math.min(qe, e);
+		});
+	}
+	for (let e of [...re, ...F]) I && e.useSecondaryAxis === !0 || Cn(e, "y", (t) => e.values[t] ?? null, (e) => {
+		let t = Ge ? e * 100 : e;
+		Ke = Math.max(Ke, t), qe = Math.min(qe, t);
+	});
+	Ge && (ce.some((e) => e.values.some((e) => e != null && e > 0)) && (Ke = Math.max(Ke, 100)), ce.some((e) => e.values.some((e) => e != null && e < 0)) && (qe = Math.min(qe, -100))), t.valMax != null && (Ke = Ge ? t.valMax * 100 : t.valMax), t.valMin != null && (qe = Ge ? t.valMin * 100 : t.valMin), Ke === 0 && qe === 0 && (Ke = 1);
+	let Je = cn(t, qe, Ke, Ue, Ge, h ? "horizontal" : "vertical"), { step: Ye } = Je, Xe = new Set(j), Ze = new Set(O), Qe = se.some(ne), et = t.series.filter((e) => !Ze.has(e) || Xe.has(e)).map((e) => {
+		if (e.useSecondaryAxis !== !0) return e;
+		if (Xe.has(e)) {
+			let t = j.indexOf(e);
+			return {
+				...e,
+				values: e.values.map((e, n) => e == null ? e : We(t, n)),
+				errBars: me(e)
 			};
-			if (C) {
-				let i = a, c = w ? Z + bt(e) * gt + f : Z + bt(e) * gt + f + i * d, l = w ? $e(O ? r : n) : tt, m = $e(w ? (O ? r : n) + T : T), h = Rn(Math.min(l, m), X, X + Je), g = Rn(Math.max(l, m), X, X + Je), C = Math.max(0, g - h);
-				if (j !== null && (t.fillStyle = j ? $n(t, j, h, c, C, u, ee) : o.fillPattern ? Fe(o.fillPattern, t, h, c, C, u) ?? ee : ee, t.fillRect(h, c, C, u)), C > 0 && u > 0 && te()) {
-					let e = t.lineWidth;
-					t.strokeRect(h + e / 2, c + e / 2, Math.max(0, C - e), Math.max(0, u - e));
+		}
+		return Qe ? {
+			...e,
+			values: e.values.map((e) => e == null ? e : e * 100),
+			errBars: (e.errBars ?? []).map((e) => ({
+				...e,
+				plus: e.plus.map((e) => e == null ? e : e * 100),
+				minus: e.minus.map((e) => e == null ? e : e * 100)
+			}))
+		} : e;
+	});
+	if (Qe && se[0]) {
+		let e = [];
+		se.some((e) => e.values.some((e) => e != null && e > 0)) && e.push(100), se.some((e) => e.values.some((e) => e != null && e < 0)) && e.push(-100), et.push({
+			...se[0],
+			values: e,
+			errBars: []
+		});
+	}
+	let tt = wn(I, et, ze / i, h ? "x" : "y", Qe, se.length > 0), nt = Math.max(8, Math.min(11, m / 20)), rt = t.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, ze / 20)) : q, it = e.font, ot = 0, ct = 0;
+	if (!h && !t.valAxisHidden) {
+		e.font = `${rt}px ${Y(t, t.valAxisFontFace, "minor")}`;
+		let n = 0;
+		for (let r of Je.majorLines) {
+			let i = nn(t, r, Ge);
+			n = Math.max(n, e.measureText(i).width);
+		}
+		ot = n, ct = ot + 16;
+	}
+	let ut = x(I?.fontSizeHpt, i) ?? nt, ft = 0;
+	if (I && !I.hidden) {
+		e.font = `${ut}px ${Y(t, I.fontFace, "minor")}`;
+		let n = 0;
+		for (let r of tt?.majorLines ?? []) n = Math.max(n, e.measureText(an(Qe ? r / 100 : r, I.formatCode ?? null, t.date1904, I.displayUnits)).width);
+		ft = n + 18;
+	}
+	e.font = it;
+	let pt = I && I.title ? l(I.titleFontSizeHpt, i) + 8 : 0, mt = {
+		t: Le,
+		r: Te + f * .03 + ft + pt,
+		b: Re,
+		l: h ? (t.catAxisHidden ? f * .03 : Ve) + Ne + Ee : Ee + Math.max(Ne + ct, Ce)
+	}, bt = h ? {
+		t: 0,
+		r: t.valAxisHidden ? 0 : rt / 2,
+		b: t.valAxisHidden ? 0 : rt + Me,
+		l: t.catAxisHidden ? 0 : Be + Ne
+	} : v({
+		valAxisHidden: t.valAxisHidden,
+		catAxisHidden: t.catAxisHidden,
+		valLabelWidth: ot,
+		valLabelFontPx: rt,
+		catLabelFontPx: K,
+		valLabelGapPx: t.valAxisFontSizeHpt == null ? 12 : y(rt),
+		catLabelGapPx: t.catAxisFontSizeHpt == null ? 3 : u(K),
+		outerTextMarginPx: r * i,
+		valTitleBandW: Ne,
+		catTitleBandH: Me,
+		secondaryBandW: ft + pt
+	}), xt = b(t, c, d, f, m, i, {
+		titleBand: G,
+		legendSideReserveFrac: .22,
+		legendReserve: we,
+		pad: mt,
+		honorPlotAreaManualLayout: !0,
+		manualOuterInsets: bt
+	}), St = jn(e, t, xt.plotRect.pw, m, i);
+	Math.abs(St.bandH - G.bandH) > .01 && (G = St, ve = G.fontPx, ye = G.topPad, be = G.bandH, Le = be + De + q / 2 + 2 + Fe + Ie, mt.t = Le, xt = b(t, c, d, f, m, i, {
+		titleBand: G,
+		legendSideReserveFrac: .22,
+		legendReserve: we,
+		pad: mt,
+		honorPlotAreaManualLayout: !0,
+		manualOuterInsets: bt
+	}));
+	let { px0: X, py0: Z, pw: Ct } = xt.plotRect, { ph: Q } = xt.plotRect;
+	if (Nn(e, t, t.titleManualLayout || !t.titleRichRuns?.length ? c : X, d, t.titleManualLayout || !t.titleRichRuns?.length ? f : Ct, m, d + ye, ve), Ct <= 0 || Q <= 0) return;
+	let wt = Sn(t, R, h ? !$t(t) : $t(t)), Tt = bn(t), Et = [], Dt = 0;
+	if (!h && !wt && !t.catAxisHidden && vn(t) && Tt === 0) {
+		let n = Ct / z, r = t.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, n * .5)) : K;
+		e.save(), e.font = lt(r, Y(t, t.catAxisFontFace, "minor"), t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
+		for (let i of R) {
+			let a = g(i, t.catAxisFormatCode, t.date1904);
+			Et.push(gn(e, a, Math.max(1, n), _n(a, r)));
+		}
+		e.restore();
+		let i = Math.max(1, ...Et.map((e) => e.length));
+		!(t.plotAreaManualLayout?.layoutTarget === "inner" && t.plotAreaManualLayout.w != null && t.plotAreaManualLayout.h != null) && i > 1 && (Dt = (i - 1) * (r + 2), Q = Math.max(1, Q - Dt));
+	}
+	let Ot = !h && t.dataTable ? vt(e, t, Ct / z, i) : null;
+	Ot && Ot.totalHeight > Se && (Q = Math.max(1, Q - (Ot.totalHeight - Se))), t.plotAreaBg && (e.fillStyle = `#${t.plotAreaBg}`, e.fillRect(X, Z, Ct, Q));
+	let kt = (e) => Z + Q - Je.frac(e) * Q, At = (e) => X + Je.frac(e) * Ct, jt = kt(0), Mt = At(0), Nt = (e) => kt(Ge ? e * 100 : e), Pt = tt ? tt.makeToY(Z, Q) : kt, Ft = (e) => Pt(Qe ? e * 100 : e), Lt = Wt(t, i);
+	e.textBaseline = "middle";
+	let Rt = t.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, Q / 20)) : q;
+	e.font = `${Rt}px ${Y(t, t.valAxisFontFace, "minor")}`;
+	let Ht = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555";
+	if (e.fillStyle = Ht, !t.valAxisHidden) {
+		let n = Gt(t, i);
+		for (let t of Je.minorLines) if (!h) Ut(e, X, Ct, kt(t), !1, n);
+		else {
+			let r = At(t);
+			e.strokeStyle = n.color, e.lineWidth = n.width;
+			let i = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+			n.dash.length > 0 && e.setLineDash(n.dash), e.beginPath(), e.moveTo(r, Z), e.lineTo(r, Z + Q), e.stroke(), n.dash.length > 0 && e.setLineDash(i);
+		}
+		let r = en(t), o = t.valAxisTickLabelPos !== "none";
+		for (let n of Je.majorLines) {
+			let s = Math.abs(n) < Ye * 1e-9, c = nn(t, n, Ge);
+			if (h) {
+				let i = At(n);
+				if (r) {
+					e.strokeStyle = Lt.explicit ? Lt.color : s ? "#aaa" : Lt.color, e.lineWidth = Lt.explicit ? Lt.width : s ? 1 : Lt.width;
+					let t = Lt.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+					Lt.dash.length > 0 && e.setLineDash(Lt.dash), e.beginPath(), e.moveTo(i, Z), e.lineTo(i, Z + Q), e.stroke(), Lt.dash.length > 0 && e.setLineDash(t);
 				}
-				let D = o.seriesDataLabels, k = Gn(s, o, e, o.categories?.[e] ?? ae[e] ?? "", y, {
-					visible: s.showDataLabels,
-					showVal: s.showDataLabels && !E,
-					showPercent: s.showDataLabels && E,
-					showCatName: !1
-				}, ce[a], E ? T / 100 : void 0, o.useSecondaryAxis && M ? M.displayUnits : s.valAxisDisplayUnits);
-				if (k) {
-					let n = _(k.fontSizeHpt ?? s.dataLabelFontSizeHpt, p) ?? Math.max(7, Math.min(11, u * .6)), r = ce[a].get(e), i = k.fontBold || D?.fontBold == null && r?.fontBold == null, l = Y(s, k.fontFace ?? s.dataLabelFontFace, "minor");
-					t.font = `${i ? "bold " : ""}${n}px ${l}`, sn(t, k.text, h, c, C, u, "horizontal", k.position ?? s.dataLabelPosition ?? (w ? "ctr" : null), o.dataLabelColors?.[e] ?? k.fontColor ?? o.labelColor ?? s.dataLabelFontColor ?? null, n, {
-						x: X,
-						y: Z,
-						w: Je,
-						h: Q
-					}, {
-						x: v,
-						y: b,
-						w: x,
-						h: S
-					}, r?.manualLayout, O, In(s, r, p, l, i));
+				if (o) {
+					e.textAlign = "center";
+					let n = t.valAxisFontSizeHpt == null ? 10 : u(Rt);
+					e.fillText(c, i, Z + Q + n);
 				}
 			} else {
-				let i = w ? X + bt(e) * gt + f : X + bt(e) * gt + f + l * d, c = w ? Qe(O ? r : n) : g, h = w ? Qe((O ? r : n) + T) : m(T), C = Rn(Math.min(c, h), Z, Z + Q), D = Rn(Math.max(c, h), Z, Z + Q), k = Math.max(0, D - C);
-				if (j !== null && (t.fillStyle = j ? $n(t, j, i, C, u, k, ee) : o.fillPattern ? Fe(o.fillPattern, t, i, C, u, k) ?? ee : ee, t.fillRect(i, C, u, k)), u > 0 && k > 0 && te()) {
-					let e = t.lineWidth;
-					t.strokeRect(i + e / 2, C + e / 2, Math.max(0, u - e), Math.max(0, k - e));
+				let l = kt(n);
+				if (r && Ut(e, X, Ct, l, s, Lt), o) {
+					e.textAlign = "right";
+					let n = a.gapPolicy === "chartex" ? Ln(i) : t.valAxisFontSizeHpt == null ? 12 : y(Rt);
+					e.fillText(c, X - n, l);
 				}
-				let A = o.seriesDataLabels, N = Gn(s, o, e, o.categories?.[e] ?? ae[e] ?? "", y, {
-					visible: s.showDataLabels,
-					showVal: s.showDataLabels && !E,
-					showPercent: s.showDataLabels && E,
+			}
+		}
+	}
+	if (I && tt && Tn(e, I, tt, Pt, X, Ct, i), !t.catAxisHidden && Jt(t)) {
+		let n = Yt(t, i);
+		e.strokeStyle = n.color, e.lineWidth = n.width;
+		let r = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+		n.dash.length > 0 && e.setLineDash(n.dash);
+		let a = wt ? wt.majorTicks.map((e) => e.fraction) : Zt(t, z);
+		for (let t of a) {
+			if (e.beginPath(), h) {
+				let n = Z + t * Q;
+				e.moveTo(X, n), e.lineTo(X + Ct, n);
+			} else {
+				let n = X + t * Ct;
+				e.moveTo(n, Z), e.lineTo(n, Z + Q);
+			}
+			e.stroke();
+		}
+		n.dash.length > 0 && e.setLineDash(r);
+	}
+	let { color: Kt, width: qt } = w(t.catAxisLineColor, t.catAxisLineWidthEmu, i), { color: Xt, width: Qt } = w(t.valAxisLineColor, t.valAxisLineWidthEmu, i), tn = (t, n, r, i, a, o) => {
+		let s = e.getLineDash?.() ?? [];
+		e.strokeStyle = a, e.lineWidth = o, e.setLineDash([]), e.beginPath(), e.moveTo(t, n), e.lineTo(r, i), e.stroke(), e.setLineDash(s);
+	}, rn = !t.catAxisHidden && !t.catAxisLineHidden, on = !t.valAxisHidden && !t.valAxisLineHidden && t.valAxisLineColor != null, sn = t.catAxisCrossesAt != null && Number.isFinite(t.catAxisCrossesAt) ? _r(t.catAxisCrossesAt, Je.min, Je.max) : t.catAxisCrosses === "max" ? Je.max : t.catAxisCrosses === "min" ? Je.min : _r(0, Je.min, Je.max), ln = h ? Z + Q : kt(sn), un = h ? At(sn) : X, dn = !h && (t.catAxisTickLabelPos ?? "nextTo") === "nextTo" ? ln : Z + Q, mn = Math.max(1, Math.floor(t.catAxisTickMarkSkip ?? 1)), yn = !h && J != null && wt == null && !t.catAxisLineHidden && T(t) && Math.abs(dn - ln) < .01, Dn = () => {
+		if (h ? (rn && tn(un, Z, un, Z + Q, Kt, qt), on && tn(X, Z + Q, X + Ct, Z + Q, Xt, Qt)) : (rn && tn(X, ln, X + Ct, ln, Kt, qt), on && tn(X, Z, X, Z + Q, Xt, Qt)), !t.valAxisHidden && t.valAxisMajorTickMark && t.valAxisMajorTickMark !== "none") for (let n of Je.majorLines) h ? Bt(e, t.valAxisMajorTickMark, "cat", Z + Q, At(n), Xt, Qt, !1, t.valAxisLineHidden, "major", i) : Bt(e, t.valAxisMajorTickMark, "val", X, kt(n), Xt, Qt, !1, t.valAxisLineHidden, "major", i);
+		if (!t.valAxisHidden && t.valAxisMinorTickMark && t.valAxisMinorTickMark !== "none") for (let n of Je.minorTicks) h ? Bt(e, t.valAxisMinorTickMark, "cat", Z + Q, At(n), Xt, Qt, !1, t.valAxisLineHidden, "minor", i) : Bt(e, t.valAxisMinorTickMark, "val", X, kt(n), Xt, Qt, !1, t.valAxisLineHidden, "minor", i);
+		if (!t.catAxisHidden && t.catAxisMajorTickMark && t.catAxisMajorTickMark !== "none") {
+			let n = yn ? [] : Zt(t, z), r = wt ? wt.majorTicks.map((e) => e.fraction) : n.filter((e, t) => t % mn === 0);
+			for (let n of r) h ? Bt(e, t.catAxisMajorTickMark, "val", un, Z + n * Q, Kt, qt, !1, t.catAxisLineHidden, "major", i) : Bt(e, t.catAxisMajorTickMark, "cat", ln, X + n * Ct, Kt, qt, !1, t.catAxisLineHidden, "major", i);
+		}
+		if (!t.catAxisHidden && t.catAxisMinorTickMark && t.catAxisMinorTickMark !== "none") {
+			let n = T(t) ? Array.from({ length: z }, (e, t) => (t + .5) / z) : Array.from({ length: Math.max(0, z - 1) }, (e, t) => (t + .5) / (z - 1)), r = wt ? wt.minorTicks.map((e) => e.fraction) : n;
+			for (let n of r) h ? Bt(e, t.catAxisMinorTickMark, "val", un, Z + n * Q, Kt, qt, !1, t.catAxisLineHidden, "minor", i) : Bt(e, t.catAxisMinorTickMark, "cat", ln, X + n * Ct, Kt, qt, !1, t.catAxisLineHidden, "minor", i);
+		}
+	}, kn = h ? Q / z : Ct / z, An = $t(t), Mn = (e) => h ? An ? e : z - 1 - e : An ? z - 1 - e : e, Fn = (e) => wt ? wt.categoryBandFractions[e] * (h ? Q : Ct) : kn, Rn = (e) => wt ? (h ? Z : X) + wt.positions[e] * (h ? Q : Ct) - Fn(e) / 2 : (h ? Z : X) + Mn(e) * kn, zn = (e) => wt ? X + wt.positions[e] * Ct : X + Mn(e) * kn + kn / 2, Bn = (e, n) => {
+		let r = e[0], i = r ? P(r) : S, o = i ? 1 : Math.max(1, e.length), s = r?.barGroupOverlap ?? t.barOverlap ?? 0, c = i || !Number.isFinite(s) ? 0 : Math.max(-100, Math.min(100, s)), l = C(r?.barGroupGapWidth ?? t.barGapWidth, a.gapPolicy ?? "legacy"), u = n / (1 + (o - 1) * (1 - c / 100) + l / 100), d = i ? 0 : u * (1 - c / 100);
+		return {
+			barW: u,
+			clusterGap: d,
+			catStart: (n - (u + (o - 1) * d)) / 2
+		};
+	};
+	for (let n = 0; n < F.length; n++) {
+		let r = F[n], a = at(ae.get(r) ?? n, r), o = I && r.useSecondaryAxis === !0 ? Ft : Nt, s = o(0), c = t.dispBlanksAs ?? "zero", l = [], u = () => {
+			l.length !== 0 && (wt && (e.save(), e.beginPath(), e.rect(X, Z, Ct, Q), e.clip()), e.beginPath(), e.moveTo(l[0].x, s), e.lineTo(l[0].x, l[0].y), vr(e, l, !1), e.lineTo(l[l.length - 1].x, s), e.closePath(), e.fillStyle = r.fillPattern ? $e(r.fillPattern, e, l[0].x, Z, Math.max(1, l[l.length - 1].x - l[0].x), Q) ?? a : a, e.fill(), r.lineHidden !== !0 && (e.strokeStyle = r.lineColor ? `#${r.lineColor}` : a, e.lineWidth = r.lineWidthEmu == null ? 1.5 : N(r.lineWidthEmu, i), e.setLineDash([]), e.stroke()), wt && e.restore(), l = []);
+		};
+		for (let e = 0; e < z; e++) {
+			let t = r.values[e];
+			t == null && (c === "gap" && u(), c !== "zero") || l.push({
+				x: zn(e),
+				y: o(t ?? 0)
+			});
+		}
+		u();
+	}
+	for (let n = 0; n < z; n++) {
+		let r = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Map(), o = Fn(n);
+		for (let s = 0; s < j.length; s++) {
+			let l = j[s], u = I != null && l.useSecondaryAxis === !0, p = de(l), g = M(l), _ = P(l), v = ne(l), y = v && p.reduce((e, t) => e + Math.abs(t.values[n] ?? 0), 0) || 1, b = r.get(g) ?? 0, S = a.get(g) ?? 0, C = Math.max(0, p.indexOf(l)), { barW: w, clusterGap: T, catStart: E } = Bn(p, o), D = u && tt ? tt.makeToY(Z, Q) : kt, O = tt ? L?.crossesAt != null && Number.isFinite(L.crossesAt) ? Math.max(tt.min, Math.min(tt.max, L.crossesAt)) : L?.crosses === "max" ? tt.max : L?.crosses === "min" ? tt.min : Math.max(tt.min, Math.min(tt.max, 0)) : 0, k = u ? D(O) : jt, A = l.values[n] ?? 0, ee = v ? A / y * 100 : A, te = ee < 0, re = te && (l.invertIfNegative === !0 || l.automaticNegativeStyle === !0), F = he[s].get(n), ie = F?.color ?? l.dataPointColors?.[n], ae = ie ? `#${ie}` : V ? st(n, l) : at(s, l), oe = re ? l.invertedFillHidden === !0 ? null : l.invertedFill : void 0, se = F?.fillHidden ? null : F?.color ? {
+				fillType: "solid",
+				color: F.color
+			} : oe === void 0 ? U ? Mr(t, H[s], j.length, l.chartexStyle, l.color) : void 0 : oe, ce = () => {
+				if (F?.lineHidden != null || F?.lineColor != null || F?.lineWidthEmu != null || F?.lineDash != null) {
+					if (F?.lineHidden) return !1;
+					let n = Er(t, t.chartexDataPointStyle, "line", H[s], j.length) ?? l.lineColor ?? ae;
+					return e.strokeStyle = `#${F?.lineColor ?? n.replace(/^#/, "")}`, e.lineWidth = F?.lineWidthEmu == null ? l.lineWidthEmu == null ? 1 : N(l.lineWidthEmu, i) : N(F.lineWidthEmu, i), e.setLineDash(yr(F?.lineDash, e.lineWidth)), !0;
+				}
+				return re && (l.invertedLineHidden != null || l.invertedLineColor != null || l.invertedLineWidthEmu != null) ? l.invertedLineHidden ? !1 : (e.strokeStyle = `#${l.invertedLineColor ?? "000000"}`, e.lineWidth = N(l.invertedLineWidthEmu, i), e.setLineDash([]), !0) : U ? Ir(e, t, t.chartexDataPointStyle, l, H[s], j.length, ae, i) : !l.lineColor || l.lineHidden ? !1 : (e.strokeStyle = `#${l.lineColor}`, e.lineWidth = N(l.lineWidthEmu, i), e.setLineDash([]), !0);
+			};
+			if (h) {
+				let r = C, a = _ ? Rn(n) + E : Rn(n) + E + r * T, o = _ ? At(te ? S : b) : Mt, u = At(_ ? (te ? S : b) + ee : ee), p = _r(Math.min(o, u), X, X + Ct), h = _r(Math.max(o, u), X, X + Ct), g = Math.max(0, h - p);
+				if (se !== null && (e.fillStyle = se ? Nr(e, se, p, a, g, w, ae) : l.fillPattern ? $e(l.fillPattern, e, p, a, g, w) ?? ae : ae, e.fillRect(p, a, g, w)), g > 0 && w > 0 && ce()) {
+					let t = e.lineWidth;
+					e.strokeRect(p + t / 2, a + t / 2, Math.max(0, g - t), Math.max(0, w - t));
+				}
+				let y = l.seriesDataLabels, D = Tr(t, l, n, l.categories?.[n] ?? R[n] ?? "", A, {
+					visible: t.showDataLabels,
+					showVal: t.showDataLabels && !v,
+					showPercent: t.showDataLabels && v,
 					showCatName: !1
-				}, ce[a], E ? T / 100 : void 0, o.useSecondaryAxis && M ? M.displayUnits : s.valAxisDisplayUnits);
-				if (N) {
-					let n = _(N.fontSizeHpt ?? s.dataLabelFontSizeHpt, p) ?? Math.max(7, Math.min(11, u * .6)), r = ce[a].get(e), c = N.fontBold || A?.fontBold == null && r?.fontBold == null, l = Y(s, N.fontFace ?? s.dataLabelFontFace, "minor");
-					t.font = `${c ? "bold " : ""}${n}px ${l}`, sn(t, N.text, i, C, k, u, "vertical", N.position ?? s.dataLabelPosition ?? (w ? "ctr" : null), o.dataLabelColors?.[e] ?? N.fontColor ?? o.labelColor ?? s.dataLabelFontColor ?? null, n, {
+				}, ge[s], v ? ee / 100 : void 0, l.useSecondaryAxis && I ? I.displayUnits : t.valAxisDisplayUnits);
+				if (D) {
+					let r = x(D.fontSizeHpt ?? t.dataLabelFontSizeHpt, i) ?? Math.max(7, Math.min(11, w * .6)), o = ge[s].get(n), u = D.fontBold || y?.fontBold == null && o?.fontBold == null, h = Y(t, D.fontFace ?? t.dataLabelFontFace, "minor");
+					e.font = `${u ? "bold " : ""}${r}px ${h}`, In(e, D.text, p, a, g, w, "horizontal", D.position ?? t.dataLabelPosition ?? (_ ? "ctr" : null), l.dataLabelColors?.[n] ?? D.fontColor ?? l.labelColor ?? t.dataLabelFontColor ?? null, r, {
 						x: X,
 						y: Z,
-						w: Je,
+						w: Ct,
 						h: Q
 					}, {
-						x: v,
-						y: b,
-						w: x,
-						h: S
-					}, r?.manualLayout, O, In(s, r, p, l, c));
+						x: c,
+						y: d,
+						w: f,
+						h: m
+					}, o?.manualLayout, te, hr(t, o, i, h, u));
+				}
+			} else {
+				let r = _ ? Rn(n) + E : Rn(n) + E + C * T;
+				if (r + w <= X || r >= X + Ct) continue;
+				let a = _ ? D(te ? S : b) : k, o = D(_ ? (te ? S : b) + ee : ee), u = _r(Math.min(a, o), Z, Z + Q), p = _r(Math.max(a, o), Z, Z + Q), h = Math.max(0, p - u);
+				if (se !== null && (e.fillStyle = se ? Nr(e, se, r, u, w, h, ae) : l.fillPattern ? $e(l.fillPattern, e, r, u, w, h) ?? ae : ae, e.fillRect(r, u, w, h)), w > 0 && h > 0 && ce()) {
+					let t = e.lineWidth;
+					e.strokeRect(r + t / 2, u + t / 2, Math.max(0, w - t), Math.max(0, h - t));
+				}
+				let g = l.seriesDataLabels, y = Tr(t, l, n, l.categories?.[n] ?? R[n] ?? "", A, {
+					visible: t.showDataLabels,
+					showVal: t.showDataLabels && !v,
+					showPercent: t.showDataLabels && v,
+					showCatName: !1
+				}, ge[s], v ? ee / 100 : void 0, l.useSecondaryAxis && I ? I.displayUnits : t.valAxisDisplayUnits);
+				if (y) {
+					let a = x(y.fontSizeHpt ?? t.dataLabelFontSizeHpt, i) ?? Math.max(7, Math.min(11, w * .6)), o = ge[s].get(n), p = y.fontBold || g?.fontBold == null && o?.fontBold == null, v = Y(t, y.fontFace ?? t.dataLabelFontFace, "minor");
+					e.font = `${p ? "bold " : ""}${a}px ${v}`, In(e, y.text, r, u, h, w, "vertical", y.position ?? t.dataLabelPosition ?? (_ ? "ctr" : null), l.dataLabelColors?.[n] ?? y.fontColor ?? l.labelColor ?? t.dataLabelFontColor ?? null, a, {
+						x: X,
+						y: Z,
+						w: Ct,
+						h: Q
+					}, {
+						x: c,
+						y: d,
+						w: f,
+						h: m
+					}, o?.manualLayout, te, hr(t, o, i, v, p));
 				}
 			}
-			w && (O ? r += T : n += T);
+			_ && (te ? a.set(g, S + ee) : r.set(g, b + ee));
 		}
 	}
-	if (!s.catAxisHidden && qt(s)) {
-		t.fillStyle = s.catAxisFontColor ? `#${s.catAxisFontColor}` : "#555";
-		let n = s.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, gt * .5)) : de;
-		t.font = `${n}px ${Y(s, s.catAxisFontFace, "minor")}`;
-		let r = gt - 4, i = X - 4 - (v + U + q), a = Xe;
-		for (let o = 0; o < I; o++) {
-			let c = h((ae[o] ?? "").toString(), s.catAxisFormatCode, s.date1904);
-			if (C) {
-				let r = Z + bt(o) * gt + gt / 2;
-				t.textAlign = "right", t.textBaseline = "middle";
-				let a = s.catAxisFontSizeHpt == null ? 4 : e(n);
-				t.fillText(re(t, c, i), X - a, r);
-			} else {
-				let e = X + bt(o) * gt + gt / 2;
-				t.textAlign = "center", t.textBaseline = "top";
-				let i = a === 0 ? r : Q * .4, l = s.catAxisFontSizeHpt == null ? 3 : f(n);
-				a === 0 ? (Ze[o] ?? [c]).forEach((r, i) => {
-					t.fillText(r, e, Z + Q + l + i * (n + 2));
-				}) : Xt(t, re(t, c, i), e, Z + Q + l, a);
-			}
-		}
-	}
-	if (O.length > 0 && !C) for (let e = 0; e < O.length; e++) {
-		let n = O[e], r = Ve(D.length + e, n), i = M && n.useSecondaryAxis === !0 ? rt : nt, a = n.chartexStyle != null || n.lineHidden != null || n.lineColor != null || n.lineWidthEmu != null || s.chartexDataPointLineStyle != null, o = a ? nr(t, s, s.chartexDataPointLineStyle, n, Wn(n, A.get(n) ?? e), O.length, r, p, { linkedNoStyleFallback: g.semanticLineNoStyleFallback }) : !0;
-		a || (t.strokeStyle = r, t.lineWidth = 2, t.setLineDash([])), t.beginPath();
-		let c = !1;
-		for (let e = 0; e < I; e++) {
-			let r = n.values[e];
-			if (r == null) {
-				c = !1;
-				continue;
-			}
-			let a = X + bt(e) * gt + gt / 2, o = i(r);
-			c ? t.lineTo(a, o) : (t.moveTo(a, o), c = !0);
-		}
-		if (o && t.stroke(), n.showMarker !== !1) for (let e = 0; e < I; e++) {
-			let a = n.values[e];
-			if (a == null) continue;
-			let o = X + bt(e) * gt + gt / 2, s = i(a);
-			t.fillStyle = r, t.beginPath(), t.arc(o, s, 3, 0, Math.PI * 2), t.fill();
-		}
-		Ut(t, n, r, (e) => X + bt(e) * gt + gt / 2, i, p, void 0, {
-			chart: s,
-			chartRect: d,
+	let Vn = (e, t) => {
+		let n = de(e), r = Math.max(0, n.indexOf(e)), i = Bn(n, Fn(t)), a = Rn(t) + i.catStart;
+		return P(e) ? a + i.barW / 2 : a + r * i.clusterGap + i.barW / 2;
+	}, Hn = (e, t) => {
+		if (Number.isInteger(t) && t >= 0 && t < z) return Vn(e, t);
+		let n = de(e), r = Math.max(0, n.indexOf(e)), i = Bn(n, kn), a = h ? An ? t : z - 1 - t : An ? z - 1 - t : t;
+		return (h ? Z : X) + a * kn + i.catStart + (P(e) ? 0 : r) * i.clusterGap + i.barW / 2;
+	};
+	for (let r = 0; r < j.length; r++) {
+		let a = j[r], o = I != null && a.useSecondaryAxis === !0 && tt ? tt.makeToY(Z, Q) : kt, s = At, c = at(r, a), l = (e) => We(r, e);
+		for (let t of me(a)) Sr(e, a, t, z, h, (e) => Vn(a, e), h ? s : o, l, c, i);
+		fn(e, a, c, (e) => Hn(a, e - 1), h ? s : o, i, a.values.map((e, t) => t + 1), {
+			chart: t,
+			chartRect: n,
 			plotRect: {
 				x: X,
 				y: Z,
-				w: Je,
+				w: Ct,
 				h: Q
 			}
+		}, (e, t) => h ? {
+			x: s(t),
+			y: Hn(a, e - 1)
+		} : {
+			x: Hn(a, e - 1),
+			y: o(t)
 		});
 	}
-	if (k.length > 0) {
-		let e = [], n = [];
-		for (let t of k) {
-			let r = t.categories ?? [];
-			for (let i = 0; i < t.values.length; i++) {
-				let a = wn(r, i, !1), o = t.values[i];
-				a == null || o == null || (e.push(a), n.push(o));
+	if (!t.catAxisHidden && vn(t)) {
+		e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#555";
+		let n = t.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, kn * .5)) : K;
+		e.font = lt(n, Y(t, t.catAxisFontFace, "minor"), t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
+		let r = kn - 4, a = X - 4 - (c + Ee + Ne), o = Tt, s = wt ? wt.majorTicks.map((e) => ({
+			raw: g(String(e.serial), t.catAxisFormatCode, t.date1904),
+			fraction: e.fraction,
+			categoryIndex: -1
+		})) : R.map((e, n) => ({
+			raw: g(e.toString(), t.catAxisFormatCode, t.date1904),
+			fraction: null,
+			categoryIndex: n
+		}));
+		for (let i of s) {
+			let { raw: s } = i;
+			if (h) {
+				let r = i.fraction == null ? Z + Mn(i.categoryIndex) * kn + kn / 2 : Z + i.fraction * Q;
+				e.textAlign = "right", e.textBaseline = "middle";
+				let o = t.catAxisFontSizeHpt == null ? 4 : y(n);
+				e.fillText(ue(e, s, a), X - o, r);
+			} else {
+				let a = i.fraction == null ? zn(i.categoryIndex) : X + i.fraction * Ct;
+				e.textAlign = "center", e.textBaseline = "top";
+				let c = o === 0 ? r : Q * .4, l = t.catAxisFontSizeHpt == null ? 3 : u(n);
+				o === 0 ? (i.categoryIndex >= 0 ? Et[i.categoryIndex] ?? [s] : [s]).forEach((t, r) => {
+					e.fillText(t, a, dn + l + r * (n + 2));
+				}) : xn(e, ue(e, s, c), a, dn + l, o);
 			}
 		}
-		if (e.length && n.length) {
-			let r = s.secondaryCatAxis, i = s.secondaryValAxis, a = T(e), o = T(n), c = (e) => e?.minorGridlines === !0 || e?.minorTickMark != null && e.minorTickMark !== "none", l = y({
-				dataMin: a.min,
-				dataMax: a.max,
-				explicitMin: r?.min,
-				explicitMax: r?.max,
-				axisLenPt: Je / p,
-				axisOrientation: "horizontal",
-				majorUnit: r?.majorUnit,
-				minorUnit: r?.minorUnit,
-				needMinor: c(r),
-				logBase: r?.logBase,
-				reversed: r?.orientation === "maxMin"
-			}), u = y({
-				dataMin: o.min,
-				dataMax: o.max,
-				explicitMin: i?.min,
-				explicitMax: i?.max,
-				axisLenPt: Q / p,
-				axisOrientation: "vertical",
-				majorUnit: i?.majorUnit,
-				minorUnit: i?.minorUnit,
-				needMinor: c(i),
-				logBase: i?.logBase,
-				reversed: i?.orientation === "maxMin"
+		if (!h && J) {
+			let r = t.catAxisFontSizeHpt == null ? 3 : u(n), a = n + 4;
+			e.textAlign = "center", e.textBaseline = "top", e.strokeStyle = Kt, e.lineWidth = qt, e.setLineDash([]);
+			let o = (e) => {
+				if (!yn || e % mn !== 0) return dn;
+				let n = Vt("major", qt, i);
+				return t.catAxisMajorTickMark === "cross" ? dn - n / 2 : t.catAxisMajorTickMark === "in" ? dn - n : dn;
+			}, s = /* @__PURE__ */ new Set();
+			for (let e = 1; e < J.length; e++) {
+				let t = J[e] ?? [];
+				for (let e = 0; e < z; e++) (t[e] ?? "") !== "" && s.add(e);
+				s.add(z);
+			}
+			let c = dn + r + n + 2;
+			for (let t = 0; t <= z; t++) {
+				if (s.has(t)) continue;
+				let n = X + t / z * Ct;
+				e.beginPath(), e.moveTo(n, o(t)), e.lineTo(n, c), e.stroke();
+			}
+			let l = /* @__PURE__ */ new Map();
+			for (let t = 1; t < J.length; t++) {
+				let i = J[t] ?? [], o = [];
+				for (let e = 0; e < z; e++) (i[e] ?? "") !== "" && o.push(e);
+				for (let s = 0; s < o.length; s++) {
+					let c = o[s], u = o[s + 1] ?? z, d = i[c] ?? "", f = X + c / z * Ct, p = X + u / z * Ct, m = dn + r + t * a;
+					e.fillText(ue(e, d, Math.max(0, p - f - 4)), (f + p) / 2, m);
+					let h = m + n + 2;
+					for (let e of [c, u]) l.set(e, Math.max(l.get(e) ?? dn, h));
+				}
+			}
+			for (let [t, n] of l) {
+				let r = X + t / z * Ct;
+				e.beginPath(), e.moveTo(r, o(t)), e.lineTo(r, n), e.stroke();
+			}
+		}
+	}
+	if (re.length > 0 && !h) {
+		wt && (e.save(), e.beginPath(), e.rect(X, Z, Ct, Q), e.clip());
+		for (let r = 0; r < re.length; r++) {
+			let o = re[r], s = at(j.length + r, o), c = I && o.useSecondaryAxis === !0 ? Ft : Nt, l = o.chartexStyle != null || o.lineHidden != null || o.lineColor != null || o.lineWidthEmu != null || t.chartexDataPointLineStyle != null, u = l ? Ir(e, t, t.chartexDataPointLineStyle, o, wr(o, ae.get(o) ?? r), re.length, s, i, { linkedNoStyleFallback: a.semanticLineNoStyleFallback }) : !0;
+			l || (e.strokeStyle = s, e.lineWidth = 2, e.setLineDash([])), e.beginPath();
+			let d = o.smooth === !0, f = t.dispBlanksAs ?? "gap", p = [], m = () => {
+				p.length !== 0 && (e.moveTo(p[0].x, p[0].y), vr(e, p, d), p = []);
+			};
+			for (let e = 0; e < z; e++) {
+				let t = o.values[e];
+				if (t == null && (f === "gap" && m(), f !== "zero")) continue;
+				let n = zn(e);
+				p.push({
+					x: n,
+					y: c(t ?? 0)
+				});
+			}
+			if (m(), u && e.stroke(), o.showMarker !== !1) for (let t = 0; t < z; t++) {
+				let n = o.values[t];
+				if (n == null) continue;
+				let r = zn(t), i = c(n);
+				e.fillStyle = s, e.beginPath(), e.arc(r, i, 3, 0, Math.PI * 2), e.fill();
+			}
+			fn(e, o, s, (e) => zn(e), c, i, void 0, {
+				chart: t,
+				chartRect: n,
+				plotRect: {
+					x: X,
+					y: Z,
+					w: Ct,
+					h: Q
+				}
 			});
-			An(t, s, k.map((e, t) => ({
+		}
+		wt && e.restore();
+	}
+	if (ie.length > 0) {
+		let r = [], a = [];
+		for (let e of ie) {
+			let t = e.categories ?? [];
+			for (let n = 0; n < e.values.length; n++) {
+				let i = rr(t, n, !1), o = e.values[n];
+				i == null || o == null || (r.push(i), a.push(o));
+			}
+		}
+		if (r.length && a.length) {
+			let o = t.secondaryCatAxis, s = t.secondaryValAxis, l = k(r), u = k(a), p = (e) => e?.minorGridlines === !0 || e?.minorTickMark != null && e.minorTickMark !== "none", h = D({
+				dataMin: l.min,
+				dataMax: l.max,
+				explicitMin: o?.min,
+				explicitMax: o?.max,
+				axisLenPt: Ct / i,
+				axisOrientation: "horizontal",
+				majorUnit: o?.majorUnit,
+				minorUnit: o?.minorUnit,
+				needMinor: p(o),
+				logBase: o?.logBase,
+				reversed: o?.orientation === "maxMin"
+			}), g = D({
+				dataMin: u.min,
+				dataMax: u.max,
+				explicitMin: s?.min,
+				explicitMax: s?.max,
+				axisLenPt: Q / i,
+				axisOrientation: "vertical",
+				majorUnit: s?.majorUnit,
+				minorUnit: s?.minorUnit,
+				needMinor: p(s),
+				logBase: s?.logBase,
+				reversed: s?.orientation === "maxMin"
+			});
+			lr(e, t, ie.map((e, t) => ({
 				series: e,
-				index: A.get(e) ?? t
-			})), !1, (e) => X + l.fraction(e) * Je, (e) => Z + Q - u.fraction(e) * Q, d, X, Z, Je, Q, p, !1, s.scatterStyle ?? "marker", {
-				x: v,
-				y: b,
-				w: x,
-				h: S
+				index: ae.get(e) ?? t
+			})), !1, (e) => X + h.fraction(e) * Ct, (e) => Z + Q - g.fraction(e) * Q, n, X, Z, Ct, Q, i, !1, t.scatterStyle ?? "marker", {
+				x: c,
+				y: d,
+				w: f,
+				h: m
 			});
 		}
 	}
-	ht(), F && !C && tn(t, s, F, ie, d, X, Z, Je, p), M && je && $t(t, s, M, je, rt, d, X, Z, Je, Q, p, Re, ze, ot, s.date1904);
-	let Ft = R ? D.map((e, t) => Qn(s, L[t], D.length, e.chartexStyle, e.color)) : [];
-	_t(t, z, H, v, b, x, S, X, Z, Je, Q, ue + 2, p, Ft), Ye(t, s, v, b, x, S, X, Z, Je, Q, U, W, _e, G, C);
+	Dn(), L && !h && On(e, t, L, le, n, X, Z, Ct, i), I && tt && En(e, t, I, tt, Pt, n, X, Z, Ct, Q, i, ut, ft, Ht, t.date1904, Qe), Ot && yt(e, t, Ot, X, Z + Q + p(K) + xe + Dt, Ct, c + Ee, i);
+	let Un = U ? j.flatMap((e, n) => [Mr(t, H[n], j.length, e.chartexStyle, e.color), ...pn([e]).map(() => void 0)]) : [];
+	zt(e, W, we, c, d, f, m, X, Z, Ct, Q, be + 2, i, Un), ht(e, t, c, d, f, m, X, Z, Ct, Q, Ee, Oe, Ae, je, h);
 }
-function un(t, s, l, d) {
-	let { x: p, y: g, w: v, h: y } = l, b = an(s), x = b.length;
-	if (x === 0) return;
-	let S = s.chartType === "stackedLine" || s.chartType === "stackedLinePct", C = s.chartType === "stackedLinePct", w = C ? b.map((e, t) => {
-		let n = 0;
-		for (let e of s.series) n += Math.abs(e.values[t] ?? 0);
-		return n || 1;
-	}) : null, T = s.dispBlanksAs ?? "gap", E = (e, t) => {
-		if (!S) return s.series[e].values[t] ?? 0;
-		let n = 0;
-		for (let r = 0; r <= e; r++) n += s.series[r].values[t] ?? 0;
-		return C && w ? n / w[t] * 100 : n;
-	}, D = !S && s.secondaryValAxis && s.series.some((e) => e.useSecondaryAxis === !0) ? s.secondaryValAxis : null, O = (e) => D != null && e.useSecondaryAxis === !0, k = Infinity, A = -Infinity;
-	for (let e = 0; e < x; e++) for (let t = 0; t < s.series.length; t++) {
-		if (O(s.series[t]) || !S && s.series[t].values[e] == null) continue;
-		let n = E(t, e);
-		k = Math.min(k, n), A = Math.max(A, n);
+function zn(e, t, n, i) {
+	let { x: a, y: c, w: d, h: f } = n, m = Pn(t), h = m.length;
+	if (h === 0) return;
+	let _ = t.chartType === "stackedLine" || t.chartType === "stackedLinePct", S = t.chartType === "stackedLinePct", C = S ? m.map((e, n) => {
+		let r = 0;
+		for (let e of t.series) r += Math.abs(e.values[n] ?? 0);
+		return r || 1;
+	}) : null, E = t.dispBlanksAs ?? "gap", D = (e, n) => {
+		if (!_) return t.series[e].values[n] ?? 0;
+		let r = 0;
+		for (let i = 0; i <= e; i++) r += t.series[i].values[n] ?? 0;
+		return S && C ? r / C[n] * 100 : r;
+	}, O = !_ && t.secondaryValAxis && t.series.some((e) => e.useSecondaryAxis === !0) ? t.secondaryValAxis : null, k = (e) => O != null && e.useSecondaryAxis === !0, A = Infinity, j = -Infinity;
+	for (let e = 0; e < h; e++) for (let n = 0; n < t.series.length; n++) {
+		if (k(t.series[n]) || !_ && t.series[n].values[e] == null) continue;
+		let r = D(n, e);
+		A = Math.min(A, r), j = Math.max(j, r);
 	}
-	isFinite(k) || (k = 0, A = 1);
-	let te = s.valAxisLogBase != null && s.valAxisLogBase >= 2;
-	s.valMin == null ? C && k > 0 && !te && (k = 0) : k = C ? s.valMin * 100 : s.valMin, s.valMax == null ? C && A < 0 && (A = 0) : A = C ? s.valMax * 100 : s.valMax;
-	let M = a(s, y, d), N = M.fontPx, ne = M.topPad, re = M.bandH, F = mt(t, s, v, y, .22, d), { legRightW: ae, legLeftW: I, legTopH: oe, legBottomH: se } = c(F), ce = Wt(s.catAxisFontSizeHpt, y, d), L = Wt(s.valAxisFontSizeHpt, y, d), R = u(s, v, y, d), z = R.catFontPx, B = R.valFontPx, V = R.catBandH, le = R.valBandW, ue = re + oe + L / 2 + 2, de = o(ce) + V + se, fe = y - ue - de, H = Zt(D, s.series, fe / d), pe = Math.max(8, Math.min(11, y / 20)), U = _(D?.fontSizeHpt, d) ?? pe, me = 0;
-	if (D && H && !D.hidden) {
-		let e = t.font;
-		t.font = Ge(U, Y(s, D.fontFace, "minor"), !1, D.fontItalic ?? !1);
-		let n = 0;
-		for (let e of H.majorLines) n = Math.max(n, t.measureText(It(e, D.formatCode ?? null, s.date1904, D.displayUnits)).width);
-		me = n + 18, t.font = e;
+	for (let e = 0; e < t.series.length; e++) {
+		let n = t.series[e];
+		k(n) || Cn(n, "y", (t) => n.values[t] == null ? null : D(e, t), (e) => {
+			A = Math.min(A, e), j = Math.max(j, e);
+		});
 	}
-	let he = D && D.title ? i(D.titleFontSizeHpt, d) + 8 : 0, W = zt(s, k, A, fe / d, C), ge = 0;
-	if (!s.valAxisHidden && s.valAxisTickLabelPos !== "none" && s.plotAreaManualLayout != null && s.plotAreaManualLayout.layoutTarget !== "inner") {
-		let e = t.font;
-		t.font = `${L}px ${Y(s, s.valAxisFontFace, "minor")}`;
-		for (let e of W.majorLines) ge = Math.max(ge, t.measureText(Pt(s, e, C)).width);
-		t.font = e;
+	isFinite(A) || (A = 0, j = 1);
+	let ee = t.valAxisLogBase != null && t.valAxisLogBase >= 2;
+	t.valMin == null ? S && A > 0 && !ee && (A = 0) : A = S ? t.valMin * 100 : t.valMin, t.valMax == null ? S && j < 0 && (j = 0) : j = S ? t.valMax * 100 : t.valMax;
+	let M = jn(e, t, d, f, i), te = M.fontPx, P = M.topPad, ne = M.bandH, re = It(e, t, d, f, .22, i), { legRightW: F, legLeftW: ie, legTopH: ae, legBottomH: oe } = o(re), I = hn(t.catAxisFontSizeHpt, f, i), se = hn(t.valAxisFontSizeHpt, f, i), ce = s(t, d, f, i), L = ce.catFontPx, le = ce.valFontPx, R = ce.catBandH, z = ce.valBandW, B = ne + ae + se / 2 + 2, ue = p(I) + R + oe, de = f - B - ue, pe = wn(O, t.series, de / i), me = Math.max(8, Math.min(11, f / 20)), V = x(O?.fontSizeHpt, i) ?? me, he = 0;
+	if (O && pe && !O.hidden) {
+		let n = e.font;
+		e.font = lt(V, Y(t, O.fontFace, "minor"), !1, O.fontItalic ?? !1);
+		let r = 0;
+		for (let n of pe.majorLines) r = Math.max(r, e.measureText(an(n, O.formatCode ?? null, t.date1904, O.displayUnits)).width);
+		he = r + 18, e.font = n;
 	}
-	let _e = {
-		t: ue,
-		r: ae + v * .05 + me + he,
-		b: de,
-		l: L * 2.2 + 10 + le + I
-	}, G = n({
-		valAxisHidden: s.valAxisHidden,
-		catAxisHidden: s.catAxisHidden,
-		valLabelWidth: ge,
-		valLabelFontPx: L,
-		catLabelFontPx: ce,
-		valLabelGapPx: s.valAxisFontSizeHpt == null ? 6 : e(L),
-		catLabelGapPx: s.catAxisFontSizeHpt == null ? 5 : f(ce),
-		outerTextMarginPx: m * d,
-		valTitleBandW: le,
-		catTitleBandH: V,
-		secondaryBandW: me + he
-	});
-	rn(t, s, p, g, v, y, g + ne, N);
-	let { plotRect: { px0: K, py0: q, pw: J, ph: ve } } = r(s, p, g, v, y, d, {
+	let ge = O && O.title ? l(O.titleFontSizeHpt, i) + 8 : 0, H = se * 2.2 + 10 + z + ie, U = F + d * .05 + he + ge, _e = cn(t, A, j, de / i, S), W = 0;
+	if (!t.valAxisHidden && t.valAxisTickLabelPos !== "none" && t.plotAreaManualLayout != null && t.plotAreaManualLayout.layoutTarget !== "inner") {
+		let n = e.font;
+		e.font = `${se}px ${Y(t, t.valAxisFontFace, "minor")}`;
+		for (let n of _e.majorLines) W = Math.max(W, e.measureText(nn(t, n, S)).width);
+		e.font = n;
+	}
+	let G = {
+		t: B,
+		r: U,
+		b: ue,
+		l: H
+	}, ve = v({
+		valAxisHidden: t.valAxisHidden,
+		catAxisHidden: t.catAxisHidden,
+		valLabelWidth: W,
+		valLabelFontPx: se,
+		catLabelFontPx: I,
+		valLabelGapPx: t.valAxisFontSizeHpt == null ? 6 : y(se),
+		catLabelGapPx: t.catAxisFontSizeHpt == null ? 5 : u(I),
+		outerTextMarginPx: r * i,
+		valTitleBandW: z,
+		catTitleBandH: R,
+		secondaryBandW: he + ge
+	}), ye = b(t, a, c, d, f, i, {
 		titleBand: M,
 		legendSideReserveFrac: .22,
-		legendReserve: F,
-		pad: _e,
+		legendReserve: re,
+		pad: G,
 		honorPlotAreaManualLayout: !0,
-		manualOuterInsets: G
-	});
-	if (J <= 0 || ve <= 0) return;
-	s.plotAreaBg && (t.fillStyle = `#${s.plotAreaBg}`, t.fillRect(K, q, J, ve));
-	let ye = zt(s, k, A, ve / d, C);
-	if (ye.max - ye.min === 0) return;
-	let be = (e) => q + ve - ye.frac(e) * ve, xe = H ? H.makeToY(q, ve) : be, Se = (e) => O(e) ? xe : be, Ce = ee(s.catAxisLineColor, s.catAxisLineWidthEmu, d), we = ee(s.valAxisLineColor, s.valAxisLineWidthEmu, d), Te = s.catAxisLineColor == null ? void 0 : Ce.color, Ee = s.catAxisLineWidthEmu == null ? void 0 : Ce.width, De = s.valAxisLineColor == null ? void 0 : we.color, Oe = s.valAxisLineWidthEmu == null ? void 0 : we.width, ke = j(s), Ae = jt(s), je = ke ? (e) => K + ((Ae ? x - 1 - e : e) + .5) / x * J : (e) => {
-		let t = Ae ? x - 1 - e : e;
-		return K + (x === 1 ? J / 2 : t / (x - 1) * J);
+		manualOuterInsets: ve
+	}), be = jn(e, t, ye.plotRect.pw, f, i);
+	Math.abs(be.bandH - M.bandH) > .01 && (M = be, te = M.fontPx, P = M.topPad, ne = M.bandH, B = ne + ae + se / 2 + 2, G.t = B, ye = b(t, a, c, d, f, i, {
+		titleBand: M,
+		legendSideReserveFrac: .22,
+		legendReserve: re,
+		pad: G,
+		honorPlotAreaManualLayout: !0,
+		manualOuterInsets: ve
+	}));
+	let { plotRect: { px0: K, py0: q, pw: J, ph: xe } } = ye;
+	if (Nn(e, t, t.titleManualLayout || !t.titleRichRuns?.length ? a : K, c, t.titleManualLayout || !t.titleRichRuns?.length ? d : J, f, c + P, te), J <= 0 || xe <= 0) return;
+	t.plotAreaBg && (e.fillStyle = `#${t.plotAreaBg}`, e.fillRect(K, q, J, xe));
+	let Se = cn(t, A, j, xe / i, S);
+	if (Se.max - Se.min === 0) return;
+	let Ce = (e) => q + xe - Se.frac(e) * xe, we = pe ? pe.makeToY(q, xe) : Ce, Te = (e) => k(e) ? we : Ce, Ee = w(t.catAxisLineColor, t.catAxisLineWidthEmu, i), De = w(t.valAxisLineColor, t.valAxisLineWidthEmu, i), Oe = t.catAxisLineColor == null ? void 0 : Ee.color, ke = t.catAxisLineWidthEmu == null ? void 0 : Ee.width, Ae = t.valAxisLineColor == null ? void 0 : De.color, je = t.valAxisLineWidthEmu == null ? void 0 : De.width, Me = Sn(t, m), Ne = T(t), Pe = $t(t), Fe = Me ? (e) => K + Me.positions[e] * J : Ne ? (e) => K + ((Pe ? h - 1 - e : e) + .5) / h * J : (e) => {
+		let t = Pe ? h - 1 - e : e;
+		return K + (h === 1 ? J / 2 : t / (h - 1) * J);
 	};
-	if (!s.valAxisHidden) {
-		t.font = `${L}px ${Y(s, s.valAxisFontFace, "minor")}`, t.textBaseline = "middle";
-		let n = St(s, d), r = Ct(s, d);
-		for (let e of ye.minorLines) xt(t, K, J, be(e), !1, r);
-		let i = Mt(s), a = s.valAxisTickLabelPos !== "none";
-		for (let r of ye.majorLines) {
-			let o = be(r);
-			if (i && xt(t, K, J, o, r === 0, n), vt(t, s.valAxisMajorTickMark, "val", K, o, De, Oe, !1, s.valAxisLineHidden, "major", d), a) {
-				t.fillStyle = s.valAxisFontColor ? `#${s.valAxisFontColor}` : "#555", t.textAlign = "right";
-				let n = s.valAxisFontSizeHpt == null ? 6 : e(L);
-				t.fillText(Pt(s, r, C), K - n, o);
+	if (!t.valAxisHidden) {
+		e.font = `${se}px ${Y(t, t.valAxisFontFace, "minor")}`, e.textBaseline = "middle";
+		let n = Wt(t, i), r = Gt(t, i);
+		for (let t of Se.minorLines) Ut(e, K, J, Ce(t), !1, r);
+		let a = en(t), o = t.valAxisTickLabelPos !== "none";
+		for (let r of Se.majorLines) {
+			let s = Ce(r);
+			if (a && Ut(e, K, J, s, r === 0, n), Bt(e, t.valAxisMajorTickMark, "val", K, s, Ae, je, !1, t.valAxisLineHidden, "major", i), o) {
+				e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555", e.textAlign = "right";
+				let n = t.valAxisFontSizeHpt == null ? 6 : y(se);
+				e.fillText(nn(t, r, S), K - n, s);
 			}
 		}
-		if (s.valAxisMinorTickMark && s.valAxisMinorTickMark !== "none") for (let e of ye.minorTicks) vt(t, s.valAxisMinorTickMark, "val", K, be(e), De, Oe, !1, s.valAxisLineHidden, "minor", d);
+		if (t.valAxisMinorTickMark && t.valAxisMinorTickMark !== "none") for (let n of Se.minorTicks) Bt(e, t.valAxisMinorTickMark, "val", K, Ce(n), Ae, je, !1, t.valAxisLineHidden, "minor", i);
 	}
-	if (D && H && Qt(t, D, H, xe, K, J, d), !s.catAxisHidden && Et(s)) {
-		let e = Dt(s, d);
-		t.strokeStyle = e.color, t.lineWidth = e.width;
-		let n = e.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-		e.dash.length > 0 && t.setLineDash(e.dash);
-		for (let e of kt(s, x)) {
-			let n = K + e * J;
-			t.beginPath(), t.moveTo(n, q), t.lineTo(n, q + ve), t.stroke();
+	if (O && pe && Tn(e, O, pe, we, K, J, i), !t.catAxisHidden && Jt(t)) {
+		let n = Yt(t, i);
+		e.strokeStyle = n.color, e.lineWidth = n.width;
+		let r = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+		n.dash.length > 0 && e.setLineDash(n.dash);
+		let a = Me ? Me.majorTicks.map((e) => e.fraction) : Zt(t, h);
+		for (let t of a) {
+			let n = K + t * J;
+			e.beginPath(), e.moveTo(n, q), e.lineTo(n, q + xe), e.stroke();
 		}
-		e.dash.length > 0 && t.setLineDash(n);
+		n.dash.length > 0 && e.setLineDash(r);
 	}
-	!s.catAxisHidden && !s.catAxisLineHidden && (t.strokeStyle = Ce.color, t.lineWidth = Ce.width, t.beginPath(), t.moveTo(K, q + ve), t.lineTo(K + J, q + ve), t.stroke()), !s.valAxisHidden && !s.valAxisLineHidden && (t.strokeStyle = we.color, t.lineWidth = we.width, t.beginPath(), t.moveTo(K, q), t.lineTo(K, q + ve), t.stroke());
-	let Me = Math.max(1, 2.25 * d), Ne = Math.max(2, 2.5 * d), Pe = Wt(s.dataLabelFontSizeHpt, y, d), Fe = [];
-	for (let e = 0; e < s.series.length; e++) {
-		let n = s.series[e], r = He(n.dataPointOverrides), i = Ve(e, n), a = Se(n);
-		t.strokeStyle = n.lineColor ? `#${n.lineColor}` : i, t.lineWidth = n.lineWidthEmu == null ? Me : P(n.lineWidthEmu, d), t.setLineDash(Bn(n.chartexStyle?.lineDash ?? void 0)), t.lineCap = n.chartexStyle?.lineCap === "rnd" ? "round" : n.chartexStyle?.lineCap === "sq" ? "square" : "butt", t.lineJoin = n.chartexStyle?.lineJoin === "round" || n.chartexStyle?.lineJoin === "bevel" ? n.chartexStyle.lineJoin : "miter", t.beginPath();
-		let o = n.smooth === !0, c = [], u = () => {
-			c.length !== 0 && (t.moveTo(c[0].x, c[0].y), zn(t, c, o), c = []);
+	!t.catAxisHidden && !t.catAxisLineHidden && (e.strokeStyle = Ee.color, e.lineWidth = Ee.width, e.beginPath(), e.moveTo(K, q + xe), e.lineTo(K + J, q + xe), e.stroke()), !t.valAxisHidden && !t.valAxisLineHidden && (e.strokeStyle = De.color, e.lineWidth = De.width, e.beginPath(), e.moveTo(K, q), e.lineTo(K, q + xe), e.stroke());
+	let Ie = Math.max(1, 2.25 * i), Le = Math.max(2, 2.5 * i), Re = hn(t.dataLabelFontSizeHpt, f, i), ze = [];
+	for (let r = 0; r < t.series.length; r++) {
+		let o = t.series[r], s = ot(o.dataPointOverrides), l = at(r, o), u = Te(o);
+		e.strokeStyle = o.lineColor ? `#${o.lineColor}` : l, e.lineWidth = o.lineWidthEmu == null ? Ie : N(o.lineWidthEmu, i), e.setLineDash(yr(o.chartexStyle?.lineDash ?? void 0, e.lineWidth)), e.lineCap = o.chartexStyle?.lineCap === "rnd" ? "round" : o.chartexStyle?.lineCap === "sq" ? "square" : "butt", e.lineJoin = o.chartexStyle?.lineJoin === "round" || o.chartexStyle?.lineJoin === "bevel" ? o.chartexStyle.lineJoin : "miter", e.beginPath();
+		let p = o.smooth === !0, g = [], v = () => {
+			g.length !== 0 && (e.moveTo(g[0].x, g[0].y), vr(e, g, p), g = []);
 		};
-		for (let t = 0; t < x; t++) {
-			if (!S && n.values[t] == null) {
-				if (T === "gap") {
-					u();
+		for (let e = 0; e < h; e++) {
+			if (!_ && o.values[e] == null) {
+				if (E === "gap") {
+					v();
 					continue;
 				}
-				if (T === "span") continue;
+				if (E === "span") continue;
 			}
-			c.push({
-				x: je(t),
-				y: a(E(e, t))
+			g.push({
+				x: Fe(e),
+				y: u(D(r, e))
 			});
 		}
-		u(), n.lineHidden !== !0 && t.stroke();
-		let f = (t) => E(e, t);
-		for (let e of n.errBars ?? []) Hn(t, n, e, x, je, a, f, i);
-		t.fillStyle = i;
-		let m = n.showMarker !== !1, h = Vn(n), _ = (n.dataLabelOverrides?.length ?? 0) > 0 || n.seriesDataLabels != null;
-		_ && Fe.push(() => {
-			Un(t, n, b, x, je, a, f, ve, d, s.date1904 ?? !1, S || T === "zero", Y(s, s.dataLabelFontFace, "minor"), s.dataLabelPosition ?? "r", {
-				x: p,
+		v(), o.lineHidden !== !0 && e.stroke();
+		let y = (e) => D(r, e);
+		for (let t of o.errBars ?? []) xr(e, o, t, h, Fe, u, y, l);
+		e.fillStyle = l;
+		let b = o.showMarker !== !1, x = br(o), w = (o.dataLabelOverrides?.length ?? 0) > 0 || o.seriesDataLabels != null;
+		w && ze.push(() => {
+			Cr(e, o, m, h, Fe, u, y, xe, i, t.date1904 ?? !1, _ || E === "zero", Y(t, t.dataLabelFontFace, "minor"), t.dataLabelPosition ?? "r", {
+				x: a,
 				y: q,
-				w: v,
-				h: ve
+				w: d,
+				h: xe
 			}, {
-				x: p,
-				y: g,
-				w: v,
-				h: y
-			}, C && w ? (e) => (n.values[e] ?? 0) / w[e] : void 0, (e) => {
-				if (!m) return 0;
-				if (!h) return Ne;
-				let t = r.get(e);
-				return (t?.markerSymbol ?? n.markerSymbol ?? "circle") === "none" ? 0 : (t?.markerSize ?? n.markerSize ?? 5) / 2 * d;
-			}, (e) => Y(s, e, "minor"), O(n) ? D?.displayUnits : s.valAxisDisplayUnits);
+				x: a,
+				y: c,
+				w: d,
+				h: f
+			}, S && C ? (e) => (o.values[e] ?? 0) / C[e] : void 0, (e) => {
+				if (!b) return 0;
+				if (!x) return Le;
+				let t = s.get(e);
+				return (t?.markerSymbol ?? o.markerSymbol ?? "circle") === "none" ? 0 : (t?.markerSize ?? o.markerSize ?? 5) / 2 * i;
+			}, (e) => Y(t, e, "minor"), k(o) ? O?.displayUnits : t.valAxisDisplayUnits);
 		});
-		for (let o = 0; o < x; o++) {
-			if (!S && n.values[o] == null && T !== "zero") continue;
-			let s = E(e, o);
-			if (m) if (h) {
-				let e = r.get(o), c = e?.markerSymbol ?? n.markerSymbol ?? "circle";
-				if (c !== "none") {
-					let r = e?.markerSize ?? n.markerSize ?? 5, l = e?.markerFill ?? e?.color ?? n.markerFill ?? i, u = e?.markerLine ?? n.markerLine ?? null, f = e?.markerLineWidthEmu ?? n.markerLineWidthEmu;
-					Mn(t, je(o), a(s), c, r, l, u, d, f == null ? void 0 : P(f, d));
+		for (let t = 0; t < h; t++) {
+			if (!_ && o.values[t] == null && E !== "zero") continue;
+			let n = D(r, t);
+			if (b) if (x) {
+				let r = s.get(t), a = r?.markerSymbol ?? o.markerSymbol ?? "circle";
+				if (a !== "none") {
+					let s = r?.markerSize ?? o.markerSize ?? 5, c = r?.markerFill ?? r?.color ?? o.markerFill ?? l, d = r?.markerLine ?? o.markerLine ?? null, f = r?.markerLineWidthEmu ?? o.markerLineWidthEmu;
+					dr(e, Fe(t), u(n), a, s, c, d, i, f == null ? void 0 : N(f, i));
 				}
-			} else t.beginPath(), t.arc(je(o), a(s), Ne, 0, Math.PI * 2), t.fill();
+			} else e.beginPath(), e.arc(Fe(t), u(n), Le, 0, Math.PI * 2), e.fill();
 		}
-		s.showDataLabels && !_ && Fe.push(() => {
-			for (let r = 0; r < x; r++) {
-				if (!S && n.values[r] == null && T !== "zero") continue;
-				let i = E(e, r), o = ie({
+		t.showDataLabels && !w && ze.push(() => {
+			for (let n = 0; n < h; n++) {
+				if (!_ && o.values[n] == null && E !== "zero") continue;
+				let i = D(r, n), a = fe({
 					showValue: !0,
-					sourceValue: n.values[r] ?? 0,
-					valueDivisor: Ft(O(n) ? D?.displayUnits : s.valAxisDisplayUnits),
-					formatCode: s.dataLabelFormatCode ?? n.valFormatCode ?? null,
-					date1904: s.date1904
+					sourceValue: o.values[n] ?? 0,
+					valueDivisor: rn(k(o) ? O?.displayUnits : t.valAxisDisplayUnits),
+					formatCode: t.dataLabelFormatCode ?? o.valFormatCode ?? null,
+					date1904: t.date1904
 				});
-				Fn(t, je(r), a(i), o, s.dataLabelPosition ?? "r", Pe, s.dataLabelFontColor ?? void 0, s.dataLabelFontBold ?? !1, Y(s, s.dataLabelFontFace, "minor"), m ? Ne + 1 : 2, {
+				mr(e, Fe(n), u(i), a, t.dataLabelPosition ?? "r", Re, t.dataLabelFontColor ?? void 0, t.dataLabelFontBold ?? !1, Y(t, t.dataLabelFontFace, "minor"), b ? Le + 1 : 2, {
 					x: K,
 					y: q,
 					w: J,
-					h: ve
+					h: xe
 				});
 			}
-		}), Ut(t, n, i, je, a, d, void 0, {
-			chart: s,
-			chartRect: l,
+		}), fn(e, o, l, Fe, u, i, void 0, {
+			chart: t,
+			chartRect: n,
 			plotRect: {
 				x: K,
 				y: q,
 				w: J,
-				h: ve
+				h: xe
 			}
 		});
 	}
-	for (let e of Fe) e();
-	if (!s.catAxisHidden) {
-		let e = s.catAxisFontColor ? `#${s.catAxisFontColor}` : "#555";
-		t.fillStyle = e, t.textAlign = "center", t.textBaseline = "top", t.font = `${ce}px ${Y(s, s.catAxisFontFace, "minor")}`;
-		let n = Math.max(1, Math.floor(s.catAxisTickMarkSkip ?? 1));
-		for (let e = 0; e < x; e += n) vt(t, s.catAxisMajorTickMark, "cat", q + ve, je(e), Te, Ee, !1, s.catAxisLineHidden, "major", d);
-		let r = qt(s), i = Math.max(1, Math.floor(s.catAxisTickLabelSkip ?? 1)), a = Yt(s);
-		for (let n = 0; n < x; n += i) {
-			let i = je(n);
-			if (!r) continue;
-			t.fillStyle = e;
-			let o = h((b[n] ?? "").toString(), s.catAxisFormatCode, s.date1904);
+	for (let e of ze) e();
+	if (!t.catAxisHidden) {
+		let n = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#555";
+		e.fillStyle = n, e.textAlign = "center", e.textBaseline = "top", e.font = `${I}px ${Y(t, t.catAxisFontFace, "minor")}`;
+		let r = Math.max(1, Math.floor(t.catAxisTickMarkSkip ?? 1)), a = Me ? Me.majorTicks.map((e) => K + e.fraction * J) : Array.from({ length: Math.ceil(h / r) }, (e, t) => Fe(t * r));
+		for (let n of a) Bt(e, t.catAxisMajorTickMark, "cat", q + xe, n, Oe, ke, !1, t.catAxisLineHidden, "major", i);
+		if (t.catAxisMinorTickMark && t.catAxisMinorTickMark !== "none" && Me) for (let n of Me.minorTicks) Bt(e, t.catAxisMinorTickMark, "cat", q + xe, K + n.fraction * J, Oe, ke, !1, t.catAxisLineHidden, "minor", i);
+		let o = vn(t), s = Math.max(1, Math.floor(t.catAxisTickLabelSkip ?? 1)), c = bn(t), l = Me ? Me.majorTicks.map((e) => ({
+			label: g(String(e.serial), t.catAxisFormatCode, t.date1904),
+			x: K + e.fraction * J
+		})) : Array.from({ length: Math.ceil(h / s) }, (e, n) => {
+			let r = n * s;
+			return {
+				label: g((m[r] ?? "").toString(), t.catAxisFormatCode, t.date1904),
+				x: Fe(r)
+			};
+		});
+		for (let r of l) {
+			let i = r.x;
 			if (!o) continue;
-			let c = s.catAxisFontSizeHpt == null ? 5 : f(ce);
-			Xt(t, o, i, q + ve + c, a);
+			e.fillStyle = n;
+			let a = r.label;
+			if (!a) continue;
+			let s = t.catAxisFontSizeHpt == null ? 5 : u(I);
+			xn(e, a, i, q + xe + s, c);
 		}
 	}
-	if (D && H) {
-		let e = s.valAxisFontColor ? `#${s.valAxisFontColor}` : "#555";
-		$t(t, s, D, H, xe, l, K, q, J, ve, d, U, me, e, s.date1904);
+	if (O && pe) {
+		let r = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555";
+		En(e, t, O, pe, we, n, K, q, J, xe, i, V, he, r, t.date1904);
 	}
-	_t(t, s, F, p, g, v, y, K, q, J, ve, re + 2, d), Ye(t, s, p, g, v, y, K, q, J, ve, I, se, z, B);
+	zt(e, t, re, a, c, d, f, K, q, J, xe, ne + 2, i), ht(e, t, a, c, d, f, K, q, J, xe, ie, oe, L, le);
 }
-function dn(e, t, n, i) {
-	let { x: s, y: l, w: d, h: f } = n, p = an(t), m = p.length;
-	if (m === 0) return;
-	let g = t.series, _ = g.length >= 4, v = _ ? 0 : -1, y = +!!_, b = _ ? 2 : 1, x = _ ? 3 : 2, S = g[y], C = g[b], w = g[x], T = v >= 0 ? g[v] : void 0, E = a(t, f, i), D = E.fontPx, O = E.topPad, k = E.bandH, A = mt(e, t, d, f, .22, i), { legRightW: ee, legLeftW: te, legBottomH: M, legTopH: N } = c(A), ne = Wt(t.catAxisFontSizeHpt, f, i), F = Wt(t.valAxisFontSizeHpt, f, i), ie = u(t, d, f, i), ae = ie.catFontPx, I = ie.valFontPx, oe = ie.catBandH, se = ie.valBandW, ce = k + N + F / 2 + 2, L = o(ne) + oe + M, R = {
+function Bn(e, t, n, r) {
+	let { x: i, y: a, w: c, h: l } = n, u = Pn(t), d = u.length;
+	if (d === 0) return;
+	let f = t.series, m = f.length >= 4, h = m ? 0 : -1, _ = +!!m, v = m ? 2 : 1, y = m ? 3 : 2, x = f[_], S = f[v], C = f[y], w = h >= 0 ? f[h] : void 0, E = f[0], D = f.at(-1), O = jn(e, t, c, l, r), k = O.fontPx, A = O.topPad, j = O.bandH, ee = It(e, t, c, l, .22, r), { legRightW: M, legLeftW: te, legBottomH: P, legTopH: ne } = o(ee), re = hn(t.catAxisFontSizeHpt, l, r), F = hn(t.valAxisFontSizeHpt, l, r), ie = s(t, c, l, r), ae = ie.catFontPx, oe = ie.valFontPx, I = ie.catBandH, se = ie.valBandW, ce = j + ne + F / 2 + 2, L = p(re) + I + P, le = {
 		t: ce,
-		r: ee + d * .05,
+		r: M + c * .05,
 		b: L,
 		l: F * 2.2 + 10 + se + te
 	};
-	rn(e, t, s, l, d, f, l + O, D);
-	let { plotRect: { px0: z, py0: B, pw: V, ph: le } } = r(t, s, l, d, f, i, {
-		titleBand: E,
+	Nn(e, t, i, a, c, l, a + A, k);
+	let { plotRect: { px0: R, py0: z, pw: B, ph: de } } = b(t, i, a, c, l, r, {
+		titleBand: O,
 		legendSideReserveFrac: .22,
-		legendReserve: A,
-		pad: R,
+		legendReserve: ee,
+		pad: le,
 		honorPlotAreaManualLayout: !0
 	});
-	if (V <= 0 || le <= 0) return;
-	t.plotAreaBg && (e.fillStyle = `#${t.plotAreaBg}`, e.fillRect(z, B, V, le));
-	let ue = Infinity, de = -Infinity;
-	for (let e of g) for (let t = 0; t < m; t++) {
+	if (B <= 0 || de <= 0) return;
+	t.plotAreaBg && (e.fillStyle = `#${t.plotAreaBg}`, e.fillRect(R, z, B, de));
+	let fe = Infinity, pe = -Infinity;
+	for (let e of f) for (let t = 0; t < d; t++) {
 		let n = e.values[t];
-		n != null && (ue = Math.min(ue, n), de = Math.max(de, n));
+		n != null && (fe = Math.min(fe, n), pe = Math.max(pe, n));
 	}
-	isFinite(ue) || (ue = 0, de = 1), t.valMin != null && (ue = t.valMin), t.valMax != null && (de = t.valMax);
-	let fe = zt(t, ue, de, le / i);
-	if (fe.max - fe.min === 0) return;
-	let H = (e) => B + le - fe.frac(e) * le, pe = j(t), U = jt(t), me = pe ? (e) => z + ((U ? m - 1 - e : e) + .5) / m * V : (e) => {
-		let t = U ? m - 1 - e : e;
-		return z + (m === 1 ? V / 2 : t / (m - 1) * V);
+	for (let e of f) Cn(e, "y", (t) => e.values[t] ?? null, (e) => {
+		fe = Math.min(fe, e), pe = Math.max(pe, e);
+	});
+	isFinite(fe) || (fe = 0, pe = 1), t.valMin != null && (fe = t.valMin), t.valMax != null && (pe = t.valMax);
+	let me = cn(t, fe, pe, de / r);
+	if (me.max - me.min === 0) return;
+	let V = (e) => z + de - me.frac(e) * de, he = T(t), ge = $t(t), H = Sn(t, u), U = H ? (e) => R + H.positions[e] * B : he ? (e) => R + ((ge ? d - 1 - e : e) + .5) / d * B : (e) => {
+		let t = ge ? d - 1 - e : e;
+		return R + (d === 1 ? B / 2 : t / (d - 1) * B);
 	};
 	if (!t.valAxisHidden) {
 		e.font = `${F}px ${Y(t, t.valAxisFontFace, "minor")}`, e.textBaseline = "middle";
-		let n = St(t, i), r = Ct(t, i);
-		for (let t of fe.minorLines) xt(e, z, V, H(t), !1, r);
-		let a = Mt(t), o = t.valAxisTickLabelPos !== "none";
-		for (let r of fe.majorLines) {
-			let s = H(r);
-			a && xt(e, z, V, s, r === 0, n), vt(e, t.valAxisMajorTickMark, "val", z, s, void 0, void 0, !1, t.valAxisLineHidden, "major", i), o && (e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555", e.textAlign = "right", e.fillText(Pt(t, r, !1), z - 6, s));
+		let n = Wt(t, r), i = Gt(t, r);
+		for (let t of me.minorLines) Ut(e, R, B, V(t), !1, i);
+		let a = en(t), o = t.valAxisTickLabelPos !== "none";
+		for (let i of me.majorLines) {
+			let s = V(i);
+			a && Ut(e, R, B, s, i === 0, n), Bt(e, t.valAxisMajorTickMark, "val", R, s, void 0, void 0, !1, t.valAxisLineHidden, "major", r), o && (e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555", e.textAlign = "right", e.fillText(nn(t, i, !1), R - 6, s));
 		}
-		for (let n of fe.minorTicks) vt(e, t.valAxisMinorTickMark, "val", z, H(n), void 0, void 0, !1, t.valAxisLineHidden, "minor", i);
+		for (let n of me.minorTicks) Bt(e, t.valAxisMinorTickMark, "val", R, V(n), void 0, void 0, !1, t.valAxisLineHidden, "minor", r);
 	}
-	if (e.strokeStyle = "#aaa", e.lineWidth = 1, !t.catAxisHidden && !t.catAxisLineHidden && (e.beginPath(), e.moveTo(z, B + le), e.lineTo(z + V, B + le), e.stroke()), !t.valAxisHidden && !t.valAxisLineHidden && (e.beginPath(), e.moveTo(z, B), e.lineTo(z, B + le), e.stroke()), t.stockUpDownBars && T && w) {
-		let n = t.stockUpDownBarStyle, r = n?.gapWidthPercent != null && Number.isFinite(n.gapWidthPercent) && n.gapWidthPercent >= 0 ? n.gapWidthPercent : 150, a = pe ? V / m : m > 1 ? V / (m - 1) : V, o = Math.max(0, a / (1 + r / 100));
-		for (let t = 0; t < m; t++) {
-			let r = T.values[t], a = w.values[t];
-			if (r == null || a == null || !Number.isFinite(r) || !Number.isFinite(a)) continue;
-			let s = H(r), c = H(a), l = Math.abs(c - s);
+	if (e.strokeStyle = "#aaa", e.lineWidth = 1, !t.catAxisHidden && !t.catAxisLineHidden && (e.beginPath(), e.moveTo(R, z + de), e.lineTo(R + B, z + de), e.stroke()), !t.valAxisHidden && !t.valAxisLineHidden && (e.beginPath(), e.moveTo(R, z), e.lineTo(R, z + de), e.stroke()), t.stockUpDownBars && E && D) {
+		let n = t.stockUpDownBarStyle, i = n?.gapWidthPercent != null && Number.isFinite(n.gapWidthPercent) && n.gapWidthPercent >= 0 ? n.gapWidthPercent : 150, a = H ? (H.categoryBandFractions[0] ?? 0) * B : he ? B / d : d > 1 ? B / (d - 1) : B, o = Math.max(0, a / (1 + i / 100));
+		for (let t = 0; t < d; t++) {
+			let i = E.values[t], a = D.values[t];
+			if (i == null || a == null || !Number.isFinite(i) || !Number.isFinite(a)) continue;
+			let s = V(i), c = V(a), l = Math.abs(c - s);
 			if (!(o > 0) || !(l > 0) || !Number.isFinite(l)) continue;
-			let u = a >= r ? n?.up : n?.down, d = a >= r ? "FFFFFF" : "000000", f = me(t) - o / 2, p = Math.min(s, c);
-			u?.fillHidden || (e.fillStyle = `#${u?.fillColor ?? d}`, e.fillRect(f, p, o, l)), u?.lineHidden || (e.strokeStyle = `#${u?.lineColor ?? "000000"}`, e.lineWidth = u?.lineWidthEmu == null ? Math.max(1, .75 * i) : P(u.lineWidthEmu, i), e.setLineDash([]), e.strokeRect(f, p, o, l));
+			let u = a >= i ? n?.up : n?.down, d = a >= i ? "FFFFFF" : "000000", f = U(t) - o / 2, p = Math.min(s, c);
+			u?.fillHidden || (e.fillStyle = `#${u?.fillColor ?? d}`, e.fillRect(f, p, o, l)), u?.lineHidden || (e.strokeStyle = `#${u?.lineColor ?? "000000"}`, e.lineWidth = u?.lineWidthEmu == null ? Math.max(1, .75 * r) : N(u.lineWidthEmu, r), e.setLineDash([]), e.strokeRect(f, p, o, l));
 		}
 	}
-	if ((t.stockHiLowLines ?? !0) && S != null && C != null && S && C) {
-		e.strokeStyle = t.stockHiLowLineColor ? `#${t.stockHiLowLineColor}` : "#595959", e.lineWidth = Math.max(1, .75 * i), e.setLineDash([]);
-		for (let t = 0; t < m; t++) {
-			let n = S.values[t], r = C.values[t];
+	if ((t.stockHiLowLines ?? !0) && x != null && S != null && x && S) {
+		e.strokeStyle = t.stockHiLowLineColor ? `#${t.stockHiLowLineColor}` : "#595959", e.lineWidth = Math.max(1, .75 * r), e.setLineDash([]);
+		for (let t = 0; t < d; t++) {
+			let n = x.values[t], r = S.values[t];
 			if (n == null || r == null) continue;
-			let i = me(t);
-			e.beginPath(), e.moveTo(i, H(n)), e.lineTo(i, H(r)), e.stroke();
+			let i = U(t);
+			e.beginPath(), e.moveTo(i, V(n)), e.lineTo(i, V(r)), e.stroke();
 		}
 	}
-	let he = (t, n, r) => {
+	let _e = (t, n, i) => {
 		if (!t) return;
-		let a = Ve(n, t), o = t.markerSymbol ?? null, s = o != null && o !== "none" && Vn(t), c = Math.max(3, V / m * .22);
-		for (let n = 0; n < m; n++) {
+		let a = at(n, t), o = t.markerSymbol ?? null, s = o != null && o !== "none" && br(t), c = Math.max(3, B / d * .22);
+		for (let n = 0; n < d; n++) {
 			let l = t.values[n];
 			if (l == null) continue;
-			let u = me(n), d = H(l);
+			let u = U(n), d = V(l);
+			if (o === "none") continue;
 			if (s) {
-				Mn(e, u, d, o, t.markerSize ?? 3, t.markerFill ?? a, t.markerLine ?? null, i, t.markerLineWidthEmu == null ? void 0 : P(t.markerLineWidthEmu, i));
+				dr(e, u, d, o, t.markerSize ?? 3, t.markerFill ?? a, t.markerLine ?? null, r, t.markerLineWidthEmu == null ? void 0 : N(t.markerLineWidthEmu, r));
 				continue;
 			}
-			e.strokeStyle = a, e.lineWidth = Math.max(1, .75 * i), e.beginPath();
-			let f = r === "right" ? u : r === "left" ? u - c : u - c / 2, p = r === "right" ? u + c : r === "left" ? u : u + c / 2;
+			e.strokeStyle = a, e.lineWidth = Math.max(1, .75 * r), e.beginPath();
+			let f = i === "right" ? u : i === "left" ? u - c : u - c / 2, p = i === "right" ? u + c : i === "left" ? u : u + c / 2;
 			e.moveTo(f, d), e.lineTo(p, d), e.stroke();
 		}
 	};
-	if (he(T, v, "left"), he(w, x, "right"), g.length < 3) for (let e = 0; e < g.length; e++) he(g[e], e, "both");
+	_e(w, h, "left"), x?.markerSymbol != null && _e(x, _, "both"), S?.markerSymbol != null && _e(S, v, "both"), _e(C, y, "right");
+	for (let t = 0; t < f.length; t++) {
+		let n = f[t], r = at(t, n);
+		for (let t of n.errBars ?? []) xr(e, n, t, d, U, V, (e) => n.values[e] ?? 0, r);
+	}
+	if (f.length < 3) for (let e = 0; e < f.length; e++) _e(f[e], e, "both");
 	if (!t.catAxisHidden) {
-		let n = Math.max(1, Math.ceil(m / 8)), r = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#555";
-		e.fillStyle = r, e.textAlign = "center", e.textBaseline = "top", e.font = `${ne}px ${Y(t, t.catAxisFontFace, "minor")}`;
-		let a = V / m * n - 4, o = qt(t), s = Yt(t);
-		for (let c = 0; c < m; c += n) {
-			let n = me(c);
-			vt(e, t.catAxisMajorTickMark, "cat", B + le, n, void 0, void 0, !1, t.catAxisLineHidden, "major", i), o && (e.fillStyle = r, Xt(e, re(e, h((p[c] ?? "").toString(), t.catAxisFormatCode, t.date1904), s === 0 ? a : le * .4), n, B + le + 5, s));
+		let n = Math.max(1, Math.floor(t.catAxisTickLabelSkip ?? 1)), i = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#555";
+		e.fillStyle = i, e.textAlign = "center", e.textBaseline = "top", e.font = `${re}px ${Y(t, t.catAxisFontFace, "minor")}`;
+		let a = H ? (H.categoryBandFractions[0] ?? 0) * B - 4 : B / d * n - 4, o = vn(t), s = bn(t), c = H ? H.majorTicks.map((e) => ({
+			label: g(String(e.serial), t.catAxisFormatCode, t.date1904),
+			x: R + e.fraction * B
+		})) : Array.from({ length: Math.ceil(d / n) }, (e, r) => {
+			let i = r * n;
+			return {
+				label: g((u[i] ?? "").toString(), t.catAxisFormatCode, t.date1904),
+				x: U(i)
+			};
+		});
+		for (let n of c) {
+			let c = n.x;
+			if (Bt(e, t.catAxisMajorTickMark, "cat", z + de, c, void 0, void 0, !1, t.catAxisLineHidden, "major", r), !o) continue;
+			e.fillStyle = i;
+			let l = n.label;
+			xn(e, ue(e, l, s === 0 ? a : de * .4), c, z + de + 5, s);
+		}
+		if (t.catAxisMinorTickMark && t.catAxisMinorTickMark !== "none" && H) for (let n of H.minorTicks) Bt(e, t.catAxisMinorTickMark, "cat", z + de, R + n.fraction * B, void 0, void 0, !1, t.catAxisLineHidden, "minor", r);
+	}
+	zt(e, t, ee, i, a, c, l, R, z, B, de, j + 2, r), ht(e, t, i, a, c, l, R, z, B, de, te, P, ae, oe);
+}
+var Vn = 2e5, Hn = 1.25;
+function Un(e, t, n) {
+	if (e.length === 0) return [];
+	let r = [], i = (e) => n ? e.value >= t : e.value <= t, a = e[e.length - 1], o = i(a);
+	for (let n of e) {
+		let e = i(n);
+		if (e !== o) {
+			let e = n.value - a.value, i = e === 0 ? 0 : (t - a.value) / e;
+			r.push({
+				x: a.x + (n.x - a.x) * i,
+				y: a.y + (n.y - a.y) * i,
+				depth: a.depth + (n.depth - a.depth) * i,
+				value: t
+			});
+		}
+		e && r.push(n), a = n, o = e;
+	}
+	return r;
+}
+function Wn(e, t, n, r) {
+	let { x: i, y: a, w: s, h: c } = n, l = Pn(t), u = t.series, f = l.length, h = u.length;
+	if (f < 2 || h < 2) return;
+	let g = Infinity, _ = -Infinity;
+	for (let e of u) for (let t = 0; t < f; t++) {
+		let n = e.values[t];
+		n == null || !Number.isFinite(n) || (g = Math.min(g, n), _ = Math.max(_, n));
+	}
+	if (!Number.isFinite(g) || !Number.isFinite(_)) return;
+	t.valMin != null && (g = t.valMin), t.valMax != null && (_ = t.valMax);
+	let v = {
+		...t.threeD ?? {},
+		rotationX: t.threeD?.rotationX ?? 15,
+		rotationY: t.threeD?.rotationY ?? 20,
+		rightAngleAxes: t.threeD?.rightAngleAxes ?? !1,
+		perspective: t.threeD?.perspective ?? 30
+	}, y = re(v), S = ce(v), C = L(v, n, {
+		sceneDepthScale: Hn,
+		perspectiveTangentGain: S
+	}), w;
+	if (C) {
+		let e = C.topology.axisX === "min" ? C.front.x : C.front.x + C.front.w, t = C.project(e, C.front.y + C.front.h, C.topology.nearDepth), n = C.project(e, C.front.y, C.topology.nearDepth);
+		w = Math.hypot(n.x - t.x, n.y - t.y) / r;
+	}
+	let E = t.valAxisMajorUnit == null ? O(g, _, w) : null, D = cn(E == null ? t : {
+		...t,
+		valAxisMajorUnit: E
+	}, g, _, w), k = D.step;
+	if (!(k > 0) || !Number.isFinite(k)) return;
+	let A = t.valMin ?? D.min, ee = t.valMax ?? Math.max(A + k, A + Math.ceil((_ - A) / k) * k), M = ee - A;
+	if (!(M > 0) || !Number.isFinite(M)) return;
+	let P = Math.ceil(M / k), ne = Math.floor(M / k + 1e-9) + 1, F = (f - 1) * (h - 1) * 2;
+	if (!Number.isSafeInteger(P) || !Number.isSafeInteger(ne) || P < 1 || ne < 2 || F < 1 || P > 512 || ne > 512 || P > Math.floor(Vn / F) || ne > Vn) return;
+	let oe = P, I = Qt(t) ? (e) => 1 - (e - A) / M : (e) => (e - A) / M, se = Array.from({ length: ne }, (e, t) => A + t * k), R = Array.from({ length: oe }, (e, n) => le(t.themeAccentColors ?? [], n, oe, t.legacyChartStyle ?? 2) ?? (u[n]?.color ? `#${u[n].color}` : at(n, u[n]))), B = new Map((t.surfaceBandFormats ?? []).map((e) => [e.idx, e])), ue = Array.from({ length: oe }, (e, t) => {
+		let n = A + t * k, r = Math.min(ee, n + k);
+		return `${d(n)}-${d(r)}`;
+	}), de = {
+		...t,
+		series: ue.map((e, t) => ({
+			name: e,
+			color: R[t].replace(/^#/, ""),
+			values: []
+		}))
+	};
+	Math.abs(v.rotationX) === 90 && de.series.reverse();
+	let fe = It(e, de, s, c, .22, r), { legRightW: pe, legLeftW: me, legTopH: V, legBottomH: he } = o(fe), ge = jn(e, t, s, c, r), H = hn(t.catAxisFontSizeHpt, c, r), U = t.threeD?.seriesAxis, _e = x(U?.fontSizeHpt, r) ?? H, { px0: W, py0: G, pw: ve, ph: ye } = b(t, i, a, s, c, r, {
+		titleBand: ge,
+		legendSideReserveFrac: .22,
+		legendReserve: fe,
+		pad: {
+			t: ge.bandH + V + _e / 2,
+			r: pe + _e * 3.2 + 12,
+			b: p(H) + he,
+			l: me + H * 1.5
+		},
+		honorPlotAreaManualLayout: !0
+	}).plotRect;
+	if (!(ve > 0) || !(ye > 0)) return;
+	Nn(e, t, t.titleManualLayout || !t.titleRichRuns?.length ? i : W, a, t.titleManualLayout || !t.titleRichRuns?.length ? s : ve, c, a + ge.topPad, ge.fontPx);
+	let be = L(v, {
+		x: W,
+		y: G,
+		w: ve,
+		h: ye
+	}, {
+		sceneDepthScale: Hn,
+		perspectiveTangentGain: S
+	});
+	if (!be) return;
+	let K = y || Math.abs(v.rotationX) === 90 && v.rotationY === 0 && v.rightAngleAxes === !1 && v.perspective === 0, { front: q } = be, J = t.catAxisOrientation === "maxMin", xe = T(t), Se = (e) => q.x + te(e, f, xe, J) * q.w, Ce = U?.orientation === "maxMin", we = (e) => te(e, h, !1, Ce), Te = (e) => q.y + q.h - I(e) * q.h, Ee = [], De = (e) => {
+		if (t.surfaceWireframe === !0) return;
+		let n = Math.min(...e.map((e) => e.value)), r = Math.max(...e.map((e) => e.value)), i = Math.max(0, Math.floor((n - A) / k)), a = Math.min(oe - 1, Math.floor((r - A) / k));
+		for (let t = i; t <= a; t++) {
+			let n = A + t * k, r = t === oe - 1 ? ee : n + k, i = Un(e, n, !0);
+			if (i = Un(i, r, !1), i.length < 3) continue;
+			let a = i.map((e) => be.project(e.x, e.y, e.depth));
+			Ee.push({
+				points: a,
+				scenePoints: i,
+				band: t,
+				depth: i.reduce((e, t) => e + be.cameraDepth(t.x, t.y, t.depth), 0) / i.length
+			});
+		}
+	};
+	e.save(), e.beginPath(), e.rect(W, G, ve, ye), e.clip();
+	let Oe = (t, n, r, i) => {
+		if (t.length < 2) return;
+		let a = t.map((e) => be.project(e.x, e.y, e.depth));
+		e.beginPath(), e.moveTo(a[0].x, a[0].y);
+		for (let t = 1; t < a.length; t++) e.lineTo(a[t].x, a[t].y);
+		e.strokeStyle = n, e.lineWidth = r, e.setLineDash(ae(i ?? "solid", r)), e.stroke();
+	}, ke = be.topology.farDepth, Ae = be.topology.nearDepth, je = q.y + q.h, Me = be.topology.farX === "min" ? q.x : q.x + q.w;
+	if (en(t)) {
+		let e = j(t.valAxisGridlineColor, t.valAxisGridlineWidthEmu, r);
+		for (let n of se) {
+			let r = Te(n);
+			Oe([{
+				x: q.x,
+				y: r,
+				depth: ke
+			}, {
+				x: q.x + q.w,
+				y: r,
+				depth: ke
+			}], e.color, e.width, t.valAxisGridlineDash), Oe([{
+				x: Me,
+				y: r,
+				depth: Ae
+			}, {
+				x: Me,
+				y: r,
+				depth: ke
+			}], e.color, e.width, t.valAxisGridlineDash);
 		}
 	}
-	_t(e, t, A, s, l, d, f, z, B, V, le, k + 2, i), Ye(e, t, s, l, d, f, z, B, V, le, te, M, ae, I);
+	if (t.catAxisMajorGridlines) {
+		let e = j(t.catAxisGridlineColor, t.catAxisGridlineWidthEmu, r);
+		for (let n of Zt(t, f)) Oe([{
+			x: q.x + n * q.w,
+			y: je,
+			depth: Ae
+		}, {
+			x: q.x + n * q.w,
+			y: je,
+			depth: ke
+		}], e.color, e.width, t.catAxisGridlineDash);
+	}
+	for (let e = 0; e < h - 1; e++) for (let t = 0; t < f - 1; t++) {
+		let n = [
+			u[e].values[t],
+			u[e].values[t + 1],
+			u[e + 1].values[t + 1],
+			u[e + 1].values[t]
+		];
+		if (n.some((e) => e == null || !Number.isFinite(e))) continue;
+		let r = {
+			x: Se(t),
+			y: Te(n[0]),
+			depth: we(e),
+			value: n[0]
+		}, i = {
+			x: Se(t + 1),
+			y: Te(n[1]),
+			depth: we(e),
+			value: n[1]
+		}, a = {
+			x: Se(t + 1),
+			y: Te(n[2]),
+			depth: we(e + 1),
+			value: n[2]
+		}, o = {
+			x: Se(t),
+			y: Te(n[3]),
+			depth: we(e + 1),
+			value: n[3]
+		};
+		r.value + a.value > i.value + o.value ? (De([
+			r,
+			i,
+			a
+		]), De([
+			r,
+			a,
+			o
+		])) : (De([
+			r,
+			i,
+			o
+		]), De([
+			i,
+			a,
+			o
+		]));
+	}
+	Ee.sort((e, t) => e.depth - t.depth);
+	for (let t of Ee) {
+		let n = B.get(t.band);
+		e.beginPath(), e.moveTo(t.points[0].x, t.points[0].y);
+		for (let n = 1; n < t.points.length; n++) e.lineTo(t.points[n].x, t.points[n].y);
+		if (e.closePath(), n?.fillHidden !== !0) {
+			let r = Math.min(...t.points.map((e) => e.x)), i = Math.max(...t.points.map((e) => e.x)), a = Math.min(...t.points.map((e) => e.y)), o = Math.max(...t.points.map((e) => e.y));
+			e.fillStyle = (n?.fill ? $e(n.fill, e, r, a, i - r, o - a) : null) ?? z(R[t.band], K ? ie(be.cameraNormal(t.scenePoints)) : 1), e.fill();
+		}
+		n && n.lineHidden !== !0 && n.lineColor && (e.strokeStyle = `#${n.lineColor}`, e.lineWidth = n.lineWidthEmu == null ? 1 : N(n.lineWidthEmu, r), e.setLineDash([]), e.stroke());
+	}
+	if (t.surfaceWireframe === !0) {
+		e.strokeStyle = "#595959", e.lineWidth = Math.max(1, .75 * r), e.setLineDash([]);
+		for (let t = 0; t < h; t++) {
+			e.beginPath();
+			for (let n = 0; n < f; n++) {
+				let r = u[t].values[n];
+				if (r == null || !Number.isFinite(r)) continue;
+				let i = be.project(Se(n), Te(r), we(t));
+				n === 0 ? e.moveTo(i.x, i.y) : e.lineTo(i.x, i.y);
+			}
+			e.stroke();
+		}
+		for (let t = 0; t < f; t++) {
+			e.beginPath();
+			for (let n = 0; n < h; n++) {
+				let r = u[n].values[t];
+				if (r == null || !Number.isFinite(r)) continue;
+				let i = be.project(Se(t), Te(r), we(n));
+				n === 0 ? e.moveTo(i.x, i.y) : e.lineTo(i.x, i.y);
+			}
+			e.stroke();
+		}
+	}
+	e.restore();
+	let Ne = be.project(q.x, je, Ae), Pe = be.project(q.x + q.w, je, Ae);
+	e.strokeStyle = t.catAxisLineColor ? `#${t.catAxisLineColor}` : "#000000", e.lineWidth = t.catAxisLineWidthEmu == null ? 1 : N(t.catAxisLineWidthEmu, r), e.setLineDash([]), e.beginPath(), e.moveTo(Ne.x, Ne.y), e.lineTo(Pe.x, Pe.y), e.stroke(), e.font = lt(H, Y(t, t.catAxisFontFace, "minor")), e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#000000", e.textAlign = "center", e.textBaseline = "top";
+	for (let t = 0; t < f; t++) {
+		let n = be.project(Se(t), je, Ae);
+		e.fillText(l[t] ?? "", n.x, n.y + 8);
+	}
+	if (!U?.hidden) {
+		e.strokeStyle = U?.lineColor ? `#${U.lineColor}` : "#000000", e.lineWidth = U?.lineWidthEmu == null ? 1 : N(U.lineWidthEmu, r);
+		let n = be.project(q.x, je, .5), i = be.project(q.x + q.w, je, .5), a = n.x >= i.x ? q.x : q.x + q.w, o = be.project(a, je, Ae), s = be.project(a, je, ke);
+		e.beginPath(), e.moveTo(o.x, o.y), e.lineTo(s.x, s.y), e.stroke(), e.font = lt(_e, Y(t, U?.fontFace, "minor"), U?.fontBold ?? !1, U?.fontItalic ?? !1), e.fillStyle = U?.fontColor ? `#${U.fontColor}` : "#000000", e.textAlign = "left", e.textBaseline = "middle";
+		for (let t = 0; t < h; t++) {
+			let n = be.project(a, je, we(t));
+			e.fillText(u[t].name, n.x + 8, n.y);
+		}
+	}
+	if (!t.valAxisHidden) {
+		let n = be.topology.axisX === "min" ? q.x : q.x + q.w, i = be.project(n, q.y + q.h, Ae), a = be.project(n, q.y, Ae);
+		if (Math.hypot(a.x - i.x, a.y - i.y) > 4) {
+			e.strokeStyle = t.valAxisLineColor ? `#${t.valAxisLineColor}` : "#000000", e.lineWidth = t.valAxisLineWidthEmu == null ? 1 : N(t.valAxisLineWidthEmu, r), e.beginPath(), e.moveTo(i.x, i.y), e.lineTo(a.x, a.y), e.stroke(), e.font = lt(hn(t.valAxisFontSizeHpt, c, r), Y(t, t.valAxisFontFace, "minor")), e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#000000";
+			let o = (i.x + a.x) / 2 < W + ve / 2;
+			e.textAlign = o ? "right" : "left", e.textBaseline = "middle";
+			for (let r of se) {
+				let i = be.project(n, Te(r), Ae);
+				e.fillText(m(r, t.valAxisFormatCode, t.date1904), i.x + (o ? -6 : 6), i.y);
+			}
+		}
+	}
+	zt(e, de, fe, i, a, s, c, W, G, ve, ye, ge.bandH + 2, r);
 }
-function fn(t, s, l, d) {
-	let { x: p, y: g, w: v, h: y } = l, b = an(s), x = b.length;
-	if (x === 0) return;
-	let S = s.series.map((e, t) => ({
+function Gn(e, t, n, i) {
+	let { x: a, y: c, w: d, h: f } = n, m = Pn(t), h = m.length;
+	if (h === 0) return;
+	let _ = t.series.map((e, t) => ({
 		series: e,
 		chartIndex: t
-	})).filter(({ series: e }) => e.seriesType == null || e.seriesType === "area"), C = s.series.map((e, t) => ({
+	})).filter(({ series: e }) => e.seriesType == null || e.seriesType === "area"), S = t.series.map((e, t) => ({
 		series: e,
 		chartIndex: t
 	})).filter(({ series: e }) => e.seriesType === "line");
-	if (S.length === 0 && C.length === 0) return;
-	let w = s.chartType === "stackedArea" || s.chartType === "stackedAreaPct", T = s.chartType === "stackedAreaPct", E = T ? b.map((e, t) => {
+	if (_.length === 0 && S.length === 0) return;
+	let C = t.chartType === "stackedArea" || t.chartType === "stackedAreaPct", E = t.chartType === "stackedAreaPct", D = E ? m.map((e, t) => {
 		let n = 0;
-		for (let { series: e } of S) n += Math.abs(e.values[t] ?? 0);
+		for (let { series: e } of _) n += Math.abs(e.values[t] ?? 0);
 		return n || 1;
-	}) : null, D = (e, t) => {
-		let n = S[e].series.values[t] ?? 0;
-		return T && E ? n / E[t] * 100 : n;
-	}, O = !w && s.secondaryValAxis && s.series.some((e) => e.useSecondaryAxis === !0) ? s.secondaryValAxis : null, k = (e) => O != null && e.useSecondaryAxis === !0, A = a(s, y, d), te = A.fontPx, M = A.topPad, N = A.bandH, ne = Wt(s.catAxisFontSizeHpt, y, d), re = Wt(s.valAxisFontSizeHpt, y, d), F = mt(t, s, v, y, .22, d), { legRightW: ie, legLeftW: ae, legTopH: I, legBottomH: oe } = c(F), se = u(s, v, y, d), ce = se.catFontPx, L = se.valFontPx, R = se.catBandH, z = se.valBandW, B = N + I + re / 2 + 2, V = o(ne) + R + oe, le = y - B - V, ue = Zt(O, s.series, le / d), de = Math.max(8, Math.min(11, y / 20)), fe = _(O?.fontSizeHpt, d) ?? de, H = 0;
-	if (O && ue && !O.hidden) {
-		let e = t.font;
-		t.font = `${fe}px ${Y(s, O.fontFace, "minor")}`;
-		let n = 0;
-		for (let e of ue.majorLines) n = Math.max(n, t.measureText(It(e, O.formatCode ?? null, s.date1904, O.displayUnits)).width);
-		H = n + 18, t.font = e;
+	}) : null, O = (e, t) => {
+		let n = _[e].series.values[t] ?? 0;
+		return E && D ? n / D[t] * 100 : n;
+	}, k = !C && t.secondaryValAxis && t.series.some((e) => e.useSecondaryAxis === !0) ? t.secondaryValAxis : null, A = (e) => k != null && e.useSecondaryAxis === !0, j = jn(e, t, d, f, i), ee = j.fontPx, M = j.topPad, te = j.bandH, P = hn(t.catAxisFontSizeHpt, f, i), ne = hn(t.valAxisFontSizeHpt, f, i), re = It(e, t, d, f, .22, i), { legRightW: F, legLeftW: ie, legTopH: ae, legBottomH: oe } = o(re), I = s(t, d, f, i), se = I.catFontPx, ce = I.valFontPx, L = I.catBandH, le = I.valBandW, R = te + ae + ne / 2 + 2, z = p(P) + L + oe, B = f - R - z, ue = wn(k, t.series, B / i), de = Math.max(8, Math.min(11, f / 20)), fe = x(k?.fontSizeHpt, i) ?? de, pe = 0;
+	if (k && ue && !k.hidden) {
+		let n = e.font;
+		e.font = `${fe}px ${Y(t, k.fontFace, "minor")}`;
+		let r = 0;
+		for (let n of ue.majorLines) r = Math.max(r, e.measureText(an(n, k.formatCode ?? null, t.date1904, k.displayUnits)).width);
+		pe = r + 18, e.font = n;
 	}
-	let pe = O && O.title ? i(O.titleFontSizeHpt, d) + 8 : 0, U = (() => {
+	let me = k && k.title ? l(k.titleFontSizeHpt, i) + 8 : 0, V = (() => {
 		let e = Infinity, t = -Infinity;
-		for (let n = 0; n < x; n++) {
-			if (w) {
+		for (let n = 0; n < h; n++) {
+			if (C) {
 				let r = 0, i = 0;
-				for (let e = 0; e < S.length; e++) {
-					let t = D(e, n);
+				for (let e = 0; e < _.length; e++) {
+					let t = O(e, n);
 					t >= 0 ? r += t : i += t;
 				}
 				e = Math.min(e, i), t = Math.max(t, r);
-			} else for (let { series: r } of S) {
-				if (k(r)) continue;
+			} else for (let { series: r } of _) {
+				if (A(r)) continue;
 				let i = r.values[n];
 				i != null && (e = Math.min(e, i), t = Math.max(t, i));
 			}
-			for (let { series: r } of C) {
-				if (k(r)) continue;
+			for (let { series: r } of S) {
+				if (A(r)) continue;
 				let i = r.values[n];
 				i != null && (e = Math.min(e, i), t = Math.max(t, i));
 			}
@@ -2367,206 +3127,238 @@ function fn(t, s, l, d) {
 		return !isFinite(e) || !isFinite(t) ? {
 			min: 0,
 			max: 1
-		} : T ? {
+		} : E ? {
 			min: e < 0 ? -100 : 0,
 			max: t > 0 ? 100 : 0
 		} : {
 			min: e,
 			max: t
 		};
-	})(), me = zt(s, U.min, U.max, le / d, T), he = s.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, le / 20)) : re, W = 0;
-	if (!s.valAxisHidden && s.plotAreaManualLayout != null && s.plotAreaManualLayout.layoutTarget !== "inner") {
-		let e = t.font;
-		t.font = `${he}px ${Y(s, s.valAxisFontFace, "minor")}`;
-		for (let e of me.majorLines) W = Math.max(W, t.measureText(Pt(s, e, T)).width);
-		t.font = e;
+	})();
+	if (!E) {
+		let e = (e) => {
+			V = {
+				min: Math.min(V.min, e),
+				max: Math.max(V.max, e)
+			};
+		};
+		for (let t = 0; t < _.length; t++) {
+			let { series: n } = _[t];
+			A(n) || Cn(n, "y", (e) => {
+				if (n.values[e] == null) return null;
+				if (!C) return n.values[e];
+				let r = 0;
+				for (let n = 0; n <= t; n++) r += O(n, e);
+				return r;
+			}, e);
+		}
+		for (let { series: t } of S) A(t) || Cn(t, "y", (e) => t.values[e] ?? null, e);
 	}
-	let ge = n({
-		valAxisHidden: s.valAxisHidden,
-		catAxisHidden: s.catAxisHidden,
-		valLabelWidth: W,
-		valLabelFontPx: he,
-		catLabelFontPx: ne,
-		valLabelGapPx: s.valAxisFontSizeHpt == null ? 6 : e(he),
-		catLabelGapPx: s.catAxisFontSizeHpt == null ? 3 : f(ne),
-		outerTextMarginPx: m * d,
-		valTitleBandW: z,
-		catTitleBandH: R,
-		secondaryBandW: H + pe
+	let he = cn(t, V.min, V.max, B / i, E), ge = t.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, B / 20)) : ne, H = 0;
+	if (!t.valAxisHidden && t.plotAreaManualLayout != null && t.plotAreaManualLayout.layoutTarget !== "inner") {
+		let n = e.font;
+		e.font = `${ge}px ${Y(t, t.valAxisFontFace, "minor")}`;
+		for (let n of he.majorLines) H = Math.max(H, e.measureText(nn(t, n, E)).width);
+		e.font = n;
+	}
+	let U = v({
+		valAxisHidden: t.valAxisHidden,
+		catAxisHidden: t.catAxisHidden,
+		valLabelWidth: H,
+		valLabelFontPx: ge,
+		catLabelFontPx: P,
+		valLabelGapPx: t.valAxisFontSizeHpt == null ? 6 : y(ge),
+		catLabelGapPx: t.catAxisFontSizeHpt == null ? 3 : u(P),
+		outerTextMarginPx: r * i,
+		valTitleBandW: le,
+		catTitleBandH: L,
+		secondaryBandW: pe + me
 	}), _e = {
-		t: B,
-		r: ie + v * .05 + H + pe,
-		b: V,
-		l: v * .12 + z + ae
+		t: R,
+		r: F + d * .05 + pe + me,
+		b: z,
+		l: d * .12 + le + ie
 	};
-	rn(t, s, p, g, v, y, g + M, te);
-	let { plotRect: { px0: G, py0: K, pw: q, ph: J } } = r(s, p, g, v, y, d, {
-		titleBand: A,
+	Nn(e, t, a, c, d, f, c + M, ee);
+	let { plotRect: { px0: W, py0: G, pw: ve, ph: ye } } = b(t, a, c, d, f, i, {
+		titleBand: j,
 		legendSideReserveFrac: .22,
-		legendReserve: F,
+		legendReserve: re,
 		pad: _e,
 		honorPlotAreaManualLayout: !0,
-		manualOuterInsets: ge
+		manualOuterInsets: U
 	});
-	if (q <= 0 || J <= 0) return;
-	s.plotAreaBg && (t.fillStyle = `#${s.plotAreaBg}`, t.fillRect(G, K, q, J));
-	let ve = zt(s, U.min, U.max, J / d, T), ye = j(s), be = jt(s), xe = ye ? (e) => G + ((be ? x - 1 - e : e) + .5) / x * q : (e) => {
-		let t = be ? x - 1 - e : e;
-		return G + (x === 1 ? q / 2 : t / (x - 1) * q);
-	}, Se = (e) => K + J - ve.frac(e) * J, Ce = ue ? ue.makeToY(K, J) : Se, we = (e) => k(e) ? Ce : Se, { color: Te, width: Ee } = ee(s.catAxisLineColor, s.catAxisLineWidthEmu, d), { color: De, width: Oe } = ee(s.valAxisLineColor, s.valAxisLineWidthEmu, d);
-	if (!s.valAxisHidden) {
-		let e = St(s, d), n = Ct(s, d);
-		if (s.valAxisMinorGridlines) for (let e of ve.minorLines) xt(t, G, q, Se(e), !1, n);
-		if (Mt(s)) for (let n of ve.majorLines) xt(t, G, q, Se(n), n === 0, e);
+	if (ve <= 0 || ye <= 0) return;
+	t.plotAreaBg && (e.fillStyle = `#${t.plotAreaBg}`, e.fillRect(W, G, ve, ye));
+	let be = cn(t, V.min, V.max, ye / i, E), K = T(t), q = $t(t), J = Sn(t, m), xe = J ? (e) => W + J.positions[e] * ve : K ? (e) => W + ((q ? h - 1 - e : e) + .5) / h * ve : (e) => {
+		let t = q ? h - 1 - e : e;
+		return W + (h === 1 ? ve / 2 : t / (h - 1) * ve);
+	}, Se = (e) => G + ye - be.frac(e) * ye, Ce = ue ? ue.makeToY(G, ye) : Se, we = (e) => A(e) ? Ce : Se, { color: Te, width: Ee } = w(t.catAxisLineColor, t.catAxisLineWidthEmu, i), { color: De, width: Oe } = w(t.valAxisLineColor, t.valAxisLineWidthEmu, i);
+	if (!t.valAxisHidden) {
+		let n = Wt(t, i), r = Gt(t, i);
+		if (t.valAxisMinorGridlines) for (let t of be.minorLines) Ut(e, W, ve, Se(t), !1, r);
+		if (en(t)) for (let t of be.majorLines) Ut(e, W, ve, Se(t), t === 0, n);
 	}
-	if (O && ue && Qt(t, O, ue, Ce, G, q, d), !s.catAxisHidden && Et(s)) {
-		let e = Dt(s, d);
-		t.strokeStyle = e.color, t.lineWidth = e.width;
-		let n = e.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-		e.dash.length > 0 && t.setLineDash(e.dash);
-		for (let e of kt(s, x)) {
-			let n = G + e * q;
-			t.beginPath(), t.moveTo(n, K), t.lineTo(n, K + J), t.stroke();
+	if (k && ue && Tn(e, k, ue, Ce, W, ve, i), !t.catAxisHidden && Jt(t)) {
+		let n = Yt(t, i);
+		e.strokeStyle = n.color, e.lineWidth = n.width;
+		let r = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+		n.dash.length > 0 && e.setLineDash(n.dash);
+		let a = J ? J.majorTicks.map((e) => e.fraction) : Zt(t, h);
+		for (let t of a) {
+			let n = W + t * ve;
+			e.beginPath(), e.moveTo(n, G), e.lineTo(n, G + ye), e.stroke();
 		}
-		e.dash.length > 0 && t.setLineDash(n);
+		n.dash.length > 0 && e.setLineDash(r);
 	}
-	let ke = w ? Array(x).fill(0) : null, Ae = w ? S.map((e, t) => t) : S.map((e, t) => S.length - 1 - t);
-	for (let e of Ae) {
-		let { series: n, chartIndex: r } = S[e], i = Ve(r, n), a = K + J, o = we(n), s = n.smooth === !0;
-		if (t.beginPath(), w && ke) {
+	let ke = C ? Array(h).fill(0) : null, Ae = C ? _.map((e, t) => t) : _.map((e, t) => _.length - 1 - t);
+	for (let t of Ae) {
+		let { series: n, chartIndex: r } = _[t], a = at(r, n), o = G + ye, s = we(n), c = n.smooth === !0;
+		if (e.beginPath(), C && ke) {
 			let n = [];
-			for (let t = 0; t < x; t++) n.push({
-				x: xe(t),
-				y: Se(D(e, t) + ke[t])
+			for (let e = 0; e < h; e++) n.push({
+				x: xe(e),
+				y: Se(O(t, e) + ke[e])
 			});
-			t.moveTo(n[0].x, n[0].y), zn(t, n, s);
-			for (let e = x - 1; e >= 0; e--) t.lineTo(xe(e), Se(ke[e]));
-			for (let t = 0; t < x; t++) ke[t] += D(e, t);
+			e.moveTo(n[0].x, n[0].y), vr(e, n, c);
+			for (let t = h - 1; t >= 0; t--) e.lineTo(xe(t), Se(ke[t]));
+			for (let e = 0; e < h; e++) ke[e] += O(t, e);
 		} else {
-			let e = [];
-			for (let t = 0; t < x; t++) e.push({
-				x: xe(t),
-				y: o(n.values[t] ?? 0)
+			let t = [];
+			for (let e = 0; e < h; e++) t.push({
+				x: xe(e),
+				y: s(n.values[e] ?? 0)
 			});
-			t.moveTo(xe(0), a), t.lineTo(e[0].x, e[0].y), zn(t, e, s), t.lineTo(xe(x - 1), a);
+			e.moveTo(xe(0), o), e.lineTo(t[0].x, t[0].y), vr(e, t, c), e.lineTo(xe(h - 1), o);
 		}
-		t.closePath(), t.fillStyle = i, t.fill(), n.lineHidden !== !0 && (t.strokeStyle = n.lineColor ? `#${n.lineColor}` : i, t.lineWidth = n.lineWidthEmu ? P(n.lineWidthEmu, d) : 1.5, t.setLineDash([]), t.stroke());
+		e.closePath(), e.fillStyle = a, e.fill(), n.lineHidden !== !0 && (e.strokeStyle = n.lineColor ? `#${n.lineColor}` : a, e.lineWidth = n.lineWidthEmu ? N(n.lineWidthEmu, i) : 1.5, e.setLineDash([]), e.stroke());
 	}
 	{
-		let e = Math.max(2, 2.5 * d), n = (e, t) => {
-			if (w) {
+		let n = Math.max(2, 2.5 * i), r = (e, t) => {
+			if (C) {
 				let n = 0;
-				for (let r = 0; r <= e; r++) n += D(r, t);
+				for (let r = 0; r <= e; r++) n += O(r, t);
 				return n;
 			}
-			return S[e].series.values[t] ?? 0;
+			return _[e].series.values[t] ?? 0;
 		};
-		for (let r = 0; r < S.length; r++) {
-			let { series: i, chartIndex: a } = S[r], o = He(i.dataPointOverrides), c = Ve(a, i), l = we(i), u = (e) => n(r, e);
-			for (let e of i.errBars ?? []) Hn(t, i, e, x, xe, l, u, c);
-			if (i.showMarker === !0 || Vn(i)) for (let n = 0; n < x; n++) {
-				if (i.values[n] == null) continue;
-				let r = o.get(n), a = r?.markerSymbol ?? i.markerSymbol ?? "circle";
+		for (let o = 0; o < _.length; o++) {
+			let { series: s, chartIndex: l } = _[o], u = ot(s.dataPointOverrides), p = at(l, s), g = we(s), v = (e) => r(o, e);
+			for (let t of s.errBars ?? []) xr(e, s, t, h, xe, g, v, p);
+			if (s.showMarker === !0 || br(s)) for (let t = 0; t < h; t++) {
+				if (s.values[t] == null) continue;
+				let r = u.get(t), a = r?.markerSymbol ?? s.markerSymbol ?? "circle";
 				if (a === "none") continue;
-				let s = xe(n), f = l(u(n));
-				if (Vn(i)) {
-					let e = r?.markerSize ?? i.markerSize ?? 5, n = r?.markerFill ?? r?.color ?? i.markerFill ?? c, o = r?.markerLine ?? i.markerLine ?? null, l = r?.markerLineWidthEmu ?? i.markerLineWidthEmu;
-					Mn(t, s, f, a, e, n, o, d, l == null ? void 0 : P(l, d));
-				} else t.fillStyle = c, t.beginPath(), t.arc(s, f, e, 0, Math.PI * 2), t.fill();
+				let o = xe(t), c = g(v(t));
+				if (br(s)) {
+					let t = r?.markerSize ?? s.markerSize ?? 5, n = r?.markerFill ?? r?.color ?? s.markerFill ?? p, l = r?.markerLine ?? s.markerLine ?? null, u = r?.markerLineWidthEmu ?? s.markerLineWidthEmu;
+					dr(e, o, c, a, t, n, l, i, u == null ? void 0 : N(u, i));
+				} else e.fillStyle = p, e.beginPath(), e.arc(o, c, n, 0, Math.PI * 2), e.fill();
 			}
-			Un(t, i, b, x, xe, l, u, J, d, s.date1904 ?? !1, !0, Y(s, s.dataLabelFontFace, "minor"), s.dataLabelPosition ?? "ctr", {
-				x: G,
-				y: K,
-				w: q,
-				h: J
+			Cr(e, s, m, h, xe, g, v, ye, i, t.date1904 ?? !1, !0, Y(t, t.dataLabelFontFace, "minor"), t.dataLabelPosition ?? "ctr", {
+				x: W,
+				y: G,
+				w: ve,
+				h: ye
 			}, {
-				x: p,
-				y: g,
-				w: v,
-				h: y
-			}, T && E ? (e) => (i.values[e] ?? 0) / E[e] : void 0, void 0, (e) => Y(s, e, "minor"), k(i) ? O?.displayUnits : s.valAxisDisplayUnits);
+				x: a,
+				y: c,
+				w: d,
+				h: f
+			}, E && D ? (e) => (s.values[e] ?? 0) / D[e] : void 0, void 0, (e) => Y(t, e, "minor"), A(s) ? k?.displayUnits : t.valAxisDisplayUnits);
 		}
 	}
-	for (let { series: e, chartIndex: n } of C) {
-		let r = He(e.dataPointOverrides), i = Ve(n, e), a = e.lineColor ? `#${e.lineColor}` : i, o = we(e);
-		if (e.lineHidden !== !0) {
-			t.strokeStyle = a, t.lineWidth = e.lineWidthEmu ? P(e.lineWidthEmu, d) : Math.max(1, 2.25 * d), t.setLineDash([]), t.beginPath();
-			let n = [], r = () => {
-				n.length !== 0 && (t.moveTo(n[0].x, n[0].y), zn(t, n, e.smooth === !0), n = []);
+	for (let { series: r, chartIndex: o } of S) {
+		let s = ot(r.dataPointOverrides), l = at(o, r), u = r.lineColor ? `#${r.lineColor}` : l, p = we(r);
+		if (r.lineHidden !== !0) {
+			e.strokeStyle = u, e.lineWidth = r.lineWidthEmu ? N(r.lineWidthEmu, i) : Math.max(1, 2.25 * i), e.setLineDash([]), e.beginPath();
+			let n = [], a = () => {
+				n.length !== 0 && (e.moveTo(n[0].x, n[0].y), vr(e, n, r.smooth === !0), n = []);
 			};
-			for (let t = 0; t < x; t++) {
-				let i = e.values[t];
-				i == null && ((s.dispBlanksAs ?? "gap") === "gap" && r(), (s.dispBlanksAs ?? "gap") !== "zero") || n.push({
-					x: xe(t),
-					y: o(i ?? 0)
+			for (let e = 0; e < h; e++) {
+				let i = r.values[e];
+				i == null && ((t.dispBlanksAs ?? "gap") === "gap" && a(), (t.dispBlanksAs ?? "gap") !== "zero") || n.push({
+					x: xe(e),
+					y: p(i ?? 0)
 				});
 			}
-			r(), t.stroke();
+			a(), e.stroke();
 		}
-		let c = (t) => e.values[t] ?? 0;
-		for (let n of e.errBars ?? []) Hn(t, e, n, x, xe, o, c, a);
-		if (e.showMarker === !0 || Vn(e)) for (let n = 0; n < x; n++) {
-			let i = e.values[n];
-			if (i == null) continue;
-			let s = r.get(n), c = s?.markerSymbol ?? e.markerSymbol ?? "circle";
-			c !== "none" && Mn(t, xe(n), o(i), c, s?.markerSize ?? e.markerSize ?? 5, s?.markerFill ?? s?.color ?? e.markerFill ?? a, s?.markerLine ?? e.markerLine ?? null, d, (s?.markerLineWidthEmu ?? e.markerLineWidthEmu) == null ? void 0 : P(s?.markerLineWidthEmu ?? e.markerLineWidthEmu, d));
+		let g = (e) => r.values[e] ?? 0;
+		for (let t of r.errBars ?? []) xr(e, r, t, h, xe, p, g, u);
+		if (r.showMarker === !0 || br(r)) for (let t = 0; t < h; t++) {
+			let n = r.values[t];
+			if (n == null) continue;
+			let a = s.get(t), o = a?.markerSymbol ?? r.markerSymbol ?? "circle";
+			o !== "none" && dr(e, xe(t), p(n), o, a?.markerSize ?? r.markerSize ?? 5, a?.markerFill ?? a?.color ?? r.markerFill ?? u, a?.markerLine ?? r.markerLine ?? null, i, (a?.markerLineWidthEmu ?? r.markerLineWidthEmu) == null ? void 0 : N(a?.markerLineWidthEmu ?? r.markerLineWidthEmu, i));
 		}
-		Un(t, e, b, x, xe, o, c, J, d, s.date1904 ?? !1, !1, Y(s, s.dataLabelFontFace, "minor"), s.dataLabelPosition ?? "r", {
-			x: G,
-			y: K,
-			w: q,
-			h: J
+		Cr(e, r, m, h, xe, p, g, ye, i, t.date1904 ?? !1, !1, Y(t, t.dataLabelFontFace, "minor"), t.dataLabelPosition ?? "r", {
+			x: W,
+			y: G,
+			w: ve,
+			h: ye
 		}, {
-			x: p,
-			y: g,
-			w: v,
-			h: y
-		}, void 0, void 0, (e) => Y(s, e, "minor"), k(e) ? O?.displayUnits : s.valAxisDisplayUnits), Ut(t, e, a, xe, o, d, void 0, {
-			chart: s,
-			chartRect: l,
+			x: a,
+			y: c,
+			w: d,
+			h: f
+		}, void 0, void 0, (e) => Y(t, e, "minor"), A(r) ? k?.displayUnits : t.valAxisDisplayUnits), fn(e, r, u, xe, p, i, void 0, {
+			chart: t,
+			chartRect: n,
 			plotRect: {
-				x: G,
-				y: K,
-				w: q,
-				h: J
+				x: W,
+				y: G,
+				w: ve,
+				h: ye
 			}
 		});
 	}
-	if (!s.valAxisHidden) {
-		let n = s.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, J / 20)) : re;
-		t.font = `${n}px ${Y(s, s.valAxisFontFace, "minor")}`, t.textBaseline = "middle";
-		for (let r of ve.majorLines) {
-			let i = Se(r);
-			vt(t, s.valAxisMajorTickMark, "val", G, i, De, Oe, !1, s.valAxisLineHidden, "major", d), t.fillStyle = s.valAxisFontColor ? `#${s.valAxisFontColor}` : "#555", t.textAlign = "right";
-			let a = s.valAxisFontSizeHpt == null ? 6 : e(n);
-			t.fillText(Pt(s, r, T), G - a, i);
+	if (!t.valAxisHidden) {
+		let n = t.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, ye / 20)) : ne;
+		e.font = `${n}px ${Y(t, t.valAxisFontFace, "minor")}`, e.textBaseline = "middle";
+		for (let r of be.majorLines) {
+			let a = Se(r);
+			Bt(e, t.valAxisMajorTickMark, "val", W, a, De, Oe, !1, t.valAxisLineHidden, "major", i), e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555", e.textAlign = "right";
+			let o = t.valAxisFontSizeHpt == null ? 6 : y(n);
+			e.fillText(nn(t, r, E), W - o, a);
 		}
-		if (s.valAxisMinorTickMark && s.valAxisMinorTickMark !== "none") for (let e of ve.minorTicks) vt(t, s.valAxisMinorTickMark, "val", G, Se(e), De, Oe, !1, s.valAxisLineHidden, "minor", d);
+		if (t.valAxisMinorTickMark && t.valAxisMinorTickMark !== "none") for (let n of be.minorTicks) Bt(e, t.valAxisMinorTickMark, "val", W, Se(n), De, Oe, !1, t.valAxisLineHidden, "minor", i);
 	}
-	if (!s.catAxisHidden && !s.catAxisLineHidden && (t.strokeStyle = Te, t.lineWidth = Ee, t.beginPath(), t.moveTo(G, K + J), t.lineTo(G + q, K + J), t.stroke()), !s.valAxisHidden && !s.valAxisLineHidden && s.valAxisLineColor != null && (t.strokeStyle = De, t.lineWidth = Oe, t.beginPath(), t.moveTo(G, K), t.lineTo(G, K + J), t.stroke()), !s.catAxisHidden && s.catAxisMajorTickMark && s.catAxisMajorTickMark !== "none") {
-		let e = Math.max(1, Math.floor(s.catAxisTickMarkSkip ?? 1));
-		if (ye) for (let n = 0; n <= x; n += e) vt(t, s.catAxisMajorTickMark, "cat", K + J, G + n / x * q, Te, Ee, !1, s.catAxisLineHidden, "major", d);
-		else for (let n = 0; n < x; n += e) vt(t, s.catAxisMajorTickMark, "cat", K + J, xe(n), Te, Ee, !1, s.catAxisLineHidden, "major", d);
+	if (!t.catAxisHidden && !t.catAxisLineHidden && (e.strokeStyle = Te, e.lineWidth = Ee, e.beginPath(), e.moveTo(W, G + ye), e.lineTo(W + ve, G + ye), e.stroke()), !t.valAxisHidden && !t.valAxisLineHidden && t.valAxisLineColor != null && (e.strokeStyle = De, e.lineWidth = Oe, e.beginPath(), e.moveTo(W, G), e.lineTo(W, G + ye), e.stroke()), !t.catAxisHidden && t.catAxisMajorTickMark && t.catAxisMajorTickMark !== "none") {
+		let n = Math.max(1, Math.floor(t.catAxisTickMarkSkip ?? 1));
+		if (J) for (let n of J.majorTicks) Bt(e, t.catAxisMajorTickMark, "cat", G + ye, W + n.fraction * ve, Te, Ee, !1, t.catAxisLineHidden, "major", i);
+		else if (K) for (let r = 0; r <= h; r += n) Bt(e, t.catAxisMajorTickMark, "cat", G + ye, W + r / h * ve, Te, Ee, !1, t.catAxisLineHidden, "major", i);
+		else for (let r = 0; r < h; r += n) Bt(e, t.catAxisMajorTickMark, "cat", G + ye, xe(r), Te, Ee, !1, t.catAxisLineHidden, "major", i);
 	}
-	if (!s.catAxisHidden) {
-		let e = s.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, q / x * .8)) : ne;
-		t.fillStyle = s.catAxisFontColor ? `#${s.catAxisFontColor}` : "#555", t.textAlign = "center", t.textBaseline = "top", t.font = `${e}px ${Y(s, s.catAxisFontFace, "minor")}`;
-		let n = b.map((e) => h((e ?? "").toString(), s.catAxisFormatCode, s.date1904)), r = Math.max(1, Math.floor(s.catAxisTickLabelSkip ?? 1));
-		for (let i = 0; i < x; i += r) {
-			let r = n[i] ?? "";
-			if (!r) continue;
-			let a = s.catAxisFontSizeHpt == null ? 3 : f(e);
-			t.fillText(r, xe(i), K + J + a);
+	if (!t.catAxisHidden && t.catAxisMinorTickMark && t.catAxisMinorTickMark !== "none" && J) for (let n of J.minorTicks) Bt(e, t.catAxisMinorTickMark, "cat", G + ye, W + n.fraction * ve, Te, Ee, !1, t.catAxisLineHidden, "minor", i);
+	if (!t.catAxisHidden) {
+		let n = t.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, ve / h * .8)) : P;
+		e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#555", e.textAlign = "center", e.textBaseline = "top", e.font = `${n}px ${Y(t, t.catAxisFontFace, "minor")}`;
+		let r = Math.max(1, Math.floor(t.catAxisTickLabelSkip ?? 1)), i = J ? J.majorTicks.map((e) => ({
+			label: g(String(e.serial), t.catAxisFormatCode, t.date1904),
+			x: W + e.fraction * ve
+		})) : Array.from({ length: Math.ceil(h / r) }, (e, n) => {
+			let i = n * r;
+			return {
+				label: g((m[i] ?? "").toString(), t.catAxisFormatCode, t.date1904),
+				x: xe(i)
+			};
+		});
+		for (let r of i) {
+			let i = r.label;
+			if (!i) continue;
+			let a = t.catAxisFontSizeHpt == null ? 3 : u(n);
+			e.fillText(i, r.x, G + ye + a);
 		}
 	}
-	if (O && ue) {
-		let e = s.valAxisFontColor ? `#${s.valAxisFontColor}` : "#555";
-		$t(t, s, O, ue, Ce, l, G, K, q, J, d, fe, H, e, s.date1904);
+	if (k && ue) {
+		let r = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555";
+		En(e, t, k, ue, Ce, n, W, G, ve, ye, i, fe, pe, r, t.date1904);
 	}
-	_t(t, s, F, p, g, v, y, G, K, q, J, N + 2, d), Ye(t, s, p, g, v, y, G, K, q, J, ae, oe, ce, L);
+	zt(e, t, re, a, c, d, f, W, G, ve, ye, te + 2, i), ht(e, t, a, c, d, f, W, G, ve, ye, ie, oe, se, ce);
 }
-var pn = .88;
-function mn(e, t) {
+var Kn = .88;
+function qn(e, t) {
 	let n = e.ofPie, r = t.map((e, t) => ({
 		value: e,
 		sourceIndex: t
@@ -2584,142 +3376,142 @@ function mn(e, t) {
 	}
 	return i.size >= r.length && i.delete(r[0].sourceIndex), i;
 }
-function hn(e, t, n, i) {
-	let a = t.series[0];
-	if (!a) return;
-	let o = a.values.map((e) => e == null ? 0 : Math.abs(e)), s = mn(t, o);
-	if (s.size === 0) {
-		gn(e, {
+function Jn(e, t, n, r) {
+	let i = t.series[0];
+	if (!i) return;
+	let a = i.values.map((e) => e == null ? 0 : Math.abs(e)), o = qn(t, a);
+	if (o.size === 0) {
+		Yn(e, {
 			...t,
 			chartType: "pie"
-		}, n, !1, i);
+		}, n, !1, r);
 		return;
 	}
-	let c = [], l = [];
-	for (let e = 0; e < o.length; e++) {
-		let t = o[e];
-		!(t > 0) || !Number.isFinite(t) || (s.has(e) ? l : c).push({
+	let s = [], c = [];
+	for (let e = 0; e < a.length; e++) {
+		let t = a[e];
+		!(t > 0) || !Number.isFinite(t) || (o.has(e) ? c : s).push({
 			sourceIndex: e,
 			value: t
 		});
 	}
-	if (c.length === 0 || l.length === 0) return;
-	let u = {
+	if (s.length === 0 || c.length === 0) return;
+	let l = {
 		...t,
 		chartType: "pie"
-	}, d = mt(e, u, n.w, n.h, .28, i), f = r(t, n.x, n.y, n.w, n.h, i, {
+	}, u = It(e, l, n.w, n.h, .28, r), d = b(t, n.x, n.y, n.w, n.h, r, {
 		titleTopPadFrac: .035,
 		titleBottomPadFrac: .035,
 		legendSideReserveFrac: .28,
-		legendReserve: d,
+		legendReserve: u,
 		radialGapFrac: .02,
 		honorPlotAreaManualLayout: !0
 	});
-	rn(e, t, n.x, n.y, n.w, n.h, n.y + f.title.topPad, f.title.fontPx);
-	let { px0: p, py0: m, pw: h, ph: g } = f.plotRect;
-	if (!(h > 0) || !(g > 0)) return;
-	let _ = t.ofPie, v = Math.max(.05, Math.min(2, (_?.secondPieSizePercent ?? 75) / 100)), y = Math.max(0, _?.gapWidthPercent ?? 150) / 100, b = Math.min(g * .44, h * .9 / (2 + 2 * v + y)), x = b * v;
-	if (!(b > 0) || !(x > 0)) return;
-	let S = p + (h - (2 * b + y * b + 2 * x)) / 2, C = S + b, w = S + 2 * b + y * b + x, T = m + g / 2, E = l.reduce((e, t) => e + t.value, 0), D = [...c, {
-		sourceIndex: l[0].sourceIndex,
+	Nn(e, t, n.x, n.y, n.w, n.h, n.y + d.title.topPad, d.title.fontPx);
+	let { px0: f, py0: p, pw: m, ph: h } = d.plotRect;
+	if (!(m > 0) || !(h > 0)) return;
+	let g = t.ofPie, _ = Math.max(.05, Math.min(2, (g?.secondPieSizePercent ?? 75) / 100)), v = Math.max(0, g?.gapWidthPercent ?? 150) / 100, y = Math.min(h * .44, m * .9 / (2 + 2 * _ + v)), x = y * _;
+	if (!(y > 0) || !(x > 0)) return;
+	let S = f + (m - (2 * y + v * y + 2 * x)) / 2, C = S + y, w = S + 2 * y + v * y + x, T = p + h / 2, E = c.reduce((e, t) => e + t.value, 0), D = [...s, {
+		sourceIndex: c[0].sourceIndex,
 		value: E
-	}], O = (n, r, i) => {
+	}], O = (n, r, a) => {
 		let o = n.reduce((e, t) => e + t.value, 0), s = -Math.PI / 2, c = s, l = s;
 		for (let u = 0; u < n.length; u++) {
 			let d = n[u], f = o > 0 ? d.value / o * Math.PI * 2 : 0;
-			e.beginPath(), e.moveTo(r, T), e.arc(r, T, i, s, s + f), e.closePath(), e.fillStyle = Ue(d.sourceIndex, a, t.varyColors !== !1), e.fill(), e.strokeStyle = "#fff", e.lineWidth = 1, e.stroke(), u === n.length - 1 && (c = s, l = s + f), s += f;
+			e.beginPath(), e.moveTo(r, T), e.arc(r, T, a, s, s + f), e.closePath(), e.fillStyle = st(d.sourceIndex, i, t.varyColors !== !1), e.fill(), e.strokeStyle = "#fff", e.lineWidth = 1, e.stroke(), u === n.length - 1 && (c = s, l = s + f), s += f;
 		}
 		return {
 			aggregateStart: c,
 			aggregateEnd: l
 		};
-	}, k = O(D, C, b), A = T - x, ee = T + x;
-	if ((_?.type ?? "pie") === "bar") {
+	}, k = O(D, C, y), A = T - x, j = T + x;
+	if ((g?.type ?? "pie") === "bar") {
 		let n = T - x, r = x;
-		for (let i of l) {
-			let o = E > 0 ? 2 * x * i.value / E : 0;
-			e.fillStyle = Ue(i.sourceIndex, a, t.varyColors !== !1), e.fillRect(w - r / 2, n, r, o), e.strokeStyle = "#fff", e.lineWidth = 1, e.strokeRect(w - r / 2, n, r, o), n += o;
+		for (let a of c) {
+			let o = E > 0 ? 2 * x * a.value / E : 0;
+			e.fillStyle = st(a.sourceIndex, i, t.varyColors !== !1), e.fillRect(w - r / 2, n, r, o), e.strokeStyle = "#fff", e.lineWidth = 1, e.strokeRect(w - r / 2, n, r, o), n += o;
 		}
-		A = T - x, ee = T + x;
-	} else O(l, w, x);
-	if (_?.seriesLines ?? !0) {
-		e.strokeStyle = "#808080", e.lineWidth = Math.max(1, .75 * i), e.setLineDash([]);
+		A = T - x, j = T + x;
+	} else O(c, w, x);
+	if (g?.seriesLines ?? !0) {
+		e.strokeStyle = "#808080", e.lineWidth = Math.max(1, .75 * r), e.setLineDash([]);
 		let t = {
-			x: C + Math.cos(k.aggregateStart) * b,
-			y: T + Math.sin(k.aggregateStart) * b
+			x: C + Math.cos(k.aggregateStart) * y,
+			y: T + Math.sin(k.aggregateStart) * y
 		}, n = {
-			x: C + Math.cos(k.aggregateEnd) * b,
-			y: T + Math.sin(k.aggregateEnd) * b
+			x: C + Math.cos(k.aggregateEnd) * y,
+			y: T + Math.sin(k.aggregateEnd) * y
 		};
-		e.beginPath(), e.moveTo(t.x, t.y), e.lineTo(w - x, A), e.stroke(), e.beginPath(), e.moveTo(n.x, n.y), e.lineTo(w - x, ee), e.stroke();
+		e.beginPath(), e.moveTo(t.x, t.y), e.lineTo(w - x, A), e.stroke(), e.beginPath(), e.moveTo(n.x, n.y), e.lineTo(w - x, j), e.stroke();
 	}
-	d && _t(e, u, d, n.x, n.y, n.w, n.h, p, m, h, g, f.title.bandH + 2, i);
+	u && zt(e, l, u, n.x, n.y, n.w, n.h, f, p, m, h, d.title.bandH + 2, r);
 }
-function gn(e, t, n, i, a) {
-	let { x: o, y: s, w: c, h: l } = n, u = t.series[0];
-	if (!u) return;
-	let d = u.categories && u.categories.length > 0 ? u.categories : t.categories, f = u.values.map((e) => Math.abs(e ?? 0)), p = f.reduce((e, t) => e + t, 0);
-	if (p === 0) return;
-	let m = {
+function Yn(e, t, n, r, i) {
+	let { x: a, y: o, w: s, h: c } = n, l = t.series[0];
+	if (!l) return;
+	let u = l.categories && l.categories.length > 0 ? l.categories : t.categories, d = l.values.map((e) => Math.abs(e ?? 0)), f = d.reduce((e, t) => e + t, 0);
+	if (f === 0) return;
+	let p = {
 		...t,
 		series: [{
-			...u,
-			categories: d
+			...l,
+			categories: u
 		}]
-	}, h = mt(e, m, c, l, .28, a), g = r(t, o, s, c, l, a, {
+	}, m = It(e, p, s, c, .28, i), h = b(t, a, o, s, c, i, {
 		titleTopPadFrac: .035,
 		titleBottomPadFrac: .035,
 		legendSideReserveFrac: .28,
-		legendReserve: h,
+		legendReserve: m,
 		radialGapFrac: .02,
 		honorPlotAreaManualLayout: !0
-	}), _ = g.title.fontPx, v = g.title.bandH;
-	rn(e, t, o, s, c, l, s + g.title.topPad, _);
-	let { px0: y, py0: b, pw: x, ph: S } = g.plotRect, C = g.center.cx, w = g.center.cy, T = Math.min(x, S) * .42, E = -Math.PI / 2 + (t.firstSliceAngle ?? 0) * Math.PI / 180, D = i ? Math.max(1, Math.min(90, t.holeSize ?? 50)) : 0, O = i ? t.series : [u], k = new Map(O.map((e) => [e, He(e.dataPointOverrides)])), A = (T - D / 100 * T) / O.length, ee = (e, t) => {
+	}), g = h.title.fontPx, _ = h.title.bandH;
+	Nn(e, t, a, o, s, c, o + h.title.topPad, g);
+	let { px0: v, py0: y, pw: x, ph: S } = h.plotRect, C = h.center.cx, w = h.center.cy, T = Math.min(x, S) * .42, E = -Math.PI / 2 + (t.firstSliceAngle ?? 0) * Math.PI / 180, D = r ? Math.max(1, Math.min(90, t.holeSize ?? 50)) : 0, O = r ? t.series : [l], k = new Map(O.map((e) => [e, ot(e.dataPointOverrides)])), A = (T - D / 100 * T) / O.length, j = (e, t) => {
 		let n = k.get(e)?.get(t)?.explosion ?? 0;
 		return n > 0 ? n / 100 * T : 0;
-	}, j = u.seriesDataLabels ?? {
+	}, ee = l.seriesDataLabels ?? {
 		showVal: !1,
 		showCatName: !1,
 		showSerName: !1,
 		showPercent: !1
-	}, te = u.seriesDataLabels != null || (u.dataLabelOverrides?.length ?? 0) > 0, M = t.showDataLabels && !te, N = Y(t, j.fontFace ?? t.dataLabelFontFace, "minor");
+	}, M = l.seriesDataLabels != null || (l.dataLabelOverrides?.length ?? 0) > 0, te = t.showDataLabels && !M, P = Y(t, ee.fontFace ?? t.dataLabelFontFace, "minor");
 	for (let n = 0; n < O.length; n++) {
-		let r = O[n], o = r.values.map((e) => Math.abs(e ?? 0)), s = o.reduce((e, t) => e + t, 0);
+		let a = O[n], o = a.values.map((e) => Math.abs(e ?? 0)), s = o.reduce((e, t) => e + t, 0);
 		if (s === 0) continue;
 		let c = T - n * A, l = c - A, u = E;
 		for (let d = 0; d < o.length; d++) {
-			let f = o[d] / s * Math.PI * 2, p = Ue(d, r, t.varyColors !== !1), m = u + f / 2, h = ee(r, d), g = h > 0 ? Math.cos(m) * h : 0, _ = h > 0 ? Math.sin(m) * h : 0;
+			let f = o[d] / s * Math.PI * 2, p = st(d, a, t.varyColors !== !1), m = u + f / 2, h = j(a, d), g = h > 0 ? Math.cos(m) * h : 0, _ = h > 0 ? Math.sin(m) * h : 0;
 			e.beginPath(), l > .01 ? (e.arc(C + g, w + _, c, u, u + f), e.arc(C + g, w + _, l, u + f, u, !0)) : (e.moveTo(C + g, w + _), e.arc(C + g, w + _, c, u, u + f)), e.closePath(), e.fillStyle = p, e.fill();
-			let v = k.get(r)?.get(d), y = v?.lineHidden ?? r.lineHidden, b = v?.lineColor ?? r.lineColor;
+			let v = k.get(a)?.get(d), y = v?.lineHidden ?? a.lineHidden, b = v?.lineColor ?? a.lineColor;
 			if (y !== !0 && b) {
-				let t = v?.lineWidthEmu ?? r.lineWidthEmu, n = t == null ? Math.max(.5, a * .75) : P(t, a);
-				e.save(), e.strokeStyle = `#${b}`, e.lineWidth = n, e.setLineDash(Bn(v?.lineDash ?? r.chartexStyle?.lineDash ?? void 0)), e.lineCap = r.chartexStyle?.lineCap === "rnd" ? "round" : r.chartexStyle?.lineCap === "sq" ? "square" : "butt", e.lineJoin = r.chartexStyle?.lineJoin === "round" || r.chartexStyle?.lineJoin === "bevel" ? r.chartexStyle.lineJoin : "miter", e.stroke(), e.restore();
+				let t = v?.lineWidthEmu ?? a.lineWidthEmu, n = t == null ? Math.max(.5, i * .75) : N(t, i);
+				e.save(), e.strokeStyle = `#${b}`, e.lineWidth = n, e.setLineDash(yr(v?.lineDash ?? a.chartexStyle?.lineDash ?? void 0, n)), e.lineCap = a.chartexStyle?.lineCap === "rnd" ? "round" : a.chartexStyle?.lineCap === "sq" ? "square" : "butt", e.lineJoin = a.chartexStyle?.lineJoin === "round" || a.chartexStyle?.lineJoin === "bevel" ? a.chartexStyle.lineJoin : "miter", e.stroke(), e.restore();
 			}
-			if (M && n === 0 && f > .15) {
-				let t = T * (i ? .75 : .6), n = C + g + Math.cos(m) * t, r = w + _ + Math.sin(m) * t, a = Math.round(o[d] / s * 100);
-				e.font = `bold ${Math.max(8, T * .1)}px ${N}`, e.fillStyle = "#fff", e.textAlign = "center", e.textBaseline = "middle", e.fillText(`${a}%`, n, r);
+			if (te && n === 0 && f > .15) {
+				let t = T * (r ? .75 : .6), n = C + g + Math.cos(m) * t, i = w + _ + Math.sin(m) * t, a = Math.round(o[d] / s * 100);
+				e.font = `bold ${Math.max(8, T * .1)}px ${P}`, e.fillStyle = "#fff", e.textAlign = "center", e.textBaseline = "middle", e.fillText(`${a}%`, n, i);
 			}
 			u += f;
 		}
 	}
-	te && _n(e, t, j, u, d, f, p, C, w, T, i ? T - A : 0, E, N, a, y, b, x, S, o, s, c, l), h && _t(e, m, h, o, s, c, l, y, b, x, S, v + 2, a);
+	M && Xn(e, t, ee, l, u, d, f, C, w, T, r ? T - A : 0, E, P, i, v, y, x, S, a, o, s, c), m && zt(e, p, m, a, o, s, c, v, y, x, S, _ + 2, i);
 }
-function _n(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, v, y, b, x, S) {
-	let C = He(r.dataLabelOverrides ?? []), w = /* @__PURE__ */ new Set();
+function Xn(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b, S) {
+	let C = ot(r.dataLabelOverrides ?? []), w = /* @__PURE__ */ new Set();
 	for (let e = 0; e < a.length; e++) (C.get(e)?.labelBox || n.labelBox) && w.add(e);
-	w.size > 0 && Sn(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, g, h, v, y, b, x, S, w, C);
+	w.size > 0 && tr(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, g, h, _, v, y, b, S, w, C);
 	let T = [], E = d;
 	for (let d = 0; d < a.length; d++) {
 		let D = a[d] / o * Math.PI * 2, O = E + D / 2;
 		if (E += D, w.has(d)) continue;
 		let k = C.get(d);
 		if (k?.deleted) continue;
-		let ee = k?.showCatName ?? n.showCatName, j = k?.showSerName ?? n.showSerName, te = k?.showVal ?? n.showVal, M = k?.showPercent ?? n.showPercent, N = ie({
+		let A = k?.showCatName ?? n.showCatName, j = k?.showSerName ?? n.showSerName, ee = k?.showVal ?? n.showVal, M = k?.showPercent ?? n.showPercent, te = fe({
 			customText: k?.text,
-			showCategory: ee,
+			showCategory: A,
 			showSeries: j,
-			showValue: te,
+			showValue: ee,
 			showPercent: M,
 			category: (i[d] ?? "").toString(),
 			seriesName: r.name,
@@ -2730,78 +3522,78 @@ function _n(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, v, y, b, x, S) {
 			date1904: t.date1904 ?? !1,
 			separator: k?.separator ?? n.separator
 		});
-		if (!N) continue;
-		let P = (k?.position ?? n.position ?? "bestFit") === "outEnd", ne = _(k?.fontSizeHpt ?? n.fontSizeHpt, p) ?? Math.max(8, l * .1), re = k?.fontBold ?? n.fontBold, ae = k?.fontColor ?? n.fontColor, I = k?.fontFace ?? n.fontFace ? Y(t, k?.fontFace ?? n.fontFace, "minor") : f, oe = In(t, k, p, I, re ?? !1), se = u > .01 ? (u + l) / 2 : l * pn;
+		if (!te) continue;
+		let N = (k?.position ?? n.position ?? "bestFit") === "outEnd", P = x(k?.fontSizeHpt ?? n.fontSizeHpt, p) ?? Math.max(8, l * .1), ne = k?.fontBold ?? n.fontBold, re = k?.fontColor ?? n.fontColor, F = k?.fontFace ?? n.fontFace ? Y(t, k?.fontFace ?? n.fontFace, "minor") : f, ie = hr(t, k, p, F, ne ?? !1), ae = u > .01 ? (u + l) / 2 : l * Kn;
 		if (k?.manualLayout) {
-			e.font = `${re ? "bold " : ""}${ne}px ${I}`, Ln(e, N, {
+			e.font = `${ne ? "bold " : ""}${P}px ${F}`, gr(e, te, {
 				kind: "point",
-				x: s + Math.cos(O) * se,
-				y: c + Math.sin(O) * se,
+				x: s + Math.cos(O) * ae,
+				y: c + Math.sin(O) * ae,
 				position: "ctr"
 			}, {
 				x: m,
 				y: h,
 				w: g,
-				h: v
-			}, ne, ae ? `#${ae}` : "#fff", k.manualLayout, {
-				x: y,
-				y: b,
-				w: x,
+				h: _
+			}, P, re ? `#${re}` : "#fff", k.manualLayout, {
+				x: v,
+				y,
+				w: b,
 				h: S
-			}, oe);
+			}, ie);
 			continue;
 		}
-		if (P) {
-			e.font = `${re ? "bold " : ""}${ne}px ${I}`;
-			let t = oe ? A(e, oe, ne, ae ? `#${ae}` : "#333") : null, n = ne * 1.15, r = t ? [] : F(N, Math.max(0, x - ne), Math.max(0, S - ne), n, (t) => e.measureText(t).width);
-			if (oe && !t || !t && r.length === 0) continue;
-			let i = t?.width ?? r.reduce((t, n) => Math.max(t, e.measureText(n).width), 0), a = t?.height ?? ne + Math.max(0, r.length - 1) * n;
-			T.push(bn(r, O, s, c, l, Math.min(i, Math.max(0, x - ne)), Math.min(a, Math.max(0, S - ne)), n, ne, re ?? !1, ae ? `#${ae}` : "#333", I, t ?? void 0));
+		if (N) {
+			e.font = `${ne ? "bold " : ""}${P}px ${F}`;
+			let t = ie ? de(e, ie, P, re ? `#${re}` : "#333") : null, n = P * 1.15, r = t ? [] : oe(te, Math.max(0, b - P), Math.max(0, S - P), n, (t) => e.measureText(t).width);
+			if (ie && !t || !t && r.length === 0) continue;
+			let i = t?.width ?? r.reduce((t, n) => Math.max(t, e.measureText(n).width), 0), a = t?.height ?? P + Math.max(0, r.length - 1) * n;
+			T.push($n(r, O, s, c, l, Math.min(i, Math.max(0, b - P)), Math.min(a, Math.max(0, S - P)), n, P, ne ?? !1, re ? `#${re}` : "#333", F, t ?? void 0));
 			continue;
 		}
-		let ce = se, L = s + Math.cos(O) * ce, R = c + Math.sin(O) * ce;
-		e.font = `${re ? "bold " : ""}${ne}px ${I}`;
-		let z = 2 * ce * Math.sin(Math.min(Math.PI, Math.abs(D)) / 2) - ne, B = u > .01 ? l - u - ne : l - ne;
-		if (!(z > 0) || !(B > 0)) continue;
-		let V = on({
-			x: L - z / 2,
-			y: R - B / 2,
-			w: z,
-			h: B
+		let I = ae, se = s + Math.cos(O) * I, ce = c + Math.sin(O) * I;
+		e.font = `${ne ? "bold " : ""}${P}px ${F}`;
+		let L = 2 * I * Math.sin(Math.min(Math.PI, Math.abs(D)) / 2) - P, le = u > .01 ? l - u - P : l - P;
+		if (!(L > 0) || !(le > 0)) continue;
+		let R = Fn({
+			x: se - L / 2,
+			y: ce - le / 2,
+			w: L,
+			h: le
 		}, {
 			x: m,
 			y: h,
 			w: g,
-			h: v
+			h: _
 		});
-		V && Ln(e, N, {
+		R && gr(e, te, {
 			kind: "point",
-			x: L,
-			y: R,
+			x: se,
+			y: ce,
 			position: "ctr"
-		}, V, ne, ae ? `#${ae}` : "#fff", void 0, {
-			x: y,
-			y: b,
-			w: x,
+		}, R, P, re ? `#${re}` : "#fff", void 0, {
+			x: v,
+			y,
+			w: b,
 			h: S
-		}, oe);
+		}, ie);
 	}
-	xn(e, n, T, s, c, l, p, y, b, x, S);
+	er(e, n, T, s, c, l, p, v, y, b, S);
 }
-function vn(e, t, n, r, i, a) {
+function Zn(e, t, n, r, i, a) {
 	let o = Math.max(Math.abs(n - e) - i, 0), s = Math.max(Math.abs(r - t) - a, 0);
 	return Math.hypot(o, s);
 }
-function yn(e, t, n, r, i) {
+function Qn(e, t, n, r, i) {
 	let a = Math.cos(e), o = Math.sin(e), s = t + i, c = 0, l = s + Math.hypot(n, r);
 	for (let e = 0; e < 32; e++) {
 		let e = (c + l) / 2;
-		vn(0, 0, a * e, o * e, n, r) >= s ? l = e : c = e;
+		Zn(0, 0, a * e, o * e, n, r) >= s ? l = e : c = e;
 	}
 	return l;
 }
-function bn(e, t, n, r, i, a, o, s, c, l, u, d, f) {
-	let p = c * .5, m = yn(t, i, a / 2, o / 2, p), h = n + Math.cos(t) * m, g = r + Math.sin(t) * m;
+function $n(e, t, n, r, i, a, o, s, c, l, u, d, f) {
+	let p = c * .5, m = Qn(t, i, a / 2, o / 2, p), h = n + Math.cos(t) * m, g = r + Math.sin(t) * m;
 	return {
 		lines: e,
 		rich: f,
@@ -2821,7 +3613,7 @@ function bn(e, t, n, r, i, a, o, s, c, l, u, d, f) {
 		leftSide: Math.cos(t) < 0
 	};
 }
-function xn(e, t, n, r, i, a, o, s, c, l, u) {
+function er(e, t, n, r, i, a, o, s, c, l, u) {
 	if (n.length === 0) return;
 	let d = c, f = c + u, p = (e) => {
 		e.sort((e, t) => e.cyBox - t.cyBox);
@@ -2842,20 +3634,20 @@ function xn(e, t, n, r, i, a, o, s, c, l, u) {
 			let i = Math.sqrt(Math.max(0, t * t - c * c));
 			e.cxBox = e.leftSide ? Math.min(e.cxBox, r - i - n) : Math.max(e.cxBox, r + i + n);
 		}
-		let u = Rn(e.cxBox, s + n, s + l - n);
-		vn(r, i, u, e.cyBox, n, o) >= t && (e.cxBox = u);
+		let u = _r(e.cxBox, s + n, s + l - n);
+		Zn(r, i, u, e.cyBox, n, o) >= t && (e.cxBox = u);
 	}
 	e.save(), e.beginPath(), e.rect(s, c, l, u), e.clip();
-	let m = t.leaderLineColor ? `#${t.leaderLineColor}` : "#a6a6a6", h = t.leaderLineWidthEmu ? Math.max(.5, t.leaderLineWidthEmu / D * o) : 1;
+	let m = t.leaderLineColor ? `#${t.leaderLineColor}` : "#a6a6a6", h = t.leaderLineWidthEmu ? Math.max(.5, t.leaderLineWidthEmu / se * o) : 1;
 	for (let r of n) {
 		let n = Math.abs(r.cxBox - r.initialCx) > .5 || Math.abs(r.cyBox - r.initialCy) > .5;
 		if (!t.showLeaderLines || !n) continue;
-		let i = Rn(r.rimX, r.cxBox - r.boxW / 2, r.cxBox + r.boxW / 2), a = Rn(r.rimY, r.cyBox - r.boxH / 2, r.cyBox + r.boxH / 2);
+		let i = _r(r.rimX, r.cxBox - r.boxW / 2, r.cxBox + r.boxW / 2), a = _r(r.rimY, r.cyBox - r.boxH / 2, r.cyBox + r.boxH / 2);
 		e.beginPath(), e.moveTo(r.rimX, r.rimY), e.lineTo(i, a), e.strokeStyle = m, e.lineWidth = h, e.stroke();
 	}
 	for (let t of n) {
 		if (t.rich) {
-			k(e, t.rich, t.cxBox, t.cyBox);
+			F(e, t.rich, t.cxBox, t.cyBox);
 			continue;
 		}
 		e.font = `${t.bold ? "bold " : ""}${t.fontPx}px ${t.font}`, e.fillStyle = t.fontColor, e.textAlign = "center", e.textBaseline = "middle";
@@ -2864,65 +3656,65 @@ function xn(e, t, n, r, i, a, o, s, c, l, u) {
 	}
 	e.restore();
 }
-function Sn(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, v, y, b, x, S, C, w) {
-	let T = (e) => w.get(e), E = _(n.fontSizeHpt, p) ?? Math.max(9, l * .09), ee = n.labelBox, j = [], te = d;
+function tr(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b, S, C, w) {
+	let T = (e) => w.get(e), E = x(n.fontSizeHpt, p) ?? Math.max(9, l * .09), D = n.labelBox, O = [], k = d;
 	for (let d = 0; d < a.length; d++) {
-		let w = a[d] / o * Math.PI * 2, k = te + w / 2;
-		if (te += w, w <= 0 || !C.has(d)) continue;
-		let M = T(d);
-		if (M?.deleted) continue;
-		let N = M?.showCatName ?? n.showCatName, P = M?.showSerName ?? n.showSerName, ne = M?.showVal ?? n.showVal, re = M?.showPercent ?? n.showPercent, ae = _(M?.fontSizeHpt, p) ?? E, I = M?.fontBold ?? n.fontBold ?? !1, oe = M?.fontFace ?? n.fontFace ? Y(t, M?.fontFace ?? n.fontFace, "minor") : f, se = M?.fontColor ? `#${M.fontColor}` : n.fontColor ? `#${n.fontColor}` : "#000", ce = M?.labelBox ?? ee, L = ce?.fill ? `#${ce.fill}` : null, R = ce?.borderColor ? `#${ce.borderColor}` : null, z = ce?.borderWidthEmu ? Math.max(.75, ce.borderWidthEmu / D * p) : 1, B = M?.position ?? n.position ?? "bestFit", V = ie({
-			customText: M?.text,
-			showCategory: N,
-			showSeries: P,
-			showValue: ne,
-			showPercent: re,
+		let w = a[d] / o * Math.PI * 2, A = k + w / 2;
+		if (k += w, w <= 0 || !C.has(d)) continue;
+		let j = T(d);
+		if (j?.deleted) continue;
+		let ee = j?.showCatName ?? n.showCatName, M = j?.showSerName ?? n.showSerName, te = j?.showVal ?? n.showVal, N = j?.showPercent ?? n.showPercent, P = x(j?.fontSizeHpt, p) ?? E, re = j?.fontBold ?? n.fontBold ?? !1, F = j?.fontFace ?? n.fontFace ? Y(t, j?.fontFace ?? n.fontFace, "minor") : f, ie = j?.fontColor ? `#${j.fontColor}` : n.fontColor ? `#${n.fontColor}` : "#000", ae = j?.labelBox ?? D, I = ae?.fill ? `#${ae.fill}` : null, ce = ae?.borderColor ? `#${ae.borderColor}` : null, L = ae?.borderWidthEmu ? Math.max(.75, ae.borderWidthEmu / se * p) : 1, le = j?.position ?? n.position ?? "bestFit", R = fe({
+			customText: j?.text,
+			showCategory: ee,
+			showSeries: M,
+			showValue: te,
+			showPercent: N,
 			category: (i[d] ?? "").toString(),
 			seriesName: r.name,
 			sourceValue: a[d],
 			percentRatio: a[d] / o,
-			formatCode: M?.formatCode ?? n.formatCode ?? r.valFormatCode ?? null,
-			percentFormatCode: M?.formatCode ?? n.formatCode ?? "0%",
+			formatCode: j?.formatCode ?? n.formatCode ?? r.valFormatCode ?? null,
+			percentFormatCode: j?.formatCode ?? n.formatCode ?? "0%",
 			date1904: t.date1904 ?? !1,
-			separator: M?.separator ?? n.separator,
+			separator: j?.separator ?? n.separator,
 			defaultSeparator: "\n"
 		});
-		if (!V) continue;
-		let le = In(t, M, p, oe, I), ue = Math.max(4, ae * .45), de = Math.max(2, ae * .28), fe = ae * .22, H = ae + fe;
-		e.font = `${I ? "bold " : ""}${ae}px ${oe}`;
-		let pe = le ? A(e, le, ae, se) : null;
-		if (le && !pe) continue;
-		let U = pe ? [] : F(V, Math.max(0, h - ue * 2), Math.max(0, v - de * 2), H, (t) => e.measureText(t).width);
-		if (!pe && U.length === 0) continue;
-		let me = pe?.width ?? 0;
-		if (!pe) for (let t of U) me = Math.max(me, e.measureText(t).width);
-		let he = Math.min(me + ue * 2, h), W = pe?.height ?? U.length * H - fe;
-		W = Math.min(W + de * 2, v);
-		let ge = s + Math.cos(k) * l, _e = c + Math.sin(k) * l, G = Math.cos(k) < 0, K = Math.max(he, W) * .55 + l * .06, q = ge + Math.cos(k) * K, J = _e + Math.sin(k) * K, ve, ye = !1;
-		if (M?.manualLayout) {
-			let t = O({
+		if (!R) continue;
+		let z = hr(t, j, p, F, re), B = Math.max(4, P * .45), ue = Math.max(2, P * .28), pe = P * .22, me = P + pe;
+		e.font = `${re ? "bold " : ""}${P}px ${F}`;
+		let V = z ? de(e, z, P, ie) : null;
+		if (z && !V) continue;
+		let he = V ? [] : oe(R, Math.max(0, h - B * 2), Math.max(0, _ - ue * 2), me, (t) => e.measureText(t).width);
+		if (!V && he.length === 0) continue;
+		let ge = V?.width ?? 0;
+		if (!V) for (let t of he) ge = Math.max(ge, e.measureText(t).width);
+		let H = Math.min(ge + B * 2, h), U = V?.height ?? he.length * me - pe;
+		U = Math.min(U + ue * 2, _);
+		let _e = s + Math.cos(A) * l, W = c + Math.sin(A) * l, G = Math.cos(A) < 0, ve = Math.max(H, U) * .55 + l * .06, ye = _e + Math.cos(A) * ve, be = W + Math.sin(A) * ve, K, q = !1;
+		if (j?.manualLayout) {
+			let t = ne({
 				kind: "point",
-				x: q,
-				y: J,
+				x: ye,
+				y: be,
 				position: "ctr"
 			}, {
 				x: m,
 				y: g,
 				w: h,
-				h: v
+				h: _
 			}, {
-				w: he,
-				h: W
-			}, ae, M.manualLayout, {
-				x: y,
-				y: b,
-				w: x,
+				w: H,
+				h: U
+			}, P, j.manualLayout, {
+				x: v,
+				y,
+				w: b,
 				h: S
 			});
-			if (!t || (he = t.rect.w, W = t.rect.h, !pe && (U = F(V, Math.max(0, he - ue * 2), Math.max(0, W - de * 2), H, (t) => e.measureText(t).width), U.length === 0))) continue;
-			q = t.rect.x + t.rect.w / 2, J = t.rect.y + t.rect.h / 2, G = q < s, ve = t.clip;
-		} else if (B !== "bestFit" && B !== "outEnd") {
-			let t = u > .01 ? (u + l) / 2 : l * pn, n = s + Math.cos(k) * t, r = c + Math.sin(k) * t, i = 2 * t * Math.sin(Math.min(Math.PI, Math.abs(w)) / 2) - ae, a = u > .01 ? l - u - ae : l - ae, o = on({
+			if (!t || (H = t.rect.w, U = t.rect.h, !V && (he = oe(R, Math.max(0, H - B * 2), Math.max(0, U - ue * 2), me, (t) => e.measureText(t).width), he.length === 0))) continue;
+			ye = t.rect.x + t.rect.w / 2, be = t.rect.y + t.rect.h / 2, G = ye < s, K = t.clip;
+		} else if (le !== "bestFit" && le !== "outEnd") {
+			let t = u > .01 ? (u + l) / 2 : l * Kn, n = s + Math.cos(A) * t, r = c + Math.sin(A) * t, i = 2 * t * Math.sin(Math.min(Math.PI, Math.abs(w)) / 2) - P, a = u > .01 ? l - u - P : l - P, o = Fn({
 				x: n - i / 2,
 				y: r - a / 2,
 				w: i,
@@ -2931,61 +3723,61 @@ function Sn(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, v, y, b, x, S, C,
 				x: m,
 				y: g,
 				w: h,
-				h: v
+				h: _
 			});
 			if (!o) continue;
-			if (pe) he = Math.min(he, o.w), W = Math.min(W, o.h);
+			if (V) H = Math.min(H, o.w), U = Math.min(U, o.h);
 			else {
-				if (U = F(V, Math.max(0, o.w - ue * 2), Math.max(0, o.h - de * 2), H, (t) => e.measureText(t).width), U.length === 0) continue;
-				me = U.reduce((t, n) => Math.max(t, e.measureText(n).width), 0), he = me + ue * 2, W = U.length * H - fe + de * 2;
+				if (he = oe(R, Math.max(0, o.w - B * 2), Math.max(0, o.h - ue * 2), me, (t) => e.measureText(t).width), he.length === 0) continue;
+				ge = he.reduce((t, n) => Math.max(t, e.measureText(n).width), 0), H = ge + B * 2, U = he.length * me - pe + ue * 2;
 			}
-			let d = O({
+			let d = ne({
 				kind: "point",
 				x: n,
 				y: r,
-				position: B === "inBase" || B === "inEnd" ? "ctr" : B
+				position: le === "inBase" || le === "inEnd" ? "ctr" : le
 			}, o, {
-				w: he,
-				h: W
-			}, ae);
+				w: H,
+				h: U
+			}, P);
 			if (!d) continue;
-			q = d.textAlign === "left" ? d.x + he / 2 : d.textAlign === "right" ? d.x - he / 2 : d.x, J = d.textBaseline === "top" ? d.y + W / 2 : d.textBaseline === "bottom" ? d.y - W / 2 : d.y, G = q < s, ve = d.clip, ye = !0;
+			ye = d.textAlign === "left" ? d.x + H / 2 : d.textAlign === "right" ? d.x - H / 2 : d.x, be = d.textBaseline === "top" ? d.y + U / 2 : d.textBaseline === "bottom" ? d.y - U / 2 : d.y, G = ye < s, K = d.clip, q = !0;
 		}
-		j.push({
-			lines: U,
-			rich: pe ?? void 0,
-			lineHeight: H,
-			midAngle: k,
-			rimX: ge,
-			rimY: _e,
-			boxW: he,
-			boxH: W,
-			cxBox: q,
-			cyBox: J,
+		O.push({
+			lines: he,
+			rich: V ?? void 0,
+			lineHeight: me,
+			midAngle: A,
+			rimX: _e,
+			rimY: W,
+			boxW: H,
+			boxH: U,
+			cxBox: ye,
+			cyBox: be,
 			leftSide: G,
-			fontColor: se,
-			boxFill: L,
-			boxBorder: R,
-			boxBorderPx: z,
-			fontPx: ae,
-			bold: I,
-			font: oe,
-			inside: ye,
-			manualClip: ve
+			fontColor: ie,
+			boxFill: I,
+			boxBorder: ce,
+			boxBorderPx: L,
+			fontPx: P,
+			bold: re,
+			font: F,
+			inside: q,
+			manualClip: K
 		});
 	}
-	let M = g + 2, N = g + v - 2, P = N - M, ne = (e) => {
+	let A = g + 2, j = g + _ - 2, ee = j - A, M = (e) => {
 		if (e.length === 0) return;
 		e.sort((e, t) => e.cyBox - t.cyBox);
 		let t = 0;
 		for (let n of e) t += n.boxH;
-		if (t += (e.length - 1) * 3, t > P) {
+		if (t += (e.length - 1) * 3, t > ee) {
 			let t = e.reduce((e, t) => e + t.boxH, 0), n = e.length;
 			if (n === 1) {
-				e[0].cyBox = Math.min(Math.max(e[0].cyBox, M + e[0].boxH / 2), N - e[0].boxH / 2);
+				e[0].cyBox = Math.min(Math.max(e[0].cyBox, A + e[0].boxH / 2), j - e[0].boxH / 2);
 				return;
 			}
-			let r = (P - t) / (n - 1), i = M;
+			let r = (ee - t) / (n - 1), i = A;
 			for (let t of e) t.cyBox = i + t.boxH / 2, i += t.boxH + r;
 			return;
 		}
@@ -2993,30 +3785,30 @@ function Sn(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, v, y, b, x, S, C,
 			let n = e[t - 1], r = e[t], i = (n.boxH + r.boxH) / 2 + 3;
 			r.cyBox - n.cyBox < i && (r.cyBox = n.cyBox + i);
 		}
-		let n = e[e.length - 1].cyBox + e[e.length - 1].boxH / 2 - N;
+		let n = e[e.length - 1].cyBox + e[e.length - 1].boxH / 2 - j;
 		if (n > 0) for (let t of e) t.cyBox -= n;
-		let r = M - (e[0].cyBox - e[0].boxH / 2);
+		let r = A - (e[0].cyBox - e[0].boxH / 2);
 		if (r > 0) for (let t of e) t.cyBox += r;
 	};
-	ne(j.filter((e) => !e.manualClip && !e.leftSide)), ne(j.filter((e) => !e.manualClip && e.leftSide));
-	for (let e of j) e.manualClip || (e.cyBox = Math.max(M + e.boxH / 2, e.cyBox), e.cyBox = Math.min(N - e.boxH / 2, e.cyBox));
-	let re = m + 2, ae = m + h - 2;
-	for (let e of j) {
+	M(O.filter((e) => !e.manualClip && !e.leftSide)), M(O.filter((e) => !e.manualClip && e.leftSide));
+	for (let e of O) e.manualClip || (e.cyBox = Math.max(A + e.boxH / 2, e.cyBox), e.cyBox = Math.min(j - e.boxH / 2, e.cyBox));
+	let te = m + 2, N = m + h - 2;
+	for (let e of O) {
 		if (e.manualClip) continue;
 		let t = e.boxW / 2;
-		e.cxBox - t < re && (e.cxBox = re + t), e.cxBox + t > ae && (e.cxBox = ae - t);
+		e.cxBox - t < te && (e.cxBox = te + t), e.cxBox + t > N && (e.cxBox = N - t);
 	}
-	e.save(), e.beginPath(), e.rect(m, g, h, v), e.clip();
-	let I = n.leaderLineColor ? `#${n.leaderLineColor}` : "#a6a6a6", oe = n.leaderLineWidthEmu ? Math.max(.5, n.leaderLineWidthEmu / D * p) : 1;
-	for (let t of j) {
+	e.save(), e.beginPath(), e.rect(m, g, h, _), e.clip();
+	let P = n.leaderLineColor ? `#${n.leaderLineColor}` : "#a6a6a6", re = n.leaderLineWidthEmu ? Math.max(.5, n.leaderLineWidthEmu / se * p) : 1;
+	for (let t of O) {
 		let r = t.cxBox + (t.leftSide ? t.boxW / 2 : -t.boxW / 2), i = t.cyBox, a = r - t.rimX, o = i - t.rimY, s = Math.hypot(a, o);
-		!t.inside && n.showLeaderLines && s > t.fontPx * .9 && (e.beginPath(), e.moveTo(t.rimX, t.rimY), e.lineTo(r, i), e.strokeStyle = I, e.lineWidth = oe, e.stroke());
+		!t.inside && n.showLeaderLines && s > t.fontPx * .9 && (e.beginPath(), e.moveTo(t.rimX, t.rimY), e.lineTo(r, i), e.strokeStyle = P, e.lineWidth = re, e.stroke());
 	}
-	for (let t of j) {
+	for (let t of O) {
 		t.manualClip && (e.save(), e.beginPath(), e.rect(t.manualClip.x, t.manualClip.y, t.manualClip.w, t.manualClip.h), e.clip());
 		let n = t.cxBox - t.boxW / 2, r = t.cyBox - t.boxH / 2;
 		if (t.boxFill && (e.fillStyle = t.boxFill, e.fillRect(n, r, t.boxW, t.boxH)), t.boxBorder && (e.strokeStyle = t.boxBorder, e.lineWidth = t.boxBorderPx, e.strokeRect(n, r, t.boxW, t.boxH)), t.rich) {
-			e.save(), e.beginPath(), e.rect(n, r, t.boxW, t.boxH), e.clip(), k(e, t.rich, t.cxBox, t.cyBox), e.restore(), t.manualClip && e.restore();
+			e.save(), e.beginPath(), e.rect(n, r, t.boxW, t.boxH), e.clip(), F(e, t.rich, t.cxBox, t.cyBox), e.restore(), t.manualClip && e.restore();
 			continue;
 		}
 		e.font = `${t.bold ? "bold " : ""}${t.fontPx}px ${t.font}`, e.fillStyle = t.fontColor, e.textAlign = "center", e.textBaseline = "middle";
@@ -3026,94 +3818,94 @@ function Sn(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, v, y, b, x, S, C,
 	}
 	e.restore();
 }
-function Cn(e, t, n, i) {
-	let { x: a, y: o, w: s, h: c } = n, l = an(t), u = l.length;
-	if (u < 3) return;
-	let d = mt(e, t, s, c, .22, i), f = r(t, a, o, s, c, i, {
+function nr(e, t, n, r) {
+	let { x: i, y: a, w: o, h: s } = n, c = Pn(t), l = c.length;
+	if (l < 3) return;
+	let u = It(e, t, o, s, .22, r), d = b(t, i, a, o, s, r, {
 		titleTopPadFrac: .035,
 		titleBottomPadFrac: .035,
 		legendSideReserveFrac: .22,
-		legendReserve: d,
+		legendReserve: u,
 		radialGapFrac: .02
-	}), p = f.title.fontPx;
-	rn(e, t, a, o, s, c, o + f.title.topPad, p);
-	let { px0: m, py0: g, pw: _, ph: v } = f.plotRect, b = f.center.cx, x = f.center.cy, S = Math.min(_, v) * .38, C = Infinity, w = -Infinity;
-	for (let e of t.series) for (let t of e.values) t != null && (C = Math.min(C, t), w = Math.max(w, t));
-	isFinite(C) || (C = 0, w = 1), w === 0 && (w = 1);
-	let T = t.valAxisMinorTickMark != null && t.valAxisMinorTickMark !== "none", E = t.valAxisLogBase != null && Number.isFinite(t.valAxisLogBase) && t.valAxisLogBase >= 2, D = t.valAxisMajorUnit ?? (E ? null : ae(t.valMin ?? C, t.valMax ?? w, S / i)), O = y({
-		dataMin: C,
-		dataMax: w,
+	}), f = d.title.fontPx;
+	Nn(e, t, i, a, o, s, a + d.title.topPad, f);
+	let { px0: p, py0: m, pw: h, ph: _ } = d.plotRect, v = d.center.cx, y = d.center.cy, x = Math.min(h, _) * .38, S = Infinity, C = -Infinity;
+	for (let e of t.series) for (let t of e.values) t != null && (S = Math.min(S, t), C = Math.max(C, t));
+	isFinite(S) || (S = 0, C = 1), C === 0 && (C = 1);
+	let T = t.valAxisMinorTickMark != null && t.valAxisMinorTickMark !== "none", O = t.valAxisLogBase != null && Number.isFinite(t.valAxisLogBase) && t.valAxisLogBase >= 2, k = t.valAxisMajorUnit ?? (O ? null : E(t.valMin ?? S, t.valMax ?? C, x / r)), A = D({
+		dataMin: S,
+		dataMax: C,
 		explicitMin: t.valMin,
 		explicitMax: t.valMax,
-		axisLenPt: S / i,
+		axisLenPt: x / r,
 		axisOrientation: "vertical",
-		majorUnit: D,
+		majorUnit: k,
 		minorUnit: t.valAxisMinorUnit,
 		needMinor: t.valAxisMinorGridlines === !0 || T,
 		logBase: t.valAxisLogBase,
-		reversed: At(t)
-	}), k = (e) => Rn(O.fraction(e), 0, 1), A = -Math.PI / 2, j = (e) => A + e / u * Math.PI * 2, te = O.majorTicks.filter((e) => k(e) > 0), M = (t) => {
-		let n = k(t) * S;
+		reversed: Qt(t)
+	}), j = (e) => _r(A.fraction(e), 0, 1), ee = -Math.PI / 2, M = (e) => ee + e / l * Math.PI * 2, te = A.majorTicks.filter((e) => j(e) > 0), P = (t) => {
+		let n = j(t) * x;
 		e.beginPath();
-		for (let t = 0; t < u; t++) {
-			let r = j(t), i = b + Math.cos(r) * n, a = x + Math.sin(r) * n;
+		for (let t = 0; t < l; t++) {
+			let r = M(t), i = v + Math.cos(r) * n, a = y + Math.sin(r) * n;
 			t === 0 ? e.moveTo(i, a) : e.lineTo(i, a);
 		}
 		e.closePath(), e.stroke();
 	};
 	if (t.valAxisMinorGridlines) {
-		let n = Ct(t, i);
+		let n = Gt(t, r);
 		e.strokeStyle = n.color, e.lineWidth = n.width;
-		let r = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+		let i = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
 		n.dash.length > 0 && e.setLineDash(n.dash);
-		for (let e of O.minorTicks) M(e);
-		n.dash.length > 0 && e.setLineDash(r);
+		for (let e of A.minorTicks) P(e);
+		n.dash.length > 0 && e.setLineDash(i);
 	}
-	if (!t.valAxisHidden && Mt(t)) {
-		let n = St(t, i);
+	if (!t.valAxisHidden && en(t)) {
+		let n = Wt(t, r);
 		e.strokeStyle = n.color, e.lineWidth = n.width;
-		let r = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+		let i = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
 		n.dash.length > 0 && e.setLineDash(n.dash);
-		for (let e of te) M(e);
-		n.dash.length > 0 && e.setLineDash(r);
+		for (let e of te) P(e);
+		n.dash.length > 0 && e.setLineDash(i);
 	}
 	e.strokeStyle = "#bbb", e.lineWidth = .5;
-	for (let t = 0; t < u; t++) {
-		let n = j(t);
-		e.beginPath(), e.moveTo(b, x), e.lineTo(b + Math.cos(n) * S, x + Math.sin(n) * S), e.stroke();
+	for (let t = 0; t < l; t++) {
+		let n = M(t);
+		e.beginPath(), e.moveTo(v, y), e.lineTo(v + Math.cos(n) * x, y + Math.sin(n) * x), e.stroke();
 	}
 	if (!t.valAxisHidden) {
-		let n = Wt(t.valAxisFontSizeHpt, c, i);
+		let n = hn(t.valAxisFontSizeHpt, s, r);
 		e.font = `${t.valAxisFontItalic ? "italic " : ""}${t.valAxisFontBold ? "bold " : ""}${n}px ${Y(t, t.valAxisFontFace, "minor")}`, e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555", e.textAlign = "right", e.textBaseline = "middle";
 		for (let n of te) {
-			let r = x - k(n) * S, a = ee(t.valAxisLineColor, t.valAxisLineWidthEmu, i);
-			vt(e, t.valAxisMajorTickMark, "val", b, r, a.color, a.width, !1, t.valAxisLineHidden, "major", i), t.valAxisTickLabelPos !== "none" && e.fillText(Pt(t, n, !1), b - 3, r);
+			let i = y - j(n) * x, a = w(t.valAxisLineColor, t.valAxisLineWidthEmu, r);
+			Bt(e, t.valAxisMajorTickMark, "val", v, i, a.color, a.width, !1, t.valAxisLineHidden, "major", r), t.valAxisTickLabelPos !== "none" && e.fillText(nn(t, n, !1), v - 3, i);
 		}
 		if (T) {
-			let n = ee(t.valAxisLineColor, t.valAxisLineWidthEmu, i);
-			for (let r of O.minorTicks) vt(e, t.valAxisMinorTickMark, "val", b, x - k(r) * S, n.color, n.width, !1, t.valAxisLineHidden, "minor", i);
+			let n = w(t.valAxisLineColor, t.valAxisLineWidthEmu, r);
+			for (let i of A.minorTicks) Bt(e, t.valAxisMinorTickMark, "val", v, y - j(i) * x, n.color, n.width, !1, t.valAxisLineHidden, "minor", r);
 		}
 	}
-	let N = t.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, S * .2)) : Wt(t.catAxisFontSizeHpt, c, i);
-	e.font = `${t.catAxisFontItalic ? "italic " : ""}${t.catAxisFontBold ? "bold " : ""}${N}px ${Y(t, t.catAxisFontFace, "minor")}`, e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#444", e.textBaseline = "middle";
-	let ne = b - _ / 2, F = b + _ / 2;
-	if (!t.catAxisHidden && qt(t)) for (let n = 0; n < u; n++) {
-		let r = j(n), i = b + Math.cos(r) * (S + 12), a = x + Math.sin(r) * (S + 12), o = Math.cos(r) < -.1 ? "right" : Math.cos(r) > .1 ? "left" : "center";
+	let ne = t.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, x * .2)) : hn(t.catAxisFontSizeHpt, s, r);
+	e.font = `${t.catAxisFontItalic ? "italic " : ""}${t.catAxisFontBold ? "bold " : ""}${ne}px ${Y(t, t.catAxisFontFace, "minor")}`, e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#444", e.textBaseline = "middle";
+	let re = v - h / 2, F = v + h / 2;
+	if (!t.catAxisHidden && vn(t)) for (let n = 0; n < l; n++) {
+		let r = M(n), i = v + Math.cos(r) * (x + 12), a = y + Math.sin(r) * (x + 12), o = Math.cos(r) < -.1 ? "right" : Math.cos(r) > .1 ? "left" : "center";
 		e.textAlign = o;
-		let s = o === "right" ? i - ne : o === "left" ? F - i : 2 * Math.min(F - i, i - ne), c = h((l[n] ?? "").toString(), t.catAxisFormatCode, t.date1904);
-		e.fillText(re(e, c, s), i, a);
+		let s = o === "right" ? i - re : o === "left" ? F - i : 2 * Math.min(F - i, i - re), l = g((c[n] ?? "").toString(), t.catAxisFormatCode, t.date1904);
+		e.fillText(ue(e, l, s), i, a);
 	}
-	let ie = t.radarStyle === "filled", I = Math.max(2, S * .025);
+	let ie = t.radarStyle === "filled", ae = Math.max(2, x * .025);
 	for (let n = 0; n < t.series.length; n++) {
-		let r = t.series[n], a = Ve(n, r), o = [];
-		for (let e = 0; e < u; e++) {
-			let t = r.values[e];
+		let i = t.series[n], a = at(n, i), o = [];
+		for (let e = 0; e < l; e++) {
+			let t = i.values[e];
 			if (t == null) {
 				o.push(null);
 				continue;
 			}
-			let n = k(t), i = j(e);
-			o.push([b + Math.cos(i) * S * n, x + Math.sin(i) * S * n]);
+			let n = j(t), r = M(e);
+			o.push([v + Math.cos(r) * x * n, y + Math.sin(r) * x * n]);
 		}
 		e.beginPath();
 		let s = !1;
@@ -3125,68 +3917,68 @@ function Cn(e, t, n, i) {
 			s ? e.lineTo(t[0], t[1]) : (e.moveTo(t[0], t[1]), s = !0);
 		}
 		let c = o.every((e) => e != null);
-		if (ie && c ? (e.closePath(), e.fillStyle = Me(a, .25), e.fill()) : c && e.closePath(), r.lineHidden !== !0) {
+		if (ie && c ? (e.closePath(), e.fillStyle = Xe(a, .25), e.fill()) : c && e.closePath(), i.lineHidden !== !0) {
 			let t = e.getLineDash ? e.getLineDash() : [], n = e.lineCap, o = e.lineJoin;
-			e.strokeStyle = r.lineColor ? `#${r.lineColor}` : a, e.lineWidth = r.lineWidthEmu == null ? 2 : P(r.lineWidthEmu, i), e.setLineDash(Bn(r.chartexStyle?.lineDash ?? void 0)), e.lineCap = r.chartexStyle?.lineCap === "rnd" ? "round" : r.chartexStyle?.lineCap === "sq" ? "square" : "butt", e.lineJoin = r.chartexStyle?.lineJoin === "round" || r.chartexStyle?.lineJoin === "bevel" ? r.chartexStyle.lineJoin : "miter", e.stroke(), e.setLineDash(t), e.lineCap = n, e.lineJoin = o;
+			e.strokeStyle = i.lineColor ? `#${i.lineColor}` : a, e.lineWidth = i.lineWidthEmu == null ? 2 : N(i.lineWidthEmu, r), e.setLineDash(yr(i.chartexStyle?.lineDash ?? void 0, e.lineWidth)), e.lineCap = i.chartexStyle?.lineCap === "rnd" ? "round" : i.chartexStyle?.lineCap === "sq" ? "square" : "butt", e.lineJoin = i.chartexStyle?.lineJoin === "round" || i.chartexStyle?.lineJoin === "bevel" ? i.chartexStyle.lineJoin : "miter", e.stroke(), e.setLineDash(t), e.lineCap = n, e.lineJoin = o;
 		}
-		if (!ie && r.showMarker !== !1 && r.markerSymbol !== "none") {
-			let t = He(r.dataPointOverrides);
+		if (!ie && i.showMarker !== !1 && i.markerSymbol !== "none") {
+			let t = ot(i.dataPointOverrides);
 			for (let n = 0; n < o.length; n++) {
 				let s = o[n];
 				if (s == null) continue;
-				let c = t.get(n), l = c?.markerSymbol ?? r.markerSymbol ?? "circle";
+				let c = t.get(n), l = c?.markerSymbol ?? i.markerSymbol ?? "circle";
 				if (l === "none") continue;
-				let u = c?.markerSize ?? r.markerSize ?? Math.max(4, I * 2 / i), d = c?.markerFill ?? r.markerFill ?? a, f = c?.markerLine ?? r.markerLine ?? null, p = c?.markerLineWidthEmu ?? r.markerLineWidthEmu;
-				Mn(e, s[0], s[1], l, u, d, f, i, p == null ? 1 : P(p, i));
+				let u = c?.markerSize ?? i.markerSize ?? Math.max(4, ae * 2 / r), d = c?.markerFill ?? i.markerFill ?? a, f = c?.markerLine ?? i.markerLine ?? null, p = c?.markerLineWidthEmu ?? i.markerLineWidthEmu;
+				dr(e, s[0], s[1], l, u, d, f, r, p == null ? 1 : N(p, r));
 			}
 		}
 	}
-	_t(e, t, d, a, o, s, c, m, g, _, v, f.title.bandH + 2, i);
+	zt(e, t, u, i, a, o, s, p, m, h, _, d.title.bandH + 2, r);
 }
-function wn(e, t, n) {
+function rr(e, t, n) {
 	if (n) return t;
 	let r = e[t];
 	if (r == null) return null;
 	let i = parseFloat(r);
 	return Number.isNaN(i) ? null : i;
 }
-function Tn(e, t) {
+function ir(e, t) {
 	return e.bubbleSizeRepresents === "w" ? t : Math.sqrt(t);
 }
-function En(e, t) {
+function ar(e, t) {
 	return t == null || !Number.isFinite(t) || t === 0 || t < 0 && e.showNegativeBubbles !== !0 ? null : Math.abs(t);
 }
-function Dn(e, t, n, r) {
+function or(e, t, n, r) {
 	return t?.markerFill ?? t?.color ?? e.dataPointColors?.[n] ?? e.markerFill ?? r;
 }
-function On(e, t, n) {
+function sr(e, t, n) {
 	return {
 		series: t,
-		fallbackColor: Ve(n, t),
+		fallbackColor: at(n, t),
 		cats: t.categories ?? e.categories,
 		pointOverrides: new Map((t.dataPointOverrides ?? []).map((e) => [e.idx, e]))
 	};
 }
-function kn(e, t, n, r, i) {
-	let a = Rn(e.bubbleScale ?? 100, 0, 300);
+function cr(e, t, n, r, i) {
+	let a = _r(e.bubbleScale ?? 100, 0, 300);
 	if (a <= 0) return 0;
 	let o = 0;
 	for (let { series: r, cats: i, pointOverrides: a } of t) if (!(r.showMarker === !1 || r.markerSymbol === "none")) for (let t = 0; t < r.values.length; t++) {
-		if (r.values[t] == null || wn(i, t, n) == null || a.get(t)?.markerSymbol === "none") continue;
-		let s = En(e, r.bubbleSizes?.[t]);
-		s != null && (o = Math.max(o, Tn(e, s)));
+		if (r.values[t] == null || rr(i, t, n) == null || a.get(t)?.markerSymbol === "none") continue;
+		let s = ar(e, r.bubbleSizes?.[t]);
+		s != null && (o = Math.max(o, ir(e, s)));
 	}
 	return o <= 0 ? 0 : Math.min(r, i) * a / (300 + a) / o;
 }
-function An(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
-	let g = p === "line" || p === "lineMarker" || p === "lineNoMarker", _ = p === "smooth" || p === "smoothMarker" || p === "smoothNoMarker", v = p === "lineNoMarker" || p === "smoothNoMarker", y = n.map(({ series: e, index: n }) => On(t, e, n)), b = f ? kn(t, y, r, l, u) : 0;
-	for (let { series: t, fallbackColor: n, cats: o } of y) for (let s of t.errBars ?? []) Nn(e, t, s, o, r, i, a, n);
+function lr(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
+	let g = p === "line" || p === "lineMarker" || p === "lineNoMarker", _ = p === "smooth" || p === "smoothMarker" || p === "smoothNoMarker", v = p === "lineNoMarker" || p === "smoothNoMarker", y = n.map(({ series: e, index: n }) => sr(t, e, n)), b = f ? cr(t, y, r, l, u) : 0;
+	for (let { series: t, fallbackColor: n, cats: o } of y) for (let s of t.errBars ?? []) fr(e, t, s, o, r, i, a, n);
 	for (let { series: t, fallbackColor: n, cats: o } of y) if ((g || _) && t.lineHidden !== !0) {
 		let s = [];
 		for (let e = 0; e < t.values.length; e++) {
 			let n = t.values[e];
 			if (n == null) continue;
-			let c = wn(o, e, r);
+			let c = rr(o, e, r);
 			c != null && s.push({
 				x: i(c),
 				y: a(n)
@@ -3204,27 +3996,27 @@ function An(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
 	for (let { series: n, fallbackColor: o, cats: s, pointOverrides: c } of y) if (!(v || n.showMarker === !1 || typeof n.markerSymbol == "string" && n.markerSymbol === "none")) for (let l = 0; l < n.values.length; l++) {
 		let u = n.values[l];
 		if (u == null) continue;
-		let p = wn(s, l, r);
+		let p = rr(s, l, r);
 		if (p == null) continue;
 		let m = c.get(l), h = m?.markerSymbol ?? n.markerSymbol ?? "circle";
 		if (h === "none") continue;
 		let g = m?.markerSize ?? n.markerSize ?? 5;
 		if (f) {
 			if (b <= 0) continue;
-			let e = En(t, n.bubbleSizes?.[l]);
+			let e = ar(t, n.bubbleSizes?.[l]);
 			if (e == null) continue;
-			g = Tn(t, e) * b / d;
+			g = ir(t, e) * b / d;
 		}
-		let _ = Dn(n, m, l, o), v = m?.markerLine ?? n.markerLine ?? (f ? n.lineColor : null) ?? null, y = m?.markerLineWidthEmu ?? n.markerLineWidthEmu, x = m?.lineWidthEmu ?? n.lineWidthEmu, S = f ? x : y, C = S == null ? void 0 : P(S, d);
-		Mn(e, i(p), a(u), h, g, _, v, d, C);
+		let _ = or(n, m, l, o), v = m?.markerLine ?? n.markerLine ?? (f ? n.lineColor : null) ?? null, y = m?.markerLineWidthEmu ?? n.markerLineWidthEmu, x = m?.lineWidthEmu ?? n.lineWidthEmu, S = f ? x : y, C = S == null ? void 0 : N(S, d);
+		dr(e, i(p), a(u), h, g, _, v, d, C);
 	}
-	for (let { series: n, cats: o } of y) Pn(e, n, o, r, i, a, u, d, t.date1904, Y(t, t.dataLabelFontFace, "minor"), t.dataLabelPosition ?? "r", {
+	for (let { series: n, cats: o } of y) pr(e, n, o, r, i, a, u, d, t.date1904, Y(t, t.dataLabelFontFace, "minor"), t.dataLabelPosition ?? "r", {
 		x: s,
 		y: c,
 		w: l,
 		h: u
 	}, m, (e) => Y(t, e, "minor"), h);
-	for (let { series: n, fallbackColor: f, cats: p } of y) Ut(e, n, f, i, a, d, n.values.map((e, t) => wn(p, t, r)), {
+	for (let { series: n, fallbackColor: f, cats: p } of y) fn(e, n, f, i, a, d, n.values.map((e, t) => rr(p, t, r)), {
 		chart: t,
 		chartRect: o,
 		plotRect: {
@@ -3236,235 +4028,236 @@ function An(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
 		clipLineToPlot: !0
 	});
 }
-function jn(t, n, i, s) {
-	let { x: l, y: d, w: p, h: m } = i, h = n.series.map((e, t) => ({
+function ur(e, t, n, r) {
+	let { x: i, y: a, w: c, h: l } = n, d = t.series.map((e, t) => ({
 		series: e,
 		index: t
-	})).filter(({ series: e }) => e.useSecondaryAxis !== !0), g = n.series.map((e, t) => ({
+	})).filter(({ series: e }) => e.useSecondaryAxis !== !0), f = t.series.map((e, t) => ({
 		series: e,
 		index: t
-	})).filter(({ series: e }) => e.useSecondaryAxis === !0), v = g.length > 0 ? n.secondaryCatAxis : null, b = g.length > 0 ? n.secondaryValAxis : null, x = ((e) => {
-		let t = [];
+	})).filter(({ series: e }) => e.useSecondaryAxis === !0), m = f.length > 0 ? t.secondaryCatAxis : null, h = f.length > 0 ? t.secondaryValAxis : null, g = ((e) => {
+		let n = [];
 		for (let { series: r } of e) {
-			let e = r.categories ?? n.categories;
-			for (let n of e) {
-				let e = parseFloat(n);
-				Number.isFinite(e) && t.push(e);
+			let e = r.categories ?? t.categories;
+			for (let t of e) {
+				let e = parseFloat(t);
+				Number.isFinite(e) && n.push(e);
 			}
 		}
-		return t;
-	})(n.series.map((e, t) => ({
+		return n;
+	})(t.series.map((e, t) => ({
 		series: e,
 		index: t
-	}))).length === 0, S = (e) => {
-		let t = [], r = [];
+	}))).length === 0, _ = (e) => {
+		let n = [], r = [];
 		for (let { series: i } of e) {
-			let e = i.categories ?? n.categories;
-			for (let n = 0; n < i.values.length; n++) {
-				let a = i.values[n];
+			let e = i.categories ?? t.categories;
+			for (let t = 0; t < i.values.length; t++) {
+				let a = i.values[t];
 				if (a == null) continue;
-				let o = wn(e, n, x);
-				o != null && (t.push(o), r.push(a));
+				let o = rr(e, t, g);
+				o != null && (n.push(o), r.push(a));
 			}
+			Cn(i, "x", (t) => i.values[t] == null ? null : rr(e, t, g), (e) => n.push(e)), Cn(i, "y", (t) => rr(e, t, g) == null ? null : i.values[t] ?? null, (e) => r.push(e));
 		}
-		if (x && t.length === 0) {
-			let n = 0;
-			for (let { series: t } of e) n = Math.max(n, t.values.length);
-			for (let e = 0; e < n; e++) t.push(e);
+		if (g && n.length === 0) {
+			let t = 0;
+			for (let { series: n } of e) t = Math.max(t, n.values.length);
+			for (let e = 0; e < t; e++) n.push(e);
 		}
 		return {
-			x: T(t),
-			y: T(r)
+			x: k(n),
+			y: k(r)
 		};
-	}, C = S(h.length > 0 ? h : g), w = S(g), E = a(n, m, s), D = E.fontPx, O = E.topPad, k = Wt(n.catAxisFontSizeHpt, m, s), A = Wt(n.valAxisFontSizeHpt, m, s), j = mt(t, n, p, m, .22, s), { legRightW: te, legLeftW: M, legTopH: N, legBottomH: ne } = c(j), re = u(n, p, m, s), F = re.catFontPx, ie = re.valFontPx, ae = re.catBandH, I = re.valBandW;
-	rn(t, n, l, d, p, m, d + O, D);
-	let oe = b ? y({
-		dataMin: w.y.min,
-		dataMax: w.y.max,
-		explicitMin: b.min,
-		explicitMax: b.max,
-		axisLenPt: Math.max(1, m * .7 / s),
+	}, v = _(d.length > 0 ? d : f), S = _(f), C = jn(e, t, c, l, r), T = C.fontPx, E = C.topPad, O = hn(t.catAxisFontSizeHpt, l, r), A = hn(t.valAxisFontSizeHpt, l, r), j = It(e, t, c, l, .22, r), { legRightW: ee, legLeftW: M, legTopH: te, legBottomH: P } = o(j), ne = s(t, c, l, r), re = ne.catFontPx, F = ne.valFontPx, ie = ne.catBandH, ae = ne.valBandW;
+	Nn(e, t, i, a, c, l, a + E, T);
+	let oe = h ? D({
+		dataMin: S.y.min,
+		dataMax: S.y.max,
+		explicitMin: h.min,
+		explicitMax: h.max,
+		axisLenPt: Math.max(1, l * .7 / r),
 		axisOrientation: "vertical",
-		majorUnit: b.majorUnit,
-		minorUnit: b.minorUnit,
-		needMinor: b.minorGridlines === !0 || b.minorTickMark != null && b.minorTickMark !== "none",
-		logBase: b.logBase,
-		reversed: b.orientation === "maxMin"
-	}) : null, se = 0;
-	if (b && oe && !b.hidden && b.tickLabelPos !== "none") {
-		let r = t.font;
-		t.font = Ge(_(b.fontSizeHpt, s) ?? A, Y(n, b.fontFace, "minor"), b.fontBold ?? !1, b.fontItalic ?? !1);
-		for (let e of oe.majorTicks) se = Math.max(se, t.measureText(It(e, b.formatCode, n.date1904, b.displayUnits)).width);
-		se += e(A) + 4, t.font = r;
+		majorUnit: h.majorUnit,
+		minorUnit: h.minorUnit,
+		needMinor: h.minorGridlines === !0 || h.minorTickMark != null && h.minorTickMark !== "none",
+		logBase: h.logBase,
+		reversed: h.orientation === "maxMin"
+	}) : null, I = 0;
+	if (h && oe && !h.hidden && h.tickLabelPos !== "none") {
+		let n = e.font;
+		e.font = lt(x(h.fontSizeHpt, r) ?? A, Y(t, h.fontFace, "minor"), h.fontBold ?? !1, h.fontItalic ?? !1);
+		for (let n of oe.majorTicks) I = Math.max(I, e.measureText(an(n, h.formatCode, t.date1904, h.displayUnits)).width);
+		I += y(A) + 4, e.font = n;
 	}
-	let ce = v && !v.hidden && v.tickLabelPos !== "none" ? (_(v.fontSizeHpt, s) ?? k) + f(k) + 2 : 0, { plotRect: { px0: L, py0: R, pw: z, ph: B } } = r(n, l, d, p, m, s, {
-		titleBand: E,
+	let se = m && !m.hidden && m.tickLabelPos !== "none" ? (x(m.fontSizeHpt, r) ?? O) + u(O) + 2 : 0, { plotRect: { px0: ce, py0: L, pw: le, ph: R } } = b(t, i, a, c, l, r, {
+		titleBand: C,
 		legendSideReserveFrac: .22,
 		legendReserve: j,
 		pad: {
-			t: E.bandH + N + A / 2 + 2 + ce,
-			r: te + p * .05 + se,
-			b: (n.catAxisHidden ? m * .04 : o(k)) + ae + ne,
-			l: (n.valAxisHidden ? p * .04 : p * .12) + I + M
+			t: C.bandH + te + A / 2 + 2 + se,
+			r: ee + c * .05 + I,
+			b: (t.catAxisHidden ? l * .04 : p(O)) + ie + P,
+			l: (t.valAxisHidden ? c * .04 : c * .12) + ae + M
 		},
 		honorPlotAreaManualLayout: !0
 	});
-	if (z <= 0 || B <= 0) return;
-	n.plotAreaBg && (t.fillStyle = `#${n.plotAreaBg}`, t.fillRect(L, R, z, B));
-	let { min: V, max: le } = C.x, { min: ue, max: de } = C.y;
-	n.valMin != null && (ue = n.valMin), n.valMax != null && (de = n.valMax);
-	let fe = n.valAxisMinorGridlines === !0 || n.valAxisMinorTickMark != null && n.valAxisMinorTickMark !== "none", H = y({
+	if (le <= 0 || R <= 0) return;
+	t.plotAreaBg && (e.fillStyle = `#${t.plotAreaBg}`, e.fillRect(ce, L, le, R));
+	let { min: z, max: B } = v.x, { min: ue, max: de } = v.y;
+	t.valMin != null && (ue = t.valMin), t.valMax != null && (de = t.valMax);
+	let fe = t.valAxisMinorGridlines === !0 || t.valAxisMinorTickMark != null && t.valAxisMinorTickMark !== "none", pe = D({
 		dataMin: ue,
 		dataMax: de,
-		explicitMin: n.valMin,
-		explicitMax: n.valMax,
-		axisLenPt: B / s,
+		explicitMin: t.valMin,
+		explicitMax: t.valMax,
+		axisLenPt: R / r,
 		axisOrientation: "vertical",
-		majorUnit: n.valAxisMajorUnit,
-		minorUnit: n.valAxisMinorUnit,
+		majorUnit: t.valAxisMajorUnit,
+		minorUnit: t.valAxisMinorUnit,
 		needMinor: fe,
-		logBase: n.valAxisLogBase,
-		reversed: At(n)
+		logBase: t.valAxisLogBase,
+		reversed: Qt(t)
 	});
-	ue = H.min, de = H.max;
-	let pe = n.catAxisMinorGridlines === !0 || n.catAxisMinorTickMark != null && n.catAxisMinorTickMark !== "none", U = y({
-		dataMin: V,
-		dataMax: le,
-		explicitMin: n.catAxisMin,
-		explicitMax: n.catAxisMax,
-		axisLenPt: z / s,
+	ue = pe.min, de = pe.max;
+	let me = t.catAxisMinorGridlines === !0 || t.catAxisMinorTickMark != null && t.catAxisMinorTickMark !== "none", V = D({
+		dataMin: z,
+		dataMax: B,
+		explicitMin: t.catAxisMin,
+		explicitMax: t.catAxisMax,
+		axisLenPt: le / r,
 		axisOrientation: "horizontal",
-		majorUnit: n.catAxisMajorUnit,
-		minorUnit: n.catAxisMinorUnit,
-		needMinor: pe,
-		logBase: n.catAxisLogBase,
-		reversed: jt(n)
+		majorUnit: t.catAxisMajorUnit,
+		minorUnit: t.catAxisMinorUnit,
+		needMinor: me,
+		logBase: t.catAxisLogBase,
+		reversed: $t(t)
 	});
-	V = U.min, le = U.max;
-	let me = v ? y({
-		dataMin: w.x.min,
-		dataMax: w.x.max,
-		explicitMin: v.min,
-		explicitMax: v.max,
-		axisLenPt: z / s,
+	z = V.min, B = V.max;
+	let he = m ? D({
+		dataMin: S.x.min,
+		dataMax: S.x.max,
+		explicitMin: m.min,
+		explicitMax: m.max,
+		axisLenPt: le / r,
 		axisOrientation: "horizontal",
-		majorUnit: v.majorUnit,
-		minorUnit: v.minorUnit,
-		needMinor: v.minorGridlines === !0 || v.minorTickMark != null && v.minorTickMark !== "none",
-		logBase: v.logBase,
-		reversed: v.orientation === "maxMin"
-	}) : null, he = b ? y({
-		dataMin: w.y.min,
-		dataMax: w.y.max,
-		explicitMin: b.min,
-		explicitMax: b.max,
-		axisLenPt: B / s,
+		majorUnit: m.majorUnit,
+		minorUnit: m.minorUnit,
+		needMinor: m.minorGridlines === !0 || m.minorTickMark != null && m.minorTickMark !== "none",
+		logBase: m.logBase,
+		reversed: m.orientation === "maxMin"
+	}) : null, ge = h ? D({
+		dataMin: S.y.min,
+		dataMax: S.y.max,
+		explicitMin: h.min,
+		explicitMax: h.max,
+		axisLenPt: R / r,
 		axisOrientation: "vertical",
-		majorUnit: b.majorUnit,
-		minorUnit: b.minorUnit,
-		needMinor: b.minorGridlines === !0 || b.minorTickMark != null && b.minorTickMark !== "none",
-		logBase: b.logBase,
-		reversed: b.orientation === "maxMin"
-	}) : null, W = (e) => L + U.fraction(e) * z, ge = (e) => R + B - H.fraction(e) * B, _e = (e) => L + (me?.fraction(e) ?? 0) * z, G = (e) => R + B - (he?.fraction(e) ?? 0) * B, K = U.majorUnit, q = H.majorTicks, J = H.minorTicks, ve = U.majorTicks, ye = U.minorTicks, be = R + B;
-	if (n.catAxisCrossesAt != null) be = Rn(ge(n.catAxisCrossesAt), R, R + B);
+		majorUnit: h.majorUnit,
+		minorUnit: h.minorUnit,
+		needMinor: h.minorGridlines === !0 || h.minorTickMark != null && h.minorTickMark !== "none",
+		logBase: h.logBase,
+		reversed: h.orientation === "maxMin"
+	}) : null, H = (e) => ce + V.fraction(e) * le, U = (e) => L + R - pe.fraction(e) * R, _e = (e) => ce + (he?.fraction(e) ?? 0) * le, W = (e) => L + R - (ge?.fraction(e) ?? 0) * R, G = V.majorUnit, ve = pe.majorTicks, ye = pe.minorTicks, be = V.majorTicks, K = V.minorTicks, q = L + R;
+	if (t.catAxisCrossesAt != null) q = _r(U(t.catAxisCrossesAt), L, L + R);
 	else {
-		let e = n.catAxisCrosses ?? "autoZero";
-		e === "autoZero" && ue < 0 && de > 0 ? be = Rn(ge(0), R, R + B) : e === "max" && (be = R);
+		let e = t.catAxisCrosses ?? "autoZero";
+		e === "autoZero" && ue < 0 && de > 0 ? q = _r(U(0), L, L + R) : e === "max" && (q = L);
 	}
-	let xe = L;
-	if (n.valAxisCrossesAt != null) xe = Rn(W(n.valAxisCrossesAt), L, L + z);
+	let J = ce;
+	if (t.valAxisCrossesAt != null) J = _r(H(t.valAxisCrossesAt), ce, ce + le);
 	else {
-		let e = n.valAxisCrosses ?? "autoZero";
-		e === "autoZero" && V < 0 && le > 0 ? xe = Rn(W(0), L, L + z) : e === "max" && (xe = L + z);
+		let e = t.valAxisCrosses ?? "autoZero";
+		e === "autoZero" && z < 0 && B > 0 ? J = _r(H(0), ce, ce + le) : e === "max" && (J = ce + le);
 	}
-	let Se = St(n, s);
-	if (!n.valAxisHidden) {
-		let r = n.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, B / 20)) : Wt(n.valAxisFontSizeHpt, m, s), i = n.valAxisFontSizeHpt == null ? 4 : e(r);
-		t.font = Ge(r, Y(n, n.valAxisFontFace, "minor"), n.valAxisFontBold ?? !1, n.valAxisFontItalic ?? !1);
-		let a = n.valAxisLineColor ? `#${n.valAxisLineColor}` : void 0, o = P(n.valAxisLineWidthEmu, s), c = n.valAxisLineHidden ? 0 : bt(n.valAxisMajorTickMark, "major", o, s);
-		if (n.valAxisMinorGridlines) {
-			let e = Ct(n, s);
-			for (let n of J) xt(t, L, z, ge(n), !1, e);
+	let xe = Wt(t, r);
+	if (!t.valAxisHidden) {
+		let n = t.valAxisFontSizeHpt == null ? Math.max(8, Math.min(11, R / 20)) : hn(t.valAxisFontSizeHpt, l, r), i = t.valAxisFontSizeHpt == null ? 4 : y(n);
+		e.font = lt(n, Y(t, t.valAxisFontFace, "minor"), t.valAxisFontBold ?? !1, t.valAxisFontItalic ?? !1);
+		let a = t.valAxisLineColor ? `#${t.valAxisLineColor}` : void 0, o = N(t.valAxisLineWidthEmu, r), s = t.valAxisLineHidden ? 0 : Ht(t.valAxisMajorTickMark, "major", o, r);
+		if (t.valAxisMinorGridlines) {
+			let n = Gt(t, r);
+			for (let t of ye) Ut(e, ce, le, U(t), !1, n);
 		}
-		for (let e of q) {
-			let r = ge(e);
-			if (t.strokeStyle = Se.color, t.lineWidth = Se.width, Mt(n)) {
-				let e = Se.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-				Se.dash.length > 0 && t.setLineDash(Se.dash), t.beginPath(), t.moveTo(L, r), t.lineTo(L + z, r), t.stroke(), Se.dash.length > 0 && t.setLineDash(e);
+		for (let n of ve) {
+			let c = U(n);
+			if (e.strokeStyle = xe.color, e.lineWidth = xe.width, en(t)) {
+				let t = xe.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+				xe.dash.length > 0 && e.setLineDash(xe.dash), e.beginPath(), e.moveTo(ce, c), e.lineTo(ce + le, c), e.stroke(), xe.dash.length > 0 && e.setLineDash(t);
 			}
-			if (n.valAxisTickLabelPos !== "none") {
-				t.fillStyle = n.valAxisFontColor ? `#${n.valAxisFontColor}` : "#555";
-				let a = n.valAxisTickLabelPos ?? "nextTo", o;
-				a === "high" ? (t.textAlign = "left", o = L + z + i) : a === "low" ? (t.textAlign = "right", o = L - i) : (t.textAlign = "right", o = xe - c - i), t.textBaseline = "middle", t.fillText(Pt(n, e, !1), o, r);
+			if (t.valAxisTickLabelPos !== "none") {
+				e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555";
+				let r = t.valAxisTickLabelPos ?? "nextTo", a;
+				r === "high" ? (e.textAlign = "left", a = ce + le + i) : r === "low" ? (e.textAlign = "right", a = ce - i) : (e.textAlign = "right", a = J - s - i), e.textBaseline = "middle", e.fillText(nn(t, n, !1), a, c);
 			}
-			vt(t, n.valAxisMajorTickMark, "val", xe, r, a, o, !1, n.valAxisLineHidden, "major", s);
+			Bt(e, t.valAxisMajorTickMark, "val", J, c, a, o, !1, t.valAxisLineHidden, "major", r);
 		}
-		if (n.valAxisMinorTickMark && n.valAxisMinorTickMark !== "none") for (let e of J) vt(t, n.valAxisMinorTickMark, "val", xe, ge(e), a, o, !1, n.valAxisLineHidden, "minor", s);
+		if (t.valAxisMinorTickMark && t.valAxisMinorTickMark !== "none") for (let n of ye) Bt(e, t.valAxisMinorTickMark, "val", J, U(n), a, o, !1, t.valAxisLineHidden, "minor", r);
 	}
-	if (!n.catAxisHidden && Et(n) && K > 0) {
-		let e = Dt(n, s);
-		t.strokeStyle = e.color, t.lineWidth = e.width;
-		let r = e.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-		e.dash.length > 0 && t.setLineDash(e.dash);
-		for (let e of ve) {
-			let n = W(e);
-			t.beginPath(), t.moveTo(n, R), t.lineTo(n, R + B), t.stroke();
+	if (!t.catAxisHidden && Jt(t) && G > 0) {
+		let n = Yt(t, r);
+		e.strokeStyle = n.color, e.lineWidth = n.width;
+		let i = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+		n.dash.length > 0 && e.setLineDash(n.dash);
+		for (let t of be) {
+			let n = H(t);
+			e.beginPath(), e.moveTo(n, L), e.lineTo(n, L + R), e.stroke();
 		}
-		e.dash.length > 0 && t.setLineDash(r);
+		n.dash.length > 0 && e.setLineDash(i);
 	}
-	if (!n.catAxisHidden && n.catAxisMinorGridlines && K > 0) {
-		let e = Ot(n, s), r = e.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-		t.strokeStyle = e.color, t.lineWidth = e.width, e.dash.length > 0 && t.setLineDash(e.dash);
-		for (let e of ye) {
-			let n = W(e);
-			t.beginPath(), t.moveTo(n, R), t.lineTo(n, R + B), t.stroke();
+	if (!t.catAxisHidden && t.catAxisMinorGridlines && G > 0) {
+		let n = Xt(t, r), i = n.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+		e.strokeStyle = n.color, e.lineWidth = n.width, n.dash.length > 0 && e.setLineDash(n.dash);
+		for (let t of K) {
+			let n = H(t);
+			e.beginPath(), e.moveTo(n, L), e.lineTo(n, L + R), e.stroke();
 		}
-		e.dash.length > 0 && t.setLineDash(r);
+		n.dash.length > 0 && e.setLineDash(i);
 	}
-	if (!n.catAxisHidden && !n.catAxisLineHidden && (t.save(), t.strokeStyle = n.catAxisLineColor ? `#${n.catAxisLineColor}` : "#888", t.lineWidth = P(n.catAxisLineWidthEmu, s), t.lineCap = "butt", t.beginPath(), t.moveTo(L, be), t.lineTo(L + z, be), t.stroke(), t.restore()), !n.valAxisHidden && !n.valAxisLineHidden && (t.save(), t.strokeStyle = n.valAxisLineColor ? `#${n.valAxisLineColor}` : "#888", t.lineWidth = P(n.valAxisLineWidthEmu, s), t.beginPath(), t.moveTo(xe, R), t.lineTo(xe, R + B), t.stroke(), t.restore()), !n.catAxisHidden) {
-		let e = n.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, B / 20)) : Wt(n.catAxisFontSizeHpt, m, s), r = n.catAxisFontSizeHpt == null ? 4 : f(e);
-		t.font = Ge(e, Y(n, n.catAxisFontFace, "minor"), n.catAxisFontBold ?? !1, n.catAxisFontItalic ?? !1), t.fillStyle = n.catAxisFontColor ? `#${n.catAxisFontColor}` : "#555", t.textAlign = "center";
-		let i = n.catAxisTickLabelPos ?? "nextTo", a = P(n.catAxisLineWidthEmu, s), o = n.catAxisLineColor ? `#${n.catAxisLineColor}` : void 0, c = n.catAxisLineHidden ? 0 : bt(n.catAxisMajorTickMark, "major", a, s), l = i === "low" ? R + B + r : i === "high" ? R - r : be + c + r;
-		t.textBaseline = i === "high" ? "bottom" : "top";
-		for (let e of ve) {
-			let r = W(e);
-			i !== "none" && t.fillText(It(e, n.catAxisFormatCode, n.date1904, n.catAxisDisplayUnits), r, l), vt(t, n.catAxisMajorTickMark, "cat", be, r, o, a, !1, n.catAxisLineHidden, "major", s);
+	if (!t.catAxisHidden && !t.catAxisLineHidden && (e.save(), e.strokeStyle = t.catAxisLineColor ? `#${t.catAxisLineColor}` : "#888", e.lineWidth = N(t.catAxisLineWidthEmu, r), e.lineCap = "butt", e.beginPath(), e.moveTo(ce, q), e.lineTo(ce + le, q), e.stroke(), e.restore()), !t.valAxisHidden && !t.valAxisLineHidden && (e.save(), e.strokeStyle = t.valAxisLineColor ? `#${t.valAxisLineColor}` : "#888", e.lineWidth = N(t.valAxisLineWidthEmu, r), e.beginPath(), e.moveTo(J, L), e.lineTo(J, L + R), e.stroke(), e.restore()), !t.catAxisHidden) {
+		let n = t.catAxisFontSizeHpt == null ? Math.max(8, Math.min(11, R / 20)) : hn(t.catAxisFontSizeHpt, l, r), i = t.catAxisFontSizeHpt == null ? 4 : u(n);
+		e.font = lt(n, Y(t, t.catAxisFontFace, "minor"), t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1), e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#555", e.textAlign = "center";
+		let a = t.catAxisTickLabelPos ?? "nextTo", o = N(t.catAxisLineWidthEmu, r), s = t.catAxisLineColor ? `#${t.catAxisLineColor}` : void 0, c = t.catAxisLineHidden ? 0 : Ht(t.catAxisMajorTickMark, "major", o, r), d = a === "low" ? L + R + i : a === "high" ? L - i : q + c + i;
+		e.textBaseline = a === "high" ? "bottom" : "top";
+		for (let n of be) {
+			let i = H(n);
+			a !== "none" && e.fillText(an(n, t.catAxisFormatCode, t.date1904, t.catAxisDisplayUnits), i, d), Bt(e, t.catAxisMajorTickMark, "cat", q, i, s, o, !1, t.catAxisLineHidden, "major", r);
 		}
-		if (n.catAxisMinorTickMark && n.catAxisMinorTickMark !== "none") for (let e of ye) vt(t, n.catAxisMinorTickMark, "cat", be, W(e), o, a, !1, n.catAxisLineHidden, "minor", s);
+		if (t.catAxisMinorTickMark && t.catAxisMinorTickMark !== "none") for (let n of K) Bt(e, t.catAxisMinorTickMark, "cat", q, H(n), s, o, !1, t.catAxisLineHidden, "minor", r);
 	}
-	let Ce = n.chartType === "bubble", we = Ce ? "marker" : n.scatterStyle ?? "marker";
-	if (An(t, n, h, x, W, ge, i, L, R, z, B, s, Ce, we, {
-		x: l,
-		y: d,
-		w: p,
-		h: m
-	}, n.valAxisDisplayUnits), g.length > 0 && me && he && An(t, n, g, x, _e, G, i, L, R, z, B, s, Ce, we, {
-		x: l,
-		y: d,
-		w: p,
-		h: m
-	}, b?.displayUnits), v && me && !v.hidden) {
-		let e = ee(v.lineColor, v.lineWidthEmu, s);
-		v.lineHidden || (t.strokeStyle = e.color, t.lineWidth = e.width, t.beginPath(), t.moveTo(L, R), t.lineTo(L + z, R), t.stroke());
-		let r = _(v.fontSizeHpt, s) ?? k;
-		t.font = Ge(r, Y(n, v.fontFace, "minor"), v.fontBold ?? !1, v.fontItalic ?? !1), t.fillStyle = v.fontColor ? `#${v.fontColor}` : "#555", t.textAlign = "center", t.textBaseline = "bottom";
-		let i = v.lineHidden ? 0 : bt(v.majorTickMark, "major", e.width, s);
-		for (let a of me.majorTicks) {
-			let o = _e(a);
-			v.tickLabelPos !== "none" && t.fillText(It(a, v.formatCode, n.date1904, v.displayUnits), o, R - i - f(r)), vt(t, v.majorTickMark, "cat", R, o, e.color, e.width, !0, v.lineHidden, "major", s);
+	let Se = t.chartType === "bubble", Ce = Se ? "marker" : t.scatterStyle ?? "marker";
+	if (lr(e, t, d, g, H, U, n, ce, L, le, R, r, Se, Ce, {
+		x: i,
+		y: a,
+		w: c,
+		h: l
+	}, t.valAxisDisplayUnits), f.length > 0 && he && ge && lr(e, t, f, g, _e, W, n, ce, L, le, R, r, Se, Ce, {
+		x: i,
+		y: a,
+		w: c,
+		h: l
+	}, h?.displayUnits), m && he && !m.hidden) {
+		let n = w(m.lineColor, m.lineWidthEmu, r);
+		m.lineHidden || (e.strokeStyle = n.color, e.lineWidth = n.width, e.beginPath(), e.moveTo(ce, L), e.lineTo(ce + le, L), e.stroke());
+		let i = x(m.fontSizeHpt, r) ?? O;
+		e.font = lt(i, Y(t, m.fontFace, "minor"), m.fontBold ?? !1, m.fontItalic ?? !1), e.fillStyle = m.fontColor ? `#${m.fontColor}` : "#555", e.textAlign = "center", e.textBaseline = "bottom";
+		let a = m.lineHidden ? 0 : Ht(m.majorTickMark, "major", n.width, r);
+		for (let o of he.majorTicks) {
+			let s = _e(o);
+			m.tickLabelPos !== "none" && e.fillText(an(o, m.formatCode, t.date1904, m.displayUnits), s, L - a - u(i)), Bt(e, m.majorTickMark, "cat", L, s, n.color, n.width, !0, m.lineHidden, "major", r);
 		}
-		if (v.minorTickMark && v.minorTickMark !== "none") for (let n of me.minorTicks) vt(t, v.minorTickMark, "cat", R, _e(n), e.color, e.width, !0, v.lineHidden, "minor", s);
+		if (m.minorTickMark && m.minorTickMark !== "none") for (let t of he.minorTicks) Bt(e, m.minorTickMark, "cat", L, _e(t), n.color, n.width, !0, m.lineHidden, "minor", r);
 	}
-	b && he && $t(t, n, b, {
-		min: he.min,
-		max: he.max,
-		step: he.majorUnit,
-		majorLines: he.majorTicks,
-		minorTicks: he.minorTicks,
-		makeToY: () => G
-	}, G, i, L, R, z, B, s, _(b.fontSizeHpt, s) ?? A, se, n.valAxisFontColor ? `#${n.valAxisFontColor}` : "#555", n.date1904), _t(t, n, j, l, d, p, m, L, R, z, B, E.bandH + 2, s), Ye(t, n, l, d, p, m, L, R, z, B, M, ne, F, ie);
+	h && ge && En(e, t, h, {
+		min: ge.min,
+		max: ge.max,
+		step: ge.majorUnit,
+		majorLines: ge.majorTicks,
+		minorTicks: ge.minorTicks,
+		makeToY: () => W
+	}, W, n, ce, L, le, R, r, x(h.fontSizeHpt, r) ?? A, I, t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#555", t.date1904), zt(e, t, j, i, a, c, l, ce, L, le, R, C.bandH + 2, r), ht(e, t, i, a, c, l, ce, L, le, R, M, P, re, F);
 }
-function Mn(e, t, n, r, i, a, o, s, c = 1) {
+function dr(e, t, n, r, i, a, o, s, c = 1) {
 	let l = Math.max(2, i * s), u = l / 2, d = a.startsWith("#") ? a : `#${a}`, f = o ? o.startsWith("#") ? o : `#${o}` : null;
 	switch (e.save(), e.fillStyle = d, f && (e.strokeStyle = f, e.lineWidth = c), r) {
 		case "square":
@@ -3504,13 +4297,13 @@ function Mn(e, t, n, r, i, a, o, s, c = 1) {
 	}
 	e.restore();
 }
-function Nn(e, t, n, r, i, a, o, s) {
-	e.save(), e.strokeStyle = n.color ? `#${n.color}` : s, e.lineWidth = n.lineWidthEmu ? Math.max(.5, n.lineWidthEmu / D) : 1, e.setLineDash(Bn(n.dash));
+function fr(e, t, n, r, i, a, o, s) {
+	e.save(), e.strokeStyle = n.color ? `#${n.color}` : s, e.lineWidth = n.lineWidthEmu ? Math.max(.5, n.lineWidthEmu / se) : 1, e.setLineDash(yr(n.dash, e.lineWidth));
 	let c = n.barType === "plus" || n.barType === "both", l = n.barType === "minus" || n.barType === "both", u = n.dir === "x", d = e.lineWidth / 2;
 	for (let s = 0; s < t.values.length; s++) {
 		let f = t.values[s];
 		if (f == null) continue;
-		let p = wn(r, s, i);
+		let p = rr(r, s, i);
 		if (p == null) continue;
 		let m = a(p), h = o(f), g = (t) => {
 			let r = m, i = h;
@@ -3527,47 +4320,47 @@ function Nn(e, t, n, r, i, a, o, s) {
 	}
 	e.restore();
 }
-function Pn(e, t, n, r, i, a, o, s, c = !1, l = "sans-serif", u = "r", d = {
+function pr(e, t, n, r, i, a, o, s, c = !1, l = "sans-serif", u = "r", d = {
 	x: -1e6,
 	y: -1e6,
 	w: 2e6,
 	h: 2e6
-}, f = d, m, h) {
-	let g = t.dataLabelOverrides ?? [], v = He(g);
+}, f = d, p, h) {
+	let g = t.dataLabelOverrides ?? [], _ = ot(g);
 	if (g.length === 0 && !t.seriesDataLabels) return;
-	let y = t.seriesDataLabels;
+	let v = t.seriesDataLabels;
 	for (let g = 0; g < t.values.length; g++) {
-		let b = t.values[g];
+		let y = t.values[g];
+		if (y == null) continue;
+		let b = rr(n, g, r);
 		if (b == null) continue;
-		let x = wn(n, g, r);
-		if (x == null) continue;
-		let S = v.get(g);
+		let S = _.get(g);
 		if (S?.deleted) continue;
-		let C = S?.showCatName ?? y?.showCatName, w = S?.showSerName ?? y?.showSerName, T = S?.showVal ?? y?.showVal, E = ie({
+		let C = S?.showCatName ?? v?.showCatName, w = S?.showSerName ?? v?.showSerName, T = S?.showVal ?? v?.showVal, E = fe({
 			customText: S?.text,
 			showCategory: C && !r,
 			showSeries: w,
 			showValue: T,
-			category: p(x, t.catFormatCodes?.[g] ?? t.catFormatCode ?? null, c),
+			category: m(b, t.catFormatCodes?.[g] ?? t.catFormatCode ?? null, c),
 			seriesName: t.name,
-			sourceValue: b,
-			valueDivisor: Ft(h),
-			formatCode: S?.formatCode ?? y?.formatCode ?? null,
+			sourceValue: y,
+			valueDivisor: rn(h),
+			formatCode: S?.formatCode ?? v?.formatCode ?? null,
 			date1904: c,
-			separator: S?.separator ?? y?.separator
+			separator: S?.separator ?? v?.separator
 		});
 		if (!E) continue;
-		let D = S?.position ?? y?.position ?? u, O = _(S?.fontSizeHpt ?? y?.fontSizeHpt, s) ?? Math.max(9, Math.min(11, o / 25)), k = S?.fontColor ?? y?.fontColor, A = S?.fontBold ?? y?.fontBold ?? !1, ee = S?.fontFace ?? y?.fontFace, j = ee && m ? m(ee) : l;
-		Fn(e, i(x), a(b), E, D, O, k, A, j, 0, d, S?.manualLayout, f, S?.richRuns, s, m);
+		let D = S?.position ?? v?.position ?? u, O = x(S?.fontSizeHpt ?? v?.fontSizeHpt, s) ?? Math.max(9, Math.min(11, o / 25)), k = S?.fontColor ?? v?.fontColor, A = S?.fontBold ?? v?.fontBold ?? !1, j = S?.fontFace ?? v?.fontFace, ee = j && p ? p(j) : l;
+		mr(e, i(b), a(y), E, D, O, k, A, ee, 0, d, S?.manualLayout, f, S?.richRuns, s, p);
 	}
 }
-function Fn(e, t, n, r, i, a, o, s, c = "sans-serif", l = 0, u = {
+function mr(e, t, n, r, i, a, o, s, c = "sans-serif", l = 0, u = {
 	x: -1e6,
 	y: -1e6,
 	w: 2e6,
 	h: 2e6
 }, d, f = u, p, m = 1, h) {
-	e.save(), e.font = `${s ? "bold " : ""}${a}px ${c}`, Ln(e, r, {
+	e.save(), e.font = `${s ? "bold " : ""}${a}px ${c}`, gr(e, r, {
 		kind: "point",
 		x: t,
 		y: n,
@@ -3581,7 +4374,7 @@ function Fn(e, t, n, r, i, a, o, s, c = "sans-serif", l = 0, u = {
 		fontFamilyForFace: h
 	} : void 0), e.restore();
 }
-function In(e, t, n, r, i) {
+function hr(e, t, n, r, i) {
 	if (!(!t?.text || !t.richRuns || t.richRuns.length === 0)) return {
 		runs: t.richRuns,
 		ptToPx: n,
@@ -3590,26 +4383,26 @@ function In(e, t, n, r, i) {
 		fontFamilyForFace: (t) => Y(e, t, "minor")
 	};
 }
-function Ln(e, t, n, r, i, a, o, s = r, c) {
+function gr(e, t, n, r, i, a, o, s = r, c) {
 	if (!t || !Number.isFinite(i) || i <= 0) return;
 	if (c) {
-		let t = A(e, c, i, a);
+		let t = de(e, c, i, a);
 		if (!t) return;
-		let l = O(n, r, {
+		let l = ne(n, r, {
 			w: t.width,
 			h: t.height
 		}, i, o, s);
 		if (!l) return;
-		e.save(), e.beginPath(), e.rect(l.clip.x, l.clip.y, l.clip.w, l.clip.h), e.clip(), k(e, t, l.x, l.y, l.textAlign, l.textBaseline), e.restore();
+		e.save(), e.beginPath(), e.rect(l.clip.x, l.clip.y, l.clip.w, l.clip.h), e.clip(), F(e, t, l.x, l.y, l.textAlign, l.textBaseline), e.restore();
 		return;
 	}
-	let l = i * 1.15, u = ne(t).value.split(/\r?\n/), d = O(n, r, {
+	let l = i * 1.15, u = I(t).value.split(/\r?\n/), d = ne(n, r, {
 		w: u.reduce((t, n) => Math.max(t, e.measureText(n).width), 0),
 		h: Math.max(l, u.length * l)
 	}, i, o, s);
 	if (!d) return;
-	let f = (t) => e.measureText(t).width, p = F(t, d.maxWidth, d.maxHeight, l, f);
-	if (p.length === 0 || (d = O(n, r, {
+	let f = (t) => e.measureText(t).width, p = oe(t, d.maxWidth, d.maxHeight, l, f);
+	if (p.length === 0 || (d = ne(n, r, {
 		w: p.reduce((e, t) => Math.max(e, f(t)), 0),
 		h: p.length * l
 	}, i, o, s), !d)) return;
@@ -3618,58 +4411,26 @@ function Ln(e, t, n, r, i, a, o, s = r, c) {
 	for (let t = 0; t < p.length; t++) e.fillText(p[t], d.x, m + t * l);
 	e.restore();
 }
-function Rn(e, t, n) {
+function _r(e, t, n) {
 	return e < t ? t : e > n ? n : e;
 }
-function zn(e, t, n) {
+function vr(e, t, n) {
 	if (t.length !== 0) if (n && t.length >= 3) for (let n = 0; n < t.length - 1; n++) {
 		let r = t[n - 1] ?? t[n], i = t[n], a = t[n + 1], o = t[n + 2] ?? a, s = i.x + (a.x - r.x) / 6, c = i.y + (a.y - r.y) / 6, l = a.x - (o.x - i.x) / 6, u = a.y - (o.y - i.y) / 6;
 		e.bezierCurveTo(s, c, l, u, a.x, a.y);
 	}
 	else for (let n = 1; n < t.length; n++) e.lineTo(t[n].x, t[n].y);
 }
-function Bn(e) {
-	if (!e) return [];
-	switch (e) {
-		case "solid": return [];
-		case "dot":
-		case "sysDot": return [1, 2];
-		case "dash":
-		case "sysDash": return [4, 2];
-		case "lgDash": return [8, 3];
-		case "dashDot":
-		case "sysDashDot": return [
-			4,
-			2,
-			1,
-			2
-		];
-		case "lgDashDot": return [
-			8,
-			3,
-			1,
-			3
-		];
-		case "dashDotDot":
-		case "sysDashDotDot":
-		case "lgDashDotDot": return [
-			4,
-			2,
-			1,
-			2,
-			1,
-			2
-		];
-		default: return [];
-	}
+function yr(e, t = 1) {
+	return ae(e ?? "solid", Number.isFinite(t) && t > 0 ? t : 1);
 }
-function Vn(e) {
+function br(e) {
 	return e.markerSymbol != null || e.markerSize != null || e.markerFill != null || e.markerLine != null || e.markerLineWidthEmu != null || e.dataPointOverrides != null && e.dataPointOverrides.length > 0;
 }
-function Hn(e, t, n, r, i, a, o, s) {
+function xr(e, t, n, r, i, a, o, s) {
 	if (n.dir === "x") return;
 	let c = n.barType === "plus" || n.barType === "both", l = n.barType === "minus" || n.barType === "both";
-	e.save(), e.strokeStyle = n.color ? `#${n.color}` : s, e.lineWidth = n.lineWidthEmu ? Math.max(.5, n.lineWidthEmu / D) : 1, e.setLineDash(Bn(n.dash));
+	e.save(), e.strokeStyle = n.color ? `#${n.color}` : s, e.lineWidth = n.lineWidthEmu ? Math.max(.5, n.lineWidthEmu / se) : 1, e.setLineDash(yr(n.dash, e.lineWidth));
 	let u = e.lineWidth / 2;
 	for (let s = 0; s < r; s++) {
 		if (t.values[s] == null) continue;
@@ -3688,47 +4449,69 @@ function Hn(e, t, n, r, i, a, o, s) {
 	}
 	e.restore();
 }
-function Un(e, t, n, r, i, a, o, s, c, l, u, d = "sans-serif", f = "t", p = {
+function Sr(e, t, n, r, i, a, o, s, c, l) {
+	if (!i && n.dir === "x" || i && n.dir === "y") return;
+	let u = n.barType === "plus" || n.barType === "both", d = n.barType === "minus" || n.barType === "both";
+	e.save(), e.strokeStyle = n.color ? `#${n.color}` : c, e.lineWidth = n.lineWidthEmu ? Math.max(.5, n.lineWidthEmu / se * l) : Math.max(.5, l * .75), e.setLineDash(yr(n.dash, e.lineWidth));
+	let f = Math.max(e.lineWidth / 2, 2 * l);
+	for (let c = 0; c < r; c++) {
+		if (t.values[c] == null) continue;
+		let r = s(c), l = a(c), p = o(r), m = (t) => {
+			let a = o(r + t);
+			e.beginPath(), i ? (e.moveTo(p, l), e.lineTo(a, l)) : (e.moveTo(l, p), e.lineTo(l, a)), e.stroke(), n.noEndCap || (e.save(), e.setLineDash([]), e.beginPath(), i ? (e.moveTo(a, l - f), e.lineTo(a, l + f)) : (e.moveTo(l - f, a), e.lineTo(l + f, a)), e.stroke(), e.restore());
+		};
+		if (u) {
+			let e = n.plus[c];
+			e != null && m(e);
+		}
+		if (d) {
+			let e = n.minus[c];
+			e != null && m(-e);
+		}
+	}
+	e.restore();
+}
+function Cr(e, t, n, r, i, a, o, s, c, l, u, d = "sans-serif", f = "t", p = {
 	x: -1e6,
 	y: -1e6,
 	w: 2e6,
 	h: 2e6
-}, m = p, h, g, v, y) {
-	let b = t.dataLabelOverrides ?? [], x = He(b), S = t.seriesDataLabels;
-	if (b.length === 0 && !S) return !1;
-	for (let b = 0; b < r; b++) {
-		if (t.values[b] == null && !u) continue;
-		let r = o(b), C = t.values[b] ?? 0, w = x.get(b);
+}, m = p, h, g, _, v) {
+	let y = t.dataLabelOverrides ?? [], b = ot(y), S = t.seriesDataLabels;
+	if (y.length === 0 && !S) return !1;
+	for (let y = 0; y < r; y++) {
+		if (t.values[y] == null && !u) continue;
+		let r = o(y), C = t.values[y] ?? 0, w = b.get(y);
 		if (w?.deleted) continue;
-		let T = w?.showCatName ?? S?.showCatName, E = w?.showSerName ?? S?.showSerName, D = w?.showVal ?? S?.showVal, O = w?.showPercent ?? S?.showPercent, k = ie({
+		let T = w?.showCatName ?? S?.showCatName, E = w?.showSerName ?? S?.showSerName, D = w?.showVal ?? S?.showVal, O = w?.showPercent ?? S?.showPercent, k = fe({
 			customText: w?.text,
 			showCategory: T,
 			showSeries: E,
 			showValue: D,
 			showPercent: O,
-			category: n[b] ?? "",
+			category: n[y] ?? "",
 			seriesName: t.name,
 			sourceValue: C,
-			valueDivisor: Ft(y),
-			percentRatio: h?.(b),
+			valueDivisor: rn(v),
+			percentRatio: h?.(y),
 			formatCode: w?.formatCode ?? S?.formatCode ?? null,
 			date1904: l,
 			separator: w?.separator ?? S?.separator
 		});
 		if (!k) continue;
-		let A = w?.position ?? S?.position ?? f, ee = _(w?.fontSizeHpt ?? S?.fontSizeHpt, c) ?? Math.max(9, Math.min(11, s / 25)), j = w?.fontColor ?? S?.fontColor, te = w?.fontBold ?? S?.fontBold ?? !1, M = w?.fontFace ?? S?.fontFace, N = M && v ? v(M) : d;
-		Fn(e, i(b), a(r), k, A, ee, j, te, N, g?.(b) ?? 0, p, w?.manualLayout, m, w?.richRuns, c, v);
+		let A = w?.position ?? S?.position ?? f, j = x(w?.fontSizeHpt ?? S?.fontSizeHpt, c) ?? Math.max(9, Math.min(11, s / 25)), ee = w?.fontColor ?? S?.fontColor, M = w?.fontBold ?? S?.fontBold ?? !1, te = w?.fontFace ?? S?.fontFace, N = te && _ ? _(te) : d;
+		mr(e, i(y), a(r), k, A, j, ee, M, N, g?.(y) ?? 0, p, w?.manualLayout, m, w?.richRuns, c, _);
 	}
 	return !0;
 }
-function Wn(e, t) {
+function wr(e, t) {
 	return e?.chartexFormatIdx ?? t;
 }
-function Gn(e, t, n, r, i, a, o, s, c) {
+function Tr(e, t, n, r, i, a, o, s, c) {
 	if (!t) return null;
 	let l = t.seriesDataLabels, u = o.get(n);
 	if (u?.deleted || !l && !u && !a.visible) return null;
-	let d = typeof s == "boolean" ? s : !1, f = typeof s == "number" ? s : void 0, p = !d && (u?.showVal ?? l?.showVal ?? a.showVal), m = u?.showCatName ?? l?.showCatName ?? a.showCatName, h = u?.showSerName ?? l?.showSerName ?? a.showSerName ?? !1, g = u?.showPercent ?? l?.showPercent ?? a.showPercent ?? !1, _ = u?.formatCode ?? l?.formatCode ?? e.dataLabelFormatCode ?? null, v = ie({
+	let d = typeof s == "boolean" ? s : !1, f = typeof s == "number" ? s : void 0, p = !d && (u?.showVal ?? l?.showVal ?? a.showVal), m = u?.showCatName ?? l?.showCatName ?? a.showCatName, h = u?.showSerName ?? l?.showSerName ?? a.showSerName ?? !1, g = u?.showPercent ?? l?.showPercent ?? a.showPercent ?? !1, _ = u?.formatCode ?? l?.formatCode ?? e.dataLabelFormatCode ?? null, v = fe({
 		customText: u?.text,
 		showCategory: m,
 		showSeries: h,
@@ -3737,7 +4520,7 @@ function Gn(e, t, n, r, i, a, o, s, c) {
 		category: r,
 		seriesName: t.name,
 		sourceValue: i,
-		valueDivisor: Ft(c),
+		valueDivisor: rn(c),
 		percentRatio: f,
 		formatCode: _ ?? t.valFormatCode ?? null,
 		percentFormatCode: _ ?? "0%",
@@ -3754,65 +4537,69 @@ function Gn(e, t, n, r, i, a, o, s, c) {
 		manualLayout: u?.manualLayout
 	} : null;
 }
-function Kn(e, t, n, r, i) {
+function Er(e, t, n, r, i) {
 	let a = n === "fill" ? t?.fillColors : t?.lineColors;
 	return a?.length ? a[((n === "fill" ? t?.fillColorIndex : t?.lineColorIndex) ?? r) % a.length] ?? null : null;
 }
-function qn(e, t, n, r) {
+function Dr(e, t, n, r) {
 	if (!t.length) return null;
 	let i = e.chartexColorStyleMethod;
 	return i === "withinLinear" || i === "acrossLinear" || i === "withinLinearReversed" || i === "acrossLinearReversed" ? t[i === "withinLinear" || i === "withinLinearReversed" ? 0 : n % t.length] ?? null : t[n % t.length] ?? null;
 }
-function Jn(e, t, n) {
-	return (e.chartexColorPalette ? qn(e, e.chartexColorPalette, t, n) : null) ?? e.chartexAccents?.[t % (e.chartexAccents.length || 1)] ?? Be[t % Be.length];
+function Or(e, t, n) {
+	return (e.chartexColorPalette ? Dr(e, e.chartexColorPalette, t, n) : null) ?? e.chartexAccents?.[t % (e.chartexAccents.length || 1)] ?? it[t % it.length];
 }
-function Yn(e, t, n, r) {
-	return Kn(e, r, "fill", t, n) ?? Kn(e, e.chartexDataPointStyle, "fill", t, n) ?? Jn(e, t, n);
+function kr(e, t, n, r) {
+	return Er(e, r, "fill", t, n) ?? Er(e, e.chartexDataPointStyle, "fill", t, n) ?? Or(e, t, n);
 }
-function Xn(e, t) {
+function Ar(e, t) {
 	let n = e?.fillPaints;
 	return n?.length ? n[(e?.fillColorIndex ?? t) % n.length] ?? null : null;
 }
-function Zn(e, t, n, r) {
+function jr(e, t, n, r) {
 	if (!t) return;
 	if (t.fillHidden) return t.fillNoStyle ? void 0 : null;
-	let i = Xn(t, n);
+	let i = Ar(t, n);
 	if (i) return i;
-	let a = Kn(e, t, "fill", n, r);
+	let a = Er(e, t, "fill", n, r);
 	return a ? {
 		fillType: "solid",
 		color: a
 	} : void 0;
 }
-function Qn(e, t, n, r, i, a = e.chartexDataPointStyle) {
-	let o = r?.fillHidden ? void 0 : Zn(e, r, t, n);
+function Mr(e, t, n, r, i, a = e.chartexDataPointStyle) {
+	let o = r?.fillHidden ? void 0 : jr(e, r, t, n);
 	if (o !== void 0) return o;
 	if (r && i) return {
 		fillType: "solid",
 		color: i
 	};
-	let s = Zn(e, a, t, n);
+	let s = jr(e, a, t, n);
 	return s === void 0 ? i ? {
 		fillType: "solid",
 		color: i
 	} : {
 		fillType: "solid",
-		color: Jn(e, t, n)
+		color: Or(e, t, n)
 	} : s;
 }
-function $n(e, t, n, r, i, a, o, s = 0) {
-	return t.fillType === "solid" ? t.color.startsWith("#") ? t.color : `#${t.color}` : Fe(t, e, n, r, i, a, s) ?? o;
+function Nr(e, t, n, r, i, a, o, s = 0) {
+	return t.fillType === "solid" ? t.color.startsWith("#") ? t.color : `#${t.color}` : $e(t, e, n, r, i, a, s) ?? o;
 }
-function er(e, t, n, r, i, a, o = {}) {
+function Pr(e, t, n, r, i, a, o = {}) {
 	let s = (t, n) => ({
 		visible: t?.lineHidden !== !0,
-		color: Kn(e, t, "line", r, i) ?? n,
+		color: Er(e, t, "line", r, i) ?? n,
 		widthEmu: t?.lineWidthEmu ?? null,
 		dash: t?.lineDash ?? null,
 		cap: t?.lineCap ?? null,
 		join: t?.lineJoin ?? null
 	}), c = n?.chartexStyle;
-	return (c?.lineHidden != null || c?.lineColors?.some(Boolean) || c?.lineWidthEmu != null || c?.lineDash != null || c?.lineCap != null || c?.lineJoin != null) && !(c?.lineHidden && c.lineNoStyle) ? s(c, a) : n?.lineHidden != null || n?.lineColor != null || n?.lineWidthEmu != null ? {
+	if ((c?.lineHidden != null || c?.lineColors?.some(Boolean) || c?.lineWidthEmu != null || c?.lineDash != null || c?.lineCap != null || c?.lineJoin != null) && !(c?.lineHidden && c.lineNoStyle)) {
+		let e = s(c, n?.lineColor ?? a);
+		return e.widthEmu ??= n?.lineWidthEmu ?? null, e;
+	}
+	return n?.lineHidden != null || n?.lineColor != null || n?.lineWidthEmu != null ? {
 		visible: n?.lineHidden !== !0,
 		color: n?.lineColor ?? a,
 		widthEmu: n?.lineWidthEmu ?? null,
@@ -3821,14 +4608,14 @@ function er(e, t, n, r, i, a, o = {}) {
 		join: null
 	} : t?.lineNoStyle && o.linkedNoStyleFallback ? s(null, a) : s(t, a);
 }
-function tr(e, t, n) {
-	return t.visible ? (e.strokeStyle = t.color.startsWith("#") ? t.color : `#${t.color}`, e.lineWidth = t.widthEmu == null ? 1 : P(t.widthEmu, n), e.setLineDash(Bn(t.dash ?? void 0)), e.lineCap = t.cap === "rnd" ? "round" : t.cap === "sq" ? "square" : "butt", e.lineJoin = t.join === "round" || t.join === "bevel" ? t.join : "miter", !0) : !1;
+function Fr(e, t, n) {
+	return t.visible ? (e.strokeStyle = t.color.startsWith("#") ? t.color : `#${t.color}`, e.lineWidth = t.widthEmu == null ? 1 : N(t.widthEmu, n), e.setLineDash(yr(t.dash ?? void 0, e.lineWidth)), e.lineCap = t.cap === "rnd" ? "round" : t.cap === "sq" ? "square" : "butt", e.lineJoin = t.join === "round" || t.join === "bevel" ? t.join : "miter", !0) : !1;
 }
-function nr(e, t, n, r, i, a, o, s, c = {}) {
-	return tr(e, er(t, n, r, i, a, o, c), s);
+function Ir(e, t, n, r, i, a, o, s, c = {}) {
+	return Fr(e, Pr(t, n, r, i, a, o, c), s);
 }
-function rr(e, t, n, r, i, a, o, s = !1, c = !0) {
-	let l = er(e, r, n, i, a, o, { linkedNoStyleFallback: s });
+function Lr(e, t, n, r, i, a, o, s = !1, c = !0) {
+	let l = Pr(e, r, n, i, a, o, { linkedNoStyleFallback: s });
 	return {
 		name: t,
 		values: [],
@@ -3843,7 +4630,7 @@ function rr(e, t, n, r, i, a, o, s = !1, c = !0) {
 		}
 	};
 }
-var ir = 1e4, ar = 512, or = new Set([
+var Rr = 1e4, zr = 512, Br = new Set([
 	"clusteredBar",
 	"clusteredBarH",
 	"stackedBar",
@@ -3862,21 +4649,22 @@ var ir = 1e4, ar = 512, or = new Set([
 	"radar",
 	"scatter",
 	"bubble",
-	"stock"
+	"stock",
+	"surface"
 ]);
-function sr(e) {
-	if (!or.has(e.chartType)) return null;
+function Vr(e) {
+	if (!Br.has(e.chartType)) return null;
 	let t = 0;
 	for (let n of e.series) {
 		let r = 0;
 		for (let e of n.errBars ?? []) r = Math.max(r, e.plus.length, e.minus.length);
 		let i = Math.max(1, e.categories.length, n.categories?.length ?? 0, n.values.length, n.bubbleSizes?.length ?? 0, n.dataPointOverrides?.length ?? 0, n.dataLabelOverrides?.length ?? 0, n.trendLines?.length ?? 0, r);
-		if (!Number.isSafeInteger(i) || i > ir - t) return ir + 1;
+		if (!Number.isSafeInteger(i) || i > Rr - t) return Rr + 1;
 		t += i;
 	}
 	return t;
 }
-function cr(e, t) {
+function Hr(e, t) {
 	if (!e.threeD || !t || !new Set([
 		"pie",
 		"line",
@@ -3895,22 +4683,22 @@ function cr(e, t) {
 	let n = 0;
 	for (let t of e.series) {
 		let r = Math.max(1, t.values.length, t.categories?.length ?? 0), i = t.threeDShape ?? e.threeD.shape ?? "box", a = e.chartType === "pie" ? 36 : e.chartType.toLowerCase().includes("bar") ? i === "box" ? 4 : 36 : e.chartType.toLowerCase().includes("area") ? 4 : t.smooth === !0 ? 25 : 3;
-		if (!Number.isSafeInteger(r) || r > Math.floor(ir / a) || (n += r * a, n > ir)) return ir + 1;
+		if (!Number.isSafeInteger(r) || r > Math.floor(Rr / a) || (n += r * a, n > Rr)) return Rr + 1;
 	}
 	return n;
 }
-function lr(e, t, n) {
-	return n <= ir ? !1 : (e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(too many data points)", t.x + t.w / 2, t.y + t.h / 2), !0);
+function Ur(e, t, n) {
+	return n <= Rr ? !1 : (e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(too many data points)", t.x + t.w / 2, t.y + t.h / 2), !0);
 }
-function ur(e, t, n, r) {
+function Wr(e, t, n, r) {
 	let i = t.series[0];
 	if (!i) return;
-	let a = ge(i.values, t.chartexHistogramBinning ?? {});
+	let a = we(i.values, t.chartexHistogramBinning ?? {});
 	if (a.kind === "tooManyInputPoints") {
-		lr(e, n, ir + 1);
+		Ur(e, n, Rr + 1);
 		return;
 	}
-	ln(e, {
+	Rn(e, {
 		...t,
 		chartType: "clusteredBar",
 		categories: a.categories,
@@ -3921,16 +4709,16 @@ function ur(e, t, n, r) {
 		}]
 	}, n, r, { gapPolicy: "chartex" });
 }
-function dr(e, t, n, i, o) {
-	let { x: s, y: l, w: d, h: f } = n, p = t.series[0]?.values ?? [], m = t.categories, g = Math.max(p.length, m.length);
-	if (g === 0 || lr(e, n, g)) return;
-	let v = new Set(t.subtotalIndices), y = !1, b = (e, t) => {
+function Gr(e, t, n, r, i) {
+	let { x: a, y: c, w: l, h: u } = n, d = t.series[0]?.values ?? [], f = t.categories, p = Math.max(d.length, f.length);
+	if (p === 0 || Ur(e, n, p)) return;
+	let m = new Set(t.subtotalIndices), h = !1, _ = (e, t) => {
 		let n = e + t;
-		return Number.isFinite(n) ? n : (y = !0, n < 0 ? -Number.MAX_VALUE : Number.MAX_VALUE);
-	}, x = 0, S = [], C = -Infinity, w = 0;
-	for (let e = 0; e < g; e++) {
-		let t = p[e], n = t != null && Number.isFinite(t), r = t == null || n, i = n ? t : 0;
-		if (v.has(e)) {
+		return Number.isFinite(n) ? n : (h = !0, n < 0 ? -Number.MAX_VALUE : Number.MAX_VALUE);
+	}, v = 0, y = [], S = -Infinity, T = 0;
+	for (let e = 0; e < p; e++) {
+		let t = d[e], n = t != null && Number.isFinite(t), r = t == null || n, i = n ? t : 0;
+		if (m.has(e)) {
 			let e = {
 				start: 0,
 				end: i,
@@ -3939,206 +4727,206 @@ function dr(e, t, n, i, o) {
 				hasValue: n,
 				paintSlot: r
 			};
-			S.push(e), r && (C = Math.max(C, e.start, e.end), w = Math.min(w, e.start, e.end)), n && (x = i);
+			y.push(e), r && (S = Math.max(S, e.start, e.end), T = Math.min(T, e.start, e.end)), n && (v = i);
 		} else {
-			let e = b(x, i), t = {
-				start: i >= 0 ? x : e,
-				end: i >= 0 ? e : x,
+			let e = _(v, i), t = {
+				start: i >= 0 ? v : e,
+				end: i >= 0 ? e : v,
 				isSub: !1,
 				isPos: i >= 0,
 				hasValue: n,
 				paintSlot: r
 			};
-			S.push(t), r && (C = Math.max(C, t.start, t.end), w = Math.min(w, t.start, t.end)), n && (x = e);
+			y.push(t), r && (S = Math.max(S, t.start, t.end), T = Math.min(T, t.start, t.end)), n && (v = e);
 		}
 	}
-	if (y) {
-		e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(chart values out of range)", s + d / 2, l + f / 2);
+	if (h) {
+		e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(chart values out of range)", a + l / 2, c + u / 2);
 		return;
 	}
-	if (C <= w) return;
-	let T = v.size === 0 && S.every((e, t) => !e.hasValue || p[t] >= 0), E = !t.valAxisHidden && t.valAxisTickLabelPos !== "none" && !T, D = a(t, f, i), O = u(t, d, f, i), k = Wt(t.valAxisFontSizeHpt, f, i), A = Wt(t.catAxisFontSizeHpt, f, i), j = Y(t, t.valAxisFontFace, "minor"), te = Y(t, t.catAxisFontFace, "minor"), M = zt(t, w, C, f / i);
+	if (S <= T) return;
+	let E = m.size === 0 && y.every((e, t) => !e.hasValue || d[t] >= 0), D = !t.valAxisHidden && t.valAxisTickLabelPos !== "none" && !E, O = jn(e, t, l, u, r), k = s(t, l, u, r), A = hn(t.valAxisFontSizeHpt, u, r), j = hn(t.catAxisFontSizeHpt, u, r), ee = Y(t, t.valAxisFontFace, "minor"), M = Y(t, t.catAxisFontFace, "minor"), te = cn(t, T, S, u / r);
 	e.save();
 	let N = 0;
-	if (E) {
-		e.font = Ge(k, j, t.valAxisFontBold ?? !1, t.valAxisFontItalic ?? !1);
+	if (D) {
+		e.font = lt(A, ee, t.valAxisFontBold ?? !1, t.valAxisFontItalic ?? !1);
 		let n = 0;
-		for (let r of M.majorLines) n = Math.max(n, e.measureText(Pt(t, r, !1)).width);
+		for (let r of te.majorLines) n = Math.max(n, e.measureText(nn(t, r, !1)).width);
 		N = n + 8;
 	}
-	let P = Math.max(1, d - O.valBandW - N - d * .02) / g;
-	e.font = Ge(A, te, t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
-	let ne = m.slice(0, g).map((n) => Gt(e, h(n, t.catAxisFormatCode, t.date1904), Math.max(1, P - 8))), re = 0;
+	let P = Math.max(1, l - k.valBandW - N - l * .02) / p;
+	e.font = lt(j, M, t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
+	let ne = f.slice(0, p).map((n) => gn(e, g(n, t.catAxisFormatCode, t.date1904), Math.max(1, P - 8))), re = 0;
 	for (let e of ne) e.some(Boolean) && (re = Math.max(re, e.length));
-	let F = t.catAxisHidden || re === 0 ? 0 : re * (A + 2) + 4, ie = t.series[0], ae = He(ie?.dataLabelOverrides), I = ie?.chartexStyle, oe = `#${ie?.color ?? Yn(t, 0, 3, I)}`, se = `#${Yn(t, 1, 3, I)}`, ce = `#${Yn(t, 2, 3, I)}`, L = Qn(t, 0, 3, I, ie?.color), R = Qn(t, 1, 3, I), z = Qn(t, 2, 3, I), B = {
+	let F = t.catAxisHidden || re === 0 ? 0 : re * (j + 2) + 4, ie = t.series[0], ae = ot(ie?.dataLabelOverrides), oe = ie?.chartexStyle, I = `#${ie?.color ?? kr(t, 0, 3, oe)}`, se = `#${kr(t, 1, 3, oe)}`, ce = `#${kr(t, 2, 3, oe)}`, L = Mr(t, 0, 3, oe, ie?.color), le = Mr(t, 1, 3, oe), R = Mr(t, 2, 3, oe), z = {
 		...t,
 		chartType: "clusteredBar",
 		series: [
-			rr(t, "Increase", ie, t.chartexDataPointStyle, 0, 3, oe),
-			rr(t, "Decrease", ie, t.chartexDataPointStyle, 1, 3, se),
-			rr(t, "Total", ie, t.chartexDataPointStyle, 2, 3, ce)
+			Lr(t, "Increase", ie, t.chartexDataPointStyle, 0, 3, I),
+			Lr(t, "Decrease", ie, t.chartexDataPointStyle, 1, 3, se),
+			Lr(t, "Total", ie, t.chartexDataPointStyle, 2, 3, ce)
 		]
-	}, V = mt(e, B, d, f, .22, i), { legRightW: le, legLeftW: ue, legTopH: de, legBottomH: fe } = c(V), H = r(t, s, l, d, f, i, {
-		titleBand: D,
+	}, B = It(e, z, l, u, .22, r), { legRightW: ue, legLeftW: de, legTopH: fe, legBottomH: pe } = o(B), me = b(t, a, c, l, u, r, {
+		titleBand: O,
 		legendSideReserveFrac: 0,
-		legendReserve: V,
+		legendReserve: B,
 		pad: {
-			t: D.bandH + de + k / 2 + 2,
-			r: le + d * .02,
-			b: fe + O.catBandH + F,
-			l: ue + O.valBandW + (t.valAxisHidden ? d * .02 : Math.max(d * .03, N))
+			t: O.bandH + fe + A / 2 + 2,
+			r: ue + l * .02,
+			b: pe + k.catBandH + F,
+			l: de + k.valBandW + (t.valAxisHidden ? l * .02 : Math.max(l * .03, N))
 		}
 	});
-	rn(e, t, s, l, d, f, l + H.title.topPad, H.title.fontPx);
-	let { px0: pe, py0: U, pw: he, ph: W } = H.plotRect, ge = zt(t, w, C, W / i), _e = (e) => U + W - ge.frac(e) * W, G = ee(t.valAxisLineColor, t.valAxisLineWidthEmu, i), K = ee(t.catAxisLineColor, t.catAxisLineWidthEmu, i), q = St(t, i);
+	Nn(e, t, a, c, l, u, c + me.title.topPad, me.title.fontPx);
+	let { px0: V, py0: he, pw: ge, ph: H } = me.plotRect, U = cn(t, T, S, H / r), _e = (e) => he + H - U.frac(e) * H, W = w(t.valAxisLineColor, t.valAxisLineWidthEmu, r), G = w(t.catAxisLineColor, t.catAxisLineWidthEmu, r), ve = Wt(t, r);
 	if (!t.valAxisHidden) {
-		e.font = Ge(k, j, t.valAxisFontBold ?? !1, t.valAxisFontItalic ?? !1), e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#595959", e.textAlign = "right", e.textBaseline = "middle";
-		let n = Ct(t, i);
-		for (let t of ge.minorLines) xt(e, pe, he, _e(t), !1, n);
-		for (let n of ge.majorLines) {
-			let r = _e(n);
-			if (Mt(t)) {
-				e.strokeStyle = q.color, e.lineWidth = q.width;
-				let t = q.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
-				q.dash.length > 0 && e.setLineDash(q.dash), e.beginPath(), e.moveTo(pe, r), e.lineTo(pe + he, r), e.stroke(), q.dash.length > 0 && e.setLineDash(t);
+		e.font = lt(A, ee, t.valAxisFontBold ?? !1, t.valAxisFontItalic ?? !1), e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#595959", e.textAlign = "right", e.textBaseline = "middle";
+		let n = Gt(t, r);
+		for (let t of U.minorLines) Ut(e, V, ge, _e(t), !1, n);
+		for (let n of U.majorLines) {
+			let i = _e(n);
+			if (en(t)) {
+				e.strokeStyle = ve.color, e.lineWidth = ve.width;
+				let t = ve.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+				ve.dash.length > 0 && e.setLineDash(ve.dash), e.beginPath(), e.moveTo(V, i), e.lineTo(V + ge, i), e.stroke(), ve.dash.length > 0 && e.setLineDash(t);
 			}
-			E && e.fillText(Pt(t, n, !1), pe - 4, r), vt(e, t.valAxisMajorTickMark, "val", pe, r, G.color, G.width, !1, t.valAxisLineHidden, "major", i);
+			D && e.fillText(nn(t, n, !1), V - 4, i), Bt(e, t.valAxisMajorTickMark, "val", V, i, W.color, W.width, !1, t.valAxisLineHidden, "major", r);
 		}
-		for (let n of ge.minorTicks) vt(e, t.valAxisMinorTickMark, "val", pe, _e(n), G.color, G.width, !1, t.valAxisLineHidden, "minor", i);
+		for (let n of U.minorTicks) Bt(e, t.valAxisMinorTickMark, "val", V, _e(n), W.color, W.width, !1, t.valAxisLineHidden, "minor", r);
 	}
-	let J = !t.valAxisHidden && !t.valAxisLineHidden, ve = !t.catAxisHidden && !t.catAxisLineHidden;
-	J && (e.strokeStyle = G.color, e.lineWidth = G.width, e.beginPath(), e.moveTo(pe, U), e.lineTo(pe, U + W), e.stroke()), ve && (e.strokeStyle = K.color, e.lineWidth = K.width, e.beginPath(), e.moveTo(pe, U + W), e.lineTo(pe + he, U + W), e.stroke());
-	let ye = he / g, be = ye / (1 + me(t.barGapWidth, "chartex") / 100);
-	S.forEach((n, r) => {
-		let a = pe + ye * r + (ye - be) / 2, c = Math.min(_e(n.start), _e(n.end)), u = Math.max(_e(n.start), _e(n.end)), h = Math.max(1, u - c), v = n.isSub ? z : n.isPos ? L : R, y = n.isSub ? ce : n.isPos ? oe : se;
-		n.paintSlot && v && (e.fillStyle = $n(e, v, a, c, be, h, y, o), e.fillRect(a, c, be, h));
-		let b = n.isSub ? 2 : +!n.isPos, x = Kn(t, t.chartexDataPointStyle, "line", b, 3);
-		if (n.paintSlot && nr(e, t, t.chartexDataPointStyle, ie, b, 3, x ? `#${x}` : y, i) && e.strokeRect(a, c, be, h), n.paintSlot && S[r + 1]?.paintSlot && r < g - 1 && t.chartexConnectorLines !== !1) {
-			let o = pe + ye * (r + 1) + (ye - be) / 2, s = n.isPos ? c : u;
+	let ye = !t.valAxisHidden && !t.valAxisLineHidden, be = !t.catAxisHidden && !t.catAxisLineHidden;
+	ye && (e.strokeStyle = W.color, e.lineWidth = W.width, e.beginPath(), e.moveTo(V, he), e.lineTo(V, he + H), e.stroke()), be && (e.strokeStyle = G.color, e.lineWidth = G.width, e.beginPath(), e.moveTo(V, he + H), e.lineTo(V + ge, he + H), e.stroke());
+	let K = ge / p, q = K / (1 + C(t.barGapWidth, "chartex") / 100);
+	y.forEach((n, o) => {
+		let s = V + K * o + (K - q) / 2, m = Math.min(_e(n.start), _e(n.end)), h = Math.max(_e(n.start), _e(n.end)), g = Math.max(1, h - m), _ = n.isSub ? R : n.isPos ? L : le, v = n.isSub ? ce : n.isPos ? I : se;
+		n.paintSlot && _ && (e.fillStyle = Nr(e, _, s, m, q, g, v, i), e.fillRect(s, m, q, g));
+		let b = n.isSub ? 2 : +!n.isPos, S = Er(t, t.chartexDataPointStyle, "line", b, 3);
+		if (n.paintSlot && Ir(e, t, t.chartexDataPointStyle, ie, b, 3, S ? `#${S}` : v, r) && e.strokeRect(s, m, q, g), n.paintSlot && y[o + 1]?.paintSlot && o < p - 1 && t.chartexConnectorLines !== !1) {
+			let i = V + K * (o + 1) + (K - q) / 2, a = n.isPos ? m : h;
 			e.save();
-			let l = er(t, t.chartexSeriesLineStyle, ie, b, 3, "#000000", { linkedNoStyleFallback: !0 });
-			tr(e, l, i) && (l.widthEmu ?? (e.lineWidth = .75 * i), e.beginPath(), e.moveTo(a + be, s), e.lineTo(o, s), e.stroke()), e.restore();
+			let c = Pr(t, t.chartexSeriesLineStyle, ie, b, 3, "#000000", { linkedNoStyleFallback: !0 });
+			Fr(e, c, r) && (c.widthEmu ?? (e.lineWidth = .75 * r), e.beginPath(), e.moveTo(s + q, a), e.lineTo(i, a), e.stroke()), e.restore();
 		}
-		let C = n.hasValue ? p[r] : 0, w = Gn(t, ie, r, m[r] ?? "", C, {
+		let C = n.hasValue ? d[o] : 0, w = Tr(t, ie, o, f[o] ?? "", C, {
 			visible: t.showDataLabels,
 			showVal: !0,
 			showCatName: !1
 		}, ae, !n.hasValue);
 		if (w) {
-			let n = ie?.dataLabelColors?.[r] ?? w.fontColor ?? null, o = n ? `#${n}` : t.dataLabelFontColor ? `#${t.dataLabelFontColor}` : "#595959", u = _(w.fontSizeHpt, i) ?? Wt(t.dataLabelFontSizeHpt, f, i), p = w.fontBold ?? t.dataLabelFontBold ?? !1, m = Y(t, w.fontFace ?? t.dataLabelFontFace, "minor");
-			e.font = `${p ? "bold " : ""}${u}px ${m}`, Ln(e, w.text, {
+			let n = ie?.dataLabelColors?.[o] ?? w.fontColor ?? null, i = n ? `#${n}` : t.dataLabelFontColor ? `#${t.dataLabelFontColor}` : "#595959", d = x(w.fontSizeHpt, r) ?? hn(t.dataLabelFontSizeHpt, u, r), f = w.fontBold ?? t.dataLabelFontBold ?? !1, p = Y(t, w.fontFace ?? t.dataLabelFontFace, "minor");
+			e.font = `${f ? "bold " : ""}${d}px ${p}`, gr(e, w.text, {
 				kind: "bar",
 				rect: {
-					x: a,
-					y: c,
-					w: be,
-					h
+					x: s,
+					y: m,
+					w: q,
+					h: g
 				},
 				orientation: "vertical",
 				negative: C < 0,
 				position: w.position ?? "outEnd"
 			}, {
-				x: pe,
-				y: U,
-				w: he,
-				h: W
-			}, u, o, w.manualLayout, {
-				x: s,
-				y: l,
-				w: d,
-				h: f
+				x: V,
+				y: he,
+				w: ge,
+				h: H
+			}, d, i, w.manualLayout, {
+				x: a,
+				y: c,
+				w: l,
+				h: u
 			});
 		}
-	}), e.textAlign = "center", e.textBaseline = "top", e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", e.font = Ge(A, te, t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
-	let xe = U + W + 4;
-	for (let n = 0; n < g && !t.catAxisHidden; n++) {
-		let t = pe + ye * n + ye / 2;
-		(ne[n] ?? []).forEach((n, r) => n && e.fillText(n, t, xe + r * (A + 2)));
+	}), e.textAlign = "center", e.textBaseline = "top", e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", e.font = lt(j, M, t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
+	let J = he + H + 4;
+	for (let n = 0; n < p && !t.catAxisHidden; n++) {
+		let t = V + K * n + K / 2;
+		(ne[n] ?? []).forEach((n, r) => n && e.fillText(n, t, J + r * (j + 2)));
 	}
-	Ye(e, t, s, l, d, f, pe, U, he, W, ue, fe, O.catFontPx, O.valFontPx), _t(e, B, V, s, l, d, f, pe, U, he, W, D.bandH + 2, i, [
+	ht(e, t, a, c, l, u, V, he, ge, H, de, pe, k.catFontPx, k.valFontPx), zt(e, z, B, a, c, l, u, V, he, ge, H, O.bandH + 2, r, [
 		L,
-		R,
-		z
-	], o), e.restore();
+		le,
+		R
+	], i), e.restore();
 }
-function fr(e, t, n, i, o) {
-	let s = t.series[0]?.values ?? [], l = Math.max(s.length, t.categories.length);
-	if (l === 0 || lr(e, n, l)) return;
-	let u = 0;
-	for (let e = 0; e < l; e++) u = Math.max(u, s[e] ?? 0);
-	if (!(u > 0)) return;
-	let { x: d, y: f, w: p, h: m } = n, h = a(t, m, i), g = t.series[0], v = He(g?.dataLabelOverrides), y = `#${g?.color ?? Yn(t, 0, 1, g?.chartexStyle)}`, b = Qn(t, 0, 1, g?.chartexStyle, g?.color), x = {
+function Kr(e, t, n, r, i) {
+	let a = t.series[0]?.values ?? [], s = Math.max(a.length, t.categories.length);
+	if (s === 0 || Ur(e, n, s)) return;
+	let c = 0;
+	for (let e = 0; e < s; e++) c = Math.max(c, a[e] ?? 0);
+	if (!(c > 0)) return;
+	let { x: l, y: u, w: d, h: f } = n, p = jn(e, t, d, f, r), m = t.series[0], h = ot(m?.dataLabelOverrides), g = `#${m?.color ?? kr(t, 0, 1, m?.chartexStyle)}`, _ = Mr(t, 0, 1, m?.chartexStyle, m?.color), v = {
 		...t,
-		series: [rr(t, g?.name ?? "", g, t.chartexDataPointStyle, 0, 1, y)]
-	}, S = mt(e, x, p, m, .22, i), { legRightW: C, legLeftW: w, legTopH: T, legBottomH: E } = c(S), D = Wt(t.catAxisFontSizeHpt, m, i);
-	e.save(), e.font = Ge(D, Y(t, t.catAxisFontFace, "minor"), t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
-	let O = 0;
+		series: [Lr(t, m?.name ?? "", m, t.chartexDataPointStyle, 0, 1, g)]
+	}, y = It(e, v, d, f, .22, r), { legRightW: S, legLeftW: T, legTopH: E, legBottomH: D } = o(y), O = hn(t.catAxisFontSizeHpt, f, r);
+	e.save(), e.font = lt(O, Y(t, t.catAxisFontFace, "minor"), t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
+	let k = 0;
 	if (!t.catAxisHidden) {
-		for (let n = 0; n < Math.min(l, t.categories.length); n++) O = Math.max(O, e.measureText(t.categories[n]).width);
-		t.categories.length > 0 && (O += 10);
+		for (let n = 0; n < Math.min(s, t.categories.length); n++) k = Math.max(k, e.measureText(t.categories[n]).width);
+		t.categories.length > 0 && (k += 10);
 	}
-	let k = r(t, d, f, p, m, i, {
-		titleBand: h,
+	let A = b(t, l, u, d, f, r, {
+		titleBand: p,
 		legendSideReserveFrac: .22,
-		legendReserve: S,
+		legendReserve: y,
 		pad: {
-			t: h.bandH + T + 2,
-			r: C + p * .02,
-			b: E + m * .02,
-			l: w + O + p * .02
+			t: p.bandH + E + 2,
+			r: S + d * .02,
+			b: D + f * .02,
+			l: T + k + d * .02
 		}
 	});
-	rn(e, t, d, f, p, m, f + k.title.topPad, k.title.fontPx);
-	let { px0: A, py0: j, pw: te, ph: M } = k.plotRect, N = M / l, P = N / (1 + me(t.barGapWidth, "chartex") / 100);
-	for (let n = 0; n < l; n++) {
-		let r = Math.max(0, s[n] ?? 0), a = te * r / u, c = A + (te - a) / 2, l = j + N * n + (N - P) / 2;
-		b && (e.fillStyle = $n(e, b, c, l, a, P, y, o), e.fillRect(c, l, a, P)), nr(e, t, t.chartexDataPointStyle, g, 0, 1, y, i) && e.strokeRect(c, l, a, P);
-		let h = t.categories[n];
-		!t.catAxisHidden && h != null && (e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", e.textAlign = "right", e.textBaseline = "middle", e.fillText(h, A - 6, l + P / 2));
-		let x = Gn(t, g, n, h ?? "", r, {
+	Nn(e, t, l, u, d, f, u + A.title.topPad, A.title.fontPx);
+	let { px0: j, py0: ee, pw: M, ph: te } = A.plotRect, N = te / s, P = N / (1 + C(t.barGapWidth, "chartex") / 100);
+	for (let n = 0; n < s; n++) {
+		let o = Math.max(0, a[n] ?? 0), s = M * o / c, p = j + (M - s) / 2, v = ee + N * n + (N - P) / 2;
+		_ && (e.fillStyle = Nr(e, _, p, v, s, P, g, i), e.fillRect(p, v, s, P)), Ir(e, t, t.chartexDataPointStyle, m, 0, 1, g, r) && e.strokeRect(p, v, s, P);
+		let y = t.categories[n];
+		!t.catAxisHidden && y != null && (e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", e.textAlign = "right", e.textBaseline = "middle", e.fillText(y, j - 6, v + P / 2));
+		let b = Tr(t, m, n, y ?? "", o, {
 			visible: !1,
 			showVal: !1,
 			showCatName: !1
-		}, v);
-		if (x) {
-			let n = _(x.fontSizeHpt, i) ?? Wt(t.dataLabelFontSizeHpt, m, i), r = Y(t, x.fontFace ?? t.dataLabelFontFace, "minor");
-			e.font = `${x.fontBold ? "bold " : ""}${n}px ${r}`, Ln(e, x.text, {
+		}, h);
+		if (b) {
+			let n = x(b.fontSizeHpt, r) ?? hn(t.dataLabelFontSizeHpt, f, r), i = Y(t, b.fontFace ?? t.dataLabelFontFace, "minor");
+			e.font = `${b.fontBold ? "bold " : ""}${n}px ${i}`, gr(e, b.text, {
 				kind: "bar",
 				rect: {
-					x: c,
-					y: l,
-					w: a,
+					x: p,
+					y: v,
+					w: s,
 					h: P
 				},
 				orientation: "horizontal",
 				negative: !1,
-				position: x.position ?? "ctr"
+				position: b.position ?? "ctr"
 			}, {
-				x: A,
-				y: j,
-				w: te,
-				h: M
-			}, n, x.fontColor ? `#${x.fontColor}` : "#ffffff", x.manualLayout, {
-				x: d,
-				y: f,
-				w: p,
-				h: m
+				x: j,
+				y: ee,
+				w: M,
+				h: te
+			}, n, b.fontColor ? `#${b.fontColor}` : "#ffffff", b.manualLayout, {
+				x: l,
+				y: u,
+				w: d,
+				h: f
 			});
 		}
 	}
 	if (!t.catAxisHidden && !t.catAxisLineHidden) {
-		let n = ee(t.catAxisLineColor, t.catAxisLineWidthEmu, i);
-		e.strokeStyle = n.color, e.lineWidth = n.width, e.beginPath(), e.moveTo(A, j), e.lineTo(A, j + M), e.stroke();
+		let n = w(t.catAxisLineColor, t.catAxisLineWidthEmu, r);
+		e.strokeStyle = n.color, e.lineWidth = n.width, e.beginPath(), e.moveTo(j, ee), e.lineTo(j, ee + te), e.stroke();
 	}
-	_t(e, x, S, d, f, p, m, A, j, te, M, h.bandH + 2, i, [b], o), e.restore();
+	zt(e, v, y, l, u, d, f, j, ee, M, te, p.bandH + 2, r, [_], i), e.restore();
 }
-function pr(e, t, n, r) {
+function qr(e, t, n, r) {
 	let i = t.series[0];
-	if (!i || lr(e, n, Math.max(t.categories.length, i.categories?.length ?? 0, i.values.length))) return;
-	let a = Se(i, t.categories);
+	if (!i || Ur(e, n, Math.max(t.categories.length, i.categories?.length ?? 0, i.values.length))) return;
+	let a = Pe(i, t.categories);
 	if (a.points.length === 0) return;
-	let o = Wn(i, 0), s = er(t, t.chartexDataPointLineStyle, i, o, 1, Ve(0, i), { linkedNoStyleFallback: !0 });
-	un(e, {
+	let o = wr(i, 0), s = Pr(t, t.chartexDataPointLineStyle, i, o, 1, at(0, i), { linkedNoStyleFallback: !0 });
+	zn(e, {
 		...t,
 		chartType: "line",
 		categories: a.categories,
@@ -4162,17 +4950,17 @@ function pr(e, t, n, r) {
 		valAxisMajorUnit: t.valAxisMajorUnit ?? .2
 	}, n, r);
 }
-function mr(e, t, n, r) {
+function Jr(e, t, n, r) {
 	let i = t.series[0];
-	if (!i || lr(e, n, Math.max(t.categories.length, i.categories?.length ?? 0, i.values.length))) return;
-	let a = Se(i, t.categories);
+	if (!i || Ur(e, n, Math.max(t.categories.length, i.categories?.length ?? 0, i.values.length))) return;
+	let a = Pe(i, t.categories);
 	if (a.points.length === 0) return;
 	let o = t.series.find((e) => e.seriesType === "line"), s = o?.chartexFormatIdx ?? i.chartexFormatIdx ?? 0, c = {
 		...o ?? a.series,
 		name: o?.name || "Cumulative %",
 		values: a.series.values,
 		categories: a.categories,
-		color: o?.color ?? Kn(t, t.chartexDataPointLineStyle, "line", s, 1) ?? i.lineColor ?? i.color,
+		color: o?.color ?? Er(t, t.chartexDataPointLineStyle, "line", s, 1) ?? i.lineColor ?? i.color,
 		seriesType: "line",
 		useSecondaryAxis: !0,
 		showMarker: !1
@@ -4197,7 +4985,7 @@ function mr(e, t, n, r) {
 		titleFontColor: t.secondaryValAxis?.titleFontColor ?? null,
 		titleFontFace: t.secondaryValAxis?.titleFontFace ?? null
 	};
-	ln(e, {
+	Rn(e, {
 		...t,
 		chartType: "clusteredBar",
 		categories: a.categories,
@@ -4212,10 +5000,10 @@ function mr(e, t, n, r) {
 		semanticLineNoStyleFallback: !0
 	});
 }
-function hr(e, t, n, r) {
+function Yr(e, t, n, r) {
 	let i = (r ?? t) - (n ?? e);
 	if (!(i > 0) || !Number.isFinite(i)) return null;
-	let a = C(i, 7);
+	let a = S(i, 7);
 	if (!(a > 0) || !Number.isFinite(a)) return null;
 	let o = e - i * .05, s = t + i * .05;
 	e >= 0 && (e === 0 || t > 1.2 * e) && (o = 0), t <= 0 && (t === 0 || Math.abs(e) > 1.2 * Math.abs(t)) && (s = 0);
@@ -4226,182 +5014,182 @@ function hr(e, t, n, r) {
 		majorUnit: a
 	};
 }
-function gr(t, n, i, s, l) {
-	let d = 3 * s / 2, p = 3 * s, h = n.chartexBox;
-	if (!h || h.categories.length === 0 || h.series.length === 0) return;
-	let { x: g, y: _, w: v, h: y } = i;
-	if (lr(t, i, ve(h.series.map((e) => e.valuesByCategory), ir))) return;
-	let b = () => {
-		t.fillStyle = "#888", t.font = "12px sans-serif", t.textAlign = "center", t.textBaseline = "middle", t.fillText("(chart values out of range)", g + v / 2, _ + y / 2);
-	}, x = (e) => {
+function Xr(e, t, n, i, a) {
+	let c = 3 * i / 2, l = 3 * i, d = t.chartexBox;
+	if (!d || d.categories.length === 0 || d.series.length === 0) return;
+	let { x: f, y: m, w: h, h: g } = n;
+	if (Ur(e, n, Ae(d.series.map((e) => e.valuesByCategory), Rr))) return;
+	let _ = () => {
+		e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(chart values out of range)", f + h / 2, m + g / 2);
+	}, v = (e) => {
 		let t = e.max - e.min, n = t / e.step;
 		return Number.isFinite(e.min) && Number.isFinite(e.max) && Number.isFinite(e.step) && Number.isFinite(t) && Number.isFinite(n) && e.max > e.min && e.step > 0 && n <= 1e3 && e.min + e.step > e.min;
-	}, S = Infinity, C = -Infinity;
-	for (let e of h.series) for (let t of e.valuesByCategory) for (let e of t) Number.isFinite(e) && (e < S && (S = e), e > C && (C = e));
-	if (!isFinite(S) || !isFinite(C)) return;
-	if (!Number.isFinite(C - S)) {
-		b();
+	}, x = Infinity, S = -Infinity;
+	for (let e of d.series) for (let t of e.valuesByCategory) for (let e of t) Number.isFinite(e) && (e < x && (x = e), e > S && (S = e));
+	if (!isFinite(x) || !isFinite(S)) return;
+	if (!Number.isFinite(S - x)) {
+		_();
 		return;
 	}
-	let w = n.valAxisMajorUnit == null ? hr(S, C, n.valMin, n.valMax) : null, T = w ? {
-		...n,
-		valMin: w.min,
-		valMax: w.max,
-		valAxisMajorUnit: w.majorUnit
-	} : n, E = Y(n, n.valAxisFontFace, "minor"), D = Wt(n.valAxisFontSizeHpt, y, s), O = e(D), k = cn(s), A = M({
-		dataMin: S,
-		dataMax: C,
-		explicitMin: T.valMin,
-		explicitMax: T.valMax,
-		axisLenPt: y / s,
-		majorUnit: T.valAxisMajorUnit
+	let T = t.valAxisMajorUnit == null ? Yr(x, S, t.valMin, t.valMax) : null, E = T ? {
+		...t,
+		valMin: T.min,
+		valMax: T.max,
+		valAxisMajorUnit: T.majorUnit
+	} : t, D = Y(t, t.valAxisFontFace, "minor"), O = hn(t.valAxisFontSizeHpt, g, i), k = y(O), A = Ln(i), j = P({
+		dataMin: x,
+		dataMax: S,
+		explicitMin: E.valMin,
+		explicitMax: E.valMax,
+		axisLenPt: g / i,
+		majorUnit: E.valAxisMajorUnit
 	});
-	if (!x({
-		min: A.min,
-		max: A.max,
-		step: A.majorUnit
+	if (!v({
+		min: j.min,
+		max: j.max,
+		step: j.majorUnit
 	})) {
-		b();
+		_();
 		return;
 	}
-	let j = 0;
-	if (!n.valAxisHidden) {
-		let e = t.font;
-		t.font = Ge(D, E, n.valAxisFontBold ?? !1, n.valAxisFontItalic ?? !1);
-		let r = 0;
-		for (let e of A.majorTicks) {
-			let i = Pt(n, e, !1);
-			r = Math.max(r, t.measureText(i).width);
+	let ee = 0;
+	if (!t.valAxisHidden) {
+		let n = e.font;
+		e.font = lt(O, D, t.valAxisFontBold ?? !1, t.valAxisFontItalic ?? !1);
+		let a = 0;
+		for (let n of j.majorTicks) {
+			let r = nn(t, n, !1);
+			a = Math.max(a, e.measureText(r).width);
 		}
-		t.font = e, j = r + O + m * s;
+		e.font = n, ee = a + k + r * i;
 	}
-	let te = a(n, y, s), N = Wt(n.catAxisFontSizeHpt, y, s), ne = Wt(n.valAxisFontSizeHpt, y, s), re = u(n, v, y, s), F = h.series.length, ie = h.series.map((e, t) => Wn(e, t)), ae = h.series.map((e, t) => {
-		let r = ie[t], i = e.color ?? Yn(n, r, F, e.chartexStyle);
-		return rr(n, e.name, e, n.chartexDataPointStyle, r, F, i, !0);
-	}), I = {
-		...n,
+	let M = jn(e, t, h, g, i), te = hn(t.catAxisFontSizeHpt, g, i), ne = hn(t.valAxisFontSizeHpt, g, i), re = s(t, h, g, i), F = d.series.length, ie = d.series.map((e, t) => wr(e, t)), ae = d.series.map((e, n) => {
+		let r = ie[n], i = e.color ?? kr(t, r, F, e.chartexStyle);
+		return Lr(t, e.name, e, t.chartexDataPointStyle, r, F, i, !0);
+	}), oe = {
+		...t,
 		series: ae
-	}, oe = mt(t, I, v, y, .22, s), { legRightW: se, legLeftW: ce, legTopH: L, legBottomH: R } = c(oe), z = r(n, g, _, v, y, s, {
-		titleBand: te,
+	}, I = It(e, oe, h, g, .22, i), { legRightW: se, legLeftW: ce, legTopH: L, legBottomH: le } = o(I), R = b(t, f, m, h, g, i, {
+		titleBand: M,
 		legendSideReserveFrac: .22,
-		legendReserve: oe,
+		legendReserve: I,
 		pad: {
-			t: te.bandH + L + ne / 2 + 2,
-			r: se + v * .02,
-			b: R + re.catBandH + (n.catAxisHidden ? y * .02 : o(N)),
-			l: ce + re.valBandW + (n.valAxisHidden ? v * .02 : j)
+			t: M.bandH + L + ne / 2 + 2,
+			r: se + h * .02,
+			b: le + re.catBandH + (t.catAxisHidden ? g * .02 : p(te)),
+			l: ce + re.valBandW + (t.valAxisHidden ? h * .02 : ee)
 		}
-	}), { px0: B, py0: V, pw: le, ph: ue } = z.plotRect, de = h.categories, fe = de.length, H = zt(T, S, C, ue / s);
-	if (!x(H)) {
-		b();
+	}), { px0: z, py0: B, pw: ue, ph: de } = R.plotRect, fe = d.categories, pe = fe.length, me = cn(E, x, S, de / i);
+	if (!v(me)) {
+		_();
 		return;
 	}
-	rn(t, n, g, _, v, y, _ + z.title.topPad, z.title.fontPx);
-	let { min: pe, max: U } = H, he = U - pe, W = (e) => V + ue * (1 - (e - pe) / he), ge = ee(n.valAxisLineColor, n.valAxisLineWidthEmu, s), _e = St(n, s);
-	if (t.save(), !n.valAxisHidden) {
-		if (t.font = Ge(D, E, n.valAxisFontBold ?? !1, n.valAxisFontItalic ?? !1), t.textAlign = "right", t.textBaseline = "middle", n.valAxisMinorGridlines) {
-			let e = Ct(n, s);
-			for (let n of H.minorLines) xt(t, B, le, W(n), !1, e);
+	Nn(e, t, f, m, h, g, m + R.title.topPad, R.title.fontPx);
+	let { min: V, max: he } = me, ge = he - V, H = (e) => B + de * (1 - (e - V) / ge), U = w(t.valAxisLineColor, t.valAxisLineWidthEmu, i), _e = Wt(t, i);
+	if (e.save(), !t.valAxisHidden) {
+		if (e.font = lt(O, D, t.valAxisFontBold ?? !1, t.valAxisFontItalic ?? !1), e.textAlign = "right", e.textBaseline = "middle", t.valAxisMinorGridlines) {
+			let n = Gt(t, i);
+			for (let t of me.minorLines) Ut(e, z, ue, H(t), !1, n);
 		}
-		for (let e of H.majorLines) {
-			let r = W(e);
-			if (n.valAxisMajorGridlines !== !1) {
-				t.strokeStyle = _e.color, t.lineWidth = _e.width;
-				let e = _e.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-				_e.dash.length > 0 && t.setLineDash(_e.dash), t.beginPath(), t.moveTo(B, r), t.lineTo(B + le, r), t.stroke(), _e.dash.length > 0 && t.setLineDash(e);
+		for (let n of me.majorLines) {
+			let r = H(n);
+			if (t.valAxisMajorGridlines !== !1) {
+				e.strokeStyle = _e.color, e.lineWidth = _e.width;
+				let t = _e.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
+				_e.dash.length > 0 && e.setLineDash(_e.dash), e.beginPath(), e.moveTo(z, r), e.lineTo(z + ue, r), e.stroke(), _e.dash.length > 0 && e.setLineDash(t);
 			}
-			t.fillStyle = n.valAxisFontColor ? `#${n.valAxisFontColor}` : "#595959", t.fillText(Pt(n, e, !1), B - k, r), vt(t, n.valAxisMajorTickMark, "val", B, r, ge.color, ge.width, !1, n.valAxisLineHidden, "major", s);
+			e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#595959", e.fillText(nn(t, n, !1), z - A, r), Bt(e, t.valAxisMajorTickMark, "val", z, r, U.color, U.width, !1, t.valAxisLineHidden, "major", i);
 		}
-		for (let e of H.minorTicks) vt(t, n.valAxisMinorTickMark, "val", B, W(e), ge.color, ge.width, !1, n.valAxisLineHidden, "minor", s);
-		n.valAxisLineHidden || (t.strokeStyle = ge.color, t.lineWidth = ge.width, t.beginPath(), t.moveTo(B, V), t.lineTo(B, V + ue), t.stroke());
+		for (let n of me.minorTicks) Bt(e, t.valAxisMinorTickMark, "val", z, H(n), U.color, U.width, !1, t.valAxisLineHidden, "minor", i);
+		t.valAxisLineHidden || (e.strokeStyle = U.color, e.lineWidth = U.width, e.beginPath(), e.moveTo(z, B), e.lineTo(z, B + de), e.stroke());
 	}
-	let G = ee(n.catAxisLineColor, n.catAxisLineWidthEmu, s);
-	!n.catAxisHidden && !n.catAxisLineHidden && (t.strokeStyle = G.color, t.lineWidth = G.width, t.beginPath(), t.moveTo(B, V + ue), t.lineTo(B + le, V + ue), t.stroke());
-	let K = le / fe, q = me(n.barGapWidth, "chartex"), be = (e) => `#${h.series[e].color ?? Yn(n, ie[e], F, h.series[e].chartexStyle)}`, xe = (e) => Qn(n, ie[e], F, h.series[e].chartexStyle, h.series[e].color), Se = h.series.map((e) => e.valuesByCategory.map((t) => J(t, e.quartileMethod))), Ce = (e, t) => {
-		let n = ye(B, le, h.oneBoxPerSeries ? 1 : fe, F, h.oneBoxPerSeries ? 0 : e, t, q);
+	let W = w(t.catAxisLineColor, t.catAxisLineWidthEmu, i);
+	!t.catAxisHidden && !t.catAxisLineHidden && (e.strokeStyle = W.color, e.lineWidth = W.width, e.beginPath(), e.moveTo(z, B + de), e.lineTo(z + ue, B + de), e.stroke());
+	let G = ue / pe, ve = C(t.barGapWidth, "chartex"), ye = (e) => `#${d.series[e].color ?? kr(t, ie[e], F, d.series[e].chartexStyle)}`, be = (e) => Mr(t, ie[e], F, d.series[e].chartexStyle, d.series[e].color), K = d.series.map((e) => e.valuesByCategory.map((t) => ke(t, e.quartileMethod))), q = (e, t) => {
+		let n = je(z, ue, d.oneBoxPerSeries ? 1 : pe, F, d.oneBoxPerSeries ? 0 : e, t, ve);
 		return n ? {
 			bx: n.boxX,
 			boxW: n.boxWidth,
 			cx: n.centerX
 		} : {
-			bx: B,
+			bx: z,
 			boxW: 0,
-			cx: B
+			cx: z
 		};
 	};
-	for (let e = 0; e < F; e++) {
-		let r = h.series[e];
+	for (let n = 0; n < F; n++) {
+		let r = d.series[n];
 		if (!r.meanLine) continue;
-		let i = n.chartexDataPointLineStyle ?? n.chartexDataPointStyle, a = r.lineColor ? `#${r.lineColor}` : be(e);
-		if (t.save(), nr(t, n, i, r, ie[e], F, a, s) || r.lineColor != null) {
-			r.lineColor && (t.strokeStyle = a), r.lineWidthEmu && (t.lineWidth = P(r.lineWidthEmu, s));
-			let n = !1;
-			t.beginPath();
-			for (let r = 0; r < fe; r++) {
-				let i = Se[e][r];
+		let a = t.chartexDataPointLineStyle ?? t.chartexDataPointStyle, o = r.lineColor ? `#${r.lineColor}` : ye(n);
+		if (e.save(), Ir(e, t, a, r, ie[n], F, o, i) || r.lineColor != null) {
+			r.lineColor && (e.strokeStyle = o), r.lineWidthEmu && (e.lineWidth = N(r.lineWidthEmu, i));
+			let t = !1;
+			e.beginPath();
+			for (let r = 0; r < pe; r++) {
+				let i = K[n][r];
 				if (!i) {
-					n = !1;
+					t = !1;
 					continue;
 				}
-				let { cx: a } = Ce(r, e), o = W(i.mean);
-				n ? t.lineTo(a, o) : t.moveTo(a, o), n = !0;
+				let { cx: a } = q(r, n), o = H(i.mean);
+				t ? e.lineTo(a, o) : e.moveTo(a, o), t = !0;
 			}
-			t.stroke();
+			e.stroke();
 		}
-		t.restore();
+		e.restore();
 	}
-	let we = Wt(n.catAxisFontSizeHpt, y, s), Te = f(we);
-	for (let e = 0; e < fe; e++) {
-		let r = B + K * (e + .5);
-		n.catAxisHidden || vt(t, n.catAxisMajorTickMark, "cat", V + ue, r, G.color, G.width, !1, n.catAxisLineHidden, "major", s);
+	let J = hn(t.catAxisFontSizeHpt, g, i), xe = u(J);
+	for (let n = 0; n < pe; n++) {
+		let r = z + G * (n + .5);
+		t.catAxisHidden || Bt(e, t.catAxisMajorTickMark, "cat", B + de, r, W.color, W.width, !1, t.catAxisLineHidden, "major", i);
 		for (let r = 0; r < F; r++) {
-			let i = h.series[r], a = Se[r][e];
-			if (!a) continue;
-			let { bx: o, boxW: c, cx: u } = Ce(e, r), f = be(r), m = xe(r), g = n.chartexDataPointStyle, _ = n.chartexDataPointLineStyle ?? g, v = n.chartexDataPointMarkerStyle ?? g, y = ie[r], b = Kn(n, g, "line", y, F), x = i.lineColor ? `#${i.lineColor}` : b ? `#${b}` : f, S = i.lineWidthEmu ? P(i.lineWidthEmu, s) : g?.lineWidthEmu == null ? 1 : P(g.lineWidthEmu, s), C = Kn(n, _, "line", y, F), w = Kn(n, v, "fill", y, F), T = Qn(n, y, F, i.chartexStyle, i.color, v), E = Kn(n, v, "line", y, F), D = (e, r) => {
-				let a = i.chartexStyle, o = a?.lineHidden != null || a?.lineColors?.some(Boolean) || a?.lineWidthEmu != null || a?.lineDash != null || a?.lineCap != null || a?.lineJoin != null, c = nr(t, n, e, i, y, F, r, s), l = e?.lineNoStyle === !0 && !o && i.lineColor == null && i.lineWidthEmu == null;
-				return !c && l && (t.strokeStyle = r, t.lineWidth = 1, t.setLineDash([])), i.lineColor && (t.strokeStyle = x), i.lineWidthEmu && (t.lineWidth = S), c || l || i.lineColor != null;
-			}, O = W(a.q1), k = W(a.q3), A = Math.min(O, k), ee = Math.max(1, Math.abs(O - k)), j = c * .4;
-			D(_, C ?? x) && (t.beginPath(), t.moveTo(u, W(a.whiskerHi)), t.lineTo(u, k), t.moveTo(u, O), t.lineTo(u, W(a.whiskerLo)), t.moveTo(u - j / 2, W(a.whiskerHi)), t.lineTo(u + j / 2, W(a.whiskerHi)), t.moveTo(u - j / 2, W(a.whiskerLo)), t.lineTo(u + j / 2, W(a.whiskerLo)), t.stroke()), m && (t.fillStyle = $n(t, m, o, A, c, ee, f, l), t.fillRect(o, A, c, ee)), D(g, x) && t.strokeRect(o + S / 2, A + S / 2, c - S, ee - S);
-			let te = W(a.median);
-			if (D(_, C ?? x) && (t.beginPath(), t.moveTo(o, te), t.lineTo(o + c, te), t.stroke()), i.showNonoutliers) {
-				let e = d, r = n.chartexMarkerSymbol ?? "circle";
-				for (let n of a.inner) {
+			let o = d.series[r], s = K[r][n];
+			if (!s) continue;
+			let { bx: u, boxW: f, cx: p } = q(n, r), m = ye(r), h = be(r), g = t.chartexDataPointStyle, _ = t.chartexDataPointLineStyle ?? g, v = t.chartexDataPointMarkerStyle ?? g, y = ie[r], b = Er(t, g, "line", y, F), x = o.lineColor ? `#${o.lineColor}` : b ? `#${b}` : m, S = o.lineWidthEmu ? N(o.lineWidthEmu, i) : g?.lineWidthEmu == null ? 1 : N(g.lineWidthEmu, i), C = Er(t, _, "line", y, F), w = Er(t, v, "fill", y, F), T = Mr(t, y, F, o.chartexStyle, o.color, v), E = Er(t, v, "line", y, F), D = (n, r) => {
+				let a = o.chartexStyle, s = a?.lineHidden != null || a?.lineColors?.some(Boolean) || a?.lineWidthEmu != null || a?.lineDash != null || a?.lineCap != null || a?.lineJoin != null, c = Ir(e, t, n, o, y, F, r, i), l = n?.lineNoStyle === !0 && !s && o.lineColor == null && o.lineWidthEmu == null;
+				return !c && l && (e.strokeStyle = r, e.lineWidth = 1, e.setLineDash([])), o.lineColor && (e.strokeStyle = x), o.lineWidthEmu && (e.lineWidth = S), c || l || o.lineColor != null;
+			}, O = H(s.q1), k = H(s.q3), A = Math.min(O, k), j = Math.max(1, Math.abs(O - k)), ee = f * .4;
+			D(_, C ?? x) && (e.beginPath(), e.moveTo(p, H(s.whiskerHi)), e.lineTo(p, k), e.moveTo(p, O), e.lineTo(p, H(s.whiskerLo)), e.moveTo(p - ee / 2, H(s.whiskerHi)), e.lineTo(p + ee / 2, H(s.whiskerHi)), e.moveTo(p - ee / 2, H(s.whiskerLo)), e.lineTo(p + ee / 2, H(s.whiskerLo)), e.stroke()), h && (e.fillStyle = Nr(e, h, u, A, f, j, m, a), e.fillRect(u, A, f, j)), D(g, x) && e.strokeRect(u + S / 2, A + S / 2, f - S, j - S);
+			let M = H(s.median);
+			if (D(_, C ?? x) && (e.beginPath(), e.moveTo(u, M), e.lineTo(u + f, M), e.stroke()), o.showNonoutliers) {
+				let n = c, r = t.chartexMarkerSymbol ?? "circle";
+				for (let t of s.inner) {
 					if (r === "none") continue;
-					let i = D(v, E ?? x), a = W(n);
-					T && (t.fillStyle = $n(t, T, u - e, a - e, e * 2, e * 2, w ? `#${w}` : f, l)), r === "circle" ? (t.beginPath(), t.arc(u, a, e, 0, Math.PI * 2), T && t.fill(), i && t.stroke()) : Mn(t, u, a, r, 3, T ? w ? `#${w}` : f : "transparent", i ? E ? `#${E}` : x : null, s, t.lineWidth);
+					let o = D(v, E ?? x), s = H(t);
+					T && (e.fillStyle = Nr(e, T, p - n, s - n, n * 2, n * 2, w ? `#${w}` : m, a)), r === "circle" ? (e.beginPath(), e.arc(p, s, n, 0, Math.PI * 2), T && e.fill(), o && e.stroke()) : dr(e, p, s, r, 3, T ? w ? `#${w}` : m : "transparent", o ? E ? `#${E}` : x : null, i, e.lineWidth);
 				}
 			}
-			if (i.meanMarker) {
-				let e = W(a.mean), n = p;
-				D(v, E ?? x) && (t.beginPath(), t.moveTo(u - n, e - n), t.lineTo(u + n, e + n), t.moveTo(u + n, e - n), t.lineTo(u - n, e + n), t.stroke());
+			if (o.meanMarker) {
+				let t = H(s.mean), n = l;
+				D(v, E ?? x) && (e.beginPath(), e.moveTo(p - n, t - n), e.lineTo(p + n, t + n), e.moveTo(p + n, t - n), e.lineTo(p - n, t + n), e.stroke());
 			}
-			if (i.showOutliers) {
-				let e = n.chartexMarkerSymbol ?? "circle", r = d;
-				for (let n of a.outliers) {
-					if (e === "none") continue;
-					let i = D(v, E ?? x), a = W(n);
-					T && (t.fillStyle = $n(t, T, u - r, a - r, r * 2, r * 2, w ? `#${w}` : f, l)), e === "circle" ? (t.beginPath(), t.arc(u, a, r, 0, Math.PI * 2), T && t.fill(), i && t.stroke()) : Mn(t, u, a, e, 3, T ? w ? `#${w}` : f : "transparent", i ? E ? `#${E}` : x : null, s, t.lineWidth);
+			if (o.showOutliers) {
+				let n = t.chartexMarkerSymbol ?? "circle", r = c;
+				for (let t of s.outliers) {
+					if (n === "none") continue;
+					let o = D(v, E ?? x), s = H(t);
+					T && (e.fillStyle = Nr(e, T, p - r, s - r, r * 2, r * 2, w ? `#${w}` : m, a)), n === "circle" ? (e.beginPath(), e.arc(p, s, r, 0, Math.PI * 2), T && e.fill(), o && e.stroke()) : dr(e, p, s, n, 3, T ? w ? `#${w}` : m : "transparent", o ? E ? `#${E}` : x : null, i, e.lineWidth);
 				}
 			}
 		}
-		if (!n.catAxisHidden) {
-			t.font = `${we}px ${Y(n, n.catAxisFontFace, "minor")}`, t.fillStyle = n.catAxisFontColor ? `#${n.catAxisFontColor}` : "#595959", t.textAlign = "center", t.textBaseline = "top";
-			let i = de[e];
-			t.fillText(i, r, V + ue + Te);
+		if (!t.catAxisHidden) {
+			e.font = `${J}px ${Y(t, t.catAxisFontFace, "minor")}`, e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", e.textAlign = "center", e.textBaseline = "top";
+			let i = fe[n];
+			e.fillText(i, r, B + de + xe);
 		}
 	}
-	t.restore(), Ye(t, n, g, _, v, y, B, V, le, ue, ce, R, re.catFontPx, re.valFontPx), _t(t, I, oe, g, _, v, y, B, V, le, ue, te.bandH + 2, s, h.series.map((e, t) => xe(t)), l);
+	e.restore(), ht(e, t, f, m, h, g, z, B, ue, de, ce, le, re.catFontPx, re.valFontPx), zt(e, oe, I, f, m, h, g, z, B, ue, de, M.bandH + 2, i, d.series.map((e, t) => be(t)), a);
 }
-function _r(e) {
-	if (e.length > ir) return !0;
+function Zr(e) {
+	if (e.length > Rr) return !0;
 	let t = 0;
 	for (let n of e) {
-		if (n.path.length > ar || t > ir - n.path.length) return !0;
+		if (n.path.length > zr || t > Rr - n.path.length) return !0;
 		t += n.path.length;
 	}
 	return !1;
 }
-function vr(e, t = !1) {
+function Qr(e, t = !1) {
 	let n = {
 		label: "",
 		layoutWeight: 0,
@@ -4441,7 +5229,7 @@ function vr(e, t = !1) {
 	}
 	return n;
 }
-function yr(e) {
+function $r(e) {
 	let t = [e];
 	for (; t.length > 0;) {
 		let e = t.pop(), n = 0;
@@ -4454,7 +5242,7 @@ function yr(e) {
 		}
 	}
 }
-function br(e) {
+function ei(e) {
 	let t = e.depth, n = [e];
 	for (; n.length > 0;) {
 		let e = n.pop();
@@ -4463,83 +5251,83 @@ function br(e) {
 	}
 	return t;
 }
-function xr(e, t, n, i, a) {
-	let o = t.chartexSunburst;
-	if (!o || o.rows.length === 0) return;
-	let { x: s, y: c, w: l, h: u } = n;
-	if (_r(o.rows)) {
-		lr(e, n, ir + 1);
+function ti(e, t, n, r, i) {
+	let a = t.chartexSunburst;
+	if (!a || a.rows.length === 0) return;
+	let { x: o, y: s, w: c, h: l } = n;
+	if (Zr(a.rows)) {
+		Ur(e, n, Rr + 1);
 		return;
 	}
-	let d = vr(o.rows);
-	if (d.layoutWeight <= 0 || d.children.length === 0) return;
-	let f = t.series[0], p = He(f?.dataLabelOverrides), m = d.children.map((e, n) => Qn(t, n, d.children.length, f?.chartexStyle, f?.color)), h = {
+	let u = Qr(a.rows);
+	if (u.layoutWeight <= 0 || u.children.length === 0) return;
+	let d = t.series[0], f = ot(d?.dataLabelOverrides), p = u.children.map((e, n) => Mr(t, n, u.children.length, d?.chartexStyle, d?.color)), m = {
 		...t,
 		chartType: "clusteredBar",
-		series: d.children.map((e) => {
-			let n = Yn(t, e.branchIndex, d.children.length, f?.chartexStyle);
-			return rr(t, e.label, f, t.chartexDataPointStyle, e.branchIndex, d.children.length, n, !1, !1);
+		series: u.children.map((e) => {
+			let n = kr(t, e.branchIndex, u.children.length, d?.chartexStyle);
+			return Lr(t, e.label, d, t.chartexDataPointStyle, e.branchIndex, u.children.length, n, !1, !1);
 		})
-	}, g = r(t, s, c, l, u, i, {
+	}, h = b(t, o, s, c, l, r, {
 		titleTopPadFrac: .035,
 		titleBottomPadFrac: .035,
 		legendSideReserveFrac: 0,
-		legendReserve: mt(e, h, l, u, .22, i),
+		legendReserve: It(e, m, c, l, .22, r),
 		radialGapFrac: .02
 	});
-	rn(e, t, s, c, l, u, c + g.title.topPad, g.title.fontPx);
-	let { px0: v, py0: y, pw: b, ph: x } = g.plotRect, S = v + b / 2, C = y + x / 2, w = Math.min(b, x) * .46;
-	d.a0 = -Math.PI / 2, d.a1 = -Math.PI / 2 + Math.PI * 2, yr(d);
-	let T = br(d) + 1, E = w * .18, D = (w - E) / T, O = (e) => `#${Yn(t, e, d.children.length, f?.chartexStyle)}`, k = (e) => Qn(t, e, d.children.length, f?.chartexStyle, f?.color), A = f?.seriesDataLabels, ee = Y(t, A?.fontFace ?? t.dataLabelFontFace, "minor"), j = _(A?.fontSizeHpt, i) ?? Math.max(7, Math.min(13, w * .075)), te = A?.fontColor ? `#${A.fontColor}` : "#ffffff", M = Array.from({ length: T }, () => []), N = [d];
+	Nn(e, t, o, s, c, l, s + h.title.topPad, h.title.fontPx);
+	let { px0: g, py0: _, pw: v, ph: y } = h.plotRect, S = g + v / 2, C = _ + y / 2, w = Math.min(v, y) * .46;
+	u.a0 = -Math.PI / 2, u.a1 = -Math.PI / 2 + Math.PI * 2, $r(u);
+	let T = ei(u) + 1, E = w * .18, D = (w - E) / T, O = (e) => `#${kr(t, e, u.children.length, d?.chartexStyle)}`, k = (e) => Mr(t, e, u.children.length, d?.chartexStyle, d?.color), A = d?.seriesDataLabels, j = Y(t, A?.fontFace ?? t.dataLabelFontFace, "minor"), ee = x(A?.fontSizeHpt, r) ?? Math.max(7, Math.min(13, w * .075)), M = A?.fontColor ? `#${A.fontColor}` : "#ffffff", te = Array.from({ length: T }, () => []), N = [u];
 	for (; N.length > 0;) {
 		let e = N.pop();
-		e.depth >= 0 && M[e.depth].push(e);
+		e.depth >= 0 && te[e.depth].push(e);
 		for (let t = e.children.length - 1; t >= 0; t--) N.push(e.children[t]);
 	}
 	e.save();
 	for (let n = 0; n < T; n++) {
-		let r = E + n * D, o = r + D;
-		for (let m of M[n]) {
+		let a = E + n * D, p = a + D;
+		for (let m of te[n]) {
 			let n = m.a1 - m.a0;
 			if (n <= 1e-4) continue;
-			e.beginPath(), e.arc(S, C, o, m.a0, m.a1), e.arc(S, C, r, m.a1, m.a0, !0), e.closePath();
+			e.beginPath(), e.arc(S, C, p, m.a0, m.a1), e.arc(S, C, a, m.a1, m.a0, !0), e.closePath();
 			let h = k(m.branchIndex);
-			h && (e.fillStyle = $n(e, h, S - o, C - o, o * 2, o * 2, O(m.branchIndex), a), e.fill()), nr(e, t, t.chartexDataPointStyle, t.series[0], m.branchIndex, d.children.length, "#ffffff", i) && e.stroke();
-			let g = Gn(t, f, m.labelIndex, m.label, m.value, {
+			h && (e.fillStyle = Nr(e, h, S - p, C - p, p * 2, p * 2, O(m.branchIndex), i), e.fill()), Ir(e, t, t.chartexDataPointStyle, t.series[0], m.branchIndex, u.children.length, "#ffffff", r) && e.stroke();
+			let b = Tr(t, d, m.labelIndex, m.label, m.value, {
 				visible: !1,
 				showVal: !1,
 				showCatName: !1
-			}, p);
-			if (!g) continue;
-			let w = g.text, T = _(g.fontSizeHpt, i) ?? j, E = g.fontColor ? `#${g.fontColor}` : te, A = g.fontFace ? Y(t, g.fontFace, "minor") : ee, M = (m.a0 + m.a1) / 2, N = (r + o) / 2, P = D - 4, ne = n * N;
-			if (!g.manualLayout && P < T * .9 && ne < T * .9) continue;
-			let re = S + Math.cos(M) * N, F = C + Math.sin(M) * N;
-			if (e.font = `${g.fontBold ? "bold " : ""}${T}px ${A}`, g.manualLayout) {
-				Ln(e, w, {
+			}, f);
+			if (!b) continue;
+			let w = b.text, T = x(b.fontSizeHpt, r) ?? ee, E = b.fontColor ? `#${b.fontColor}` : M, A = b.fontFace ? Y(t, b.fontFace, "minor") : j, te = (m.a0 + m.a1) / 2, N = (a + p) / 2, P = D - 4, ne = n * N;
+			if (!b.manualLayout && P < T * .9 && ne < T * .9) continue;
+			let re = S + Math.cos(te) * N, F = C + Math.sin(te) * N;
+			if (e.font = `${b.fontBold ? "bold " : ""}${T}px ${A}`, b.manualLayout) {
+				gr(e, w, {
 					kind: "point",
 					x: re,
 					y: F,
-					position: g.position ?? "ctr"
+					position: b.position ?? "ctr"
 				}, {
-					x: v,
-					y,
-					w: b,
-					h: x
-				}, T, E, g.manualLayout, {
-					x: s,
-					y: c,
-					w: l,
-					h: u
+					x: g,
+					y: _,
+					w: v,
+					h: y
+				}, T, E, b.manualLayout, {
+					x: o,
+					y: s,
+					w: c,
+					h: l
 				});
 				continue;
 			}
 			e.save(), e.translate(re, F);
-			let ie = M, ae = ie * 180 / Math.PI % 360;
-			(ae > 90 || ae < -90) && (ie += Math.PI), e.rotate(ie), e.font = `${g.fontBold ? "bold " : ""}${T}px ${A}`, Ln(e, w, {
+			let ie = te, ae = ie * 180 / Math.PI % 360;
+			(ae > 90 || ae < -90) && (ie += Math.PI), e.rotate(ie), e.font = `${b.fontBold ? "bold " : ""}${T}px ${A}`, gr(e, w, {
 				kind: "point",
 				x: 0,
 				y: 0,
-				position: g.position ?? "ctr"
+				position: b.position ?? "ctr"
 			}, {
 				x: -P / 2,
 				y: -ne / 2,
@@ -4548,9 +5336,9 @@ function xr(e, t, n, i, a) {
 			}, T, E), e.restore();
 		}
 	}
-	e.restore(), _t(e, h, g.legend, s, c, l, u, v, y, b, x, g.title.bandH + 2, i, m, a);
+	e.restore(), zt(e, m, h.legend, o, s, c, l, g, _, v, y, h.title.bandH + 2, r, p, i);
 }
-function Sr(e, t) {
+function ni(e, t) {
 	let n = e.map((e, t) => ({
 		node: e,
 		index: t,
@@ -4613,111 +5401,111 @@ function Sr(e, t) {
 	}
 	return p(c, l), o;
 }
-function Cr(e, t, n, i, a) {
-	let o = t.chartexTreemap;
-	if (!o || o.rows.length === 0) return;
-	if (_r(o.rows)) {
-		lr(e, n, ir + 1);
+function ri(e, t, n, r, i) {
+	let a = t.chartexTreemap;
+	if (!a || a.rows.length === 0) return;
+	if (Zr(a.rows)) {
+		Ur(e, n, Rr + 1);
 		return;
 	}
-	let s = vr(o.rows, !0);
-	if (s.layoutWeight <= 0 || s.children.length === 0) return;
-	let c = t.series[0], l = s.children.map((e) => Qn(t, e.branchIndex, s.children.length, c?.chartexStyle, c?.color)), u = {
+	let o = Qr(a.rows, !0);
+	if (o.layoutWeight <= 0 || o.children.length === 0) return;
+	let s = t.series[0], c = o.children.map((e) => Mr(t, e.branchIndex, o.children.length, s?.chartexStyle, s?.color)), l = {
 		...t,
 		chartType: "clusteredBar",
-		series: s.children.map((e) => {
-			let n = Yn(t, e.branchIndex, s.children.length, c?.chartexStyle);
-			return rr(t, e.label, c, t.chartexDataPointStyle, e.branchIndex, s.children.length, n, !0, !1);
+		series: o.children.map((e) => {
+			let n = kr(t, e.branchIndex, o.children.length, s?.chartexStyle);
+			return Lr(t, e.label, s, t.chartexDataPointStyle, e.branchIndex, o.children.length, n, !0, !1);
 		})
-	}, d = mt(e, u, n.w, n.h, .22, i), f = r(t, n.x, n.y, n.w, n.h, i, {
+	}, u = It(e, l, n.w, n.h, .22, r), d = b(t, n.x, n.y, n.w, n.h, r, {
 		titleTopPadFrac: .035,
 		titleBottomPadFrac: .035,
 		legendSideReserveFrac: 0,
-		legendReserve: d,
+		legendReserve: u,
 		radialGapFrac: .015
 	});
-	rn(e, t, n.x, n.y, n.w, n.h, n.y + f.title.topPad, f.title.fontPx);
-	let { px0: p, py0: m, pw: h, ph: g } = f.plotRect, v = {
-		x: p,
-		y: m,
-		w: h,
-		h: g
-	}, y = o.parentLabelLayout ?? "overlapping", b = t.series[0]?.seriesDataLabels, x = Y(t, b?.fontFace ?? t.dataLabelFontFace, "minor"), S = _(b?.fontSizeHpt, i) ?? Math.max(8, Math.min(13, f.plotRect.ph * .025)), C = b?.fontColor ? `#${b.fontColor}` : "#ffffff", w = new Map((t.series[0]?.dataLabelOverrides ?? []).map((e) => [e.idx, e])), T = t.chartBg ? t.chartBg.startsWith("#") ? t.chartBg : `#${t.chartBg}` : "#ffffff", E = (r, o) => {
-		if (o.w < .5 || o.h < .5) return;
-		let l = `#${Yn(t, r.branchIndex, s.children.length, c?.chartexStyle)}`, u = Qn(t, r.branchIndex, s.children.length, c?.chartexStyle, c?.color), d = w.get(r.labelIndex), f = d?.fontColor ? `#${d.fontColor}` : C, p = _(d?.fontSizeHpt, i) ?? S, m = d?.fontBold ?? b?.fontBold ?? !1;
-		if (r.children.length > 0) {
-			let i = Gn(t, c, r.labelIndex, r.label, r.value, {
-				visible: y !== "none",
+	Nn(e, t, n.x, n.y, n.w, n.h, n.y + d.title.topPad, d.title.fontPx);
+	let { px0: f, py0: p, pw: m, ph: h } = d.plotRect, g = {
+		x: f,
+		y: p,
+		w: m,
+		h
+	}, _ = a.parentLabelLayout ?? "overlapping", v = t.series[0]?.seriesDataLabels, y = Y(t, v?.fontFace ?? t.dataLabelFontFace, "minor"), S = x(v?.fontSizeHpt, r) ?? Math.max(8, Math.min(13, d.plotRect.ph * .025)), C = v?.fontColor ? `#${v.fontColor}` : "#ffffff", w = new Map((t.series[0]?.dataLabelOverrides ?? []).map((e) => [e.idx, e])), T = t.chartBg ? t.chartBg.startsWith("#") ? t.chartBg : `#${t.chartBg}` : "#ffffff", E = (a, c) => {
+		if (c.w < .5 || c.h < .5) return;
+		let l = `#${kr(t, a.branchIndex, o.children.length, s?.chartexStyle)}`, u = Mr(t, a.branchIndex, o.children.length, s?.chartexStyle, s?.color), d = w.get(a.labelIndex), f = d?.fontColor ? `#${d.fontColor}` : C, p = x(d?.fontSizeHpt, r) ?? S, m = d?.fontBold ?? v?.fontBold ?? !1;
+		if (a.children.length > 0) {
+			let r = Tr(t, s, a.labelIndex, a.label, a.value, {
+				visible: _ !== "none",
 				showVal: !1,
 				showCatName: !0
-			}, w), s = i != null && (y !== "overlapping" || r.depth === 0), h = p, g = i?.fontFace ? Y(t, i.fontFace, "minor") : x, _ = y === "banner" && s ? Math.min(o.h * .28, h + 7) : 0;
-			_ > 0 && u && (e.fillStyle = $n(e, u, o.x, o.y, o.w, _, l, a), e.fillRect(o.x, o.y, o.w, _));
-			let b = {
-				x: o.x,
-				y: o.y + _,
-				w: o.w,
-				h: Math.max(0, o.h - _)
+			}, w), o = r != null && (_ !== "overlapping" || a.depth === 0), h = p, v = r?.fontFace ? Y(t, r.fontFace, "minor") : y, b = _ === "banner" && o ? Math.min(c.h * .28, h + 7) : 0;
+			b > 0 && u && (e.fillStyle = Nr(e, u, c.x, c.y, c.w, b, l, i), e.fillRect(c.x, c.y, c.w, b));
+			let x = {
+				x: c.x,
+				y: c.y + b,
+				w: c.w,
+				h: Math.max(0, c.h - b)
 			};
-			for (let e of Sr(r.children, b)) E(e.node, e.rect);
-			if (s && (i.manualLayout || o.w > h * 2 && o.h > h + 4)) {
-				e.font = `${m ? "bold " : ""}${h}px ${g}`;
-				let t = _ > 0 ? {
-					x: o.x,
-					y: o.y,
-					w: o.w,
-					h: _
-				} : o, r = d?.position ?? "inBase";
-				Ln(e, i.text, i.manualLayout ? {
+			for (let e of ni(a.children, x)) E(e.node, e.rect);
+			if (o && (r.manualLayout || c.w > h * 2 && c.h > h + 4)) {
+				e.font = `${m ? "bold " : ""}${h}px ${v}`;
+				let t = b > 0 ? {
+					x: c.x,
+					y: c.y,
+					w: c.w,
+					h: b
+				} : c, i = d?.position ?? "inBase";
+				gr(e, r.text, r.manualLayout ? {
 					kind: "point",
-					x: o.x + o.w / 2,
-					y: o.y + o.h / 2,
-					position: r
+					x: c.x + c.w / 2,
+					y: c.y + c.h / 2,
+					position: i
 				} : {
 					kind: "box",
 					rect: t,
-					position: r
-				}, i.manualLayout ? v : t, h, f, i.manualLayout, n);
+					position: i
+				}, r.manualLayout ? g : t, h, f, r.manualLayout, n);
 			}
 			return;
 		}
-		u && (e.fillStyle = $n(e, u, o.x, o.y, o.w, o.h, l, a), e.fillRect(o.x, o.y, o.w, o.h)), nr(e, t, t.chartexDataPointStyle, t.series[0], r.branchIndex, s.children.length, T, i, { linkedNoStyleFallback: !0 }) && e.strokeRect(o.x, o.y, o.w, o.h);
-		let h = Gn(t, c, r.labelIndex, r.label, r.value, {
+		u && (e.fillStyle = Nr(e, u, c.x, c.y, c.w, c.h, l, i), e.fillRect(c.x, c.y, c.w, c.h)), Ir(e, t, t.chartexDataPointStyle, t.series[0], a.branchIndex, o.children.length, T, r, { linkedNoStyleFallback: !0 }) && e.strokeRect(c.x, c.y, c.w, c.h);
+		let h = Tr(t, s, a.labelIndex, a.label, a.value, {
 			visible: !1,
 			showVal: !1,
 			showCatName: !1
 		}, w);
 		if (!h) return;
-		let g = _(h.fontSizeHpt, i) ?? p;
-		if (!h.manualLayout && (o.w <= g * 1.2 || o.h <= g * 1.2)) return;
-		let D = h.fontFace ? Y(t, h.fontFace, "minor") : x;
-		e.font = `${h.fontBold ? "bold " : ""}${g}px ${D}`;
-		let O = o, k = h.position === "outEnd" ? "inEnd" : h.position ?? "ctr";
-		Ln(e, h.text, h.manualLayout ? {
+		let b = x(h.fontSizeHpt, r) ?? p;
+		if (!h.manualLayout && (c.w <= b * 1.2 || c.h <= b * 1.2)) return;
+		let D = h.fontFace ? Y(t, h.fontFace, "minor") : y;
+		e.font = `${h.fontBold ? "bold " : ""}${b}px ${D}`;
+		let O = c, k = h.position === "outEnd" ? "inEnd" : h.position ?? "ctr";
+		gr(e, h.text, h.manualLayout ? {
 			kind: "point",
-			x: o.x + o.w / 2,
-			y: o.y + o.h / 2,
+			x: c.x + c.w / 2,
+			y: c.y + c.h / 2,
 			position: k
 		} : {
 			kind: "box",
 			rect: O,
 			position: k
-		}, h.manualLayout ? v : O, g, h.fontColor ? `#${h.fontColor}` : f, h.manualLayout, n);
+		}, h.manualLayout ? g : O, b, h.fontColor ? `#${h.fontColor}` : f, h.manualLayout, n);
 	};
-	e.save(), e.beginPath(), e.rect(p, m, h, g), e.clip();
-	for (let e of Sr(s.children, {
-		x: p,
-		y: m,
-		w: h,
-		h: g
+	e.save(), e.beginPath(), e.rect(f, p, m, h), e.clip();
+	for (let e of ni(o.children, {
+		x: f,
+		y: p,
+		w: m,
+		h
 	})) E(e.node, e.rect);
-	e.restore(), _t(e, u, f.legend, n.x, n.y, n.w, n.h, p, m, h, g, f.title.bandH + 2, i, l, a);
+	e.restore(), zt(e, l, d.legend, n.x, n.y, n.w, n.h, f, p, m, h, d.title.bandH + 2, r, c, i);
 }
-function wr(e, t, n, r) {
+function ii(e, t, n, r) {
 	let i = t.chartTextBoxes;
 	if (i?.length) for (let a of i) {
 		let i = n.x + a.x * n.w, o = n.y + a.y * n.h, s = a.w * n.w, c = a.h * n.h;
 		if (!(s > 0 && c > 0)) continue;
-		let l = i + (a.lIns ?? 91440) / D * r, u = o + (a.tIns ?? 45720) / D * r, d = i + s - (a.rIns ?? 91440) / D * r, f = o + c - (a.bIns ?? 45720) / D * r, p = d - l, m = f - u;
+		let l = i + (a.lIns ?? 91440) / se * r, u = o + (a.tIns ?? 45720) / se * r, d = i + s - (a.rIns ?? 91440) / se * r, f = o + c - (a.bIns ?? 45720) / se * r, p = d - l, m = f - u;
 		if (!(p > 0 && m > 0)) continue;
 		let h = (e, t) => {
 			let n = Math.max(1, ...t.map((e) => e.fontPx));
@@ -4768,31 +5556,31 @@ function wr(e, t, n, r) {
 		e.restore();
 	}
 }
-function Tr(e, t, n, r = w, i = 0, a, o) {
+function ai(e, t, n, r = A, i = 0, a, o) {
 	e.save();
 	try {
 		let { x: s, y: c, w: l, h: u } = n;
 		if (t.chartBg && (e.fillStyle = `#${t.chartBg}`, e.fillRect(s, c, l, u)), t.chartBorderColor) {
-			e.save(), e.strokeStyle = `#${t.chartBorderColor}`, e.lineWidth = t.chartBorderWidthEmu ? Math.max(.5, t.chartBorderWidthEmu / D) * r : 1;
+			e.save(), e.strokeStyle = `#${t.chartBorderColor}`, e.lineWidth = t.chartBorderWidthEmu ? Math.max(.5, t.chartBorderWidthEmu / se) * r : 1;
 			let n = e.lineWidth;
 			e.strokeRect(s + n / 2, c + n / 2, l - n, u - n), e.restore();
 		}
 		let d = t.chartexBox != null || t.chartexSunburst != null || t.chartexTreemap != null || t.chartexRegionMap != null;
 		if (t.series.length === 0 && !d) {
-			e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(no data)", s + l / 2, c + u / 2), wr(e, t, n, r);
+			e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(no data)", s + l / 2, c + u / 2), ii(e, t, n, r);
 			return;
 		}
-		let f = sr(t), p = cr(t, a);
-		if ((f != null || p != null) && lr(e, n, Math.max(f ?? 0, p ?? 0))) {
-			wr(e, t, n, r);
+		let f = Vr(t), p = Hr(t, a);
+		if ((f != null || p != null) && Ur(e, n, Math.max(f ?? 0, p ?? 0))) {
+			ii(e, t, n, r);
 			return;
 		}
 		if (a?.render(e, t, n, r)) {
-			Rt(e, t, n, r), wr(e, t, n, r);
+			sn(e, t, n, r), ii(e, t, n, r);
 			return;
 		}
 		if (o?.render(e, t, n, r)) {
-			wr(e, t, n, r);
+			ii(e, t, n, r);
 			return;
 		}
 		switch (t.chartType) {
@@ -4802,75 +5590,78 @@ function Tr(e, t, n, r = w, i = 0, a, o) {
 			case "stackedBarH":
 			case "stackedBarPct":
 			case "stackedBarHPct":
-				ln(e, t, n, r);
+				Rn(e, t, n, r);
 				break;
 			case "line":
 			case "stackedLine":
 			case "stackedLinePct":
-				un(e, t, n, r);
+				zn(e, t, n, r);
 				break;
 			case "area":
 			case "stackedArea":
 			case "stackedAreaPct":
-				fn(e, t, n, r);
+				Gn(e, t, n, r);
 				break;
 			case "pie":
-				gn(e, t, n, !1, r);
+				Yn(e, t, n, !1, r);
 				break;
 			case "ofPie":
-				hn(e, t, n, r);
+				Jn(e, t, n, r);
 				break;
 			case "doughnut":
-				gn(e, t, n, !0, r);
+				Yn(e, t, n, !0, r);
 				break;
 			case "radar":
-				Cn(e, t, n, r);
+				nr(e, t, n, r);
 				break;
 			case "scatter":
 			case "bubble":
-				jn(e, t, n, r);
+				ur(e, t, n, r);
 				break;
 			case "waterfall":
-				dr(e, t, n, r, i);
+				Gr(e, t, n, r, i);
 				break;
 			case "clusteredColumn":
-				ln(e, {
+				Rn(e, {
 					...t,
 					chartType: "clusteredBar"
 				}, n, r, { gapPolicy: "chartex" });
 				break;
 			case "histogram":
-				ur(e, t, n, r);
+				Wr(e, t, n, r);
 				break;
 			case "funnel":
-				fr(e, t, n, r, i);
+				Kr(e, t, n, r, i);
 				break;
 			case "paretoLine":
-				pr(e, t, n, r);
+				qr(e, t, n, r);
 				break;
 			case "pareto":
-				mr(e, t, n, r);
+				Jr(e, t, n, r);
 				break;
 			case "stock":
-				dn(e, t, n, r);
+				Bn(e, t, n, r);
+				break;
+			case "surface":
+				Wn(e, t, n, r);
 				break;
 			case "boxWhisker":
-				gr(e, t, n, r, i);
+				Xr(e, t, n, r, i);
 				break;
 			case "sunburst":
-				xr(e, t, n, r, i);
+				ti(e, t, n, r, i);
 				break;
 			case "treemap":
-				Cr(e, t, n, r, i);
+				ri(e, t, n, r, i);
 				break;
 			default: e.fillStyle = "#888", e.font = "11px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText(`Chart: ${t.chartType}`, s + l / 2, c + u / 2);
 		}
-		Rt(e, t, n, r), wr(e, t, n, r);
+		sn(e, t, n, r), ii(e, t, n, r);
 	} finally {
 		e.restore();
 	}
 }
-var Er = {
+var oi = {
 	accentbordercallout1: {
 		adj: [
 			["adj1", "val 18750"],
@@ -26733,15 +27524,15 @@ var Er = {
 			]
 		}]
 	}
-}, Dr = 216e5, Or = Math.PI * 2 / Dr;
-function kr(e) {
+}, si = 216e5, ci = Math.PI * 2 / si;
+function li(e) {
 	let t = e.trim().split(/\s+/);
 	return {
 		op: t[0],
 		argTokens: t.slice(1)
 	};
 }
-function Ar(e, t, n) {
+function ui(e, t, n) {
 	let { w: r, h: i, adj: a } = e, o = Math.min(r, i), s = Math.max(r, i), c = Object.create(null);
 	Object.assign(c, {
 		w: r,
@@ -26786,14 +27577,14 @@ function Ar(e, t, n) {
 		lsd8: s / 8,
 		lsd16: s / 16,
 		lsd32: s / 32,
-		cd: Dr,
-		cd2: Dr / 2,
-		cd4: Dr / 4,
-		cd8: Dr / 8,
-		"3cd4": 3 * Dr / 4,
-		"3cd8": 3 * Dr / 8,
-		"5cd8": 5 * Dr / 8,
-		"7cd8": 7 * Dr / 8
+		cd: si,
+		cd2: si / 2,
+		cd4: si / 4,
+		cd8: si / 8,
+		"3cd4": 3 * si / 4,
+		"3cd8": 3 * si / 8,
+		"5cd8": 5 * si / 8,
+		"7cd8": 7 * si / 8
 	}), t.forEach(([e, t], n) => {
 		let r = a[n];
 		c[e] = typeof r == "number" ? r : u(t), e === "adj" && (c.adj1 = c.adj), e === "adj1" && (c.adj = c.adj1);
@@ -26830,10 +27621,10 @@ function Ar(e, t, n) {
 			case "pin": return t[1] < t[0] ? t[0] : t[1] > t[2] ? t[2] : t[1];
 			case "sqrt": return Math.sqrt(Math.max(0, t[0]));
 			case "mod": return Math.sqrt(t[0] * t[0] + t[1] * t[1] + t[2] * t[2]);
-			case "sin": return t[0] * Math.sin(t[1] * Or);
-			case "cos": return t[0] * Math.cos(t[1] * Or);
-			case "tan": return t[0] * Math.tan(t[1] * Or);
-			case "at2": return Math.atan2(t[1], t[0]) / Or;
+			case "sin": return t[0] * Math.sin(t[1] * ci);
+			case "cos": return t[0] * Math.cos(t[1] * ci);
+			case "tan": return t[0] * Math.tan(t[1] * ci);
+			case "at2": return Math.atan2(t[1], t[0]) / ci;
 			case "cat2": return t[0] * Math.cos(Math.atan2(t[2], t[1]));
 			case "sat2": return t[0] * Math.sin(Math.atan2(t[2], t[1]));
 			default: throw Error(`preset-shape: unknown operator "${e}" in "${[n.op, ...n.argTokens].join(" ")}"`);
@@ -26842,8 +27633,8 @@ function Ar(e, t, n) {
 }
 //#endregion
 //#region packages/core/src/shape/preset-geometry/path-executor.ts
-var jr = Math.PI * 2 / 216e5;
-function Mr(e, t, n, r, i, a, o) {
+var di = Math.PI * 2 / 216e5;
+function fi(e, t, n, r, i, a, o) {
 	let s = t.w == null ? 1 : a / t.w, c = t.h == null ? 1 : o / t.h, l = (e) => r + e * s, u = (e) => i + e * c, d = 0, f = 0;
 	for (let r of t.cmds) switch (r[0]) {
 		case "m": {
@@ -26867,7 +27658,7 @@ function Mr(e, t, n, r, i, a, o) {
 			break;
 		}
 		case "a": {
-			let t = n.resolve(r[1]), i = n.resolve(r[2]), a = t * s, o = i * c, l = n.resolve(r[3]) * jr, u = n.resolve(r[4]) * jr, p = Math.PI * 2, m = (e) => Math.atan2(t * Math.sin(e), i * Math.cos(e)), h = m(l), g = Math.trunc(u / p), _ = u - g * p, v = m(l + _) - h;
+			let t = n.resolve(r[1]), i = n.resolve(r[2]), a = t * s, o = i * c, l = n.resolve(r[3]) * di, u = n.resolve(r[4]) * di, p = Math.PI * 2, m = (e) => Math.atan2(t * Math.sin(e), i * Math.cos(e)), h = m(l), g = Math.trunc(u / p), _ = u - g * p, v = m(l + _) - h;
 			_ > 0 && v < 0 ? v += p : _ < 0 && v > 0 && (v -= p);
 			let y = h + v + g * p, b = d - a * Math.cos(h), x = f - o * Math.sin(h);
 			Math.abs(a) > 1e-6 && Math.abs(o) > 1e-6 && (e.ellipse(b, x, Math.abs(a), Math.abs(o), 0, h, y, u < 0), d = b + a * Math.cos(y), f = x + o * Math.sin(y));
@@ -26880,44 +27671,44 @@ function Mr(e, t, n, r, i, a, o) {
 }
 //#endregion
 //#region packages/core/src/shape/preset-geometry/index.ts
-var Nr = Er, Pr = /* @__PURE__ */ new WeakMap();
-function Fr(e) {
-	let t = Pr.get(e);
+var pi = oi, mi = /* @__PURE__ */ new WeakMap();
+function hi(e) {
+	let t = mi.get(e);
 	return t || (t = {
-		adj: e.adj.map(([e, t]) => [e, kr(t)]),
-		gd: e.gd.map(([e, t]) => [e, kr(t)])
-	}, Pr.set(e, t)), t;
+		adj: e.adj.map(([e, t]) => [e, li(t)]),
+		gd: e.gd.map(([e, t]) => [e, li(t)])
+	}, mi.set(e, t)), t;
 }
-function Ir(e, t, n, r) {
-	let i = Fr(e);
-	return Ar({
+function gi(e, t, n, r) {
+	let i = hi(e);
+	return ui({
 		w: t,
 		h: n,
 		adj: r
 	}, i.adj, i.gd);
 }
-function Lr(e) {
-	return e.toLowerCase() in Nr;
+function _i(e) {
+	return e.toLowerCase() in pi;
 }
-function Rr(e, t, n, r, i, a, o = []) {
-	let s = Nr[t.toLowerCase()];
+function vi(e, t, n, r, i, a, o = []) {
+	let s = pi[t.toLowerCase()];
 	if (!s) return !1;
-	let c = Ir(s, i, a, o);
-	for (let t of s.paths) Mr(e, t, c, n, r, i, a);
+	let c = gi(s, i, a, o);
+	for (let t of s.paths) fi(e, t, c, n, r, i, a);
 	return !0;
 }
-function zr(e, t, n, r, i, a, o = []) {
-	let s = Nr[t.toLowerCase()];
+function yi(e, t, n, r, i, a, o = []) {
+	let s = pi[t.toLowerCase()];
 	if (!s) return !1;
-	let c = Ir(s, i, a, o);
-	for (let t of s.paths) t.fill !== "none" && Mr(e, t, c, n, r, i, a);
+	let c = gi(s, i, a, o);
+	for (let t of s.paths) t.fill !== "none" && fi(e, t, c, n, r, i, a);
 	return !0;
 }
-var Br = {
+var bi = {
 	wedgeroundrectcallout: "roundrect",
 	wedgeellipsecallout: "ellipse",
 	wedgerectcallout: null
-}, Vr = {
+}, xi = {
 	adj: [],
 	gd: [],
 	paths: [{
@@ -26951,20 +27742,20 @@ var Br = {
 		]
 	}]
 };
-function Hr(e, t, n) {
+function Si(e, t, n) {
 	let r = e[n];
 	if (typeof r == "number") return r;
 	let i = t.adj[n];
 	return i && Number(i[1].replace(/^val\s+/, "")) || 0;
 }
-function Ur(e, t, n, r) {
-	let i = Nr[e];
+function Ci(e, t, n, r) {
+	let i = pi[e];
 	if (!i) return null;
-	if (e in Br) {
-		let a = Hr(r, i, 0), o = Hr(r, i, 1), s = t / 2 + t * a / 1e5, c = n / 2 + n * o / 1e5;
+	if (e in bi) {
+		let a = Si(r, i, 0), o = Si(r, i, 1), s = t / 2 + t * a / 1e5, c = n / 2 + n * o / 1e5;
 		if (s >= 0 && s <= t && c >= 0 && c <= n) {
-			let t = Br[e];
-			t === "roundrect" ? (i = Nr.roundrect, r = [Hr(r, Nr[e], 2)]) : t && Nr[t] ? (i = Nr[t], r = []) : (i = Vr, r = []);
+			let t = bi[e];
+			t === "roundrect" ? (i = pi.roundrect, r = [Si(r, pi[e], 2)]) : t && pi[t] ? (i = pi[t], r = []) : (i = xi, r = []);
 		}
 	}
 	return {
@@ -26972,8 +27763,8 @@ function Ur(e, t, n, r) {
 		adj: r
 	};
 }
-function Wr(e, t, n, r, i, a = []) {
-	let o = Ur(e.toLowerCase(), r, i, a);
+function wi(e, t, n, r, i, a = []) {
+	let o = Ci(e.toLowerCase(), r, i, a);
 	if (!o) return null;
 	let s = Infinity, c = Infinity, l = -Infinity, u = -Infinity, d = (e, t) => {
 		!Number.isFinite(e) || !Number.isFinite(t) || (s = Math.min(s, e), c = Math.min(c, t), l = Math.max(l, e), u = Math.max(u, t));
@@ -26990,8 +27781,8 @@ function Wr(e, t, n, r, i, a = []) {
 			d(e - Math.abs(n), t - Math.abs(r)), d(e + Math.abs(n), t + Math.abs(r));
 		},
 		closePath() {}
-	}, p = Ir(o.def, r, i, o.adj);
-	for (let e of o.def.paths) Mr(f, e, p, t, n, r, i);
+	}, p = gi(o.def, r, i, o.adj);
+	for (let e of o.def.paths) fi(f, e, p, t, n, r, i);
 	return Number.isFinite(s) ? {
 		x: s,
 		y: c,
@@ -27004,19 +27795,19 @@ function Wr(e, t, n, r, i, a = []) {
 		h: i
 	};
 }
-function Gr(e, t, n, r, i, a, o, s, c, l, u) {
-	let d = Ur(t.toLowerCase(), i, a, o);
+function Ti(e, t, n, r, i, a, o, s, c, l, u) {
+	let d = Ci(t.toLowerCase(), i, a, o);
 	if (!d) return !1;
 	let { def: f } = d;
 	o = d.adj;
-	let p = Ir(f, i, a, o), m = !1, h = f.paths.length - 1;
+	let p = gi(f, i, a, o), m = !1, h = f.paths.length - 1;
 	for (let t = 0; t < f.paths.length; t++) {
 		let o = f.paths[t];
-		e.beginPath(), Mr(e, o, p, n, r, i, a);
+		e.beginPath(), fi(e, o, p, n, r, i, a);
 		let d = o.fill;
 		if (d !== "none" && s != null) {
 			e.save(), e.fillStyle = s, e.fill();
-			let t = qr(d);
+			let t = Di(d);
 			t && (e.fillStyle = t, e.fill()), e.restore(), m ||= (l(), !0);
 		}
 		if (o.stroke && c) {
@@ -27026,10 +27817,10 @@ function Gr(e, t, n, r, i, a, o, s, c, l, u) {
 	}
 	return !0;
 }
-function Kr(e, t, n, r, i, a) {
-	let o = Nr[e.toLowerCase()];
+function Ei(e, t, n, r, i, a) {
+	let o = pi[e.toLowerCase()];
 	if (!o || o.paths.length === 0) return null;
-	let s = o.paths[o.paths.length - 1], c = Ir(o, r, i, a), l = s.w == null ? 1 : r / s.w, u = s.h == null ? 1 : i / s.h, d = (e) => t + e * l, f = (e) => n + e * u, p = 0, m = 0, h = 0, g = 0, _ = 0, v = 0, y = !1, b = 0, x = 0, S = [];
+	let s = o.paths[o.paths.length - 1], c = gi(o, r, i, a), l = s.w == null ? 1 : r / s.w, u = s.h == null ? 1 : i / s.h, d = (e) => t + e * l, f = (e) => n + e * u, p = 0, m = 0, h = 0, g = 0, _ = 0, v = 0, y = !1, b = 0, x = 0, S = [];
 	for (let e of s.cmds) switch (e[0]) {
 		case "m":
 			h = d(c.resolve(e[1])), g = f(c.resolve(e[2])), p = h, m = g, S.push({
@@ -27069,7 +27860,7 @@ function Kr(e, t, n, r, i, a) {
 		vertices: S
 	};
 }
-function qr(e) {
+function Di(e) {
 	switch (e) {
 		case "lighten": return "rgba(255,255,255,0.30)";
 		case "lightenLess": return "rgba(255,255,255,0.15)";
@@ -27080,26 +27871,26 @@ function qr(e) {
 }
 //#endregion
 //#region packages/core/src/image/pixel-budget.ts
-var Jr = 32767, Yr = 1 << 25, Xr = Yr * 4, Zr = class e extends RangeError {
+var Oi = 32767, ki = 1 << 25, Ai = ki * 4, ji = class e extends RangeError {
 	code = "ooxml-decoded-image-limit";
 	constructor(t, n, r) {
 		super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`), this.metric = t, this.limit = n, this.observed = r, this.name = "OoxmlDecodedImageLimitError", Object.setPrototypeOf(this, e.prototype);
 	}
 };
-function Qr(e) {
-	return e instanceof Zr || !!e && typeof e == "object" && e.code === "ooxml-decoded-image-limit";
+function Mi(e) {
+	return e instanceof ji || !!e && typeof e == "object" && e.code === "ooxml-decoded-image-limit";
 }
 //#endregion
 //#region packages/core/src/image/dib.ts
-var $r = Jr, ei = Yr;
-function ti(e, t, n, r, i) {
+var Ni = Oi, Pi = ki;
+function Fi(e, t, n, r, i) {
 	if (n < 40 || t + 40 > e.byteLength) return null;
 	let a = e.getUint32(t, !0);
 	if (a < 40) return null;
 	let o = e.getInt32(t + 4, !0), s = e.getInt32(t + 8, !0), c = e.getUint16(t + 14, !0);
 	if (e.getUint32(t + 16, !0) !== 0) return null;
 	let l = s < 0, u = Math.abs(o), d = Math.abs(s);
-	if (u <= 0 || d <= 0 || u > $r || d > $r || u * d > ei) return null;
+	if (u <= 0 || d <= 0 || u > Ni || d > Ni || u * d > Pi) return null;
 	let f = new Uint8ClampedArray(u * d * 4), p = u * c + 31 >> 5 << 2 >>> 0;
 	if (r + p * d > r + i + p && r + p * d > e.byteLength) return null;
 	let m = null;
@@ -27159,7 +27950,7 @@ function ti(e, t, n, r, i) {
 		data: f
 	};
 }
-function ni(e, t, n) {
+function Ii(e, t, n) {
 	if (n < 40 || t + 40 > e.byteLength) return null;
 	let r = e.getUint32(t, !0);
 	if (r < 40) return null;
@@ -27169,11 +27960,11 @@ function ni(e, t, n) {
 		n === 0 && (n = 1 << i), a = n;
 	} else a = e.getUint32(t + 32, !0);
 	let o = r + a * 4, s = t + o, c = n - o;
-	return c <= 0 ? null : ti(e, t, o, s, c);
+	return c <= 0 ? null : Fi(e, t, o, s, c);
 }
-function ri(e, t, n, r, i, a) {
+function Li(e, t, n, r, i, a) {
 	try {
-		let o = Te(t.width, t.height);
+		let o = Ue(t.width, t.height);
 		if (!o) return !1;
 		let s = o.getContext("2d");
 		if (!s) return !1;
@@ -27238,7 +28029,7 @@ var $ = {
 	EXTCREATEPEN: 95,
 	BITBLT: 76,
 	STRETCHDIBITS: 81
-}, ii = {
+}, Ri = {
 	WHITE_BRUSH: 2147483648,
 	LTGRAY_BRUSH: 2147483649,
 	GRAY_BRUSH: 2147483650,
@@ -27250,7 +28041,7 @@ var $ = {
 	NULL_PEN: 2147483656,
 	DC_BRUSH: 2147483666,
 	DC_PEN: 2147483662
-}, ai = {
+}, zi = {
 	TEXT: 1,
 	LOMETRIC: 2,
 	HIMETRIC: 3,
@@ -27259,7 +28050,7 @@ var $ = {
 	TWIPS: 6,
 	ISOTROPIC: 7,
 	ANISOTROPIC: 8
-}, oi = () => ({
+}, Bi = () => ({
 	m11: 1,
 	m12: 0,
 	m21: 0,
@@ -27267,7 +28058,7 @@ var $ = {
 	dx: 0,
 	dy: 0
 });
-function si(e, t) {
+function Vi(e, t) {
 	return {
 		m11: e.m11 * t.m11 + e.m21 * t.m12,
 		m12: e.m12 * t.m11 + e.m22 * t.m12,
@@ -27277,7 +28068,7 @@ function si(e, t) {
 		dy: e.m12 * t.dx + e.m22 * t.dy + e.dy
 	};
 }
-var ci = class {
+var Hi = class {
 	p;
 	constructor(e, t, n) {
 		this.dv = e, this.end = n, this.p = t;
@@ -27321,137 +28112,137 @@ var ci = class {
 		this.p += e;
 	}
 };
-function li(e, t, n) {
+function Ui(e, t, n) {
 	return e.wt.m11 * t + e.wt.m21 * n + e.wt.dx;
 }
-function ui(e, t, n) {
+function Wi(e, t, n) {
 	return e.wt.m12 * t + e.wt.m22 * n + e.wt.dy;
 }
-function di(e) {
+function Gi(e) {
 	return e.winExtX === 0 ? 1 : e.vpExtX / e.winExtX;
 }
-function fi(e) {
+function Ki(e) {
 	return e.winExtY === 0 ? 1 : e.vpExtY / e.winExtY;
 }
-function pi(e) {
-	return Math.min(Math.abs(di(e)), Math.abs(fi(e)));
+function qi(e) {
+	return Math.min(Math.abs(Gi(e)), Math.abs(Ki(e)));
 }
-function mi(e) {
-	return e.mapMode === ai.ISOTROPIC ? di(e) < 0 ? -pi(e) : pi(e) : di(e);
+function Ji(e) {
+	return e.mapMode === zi.ISOTROPIC ? Gi(e) < 0 ? -qi(e) : qi(e) : Gi(e);
 }
-function hi(e) {
-	return e.mapMode === ai.ISOTROPIC ? fi(e) < 0 ? -pi(e) : pi(e) : fi(e);
+function Yi(e) {
+	return e.mapMode === zi.ISOTROPIC ? Ki(e) < 0 ? -qi(e) : qi(e) : Ki(e);
 }
-function gi(e, t) {
-	return (t - e.winOrgX) * mi(e) + e.vpOrgX;
+function Xi(e, t) {
+	return (t - e.winOrgX) * Ji(e) + e.vpOrgX;
 }
-function _i(e, t) {
-	return (t - e.winOrgY) * hi(e) + e.vpOrgY;
+function Zi(e, t) {
+	return (t - e.winOrgY) * Yi(e) + e.vpOrgY;
 }
-function vi(e, t, n) {
-	let r = gi(e, li(e, t, n)), i = _i(e, ui(e, t, n));
+function Qi(e, t, n) {
+	let r = Xi(e, Ui(e, t, n)), i = Zi(e, Wi(e, t, n));
 	return [(r - e.left) * e.W / e.boundsW, (i - e.top) * e.H / e.boundsH];
 }
-function yi(e) {
+function $i(e) {
 	return (Math.hypot(e.wt.m11, e.wt.m12) + Math.hypot(e.wt.m21, e.wt.m22)) / 2;
 }
-function bi(e) {
-	return (Math.abs(mi(e)) + Math.abs(hi(e))) / 2;
+function ea(e) {
+	return (Math.abs(Ji(e)) + Math.abs(Yi(e))) / 2;
 }
-function xi(e) {
+function ta(e) {
 	return (e.W / e.boundsW + e.H / e.boundsH) / 2;
 }
-function Si(e) {
+function na(e) {
 	return Math.hypot(e.wt.m21, e.wt.m22);
 }
-function Ci(e) {
+function ra(e) {
 	return e.H / e.boundsH;
 }
-function wi(e, t) {
-	let n = t * yi(e) * bi(e) * xi(e);
+function ia(e, t) {
+	let n = t * $i(e) * ea(e) * ta(e);
 	return Math.max(.75, n);
 }
-function Ti(e, t) {
-	if (e.mapMode = t, t === ai.TEXT) {
+function aa(e, t) {
+	if (e.mapMode = t, t === zi.TEXT) {
 		e.winOrgX = 0, e.winOrgY = 0, e.vpOrgX = 0, e.vpOrgY = 0, e.winExtX = 1, e.winExtY = 1, e.vpExtX = 1, e.vpExtY = 1;
 		return;
 	}
-	if (t === ai.ANISOTROPIC || t === ai.ISOTROPIC || e.devPxPerMmX <= 0 || e.devPxPerMmY <= 0) return;
-	let n = 25.4, r = t === ai.LOMETRIC ? .1 : t === ai.HIMETRIC ? .01 : t === ai.LOENGLISH ? .01 * n : t === ai.HIENGLISH ? .001 * n : t === ai.TWIPS ? n / 1440 : 0;
+	if (t === zi.ANISOTROPIC || t === zi.ISOTROPIC || e.devPxPerMmX <= 0 || e.devPxPerMmY <= 0) return;
+	let n = 25.4, r = t === zi.LOMETRIC ? .1 : t === zi.HIMETRIC ? .01 : t === zi.LOENGLISH ? .01 * n : t === zi.HIENGLISH ? .001 * n : t === zi.TWIPS ? n / 1440 : 0;
 	r <= 0 || (e.winOrgX = 0, e.winOrgY = 0, e.vpOrgX = 0, e.vpOrgY = 0, e.winExtX = 1, e.winExtY = 1, e.vpExtX = r * e.devPxPerMmX, e.vpExtY = -(r * e.devPxPerMmY));
 }
-var Ei = {
-	[ii.WHITE_BRUSH]: {
+var oa = {
+	[Ri.WHITE_BRUSH]: {
 		kind: "brush",
 		fill: "#ffffff"
 	},
-	[ii.LTGRAY_BRUSH]: {
+	[Ri.LTGRAY_BRUSH]: {
 		kind: "brush",
 		fill: "#c0c0c0"
 	},
-	[ii.GRAY_BRUSH]: {
+	[Ri.GRAY_BRUSH]: {
 		kind: "brush",
 		fill: "#808080"
 	},
-	[ii.DKGRAY_BRUSH]: {
+	[Ri.DKGRAY_BRUSH]: {
 		kind: "brush",
 		fill: "#404040"
 	},
-	[ii.BLACK_BRUSH]: {
+	[Ri.BLACK_BRUSH]: {
 		kind: "brush",
 		fill: "#000000"
 	},
-	[ii.NULL_BRUSH]: {
+	[Ri.NULL_BRUSH]: {
 		kind: "brush",
 		fill: null
 	}
-}, Di = {
-	[ii.WHITE_PEN]: {
+}, sa = {
+	[Ri.WHITE_PEN]: {
 		kind: "pen",
 		stroke: "#ffffff",
 		width: 1
 	},
-	[ii.BLACK_PEN]: {
+	[Ri.BLACK_PEN]: {
 		kind: "pen",
 		stroke: "#000000",
 		width: 1
 	},
-	[ii.NULL_PEN]: {
+	[Ri.NULL_PEN]: {
 		kind: "pen",
 		stroke: null,
 		width: 1
 	},
-	[ii.DC_PEN]: {
+	[Ri.DC_PEN]: {
 		kind: "pen",
 		stroke: "#000000",
 		width: 1
 	}
 };
-function Oi(e, t) {
-	let n = Ei[t];
+function ca(e, t) {
+	let n = oa[t];
 	if (n) {
 		e.curBrush = n;
 		return;
 	}
-	let r = Di[t];
+	let r = sa[t];
 	if (r) {
 		e.curPen = r;
 		return;
 	}
-	t === ii.DC_BRUSH && (e.curBrush = e.curBrush ?? {
+	t === Ri.DC_BRUSH && (e.curBrush = e.curBrush ?? {
 		kind: "brush",
 		fill: "#000000"
 	});
 }
-function ki(e) {
+function la(e) {
 	let t = 0, n = 0, r = 0, i = 0;
 	for (let a = 0; a < e.data.length; a += 4) e.data[a + 3] !== 0 && (t += e.data[a], n += e.data[a + 1], r += e.data[a + 2], i++);
 	if (i === 0) return "#808080";
 	let a = (e) => Math.round(e / i).toString(16).padStart(2, "0");
 	return `#${a(t)}${a(n)}${a(r)}`;
 }
-var Ai = (e) => [e.i16(), e.i16()], ji = (e) => [e.i32(), e.i32()];
-function Mi(e, t, n) {
+var ua = (e) => [e.i16(), e.i16()], da = (e) => [e.i32(), e.i32()];
+function fa(e, t, n) {
 	t.skip(16);
 	let r = t.u32();
 	if (r < 2 || r > 1048576 || !e.curPen || e.curPen.stroke == null) return;
@@ -27459,32 +28250,32 @@ function Mi(e, t, n) {
 	i.beginPath();
 	let a = 0, o = 0;
 	for (let s = 0; s < r && !(t.remaining < 4); s++) {
-		let [r, c] = n(t), [l, u] = vi(e, r, c);
+		let [r, c] = n(t), [l, u] = Qi(e, r, c);
 		s === 0 ? i.moveTo(l, u) : i.lineTo(l, u), a = r, o = c;
 	}
-	i.strokeStyle = e.curPen.stroke, i.lineWidth = wi(e, e.curPen.width), i.stroke(), e.drew = !0, e.curX = a, e.curY = o;
+	i.strokeStyle = e.curPen.stroke, i.lineWidth = ia(e, e.curPen.width), i.stroke(), e.drew = !0, e.curX = a, e.curY = o;
 }
-function Ni(e, t, n) {
+function pa(e, t, n) {
 	t.skip(16);
 	let r = t.u32();
 	if (r < 1 || r > 1048576) return;
 	let { ctx: i } = e, a = e.curPen != null && e.curPen.stroke != null;
 	if (a) {
 		i.beginPath();
-		let [t, n] = vi(e, e.curX, e.curY);
+		let [t, n] = Qi(e, e.curX, e.curY);
 		i.moveTo(t, n);
 	}
 	for (let o = 0; o < r && !(t.remaining < 4); o++) {
 		let [r, o] = n(t);
 		if (a) {
-			let [t, n] = vi(e, r, o);
+			let [t, n] = Qi(e, r, o);
 			i.lineTo(t, n);
 		}
 		e.curX = r, e.curY = o;
 	}
-	a && e.curPen && (i.strokeStyle = e.curPen.stroke, i.lineWidth = wi(e, e.curPen.width), i.stroke(), e.drew = !0);
+	a && e.curPen && (i.strokeStyle = e.curPen.stroke, i.lineWidth = ia(e, e.curPen.width), i.stroke(), e.drew = !0);
 }
-function Pi(e, t, n) {
+function ma(e, t, n) {
 	t.skip(16);
 	let r = t.u32();
 	if (r < 2 || r > 1048576) return;
@@ -27492,12 +28283,12 @@ function Pi(e, t, n) {
 	e.inPath || i.beginPath();
 	let a = !1;
 	for (let o = 0; o < r && !(t.remaining < 4); o++) {
-		let [r, o] = n(t), [s, c] = vi(e, r, o);
+		let [r, o] = n(t), [s, c] = Qi(e, r, o);
 		a ? i.lineTo(s, c) : (i.moveTo(s, c), a = !0);
 	}
-	a && (i.closePath(), !e.inPath && (e.curBrush && e.curBrush.fill != null && (i.fillStyle = e.curBrush.fill, i.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (i.strokeStyle = e.curPen.stroke, i.lineWidth = wi(e, e.curPen.width), i.stroke(), e.drew = !0)));
+	a && (i.closePath(), !e.inPath && (e.curBrush && e.curBrush.fill != null && (i.fillStyle = e.curBrush.fill, i.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (i.strokeStyle = e.curPen.stroke, i.lineWidth = ia(e, e.curPen.width), i.stroke(), e.drew = !0)));
 }
-function Fi(e, t, n, r) {
+function ha(e, t, n, r) {
 	t.skip(16);
 	let i = t.u32();
 	if (i < 1 || i > 1048576) return;
@@ -27510,7 +28301,7 @@ function Fi(e, t, n, r) {
 	let o = e.curPen != null && e.curPen.stroke != null, { ctx: s } = e;
 	if (o) {
 		s.beginPath();
-		let t = r ? vi(e, e.curX, e.curY) : vi(e, a[0][0], a[0][1]);
+		let t = r ? Qi(e, e.curX, e.curY) : Qi(e, a[0][0], a[0][1]);
 		s.moveTo(t[0], t[1]);
 	}
 	let c = +!r;
@@ -27518,14 +28309,14 @@ function Fi(e, t, n, r) {
 		let t = a[c], n = a[c + 1], r = a[c + 2];
 		if (!t || !n || !r) break;
 		if (o) {
-			let i = vi(e, t[0], t[1]), a = vi(e, n[0], n[1]), o = vi(e, r[0], r[1]);
+			let i = Qi(e, t[0], t[1]), a = Qi(e, n[0], n[1]), o = Qi(e, r[0], r[1]);
 			s.bezierCurveTo(i[0], i[1], a[0], a[1], o[0], o[1]);
 		}
 		e.curX = r[0], e.curY = r[1];
 	}
-	o && e.curPen && (s.strokeStyle = e.curPen.stroke, s.lineWidth = wi(e, e.curPen.width), s.stroke(), e.drew = !0);
+	o && e.curPen && (s.strokeStyle = e.curPen.stroke, s.lineWidth = ia(e, e.curPen.width), s.stroke(), e.drew = !0);
 }
-function Ii(e, t, n, r) {
+function ga(e, t, n, r) {
 	t.skip(16);
 	let i = t.u32(), a = t.u32();
 	if (i <= 0 || i > 65536 || a <= 0 || a > 2097152) return;
@@ -27543,28 +28334,28 @@ function Ii(e, t, n, r) {
 			continue;
 		}
 		for (let r = 0; r < i && !(t.remaining < 4); r++) {
-			let [i, a] = n(t), [o, c] = vi(e, i, a);
+			let [i, a] = n(t), [o, c] = Qi(e, i, a);
 			r === 0 ? s.moveTo(o, c) : s.lineTo(o, c);
 		}
 		r && s.closePath(), c = !0;
 	}
-	!c || e.inPath || (r && e.curBrush && e.curBrush.fill != null && (s.fillStyle = e.curBrush.fill, s.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (s.strokeStyle = e.curPen.stroke, s.lineWidth = wi(e, e.curPen.width), s.stroke(), e.drew = !0));
+	!c || e.inPath || (r && e.curBrush && e.curBrush.fill != null && (s.fillStyle = e.curBrush.fill, s.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (s.strokeStyle = e.curPen.stroke, s.lineWidth = ia(e, e.curPen.width), s.stroke(), e.drew = !0));
 }
-function Li(e, t, n, r, i) {
-	let { ctx: a } = e, o = vi(e, t, n), s = vi(e, r, n), c = vi(e, r, i), l = vi(e, t, i);
-	e.inPath || a.beginPath(), a.moveTo(o[0], o[1]), a.lineTo(s[0], s[1]), a.lineTo(c[0], c[1]), a.lineTo(l[0], l[1]), a.closePath(), !e.inPath && (e.curBrush && e.curBrush.fill != null && (a.fillStyle = e.curBrush.fill, a.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (a.strokeStyle = e.curPen.stroke, a.lineWidth = wi(e, e.curPen.width), a.stroke(), e.drew = !0));
+function _a(e, t, n, r, i) {
+	let { ctx: a } = e, o = Qi(e, t, n), s = Qi(e, r, n), c = Qi(e, r, i), l = Qi(e, t, i);
+	e.inPath || a.beginPath(), a.moveTo(o[0], o[1]), a.lineTo(s[0], s[1]), a.lineTo(c[0], c[1]), a.lineTo(l[0], l[1]), a.closePath(), !e.inPath && (e.curBrush && e.curBrush.fill != null && (a.fillStyle = e.curBrush.fill, a.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (a.strokeStyle = e.curPen.stroke, a.lineWidth = ia(e, e.curPen.width), a.stroke(), e.drew = !0));
 }
-function Ri(e) {
+function va(e) {
 	let t = e.u32(), n = e.u32(), r = e.i32();
 	e.i32();
 	let i = e.u32();
 	return [t, {
 		kind: "pen",
-		stroke: (n & 255) == 5 ? null : ma(i),
+		stroke: (n & 255) == 5 ? null : Ja(i),
 		width: Math.abs(r)
 	}];
 }
-function zi(e) {
+function ya(e) {
 	let t = e.u32();
 	e.skip(16);
 	let n = e.u32(), r = e.u32();
@@ -27572,31 +28363,31 @@ function zi(e) {
 	let i = e.u32();
 	return [t, {
 		kind: "pen",
-		stroke: (n & 255) == 5 ? null : ma(i),
+		stroke: (n & 255) == 5 ? null : Ja(i),
 		width: Math.abs(r)
 	}];
 }
-function Bi(e) {
+function ba(e) {
 	let t = e.u32(), n = e.u32(), r = e.u32();
 	return e.u32(), [t, {
 		kind: "brush",
-		fill: n === 1 ? null : ma(r)
+		fill: n === 1 ? null : Ja(r)
 	}];
 }
-function Vi(e, t, n) {
+function xa(e, t, n) {
 	let r = e.u32();
 	e.u32();
 	let i = e.u32(), a = e.u32(), o = e.u32(), s = e.u32(), c = "#808080";
 	try {
-		let e = ti(t, n + i, a, n + o, s);
-		e && (c = ki(e));
+		let e = Fi(t, n + i, a, n + o, s);
+		e && (c = la(e));
 	} catch {}
 	return [r, {
 		kind: "brush",
 		fill: c
 	}];
 }
-function Hi(e, t, n) {
+function Sa(e, t, n) {
 	let r = e.u32(), i = n + 12, a = t.getInt32(i, !0), o = t.getInt32(i + 8, !0), s = t.getInt32(i + 16, !0), c = t.getUint8(i + 20), l = "";
 	for (let e = 0; e < 32; e++) {
 		let n = i + 28 + e * 2;
@@ -27614,7 +28405,7 @@ function Hi(e, t, n) {
 		escapement: o
 	}];
 }
-function Ui(e, t, n, r) {
+function Ca(e, t, n, r) {
 	t.skip(16), t.u32(), t.f32(), t.f32();
 	let i = t.i32(), a = t.i32(), o = t.u32(), s = t.u32();
 	if (t.u32(), o <= 0 || o > 65536) return;
@@ -27625,9 +28416,9 @@ function Ui(e, t, n, r) {
 		c += String.fromCharCode(n.getUint16(t, !0));
 	}
 	if (c.length === 0) return;
-	let l = e.curFont, u = Math.abs(l?.height ?? 0) * Si(e) * Math.abs(hi(e)) * Ci(e);
+	let l = e.curFont, u = Math.abs(l?.height ?? 0) * na(e) * Math.abs(Yi(e)) * ra(e);
 	if (!Number.isFinite(u) || u < 1) return;
-	let { ctx: d } = e, [f, p] = vi(e, i, a);
+	let { ctx: d } = e, [f, p] = Qi(e, i, a);
 	d.fillStyle = e.textColor;
 	let m = l && l.weight >= 700 ? "bold " : "";
 	d.font = `${l?.italic ? "italic " : ""}${m}${u}px ${l?.face || "sans-serif"}`;
@@ -27646,29 +28437,29 @@ function Ui(e, t, n, r) {
 		e.drew = !0;
 	} catch {}
 }
-function Wi(e, t, n, r, i, a, o, s, c, l, u) {
+function wa(e, t, n, r, i, a, o, s, c, l, u) {
 	if (i === 0 || o === 0) return;
-	let d = ti(t, n + r, i, n + a, o);
+	let d = Fi(t, n + r, i, n + a, o);
 	if (!d) return;
-	let [f, p] = vi(e, s, c), [m, h] = vi(e, l, u);
-	ri(e.ctx, d, f, p, m, h) && (e.drew = !0);
+	let [f, p] = Qi(e, s, c), [m, h] = Qi(e, l, u);
+	Li(e.ctx, d, f, p, m, h) && (e.drew = !0);
 }
-function Gi(e, t, n, r) {
+function Ta(e, t, n, r) {
 	t.skip(16);
 	let i = t.i32(), a = t.i32(), o = t.i32(), s = t.i32();
-	t.u32(), t.i32(), t.i32(), t.skip(24), t.u32(), t.u32(), Wi(e, n, r, t.u32(), t.u32(), t.u32(), t.u32(), i, a, i + o, a + s);
+	t.u32(), t.i32(), t.i32(), t.skip(24), t.u32(), t.u32(), wa(e, n, r, t.u32(), t.u32(), t.u32(), t.u32(), i, a, i + o, a + s);
 }
-function Ki(e, t, n, r) {
+function Ea(e, t, n, r) {
 	t.skip(16);
 	let i = t.i32(), a = t.i32();
 	t.i32(), t.i32(), t.i32(), t.i32();
 	let o = t.u32(), s = t.u32(), c = t.u32(), l = t.u32();
 	t.u32(), t.u32();
 	let u = t.i32(), d = t.i32();
-	Wi(e, n, r, o, s, c, l, i, a, i + u, a + d);
+	wa(e, n, r, o, s, c, l, i, a, i + u, a + d);
 }
-function qi(e, t, n, r) {
-	if (!fa(e) || n <= 0 || r <= 0) return !1;
+function Da(e, t, n, r) {
+	if (!Ka(e) || n <= 0 || r <= 0) return !1;
 	let i = new DataView(e.buffer, e.byteOffset, e.byteLength), a = {
 		ctx: t,
 		W: n,
@@ -27677,8 +28468,8 @@ function qi(e, t, n, r) {
 		top: 0,
 		boundsW: n,
 		boundsH: r,
-		wt: oi(),
-		mapMode: ai.TEXT,
+		wt: Bi(),
+		mapMode: zi.TEXT,
 		winOrgX: 0,
 		winOrgY: 0,
 		winExtX: 1,
@@ -27708,7 +28499,7 @@ function qi(e, t, n, r) {
 		if (r < 8 || r & 3) break;
 		let s = o + r;
 		if (s > e.length || n === $.EOF) break;
-		let c = new ci(i, o + 8, s);
+		let c = new Hi(i, o + 8, s);
 		try {
 			switch (n) {
 				case $.HEADER: {
@@ -27727,11 +28518,11 @@ function qi(e, t, n, r) {
 					break;
 				case $.MODIFYWORLDTRANSFORM: {
 					let e = c.xform(), t = c.u32();
-					t === 1 ? a.wt = oi() : t === 2 ? a.wt = si(e, a.wt) : t === 3 ? a.wt = si(a.wt, e) : t === 4 && (a.wt = e);
+					t === 1 ? a.wt = Bi() : t === 2 ? a.wt = Vi(e, a.wt) : t === 3 ? a.wt = Vi(a.wt, e) : t === 4 && (a.wt = e);
 					break;
 				}
 				case $.SETMAPMODE:
-					Ti(a, c.u32());
+					aa(a, c.u32());
 					break;
 				case $.SETWINDOWORGEX:
 					a.winOrgX = c.i32(), a.winOrgY = c.i32();
@@ -27804,7 +28595,7 @@ function qi(e, t, n, r) {
 					break;
 				case $.SELECTOBJECT: {
 					let e = c.u32();
-					if (e & 2147483648) Oi(a, e >>> 0);
+					if (e & 2147483648) ca(a, e >>> 0);
 					else {
 						let t = a.objects.get(e);
 						t?.kind === "pen" ? a.curPen = t : t?.kind === "brush" ? a.curBrush = t : t?.kind === "font" && (a.curFont = t);
@@ -27817,72 +28608,72 @@ function qi(e, t, n, r) {
 					break;
 				}
 				case $.CREATEPEN: {
-					let [e, t] = Ri(c);
+					let [e, t] = va(c);
 					a.objects.set(e, t);
 					break;
 				}
 				case $.EXTCREATEPEN: {
-					let [e, t] = zi(c);
+					let [e, t] = ya(c);
 					a.objects.set(e, t);
 					break;
 				}
 				case $.CREATEBRUSHINDIRECT: {
-					let [e, t] = Bi(c);
+					let [e, t] = ba(c);
 					a.objects.set(e, t);
 					break;
 				}
 				case $.CREATEMONOBRUSH:
 				case $.CREATEDIBPATTERNBRUSHPT: {
-					let [e, t] = Vi(c, i, o);
+					let [e, t] = xa(c, i, o);
 					a.objects.set(e, t);
 					break;
 				}
 				case $.EXTCREATEFONTINDIRECTW: {
-					let [e, t] = Hi(c, i, o);
+					let [e, t] = Sa(c, i, o);
 					a.objects.set(e, t);
 					break;
 				}
 				case $.POLYLINE16:
-					Mi(a, c, Ai);
+					fa(a, c, ua);
 					break;
 				case $.POLYLINE:
-					Mi(a, c, ji);
+					fa(a, c, da);
 					break;
 				case $.POLYLINETO16:
-					Ni(a, c, Ai);
+					pa(a, c, ua);
 					break;
 				case $.POLYLINETO:
-					Ni(a, c, ji);
+					pa(a, c, da);
 					break;
 				case $.POLYGON16:
-					Pi(a, c, Ai);
+					ma(a, c, ua);
 					break;
 				case $.POLYGON:
-					Pi(a, c, ji);
+					ma(a, c, da);
 					break;
 				case $.POLYBEZIER16:
-					Fi(a, c, Ai, !1);
+					ha(a, c, ua, !1);
 					break;
 				case $.POLYBEZIER:
-					Fi(a, c, ji, !1);
+					ha(a, c, da, !1);
 					break;
 				case $.POLYBEZIERTO16:
-					Fi(a, c, Ai, !0);
+					ha(a, c, ua, !0);
 					break;
 				case $.POLYBEZIERTO:
-					Fi(a, c, ji, !0);
+					ha(a, c, da, !0);
 					break;
 				case $.POLYPOLYGON16:
-					Ii(a, c, Ai, !0);
+					ga(a, c, ua, !0);
 					break;
 				case $.POLYPOLYGON:
-					Ii(a, c, ji, !0);
+					ga(a, c, da, !0);
 					break;
 				case $.POLYPOLYLINE16:
-					Ii(a, c, Ai, !1);
+					ga(a, c, ua, !1);
 					break;
 				case $.POLYPOLYLINE:
-					Ii(a, c, ji, !1);
+					ga(a, c, da, !1);
 					break;
 				case $.MOVETOEX:
 					a.curX = c.i32(), a.curY = c.i32();
@@ -27890,25 +28681,25 @@ function qi(e, t, n, r) {
 				case $.LINETO: {
 					let e = c.i32(), n = c.i32();
 					if (a.curPen && a.curPen.stroke != null) {
-						let [r, i] = vi(a, a.curX, a.curY), [o, s] = vi(a, e, n);
-						t.beginPath(), t.moveTo(r, i), t.lineTo(o, s), t.strokeStyle = a.curPen.stroke, t.lineWidth = wi(a, a.curPen.width), t.stroke(), a.drew = !0;
+						let [r, i] = Qi(a, a.curX, a.curY), [o, s] = Qi(a, e, n);
+						t.beginPath(), t.moveTo(r, i), t.lineTo(o, s), t.strokeStyle = a.curPen.stroke, t.lineWidth = ia(a, a.curPen.width), t.stroke(), a.drew = !0;
 					}
 					a.curX = e, a.curY = n;
 					break;
 				}
 				case $.RECTANGLE:
-					Li(a, c.i32(), c.i32(), c.i32(), c.i32());
+					_a(a, c.i32(), c.i32(), c.i32(), c.i32());
 					break;
 				case $.ELLIPSE: {
-					let e = c.i32(), n = c.i32(), r = c.i32(), i = c.i32(), [o, s] = [(e + r) / 2, (n + i) / 2], [l, u] = vi(a, o, s), [d] = vi(a, r, s), [, f] = vi(a, o, i), p = Math.abs(d - l), m = Math.abs(f - u);
-					t.beginPath(), t.ellipse(l, u, p, m, 0, 0, Math.PI * 2), a.curBrush && a.curBrush.fill != null && (t.fillStyle = a.curBrush.fill, t.fill(a.fillRule), a.drew = !0), a.curPen && a.curPen.stroke != null && (t.strokeStyle = a.curPen.stroke, t.lineWidth = wi(a, a.curPen.width), t.stroke(), a.drew = !0);
+					let e = c.i32(), n = c.i32(), r = c.i32(), i = c.i32(), [o, s] = [(e + r) / 2, (n + i) / 2], [l, u] = Qi(a, o, s), [d] = Qi(a, r, s), [, f] = Qi(a, o, i), p = Math.abs(d - l), m = Math.abs(f - u);
+					t.beginPath(), t.ellipse(l, u, p, m, 0, 0, Math.PI * 2), a.curBrush && a.curBrush.fill != null && (t.fillStyle = a.curBrush.fill, t.fill(a.fillRule), a.drew = !0), a.curPen && a.curPen.stroke != null && (t.strokeStyle = a.curPen.stroke, t.lineWidth = ia(a, a.curPen.width), t.stroke(), a.drew = !0);
 					break;
 				}
 				case $.SETPOLYFILLMODE:
 					a.fillRule = c.u32() === 1 ? "evenodd" : "nonzero";
 					break;
 				case $.SETTEXTCOLOR:
-					a.textColor = ma(c.u32());
+					a.textColor = Ja(c.u32());
 					break;
 				case $.SETTEXTALIGN:
 					a.textAlign = c.u32();
@@ -27917,13 +28708,13 @@ function qi(e, t, n, r) {
 					a.bkMode = c.u32();
 					break;
 				case $.EXTTEXTOUTW:
-					Ui(a, c, i, o);
+					Ca(a, c, i, o);
 					break;
 				case $.BITBLT:
-					Gi(a, c, i, o);
+					Ta(a, c, i, o);
 					break;
 				case $.STRETCHDIBITS:
-					Ki(a, c, i, o);
+					Ea(a, c, i, o);
 					break;
 				default: break;
 			}
@@ -27932,55 +28723,55 @@ function qi(e, t, n, r) {
 	}
 	return a.drew;
 }
-async function Ji(e, t, n) {
-	if (!fa(e) || t <= 0 || n <= 0) return null;
-	let r = Te(t, n);
+async function Oa(e, t, n) {
+	if (!Ka(e) || t <= 0 || n <= 0) return null;
+	let r = Ue(t, n);
 	if (!r) return null;
 	let i = r.getContext("2d");
-	return !i || (i.lineJoin = "round", i.lineCap = "round", !qi(e, i, t, n)) ? null : createImageBitmap(r);
+	return !i || (i.lineJoin = "round", i.lineCap = "round", !Da(e, i, t, n)) ? null : createImageBitmap(r);
 }
 //#endregion
 //#region packages/core/src/image/raster-dimensions.ts
-function Yi(e, t) {
+function ka(e, t) {
 	return e[t] << 8 | e[t + 1];
 }
-function Xi(e, t) {
+function Aa(e, t) {
 	return (e[t] << 24 | e[t + 1] << 16 | e[t + 2] << 8 | e[t + 3]) >>> 0;
 }
-function Zi(e, t) {
+function ja(e, t) {
 	return e[t] | e[t + 1] << 8;
 }
-function Qi(e, t) {
+function Ma(e, t) {
 	return e[t] | e[t + 1] << 8 | e[t + 2] << 16 | e[t + 3] << 24 | 0;
 }
-function $i(e) {
+function Na(e) {
 	let t = e.length;
 	return t >= 24 && e[0] === 137 && e[1] === 80 && e[2] === 78 && e[3] === 71 && e[4] === 13 && e[5] === 10 && e[6] === 26 && e[7] === 10 ? e[12] === 73 && e[13] === 72 && e[14] === 68 && e[15] === 82 ? {
-		width: Xi(e, 16),
-		height: Xi(e, 20)
+		width: Aa(e, 16),
+		height: Aa(e, 20)
 	} : null : t >= 10 && e[0] === 71 && e[1] === 73 && e[2] === 70 && e[3] === 56 && (e[4] === 55 || e[4] === 57) && e[5] === 97 ? {
-		width: Zi(e, 6),
-		height: Zi(e, 8)
-	} : t >= 26 && e[0] === 66 && e[1] === 77 ? ea(e, 14) === 12 ? {
-		width: Zi(e, 18),
-		height: Zi(e, 20)
+		width: ja(e, 6),
+		height: ja(e, 8)
+	} : t >= 26 && e[0] === 66 && e[1] === 77 ? Pa(e, 14) === 12 ? {
+		width: ja(e, 18),
+		height: ja(e, 20)
 	} : {
-		width: Math.abs(Qi(e, 18)),
-		height: Math.abs(Qi(e, 22))
-	} : t >= 16 && e[0] === 82 && e[1] === 73 && e[2] === 70 && e[3] === 70 && e[8] === 87 && e[9] === 69 && e[10] === 66 && e[11] === 80 ? ta(e) : t >= 4 && e[0] === 255 && e[1] === 216 ? na(e) : null;
+		width: Math.abs(Ma(e, 18)),
+		height: Math.abs(Ma(e, 22))
+	} : t >= 16 && e[0] === 82 && e[1] === 73 && e[2] === 70 && e[3] === 70 && e[8] === 87 && e[9] === 69 && e[10] === 66 && e[11] === 80 ? Fa(e) : t >= 4 && e[0] === 255 && e[1] === 216 ? Ia(e) : null;
 }
-function ea(e, t) {
+function Pa(e, t) {
 	return (e[t] | e[t + 1] << 8 | e[t + 2] << 16 | e[t + 3] << 24) >>> 0;
 }
-function ta(e) {
+function Fa(e) {
 	let t = e.length, n = e[12], r = e[13], i = e[14], a = e[15];
 	if (n === 86 && r === 80 && i === 56 && a === 32) return t < 30 ? null : {
-		width: Zi(e, 26) & 16383,
-		height: Zi(e, 28) & 16383
+		width: ja(e, 26) & 16383,
+		height: ja(e, 28) & 16383
 	};
 	if (n === 86 && r === 80 && i === 56 && a === 76) {
 		if (t < 25 || e[20] !== 47) return null;
-		let n = ea(e, 21);
+		let n = Pa(e, 21);
 		return {
 			width: (n & 16383) + 1,
 			height: (n >>> 14 & 16383) + 1
@@ -27991,7 +28782,7 @@ function ta(e) {
 		height: (e[27] | e[28] << 8 | e[29] << 16) + 1
 	} : null;
 }
-function na(e) {
+function Ia(e) {
 	let t = e.length, n = 2;
 	for (; n + 1 < t;) {
 		if (e[n] !== 255) {
@@ -28008,12 +28799,12 @@ function na(e) {
 			continue;
 		}
 		if (r === 217 || n + 3 >= t) return null;
-		let i = Yi(e, n + 2);
+		let i = ka(e, n + 2);
 		if (r >= 192 && r <= 207 && r !== 196 && r !== 200 && r !== 204) {
 			if (n + 8 >= t) return null;
-			let r = Yi(e, n + 5);
+			let r = ka(e, n + 5);
 			return {
-				width: Yi(e, n + 7),
+				width: ka(e, n + 7),
 				height: r
 			};
 		}
@@ -28022,19 +28813,19 @@ function na(e) {
 	}
 	return null;
 }
-function ra(e) {
+function La(e) {
 	let { width: t, height: n } = e;
-	return !Number.isFinite(t) || !Number.isFinite(n) || t <= 0 || n <= 0 || t > 32767 || n > 32767 ? !0 : t * n > Yr;
+	return !Number.isFinite(t) || !Number.isFinite(n) || t <= 0 || n <= 0 || t > 32767 || n > 32767 ? !0 : t * n > ki;
 }
 //#endregion
 //#region packages/core/src/image/image-bitmap-lifecycle.ts
-function ia(e) {
+function Ra(e) {
 	let t = e.close;
 	typeof t == "function" && t.call(e);
 }
 //#endregion
 //#region packages/core/src/image/wmf.ts
-var aa = {
+var za = {
 	EOF: 0,
 	SETBKMODE: 258,
 	SETTEXTALIGN: 302,
@@ -28055,35 +28846,35 @@ var aa = {
 	DIBBITBLT: 2368,
 	DIBSTRETCHBLT: 2881,
 	STRETCHDIBITS: 3907
-}, oa = 2596720087, sa = 22, ca = 18, la = 1179469088;
-function ua(e, t) {
-	if (e.length < t + ca) return !1;
+}, Ba = 2596720087, Va = 22, Ha = 18, Ua = 1179469088;
+function Wa(e, t) {
+	if (e.length < t + Ha) return !1;
 	let n = e[t] | e[t + 1] << 8, r = e[t + 2] | e[t + 3] << 8;
 	return (n === 1 || n === 2) && r === 9;
 }
-function da(e) {
-	return e.length < 4 ? !1 : (e[0] | e[1] << 8 | e[2] << 16 | e[3] << 24) >>> 0 === oa ? !0 : ua(e, 0);
+function Ga(e) {
+	return e.length < 4 ? !1 : (e[0] | e[1] << 8 | e[2] << 16 | e[3] << 24) >>> 0 === Ba ? !0 : Wa(e, 0);
 }
-function fa(e) {
+function Ka(e) {
 	if (e.length < 44) return !1;
 	let t = new DataView(e.buffer, e.byteOffset, e.byteLength);
-	return t.getUint32(0, !0) === 1 && t.getUint32(40, !0) === la;
+	return t.getUint32(0, !0) === 1 && t.getUint32(40, !0) === Ua;
 }
-function pa(e) {
+function qa(e) {
 	return e === "image/wmf" || e === "image/emf";
 }
-function ma(e) {
+function Ja(e) {
 	let t = e & 255, n = e >>> 8 & 255, r = e >>> 16 & 255, i = (e) => e.toString(16).padStart(2, "0");
 	return `#${i(t)}${i(n)}${i(r)}`;
 }
-function ha(e, t) {
+function Ya(e, t) {
 	for (let n = 0; n < e.length; n++) if (e[n] == null) {
 		e[n] = t;
 		return;
 	}
 	e.push(t);
 }
-var ga = class {
+var Xa = class {
 	p = 0;
 	constructor(e, t, n) {
 		this.b = e, this.end = n, this.p = t;
@@ -28114,56 +28905,56 @@ var ga = class {
 		this.p = Math.min(this.p + Math.max(0, e), this.end);
 	}
 };
-function _a(e, t) {
+function Za(e, t) {
 	return (t - e.orgX) * (e.W / e.extX);
 }
-function va(e, t) {
+function Qa(e, t) {
 	return (t - e.orgY) * (e.H / e.extY);
 }
-function ya(e, t) {
+function $a(e, t) {
 	let n = t * Math.abs(e.W / e.extX);
 	return n >= 1 ? n : 1;
 }
-var ba = .001;
-function xa(e, t, n) {
-	return Math.abs(e - t) <= ba || Math.abs(e - n) <= ba;
+var eo = .001;
+function to(e, t, n) {
+	return Math.abs(e - t) <= eo || Math.abs(e - n) <= eo;
 }
-function Sa(e, t, n) {
+function no(e, t, n) {
 	let r = [], i = n ? t.length : t.length - 1;
 	for (let n = 0; n < i; n++) {
-		let i = t[n], a = t[(n + 1) % t.length], o = Math.abs(i[0] - a[0]) <= ba && xa(i[0], 0, e.W) && xa(a[0], 0, e.W), s = Math.abs(i[1] - a[1]) <= ba && xa(i[1], 0, e.H) && xa(a[1], 0, e.H);
+		let i = t[n], a = t[(n + 1) % t.length], o = Math.abs(i[0] - a[0]) <= eo && to(i[0], 0, e.W) && to(a[0], 0, e.W), s = Math.abs(i[1] - a[1]) <= eo && to(i[1], 0, e.H) && to(a[1], 0, e.H);
 		o || s || r.push([i, a]);
 	}
 	return r;
 }
-function Ca(e, t, n) {
+function ro(e, t, n) {
 	if (!e.curPen || e.curPen.stroke == null || t.length < 2) return;
 	let { ctx: r } = e;
-	if (r.strokeStyle = e.curPen.stroke, r.lineWidth = ya(e, e.curPen.width), !e.suppressBoundaryFrame) {
+	if (r.strokeStyle = e.curPen.stroke, r.lineWidth = $a(e, e.curPen.width), !e.suppressBoundaryFrame) {
 		r.beginPath(), r.moveTo(t[0][0], t[0][1]);
 		for (let e = 1; e < t.length; e++) r.lineTo(t[e][0], t[e][1]);
 		n && r.closePath(), r.stroke(), e.drew = !0;
 		return;
 	}
-	let i = Sa(e, t, n);
+	let i = no(e, t, n);
 	if (i.length === 0) return;
 	r.beginPath();
 	let a = null;
 	for (let [e, t] of i) (!a || a[0] !== e[0] || a[1] !== e[1]) && r.moveTo(e[0], e[1]), r.lineTo(t[0], t[1]), a = t;
 	r.stroke(), e.drew = !0;
 }
-function wa(e, t, n) {
+function io(e, t, n) {
 	let r = [];
 	for (let i = 0; i < n && !(t.remaining < 4); i++) {
 		let n = t.i16(), i = t.i16();
-		r.push([_a(e, n), va(e, i)]);
+		r.push([Za(e, n), Qa(e, i)]);
 	}
 	return r;
 }
-function Ta(e, t) {
-	t.length < 2 || !e.curPen || e.curPen.stroke == null || Ca(e, t, !1);
+function ao(e, t) {
+	t.length < 2 || !e.curPen || e.curPen.stroke == null || ro(e, t, !1);
 }
-function Ea(e, t) {
+function oo(e, t) {
 	if (t.length < 2) return;
 	let { ctx: n } = e;
 	if (e.curBrush && e.curBrush.fill != null) {
@@ -28171,9 +28962,9 @@ function Ea(e, t) {
 		for (let e = 1; e < t.length; e++) n.lineTo(t[e][0], t[e][1]);
 		n.closePath(), n.fillStyle = e.curBrush.fill, n.fill(e.fillRule), e.drew = !0;
 	}
-	Ca(e, t, !0);
+	ro(e, t, !0);
 }
-function Da(e, t) {
+function so(e, t) {
 	let n = t.u16();
 	if (n <= 0 || n > 65536) return;
 	let r = [];
@@ -28189,33 +28980,33 @@ function Da(e, t) {
 			for (let e = 0; e < n && t.remaining >= 4; e++) t.i16(), t.i16();
 			continue;
 		}
-		let r = wa(e, t, n);
+		let r = io(e, t, n);
 		if (!(r.length < 2)) {
 			i.moveTo(r[0][0], r[0][1]);
 			for (let e = 1; e < r.length; e++) i.lineTo(r[e][0], r[e][1]);
 			i.closePath(), a = !0;
 		}
 	}
-	a && (e.curBrush && e.curBrush.fill != null && (i.fillStyle = e.curBrush.fill, i.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (i.strokeStyle = e.curPen.stroke, i.lineWidth = ya(e, e.curPen.width), i.stroke(), e.drew = !0));
+	a && (e.curBrush && e.curBrush.fill != null && (i.fillStyle = e.curBrush.fill, i.fill(e.fillRule), e.drew = !0), e.curPen && e.curPen.stroke != null && (i.strokeStyle = e.curPen.stroke, i.lineWidth = $a(e, e.curPen.width), i.stroke(), e.drew = !0));
 }
-function Oa(e) {
+function co(e) {
 	let t = e.u16(), n = e.i16();
 	e.i16();
 	let r = e.u32();
 	return {
 		kind: "pen",
-		stroke: (t & 255) == 5 ? null : ma(r),
+		stroke: (t & 255) == 5 ? null : Ja(r),
 		width: Math.abs(n)
 	};
 }
-function ka(e) {
+function lo(e) {
 	let t = e.u16(), n = e.u32();
 	return e.u16(), {
 		kind: "brush",
-		fill: t === 1 ? null : ma(n)
+		fill: t === 1 ? null : Ja(n)
 	};
 }
-function Aa(e) {
+function uo(e) {
 	let t = e.indexOf(0), n = t >= 0 ? e.subarray(0, t) : e;
 	if (n.length === 0) return "";
 	try {
@@ -28224,7 +29015,7 @@ function Aa(e) {
 		return String.fromCharCode(...n);
 	}
 }
-function ja(e) {
+function fo(e) {
 	let t = Math.abs(e.i16());
 	e.i16(), e.i16(), e.i16();
 	let n = e.i16(), r = e.u8() !== 0;
@@ -28233,12 +29024,12 @@ function ja(e) {
 		height: t,
 		weight: n,
 		italic: r,
-		face: Aa(e.bytes(Math.min(32, e.remaining)))
+		face: uo(e.bytes(Math.min(32, e.remaining)))
 	};
 }
-function Ma(e, t, n, r) {
+function po(e, t, n, r) {
 	if (t.length === 0) return;
-	let i = e.curFont, a = i?.height || 12, o = Math.abs(va(e, e.orgY + a) - va(e, e.orgY));
+	let i = e.curFont, a = i?.height || 12, o = Math.abs(Qa(e, e.orgY + a) - Qa(e, e.orgY));
 	if (!Number.isFinite(o) || o < 1) return;
 	let { ctx: s } = e;
 	try {
@@ -28246,14 +29037,14 @@ function Ma(e, t, n, r) {
 		let a = i && i.weight >= 700 ? "bold " : "";
 		s.font = `${i?.italic ? "italic " : ""}${a}${o}px ${i?.face || "sans-serif"}`;
 		let c = e.textAlign & 6;
-		s.textAlign = c === 2 ? "right" : c === 6 ? "center" : "left", s.textBaseline = (e.textAlign & 24) == 24 ? "alphabetic" : "top", s.fillText(t, _a(e, n), va(e, r)), e.drew = !0;
+		s.textAlign = c === 2 ? "right" : c === 6 ? "center" : "left", s.textBaseline = (e.textAlign & 24) == 24 ? "alphabetic" : "top", s.fillText(t, Za(e, n), Qa(e, r)), e.drew = !0;
 	} catch {}
 }
-function Na(e, t, n, r, i = !1) {
-	if (!da(e)) return !1;
+function mo(e, t, n, r, i = !1) {
+	if (!Ga(e)) return !1;
 	let a = 0;
-	(e.length >= 4 ? (e[0] | e[1] << 8 | e[2] << 16 | e[3] << 24) >>> 0 : 0) === oa && (a = sa);
-	let o = a + ca;
+	(e.length >= 4 ? (e[0] | e[1] << 8 | e[2] << 16 | e[3] << 24) >>> 0 : 0) === Ba && (a = Va);
+	let o = a + Ha;
 	if (o > e.length) return !1;
 	let s = {
 		ctx: t,
@@ -28278,214 +29069,214 @@ function Na(e, t, n, r, i = !1) {
 		let t = c.getUint32(o, !0), n = c.getUint16(o + 4, !0);
 		if (t < 3) break;
 		let r = t * 2, i = o + r;
-		if (i > e.length || n === aa.EOF) break;
-		let a = o + 6, l = new ga(e, a, i);
+		if (i > e.length || n === za.EOF) break;
+		let a = o + 6, l = new Xa(e, a, i);
 		switch (n) {
-			case aa.SETWINDOWORG:
+			case za.SETWINDOWORG:
 				s.orgY = l.i16(), s.orgX = l.i16();
 				break;
-			case aa.SETWINDOWEXT: {
+			case za.SETWINDOWEXT: {
 				let e = l.i16(), t = l.i16();
 				s.extY = e || 1, s.extX = t || 1, s.haveExt = !0;
 				break;
 			}
-			case aa.SETPOLYFILLMODE:
+			case za.SETPOLYFILLMODE:
 				s.fillRule = l.u16() === 1 ? "evenodd" : "nonzero";
 				break;
-			case aa.SETTEXTCOLOR:
-				s.textColor = ma(l.u32());
+			case za.SETTEXTCOLOR:
+				s.textColor = Ja(l.u32());
 				break;
-			case aa.SETTEXTALIGN:
+			case za.SETTEXTALIGN:
 				s.textAlign = l.u16();
 				break;
-			case aa.CREATEPENINDIRECT:
-				ha(s.objects, Oa(l));
+			case za.CREATEPENINDIRECT:
+				Ya(s.objects, co(l));
 				break;
-			case aa.CREATEBRUSHINDIRECT:
-				ha(s.objects, ka(l));
+			case za.CREATEBRUSHINDIRECT:
+				Ya(s.objects, lo(l));
 				break;
-			case aa.CREATEFONTINDIRECT:
-				ha(s.objects, ja(l));
+			case za.CREATEFONTINDIRECT:
+				Ya(s.objects, fo(l));
 				break;
-			case aa.SELECTOBJECT: {
+			case za.SELECTOBJECT: {
 				let e = l.u16(), t = s.objects[e];
 				t?.kind === "pen" ? s.curPen = t : t?.kind === "brush" ? s.curBrush = t : t?.kind === "font" && (s.curFont = t);
 				break;
 			}
-			case aa.DELETEOBJECT: {
+			case za.DELETEOBJECT: {
 				let e = l.u16(), t = s.objects[e];
 				t && (t === s.curPen && (s.curPen = null), t === s.curBrush && (s.curBrush = null), t === s.curFont && (s.curFont = null), s.objects[e] = null);
 				break;
 			}
-			case aa.POLYLINE:
-				Ta(s, wa(s, l, l.i16()));
+			case za.POLYLINE:
+				ao(s, io(s, l, l.i16()));
 				break;
-			case aa.POLYGON:
-				Ea(s, wa(s, l, l.i16()));
+			case za.POLYGON:
+				oo(s, io(s, l, l.i16()));
 				break;
-			case aa.POLYPOLYGON:
-				Da(s, l);
+			case za.POLYPOLYGON:
+				so(s, l);
 				break;
-			case aa.RECTANGLE: {
+			case za.RECTANGLE: {
 				let e = l.i16(), t = l.i16(), n = l.i16(), r = l.i16();
-				Ea(s, [
-					[_a(s, r), va(s, n)],
-					[_a(s, t), va(s, n)],
-					[_a(s, t), va(s, e)],
-					[_a(s, r), va(s, e)]
+				oo(s, [
+					[Za(s, r), Qa(s, n)],
+					[Za(s, t), Qa(s, n)],
+					[Za(s, t), Qa(s, e)],
+					[Za(s, r), Qa(s, e)]
 				]);
 				break;
 			}
-			case aa.TEXTOUT: {
-				let e = l.u16(), t = Aa(l.bytes(e));
+			case za.TEXTOUT: {
+				let e = l.u16(), t = uo(l.bytes(e));
 				e % 2 != 0 && l.skip(1);
 				let n = l.i16();
-				Ma(s, t, l.i16(), n);
+				po(s, t, l.i16(), n);
 				break;
 			}
-			case aa.STRETCHDIBITS: {
+			case za.STRETCHDIBITS: {
 				l.u32(), l.i16(), l.i16(), l.i16(), l.i16(), l.u16();
-				let e = l.i16(), t = l.i16(), n = l.i16(), r = l.i16(), o = a + 22, u = ni(c, o, i - o);
+				let e = l.i16(), t = l.i16(), n = l.i16(), r = l.i16(), o = a + 22, u = Ii(c, o, i - o);
 				if (u) {
-					let i = _a(s, r), a = va(s, n), o = _a(s, r + t), c = va(s, n + e);
-					ri(s.ctx, u, i, a, o, c) && (s.drew = !0);
+					let i = Za(s, r), a = Qa(s, n), o = Za(s, r + t), c = Qa(s, n + e);
+					Li(s.ctx, u, i, a, o, c) && (s.drew = !0);
 				}
 				break;
 			}
-			case aa.DIBSTRETCHBLT:
-			case aa.DIBBITBLT:
-			case aa.SETBKMODE: break;
+			case za.DIBSTRETCHBLT:
+			case za.DIBBITBLT:
+			case za.SETBKMODE: break;
 			default: break;
 		}
 		o = i;
 	}
 	return s.drew;
 }
-var Pa = 2e3, Fa = 2;
-function Ia(e, t) {
-	let n = e > 0 ? e : 300, r = t > 0 ? t : 300, i = (e) => Math.max(1, Math.min(Pa, Math.round(e)));
+var ho = 2e3, go = 2;
+function _o(e, t) {
+	let n = e > 0 ? e : 300, r = t > 0 ? t : 300, i = (e) => Math.max(1, Math.min(ho, Math.round(e)));
 	return {
-		w: i(n * Fa),
-		h: i(r * Fa)
+		w: i(n * go),
+		h: i(r * go)
 	};
 }
-async function La(e, t, n, r = !1) {
-	if (!da(e) || t <= 0 || n <= 0) return null;
-	let i = Te(t, n);
+async function vo(e, t, n, r = !1) {
+	if (!Ga(e) || t <= 0 || n <= 0) return null;
+	let i = Ue(t, n);
 	if (!i) return null;
 	let a = i.getContext("2d");
-	return !a || (a.lineJoin = "round", a.lineCap = "round", !Na(e, a, t, n, r)) ? null : createImageBitmap(i);
+	return !a || (a.lineJoin = "round", a.lineCap = "round", !mo(e, a, t, n, r)) ? null : createImageBitmap(i);
 }
-async function Ra(e, t = {}) {
+async function yo(e, t = {}) {
 	let { widthPt: n = 0, heightPt: r = 0, suppressBoundaryFrame: i = !1 } = t, a = new Uint8Array(await e.slice(0, 64 * 1024).arrayBuffer());
-	if (da(a)) {
-		let { w: t, h: a } = Ia(n, r);
-		return za(await La(new Uint8Array(await e.arrayBuffer()), t, a, i));
+	if (Ga(a)) {
+		let { w: t, h: a } = _o(n, r);
+		return bo(await vo(new Uint8Array(await e.arrayBuffer()), t, a, i));
 	}
-	if (fa(a)) {
-		let { w: t, h: i } = Ia(n, r);
-		return za(await Ji(new Uint8Array(await e.arrayBuffer()), t, i));
+	if (Ka(a)) {
+		let { w: t, h: i } = _o(n, r);
+		return bo(await Oa(new Uint8Array(await e.arrayBuffer()), t, i));
 	}
-	let o = $i(a);
-	if (o && ra(o)) throw new Zr("image-pixels", Yr, o.width * o.height);
-	return za(await createImageBitmap(e));
+	let o = Na(a);
+	if (o && La(o)) throw new ji("image-pixels", ki, o.width * o.height);
+	return bo(await createImageBitmap(e));
 }
-function za(e) {
+function bo(e) {
 	if (!e) return null;
 	let t = Number(e.width), n = Number(e.height);
-	if (!ra({
+	if (!La({
 		width: t,
 		height: n
 	})) return e;
 	let r = t * n;
-	throw ia(e), new Zr("image-pixels", Yr, Number.isSafeInteger(r) && r >= 0 ? r : 2 ** 53 - 1);
+	throw Ra(e), new ji("image-pixels", ki, Number.isSafeInteger(r) && r >= 0 ? r : 2 ** 53 - 1);
 }
 //#endregion
 //#region packages/core/src/image/decode-gate.ts
-var Ba = /* @__PURE__ */ new WeakMap();
-async function Va(e, t) {
-	let n = Ba.get(e);
+var xo = /* @__PURE__ */ new WeakMap();
+async function So(e, t) {
+	let n = xo.get(e);
 	n || (n = {
 		active: 0,
 		waiters: []
-	}, Ba.set(e, n)), n.active >= 2 || n.waiters.length > 0 ? await new Promise((e) => n.waiters.push(e)) : n.active++;
+	}, xo.set(e, n)), n.active >= 2 || n.waiters.length > 0 ? await new Promise((e) => n.waiters.push(e)) : n.active++;
 	try {
 		return await Promise.resolve(), await t();
 	} finally {
 		let t = n.waiters.shift();
-		t ? t() : (n.active--, n.active === 0 && Ba.delete(e));
+		t ? t() : (n.active--, n.active === 0 && xo.delete(e));
 	}
 }
 //#endregion
 //#region packages/core/src/image/bitmap-image-by-path.ts
-var Ha = 256, Ua = /* @__PURE__ */ new WeakMap();
-function Wa(e) {
-	let t = Ua.get(e);
+var Co = 256, wo = /* @__PURE__ */ new WeakMap();
+function To(e) {
+	let t = wo.get(e);
 	return t || (t = {
 		entries: /* @__PURE__ */ new Map(),
 		retainedBytes: 0
-	}, Ua.set(e, t)), t;
+	}, wo.set(e, t)), t;
 }
-var Ga = /* @__PURE__ */ new WeakMap(), Ka = /* @__PURE__ */ new WeakSet();
-function qa(e) {
-	!e || Ka.has(e) || (Ka.add(e), ia(e));
+var Eo = /* @__PURE__ */ new WeakMap(), Do = /* @__PURE__ */ new WeakSet();
+function Oo(e) {
+	!e || Do.has(e) || (Do.add(e), Ra(e));
 }
-function Ja(e) {
-	qa(e);
+function ko(e) {
+	Oo(e);
 }
-function Ya(e) {
-	let t = Ga.get(e);
+function Ao(e) {
+	let t = Eo.get(e);
 	t || (t = {
 		count: 0,
 		deferred: [],
 		activeBytes: 0,
 		activeBitmaps: /* @__PURE__ */ new WeakSet()
-	}, Ga.set(e, t));
+	}, Eo.set(e, t));
 	let n = t;
 	n.count++;
 	let r = !1;
 	return () => {
 		if (!r && (r = !0, n.count--, !(n.count > 0))) {
-			for (let e of n.deferred) e.then((e) => qa(e)).catch(() => {});
-			n.deferred = [], n.activeBytes = 0, n.activeBitmaps = /* @__PURE__ */ new WeakSet(), Ga.delete(e);
+			for (let e of n.deferred) e.then((e) => Oo(e)).catch(() => {});
+			n.deferred = [], n.activeBytes = 0, n.activeBitmaps = /* @__PURE__ */ new WeakSet(), Eo.delete(e);
 		}
 	};
 }
-function Xa(e) {
+function jo(e) {
 	if (!e) return 0;
 	let t = Number(e.width), n = Number(e.height);
 	return Number.isSafeInteger(t) && t > 0 && Number.isSafeInteger(n) && n > 0 ? t * n * 4 : 0;
 }
-function Za(e, t) {
+function Mo(e, t) {
 	if (!t) return;
-	let n = Ga.get(e);
+	let n = Eo.get(e);
 	if (!n || n.count === 0 || n.activeBitmaps.has(t)) return;
-	let r = n.activeBytes + Xa(t);
-	if (r > 134217728) throw new Zr("active-decoded-bytes", Xr, r);
+	let r = n.activeBytes + jo(t);
+	if (r > 134217728) throw new ji("active-decoded-bytes", Ai, r);
 	n.activeBitmaps.add(t), n.activeBytes = r;
 }
-function Qa(e, t, n) {
+function No(e, t, n) {
 	let r = [...t.entries].find(([e]) => e !== n);
 	if (!r) return !1;
 	let [i, a] = r;
-	return t.entries.delete(i), t.retainedBytes -= a.weight, $a(e, a.ownedPromise), !0;
+	return t.entries.delete(i), t.retainedBytes -= a.weight, Po(e, a.ownedPromise), !0;
 }
-function $a(e, t) {
-	let n = Ga.get(e);
+function Po(e, t) {
+	let n = Eo.get(e);
 	if (n && n.count > 0) {
 		n.deferred.push(t);
 		return;
 	}
-	t.then((e) => qa(e)).catch(() => {});
+	t.then((e) => Oo(e)).catch(() => {});
 }
-function eo(e, t, n) {
-	let r = Wa(t), i = r.entries, a = i.get(e);
-	if (a) return i.delete(e), i.set(e, a), a.promise.then((e) => (Za(t, e), e));
-	let o = Va(t, n), s = o.then(({ bitmap: e, owned: t }) => t ? e : null), c = o.then(({ bitmap: e, owned: n }) => {
+function Fo(e, t, n) {
+	let r = To(t), i = r.entries, a = i.get(e);
+	if (a) return i.delete(e), i.set(e, a), a.promise.then((e) => (Mo(t, e), e));
+	let o = So(t, n), s = o.then(({ bitmap: e, owned: t }) => t ? e : null), c = o.then(({ bitmap: e, owned: n }) => {
 		try {
-			return Za(t, e), e;
+			return Mo(t, e), e;
 		} catch (t) {
-			throw n && qa(e), t;
+			throw n && Oo(e), t;
 		}
 	}), l = {
 		promise: c,
@@ -28498,24 +29289,24 @@ function eo(e, t, n) {
 				i.delete(e);
 				return;
 			}
-			for (l.weight = Xa(n), r.retainedBytes += l.weight; r.retainedBytes > Xr && Qa(t, r, e););
+			for (l.weight = jo(n), r.retainedBytes += l.weight; r.retainedBytes > Ai && No(t, r, e););
 		}
 	}).catch(() => {}), c.catch(() => {
-		i.get(e) === l && (i.delete(e), r.retainedBytes -= l.weight, $a(t, s));
-	}), i.set(e, l); i.size > Ha && Qa(t, r, e););
+		i.get(e) === l && (i.delete(e), r.retainedBytes -= l.weight, Po(t, s));
+	}), i.set(e, l); i.size > Co && No(t, r, e););
 	return c;
 }
-var to = "base", no = `${to}:`, ro = "derived:";
-function io(e, t, n, r) {
-	return eo(`${e}:${t}`, n, r);
+var Io = "base", Lo = `${Io}:`, Ro = "derived:";
+function zo(e, t, n, r) {
+	return Fo(`${e}:${t}`, n, r);
 }
-function ao(e, t, n, r) {
-	return io(`${ro}${e}`, t, n, r);
+function Bo(e, t, n, r) {
+	return zo(`${Ro}${e}`, t, n, r);
 }
-function oo(e, t, n, r = {}) {
+function Vo(e, t, n, r = {}) {
 	let { widthPt: i = 0, heightPt: a = 0, suppressBoundaryFrame: o = !1 } = r;
-	return io(to, e, n, async () => ({
-		bitmap: await Ra(await n(e, t), {
+	return zo(Io, e, n, async () => ({
+		bitmap: await yo(await n(e, t), {
 			widthPt: i,
 			heightPt: a,
 			suppressBoundaryFrame: o
@@ -28523,32 +29314,32 @@ function oo(e, t, n, r = {}) {
 		owned: !0
 	}));
 }
-function so(e, t) {
-	return Ua.get(t)?.entries.get(`${no}${e}`)?.bitmap;
+function Ho(e, t) {
+	return wo.get(t)?.entries.get(`${Lo}${e}`)?.bitmap;
 }
-function co(e) {
-	let t = Ua.get(e);
+function Uo(e) {
+	let t = wo.get(e);
 	if (t) {
-		for (let n of t.entries.values()) $a(e, n.ownedPromise);
-		t.entries.clear(), t.retainedBytes = 0, Ua.delete(e);
+		for (let n of t.entries.values()) Po(e, n.ownedPromise);
+		t.entries.clear(), t.retainedBytes = 0, wo.delete(e);
 	}
 }
 //#endregion
 //#region packages/core/src/image/svg-image-by-path.ts
-var lo = /* @__PURE__ */ new WeakMap(), uo = 256;
-function fo(e) {
-	let t = lo.get(e);
-	return t || (t = { imgs: /* @__PURE__ */ new Map() }, lo.set(e, t)), t;
+var Wo = /* @__PURE__ */ new WeakMap(), Go = 256;
+function Ko(e) {
+	let t = Wo.get(e);
+	return t || (t = { imgs: /* @__PURE__ */ new Map() }, Wo.set(e, t)), t;
 }
-function po(e, t) {
-	if (typeof Image > "u") return oo(e, "image/svg+xml", t).then((t) => {
+function qo(e, t) {
+	if (typeof Image > "u") return Vo(e, "image/svg+xml", t).then((t) => {
 		if (!t) throw Error(`svg decode failed: ${e}`);
 		return t;
 	});
-	let n = fo(t), r = n.imgs.get(e);
+	let n = Ko(t), r = n.imgs.get(e);
 	if (r) return n.imgs.delete(e), n.imgs.set(e, r), r.promise;
 	let i = {};
-	if (i.promise = Va(t, async () => {
+	if (i.promise = So(t, async () => {
 		if (n.imgs.get(e) !== i) throw Error("SVG decode was superseded before it started");
 		let r = await t(e, "image/svg+xml"), a = URL.createObjectURL(r);
 		try {
@@ -28563,28 +29354,28 @@ function po(e, t) {
 		}
 	}), i.promise.catch(() => {
 		n.imgs.get(e) === i && n.imgs.delete(e);
-	}), n.imgs.set(e, i), n.imgs.size > uo) {
+	}), n.imgs.set(e, i), n.imgs.size > Go) {
 		let e = n.imgs.keys().next().value;
 		n.imgs.delete(e);
 	}
 	return i.promise;
 }
-function mo(e) {
-	let t = lo.get(e);
-	t && (t.imgs.clear(), lo.delete(e));
+function Jo(e) {
+	let t = Wo.get(e);
+	t && (t.imgs.clear(), Wo.delete(e));
 }
 //#endregion
 //#region packages/core/src/image/crop.ts
-function ho(e) {
+function Yo(e) {
 	let t = e;
 	return {
 		w: t.naturalWidth || (typeof t.width == "number" ? t.width : 0) || 0,
 		h: t.naturalHeight || (typeof t.height == "number" ? t.height : 0) || 0
 	};
 }
-function go(e, t) {
+function Xo(e, t) {
 	if (!t || !(t.l || t.t || t.r || t.b)) return null;
-	let { w: n, h: r } = ho(e);
+	let { w: n, h: r } = Yo(e);
 	if (n <= 0 || r <= 0) return null;
 	let i = (e) => Math.max(0, Math.min(1, e)), a = i(t.l) * n, o = i(t.t) * r;
 	return {
@@ -28594,12 +29385,12 @@ function go(e, t) {
 		sh: Math.max(1, r - o - i(t.b) * r)
 	};
 }
-function _o(e, t, n, r, i, a, o) {
-	let s = go(t, n);
+function Zo(e, t, n, r, i, a, o) {
+	let s = Xo(t, n);
 	s ? e.drawImage(t, s.sx, s.sy, s.sw, s.sh, r, i, a, o) : e.drawImage(t, r, i, a, o);
 }
-function vo(e, t, n, r) {
-	if (!t || !pa(e)) return {
+function Qo(e, t, n, r) {
+	if (!t || !qa(e)) return {
 		widthPt: n,
 		heightPt: r
 	};
@@ -28611,32 +29402,32 @@ function vo(e, t, n, r) {
 }
 //#endregion
 //#region packages/core/src/image/duotone.ts
-function yo(e) {
+function $o(e) {
 	return /^[0-9a-fA-F]{6}$/.test(e) ? [
 		parseInt(e.slice(0, 2), 16),
 		parseInt(e.slice(2, 4), 16),
 		parseInt(e.slice(4, 6), 16)
 	] : null;
 }
-function bo(e, t, n) {
+function es(e, t, n) {
 	return (.299 * e + .587 * t + .114 * n) / 255;
 }
-function xo(e, t, n) {
-	let r = yo(t), i = yo(n);
+function ts(e, t, n) {
+	let r = $o(t), i = $o(n);
 	if (!r || !i) return e;
 	let [a, o, s] = r, [c, l, u] = i, d = e.data;
 	for (let e = 0; e < d.length; e += 4) {
 		if (d[e + 3] === 0) continue;
-		let t = bo(d[e], d[e + 1], d[e + 2]);
+		let t = es(d[e], d[e + 1], d[e + 2]);
 		d[e] = Math.round(a + (c - a) * t), d[e + 1] = Math.round(o + (l - o) * t), d[e + 2] = Math.round(s + (u - s) * t);
 	}
 	return e;
 }
-var So = (e, t) => typeof OffscreenCanvas > "u" ? null : new OffscreenCanvas(e, t);
-async function Co(e, t, n) {
+var ns = (e, t) => typeof OffscreenCanvas > "u" ? null : new OffscreenCanvas(e, t);
+async function rs(e, t, n) {
 	let { width: r, height: i } = n;
 	if (r <= 0 || i <= 0 || typeof createImageBitmap > "u") return e;
-	let a = (n.offscreenFactory ?? So)(r, i);
+	let a = (n.offscreenFactory ?? ns)(r, i);
 	if (!a) return e;
 	let o = a.getContext("2d");
 	if (!o) return e;
@@ -28647,22 +29438,22 @@ async function Co(e, t, n) {
 	} catch {
 		return e;
 	}
-	return xo(s, t.clr1, t.clr2), o.putImageData(s, 0, 0), createImageBitmap(a);
+	return ts(s, t.clr1, t.clr2), o.putImageData(s, 0, 0), createImageBitmap(a);
 }
 //#endregion
 //#region packages/core/src/image/blip-gate.ts
-function wo(e) {
+function is(e) {
 	return e.svgImagePath != null && e.srcRect == null;
 }
 //#endregion
 //#region packages/core/src/math/mathml.ts
-var To = {
+var as = {
 	"&": "&amp;",
 	"<": "&lt;",
 	">": "&gt;",
 	"\"": "&quot;"
-}, Eo = (e) => e.replace(/[&<>"]/g, (e) => To[e]);
-function Do(e, t = "roman") {
+}, os = (e) => e.replace(/[&<>"]/g, (e) => as[e]);
+function ss(e, t = "roman") {
 	if (t === "double-struck" || t === "monospace") return t;
 	if (t === "fraktur") return e === "bold" || e === "boldItalic" ? "bold-fraktur" : "fraktur";
 	if (t === "script") return e === "bold" || e === "boldItalic" ? "bold-script" : "script";
@@ -28679,10 +29470,10 @@ function Do(e, t = "roman") {
 		case "italic": return null;
 	}
 }
-var Oo = new Set([..."⏞⏟⎴⎵︷︸⏜⏝{}[]()¯_‾"]), ko = "+−±∓×÷·∗⋅∘∙*/", Ao = "=≠<>≤≥≈≡∼≅≃→←↔⇒∈∉⊂⊆⊃⊇∝≪≫⊥≔", jo = "([{⟨⌈⌊", Mo = ")]}⟩⌉⌋", No = ",;";
-function Po(e, t, n) {
-	let r = Do(t, n), i = r ? ` mathvariant="${r}"` : "", a = "", o = "", s = () => {
-		o &&= (a += `<mn${i}>${Eo(o)}</mn>`, "");
+var cs = new Set([..."⏞⏟⎴⎵︷︸⏜⏝{}[]()¯_‾"]), ls = "+−±∓×÷·∗⋅∘∙*/", us = "=≠<>≤≥≈≡∼≅≃→←↔⇒∈∉⊂⊆⊃⊇∝≪≫⊥≔", ds = "([{⟨⌈⌊", fs = ")]}⟩⌉⌋", ps = ",;";
+function ms(e, t, n) {
+	let r = ss(t, n), i = r ? ` mathvariant="${r}"` : "", a = "", o = "", s = () => {
+		o &&= (a += `<mn${i}>${os(o)}</mn>`, "");
 	};
 	for (let t of e) {
 		if (t === " ") {
@@ -28693,56 +29484,56 @@ function Po(e, t, n) {
 			o += t;
 			continue;
 		}
-		s(), ko.includes(t) || Ao.includes(t) || No.includes(t) ? a += `<mo>${Eo(t)}</mo>` : jo.includes(t) || Mo.includes(t) ? a += `<mo fence="true" stretchy="false">${Eo(t)}</mo>` : a += `<mi${i}>${Eo(t)}</mi>`;
+		s(), ls.includes(t) || us.includes(t) || ps.includes(t) ? a += `<mo>${os(t)}</mo>` : ds.includes(t) || fs.includes(t) ? a += `<mo fence="true" stretchy="false">${os(t)}</mo>` : a += `<mi${i}>${os(t)}</mi>`;
 	}
 	return s(), a;
 }
-function Fo(e) {
-	return e.map(Lo).join("");
+function hs(e) {
+	return e.map(_s).join("");
 }
-function Io(e) {
-	return `<mrow>${Fo(e)}</mrow>`;
+function gs(e) {
+	return `<mrow>${hs(e)}</mrow>`;
 }
-function Lo(e) {
+function _s(e) {
 	switch (e.kind) {
-		case "run": return Po(e.text, e.style, e.__script);
-		case "group": return Io(e.items);
-		case "fraction": return `<mfrac${e.bar === !1 ? " linethickness=\"0\"" : ""}>${Io(e.num)}${Io(e.den)}</mfrac>`;
-		case "sup": return `<msup>${Io(e.base)}${Io(e.sup ?? [])}</msup>`;
-		case "sub": return `<msub>${Io(e.base)}${Io(e.sub ?? [])}</msub>`;
-		case "subSup": return `<msubsup>${Io(e.base)}${Io(e.sub ?? [])}${Io(e.sup ?? [])}</msubsup>`;
-		case "nary": return Ko(e);
-		case "delimiter": return qo(e);
-		case "radical": return e.index && e.index.length ? `<mroot>${Io(e.radicand)}${Io(e.index)}</mroot>` : `<msqrt>${Fo(e.radicand)}</msqrt>`;
-		case "limit": return Uo(e);
-		case "array": return Wo(e);
+		case "run": return ms(e.text, e.style, e.__script);
+		case "group": return gs(e.items);
+		case "fraction": return `<mfrac${e.bar === !1 ? " linethickness=\"0\"" : ""}>${gs(e.num)}${gs(e.den)}</mfrac>`;
+		case "sup": return `<msup>${gs(e.base)}${gs(e.sup ?? [])}</msup>`;
+		case "sub": return `<msub>${gs(e.base)}${gs(e.sub ?? [])}</msub>`;
+		case "subSup": return `<msubsup>${gs(e.base)}${gs(e.sub ?? [])}${gs(e.sup ?? [])}</msubsup>`;
+		case "nary": return Es(e);
+		case "delimiter": return Ds(e);
+		case "radical": return e.index && e.index.length ? `<mroot>${gs(e.radicand)}${gs(e.index)}</mroot>` : `<msqrt>${hs(e.radicand)}</msqrt>`;
+		case "limit": return Cs(e);
+		case "array": return ws(e);
 		case "groupChr": {
-			let t = Io(e.base), n = Oo.has(e.char), r = e.pos === "top" ? "mover" : "munder", i = `<mo stretchy="${n}">${Eo(e.char)}</mo>`;
+			let t = gs(e.base), n = cs.has(e.char), r = e.pos === "top" ? "mover" : "munder", i = `<mo stretchy="${n}">${os(e.char)}</mo>`;
 			return n ? `<${r}>${t}${i}</${r}>` : `<${r} accent="true">${t}${i}</${r}>`;
 		}
 		case "bar": {
-			let t = Io(e.base), n = "<mo stretchy=\"true\">&#x2015;</mo>";
+			let t = gs(e.base), n = "<mo stretchy=\"true\">&#x2015;</mo>";
 			return e.pos === "bot" ? `<munder>${t}${n}</munder>` : `<mover>${t}${n}</mover>`;
 		}
-		case "accent": return Ho(e);
-		case "func": return `<mrow>${Io(e.name)}<mo>&#x2061;</mo>${Io(e.arg)}</mrow>`;
-		case "phant": return Ro(e);
-		case "sPre": return `<mmultiscripts>${Io(e.base)}<mprescripts/>${Io(e.sub)}${Io(e.sup)}</mmultiscripts>`;
-		case "box": return Io(e.base);
-		case "borderBox": return zo(e);
+		case "accent": return Ss(e);
+		case "func": return `<mrow>${gs(e.name)}<mo>&#x2061;</mo>${gs(e.arg)}</mrow>`;
+		case "phant": return vs(e);
+		case "sPre": return `<mmultiscripts>${gs(e.base)}<mprescripts/>${gs(e.sub)}${gs(e.sup)}</mmultiscripts>`;
+		case "box": return gs(e.base);
+		case "borderBox": return ys(e);
 	}
 }
-function Ro(e) {
-	let t = e.show ? Fo(e.base) : `<mphantom>${Fo(e.base)}</mphantom>`, n = [];
+function vs(e) {
+	let t = e.show ? hs(e.base) : `<mphantom>${hs(e.base)}</mphantom>`, n = [];
 	return e.zeroWid && n.push("width=\"0\""), e.zeroAsc && n.push("height=\"0\""), e.zeroDesc && n.push("depth=\"0\""), n.length ? `<mpadded ${n.join(" ")}>${t}</mpadded>` : `<mrow>${t}</mrow>`;
 }
-function zo(e) {
+function ys(e) {
 	let t = [], n = !e.hideTop, r = !e.hideBot, i = !e.hideLeft, a = !e.hideRight;
 	n && r && i && a ? t.push("box") : (n && t.push("top"), r && t.push("bottom"), i && t.push("left"), a && t.push("right")), e.strikeH && t.push("horizontalstrike"), e.strikeV && t.push("verticalstrike"), e.strikeBltr && t.push("updiagonalstrike"), e.strikeTlbr && t.push("downdiagonalstrike");
-	let o = Fo(e.base);
+	let o = hs(e.base);
 	return t.length ? `<menclose notation="${t.join(" ")}">${o}</menclose>` : `<mrow>${o}</mrow>`;
 }
-var Bo = {
+var bs = {
 	"̀": "`",
 	"́": "´",
 	"̂": "^",
@@ -28753,7 +29544,7 @@ var Bo = {
 	"̌": "ˇ",
 	"⃗": "→",
 	"⃖": "←"
-}, Vo = new Set([
+}, xs = new Set([
 	"̅",
 	"̄",
 	"¯",
@@ -28761,39 +29552,39 @@ var Bo = {
 	"̲",
 	"̳"
 ]);
-function Ho(e) {
-	let t = Io(e.base);
-	if (Vo.has(e.char)) return `<mover>${t}<mo stretchy="true">&#x2015;</mo></mover>`;
-	let n = Bo[e.char] ?? e.char;
-	return `<mover accent="true">${t}<mo stretchy="${n === "→" || n === "←" ? "true" : "false"}">${Eo(n)}</mo></mover>`;
+function Ss(e) {
+	let t = gs(e.base);
+	if (xs.has(e.char)) return `<mover>${t}<mo stretchy="true">&#x2015;</mo></mover>`;
+	let n = bs[e.char] ?? e.char;
+	return `<mover accent="true">${t}<mo stretchy="${n === "→" || n === "←" ? "true" : "false"}">${os(n)}</mo></mover>`;
 }
-function Uo(e) {
-	let t = Io(e.base), n = e.lower && e.lower.length ? Io(e.lower) : null, r = e.upper && e.upper.length ? Io(e.upper) : null;
+function Cs(e) {
+	let t = gs(e.base), n = e.lower && e.lower.length ? gs(e.lower) : null, r = e.upper && e.upper.length ? gs(e.upper) : null;
 	return n && r ? `<munderover>${t}${n}${r}</munderover>` : n ? `<munder>${t}${n}</munder>` : r ? `<mover>${t}${r}</mover>` : t;
 }
-function Wo(e) {
+function ws(e) {
 	let t = Math.max(1, ...e.rows.map((e) => e.length)), n;
 	n = e.align === "eq" ? Array.from({ length: t }, (e, t) => t % 2 == 0 ? "right" : "left").join(" ") : e.align === "left" ? "left" : "center";
-	let r = e.rows.map((e) => `<mtr>${e.map((e) => `<mtd>${Fo(e)}</mtd>`).join("")}</mtr>`).join("");
+	let r = e.rows.map((e) => `<mtr>${e.map((e) => `<mtd>${hs(e)}</mtd>`).join("")}</mtr>`).join("");
 	return `<mtable columnalign="${n}" rowspacing="0.2em" columnspacing="0.3em">${r}</mtable>`;
 }
-var Go = new Set([..."∫∬∭∮∯∰∱∲∳⨌⨍⨎⨏⨐⨑⨒⨓⨔⨕⨖⨗"]);
-function Ko(e) {
-	let t = e.limLoc === "subSup" ? !0 : e.limLoc === "undOvr" ? !1 : Go.has(e.op), n = `<mo largeop="true">${Eo(e.op)}</mo>`, r = e.sub ?? [], i = e.sup ?? [], a;
-	return a = t ? r.length && i.length ? `<msubsup>${n}${Io(r)}${Io(i)}</msubsup>` : r.length ? `<msub>${n}${Io(r)}</msub>` : i.length ? `<msup>${n}${Io(i)}</msup>` : n : r.length && i.length ? `<munderover>${n}${Io(r)}${Io(i)}</munderover>` : r.length ? `<munder>${n}${Io(r)}</munder>` : i.length ? `<mover>${n}${Io(i)}</mover>` : n, `<mrow>${a}${Fo(e.body)}</mrow>`;
+var Ts = new Set([..."∫∬∭∮∯∰∱∲∳⨌⨍⨎⨏⨐⨑⨒⨓⨔⨕⨖⨗"]);
+function Es(e) {
+	let t = e.limLoc === "subSup" ? !0 : e.limLoc === "undOvr" ? !1 : Ts.has(e.op), n = `<mo largeop="true">${os(e.op)}</mo>`, r = e.sub ?? [], i = e.sup ?? [], a;
+	return a = t ? r.length && i.length ? `<msubsup>${n}${gs(r)}${gs(i)}</msubsup>` : r.length ? `<msub>${n}${gs(r)}</msub>` : i.length ? `<msup>${n}${gs(i)}</msup>` : n : r.length && i.length ? `<munderover>${n}${gs(r)}${gs(i)}</munderover>` : r.length ? `<munder>${n}${gs(r)}</munder>` : i.length ? `<mover>${n}${gs(i)}</mover>` : n, `<mrow>${a}${hs(e.body)}</mrow>`;
 }
-function qo(e) {
-	let t = (e) => `<mo fence="true" stretchy="true">${Eo(e)}</mo>`, n = e.items.map((e) => Io(e)).join("<mo separator=\"true\">,</mo>");
+function Ds(e) {
+	let t = (e) => `<mo fence="true" stretchy="true">${os(e)}</mo>`, n = e.items.map((e) => gs(e)).join("<mo separator=\"true\">,</mo>");
 	return `<mrow>${t(e.begChar)}${n}${t(e.endChar)}</mrow>`;
 }
-function Jo(e, t) {
-	return `<math xmlns="http://www.w3.org/1998/Math/MathML" display="${t ? "block" : "inline"}">${Fo(e)}</math>`;
+function Os(e, t) {
+	return `<math xmlns="http://www.w3.org/1998/Math/MathML" display="${t ? "block" : "inline"}">${hs(e)}</math>`;
 }
 //#endregion
 //#region packages/core/src/canvas/clamp.ts
-var Yo = 32767, Xo = 1 << 24;
-function Zo(e, t) {
-	let n = Number.isFinite(e) && e > 0 ? Math.max(1, Math.round(e)) : 1, r = Number.isFinite(t) && t > 0 ? Math.max(1, Math.round(t)) : 1, i = Math.min(1, Yo / n, Yo / r), a = n * r, o = a > 16777216 ? Math.sqrt(Xo / a) : 1, s = Math.min(i, o);
+var ks = 32767, As = 1 << 24;
+function js(e, t) {
+	let n = Number.isFinite(e) && e > 0 ? Math.max(1, Math.round(e)) : 1, r = Number.isFinite(t) && t > 0 ? Math.max(1, Math.round(t)) : 1, i = Math.min(1, ks / n, ks / r), a = n * r, o = a > 16777216 ? Math.sqrt(As / a) : 1, s = Math.min(i, o);
 	return s >= 1 ? {
 		width: n,
 		height: r,
@@ -28806,19 +29597,19 @@ function Zo(e, t) {
 		clamped: !0
 	};
 }
-var Qo = 64;
-function $o(e, t, n) {
+var Ms = 64;
+function Ns(e, t, n) {
 	let r = Math.max(1, Math.round(t * 256)), i = Math.max(1, Math.round(n * 256));
 	return e.replace(/<svg([^>]*?)>/, (e, t) => `<svg${t.replace(/\s(?:width|height)="[^"]*"/g, "")} width="${r}" height="${i}">`);
 }
-function es(e, t) {
+function Ps(e, t) {
 	return RegExp(`(?:^|\\s)${t}="([^"]*)"`).exec(e)?.[1];
 }
-function ts(e, t, n = 0) {
-	let r = Number.parseFloat(es(e, t) ?? "");
+function Fs(e, t, n = 0) {
+	let r = Number.parseFloat(Ps(e, t) ?? "");
 	return Number.isFinite(r) ? r : n;
 }
-function ns(e) {
+function Is(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n of [
 		"fill",
@@ -28829,10 +29620,10 @@ function ns(e) {
 		"fill-rule",
 		"opacity"
 	]) {
-		let r = es(e, n);
+		let r = Ps(e, n);
 		r !== void 0 && t.set(n, r);
 	}
-	let n = es(e, "style");
+	let n = Ps(e, "style");
 	if (n) for (let e of n.split(";")) {
 		let n = e.indexOf(":");
 		if (n < 0) continue;
@@ -28841,8 +29632,8 @@ function ns(e) {
 	}
 	return t;
 }
-function rs(e, t, n) {
-	let r = ns(t), i = { ...n }, a = r.get("fill");
+function Ls(e, t, n) {
+	let r = Is(t), i = { ...n }, a = r.get("fill");
 	a === "none" ? i.fill = !1 : a && (i.fill = !0, e.fillStyle = a);
 	let o = r.get("stroke");
 	o === "none" ? i.stroke = !1 : o && (i.stroke = !0, e.strokeStyle = o);
@@ -28857,7 +29648,7 @@ function rs(e, t, n) {
 	let d = Number.parseFloat(r.get("opacity") ?? "");
 	return Number.isFinite(d) && (e.globalAlpha *= Math.max(0, Math.min(1, d))), i;
 }
-function is(e, t) {
+function Rs(e, t) {
 	if (!t) return;
 	let n = /([a-zA-Z]+)\(([^)]*)\)/g;
 	for (let r = n.exec(t); r; r = n.exec(t)) {
@@ -28882,11 +29673,11 @@ function is(e, t) {
 		}
 	}
 }
-function as(e, t, n) {
+function zs(e, t, n) {
 	n.fill && e.fill(t, n.fillRule), n.stroke && e.lineWidth > 0 && e.stroke(t);
 }
-function os(e, t, n, r) {
-	let i = es(t.slice(0, t.indexOf(">") + 1), "viewBox")?.trim().split(/[\s,]+/).map(Number);
+function Bs(e, t, n, r) {
+	let i = Ps(t.slice(0, t.indexOf(">") + 1), "viewBox")?.trim().split(/[\s,]+/).map(Number);
 	if (!i || i.length !== 4 || i.some((e) => !Number.isFinite(e))) throw TypeError("MathJax SVG must contain a finite viewBox");
 	let [a, o, s, c] = i;
 	if (!(s > 0) || !(c > 0)) throw TypeError("MathJax SVG viewBox must have positive dimensions");
@@ -28904,25 +29695,25 @@ function os(e, t, n, r) {
 			continue;
 		}
 		if (a === "g") {
-			u.push(l), e.save(), l = rs(e, i, l), is(e, es(i, "transform"));
+			u.push(l), e.save(), l = Ls(e, i, l), Rs(e, Ps(i, "transform"));
 			continue;
 		}
 		if (a !== "path" && a !== "rect" && a !== "line") continue;
 		e.save();
-		let s = rs(e, i, l);
-		is(e, es(i, "transform"));
-		let c = a === "path" ? new Path2D(es(i, "d") ?? "") : new Path2D();
-		a === "rect" ? c.rect(ts(i, "x"), ts(i, "y"), ts(i, "width"), ts(i, "height")) : a === "line" && (c.moveTo(ts(i, "x1"), ts(i, "y1")), c.lineTo(ts(i, "x2"), ts(i, "y2"))), as(e, c, s), e.restore();
+		let s = Ls(e, i, l);
+		Rs(e, Ps(i, "transform"));
+		let c = a === "path" ? new Path2D(Ps(i, "d") ?? "") : new Path2D();
+		a === "rect" ? c.rect(Fs(i, "x"), Fs(i, "y"), Fs(i, "width"), Fs(i, "height")) : a === "line" && (c.moveTo(Fs(i, "x1"), Fs(i, "y1")), c.lineTo(Fs(i, "x2"), Fs(i, "y2"))), zs(e, c, s), e.restore();
 	}
 	e.restore();
 }
-async function ss(e, t) {
-	let { width: n, height: r } = Zo(e.widthEm * 256, (e.ascentEm + e.descentEm) * 256), i = Te(n, r), a = i?.getContext("2d");
+async function Vs(e, t) {
+	let { width: n, height: r } = js(e.widthEm * 256, (e.ascentEm + e.descentEm) * 256), i = Ue(n, r), a = i?.getContext("2d");
 	if (!i || !a || typeof Path2D > "u") throw Error("Math SVG rasterization requires Canvas 2D and Path2D support");
-	os(a, $o(I(e.svg, t), e.widthEm, e.ascentEm + e.descentEm), n, r);
-	let o = i, s = n, c = r, l = Qo / 256, u = Math.max(1, Math.round(n * l)), d = Math.max(1, Math.round(r * l));
+	Bs(a, Ns(me(e.svg, t), e.widthEm, e.ascentEm + e.descentEm), n, r);
+	let o = i, s = n, c = r, l = Ms / 256, u = Math.max(1, Math.round(n * l)), d = Math.max(1, Math.round(r * l));
 	for (; s > u || c > d;) {
-		let e = Math.max(u, Math.ceil(s / 2)), t = Math.max(d, Math.ceil(c / 2)), n = Te(e, t), r = n?.getContext("2d");
+		let e = Math.max(u, Math.ceil(s / 2)), t = Math.max(d, Math.ceil(c / 2)), n = Ue(e, t), r = n?.getContext("2d");
 		if (!n || !r) break;
 		r.imageSmoothingEnabled = !0, r.imageSmoothingQuality = "high", r.drawImage(o, 0, 0, e, t), o = n, s = e, c = t;
 	}
@@ -28932,29 +29723,29 @@ async function ss(e, t) {
 		heightPx: c
 	};
 }
-function cs(e, t) {
-	let n = Te(e.widthPx, e.heightPx);
+function Hs(e, t) {
+	let n = Ue(e.widthPx, e.heightPx);
 	if (!n) return e.source;
 	let r = n.getContext("2d");
 	return r ? (r.drawImage(e.source, 0, 0, e.widthPx, e.heightPx), r.globalCompositeOperation = "source-in", r.fillStyle = t, r.fillRect(0, 0, e.widthPx, e.heightPx), n) : e.source;
 }
 //#endregion
 //#region packages/core/src/canvas/env.ts
-function ls(e) {
+function Us(e) {
 	return typeof HTMLCanvasElement < "u" && e instanceof HTMLCanvasElement;
 }
-function us(e = 1) {
+function Ws(e = 1) {
 	return typeof window < "u" && window.devicePixelRatio || e;
 }
 //#endregion
 //#region packages/core/src/canvas/crisp.ts
-function ds(e, t, n) {
+function Gs(e, t, n) {
 	let r = Math.round(t * n) % 2 == 1 ? .5 : 0, i = e * n;
 	return (Math.round(i - r) + r) / n - e;
 }
 //#endregion
 //#region packages/core/src/internal/runtime-generation.ts
-var fs = class {
+var Ks = class {
 	state = "uninitialized";
 	generationValue = 0;
 	readiness;
@@ -29008,17 +29799,17 @@ var fs = class {
 	assertCurrent(e) {
 		if (this.state !== "ready" || e !== this.generationValue) throw Error("WASM archive session belongs to a discarded runtime generation");
 	}
-}, ps = class e extends Error {
+}, qs = class e extends Error {
 	code = "parser-crashed";
 	constructor(t) {
 		super(t), this.name = "WasmTrapError", Object.setPrototypeOf(this, e.prototype);
 	}
 };
-function ms(e) {
+function Js(e) {
 	let t = globalThis.WebAssembly?.RuntimeError;
 	return t && e instanceof t || e instanceof RangeError ? !0 : e instanceof Error ? e.name === "RuntimeError" || e.name === "CompileError" || e.name === "LinkError" || e.name === "InternalError" || e.name === "OOMError" : !1;
 }
-function hs(e) {
+function Ys(e) {
 	try {
 		if ((typeof e != "object" || !e) && typeof e != "function") return;
 		let t = Reflect.get(e, "__destroy_into_raw");
@@ -29027,27 +29818,27 @@ function hs(e) {
 }
 //#endregion
 //#region packages/core/src/worker/pull-credit-error.ts
-var gs = "ooxml-insufficient-credit", _s = "OOXML_INSUFFICIENT_CREDIT:";
-function vs(e) {
+var Xs = "ooxml-insufficient-credit", Zs = "OOXML_INSUFFICIENT_CREDIT:";
+function Qs(e) {
 	return typeof e == "number" && Number.isSafeInteger(e) && e > 0;
 }
-function ys(e) {
+function $s(e) {
 	if (!e || typeof e != "object" || Array.isArray(e)) return !1;
 	let t = e;
-	return vs(t.requiredBytes) && vs(t.offeredBytes) && t.requiredBytes > t.offeredBytes;
+	return Qs(t.requiredBytes) && Qs(t.offeredBytes) && t.requiredBytes > t.offeredBytes;
 }
-var bs = class e extends RangeError {
-	code = gs;
+var ec = class e extends RangeError {
+	code = Xs;
 	requiredBytes;
 	offeredBytes;
 	constructor(t) {
 		super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`), this.name = "PullSessionInsufficientCreditError", this.requiredBytes = t.requiredBytes, this.offeredBytes = t.offeredBytes, Object.setPrototypeOf(this, e.prototype);
 	}
 };
-function xs(e) {
-	if (e instanceof bs) return e;
+function tc(e) {
+	if (e instanceof ec) return e;
 	let t = e instanceof Error ? e.message : String(e);
-	if (!t.startsWith(_s)) return;
+	if (!t.startsWith(Zs)) return;
 	let n;
 	try {
 		n = JSON.parse(t.slice(26));
@@ -29056,55 +29847,55 @@ function xs(e) {
 	}
 	if (!n || typeof n != "object" || Array.isArray(n)) return;
 	let r = n;
-	if (!(r.code !== "ooxml-insufficient-credit" || !ys(r))) return new bs(r);
+	if (!(r.code !== "ooxml-insufficient-credit" || !$s(r))) return new ec(r);
 }
-function Ss(e, t, n) {
-	let r = xs(e);
+function nc(e, t, n) {
+	let r = tc(e);
 	if (!(!r || r.offeredBytes !== t || r.requiredBytes > n)) return r;
 }
-function Cs(e, t, n) {
-	if (ws(e)) return e.offeredBytes === t && e.requiredBytes <= n ? e.requiredBytes : void 0;
+function rc(e, t, n) {
+	if (ic(e)) return e.offeredBytes === t && e.requiredBytes <= n ? e.requiredBytes : void 0;
 }
-function ws(e) {
-	return e instanceof bs || !!e && typeof e == "object" && e.code === "ooxml-insufficient-credit" && ys(e);
+function ic(e) {
+	return e instanceof ec || !!e && typeof e == "object" && e.code === "ooxml-insufficient-credit" && $s(e);
 }
 //#endregion
 //#region packages/core/src/worker/error-wire.ts
-var Ts = "OOXML_RESOURCE_LIMIT:", Es = 128, Ds = 256, Os = 4096;
-function ks(e) {
+var ac = "OOXML_RESOURCE_LIMIT:", oc = 128, sc = 256, cc = 4096;
+function lc(e) {
 	return typeof e == "number" && Number.isSafeInteger(e) && e >= 0;
 }
-function As(e) {
+function uc(e) {
 	if (!e || typeof e != "object" || Array.isArray(e)) return !1;
 	let t = e;
-	return ks(t.archiveEntryCount) && ks(t.declaredInflatedBytes) && (t.largestInflatedEntryBytes === void 0 || ks(t.largestInflatedEntryBytes)) && ks(t.distinctInflatedBytes) && ks(t.operationInflatedBytes);
+	return lc(t.archiveEntryCount) && lc(t.declaredInflatedBytes) && (t.largestInflatedEntryBytes === void 0 || lc(t.largestInflatedEntryBytes)) && lc(t.distinctInflatedBytes) && lc(t.operationInflatedBytes);
 }
-function js(e) {
+function dc(e) {
 	let t;
 	try {
 		t = JSON.parse(new TextDecoder().decode(e));
 	} catch {
 		throw TypeError("OOXML resource usage checkpoint is not valid JSON");
 	}
-	if (!As(t)) throw TypeError("OOXML resource usage checkpoint is invalid");
+	if (!uc(t)) throw TypeError("OOXML resource usage checkpoint is invalid");
 	return t;
 }
-function Ms(e) {
+function fc(e) {
 	return e === "docx" || e === "xlsx" || e === "pptx";
 }
-function Ns(e) {
+function pc(e) {
 	return e === "container" || e === "decompression" || e === "parsing" || e === "serialization" || e === "layout" || e === "rendering" || e === "worker";
 }
-function Ps(e, t) {
+function mc(e, t) {
 	return typeof e == "string" && e.length > 0 && e.length <= t && !/[\u0000-\u001f\u007f]/u.test(e);
 }
-function Fs(e) {
-	return Ps(e, Es) && /^[a-z0-9][a-z0-9-]*$/u.test(e);
+function hc(e) {
+	return mc(e, oc) && /^[a-z0-9][a-z0-9-]*$/u.test(e);
 }
-function Is(e) {
-	return !Ps(e, Os) || e.startsWith("/") || e.startsWith("\\") || e.includes("\\") || e.includes("?") || e.includes("#") || e.includes("://") || /^[a-z]:/iu.test(e) ? !1 : e.split("/").every((e) => e !== "" && e !== "." && e !== "..");
+function gc(e) {
+	return !mc(e, cc) || e.startsWith("/") || e.startsWith("\\") || e.includes("\\") || e.includes("?") || e.includes("#") || e.includes("://") || /^[a-z]:/iu.test(e) ? !1 : e.split("/").every((e) => e !== "" && e !== "." && e !== "..");
 }
-var Ls = new Map([
+var _c = new Map([
 	["archive-entry:declared-inflated-bytes", {
 		stage: "container",
 		part: "required"
@@ -29151,20 +29942,20 @@ var Ls = new Map([
 		part: "optional",
 		configurable: !1
 	}]
-]), Rs = new Set([...Ls.keys()].map((e) => e.slice(0, e.indexOf(":")))), zs = new Set([...Ls.keys()].map((e) => e.slice(e.indexOf(":") + 1)));
-function Bs(e) {
+]), vc = new Set([..._c.keys()].map((e) => e.slice(0, e.indexOf(":")))), yc = new Set([..._c.keys()].map((e) => e.slice(e.indexOf(":") + 1)));
+function bc(e) {
 	if (!e || typeof e != "object" || Array.isArray(e)) return !1;
 	let t = e;
-	return !Ms(t.format) || !Ps(t.operation, Ds) || !Fs(t.resource) || !Fs(t.metric) || !ks(t.limit) || !ks(t.observed) || typeof t.configurable != "boolean" || !As(t.usage) ? !1 : !("part" in t) || Is(t.part);
+	return !fc(t.format) || !mc(t.operation, sc) || !hc(t.resource) || !hc(t.metric) || !lc(t.limit) || !lc(t.observed) || typeof t.configurable != "boolean" || !uc(t.usage) ? !1 : !("part" in t) || gc(t.part);
 }
-function Vs(e) {
+function xc(e) {
 	if (!e || typeof e != "object" || Array.isArray(e)) return !1;
 	let t = e;
-	if (!Ns(t.stage) || !Bs(t.violation)) return !1;
-	let n = t.violation, r = Ls.get(`${n.resource}:${n.metric}`);
-	return r ? t.stage !== r.stage || r.configurable === !1 && n.configurable !== !1 ? !1 : r.part === "required" ? n.part !== void 0 : r.part === "forbidden" ? n.part === void 0 : !0 : !(Rs.has(n.resource) && zs.has(n.metric));
+	if (!pc(t.stage) || !bc(t.violation)) return !1;
+	let n = t.violation, r = _c.get(`${n.resource}:${n.metric}`);
+	return r ? t.stage !== r.stage || r.configurable === !1 && n.configurable !== !1 ? !1 : r.part === "required" ? n.part !== void 0 : r.part === "forbidden" ? n.part === void 0 : !0 : !(vc.has(n.resource) && yc.has(n.metric));
 }
-function Hs(e) {
+function Sc(e) {
 	return {
 		archiveEntryCount: e.archiveEntryCount,
 		declaredInflatedBytes: e.declaredInflatedBytes,
@@ -29173,8 +29964,8 @@ function Hs(e) {
 		operationInflatedBytes: e.operationInflatedBytes
 	};
 }
-function Us(e) {
-	if (!Vs(e)) return;
+function Cc(e) {
+	if (!xc(e)) return;
 	let t = e.violation, n = {
 		stage: e.stage,
 		violation: {
@@ -29186,18 +29977,18 @@ function Us(e) {
 			limit: t.limit,
 			observed: t.observed,
 			configurable: t.configurable,
-			usage: Hs(t.usage)
+			usage: Sc(t.usage)
 		}
 	};
-	return Vs(n) ? n : void 0;
+	return xc(n) ? n : void 0;
 }
-function Ws(e) {
+function wc(e) {
 	let t = e.violation;
 	return `OOXML resource limit exceeded${t.part ? ` for ${t.part}` : ""}: ${t.metric} ${t.observed} > ${t.limit}`;
 }
-function Gs(e) {
+function Tc(e) {
 	let t = e instanceof Error ? e.message : String(e);
-	if (!t.startsWith(Ts)) return;
+	if (!t.startsWith(ac)) return;
 	let n;
 	try {
 		n = JSON.parse(t.slice(21));
@@ -29206,10 +29997,10 @@ function Gs(e) {
 	}
 	if (!n || typeof n != "object") return;
 	let r = n;
-	if (!(r.code !== "ooxml-resource-limit" || !Vs(r.details))) return new se(Ws(r.details), r.details);
+	if (!(r.code !== "ooxml-resource-limit" || !xc(r.details))) return new he(wc(r.details), r.details);
 }
-function Ks(e) {
-	if (e instanceof Zr) return {
+function Ec(e) {
+	if (e instanceof ji) return {
 		message: e.message,
 		errorName: e.name,
 		code: e.code,
@@ -29219,7 +30010,7 @@ function Ks(e) {
 			observed: e.observed
 		}
 	};
-	let t = xs(e);
+	let t = tc(e);
 	if (t) return {
 		message: t.message,
 		errorName: t.name,
@@ -29229,11 +30020,11 @@ function Ks(e) {
 			offeredBytes: t.offeredBytes
 		}
 	};
-	let n = e instanceof oe || e instanceof se ? e : Gs(e);
-	if (n instanceof se) {
-		let e = Us(n.details);
+	let n = e instanceof V || e instanceof he ? e : Tc(e);
+	if (n instanceof he) {
+		let e = Cc(n.details);
 		return e ? {
-			message: typeof n.message == "string" ? n.message : Ws(e),
+			message: typeof n.message == "string" ? n.message : wc(e),
 			errorName: "OoxmlResourceLimitError",
 			code: "ooxml-resource-limit",
 			resourceLimit: e
@@ -29242,26 +30033,26 @@ function Ks(e) {
 			errorName: "Error"
 		};
 	}
-	if (n instanceof oe) return {
+	if (n instanceof V) return {
 		message: typeof n.message == "string" ? n.message : String(n.message),
-		errorName: Ps(n.name, Es) ? n.name : "OoxmlError",
-		...Fs(n.code) ? { code: n.code } : {}
+		errorName: mc(n.name, oc) ? n.name : "OoxmlError",
+		...hc(n.code) ? { code: n.code } : {}
 	};
 	let r = e instanceof Error ? e.message : String(e);
-	if (typeof r == "string" && r.startsWith(Ts)) return {
+	if (typeof r == "string" && r.startsWith(ac)) return {
 		message: "Invalid OOXML resource-limit payload",
 		errorName: "Error"
 	};
 	let i = e instanceof Error ? e : Error(r), a = i;
 	return {
 		message: typeof i.message == "string" ? i.message : String(i.message),
-		errorName: Ps(i.name, Es) ? i.name : "Error",
+		errorName: mc(i.name, oc) ? i.name : "Error",
 		...typeof a.code == "string" ? { code: a.code } : {}
 	};
 }
-function qs(e) {
+function Dc(e) {
 	try {
-		return Ks(e);
+		return Ec(e);
 	} catch {
 		return {
 			message: "Worker operation failed with an unreadable error",
@@ -29269,68 +30060,68 @@ function qs(e) {
 		};
 	}
 }
-var Js = new Set([
+var Oc = new Set([
 	"encrypted",
 	"invalid-password",
 	"unsupported-encryption",
 	"legacy-binary-format",
 	"not-ooxml"
 ]);
-function Ys(e) {
-	if (e.code === "ooxml-decoded-image-limit" && e.decodedImage && (e.decodedImage.metric === "image-pixels" || e.decodedImage.metric === "active-decoded-bytes") && ks(e.decodedImage.limit) && ks(e.decodedImage.observed) && e.decodedImage.observed > e.decodedImage.limit) return new Zr(e.decodedImage.metric, e.decodedImage.limit, e.decodedImage.observed);
-	if (e.code === "ooxml-insufficient-credit" && ys(e.insufficientCredit)) return new bs(e.insufficientCredit);
-	if (e.code === "ooxml-resource-limit" && Vs(e.resourceLimit)) return new se(e.message, e.resourceLimit);
-	if (e.code && Js.has(e.code)) return new oe(e.code, e.message);
+function kc(e) {
+	if (e.code === "ooxml-decoded-image-limit" && e.decodedImage && (e.decodedImage.metric === "image-pixels" || e.decodedImage.metric === "active-decoded-bytes") && lc(e.decodedImage.limit) && lc(e.decodedImage.observed) && e.decodedImage.observed > e.decodedImage.limit) return new ji(e.decodedImage.metric, e.decodedImage.limit, e.decodedImage.observed);
+	if (e.code === "ooxml-insufficient-credit" && $s(e.insufficientCredit)) return new ec(e.insufficientCredit);
+	if (e.code === "ooxml-resource-limit" && xc(e.resourceLimit)) return new he(e.message, e.resourceLimit);
+	if (e.code && Oc.has(e.code)) return new V(e.code, e.message);
 	let t = e.errorName === "TypeError" ? TypeError(e.message) : e.errorName === "RangeError" ? RangeError(e.message) : Error(e.message);
 	return e.errorName && (t.name = e.errorName), e.code !== void 0 && Object.assign(t, { code: e.code }), t;
 }
 //#endregion
 //#region packages/core/src/worker/resource-policy.generated.ts
-var Xs = 134217728, Zs = 268435456, Qs = 4096, $s = 2e4, ec = 67108864, tc = 67108864, nc = 67108864, rc = 134217728, ic = 134217728, ac = 1e5, oc = 25e4, sc = 33554432, cc = 67108864, lc = 2e5, uc = 5e5, dc = 67108864, fc = 134217728, pc = 25e4, mc = Object.freeze({
-	maxArchiveEntryBytes: Xs,
-	maxTotalInflatedBytes: Zs,
-	maxArchiveEntries: Qs
+var Ac = 134217728, jc = 268435456, Mc = 4096, Nc = 2e4, Pc = 67108864, Fc = 67108864, Ic = 67108864, Lc = 134217728, Rc = 134217728, zc = 1e5, Bc = 25e4, Vc = 33554432, Hc = 67108864, Uc = 2e5, Wc = 5e5, Gc = 67108864, Kc = 134217728, qc = 25e4, Jc = Object.freeze({
+	maxArchiveEntryBytes: Ac,
+	maxTotalInflatedBytes: jc,
+	maxArchiveEntries: Mc
 });
-function hc(e, t, n) {
+function Yc(e, t, n) {
 	if (t === void 0) return n;
 	if (t === null) return null;
 	if (!Number.isSafeInteger(t) || t <= 0) throw RangeError(`resourceLimits.${e} must be null or a positive safe integer number of bytes`);
 	return t;
 }
-function gc(e) {
-	if (e === void 0) return mc.maxArchiveEntries;
+function Xc(e) {
+	if (e === void 0) return Jc.maxArchiveEntries;
 	if (e === null) return null;
 	if (!Number.isSafeInteger(e) || e <= 0) throw RangeError("resourceLimits.maxArchiveEntries must be null or a positive safe integer");
-	if (e > 2e4) throw RangeError(`resourceLimits.maxArchiveEntries must not exceed the internal hard ceiling of ${$s}`);
+	if (e > 2e4) throw RangeError(`resourceLimits.maxArchiveEntries must not exceed the internal hard ceiling of ${Nc}`);
 	return e;
 }
-function _c(e) {
+function Zc(e) {
 	if (!(e === void 0 || !(e > 0))) {
 		if (!Number.isSafeInteger(e)) throw RangeError("maxZipEntryBytes must be a positive safe integer number of bytes");
 		return e;
 	}
 }
-function vc(e) {
+function Qc(e) {
 	let t = e.resourceLimits;
 	if (t !== void 0 && (typeof t != "object" || !t || Array.isArray(t))) throw TypeError("resourceLimits must be an object when provided");
-	let n = _c(e.maxZipEntryBytes), r = t?.maxArchiveEntryBytes;
+	let n = Zc(e.maxZipEntryBytes), r = t?.maxArchiveEntryBytes;
 	if (n !== void 0 && r !== void 0 && n !== r) throw RangeError("maxZipEntryBytes conflicts with resourceLimits.maxArchiveEntryBytes");
 	return Object.freeze({
-		maxArchiveEntryBytes: hc("maxArchiveEntryBytes", r === void 0 ? n : r, mc.maxArchiveEntryBytes),
-		maxTotalInflatedBytes: hc("maxTotalInflatedBytes", t?.maxTotalInflatedBytes, mc.maxTotalInflatedBytes),
-		maxArchiveEntries: gc(t?.maxArchiveEntries)
+		maxArchiveEntryBytes: Yc("maxArchiveEntryBytes", r === void 0 ? n : r, Jc.maxArchiveEntryBytes),
+		maxTotalInflatedBytes: Yc("maxTotalInflatedBytes", t?.maxTotalInflatedBytes, Jc.maxTotalInflatedBytes),
+		maxArchiveEntries: Xc(t?.maxArchiveEntries)
 	});
 }
-function yc(e) {
+function $c(e) {
 	if (e.debug !== void 0 && typeof e.debug != "boolean") throw TypeError("debug must be a boolean when provided");
 	if (e.onResourceMetrics !== void 0 && typeof e.onResourceMetrics != "function") throw TypeError("onResourceMetrics must be a function when provided");
 	return Object.freeze({
-		policy: vc(e),
+		policy: Qc(e),
 		debug: e.debug ?? !1,
 		...e.onResourceMetrics ? { onResourceMetrics: e.onResourceMetrics } : {}
 	});
 }
-function bc(e) {
+function el(e) {
 	return [
 		e.maxArchiveEntryBytes === null ? 0n : BigInt(e.maxArchiveEntryBytes),
 		e.maxTotalInflatedBytes === null ? 0n : BigInt(e.maxTotalInflatedBytes),
@@ -29339,7 +30130,7 @@ function bc(e) {
 }
 //#endregion
 //#region packages/core/src/internal/console-tui.ts
-var xc = [
+var tl = [
 	"font-family: \"SFMono-Regular\", Menlo, Monaco, Consolas, monospace",
 	"font-size: 12px",
 	"line-height: 1.35",
@@ -29347,43 +30138,43 @@ var xc = [
 	"letter-spacing: 0",
 	"white-space: pre"
 ].join(";");
-function Sc(e) {
-	if (Cc()) {
-		console.log(`%c${e}`, xc);
+function nl(e) {
+	if (rl()) {
+		console.log(`%c${e}`, tl);
 		return;
 	}
 	console.log(e);
 }
-function Cc() {
+function rl() {
 	return typeof window < "u" && globalThis.process?.release?.name !== "node";
 }
 //#endregion
 //#region packages/core/src/worker/resource-debug-view.ts
-function wc(e) {
-	let t = e.scope === "session" ? "SESSION" : "LOAD", n = e.status === "ok" ? e.scope === "session" ? "COMPLETE" : "READY" : "FAILED", r = [kc(` OOXML ${t}  ${e.format.toUpperCase()}  ${n} `, 68)];
-	if (r.push(jc(`mode ${e.mode.padEnd(8)}  elapsed ${Dc(e.elapsedMs)}`, 68)), e.sourceBytes !== void 0 && r.push(jc(`source ${Ec(e.sourceBytes)}`, 68)), r.push(Ac(" admission ", 68)), r.push(Mc("largest entry", e.usage?.largestInflatedEntryBytes, e.policy.maxArchiveEntryBytes, 68)), r.push(Mc("total inflated", e.usage?.distinctInflatedBytes, e.policy.maxTotalInflatedBytes, 68)), r.push(jc(`entry count ${e.usage ? Oc(e.usage.archiveEntryCount) : "—"} / ${e.policy.maxArchiveEntries === null ? "public off" : Oc(e.policy.maxArchiveEntries)}`, 68)), e.usage ? r.push(jc(`declared inflated ${Ec(e.usage.declaredInflatedBytes)}`, 68)) : r.push(jc("usage unavailable for this report", 68)), e.checkpoints.length > 0) {
-		r.push(Ac(" checkpoints ", 68));
+function il(e) {
+	let t = e.scope === "session" ? "SESSION" : "LOAD", n = e.status === "ok" ? e.scope === "session" ? "COMPLETE" : "READY" : "FAILED", r = [ll(` OOXML ${t}  ${e.format.toUpperCase()}  ${n} `, 68)];
+	if (r.push(dl(`mode ${e.mode.padEnd(8)}  elapsed ${sl(e.elapsedMs)}`, 68)), e.sourceBytes !== void 0 && r.push(dl(`source ${ol(e.sourceBytes)}`, 68)), r.push(ul(" admission ", 68)), r.push(fl("largest entry", e.usage?.largestInflatedEntryBytes, e.policy.maxArchiveEntryBytes, 68)), r.push(fl("total inflated", e.usage?.distinctInflatedBytes, e.policy.maxTotalInflatedBytes, 68)), r.push(dl(`entry count ${e.usage ? cl(e.usage.archiveEntryCount) : "—"} / ${e.policy.maxArchiveEntries === null ? "public off" : cl(e.policy.maxArchiveEntries)}`, 68)), e.usage ? r.push(dl(`declared inflated ${ol(e.usage.declaredInflatedBytes)}`, 68)) : r.push(dl("usage unavailable for this report", 68)), e.checkpoints.length > 0) {
+		r.push(ul(" checkpoints ", 68));
 		for (let t of e.checkpoints) {
-			let e = t.usage ? Ec(t.usage.distinctInflatedBytes) : "—";
-			r.push(jc(`${Dc(t.elapsedMs).padStart(8)}  ${t.name.padEnd(25)} ${e.padStart(12)}`, 68));
+			let e = t.usage ? ol(t.usage.distinctInflatedBytes) : "—";
+			r.push(dl(`${sl(t.elapsedMs).padStart(8)}  ${t.name.padEnd(25)} ${e.padStart(12)}`, 68));
 		}
 	}
-	if (e.outcome && Object.keys(e.outcome).length > 0 && (r.push(Ac(" result ", 68)), r.push(jc(Object.entries(e.outcome).map(([e, t]) => `${e} ${Oc(t)}`).join("  "), 68))), e.error) {
-		r.push(Ac(" failure ", 68));
+	if (e.outcome && Object.keys(e.outcome).length > 0 && (r.push(ul(" result ", 68)), r.push(dl(Object.entries(e.outcome).map(([e, t]) => `${e} ${cl(t)}`).join("  "), 68))), e.error) {
+		r.push(ul(" failure ", 68));
 		let t = [
 			e.error.code,
 			e.error.stage,
 			e.error.resource,
 			e.error.metric
 		].filter((e) => !!e).join(" · ");
-		r.push(jc(t || "unclassified error", 68));
+		r.push(dl(t || "unclassified error", 68));
 	}
 	return r.push(`└${"─".repeat(68)}┘`), r.join("\n");
 }
-function Tc(e) {
-	Sc(wc(e));
+function al(e) {
+	nl(il(e));
 }
-function Ec(e) {
+function ol(e) {
 	if (!Number.isFinite(e) || e < 0) return "—";
 	let t = [
 		"B",
@@ -29396,38 +30187,38 @@ function Ec(e) {
 	let i = r === 0 || n >= 100 ? 0 : n >= 10 ? 1 : 2;
 	return `${n.toFixed(i)} ${t[r]}`;
 }
-function Dc(e) {
+function sl(e) {
 	return e < 1e3 ? `${Math.round(e)} ms` : `${(e / 1e3).toFixed(2)} s`;
 }
-function Oc(e) {
+function cl(e) {
 	return Number.isSafeInteger(e) ? e.toLocaleString("en-US") : "—";
 }
-function kc(e, t) {
+function ll(e, t) {
 	let n = e.slice(0, t);
 	return `┌${n}${"─".repeat(t - n.length)}┐`;
 }
-function Ac(e, t) {
+function ul(e, t) {
 	let n = e.slice(0, t);
 	return `├${n}${"─".repeat(t - n.length)}┤`;
 }
-function jc(e, t) {
+function dl(e, t) {
 	let n = e.slice(0, t - 2);
 	return `│ ${n}${" ".repeat(t - n.length - 2)} │`;
 }
-function Mc(e, t, n, r) {
-	let i = t === void 0 || n === null || n <= 0 ? 0 : Math.min(1, t / n), a = Math.round(i * 16), o = `${"█".repeat(a)}${"░".repeat(16 - a)}`, s = `${t === void 0 ? "—" : Ec(t)} / ${n === null ? "public off" : Ec(n)}`;
-	return jc(`${e.padEnd(14)} ${o}  ${s}`, r);
+function fl(e, t, n, r) {
+	let i = t === void 0 || n === null || n <= 0 ? 0 : Math.min(1, t / n), a = Math.round(i * 16), o = `${"█".repeat(a)}${"░".repeat(16 - a)}`, s = `${t === void 0 ? "—" : ol(t)} / ${n === null ? "public off" : ol(n)}`;
+	return dl(`${e.padEnd(14)} ${o}  ${s}`, r);
 }
 //#endregion
 //#region packages/core/src/worker/resource-debug.ts
-var Nc = 1e3;
-async function Pc(e, t) {
-	e.observeUsage(await t(Nc));
+var pl = 1e3;
+async function ml(e, t) {
+	e.observeUsage(await t(pl));
 	let n = e.current();
 	if (!n) throw Error("OOXML resource metrics are not ready");
 	return n;
 }
-var Fc = class {
+var hl = class {
 	now;
 	startedAt;
 	policy;
@@ -29441,7 +30232,7 @@ var Fc = class {
 	terminalOutcome;
 	terminalElapsedMs;
 	constructor(e) {
-		this.options = e, this.now = e.now ?? Rc, this.startedAt = this.now(), this.policy = Object.freeze({
+		this.options = e, this.now = e.now ?? vl, this.startedAt = this.now(), this.policy = Object.freeze({
 			maxArchiveEntryBytes: e.policy.maxArchiveEntryBytes,
 			maxTotalInflatedBytes: e.policy.maxTotalInflatedBytes,
 			maxArchiveEntries: e.policy.maxArchiveEntries
@@ -29455,16 +30246,16 @@ var Fc = class {
 	}
 	checkpoint(e, t) {
 		if (!this.options.enabled || this.finished) return;
-		t && (this.lastUsage = zc(t));
+		t && (this.lastUsage = yl(t));
 		let n = this.lastUsage;
 		this.checkpoints.push(Object.freeze({
-			name: Hc(e),
-			elapsedMs: Vc(this.startedAt, this.now()),
+			name: Sl(e),
+			elapsedMs: xl(this.startedAt, this.now()),
 			...n ? { usage: n } : {}
 		}));
 	}
 	observeUsage(e) {
-		!this.options.enabled || !e || (this.lastUsage = zc(e));
+		!this.options.enabled || !e || (this.lastUsage = yl(e));
 	}
 	current() {
 		if (!(!this.options.enabled || !this.terminalStatus)) return this.report(this.terminalStatus, this.terminalError, this.terminalOutcome);
@@ -29477,12 +30268,12 @@ var Fc = class {
 	}
 	finish(e, t, n) {
 		if (!this.options.enabled || this.finished) return;
-		this.finished = !0, this.terminalStatus = e, this.terminalError = t, this.terminalOutcome = n, this.terminalElapsedMs = Vc(this.startedAt, this.now());
+		this.finished = !0, this.terminalStatus = e, this.terminalError = t, this.terminalOutcome = n, this.terminalElapsedMs = xl(this.startedAt, this.now());
 		let r = this.report(e, t, n);
-		return this.options.onMetrics && Ic(this.options.onMetrics, r), (this.options.emitToConsole ?? this.options.onMetrics === void 0) && Ic(Tc, r), r;
+		return this.options.onMetrics && gl(this.options.onMetrics, r), (this.options.emitToConsole ?? this.options.onMetrics === void 0) && gl(al, r), r;
 	}
 	report(e, t, n) {
-		let r = Bc(t) ?? this.lastUsage;
+		let r = bl(t) ?? this.lastUsage;
 		return Object.freeze({
 			schemaVersion: 1,
 			scope: this.options.scope ?? "load",
@@ -29490,28 +30281,28 @@ var Fc = class {
 			mode: this.mode,
 			status: e,
 			...this.sourceBytes === void 0 ? {} : { sourceBytes: this.sourceBytes },
-			elapsedMs: this.terminalElapsedMs ?? Vc(this.startedAt, this.now()),
+			elapsedMs: this.terminalElapsedMs ?? xl(this.startedAt, this.now()),
 			policy: this.policy,
 			...r ? { usage: r } : {},
 			checkpoints: Object.freeze([...this.checkpoints]),
-			...n ? { outcome: Uc(n) } : {},
-			...e === "error" ? { error: Wc(t) } : {}
+			...n ? { outcome: Cl(n) } : {},
+			...e === "error" ? { error: wl(t) } : {}
 		});
 	}
 };
-function Ic(e, t) {
+function gl(e, t) {
 	try {
 		let n = e(t);
-		Lc(n) && Promise.resolve(n).catch(() => void 0);
+		_l(n) && Promise.resolve(n).catch(() => void 0);
 	} catch {}
 }
-function Lc(e) {
+function _l(e) {
 	return (typeof e == "object" && !!e || typeof e == "function") && typeof e.then == "function";
 }
-function Rc() {
+function vl() {
 	return typeof performance > "u" ? Date.now() : performance.now();
 }
-function zc(e) {
+function yl(e) {
 	return Object.freeze({
 		archiveEntryCount: e.archiveEntryCount,
 		declaredInflatedBytes: e.declaredInflatedBytes,
@@ -29520,25 +30311,25 @@ function zc(e) {
 		operationInflatedBytes: e.operationInflatedBytes
 	});
 }
-function Bc(e) {
+function bl(e) {
 	try {
-		return e instanceof se ? zc(e.details.violation.usage) : void 0;
+		return e instanceof he ? yl(e.details.violation.usage) : void 0;
 	} catch {
 		return;
 	}
 }
-function Vc(e, t) {
+function xl(e, t) {
 	return Math.max(0, Math.round((t - e) * 10) / 10);
 }
-function Hc(e) {
+function Sl(e) {
 	return e.replace(/[^a-z0-9 -]/giu, "").trim().slice(0, 32) || "checkpoint";
 }
-function Uc(e) {
+function Cl(e) {
 	return Object.freeze(Object.fromEntries(Object.entries(e).filter(([e, t]) => /^[a-z][a-z0-9-]{0,31}$/u.test(e) && Number.isSafeInteger(t) && t >= 0)));
 }
-function Wc(e) {
+function wl(e) {
 	try {
-		if (e instanceof se) {
+		if (e instanceof he) {
 			let t = e.details.violation;
 			return Object.freeze({
 				code: e.code,
@@ -29547,19 +30338,19 @@ function Wc(e) {
 				metric: t.metric
 			});
 		}
-		if (e instanceof oe || e instanceof Zr) return Object.freeze({ code: e.code });
-		if (e instanceof ps || typeof e == "object" && e && e.code === "parser-crashed") return Object.freeze({ code: "parser-crashed" });
+		if (e instanceof V || e instanceof ji) return Object.freeze({ code: e.code });
+		if (e instanceof qs || typeof e == "object" && e && e.code === "parser-crashed") return Object.freeze({ code: "parser-crashed" });
 	} catch {}
 	return Object.freeze({});
 }
-var Gc = "ooxml-pull-v1";
-function Kc(e, t) {
+var Tl = "ooxml-pull-v1";
+function El(e, t) {
 	if (!Number.isSafeInteger(e) || e <= 0) throw RangeError(`${t} must be a positive safe integer`);
 }
-function qc(e) {
+function Dl(e) {
 	if (!(typeof e == "string" && e.length > 0 || typeof e == "number" && Number.isSafeInteger(e) && e > 0)) throw RangeError("session id must be a non-empty string or positive safe integer");
 }
-var Jc = class {
+var Ol = class {
 	bridge;
 	options;
 	sequence = 0;
@@ -29572,7 +30363,7 @@ var Jc = class {
 	orphanedRequestIds = /* @__PURE__ */ new Set();
 	transferDisposers = /* @__PURE__ */ new Set();
 	constructor(e, t) {
-		qc(t.sessionId), Kc(t.operationId, "operation id"), Kc(t.generation, "generation"), Kc(t.maxByteCredit, "max byte credit"), t.cancelGraceMs !== void 0 && Kc(t.cancelGraceMs, "cancel grace"), this.bridge = e, this.options = t;
+		Dl(t.sessionId), El(t.operationId, "operation id"), El(t.generation, "generation"), El(t.maxByteCredit, "max byte credit"), t.cancelGraceMs !== void 0 && El(t.cancelGraceMs, "cancel grace"), this.bridge = e, this.options = t;
 	}
 	async pull(e, t) {
 		if (this.validateCredit(e), this.ending || this.completed) throw Error("pull session is closed");
@@ -29582,14 +30373,14 @@ var Jc = class {
 		let n = this.sequence;
 		try {
 			let r = await this.request((t) => ({
-				protocol: Gc,
+				protocol: Tl,
 				kind: "pull",
 				...this.identity(),
 				requestId: t,
 				sequence: n,
 				byteCredit: e
 			}), t);
-			if (this.validateResponseIdentity(r), r.usage && (this.usage = r.usage), r.kind === "error") throw Ys(r.error);
+			if (this.validateResponseIdentity(r), r.usage && (this.usage = r.usage), r.kind === "error") throw kc(r.error);
 			if (r.kind !== "chunk") throw Error(`expected chunk response, received ${r.kind}`);
 			if (this.ending) throw this.disposePayload(r.payload), Error("pull session is closed");
 			try {
@@ -29599,14 +30390,14 @@ var Jc = class {
 			}
 			return this.outstanding = !0, this.makeChunk(r);
 		} catch (e) {
-			throw !ws(e) && !this.ending && !this.completed && this.cancel("protocol-error").catch(() => void 0), e;
+			throw !ic(e) && !this.ending && !this.completed && this.cancel("protocol-error").catch(() => void 0), e;
 		} finally {
 			this.pulling = !1;
 		}
 	}
 	cancel(e = "closed", t) {
 		return this.lifecyclePromise ? this.lifecyclePromise : (this.ending = !0, this.disposeAllTransferred(), this.lifecyclePromise = this.lifecycleControl(this.control("cancel", t, (t) => ({
-			protocol: Gc,
+			protocol: Tl,
 			kind: "cancel",
 			...this.identity(),
 			requestId: t,
@@ -29615,7 +30406,7 @@ var Jc = class {
 	}
 	close(e) {
 		return this.lifecyclePromise ? this.lifecyclePromise : (this.ending = !0, this.disposeAllTransferred(), this.lifecyclePromise = this.lifecycleControl(this.control("close", e, (e) => ({
-			protocol: Gc,
+			protocol: Tl,
 			kind: "close",
 			...this.identity(),
 			requestId: e
@@ -29637,7 +30428,7 @@ var Jc = class {
 			usage: e.usage,
 			disposeTransferred: i,
 			ack: (t) => n || (this.ending ? Promise.resolve() : (n = this.control("ack", t, (t) => ({
-				protocol: Gc,
+				protocol: Tl,
 				kind: "ack",
 				...this.identity(),
 				requestId: t,
@@ -29648,7 +30439,7 @@ var Jc = class {
 				throw this.ending || this.cancel("request-error").catch(() => void 0), e;
 			}), n)),
 			release: (t) => r || (e.leaseId === void 0 || this.ending ? Promise.resolve() : (r = this.control("release", t, (t) => ({
-				protocol: Gc,
+				protocol: Tl,
 				kind: "release",
 				...this.identity(),
 				requestId: t,
@@ -29665,7 +30456,7 @@ var Jc = class {
 				this.forgetLifecycleOrphans();
 				return;
 			}
-			throw Ys(r.error);
+			throw kc(r.error);
 		}
 		if (r.kind !== "accepted" || r.command !== e) throw Error(`expected ${e} acceptance`);
 		(e === "cancel" || e === "close") && this.forgetLifecycleOrphans();
@@ -29698,13 +30489,13 @@ var Jc = class {
 		if (e.protocol !== "ooxml-pull-v1" || e.sessionId !== this.options.sessionId || e.operationId !== this.options.operationId || e.generation !== this.options.generation) throw e.kind === "chunk" && this.disposePayload(e.payload), Error("stale or mismatched pull session response");
 	}
 	validateCredit(e) {
-		if (Kc(e, "byte credit"), e > this.options.maxByteCredit) throw RangeError(`byte credit exceeds session maximum ${this.options.maxByteCredit}`);
+		if (El(e, "byte credit"), e > this.options.maxByteCredit) throw RangeError(`byte credit exceeds session maximum ${this.options.maxByteCredit}`);
 	}
 	validateChunk(e, t, n) {
 		if (e.sequence !== t) throw Error("pull response sequence mismatch");
 		if (!Number.isSafeInteger(e.byteLength) || e.byteLength < 0) throw RangeError("chunk byte length must be a non-negative safe integer");
 		if (e.byteLength > n) throw RangeError("chunk exceeds byte credit");
-		e.leaseId !== void 0 && Kc(e.leaseId, "lease id");
+		e.leaseId !== void 0 && El(e.leaseId, "lease id");
 	}
 	disposeAllTransferred() {
 		for (let e of [...this.transferDisposers]) e();
@@ -29729,7 +30520,7 @@ var Jc = class {
 			this.options.disposeTransferred?.(e);
 		} catch {}
 	}
-}, Yc = class {
+}, kl = class {
 	owner;
 	queue = Promise.resolve();
 	leases = /* @__PURE__ */ new Map();
@@ -29742,7 +30533,7 @@ var Jc = class {
 	poisonRunning = !1;
 	fatal;
 	constructor(e) {
-		this.maxRetainedBytes = e?.maxRetainedBytes ?? 64 * 1024 * 1024, this.maxRetainedCount = e?.maxRetainedCount ?? 256, Kc(this.maxRetainedBytes, "max retained lease bytes"), Kc(this.maxRetainedCount, "max retained lease count");
+		this.maxRetainedBytes = e?.maxRetainedBytes ?? 64 * 1024 * 1024, this.maxRetainedCount = e?.maxRetainedCount ?? 256, El(this.maxRetainedBytes, "max retained lease bytes"), El(this.maxRetainedCount, "max retained lease count");
 	}
 	enqueue(e) {
 		let t = this.queue.then(e, e);
@@ -29786,7 +30577,7 @@ var Jc = class {
 		}
 		return this.fatal;
 	}
-}, Xc = class {
+}, Al = class {
 	options;
 	coordinator;
 	coordinatorOwner = Symbol("pull-session-host");
@@ -29804,7 +30595,7 @@ var Jc = class {
 	driverCloseComplete = !1;
 	completed = !1;
 	constructor(e) {
-		qc(e.sessionId), Kc(e.operationId, "operation id"), Kc(e.generation, "generation"), Kc(e.maxByteCredit, "max byte credit"), e.wireLeaseIdStart !== void 0 && Kc(e.wireLeaseIdStart, "wire lease id start"), this.options = e, this.coordinator = e.coordinator, this.nextWireLeaseId = e.wireLeaseIdStart ?? 1, this.unregisterCleanup = this.coordinator.registerCleanup(() => this.forceFatalCleanup());
+		Dl(e.sessionId), El(e.operationId, "operation id"), El(e.generation, "generation"), El(e.maxByteCredit, "max byte credit"), e.wireLeaseIdStart !== void 0 && El(e.wireLeaseIdStart, "wire lease id start"), this.options = e, this.coordinator = e.coordinator, this.nextWireLeaseId = e.wireLeaseIdStart ?? 1, this.unregisterCleanup = this.coordinator.registerCleanup(() => this.forceFatalCleanup());
 	}
 	dispatch(e, t) {
 		return this.coordinator.enqueue(async () => {
@@ -29863,7 +30654,7 @@ var Jc = class {
 				case "close": return await this.close(), { response: this.accepted(e, "close") };
 			}
 		} catch (t) {
-			let n = qs(t);
+			let n = Dc(t);
 			return n.code === "ooxml-resource-limit" && (n = await this.coordinator.poison(n)), { response: this.errorResponse(e, n) };
 		}
 	}
@@ -29883,7 +30674,7 @@ var Jc = class {
 			let o = this.options.driver.measureChunk(t), s = this.arrayBufferTransferBytes(t.transfer);
 			if (o < s) throw RangeError("measured chunk bytes are below ArrayBuffer transfer bytes");
 			if (a = Math.max(o, s), t.leaseId !== void 0) {
-				if (Kc(t.leaseId, "lease id"), t.retainedBytes === void 0) throw Error("retained lease bytes are required");
+				if (El(t.leaseId, "lease id"), t.retainedBytes === void 0) throw Error("retained lease bytes are required");
 				if (this.activeDriverLeases.has(t.leaseId)) throw r = !0, Error("driver returned an active duplicate lease id");
 				i = this.allocateWireLeaseId(), this.coordinator.retainLease(this.coordinatorOwner, i, t.retainedBytes), this.leases.set(i, {
 					driverLeaseId: t.leaseId,
@@ -29922,7 +30713,7 @@ var Jc = class {
 		}, {
 			response: {
 				kind: "chunk",
-				protocol: Gc,
+				protocol: Tl,
 				...this.identity(),
 				requestId: e.requestId,
 				sequence: this.sequence,
@@ -29943,7 +30734,7 @@ var Jc = class {
 		await this.options.driver.acknowledge?.(e), this.unacked = void 0, this.coordinator.release(this.coordinatorOwner), this.sequence++, t && (this.completed = !0, this.maybeUnregisterCompleted());
 	}
 	async release(e) {
-		Kc(e, "wire lease id");
+		El(e, "wire lease id");
 		let t = this.leases.get(e);
 		t && (await this.options.driver.releaseLease?.(t.driverLeaseId), this.leases.delete(e), this.activeDriverLeases.delete(t.driverLeaseId), this.coordinator.releaseLease(this.coordinatorOwner, e), this.maybeUnregisterCompleted());
 	}
@@ -29994,12 +30785,12 @@ var Jc = class {
 		if (e.protocol !== "ooxml-pull-v1" || e.sessionId !== this.options.sessionId || e.operationId !== this.options.operationId || e.generation !== this.options.generation || !Number.isSafeInteger(e.requestId) || e.requestId <= 0) throw Error("stale or mismatched pull session command");
 	}
 	validateHostCredit(e) {
-		if (Kc(e, "byte credit"), e > this.options.maxByteCredit) throw RangeError("byte credit exceeds host maximum");
+		if (El(e, "byte credit"), e > this.options.maxByteCredit) throw RangeError("byte credit exceeds host maximum");
 	}
 	accepted(e, t, n = !1) {
 		return {
 			kind: "accepted",
-			protocol: Gc,
+			protocol: Tl,
 			...n ? {
 				sessionId: e.sessionId,
 				operationId: e.operationId,
@@ -30026,7 +30817,7 @@ var Jc = class {
 	errorResponse(e, t) {
 		return {
 			kind: "error",
-			protocol: Gc,
+			protocol: Tl,
 			sessionId: e.sessionId,
 			operationId: e.operationId,
 			generation: e.generation,
@@ -30073,7 +30864,7 @@ var Jc = class {
 			return;
 		}
 	}
-}, Zc = [
+}, jl = [
 	"L",
 	"R",
 	"AL",
@@ -30097,7 +30888,7 @@ var Jc = class {
 	"RLI",
 	"FSI",
 	"PDI"
-], Qc = [
+], Ml = [
 	0,
 	9,
 	10,
@@ -31365,7 +32156,7 @@ var Jc = class {
 	1048574,
 	1048576,
 	1114110
-], $c = [
+], Nl = [
 	9,
 	11,
 	10,
@@ -32633,7 +33424,7 @@ var Jc = class {
 	9,
 	0,
 	9
-], el = [
+], Pl = [
 	40,
 	41,
 	41,
@@ -33490,7 +34281,7 @@ var Jc = class {
 	65379,
 	65379,
 	65378
-], tl = [
+], Fl = [
 	40,
 	41,
 	0,
@@ -33878,42 +34669,42 @@ var Jc = class {
 ];
 //#endregion
 //#region packages/core/src/text/bidi/char-data.ts
-function nl(e) {
-	let t = 0, n = Qc.length - 1;
+function Il(e) {
+	let t = 0, n = Ml.length - 1;
 	for (; t < n;) {
 		let r = t + n + 1 >> 1;
-		Qc[r] <= e ? t = r : n = r - 1;
+		Ml[r] <= e ? t = r : n = r - 1;
 	}
-	return $c[t];
+	return Nl[t];
 }
-function rl(e) {
-	return Zc[nl(e)];
+function Ll(e) {
+	return jl[Il(e)];
 }
-var il = (() => {
+var Rl = (() => {
 	let e = /* @__PURE__ */ new Map();
-	for (let t = 0; t < el.length; t += 2) e.set(el[t], el[t + 1]);
+	for (let t = 0; t < Pl.length; t += 2) e.set(Pl[t], Pl[t + 1]);
 	return e;
 })();
-function al(e) {
-	return il.get(e) ?? null;
+function zl(e) {
+	return Rl.get(e) ?? null;
 }
-var ol = (() => {
+var Bl = (() => {
 	let e = /* @__PURE__ */ new Map();
-	for (let t = 0; t < tl.length; t += 3) e.set(tl[t], {
-		pair: tl[t + 1],
-		type: tl[t + 2] === 0 ? "o" : "c"
+	for (let t = 0; t < Fl.length; t += 3) e.set(Fl[t], {
+		pair: Fl[t + 1],
+		type: Fl[t + 2] === 0 ? "o" : "c"
 	});
 	return e;
 })();
-function sl(e) {
-	return ol.get(e) ?? null;
+function Vl(e) {
+	return Bl.get(e) ?? null;
 }
-var cl = (e) => e === "RLE" || e === "LRE" || e === "RLO" || e === "LRO" || e === "PDF" || e === "BN", ll = (e) => e === "LRI" || e === "RLI" || e === "FSI", ul = (e) => e === "B" || e === "S" || e === "WS" || e === "ON" || e === "FSI" || e === "LRI" || e === "RLI" || e === "PDI", dl = (e) => e & 1 ? e + 2 : e + 1, fl = (e) => e & 1 ? e + 1 : e + 2;
-function pl(e, t, n) {
+var Hl = (e) => e === "RLE" || e === "LRE" || e === "RLO" || e === "LRO" || e === "PDF" || e === "BN", Ul = (e) => e === "LRI" || e === "RLI" || e === "FSI", Wl = (e) => e === "B" || e === "S" || e === "WS" || e === "ON" || e === "FSI" || e === "LRI" || e === "RLI" || e === "PDI", Gl = (e) => e & 1 ? e + 2 : e + 1, Kl = (e) => e & 1 ? e + 1 : e + 2;
+function ql(e, t, n) {
 	let r = 0;
 	for (let i = t; i < n; i++) {
 		let t = e[i];
-		if (ll(t)) r++;
+		if (Ul(t)) r++;
 		else if (t === "PDI") r > 0 && r--;
 		else if (r === 0) {
 			if (t === "L") return 0;
@@ -33922,11 +34713,11 @@ function pl(e, t, n) {
 	}
 	return 0;
 }
-function ml(e) {
+function Jl(e) {
 	let t = e.length, n = new Int32Array(t).fill(t), r = new Int32Array(t).fill(-1), i = [];
 	for (let a = 0; a < t; a++) {
 		let t = e[a];
-		if (ll(t)) i.push(a);
+		if (Ul(t)) i.push(a);
 		else if (t === "PDI" && i.length) {
 			let e = i.pop();
 			n[e] = a, r[a] = e;
@@ -33937,7 +34728,7 @@ function ml(e) {
 		initOf: r
 	};
 }
-function hl(e, t, n) {
+function Yl(e, t, n) {
 	let r = e.length, i = Array(r).fill(t), a = e.slice(), o = [{
 		level: t,
 		override: "neutral",
@@ -33951,7 +34742,7 @@ function hl(e, t, n) {
 			case "RLO":
 			case "LRO": {
 				i[d] = u().level;
-				let e = r === "RLE" || r === "RLO" ? dl(u().level) : fl(u().level);
+				let e = r === "RLE" || r === "RLO" ? Gl(u().level) : Kl(u().level);
 				e <= 125 && s === 0 && c === 0 ? o.push({
 					level: e,
 					override: r === "RLO" ? "R" : r === "LRO" ? "L" : "neutral",
@@ -33966,8 +34757,8 @@ function hl(e, t, n) {
 				let t = u().override;
 				t !== "neutral" && (a[d] = t);
 				let f;
-				f = r === "RLI" ? "R" : r === "LRI" ? "L" : pl(e, d + 1, n[d]) === 1 ? "R" : "L";
-				let p = f === "R" ? dl(u().level) : fl(u().level);
+				f = r === "RLI" ? "R" : r === "LRI" ? "L" : ql(e, d + 1, n[d]) === 1 ? "R" : "L";
+				let p = f === "R" ? Gl(u().level) : Kl(u().level);
 				p <= 125 && s === 0 && c === 0 ? (l++, o.push({
 					level: p,
 					override: "neutral",
@@ -34009,10 +34800,10 @@ function hl(e, t, n) {
 		types: a
 	};
 }
-function gl(e) {
+function Xl(e) {
 	return e === 9001 ? 12296 : e === 9002 ? 12297 : e;
 }
-function _l(e, t, n, r, i, a) {
+function Zl(e, t, n, r, i, a) {
 	let o = e.length, s = [];
 	for (let e = 0; e < o; e++) n[e] || s.push(e);
 	let c = [];
@@ -34030,7 +34821,7 @@ function _l(e, t, n, r, i, a) {
 		for (;;) {
 			for (let e of p) f.push(e);
 			let t = p[p.length - 1];
-			if (ll(e[t]) && i[t] !== o) {
+			if (Ul(e[t]) && i[t] !== o) {
 				let e = l.get(i[t]);
 				if (e) {
 					p = e;
@@ -34045,7 +34836,7 @@ function _l(e, t, n, r, i, a) {
 			break;
 		}
 		let g = u(Math.max(m, h)), _ = f[f.length - 1], v = r;
-		if (!(ll(e[_]) && i[_] === o)) {
+		if (!(Ul(e[_]) && i[_] === o)) {
 			for (let e = _ + 1; e < o; e++) if (!n[e]) {
 				v = t[e];
 				break;
@@ -34061,8 +34852,8 @@ function _l(e, t, n, r, i, a) {
 	}
 	return d;
 }
-var vl = (e) => e === "L" ? "L" : e === "R" || e === "EN" || e === "AN" ? "R" : null;
-function yl(e, t, n, r, i) {
+var Ql = (e) => e === "L" ? "L" : e === "R" || e === "EN" || e === "AN" ? "R" : null;
+function $l(e, t, n, r, i) {
 	let a = e.indices, o = a.length, { sos: s, eos: c, level: l } = e;
 	for (let e = 0; e < o; e++) {
 		let t = a[e];
@@ -34109,15 +34900,15 @@ function yl(e, t, n, r, i) {
 		outer: for (let n = 0; n < o; n++) {
 			let i = a[n];
 			if (r[i] !== "ON") continue;
-			let o = sl(t[i]);
+			let o = Vl(t[i]);
 			if (o) if (o.type === "o") {
 				if (e.length === 63) break outer;
 				e.push({
-					expect: gl(o.pair),
+					expect: Xl(o.pair),
 					pos: n
 				});
 			} else {
-				let r = gl(t[i]);
+				let r = Xl(t[i]);
 				for (let t = e.length - 1; t >= 0; t--) if (e[t].expect === r) {
 					f.push({
 						open: e[t].pos,
@@ -34135,7 +34926,7 @@ function yl(e, t, n, r, i) {
 	for (let { open: e, close: t } of f) {
 		let n = !1, i = !1;
 		for (let o = e + 1; o < t; o++) {
-			let e = vl(r[a[o]]);
+			let e = Ql(r[a[o]]);
 			e === u ? n = !0 : e === d && (i = !0);
 		}
 		let o = null;
@@ -34143,7 +34934,7 @@ function yl(e, t, n, r, i) {
 		else if (i) {
 			let t = s;
 			for (let n = e - 1; n >= 0; n--) {
-				let e = vl(r[a[n]]);
+				let e = Ql(r[a[n]]);
 				if (e) {
 					t = e;
 					break;
@@ -34154,29 +34945,29 @@ function yl(e, t, n, r, i) {
 		o && (r[a[e]] = o, r[a[t]] = o, p(e, o), p(t, o));
 	}
 	for (let e = 0; e < o; e++) {
-		if (!ul(r[a[e]])) continue;
+		if (!Wl(r[a[e]])) continue;
 		let t = e;
-		for (; t < o && ul(r[a[t]]);) t++;
-		let n = e > 0 ? vl(r[a[e - 1]]) : s, i = t < o ? vl(r[a[t]]) : c;
+		for (; t < o && Wl(r[a[t]]);) t++;
+		let n = e > 0 ? Ql(r[a[e - 1]]) : s, i = t < o ? Ql(r[a[t]]) : c;
 		if (n && i && n === i) for (let i = e; i < t; i++) r[a[i]] = n;
 		e = t - 1;
 	}
-	for (let e = 0; e < o; e++) ul(r[a[e]]) && (r[a[e]] = u);
+	for (let e = 0; e < o; e++) Wl(r[a[e]]) && (r[a[e]] = u);
 	for (let e = 0; e < o; e++) {
 		let t = a[e], n = r[t];
 		l & 1 ? (n === "L" || n === "EN" || n === "AN") && (i[t] += 1) : n === "R" ? i[t] += 1 : (n === "AN" || n === "EN") && (i[t] += 2);
 	}
 }
-function bl(e, t, n) {
+function eu(e, t, n) {
 	let r = e.length, i = Array(r);
-	for (let t = 0; t < r; t++) i[t] = n?.[t] ?? rl(e[t]);
-	let a = t === "rtl" ? 1 : t === "ltr" ? 0 : pl(i, 0, r), { pdiOf: o, initOf: s } = ml(i), { levels: c, types: l } = hl(i, a, o), u = Array(r);
-	for (let e = 0; e < r; e++) u[e] = cl(i[e]);
-	let d = _l(i, c, u, a, o, s), f = l.slice();
-	for (let t of d) yl(t, e, i, f, c);
+	for (let t = 0; t < r; t++) i[t] = n?.[t] ?? Ll(e[t]);
+	let a = t === "rtl" ? 1 : t === "ltr" ? 0 : ql(i, 0, r), { pdiOf: o, initOf: s } = Jl(i), { levels: c, types: l } = Yl(i, a, o), u = Array(r);
+	for (let e = 0; e < r; e++) u[e] = Hl(i[e]);
+	let d = Zl(i, c, u, a, o, s), f = l.slice();
+	for (let t of d) $l(t, e, i, f, c);
 	let p = (e) => {
 		let t = i[e];
-		return t === "WS" || ll(t) || t === "PDI" || u[e];
+		return t === "WS" || Ul(t) || t === "PDI" || u[e];
 	};
 	for (let e = 0; e < r; e++) {
 		let t = i[e];
@@ -34192,7 +34983,7 @@ function bl(e, t, n) {
 		paragraphLevel: a
 	};
 }
-function xl(e, t, n) {
+function tu(e, t, n) {
 	let r = [];
 	for (let i = t; i < n; i++) {
 		let t = e[i];
@@ -34220,7 +35011,7 @@ function xl(e, t, n) {
 }
 //#endregion
 //#region packages/core/src/text/bidi/uax9/index.ts
-function Sl(e) {
+function nu(e) {
 	let t = [], n = [], r = [];
 	for (let i = 0; i < e.length;) {
 		let a = e.codePointAt(i), o = a > 65535 ? 2 : 1;
@@ -34232,9 +35023,9 @@ function Sl(e) {
 		starts: r
 	};
 }
-var Cl = class {
+var ru = class {
 	computeLevels(e, t, n) {
-		let { cps: r, units: i, starts: a } = Sl(e), { levels: o, paragraphLevel: s } = bl(r, t, n ? r.map((e, t) => n[a[t]] ?? null) : void 0), c = new Uint8Array(e.length), l = 0;
+		let { cps: r, units: i, starts: a } = nu(e), { levels: o, paragraphLevel: s } = eu(r, t, n ? r.map((e, t) => n[a[t]] ?? null) : void 0), c = new Uint8Array(e.length), l = 0;
 		for (let e = 0; e < o.length; e++) {
 			let t = o[e] === -1 ? 255 : o[e];
 			for (let n = 0; n < i[e]; n++) c[l++] = t;
@@ -34245,63 +35036,63 @@ var Cl = class {
 		};
 	}
 	reorderVisual(e, t, n) {
-		return xl(e, t, n);
+		return tu(e, t, n);
 	}
 	getMirror(e) {
-		return al(e);
+		return zl(e);
 	}
 };
-function wl() {
-	return new Cl();
+function iu() {
+	return new ru();
 }
 //#endregion
 //#region packages/core/src/text/bidi/engine.ts
-var Tl = null;
-function El() {
-	return Tl === null && (Tl = wl()), Tl;
+var au = null;
+function ou() {
+	return au === null && (au = iu()), au;
 }
 //#endregion
 //#region packages/core/src/text/bidi/line-order.ts
-var Dl = /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF\u200F\u202B\u202E\u2067]|[\u{10800}-\u{10FFF}\u{1E800}-\u{1EFFF}]/u;
-function Ol(e) {
-	return Dl.test(e);
+var su = /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF\u200F\u202B\u202E\u2067]|[\u{10800}-\u{10FFF}\u{1E800}-\u{1EFFF}]/u;
+function cu(e) {
+	return su.test(e);
 }
-function kl(e, t, n) {
+function lu(e, t, n) {
 	let r = n.length, i = new Uint8Array(r);
 	for (let a = 0; a < r; a++) {
 		let r = e[n[a]];
 		i[a] = r === 255 ? t : r;
 	}
 	return {
-		order: El().reorderVisual(i, 0, r),
+		order: ou().reorderVisual(i, 0, r),
 		segLevels: i
 	};
 }
 //#endregion
 //#region packages/core/src/text/kinsoku/rules.ts
-var Al = "”’）〕］｝〉》」』】〙〗〟｠»、。，．・：；／？！‐ー゠–〜～ぁぃぅぇぉっゃゅょゎゕゖァィゥェォッャュョヮヵヶㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ々〻ゝゞヽヾ゛゜％‰℃°′″｡｣､･ｰﾞﾟ!),.:;?]}｠", jl = "“‘（〔［｛〈《「『【〘〖〝｟«＄￥＃￡￠([{｟";
-function Ml(e) {
+var uu = "”’）〕］｝〉》」』】〙〗〟｠»、。，．・：；／？！‐ー゠–〜～ぁぃぅぇぉっゃゅょゎゕゖァィゥェォッャュョヮヵヶㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ々〻ゝゞヽヾ゛゜％‰℃°′″｡｣､･ｰﾞﾟ!),.:;?]}｠", du = "“‘（〔［｛〈《「『【〘〖〝｟«＄￥＃￡￠([{｟";
+function fu(e) {
 	let t = /* @__PURE__ */ new Set();
 	for (let n of e) t.add(n.codePointAt(0));
 	return t;
 }
-function Nl(e) {
+function pu(e) {
 	return {
 		enabled: e?.kinsoku !== !1,
-		lineStartForbidden: Ml(e?.noLineBreaksBefore ?? Al),
-		lineEndForbidden: Ml(e?.noLineBreaksAfter ?? jl)
+		lineStartForbidden: fu(e?.noLineBreaksBefore ?? uu),
+		lineEndForbidden: fu(e?.noLineBreaksAfter ?? du)
 	};
 }
-var Pl = Nl();
+var mu = pu();
 //#endregion
 //#region packages/core/src/text/kinsoku/split.ts
-function Fl(e, t, n, r = 1) {
+function hu(e, t, n, r = 1) {
 	if (!n.enabled || t <= 0 || t >= e.length) return t;
 	let i = (t) => t < e.length && n.lineStartForbidden.has(e[t].codePointAt(0)), a = (t) => t >= 0 && n.lineEndForbidden.has(e[t].codePointAt(0)), o = t;
 	for (; o > r && (i(o) || a(o - 1));) o--;
 	return o <= r && (i(o) || a(o - 1)) ? t : o;
 }
-function Il(e, t, n) {
+function gu(e, t, n) {
 	if (!t.enabled) return 0;
 	let r = e.length - n;
 	for (let n = 1; n <= r; n++) {
@@ -34314,15 +35105,15 @@ function Il(e, t, n) {
 }
 //#endregion
 //#region packages/core/src/text/cjk-ranges.ts
-function Ll(e) {
+function _u(e) {
 	return e >= 12288 && e <= 40959 || e >= 44032 && e <= 55203 || e >= 63744 && e <= 64255 || e >= 65280 && e <= 65519;
 }
-function Rl(e) {
-	return e === 32 || e === 9 || e === 10 || e === 13 ? !1 : !Ll(e);
+function vu(e) {
+	return e === 32 || e === 9 || e === 10 || e === 13 ? !1 : !_u(e);
 }
 //#endregion
 //#region packages/core/src/text/line-break-class.generated.ts
-var zl = /* @__PURE__ */ "BK.CM.CR.GL.LF.NL.SP.WJ.ZW.ZWJ.AK.AL.AP.AS.B2.BA.BB.CB.CL.CP.EB.EM.EX.H2.H3.HL.HH.HY.ID.IN.IS.JL.JT.JV.NS.NU.OP.PO.PR.QU.RI.SY.VF.VI".split("."), Bl = [
+var yu = /* @__PURE__ */ "BK.CM.CR.GL.LF.NL.SP.WJ.ZW.ZWJ.AK.AL.AP.AS.B2.BA.BB.CB.CL.CP.EB.EM.EX.H2.H3.HL.HH.HY.ID.IN.IS.JL.JT.JV.NS.NU.OP.PO.PR.QU.RI.SY.VF.VI".split("."), bu = [
 	0,
 	9,
 	10,
@@ -36945,7 +37736,7 @@ var zl = /* @__PURE__ */ "BK.CM.CR.GL.LF.NL.SP.WJ.ZW.ZWJ.AK.AL.AP.AS.B2.BA.BB.CB
 	917632,
 	917760,
 	918e3
-], Vl = [
+], xu = [
 	1,
 	15,
 	4,
@@ -39568,7 +40359,7 @@ var zl = /* @__PURE__ */ "BK.CM.CR.GL.LF.NL.SP.WJ.ZW.ZWJ.AK.AL.AP.AS.B2.BA.BB.CB
 	11,
 	1,
 	11
-], Hl = [
+], Su = [
 	4352,
 	8361,
 	8986,
@@ -39698,7 +40489,7 @@ var zl = /* @__PURE__ */ "BK.CM.CR.GL.LF.NL.SP.WJ.ZW.ZWJ.AK.AL.AP.AS.B2.BA.BB.CB
 	129775,
 	131072,
 	196608
-], Ul = [
+], Cu = [
 	4448,
 	8362,
 	8988,
@@ -39831,68 +40622,68 @@ var zl = /* @__PURE__ */ "BK.CM.CR.GL.LF.NL.SP.WJ.ZW.ZWJ.AK.AL.AP.AS.B2.BA.BB.CB
 ];
 //#endregion
 //#region packages/core/src/text/line-break.ts
-function Wl(e) {
-	let t = 0, n = Bl.length - 1;
+function wu(e) {
+	let t = 0, n = bu.length - 1;
 	for (; t < n;) {
 		let r = t + n + 1 >> 1;
-		Bl[r] <= e ? t = r : n = r - 1;
+		bu[r] <= e ? t = r : n = r - 1;
 	}
-	return zl[Vl[t]];
+	return yu[xu[t]];
 }
-function Gl(e) {
-	let t = 0, n = Hl.length - 1;
-	if (n < 0 || e < Hl[0]) return !1;
+function Tu(e) {
+	let t = 0, n = Su.length - 1;
+	if (n < 0 || e < Su[0]) return !1;
 	for (; t < n;) {
 		let r = t + n + 1 >> 1;
-		Hl[r] <= e ? t = r : n = r - 1;
+		Su[r] <= e ? t = r : n = r - 1;
 	}
-	return e < Ul[t];
+	return e < Cu[t];
 }
-function Kl(e, t) {
-	let n = Wl(e);
+function Eu(e, t) {
+	let n = wu(e);
 	if (n === "OP") return !0;
-	let r = Wl(t), i = n === "AL" || n === "HL", a = r === "AL" || r === "HL";
-	return !!(i && (a || r === "NU" || r === "PR" || r === "PO") || a && (n === "NU" || n === "PR" || n === "PO") || n === "PR" && (r === "ID" || r === "EB" || r === "EM") || (n === "ID" || n === "EB" || n === "EM") && r === "PO" || n === "NU" && (r === "NU" || r === "PO" || r === "PR") || r === "NU" && (n === "PO" || n === "PR" || n === "HY" || n === "IS") || (i || n === "NU") && r === "OP" && !Gl(t) || n === "CP" && !Gl(e) && (a || r === "NU"));
+	let r = wu(t), i = n === "AL" || n === "HL", a = r === "AL" || r === "HL";
+	return !!(i && (a || r === "NU" || r === "PR" || r === "PO") || a && (n === "NU" || n === "PR" || n === "PO") || n === "PR" && (r === "ID" || r === "EB" || r === "EM") || (n === "ID" || n === "EB" || n === "EM") && r === "PO" || n === "NU" && (r === "NU" || r === "PO" || r === "PR") || r === "NU" && (n === "PO" || n === "PR" || n === "HY" || n === "IS") || (i || n === "NU") && r === "OP" && !Tu(t) || n === "CP" && !Tu(e) && (a || r === "NU"));
 }
 //#endregion
 //#region packages/core/src/text/sea-break.ts
-function ql(e) {
+function Du(e) {
 	return e === "my" || e === "bo";
 }
-function Jl(e) {
+function Ou(e) {
 	return e >= 3584 && e <= 3711 || e >= 3712 && e <= 3839 || e >= 6016 && e <= 6143 || e >= 4096 && e <= 4255 || e >= 43616 && e <= 43647 || e >= 43488 && e <= 43519 || e >= 3840 && e <= 4095;
 }
-function Yl(e) {
+function ku(e) {
 	return e === 3633 || e >= 3635 && e <= 3642 || e >= 3655 && e <= 3662 || e === 3761 || e >= 3763 && e <= 3772 || e >= 3784 && e <= 3790 || e >= 6068 && e <= 6099 || e === 6109;
 }
-function Xl(e) {
+function Au(e) {
 	return e <= 3711 ? "th" : e <= 3839 ? "lo" : e <= 4095 ? "bo" : e <= 4255 ? "my" : e <= 6143 ? "km" : "my";
 }
-function Zl(e) {
-	for (let t of e) if (Jl(t.codePointAt(0))) return !0;
+function ju(e) {
+	for (let t of e) if (Ou(t.codePointAt(0))) return !0;
 	return !1;
 }
-function Ql(e) {
+function Mu(e) {
 	for (let t of e) {
 		let e = t.codePointAt(0);
-		if (Jl(e)) return ql(Xl(e));
+		if (Ou(e)) return Du(Au(e));
 	}
 	return !1;
 }
-function $l(e) {
+function Nu(e) {
 	let t = !1;
 	for (let n of e) {
 		let e = n.codePointAt(0);
-		if (Jl(e)) {
-			if (ql(Xl(e))) return !1;
+		if (Ou(e)) {
+			if (Du(Au(e))) return !1;
 			t = !0;
 		}
 	}
 	return t;
 }
-var eu, tu = /* @__PURE__ */ new Map();
-function nu(e) {
-	let t = tu.get(e);
+var Pu, Fu = /* @__PURE__ */ new Map();
+function Iu(e) {
+	let t = Fu.get(e);
 	if (t !== void 0) return t;
 	let n = null;
 	try {
@@ -39900,36 +40691,36 @@ function nu(e) {
 	} catch {
 		n = null;
 	}
-	return tu.set(e, n), n;
+	return Fu.set(e, n), n;
 }
-function ru(e) {
-	if (eu === null) return null;
-	if (typeof eu == "function") {
-		let t = eu;
+function Lu(e) {
+	if (Pu === null) return null;
+	if (typeof Pu == "function") {
+		let t = Pu;
 		return (n) => t(n, e);
 	}
-	let t = nu(e);
+	let t = Iu(e);
 	return t ? (e) => t.segment(e) : null;
 }
-function iu(e) {
-	if (!Zl(e)) return [];
+function Ru(e) {
+	if (!ju(e)) return [];
 	let t = [], n = e.length, r = 0;
 	for (; r < n;) {
 		let i = e.codePointAt(r), a = i > 65535 ? 2 : 1;
-		if (!Jl(i)) {
+		if (!Ou(i)) {
 			r += a;
 			continue;
 		}
-		let o = Xl(i), s = ql(o), c = r + a;
+		let o = Au(i), s = Du(o), c = r + a;
 		for (; c < n;) {
 			let t = e.codePointAt(c);
-			if (!Jl(t) || ql(Xl(t)) !== s) break;
+			if (!Ou(t) || Du(Au(t)) !== s) break;
 			c += t > 65535 ? 2 : 1;
 		}
 		let l = e.slice(r, c);
-		if (s) for (let e of fu(l)) t.push(r + e);
+		if (s) for (let e of Ku(l)) t.push(r + e);
 		else {
-			let e = ru(o);
+			let e = Lu(o);
 			if (e) {
 				let n = [];
 				try {
@@ -39942,42 +40733,42 @@ function iu(e) {
 	}
 	return t;
 }
-function au(e) {
-	if (!Zl(e)) return [];
+function zu(e) {
+	if (!ju(e)) return [];
 	let t = [], n = e.length, r = e.codePointAt(0), i = r > 65535 ? 2 : 1;
 	for (; i < n;) {
 		let n = e.codePointAt(i), a = n > 65535 ? 2 : 1;
-		Jl(r) !== Jl(n) && !ou(r) && !ou(n) && t.push(i), r = n, i += a;
+		Ou(r) !== Ou(n) && !Bu(r) && !Bu(n) && t.push(i), r = n, i += a;
 	}
 	return t;
 }
-function ou(e) {
+function Bu(e) {
 	return e === 32 || e === 9 || e === 10 || e === 13 || e === 12288 || e === 160 || e === 8199 || e === 8239 || e === 8288 || e === 65279;
 }
-function su(e, t) {
-	if (!Zl(e)) return [];
-	let n = e.length, r = new Set(iu(e)), i = new Set(fu(e)), a = (e) => {
+function Vu(e, t) {
+	if (!ju(e)) return [];
+	let n = e.length, r = new Set(Ru(e)), i = new Set(Ku(e)), a = (e) => {
 		i.has(e) && r.add(e);
 	};
-	for (let t of au(e)) a(t);
+	for (let t of zu(e)) a(t);
 	if (t?.cjk) {
 		let t = e.codePointAt(0), r = t > 65535 ? 2 : 1;
 		for (; r < n;) {
 			let n = e.codePointAt(r);
-			(Ll(n) || Ll(t)) && a(r), t = n, r += n > 65535 ? 2 : 1;
+			(_u(n) || _u(t)) && a(r), t = n, r += n > 65535 ? 2 : 1;
 		}
 	}
 	let o = t?.kinsoku, s = o != null && o.enabled !== !1, c = [];
 	for (let t of r) if (!(t <= 0 || t >= n)) {
 		if (s) {
-			let n = e.codePointAt(t), r = cu(e, t);
+			let n = e.codePointAt(t), r = Hu(e, t);
 			if (r !== void 0 && o.lineEndForbidden.has(r) || o.lineStartForbidden.has(n)) continue;
 		}
 		c.push(t);
 	}
 	return c.sort((e, t) => e - t), c;
 }
-function cu(e, t) {
+function Hu(e, t) {
 	if (t <= 0) return;
 	let n = e.charCodeAt(t - 1);
 	if (n >= 56320 && n <= 57343 && t >= 2) {
@@ -39986,7 +40777,7 @@ function cu(e, t) {
 	}
 	return n;
 }
-function lu(e, t, n, r, i, a = !1) {
+function Uu(e, t, n, r, i, a = !1) {
 	let o = e.length;
 	if (n >= o) return n;
 	if (a) {
@@ -40002,19 +40793,19 @@ function lu(e, t, n, r, i, a = !1) {
 	for (let a of t) a <= n || a >= o || i(e.slice(n, a)) <= r && (s = a);
 	return i(e.slice(n, o)) <= r && (s = o), s;
 }
-var uu;
-function du() {
-	if (uu !== void 0) return uu;
+var Wu;
+function Gu() {
+	if (Wu !== void 0) return Wu;
 	let e = null;
 	try {
 		typeof Intl < "u" && typeof Intl.Segmenter == "function" && (e = new Intl.Segmenter(void 0, { granularity: "grapheme" }));
 	} catch {
 		e = null;
 	}
-	return uu = e, e;
+	return Wu = e, e;
 }
-function fu(e) {
-	let t = du();
+function Ku(e) {
+	let t = Gu();
 	if (t) try {
 		let n = [];
 		for (let r of t.segment(e)) r.index > 0 && n.push(r.index);
@@ -40029,12 +40820,12 @@ function fu(e) {
 }
 //#endregion
 //#region packages/core/src/text/vertical-orientation.generated.ts
-var pu = [
+var qu = [
 	"U",
 	"R",
 	"Tu",
 	"Tr"
-], mu = [
+], Ju = [
 	0,
 	167,
 	168,
@@ -40315,7 +41106,7 @@ var pu = [
 	1048574,
 	1048576,
 	1114110
-], hu = [
+], Yu = [
 	1,
 	0,
 	1,
@@ -40599,29 +41390,29 @@ var pu = [
 ];
 //#endregion
 //#region packages/core/src/text/vertical-orientation.ts
-function gu(e) {
-	let t = 0, n = mu.length - 1;
+function Xu(e) {
+	let t = 0, n = Ju.length - 1;
 	for (; t < n;) {
 		let r = t + n + 1 >> 1;
-		mu[r] <= e ? t = r : n = r - 1;
+		Ju[r] <= e ? t = r : n = r - 1;
 	}
-	return hu[t];
+	return Yu[t];
 }
-function _u(e) {
-	return pu[gu(e)];
+function Zu(e) {
+	return qu[Xu(e)];
 }
-function vu(e) {
-	return yu.get(e) ?? null;
+function Qu(e) {
+	return $u.get(e) ?? null;
 }
-var yu = new Map([
+var $u = new Map([
 	[65292, 65040],
 	[12289, 65041],
 	[12290, 65042]
 ]);
-function bu(e) {
-	return xu.get(e) ?? null;
+function ed(e) {
+	return td.get(e) ?? null;
 }
-var xu = new Map([
+var td = new Map([
 	[65288, 65077],
 	[65289, 65078],
 	[65371, 65079],
@@ -40640,40 +41431,40 @@ var xu = new Map([
 	[12303, 65092],
 	[12310, 65047],
 	[12311, 65048]
-]), Su = new Set([65307]);
-function Cu(e) {
-	return Su.has(e);
+]), nd = new Set([65307]);
+function rd(e) {
+	return nd.has(e);
 }
-var wu = new Set([
+var id = new Set([
 	12540,
 	12316,
 	65374
 ]);
-function Tu(e) {
-	return wu.has(e);
+function ad(e) {
+	return id.has(e);
 }
 //#endregion
 //#region packages/core/src/text/vertical-vert-feature.ts
-var Eu = 256, Du = 200, Ou = /* @__PURE__ */ new WeakMap();
-function ku(e) {
+var od = 256, sd = 200, cd = /* @__PURE__ */ new WeakMap();
+function ld(e) {
 	let t = e.canvas, n = t?.ownerDocument?.defaultView?.HTMLCanvasElement;
 	return typeof n == "function" && t instanceof n || typeof HTMLCanvasElement < "u" && t instanceof HTMLCanvasElement ? t : null;
 }
-function Au(e, t) {
+function ud(e, t) {
 	return e.replace(/(^|\s)\d*\.?\d+(?:px|pt|pc|in|cm|mm|q|em|rem|%)(?:\/[^\s]+)?(?=\s)/i, `$1${t}`);
 }
-function ju(e, t = !0) {
+function dd(e, t = !0) {
 	let n = e.trim();
 	return [...n === "" || n.toLowerCase() === "normal" ? [] : n.split(",").map((e) => e.trim()).filter((e) => !/^(["'])vert\1(?:\s+(?:on|off|\d+))?$/i.test(e)), `"vert" ${+!!t}`].join(", ");
 }
-function Mu(e) {
+function fd(e) {
 	try {
 		let t = e.ownerDocument?.defaultView, n = t?.getComputedStyle ? t.getComputedStyle(e) : typeof getComputedStyle == "function" ? getComputedStyle(e) : null;
 		if (n?.fontFeatureSettings) return n.fontFeatureSettings;
 	} catch {}
 	return e.style.fontFeatureSettings;
 }
-function Nu(e, t) {
+function pd(e, t) {
 	if (e.isConnected) return t();
 	let n = e.ownerDocument ?? (typeof document > "u" ? null : document), r = n?.body ?? n?.documentElement;
 	if (!r) return t();
@@ -40714,15 +41505,15 @@ function Nu(e, t) {
 		if (t !== void 0 && !c) throw t;
 	}
 }
-function Pu(e, t) {
-	let n = ku(e);
-	return n === null ? t() : Nu(n, t);
+function md(e, t) {
+	let n = ld(e);
+	return n === null ? t() : pd(n, t);
 }
-function Fu(e) {
-	let t = Ou.get(e);
+function hd(e) {
+	let t = cd.get(e);
 	if (t) return t;
 	let n = e.createElement("canvas");
-	n.width = Eu, n.height = Eu, n.setAttribute("aria-hidden", "true"), Object.assign(n.style, {
+	n.width = od, n.height = od, n.setAttribute("aria-hidden", "true"), Object.assign(n.style, {
 		position: "fixed",
 		left: "-99999px",
 		top: "0",
@@ -40736,9 +41527,9 @@ function Fu(e) {
 	}, i = () => {
 		r.epoch += 1, r.cache.clear();
 	};
-	return e.fonts?.addEventListener?.("loadingdone", i), e.fonts?.addEventListener?.("loadingerror", i), Ou.set(e, r), r;
+	return e.fonts?.addEventListener?.("loadingdone", i), e.fonts?.addEventListener?.("loadingerror", i), cd.set(e, r), r;
 }
-function Iu(e, t) {
+function gd(e, t) {
 	let { width: n, height: r } = e.canvas, i = e.getImageData(0, 0, n, r).data, a = new Uint8ClampedArray(n * r), o = n, s = r, c = -1, l = -1, u = 0, d = 0, f = 0;
 	for (let e = 0; e < r; e += 1) for (let t = 0; t < n; t += 1) {
 		let r = i[(e * n + t) * 4 + 3];
@@ -40765,28 +41556,28 @@ function Iu(e, t) {
 		]
 	};
 }
-function Lu(e, t, n) {
+function _d(e, t, n) {
 	let r = e.canvas;
 	r.style.fontFeatureSettings = n, e.font = e.font, e.clearRect(0, 0, r.width, r.height);
 	let i = String.fromCodePoint(t);
-	return e.fillText(i, r.width / 2, r.height / 2), Iu(e, i);
+	return e.fillText(i, r.width / 2, r.height / 2), gd(e, i);
 }
-function Ru(e, t) {
+function vd(e, t) {
 	let n = 0, r = Math.min(e.length, t.length);
 	for (let i = 0; i < r; i += 1) n += Math.abs(e[i] - t[i]);
 	return n;
 }
-function zu(e, t, n, r) {
+function yd(e, t, n, r) {
 	let i = (e, t, n, r) => {
-		let i = Math.max(Ru(e, t), Ru(n, r));
-		return Math.min(Ru(e, n), Ru(e, r), Ru(t, n), Ru(t, r)) > i;
+		let i = Math.max(vd(e, t), vd(n, r));
+		return Math.min(vd(e, n), vd(e, r), vd(t, n), vd(t, r)) > i;
 	};
 	return i(e.alpha, t.alpha, n.alpha, r.alpha) || i(e.geometry, t.geometry, n.geometry, r.geometry) || i(e.metrics, t.metrics, n.metrics, r.metrics);
 }
-function Bu(e, t) {
-	let n = ku(e);
+function bd(e, t) {
+	let n = ld(e);
 	if (n === null || typeof document > "u") return !1;
-	let r = n.ownerDocument ?? document, i = Fu(r), a = Mu(n), o = `${i.epoch}:${Au(e.font, "<size>")}:${a}:${t}`, s = i.cache.get(o);
+	let r = n.ownerDocument ?? document, i = hd(r), a = fd(n), o = `${i.epoch}:${ud(e.font, "<size>")}:${a}:${t}`, s = i.cache.get(o);
 	if (s !== void 0) return s;
 	let c = !1, l = r.body ?? r.documentElement;
 	if (!l) return !1;
@@ -40796,9 +41587,9 @@ function Bu(e, t) {
 	if (d !== null) {
 		let n = i.canvas.style.fontFeatureSettings;
 		try {
-			d.font = Au(e.font, `${Du}px`), d.fillStyle = "#000", d.textAlign = "center", d.textBaseline = "middle";
-			let n = ju(a, !1), r = ju(a, !0), i = Lu(d, t, n), o = Lu(d, t, n), s = Lu(d, t, r), l = Lu(d, t, r);
-			c = i !== null && o !== null && s !== null && l !== null && zu(i, o, s, l);
+			d.font = ud(e.font, `${sd}px`), d.fillStyle = "#000", d.textAlign = "center", d.textBaseline = "middle";
+			let n = dd(a, !1), r = dd(a, !0), i = _d(d, t, n), o = _d(d, t, n), s = _d(d, t, r), l = _d(d, t, r);
+			c = i !== null && o !== null && s !== null && l !== null && yd(i, o, s, l);
 		} catch {
 			c = !1;
 		} finally {
@@ -40807,11 +41598,11 @@ function Bu(e, t) {
 	}
 	return i.cache.set(o, c), c;
 }
-function Vu(e, t) {
+function xd(e, t) {
 	let n = e.canvas;
-	return n?.style ? Pu(e, () => {
+	return n?.style ? md(e, () => {
 		let r = n.style, i = r.fontFeatureSettings;
-		r.fontFeatureSettings = ju(Mu(n)), e.font = e.font;
+		r.fontFeatureSettings = dd(fd(n)), e.font = e.font;
 		try {
 			return t();
 		} finally {
@@ -40819,8 +41610,8 @@ function Vu(e, t) {
 		}
 	}) : t();
 }
-function Hu(e, t) {
-	return Vu(e, () => {
+function Sd(e, t) {
+	return xd(e, () => {
 		let n = e.textAlign, r = e.textBaseline;
 		e.textAlign = "center", e.textBaseline = "middle";
 		try {
@@ -40839,13 +41630,13 @@ function Hu(e, t) {
 }
 //#endregion
 //#region packages/core/src/interaction/hyperlink.ts
-var Uu = [
+var Cd = [
 	"http",
 	"https",
 	"mailto",
 	"tel"
 ];
-function Wu(e) {
+function wd(e) {
 	let t = "";
 	for (let n of e) {
 		let e = n.codePointAt(0);
@@ -40854,18 +41645,18 @@ function Wu(e) {
 	let n = /^([a-zA-Z][a-zA-Z0-9+.-]*):/.exec(t);
 	return n ? n[1].toLowerCase() : null;
 }
-function Gu(e, t = Uu) {
+function Td(e, t = Cd) {
 	if (e === "") return null;
-	let n = Wu(e);
+	let n = wd(e);
 	return n === null || t.includes(n) ? e : null;
 }
-function Ku(e, t = Uu, n = typeof window < "u" ? window : void 0) {
-	let r = Gu(e, t);
+function Ed(e, t = Cd, n = typeof window < "u" ? window : void 0) {
+	let r = Td(e, t);
 	return r === null || !n ? !1 : (n.open(r, "_blank", "noopener,noreferrer"), !0);
 }
 //#endregion
 //#region packages/core/src/text/line-metrics.ts
-var qu = [
+var Dd = [
 	[(e) => e.includes("meiryo ui") || e.includes("meiryoui") || e.includes("メイリオ") && e.includes("ui"), {
 		asc: 2171 * 1.3 / 2048,
 		desc: 430 * 1.3 / 2048,
@@ -40893,22 +41684,22 @@ var qu = [
 		desc: 501 / 2048
 	}]
 ];
-function Ju(e, t) {
+function Od(e, t) {
 	if (!e) return null;
 	let n = e.toLowerCase();
-	for (let [e, r] of qu) if (e(n) && (t || !r.eaOnly)) return r;
+	for (let [e, r] of Dd) if (e(n) && (t || !r.eaOnly)) return r;
 	return null;
 }
-function Yu(e, t = !1) {
-	let n = Ju(e, t);
+function kd(e, t = !1) {
+	let n = Od(e, t);
 	return n === null ? null : n.asc + n.desc;
 }
-function Xu(e, t, n = !1) {
-	let r = Yu(e, n);
+function Ad(e, t, n = !1) {
+	let r = kd(e, n);
 	return r === null ? 0 : r * t;
 }
-function Zu(e, t, n, r, i = !1) {
-	let a = Ju(e, i);
+function jd(e, t, n, r, i = !1) {
+	let a = Od(e, i);
 	if (a === null) return {
 		ascent: n,
 		descent: r
@@ -40923,4 +41714,4 @@ function Zu(e, t, n, r, i = !1) {
 	};
 }
 //#endregion
-export { oc as $, Te as $t, kl as A, Ya as At, yc as B, zr as Bt, Kl as C, bo as Ct, Fl as D, vo as Dt, Il as E, ho as Et, Xc as F, so as Ft, rc as G, Gr as Gt, bc as H, Kr as Ht, Yc as I, Ja as It, pc as J, Tr as Jt, nc as K, kr as Kt, Nc as L, Ra as Lt, El as M, oo as Mt, Jc as N, io as Nt, Pl as O, mo as Ot, Gc as P, ao as Pt, lc as Q, Fe as Qt, Fc as R, Zr as Rt, su as S, yo as St, Rl as T, _o as Tt, ec as U, Wr as Ut, vc as V, Rr as Vt, tc as W, Lr as Wt, dc as X, Pe as Xt, uc as Y, Re as Yt, fc as Z, Me as Zt, fu as _, cs as _t, Ku as a, V as an, Gs as at, Yl as b, wo as bt, Vu as c, oe as cn, Cs as ct, vu as d, ms as dt, ue as en, sc as et, _u as f, fs as ft, lu as g, ss as gt, Zl as h, ls as ht, Wu as i, B as in, Ys as it, Ol as j, co as jt, Nl as k, po as kt, Pu as l, se as ln, ps as lt, Cu as m, us as mt, Xu as n, H as nn, ac as nt, Hu as o, U as on, qs as ot, Tu as p, ds as pt, ic as q, Ar as qt, Uu as r, le as rn, js as rt, Bu as s, z as sn, Ss as st, Zu as t, de as tn, cc as tt, bu as u, hs as ut, $l as v, Zo as vt, Ll as w, go as wt, Jl as x, Co as xt, Ql as y, Jo as yt, Pc as z, Qr as zt };
+export { Bc as $, Ue as $t, lu as A, Ao as At, $c as B, yi as Bt, Eu as C, es as Ct, hu as D, Qo as Dt, gu as E, Yo as Et, Al as F, Ho as Ft, Lc as G, Ti as Gt, el as H, Ei as Ht, kl as I, ko as It, qc as J, ai as Jt, Ic as K, li as Kt, pl as L, yo as Lt, ou as M, Vo as Mt, Ol as N, zo as Nt, mu as O, Jo as Ot, Tl as P, Bo as Pt, Uc as Q, $e as Qt, hl as R, ji as Rt, Vu as S, $o as St, vu as T, Zo as Tt, Pc as U, wi as Ut, Qc as V, vi as Vt, Fc as W, _i as Wt, Gc as X, Qe as Xt, Wc as Y, nt as Yt, Kc as Z, Xe as Zt, Ku as _, Hs as _t, Ed as a, G as an, Tc as at, ku as b, is as bt, xd as c, V as cn, rc as ct, Qu as d, Js as dt, ye as en, Vc as et, Zu as f, Ks as ft, Uu as g, Vs as gt, ju as h, Us as ht, wd as i, W as in, kc as it, cu as j, Uo as jt, pu as k, qo as kt, md as l, he as ln, qs as lt, rd as m, Ws as mt, Ad as n, q as nn, zc as nt, Sd as o, xe as on, Dc as ot, ad as p, Gs as pt, Rc as q, ui as qt, Cd as r, ve as rn, dc as rt, bd as s, _e as sn, nc as st, jd as t, be as tn, Hc as tt, ed as u, Ys as ut, Nu as v, js as vt, _u as w, Xo as wt, Ou as x, rs as xt, Mu as y, Os as yt, ml as z, Mi as zt };
