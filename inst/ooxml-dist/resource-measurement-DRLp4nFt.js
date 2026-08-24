@@ -1,25 +1,26 @@
-import { Et as e, Mt as t, Pt as n, xt as r } from "./line-metrics-DdEJYxjx.js";
+import { Dt as e, bt as t, kt as n } from "./line-metrics-Baz31mML.js";
+import { cn as r } from "./plot-area-frame-Dg1VIpUU.js";
 //#region packages/core/src/image/duotone-bitmap-by-path.ts
 function i(e, t) {
 	return t ? `${e}|duo:${t.clr1}:${t.clr2}` : e;
 }
 var a = "duotone";
 async function o(o, s, c, l, u = {}) {
-	let { offscreenFactory: d, ...f } = u, p = await t(o, s, l, f);
-	return !c || !p ? p : n(a, i(o, c), l, async () => {
-		let { w: t, h: n } = e(p);
-		if (t <= 0 || n <= 0) return {
-			bitmap: p,
+	let { offscreenFactory: d, failClosedOnDuotoneFailure: f = !1, ...p } = u, m = await e(o, s, l, p);
+	return !c || !m ? m : n(a, `${i(o, c)}${f ? "|strict" : ""}`, l, async () => {
+		let { w: e, h: n } = r(m);
+		if (e <= 0 || n <= 0) return {
+			bitmap: f ? null : m,
 			owned: !1
 		};
-		let i = await r(p, c, {
-			width: t,
+		let i = await t(m, c, {
+			width: e,
 			height: n,
 			offscreenFactory: d
-		});
+		}), a = f && i === m ? null : i;
 		return {
-			bitmap: i,
-			owned: i !== p
+			bitmap: a,
+			owned: a !== m
 		};
 	});
 }

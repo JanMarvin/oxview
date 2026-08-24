@@ -1,4 +1,5 @@
-import { Vt as e, Zt as t, b as n, w as r, x as i } from "./line-metrics-DdEJYxjx.js";
+import { Nt as e, b as t, w as n, x as r } from "./line-metrics-Baz31mML.js";
+import { _ as i } from "./plot-area-frame-Dg1VIpUU.js";
 //#region packages/core/src/fonts/symbol-font.ts
 var a = {
 	167: "♣",
@@ -912,10 +913,10 @@ function I(e, t, n) {
 		y: e.y + i * o
 	};
 }
-function L(e, n, r, i, a, o, s, c) {
+function L(e, t, n, r, a, o, s, c) {
 	if (a.type === "none") return;
-	let { lw: l, halfW: u, len: d } = M(a, o, s), f = c ?? t(o.color);
-	switch (e.save(), e.translate(n, r), e.rotate(i), e.fillStyle = f, e.strokeStyle = f, e.lineWidth = l, e.setLineDash([]), e.beginPath(), a.type) {
+	let { lw: l, halfW: u, len: d } = M(a, o, s), f = c ?? i(o.color);
+	switch (e.save(), e.translate(t, n), e.rotate(r), e.fillStyle = f, e.strokeStyle = f, e.lineWidth = l, e.setLineDash([]), e.beginPath(), a.type) {
 		case "triangle":
 		case "stealth":
 			e.moveTo(0, 0), e.lineTo(-d, -u), e.lineTo(-d, u), e.closePath(), e.fill();
@@ -935,9 +936,9 @@ function L(e, n, r, i, a, o, s, c) {
 //#endregion
 //#region packages/core/src/text/line-distribute.ts
 var R = (e) => e === 32 || e === 12288;
-function z(e, t, a = {}) {
-	if (Math.abs(t) <= .5) return null;
-	let o = a.firstContentSi ?? 0, s = a.lastDrawnSi ?? e.length - 1, c = a.minPerGap ?? -Infinity, l = a.isGapChar ?? r, u = a.isWhitespace ?? R, d = a.seaClusterGaps ?? !1, f = [];
+function z(e, i, a = {}) {
+	if (Math.abs(i) <= .5) return null;
+	let o = a.firstContentSi ?? 0, s = a.lastDrawnSi ?? e.length - 1, c = a.minPerGap ?? -Infinity, l = a.isGapChar ?? n, u = a.isWhitespace ?? R, d = a.seaClusterGaps ?? !1, f = [];
 	for (let t = o; t < e.length; t++) {
 		let n = e[t];
 		if (n === void 0) continue;
@@ -965,20 +966,20 @@ function z(e, t, a = {}) {
 	if (p === -1 || p === m) return null;
 	let h = Array(f.length).fill(!1), g = 0;
 	for (let e = p; e < m; e++) {
-		let t = f[e];
-		if (t.si === s) continue;
-		if (t.ws) {
+		let n = f[e];
+		if (n.si === s) continue;
+		if (n.ws) {
 			h[e] = !0, g++;
 			continue;
 		}
-		let r = f[e + 1];
-		if (r.ws) continue;
-		let a = t.cp, o = r.cp;
-		(a !== void 0 && l(a) || o !== void 0 && l(o) || d && a !== void 0 && o !== void 0 && i(a) && i(o) && !n(o)) && (h[e] = !0, g++);
+		let i = f[e + 1];
+		if (i.ws) continue;
+		let a = n.cp, o = i.cp;
+		(a !== void 0 && l(a) || o !== void 0 && l(o) || d && a !== void 0 && o !== void 0 && r(a) && r(o) && !t(o)) && (h[e] = !0, g++);
 	}
 	if (g === 0) return null;
-	let _ = t / g;
-	t < 0 && _ < c && (_ = c);
+	let _ = i / g;
+	i < 0 && _ < c && (_ = c);
 	let v = /* @__PURE__ */ new Map();
 	for (let e of f) e.cp !== void 0 && v.set(e.si, (v.get(e.si) ?? 0) + 1);
 	let y = /* @__PURE__ */ new Map();

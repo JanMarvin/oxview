@@ -1,4 +1,8 @@
 import { DocxScrollViewer } from "/assets/docx.mjs";
+import { threeD } from "/assets/three-d.mjs";
+import { regionMap } from "/assets/region-map.mjs";
+import { chartEx } from "/assets/chart-ex.mjs";
+import { math } from "/assets/math.mjs";
 
 // Using the library's native `enableTextSelection: true` instead of our
 // earlier hand-rolled overlay: the hand-rolled version accumulated a series
@@ -33,6 +37,10 @@ async function init() {
     const bgParam = qs.get("background");
 
     const viewer = new DocxScrollViewer(container, {
+        threeD,
+        regionMap,
+        chartEx,
+        math,
         enableElementSelection: true,
         enableTextSelection: true,
         background: bgParam || undefined,

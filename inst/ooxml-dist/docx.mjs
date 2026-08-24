@@ -1,4 +1,5 @@
-import { Rt as e, a as t, cn as n, ln as r, zt as i } from "./line-metrics-DdEJYxjx.js";
-import { w as a } from "./canvas-viewer-mechanics-D-r6wHY_.js";
-import { a as o, c as s, i as c, n as l, o as u, r as d, s as f } from "./docx-BlELeDNF.js";
-export { s as DocxDocument, d as DocxScrollViewer, c as DocxViewer, e as OoxmlDecodedImageLimitError, n as OoxmlError, r as OoxmlResourceLimitError, a as autoResize, u as buildDocxHighlightLayer, f as buildDocxTextLayer, i as isOoxmlDecodedImageLimitError, l as noteText, t as openExternalHyperlink, o as readDocxTextSelectionContext };
+import { Jt as e, Yt as t, a as n } from "./line-metrics-Baz31mML.js";
+import { w as r } from "./canvas-viewer-mechanics-CqxKRGCp.js";
+import { a as i, c as a, i as o, n as s, o as c, r as l, s as u } from "./docx-SEyQ4gS-.js";
+import { mn as d, pn as f } from "./plot-area-frame-Dg1VIpUU.js";
+export { a as DocxDocument, l as DocxScrollViewer, o as DocxViewer, f as OoxmlDecodedImageLimitError, e as OoxmlError, t as OoxmlResourceLimitError, r as autoResize, c as buildDocxHighlightLayer, u as buildDocxTextLayer, d as isOoxmlDecodedImageLimitError, s as noteText, n as openExternalHyperlink, i as readDocxTextSelectionContext };

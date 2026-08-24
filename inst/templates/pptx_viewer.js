@@ -1,4 +1,8 @@
 import { PptxScrollViewer } from "/assets/pptx.mjs";
+import { threeD } from "/assets/three-d.mjs";
+import { regionMap } from "/assets/region-map.mjs";
+import { chartEx } from "/assets/chart-ex.mjs";
+import { math } from "/assets/math.mjs";
 
 // Ported from the docx viewer: same reasoning applies here (see docx_viewer.js
 // for the full history). Using the library's native `enableTextSelection: true`
@@ -25,6 +29,10 @@ async function init() {
     const bgParam = qs.get("background");
 
     const viewer = new PptxScrollViewer(container, {
+        threeD,
+        regionMap,
+        chartEx,
+        math,
         enableElementSelection: true,
         enableTextSelection: true,
         background: bgParam || undefined,

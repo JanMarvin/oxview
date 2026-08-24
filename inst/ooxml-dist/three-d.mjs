@@ -1,7 +1,7 @@
-import { C as e, S as t, _ as n, d as r, f as i, g as a, h as o, l as s, r as c, t as l, u, x as d, y as f } from "./chart-number-format-qLhnk6hj.js";
-import { H as p, L as m, N as h, S as g, _, b as v, d as y, g as b, i as x, j as S, n as C, r as w, s as T, t as E, v as D, w as O, x as k, y as ee } from "./three-d-C28kqDym.js";
-import { t as A } from "./renderer-module-contract-BNGz8HvO.js";
-function j(e) {
+import { A as e, At as t, B as n, Bt as r, Ct as i, Dt as a, E as o, Et as s, H as c, Ht as l, It as u, J as d, Jt as f, Kt as p, Lt as m, Mt as h, Nt as g, R as _, Rt as v, St as y, Ut as b, Wt as x, Xt as S, Y as C, Yt as w, _t as T, a as E, an as D, at as O, b as k, bt as A, ct as j, ft as M, ht as N, it as P, jt as F, kt as I, mt as L, n as R, ot as ee, r as z, rn as B, st as V, t as H, v as U, vt as te, wt as W, x as G, xt as ne, yt as re } from "./plot-area-frame-Dg1VIpUU.js";
+import { D as K, E as q, O as ie, _ as J, a as Y, c as ae, d as X, g as oe, h as se, i as ce, k as le, m as ue, n as de, o as fe, r as pe, s as me, t as he, x as ge } from "./three-d-BYiWCNlz.js";
+import { t as _e } from "./renderer-module-contract-0bO_5SC0.js";
+function ve(e) {
 	switch (e) {
 		case "cylinder":
 		case "cone":
@@ -11,8 +11,8 @@ function j(e) {
 		default: return "box";
 	}
 }
-var M = (e) => Math.max(0, Math.min(1, e));
-function N(e, t) {
+var ye = (e) => Math.max(0, Math.min(1, e));
+function be(e, t) {
 	if (t.length < 3) return null;
 	let n = e[t[0]];
 	for (let r = 1; r + 1 < t.length; r++) for (let i = r + 1; i < t.length; i++) {
@@ -37,7 +37,7 @@ function N(e, t) {
 	}
 	return null;
 }
-function P(e, t) {
+function xe(e, t) {
 	let n = e.reduce((t, n) => ({
 		x: t.x + n.x / e.length,
 		y: t.y + n.y / e.length,
@@ -48,7 +48,7 @@ function P(e, t) {
 		depth: 0
 	});
 	return t.map((t) => {
-		let r = N(e, t.indices);
+		let r = be(e, t.indices);
 		if (!r) return t;
 		let i = t.indices.reduce((n, r) => ({
 			x: n.x + e[r].x / t.indices.length,
@@ -69,7 +69,7 @@ function P(e, t) {
 		};
 	});
 }
-function F(e) {
+function Se(e) {
 	let { horizontal: t, crossStart: n, crossSize: r, baseCoord: i, endCoord: a, nearDepth: o, farDepth: s } = e;
 	if (![
 		n,
@@ -79,7 +79,7 @@ function F(e) {
 		o,
 		s
 	].every(Number.isFinite) || r <= 0 || i === a || o === s) return null;
-	let c = j(e.shape), l = c === "cylinder" || c === "cone" || c === "coneToMax", u = c !== "box" && c !== "cylinder", d = c === "coneToMax" || c === "pyramidToMax", f = l ? Math.max(8, Math.min(64, Math.trunc(e.roundSegments ?? 32))) : 4, p = M(e.baseScale ?? (d ? e.toMaxBaseScale ?? 1 : 1)), m = M(e.endScale ?? (u ? d ? e.toMaxEndScale ?? 0 : 0 : 1));
+	let c = ve(e.shape), l = c === "cylinder" || c === "cone" || c === "coneToMax", u = c !== "box" && c !== "cylinder", d = c === "coneToMax" || c === "pyramidToMax", f = l ? Math.max(8, Math.min(64, Math.trunc(e.roundSegments ?? 32))) : 4, p = ye(e.baseScale ?? (d ? e.toMaxBaseScale ?? 1 : 1)), m = ye(e.endScale ?? (u ? d ? e.toMaxEndScale ?? 0 : 0 : 1));
 	if (p === 0 && m === 0) return null;
 	let h = n + r / 2, g = r / 2, _ = (o + s) / 2, v = Math.abs(s - o) / 2, y = [], b = (e, n) => {
 		if (n === 0) {
@@ -146,11 +146,11 @@ function F(e) {
 	return {
 		shape: c,
 		vertices: y,
-		faces: P(y, w),
+		faces: xe(y, w),
 		silhouetteEdges: T
 	};
 }
-function I(e) {
+function Ce(e) {
 	let { x0: t, x1: n, lower0: r, lower1: i, upper0: a, upper1: o, nearDepth: s, farDepth: c, capStart: l, capEnd: u } = e;
 	if (![
 		t,
@@ -210,7 +210,7 @@ function I(e) {
 	return {
 		shape: "areaStrip",
 		vertices: _,
-		faces: P(_, [
+		faces: xe(_, [
 			{
 				indices: [
 					0,
@@ -275,17 +275,17 @@ function I(e) {
 		silhouetteEdges: []
 	};
 }
-function L(e) {
+function we(e) {
 	let t = e.upper0 - e.lower0, n = e.upper1 - e.lower1;
 	if (Number.isFinite(t) && Number.isFinite(n) && t * n < 0) {
 		let r = t / (t - n), i = e.x0 + (e.x1 - e.x0) * r, a = e.lower0 + (e.lower1 - e.lower0) * r;
-		return [I({
+		return [Ce({
 			...e,
 			x1: i,
 			lower1: a,
 			upper1: a,
 			capEnd: !1
-		}), I({
+		}), Ce({
 			...e,
 			x0: i,
 			lower0: a,
@@ -293,10 +293,51 @@ function L(e) {
 			capStart: !1
 		})].filter((e) => e != null);
 	}
-	let r = I(e);
+	let r = Ce(e);
 	return r ? [r] : [];
 }
-function R(e) {
+function Te(e) {
+	let t = e.outline;
+	if (t.length < 3 || t.length > 64 || ![e.nearDepth, e.farDepth].every(Number.isFinite) || Math.abs(e.nearDepth - e.farDepth) < 1e-9 || !t.every((e) => Number.isFinite(e.x) && Number.isFinite(e.y))) return null;
+	let n = Math.min(e.nearDepth, e.farDepth), r = Math.max(e.nearDepth, e.farDepth), i = t.length, a = [...t.map((e) => ({
+		...e,
+		depth: n
+	})), ...t.map((e) => ({
+		...e,
+		depth: r
+	}))], o = Array.from({ length: i }, (e, t) => t), s = Array.from({ length: i }, (e, t) => i + t).reverse();
+	return {
+		shape: "lineRibbon",
+		vertices: a,
+		faces: xe(a, [
+			{
+				indices: o,
+				role: "side",
+				smoothSurface: !1
+			},
+			{
+				indices: s,
+				role: "side",
+				smoothSurface: !1
+			},
+			...Array.from({ length: i }, (e, t) => {
+				let n = (t + 1) % i;
+				return {
+					indices: [
+						t,
+						n,
+						i + n,
+						i + t
+					],
+					role: "side",
+					smoothSurface: !1
+				};
+			})
+		]),
+		silhouetteEdges: []
+	};
+}
+function Ee(e) {
 	let { centerX: t, centerY: n, centerDepth: r, radius: i, modelDepth: a, thickness: o, startAngle: s, endAngle: c } = e;
 	if (![
 		t,
@@ -388,13 +429,13 @@ function R(e) {
 	return {
 		shape: "pieSector",
 		vertices: m,
-		faces: P(m, v),
+		faces: xe(m, v),
 		silhouetteEdges: h.slice(0, u ? void 0 : -1).map((e, t) => [e, g[t]])
 	};
 }
 //#endregion
 //#region packages/core/src/chart/three-d-scene.ts
-function z(e, t) {
+function De(e, t) {
 	if (![e, t].every(Number.isFinite)) return null;
 	let n = t - e;
 	if (n === 0) return e >= 0 && e <= 1 ? {
@@ -407,7 +448,7 @@ function z(e, t) {
 		endT: o
 	} : null;
 }
-function B(e, t, n, r) {
+function Oe(e, t, n, r) {
 	if (![
 		e,
 		t,
@@ -436,12 +477,12 @@ function B(e, t, n, r) {
 	}
 	return l;
 }
-var V = (e) => ({
+var ke = (e) => ({
 	minX: Math.min(...e.map((e) => e.x)),
 	maxX: Math.max(...e.map((e) => e.x)),
 	minY: Math.min(...e.map((e) => e.y)),
 	maxY: Math.max(...e.map((e) => e.y))
-}), H = (e, t) => {
+}), Ae = (e, t) => {
 	let n = !1;
 	for (let r = 0, i = e.length - 1; r < e.length; i = r++) {
 		let a = e[r], o = e[i], s = (a.x - t.x) * (o.y - t.y) - (a.y - t.y) * (o.x - t.x), c = Math.max(1, Math.abs(a.x), Math.abs(a.y), Math.abs(o.x), Math.abs(o.y));
@@ -449,7 +490,7 @@ var V = (e) => ({
 		a.y > t.y != o.y > t.y && t.x < (o.x - a.x) * (t.y - a.y) / (o.y - a.y) + a.x && (n = !n);
 	}
 	return n;
-}, U = (e, t, n, r) => {
+}, je = (e, t, n, r) => {
 	let i = {
 		x: t.x - e.x,
 		y: t.y - e.y
@@ -467,23 +508,23 @@ var V = (e) => ({
 		y: e.y + i.y * c
 	};
 };
-function W(e, t, n, r) {
+function Me(e, t, n, r) {
 	let i = [], a = (e) => {
 		i.length >= 12 || i.some((t) => Math.hypot(t.x - e.x, t.y - e.y) < 1e-7) || i.push(e);
 	}, o = {
 		x: (Math.max(n.minX, r.minX) + Math.min(n.maxX, r.maxX)) / 2,
 		y: (Math.max(n.minY, r.minY) + Math.min(n.maxY, r.maxY)) / 2
 	};
-	H(e, o) && H(t, o) && a(o);
-	for (let n of e) H(t, n) && a(n);
-	for (let n of t) H(e, n) && a(n);
+	Ae(e, o) && Ae(t, o) && a(o);
+	for (let n of e) Ae(t, n) && a(n);
+	for (let n of t) Ae(e, n) && a(n);
 	for (let n = 0; n < e.length && i.length < 12; n++) for (let r = 0; r < t.length && i.length < 12; r++) {
-		let i = U(e[n], e[(n + 1) % e.length], t[r], t[(r + 1) % t.length]);
+		let i = je(e[n], e[(n + 1) % e.length], t[r], t[(r + 1) % t.length]);
 		i && a(i);
 	}
 	return i;
 }
-function G(e, t) {
+function Ne(e, t) {
 	let n = e.cameraDepths;
 	if (!n || n.length !== e.points.length || e.points.length < 3) return e.cameraDepth;
 	let r = e.cameraWeights?.length === e.points.length ? e.cameraWeights : e.points.map(() => 1), i = e.points[0];
@@ -497,17 +538,17 @@ function G(e, t) {
 	}
 	return e.cameraDepth;
 }
-function K(e) {
+function Pe(e) {
 	if (e.length < 2) return [...e];
-	let t = [...e.keys()].sort((t, n) => e[t].cameraDepth - e[n].cameraDepth || t - n), n = e.map((e) => V(e.points)), r = [...e.keys()].sort((e, t) => n[e].minX - n[t].minX || e - t), i = e.map(() => /* @__PURE__ */ new Set()), a = e.map(() => 0), o = [], s = 0;
+	let t = [...e.keys()].sort((t, n) => e[t].cameraDepth - e[n].cameraDepth || t - n), n = e.map((e) => ke(e.points)), r = [...e.keys()].sort((e, t) => n[e].minX - n[t].minX || e - t), i = e.map(() => /* @__PURE__ */ new Set()), a = e.map(() => 0), o = [], s = 0;
 	for (let c of r) {
 		for (let e = o.length - 1; e >= 0; e--) n[o[e]].maxX < n[c].minX - 1e-9 && o.splice(e, 1);
 		for (let r of o) {
 			if (++s > 2e5) return t.map((t) => e[t]);
 			if (n[r].maxY < n[c].minY - 1e-9 || n[c].maxY < n[r].minY - 1e-9) continue;
-			let o = W(e[r].points, e[c].points, n[r], n[c]), l = 0;
+			let o = Me(e[r].points, e[c].points, n[r], n[c]), l = 0;
 			for (let t of o) {
-				let n = G(e[r], t) - G(e[c], t), i = 1e-8 * Math.max(1, Math.abs(e[r].cameraDepth), Math.abs(e[c].cameraDepth));
+				let n = Ne(e[r], t) - Ne(e[c], t), i = 1e-8 * Math.max(1, Math.abs(e[r].cameraDepth), Math.abs(e[c].cameraDepth));
 				if (Math.abs(n) <= i) continue;
 				let a = n < 0 ? -1 : 1;
 				if (l !== 0 && l !== a) {
@@ -533,29 +574,29 @@ function K(e) {
 }
 //#endregion
 //#region packages/core/src/chart/three-d-stroke.ts
-var q = 1e-9, te = 1e4, ne = (e, t, n) => ({
+var Z = 1e-9, Fe = 1e4, Ie = (e, t, n) => ({
 	x: e.x + (t.x - e.x) * n,
 	y: e.y + (t.y - e.y) * n,
 	cameraDepth: e.cameraDepth + (t.cameraDepth - e.cameraDepth) * n,
 	cameraWeight: (e.cameraWeight ?? 1) + ((t.cameraWeight ?? 1) - (e.cameraWeight ?? 1)) * n
-}), J = (e, t) => Math.hypot(e.x - t.x, e.y - t.y) <= q;
-function re(e, t, n = 0) {
-	let r = t.filter((e) => Number.isFinite(e) && e > q);
+}), Le = (e, t) => Math.hypot(e.x - t.x, e.y - t.y) <= Z;
+function Re(e, t, n = 0) {
+	let r = t.filter((e) => Number.isFinite(e) && e > Z);
 	if (r.length === 0) return e.length >= 2 ? [[...e]] : [];
 	r.length % 2 == 1 && r.push(...r);
-	let i = [], a = 0, o = r[0], s = !0, c = r.reduce((e, t) => e + t, 0), l = c > q && Number.isFinite(n) ? (n % c + c) % c : 0;
-	for (; l > q;) {
+	let i = [], a = 0, o = r[0], s = !0, c = r.reduce((e, t) => e + t, 0), l = c > Z && Number.isFinite(n) ? (n % c + c) % c : 0;
+	for (; l > Z;) {
 		let e = Math.min(l, o);
-		l -= e, o -= e, o <= q && (a = (a + 1) % r.length, o = r[a], s = a % 2 == 0);
+		l -= e, o -= e, o <= Z && (a = (a + 1) % r.length, o = r[a], s = a % 2 == 0);
 	}
 	let u = null;
 	for (let t = 0; t + 1 < e.length; t++) {
 		let n = e[t], c = e[t + 1], l = Math.hypot(c.x - n.x, c.y - n.y);
-		if (!(l > q)) continue;
+		if (!(l > Z)) continue;
 		let d = 0;
-		for (; d < l - q;) {
-			let e = Math.min(o, l - d), t = ne(n, c, d / l), f = ne(n, c, (d + e) / l);
-			if (s && (u ??= [], (u.length === 0 || !J(u.at(-1), t)) && u.push(t), u.push(f)), d += e, o -= e, o <= q) {
+		for (; d < l - Z;) {
+			let e = Math.min(o, l - d), t = Ie(n, c, d / l), f = Ie(n, c, (d + e) / l);
+			if (s && (u ??= [], (u.length === 0 || !Le(u.at(-1), t)) && u.push(t), u.push(f)), d += e, o -= e, o <= Z) {
 				if (s && u && u.length >= 2) {
 					if (i.length >= 1e4) return null;
 					i.push(u);
@@ -568,13 +609,13 @@ function re(e, t, n = 0) {
 		if (i.length >= 1e4) return null;
 		i.push(u);
 	}
-	if (i.length > 1 && J(e[0], e.at(-1)) && J(i[0][0], e[0]) && J(i.at(-1).at(-1), e.at(-1))) {
+	if (i.length > 1 && Le(e[0], e.at(-1)) && Le(i[0][0], e[0]) && Le(i.at(-1).at(-1), e.at(-1))) {
 		let e = i.shift(), t = i.pop();
 		i.unshift([...t, ...e.slice(1)]);
 	}
 	return i;
 }
-var Y = (e, t) => ({
+var ze = (e, t) => ({
 	kind: e,
 	points: t.map(({ x: e, y: t }) => ({
 		x: e,
@@ -583,7 +624,7 @@ var Y = (e, t) => ({
 	cameraDepths: t.map((e) => e.cameraDepth),
 	cameraWeights: t.map((e) => e.cameraWeight ?? 1),
 	cameraDepth: t.reduce((e, t) => e + t.cameraDepth, 0) / t.length
-}), ie = (e, t, n) => {
+}), Be = (e, t, n) => {
 	let r = [];
 	for (let n = 0; n < 12; n++) {
 		let i = Math.PI * 2 * n / 12;
@@ -593,17 +634,17 @@ var Y = (e, t) => ({
 			y: e.y + Math.sin(i) * t
 		});
 	}
-	return Y(n, r);
+	return ze(n, r);
 };
-function ae(e, t, n) {
+function Ve(e, t, n) {
 	let r = Number.isFinite(n.width) ? Math.max(0, n.width) : 0;
-	if (!(r > q) || t.length < 3) return null;
+	if (!(r > Z) || t.length < 3) return null;
 	let i = r / 2;
-	if ((n.lineJoin ?? "miter") === "round") return ie(e, i, "join");
+	if ((n.lineJoin ?? "miter") === "round") return Be(e, i, "join");
 	let a = [];
 	for (let n of t) {
 		let t = n.x - e.x, r = n.y - e.y, o = Math.hypot(t, r);
-		if (!(o > q)) continue;
+		if (!(o > Z)) continue;
 		let s = -r / o * i, c = t / o * i;
 		a.push({
 			...e,
@@ -619,20 +660,20 @@ function ae(e, t, n) {
 	a.sort((e, t) => e.x - t.x || e.y - t.y);
 	let o = (e, t, n) => (t.x - e.x) * (n.y - e.y) - (t.y - e.y) * (n.x - e.x), s = [];
 	for (let e of a) {
-		for (; s.length >= 2 && o(s.at(-2), s.at(-1), e) <= q;) s.pop();
+		for (; s.length >= 2 && o(s.at(-2), s.at(-1), e) <= Z;) s.pop();
 		s.push(e);
 	}
 	let c = [];
 	for (let e of [...a].reverse()) {
-		for (; c.length >= 2 && o(c.at(-2), c.at(-1), e) <= q;) c.pop();
+		for (; c.length >= 2 && o(c.at(-2), c.at(-1), e) <= Z;) c.pop();
 		c.push(e);
 	}
 	let l = [...s.slice(0, -1), ...c.slice(0, -1)];
-	return l.length >= 3 ? Y("join", l) : null;
+	return l.length >= 3 ? ze("join", l) : null;
 }
-var oe = (e, t, n, r) => {
+var He = (e, t, n, r) => {
 	let i = t.x * r.y - t.y * r.x;
-	if (Math.abs(i) <= q) return null;
+	if (Math.abs(i) <= Z) return null;
 	let a = {
 		x: n.x - e.x,
 		y: n.y - e.y
@@ -642,17 +683,17 @@ var oe = (e, t, n, r) => {
 		y: e.y + t.y * o
 	};
 };
-function se(e, t) {
+function Ue(e, t) {
 	let n = Number.isFinite(t.width) ? Math.max(0, t.width) : 0;
-	if (!(n > q) || e.length < 2) return [];
-	let r = n / 2, i = t.lineCap ?? "butt", a = t.lineJoin ?? "miter", o = Math.max(1, t.miterLimit ?? 10), s = [], c = re(e, t.dash ?? [], t.dashOffset);
+	if (!(n > Z) || e.length < 2) return [];
+	let r = n / 2, i = t.lineCap ?? "butt", a = t.lineJoin ?? "miter", o = Math.max(1, t.miterLimit ?? 10), s = [], c = Re(e, t.dash ?? [], t.dashOffset);
 	if (c == null) return null;
 	let l = (e) => s.length >= 1e4 ? !1 : (s.push(e), !0);
 	for (let n = 0; n < c.length; n++) {
-		let s = c[n], u = s.length > 2 && J(s[0], s.at(-1)), d = n === 0 && J(s[0], e[0]) ? t.startCap ?? i : i, f = n + 1 === c.length && J(s.at(-1), e.at(-1)) ? t.endCap ?? i : i, p = [];
+		let s = c[n], u = s.length > 2 && Le(s[0], s.at(-1)), d = n === 0 && Le(s[0], e[0]) ? t.startCap ?? i : i, f = n + 1 === c.length && Le(s.at(-1), e.at(-1)) ? t.endCap ?? i : i, p = [];
 		for (let e = 0; e + 1 < s.length; e++) {
 			let t = s[e], n = s[e + 1], r = Math.hypot(n.x - t.x, n.y - t.y);
-			p.push(r > q ? {
+			p.push(r > Z ? {
 				x: (n.x - t.x) / r,
 				y: (n.y - t.y) / r
 			} : null);
@@ -672,7 +713,7 @@ function se(e, t) {
 				x: s[e + 1].x + n.x * _,
 				y: s[e + 1].y + n.y * _
 			};
-			if (!l(Y("segment", [
+			if (!l(ze("segment", [
 				{
 					...v,
 					x: v.x + i.x,
@@ -695,12 +736,12 @@ function se(e, t) {
 				}
 			]))) return null;
 		}
-		if (!u && d === "round" && !l(ie(s[0], r, "cap")) || !u && f === "round" && !l(ie(s.at(-1), r, "cap"))) return null;
+		if (!u && d === "round" && !l(Be(s[0], r, "cap")) || !u && f === "round" && !l(Be(s.at(-1), r, "cap"))) return null;
 		let m = (e, t, n) => {
 			if (!t || !n) return !0;
 			let i = t.x * n.y - t.y * n.x;
-			if (Math.abs(i) <= q) return !0;
-			if (a === "round") return l(ie(e, r, "join"));
+			if (Math.abs(i) <= Z) return !0;
+			if (a === "round") return l(Be(e, r, "join"));
 			let s = i > 0 ? -1 : 1, c = {
 				...e,
 				x: e.x + -t.y * r * s,
@@ -711,8 +752,8 @@ function se(e, t) {
 				y: e.y + n.x * r * s
 			};
 			if (a === "miter") {
-				let i = oe(c, t, u, n);
-				if (i && Math.hypot(i.x - e.x, i.y - e.y) <= r * o) return !!l(Y("join", [
+				let i = He(c, t, u, n);
+				if (i && Math.hypot(i.x - e.x, i.y - e.y) <= r * o) return !!l(ze("join", [
 					c,
 					{
 						...e,
@@ -721,7 +762,7 @@ function se(e, t) {
 					u
 				]));
 			}
-			return l(Y("join", [
+			return l(ze("join", [
 				c,
 				e,
 				u
@@ -734,30 +775,30 @@ function se(e, t) {
 }
 //#endregion
 //#region packages/core/src/chart/three-d-outline.ts
-var ce = 1e-9, le = (e, t) => Math.hypot(e.x - t.x, e.y - t.y, e.depth - t.depth) <= ce, ue = (e, t) => e.x - t.x || e.y - t.y || e.depth - t.depth, de = (e, t) => {
+var We = 1e-9, Ge = (e, t) => Math.hypot(e.x - t.x, e.y - t.y, e.depth - t.depth) <= We, Ke = (e, t) => e.x - t.x || e.y - t.y || e.depth - t.depth, qe = (e, t) => {
 	let n = Math.min(e.length, t.length);
 	for (let r = 0; r < n; r++) {
-		let n = ue(e[r], t[r]);
+		let n = Ke(e[r], t[r]);
 		if (n !== 0) return n;
 	}
 	return e.length - t.length;
 };
-function fe(e) {
+function Je(e) {
 	let t = [...e].reverse();
-	return de(e, t) <= 0 ? e : t;
+	return qe(e, t) <= 0 ? e : t;
 }
-function pe(e) {
-	let t = le(e[0], e.at(-1)) ? e.slice(0, -1) : [...e];
+function Ye(e) {
+	let t = Ge(e[0], e.at(-1)) ? e.slice(0, -1) : [...e];
 	if (t.length === 0) return [];
 	let n = 0;
-	for (let e = 1; e < t.length; e++) ue(t[e], t[n]) < 0 && (n = e);
-	let r = t.map((e, r) => t[(n + r) % t.length]), i = t.map((e, r) => t[(n - r + t.length) % t.length]), a = de(r, i) <= 0 ? r : i;
+	for (let e = 1; e < t.length; e++) Ke(t[e], t[n]) < 0 && (n = e);
+	let r = t.map((e, r) => t[(n + r) % t.length]), i = t.map((e, r) => t[(n - r + t.length) % t.length]), a = qe(r, i) <= 0 ? r : i;
 	return [...a, a[0]];
 }
-function me(e) {
+function Xe(e) {
 	let t = [], n = (e) => {
-		let n = t.find((t) => le(t.point, e));
-		if (n) return ue(e, n.point) < 0 && (n.point = e), n;
+		let n = t.find((t) => Ge(t.point, e));
+		if (n) return Ke(e, n.point) < 0 && (n.point = e), n;
 		let r = {
 			point: e,
 			edges: [],
@@ -766,11 +807,11 @@ function me(e) {
 		return t.push(r), r;
 	}, r = [];
 	for (let [t, i] of e) {
-		if (le(t, i)) continue;
+		if (Ge(t, i)) continue;
 		let e = n(t), a = n(i);
 		e !== a && r.push([e, a]);
 	}
-	t.sort((e, t) => ue(e.point, t.point)), t.forEach((e, t) => {
+	t.sort((e, t) => Ke(e.point, t.point)), t.forEach((e, t) => {
 		e.order = t;
 	});
 	let i = [], a = /* @__PURE__ */ new Set();
@@ -798,34 +839,47 @@ function me(e) {
 		}
 		return n;
 	}, c = [];
-	for (let e of t) if (e.edges.length !== 2) for (let t of e.edges) o.has(t) || c.push(fe(s(e, t)));
+	for (let e of t) if (e.edges.length !== 2) for (let t of e.edges) o.has(t) || c.push(Je(s(e, t)));
 	for (let e = 0; e < i.length; e++) {
 		if (o.has(e)) continue;
 		let t = i[e], n = t.first.order <= t.second.order ? t.first : t.second;
-		c.push(pe(s(n, e)));
+		c.push(Ye(s(n, e)));
 	}
 	let l = t.filter((e) => e.edges.length > 2).map((e) => ({
 		point: e.point,
 		neighbours: e.edges.map((t) => {
 			let n = i[t];
 			return n.first === e ? n.second.point : n.first.point;
-		}).sort(ue)
+		}).sort(Ke)
 	}));
 	return {
-		paths: c.sort(de),
+		paths: c.sort(qe),
 		junctions: l
 	};
 }
 //#endregion
 //#region packages/core/src/chart/three-d-renderer.ts
-var X = [
+function Ze(e) {
+	let t = /* @__PURE__ */ new Map();
+	for (let n of e.legendEntries ?? []) t.set(n.idx, n);
+	return t;
+}
+function Qe(e, t, n) {
+	let i = r(t?.fontSizeHpt ?? e.legendFontSizeHpt, n) ?? 9 * n, a = t?.fontFace ?? e.legendFontFace;
+	return {
+		fontPx: i,
+		font: `${t?.fontBold ?? e.legendFontBold ?? !1 ? "bold " : ""}${i}px ${mt(a)}`,
+		color: t?.fontColor ? `#${t.fontColor}` : e.legendFontColor ? `#${e.legendFontColor}` : "#595959"
+	};
+}
+var $e = [
 	"4472C4",
 	"ED7D31",
 	"70AD47",
 	"A5A5A5",
 	"FFC000",
 	"5B9BD5"
-], he = new Set([
+], et = C, tt = d, nt = new Set([
 	"line",
 	"stackedLine",
 	"stackedLinePct",
@@ -839,11 +893,11 @@ var X = [
 	"stackedBarPct",
 	"stackedBarHPct"
 ]);
-function ge(e, t) {
-	let n = Number.isFinite(t) && t > 0 ? t / h : 1, r = Number.isFinite(e) && e >= 0 ? e / S : 0;
+function rt(e, t) {
+	let n = Number.isFinite(t) && t > 0 ? t / D : 1, r = Number.isFinite(e) && e >= 0 ? e / B : 0;
 	return Math.max(.25, r) * n;
 }
-function _e(e, t) {
+function it(e, t) {
 	let n = Number.isSafeInteger(t) && t > 0 ? t : 0, r = Array.from({ length: n }, () => []);
 	for (let t of e) {
 		let e = t.categoryIndex;
@@ -851,13 +905,191 @@ function _e(e, t) {
 	}
 	return r;
 }
-var ve = (e, t) => `#${t?.color ?? X[e % X.length]}`;
-function ye(e, t) {
-	if (t?.lineHidden != null || t?.lineColor != null || t?.lineWidthEmu != null || t?.lineDash != null) return t.lineHidden !== !0;
-	let n = e.chartexStyle;
-	return (e.lineHidden != null || e.lineColor != null || e.lineWidthEmu != null || n?.lineHidden != null || n?.lineNoStyle != null || n?.lineColors != null || n?.lineWidthEmu != null || n?.lineDash != null || n?.lineCap != null || n?.lineJoin != null) && e.lineHidden !== !0 && n?.lineHidden !== !0;
+var at = (e, t) => `#${t?.color ?? $e[e % $e.length]}`;
+function ot(e, t, n) {
+	let r = 0;
+	for (let i of e) for (let e of [t(i), n(i)]) {
+		if (e == null) continue;
+		let t = j(e);
+		if (e.fillType === "gradient" && t > et || t > tt - r) return !1;
+		r += t;
+	}
+	return !0;
 }
-function be(e, t) {
+function st(e, t) {
+	let n = Array.from({ length: t }, () => ({
+		maxMagnitude: 0,
+		scaledTotal: 0
+	}));
+	for (let r of e.series) for (let e = 0; e < t; e++) {
+		let t = r.values[e];
+		t != null && Number.isFinite(t) && (n[e].maxMagnitude = Math.max(n[e].maxMagnitude, Math.abs(t)));
+	}
+	for (let r of e.series) for (let e = 0; e < t; e++) {
+		let t = r.values[e], i = n[e].maxMagnitude;
+		t != null && Number.isFinite(t) && i > 0 && (n[e].scaledTotal += Math.abs(t) / i);
+	}
+	return n;
+}
+function ct(e, t, n, r) {
+	let i = e.series[t]?.values[n] ?? 0;
+	if (!Number.isFinite(i)) return 0;
+	if (!r) return i;
+	let { maxMagnitude: a, scaledTotal: o } = r[n] ?? {
+		maxMagnitude: 0,
+		scaledTotal: 0
+	};
+	return a > 0 && o > 0 ? i / a / o * 100 : 0;
+}
+function Q(e, t) {
+	let n = e + t;
+	return Number.isFinite(n) ? n : t < 0 ? -Number.MAX_VALUE : Number.MAX_VALUE;
+}
+function lt(e) {
+	let t = [];
+	for (let [n, r] of [
+		[e.threeD?.floor, "floor"],
+		[e.threeD?.sideWall, "wall"],
+		[e.threeD?.backWall, "wall"]
+	]) {
+		let i = c(e, n, r);
+		t.push({
+			fill: i.fill,
+			line: i.line
+		});
+	}
+	if (e.chartType === "pie") {
+		let n = e.series[0];
+		if (n) {
+			let r = new Map(n.dataPointOverrides?.map((e) => [e.idx, e]) ?? []);
+			for (let i = 0; i < n.values.length; i++) {
+				let a = n.values[i];
+				if (a == null || !Number.isFinite(a) || Math.abs(a) <= 0) continue;
+				let o = dt(e, n, r.get(i), i, 0);
+				t.push({
+					fill: o.fill,
+					line: o.lineFill
+				});
+			}
+		}
+	} else if (e.chartType === "clusteredBar" || e.chartType === "clusteredBarH" || e.chartType.startsWith("stackedBar")) {
+		let n = e.chartType.startsWith("stacked"), r = e.chartType.endsWith("Pct"), i = n || e.dispBlanksAs === "zero", a = e.valAxisLogBase != null && Number.isFinite(e.valAxisLogBase) && e.valAxisLogBase >= 2, o = Math.max(1, e.categories.length, ...e.series.map((e) => Math.max(e.values.length, e.categories?.length ?? 0))), s = r ? st(e, o) : void 0, c = (t, n) => {
+			if (t === n) return !1;
+			let r = Math.min(t, n), i = Math.max(t, n), o = e.valMin, s = e.valMax;
+			return o != null && Number.isFinite(o) && i <= o || s != null && Number.isFinite(s) && r >= s ? !1 : !a || i > 0;
+		}, l = Array(o).fill(0), u = Array(o).fill(0);
+		for (let r = 0; r < e.series.length; r++) {
+			let d = e.series[r], f = new Map(d.dataPointOverrides?.map((e) => [e.idx, e]) ?? []);
+			for (let p = 0; p < o; p++) {
+				let o = d.values[p];
+				if (!(o != null && Number.isFinite(o) && (!a || o > 0) || o == null && i)) continue;
+				let m = ct(e, r, p, s), h = n ? m >= 0 ? l[p] : u[p] : 0, g = Q(h, m);
+				if (n && (m >= 0 ? l[p] = g : u[p] = g), !c(h, g)) continue;
+				let _ = dt(e, d, f.get(p), p, r);
+				t.push({
+					fill: _.fill,
+					line: _.lineFill
+				});
+			}
+		}
+	} else {
+		let n = e.chartType.toLowerCase().includes("area"), r = e.chartType.startsWith("stacked"), i = e.chartType.endsWith("Pct"), a = r || e.dispBlanksAs === "zero", o = e.valAxisLogBase != null && Number.isFinite(e.valAxisLogBase) && e.valAxisLogBase >= 2, s = Math.max(e.categories.length, ...e.series.map((e) => Math.max(e.categories?.length ?? 0, e.values.length))), c = i ? st(e, s) : void 0, l = e.series.map(() => Array(s).fill(0));
+		if (r) {
+			let t = Array(s).fill(0), n = Array(s).fill(0);
+			for (let r = 0; r < e.series.length; r++) for (let i = 0; i < s; i++) {
+				let a = ct(e, r, i, c), o = Q(a >= 0 ? t[i] : n[i], a);
+				l[r][i] = o, a >= 0 ? t[i] = o : n[i] = o;
+			}
+		}
+		for (let i = 0; i < e.series.length; i++) {
+			let u = e.series[i], d = new Map(u.dataPointOverrides?.map((e) => [e.idx, e]) ?? []), f = s, p = 0, m = null, h = !1, g = !1;
+			for (let s = 0; s < f; s++) {
+				let f = u.values[s];
+				if (f != null && Number.isFinite(f) && (!o || f > 0) || f == null && a) {
+					p++;
+					let a = r ? l[i][s] : ct(e, i, s, c), o = m == null ? a : Math.min(m, a), f = m == null ? a : Math.max(m, a), _ = e.valMin != null && Number.isFinite(e.valMin) && f <= e.valMin || e.valMax != null && Number.isFinite(e.valMax) && o >= e.valMax;
+					if (p >= 2 && (n || u.smooth === !0 || !_)) {
+						if (h = !0, n) break;
+						let r = d.get(s);
+						if (ft(r)) {
+							let n = dt(e, u, r, s, i);
+							t.push({
+								fill: void 0,
+								line: n.lineFill
+							});
+						} else g = !0;
+					}
+					m = a;
+				} else (e.dispBlanksAs ?? "gap") === "gap" && (p = 0, m = null);
+			}
+			if (!h) continue;
+			let _ = dt(e, u, void 0, i, i);
+			n ? t.push({
+				fill: _.fill,
+				line: _.lineFill
+			}) : g && t.push({
+				fill: void 0,
+				line: _.lineFill
+			});
+		}
+	}
+	return ot(t, (e) => e.fill, (e) => e.line);
+}
+function ut(e, t) {
+	return e?.fillType === "solid" ? {
+		color: `#${e.color}`,
+		fill: void 0
+	} : {
+		color: t,
+		fill: e
+	};
+}
+function dt(e, t, r, i, a) {
+	let o = t.dataPointColors?.[i] ? `#${t.dataPointColors[i]}` : at(a, t), s = e.chartType === "pie" || e.varyColors === !0 && e.series.length === 1 && e.chartType.includes("Bar") ? i : a, c, l = o, u = _(r?.chartexStyle, i);
+	if (u !== void 0) ({color: l, fill: c} = ut(u, l));
+	else if (r?.fillHidden === !0 || r?.color === "00000000") c = null;
+	else if (r?.color) l = `#${r.color}`;
+	else {
+		let n = _(t.chartexStyle, s);
+		if (n !== void 0) ({color: l, fill: c} = ut(n, l));
+		else {
+			let t = _(e.chartStyleRoles?.dataPoint3D, s);
+			t !== void 0 && ({color: l, fill: c} = ut(t, l));
+		}
+	}
+	let d, f = null, p = n(r?.chartexStyle, i);
+	if (p !== void 0) p?.fillType === "solid" ? f = `#${p.color}` : d = p;
+	else if (r?.lineHidden === !0) d = null;
+	else if (r?.lineColor) f = `#${r.lineColor}`;
+	else {
+		let r = n(t.chartexStyle, s);
+		if (r !== void 0) r?.fillType === "solid" ? f = `#${r.color}` : d = r;
+		else if (t.lineHidden === !0) d = null;
+		else if (t.lineColor) f = `#${t.lineColor}`;
+		else {
+			let t = n(e.chartStyleRoles?.dataPoint3D, s);
+			t !== void 0 && (t?.fillType === "solid" ? f = `#${t.color}` : d = t);
+		}
+	}
+	let m = e.chartStyleRoles?.dataPoint3D?.lineNoStyle === !0 ? void 0 : e.chartStyleRoles?.dataPoint3D, h = r?.chartexStyle?.lineCap ?? t.chartexStyle?.lineCap ?? m?.lineCap, g = r?.chartexStyle?.lineJoin ?? t.chartexStyle?.lineJoin ?? m?.lineJoin;
+	return {
+		color: l,
+		fill: c,
+		lineColor: f,
+		lineFill: d,
+		lineWidthEmu: r?.lineWidthEmu ?? r?.chartexStyle?.lineWidthEmu ?? t.lineWidthEmu ?? t.chartexStyle?.lineWidthEmu ?? m?.lineWidthEmu,
+		lineDash: r?.lineDash ?? r?.chartexStyle?.lineDash ?? t.chartexStyle?.lineDash ?? m?.lineDash,
+		lineCustomDash: r?.chartexStyle?.lineCustomDash ?? t.chartexStyle?.lineCustomDash ?? m?.lineCustomDash,
+		lineCap: h === "rnd" ? "round" : h === "sq" ? "square" : "butt",
+		lineJoin: g === "round" || g === "bevel" ? g : "miter"
+	};
+}
+function ft(e) {
+	if (!e) return !1;
+	let t = e.chartexStyle;
+	return e.lineHidden != null || e.lineColor != null || e.lineWidthEmu != null || e.lineDash != null || t?.linePaintAuthored === !0 || t?.lineHidden != null || t?.lineNoStyle === !0 || t?.lineColors?.some((e) => e != null) === !0 || t?.linePaints?.some((e) => e != null) === !0 || t?.lineWidthEmu != null || t?.lineDash != null || t?.lineCustomDash != null || t?.lineCap != null || t?.lineJoin != null;
+}
+function pt(e, t) {
 	let n = e.cameraNormal(t);
 	if (!n) return 1;
 	let r = {
@@ -867,20 +1099,20 @@ function be(e, t) {
 	}, i = Math.hypot(r.x, r.y, r.z), a = Math.max(0, (n.x * r.x + n.y * r.y + n.z * r.z) / i);
 	return Math.max(.78, Math.min(1, .78 + .24 * a));
 }
-var xe = (e) => `"${e && !e.startsWith("+") ? e.replace(/["\\]/g, "") : "Arial"}"`, Z = (e, t, n = "minor") => xe((t?.startsWith("+mj-") ? e.themeMajorFontLatin : t?.startsWith("+mn-") ? e.themeMinorFontLatin : t) ?? (n === "major" ? e.themeMajorFontLatin : e.themeMinorFontLatin));
-function Se(e, t) {
+var mt = (e) => `"${e && !e.startsWith("+") ? e.replace(/["\\]/g, "") : "Arial"}"`, $ = (e, t, n = "minor") => mt((t?.startsWith("+mj-") ? e.themeMajorFontLatin : t?.startsWith("+mn-") ? e.themeMinorFontLatin : t) ?? (n === "major" ? e.themeMajorFontLatin : e.themeMinorFontLatin));
+function ht(e, t) {
 	if (t.length) {
 		e.beginPath(), e.moveTo(t[0].x, t[0].y);
 		for (let n = 1; n < t.length; n++) e.lineTo(t[n].x, t[n].y);
 		e.closePath();
 	}
 }
-var Ce = (e) => e === "transparent" || e === "#00000000" || e === "rgba(0,0,0,0)";
-function we(e, t, n, r) {
-	Ce(n) || (Se(e, t), e.fillStyle = n, e.fill(), r > 0 && (Se(e, t), e.fillStyle = `rgba(0,0,0,${r})`, e.fill()));
+var gt = (e) => e === "transparent" || e === "#00000000" || e === "rgba(0,0,0,0)";
+function _t(e, t, n, r) {
+	gt(n) || (ht(e, t), e.fillStyle = n, e.fill(), r > 0 && (ht(e, t), e.fillStyle = `rgba(0,0,0,${r})`, e.fill()));
 }
-function Te(e, t, n, r, i, a, o, s, c, l, u, d) {
-	return L({
+function vt(e, t, n, r, i, a, o, s, c, l, u, d) {
+	return we({
 		x0: t,
 		x1: n,
 		lower0: r,
@@ -891,13 +1123,13 @@ function Te(e, t, n, r, i, a, o, s, c, l, u, d) {
 		farDepth: c,
 		capStart: u,
 		capEnd: d
-	}).flatMap((t) => De(e, t, l).map((e) => ({
+	}).flatMap((t) => bt(e, t, l).map((e) => ({
 		...e,
 		outline: !1,
 		outlineSegments: void 0
 	})));
 }
-function Ee(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m = !1, h = !1, g, _) {
+function yt(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m = !1, h = !1, g, _) {
 	if (![
 		r,
 		i,
@@ -908,7 +1140,7 @@ function Ee(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m = !1, h = !1, g, _) {
 		l,
 		u
 	].every(Number.isFinite) || a <= 0 || o <= 0 || s === c) return [];
-	let v = F({
+	let v = Se({
 		shape: t,
 		horizontal: n,
 		crossStart: n ? i : r,
@@ -922,9 +1154,9 @@ function Ee(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m = !1, h = !1, g, _) {
 		omitBaseCap: m,
 		omitEndCap: h
 	});
-	return v ? De(e, v, d, g, _) : [];
+	return v ? bt(e, v, d, g, _) : [];
 }
-function De(e, t, n, r, i, a = !1) {
+function bt(e, t, n, r, i, a = !1) {
 	if (i?.exceeded) return [];
 	let o = t.faces.map((r) => {
 		let i = r.indices.map((e) => t.vertices[e]), a = e.cameraFacing(i);
@@ -946,7 +1178,8 @@ function De(e, t, n, r, i, a = !1) {
 			facing: a,
 			face: {
 				points: o,
-				color: T(n, be(e, i)),
+				color: X(n, pt(e, i)),
+				paintRole: "fill",
 				shade: 0,
 				cameraDepth: i.reduce((t, n) => t + e.cameraDepth(n.x, n.y, n.depth), 0) / i.length,
 				cameraDepths: i.map((t) => e.cameraDepth(t.x, t.y, t.depth)),
@@ -982,11 +1215,11 @@ function De(e, t, n, r, i, a = !1) {
 		let t = [d ? void 0 : e.meshFace.baseRimEdge, f ? void 0 : e.meshFace.endRimEdge].filter((e) => e != null);
 		for (let [e, n] of t) l(e, n);
 	}
-	let p = me([...c.values()].map(([e, n]) => [t.vertices[e], t.vertices[n]]));
+	let p = Xe([...c.values()].map(([e, n]) => [t.vertices[e], t.vertices[n]]));
 	if (!r) return s;
 	let m = (e, t) => Math.hypot(e.x - t.x, e.y - t.y, e.depth - t.depth) <= 1e-9, h = (e) => p.junctions.some((t) => m(t.point, e));
 	for (let t of p.paths) {
-		let n = t.map((t) => e.project(t.x, t.y, t.depth)), a = t.map((t) => e.cameraDepth(t.x, t.y, t.depth)), o = t.map((t) => e.cameraProjectionWeight(t.x, t.y, t.depth)), c = se(n.map((e, t) => ({
+		let n = t.map((t) => e.project(t.x, t.y, t.depth)), a = t.map((t) => e.cameraDepth(t.x, t.y, t.depth)), o = t.map((t) => e.cameraProjectionWeight(t.x, t.y, t.depth)), c = Ue(n.map((e, t) => ({
 			...e,
 			cameraDepth: a[t],
 			cameraWeight: o[t]
@@ -1006,6 +1239,7 @@ function De(e, t, n, r, i, a = !1) {
 			return {
 				points: e.points,
 				color: r.color,
+				paintRole: "outline",
 				shade: 0,
 				cameraDepth: e.cameraDepth + t,
 				cameraDepths: e.cameraDepths?.map((e) => e + t),
@@ -1015,7 +1249,7 @@ function De(e, t, n, r, i, a = !1) {
 		}));
 	}
 	for (let t of p.junctions) {
-		let n = ae({
+		let n = Ve({
 			...e.project(t.point.x, t.point.y, t.point.depth),
 			cameraDepth: e.cameraDepth(t.point.x, t.point.y, t.point.depth),
 			cameraWeight: e.cameraProjectionWeight(t.point.x, t.point.y, t.point.depth)
@@ -1034,6 +1268,7 @@ function De(e, t, n, r, i, a = !1) {
 		s.push({
 			points: n.points,
 			color: r.color,
+			paintRole: "outline",
 			shade: 0,
 			cameraDepth: n.cameraDepth + a,
 			cameraDepths: n.cameraDepths?.map((e) => e + a),
@@ -1043,7 +1278,7 @@ function De(e, t, n, r, i, a = !1) {
 	}
 	return s;
 }
-function Oe(e, t, n, r, i, a, o) {
+function xt(e, t, n, r, i, a, o) {
 	if (!t.length || o.exceeded) return [];
 	let s = [...t].sort((e, t) => e.start - t.start), c = n - i / 2, l = n + i / 2, u = s[0], d = e.cameraDepth(u.centerX, c, u.centerDepth) >= e.cameraDepth(u.centerX, l, u.centerDepth) ? c : l, f = d === c ? l : c, p = (t, n, i) => ({
 		x: t.centerX + Math.cos(n) * r,
@@ -1055,7 +1290,7 @@ function Oe(e, t, n, r, i, a, o) {
 		depth: e.centerDepth
 	}), h = [], g = (t, n = !1) => {
 		if (t.length < 2 || o.exceeded) return;
-		let r = t[0], i = t.at(-1), s = Math.hypot(r.x - i.x, r.y - i.y, r.depth - i.depth) <= 1e-9, c = se((n && !s ? [...t, r] : [...t]).map((t) => ({
+		let r = t[0], i = t.at(-1), s = Math.hypot(r.x - i.x, r.y - i.y, r.depth - i.depth) <= 1e-9, c = Ue((n && !s ? [...t, r] : [...t]).map((t) => ({
 			...e.project(t.x, t.y, t.depth),
 			cameraDepth: e.cameraDepth(t.x, t.y, t.depth),
 			cameraWeight: e.cameraProjectionWeight(t.x, t.y, t.depth)
@@ -1077,6 +1312,7 @@ function Oe(e, t, n, r, i, a, o) {
 			h.push({
 				points: e.points,
 				color: a.color,
+				paintRole: "outline",
 				shade: 0,
 				cameraDepth: e.cameraDepth + t,
 				cameraDepths: e.cameraDepths?.map((e) => e + t),
@@ -1134,244 +1370,269 @@ function Oe(e, t, n, r, i, a, o) {
 	for (let { slice: e, angle: t } of C.values()) g([p(e, t, d), p(e, t, f)]);
 	return h;
 }
-function ke(e, t) {
-	we(e, t.points, t.color, t.shade), t.outline && (e.strokeStyle = t.outlineColor ?? "rgba(0,0,0,0.42)", e.lineWidth = t.outlineWidth ?? .75, e.setLineDash(y(t.outlineDash ?? "solid", e.lineWidth)), e.lineCap = t.outlineCap ?? "butt", e.lineJoin = t.outlineJoin ?? "miter", t.outline && (Se(e, t.points), e.stroke()), e.setLineDash([]));
+function St(e, t) {
+	t.paint !== null && (t.paint === void 0 ? _t(e, t.points, t.color, t.shade) : (ht(e, t.points), e.fillStyle = t.paint, e.fill()), t.outline && (e.strokeStyle = t.outlineColor ?? "rgba(0,0,0,0.42)", e.lineWidth = t.outlineWidth ?? .75, e.setLineDash(G(t.outlineDash ?? "solid", e.lineWidth)), e.lineCap = t.outlineCap ?? "butt", e.lineJoin = t.outlineJoin ?? "miter", t.outline && (ht(e, t.points), e.stroke()), e.setLineDash([])));
 }
-function Ae(e, t, n) {
-	t.points.length < 3 || Ce(n) || (Se(e, t.points), e.fillStyle = n, e.fill());
+function Ct(e, t, n, r, i) {
+	if (r === void 0) return;
+	let a = t.filter((e) => e.paintRole === n);
+	if (!a.length) return;
+	if (r === null) {
+		for (let e of a) e.paint = null;
+		return;
+	}
+	let o = a.flatMap((e) => e.points), s = Math.min(...o.map((e) => e.x)), c = Math.max(...o.map((e) => e.x)), l = Math.min(...o.map((e) => e.y)), u = Math.max(...o.map((e) => e.y)), d = U(r, e, s, l, c - s, u - l, i);
+	for (let e of a) e.paint = d;
 }
-function je(e, t) {
+function wt(e, t) {
 	e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(too many data points)", t.x + t.w / 2, t.y + t.h / 2);
 }
-function Me(e) {
+function Tt(e) {
 	let t = e.catAxisLabelRotation;
 	return t == null ? null : !Number.isFinite(t) || Math.abs(t) > 54e5 ? 0 : t / 6e4 * Math.PI / 180;
 }
-function Ne(e, t, n, r, i, a = 1, o = 6) {
+function Et(e, t, n, r, i, a = 1, o = 6) {
 	if (i || r === 0) {
 		e.textAlign = i ? "right" : "center", e.textBaseline = i ? "middle" : a < 0 ? "bottom" : "top", e.fillText(t, n.x + (i ? -o : 0), n.y + (i ? 0 : a * o));
 		return;
 	}
 	e.save(), e.translate(n.x, n.y + a * o), e.rotate(r), e.textAlign = a < 0 ? "left" : "right", e.textBaseline = "middle", e.fillText(t, 0, 0), e.restore();
 }
-function Pe(e, t, n, r, i, a, o) {
-	if (!(r > 0) || !Number.isFinite(t.x) || !Number.isFinite(t.y)) return;
-	let s = r / 2;
-	switch (e.beginPath(), n) {
+function Dt(t, n, r, i, a, o, s, c = void 0, l = 0, u = D) {
+	if (!(i > 0) || !Number.isFinite(n.x) || !Number.isFinite(n.y)) return;
+	let d = i / 2;
+	switch (t.beginPath(), r) {
 		case "square":
-			e.rect(t.x - s, t.y - s, r, r);
+			t.rect(n.x - d, n.y - d, i, i);
 			break;
 		case "diamond":
-			e.moveTo(t.x, t.y - s), e.lineTo(t.x + s, t.y), e.lineTo(t.x, t.y + s), e.lineTo(t.x - s, t.y), e.closePath();
+			t.moveTo(n.x, n.y - d), t.lineTo(n.x + d, n.y), t.lineTo(n.x, n.y + d), t.lineTo(n.x - d, n.y), t.closePath();
 			break;
 		case "triangle":
-			e.moveTo(t.x, t.y - s), e.lineTo(t.x + s, t.y + s), e.lineTo(t.x - s, t.y + s), e.closePath();
+			t.moveTo(n.x, n.y - d), t.lineTo(n.x + d, n.y + d), t.lineTo(n.x - d, n.y + d), t.closePath();
 			break;
 		case "x":
-		case "plus":
-		case "dash": {
-			if (n === "dash") {
-				e.moveTo(t.x - s, t.y), e.lineTo(t.x + s, t.y), e.strokeStyle = a, e.lineWidth = o, e.stroke();
-				return;
-			}
-			let r = n === "x";
-			e.moveTo(t.x - s, t.y + (r ? -s : 0)), e.lineTo(t.x + s, t.y + (r ? s : 0)), e.moveTo(t.x + (r ? -s : 0), t.y + s), e.lineTo(t.x + (r ? s : 0), t.y - s), e.strokeStyle = a, e.lineWidth = o, e.stroke();
+		case "plus": {
+			let e = r === "x";
+			t.moveTo(n.x - d, n.y + (e ? -d : 0)), t.lineTo(n.x + d, n.y + (e ? d : 0)), t.moveTo(n.x + (e ? -d : 0), n.y + d), t.lineTo(n.x + (e ? d : 0), n.y - d), t.strokeStyle = o, t.lineWidth = s, t.stroke();
 			return;
 		}
+		case "dash":
+			t.rect(n.x - d, n.y - i * .1, i, i * .2);
+			break;
 		case "star":
-			for (let n = 0; n < 10; n++) {
-				let r = -Math.PI / 2 + n * Math.PI / 5, i = n % 2 == 0 ? s : s * .4, a = t.x + Math.cos(r) * i, o = t.y + Math.sin(r) * i;
-				n ? e.lineTo(a, o) : e.moveTo(a, o);
+			for (let e = 0; e < 10; e++) {
+				let r = -Math.PI / 2 + e * Math.PI / 5, i = e % 2 == 0 ? d : d * .4, a = n.x + Math.cos(r) * i, o = n.y + Math.sin(r) * i;
+				e ? t.lineTo(a, o) : t.moveTo(a, o);
 			}
-			e.closePath();
+			t.closePath();
 			break;
 		case "dot":
-			e.arc(t.x, t.y, Math.max(1, s * .35), 0, Math.PI * 2);
+			t.ellipse(n.x, n.y, i * .25, i * .1, 0, 0, Math.PI * 2);
 			break;
-		case "picture": return;
+		case "picture":
+			c?.fillType === "image" && e(t, c, n.x - d, n.y - d, i, i, u, l), t.strokeStyle = o, t.lineWidth = s, t.strokeRect(n.x - d, n.y - d, i, i);
+			return;
 		default:
-			e.arc(t.x, t.y, s, 0, Math.PI * 2);
+			t.arc(n.x, n.y, d, 0, Math.PI * 2);
 			break;
 	}
-	i !== "transparent" && (e.fillStyle = i, e.fill()), e.strokeStyle = a, e.lineWidth = o, e.stroke();
+	let f = c?.fillType === "image" ? c : void 0, p = f ? null : c === void 0 ? a === "transparent" ? null : a : c == null ? null : U(c, t, n.x - d, n.y - d, i, i, l);
+	p == null ? f && (t.save(), t.clip(), e(t, f, n.x - d, n.y - d, i, i, u, l), t.restore()) : (t.fillStyle = p, t.fill()), t.strokeStyle = o, t.lineWidth = s, t.stroke();
 }
-function Fe(e, t, n, r, i, a, o, s, c, l = 0, u, d, p = "t", m = o, h = !0, g) {
-	let y = d;
-	if (y?.deleted) return;
-	let x = n.seriesDataLabels, C = y?.showVal ?? x?.showVal ?? t.showDataLabels, w = y?.showCatName ?? x?.showCatName ?? !1, T = y?.showSerName ?? x?.showSerName ?? !1, E = y?.showPercent ?? x?.showPercent ?? !1, D = y?.text, O = ee({
-		customText: D,
-		showCategory: w,
-		showSeries: T,
-		showValue: C,
-		showPercent: E,
-		category: n.categories?.[i] ?? t.categories[i] ?? `${i + 1}`,
-		seriesName: n.name || `Series ${r + 1}`,
-		sourceValue: a,
-		valueDivisor: g?.divisor,
-		percentRatio: u != null && Number.isFinite(u) ? u : void 0,
-		formatCode: y?.formatCode ?? x?.formatCode ?? t.dataLabelFormatCode ?? n.valFormatCode,
-		percentFormatCode: y?.formatCode ?? x?.formatCode ?? t.dataLabelFormatCode ?? "0%",
+function Ot(e, t, n, o, s, c, l, u, d, f = 0, p, m, h = "t", g = l, _ = !0, v, b, x = c, S = 0) {
+	let C = m, w = n.seriesDataLabels;
+	if (A(w, C) || t.showDataLabelsOverMax !== !0 && b != null && Number.isFinite(b) && x > b) return;
+	let E = C?.showVal ?? w?.showVal ?? t.showDataLabels, D = C?.showCatName ?? w?.showCatName ?? !1, O = C?.showSerName ?? w?.showSerName ?? !1, k = C?.showPercent ?? w?.showPercent ?? !1, j = C?.text, M = ue({
+		customText: j,
+		showCategory: D,
+		showSeries: O,
+		showValue: E,
+		showPercent: k,
+		category: n.categories?.[s] ?? t.categories[s] ?? `${s + 1}`,
+		seriesName: n.name || `Series ${o + 1}`,
+		sourceValue: c,
+		valueDivisor: v?.divisor,
+		percentRatio: p != null && Number.isFinite(p) ? p : void 0,
+		formatCode: C?.formatCode ?? w?.formatCode ?? t.dataLabelFormatCode ?? n.valFormatCode,
+		percentFormatCode: C?.formatCode ?? w?.formatCode ?? t.dataLabelFormatCode ?? "0%",
 		date1904: t.date1904,
-		separator: y?.separator ?? x?.separator
+		separator: C?.separator ?? w?.separator
 	});
-	if (!O) return;
-	let A = f(y?.fontSizeHpt ?? x?.fontSizeHpt ?? t.dataLabelFontSizeHpt, c) ?? 9 * c, j = y?.fontBold ?? x?.fontBold ?? t.dataLabelFontBold ?? !1, M = Z(t, y?.fontFace ?? x?.fontFace ?? t.dataLabelFontFace);
-	e.font = `${j ? "bold " : ""}${A}px ${M}`;
-	let N = `#${y?.fontColor ?? x?.fontColor ?? n.labelColor ?? t.dataLabelFontColor ?? "111111"}`, P = D && y?.richRuns?.length ? k(e, {
-		runs: y.richRuns,
-		ptToPx: c,
-		fontFamily: M,
-		fallbackBold: j,
-		fontFamilyForFace: (e) => Z(t, e)
-	}, A, N) : null, F = P ? [] : b(O, Math.max(A, s.w * .45), Math.max(A * 1.2, s.h * .35), A * 1.2, (t) => e.measureText(t).width);
-	if (!P && !F.length) return;
-	let I = P?.width ?? Math.max(...F.map((t) => e.measureText(t).width)), L = P?.height ?? F.length * A * 1.2, R = _({
+	if (!M) return;
+	let N = r(C?.fontSizeHpt ?? w?.fontSizeHpt ?? t.dataLabelFontSizeHpt, d) ?? 9 * d, P = C?.fontBold ?? w?.fontBold ?? t.dataLabelFontBold ?? !1, F = ne(C, w), I = $(t, C?.fontFace ?? w?.fontFace ?? t.dataLabelFontFace);
+	e.font = `${F.fontItalic ? "italic " : ""}${P ? "bold " : ""}${N}px ${I}`;
+	let L = `#${C?.fontColor ?? w?.fontColor ?? n.labelColor ?? t.dataLabelFontColor ?? "111111"}`, R = j && C?.richRuns?.length ? oe(e, {
+		runs: C.richRuns,
+		ptToPx: d,
+		fontFamily: I,
+		fallbackBold: P,
+		fallbackItalic: F.fontItalic,
+		fallbackBaseline: F.fontBaseline,
+		fallbackColorHidden: F.fontPaintAuthored === !0 && (F.fontHidden === !0 || F.fontColor == null),
+		fontFamilyForFace: (e) => $(t, e)
+	}, N, L) : null, ee = R ? [] : y(M, Math.max(N, u.w * .45), Math.max(N * 1.2, u.h * .35), N * 1.2, (t) => e.measureText(t).width, F);
+	if (!R && !ee.length) return;
+	let z = R?.width ?? Math.max(...ee.map((t) => e.measureText(t).width)), V = R?.height ?? ee.length * N * 1.2, H = re(F, d), U = i(z + H.left + H.right, V + H.top + H.bottom, F.textRotation, F.textVerticalMode), q = a({
 		kind: "point",
-		x: o.x,
-		y: o.y,
-		position: y?.position ?? x?.position ?? t.dataLabelPosition ?? p,
-		markerGap: l
-	}, s, {
-		w: I,
-		h: L
-	}, A, y?.manualLayout, s);
-	if (!R) return;
-	let z = y?.labelBox ?? x?.labelBox;
-	if (x?.showLeaderLines && h && (e.beginPath(), e.moveTo(m.x, m.y), e.lineTo(Math.max(R.rect.x, Math.min(m.x, R.rect.x + R.rect.w)), Math.max(R.rect.y, Math.min(m.y, R.rect.y + R.rect.h))), e.strokeStyle = `#${x.leaderLineColor ?? "808080"}`, e.lineWidth = x.leaderLineWidthEmu == null ? .75 * c : Math.max(.25, x.leaderLineWidthEmu / S * c), e.stroke()), z && (z.fill && (e.fillStyle = `#${z.fill}`, e.fillRect(R.rect.x, R.rect.y, R.rect.w, R.rect.h)), z.borderColor && (e.strokeStyle = `#${z.borderColor}`, e.lineWidth = z.borderWidthEmu == null ? .75 * c : Math.max(.25, z.borderWidthEmu / S * c), e.strokeRect(R.rect.x, R.rect.y, R.rect.w, R.rect.h))), e.save(), e.beginPath(), e.rect(R.clip.x, R.clip.y, R.clip.w, R.clip.h), e.clip(), P) {
-		v(e, P, R.x, R.y, R.textAlign, R.textBaseline), e.restore();
+		x: l.x,
+		y: l.y,
+		position: C?.position ?? w?.position ?? t.dataLabelPosition ?? h,
+		markerGap: f
+	}, u, {
+		w: U.w,
+		h: U.h
+	}, N, C?.manualLayout, u);
+	if (!q) return;
+	let J = K(C?.labelBox, w?.labelBox);
+	w?.showLeaderLines && w.leaderLineHidden !== !0 && _ && (e.beginPath(), e.moveTo(g.x, g.y), e.lineTo(Math.max(q.rect.x, Math.min(g.x, q.rect.x + q.rect.w)), Math.max(q.rect.y, Math.min(g.y, q.rect.y + q.rect.h))), e.strokeStyle = `#${w.leaderLineColor ?? "808080"}`, e.lineWidth = w.leaderLineWidthEmu == null ? .75 * d : Math.max(.25, w.leaderLineWidthEmu / B * d), e.setLineDash(G(w.leaderLineDash ?? "solid", e.lineWidth)), e.stroke()), ie(e, J, q.rect, d, S), e.save(), e.beginPath(), e.rect(q.clip.x, q.clip.y, q.clip.w, q.clip.h), e.clip();
+	let Y = te(F, q.textAlign), ae = T(q.x, q.y, q.rect, V + H.top + H.bottom, F, C?.manualLayout != null, Y, q.textAlign, z + H.left + H.right, U.radians), X = W(e, ae.x, ae.y, U.radians, Y, q.textBaseline, H);
+	if (R) {
+		se(e, R, X.x, X.y, Y, q.textBaseline, C?.manualLayout ? Math.max(0, q.rect.w - H.left - H.right) : R.width), e.restore();
 		return;
 	}
-	e.fillStyle = N, e.textAlign = R.textAlign, e.textBaseline = "middle";
-	let B = A * 1.2, V = R.y - (F.length - 1) * B / 2;
-	F.forEach((t, n) => e.fillText(t, R.x, V + n * B)), e.restore();
+	if (!(F.fontPaintAuthored === !0 && (F.fontHidden === !0 || F.fontColor == null))) {
+		e.fillStyle = L, e.textAlign = Y, e.textBaseline = "middle";
+		let t = N * 1.2, n = (F.fontBaseline ?? 0) * N, r = X.y - (ee.length - 1) * t / 2 - n;
+		ee.forEach((n, i) => e.fillText(n, X.x, r + i * t));
+	}
+	e.restore();
 }
-function Ie(e, t, n) {
-	if (n?.deleted) return !1;
-	if (n?.text) return !0;
+function kt(e, t, n) {
 	let r = t.seriesDataLabels;
-	return (n?.showVal ?? r?.showVal ?? e.showDataLabels) || (n?.showCatName ?? r?.showCatName ?? !1) || (n?.showSerName ?? r?.showSerName ?? !1) || (n?.showPercent ?? r?.showPercent ?? !1);
+	return A(r, n) ? !1 : n?.text ? !0 : (n?.showVal ?? r?.showVal ?? e.showDataLabels) || (n?.showCatName ?? r?.showCatName ?? !1) || (n?.showSerName ?? r?.showSerName ?? !1) || (n?.showPercent ?? r?.showPercent ?? !1);
 }
-function Le(t, r, s, c, l) {
-	let p = i(r, s.h, c);
-	if (r.title) {
-		t.font = `${r.titleFontBold === !1 ? "" : "bold "}${p.fontPx}px ${xe(r.titleFontFace)}`, t.fillStyle = r.titleFontColor ? `#${r.titleFontColor}` : "#111111", t.textAlign = "center", t.textBaseline = "top";
-		let n = t.measureText(r.title).width, i = {
-			x: s.x + (s.w - n) / 2,
-			y: s.y + p.topPad,
-			w: n,
-			h: Math.max(1, p.fontPx)
-		}, a = r.titleManualLayout ? e({
-			...r.titleManualLayout,
+function At(e, n, r, i, a, o) {
+	let s = g(n, r.h, i);
+	if (n.title) {
+		e.font = `${n.titleFontBold === !1 ? "" : "bold "}${s.fontPx}px ${mt(n.titleFontFace)}`, e.fillStyle = n.titleFontColor ? `#${n.titleFontColor}` : "#111111", e.textAlign = "center", e.textBaseline = "top";
+		let t = e.measureText(n.title).width, i = {
+			x: r.x + (r.w - t) / 2,
+			y: r.y + s.topPad,
+			w: t,
+			h: Math.max(1, s.fontPx)
+		}, a = n.titleManualLayout ? x({
+			...n.titleManualLayout,
 			w: void 0,
 			h: void 0
-		}, s, i) : null;
-		t.fillText(r.title, a ? a.x + a.w / 2 : s.x + s.w / 2, a?.y ?? i.y);
+		}, r, i) : null;
+		e.fillText(n.title, a ? a.x + a.w / 2 : r.x + r.w / 2, a?.y ?? i.y);
 	}
-	let m = f(r.legendFontSizeHpt, c) ?? 9 * c;
-	t.save(), t.font = `${r.legendFontBold ? "bold " : ""}${m}px ${xe(r.legendFontFace)}`;
-	let h = r.chartType === "pie" ? r.series[0]?.categories?.length ? r.series[0].categories : r.categories : r.series.map((e, t) => e.name || `Series ${t + 1}`), g = n(r, s.w, s.h, .23, {
-		itemWidths: h.map((e) => 7 * c + 4 + t.measureText(e).width),
-		rowHeight: Math.max(m * 1.45, 12),
+	let c = Ze(n);
+	e.save();
+	let d = (n.chartType === "pie" ? n.series[0]?.categories?.length ? n.series[0].categories : n.categories : n.series.map((e, t) => e.name || `Series ${t + 1}`)).flatMap((e, t) => c.get(t)?.deleted === !0 ? [] : [{
+		label: e,
+		index: t
+	}]), f = d.map((e) => Qe(n, c.get(e.index), i)), p = Math.max(0, ...f.map((e) => e.fontPx)), _ = d.map((t, n) => (e.font = f[n].font, 7 * i + 4 + e.measureText(t.label).width)), y = v(n, r.w, r.h, .23, {
+		itemWidths: _,
+		rowHeight: Math.max(p * 1.45, 12),
 		itemGap: 12,
 		horizontalPadding: 8,
 		verticalPadding: 4
 	});
-	t.restore();
-	let _ = a(g), v = o(r, s.w, s.h, c), y = l === "horizontal" ? r.catAxisTitle ? v.catFontPx + u(s.w) + 4 : 0 : l === "vertical" ? v.valBandW : 0, b = l === "horizontal" ? r.valAxisTitle ? v.valFontPx + u(s.h) + 4 : 0 : l === "vertical" ? v.catBandH : 0, x = d(r, s.x, s.y, s.w, s.h, c, {
-		titleBand: p,
+	e.restore();
+	let b = m(y, n.legendOverlay === !0), S = u(n, r.w, r.h, i), C = h(n.catAxisTitleTextVerticalInsetEmu, i), w = h(n.valAxisTitleTextVerticalInsetEmu, i), T = a === "horizontal" ? n.catAxisTitle ? S.catFontPx + C + t(r.w) + 4 : 0 : a === "vertical" ? S.valBandW : 0, E = a === "horizontal" ? n.valAxisTitle ? S.valFontPx + w + t(r.h) + 4 : 0 : a === "vertical" ? S.catBandH : 0, D = l(n, r.x, r.y, r.w, r.h, i, {
+		titleBand: s,
 		legendSideReserveFrac: .23,
-		legendReserve: g,
+		legendReserve: y,
 		pad: {
-			t: p.bandH + _.legTopH + s.h * .04,
-			r: _.legRightW + s.w * .05,
-			b: _.legBottomH + s.h * .19 + b,
-			l: _.legLeftW + s.w * .13 + y
+			t: s.bandH + b.legTopH + r.h * .04,
+			r: b.legRightW + r.w * .05,
+			b: b.legBottomH + r.h * .19 + E,
+			l: b.legLeftW + r.w * .13 + T
 		},
 		honorPlotAreaManualLayout: !0,
 		manualOuterInsets: {
-			t: p.bandH,
-			r: _.legRightW,
-			b: _.legBottomH + b,
-			l: _.legLeftW + y
+			t: s.bandH,
+			r: b.legRightW,
+			b: b.legBottomH + E,
+			l: b.legLeftW + T
 		}
-	}), S = {
-		x: x.plotRect.px0,
-		y: x.plotRect.py0,
-		w: Math.max(1, x.plotRect.pw),
-		h: Math.max(1, x.plotRect.ph)
-	}, C = g ? g.side === "r" ? {
-		x: s.x + s.w - g.reserveW,
-		y: S.y,
-		w: g.reserveW,
-		h: S.h
-	} : g.side === "l" ? {
-		x: s.x,
-		y: S.y,
-		w: g.reserveW,
-		h: S.h
-	} : g.side === "t" ? {
-		x: s.x + 4,
-		y: s.y + p.bandH,
-		w: Math.max(1, s.w - 8),
-		h: g.reserveH
+	}), O = {
+		x: D.plotRect.px0,
+		y: D.plotRect.py0,
+		w: Math.max(1, D.plotRect.pw),
+		h: Math.max(1, D.plotRect.ph)
+	};
+	H(e, n, O.x, O.y, O.w, O.h, i, o);
+	let k = y ? y.side === "r" ? {
+		x: r.x + r.w - y.reserveW,
+		y: O.y,
+		w: y.reserveW,
+		h: O.h
+	} : y.side === "l" ? {
+		x: r.x,
+		y: O.y,
+		w: y.reserveW,
+		h: O.h
+	} : y.side === "t" ? {
+		x: r.x + 4,
+		y: r.y + s.bandH,
+		w: Math.max(1, r.w - 8),
+		h: y.reserveH
 	} : {
-		x: s.x + 4,
-		y: s.y + s.h - g.reserveH,
-		w: Math.max(1, s.w - 8),
-		h: g.reserveH
+		x: r.x + 4,
+		y: r.y + r.h - y.reserveH,
+		w: Math.max(1, r.w - 8),
+		h: y.reserveH
 	} : null;
 	return {
-		plot: S,
-		legend: (C && r.legendManualLayout ? e(r.legendManualLayout, s, C) : null) ?? C
+		plot: O,
+		legend: (k && n.legendManualLayout ? x(n.legendManualLayout, r, k) : null) ?? k,
+		legendMeasure: {
+			labels: d.map((e) => e.label),
+			styles: f,
+			itemWidths: _
+		}
 	};
 }
-function Re(t, n, i, a, o, s, c, l, u, d, f, p, m, h) {
-	t.save(), t.font = `${d ? "italic " : ""}${u ? "bold " : ""}${s}px ${c}`, t.fillStyle = l ? `#${l}` : "#555";
-	let g = m ? n : O(t, n, h), _ = r(o, f, p), v = a;
-	if (m) {
-		let n = t.measureText(g).width, r = Math.abs(Math.cos(_)), o = Math.abs(Math.sin(_)), c = {
-			x: a.x - (n * r + s * o) / 2,
-			y: a.y - (n * o + s * r) / 2,
-			w: n * r + s * o,
-			h: n * o + s * r
-		}, l = e({
-			...m,
+function jt(e, t, n, r, i, a, o, s, c, l, u, d, f, p) {
+	e.save(), e.font = `${l ? "italic " : ""}${c ? "bold " : ""}${a}px ${o}`, e.fillStyle = s ? `#${s}` : "#555";
+	let m = f ? t : J(e, t, p), h = F(i, u, d), g = r;
+	if (f) {
+		let t = e.measureText(m).width, i = Math.abs(Math.cos(h)), o = Math.abs(Math.sin(h)), s = {
+			x: r.x - (t * i + a * o) / 2,
+			y: r.y - (t * o + a * i) / 2,
+			w: t * i + a * o,
+			h: t * o + a * i
+		}, c = x({
+			...f,
 			w: void 0,
 			h: void 0
-		}, i, c);
-		l && (v = {
-			x: l.x + l.w / 2,
-			y: l.y + l.h / 2
+		}, n, s);
+		c && (g = {
+			x: c.x + c.w / 2,
+			y: c.y + c.h / 2
 		});
 	}
-	t.translate(v.x, v.y), _ && t.rotate(_), t.textAlign = "center", t.textBaseline = "middle", t.fillText(g, 0, 0), t.restore();
+	e.translate(g.x, g.y), h && e.rotate(h), e.textAlign = "center", e.textBaseline = "middle", e.fillText(m, 0, 0), e.restore();
 }
-function ze(e, t, n, r, i, a) {
-	if (t.valAxisTitle) {
-		let o = s(t.valAxisTitleFontSizeHpt, a), c = i ? "horizontal" : "left";
-		Re(e, t.valAxisTitle, n, i ? {
-			x: r.x + r.w / 2,
-			y: r.y + r.h + u(n.h) + o / 2
+function Mt(e, n, r, i, a, o) {
+	if (n.valAxisTitle) {
+		let s = I(n.valAxisTitleFontSizeHpt, o), c = a ? "horizontal" : "left";
+		jt(e, n.valAxisTitle, r, a ? {
+			x: i.x + i.w / 2,
+			y: i.y + i.h + t(r.h) + s / 2
 		} : {
-			x: r.x - u(n.w) - o / 2,
-			y: r.y + r.h / 2
-		}, c, o, Z(t, t.valAxisTitleFontFace, "major"), t.valAxisTitleFontColor, t.valAxisTitleFontBold ?? !0, t.valAxisTitleFontItalic ?? !1, t.valAxisTitleRotation, t.valAxisTitleVerticalMode, t.valAxisTitleManualLayout, i ? r.w : r.h);
+			x: i.x - t(r.w) - s / 2,
+			y: i.y + i.h / 2
+		}, c, s, $(n, n.valAxisTitleFontFace, "major"), n.valAxisTitleFontColor, n.valAxisTitleFontBold ?? !0, n.valAxisTitleFontItalic ?? !1, n.valAxisTitleRotation, n.valAxisTitleVerticalMode, n.valAxisTitleManualLayout, a ? i.w : i.h);
 	}
-	if (t.catAxisTitle) {
-		let o = s(t.catAxisTitleFontSizeHpt, a), c = i ? "left" : "horizontal";
-		Re(e, t.catAxisTitle, n, i ? {
-			x: r.x - u(n.w) - o / 2,
-			y: r.y + r.h / 2
+	if (n.catAxisTitle) {
+		let s = I(n.catAxisTitleFontSizeHpt, o), c = a ? "left" : "horizontal";
+		jt(e, n.catAxisTitle, r, a ? {
+			x: i.x - t(r.w) - s / 2,
+			y: i.y + i.h / 2
 		} : {
-			x: r.x + r.w / 2,
-			y: r.y + r.h + u(n.h) + o / 2
-		}, c, o, Z(t, t.catAxisTitleFontFace, "major"), t.catAxisTitleFontColor, t.catAxisTitleFontBold ?? !0, t.catAxisTitleFontItalic ?? !1, t.catAxisTitleRotation, t.catAxisTitleVerticalMode, t.catAxisTitleManualLayout, i ? r.h : r.w);
+			x: i.x + i.w / 2,
+			y: i.y + i.h + t(r.h) + s / 2
+		}, c, s, $(n, n.catAxisTitleFontFace, "major"), n.catAxisTitleFontColor, n.catAxisTitleFontBold ?? !0, n.catAxisTitleFontItalic ?? !1, n.catAxisTitleRotation, n.catAxisTitleVerticalMode, n.catAxisTitleManualLayout, a ? i.h : i.w);
 	}
 }
-function Be(e, t, n, r, i, a, o, c, l, u) {
-	let d = t.threeD?.seriesAxis;
-	if (!d || d.hidden || t.threeD?.barGrouping !== "standard" || t.series.length === 0) return;
-	let p = Qe(t, r, i, a, o, c, l), m = We(r), h = l === "vertical" ? m.seriesAxisX : p.axisX, g = l === "horizontal" ? m.floorY === r.front.y ? r.front.y + r.front.h : r.front.y : m.floorY, _ = r.project(h, g, r.topology.nearDepth), v = r.project(h, g, r.topology.farDepth), y = Math.hypot(v.x - _.x, v.y - _.y);
+function Nt(e, t, n, i, a, o, s, c, l, u, d) {
+	let f = t.threeD?.seriesAxis;
+	if (!f || f.hidden || t.threeD?.barGrouping !== "standard" || t.series.length === 0) return;
+	let p = Xt(t, i, a, o, s, c, l), m = Rt(i), h = l === "vertical" ? m.seriesAxisX : p.axisX, g = l === "horizontal" ? m.floorY === i.front.y ? i.front.y + i.front.h : i.front.y : m.floorY, _ = i.project(h, g, i.topology.nearDepth), v = i.project(h, g, i.topology.farDepth), y = Math.hypot(v.x - _.x, v.y - _.y);
 	if (!(y > 1e-6)) return;
 	let b = {
 		x: (v.x - _.x) / y,
@@ -1379,97 +1640,118 @@ function Be(e, t, n, r, i, a, o, c, l, u) {
 	}, x = {
 		x: -b.y,
 		y: b.x
-	}, S = r.project(r.front.x + r.front.w / 2, r.front.y + r.front.h / 2, .5), C = {
+	}, S = i.project(i.front.x + i.front.w / 2, i.front.y + i.front.h / 2, .5), C = {
 		x: (_.x + v.x) / 2,
 		y: (_.y + v.y) / 2
 	};
 	(C.x - S.x) * x.x + (C.y - S.y) * x.y < 0 && (x = {
 		x: -x.x,
 		y: -x.y
-	}), (d.tickLabelPos === "low" && x.y < 0 || d.tickLabelPos === "high" && x.y > 0) && (x = {
+	}), (f.tickLabelPos === "low" && x.y < 0 || f.tickLabelPos === "high" && x.y > 0) && (x = {
 		x: -x.x,
 		y: -x.y
-	}), d.lineHidden || ($(e, Q(d.lineColor, d.lineWidthEmu, null, u, "898989", 1)), e.beginPath(), e.moveTo(_.x, _.y), e.lineTo(v.x, v.y), e.stroke());
-	let w = Math.max(1, Math.floor(d.tickMarkSkip ?? 1)), T = Math.max(1, Math.floor(d.tickLabelSkip ?? 1)), E = d.majorTickMark ?? "out", D = f(d.fontSizeHpt, u) ?? 9 * u;
-	e.font = `${d.fontItalic ? "italic " : ""}${d.fontBold ? "bold " : ""}${D}px ${Z(t, d.fontFace)}`, e.fillStyle = d.fontColor ? `#${d.fontColor}` : "#595959", e.textAlign = Math.abs(x.x) < .2 ? "center" : x.x < 0 ? "right" : "left", e.textBaseline = Math.abs(x.y) < .2 ? "middle" : x.y < 0 ? "bottom" : "top";
+	}), f.lineHidden || (Ht(e, Bt(f.lineColor, f.lineWidthEmu, f.lineDash, d)), e.beginPath(), e.moveTo(_.x, _.y), e.lineTo(v.x, v.y), e.stroke());
+	let w = Math.max(1, Math.floor(f.tickMarkSkip ?? 1)), T = Math.max(1, Math.floor(f.tickLabelSkip ?? 1)), E = f.majorTickMark ?? "out", D = r(f.fontSizeHpt, d) ?? 9 * d;
+	if (e.font = `${f.fontItalic ? "italic " : ""}${f.fontBold ? "bold " : ""}${D}px ${$(t, f.fontFace)}`, e.fillStyle = f.fontColor ? `#${f.fontColor}` : "#595959", e.textAlign = Math.abs(x.x) < .2 ? "center" : x.x < 0 ? "right" : "left", e.textBaseline = Math.abs(x.y) < .2 ? "middle" : x.y < 0 ? "bottom" : "top", u && !f.lineHidden && E !== "none") {
+		Ht(e, Vt(f.lineColor, f.lineWidthEmu, f.lineDash, d));
+		let n = t.series.length;
+		for (let t = 0; t <= n; t += w) {
+			let r = t / n, a = f.orientation === "maxMin" ? 1 - r : r, o = i.project(h, g, a), s = 6 * d, c = E === "cross" ? s / 2 : E === "out" ? s : 0, l = E === "cross" ? s / 2 : E === "in" ? s : 0;
+			e.beginPath(), e.moveTo(o.x + x.x * c, o.y + x.y * c), e.lineTo(o.x - x.x * l, o.y - x.y * l), e.stroke();
+		}
+	}
 	for (let n = 0; n < t.series.length; n++) {
-		let i = r.seriesDepth(n, t.series.length, !1), a = d.orientation === "maxMin" ? 1 - i : i, o = r.project(h, g, a);
-		if (!d.lineHidden && n % w === 0 && E !== "none") {
-			let t = 6 * u, n = E === "cross" ? t / 2 : E === "out" ? t : 0, r = E === "cross" ? t / 2 : E === "in" ? t : 0;
+		let r = i.seriesDepth(n, t.series.length, !1), a = f.orientation === "maxMin" ? 1 - r : r, o = i.project(h, g, a);
+		if (!u && !f.lineHidden && n % w === 0 && E !== "none") {
+			let t = 6 * d, n = E === "cross" ? t / 2 : E === "out" ? t : 0, r = E === "cross" ? t / 2 : E === "in" ? t : 0;
 			e.beginPath(), e.moveTo(o.x + x.x * n, o.y + x.y * n), e.lineTo(o.x - x.x * r, o.y - x.y * r), e.stroke();
 		}
-		d.tickLabelPos !== "none" && n % T === 0 && e.fillText(t.series[n].name || `Series ${n + 1}`, o.x + x.x * (6 * u + 3), o.y + x.y * (6 * u + 3));
+		f.tickLabelPos !== "none" && n % T === 0 && e.fillText(t.series[n].name || `Series ${n + 1}`, o.x + x.x * (6 * d + 3), o.y + x.y * (6 * d + 3));
 	}
-	if (e.setLineDash([]), d.title) {
-		let i = s(d.titleFontSizeHpt, u);
-		Re(e, d.title, n, {
-			x: C.x + x.x * (D + i + 12),
-			y: C.y + x.y * (D + i + 12)
-		}, "horizontal", i, Z(t, d.titleFontFace, "major"), d.titleFontColor, d.titleFontBold ?? !0, d.titleFontItalic ?? !1, d.titleRotation, d.titleVerticalMode, d.titleManualLayout, Math.max(r.front.w, r.front.h));
+	if (e.setLineDash([]), f.title) {
+		let r = I(f.titleFontSizeHpt, d);
+		jt(e, f.title, n, {
+			x: C.x + x.x * (D + r + 12),
+			y: C.y + x.y * (D + r + 12)
+		}, "horizontal", r, $(t, f.titleFontFace, "major"), f.titleFontColor, f.titleFontBold ?? !0, f.titleFontItalic ?? !1, f.titleRotation, f.titleVerticalMode, f.titleManualLayout, Math.max(i.front.w, i.front.h));
 	}
 }
-function Ve(e, n, r, i, a = !1) {
-	if (!r) return;
-	D(e, n, r, i);
-	let o = new Map(n.series[0]?.dataPointOverrides?.map((e) => [e.idx, e]) ?? []), s = a ? (n.series[0]?.categories?.length ? n.series[0].categories : n.categories).map((e, t) => {
-		let r = n.series[0]?.dataPointColors?.[t];
+function Pt(e, t, n, r, i, a, o, s) {
+	if (t.lineHidden !== !0) {
+		let s = t.lineWidthEmu == null ? Math.max(1, 2 * o) : Math.max(.5, t.lineWidthEmu / B * o);
+		e.beginPath(), e.moveTo(r, i), e.lineTo(r + a, i), e.strokeStyle = t.lineColor ? `#${t.lineColor}` : X(n, .7), e.lineWidth = s, e.setLineDash(G(t.chartexStyle?.lineDash ?? "solid", s)), e.stroke(), e.setLineDash([]);
+	}
+	if (t.showMarker !== !0 || t.markerSymbol === "none") return;
+	let c = t.markerSymbol ?? "circle", l = L(t, n.replace(/^#/, "")), u = l === "00000000" ? "transparent" : l.startsWith("#") ? l : `#${l}`, d = t.markerLine ?? t.lineColor ?? n.replace(/^#/, ""), f = d === "00000000" ? "rgba(0,0,0,0)" : d.startsWith("#") ? d : `#${d}`, p = t.markerLineWidthEmu == null ? Math.max(.75, o) : Math.max(.25, t.markerLineWidthEmu / B * o);
+	Dt(e, {
+		x: r + a / 2,
+		y: i
+	}, c, Math.min(a, Math.max(2, (t.markerSize ?? 5) * o)), u, f, p, N(t), s, o);
+}
+function Ft(e, t, n, r, i = !1, a, o = 0) {
+	if (!n) return;
+	R(e, t, n, r, o);
+	let c = new Map(t.series[0]?.dataPointOverrides?.map((e) => [e.idx, e]) ?? []), l = i ? (t.series[0]?.categories?.length ? t.series[0].categories : t.categories).map((e, n) => {
+		let r = t.series[0]?.dataPointColors?.[n];
 		return {
 			label: e,
-			color: r === "00000000" ? "transparent" : r ? `#${r}` : ve(t),
-			series: n.series[0],
-			point: o.get(t)
+			color: r === "00000000" ? "transparent" : r ? `#${r}` : at(n),
+			series: t.series[0],
+			point: c.get(n),
+			sourceIndex: n
 		};
-	}) : n.series.map((e, t) => ({
+	}) : t.series.map((e, t) => ({
 		label: e.name || `Series ${t + 1}`,
-		color: ve(t, e),
+		color: at(t, e),
 		series: e,
-		point: void 0
-	})), c = f(n.legendFontSizeHpt, i) ?? 9 * i;
-	e.font = `${n.legendFontBold ? "bold " : ""}${c}px ${xe(n.legendFontFace)}`, e.textAlign = "left", e.textBaseline = "middle";
-	let l = Math.max(c * 1.45, 12), u = Math.min(7 * i, l * .7);
-	if (n.legendPos === "t" || n.legendPos === "b" || n.legendManualLayout != null && r.w >= r.h) {
-		let o = s.map((t) => u + 4 + e.measureText(t.label).width), c = t(o, Math.max(1, r.w - 8), 12).slice(0, Math.max(0, Math.floor((r.h - 4 + 1e-6) / l))), d = r.y + 2 + l / 2;
-		for (let t of c) {
-			let c = t.map((e) => Math.min(r.w, o[e])), f = c.reduce((e, t) => e + t, 0) + Math.max(0, t.length - 1) * 12, p = r.x + Math.max(4, (r.w - f) / 2);
-			for (let r = 0; r < t.length; r++) {
-				let o = s[t[r]], l = Math.max(0, c[r] - u - 4);
-				if (!a && n.chartType.toLowerCase().includes("line") && o.series?.lineHidden !== !0) {
-					let t = o.series?.lineWidthEmu == null ? Math.max(1, 2 * i) : Math.max(.5, o.series.lineWidthEmu / S * i);
-					e.beginPath(), e.moveTo(p, d), e.lineTo(p + u, d), e.strokeStyle = o.series?.lineColor ? `#${o.series.lineColor}` : T(o.color, .7), e.lineWidth = t, e.setLineDash(y(o.series?.chartexStyle?.lineDash ?? "solid", t)), e.stroke(), e.setLineDash([]);
-				} else {
-					o.color !== "transparent" && (e.fillStyle = o.color, e.fillRect(p, d - u / 2, u, u));
-					let t = o.point?.lineHidden ?? o.series?.lineHidden, n = o.point?.lineColor ?? o.series?.lineColor;
-					t !== !0 && n && (e.strokeStyle = `#${n}`, e.lineWidth = (o.point?.lineWidthEmu ?? o.series?.lineWidthEmu) == null ? .75 * i : Math.max(.25, (o.point?.lineWidthEmu ?? o.series?.lineWidthEmu ?? 0) / S * i), e.setLineDash(y(o.point?.lineDash ?? o.series?.chartexStyle?.lineDash ?? "solid", e.lineWidth)), e.strokeRect(p, d - u / 2, u, u), e.setLineDash([]));
+		point: void 0,
+		sourceIndex: t
+	})), u = Ze(t), d = l.filter((e) => u.get(e.sourceIndex)?.deleted !== !0), f = a != null && a.labels.length === d.length && a.labels.every((e, t) => e === d[t].label), p = f ? a.styles : d.map((e) => Qe(t, u.get(e.sourceIndex), r));
+	e.textAlign = "left", e.textBaseline = "middle";
+	let m = Math.max(Math.max(0, ...p.map((e) => e.fontPx)) * 1.45, 12), h = Math.min(7 * r, m * .7);
+	if (t.legendPos === "t" || t.legendPos === "b" || t.legendManualLayout != null && n.w >= n.h) {
+		let s = f ? a.itemWidths : d.map((t, n) => (e.font = p[n].font, h + 4 + e.measureText(t.label).width)), c = b(s, Math.max(1, n.w - 8), 12).slice(0, Math.max(0, Math.floor((n.h - 4 + 1e-6) / m))), l = n.y + 2 + m / 2;
+		for (let a of c) {
+			let c = a.map((e) => Math.min(n.w, s[e])), u = c.reduce((e, t) => e + t, 0) + Math.max(0, a.length - 1) * 12, f = n.x + Math.max(4, (n.w - u) / 2);
+			for (let n = 0; n < a.length; n++) {
+				let s = a[n], u = d[s], m = p[s];
+				e.font = m.font;
+				let g = Math.max(0, c[n] - h - 4);
+				if (!i && t.chartType.toLowerCase().includes("line") && u.series) Pt(e, u.series, u.color, f, l, h, r, o);
+				else {
+					u.color !== "transparent" && (e.fillStyle = u.color, e.fillRect(f, l - h / 2, h, h));
+					let t = u.point?.lineHidden ?? u.series?.lineHidden, n = u.point?.lineColor ?? u.series?.lineColor;
+					t !== !0 && n && (e.strokeStyle = `#${n}`, e.lineWidth = (u.point?.lineWidthEmu ?? u.series?.lineWidthEmu) == null ? .75 * r : Math.max(.25, (u.point?.lineWidthEmu ?? u.series?.lineWidthEmu ?? 0) / B * r), e.setLineDash(G(u.point?.lineDash ?? u.series?.chartexStyle?.lineDash ?? "solid", e.lineWidth)), e.strokeRect(f, l - h / 2, h, h), e.setLineDash([]));
 				}
-				e.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", e.fillText(O(e, o.label, l), p + u + 4, d), p += c[r] + 12;
+				e.fillStyle = m.color, e.fillText(J(e, u.label, g), f + h + 4, l), f += c[n] + 12;
 			}
-			d += l;
+			l += m;
 		}
 		return;
 	}
-	let d = r.y;
-	for (let t = 0; t < s.length; t++) {
-		let o = s[t], f = r.x + 8 + u, p = Math.max(0, r.x + r.w - 4 - f), m = Math.max(c * 1.2, 10), h = b(o.label, p, m * (a ? 1 : 2), m, (t) => e.measureText(t).width);
-		if (h.length === 0) continue;
-		let g = Math.max(l, h.length * m + 2);
-		if (d + g > r.y + r.h + 1e-6) break;
-		let _ = d + g / 2;
-		if (!a && n.chartType.toLowerCase().includes("line")) {
-			let t = o.series?.lineWidthEmu == null ? Math.max(1, 2 * i) : Math.max(.5, o.series.lineWidthEmu / S * i);
-			o.series?.lineHidden !== !0 && (e.beginPath(), e.moveTo(r.x + 4, _), e.lineTo(r.x + 4 + u, _), e.strokeStyle = o.series?.lineColor ? `#${o.series.lineColor}` : T(o.color, .7), e.lineWidth = t, e.setLineDash(y(o.series?.chartexStyle?.lineDash ?? "solid", t)), e.stroke(), e.setLineDash([]));
-		} else {
-			o.color !== "transparent" && (e.fillStyle = o.color, e.fillRect(r.x + 4, _ - u / 2, u, u));
-			let t = o.point?.lineHidden ?? o.series?.lineHidden, n = o.point?.lineColor ?? o.series?.lineColor;
-			t !== !0 && n && (e.strokeStyle = `#${n}`, e.lineWidth = (o.point?.lineWidthEmu ?? o.series?.lineWidthEmu) == null ? .75 * i : Math.max(.25, (o.point?.lineWidthEmu ?? o.series?.lineWidthEmu ?? 0) / S * i), e.setLineDash(y(o.point?.lineDash ?? o.series?.chartexStyle?.lineDash ?? "solid", e.lineWidth)), e.strokeRect(r.x + 4, _ - u / 2, u, u), e.setLineDash([]));
+	let g = n.y;
+	for (let a = 0; a < d.length; a++) {
+		let c = d[a], l = p[a];
+		e.font = l.font;
+		let u = n.x + 8 + h, f = Math.max(0, n.x + n.w - 4 - u), _ = Math.max(l.fontPx * 1.2, 10), v = s(c.label, f, _ * (i ? 1 : 2), _, (t) => e.measureText(t).width);
+		if (v.length === 0) continue;
+		let y = Math.max(m, v.length * _ + 2);
+		if (g + y > n.y + n.h + 1e-6) break;
+		let b = g + y / 2;
+		if (!i && t.chartType.toLowerCase().includes("line") && c.series) Pt(e, c.series, c.color, n.x + 4, b, h, r, o);
+		else {
+			c.color !== "transparent" && (e.fillStyle = c.color, e.fillRect(n.x + 4, b - h / 2, h, h));
+			let t = c.point?.lineHidden ?? c.series?.lineHidden, i = c.point?.lineColor ?? c.series?.lineColor;
+			t !== !0 && i && (e.strokeStyle = `#${i}`, e.lineWidth = (c.point?.lineWidthEmu ?? c.series?.lineWidthEmu) == null ? .75 * r : Math.max(.25, (c.point?.lineWidthEmu ?? c.series?.lineWidthEmu ?? 0) / B * r), e.setLineDash(G(c.point?.lineDash ?? c.series?.chartexStyle?.lineDash ?? "solid", e.lineWidth)), e.strokeRect(n.x + 4, b - h / 2, h, h), e.setLineDash([]));
 		}
-		e.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959";
-		let v = _ - (h.length - 1) * m / 2;
-		h.forEach((t, n) => e.fillText(t, f, v + n * m)), d += g;
+		e.fillStyle = l.color;
+		let x = b - (v.length - 1) * _ / 2;
+		v.forEach((t, n) => e.fillText(t, u, x + n * _)), g += y;
 	}
 }
-function He(e, t, n, r, i, a) {
+function It(e, t, n, r, i, a) {
 	let o = i ? 100 : 1, s = e.valAxisMinorTickMark ?? "none";
-	return p({
+	return q({
 		dataMin: t,
 		dataMax: n,
 		explicitMin: e.valMin == null ? i ? t : null : e.valMin * o,
@@ -1483,7 +1765,7 @@ function He(e, t, n, r, i, a) {
 		needMinor: e.valAxisMinorGridlines === !0 || s !== "none"
 	});
 }
-function Ue(e, t, n) {
+function Lt(e, t, n) {
 	let r = e != null && Number.isFinite(e) ? (e % 360 + 360) % 360 : 0, i = Number.isFinite(t) ? Math.max(0, Math.min(1, t)) : 0, a = Number.isFinite(n) ? Math.max(0, Math.min(1 - i, n)) : 0, o = Math.PI / 2 - (r * Math.PI / 180 + i * Math.PI * 2), s = o - a * Math.PI * 2;
 	return {
 		start: Math.min(o, s),
@@ -1492,7 +1774,7 @@ function Ue(e, t, n) {
 		leading: o
 	};
 }
-function We(e) {
+function Rt(e) {
 	let { front: t } = e, n = t.x, r = t.x + t.w, i = e.topology.farX === "min" ? n : r, a = i === n ? r : n, o = e.topology.axisY === "min" ? t.y : t.y + t.h, s = o === t.y ? t.y + t.h : t.y, { nearDepth: c, farDepth: l } = e.topology, u = e.project(n, o, c), d = e.project(r, o, c), f = e.project(r, o, l), p = e.project(n, o, l), m = e.project(n, s, l), h = e.project(r, s, l), g = e.project(i, o, c), _ = e.project(i, o, l), v = e.project(i, s, l), y = e.project(i, s, c);
 	return {
 		floor: [
@@ -1521,54 +1803,130 @@ function We(e) {
 		farDepth: l
 	};
 }
-function Q(e, t, n, r, i = "A6A6A6", a = .75) {
-	let o = t != null && Number.isFinite(t) && t >= 0 ? Math.max(.25, t / S * r) : a * r;
+function zt(e, t, n, r, i = "A6A6A6", a = .75) {
+	let o = t != null && Number.isFinite(t) && t >= 0 ? Math.max(.25, t / B * r) : a * r;
 	return {
 		color: `#${e ?? i}`,
 		width: o,
-		dash: y(n ?? "solid", o)
+		dash: G(n ?? "solid", o)
 	};
 }
-function $(e, t) {
+function Bt(e, t, n, r) {
+	let i = zt(e, t, n, r, "898989", 1);
+	if (t == null || !Number.isFinite(t) || t < 0) return i;
+	let a = t / B * r;
+	if (!(a > 0)) return i;
+	let o = a;
+	return {
+		...i,
+		width: o,
+		dash: G(n ?? "solid", o)
+	};
+}
+function Vt(e, t, n, r) {
+	return Bt(e, t, n, r);
+}
+function Ht(e, t) {
 	e.strokeStyle = t.color, e.lineWidth = t.width, e.setLineDash(t.dash);
 }
-function Ge(e, t, n, r, i, a, o, s, c) {
-	let { front: l } = n, u = l.x, d = l.x + l.w, f = We(n), { sideX: p, floorY: m, oppositeFloorY: h, nearDepth: _, farDepth: v } = f, y = (t, n) => {
-		n?.fillHidden === !0 || !n?.fillColor || we(e, t, `#${n.fillColor}`, 0);
-	};
-	y(f.floor, t.threeD?.floor), y(f.sideWall, t.threeD?.sideWall), y(f.backWall, t.threeD?.backWall);
-	let b = (t, a) => {
-		$(e, a);
-		for (let a of t) if (i === "horizontal") {
-			let t = l.x + r.fraction(a) * l.w, i = n.project(t, m, v), o = n.project(t, h, v);
-			e.beginPath(), e.moveTo(i.x, i.y), e.lineTo(o.x, o.y), e.stroke();
-		} else {
-			let t = l.y + l.h - r.fraction(a) * l.h, i = n.project(p, t, _), o = n.project(p, t, v), s = n.project(p === u ? d : u, t, v);
-			e.beginPath(), e.moveTo(i.x, i.y), e.lineTo(o.x, o.y), e.stroke(), e.beginPath(), e.moveTo(o.x, o.y), e.lineTo(s.x, s.y), e.stroke();
-		}
-	};
-	t.valAxisMinorGridlines === !0 && b(r.minorTicks, Q(t.valAxisMinorGridlineColor, t.valAxisMinorGridlineWidthEmu, t.valAxisMinorGridlineDash, c, "D9D9D9", .5)), t.valAxisMajorGridlines !== !1 && b(r.majorTicks, Q(t.valAxisGridlineColor, t.valAxisGridlineWidthEmu, t.valAxisGridlineDash, c, "898989", 1)), $(e, Q(null, null, null, c, "898989", 1));
-	for (let t = 0; t < a; t++) if (i === "vertical") {
-		let r = l.x + g(t, a, o, s) * l.w, i = n.project(r, m, _), c = n.project(r, m, v);
-		e.beginPath(), e.moveTo(i.x, i.y), e.lineTo(c.x, c.y), e.stroke();
-	} else {
-		let r = l.y + g(t, a, o, s) * l.h, i = n.project(p, r, _), c = n.project(p, r, v);
-		e.beginPath(), e.moveTo(i.x, i.y), e.lineTo(c.x, c.y), e.stroke();
+function Ut(e, t, n, r, i, a, s, l, u) {
+	let { front: d } = n, f = d.x, m = d.x + d.w, h = Rt(n), { sideX: g, floorY: _, oppositeFloorY: v, nearDepth: y, farDepth: b } = h, x = Xt(t, n, r, a, s, l, i), S = [], C = t.catAxisLinePaintAuthored === !0, T = t.valAxisLinePaintAuthored === !0, E = i === "vertical" ? C && !t.catAxisHidden && !t.catAxisLineHidden : T && !t.valAxisHidden && !t.valAxisLineHidden, D = i === "vertical" ? T && !t.valAxisHidden && !t.valAxisLineHidden : C && !t.catAxisHidden && !t.catAxisLineHidden;
+	E && S.push([x.horizontalStart, x.horizontalEnd]), D && S.push([x.verticalStart, x.verticalEnd]);
+	let O = t.threeD?.seriesAxis, A = O?.linePaintAuthored === !0;
+	if (O && !O.hidden && !O.lineHidden && A && t.threeD?.barGrouping === "standard" && t.series.length > 0) {
+		let e = i === "vertical" ? h.seriesAxisX : x.axisX, t = i === "horizontal" ? _ === n.front.y ? n.front.y + n.front.h : n.front.y : _;
+		S.push([n.project(e, t, y), n.project(e, t, b)]);
 	}
-	let x = (t, n) => {
-		if (!(n?.lineHidden === !0 || t.length < 2)) {
-			$(e, Q(n?.lineColor, n?.lineWidthEmu, n?.lineDash, c, "898989", 1)), e.beginPath(), e.moveTo(t[0].x, t[0].y);
-			for (let n = 1; n < t.length; n++) e.lineTo(t[n].x, t[n].y);
-			e.lineTo(t[0].x, t[0].y), e.closePath(), e.stroke();
+	let j = (e, t) => Math.hypot(e.x - t.x, e.y - t.y) <= 1e-6, M = (e, t) => S.some(([n, r]) => j(e, n) && j(t, r) || j(e, r) && j(t, n)), N = (e, t) => {
+		let r = Y(n, e, t?.thicknessPercent), i = r.faces.map((e, t) => ({
+			scenePoints: e,
+			faceIndex: t
+		})).filter(({ scenePoints: e }) => r.thickness === 0 || n.cameraFacing(e)).map(({ scenePoints: e, faceIndex: t }) => ({
+			faceIndex: t,
+			scenePoints: e,
+			points: e.map((e) => n.projectUnbounded(e.x, e.y, e.depth)),
+			depth: e.reduce((e, t) => e + n.cameraDepth(t.x, t.y, t.depth), 0) / e.length
+		})).sort((e, t) => e.depth - t.depth);
+		return {
+			slab: r,
+			faces: i,
+			visibleFaceIndices: new Set(i.map((e) => e.faceIndex))
+		};
+	}, P = N("floor", t.threeD?.floor), F = N("sideWall", t.threeD?.sideWall), I = N("backWall", t.threeD?.backWall), L = P.faces, R = F.faces, ee = I.faces, z = (i, a, s, l) => {
+		let u = c(t, a, s), d = i.faces;
+		if (!u.fill || !d.length) return;
+		if (u.fill.fillType === "image") {
+			let t = o(u.fill);
+			if (!t) return;
+			le(e, u.fill, t, a, l, i.slab, i.faces.map((e) => e.faceIndex), (e) => n.projectUnbounded(e.x, e.y, e.depth), r.max - r.min);
+			return;
+		}
+		let f = d.flatMap((e) => e.points), p = Math.min(...f.map((e) => e.x)), m = Math.max(...f.map((e) => e.x)), h = Math.min(...f.map((e) => e.y)), g = Math.max(...f.map((e) => e.y)), _ = u.fill.fillType === "solid" ? `#${u.fill.color}` : U(u.fill, e, p, h, m - p, g - h);
+		if (_) for (let t of d) t.points.length < 3 || (ht(e, t.points), e.fillStyle = _, e.fill());
+	};
+	z(P, t.threeD?.floor, "floor", "floor"), z(F, t.threeD?.sideWall, "wall", "sideWall"), z(I, t.threeD?.backWall, "wall", "backWall");
+	let V = (t, r, i, a, o = !0) => {
+		for (let s of fe(t.slab, r, i, a)) {
+			if (!o && s.faceIndex !== 0 || !t.visibleFaceIndices.has(s.faceIndex)) continue;
+			let [r, i] = s.scenePoints.map((e) => n.projectUnbounded(e.x, e.y, e.depth));
+			e.beginPath(), e.moveTo(r.x, r.y), e.lineTo(i.x, i.y), e.stroke();
+		}
+	}, H = (t, a, o) => {
+		Ht(e, a);
+		for (let a of t) {
+			let t = r.fraction(a);
+			if (o) {
+				i === "horizontal" ? (V(P, "floor", "x", t), V(I, "backWall", "x", t)) : (V(F, "sideWall", "y", t), V(I, "backWall", "y", t));
+				continue;
+			}
+			if (i === "horizontal") {
+				let r = d.x + t * d.w, i = n.project(r, _, b), a = n.project(r, v, b);
+				e.beginPath(), e.moveTo(i.x, i.y), e.lineTo(a.x, a.y), e.stroke();
+			} else {
+				let r = d.y + d.h - t * d.h, i = n.project(g, r, y), a = n.project(g, r, b), o = n.project(g === f ? m : f, r, b);
+				e.beginPath(), e.moveTo(i.x, i.y), e.lineTo(a.x, a.y), e.stroke(), e.beginPath(), e.moveTo(a.x, a.y), e.lineTo(o.x, o.y), e.stroke();
+			}
 		}
 	};
-	x(f.floor, t.threeD?.floor), x(f.sideWall, t.threeD?.sideWall), x(f.backWall, t.threeD?.backWall), e.setLineDash([]);
+	t.valAxisMinorGridlines === !0 && H(r.minorTicks, zt(t.valAxisMinorGridlineColor, t.valAxisMinorGridlineWidthEmu, t.valAxisMinorGridlineDash, u, "D9D9D9", .5), !0), t.valAxisMajorGridlines === !0 && H(r.majorTicks, zt(t.valAxisGridlineColor, t.valAxisGridlineWidthEmu, t.valAxisGridlineDash, u, "898989", 1), !0);
+	let te = (t, n) => {
+		Ht(e, n);
+		for (let e of t) i === "vertical" ? (V(P, "floor", "x", e), V(I, "backWall", "x", e)) : (V(F, "sideWall", "y", e), V(I, "backWall", "y", e));
+	};
+	t.catAxisMinorGridlines === !0 && te(w(a, s), zt(t.catAxisMinorGridlineColor, t.catAxisMinorGridlineWidthEmu, t.catAxisMinorGridlineDash, u, "E0E0E0", .5)), t.catAxisMajorGridlines === !0 && te(p(a, s), zt(t.catAxisGridlineColor, t.catAxisGridlineWidthEmu, t.catAxisGridlineDash, u, "E0E0E0", .5));
+	let W = (n, r, i) => {
+		if (!n.length) return;
+		let a = c(t, r, i);
+		if (a.line === null) return;
+		let o = a.line ?? {
+			fillType: "solid",
+			color: "898989"
+		}, s = n.flatMap((e) => e.points), l = Math.min(...s.map((e) => e.x)), d = Math.max(...s.map((e) => e.x)), f = Math.min(...s.map((e) => e.y)), p = Math.max(...s.map((e) => e.y)), m = o.fillType === "solid" ? `#${o.color}` : U(o, e, l, f, d - l, p - f);
+		if (!m) return;
+		let h = a.lineWidthEmu == null ? u : Math.max(.25, a.lineWidthEmu / B * u);
+		e.strokeStyle = m, e.lineWidth = h, e.setLineDash(k(a.lineCustomDash, a.lineDash, h)), e.lineCap = a.lineCap === "rnd" ? "round" : a.lineCap === "sq" ? "square" : "butt", e.lineJoin = a.lineJoin === "round" || a.lineJoin === "bevel" ? a.lineJoin : "miter";
+		for (let t of n) {
+			if (t.points.length < 2) continue;
+			let n = t.points.map((e, n) => ({
+				start: e,
+				end: t.points[(n + 1) % t.points.length]
+			}));
+			if (n.some((e) => M(e.start, e.end))) {
+				for (let t of n) M(t.start, t.end) || (e.beginPath(), e.moveTo(t.start.x, t.start.y), e.lineTo(t.end.x, t.end.y), e.stroke());
+				continue;
+			}
+			e.beginPath(), e.moveTo(t.points[0].x, t.points[0].y);
+			for (let n = 1; n < t.points.length; n++) e.lineTo(t.points[n].x, t.points[n].y);
+			e.lineTo(t.points[0].x, t.points[0].y), e.closePath(), e.stroke();
+		}
+	};
+	W(L, t.threeD?.floor, "floor"), W(R, t.threeD?.sideWall, "wall"), W(ee, t.threeD?.backWall, "wall"), e.setLineDash([]);
 }
-function Ke(e, t, n, r, i, a, o, s, c) {
-	let l = Qe(t, n, r, i, a, o, c), u = c === "vertical" ? !t.catAxisHidden && !t.catAxisLineHidden : !t.valAxisHidden && !t.valAxisLineHidden, d = c === "vertical" ? !t.valAxisHidden && !t.valAxisLineHidden : !t.catAxisHidden && !t.catAxisLineHidden;
-	u && ($(e, Q(c === "vertical" ? t.catAxisLineColor : t.valAxisLineColor, c === "vertical" ? t.catAxisLineWidthEmu : t.valAxisLineWidthEmu, null, s, "898989", 1)), e.beginPath(), e.moveTo(l.horizontalStart.x, l.horizontalStart.y), e.lineTo(l.horizontalEnd.x, l.horizontalEnd.y), e.stroke()), d && ($(e, Q(c === "vertical" ? t.valAxisLineColor : t.catAxisLineColor, c === "vertical" ? t.valAxisLineWidthEmu : t.catAxisLineWidthEmu, null, s, "898989", 1)), e.beginPath(), e.moveTo(l.verticalStart.x, l.verticalStart.y), e.lineTo(l.verticalEnd.x, l.verticalEnd.y), e.stroke()), e.setLineDash([]);
+function Wt(e, t, n, r, i, a, o, s, c) {
+	let l = Xt(t, n, r, i, a, o, c), u = c === "vertical" ? !t.catAxisHidden && !t.catAxisLineHidden : !t.valAxisHidden && !t.valAxisLineHidden, d = c === "vertical" ? !t.valAxisHidden && !t.valAxisLineHidden : !t.catAxisHidden && !t.catAxisLineHidden;
+	u && (Ht(e, Bt(c === "vertical" ? t.catAxisLineColor : t.valAxisLineColor, c === "vertical" ? t.catAxisLineWidthEmu : t.valAxisLineWidthEmu, c === "vertical" ? t.catAxisLineDash : t.valAxisLineDash, s)), e.beginPath(), e.moveTo(l.horizontalStart.x, l.horizontalStart.y), e.lineTo(l.horizontalEnd.x, l.horizontalEnd.y), e.stroke()), d && (Ht(e, Bt(c === "vertical" ? t.valAxisLineColor : t.catAxisLineColor, c === "vertical" ? t.valAxisLineWidthEmu : t.catAxisLineWidthEmu, c === "vertical" ? t.valAxisLineDash : t.catAxisLineDash, s)), e.beginPath(), e.moveTo(l.verticalStart.x, l.verticalStart.y), e.lineTo(l.verticalEnd.x, l.verticalEnd.y), e.stroke()), e.setLineDash([]);
 }
-function qe(e, t, n, r) {
+function Gt(e, t, n, r) {
 	let i = {
 		x: (e.x + t.x) / 2,
 		y: (e.y + t.y) / 2
@@ -1581,25 +1939,25 @@ function qe(e, t, n, r) {
 		y: i.y <= n.y ? -1 : 1
 	};
 }
-function Je(e, t, n, r, i, a, o, s, c) {
+function Kt(e, t, n, r, i, a, o, s, c) {
 	if (!t || t === "none") return;
-	let l = qe(r, i, a, o), u = Ye(s, c), d = t === "cross" ? u / 2 : u, f = t === "out" || t === "cross" ? d : 0, p = t === "in" || t === "cross" ? d : 0;
+	let l = Gt(r, i, a, o), u = qt(s, c), d = t === "cross" ? u / 2 : u, f = t === "out" || t === "cross" ? d : 0, p = t === "in" || t === "cross" ? d : 0;
 	e.beginPath(), e.moveTo(n.x + l.x * f, n.y + l.y * f), e.lineTo(n.x - l.x * p, n.y - l.y * p), e.stroke();
 }
-function Ye(e, t) {
+function qt(e, t) {
 	return (e === "minor" ? 4 : 6) * t;
 }
-function Xe(e, t, n) {
+function Jt(e, t, n) {
 	if (e !== "out" && e !== "cross") return 0;
-	let r = Ye(t, n);
+	let r = qt(t, n);
 	return e === "cross" ? r / 2 : r;
 }
-function Ze(e, t, n, r) {
+function Yt(e, t, n, r) {
 	if (t) return r;
-	let i = Xe(e, "major", n);
+	let i = Jt(e, "major", n);
 	return Math.max(r, i + 3 * n);
 }
-function Qe(e, t, n, r, i, a, o) {
+function Xt(e, t, n, r, i, a, o) {
 	let { front: s } = t, c = (e) => Math.max(0, Math.min(1, e)), l = t.topology.axisX === "min" ? s.x : s.x + s.w, u = t.topology.axisY === "min" ? s.y : s.y + s.h, d = () => {
 		if (e.catAxisCrossesAt != null && Number.isFinite(e.catAxisCrossesAt)) {
 			let t = e.chartType.endsWith("Pct") ? e.catAxisCrossesAt * 100 : e.catAxisCrossesAt;
@@ -1609,253 +1967,251 @@ function Qe(e, t, n, r, i, a, o) {
 		return c(t === "min" ? n.fraction(n.min) : t === "max" ? n.fraction(n.max) : n.fraction(0));
 	}, f = () => {
 		let t = e.valAxisCrossesAt;
-		if (t != null && Number.isFinite(t)) return g(t - 1, r, i, a);
+		if (t != null && Number.isFinite(t)) return S(t - 1, r, i, a);
 		let n = e.valAxisCrosses;
 		if (n !== "min" && n !== "max") return null;
 		let o = +(n === "max");
 		return a ? 1 - o : o;
-	}, p = d(), m = f(), h = o === "horizontal" ? s.x + p * s.w : m == null ? l : s.x + m * s.w, _ = o === "vertical" ? s.y + s.h - p * s.h : m == null ? u : s.y + m * s.h, v = t.topology.nearDepth;
+	}, p = d(), m = f(), h = o === "horizontal" ? s.x + p * s.w : m == null ? l : s.x + m * s.w, g = o === "vertical" ? s.y + s.h - p * s.h : m == null ? u : s.y + m * s.h, _ = t.topology.nearDepth;
 	return {
 		axisX: h,
-		axisY: _,
-		depth: v,
-		horizontalStart: t.project(s.x, _, v),
-		horizontalEnd: t.project(s.x + s.w, _, v),
-		verticalStart: t.project(h, s.y + s.h, v),
-		verticalEnd: t.project(h, s.y, v)
+		axisY: g,
+		depth: _,
+		horizontalStart: t.project(s.x, g, _),
+		horizontalEnd: t.project(s.x + s.w, g, _),
+		verticalStart: t.project(h, s.y + s.h, _),
+		verticalEnd: t.project(h, s.y, _)
 	};
 }
-function $e(e, t, n, r, i, a, o, s, c) {
-	let { front: l } = n, u = Qe(t, n, r, i, a, o, s), { axisX: d, axisY: f, depth: p } = u, m = n.project(l.x + l.w / 2, l.y + l.h / 2, p), h = t.valAxisMinorTickMark ?? "none";
+function Zt(e, t, n, r, i, a, o, s, c, l) {
+	let { front: u } = n, d = Xt(t, n, r, i, a, o, s), { axisX: f, axisY: m, depth: h } = d, g = n.project(u.x + u.w / 2, u.y + u.h / 2, h), _ = t.valAxisMinorTickMark ?? "none", v = c ? Vt : Bt;
 	if (!t.valAxisHidden && !t.valAxisLineHidden) {
-		$(e, Q(t.valAxisLineColor, t.valAxisLineWidthEmu, null, c, "898989", 1));
-		let i = (e) => s === "horizontal" ? n.project(l.x + r.fraction(e) * l.w, f, p) : n.project(d, l.y + l.h - r.fraction(e) * l.h, p), a = s === "horizontal" ? u.horizontalStart : u.verticalStart, o = s === "horizontal" ? u.horizontalEnd : u.verticalEnd;
-		for (let n of r.majorTicks) Je(e, t.valAxisMajorTickMark, i(n), a, o, m, s === "vertical" ? "horizontal" : "vertical", "major", c);
-		for (let t of r.minorTicks) Je(e, h, i(t), a, o, m, s === "vertical" ? "horizontal" : "vertical", "minor", c);
+		Ht(e, v(t.valAxisLineColor, t.valAxisLineWidthEmu, t.valAxisLineDash, l));
+		let i = (e) => s === "horizontal" ? n.project(u.x + r.fraction(e) * u.w, m, h) : n.project(f, u.y + u.h - r.fraction(e) * u.h, h), a = s === "horizontal" ? d.horizontalStart : d.verticalStart, o = s === "horizontal" ? d.horizontalEnd : d.verticalEnd;
+		for (let n of r.majorTicks) Kt(e, t.valAxisMajorTickMark, i(n), a, o, g, s === "vertical" ? "horizontal" : "vertical", "major", l);
+		for (let t of r.minorTicks) Kt(e, _, i(t), a, o, g, s === "vertical" ? "horizontal" : "vertical", "minor", l);
 	}
 	if (!t.catAxisHidden && !t.catAxisLineHidden) {
-		$(e, Q(t.catAxisLineColor, t.catAxisLineWidthEmu, null, c, "898989", 1));
-		let r = s === "vertical" ? u.horizontalStart : u.verticalStart, h = s === "vertical" ? u.horizontalEnd : u.verticalEnd, _ = Math.max(1, Math.floor(t.catAxisTickMarkSkip ?? 1));
-		for (let u = 0; u < i; u += _) {
-			let _ = g(u, i, a, o), v = s === "vertical" ? n.project(l.x + _ * l.w, f, p) : n.project(d, l.y + _ * l.h, p);
-			Je(e, t.catAxisMajorTickMark, v, r, h, m, s === "vertical" ? "vertical" : "horizontal", "major", c);
-		}
-		let v = t.catAxisMinorUnit;
-		if (t.catAxisMinorTickMark && t.catAxisMinorTickMark !== "none" && v != null && Number.isFinite(v) && v > 0) {
-			let u = t.catAxisMajorUnit != null && Number.isFinite(t.catAxisMajorUnit) && t.catAxisMajorUnit > 0 ? t.catAxisMajorUnit : _, y = Math.min(512, Math.ceil(i / v));
-			for (let _ = 1; _ < y; _++) {
-				let y = _ * v;
-				if (!(y < i)) break;
-				if (Math.abs(y / u - Math.round(y / u)) < 1e-9) continue;
-				let b = g(y, i, a, o), x = s === "vertical" ? n.project(l.x + b * l.w, f, p) : n.project(d, l.y + b * l.h, p);
-				Je(e, t.catAxisMinorTickMark, x, r, h, m, s === "vertical" ? "vertical" : "horizontal", "minor", c);
+		Ht(e, v(t.catAxisLineColor, t.catAxisLineWidthEmu, t.catAxisLineDash, l));
+		let r = s === "vertical" ? d.horizontalStart : d.verticalStart, _ = s === "vertical" ? d.horizontalEnd : d.verticalEnd, y = Math.max(1, Math.floor(t.catAxisTickMarkSkip ?? 1)), b = (i) => {
+			let a = s === "vertical" ? n.project(u.x + i * u.w, m, h) : n.project(f, u.y + i * u.h, h);
+			Kt(e, t.catAxisMajorTickMark, a, r, _, g, s === "vertical" ? "vertical" : "horizontal", "major", l);
+		};
+		if (c) {
+			let e = p(i, a);
+			for (let t = 0; t < e.length; t += y) b(o ? 1 - e[t] : e[t]);
+		} else for (let e = 0; e < i; e += y) b(S(e, i, a, o));
+		let x = t.catAxisMinorUnit;
+		if (t.catAxisMinorTickMark && t.catAxisMinorTickMark !== "none" && x != null && Number.isFinite(x) && x > 0) {
+			let c = t.catAxisMajorUnit != null && Number.isFinite(t.catAxisMajorUnit) && t.catAxisMajorUnit > 0 ? t.catAxisMajorUnit : y, d = Math.min(512, Math.ceil(i / x));
+			for (let p = 1; p < d; p++) {
+				let d = p * x;
+				if (!(d < i)) break;
+				if (Math.abs(d / c - Math.round(d / c)) < 1e-9) continue;
+				let v = S(d, i, a, o), y = s === "vertical" ? n.project(u.x + v * u.w, m, h) : n.project(f, u.y + v * u.h, h);
+				Kt(e, t.catAxisMinorTickMark, y, r, _, g, s === "vertical" ? "vertical" : "horizontal", "minor", l);
 			}
 		}
 	}
 	e.setLineDash([]);
 }
-function et(e, t, n, r) {
+function Qt(e, t, n, i, a) {
 	if (!t.threeD) return !1;
-	let i = t.chartType === "clusteredBar" || t.chartType === "clusteredBarH" || t.chartType.startsWith("stackedBar"), a = t.chartType.endsWith("H") || t.chartType.includes("BarH"), o = t.chartType.startsWith("stacked"), s = i && !o && t.threeD.barGrouping === "standard", { plot: u, legend: d } = Le(e, t, n, r, a ? "horizontal" : "vertical"), p = C(t.threeD, u, {
-		sceneDepthScale: i ? s ? .65 : .1 : .4,
-		perspectiveTangentGain: s ? 1 : 2
+	let o = t.chartType === "clusteredBar" || t.chartType === "clusteredBarH" || t.chartType.startsWith("stackedBar"), s = t.chartType.endsWith("H") || t.chartType.includes("BarH"), c = t.chartType.startsWith("stacked"), l = o && !c && t.threeD.barGrouping === "standard", { plot: u, legend: d, legendMeasure: p } = At(e, t, n, i, s ? "horizontal" : "vertical", a), m = ce(t.threeD, u, {
+		sceneDepthScale: o ? l ? .65 : .1 : .4,
+		perspectiveTangentGain: l ? 1 : 2,
+		sceneHeightScale: !o && !(t.threeD.heightPercentAuthored ?? t.threeD.heightPercent != null) ? 1 / 3 : void 0
 	});
-	if (!p) return !0;
-	let _ = t.chartType.endsWith("Pct"), v = t.series.find((e) => (e.categories?.length ?? 0) > 0)?.categories ?? t.categories, b = Math.max(1, v.length, ...t.series.map((e) => e.values.length)), E = t.catAxisOrientation === "maxMin", D = t.catAxisCrossBetween === "between", O = t.dispBlanksAs ?? "gap", k = t.valAxisLogBase != null && Number.isFinite(t.valAxisLogBase) && t.valAxisLogBase >= 2, ee = (e, n) => {
+	if (!m) return !0;
+	m = de(m, t.threeD, u);
+	let h = t.chartType.endsWith("Pct"), g = t.series.find((e) => (e.categories?.length ?? 0) > 0)?.categories ?? t.categories, _ = Math.max(1, g.length, ...t.series.map((e) => e.values.length)), v = h ? st(t, _) : void 0, y = t.catAxisOrientation === "maxMin", b = t.catAxisCrossBetween === "between", x = t.dispBlanksAs ?? "gap", C = t.valAxisLogBase != null && Number.isFinite(t.valAxisLogBase) && t.valAxisLogBase >= 2, w = (e, n) => {
 		let r = t.series[e]?.values[n];
-		return r != null && Number.isFinite(r) && (!k || r > 0) || r == null && (o || O === "zero");
-	}, A = (e, n) => {
-		let r = t.series[e]?.values[n] ?? 0;
-		if (!Number.isFinite(r)) return 0;
-		if (!_) return r;
-		let i = 0;
-		for (let e of t.series) {
-			let t = e.values[n];
-			t != null && Number.isFinite(t) && (i = Math.max(i, Math.abs(t)));
-		}
-		if (!(i > 0)) return 0;
-		let a = 0;
-		for (let e of t.series) {
-			let t = e.values[n];
-			t != null && Number.isFinite(t) && (a += Math.abs(t) / i);
-		}
-		return a > 0 ? r / i / a * 100 : 0;
-	}, j = (e, t) => {
-		let n = e + t;
-		return Number.isFinite(n) ? n : t < 0 ? -Number.MAX_VALUE : Number.MAX_VALUE;
-	}, M = 0, N = 0;
-	if (o) {
-		for (let e = 0; e < b; e++) {
+		return r != null && Number.isFinite(r) && (!C || r > 0) || r == null && (c || x === "zero");
+	}, T = (e, n) => ct(t, e, n, v), A = 0, j = 0;
+	if (c) {
+		for (let e = 0; e < _; e++) {
 			let n = 0, r = 0;
 			for (let i = 0; i < t.series.length; i++) {
-				let t = A(i, e);
-				t >= 0 ? n = j(n, t) : r = j(r, t);
+				let t = T(i, e);
+				t >= 0 ? n = Q(n, t) : r = Q(r, t);
 			}
-			M = Math.min(M, r), N = Math.max(N, n);
+			A = Math.min(A, r), j = Math.max(j, n);
 		}
-		_ && (M = M < 0 ? -100 : 0, N = N > 0 ? 100 : 0, M === 0 && N === 0 && (N = 1));
+		h && (A = A < 0 ? -100 : 0, j = j > 0 ? 100 : 0, A === 0 && j === 0 && (j = 1));
 	} else {
-		let e = m(t.series.flatMap((e) => e.values).filter((e) => e != null && Number.isFinite(e) && (!k || e > 0)), k ? {
+		let e = ge(t.series.flatMap((e) => e.values).filter((e) => e != null && Number.isFinite(e) && (!C || e > 0)), C ? {
 			min: 1,
 			max: 10
 		} : {
 			min: 0,
 			max: 1
 		});
-		M = k ? e.min : Math.min(0, e.min), N = k ? e.max : Math.max(0, e.max);
+		A = C ? e.min : Math.min(0, e.min), j = C ? e.max : Math.max(0, e.max);
 	}
-	let P = He(t, M, N, (a ? p.front.w : p.front.h) / r, _, a ? "horizontal" : "vertical"), F = (e) => Number.isFinite(e) ? Math.max(P.min, Math.min(P.max, e)) : P.min;
-	Ge(e, t, p, P, a ? "horizontal" : "vertical", b, D, E, r);
-	let { front: I } = p, L = Math.max(1, t.series.length), R = [], V = t.series.map((e) => new Map(e.dataPointOverrides?.map((e) => [e.idx, e]) ?? [])), H = t.series.map((e) => new Map(e.dataLabelOverrides?.map((e) => [e.idx, e]) ?? []));
-	if (i) {
-		let i = p.prismInterval(0, 1, !0), c = [], l = Array(b).fill(0), u = Array(b).fill(0), d = (a ? I.h : I.w) / b, f = t.barGapWidth != null && Number.isFinite(t.barGapWidth) && t.barGapWidth >= 0 ? t.barGapWidth : 150;
+	let N = s ? m.project(m.front.x, m.topology.axisY === "min" ? m.front.y : m.front.y + m.front.h, m.topology.nearDepth) : m.project(m.topology.axisX === "min" ? m.front.x : m.front.x + m.front.w, m.front.y, m.topology.nearDepth), F = s ? m.project(m.front.x + m.front.w, m.topology.axisY === "min" ? m.front.y : m.front.y + m.front.h, m.topology.nearDepth) : m.project(m.topology.axisX === "min" ? m.front.x : m.front.x + m.front.w, m.front.y + m.front.h, m.topology.nearDepth), I = Math.hypot(F.x - N.x, F.y - N.y) / i, L = It(t, A, j, I, h, s ? "horizontal" : "vertical"), R = (e) => Number.isFinite(e) ? Math.max(L.min, Math.min(L.max, e)) : L.min;
+	o || Ut(e, t, m, L, s ? "horizontal" : "vertical", _, b, y, i);
+	let { front: H } = m, U = Math.max(1, t.series.length), te = [], W = t.series.map((e) => new Map(e.dataPointOverrides?.map((e) => [e.idx, e]) ?? [])), G = t.series.map((e) => new Map(e.dataLabelOverrides?.map((e) => [e.idx, e]) ?? []));
+	if (o) {
+		let r = m.prismInterval(0, 1, !0), o = [], u = Array(_).fill(0), d = Array(_).fill(0), f = (s ? H.h : H.w) / _, p = t.barGapWidth != null && Number.isFinite(t.barGapWidth) && t.barGapWidth >= 0 ? t.barGapWidth : 150;
 		for (let e = 0; e < t.series.length; e++) {
-			let n = t.series[e], m = s ? p.prismInterval(e, L, !1) : i, g = w(d, f, s ? 0 : e, s ? 1 : L, o || s);
-			for (let i = 0; i < b; i++) {
-				if (!ee(e, i)) continue;
-				let s = A(e, i), f = V[e].get(i), p = f?.fillHidden === !0 ? "transparent" : f?.color ?? n.dataPointColors?.[i], v = p === "00000000" ? "transparent" : p ? `#${p}` : n.color === "00000000" ? "transparent" : ve(e, n), y = ye(n, f), S = f?.lineColor ?? n.lineColor, C = f?.lineWidthEmu ?? n.lineWidthEmu, w = f?.lineDash ?? n.chartexStyle?.lineDash ?? "solid", T = n.chartexStyle?.lineCap === "rnd" ? "round" : n.chartexStyle?.lineCap === "sq" ? "square" : "butt", D = n.chartexStyle?.lineJoin === "round" || n.chartexStyle?.lineJoin === "bevel" ? n.chartexStyle.lineJoin : "miter", O = o ? s >= 0 ? l[i] : u[i] : 0, M = j(O, s);
-				o && (s >= 0 ? l[i] = M : u[i] = M);
-				let N = F(O), L = F(M), R = n.threeDShape ?? t.threeD.shape ?? "box", z = R === "cone" || R === "pyramid", B = R === "coneToMax" || R === "pyramidToMax", H = (e) => {
-					if (!z) return 1;
-					let t = k && !(O > 0) ? P.min : O, n = P.fraction(t), r = P.fraction(M), i = P.fraction(e), a = r - n;
+			let n = t.series[e], a = l ? m.prismInterval(e, U, !1) : r, g = me(f, p, l ? 0 : e, l ? 1 : U, c || l);
+			for (let r = 0; r < _; r++) {
+				if (!w(e, r)) continue;
+				let l = T(e, r), p = dt(t, n, W[e].get(r), r, e), m = p.fill === null ? "transparent" : p.color, v = p.lineFill !== null && (p.lineColor != null || p.lineFill !== void 0), b = c ? l >= 0 ? u[r] : d[r] : 0, x = Q(b, l);
+				c && (l >= 0 ? u[r] = x : d[r] = x);
+				let S = R(b), E = R(x), O = n.threeDShape ?? t.threeD.shape ?? "box", k = O === "cone" || O === "pyramid", A = O === "coneToMax" || O === "pyramidToMax", j = (e) => {
+					if (!k) return 1;
+					let t = C && !(b > 0) ? L.min : b, n = L.fraction(t), r = L.fraction(x), i = L.fraction(e), a = r - n;
 					return a === 0 || !Number.isFinite(a) || !Number.isFinite(i - n) ? +(e === t) : Math.max(0, Math.min(1, 1 - (i - n) / a));
-				}, U = (e) => {
-					if (!B) return 1;
-					let t = M >= O ? P.max : P.min, n = k ? P.min : 0, r = P.fraction(t), i = P.fraction(n), a = P.fraction(e), o = Math.abs(r - i);
+				}, M = (e) => {
+					if (!A) return 1;
+					let t = x >= b ? L.max : L.min, n = C ? L.min : 0, r = L.fraction(t), i = L.fraction(n), a = L.fraction(e), o = Math.abs(r - i);
 					return !(o > 0) || ![
 						r,
 						i,
 						a
-					].every(Number.isFinite) ? x(e, P.min, P.max) : Math.max(0, Math.min(1, Math.abs(r - a) / o));
-				}, W = B ? U(N) : H(N), G = B ? U(L) : H(L);
-				if (a) {
-					let t = I.x + P.fraction(N) * I.w, n = I.x + P.fraction(L) * I.w, a = E ? b - 1 - i : i, o = I.y + a * d + g.offset;
-					c.push({
+					].every(Number.isFinite) ? ae(e, L.min, L.max) : Math.max(0, Math.min(1, Math.abs(r - a) / o));
+				}, N = A ? M(S) : j(S), P = A ? M(E) : j(E);
+				if (s) {
+					let t = H.x + L.fraction(S) * H.w, n = H.x + L.fraction(E) * H.w, s = y ? _ - 1 - r : r, c = H.y + s * f + g.offset;
+					o.push({
 						x: Math.min(t, n),
-						y: o,
+						y: c,
 						width: Math.abs(n - t),
 						height: g.size,
-						nearDepth: m.near,
-						farDepth: m.far,
-						categoryIndex: i,
+						nearDepth: a.near,
+						farDepth: a.far,
+						categoryIndex: r,
 						seriesIndex: e,
-						color: v,
-						shape: R,
+						color: m,
+						fillPaint: p.fill,
+						lineFill: p.lineFill,
+						shape: O,
 						baseCoord: t,
 						endCoord: n,
-						baseScale: W,
-						endScale: G,
+						baseScale: N,
+						endScale: P,
 						omitBaseCap: !1,
 						omitEndCap: !1,
-						outline: y,
-						outlineColor: S ? `#${S}` : "rgba(0,0,0,0.42)",
-						outlineWidth: C == null ? .75 * r / h : ge(C, r),
-						outlineDash: w,
-						outlineCap: T,
-						outlineJoin: D,
-						labelValue: _ ? s / 100 : s
+						outline: v,
+						outlineColor: p.lineColor ?? "rgba(0,0,0,0.42)",
+						outlineWidth: p.lineWidthEmu == null ? .75 * i / D : rt(p.lineWidthEmu, i),
+						outlineDash: p.lineDash ?? "solid",
+						outlineCustomDash: p.lineCustomDash,
+						outlineCap: p.lineCap,
+						outlineJoin: p.lineJoin,
+						labelValue: h ? l / 100 : l,
+						plottedLabelValue: x
 					});
 				} else {
-					let t = I.y + I.h - P.fraction(N) * I.h, n = I.y + I.h - P.fraction(L) * I.h, a = E ? b - 1 - i : i, o = I.x + a * d + g.offset;
-					c.push({
-						x: o,
+					let t = H.y + H.h - L.fraction(S) * H.h, n = H.y + H.h - L.fraction(E) * H.h, s = y ? _ - 1 - r : r, c = H.x + s * f + g.offset;
+					o.push({
+						x: c,
 						y: Math.min(t, n),
 						width: g.size,
 						height: Math.abs(n - t),
-						nearDepth: m.near,
-						farDepth: m.far,
-						categoryIndex: i,
+						nearDepth: a.near,
+						farDepth: a.far,
+						categoryIndex: r,
 						seriesIndex: e,
-						color: v,
-						shape: R,
+						color: m,
+						fillPaint: p.fill,
+						lineFill: p.lineFill,
+						shape: O,
 						baseCoord: t,
 						endCoord: n,
-						baseScale: W,
-						endScale: G,
+						baseScale: N,
+						endScale: P,
 						omitBaseCap: !1,
 						omitEndCap: !1,
-						outline: y,
-						outlineColor: S ? `#${S}` : "rgba(0,0,0,0.42)",
-						outlineWidth: C == null ? .75 * r / h : ge(C, r),
-						outlineDash: w,
-						outlineCap: T,
-						outlineJoin: D,
-						labelValue: _ ? s / 100 : s
+						outline: v,
+						outlineColor: p.lineColor ?? "rgba(0,0,0,0.42)",
+						outlineWidth: p.lineWidthEmu == null ? .75 * i / D : rt(p.lineWidthEmu, i),
+						outlineDash: p.lineDash ?? "solid",
+						outlineCustomDash: p.lineCustomDash,
+						outlineCap: p.lineCap,
+						outlineJoin: p.lineJoin,
+						labelValue: h ? l / 100 : l,
+						plottedLabelValue: x
 					});
 				}
 			}
 		}
-		if (o) {
-			let e = _e(c, b);
-			for (let t = 0; t < b; t++) {
+		if (c) {
+			let e = it(o, _);
+			for (let t = 0; t < _; t++) {
 				let n = e[t];
 				for (let e of [-1, 1]) {
-					let t = n.filter((t) => Math.sign(t.labelValue) === e && !Ce(t.color) && Math.abs(t.endCoord - t.baseCoord) > 1e-9).sort((e, t) => e.seriesIndex - t.seriesIndex);
+					let t = n.filter((t) => Math.sign(t.labelValue) === e && !gt(t.color) && Math.abs(t.endCoord - t.baseCoord) > 1e-9).sort((e, t) => e.seriesIndex - t.seriesIndex);
 					for (let e = 0; e + 1 < t.length; e++) {
 						let n = t[e], r = t[e + 1], i = 1e-8 * Math.max(1, Math.abs(n.endCoord), Math.abs(r.baseCoord));
 						n.shape !== r.shape || Math.abs(n.endCoord - r.baseCoord) > i || Math.abs(n.endScale - r.baseScale) > 1e-9 || n.nearDepth !== r.nearDepth || n.farDepth !== r.farDepth || (n.omitEndCap = !0, r.omitBaseCap = !0);
 					}
 				}
-				let r = n.find((e) => e.labelValue > 0 && !Ce(e.color)), i = n.find((e) => e.labelValue < 0 && !Ce(e.color));
+				let r = n.find((e) => e.labelValue > 0 && !gt(e.color)), i = n.find((e) => e.labelValue < 0 && !gt(e.color));
 				if (r && i) {
 					let e = 1e-8 * Math.max(1, Math.abs(r.baseCoord), Math.abs(i.baseCoord));
 					r.shape === i.shape && Math.abs(r.baseCoord - i.baseCoord) <= e && Math.abs(r.baseScale - i.baseScale) <= 1e-9 && r.nearDepth === i.nearDepth && r.farDepth === i.farDepth && (r.omitBaseCap = !0, i.omitBaseCap = !0);
 				}
 			}
 		}
-		let m = {
-			remaining: te,
+		Ut(e, t, m, L, s ? "horizontal" : "vertical", _, b, y, i);
+		let g = {
+			remaining: Fe,
 			exceeded: !1
-		}, g = c.flatMap((e) => Ee(p, e.shape, a, e.x, e.y, e.width, e.height, e.baseCoord, e.endCoord, e.nearDepth, e.farDepth, e.color, e.baseScale, e.endScale, e.omitBaseCap, e.omitEndCap, e.outline && e.outlineColor ? {
-			color: e.outlineColor,
-			width: e.outlineWidth,
-			dash: y(e.outlineDash, e.outlineWidth),
-			cap: e.outlineCap,
-			join: e.outlineJoin
-		} : void 0, m));
-		if (m.exceeded) return je(e, n), !0;
-		for (let t of K(g)) ke(e, t);
-		for (let i of c) {
-			let o = t.series[i.seriesIndex], s = a ? p.project(i.endCoord, i.y + i.height / 2, (i.nearDepth + i.farDepth) / 2) : p.project(i.x + i.width / 2, i.endCoord, (i.nearDepth + i.farDepth) / 2), c = H[i.seriesIndex].get(i.categoryIndex);
-			Ie(t, o, c) && R.push(() => Fe(e, t, o, i.seriesIndex, i.categoryIndex, i.labelValue, s, n, r, 0, void 0, c, "t", s, !0, t.valAxisDisplayUnits));
+		}, v = o.flatMap((t) => {
+			let n = yt(m, t.shape, s, t.x, t.y, t.width, t.height, t.baseCoord, t.endCoord, t.nearDepth, t.farDepth, t.color, t.baseScale, t.endScale, t.omitBaseCap, t.omitEndCap, t.outline && t.outlineColor ? {
+				color: t.outlineColor,
+				width: t.outlineWidth,
+				dash: k(t.outlineCustomDash, t.outlineDash, t.outlineWidth),
+				cap: t.outlineCap,
+				join: t.outlineJoin
+			} : void 0, g);
+			return Ct(e, n, "fill", t.fillPaint, a), Ct(e, n, "outline", t.lineFill, a), n;
+		});
+		if (g.exceeded) return wt(e, n), !0;
+		for (let t of Pe(v)) St(e, t);
+		for (let r of o) {
+			let o = t.series[r.seriesIndex], c = s ? m.project(r.endCoord, r.y + r.height / 2, (r.nearDepth + r.farDepth) / 2) : m.project(r.x + r.width / 2, r.endCoord, (r.nearDepth + r.farDepth) / 2), l = G[r.seriesIndex].get(r.categoryIndex);
+			kt(t, o, l) && te.push(() => Ot(e, t, o, r.seriesIndex, r.categoryIndex, r.labelValue, c, n, i, 0, void 0, l, "t", c, !0, t.valAxisDisplayUnits, L.max, r.plottedLabelValue, a));
 		}
 	} else {
-		let i = t.series.map(() => Array(b).fill(0)), a = t.series.map(() => Array(b).fill(0));
-		if (o) {
-			let e = Array(b).fill(0), n = Array(b).fill(0);
-			for (let r = 0; r < t.series.length; r++) for (let t = 0; t < b; t++) {
-				let o = A(r, t), s = o >= 0 ? e[t] : n[t];
-				i[r][t] = s, a[r][t] = j(s, o), o >= 0 ? e[t] = j(e[t], o) : n[t] = j(n[t], o);
+		let r = t.series.map(() => Array(_).fill(0)), o = t.series.map(() => Array(_).fill(0));
+		if (c) {
+			let e = Array(_).fill(0), n = Array(_).fill(0);
+			for (let i = 0; i < t.series.length; i++) for (let t = 0; t < _; t++) {
+				let a = T(i, t), s = a >= 0 ? e[t] : n[t];
+				r[i][t] = s, o[i][t] = Q(s, a), a >= 0 ? e[t] = Q(e[t], a) : n[t] = Q(n[t], a);
 			}
 		}
 		let s = (e) => {
-			let t = p.seriesDepth(e, L, o), n = 0, r = 0;
-			for (let i = 0; i < b; i++) {
-				if (!ee(e, i)) continue;
-				let s = o ? a[e][i] : A(e, i), c = I.x + g(i, b, D, E) * I.w, l = I.y + I.h - P.fraction(F(s)) * I.h;
-				n += p.cameraDepth(c, l, t), r++;
+			let t = m.seriesDepth(e, U, c), n = 0, r = 0;
+			for (let i = 0; i < _; i++) {
+				if (!w(e, i)) continue;
+				let a = c ? o[e][i] : T(e, i), s = H.x + S(i, _, b, y) * H.w, l = H.y + H.h - L.fraction(R(a)) * H.h;
+				n += m.cameraDepth(s, l, t), r++;
 			}
 			return r > 0 ? n / r : -Infinity;
-		}, c = t.series.map((e, t) => t).sort((e, t) => s(e) - s(t) || t - e), l = [], u = [], d = !1;
-		for (let s of c) {
-			if (d) break;
-			let c = t.series[s], f = ve(s, c), m = o ? p.prismInterval(0, 1, !0) : p.prismInterval(s, L, !1), h = I.x + I.w / 2, v = I.y + I.h / 2, x = p.cameraDepth(h, v, m.near) >= p.cameraDepth(h, v, m.far) ? m.near : m.far, C = [], w = [], k = [], j = [], M = [], N = [], F = [], U = [], W = [], G = [];
-			for (let e = 0; e < b; e++) {
-				if (!ee(s, e)) {
-					C.push(null), w.push(null), k.push(null), j.push(null), M.push(null), N.push(null), F.push(null), U.push(null), W.push(null), G.push(null);
+		}, l = t.series.map((e, t) => t).sort((e, t) => s(e) - s(t) || t - e), u = t.series.map((e, n) => dt(t, e, void 0, n, n)), d = [], f = [], p = !1;
+		for (let s of l) {
+			if (p) break;
+			let l = t.series[s], g = u[s], v = g.fill === null ? "transparent" : g.color, C = c ? m.prismInterval(0, 1, !0) : m.prismInterval(s, U, !1), E = H.x + H.w / 2, D = H.y + H.h / 2, A = m.cameraDepth(E, D, C.near) >= m.cameraDepth(E, D, C.far) ? C.near : C.far, j = [], N = [], F = [], I = [], R = [], z = [], ne = [], re = [], K = [], q = [];
+			for (let e = 0; e < _; e++) {
+				if (!w(s, e)) {
+					j.push(null), N.push(null), F.push(null), I.push(null), R.push(null), z.push(null), ne.push(null), re.push(null), K.push(null), q.push(null);
 					continue;
 				}
-				let n = o ? a[s][e] : A(s, e), r = o ? i[s][e] : 0, c = I.x + g(e, b, D, E) * I.w, l = P.fraction(n), u = P.fraction(r), d = Number.isFinite(u) ? u : r <= P.min ? 0 : 1, f = Number.isFinite(l) && l >= 0 && l <= 1, m = Number.isFinite(l) ? Math.max(0, Math.min(1, l)) : n <= P.min ? 0 : 1, h = I.y + I.h - m * I.h, _ = I.y + I.h - Math.max(0, Math.min(1, d)) * I.h;
-				C.push(t.chartType.toLowerCase().includes("area") || f ? p.project(c, h, x) : null), w.push(p.project(c, _, x)), k.push(f ? p.cameraDepth(c, h, x) : null), j.push(p.cameraDepth(c, _, x)), M.push(n), N.push(c), F.push(h), U.push(_), W.push(l), G.push(d);
+				let n = c ? o[s][e] : T(s, e), i = c ? r[s][e] : 0, a = H.x + S(e, _, b, y) * H.w, l = L.fraction(n), u = L.fraction(i), d = Number.isFinite(u) ? u : i <= L.min ? 0 : 1, f = Number.isFinite(l) && l >= 0 && l <= 1, p = Number.isFinite(l) ? Math.max(0, Math.min(1, l)) : n <= L.min ? 0 : 1, h = H.y + H.h - p * H.h, g = H.y + H.h - Math.max(0, Math.min(1, d)) * H.h;
+				j.push(t.chartType.toLowerCase().includes("area") || f ? m.project(a, h, A) : null), N.push(m.project(a, g, A)), F.push(f ? m.cameraDepth(a, h, A) : null), I.push(m.cameraDepth(a, g, A)), R.push(n), z.push(a), ne.push(h), re.push(g), K.push(l), q.push(d);
 			}
-			let K = [], q = null;
-			for (let e = 0; e < C.length; e++) {
-				let t = C[e], n = w[e];
+			let ie = [], J = null;
+			for (let e = 0; e < j.length; e++) {
+				let t = j[e], n = N[e];
 				if (!t || !n) {
-					O === "gap" && (q && K.push(q), q = null);
+					x === "gap" && (J && ie.push(J), J = null);
 					continue;
 				}
-				q ??= {
+				J ??= {
 					upper: [],
 					lower: [],
 					upperDepths: [],
@@ -1866,369 +2222,453 @@ function et(e, t, n, r) {
 					lowerYs: [],
 					upperFractions: [],
 					lowerFractions: []
-				}, q.upper.push(t), q.lower.push(n), q.upperDepths.push(k[e] ?? 0), q.lowerDepths.push(j[e] ?? 0), q.indices.push(e), q.sceneXs.push(N[e] ?? 0), q.upperYs.push(F[e] ?? 0), q.lowerYs.push(U[e] ?? 0), q.upperFractions.push(W[e] ?? 0), q.lowerFractions.push(G[e] ?? 0);
+				}, J.upper.push(t), J.lower.push(n), J.upperDepths.push(F[e] ?? 0), J.lowerDepths.push(I[e] ?? 0), J.indices.push(e), J.sceneXs.push(z[e] ?? 0), J.upperYs.push(ne[e] ?? 0), J.lowerYs.push(re[e] ?? 0), J.upperFractions.push(K[e] ?? 0), J.lowerFractions.push(q[e] ?? 0);
 			}
-			q && K.push(q);
-			let te = [];
-			if (t.chartType.toLowerCase().includes("area")) for (let t of K) {
-				let n = null;
-				for (let r = 0; r + 1 < t.upper.length; r++) {
-					let i = B(t.lowerFractions[r], t.lowerFractions[r + 1], t.upperFractions[r], t.upperFractions[r + 1]);
-					for (let a = 0; a < i.length; a++) {
-						let o = i[a], s = t.sceneXs[r] + (t.sceneXs[r + 1] - t.sceneXs[r]) * o.startT, c = t.sceneXs[r] + (t.sceneXs[r + 1] - t.sceneXs[r]) * o.endT, u = I.y + I.h - o.lowerStart * I.h, h = I.y + I.h - o.lowerEnd * I.h, g = I.y + I.h - o.upperStart * I.h, _ = I.y + I.h - o.upperEnd * I.h, v = {
-							...p.project(s, g, x),
-							cameraDepth: p.cameraDepth(s, g, x),
-							cameraWeight: p.cameraProjectionWeight(s, g, x)
-						}, y = {
-							...p.project(c, _, x),
-							cameraDepth: p.cameraDepth(c, _, x),
-							cameraWeight: p.cameraProjectionWeight(c, _, x)
-						};
-						n != null && Math.hypot(n.at(-1).x - v.x, n.at(-1).y - v.y) <= 1e-8 ? n.push(y) : (n && n.length >= 2 && te.push(n), n = [v, y]);
-						let b = Te(p, s, c, u, h, g, _, m.near, m.far, f, r === 0 && a === 0 && o.startT === 0, r + 2 === t.upper.length && a + 1 === i.length && o.endT === 1);
-						for (let t of b) {
-							if (l.length >= 1e4) {
-								d = !0;
-								break;
+			J && ie.push(J);
+			let Y = [], ae = [];
+			if (t.chartType.toLowerCase().includes("area")) {
+				for (let t of ie) {
+					let n = null;
+					for (let r = 0; r + 1 < t.upper.length; r++) {
+						let i = Oe(t.lowerFractions[r], t.lowerFractions[r + 1], t.upperFractions[r], t.upperFractions[r + 1]);
+						for (let a = 0; a < i.length; a++) {
+							let o = i[a], s = t.sceneXs[r] + (t.sceneXs[r + 1] - t.sceneXs[r]) * o.startT, c = t.sceneXs[r] + (t.sceneXs[r + 1] - t.sceneXs[r]) * o.endT, l = H.y + H.h - o.lowerStart * H.h, u = H.y + H.h - o.lowerEnd * H.h, f = H.y + H.h - o.upperStart * H.h, h = H.y + H.h - o.upperEnd * H.h, g = {
+								...m.project(s, f, A),
+								cameraDepth: m.cameraDepth(s, f, A),
+								cameraWeight: m.cameraProjectionWeight(s, f, A)
+							}, _ = {
+								...m.project(c, h, A),
+								cameraDepth: m.cameraDepth(c, h, A),
+								cameraWeight: m.cameraProjectionWeight(c, h, A)
+							};
+							n != null && Math.hypot(n.at(-1).x - g.x, n.at(-1).y - g.y) <= 1e-8 ? n.push(_) : (n && n.length >= 2 && Y.push(n), n = [g, _]);
+							let y = vt(m, s, c, l, u, f, h, C.near, C.far, v, r === 0 && a === 0 && o.startT === 0, r + 2 === t.upper.length && a + 1 === i.length && o.endT === 1);
+							for (let t of y) {
+								if (d.length >= 1e4) {
+									p = !0;
+									break;
+								}
+								d.push({
+									points: t.points,
+									cameraDepth: t.cameraDepth,
+									cameraDepths: t.cameraDepths,
+									cameraWeights: t.cameraWeights,
+									layer: 0,
+									paint: () => St(e, t)
+								}), ae.push(t);
 							}
-							l.push({
-								points: t.points,
-								cameraDepth: t.cameraDepth,
-								cameraDepths: t.cameraDepths,
-								cameraWeights: t.cameraWeights,
-								layer: 0,
-								paint: () => ke(e, t)
-							});
+							if (p) break;
 						}
-						if (d) break;
+						if (p) break;
 					}
-					if (d) break;
+					if (n && n.length >= 2 && Y.push(n), p) break;
 				}
-				if (n && n.length >= 2 && te.push(n), d) break;
+				Ct(e, ae, "fill", g.fill, a);
 			}
-			let ne = [];
+			let oe = [];
 			if (!t.chartType.toLowerCase().includes("area")) {
 				let e = [], t = null;
-				for (let n = 0; n < b; n++) {
-					let r = M[n], i = r == null ? NaN : P.fraction(r);
+				for (let n = 0; n < _; n++) {
+					let r = R[n], i = r == null ? NaN : L.fraction(r);
 					if (r == null || !Number.isFinite(i)) {
-						O === "gap" && t && (e.push(t), t = null);
+						x === "gap" && t && (e.push(t), t = null);
 						continue;
 					}
 					t ??= [], t.push({
-						x: I.x + g(n, b, D, E) * I.w,
-						fraction: i
+						x: H.x + S(n, _, b, y) * H.w,
+						fraction: i,
+						ownerIndex: n
 					});
 				}
 				t && e.push(t);
 				let n = (e) => {
-					let t = Math.max(0, Math.min(1, e.fraction)), n = I.y + I.h - t * I.h;
+					let t = Math.max(0, Math.min(1, e.fraction)), n = H.y + H.h - t * H.h;
 					return {
-						...p.project(e.x, n, x),
-						cameraDepth: p.cameraDepth(e.x, n, x),
-						cameraWeight: p.cameraProjectionWeight(e.x, n, x)
+						...m.project(e.x, n, A),
+						cameraDepth: m.cameraDepth(e.x, n, A),
+						cameraWeight: m.cameraProjectionWeight(e.x, n, A)
 					};
 				}, r = (e) => {
-					e && e.path.length >= 2 && ne.push(e);
+					e && e.path.length >= 2 && oe.push(e);
 				};
 				for (let t of e) {
 					if (t.length < 2) continue;
 					let e = [t[0]];
 					for (let n = 0; n + 1 < t.length; n++) {
 						let r = t[n - 1] ?? t[n], i = t[n], a = t[n + 1], o = t[n + 2] ?? a;
-						if (c.smooth !== !0 || t.length < 3) {
+						if (l.smooth !== !0 || t.length < 3) {
 							e.push(a);
 							continue;
 						}
 						let s = {
 							x: i.x + (a.x - r.x) / 6,
 							fraction: i.fraction + (a.fraction - r.fraction) / 6
-						}, l = {
+						}, c = {
 							x: a.x - (o.x - i.x) / 6,
 							fraction: a.fraction - (o.fraction - i.fraction) / 6
 						};
 						for (let t = 1; t <= 12; t++) {
 							let n = t / 12, r = 1 - n;
 							e.push({
-								x: r * r * r * i.x + 3 * r * r * n * s.x + 3 * r * n * n * l.x + n * n * n * a.x,
-								fraction: r * r * r * i.fraction + 3 * r * r * n * s.fraction + 3 * r * n * n * l.fraction + n * n * n * a.fraction
+								x: r * r * r * i.x + 3 * r * r * n * s.x + 3 * r * n * n * c.x + n * n * n * a.x,
+								fraction: r * r * r * i.fraction + 3 * r * r * n * s.fraction + 3 * r * n * n * c.fraction + n * n * n * a.fraction,
+								ownerIndex: a.ownerIndex
 							});
 						}
 					}
 					let i = null, a = 0;
 					for (let t = 0; t + 1 < e.length; t++) {
-						let o = e[t], s = e[t + 1], c = (e) => p.project(e.x, I.y + I.h - e.fraction * I.h, x), l = c(o), u = c(s), d = Math.hypot(u.x - l.x, u.y - l.y), f = Number.isFinite(d) ? d : Math.hypot(s.x - o.x, (s.fraction - o.fraction) * I.h), m = z(o.fraction, s.fraction);
-						if (!m || m.endT - m.startT <= 1e-12) {
+						let o = e[t], s = e[t + 1], c = (e) => m.project(e.x, H.y + H.h - e.fraction * H.h, A), l = c(o), u = c(s), d = Math.hypot(u.x - l.x, u.y - l.y), f = Number.isFinite(d) ? d : Math.hypot(s.x - o.x, (s.fraction - o.fraction) * H.h), p = De(o.fraction, s.fraction);
+						if (!p || p.endT - p.startT <= 1e-12) {
 							r(i), i = null, a += f;
 							continue;
 						}
 						let h = (e) => ({
 							x: o.x + (s.x - o.x) * e,
-							fraction: o.fraction + (s.fraction - o.fraction) * e
-						}), g = c(h(m.startT)), _ = Math.hypot(g.x - l.x, g.y - l.y), v = n(h(m.startT)), y = n(h(m.endT));
-						i != null && Math.hypot(i.path.at(-1).x - v.x, i.path.at(-1).y - v.y) <= 1e-8 ? (i.path.push(y), i.endClipped = t + 1 < e.length - 1 || m.endT < 1) : (r(i), i = {
+							fraction: o.fraction + (s.fraction - o.fraction) * e,
+							ownerIndex: s.ownerIndex
+						}), g = c(h(p.startT)), _ = Math.hypot(g.x - l.x, g.y - l.y), v = n(h(p.startT)), y = n(h(p.endT)), b = h(p.startT), x = h(p.endT), S = (e) => ({
+							x: e.x,
+							y: H.y + H.h - Math.max(0, Math.min(1, e.fraction)) * H.h
+						});
+						i != null && Math.hypot(i.path.at(-1).x - v.x, i.path.at(-1).y - v.y) <= 1e-8 && i.ownerIndex === s.ownerIndex ? (i.path.push(y), i.modelPath.push(S(x)), i.endClipped = t + 1 < e.length - 1 || p.endT < 1) : (r(i), i = {
 							path: [v, y],
-							startClipped: t > 0 || m.startT > 0,
-							endClipped: t + 1 < e.length - 1 || m.endT < 1,
-							dashOffset: a + (Number.isFinite(_) ? _ : f * m.startT)
+							modelPath: [S(b), S(x)],
+							ownerIndex: s.ownerIndex,
+							startClipped: t > 0 || p.startT > 0,
+							endClipped: t + 1 < e.length - 1 || p.endT < 1,
+							dashOffset: a + (Number.isFinite(_) ? _ : f * p.startT)
 						}), a += f;
 					}
 					r(i);
 				}
 			}
-			let J = t.chartType.toLowerCase().includes("area"), re = c.lineHidden != null || c.lineColor != null || c.lineWidthEmu != null || c.chartexStyle?.lineHidden != null || c.chartexStyle?.lineColors?.some(Boolean) || c.chartexStyle?.lineWidthEmu != null || c.chartexStyle?.lineDash != null || c.chartexStyle?.lineCap != null || c.chartexStyle?.lineJoin != null;
-			if (c.lineHidden !== !0 && (!J || re)) {
-				let t = c.lineColor ? `#${c.lineColor}` : T(f, .7), n = c.lineWidthEmu ? Math.max(.5, c.lineWidthEmu / S) * r : J ? .75 * r : Math.max(1, 2 * r), i = y(c.chartexStyle?.lineDash ?? "solid", n), a = c.chartexStyle?.lineCap === "rnd" ? "round" : c.chartexStyle?.lineCap === "sq" ? "square" : "butt", o = c.chartexStyle?.lineJoin === "round" || c.chartexStyle?.lineJoin === "bevel" ? c.chartexStyle.lineJoin : "miter", s = (r, s, c = s, u = 0) => {
-					let f = se(r, {
-						width: n,
-						dash: i,
-						dashOffset: u,
-						lineCap: a,
-						startCap: s,
-						endCap: c,
-						lineJoin: o
-					});
-					if (f == null) {
-						d = !0;
+			let se = t.chartType.toLowerCase().includes("area"), ce = l.lineHidden != null || l.lineColor != null || l.lineWidthEmu != null || l.chartexStyle?.lineHidden != null || l.chartexStyle?.lineColors?.some(Boolean) || l.chartexStyle?.lineWidthEmu != null || l.chartexStyle?.lineDash != null || l.chartexStyle?.lineCap != null || l.chartexStyle?.lineJoin != null || g.lineColor != null || g.lineFill !== void 0;
+			if (!se || g.lineFill !== null && ce) {
+				let n = /* @__PURE__ */ new Map(), r = (e) => {
+					let r = W[s].get(e);
+					if (!ft(r)) return g;
+					let i = n.get(e);
+					return i || (i = dt(t, l, r, e, s), n.set(e, i)), i;
+				}, o = /* @__PURE__ */ new Map(), c = {
+					remaining: Fe,
+					exceeded: !1
+				}, u = (t, n, r, a = r, s = 0, l) => {
+					if (n.lineFill === null) return;
+					let u = n === g ? v : n.color, f = n.lineColor ?? X(u, .7), h = n.lineWidthEmu ? Math.max(.5, n.lineWidthEmu / B) * i : se ? .75 * i : Math.max(1, 2 * i), _ = {
+						width: h,
+						dash: k(n.lineCustomDash, n.lineDash, h),
+						dashOffset: s,
+						lineCap: n.lineCap,
+						startCap: r,
+						endCap: a,
+						lineJoin: n.lineJoin
+					};
+					if (!se && l && l.length >= 2) {
+						let t = Ue(l.map((e) => ({
+							...e,
+							cameraDepth: 0,
+							cameraWeight: 1
+						})), _);
+						if (t == null) {
+							p = !0;
+							return;
+						}
+						let r = o.get(n) ?? [];
+						for (let n of t) {
+							let t = Te({
+								outline: n.points,
+								nearDepth: C.near,
+								farDepth: C.far
+							});
+							if (!t) continue;
+							let i = bt(m, t, f, void 0, c).map((e) => ({
+								...e,
+								paintRole: "outline"
+							}));
+							if (c.exceeded) {
+								p = !0;
+								return;
+							}
+							r.push(...i);
+							for (let t of i) d.push({
+								points: t.points,
+								cameraDepth: t.cameraDepth,
+								cameraDepths: t.cameraDepths,
+								cameraWeights: t.cameraWeights,
+								layer: 1,
+								paint: () => St(e, t)
+							});
+						}
+						o.set(n, r);
 						return;
 					}
-					if (l.length + f.length > 1e4) {
-						d = !0;
+					let y = Ue(t, _);
+					if (y == null) {
+						p = !0;
 						return;
 					}
-					for (let n of f) l.push({
-						points: n.points,
-						cameraDepth: n.cameraDepth,
-						cameraDepths: n.cameraDepths,
-						cameraWeights: n.cameraWeights,
-						layer: 1,
-						paint: () => Ae(e, n, t)
-					});
+					if (d.length + y.length > 1e4) {
+						p = !0;
+						return;
+					}
+					for (let t of y) {
+						let r = {
+							points: t.points,
+							color: f,
+							paintRole: "outline",
+							shade: 0,
+							cameraDepth: t.cameraDepth,
+							cameraDepths: t.cameraDepths,
+							cameraWeights: t.cameraWeights,
+							outline: !1
+						}, i = o.get(n) ?? [];
+						i.push(r), o.set(n, i), d.push({
+							points: t.points,
+							cameraDepth: t.cameraDepth,
+							cameraDepths: t.cameraDepths,
+							cameraWeights: t.cameraWeights,
+							layer: 1,
+							paint: () => St(e, r)
+						});
+					}
 				};
-				if (J) for (let e of te) s(e, a);
-				else for (let e of ne) s(e.path, e.startClipped ? "butt" : a, e.endClipped ? "butt" : a, e.dashOffset);
+				if (se) for (let e of Y) u(e, g, g.lineCap);
+				else for (let e of oe) {
+					let t = r(e.ownerIndex);
+					u(e.path, t, e.startClipped ? "butt" : t.lineCap, e.endClipped ? "butt" : t.lineCap, e.dashOffset, e.modelPath);
+				}
+				for (let [t, n] of o) Ct(e, n, "outline", t.lineFill, a);
 			}
-			let Y = c.dataPointOverrides?.some((e) => e.markerSymbol != null && e.markerSymbol !== "none") === !0;
-			if (t.chartType.toLowerCase().includes("line") && (c.showMarker === !0 || Y)) for (let t = 0; t < C.length; t++) {
-				let n = C[t];
+			let le = (se ? l.showMarker === !0 || M(l) : l.showMarker === !0) && l.markerSymbol !== "none";
+			if ((t.chartType.toLowerCase().includes("line") || se) && (le || O(l))) for (let t = 0; t < j.length; t++) {
+				let n = j[t];
 				if (!n) continue;
-				let i = V[s].get(t), a = i?.markerSymbol ?? (c.showMarker === !0 ? c.markerSymbol ?? "circle" : "none");
-				if (a === "none") continue;
-				let o = i?.markerSize ?? c.markerSize ?? 5, l = i?.markerFill ?? c.markerFill ?? c.color ?? X[s % X.length], d = i?.markerLine ?? c.markerLine ?? c.lineColor ?? c.color ?? X[s % X.length], f = (i?.markerLineWidthEmu ?? c.markerLineWidthEmu) == null ? Math.max(.75, c.lineWidthEmu == null ? r : c.lineWidthEmu / S * r) : Math.max(.25, (i?.markerLineWidthEmu ?? c.markerLineWidthEmu ?? 0) / S * r);
-				u.push(() => Pe(e, n, a, Math.max(2, o) * r, l === "00000000" ? "transparent" : `#${l}`, `#${d}`, f));
+				let r = W[s].get(t), o = P(l, r, "circle", le);
+				if (o === "none") continue;
+				let c = r?.markerSize ?? l.markerSize ?? 5, u = ee(l, r, t, l.color ?? $e[s % $e.length]), d = V(l, r, t), p = r?.markerLine ?? l.markerLine ?? l.lineColor ?? l.color ?? $e[s % $e.length], m = (r?.markerLineWidthEmu ?? l.markerLineWidthEmu) == null ? Math.max(.75, l.lineWidthEmu == null ? i : l.lineWidthEmu / B * i) : Math.max(.25, (r?.markerLineWidthEmu ?? l.markerLineWidthEmu ?? 0) / B * i);
+				f.push(() => Dt(e, n, o, Math.max(2, c) * i, u === "00000000" ? "transparent" : `#${u}`, `#${p}`, m, d, a, i));
 			}
-			for (let i = 0; i < C.length; i++) {
-				let a = C[i];
-				if (!a) continue;
-				let o = A(s, i), l = V[s].get(i), u = l?.markerSize ?? c.markerSize ?? 5, d = H[s].get(i);
-				Ie(t, c, d) && R.push(() => Fe(e, t, c, s, i, _ ? o / 100 : o, a, n, r, c.showMarker === !0 || l?.markerSymbol != null ? u * r / 2 : 0, void 0, d, "t", a, !0, t.valAxisDisplayUnits));
+			for (let r = 0; r < j.length; r++) {
+				let u = j[r];
+				if (!u) continue;
+				let d = T(s, r), f = W[s].get(r), p = f?.markerSize ?? l.markerSize ?? 5, m = G[s].get(r);
+				kt(t, l, m) && te.push(() => Ot(e, t, l, s, r, h ? d / 100 : d, u, n, i, l.showMarker === !0 || f?.markerSymbol != null ? p * i / 2 : 0, void 0, m, "t", u, !0, t.valAxisDisplayUnits, L.max, c ? o[s][r] : d, a));
 			}
 		}
-		if (d) return je(e, n), !0;
-		for (let e of K(l)) e.paint();
-		for (let e of u) e();
+		if (p) return wt(e, n), !0;
+		for (let e of Pe(d)) e.paint();
+		for (let e of f) e();
 	}
-	Ke(e, t, p, P, b, D, E, r, a ? "horizontal" : "vertical"), $e(e, t, p, P, b, D, E, a ? "horizontal" : "vertical", r), Be(e, t, n, p, P, b, D, E, a ? "horizontal" : "vertical", r);
-	let U = Qe(t, p, P, b, D, E, a ? "horizontal" : "vertical"), W = (e, t) => {
-		if (t !== "low" && t !== "high") return U;
-		let n = p.topology.nearDepth, r = U.axisX, i = U.axisY;
-		if (e === "value" === a) {
-			let e = I.y, r = I.y + I.h, a = p.project(I.x + I.w / 2, e, n), o = p.project(I.x + I.w / 2, r, n), s = a.y >= o.y ? e : r;
+	Wt(e, t, m, L, _, b, y, i, s ? "horizontal" : "vertical"), Zt(e, t, m, L, _, b, y, s ? "horizontal" : "vertical", o, i), Nt(e, t, n, m, L, _, b, y, s ? "horizontal" : "vertical", o, i);
+	let ne = Xt(t, m, L, _, b, y, s ? "horizontal" : "vertical"), re = (e, t) => {
+		if (t !== "low" && t !== "high") return ne;
+		let n = m.topology.nearDepth, r = ne.axisX, i = ne.axisY;
+		if (e === "value" === s) {
+			let e = H.y, r = H.y + H.h, a = m.project(H.x + H.w / 2, e, n), o = m.project(H.x + H.w / 2, r, n), s = a.y >= o.y ? e : r;
 			i = t === "low" ? s : s === e ? r : e;
 		} else {
-			let e = I.x, i = I.x + I.w, a = p.project(e, I.y + I.h / 2, n), o = p.project(i, I.y + I.h / 2, n), s = a.x <= o.x ? e : i;
+			let e = H.x, i = H.x + H.w, a = m.project(e, H.y + H.h / 2, n), o = m.project(i, H.y + H.h / 2, n), s = a.x <= o.x ? e : i;
 			r = t === "low" ? s : s === e ? i : e;
 		}
 		return {
 			axisX: r,
 			axisY: i,
 			depth: n,
-			horizontalStart: p.project(I.x, i, n),
-			horizontalEnd: p.project(I.x + I.w, i, n),
-			verticalStart: p.project(r, I.y + I.h, n),
-			verticalEnd: p.project(r, I.y, n)
+			horizontalStart: m.project(H.x, i, n),
+			horizontalEnd: m.project(H.x + H.w, i, n),
+			verticalStart: m.project(r, H.y + H.h, n),
+			verticalEnd: m.project(r, H.y, n)
 		};
-	}, G = W("value", t.valAxisTickLabelPos), q = W("category", t.catAxisTickLabelPos), ne = f(t.valAxisFontSizeHpt, r) ?? 9 * r;
-	if (e.font = `${t.valAxisFontItalic ? "italic " : ""}${t.valAxisFontBold ? "bold " : ""}${ne}px ${xe(t.valAxisFontFace)}`, e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#595959", e.textAlign = a ? "center" : "right", e.textBaseline = a ? "top" : "middle", !t.valAxisHidden && t.valAxisTickLabelPos !== "none") {
-		let { axisX: n, axisY: i, depth: o } = G, s = p.project(I.x + I.w / 2, I.y + I.h / 2, o), l = qe(a ? G.horizontalStart : G.verticalStart, a ? G.horizontalEnd : G.verticalEnd, s, a ? "vertical" : "horizontal");
-		e.textAlign = Math.abs(l.x) < .2 ? "center" : l.x < 0 ? "right" : "left", e.textBaseline = Math.abs(l.y) < .2 ? "middle" : l.y < 0 ? "bottom" : "top";
-		let u = Ze(t.valAxisMajorTickMark, t.valAxisLineHidden, r, 5), d = t.valAxisDisplayUnits?.divisor;
-		for (let r of P.majorTicks) {
-			let s = a ? p.project(I.x + P.fraction(r) * I.w, i, o) : p.project(n, I.y + I.h - P.fraction(r) * I.h, o);
-			e.fillText(c(_ ? r / 100 : d != null && Number.isFinite(d) && d > 0 ? r / d : r, _ ? t.valAxisFormatCode ?? "0%" : t.valAxisFormatCode, t.date1904), s.x + l.x * u, s.y + l.y * u);
+	}, K = re("value", t.valAxisTickLabelPos), q = re("category", t.catAxisTickLabelPos), ie = r(t.valAxisFontSizeHpt, i) ?? 9 * i;
+	if (e.font = `${t.valAxisFontItalic ? "italic " : ""}${t.valAxisFontBold ? "bold " : ""}${ie}px ${mt(t.valAxisFontFace)}`, e.fillStyle = t.valAxisFontColor ? `#${t.valAxisFontColor}` : "#595959", e.textAlign = s ? "center" : "right", e.textBaseline = s ? "top" : "middle", !t.valAxisHidden && t.valAxisTickLabelPos !== "none") {
+		let { axisX: n, axisY: r, depth: a } = K, o = m.project(H.x + H.w / 2, H.y + H.h / 2, a), c = Gt(s ? K.horizontalStart : K.verticalStart, s ? K.horizontalEnd : K.verticalEnd, o, s ? "vertical" : "horizontal");
+		e.textAlign = Math.abs(c.x) < .2 ? "center" : c.x < 0 ? "right" : "left", e.textBaseline = Math.abs(c.y) < .2 ? "middle" : c.y < 0 ? "bottom" : "top";
+		let l = Yt(t.valAxisMajorTickMark, t.valAxisLineHidden, i, 5), u = t.valAxisDisplayUnits?.divisor;
+		for (let i of L.majorTicks) {
+			let o = s ? m.project(H.x + L.fraction(i) * H.w, r, a) : m.project(n, H.y + H.h - L.fraction(i) * H.h, a);
+			e.fillText(E(h ? i / 100 : u != null && Number.isFinite(u) && u > 0 ? i / u : i, h ? t.valAxisFormatCode ?? "0%" : t.valAxisFormatCode, t.date1904), o.x + c.x * l, o.y + c.y * l);
 		}
 	}
-	let J = f(t.catAxisFontSizeHpt, r) ?? 9 * r;
-	if (e.font = `${t.catAxisFontItalic ? "italic " : ""}${t.catAxisFontBold ? "bold " : ""}${J}px ${xe(t.catAxisFontFace)}`, e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", !t.catAxisHidden && t.catAxisTickLabelPos !== "none") {
-		let n = Ze(t.catAxisMajorTickMark, t.catAxisLineHidden, r, 6), i = Array.from({ length: b }, (e, n) => l(String(v[n] ?? n + 1), t.catAxisFormatCode, t.date1904)), o = Me(t);
-		if (o == null && (o = 0, !a && b > 1)) {
-			let t = Infinity, n = null, r = q.axisY;
-			for (let e = 0; e < b; e++) {
-				let i = g(e, b, D, E), a = p.project(I.x + i * I.w, r, p.topology.nearDepth);
+	let J = r(t.catAxisFontSizeHpt, i) ?? 9 * i;
+	if (e.font = `${t.catAxisFontItalic ? "italic " : ""}${t.catAxisFontBold ? "bold " : ""}${J}px ${mt(t.catAxisFontFace)}`, e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", !t.catAxisHidden && t.catAxisTickLabelPos !== "none") {
+		let n = f(Yt(t.catAxisMajorTickMark, t.catAxisLineHidden, i, 6), t.catAxisLabelOffsetPercent), r = Array.from({ length: _ }, (e, n) => z(String(g[n] ?? n + 1), t.catAxisFormatCode, t.date1904)), a = Tt(t);
+		if (a == null && (a = 0, !s && _ > 1)) {
+			let t = Infinity, n = null, i = q.axisY;
+			for (let e = 0; e < _; e++) {
+				let r = S(e, _, b, y), a = m.project(H.x + r * H.w, i, m.topology.nearDepth);
 				n && (t = Math.min(t, Math.hypot(a.x - n.x, a.y - n.y))), n = a;
 			}
-			Math.max(0, ...i.map((t) => e.measureText(t).width)) > t * .9 && (o = -Math.PI / 4);
+			Math.max(0, ...r.map((t) => e.measureText(t).width)) > t * .9 && (a = -Math.PI / 4);
 		}
-		let s = Math.max(1, Math.floor(t.catAxisTickLabelSkip ?? 1));
-		for (let t = 0; t < b; t += s) {
-			let r = g(t, b, D, E), { axisX: s, axisY: c, depth: l } = q, u = a ? p.project(s, I.y + g(t, b, D, E) * I.h, l) : p.project(I.x + r * I.w, c, l);
-			if (a) {
-				let r = p.project(s, I.y + I.h / 2, l), a = p.project(I.x + I.w / 2, I.y + I.h / 2, l), o = r.x <= a.x;
-				e.textAlign = o ? "right" : "left", e.textBaseline = "middle", e.fillText(i[t], u.x + (o ? -n : n), u.y);
+		let o = Math.max(1, Math.floor(t.catAxisTickLabelSkip ?? 1));
+		for (let t = 0; t < _; t += o) {
+			let i = S(t, _, b, y), { axisX: o, axisY: c, depth: l } = q, u = s ? m.project(o, H.y + S(t, _, b, y) * H.h, l) : m.project(H.x + i * H.w, c, l);
+			if (s) {
+				let i = m.project(o, H.y + H.h / 2, l), a = m.project(H.x + H.w / 2, H.y + H.h / 2, l), s = i.x <= a.x;
+				e.textAlign = s ? "right" : "left", e.textBaseline = "middle", e.fillText(r[t], u.x + (s ? -n : n), u.y);
 			} else {
-				let r = p.project(I.x + I.w / 2, I.y + I.h / 2, l), s = qe(q.horizontalStart, q.horizontalEnd, r, "vertical");
-				Ne(e, i[t], u, o, a, s.y < 0 ? -1 : 1, n);
+				let i = m.project(H.x + H.w / 2, H.y + H.h / 2, l), o = Gt(q.horizontalStart, q.horizontalEnd, i, "vertical");
+				Et(e, r[t], u, a, s, o.y < 0 ? -1 : 1, n);
 			}
 		}
 	}
-	ze(e, t, n, u, a, r);
-	for (let e of R) e();
-	return Ve(e, t, d, r), !0;
+	Mt(e, t, n, u, s, i);
+	for (let e of te) e();
+	return Ft(e, t, d, i, !1, p, a), !0;
 }
-function tt(e, t, n, r) {
+function $t(e, t, n, i, a) {
 	if (!t.threeD || t.chartType !== "pie") return !1;
-	let i = t.series[0];
-	if (!i) return !0;
-	let a = i.values.flatMap((e, t) => e != null && Number.isFinite(e) ? [{
+	let o = t.series[0];
+	if (!o) return !0;
+	let s = o.values.flatMap((e, t) => e != null && Number.isFinite(e) ? [{
 		index: t,
 		value: Math.abs(e)
-	}] : []), o = 0;
-	for (let e of a) o = Math.max(o, e.value);
-	if (!(o > 0)) return !0;
-	let s = a.reduce((e, t) => e + t.value / o, 0);
-	if (!(s > 0) || !Number.isFinite(s)) return !0;
-	let { plot: c, legend: l } = Le(e, t, n, r, "radial"), u = C({
+	}] : []), c = 0;
+	for (let e of s) c = Math.max(c, e.value);
+	if (!(c > 0)) return !0;
+	let l = s.reduce((e, t) => e + t.value / c, 0);
+	if (!(l > 0) || !Number.isFinite(l)) return !0;
+	let { plot: u, legend: d, legendMeasure: f } = At(e, t, n, i, "radial", a), p = ce({
 		...t.threeD,
 		rotationY: t.threeD.rotationY ?? 0,
+		heightPercent: void 0,
 		depthPercent: 100
-	}, c, {
+	}, u, {
 		sceneDepthScale: 1,
 		sceneHeightScale: .15
 	});
-	if (!u) return !0;
-	let d = new Map(i.dataPointOverrides?.map((e) => [e.idx, e]) ?? []), p = 0;
-	for (let e of d.values()) e.explosion != null && Number.isFinite(e.explosion) && (p = Math.max(p, Math.max(0, Math.min(100, e.explosion)) / 100));
-	let { scene: m } = u, h = Math.min(m.w * .45 / (1 + p), u.modelDepth * .45 / (1 + p), m.h / .45);
-	if (!(h > 0)) return !0;
-	let g = m.x + m.w / 2, _ = m.y + m.h / 2, v = .5, b = h * .3, x = 0, w = [], D = new Map(i.dataLabelOverrides?.map((e) => [e.idx, e]) ?? []), O = Math.max(48, Math.min(128, Math.ceil(Math.PI * 2 * h / 4)));
-	for (let e of a) {
-		let n = e.value / o / s, r = Ue(t.firstSliceAngle, x, n), a = d.get(e.index), c = a?.fillHidden === !0 ? "00000000" : a?.color ?? i.dataPointColors?.[e.index] ?? i.color, l = r.middle, f = a?.explosion != null && Number.isFinite(a.explosion) ? Math.max(0, Math.min(100, a.explosion)) / 100 : 0, p = g + Math.cos(l) * h * f, m = v + Math.sin(l) * h * f / u.modelDepth, y = Math.max(2, Math.ceil(O * n)), S = R({
-			centerX: p,
-			centerY: _,
-			centerDepth: m,
-			radius: h,
-			modelDepth: u.modelDepth,
-			thickness: b,
+	if (!p) return !0;
+	let m = new Map(o.dataPointOverrides?.map((e) => [e.idx, e]) ?? []), h = 0;
+	for (let e of m.values()) e.explosion != null && Number.isFinite(e.explosion) && (h = Math.max(h, Math.max(0, Math.min(100, e.explosion)) / 100));
+	let { scene: g } = p, _ = Math.min(g.w * .45 / (1 + h), p.modelDepth * .45 / (1 + h), g.h / .45);
+	if (!(_ > 0)) return !0;
+	let v = g.x + g.w / 2, y = g.y + g.h / 2, b = .5, x = _ * .3 * pe(t.threeD), S = 0, C = [], w = new Map(o.dataLabelOverrides?.map((e) => [e.idx, e]) ?? []), T = Math.max(48, Math.min(128, Math.ceil(Math.PI * 2 * _ / 4)));
+	for (let e of s) {
+		let n = e.value / c / l, r = Lt(t.firstSliceAngle, S, n), i = m.get(e.index), a = dt(t, o, i, e.index, 0), s = r.middle, u = i?.explosion != null && Number.isFinite(i.explosion) ? Math.max(0, Math.min(100, i.explosion)) / 100 : 0, d = v + Math.cos(s) * _ * u, f = b + Math.sin(s) * _ * u / p.modelDepth, h = Math.max(2, Math.ceil(T * n)), g = Ee({
+			centerX: d,
+			centerY: y,
+			centerDepth: f,
+			radius: _,
+			modelDepth: p.modelDepth,
+			thickness: x,
 			startAngle: r.start,
 			endAngle: r.end,
-			segments: y
+			segments: h
 		});
-		if (!S) {
-			x += n;
+		if (!g) {
+			S += n;
 			continue;
 		}
-		w.push({
+		C.push({
 			index: e.index,
 			start: r.start,
 			end: r.end,
-			color: c === "00000000" ? "transparent" : c ? `#${c}` : ve(e.index),
+			color: a.fill === null ? "transparent" : a.color,
+			fillPaint: a.fill,
 			value: e.value,
 			percentValue: n,
-			centerX: p,
-			centerDepth: m,
-			segments: y,
-			mesh: S,
-			lineHidden: a?.lineHidden ?? i.lineHidden ?? !1,
-			lineColor: a?.lineColor ?? i.lineColor ?? null,
-			lineWidthEmu: a?.lineWidthEmu ?? i.lineWidthEmu ?? null,
-			lineDash: a?.lineDash ?? i.chartexStyle?.lineDash ?? "solid",
-			lineCap: i.chartexStyle?.lineCap === "rnd" ? "round" : i.chartexStyle?.lineCap === "sq" ? "square" : "butt",
-			lineJoin: i.chartexStyle?.lineJoin === "round" || i.chartexStyle?.lineJoin === "bevel" ? i.chartexStyle.lineJoin : "miter"
-		}), x += n;
+			centerX: d,
+			centerDepth: f,
+			segments: h,
+			mesh: g,
+			lineColor: a.lineColor,
+			lineFill: a.lineFill,
+			lineWidthEmu: a.lineWidthEmu ?? null,
+			lineDash: a.lineDash ?? "solid",
+			lineCustomDash: a.lineCustomDash,
+			lineCap: a.lineCap,
+			lineJoin: a.lineJoin
+		}), S += n;
 	}
-	u = E(u, w.flatMap((e) => e.mesh.vertices), c, .08);
-	let A = [], j = {
-		remaining: te,
+	p = he(p, C.flatMap((e) => e.mesh.vertices), u, .08);
+	let E = [], D = {
+		remaining: Fe,
 		exceeded: !1
-	}, M = (e) => {
-		let t = e.lineWidthEmu == null ? .75 * r : Math.max(.25, e.lineWidthEmu / S * r);
-		return !e.lineHidden && e.lineColor ? {
-			color: `#${e.lineColor}`,
+	}, O = (e) => {
+		let t = e.lineWidthEmu == null ? .75 * i : Math.max(.25, e.lineWidthEmu / B * i);
+		return e.lineFill !== null && (e.lineColor != null || e.lineFill !== void 0) ? {
+			color: e.lineColor ?? "rgba(0,0,0,0.42)",
 			width: t,
-			dash: y(e.lineDash, t),
+			dash: k(e.lineCustomDash, e.lineDash, t),
 			cap: e.lineCap,
 			join: e.lineJoin
 		} : void 0;
-	}, N = w.flatMap((e) => De(u, e.mesh, e.color, void 0, j)), P = [], F = w.map(M), I = F[0], L = (e) => e == null ? null : [
+	}, A = C.flatMap((t) => {
+		let n = bt(p, t.mesh, t.color, void 0, D);
+		return Ct(e, n, "fill", t.fillPaint, a), n;
+	}), j = [], M = C.map(O), N = M[0], P = (e) => e == null ? null : [
 		e.color,
 		e.width,
 		e.dash.join(","),
 		e.cap,
 		e.join
-	].join("|"), z = I != null && F.every((e) => L(e) === L(I)) && w.every((e) => Math.abs(e.centerX - g) < 1e-9 && Math.abs(e.centerDepth - v) < 1e-9);
-	if (z) P.push(...Oe(u, w, _, h, b, I, j));
-	else for (let e = 0; e < w.length; e++) {
-		let t = F[e];
-		t && P.push(...De(u, w[e].mesh, "transparent", t, j, !0));
+	].join("|"), F = N != null && C.every((e) => e.lineFill === void 0) && M.every((e) => P(e) === P(N)) && C.every((e) => Math.abs(e.centerX - v) < 1e-9 && Math.abs(e.centerDepth - b) < 1e-9);
+	if (F) j.push(...xt(p, C, y, _, x, N, D));
+	else for (let t = 0; t < C.length; t++) {
+		let n = M[t];
+		if (!n) continue;
+		let r = bt(p, C[t].mesh, "transparent", n, D, !0);
+		Ct(e, r, "outline", C[t].lineFill, a), j.push(...r);
 	}
-	if (j.exceeded) return je(e, n), !0;
-	if (z) {
-		for (let t of K(N)) ke(e, t);
-		for (let t of K(P)) ke(e, t);
-	} else for (let t of K([...N, ...P])) ke(e, t);
-	for (let n of w) {
-		let a = (n.start + n.end) / 2, o = D.get(n.index);
-		if (Ie(t, i, o)) {
-			let s = i.seriesDataLabels, l = f(o?.fontSizeHpt ?? s?.fontSizeHpt ?? t.dataLabelFontSizeHpt, r) ?? 9 * r;
-			e.font = `${o?.fontBold ?? s?.fontBold ?? t.dataLabelFontBold ? "bold " : ""}${l}px ${Z(t, o?.fontFace ?? s?.fontFace ?? t.dataLabelFontFace)}`;
-			let d = ee({
-				customText: o?.text,
-				showCategory: o?.showCatName ?? s?.showCatName ?? !1,
-				showSeries: o?.showSerName ?? s?.showSerName ?? !1,
-				showValue: o?.showVal ?? s?.showVal ?? t.showDataLabels,
-				showPercent: o?.showPercent ?? s?.showPercent ?? !1,
-				category: i.categories?.[n.index] ?? t.categories[n.index] ?? `${n.index + 1}`,
-				seriesName: i.name || "Series 1",
+	if (D.exceeded) return wt(e, n), !0;
+	if (F) {
+		for (let t of Pe(A)) St(e, t);
+		for (let t of Pe(j)) St(e, t);
+	} else for (let t of Pe([...A, ...j])) St(e, t);
+	for (let n of C) {
+		let s = (n.start + n.end) / 2, c = w.get(n.index);
+		if (kt(t, o, c)) {
+			let l = o.seriesDataLabels, d = r(c?.fontSizeHpt ?? l?.fontSizeHpt ?? t.dataLabelFontSizeHpt, i) ?? 9 * i;
+			e.font = `${c?.fontBold ?? l?.fontBold ?? t.dataLabelFontBold ? "bold " : ""}${d}px ${$(t, c?.fontFace ?? l?.fontFace ?? t.dataLabelFontFace)}`;
+			let f = ue({
+				customText: c?.text,
+				showCategory: c?.showCatName ?? l?.showCatName ?? !1,
+				showSeries: c?.showSerName ?? l?.showSerName ?? !1,
+				showValue: c?.showVal ?? l?.showVal ?? t.showDataLabels,
+				showPercent: c?.showPercent ?? l?.showPercent ?? !1,
+				category: o.categories?.[n.index] ?? t.categories[n.index] ?? `${n.index + 1}`,
+				seriesName: o.name || "Series 1",
 				sourceValue: n.value,
 				percentRatio: n.percentValue,
-				formatCode: o?.formatCode ?? s?.formatCode ?? t.dataLabelFormatCode ?? i.valFormatCode,
-				separator: o?.separator ?? s?.separator,
+				formatCode: c?.formatCode ?? l?.formatCode ?? t.dataLabelFormatCode ?? o.valFormatCode,
+				separator: c?.separator ?? l?.separator,
 				date1904: t.date1904
-			}), p = Z(t, o?.fontFace ?? s?.fontFace ?? t.dataLabelFontFace), m = o?.text && o.richRuns?.length ? k(e, {
-				runs: o.richRuns,
-				ptToPx: r,
-				fontFamily: p,
-				fallbackBold: o.fontBold ?? s?.fontBold ?? t.dataLabelFontBold ?? !1,
-				fontFamilyForFace: (e) => Z(t, e)
-			}, l, `#${o.fontColor ?? s?.fontColor ?? i.labelColor ?? t.dataLabelFontColor ?? "111111"}`) : null, g = o?.position ?? s?.position ?? t.dataLabelPosition, v = _ - b / 2, y = _ + b / 2, x = u.cameraDepth(n.centerX, v, n.centerDepth) >= u.cameraDepth(n.centerX, y, n.centerDepth) ? v : y, S = 0, C = null;
+			}), m = $(t, c?.fontFace ?? l?.fontFace ?? t.dataLabelFontFace), h = c?.text && c.richRuns?.length ? oe(e, {
+				runs: c.richRuns,
+				ptToPx: i,
+				fontFamily: m,
+				fallbackBold: c.fontBold ?? l?.fontBold ?? t.dataLabelFontBold ?? !1,
+				fontFamilyForFace: (e) => $(t, e)
+			}, d, `#${c.fontColor ?? l?.fontColor ?? o.labelColor ?? t.dataLabelFontColor ?? "111111"}`) : null, g = c?.position ?? l?.position ?? t.dataLabelPosition, v = y - x / 2, b = y + x / 2, S = p.cameraDepth(n.centerX, v, n.centerDepth) >= p.cameraDepth(n.centerX, b, n.centerDepth) ? v : b, C = 0, w = null;
 			for (let e = 0; e <= 12; e++) {
-				let t = n.start + (n.end - n.start) * e / 12, r = u.project(n.centerX + Math.cos(t) * h * .64, x, n.centerDepth + Math.sin(t) * h * .64 / u.modelDepth);
-				C && (S += Math.hypot(r.x - C.x, r.y - C.y)), C = r;
+				let t = n.start + (n.end - n.start) * e / 12, r = p.project(n.centerX + Math.cos(t) * _ * .64, S, n.centerDepth + Math.sin(t) * _ * .64 / p.modelDepth);
+				w && (C += Math.hypot(r.x - w.x, r.y - w.y)), w = r;
 			}
-			let w = (g == null || g === "bestFit") && (n.percentValue === 0 || S < (m?.width ?? e.measureText(d).width)) || g === "outEnd", T = h * (w ? 1.12 : .64), E = u.project(n.centerX + Math.cos(a) * T, x, n.centerDepth + Math.sin(a) * T / u.modelDepth), D = u.project(n.centerX + Math.cos(a) * h, x, n.centerDepth + Math.sin(a) * h / u.modelDepth);
-			A.push(() => Fe(e, t, i, 0, n.index, n.value, E, c, r, 0, n.percentValue, o, "ctr", D, w));
+			let T = (g == null || g === "bestFit") && (n.percentValue === 0 || C < (h?.width ?? e.measureText(f).width)) || g === "outEnd", D = _ * (T ? 1.12 : .64), O = p.project(n.centerX + Math.cos(s) * D, S, n.centerDepth + Math.sin(s) * D / p.modelDepth), k = p.project(n.centerX + Math.cos(s) * _, S, n.centerDepth + Math.sin(s) * _ / p.modelDepth);
+			E.push(() => Ot(e, t, o, 0, n.index, n.value, O, u, i, 0, n.percentValue, c, "ctr", k, T, void 0, void 0, void 0, a));
 		}
 	}
-	for (let e of A) e();
-	let B = i.categories?.length ? i.categories : t.categories, V = Array.from({ length: B.length }, (e, t) => {
-		let n = d.get(t), r = n?.fillHidden === !0 ? "00000000" : n?.color ?? i.dataPointColors?.[t] ?? i.color;
-		return r === "00000000" ? "00000000" : T(r ? `#${r}` : ve(t), .8).replace(/^#/, "");
+	for (let e of E) e();
+	let I = o.categories?.length ? o.categories : t.categories, L = Array.from({ length: I.length }, (e, t) => {
+		let n = m.get(t), r = n?.fillHidden === !0 ? "00000000" : n?.color ?? o.dataPointColors?.[t] ?? o.color;
+		return r === "00000000" ? "00000000" : X(r ? `#${r}` : at(t), .8).replace(/^#/, "");
 	});
-	return Ve(e, {
+	return Ft(e, {
 		...t,
-		categories: B,
+		categories: I,
 		series: [{
-			...i,
-			categories: B,
-			dataPointColors: V
+			...o,
+			categories: I,
+			dataPointColors: L
 		}]
-	}, l, r, !0), !0;
+	}, d, i, !0, f, a), !0;
 }
-function nt(e, t, n, r) {
-	return t.threeD ? tt(e, t, n, r) ? !0 : he.has(t.chartType) ? et(e, t, n, r) : !1 : !1;
+function en(e, t, n, r, i = 0) {
+	return !t.threeD || !(t.chartType === "pie" || nt.has(t.chartType)) ? !1 : lt(t) ? $t(e, t, n, r, i) ? !0 : Qt(e, t, n, r, i) : (wt(e, n), !0);
 }
 //#endregion
 //#region src/three-d.ts
-var rt = A({ render: nt }, "threeD");
+var tn = _e({ render: en }, "threeD");
 //#endregion
-export { rt as threeD };
+export { tn as threeD };

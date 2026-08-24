@@ -1,8 +1,8 @@
-import { $ as e, F as t, I as n, N as r, P as i, Q as a, X as o, Y as s, Z as c, et as l, ln as u, nt as d, ot as f, rt as p, tt as m } from "./line-metrics-DdEJYxjx.js";
-import { n as h, r as g, t as _ } from "./resource-measurement-CgMubiAI.js";
-import { t as v } from "./transfer-CKZ79zFw.js";
+import { $ as e, F as t, I as n, N as r, P as i, Q as a, X as o, Y as s, Yt as c, Z as l, et as u, nt as d, ot as f, rt as p, tt as m } from "./line-metrics-Baz31mML.js";
+import { n as h, r as g, t as _ } from "./resource-measurement-DRLp4nFt.js";
+import { t as v } from "./transfer-D0U6Uhn4.js";
 //#region packages/xlsx/src/worksheet-resource-limits.ts
-var y = d, b = e, x = l, S = m, C = a, w = s, T = o, E = c, D = Object.freeze({
+var y = d, b = e, x = u, S = m, C = a, w = s, T = o, E = l, D = Object.freeze({
 	archiveEntryCount: 0,
 	declaredInflatedBytes: 0,
 	distinctInflatedBytes: 0,
@@ -45,7 +45,7 @@ function j(e, t, n = {}) {
 }
 function M(e, t, n, r, i, a, o) {
 	let s = n === "worksheet-json" ? "serialization" : "parsing";
-	return new u(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
+	return new c(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
 		stage: s,
 		violation: {
 			format: "xlsx",
@@ -172,7 +172,7 @@ var z = 64 * 1024 * 1024, B = class {
 				rows: 0,
 				cells: 0,
 				ownedUtf8Bytes: 0
-			}, c, l = !1, d = new t({
+			}, l, u = !1, d = new t({
 				...r,
 				maxByteCredit: z,
 				coordinator: this.coordinator,
@@ -185,12 +185,12 @@ var z = 64 * 1024 * 1024, B = class {
 								if (n.kind === "rows") {
 									let e = A(s, O(n.rows));
 									N(e, "get-worksheet-worker", void 0, this.readResourceUsage()), o.push(...n.rows), s = e;
-								} else c = n.worksheet;
+								} else l = n.worksheet;
 							} catch (e) {
-								throw e instanceof u && (this.resourceFailure ??= e), e;
+								throw e instanceof c && (this.resourceFailure ??= e), e;
 							}
 						}
-						l = t;
+						u = t;
 						let n = v(e);
 						return {
 							payload: n,
@@ -201,26 +201,26 @@ var z = 64 * 1024 * 1024, B = class {
 					},
 					measureChunk: ({ payload: e }) => e.byteLength,
 					acknowledge: () => {
-						if (!l) return;
+						if (!u) return;
 						let t, n;
 						try {
 							if (this.acceptWorksheet) {
-								if (!c) throw Error("worksheet terminal payload is missing");
-								c.rows = c.parseError ? [] : o;
-								let r = c.parseError ? {
+								if (!l) throw Error("worksheet terminal payload is missing");
+								l.rows = l.parseError ? [] : o;
+								let r = l.parseError ? {
 									rows: 0,
 									cells: 0,
 									ownedUtf8Bytes: 0
-								} : s, i = k(c, r), a = this.readResourceUsage();
+								} : s, i = k(l, r), a = this.readResourceUsage();
 								N(i, "get-worksheet-worker", void 0, a), P(i.jsonBytes, "get-worksheet-worker", void 0, a);
-								let l = this.acceptWorksheet(e, c, i, a);
-								typeof l == "function" ? t = l : l && ({rollback: t, commit: n} = l);
+								let c = this.acceptWorksheet(e, l, i, a);
+								typeof c == "function" ? t = c : c && ({rollback: t, commit: n} = c);
 							}
 							this.executeArchive((e) => e.acknowledge_sheet_cursor_terminal()), n?.();
 						} catch (e) {
-							throw t?.(), e instanceof u && (this.resourceFailure ??= e), e;
+							throw t?.(), e instanceof c && (this.resourceFailure ??= e), e;
 						}
-						l = !1, this.sessions.delete(r.sessionId), a();
+						u = !1, this.sessions.delete(r.sessionId), a();
 					},
 					cancel: () => {
 						try {
@@ -329,7 +329,7 @@ var z = 64 * 1024 * 1024, B = class {
 			if (this.resourceFailure) throw this.resourceFailure;
 			return e();
 		})).catch((e) => {
-			throw e instanceof u && (this.resourceFailure ??= e), e;
+			throw e instanceof c && (this.resourceFailure ??= e), e;
 		});
 		return this.operationTail = t.then(() => void 0, () => void 0), t;
 	}
