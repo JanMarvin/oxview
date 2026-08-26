@@ -2,7 +2,7 @@ import { t as e } from "./chunk-DmhlhrBa.js";
 import { B as t, Ct as n, Et as r, Jt as i, R as a, Yt as o, a as s, it as c, mt as l, q as u, z as d } from "./line-metrics-B3syvDn2.js";
 import { C as f, E as p, S as m, T as h, _ as g, a as _, b as ee, c as v, d as y, f as te, g as ne, h as re, i as b, l as x, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as S } from "./canvas-viewer-mechanics-CS_qbr6T.js";
 import { a as he, c as ge, i as _e, o as ve, r as ye, s as be, t as xe } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { C, E as Se, S as w, T as Ce, _ as T, a as we, b as Te, c as Ee, d as De, f as Oe, g as ke, h as Ae, l as je, m as Me, n as Ne, o as Pe, p as Fe, s as Ie, t as Le, v as Re, w as ze, x as Be, y as E } from "./document-pull-client-BCgmytqI.js";
+import { C, E as Se, S as w, T as Ce, _ as T, a as we, b as Te, c as Ee, d as De, f as Oe, g as ke, h as Ae, l as je, m as Me, n as Ne, o as Pe, p as Fe, s as Ie, t as Le, v as Re, w as ze, x as Be, y as E } from "./document-pull-client-B1WOjA0z.js";
 import { cn as Ve, ln as He } from "./plot-area-frame-DHV02PJU.js";
 import { a as D } from "./units-BzZ0gAxs.js";
 import { n as Ue } from "./renderer-module-contract-DLbb7zY0.js";
@@ -473,7 +473,7 @@ var K = class e {
 				t = await e.arrayBuffer();
 			} else t = n;
 			t = p(await h(t, r.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let a = s === "worker" ? (await import("./render-worker-host-BNENN3qP.js")).createRenderWorker() : new nt(), l = s === "worker" ? Ue(r) : void 0, u;
+			let a = s === "worker" ? (await import("./render-worker-host-DhnkTyjj.js")).createRenderWorker() : new nt(), l = s === "worker" ? Ue(r) : void 0, u;
 			try {
 				if (u = new e(a, s, o, r.wasmUrl), u._metrics = c, await u._parse(t, i.policy, s === "worker" ? !!r.useGoogleFonts : !1, r.workerTimeoutMs, (e) => c.observeUsage(e), l), s === "worker" && u._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), r.math && u._mode === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), r.threeD && u._mode === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._threeD = u._mode === "worker" ? void 0 : r.threeD, r.regionMap && u._mode === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = u._mode === "worker" ? void 0 : r.regionMap, r.chartEx && u._mode === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = u._mode === "worker" ? void 0 : r.chartEx, u._mode === "main" && r.useGoogleFonts && u._document && (u._googleFontFaces = await _e(Fe(u._document), Oe)), u._mode === "main" && u._document?.embeddedFonts?.length) {
 					let e = u;
@@ -1294,7 +1294,7 @@ var Pt = Symbol("DocxViewer.borrowedDocument"), Q = class e {
 	}
 }, Ft = 150, It = "0 1px 3px rgba(0,0,0,0.2)", $ = 12, Lt = 13, Rt = Symbol("DocxScrollViewer.borrowedDocument"), zt;
 function Bt() {
-	return zt ??= import("./comment-ui-runtime-BUCj4hWn.js");
+	return zt ??= import("./comment-ui-runtime-DgCZpPR0.js");
 }
 var Vt = class e {
 	_documentOwner;

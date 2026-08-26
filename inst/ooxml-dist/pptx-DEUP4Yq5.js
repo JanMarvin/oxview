@@ -1,5 +1,5 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { a as t, c as n, i as r, l as i, n as a, o, r as s, s as c, t as l } from "./slide-pull-client-CqTVFb3W.js";
+import { a as t, c as n, i as r, l as i, n as a, o, r as s, s as c, t as l } from "./slide-pull-client-Bg9DusLX.js";
 import { B as u, Ct as d, Et as f, G as p, Jt as m, R as h, Yt as g, a as _, at as v, ht as y, it as b, mt as x, q as S, z as C } from "./line-metrics-B3syvDn2.js";
 import { C as w, E as ee, S as te, T as ne, _ as re, a as T, b as ie, c as E, d as ae, f as oe, g as se, h as ce, i as D, l as O, m as le, n as ue, o as de, p as fe, r as pe, s as me, t as he, v as ge, w as _e, x as ve, y as ye } from "./canvas-viewer-mechanics-CS_qbr6T.js";
 import { a as be, i as xe, n as Se, t as Ce } from "./bounded-raw-part-cache-C6ro6Ezf.js";
@@ -798,7 +798,7 @@ var q = class e {
 				s = await e.arrayBuffer();
 			} else s = t;
 			s = ee(await ne(s, n.password)), a.setSourceBytes(s.byteLength), a.checkpoint("container ready");
-			let c = i === "worker" ? (await import("./render-worker-host-BmH3kGSj.js")).createRenderWorker() : new ot(), l = i === "worker" ? De(n) : void 0, u;
+			let c = i === "worker" ? (await import("./render-worker-host-BNnXCtAu.js")).createRenderWorker() : new ot(), l = i === "worker" ? De(n) : void 0, u;
 			try {
 				return u = new e(c, i, n.wasmUrl), u._metrics = a, n.math && i === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), n.threeD && i === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._math = i === "worker" ? void 0 : n.math, u._threeD = i === "worker" ? void 0 : n.threeD, n.regionMap && i === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = i === "worker" ? void 0 : n.regionMap, n.chartEx && i === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = i === "worker" ? void 0 : n.chartEx, await u._parse(s, r.policy, i === "worker" ? !!n.useGoogleFonts : !1, n.workerTimeoutMs, (e) => a.observeUsage(e), l), a.checkpoint("presentation preflight ready"), i === "main" && n.useGoogleFonts && u._preflight && (u._googleFontFaces = await xe(u._preflight.fontPreloadNames, o)), a.succeed({ slides: u.slideCount }), u;
 			} catch (e) {
@@ -1544,7 +1544,7 @@ var St = Symbol("PptxViewer.borrowedPresentation"), Z = {
 	}
 }, wt = 150, Tt = "0 1px 3px rgba(0,0,0,0.2)", Q = 12, Et;
 function Dt() {
-	return Et ??= import("./comment-ui-runtime-BAe30Ct9.js");
+	return Et ??= import("./comment-ui-runtime-C1RV_3iu.js");
 }
 var $ = 440, Ot = 20, kt = Symbol("PptxScrollViewer.borrowedPresentation"), At = class e {
 	_presentationOwner;

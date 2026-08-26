@@ -21501,7 +21501,7 @@ function Wx(e, t, n) {
 	let p = Ux(e, r, n);
 	for (; p.advancePt > n.availableHeightPt + bx;) {
 		let t = r.at(-1), i = r.filter((e) => e.ownership === "source").length;
-		if (!(t?.ownership === "source" && t.fragmentIndex === 0 && t.ranges.every((e) => e.every((e) => e.kind === "whole"))) || i <= 1) break;
+		if (!(t?.ownership === "source" && t.fragmentIndex === 0) || i <= 1) break;
 		r.pop(), l = Object.freeze({
 			rowIndex: t.logicalRowIndex,
 			rowFragmentIndex: 0,
