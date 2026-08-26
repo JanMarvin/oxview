@@ -1,5 +1,5 @@
-import { t as e } from "./renderer-module-contract-0bO_5SC0.js";
-import { n as t } from "./mathjax-DJa-Q93p.js";
+import { t as e } from "./renderer-module-contract-DLbb7zY0.js";
+import { n as t } from "./mathjax-DwIrafQ6.js";
 //#region packages/core/assets/mathjax-stix2.js?url
 var n = new URL("mathjax-stix2.js", import.meta.url).href, r = null;
 function i(e) {

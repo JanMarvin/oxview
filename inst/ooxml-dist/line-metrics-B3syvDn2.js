@@ -1,6 +1,6 @@
-import { dn as e, fn as t, hn as n, pn as r, un as i } from "./plot-area-frame-Dg1VIpUU.js";
-import { L as a } from "./three-d-BYiWCNlz.js";
-import { t as o } from "./mathjax-DJa-Q93p.js";
+import { an as e, cn as t, on as n, sn as r, un as i } from "./plot-area-frame-DHV02PJU.js";
+import { L as a } from "./three-d-7MaVzQuZ.js";
+import { t as o } from "./mathjax-DwIrafQ6.js";
 //#region packages/core/src/errors/ooxml-error.ts
 var s = class e extends Error {
 	code;
@@ -22446,8 +22446,8 @@ function be(e) {
 	}, D.set(e, t)), t;
 }
 var O = /* @__PURE__ */ new WeakMap(), xe = /* @__PURE__ */ new WeakSet();
-function k(t) {
-	!t || xe.has(t) || (xe.add(t), e(t));
+function k(e) {
+	!e || xe.has(e) || (xe.add(e), n(e));
 }
 function Se(e) {
 	k(e);
@@ -22480,7 +22480,7 @@ function Te(e, n) {
 	let i = O.get(e);
 	if (!i || i.count === 0 || i.activeBitmaps.has(n)) return;
 	let a = i.activeBytes + we(n);
-	if (a > 134217728) throw new r("active-decoded-bytes", t, a);
+	if (a > 134217728) throw new t("active-decoded-bytes", r, a);
 	i.activeBitmaps.add(n), i.activeBytes = a;
 }
 function Ee(e, t, n) {
@@ -22497,31 +22497,31 @@ function De(e, t) {
 	}
 	t.then((e) => k(e)).catch(() => {});
 }
-function Oe(e, n, r) {
-	let i = be(n), a = i.entries, o = a.get(e);
-	if (o) return a.delete(e), a.set(e, o), o.promise.then((e) => (Te(n, e), e));
-	let s = ve(n, r), c = s.then(({ bitmap: e, owned: t }) => t ? e : null), l = s.then(({ bitmap: e, owned: t }) => {
+function Oe(e, t, n) {
+	let i = be(t), a = i.entries, o = a.get(e);
+	if (o) return a.delete(e), a.set(e, o), o.promise.then((e) => (Te(t, e), e));
+	let s = ve(t, n), c = s.then(({ bitmap: e, owned: t }) => t ? e : null), l = s.then(({ bitmap: e, owned: n }) => {
 		try {
-			return Te(n, e), e;
-		} catch (n) {
-			throw t && k(e), n;
+			return Te(t, e), e;
+		} catch (t) {
+			throw n && k(e), t;
 		}
 	}), u = {
 		promise: l,
 		ownedPromise: c,
 		weight: 0
 	};
-	for (s.then(({ bitmap: r, owned: o }) => {
+	for (s.then(({ bitmap: n, owned: o }) => {
 		if (a.get(e) === u) {
-			if (u.bitmap = r, !o) {
+			if (u.bitmap = n, !o) {
 				a.delete(e);
 				return;
 			}
-			for (u.weight = we(r), i.retainedBytes += u.weight; i.retainedBytes > t && Ee(n, i, e););
+			for (u.weight = we(n), i.retainedBytes += u.weight; i.retainedBytes > r && Ee(t, i, e););
 		}
 	}).catch(() => {}), l.catch(() => {
-		a.get(e) === u && (a.delete(e), i.retainedBytes -= u.weight, De(n, c));
-	}), a.set(e, u); a.size > ye && Ee(n, i, e););
+		a.get(e) === u && (a.delete(e), i.retainedBytes -= u.weight, De(t, c));
+	}), a.set(e, u); a.size > ye && Ee(t, i, e););
 	return l;
 }
 var ke = "base", Ae = `${ke}:`, je = "derived:";
@@ -22531,10 +22531,10 @@ function Me(e, t, n, r) {
 function Ne(e, t, n, r) {
 	return Me(`${je}${e}`, t, n, r);
 }
-function Pe(e, t, n, r = {}) {
-	let { widthPt: a = 0, heightPt: o = 0, suppressBoundaryFrame: s = !1 } = r;
-	return Me(ke, e, n, async () => ({
-		bitmap: await i(await n(e, t), {
+function Pe(t, n, r, i = {}) {
+	let { widthPt: a = 0, heightPt: o = 0, suppressBoundaryFrame: s = !1 } = i;
+	return Me(ke, t, r, async () => ({
+		bitmap: await e(await r(t, n), {
 			widthPt: a,
 			heightPt: o,
 			suppressBoundaryFrame: s
@@ -22883,14 +22883,14 @@ function bt(e, t, n, r) {
 	e.restore();
 }
 async function xt(e, t) {
-	let { width: r, height: i } = a(e.widthEm * 256, (e.ascentEm + e.descentEm) * 256), s = n(r, i), c = s?.getContext("2d");
+	let { width: n, height: r } = a(e.widthEm * 256, (e.ascentEm + e.descentEm) * 256), s = i(n, r), c = s?.getContext("2d");
 	if (!s || !c || typeof Path2D > "u") throw Error("Math SVG rasterization requires Canvas 2D and Path2D support");
-	bt(c, ht(o(e.svg, t), e.widthEm, e.ascentEm + e.descentEm), r, i);
-	let l = s, u = r, d = i, f = mt / 256, p = Math.max(1, Math.round(r * f)), m = Math.max(1, Math.round(i * f));
+	bt(c, ht(o(e.svg, t), e.widthEm, e.ascentEm + e.descentEm), n, r);
+	let l = s, u = n, d = r, f = mt / 256, p = Math.max(1, Math.round(n * f)), m = Math.max(1, Math.round(r * f));
 	for (; u > p || d > m;) {
-		let e = Math.max(p, Math.ceil(u / 2)), t = Math.max(m, Math.ceil(d / 2)), r = n(e, t), i = r?.getContext("2d");
-		if (!r || !i) break;
-		i.imageSmoothingEnabled = !0, i.imageSmoothingQuality = "high", i.drawImage(l, 0, 0, e, t), l = r, u = e, d = t;
+		let e = Math.max(p, Math.ceil(u / 2)), t = Math.max(m, Math.ceil(d / 2)), n = i(e, t), r = n?.getContext("2d");
+		if (!n || !r) break;
+		r.imageSmoothingEnabled = !0, r.imageSmoothingQuality = "high", r.drawImage(l, 0, 0, e, t), l = n, u = e, d = t;
 	}
 	return {
 		source: l,
@@ -22899,10 +22899,10 @@ async function xt(e, t) {
 	};
 }
 function St(e, t) {
-	let r = n(e.widthPx, e.heightPx);
-	if (!r) return e.source;
-	let i = r.getContext("2d");
-	return i ? (i.drawImage(e.source, 0, 0, e.widthPx, e.heightPx), i.globalCompositeOperation = "source-in", i.fillStyle = t, i.fillRect(0, 0, e.widthPx, e.heightPx), r) : e.source;
+	let n = i(e.widthPx, e.heightPx);
+	if (!n) return e.source;
+	let r = n.getContext("2d");
+	return r ? (r.drawImage(e.source, 0, 0, e.widthPx, e.heightPx), r.globalCompositeOperation = "source-in", r.fillStyle = t, r.fillRect(0, 0, e.widthPx, e.heightPx), n) : e.source;
 }
 //#endregion
 //#region packages/core/src/canvas/env.ts
@@ -23175,7 +23175,7 @@ function tn(e) {
 	if (!(r.code !== "ooxml-resource-limit" || !z(r.details))) return new c(en(r.details), r.details);
 }
 function nn(e) {
-	if (e instanceof r) return {
+	if (e instanceof t) return {
 		message: e.message,
 		errorName: e.name,
 		code: e.code,
@@ -23185,21 +23185,21 @@ function nn(e) {
 			observed: e.observed
 		}
 	};
-	let t = Pt(e);
-	if (t) return {
-		message: t.message,
-		errorName: t.name,
-		code: t.code,
+	let n = Pt(e);
+	if (n) return {
+		message: n.message,
+		errorName: n.name,
+		code: n.code,
 		insufficientCredit: {
-			requiredBytes: t.requiredBytes,
-			offeredBytes: t.offeredBytes
+			requiredBytes: n.requiredBytes,
+			offeredBytes: n.offeredBytes
 		}
 	};
-	let n = e instanceof s || e instanceof c ? e : tn(e);
-	if (n instanceof c) {
-		let e = $t(n.details);
+	let r = e instanceof s || e instanceof c ? e : tn(e);
+	if (r instanceof c) {
+		let e = $t(r.details);
 		return e ? {
-			message: typeof n.message == "string" ? n.message : en(e),
+			message: typeof r.message == "string" ? r.message : en(e),
 			errorName: "OoxmlResourceLimitError",
 			code: "ooxml-resource-limit",
 			resourceLimit: e
@@ -23208,10 +23208,10 @@ function nn(e) {
 			errorName: "Error"
 		};
 	}
-	if (n instanceof s) return {
-		message: typeof n.message == "string" ? n.message : String(n.message),
-		errorName: R(n.name, zt) ? n.name : "OoxmlError",
-		...Kt(n.code) ? { code: n.code } : {}
+	if (r instanceof s) return {
+		message: typeof r.message == "string" ? r.message : String(r.message),
+		errorName: R(r.name, zt) ? r.name : "OoxmlError",
+		...Kt(r.code) ? { code: r.code } : {}
 	};
 	let i = e instanceof Error ? e.message : String(e);
 	if (typeof i == "string" && i.startsWith(Rt)) return {
@@ -23243,12 +23243,12 @@ var an = new Set([
 	"not-ooxml"
 ]);
 function on(e) {
-	if (e.code === "ooxml-decoded-image-limit" && e.decodedImage && (e.decodedImage.metric === "image-pixels" || e.decodedImage.metric === "active-decoded-bytes") && L(e.decodedImage.limit) && L(e.decodedImage.observed) && e.decodedImage.observed > e.decodedImage.limit) return new r(e.decodedImage.metric, e.decodedImage.limit, e.decodedImage.observed);
+	if (e.code === "ooxml-decoded-image-limit" && e.decodedImage && (e.decodedImage.metric === "image-pixels" || e.decodedImage.metric === "active-decoded-bytes") && L(e.decodedImage.limit) && L(e.decodedImage.observed) && e.decodedImage.observed > e.decodedImage.limit) return new t(e.decodedImage.metric, e.decodedImage.limit, e.decodedImage.observed);
 	if (e.code === "ooxml-insufficient-credit" && Nt(e.insufficientCredit)) return new I(e.insufficientCredit);
 	if (e.code === "ooxml-resource-limit" && z(e.resourceLimit)) return new c(e.message, e.resourceLimit);
 	if (e.code && an.has(e.code)) return new s(e.code, e.message);
-	let t = e.errorName === "TypeError" ? TypeError(e.message) : e.errorName === "RangeError" ? RangeError(e.message) : Error(e.message);
-	return e.errorName && (t.name = e.errorName), e.code !== void 0 && Object.assign(t, { code: e.code }), t;
+	let n = e.errorName === "TypeError" ? TypeError(e.message) : e.errorName === "RangeError" ? RangeError(e.message) : Error(e.message);
+	return e.errorName && (n.name = e.errorName), e.code !== void 0 && Object.assign(n, { code: e.code }), n;
 }
 //#endregion
 //#region packages/core/src/worker/resource-policy.generated.ts
@@ -23513,7 +23513,7 @@ function Qn(e) {
 				metric: t.metric
 			});
 		}
-		if (e instanceof s || e instanceof r) return Object.freeze({ code: e.code });
+		if (e instanceof s || e instanceof t) return Object.freeze({ code: e.code });
 		if (e instanceof Dt || typeof e == "object" && e && e.code === "parser-crashed") return Object.freeze({ code: "parser-crashed" });
 	} catch {}
 	return Object.freeze({});

@@ -1,5 +1,5 @@
-import { Vt as e, Wt as t, a as n, n as r, t as i } from "./plot-area-frame-Dg1VIpUU.js";
-import { t as a } from "./renderer-module-contract-0bO_5SC0.js";
+import { Vt as e, Wt as t, a as n, n as r, t as i } from "./plot-area-frame-DHV02PJU.js";
+import { t as a } from "./renderer-module-contract-DLbb7zY0.js";
 //#region packages/core/src/chart/region-map-natural-earth.generated.ts
 var o = [
 	{

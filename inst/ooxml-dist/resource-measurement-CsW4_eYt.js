@@ -1,5 +1,5 @@
-import { Dt as e, bt as t, kt as n } from "./line-metrics-Baz31mML.js";
-import { cn as r } from "./plot-area-frame-Dg1VIpUU.js";
+import { Dt as e, bt as t, kt as n } from "./line-metrics-B3syvDn2.js";
+import { rn as r } from "./plot-area-frame-DHV02PJU.js";
 //#region packages/core/src/image/duotone-bitmap-by-path.ts
 function i(e, t) {
 	return t ? `${e}|duo:${t.clr1}:${t.clr2}` : e;
