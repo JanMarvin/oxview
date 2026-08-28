@@ -1,4 +1,4 @@
-import { Dt as e, bt as t, kt as n } from "./line-metrics-B3syvDn2.js";
+import { ht as e, ot as t, pt as n } from "./line-metrics-Bpn7OeZD.js";
 import { rn as r } from "./plot-area-frame-DHV02PJU.js";
 //#region packages/core/src/image/duotone-bitmap-by-path.ts
 function i(e, t) {
@@ -6,8 +6,8 @@ function i(e, t) {
 }
 var a = "duotone";
 async function o(o, s, c, l, u = {}) {
-	let { offscreenFactory: d, failClosedOnDuotoneFailure: f = !1, ...p } = u, m = await e(o, s, l, p);
-	return !c || !m ? m : n(a, `${i(o, c)}${f ? "|strict" : ""}`, l, async () => {
+	let { offscreenFactory: d, failClosedOnDuotoneFailure: f = !1, ...p } = u, m = await n(o, s, l, p);
+	return !c || !m ? m : e(a, `${i(o, c)}${f ? "|strict" : ""}`, l, async () => {
 		let { w: e, h: n } = r(m);
 		if (e <= 0 || n <= 0) return {
 			bitmap: f ? null : m,

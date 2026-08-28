@@ -1,6 +1,6 @@
 import { i as e } from "./units-BzZ0gAxs.js";
-import { t } from "./highlight-rect-MaCt0om0.js";
-import { t as n } from "./comment-occurrence-C34fWs_F.js";
+import { t } from "./highlight-rect-Hes0z_Mj.js";
+import { t as n } from "./comment-occurrence-X54si2ob.js";
 import { i as r, n as i, o as a, r as o, t as s } from "./read-only-comment-margin-DrUX-YrP.js";
 import { i as c, n as l, r as u, t as d } from "./read-only-comment-decoration-DcFevX_Q.js";
 //#region packages/pptx/src/comment-margin.ts

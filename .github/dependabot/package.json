@@ -3,7 +3,7 @@
   "private": true,
   "description": "Not a real Node project - this file exists solely so Dependabot has an npm manifest to track the version of @silurus/ooxml vendored into inst/ooxml-dist by inst/prepare_lib.R. Nothing here is installed or run; version bumps here are written automatically by prepare_lib.R.",
   "dependencies": {
-    "@silurus/ooxml": "0.82.1"
+    "@silurus/ooxml": "0.83.0"
   }
 }
 

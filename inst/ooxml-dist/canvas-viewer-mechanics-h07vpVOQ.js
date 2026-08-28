@@ -1,4 +1,4 @@
-import { Jt as e } from "./line-metrics-B3syvDn2.js";
+import { Zt as e } from "./line-metrics-Bpn7OeZD.js";
 //#region packages/core/src/errors/cfb-sniff.ts
 var t = [
 	208,
@@ -1088,18 +1088,58 @@ var $e = class {
 		}
 		return !0;
 	}
+	commitBitmapTo2d(e, t, n = {}) {
+		if (!this.isCurrent(e)) return t.close(), !1;
+		this.canvas.width !== t.width && (this.canvas.width = t.width), this.canvas.height !== t.height && (this.canvas.height = t.height), n.cssWidth !== void 0 && (this.canvas.style.width = `${n.cssWidth}px`), n.cssHeight !== void 0 && (this.canvas.style.height = `${n.cssHeight}px`);
+		let r = this.canvas.getContext("2d");
+		if (!r) throw t.close(), Error("2D context not available");
+		try {
+			r.drawImage(t, 0, 0);
+		} finally {
+			t.close();
+		}
+		return !0;
+	}
 	destroy() {
 		this.destroyed || (this.destroyed = !0, this.generation++);
 	}
 }, tt = class {
 	closed = !1;
+	handled = /* @__PURE__ */ new WeakSet();
+	backgroundLifecycleOwners = 0;
 	constructor(e, t) {
 		this.viewerName = e, this.onError = t;
 	}
 	report(e) {
 		if (this.closed) return;
 		let t = e instanceof Error ? e : Error(String(e));
-		this.onError ? this.onError(t) : console.error(`[ooxml] ${this.viewerName} render failed:`, t);
+		this.handled.has(t) || (this.handled.add(t), this.onError ? this.onError(t) : console.error(`[ooxml] ${this.viewerName} render failed:`, t));
+	}
+	markHandled(e) {
+		this.closed || !(e instanceof Error) || this.handled.add(e);
+	}
+	async ownAwaitable(e) {
+		try {
+			return await e();
+		} catch (e) {
+			throw this.markHandled(e), e;
+		}
+	}
+	async ownBackgroundLifecycle(e) {
+		this.backgroundLifecycleOwners++;
+		try {
+			return await this.ownAwaitable(e);
+		} finally {
+			this.backgroundLifecycleOwners--;
+		}
+	}
+	reportBackground(e, t = !1) {
+		let n = e instanceof Error ? e : Error(String(e));
+		if (t || this.backgroundLifecycleOwners > 0) {
+			this.markHandled(n);
+			return;
+		}
+		this.report(n);
 	}
 	close() {
 		this.closed = !0;

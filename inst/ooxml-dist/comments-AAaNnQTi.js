@@ -137,8 +137,13 @@ function d(e, t, n = /* @__PURE__ */ new Map()) {
 	}
 	return [...i.values()].flatMap((e) => u(e, r, n));
 }
-function f(e, t, n = /* @__PURE__ */ new Map()) {
-	return (e?.length ?? 0) === 0 ? [] : d(e ?? [], t, n);
+function f(t, n, r = /* @__PURE__ */ new Map(), i = {}) {
+	if ((t?.length ?? 0) === 0) return [];
+	let a = d(t ?? [], n, r), o = i.completedSourceKeys;
+	return o === void 0 ? a : a.filter((t) => {
+		let n = r.get(e(t.source)) ?? /* @__PURE__ */ new Set(), i = t.startRunIndex < t.endRunIndex ? [...n].some((e) => e >= t.startRunIndex && e < t.endRunIndex) : n.has(t.reference.affinity === "following" ? t.startRunIndex : t.startRunIndex - 1), a = r.get(e(t.reference.source))?.has(t.reference.affinity === "following" ? t.reference.runIndex : t.reference.runIndex - 1) === !0;
+		return i || a || o.has(e(t.source)) || o.has(e(t.reference.source));
+	});
 }
 function p(e, t) {
 	return e !== void 0 && e.story === t.story && e.storyInstance === t.storyInstance && e.path.length === t.path.length && e.path.every((e, n) => e === t.path[n]);

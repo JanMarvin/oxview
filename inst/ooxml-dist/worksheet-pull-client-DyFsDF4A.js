@@ -1,8 +1,8 @@
-import { $ as e, F as t, I as n, N as r, P as i, Q as a, X as o, Y as s, Yt as c, Z as l, et as u, nt as d, ot as f, rt as p, tt as m } from "./line-metrics-B3syvDn2.js";
-import { n as h, r as g, t as _ } from "./resource-measurement-CsW4_eYt.js";
+import { F as e, Gt as t, I as n, Jt as r, K as i, Kt as a, N as o, P as s, Qt as c, U as l, Ut as u, Wt as d, Xt as f, Yt as p, qt as m } from "./line-metrics-Bpn7OeZD.js";
+import { n as h, r as g, t as _ } from "./resource-measurement-DuiFWzam.js";
 import { t as v } from "./transfer-R6NjgBKD.js";
 //#region packages/xlsx/src/worksheet-resource-limits.ts
-var y = d, b = e, x = u, S = m, C = a, w = s, T = o, E = l, D = Object.freeze({
+var y = f, b = m, x = r, S = p, C = a, w = u, T = d, E = t, D = Object.freeze({
 	archiveEntryCount: 0,
 	declaredInflatedBytes: 0,
 	distinctInflatedBytes: 0,
@@ -159,7 +159,7 @@ var z = 64 * 1024 * 1024, B = class {
 	get pendingOpenCount() {
 		return this.pendingOpens.size;
 	}
-	async open(e, n, r) {
+	async open(t, n, r) {
 		if (this.resourceFailure) throw this.resourceFailure;
 		let i = this.pendingOpens.get(r.sessionId);
 		if (!i || i.identity.operationId !== r.operationId || i.identity.generation !== r.generation) throw Error("worksheet pull session open reservation is stale or missing");
@@ -167,12 +167,12 @@ var z = 64 * 1024 * 1024, B = class {
 			a = e;
 		}), s = this.operationTail.then(() => this.coordinator.enqueue(async () => {
 			if (i.canceled) throw Error("worksheet pull session open was canceled");
-			this.executeArchive((t) => t.open_sheet_cursor(e, n));
+			this.executeArchive((e) => e.open_sheet_cursor(t, n));
 			let o = [], s = {
 				rows: 0,
 				cells: 0,
 				ownedUtf8Bytes: 0
-			}, l, u = !1, d = new t({
+			}, l, u = !1, d = new e({
 				...r,
 				maxByteCredit: z,
 				coordinator: this.coordinator,
@@ -202,7 +202,7 @@ var z = 64 * 1024 * 1024, B = class {
 					measureChunk: ({ payload: e }) => e.byteLength,
 					acknowledge: () => {
 						if (!u) return;
-						let t, n;
+						let e, n;
 						try {
 							if (this.acceptWorksheet) {
 								if (!l) throw Error("worksheet terminal payload is missing");
@@ -213,12 +213,12 @@ var z = 64 * 1024 * 1024, B = class {
 									ownedUtf8Bytes: 0
 								} : s, i = k(l, r), a = this.readResourceUsage();
 								N(i, "get-worksheet-worker", void 0, a), P(i.jsonBytes, "get-worksheet-worker", void 0, a);
-								let c = this.acceptWorksheet(e, l, i, a);
-								typeof c == "function" ? t = c : c && ({rollback: t, commit: n} = c);
+								let c = this.acceptWorksheet(t, l, i, a);
+								typeof c == "function" ? e = c : c && ({rollback: e, commit: n} = c);
 							}
 							this.executeArchive((e) => e.acknowledge_sheet_cursor_terminal()), n?.();
-						} catch (e) {
-							throw t?.(), e instanceof c && (this.resourceFailure ??= e), e;
+						} catch (t) {
+							throw e?.(), t instanceof c && (this.resourceFailure ??= t), t;
 						}
 						u = !1, this.sessions.delete(r.sessionId), a();
 					},
@@ -268,7 +268,7 @@ var z = 64 * 1024 * 1024, B = class {
 		if (r && (e.kind === "cancel" || e.kind === "close")) {
 			let n = r.identity.operationId === e.operationId && r.identity.generation === e.generation;
 			return n && (r.canceled = !0), t(n ? {
-				protocol: i,
+				protocol: s,
 				kind: "accepted",
 				sessionId: e.sessionId,
 				operationId: e.operationId,
@@ -276,7 +276,7 @@ var z = 64 * 1024 * 1024, B = class {
 				requestId: e.requestId,
 				command: e.kind
 			} : {
-				protocol: i,
+				protocol: s,
 				kind: "error",
 				sessionId: e.sessionId,
 				operationId: e.operationId,
@@ -290,7 +290,7 @@ var z = 64 * 1024 * 1024, B = class {
 			}), Promise.resolve();
 		}
 		return e.kind === "cancel" || e.kind === "close" ? (t({
-			protocol: i,
+			protocol: s,
 			kind: "accepted",
 			sessionId: e.sessionId,
 			operationId: e.operationId,
@@ -298,13 +298,13 @@ var z = 64 * 1024 * 1024, B = class {
 			requestId: e.requestId,
 			command: e.kind
 		}), Promise.resolve()) : (t({
-			protocol: i,
+			protocol: s,
 			kind: "error",
 			sessionId: e.sessionId,
 			operationId: e.operationId,
 			generation: e.generation,
 			requestId: e.requestId,
-			error: f(/* @__PURE__ */ Error("worksheet pull session is not open"))
+			error: i(/* @__PURE__ */ Error("worksheet pull session is not open"))
 		}), Promise.resolve());
 	}
 	async dispatchSafely(e, t) {
@@ -313,13 +313,13 @@ var z = 64 * 1024 * 1024, B = class {
 		} catch (n) {
 			try {
 				t({
-					protocol: i,
+					protocol: s,
 					kind: "error",
 					sessionId: e.sessionId,
 					operationId: e.operationId,
 					generation: e.generation,
 					requestId: e.requestId,
-					error: f(n)
+					error: i(n)
 				});
 			} catch {}
 		}
@@ -337,7 +337,7 @@ var z = 64 * 1024 * 1024, B = class {
 		for (let e of this.pendingOpens.values()) e.canceled = !0;
 		let e = 1;
 		for (let { host: t, identity: n } of [...this.sessions.values()]) await t.dispatch({
-			protocol: i,
+			protocol: s,
 			kind: "close",
 			...n,
 			requestId: e++
@@ -353,7 +353,7 @@ var z = 64 * 1024 * 1024, B = class {
 		let t = this.sessions.get(e.sessionId);
 		if (t) {
 			await t.host.dispatch({
-				protocol: i,
+				protocol: s,
 				kind: "close",
 				...e,
 				requestId: 1
@@ -365,7 +365,7 @@ var z = 64 * 1024 * 1024, B = class {
 	}
 	readResourceUsage() {
 		try {
-			return p(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
+			return l(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
 		} catch (e) {
 			if (String(e).includes("worksheet cursor usage is unavailable")) return;
 			throw e;
@@ -381,24 +381,24 @@ var z = 64 * 1024 * 1024, B = class {
 		if (!Number.isSafeInteger(e) || e < 0) throw RangeError("sheetIndex must be a non-negative safe integer");
 		if (!t) throw TypeError("sheetName must be non-empty");
 		W(n);
-		let i = this.nextSessionId++, a = {
-			sessionId: i,
-			operationId: i,
+		let r = this.nextSessionId++, i = {
+			sessionId: r,
+			operationId: r,
 			generation: this.options.generation ?? 1
-		}, o = new r(this.options.transport, {
-			...a,
+		}, a = new o(this.options.transport, {
+			...i,
 			maxByteCredit: z,
 			timeoutMs: this.options.timeoutMs,
 			disposeTransferred: this.options.disposeTransferred
 		});
-		this.active.add(o);
+		this.active.add(a);
 		let s = !1, c;
 		try {
-			for (await this.options.open(e, t, a, this.options.timeoutMs);;) {
+			for (await this.options.open(e, t, i, this.options.timeoutMs);;) {
 				W(n);
-				let e = await o.pull(z, { signal: n });
+				let e = await a.pull(z, { signal: n });
 				try {
-					let t = e.usage ?? o.usageCheckpoint;
+					let t = e.usage ?? a.usageCheckpoint;
 					t && this.options.onUsage?.(t);
 					let r = R(e.payload, e.done, this.options.sharedStrings);
 					if (yield r.kind === "rows" ? {
@@ -426,11 +426,11 @@ var z = 64 * 1024 * 1024, B = class {
 		} finally {
 			let e;
 			try {
-				s || await o.cancel(U(c));
+				s || await a.cancel(U(c));
 			} catch (t) {
 				e = t;
 			} finally {
-				this.active.delete(o);
+				this.active.delete(a);
 			}
 			if (c === void 0 && e !== void 0) throw e;
 		}
