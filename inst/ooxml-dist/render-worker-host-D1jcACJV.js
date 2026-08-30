@@ -1,5 +1,5 @@
 //#region packages/pptx/src/render-worker.ts?worker&url
-var e = "" + new URL("assets/render-worker-DuztdEcX.js", import.meta.url).href;
+var e = "" + new URL("assets/render-worker-4GSYWsM3.js", import.meta.url).href;
 //#endregion
 //#region packages/pptx/src/render-worker-host.ts
 function t() {

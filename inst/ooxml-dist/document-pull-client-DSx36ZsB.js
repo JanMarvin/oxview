@@ -8335,6 +8335,7 @@ var xd = class {
 	#r;
 	#i;
 	#a = null;
+	#o = /* @__PURE__ */ new Set();
 	constructor(e, t, n) {
 		this.#e = e, this.#r = Object.freeze({ ...t }), this.#i = Kr(this.#r, this.#e), this.#t = n;
 	}
@@ -8346,7 +8347,7 @@ var xd = class {
 	}
 	select(e) {
 		let t = Object.isFrozen(e) ? e : Object.freeze({ ...e }), n = Kr(t, this.#e), r = this.#n.get(n);
-		return r || (r = vd(this.#t(t)), n !== this.#i && (this.#a !== null && this.#a !== n && this.#n.delete(this.#a), this.#a = n), this.#n.set(n, r)), Object.freeze({
+		return r || (this.#c(n, t), r = vd(this.#t(t)), this.#n.set(n, r)), Object.freeze({
 			key: n,
 			options: t,
 			layout: r
@@ -8360,16 +8361,26 @@ var xd = class {
 		});
 	}
 	prime(e, t) {
-		let n = Kr(Object.isFrozen(e) ? e : Object.freeze({ ...e }), this.#e);
-		return this.#n.get(n) || this.#o(n, t);
+		let n = Object.isFrozen(e) ? e : Object.freeze({ ...e }), r = Kr(n, this.#e);
+		return this.#n.get(r) || this.#s(r, n, t);
 	}
 	replaceIfCurrent(e, t, n) {
-		let r = Kr(Object.isFrozen(e) ? e : Object.freeze({ ...e }), this.#e);
-		return (this.#n.get(r) ?? null) === t ? this.#o(r, n) : null;
+		let r = Object.isFrozen(e) ? e : Object.freeze({ ...e }), i = Kr(r, this.#e);
+		return (this.#n.get(i) ?? null) === t ? this.#s(i, r, n) : null;
 	}
-	#o(e, t) {
-		let n = vd(t);
-		return e !== this.#i && (this.#a !== null && this.#a !== e && this.#n.delete(this.#a), this.#a = e), this.#n.set(e, n), n;
+	#s(e, t, n) {
+		this.#c(e, t);
+		let r = vd(n);
+		return this.#n.set(e, r), r;
+	}
+	#c(e, t) {
+		if (e !== this.#i) {
+			if (this.#a !== t.currentDateMs) {
+				for (let e of this.#o) this.#n.delete(e);
+				this.#o.clear(), this.#a = t.currentDateMs;
+			}
+			this.#o.add(e);
+		}
 	}
 	hasLayoutFor(e) {
 		return this.#n.has(Kr(e, this.#e));

@@ -1,21 +1,21 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
 import { B as t, Qt as n, R as r, Vt as i, W as a, Zt as o, a as s, et as c, ft as l, lt as u, z as d } from "./line-metrics-Bpn7OeZD.js";
-import { C as f, E as p, S as m, T as h, _ as g, a as _, b as ee, c as v, d as y, f as te, g as ne, h as re, i as b, l as x, m as ie, n as ae, o as oe, p as se, r as S, s as ce, t as le, u as ue, v as C, w as de, x as fe, y as w } from "./canvas-viewer-mechanics-h07vpVOQ.js";
-import { a as pe, i as me, t as he } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { c as ge, i as _e, l as ve, n as ye, o as T, r as be, s as xe, t as Se } from "./dom-interaction-boundary-CepOlXt6.js";
-import { A as Ce, C as E, D, E as we, O, S as Te, T as Ee, _ as De, a as Oe, b as ke, c as Ae, d as je, f as Me, g as Ne, h as Pe, j as Fe, k as Ie, l as Le, m as Re, n as k, o as ze, p as Be, s as Ve, t as A, v as He, w as Ue, x as j, y as We } from "./document-pull-client-BAhqoTmm.js";
-import { cn as Ge, ln as Ke } from "./plot-area-frame-DHV02PJU.js";
-import { a as M } from "./units-BzZ0gAxs.js";
-import { n as qe } from "./renderer-module-contract-DLbb7zY0.js";
-import { n as Je, t as N } from "./highlight-rect-Hes0z_Mj.js";
-import { o as P } from "./source-key-BklvnEyQ.js";
-import { i as Ye, n as F, r as Xe, t as Ze } from "./comments-AAaNnQTi.js";
+import { C as f, E as p, S as m, T as h, _ as g, a as _, b as ee, c as v, d as y, f as te, g as ne, h as re, i as b, l as x, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-h07vpVOQ.js";
+import { a as ge, i as _e, t as ve } from "./bounded-raw-part-cache-C6ro6Ezf.js";
+import { c as ye, i as be, l as xe, n as Se, o as S, r as Ce, s as we, t as Te } from "./dom-interaction-boundary-CepOlXt6.js";
+import { A as Ee, C, D as w, E as De, O as T, S as Oe, T as E, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as D, o as Ve, p as He, s as Ue, t as O, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-DSx36ZsB.js";
+import { cn as Je, ln as Ye } from "./plot-area-frame-DHV02PJU.js";
+import { a as k } from "./units-BzZ0gAxs.js";
+import { n as Xe } from "./renderer-module-contract-DLbb7zY0.js";
+import { n as Ze, t as A } from "./highlight-rect-Hes0z_Mj.js";
+import { o as j } from "./source-key-BklvnEyQ.js";
+import { i as Qe, n as M, r as $e, t as et } from "./comments-AAaNnQTi.js";
 //#region packages/docx/src/worker.ts?worker&inline
-var Qe = "var e=(e,t)=>()=>(e&&(t=e(e=0)),t),t=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,r.unregister(this),e}free(){let e=this.__destroy_into_raw();_.__wbg_docxarchive_free(e,0)}acknowledge_document_chunk(e,t,n){let r=_.docxarchive_acknowledge_document_chunk(this.__wbg_ptr,e,t,n);if(r[1])throw f(r[0])}assert_healthy(){let e=_.docxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw f(e[0])}cancel_document_cursor(){_.docxarchive_cancel_document_cursor(this.__wbg_ptr)}close_document_session(){_.docxarchive_close_document_session(this.__wbg_ptr)}document_chunk_done(){let e=_.docxarchive_document_chunk_done(this.__wbg_ptr);if(e[2])throw f(e[1]);return e[0]!==0}document_cursor_resource_usage(){let e=_.docxarchive_document_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=i(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}extract_image(e){let t=d(e,_.__wbindgen_malloc,_.__wbindgen_realloc),n=g,r=_.docxarchive_extract_image(this.__wbg_ptr,t,n);if(r[3])throw f(r[2]);var a=i(r[0],r[1]).slice();return _.__wbindgen_free(r[0],r[1]*1,1),a}constructor(e,t,n,i){let a=ee(e,_.__wbindgen_malloc),o=g,s=_.docxarchive_new(a,o,!u(t),u(t)?BigInt(0):t,!u(n),u(n)?BigInt(0):n,!u(i),u(i)?BigInt(0):i);if(s[2])throw f(s[1]);return this.__wbg_ptr=s[0]>>>0,r.register(this,this.__wbg_ptr,this),this}open_document_cursor(e,t){let n=_.docxarchive_open_document_cursor(this.__wbg_ptr,e,t);if(n[1])throw f(n[0])}parse(){let e=_.docxarchive_parse(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=i(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}pull_document_chunk(e,t,n,r){let a=_.docxarchive_pull_document_chunk(this.__wbg_ptr,e,t,n,r);if(a[3])throw f(a[2]);var o=i(a[0],a[1]).slice();return _.__wbindgen_free(a[0],a[1]*1,1),o}resource_usage(){let e=_.docxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=i(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=_.docxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,f(i[2]);return e=n,t=r,s(n,r)}finally{_.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(t.prototype[Symbol.dispose]=t.prototype.free);function n(){return{__proto__:null,\"./docx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(s(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(s(e,t))}finally{_.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=d(n,_.__wbindgen_malloc,_.__wbindgen_realloc),i=g;o().setInt32(e+4,i,!0),o().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return s(e,t)},__wbindgen_init_externref_table:function(){let e=_.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const r=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>_.__wbg_docxarchive_free(e>>>0,1));function i(e,t){return e>>>=0,l().subarray(e/1,e/1+t)}let a=null;function o(){return(a===null||a.buffer.detached===!0||a.buffer.detached===void 0&&a.buffer!==_.memory.buffer)&&(a=new DataView(_.memory.buffer)),a}function s(e,t){return e>>>=0,te(e,t)}let c=null;function l(){return(c===null||c.byteLength===0)&&(c=new Uint8Array(_.memory.buffer)),c}function u(e){return e==null}function ee(e,t){let n=t(e.length*1,1)>>>0;return l().set(e,n/1),g=e.length,n}function d(e,t,n){if(n===void 0){let n=h.encode(e),r=t(n.length,1)>>>0;return l().subarray(r,r+n.length).set(n),g=n.length,r}let r=e.length,i=t(r,1)>>>0,a=l(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=l().subarray(i+o,i+r),a=h.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return g=o,i}function f(e){let t=_.__wbindgen_externrefs.get(e);return _.__externref_table_dealloc(e),t}let p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});p.decode();let m=0;function te(e,t){return m+=t,m>=2146435072&&(p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),p.decode(),m=t),p.decode(l().subarray(e,e+t))}const h=new TextEncoder;`encodeInto`in h||(h.encodeInto=function(e,t){let n=h.encode(e);return t.set(n),{read:e.length,written:n.length}});let g=0,_;function v(e,t){return _=e.exports,a=null,c=null,_.__wbindgen_start(),_}async function y(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function b(e){if(_!==void 0)return _;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let t=n();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:r,module:i}=await y(await e,t);return v(r,i)}async function ne(e){return _=void 0,a=null,c=null,b(e)}var x=class e extends Error{code;constructor(t,n){super(n),this.name=`OoxmlError`,this.code=t,Object.setPrototypeOf(this,e.prototype)}},S=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}},C,w,re=e((()=>{C=1<<25,C*4,w=class e extends RangeError{code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}}}));function ie(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var ae=class{state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},T=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function E(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function oe(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function se(e,t){return e({module_or_path:t})}var ce=class{runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new ae(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),le),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return this.runtime.run(e)}poison(){this.runtime.poison(new T(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):se(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,oe(e)}};function le(e){return E(e)?new T(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function D(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function O(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return D(t.requiredBytes)&&D(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var k=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function A(e){if(e instanceof k)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!O(r)))return new k(r)}function ue(e,t,n){let r=A(e);if(!(!r||r.offeredBytes!==t||r.requiredBytes>n))return r}re();const j=`OOXML_RESOURCE_LIMIT:`;function M(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function N(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return M(t.archiveEntryCount)&&M(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||M(t.largestInflatedEntryBytes))&&M(t.distinctInflatedBytes)&&M(t.operationInflatedBytes)}function P(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!N(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function F(e){return e===`docx`||e===`xlsx`||e===`pptx`}function I(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function L(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function R(e){return L(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function z(e){return!L(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const B=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}]]),V=new Set([...B.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),H=new Set([...B.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function de(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!F(t.format)||!L(t.operation,256)||!R(t.resource)||!R(t.metric)||!M(t.limit)||!M(t.observed)||typeof t.configurable!=`boolean`||!N(t.usage)?!1:!(`part`in t)||z(t.part)}function U(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!I(t.stage)||!de(t.violation))return!1;let n=t.violation,r=B.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(V.has(n.resource)&&H.has(n.metric))}function fe(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function pe(e){if(!U(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:fe(t.usage)}};return U(n)?n:void 0}function W(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``}: ${t.metric} ${t.observed} > ${t.limit}`}function me(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(j))return;let n;try{n=JSON.parse(t.slice(21))}catch{return}if(!n||typeof n!=`object`)return;let r=n;if(!(r.code!==`ooxml-resource-limit`||!U(r.details)))return new S(W(r.details),r.details)}function he(e){if(e instanceof w)return{message:e.message,errorName:e.name,code:e.code,decodedImage:{metric:e.metric,limit:e.limit,observed:e.observed}};let t=A(e);if(t)return{message:t.message,errorName:t.name,code:t.code,insufficientCredit:{requiredBytes:t.requiredBytes,offeredBytes:t.offeredBytes}};let n=e instanceof x||e instanceof S?e:me(e);if(n instanceof S){let e=pe(n.details);return e?{message:typeof n.message==`string`?n.message:W(e),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:e}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(n instanceof x)return{message:typeof n.message==`string`?n.message:String(n.message),errorName:L(n.name,128)?n.name:`OoxmlError`,...R(n.code)?{code:n.code}:{}};let r=e instanceof Error?e.message:String(e);if(typeof r==`string`&&r.startsWith(j))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let i=e instanceof Error?e:Error(r),a=i;return{message:typeof i.message==`string`?i.message:String(i.message),errorName:L(i.name,128)?i.name:`Error`,...typeof a.code==`string`?{code:a.code}:{}}}function G(e){try{return he(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}function ge(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function _e(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const K=`ooxml-pull-v1`;function q(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function ve(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var J=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,q(this.maxRetainedBytes,`max retained lease bytes`),q(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},ye=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){ve(e.sessionId),q(e.operationId,`operation id`),q(e.generation,`generation`),q(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&q(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=G(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(q(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:K,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){q(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(q(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:K,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:K,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};const Y=67108864;var be=class{coordinator=new J;host=null;identity=null;constructor(e,t=e=>e(this.requireArchive())){this.archive=e,this.executeArchive=t}open(e){if(this.host)throw Error(`a DOCX document pull session is already active`);this.executeArchive(t=>{t.open_document_cursor(e.operationId,e.generation)});let t=0;this.identity=e,this.host=new ye({...e,maxByteCredit:Y,coordinator:this.coordinator,driver:{pull:n=>{let r;try{r=this.executeArchive(r=>r.pull_document_chunk(t,e.operationId,e.generation,n))}catch(e){throw ue(e,n,Y)||e}let i=ge(r);return{payload:i,byteLength:i.byteLength,done:this.executeArchive(e=>e.document_chunk_done()),transfer:[i]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:n=>{if(n!==t)throw Error(`DOCX document acknowledgement sequence mismatch`);this.executeArchive(n=>n.acknowledge_document_chunk(t,e.operationId,e.generation)),t+=1},cancel:()=>this.executeArchive(e=>e.cancel_document_cursor()),close:()=>this.executeArchive(e=>e.close_document_session()),resourceUsage:()=>{let e=this.executeArchive(e=>e.document_cursor_resource_usage?.());return e?P(e):void 0}}})}dispatch(e,t){return!this.host||!this.identity?(t({protocol:K,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:G(Error(`DOCX document pull session is not open`))}),Promise.resolve()):this.host.dispatch(e,t)}async reset(){if(this.host)try{this.archive()&&this.executeArchive(e=>e.close_document_session())}finally{this.host=null,this.identity=null,this.coordinator=new J}}requireArchive(){let e=this.archive();if(!e)throw Error(`No docx loaded`);return e}};function xe(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}const X=new ce(b,{freeArchive:e=>e.free(),reinit:ne}),Z=new be(()=>X.archive,e=>X.run(()=>{let t=X.archive;if(!t)throw Error(`No docx loaded`);return e(t)}));let Q=0;const $=(e,t)=>self.postMessage(e,t);self.onmessage=async e=>{let n=e.data;if(xe(n)){try{await Z.dispatch(n,$)}catch(e){$({protocol:K,kind:`error`,sessionId:n.sessionId,operationId:n.operationId,generation:n.generation,requestId:n.requestId,error:G(e)})}return}if(n.type===`init`){X.setWasmInput(ie(n.wasmUrl)??n.wasmUrl);return}let r=n.id;try{if(await X.ensureReady(),n.type!==`parse`&&X.archive){let e=X.archive;X.run(()=>e.assert_healthy())}if(n.type===`parse`){await Z.reset();let[e,i,a]=_e(n.resourcePolicy),o=new Uint8Array(n.data);X.run(()=>{let n=new t(o,e,i,a);X.setArchive(n)}),Q+=1;let s={sessionId:Q,operationId:Q,generation:Q};Z.open(s),$({type:`documentSessionOpened`,id:r,...s});return}let e=X.archive;if(n.type===`extractImage`){if(!e)throw Error(`No docx loaded`);let t=X.run(()=>e.extract_image(n.path).buffer),i={type:`imageExtracted`,id:r,bytes:t};self.postMessage(i,[t]);return}if(n.type===`resourceUsage`){if(!e)throw Error(`No docx loaded`);$({type:`resourceUsage`,id:r,usage:P(X.run(()=>e.resource_usage()))});return}if(n.type===`toMarkdown`){if(!e)throw Error(`No docx loaded`);$({type:`markdownRendered`,id:r,markdown:X.run(()=>e.to_markdown())});return}}catch(e){$({type:`error`,id:r,...G(e)})}};", $e = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", Qe], { type: "text/javascript;charset=utf-8" });
-function et(e) {
+var tt = "var e=(e,t)=>()=>(e&&(t=e(e=0)),t),t=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,r.unregister(this),e}free(){let e=this.__destroy_into_raw();_.__wbg_docxarchive_free(e,0)}acknowledge_document_chunk(e,t,n){let r=_.docxarchive_acknowledge_document_chunk(this.__wbg_ptr,e,t,n);if(r[1])throw f(r[0])}assert_healthy(){let e=_.docxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw f(e[0])}cancel_document_cursor(){_.docxarchive_cancel_document_cursor(this.__wbg_ptr)}close_document_session(){_.docxarchive_close_document_session(this.__wbg_ptr)}document_chunk_done(){let e=_.docxarchive_document_chunk_done(this.__wbg_ptr);if(e[2])throw f(e[1]);return e[0]!==0}document_cursor_resource_usage(){let e=_.docxarchive_document_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=i(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}extract_image(e){let t=d(e,_.__wbindgen_malloc,_.__wbindgen_realloc),n=g,r=_.docxarchive_extract_image(this.__wbg_ptr,t,n);if(r[3])throw f(r[2]);var a=i(r[0],r[1]).slice();return _.__wbindgen_free(r[0],r[1]*1,1),a}constructor(e,t,n,i){let a=ee(e,_.__wbindgen_malloc),o=g,s=_.docxarchive_new(a,o,!u(t),u(t)?BigInt(0):t,!u(n),u(n)?BigInt(0):n,!u(i),u(i)?BigInt(0):i);if(s[2])throw f(s[1]);return this.__wbg_ptr=s[0]>>>0,r.register(this,this.__wbg_ptr,this),this}open_document_cursor(e,t){let n=_.docxarchive_open_document_cursor(this.__wbg_ptr,e,t);if(n[1])throw f(n[0])}parse(){let e=_.docxarchive_parse(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=i(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}pull_document_chunk(e,t,n,r){let a=_.docxarchive_pull_document_chunk(this.__wbg_ptr,e,t,n,r);if(a[3])throw f(a[2]);var o=i(a[0],a[1]).slice();return _.__wbindgen_free(a[0],a[1]*1,1),o}resource_usage(){let e=_.docxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw f(e[2]);var t=i(e[0],e[1]).slice();return _.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=_.docxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,f(i[2]);return e=n,t=r,s(n,r)}finally{_.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(t.prototype[Symbol.dispose]=t.prototype.free);function n(){return{__proto__:null,\"./docx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(s(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(s(e,t))}finally{_.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=d(n,_.__wbindgen_malloc,_.__wbindgen_realloc),i=g;o().setInt32(e+4,i,!0),o().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return s(e,t)},__wbindgen_init_externref_table:function(){let e=_.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const r=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>_.__wbg_docxarchive_free(e>>>0,1));function i(e,t){return e>>>=0,l().subarray(e/1,e/1+t)}let a=null;function o(){return(a===null||a.buffer.detached===!0||a.buffer.detached===void 0&&a.buffer!==_.memory.buffer)&&(a=new DataView(_.memory.buffer)),a}function s(e,t){return e>>>=0,te(e,t)}let c=null;function l(){return(c===null||c.byteLength===0)&&(c=new Uint8Array(_.memory.buffer)),c}function u(e){return e==null}function ee(e,t){let n=t(e.length*1,1)>>>0;return l().set(e,n/1),g=e.length,n}function d(e,t,n){if(n===void 0){let n=h.encode(e),r=t(n.length,1)>>>0;return l().subarray(r,r+n.length).set(n),g=n.length,r}let r=e.length,i=t(r,1)>>>0,a=l(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=l().subarray(i+o,i+r),a=h.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return g=o,i}function f(e){let t=_.__wbindgen_externrefs.get(e);return _.__externref_table_dealloc(e),t}let p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});p.decode();let m=0;function te(e,t){return m+=t,m>=2146435072&&(p=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),p.decode(),m=t),p.decode(l().subarray(e,e+t))}const h=new TextEncoder;`encodeInto`in h||(h.encodeInto=function(e,t){let n=h.encode(e);return t.set(n),{read:e.length,written:n.length}});let g=0,_;function v(e,t){return _=e.exports,a=null,c=null,_.__wbindgen_start(),_}async function y(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function b(e){if(_!==void 0)return _;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let t=n();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:r,module:i}=await y(await e,t);return v(r,i)}async function ne(e){return _=void 0,a=null,c=null,b(e)}var x=class e extends Error{code;constructor(t,n){super(n),this.name=`OoxmlError`,this.code=t,Object.setPrototypeOf(this,e.prototype)}},S=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}},C,w,re=e((()=>{C=1<<25,C*4,w=class e extends RangeError{code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}}}));function ie(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var ae=class{state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},T=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function E(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function oe(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function se(e,t){return e({module_or_path:t})}var ce=class{runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new ae(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),le),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return this.runtime.run(e)}poison(){this.runtime.poison(new T(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):se(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,oe(e)}};function le(e){return E(e)?new T(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function D(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function O(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return D(t.requiredBytes)&&D(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var k=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function A(e){if(e instanceof k)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!O(r)))return new k(r)}function ue(e,t,n){let r=A(e);if(!(!r||r.offeredBytes!==t||r.requiredBytes>n))return r}re();const j=`OOXML_RESOURCE_LIMIT:`;function M(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function N(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return M(t.archiveEntryCount)&&M(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||M(t.largestInflatedEntryBytes))&&M(t.distinctInflatedBytes)&&M(t.operationInflatedBytes)}function P(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!N(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function F(e){return e===`docx`||e===`xlsx`||e===`pptx`}function I(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function L(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function R(e){return L(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function z(e){return!L(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const B=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}]]),V=new Set([...B.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),H=new Set([...B.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function de(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!F(t.format)||!L(t.operation,256)||!R(t.resource)||!R(t.metric)||!M(t.limit)||!M(t.observed)||typeof t.configurable!=`boolean`||!N(t.usage)?!1:!(`part`in t)||z(t.part)}function U(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!I(t.stage)||!de(t.violation))return!1;let n=t.violation,r=B.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(V.has(n.resource)&&H.has(n.metric))}function fe(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function pe(e){if(!U(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:fe(t.usage)}};return U(n)?n:void 0}function W(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``}: ${t.metric} ${t.observed} > ${t.limit}`}function me(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(j))return;let n;try{n=JSON.parse(t.slice(21))}catch{return}if(!n||typeof n!=`object`)return;let r=n;if(!(r.code!==`ooxml-resource-limit`||!U(r.details)))return new S(W(r.details),r.details)}function he(e){if(e instanceof w)return{message:e.message,errorName:e.name,code:e.code,decodedImage:{metric:e.metric,limit:e.limit,observed:e.observed}};let t=A(e);if(t)return{message:t.message,errorName:t.name,code:t.code,insufficientCredit:{requiredBytes:t.requiredBytes,offeredBytes:t.offeredBytes}};let n=e instanceof x||e instanceof S?e:me(e);if(n instanceof S){let e=pe(n.details);return e?{message:typeof n.message==`string`?n.message:W(e),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:e}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(n instanceof x)return{message:typeof n.message==`string`?n.message:String(n.message),errorName:L(n.name,128)?n.name:`OoxmlError`,...R(n.code)?{code:n.code}:{}};let r=e instanceof Error?e.message:String(e);if(typeof r==`string`&&r.startsWith(j))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let i=e instanceof Error?e:Error(r),a=i;return{message:typeof i.message==`string`?i.message:String(i.message),errorName:L(i.name,128)?i.name:`Error`,...typeof a.code==`string`?{code:a.code}:{}}}function G(e){try{return he(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}function ge(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function _e(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const K=`ooxml-pull-v1`;function q(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function ve(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var J=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,q(this.maxRetainedBytes,`max retained lease bytes`),q(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},ye=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){ve(e.sessionId),q(e.operationId,`operation id`),q(e.generation,`generation`),q(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&q(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=G(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(q(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:K,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){q(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(q(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:K,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:K,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};const Y=67108864;var be=class{coordinator=new J;host=null;identity=null;constructor(e,t=e=>e(this.requireArchive())){this.archive=e,this.executeArchive=t}open(e){if(this.host)throw Error(`a DOCX document pull session is already active`);this.executeArchive(t=>{t.open_document_cursor(e.operationId,e.generation)});let t=0;this.identity=e,this.host=new ye({...e,maxByteCredit:Y,coordinator:this.coordinator,driver:{pull:n=>{let r;try{r=this.executeArchive(r=>r.pull_document_chunk(t,e.operationId,e.generation,n))}catch(e){throw ue(e,n,Y)||e}let i=ge(r);return{payload:i,byteLength:i.byteLength,done:this.executeArchive(e=>e.document_chunk_done()),transfer:[i]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:n=>{if(n!==t)throw Error(`DOCX document acknowledgement sequence mismatch`);this.executeArchive(n=>n.acknowledge_document_chunk(t,e.operationId,e.generation)),t+=1},cancel:()=>this.executeArchive(e=>e.cancel_document_cursor()),close:()=>this.executeArchive(e=>e.close_document_session()),resourceUsage:()=>{let e=this.executeArchive(e=>e.document_cursor_resource_usage?.());return e?P(e):void 0}}})}dispatch(e,t){return!this.host||!this.identity?(t({protocol:K,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:G(Error(`DOCX document pull session is not open`))}),Promise.resolve()):this.host.dispatch(e,t)}async reset(){if(this.host)try{this.archive()&&this.executeArchive(e=>e.close_document_session())}finally{this.host=null,this.identity=null,this.coordinator=new J}}requireArchive(){let e=this.archive();if(!e)throw Error(`No docx loaded`);return e}};function xe(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}const X=new ce(b,{freeArchive:e=>e.free(),reinit:ne}),Z=new be(()=>X.archive,e=>X.run(()=>{let t=X.archive;if(!t)throw Error(`No docx loaded`);return e(t)}));let Q=0;const $=(e,t)=>self.postMessage(e,t);self.onmessage=async e=>{let n=e.data;if(xe(n)){try{await Z.dispatch(n,$)}catch(e){$({protocol:K,kind:`error`,sessionId:n.sessionId,operationId:n.operationId,generation:n.generation,requestId:n.requestId,error:G(e)})}return}if(n.type===`init`){X.setWasmInput(ie(n.wasmUrl)??n.wasmUrl);return}let r=n.id;try{if(await X.ensureReady(),n.type!==`parse`&&X.archive){let e=X.archive;X.run(()=>e.assert_healthy())}if(n.type===`parse`){await Z.reset();let[e,i,a]=_e(n.resourcePolicy),o=new Uint8Array(n.data);X.run(()=>{let n=new t(o,e,i,a);X.setArchive(n)}),Q+=1;let s={sessionId:Q,operationId:Q,generation:Q};Z.open(s),$({type:`documentSessionOpened`,id:r,...s});return}let e=X.archive;if(n.type===`extractImage`){if(!e)throw Error(`No docx loaded`);let t=X.run(()=>e.extract_image(n.path).buffer),i={type:`imageExtracted`,id:r,bytes:t};self.postMessage(i,[t]);return}if(n.type===`resourceUsage`){if(!e)throw Error(`No docx loaded`);$({type:`resourceUsage`,id:r,usage:P(X.run(()=>e.resource_usage()))});return}if(n.type===`toMarkdown`){if(!e)throw Error(`No docx loaded`);$({type:`markdownRendered`,id:r,markdown:X.run(()=>e.to_markdown())});return}}catch(e){$({type:`error`,id:r,...G(e)})}};", nt = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", tt], { type: "text/javascript;charset=utf-8" });
+function rt(e) {
 	let t;
 	try {
-		if (t = $e && (self.URL || self.webkitURL).createObjectURL($e), !t) throw "";
+		if (t = nt && (self.URL || self.webkitURL).createObjectURL(nt), !t) throw "";
 		let n = new Worker(t, {
 			type: "module",
 			name: e?.name
@@ -24,7 +24,7 @@ function et(e) {
 			(self.URL || self.webkitURL).revokeObjectURL(t);
 		}), n;
 	} catch {
-		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(Qe), {
+		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(tt), {
 			type: "module",
 			name: e?.name
 		});
@@ -32,17 +32,17 @@ function et(e) {
 }
 //#endregion
 //#region packages/docx/src/wasm/docx_parser_bg.wasm?url
-var tt = new URL("docx_parser_bg.wasm", import.meta.url).href;
+var it = new URL("docx_parser_bg.wasm", import.meta.url).href;
 //#endregion
 //#region packages/docx/src/bookmark-nav.ts
-function nt(e) {
+function at(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n of e.pages) for (let e of n.bookmarkStarts) e.name !== "" && !t.has(e.name) && t.set(e.name, n.pageIndex);
 	return t;
 }
 //#endregion
 //#region packages/docx/src/embedded-fonts.ts
-async function rt(e, t) {
+async function ot(e, t) {
 	let n = e.embeddedFonts;
 	if (!n || n.length === 0) return [];
 	let r = (await Promise.all(n.map(async (e) => {
@@ -53,25 +53,25 @@ async function rt(e, t) {
 				bytes: n,
 				odttf: e.partPath.toLowerCase().endsWith(".odttf"),
 				fontKey: e.fontKey,
-				weight: it(e.style),
-				style: at(e.style)
+				weight: st(e.style),
+				style: ct(e.style)
 			};
 		} catch {
 			return null;
 		}
 	}))).filter((e) => e !== null);
-	return r.length === 0 ? [] : ge(r);
+	return r.length === 0 ? [] : ye(r);
 }
-function it(e) {
+function st(e) {
 	return e === "bold" || e === "boldItalic" ? "bold" : "normal";
 }
-function at(e) {
+function ct(e) {
 	return e === "italic" || e === "boldItalic" ? "italic" : "normal";
 }
 //#endregion
 //#region packages/docx/src/element-context.ts
-var I = ue, ot = 16384;
-function st(e, t) {
+var N = de, lt = 16384;
+function ut(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -79,7 +79,7 @@ function st(e, t) {
 	}
 	return e.slice(0, n);
 }
-function ct(e, t) {
+function dt(e, t) {
 	let n = [], r = 0, i = !1;
 	for (let a of e) {
 		if (a.length === 0) continue;
@@ -90,7 +90,7 @@ function ct(e, t) {
 			}
 			n.push("\n"), r++;
 		}
-		let e = st(a, Math.max(0, t - r));
+		let e = ut(a, Math.max(0, t - r));
 		if (n.push(e), r += e.length, e.length < a.length) {
 			i = !0;
 			break;
@@ -102,7 +102,7 @@ function ct(e, t) {
 		truncated: i
 	};
 }
-function* L(e) {
+function* P(e) {
 	if (e.kind === "paragraph") {
 		for (let t of e.lines) {
 			let e = t.placements.flatMap((e) => e.kind === "text" ? [e.text] : []).join("");
@@ -111,42 +111,42 @@ function* L(e) {
 		return;
 	}
 	if (e.kind === "table") {
-		for (let t of e.rows) for (let e of t.cells) for (let t of e.blocks) yield* L(t.layout);
+		for (let t of e.rows) for (let e of t.cells) for (let t of e.blocks) yield* P(t.layout);
 		return;
 	}
-	if (e.kind === "note" || e.kind === "textbox") for (let t of e.story.blocks) yield* L(t);
+	if (e.kind === "note" || e.kind === "textbox") for (let t of e.story.blocks) yield* P(t);
 }
-function* lt(e) {
+function* ft(e) {
 	for (let t of e.drawing.commands) (t.kind === "text" || t.kind === "watermark-text") && (yield t.text);
-	for (let t of e.textBoxes) yield* L(t);
+	for (let t of e.textBoxes) yield* P(t);
 }
-function R(e) {
-	let t = e ?? ot;
+function pt(e) {
+	let t = e ?? lt;
 	if (!Number.isFinite(t) || t < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	return Math.min(I, Math.floor(t));
+	return Math.min(N, Math.floor(t));
 }
-function ut(e) {
+function mt(e) {
 	return {
 		story: e.story,
 		storyInstance: e.storyInstance,
 		path: [...e.path]
 	};
 }
-function dt(e) {
+function ht(e) {
 	return "drawing" in e ? e.drawing.inkBounds : e.placement.bounds;
 }
-function ft(e) {
-	let t = dt(e), n = [
-		E(e.pointToPage, t),
-		E(e.pointToPage, {
+function gt(e) {
+	let t = ht(e), n = [
+		C(e.pointToPage, t),
+		C(e.pointToPage, {
 			xPt: t.xPt + t.widthPt,
 			yPt: t.yPt
 		}),
-		E(e.pointToPage, {
+		C(e.pointToPage, {
 			xPt: t.xPt,
 			yPt: t.yPt + t.heightPt
 		}),
-		E(e.pointToPage, {
+		C(e.pointToPage, {
 			xPt: t.xPt + t.widthPt,
 			yPt: t.yPt + t.heightPt
 		})
@@ -158,10 +158,10 @@ function ft(e) {
 		heightPt: o - i
 	};
 }
-function z(e, t) {
+function F(e, t) {
 	return t.xPt >= e.xPt && t.xPt <= e.xPt + e.widthPt && t.yPt >= e.yPt && t.yPt <= e.yPt + e.heightPt;
 }
-function pt(e, t) {
+function _t(e, t) {
 	let n = !1;
 	for (let r = 0, i = t.length - 1; r < t.length; i = r++) {
 		let a = t[r], o = t[i];
@@ -169,35 +169,35 @@ function pt(e, t) {
 	}
 	return n;
 }
-function mt(e, t) {
-	return z(e.inkBounds, t) ? e.clip ? e.clip.kind === "rect" ? z(e.clip.rect, t) : pt(t, e.clip.points) : !0 : !1;
+function vt(e, t) {
+	return F(e.inkBounds, t) ? e.clip ? e.clip.kind === "rect" ? F(e.clip.rect, t) : _t(t, e.clip.points) : !0 : !1;
 }
-function ht(e, t, n) {
+function yt(e, t, n) {
 	for (let n of e.clips) {
-		let e = Te(n.pointToPage, t);
-		if (!e || !z(n.bounds, e)) return !1;
+		let e = Oe(n.pointToPage, t);
+		if (!e || !F(n.bounds, e)) return !1;
 	}
-	return "drawing" in e ? mt(e.drawing, n) : z(e.placement.bounds, n);
+	return "drawing" in e ? vt(e.drawing, n) : F(e.placement.bounds, n);
 }
-function B(e, t) {
+function I(e, t) {
 	return e.commands.find((e) => e.kind === "resource" && e.resourceKind === t);
 }
-function gt(e) {
-	return B(e, "chart") ? "chart" : e.commands.some((e) => e.kind === "drawingml-shape" || e.kind === "drawingml-image-fill" || e.kind === "fill-rect" || e.kind === "stroke-rect" || e.kind === "text" || e.kind === "watermark-text") ? "shape" : B(e, "image") ? "image" : null;
+function bt(e) {
+	return I(e, "chart") ? "chart" : e.commands.some((e) => e.kind === "drawingml-shape" || e.kind === "drawingml-image-fill" || e.kind === "fill-rect" || e.kind === "stroke-rect" || e.kind === "text" || e.kind === "watermark-text") ? "shape" : I(e, "image") ? "image" : null;
 }
-function _t(e, t, n, r, i, a) {
-	let o = "drawing" in e ? gt(e.drawing) : e.placement.resourceKind;
+function xt(e, t, n, r, i, a) {
+	let o = "drawing" in e ? bt(e.drawing) : e.placement.resourceKind;
 	if (!o) return null;
 	let s, c = !1, l, u;
 	if (o === "chart") {
-		let t = "drawing" in e ? B(e.drawing, "chart").resourceKey : e.placement.resourceKey, n = i.resolve(t, "chart"), r = y(n.model, a);
+		let t = "drawing" in e ? I(e.drawing, "chart").resourceKey : e.placement.resourceKey, n = i.resolve(t, "chart"), r = y(n.model, a);
 		s = r.text, c = r.truncated, u = n.model.series.length;
 	} else if (o === "image") {
-		let t = "drawing" in e ? B(e.drawing, "image").resourceKey : e.placement.resourceKey, n = i.descriptors.find((e) => e.resourceKey === t && e.kind === "image" && "mimeType" in e);
+		let t = "drawing" in e ? I(e.drawing, "image").resourceKey : e.placement.resourceKey, n = i.descriptors.find((e) => e.resourceKey === t && e.kind === "image" && "mimeType" in e);
 		if (!n) throw Error(`Unknown image paint resource: ${t}`);
 		l = n.mimeType;
 	} else {
-		let t = ct(lt(e), a);
+		let t = dt(ft(e), a);
 		s = t.text, c = t.truncated;
 	}
 	return {
@@ -207,8 +207,8 @@ function _t(e, t, n, r, i, a) {
 		elementIndex: n,
 		elementType: o,
 		point: { ...r },
-		bounds: ft(e),
-		source: ut("drawing" in e ? e.drawing.source : e.source),
+		bounds: gt(e),
+		source: mt("drawing" in e ? e.drawing.source : e.source),
 		...s === void 0 ? {} : { text: s },
 		...l === void 0 ? {} : { mimeType: l },
 		...u === void 0 ? {} : { seriesCount: u },
@@ -218,26 +218,26 @@ function _t(e, t, n, r, i, a) {
 		maxTextCharacters: a
 	};
 }
-function vt(e, t, n, r, i = {}) {
+function St(e, t, n, r, i = {}) {
 	if (!Number.isFinite(n.xPt) || !Number.isFinite(n.yPt)) throw RangeError("DOCX hit-test point must contain finite page coordinates.");
-	let a = R(i.maxTextCharacters), o = ke(e, t);
+	let a = pt(i.maxTextCharacters), o = je(e, t);
 	for (let e = o.length - 1; e >= 0; e--) {
-		let i = o[e], s = Te(i.pointToPage, n);
-		if (!s || !ht(i, n, s)) continue;
-		let c = _t(i, t, e, n, r, a);
+		let i = o[e], s = Oe(i.pointToPage, n);
+		if (!s || !yt(i, n, s)) continue;
+		let c = xt(i, t, e, n, r, a);
 		if (c) return c;
 	}
 	return null;
 }
-function yt(e, t, n, r) {
-	return vt(Ue(e, {
+function Ct(e, t, n, r) {
+	return St(Ge(e, {
 		currentDate: r.currentDate,
 		defaultCurrentDateMs: r.defaultCurrentDateMs,
 		showTrackedChanges: r.showTrackedChanges
-	}, t).layout, t, n, Ie(e), r);
+	}, t).layout, t, n, Re(e), r);
 }
-function bt(e, t) {
-	let n = R(t), r = e.text === void 0 ? void 0 : st(e.text, n), i = e.truncated || e.text !== void 0 && r.length < e.text.length;
+function L(e, t) {
+	let n = pt(t), r = e.text === void 0 ? void 0 : ut(e.text, n), i = e.truncated || e.text !== void 0 && r.length < e.text.length;
 	return {
 		...structuredClone(e),
 		...r === void 0 ? {} : { text: r },
@@ -249,20 +249,20 @@ function bt(e, t) {
 }
 //#endregion
 //#region packages/docx/src/revisions.ts
-function V(e) {
-	let t = Ye(e.id);
+function R(e) {
+	let t = Qe(e.id);
 	return t === void 0 ? void 0 : `${e.kind}\u0000${t}`;
 }
-function H(e) {
+function z(e) {
 	return Object.freeze({
 		...e,
 		path: Object.freeze([...e.path])
 	});
 }
-function xt(e, t) {
+function wt(e, t) {
 	return e !== void 0 && e.story === t.story && e.storyInstance === t.storyInstance && e.path.length === t.path.length && e.path.every((e, n) => e === t.path[n]);
 }
-function U(e, t) {
+function B(e, t) {
 	let n = 0, r = e.length;
 	for (; n < r;) {
 		let i = n + Math.floor((r - n) / 2);
@@ -270,22 +270,22 @@ function U(e, t) {
 	}
 	return n;
 }
-function St(e, t) {
+function Tt(e, t) {
 	let n = Array(e.length), r;
 	for (let i = e.length - 1; i >= 0; --i) {
 		n[i] = r;
-		let a = e[i], o = t.get(P(a.source))?.[0];
+		let a = e[i], o = t.get(j(a.source))?.[0];
 		o !== void 0 && (r = Object.freeze({
-			source: H(a.source),
+			source: z(a.source),
 			sourceRunIndex: o
 		}));
 	}
 	let i = Array(e.length), a;
 	for (let n = 0; n < e.length; n += 1) {
 		i[n] = a;
-		let r = e[n], o = t.get(P(r.source))?.at(-1);
+		let r = e[n], o = t.get(j(r.source))?.at(-1);
 		o !== void 0 && (a = Object.freeze({
-			source: H(r.source),
+			source: z(r.source),
 			sourceRunIndex: o
 		}));
 	}
@@ -294,17 +294,17 @@ function St(e, t) {
 		preceding: i
 	};
 }
-function Ct(e, t, n, r, i, a) {
-	let o = r[e], s = i.get(P(o.source)) ?? [], c = s[U(s, n)], l = s[U(s, t) - 1], u = c ?? l;
+function Et(e, t, n, r, i, a) {
+	let o = r[e], s = i.get(j(o.source)) ?? [], c = s[B(s, n)], l = s[B(s, t) - 1], u = c ?? l;
 	return u === void 0 ? a.following[e] ?? a.preceding[e] : Object.freeze({
-		source: H(o.source),
+		source: z(o.source),
 		sourceRunIndex: u
 	});
 }
-function wt(e, t, n = /* @__PURE__ */ new Map()) {
+function Dt(e, t, n = /* @__PURE__ */ new Map()) {
 	let r = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Set();
 	e.forEach((e, t) => {
-		let n = V(e);
+		let n = R(e);
 		n === void 0 || i.has(n) || (r.has(n) ? (r.delete(n), i.add(n)) : r.set(n, t));
 	});
 	let a = t.blocks.sources.flatMap((e) => {
@@ -314,11 +314,11 @@ function wt(e, t, n = /* @__PURE__ */ new Map()) {
 			source: e,
 			runs: n.runs
 		}] : [];
-	}), o = new Map([...n].map(([e, t]) => [e, Object.freeze([...t].sort((e, t) => e - t))])), s = St(a, o), c = [];
+	}), o = new Map([...n].map(([e, t]) => [e, Object.freeze([...t].sort((e, t) => e - t))])), s = Tt(a, o), c = [];
 	for (let [e, t] of a.entries()) {
 		let n = 0;
 		for (; n < t.runs.length;) {
-			let i = t.runs[n], l = i.revision?.kind ? V({
+			let i = t.runs[n], l = i.revision?.kind ? R({
 				kind: i.revision.kind,
 				id: i.revision.id
 			}) : void 0, u = l === void 0 ? void 0 : r.get(l);
@@ -329,16 +329,16 @@ function wt(e, t, n = /* @__PURE__ */ new Map()) {
 			let d = n;
 			for (n += 1; n < t.runs.length;) {
 				let e = t.runs[n].revision;
-				if (!e?.kind || V({
+				if (!e?.kind || R({
 					kind: e.kind,
 					id: e.id
 				}) !== l) break;
 				n += 1;
 			}
-			let f = n, p = o.get(P(t.source)) ?? [], m = (p[U(p, d)] ?? f) < f ? void 0 : Ct(e, d, f, a, o, s);
+			let f = n, p = o.get(j(t.source)) ?? [], m = (p[B(p, d)] ?? f) < f ? void 0 : Et(e, d, f, a, o, s);
 			c.push(Object.freeze({
 				revisionIndex: u,
-				source: H(t.source),
+				source: z(t.source),
 				startRunIndex: d,
 				endRunIndex: f,
 				...m === void 0 ? {} : { geometryFallback: m }
@@ -347,26 +347,26 @@ function wt(e, t, n = /* @__PURE__ */ new Map()) {
 	}
 	return c;
 }
-function Tt(e, t, n = /* @__PURE__ */ new Map(), r = {}) {
+function Ot(e, t, n = /* @__PURE__ */ new Map(), r = {}) {
 	if ((e?.length ?? 0) === 0) return [];
-	let i = wt(e ?? [], t, n), a = r.completedSourceKeys;
+	let i = Dt(e ?? [], t, n), a = r.completedSourceKeys;
 	return a === void 0 ? i : i.filter((e) => {
-		let t = n.get(P(e.source));
-		return t !== void 0 && [...t].some((t) => t >= e.startRunIndex && t < e.endRunIndex) || a.has(P(e.source));
+		let t = n.get(j(e.source));
+		return t !== void 0 && [...t].some((t) => t >= e.startRunIndex && t < e.endRunIndex) || a.has(j(e.source));
 	});
 }
-function Et(e, t) {
-	let n = t.filter((t) => t.sourceRunIndex !== void 0 && xt(t.source, e.source) && t.sourceRunIndex >= e.startRunIndex && t.sourceRunIndex < e.endRunIndex);
+function kt(e, t) {
+	let n = t.filter((t) => t.sourceRunIndex !== void 0 && wt(t.source, e.source) && t.sourceRunIndex >= e.startRunIndex && t.sourceRunIndex < e.endRunIndex);
 	if (n.length > 0) return n;
 	let r = e.geometryFallback;
-	return r === void 0 ? [] : t.filter((e) => e.sourceRunIndex === r.sourceRunIndex && xt(e.source, r.source));
+	return r === void 0 ? [] : t.filter((e) => e.sourceRunIndex === r.sourceRunIndex && wt(e.source, r.source));
 }
 //#endregion
 //#region packages/docx/src/layout/progressive.ts
-var Dt = 12;
-async function Ot(e, t, n, r = {}) {
+var At = 12;
+async function jt(e, t, n, r = {}) {
 	let { onPreview: i, scheduler: a } = r;
-	return Ne(De(e, t, n, i && e.sequence.length > Dt ? { onPages: (e, t) => {
+	return Fe(ke(e, t, n, i && e.sequence.length > At ? { onPages: (e, t) => {
 		i(Object.freeze({
 			layout: e,
 			exact: !1,
@@ -376,10 +376,10 @@ async function Ot(e, t, n, r = {}) {
 }
 //#endregion
 //#region packages/docx/src/document-layout-events.ts
-var W = /* @__PURE__ */ new WeakMap();
-function G(e, t) {
+var V = /* @__PURE__ */ new WeakMap();
+function H(e, t) {
 	let n = Object.freeze({ ...t });
-	for (let t of [...W.get(e) ?? []]) try {
+	for (let t of [...V.get(e) ?? []]) try {
 		t.notify(n);
 	} catch (e) {
 		try {
@@ -387,9 +387,9 @@ function G(e, t) {
 		} catch {}
 	}
 }
-function kt(e, t, n, r) {
-	let i = W.get(e);
-	i || (i = /* @__PURE__ */ new Set(), W.set(e, i));
+function Mt(e, t, n, r) {
+	let i = V.get(e);
+	i || (i = /* @__PURE__ */ new Set(), V.set(e, i));
 	let a = Object.freeze({
 		notify: n,
 		report: r
@@ -403,15 +403,65 @@ function kt(e, t, n, r) {
 		} catch {}
 	}
 	return () => {
-		i?.delete(a), i?.size === 0 && W.delete(e);
+		i?.delete(a), i?.size === 0 && V.delete(e);
+	};
+}
+//#endregion
+//#region packages/docx/src/document-layout-view.ts
+var U = /* @__PURE__ */ new WeakMap(), Nt = /* @__PURE__ */ new WeakMap(), Pt = Symbol("docxLayoutViewRequester");
+function W(e) {
+	let t = w(e), n = t.activeLayoutOptions;
+	return {
+		showTrackedChanges: n?.showTrackedChanges === !0,
+		currentDate: n?.currentDateMs ?? t.defaultCurrentDateMs
+	};
+}
+async function G(e, t, n) {
+	let r = w(e), i = E(t.currentDate, r.defaultCurrentDateMs, t.showTrackedChanges === !0), a = Object.freeze({
+		showTrackedChanges: i.showTrackedChanges === !0,
+		currentDate: i.currentDateMs
+	}), o = {
+		showTrackedChanges: a.showTrackedChanges,
+		currentDate: a.currentDate,
+		[Pt]: n
+	};
+	await e.setLayoutView(o);
+	let s = W(e);
+	return s.currentDate === a.currentDate && s.showTrackedChanges === a.showTrackedChanges;
+}
+function Ft(e, t) {
+	let n = Object.freeze({ ...W(e) }), r = (Nt.get(e) ?? 0) + 1;
+	Nt.set(e, r);
+	let i = Object.freeze({
+		view: n,
+		generation: r,
+		requester: t
+	});
+	for (let t of [...U.get(e) ?? []]) try {
+		t.notify(i);
+	} catch (e) {
+		try {
+			t.report(e);
+		} catch {}
+	}
+}
+function It(e, t, n) {
+	let r = U.get(e);
+	r || (r = /* @__PURE__ */ new Set(), U.set(e, r));
+	let i = Object.freeze({
+		notify: t,
+		report: n
+	});
+	return r.add(i), () => {
+		r?.delete(i), r?.size === 0 && U.delete(e);
 	};
 }
 //#endregion
 //#region packages/docx/src/document.ts
-function At(e, t) {
+function Lt(e, t) {
 	return e !== null && e.currentDateMs === t.currentDateMs && e.showTrackedChanges === !0 == (t.showTrackedChanges === !0);
 }
-function jt() {
+function Rt() {
 	let e, t;
 	return {
 		promise: new Promise((n, r) => {
@@ -421,12 +471,12 @@ function jt() {
 		reject: t
 	};
 }
-var Mt = Object.freeze([]), Nt = Object.freeze([]), Pt = Object.freeze({
+var zt = Object.freeze([]), Bt = Object.freeze([]), Vt = Object.freeze({
 	comments: Object.freeze([]),
 	revisions: Object.freeze([])
 });
 function K(e, t) {
-	return Ce({
+	return Ee({
 		comments: e,
 		revisions: t
 	}, "DOCX review metadata");
@@ -436,9 +486,9 @@ var q = class e {
 	_document = null;
 	_source = null;
 	_meta = null;
-	_review = Pt;
-	_layoutLifecycle = new _e();
-	_layoutObservers = new be();
+	_review = Vt;
+	_layoutLifecycle = new be();
+	_layoutObservers = new Ce();
 	_layoutCompletion = null;
 	_layoutAbort = null;
 	_bookmarkPages = null;
@@ -456,7 +506,7 @@ var q = class e {
 	_chartEx;
 	_worker;
 	_bridge;
-	_rawParts = new he({
+	_rawParts = new ve({
 		maxEntries: 64,
 		maxBytes: i
 	});
@@ -465,7 +515,7 @@ var q = class e {
 	_localMetricFontFaces = [];
 	_fetchImage = (e, t) => this.getImage(e, t);
 	constructor(e, t, n, r) {
-		this._worker = e, this._mode = t, we(this, n), this._bridge = new f(this._worker, {
+		this._worker = e, this._mode = t, De(this, n), this._bridge = new f(this._worker, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
 			onUnsolicited: (e) => this._onWorkerLayoutPush(e),
 			toError: (e) => {
@@ -477,7 +527,7 @@ var q = class e {
 				});
 			}
 		});
-		let i = new URL(r ?? tt, location.href).href;
+		let i = new URL(r ?? it, location.href).href;
 		this._bridge.post({
 			type: "init",
 			wasmUrl: i
@@ -501,29 +551,29 @@ var q = class e {
 				t = await e.arrayBuffer();
 			} else t = n;
 			t = p(await h(t, i.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let r = s === "worker" ? (await import("./render-worker-host-DDZo0feh.js")).createRenderWorker() : new et(), l = s === "worker" ? qe(i) : void 0, u = s === "worker" && !!i.progressiveLayout, d;
+			let r = s === "worker" ? (await import("./render-worker-host-DCLyw6UR.js")).createRenderWorker() : new rt(), l = s === "worker" ? Xe(i) : void 0, u = s === "worker" && !!i.progressiveLayout, d;
 			try {
 				d = new e(r, s, o, i.wasmUrl), d._metrics = c;
-				let n = D(d), f = Ee(i.currentDate, n.defaultCurrentDateMs, i.showTrackedChanges === !0);
+				let n = w(d), f = E(i.currentDate, n.defaultCurrentDateMs, i.showTrackedChanges === !0);
 				if (n.activeLayoutOptions = f, await d._parse(t, a.policy, s === "worker" ? !!i.useGoogleFonts : !1, i.workerTimeoutMs, (e) => c.observeUsage(e), l, u ? {
 					onPartial: i.onLayoutPartial,
 					onComplete: i.onLayoutComplete,
 					onProgress: i.onLayoutProgress,
 					layoutOptions: f,
 					abort: new AbortController(),
-					firstPublication: jt(),
+					firstPublication: Rt(),
 					published: !1,
 					settled: !1
-				} : void 0), s === "worker" && d._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), i.math && d._mode === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), i.threeD && d._mode === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), d._threeD = d._mode === "worker" ? void 0 : i.threeD, i.regionMap && d._mode === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), d._regionMap = d._mode === "worker" ? void 0 : i.regionMap, i.chartEx && d._mode === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), d._chartEx = d._mode === "worker" ? void 0 : i.chartEx, d._mode === "main" && i.useGoogleFonts && d._document && (d._googleFontFaces = await me(Be(d._document), Me)), d._mode === "main" && d._document?.embeddedFonts?.length) {
+				} : void 0), s === "worker" && d._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), i.math && d._mode === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), i.threeD && d._mode === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), d._threeD = d._mode === "worker" ? void 0 : i.threeD, i.regionMap && d._mode === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), d._regionMap = d._mode === "worker" ? void 0 : i.regionMap, i.chartEx && d._mode === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), d._chartEx = d._mode === "worker" ? void 0 : i.chartEx, d._mode === "main" && i.useGoogleFonts && d._document && (d._googleFontFaces = await _e(He(d._document), Pe)), d._mode === "main" && d._document?.embeddedFonts?.length) {
 					let e = d;
-					d._embeddedFontFaces = await rt(d._document, (t) => e.getFontBytes(t));
+					d._embeddedFontFaces = await ot(d._document, (t) => e.getFontBytes(t));
 				}
 				let p;
-				d._mode === "main" && d._document && (p = await je(d._document), d._localMetricFontFaces = p.faces);
+				d._mode === "main" && d._document && (p = await Ne(d._document), d._localMetricFontFaces = p.faces);
 				let m;
-				if (d._mode === "main" && i.math && d._document && ze(d._document) && (m = await Ve(d._document, i.math)), d._mode === "main" && d._document && d._source) {
-					let e = d, t = D(d);
-					t.services = Le(d._source, {
+				if (d._mode === "main" && i.math && d._document && Ve(d._document) && (m = await Ue(d._document, i.math)), d._mode === "main" && d._document && d._source) {
+					let e = d, t = w(d);
+					t.services = ze(d._source, {
 						localMetrics: p?.metrics,
 						useGoogleFonts: !!i.useGoogleFonts,
 						embeddedFaces: d._embeddedFontFaces,
@@ -531,14 +581,14 @@ var q = class e {
 						mathResources: m?.records,
 						mathDrawables: m?.drawables
 					});
-					let n = t.services, r = Oe(d._source, n, t.defaultCurrentDateMs), a = d._source.fatalParse === null, o = t.activeLayoutOptions;
+					let n = t.services, r = Ae(d._source, n, t.defaultCurrentDateMs), a = d._source.fatalParse === null, o = t.activeLayoutOptions;
 					if (!o) throw Error("Active layout view was not recorded at load");
 					let s = { onProgress: i.onLayoutProgress ? (t) => e._layoutObservers.notify("onLayoutProgress", i.onLayoutProgress, { committedUnits: t }) : void 0 };
 					if (a && i.progressiveLayout) {
 						let e = r.layoutVariants, t = d, a = new AbortController();
 						t._layoutAbort = a;
-						let c = jt(), l = null, u = !0;
-						t._layoutCompletion = Ot(d._source.bodyLayoutInput, n, o, {
+						let c = Rt(), l = null, u = !0;
+						t._layoutCompletion = jt(d._source.bodyLayoutInput, n, o, {
 							scheduler: {
 								...s,
 								signal: a.signal
@@ -550,14 +600,14 @@ var q = class e {
 									u = !1;
 									return;
 								}
-								if (l = a, r) t._layoutLifecycle.begin(), G(t, {
+								if (l = a, r) t._layoutLifecycle.begin(), H(t, {
 									pageCount: n.layout.pages.length,
 									exact: n.exact,
 									complete: !1
 								}), c.resolve();
 								else {
 									if (!t._isLayoutViewActive(o)) return;
-									G(t, {
+									H(t, {
 										pageCount: n.layout.pages.length,
 										exact: n.exact,
 										complete: !1
@@ -568,7 +618,7 @@ var q = class e {
 								}
 							}
 						}).then((n) => {
-							u && t._replaceMainLayoutPublication(e, o, l, n) === null && (u = !1), t._layoutLifecycle.succeed(), G(t, {
+							u && t._replaceMainLayoutPublication(e, o, l, n) === null && (u = !1), t._layoutLifecycle.succeed(), H(t, {
 								pageCount: t.pageCount,
 								exact: !0,
 								complete: !0
@@ -578,12 +628,12 @@ var q = class e {
 								c.reject(e);
 								return;
 							}
-							if (e instanceof Pe) {
+							if (e instanceof Ie) {
 								t._layoutLifecycle.succeed();
 								return;
 							}
 							let n = t._layoutLifecycle.fail(e);
-							G(t, {
+							H(t, {
 								pageCount: t.pageCount,
 								exact: !1,
 								complete: !1,
@@ -591,7 +641,7 @@ var q = class e {
 							}), t._layoutObservers.notify("onLayoutComplete", i.onLayoutComplete, n);
 						}), await c.promise;
 					} else if (a && (i.sliceLayout || i.onLayoutProgress)) {
-						let e = await Re(d._source.bodyLayoutInput, n, o, s);
+						let e = await Be(d._source.bodyLayoutInput, n, o, s);
 						r.layoutVariants.prime(o, e);
 					} else r.layoutVariants.layoutFor(o);
 				}
@@ -615,7 +665,7 @@ var q = class e {
 			data: e,
 			resourcePolicy: t,
 			useGoogleFonts: n,
-			defaultCurrentDateMs: D(this).defaultCurrentDateMs,
+			defaultCurrentDateMs: w(this).defaultCurrentDateMs,
 			...this._parseViewFields(),
 			renderers: a
 		} : {
@@ -626,14 +676,14 @@ var q = class e {
 		}, [e], { timeoutMs: r });
 		if ("protocol" in s) throw Error("DOCX parse open returned a pull-protocol response");
 		if (this._mode === "worker") if ("usage" in s && s.usage && i?.(s.usage), s.type === "mainThreadVerticalFallback") {
-			let e = await k(this._bridge.transport(A), s, {
+			let e = await D(this._bridge.transport(O), s, {
 				timeoutMs: r,
 				onUsage: i
 			});
 			this._source = e.source, this._document = e.document, this._meta = null, this._mode = "main";
 		} else this._meta = s.meta;
 		else {
-			let e = s, t = await k(this._bridge.transport(A), e, {
+			let e = s, t = await D(this._bridge.transport(O), e, {
 				timeoutMs: r,
 				onUsage: i
 			});
@@ -654,7 +704,7 @@ var q = class e {
 		let n = !t.published || this._isLayoutViewActive(t.layoutOptions);
 		if (n && this._applyLayoutPartial(e.partial), t.published) {
 			if (!n) return;
-			G(this, {
+			H(this, {
 				pageCount: e.partial.pageCount,
 				exact: e.partial.exact,
 				complete: !1
@@ -664,7 +714,7 @@ var q = class e {
 			});
 			return;
 		}
-		t.published = !0, this._layoutLifecycle.begin(), G(this, {
+		t.published = !0, this._layoutLifecycle.begin(), H(this, {
 			pageCount: e.partial.pageCount,
 			exact: e.partial.exact,
 			complete: !1
@@ -700,7 +750,7 @@ var q = class e {
 					revisionAnchorRanges: t.revisionAnchorRanges
 				};
 			}
-			this._invalidateLayoutDerivedCaches(), this._review = K(e.comments, e.revisions), t && (t.settled = !0, this._layoutLifecycle.succeed(), G(this, {
+			this._invalidateLayoutDerivedCaches(), this._review = K(e.comments, e.revisions), t && (t.settled = !0, this._layoutLifecycle.succeed(), H(this, {
 				pageCount: this.pageCount,
 				exact: !0,
 				complete: !0
@@ -715,7 +765,7 @@ var q = class e {
 		return i !== null && this._isLayoutViewActive(t) && this._invalidateLayoutDerivedCaches(), i;
 	}
 	_isLayoutViewActive(e) {
-		return At(D(this).activeLayoutOptions, e);
+		return Lt(w(this).activeLayoutOptions, e);
 	}
 	_rearmParseWatchdog() {
 		this._parseWatchdogMs !== void 0 && (clearTimeout(this._parseWatchdog), this._parseWatchdog = setTimeout(() => this._onParseWentSilent(), this._parseWatchdogMs));
@@ -736,7 +786,7 @@ var q = class e {
 			return;
 		}
 		let n = this._layoutLifecycle.fail(t);
-		G(this, {
+		H(this, {
 			pageCount: this.pageCount,
 			exact: !1,
 			complete: !1,
@@ -744,7 +794,7 @@ var q = class e {
 		}), this._layoutObservers.notify("onLayoutComplete", e.onComplete, n);
 	}
 	_parseViewFields() {
-		let e = D(this), t = e.activeLayoutOptions;
+		let e = w(this), t = e.activeLayoutOptions;
 		return t ? {
 			...t.currentDateMs === e.defaultCurrentDateMs ? {} : { currentDateMs: t.currentDateMs },
 			...t.showTrackedChanges === !0 ? { showTrackedChanges: !0 } : {}
@@ -757,7 +807,7 @@ var q = class e {
 			data: e,
 			resourcePolicy: t,
 			useGoogleFonts: n,
-			defaultCurrentDateMs: D(this).defaultCurrentDateMs,
+			defaultCurrentDateMs: w(this).defaultCurrentDateMs,
 			...this._parseViewFields(),
 			renderers: a,
 			progressiveLayout: !0
@@ -765,7 +815,7 @@ var q = class e {
 			if (this._parseRequestId = null, "protocol" in e) throw Error("DOCX parse open returned a pull-protocol response");
 			if ("usage" in e && e.usage && i?.(e.usage), e.type === "mainThreadVerticalFallback") {
 				this._clearParseWatchdog(), o.settled = !0, this._progressive = null, this._layoutAbort = null;
-				let t = await k(this._bridge.transport(A), e, {
+				let t = await D(this._bridge.transport(O), e, {
 					timeoutMs: r,
 					onUsage: i
 				});
@@ -784,7 +834,7 @@ var q = class e {
 		}), this._rearmParseWatchdog(), await o.firstPublication.promise;
 	}
 	destroy() {
-		this._layoutAbort?.abort(), this._layoutAbort = null, this._clearParseWatchdog(), this._parseRequestId = null, this._progressive = null, this._layoutViewGeneration++, this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, this._review = Pt, D(this).services = null, this._bookmarkPages = null, this._commentAnchorRanges = null, this._revisionAnchorRanges = null, this._reviewProjectionIndex = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (ve(this._embeddedFontFaces), this._embeddedFontFaces = []), this._googleFontFaces.length > 0 && (pe(this._googleFontFaces), this._googleFontFaces = []), this._localMetricFontFaces.length > 0 && (Fe(this._localMetricFontFaces), this._localMetricFontFaces = []), l(this._fetchImage), u(this._fetchImage);
+		this._layoutAbort?.abort(), this._layoutAbort = null, this._clearParseWatchdog(), this._parseRequestId = null, this._progressive = null, this._layoutViewGeneration++, this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, this._review = Vt, w(this).services = null, this._bookmarkPages = null, this._commentAnchorRanges = null, this._revisionAnchorRanges = null, this._reviewProjectionIndex = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (xe(this._embeddedFontFaces), this._embeddedFontFaces = []), this._googleFontFaces.length > 0 && (ge(this._googleFontFaces), this._googleFontFaces = []), this._localMetricFontFaces.length > 0 && (Le(this._localMetricFontFaces), this._localMetricFontFaces = []), l(this._fetchImage), u(this._fetchImage);
 	}
 	async getImage(e, t) {
 		return this._rawParts.get(e, t, () => this._bridge.request((t) => ({
@@ -845,32 +895,32 @@ var q = class e {
 		return this._reviewSnapshot().revisions;
 	}
 	commentAnchorRanges() {
-		if (this._meta) return this._meta.commentAnchorRanges ?? Mt;
+		if (this._meta) return this._meta.commentAnchorRanges ?? zt;
 		if (!this._document || !this._source) return [];
 		let e = this._reviewSnapshot().comments;
-		if (e.length === 0) return Mt;
-		let t = D(this), n = t.services;
+		if (e.length === 0) return zt;
+		let t = w(this), n = t.services;
 		if (!n) throw Error("Document layout services are not initialized");
-		let r = O(n);
+		let r = T(n);
 		if (!r) throw Error("Document layout variant store is not initialized");
 		let i = t.activeLayoutOptions, a = i ? r.layoutFor(i) : r.defaultLayout;
-		this._reviewProjectionIndex ??= j(a);
+		this._reviewProjectionIndex ??= Ke(a);
 		let o = this._layoutLifecycle?.complete ?? !0 ? void 0 : { completedSourceKeys: this._reviewProjectionIndex.completedSourceKeys };
-		return this._commentAnchorRanges ??= Ze(e, this._source, this._reviewProjectionIndex.renderedRunIndex, o), this._commentAnchorRanges;
+		return this._commentAnchorRanges ??= et(e, this._source, this._reviewProjectionIndex.renderedRunIndex, o), this._commentAnchorRanges;
 	}
 	revisionAnchorRanges() {
-		if (this._meta) return this._meta.revisionAnchorRanges ?? Nt;
+		if (this._meta) return this._meta.revisionAnchorRanges ?? Bt;
 		if (!this._document || !this._source) return [];
 		let e = this._reviewSnapshot().revisions;
-		if (e.length === 0) return Nt;
-		let t = D(this), n = t.services;
+		if (e.length === 0) return Bt;
+		let t = w(this), n = t.services;
 		if (!n) throw Error("Document layout services are not initialized");
-		let r = O(n);
+		let r = T(n);
 		if (!r) throw Error("Document layout variant store is not initialized");
 		let i = t.activeLayoutOptions, a = i ? r.layoutFor(i) : r.defaultLayout;
-		this._reviewProjectionIndex ??= j(a);
+		this._reviewProjectionIndex ??= Ke(a);
 		let o = this._layoutLifecycle?.complete ?? !0 ? void 0 : { completedSourceKeys: this._reviewProjectionIndex.completedSourceKeys };
-		return this._revisionAnchorRanges ??= Tt(e, this._source, this._reviewProjectionIndex.renderedRunIndex, o), this._revisionAnchorRanges;
+		return this._revisionAnchorRanges ??= Ot(e, this._source, this._reviewProjectionIndex.renderedRunIndex, o), this._revisionAnchorRanges;
 	}
 	_reviewSnapshot() {
 		return this._review ||= K(this._meta?.comments ?? this._document?.comments ?? [], this._meta?.revisions ?? this._document?.revisions ?? []), this._review;
@@ -883,39 +933,39 @@ var q = class e {
 	}
 	_getLayout() {
 		if (!this._document) return null;
-		let e = D(this), t = e.services;
+		let e = w(this), t = e.services;
 		if (!t) throw Error("Document layout services are not initialized");
-		let n = O(t);
+		let n = T(t);
 		if (!n) throw Error("Document layout variant store is not initialized");
 		let r = e.activeLayoutOptions;
 		return r ? n.layoutFor(r) : n.defaultLayout;
 	}
 	async setLayoutView(e = {}) {
-		let t = D(this), n = Ee(e.currentDate, t.defaultCurrentDateMs, e.showTrackedChanges === !0), r = ++this._layoutViewGeneration, i = t.activeLayoutOptions;
-		if (!At(i, n)) {
+		let t = e[Pt], n = w(this), r = E(e.currentDate, n.defaultCurrentDateMs, e.showTrackedChanges === !0), i = ++this._layoutViewGeneration, a = n.activeLayoutOptions;
+		if (!Lt(a, r)) {
 			if (this._mode === "worker" && this._meta) {
 				let e = await this._bridge.request((e) => ({
 					type: "selectLayoutView",
 					id: e,
-					currentDateMs: n.currentDateMs,
-					showTrackedChanges: n.showTrackedChanges === !0
+					currentDateMs: r.currentDateMs,
+					showTrackedChanges: r.showTrackedChanges === !0
 				}));
-				if (r !== this._layoutViewGeneration) return;
-				let i = e;
-				t.activeLayoutOptions = n, this._meta = {
+				if (i !== this._layoutViewGeneration) return;
+				let a = e;
+				n.activeLayoutOptions = r, this._meta = {
 					...this._meta,
-					...i.meta
-				}, this._invalidateLayoutDerivedCaches();
+					...a.meta
+				}, this._invalidateLayoutDerivedCaches(), Ft(this, t);
 				return;
 			}
-			t.activeLayoutOptions = n, this._invalidateLayoutDerivedCaches();
+			n.activeLayoutOptions = r, this._invalidateLayoutDerivedCaches(), Ft(this, t);
 		}
 	}
 	_getBookmarkPages() {
 		if (this._bookmarkPages) return this._bookmarkPages;
 		if (this._meta) return this._bookmarkPages = new Map(this._meta.bookmarkPages), this._bookmarkPages;
 		let e = this._getLayout();
-		return e ? (this._bookmarkPages = nt(e), this._bookmarkPages) : null;
+		return e ? (this._bookmarkPages = at(e), this._bookmarkPages) : null;
 	}
 	getBookmarkPage(e) {
 		return this._getBookmarkPages()?.get(e);
@@ -947,7 +997,7 @@ var q = class e {
 		};
 	}
 	_withActiveView(e) {
-		let t = D(this).activeLayoutOptions;
+		let t = w(this).activeLayoutOptions;
 		if (!t) return e;
 		let n = { ...e };
 		return e.currentDate === void 0 && (n.currentDate = t.currentDateMs), e.showTrackedChanges === void 0 && t.showTrackedChanges === !0 && (n.showTrackedChanges = !0), n;
@@ -955,11 +1005,11 @@ var q = class e {
 	renderPage(e, t, n = {}) {
 		if (this._mode === "worker") throw Error("renderPage(canvas) is unavailable in mode: 'worker'; use renderPageToBitmap() and paint it via an ImageBitmapRenderingContext");
 		if (!this._source) throw Error("Document not loaded");
-		return Ae(this._source, e, t, {
+		return Me(this._source, e, t, {
 			...this._withActiveView(n),
 			fetchImage: this._fetchImage,
-			layoutServices: D(this).services ?? void 0,
-			defaultCurrentDateMs: D(this).defaultCurrentDateMs,
+			layoutServices: w(this).services ?? void 0,
+			defaultCurrentDateMs: w(this).defaultCurrentDateMs,
 			threeD: this._threeD,
 			regionMap: this._regionMap,
 			chartEx: this._chartEx
@@ -994,9 +1044,9 @@ var q = class e {
 			pageIndex: e,
 			opts: n
 		}))).runs;
-		let r = D(this), i = r.services;
+		let r = w(this), i = r.services;
 		if (!i) throw Error("Document layout services are not initialized");
-		return We(i, e, {
+		return qe(i, e, {
 			currentDate: n.currentDate,
 			defaultCurrentDateMs: r.defaultCurrentDateMs,
 			width: n.width,
@@ -1005,7 +1055,7 @@ var q = class e {
 	}
 	async getCommentThreads(e, t = {}) {
 		let { includeResolved: n, ...r } = t, i = await this.collectPageRuns(e, r);
-		return Xe(this.comments, this.commentAnchorRanges(), i, { includeResolved: n });
+		return $e(this.comments, this.commentAnchorRanges(), i, { includeResolved: n });
 	}
 	async getElementContextAt(e, t, n = {}) {
 		let r = this._withActiveView(n);
@@ -1016,9 +1066,9 @@ var q = class e {
 			point: t,
 			opts: r
 		}))).context;
-		let i = D(this), a = i.services;
+		let i = w(this), a = i.services;
 		if (!a) throw Error("Document layout services are not initialized");
-		return yt(a, e, t, {
+		return Ct(a, e, t, {
 			...r,
 			defaultCurrentDateMs: i.defaultCurrentDateMs
 		});
@@ -1026,7 +1076,7 @@ var q = class e {
 };
 //#endregion
 //#region packages/docx/src/tate-chu-yoko-overlay.ts
-function Ft(e, t) {
+function Ht(e, t) {
 	if (!e.eastAsianVert) return 1;
 	let n = t(e.text);
 	return !(n > 0) || e.w >= n ? 1 : e.w / n;
@@ -1044,11 +1094,11 @@ function Y(e, t, n, r, i, a, o) {
 		J(t, "ooxmlSelectionRun", "docx"), J(t, "runIndex", String(o)), c.paragraphId !== void 0 && J(t, "paragraphId", c.paragraphId), c.source !== void 0 && (J(t, "sourceStory", c.source.story), J(t, "sourceStoryInstance", c.source.storyInstance), J(t, "sourcePath", JSON.stringify(c.source.path))), t.textContent = c.text;
 		let l = c.transform ?? "";
 		if (a && c.eastAsianVert) {
-			let e = Ft(c, a(c.font));
+			let e = Ht(c, a(c.font));
 			e !== 1 && (l = `${l ? `${l} ` : ""}scaleX(${e})`);
 		}
 		let u = l ? `transform:${l};transform-origin:top left;` : "", d = i ? c.hyperlink : void 0, f = d ? "pointer" : "text", p = c.letterSpacingPx === void 0 ? "0" : `${c.letterSpacingPx}px`;
-		t.style.cssText = `position:absolute;left:${N(c.x, n)};top:${N(c.y, r)};font:${c.font};line-height:${c.h}px;letter-spacing:${p};` + u + `white-space:pre;color:transparent;cursor:${f};pointer-events:all;`, d && i && (t.title = d.kind === "external" ? d.url : d.ref, t.addEventListener("click", (e) => {
+		t.style.cssText = `position:absolute;left:${A(c.x, n)};top:${A(c.y, r)};font:${c.font};line-height:${c.h}px;letter-spacing:${p};` + u + `white-space:pre;color:transparent;cursor:${f};pointer-events:all;`, d && i && (t.title = d.kind === "external" ? d.url : d.ref, t.addEventListener("click", (e) => {
 			e.preventDefault(), i(d);
 		})), e.appendChild(t);
 	}
@@ -1061,16 +1111,16 @@ function X(e, t, n, r, i, a, o = {}) {
 		for (let s of o.slices) {
 			let o = t[s.runIndex];
 			if (!o) continue;
-			let c = a(o.font), l = Je(o.text, s.start, s.end, c), u = o.letterSpacingPx ?? 0, d = Math.max(0, Math.min(s.start, o.text.length)), f = Math.max(d, Math.min(s.end, o.text.length)), p = [...o.text.slice(0, d)].length, m = [...o.text.slice(d, f)].length, h = l.x + p * u, g = l.width + Math.max(0, m - 1) * u, _ = Ft(o, c), ee = h * _, v = g * _;
+			let c = a(o.font), l = Ze(o.text, s.start, s.end, c), u = o.letterSpacingPx ?? 0, d = Math.max(0, Math.min(s.start, o.text.length)), f = Math.max(d, Math.min(s.end, o.text.length)), p = [...o.text.slice(0, d)].length, m = [...o.text.slice(d, f)].length, h = l.x + p * u, g = l.width + Math.max(0, m - 1) * u, _ = Ht(o, c), ee = h * _, v = g * _;
 			if (v <= 0) continue;
 			let y = document.createElement("div"), te = o.transform ? `transform:${o.transform};transform-origin:top left;` : "";
-			y.style.cssText = `position:absolute;left:${N(o.x + ee, r)};top:${N(o.y, i)};width:${N(v, r)};height:${N(o.h, i)};` + te + `background:${n};pointer-events:none;`, e.appendChild(y);
+			y.style.cssText = `position:absolute;left:${A(o.x + ee, r)};top:${A(o.y, i)};width:${A(v, r)};height:${A(o.h, i)};` + te + `background:${n};pointer-events:none;`, e.appendChild(y);
 		}
 	}
 }
 //#endregion
 //#region packages/docx/src/find.ts
-var Z = class {
+var Ut = class {
 	_pageRuns = /* @__PURE__ */ new Map();
 	_matches = [];
 	_active = -1;
@@ -1162,7 +1212,7 @@ var Z = class {
 };
 //#endregion
 //#region packages/docx/src/selection-context.ts
-function It(e, t, n, r, i = {}) {
+function Wt(e, t, n, r, i = {}) {
 	let a = e.find((e) => e.id === n && e.parentId === void 0);
 	if (!a) return null;
 	let o = new Map(e.map((e) => [e.id, e])), s = e.filter((e) => {
@@ -1176,7 +1226,7 @@ function It(e, t, n, r, i = {}) {
 			t = e;
 		}
 		return !1;
-	}), c = ye({
+	}), c = Se({
 		id: a.id,
 		author: a.author,
 		date: a.date,
@@ -1205,19 +1255,19 @@ function It(e, t, n, r, i = {}) {
 		maxTextCharacters: c.maxTextCharacters
 	});
 }
-function Lt(e) {
+function Z(e) {
 	if (e === void 0 || !/^\d+$/.test(e)) return null;
 	let t = Number(e);
 	return Number.isSafeInteger(t) ? t : null;
 }
-function Rt(e) {
+function Gt(e) {
 	for (let t = e; t; t = t.parentElement) {
-		let e = Lt(t.dataset.pageIndex);
+		let e = Z(t.dataset.pageIndex);
 		if (e !== null) return e;
 	}
 	return null;
 }
-var zt = new Set([
+var Kt = new Set([
 	"body",
 	"header",
 	"footer",
@@ -1225,9 +1275,9 @@ var zt = new Set([
 	"endnote",
 	"textbox"
 ]);
-function Bt(e) {
+function qt(e) {
 	let t = e.dataset.sourceStory, n = e.dataset.sourceStoryInstance, r = e.dataset.sourcePath;
-	if (!t || !zt.has(t) || !n || !r) return null;
+	if (!t || !Kt.has(t) || !n || !r) return null;
 	try {
 		let e = JSON.parse(r);
 		return !Array.isArray(e) || e.length === 0 || e.length > 32 || !e.every((e) => Number.isSafeInteger(e) && e >= 0) ? null : {
@@ -1240,13 +1290,13 @@ function Bt(e) {
 	}
 }
 function Q(e, t, n = {}) {
-	let r = ce(e, t, (e) => {
-		let t = Rt(e), n = Lt(e.dataset.runIndex);
+	let r = le(e, t, (e) => {
+		let t = Gt(e), n = Z(e.dataset.runIndex);
 		return t === null || n === null ? null : {
 			pageIndex: t,
 			runIndex: n,
 			...e.dataset.paragraphId === void 0 ? {} : { paragraphId: e.dataset.paragraphId },
-			...Bt(e) === null ? {} : { source: Bt(e) }
+			...qt(e) === null ? {} : { source: qt(e) }
 		};
 	}, {
 		maxChars: n.maxTextCharacters,
@@ -1275,7 +1325,7 @@ function $(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/docx/src/viewer.ts
-var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
+var Jt = Symbol("DocxViewer.borrowedDocument"), Yt = class e {
 	_documentOwner;
 	get _doc() {
 		return this._documentOwner.current;
@@ -1303,6 +1353,7 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 	_elementContext = null;
 	_elementHitGeneration = 0;
 	_layoutViewGeneration = 0;
+	_layoutViewPublicationGeneration = 0;
 	_navigationGeneration = 0;
 	_layoutUnsubscribe = null;
 	_internalHyperlinkGeneration = 0;
@@ -1312,21 +1363,24 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 	_elementClickListener = null;
 	_contextMenuListener = null;
 	static fromDocument(t, n, r = {}) {
+		let i = W(n);
 		return new e(t, {
 			...r,
-			[Vt]: n
+			currentDate: i.currentDate,
+			showTrackedChanges: i.showTrackedChanges,
+			[Jt]: n
 		});
 	}
 	constructor(e, t = {}) {
 		this._canvas = e, this._opts = t;
-		let n = t[Vt];
+		let n = t[Jt];
 		this._borrowed = n !== void 0, this._mode = x("DocxViewer", t.mode, n), this._documentOwner = new _("DocxViewer", n ?? null, !1);
 		let r = e.ownerDocument?.defaultView ?? (typeof window < "u" ? window : null);
 		if (!r) throw Error("DocxViewer requires a canvas with an active Window");
-		this._hostWindow = r, this._canvasMount = new le(e, {
+		this._hostWindow = r, this._canvasMount = new ue(e, {
 			wrapperCssText: "position:relative;display:inline-block;vertical-align:top;",
 			forceDisplayBlock: !0
-		}), this._wrapper = this._canvasMount.wrapper, this._renderDispatcher = new b(e, this._mode === "worker"), this._errorRouter = new S("DocxViewer", t.onError);
+		}), this._wrapper = this._canvasMount.wrapper, this._renderDispatcher = new b(e, this._mode === "worker"), this._errorRouter = new ce("DocxViewer", t.onError);
 		let i = new ae(this._wrapper, t.enableTextSelection === !0, t.enableElementSelection === !0);
 		this._textLayer = i.textLayer, this._highlightLayer = i.highlightLayer, this._elementLayer = i.elementLayer, this._loadingLayer = this._wrapper.ownerDocument.createElement("div"), this._loadingLayer.style.cssText = [
 			"position:absolute",
@@ -1341,7 +1395,7 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 		let a = this._wrapper.ownerDocument.createElement("progress");
 		a.setAttribute("aria-hidden", "true"), this._loadingLayer.appendChild(a), this._wrapper.insertBefore(this._loadingLayer, this._elementLayer), this._textLayer && (t.onSelectionContextChange || t.enableElementSelection) && (this._selectionChangeListener = () => this._emitSelectionContextChange(), this._wrapper.ownerDocument.addEventListener("selectionchange", this._selectionChangeListener)), t.enableElementSelection && (this._elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
-		}, this._wrapper.addEventListener("click", this._elementClickListener)), t.onContextMenu && (this._contextMenuListener = (e) => this._onContextMenu(e), this._wrapper.addEventListener("contextmenu", this._contextMenuListener)), this._find = new Z(() => this.pageCount, (e) => this._collectPageRuns(e)), n && this._bindLayoutDocument(n);
+		}, this._wrapper.addEventListener("click", this._elementClickListener)), t.onContextMenu && (this._contextMenuListener = (e) => this._onContextMenu(e), this._wrapper.addEventListener("contextmenu", this._contextMenuListener)), this._find = new Ut(() => this.pageCount, (e) => this._collectPageRuns(e)), n && this._bindLayoutDocument(n);
 	}
 	async load(e) {
 		if (this._destroyed) throw Error("DocxViewer is destroyed");
@@ -1420,7 +1474,7 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 		await this.goToPage(this._currentPage - 1);
 	}
 	_naturalWidthPx() {
-		return !this._doc || this._doc.pageCount === 0 ? 0 : this._doc.pageSize(this._currentPage).widthPt * M;
+		return !this._doc || this._doc.pageCount === 0 ? 0 : this._doc.pageSize(this._currentPage).widthPt * k;
 	}
 	_renderWidth() {
 		if (this._scale === null) return this._opts.width;
@@ -1443,10 +1497,10 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 		this._scale = t, await this._render(), n && this._opts.onScaleChange?.(t);
 	}
 	async zoomIn() {
-		await this.setScale(C(this.getScale()));
+		await this.setScale(fe(this.getScale()));
 	}
 	async zoomOut() {
-		await this.setScale(w(this.getScale()));
+		await this.setScale(he(this.getScale()));
 	}
 	async fitWidth() {
 		await this._fit("width");
@@ -1459,8 +1513,8 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 		let t = this._doc.pageSize(this._currentPage), n = this._fitContainer();
 		if (!n) return;
 		let r = g({
-			contentWidth: t.widthPt * M,
-			contentHeight: t.heightPt * M,
+			contentWidth: t.widthPt * k,
+			contentHeight: t.heightPt * k,
 			containerWidth: n.clientWidth,
 			containerHeight: n.clientHeight
 		}, e);
@@ -1499,7 +1553,7 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 	}
 	getSelectionContext(e = {}) {
 		if (this._destroyed) throw Error("DocxViewer is destroyed");
-		return (this._textLayer ? Q(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? bt(this._elementContext, e.maxTextCharacters) : null);
+		return (this._textLayer ? Q(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? L(this._elementContext, e.maxTextCharacters) : null);
 	}
 	_emitSelectionContextChange() {
 		let e = this.getSelectionContext();
@@ -1554,7 +1608,7 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 			}, {
 				currentDate: this._opts.currentDate,
 				showTrackedChanges: this._opts.showTrackedChanges,
-				maxTextCharacters: I
+				maxTextCharacters: N
 			});
 		} catch (e) {
 			if (this._destroyed || a !== this._elementHitGeneration || o !== this._currentPage || t !== this._doc) return null;
@@ -1563,7 +1617,7 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 		return this._destroyed || a !== this._elementHitGeneration || o !== this._currentPage || t !== this._doc ? null : (this._setElementContext(c), this._destroyed ? null : this.getSelectionContext());
 	}
 	destroy() {
-		this._destroyed || (this._destroyed = !0, this._findRequestGeneration++, this._layoutViewGeneration++, this._unbindLayoutDocument(), this._errorRouter.close(), this._renderDispatcher.destroy(), He(this._canvas), this._documentOwner.close(), this._find.invalidate(), this._selectionChangeListener &&= (this._wrapper.ownerDocument.removeEventListener("selectionchange", this._selectionChangeListener), null), this._elementHitGeneration++, this._elementClickListener &&= (this._wrapper.removeEventListener("click", this._elementClickListener), null), this._contextMenuListener &&= (this._wrapper.removeEventListener("contextmenu", this._contextMenuListener), null), this._elementContext = null, this._canvasMount.restore());
+		this._destroyed || (this._destroyed = !0, this._findRequestGeneration++, this._layoutViewGeneration++, this._unbindLayoutDocument(), this._errorRouter.close(), this._renderDispatcher.destroy(), We(this._canvas), this._documentOwner.close(), this._find.invalidate(), this._selectionChangeListener &&= (this._wrapper.ownerDocument.removeEventListener("selectionchange", this._selectionChangeListener), null), this._elementHitGeneration++, this._elementClickListener &&= (this._wrapper.removeEventListener("click", this._elementClickListener), null), this._contextMenuListener &&= (this._wrapper.removeEventListener("contextmenu", this._contextMenuListener), null), this._elementContext = null, this._canvasMount.restore());
 	}
 	async _render() {
 		let e = this._renderDispatcher.begin();
@@ -1597,19 +1651,21 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 		this._textLayer && this._buildTextLayer(this._textLayer, o), this._find.setPageRuns(this._currentPage, o), this._buildHighlightLayer(o), this._opts.onPageChange?.(this._currentPage, this.pageCount, this.layoutComplete);
 	}
 	_bindLayoutDocument(e) {
-		this._unbindLayoutDocument(), this._layoutFailed = !1;
-		let t = !0;
-		this._layoutUnsubscribe = kt(e, () => ({
+		this._unbindLayoutDocument(), this._layoutFailed = !1, this._layoutViewPublicationGeneration = 0;
+		let t = It(e, (t) => this._onLayoutViewPublication(e, t), (e) => this._reportRenderError(e)), n = !0, r = Mt(e, () => ({
 			pageCount: e.pageCount,
 			exact: e.layoutComplete,
 			complete: e.layoutComplete
-		}), (n) => {
-			if (t) {
-				t = !1;
+		}), (t) => {
+			if (n) {
+				n = !1;
 				return;
 			}
-			this._onLayoutPublication(e, n);
+			this._onLayoutPublication(e, t);
 		}, (e) => this._reportRenderError(e));
+		this._layoutUnsubscribe = () => {
+			r(), t();
+		};
 	}
 	_unbindLayoutDocument() {
 		this._layoutUnsubscribe?.(), this._layoutUnsubscribe = null, this._layoutFailed = !1, this._cancelPendingNavigation();
@@ -1622,6 +1678,13 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 			}
 			this._find.invalidate(), this._currentPage = Math.max(0, Math.min(this._currentPage, t.pageCount - 1)), this._render().catch((e) => this._reportRenderError(e));
 		}
+	}
+	_onLayoutViewPublication(e, t) {
+		this._destroyed || e !== this._doc || t.generation <= this._layoutViewPublicationGeneration || (this._layoutViewPublicationGeneration = t.generation, t.requester !== this && (this._layoutViewGeneration++, this._opts = {
+			...this._opts,
+			currentDate: t.view.currentDate,
+			showTrackedChanges: t.view.showTrackedChanges
+		}, this._find.invalidate(), this._currentPage = Math.max(0, Math.min(this._currentPage, e.pageCount - 1)), this._render().catch((e) => this._reportRenderError(e))));
 	}
 	async _waitForPage(e, t, n) {
 		await this._errorRouter.ownBackgroundLifecycle(async () => {
@@ -1645,20 +1708,20 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 	async setShowTrackedChanges(e) {
 		let t = ++this._layoutViewGeneration, n = this._doc;
 		if (this._opts.showTrackedChanges === !0 === e) {
-			await n?.setLayoutView?.({
+			n && await G(n, {
 				showTrackedChanges: e,
 				currentDate: this._opts.currentDate
-			});
+			}, this);
 			return;
 		}
 		let r = {
 			...this._opts,
 			showTrackedChanges: e
 		};
-		await n?.setLayoutView?.({
+		(!n || await G(n, {
 			showTrackedChanges: e,
 			currentDate: r.currentDate
-		}), !(this._destroyed || t !== this._layoutViewGeneration || n !== this._doc) && (this._opts = r, this._find.invalidate(), this._currentPage = Math.max(0, Math.min(this._currentPage, this.pageCount - 1)), await this._render());
+		}, this)) && (this._destroyed || t !== this._layoutViewGeneration || n !== this._doc || (this._opts = r, this._find.invalidate(), this._currentPage = Math.max(0, Math.min(this._currentPage, this.pageCount - 1)), await this._render()));
 	}
 	_buildHighlightLayer(e) {
 		let t = this._highlightLayer;
@@ -1705,11 +1768,11 @@ var Vt = Symbol("DocxViewer.borrowedDocument"), Ht = class e {
 		let r = e.getBookmarkPage(t);
 		r !== void 0 && await this.goToPage(r);
 	}
-}, Ut = 150, Wt = "0 1px 3px rgba(0,0,0,0.2)", Gt = 12, Kt = 13, qt = Symbol("DocxScrollViewer.borrowedDocument"), Jt;
-function Yt() {
-	return Jt ??= import("./comment-ui-runtime-DD5a3x3k.js");
+}, Xt = 150, Zt = "0 1px 3px rgba(0,0,0,0.2)", Qt = 12, $t = 13, en = Symbol("DocxScrollViewer.borrowedDocument"), tn;
+function nn() {
+	return tn ??= import("./comment-ui-runtime-DD5a3x3k.js");
 }
-var Xt = class e {
+var rn = class e {
 	_documentOwner;
 	get _doc() {
 		return this._documentOwner.current;
@@ -1773,22 +1836,27 @@ var Xt = class e {
 	_prevBase = 0;
 	_lastFitWidth = 0;
 	_pageShadow;
-	_find = new Z(() => this.pageCount, (e) => this._collectPageRuns(e));
+	_find = new Ut(() => this.pageCount, (e) => this._collectPageRuns(e));
 	_findActive = !1;
 	_findRequestGeneration = 0;
 	_showTrackedChanges;
+	_currentDate;
 	_layoutViewGeneration = 0;
+	_layoutViewPublicationGeneration = 0;
 	static fromDocument(t, n, r = {}) {
+		let i = W(n);
 		return new e(t, {
 			...r,
-			[qt]: n
+			currentDate: i.currentDate,
+			showTrackedChanges: i.showTrackedChanges,
+			[en]: n
 		});
 	}
 	constructor(e, t = {}) {
 		if (e.tagName === "CANVAS") throw Error("DocxScrollViewer takes a container element (e.g. a <div>), not a <canvas> — the viewer creates and manages its own canvases. Pass a block container; for the single-page canvas API use DocxViewer.");
-		this._container = e, this._opts = t, this._errorRouter = new S("DocxScrollViewer", t.onError), this._showTrackedChanges = t.showTrackedChanges === !0, this._pageShadow = t.pageShadow ?? Wt;
-		let n = t[qt];
-		this._borrowed = n !== void 0, n ? (this._documentOwner = new _("DocxScrollViewer", n, !1), this._mode = x("DocxScrollViewer", t.mode, n)) : (this._documentOwner = new _("DocxScrollViewer"), this._mode = x("DocxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), this._commentsEnabled() && Yt().then((e) => {
+		this._container = e, this._opts = t, this._errorRouter = new ce("DocxScrollViewer", t.onError), this._showTrackedChanges = t.showTrackedChanges === !0, this._currentDate = t.currentDate, this._pageShadow = t.pageShadow ?? Zt;
+		let n = t[en];
+		this._borrowed = n !== void 0, n ? (this._documentOwner = new _("DocxScrollViewer", n, !1), this._mode = x("DocxScrollViewer", t.mode, n)) : (this._documentOwner = new _("DocxScrollViewer"), this._mode = x("DocxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), this._commentsEnabled() && nn().then((e) => {
 			if (!this._destroyed) {
 				this._commentUi = e;
 				for (let [e, t] of this._slots) this._redrawSlotComments(e, t);
@@ -1796,7 +1864,7 @@ var Xt = class e {
 		}).catch((e) => this._reportRenderError(e)), t.enableTextSelection && (t.onSelectionContextChange || t.enableElementSelection) && (this._selectionChangeListener = () => this._emitSelectionContextChange(), this._wrapper.ownerDocument.addEventListener("selectionchange", this._selectionChangeListener)), t.enableElementSelection && (this._elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
 		}, this._scrollHost.addEventListener("click", this._elementClickListener)), t.onContextMenu && (this._contextMenuListener = (e) => this._onContextMenu(e), this._scrollHost.addEventListener("contextmenu", this._contextMenuListener)), this._scrollListener = () => this._onScroll(), this._scrollHost.addEventListener("scroll", this._scrollListener), t.comments && (this._commentOutsidePointerListener = (e) => {
-			if (!Se(e, this._wrapper, "ooxmlCommentId") && this._activeCommentId !== null) {
+			if (!Te(e, this._wrapper, "ooxmlCommentId") && this._activeCommentId !== null) {
 				this._activeCommentId = null, this._activeCommentPage = null;
 				for (let [e, t] of this._slots) this._redrawSlotComments(e, t);
 				this._emitSelectionContextChange();
@@ -1807,7 +1875,7 @@ var Xt = class e {
 			this._pendingZoomAnchor = Number.isFinite(n) && Number.isFinite(r) ? {
 				x: n,
 				y: r
-			} : null, this.setScale(fe(this._scale, e.deltaY));
+			} : null, this.setScale(me(this._scale, e.deltaY));
 		}, this._scrollHost.addEventListener("wheel", this._wheelListener, { passive: !1 })), typeof ResizeObserver < "u" && (this._resizeObserver = new ResizeObserver(() => this._onResize()), this._resizeObserver.observe(this._container)), this._borrowed && (this._bindLayoutDocument(n), this.relayout());
 	}
 	async load(e) {
@@ -1830,7 +1898,7 @@ var Xt = class e {
 				chartEx: this._opts.chartEx,
 				mode: this._mode,
 				...this._showTrackedChanges ? { showTrackedChanges: !0 } : {},
-				...this._opts.currentDate === void 0 ? {} : { currentDate: this._opts.currentDate },
+				...this._currentDate === void 0 ? {} : { currentDate: this._currentDate },
 				...this._opts.progressiveLayout ? { progressiveLayout: !0 } : {},
 				...this._opts.sliceLayout ? { sliceLayout: !0 } : {},
 				onLayoutProgress: this._opts.onLayoutProgress,
@@ -1864,19 +1932,21 @@ var Xt = class e {
 		});
 	}
 	_bindLayoutDocument(e) {
-		this._unbindLayoutDocument(), this._presentedPageCount = e.pageCount, this._pendingLayoutPublication = null;
-		let t = !0;
-		this._layoutUnsubscribe = kt(e, () => ({
+		this._unbindLayoutDocument(), this._layoutViewPublicationGeneration = 0, this._presentedPageCount = e.pageCount, this._pendingLayoutPublication = null;
+		let t = It(e, (t) => this._onLayoutViewPublication(e, t), (e) => this._reportRenderError(e)), n = !0, r = Mt(e, () => ({
 			pageCount: e.pageCount,
 			exact: e.layoutComplete,
 			complete: e.layoutComplete
-		}), (n) => {
-			if (t) {
-				t = !1;
+		}), (t) => {
+			if (n) {
+				n = !1;
 				return;
 			}
-			this._onLayoutPublication(e, n);
+			this._onLayoutPublication(e, t);
 		}, (e) => this._reportRenderError(e));
+		this._layoutUnsubscribe = () => {
+			r(), t();
+		};
 	}
 	_unbindLayoutDocument() {
 		this._layoutUnsubscribe?.(), this._layoutUnsubscribe = null, this._presentedPageCount = 0, this._pendingLayoutPublication = null;
@@ -1898,6 +1968,13 @@ var Xt = class e {
 			this._pendingLayoutPublication = null, this._applyLayoutPublication(t);
 		}
 	}
+	_onLayoutViewPublication(e, t) {
+		this._destroyed || e !== this._doc || t.generation <= this._layoutViewPublicationGeneration || (this._layoutViewPublicationGeneration = t.generation, t.requester !== this && (this._layoutViewGeneration++, this._showTrackedChanges = t.view.showTrackedChanges, this._currentDate = t.view.currentDate, this._find.invalidate(), this._pendingLayoutPublication = null, this._applyLayoutPublication({
+			pageCount: e.pageCount,
+			exact: !0,
+			complete: e.layoutComplete
+		})));
+	}
 	_refreshCommentSurface() {
 		if (!(!this._commentsEnabled() || this._slots.size === 0)) {
 			this._syncSpacerWidth();
@@ -1911,17 +1988,17 @@ var Xt = class e {
 	}
 	_revealPendingLayoutAtPresentedTail() {
 		let e = this._pendingLayoutPublication;
-		!e || this._presentedPageCount === 0 || T(this._scrollGeometry, this._scrollHost.scrollTop, this._scrollHost.clientHeight, 0).end < this._presentedPageCount - 1 || (this._pendingLayoutPublication = null, this._applyLayoutPublication(e));
+		!e || this._presentedPageCount === 0 || S(this._scrollGeometry, this._scrollHost.scrollTop, this._scrollHost.clientHeight, 0).end < this._presentedPageCount - 1 || (this._pendingLayoutPublication = null, this._applyLayoutPublication(e));
 	}
 	_revealPendingLayoutThroughPage(e) {
 		let t = this._pendingLayoutPublication;
 		!t || e < this._presentedPageCount || (this._pendingLayoutPublication = null, this._applyLayoutPublication(t));
 	}
 	_pageWidthPx(e) {
-		return this._doc.pageSize(e).widthPt * M * this._scale;
+		return this._doc.pageSize(e).widthPt * k * this._scale;
 	}
 	_pageHeightPx(e) {
-		return this._doc.pageSize(e).heightPt * M * this._scale;
+		return this._doc.pageSize(e).heightPt * k * this._scale;
 	}
 	_fitWidthPx() {
 		if (this._opts.width && this._opts.width > 0) return this._opts.width;
@@ -1943,7 +2020,7 @@ var Xt = class e {
 		return e.comments.some((e) => this._commentAnchorIds.has(e.id) && e.parentId === void 0 && (n || e.resolved !== !0));
 	}
 	_commentMarginExtent() {
-		return this._hasCommentMargin() ? (Gt + 280) * this._commentZoom() : 0;
+		return this._hasCommentMargin() ? (Qt + 280) * this._commentZoom() : 0;
 	}
 	_commentZoom() {
 		return this._scaleEstablished ? this._scale : 1;
@@ -1960,15 +2037,15 @@ var Xt = class e {
 	}
 	_syncCommentMarginGeometry(e) {
 		if (!e) return;
-		let t = this._commentZoom(), n = `calc(100% + ${Gt * t}px)`;
-		e.style.left = this._commentSide() === "right" ? n : "", e.style.right = this._commentSide() === "left" ? n : "", e.style.width = `${280 * t}px`, e.style.fontSize = `${Kt}px`, e.dataset.ooxmlCommentZoom = String(t);
+		let t = this._commentZoom(), n = `calc(100% + ${Qt * t}px)`;
+		e.style.left = this._commentSide() === "right" ? n : "", e.style.right = this._commentSide() === "left" ? n : "", e.style.width = `${280 * t}px`, e.style.fontSize = `${$t}px`, e.dataset.ooxmlCommentZoom = String(t);
 	}
 	_baseScale() {
 		if (!this._doc || this._doc.pageCount === 0) return 0;
 		let e = this._fitWidthPx();
 		if (e <= 0) return 0;
 		let t = this._doc.pageSize(0).widthPt;
-		return t <= 0 ? 0 : e / (t * M);
+		return t <= 0 ? 0 : e / (t * k);
 	}
 	relayout() {
 		this._relayout();
@@ -1991,7 +2068,7 @@ var Xt = class e {
 	_recomputeHeights() {
 		let e = Math.min(this._presentedPageCount, this._doc.pageCount), t = Array(e);
 		for (let n = 0; n < e; n++) t[n] = this._pageHeightPx(n);
-		this._heights = t, this._scrollGeometry = xe(t, this._gap(), this._pad());
+		this._heights = t, this._scrollGeometry = we(t, this._gap(), this._pad());
 	}
 	_gap() {
 		return this._opts.gap ?? 16;
@@ -2022,7 +2099,7 @@ var Xt = class e {
 		return a;
 	}
 	_range() {
-		return T(this._scrollGeometry, this._scrollHost.scrollTop, this._scrollHost.clientHeight, this._overscan());
+		return S(this._scrollGeometry, this._scrollHost.scrollTop, this._scrollHost.clientHeight, this._overscan());
 	}
 	_syncSpacer() {
 		let e = this._range();
@@ -2124,7 +2201,7 @@ var Xt = class e {
 				width: i,
 				dpr: r,
 				defaultTextColor: this._opts.defaultTextColor,
-				currentDate: this._opts.currentDate,
+				currentDate: this._currentDate,
 				...this._showTrackedChanges ? { showTrackedChanges: !0 } : {},
 				onTextRun: f
 			});
@@ -2185,7 +2262,7 @@ var Xt = class e {
 				width: n,
 				dpr: r,
 				defaultTextColor: this._opts.defaultTextColor,
-				currentDate: this._opts.currentDate,
+				currentDate: this._currentDate,
 				...this._showTrackedChanges ? { showTrackedChanges: !0 } : {},
 				onTextRun: f ? (e) => p.push(e) : void 0
 			});
@@ -2222,7 +2299,7 @@ var Xt = class e {
 		f = Math.min(1, Math.max(0, f));
 		let p = this._padH().left, m = this._scrollHost.scrollLeft || 0;
 		this._renderEpoch++, this._scale = r, this._recomputeHeights();
-		let h = T(this._scrollGeometry, 0, this._scrollHost.clientHeight, this._overscan());
+		let h = S(this._scrollGeometry, 0, this._scrollHost.clientHeight, this._overscan());
 		this._spacer.style.height = `${h.totalHeight}px`, this._syncSpacerWidth();
 		let g = Math.max(0, h.totalHeight - this._scrollHost.clientHeight), _ = (h.offsets[u] ?? 0) + f * (this._heights[u] || 0), v = l < (s.offsets[0] ?? 0) ? c : _ - o;
 		if (this._scrollHost.scrollTop = Math.min(g, Math.max(0, v)), i) {
@@ -2235,10 +2312,10 @@ var Xt = class e {
 		return this._scaleEstablished ? this._scale : this._pendingScale ?? 1;
 	}
 	zoomIn() {
-		this.setScale(C(this.getScale()));
+		this.setScale(fe(this.getScale()));
 	}
 	zoomOut() {
-		this.setScale(w(this.getScale()));
+		this.setScale(he(this.getScale()));
 	}
 	fitWidth() {
 		this._fit("width");
@@ -2249,8 +2326,8 @@ var Xt = class e {
 	_fit(e) {
 		if (!this._doc || this._doc.pageCount === 0) return;
 		let t = this._doc.pageSize(0), n = g({
-			contentWidth: t.widthPt * M,
-			contentHeight: t.heightPt * M,
+			contentWidth: t.widthPt * k,
+			contentHeight: t.heightPt * k,
 			containerWidth: this._fitWidthPx(),
 			containerHeight: this._scrollHost.clientHeight
 		}, e);
@@ -2287,7 +2364,7 @@ var Xt = class e {
 	_scheduleSettle() {
 		this._settleTimer !== null && clearTimeout(this._settleTimer), this._settleTimer = setTimeout(() => {
 			this._settleTimer = null, this._settleRender();
-		}, Ut);
+		}, Xt);
 	}
 	_settleRender() {
 		if (!(this._destroyed || !this._doc || this._doc.pageCount === 0)) for (let [e, t] of [...this._slots]) t.renderedScale !== this._scale && this._refreshSlotAtomically(e, t);
@@ -2306,7 +2383,7 @@ var Xt = class e {
 			width: r,
 			dpr: n,
 			defaultTextColor: this._opts.defaultTextColor,
-			currentDate: this._opts.currentDate,
+			currentDate: this._currentDate,
 			...this._showTrackedChanges ? { showTrackedChanges: !0 } : {},
 			onTextRun: f
 		}).then(() => {
@@ -2327,26 +2404,26 @@ var Xt = class e {
 	async setShowTrackedChanges(e) {
 		let t = ++this._layoutViewGeneration, n = this._doc;
 		if (this._showTrackedChanges === e) {
-			await n?.setLayoutView?.({
+			n && await G(n, {
 				showTrackedChanges: e,
-				currentDate: this._opts.currentDate
-			});
+				currentDate: this._currentDate
+			}, this);
 			return;
 		}
-		await n?.setLayoutView?.({
+		(!n || await G(n, {
 			showTrackedChanges: e,
-			currentDate: this._opts.currentDate
-		}), !(this._destroyed || t !== this._layoutViewGeneration || n !== this._doc) && (this._showTrackedChanges = e, this._find.invalidate(), this._pendingLayoutPublication = null, this._applyLayoutPublication({
+			currentDate: this._currentDate
+		}, this)) && (this._destroyed || t !== this._layoutViewGeneration || n !== this._doc || (this._showTrackedChanges = e, this._find.invalidate(), this._pendingLayoutPublication = null, this._applyLayoutPublication({
 			pageCount: n?.pageCount ?? 0,
 			exact: !0,
 			complete: n?.layoutComplete !== !1
-		}));
+		})));
 	}
 	scrollToPage(e, t) {
 		if (!this._doc || this._doc.pageCount === 0 || !this._scaleEstablished) return;
 		let n = Math.max(0, Math.min(e, this._doc.pageCount - 1));
 		this._revealPendingLayoutThroughPage(n);
-		let r = T(this._scrollGeometry, 0, this._scrollHost.clientHeight, this._overscan()), i = r.offsets[n] ?? 0, a = Math.max(0, r.totalHeight - this._scrollHost.clientHeight), o = Math.min(a, Math.max(0, i)), s = this._scrollHost;
+		let r = S(this._scrollGeometry, 0, this._scrollHost.clientHeight, this._overscan()), i = r.offsets[n] ?? 0, a = Math.max(0, r.totalHeight - this._scrollHost.clientHeight), o = Math.min(a, Math.max(0, i)), s = this._scrollHost;
 		typeof s.scrollTo == "function" ? s.scrollTo({
 			top: o,
 			behavior: t?.behavior ?? "auto"
@@ -2354,7 +2431,7 @@ var Xt = class e {
 	}
 	_scrollToPageTarget(e, t, n) {
 		this._revealPendingLayoutThroughPage(e);
-		let r = T(this._scrollGeometry, 0, this._scrollHost.clientHeight, this._overscan()), i = this._pageWidthPx(e), { left: a } = this._padH(), o = Math.max(a, (this._scrollHost.clientWidth - i) / 2) + this._reviewOriginPx, s = Math.max(0, r.totalHeight - this._scrollHost.clientHeight), c = this._spacer.offsetWidth || Number.parseFloat(this._spacer.style.width) || 0, l = Math.max(0, c - this._scrollHost.clientWidth), u = Math.min(s, Math.max(0, (r.offsets[e] ?? 0) + t.y + t.h / 2 - this._scrollHost.clientHeight / 2)), d = Math.min(l, Math.max(0, o + t.x + t.w / 2 - this._scrollHost.clientWidth / 2)), f = this._scrollHost;
+		let r = S(this._scrollGeometry, 0, this._scrollHost.clientHeight, this._overscan()), i = this._pageWidthPx(e), { left: a } = this._padH(), o = Math.max(a, (this._scrollHost.clientWidth - i) / 2) + this._reviewOriginPx, s = Math.max(0, r.totalHeight - this._scrollHost.clientHeight), c = this._spacer.offsetWidth || Number.parseFloat(this._spacer.style.width) || 0, l = Math.max(0, c - this._scrollHost.clientWidth), u = Math.min(s, Math.max(0, (r.offsets[e] ?? 0) + t.y + t.h / 2 - this._scrollHost.clientHeight / 2)), d = Math.min(l, Math.max(0, o + t.x + t.w / 2 - this._scrollHost.clientWidth / 2)), f = this._scrollHost;
 		typeof f.scrollTo == "function" ? f.scrollTo({
 			top: u,
 			left: d,
@@ -2369,7 +2446,7 @@ var Xt = class e {
 	}
 	_indexCommentPages(e, t, n) {
 		if (!this._commentIndexedPages.has(e)) {
-			for (let r of n) this._commentPageById.has(r.commentId) || F(r, t).length > 0 && this._commentPageById.set(r.commentId, e);
+			for (let r of n) this._commentPageById.has(r.commentId) || M(r, t).length > 0 && this._commentPageById.set(r.commentId, e);
 			this._commentIndexedPages.add(e), this._advanceCommentScanFrontier();
 		}
 	}
@@ -2380,7 +2457,7 @@ var Xt = class e {
 				scale: n,
 				runs: t.collectPageRuns(e, {
 					width: this._pageWidthPx(e),
-					currentDate: this._opts.currentDate,
+					currentDate: this._currentDate,
 					...this._showTrackedChanges ? { showTrackedChanges: !0 } : {}
 				})
 			}, this._commentRunsByPage.set(e, r));
@@ -2419,7 +2496,7 @@ var Xt = class e {
 		if (a.length === 0 || o !== void 0 && o >= n.pageCount || s === void 0) return !1;
 		let u = await this._commentRunsForPage(s, n);
 		if (this._destroyed) throw Error("DocxScrollViewer is destroyed");
-		if (this._doc !== n || r !== this._commentNavigationGeneration || !u || (c = a.flatMap((e) => F(e, u))[0], !c)) return !1;
+		if (this._doc !== n || r !== this._commentNavigationGeneration || !u || (c = a.flatMap((e) => M(e, u))[0], !c)) return !1;
 		this._activeCommentId = e, this._activeCommentPage = s, this._elementContext = null, this._scrollToPageTarget(s, c, t);
 		for (let [e, t] of this._slots) this._redrawSlotComments(e, t);
 		return this._emitSelectionContextChange(), !0;
@@ -2450,7 +2527,7 @@ var Xt = class e {
 	async _collectPageRuns(e) {
 		return this._doc ? this._doc.collectPageRuns(e, {
 			width: this._pageWidthPx(e),
-			currentDate: this._opts.currentDate,
+			currentDate: this._currentDate,
 			...this._showTrackedChanges ? { showTrackedChanges: !0 } : {}
 		}) : [];
 	}
@@ -2595,7 +2672,7 @@ var Xt = class e {
 	}
 	getSelectionContext(e = {}) {
 		if (this._destroyed) throw Error("DocxScrollViewer is destroyed");
-		return (this._doc && this._activeCommentId !== null && this._activeCommentPage !== null ? It(this._doc.comments, this._doc.commentAnchorRanges(), this._activeCommentId, this._activeCommentPage, e) : null) || ((this._opts.enableTextSelection ? Q(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? bt(this._elementContext, e.maxTextCharacters) : null));
+		return (this._doc && this._activeCommentId !== null && this._activeCommentPage !== null ? Wt(this._doc.comments, this._doc.commentAnchorRanges(), this._activeCommentId, this._activeCommentPage, e) : null) || ((this._opts.enableTextSelection ? Q(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? L(this._elementContext, e.maxTextCharacters) : null));
 	}
 	_emitSelectionContextChange() {
 		let e = this.getSelectionContext();
@@ -2653,9 +2730,9 @@ var Xt = class e {
 				xPt: s / o.width * u.widthPt,
 				yPt: c / o.height * u.heightPt
 			}, {
-				currentDate: this._opts.currentDate,
+				currentDate: this._currentDate,
 				...this._showTrackedChanges ? { showTrackedChanges: !0 } : {},
-				maxTextCharacters: I
+				maxTextCharacters: N
 			});
 		} catch (e) {
 			if (this._destroyed || l !== this._elementHitGeneration || t !== this._doc) return null;
@@ -2673,7 +2750,7 @@ var Xt = class e {
 };
 //#endregion
 //#region packages/docx/src/types.ts
-function Zt(e) {
+function an(e) {
 	let t = [];
 	for (let n of e.content) {
 		if (n.type !== "paragraph") continue;
@@ -2685,23 +2762,23 @@ function Zt(e) {
 }
 //#endregion
 //#region src/docx.ts
-var Qt = /* @__PURE__ */ e({
+var on = /* @__PURE__ */ e({
 	DocxDocument: () => q,
-	DocxScrollViewer: () => Xt,
-	DocxViewer: () => Ht,
-	OoxmlDecodedImageLimitError: () => Ge,
+	DocxScrollViewer: () => rn,
+	DocxViewer: () => Yt,
+	OoxmlDecodedImageLimitError: () => Je,
 	OoxmlError: () => o,
 	OoxmlResourceLimitError: () => n,
-	autoResize: () => de,
+	autoResize: () => pe,
 	buildDocxHighlightLayer: () => X,
 	buildDocxTextLayer: () => Y,
-	isOoxmlDecodedImageLimitError: () => Ke,
-	noteText: () => Zt,
+	isOoxmlDecodedImageLimitError: () => Ye,
+	noteText: () => an,
 	openExternalHyperlink: () => s,
 	readDocxTextSelectionContext: () => Q,
-	resolveCommentAnchorRuns: () => F,
-	resolveDocxCommentThreads: () => Xe,
-	resolveRevisionAnchorRuns: () => Et
+	resolveCommentAnchorRuns: () => M,
+	resolveDocxCommentThreads: () => $e,
+	resolveRevisionAnchorRuns: () => kt
 });
 //#endregion
-export { Q as a, q as c, Ht as i, Et as l, Zt as n, X as o, Xt as r, Y as s, Qt as t };
+export { Q as a, q as c, Yt as i, kt as l, an as n, X as o, rn as r, Y as s, on as t };

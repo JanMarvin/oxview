@@ -5097,20 +5097,20 @@ function Fr(t, n, r, i, a = {
 	themeMajorFont: null,
 	themeMinorFont: null,
 	dpr: 1
-}) {
+}, o) {
 	t.save(), Pr(t, n, r);
-	let o = Y(n.x, r), s = Y(n.y, r), c = n.cols.map((e) => Y(e, r)), l = c.length, u = (e, t) => {
+	let s = Y(n.x, r), c = Y(n.y, r), l = n.cols.map((e) => Y(e, r)), u = l.length, d = (e, t) => {
 		let n = 0;
-		for (let r = 0; r < t; r++) n += c[e + r] ?? 0;
+		for (let r = 0; r < t; r++) n += l[e + r] ?? 0;
 		return n;
-	}, d = n.rows.map((e) => Y(e.height, r));
+	}, f = n.rows.map((e) => Y(e.height, r));
 	for (let e = 0; e < n.rows.length; e++) {
 		let o = n.rows[e];
 		for (let n = 0; n < o.cells.length; n++) {
 			let s = o.cells[n];
 			if (s.hMerge || s.vMerge || (s.rowSpan || 1) > 1 || !s.textBody) continue;
-			let c = u(n, s.gridSpan || 1), l = Sr(t, s.textBody, 0, 0, c, 0, r, null, 0, !1, !1, "#000000", i, a, void 0, !0, void 0, !1, o.height === 0) || 0;
-			l > d[e] && (d[e] = l);
+			let c = d(n, s.gridSpan || 1), l = Sr(t, s.textBody, 0, 0, c, 0, r, null, 0, !1, !1, "#000000", i, a, void 0, !0, void 0, !1, o.height === 0) || 0;
+			l > f[e] && (f[e] = l);
 		}
 	}
 	for (let e = 0; e < n.rows.length; e++) {
@@ -5120,101 +5120,127 @@ function Fr(t, n, r, i, a = {
 			if (c.hMerge || c.vMerge) continue;
 			let l = c.rowSpan || 1;
 			if (l <= 1 || !c.textBody) continue;
-			let f = u(s, c.gridSpan || 1), p = n.rows.slice(e, Math.min(n.rows.length, e + l)).some((e) => e.height === 0), m = Sr(t, c.textBody, 0, 0, f, 0, r, null, 0, !1, !1, "#000000", i, a, void 0, !0, void 0, !1, p) || 0, h = 0;
-			for (let t = 0; t < l && e + t < d.length; t++) h += d[e + t];
+			let u = d(s, c.gridSpan || 1), p = n.rows.slice(e, Math.min(n.rows.length, e + l)).some((e) => e.height === 0), m = Sr(t, c.textBody, 0, 0, u, 0, r, null, 0, !1, !1, "#000000", i, a, void 0, !0, void 0, !1, p) || 0, h = 0;
+			for (let t = 0; t < l && e + t < f.length; t++) h += f[e + t];
 			if (m > h) {
 				let t = (m - h) / l;
-				for (let n = 0; n < l && e + n < d.length; n++) d[e + n] += t;
+				for (let n = 0; n < l && e + n < f.length; n++) f[e + n] += t;
 			}
 		}
 	}
-	let f = c.reduce((e, t) => e + t, 0), p = Array(l);
+	let p = l.reduce((e, t) => e + t, 0), m = Array(u);
 	if (n.rtl) {
-		let e = o + f;
-		for (let t = 0; t < l; t++) e -= c[t], p[t] = e;
+		let e = s + p;
+		for (let t = 0; t < u; t++) e -= l[t], m[t] = e;
 	} else {
-		let e = o;
-		for (let t = 0; t < l; t++) p[t] = e, e += c[t];
-	}
-	let m = (e, t) => n.rtl ? p[e + t - 1] : p[e], h = Array(n.rows.length);
-	{
 		let e = s;
-		for (let t = 0; t < n.rows.length; t++) h[t] = e, e += d[t];
+		for (let t = 0; t < u; t++) m[t] = e, e += l[t];
 	}
-	let g = [], _ = n.rows.map(() => Array(l).fill(-1));
+	let h = (e, t) => n.rtl ? m[e + t - 1] : m[e], g = Array(n.rows.length);
+	{
+		let e = c;
+		for (let t = 0; t < n.rows.length; t++) g[t] = e, e += f[t];
+	}
+	let _, v = {
+		row: 0,
+		column: 0
+	};
+	if (o) {
+		let e = Y(n.width, r), t = Y(n.height, r), i = s + e / 2, a = c + t / 2, l = n.rotation * Math.PI / 180, u = Math.cos(l), d = Math.sin(l);
+		_ = (e) => {
+			let t = e.shapeX + e.shapeW / 2 - i, r = e.shapeY + e.shapeH / 2 - a;
+			n.flipH && (t = -t), n.flipV && (r = -r);
+			let s = i + u * t - d * r, c = a + d * t + u * r;
+			o({
+				...e,
+				...n.id === void 0 ? {} : { shapeId: n.id },
+				shapeX: s - e.shapeW / 2,
+				shapeY: c - e.shapeH / 2,
+				rotation: n.rotation,
+				...n.flipH ? { shapeFlipH: !0 } : {},
+				...n.flipV ? { shapeFlipV: !0 } : {},
+				tableCell: v
+			});
+		};
+	}
+	let y = [], b = n.rows.map(() => Array(u).fill(-1));
 	for (let e = 0; e < n.rows.length; e++) {
-		let t = n.rows[e], r = h[e];
+		let t = n.rows[e], r = g[e];
 		for (let i = 0; i < t.cells.length; i++) {
 			let a = t.cells[i];
 			if (a.hMerge || a.vMerge) continue;
-			let o = a.gridSpan || 1, s = a.rowSpan || 1, c = u(i, o), f = 0;
-			for (let t = 0; t < s; t++) f += d[e + t] ?? 0;
-			let p = m(i, o), h = Math.min(e + s - 1, n.rows.length - 1), v = g.length;
-			g.push({
+			let o = a.gridSpan || 1, s = a.rowSpan || 1, c = d(i, o), l = 0;
+			for (let t = 0; t < s; t++) l += f[e + t] ?? 0;
+			let p = h(i, o), m = Math.min(e + s - 1, n.rows.length - 1), g = y.length;
+			y.push({
 				cell: a,
 				colX: p,
 				rowY: r,
 				cellW: c,
-				cellH: f,
+				cellH: l,
 				ci: i,
 				ri: e,
 				span: o,
-				lastRi: h
+				lastRi: m
 			});
-			for (let t = e; t <= h; t++) for (let e = i; e < i + o && e < l; e++) _[t][e] = v;
+			for (let t = e; t <= m; t++) for (let e = i; e < i + o && e < u; e++) b[t][e] = g;
 		}
 	}
-	for (let { cell: e, colX: o, rowY: s, cellW: c, cellH: l } of g) {
-		let u = _n(e.fill, t, o, s, c, l, n.rotation);
-		if (u && (t.fillStyle = u, t.fillRect(o, s, c, l)), e.textBody) {
+	for (let { cell: e, colX: o, rowY: s, cellW: c, cellH: l, ci: u, ri: d } of y) {
+		let f = _n(e.fill, t, o, s, c, l, n.rotation);
+		if (f && (t.fillStyle = f, t.fillRect(o, s, c, l)), e.textBody) {
+			_ && (v = {
+				row: d,
+				column: u
+			});
 			let n = e.textColor ? X(e.textColor) : null;
-			Sr(t, e.textBody, o, s, c, l, r, n, 0, !1, !1, "#000000", i, a);
+			Sr(t, e.textBody, o, s, c, l, r, n, 0, !1, !1, "#000000", i, a, _);
 		}
 	}
-	let v = a.dpr, y = (e, t) => {
-		if (e < 0 || e >= _.length || t < 0 || t >= l) return null;
-		let n = _[e][t];
-		return n < 0 ? null : g[n];
-	}, b = (i, a, o, s, c) => {
+	let x = a.dpr, S = (e, t) => {
+		if (e < 0 || e >= b.length || t < 0 || t >= u) return null;
+		let n = b[e][t];
+		return n < 0 ? null : y[n];
+	}, C = (i, a, o, s, c) => {
 		Nr(t, i, r, {
 			x: Math.min(a, s),
 			y: Math.min(o, c),
 			w: Math.max(1, Math.abs(s - a)),
 			h: Math.max(1, Math.abs(c - o))
 		}, n.rotation);
-		let l = a === s ? e(a, t.lineWidth, v) : 0, u = o === c ? e(o, t.lineWidth, v) : 0;
+		let l = a === s ? e(a, t.lineWidth, x) : 0, u = o === c ? e(o, t.lineWidth, x) : 0;
 		t.beginPath(), t.moveTo(a + l, o + u), t.lineTo(s + l, c + u), t.stroke();
 	};
-	for (let e of g) {
+	for (let e of y) {
 		let { cell: i, colX: a, rowY: o, cellW: s, cellH: c } = e;
 		t.save();
-		let f = n.rtl ? i.borderR : i.borderL, p = n.rtl ? i.borderL : i.borderR, g = n.rtl ? e.ci + e.span === l : e.ci === 0, v = n.rtl ? e.ci === 0 : e.ci + e.span === l, x = n.rtl ? e.ci - 1 : e.ci + e.span, S = (e) => n.rtl ? e.borderR : e.borderL;
-		if (e.ri === 0 && i.borderT && b(i.borderT, a, o, a + s, o), g && f && b(f, a, o, a, o + c), e.lastRi === n.rows.length - 1) {
+		let l = n.rtl ? i.borderR : i.borderL, p = n.rtl ? i.borderL : i.borderR, m = n.rtl ? e.ci + e.span === u : e.ci === 0, _ = n.rtl ? e.ci === 0 : e.ci + e.span === u, v = n.rtl ? e.ci - 1 : e.ci + e.span, y = (e) => n.rtl ? e.borderR : e.borderL;
+		if (e.ri === 0 && i.borderT && C(i.borderT, a, o, a + s, o), m && l && C(l, a, o, a, o + c), e.lastRi === n.rows.length - 1) {
 			let e = i.borderB;
-			e && b(e, a, o + c, a + s, o + c);
+			e && C(e, a, o + c, a + s, o + c);
 		} else {
-			let t = e.lastRi + 1, n = o + c, r = Math.min(e.ci + e.span, l), a = e.ci;
+			let t = e.lastRi + 1, n = o + c, r = Math.min(e.ci + e.span, u), a = e.ci;
 			for (; a < r;) {
-				let e = _[t][a], o = a + 1;
-				for (; o < r && _[t][o] === e;) o++;
-				let s = y(t, a), c = an(i.borderB, s ? s.cell.borderT : null);
+				let e = b[t][a], o = a + 1;
+				for (; o < r && b[t][o] === e;) o++;
+				let s = S(t, a), c = an(i.borderB, s ? s.cell.borderT : null);
 				if (c) {
-					let e = m(a, o - a);
-					b(c, e, n, e + u(a, o - a), n);
+					let e = h(a, o - a);
+					C(c, e, n, e + d(a, o - a), n);
 				}
 				a = o;
 			}
 		}
-		if (v) {
+		if (_) {
 			let e = p;
-			e && b(e, a + s, o, a + s, o + c);
+			e && C(e, a + s, o, a + s, o + c);
 		} else {
 			let t = a + s, n = e.ri;
 			for (; n <= e.lastRi;) {
-				let r = _[n][x], i = n;
-				for (; i + 1 <= e.lastRi && _[i + 1][x] === r;) i++;
-				let a = y(n, x), o = an(p, a ? S(a.cell) : null);
-				o && b(o, t, h[n], t, h[i] + d[i]), n = i + 1;
+				let r = b[n][v], i = n;
+				for (; i + 1 <= e.lastRi && b[i + 1][v] === r;) i++;
+				let a = S(n, v), o = an(p, a ? y(a.cell) : null);
+				o && C(o, t, g[n], t, g[i] + f[i]), n = i + 1;
 			}
 		}
 		i.diagonalTL && (Nr(t, i.diagonalTL, r, {
@@ -5356,7 +5382,11 @@ async function Hr(e, t, n, r, i = {}, a, o) {
 			origin: t.elementSources?.[n]?.origin ?? "slide"
 		}) : void 0, i.fetchImage);
 		else if (r.type === "picture") await Ar(g, r, u, c, i.fetchImage);
-		else if (r.type === "table") Fr(g, r, u, y, v);
+		else if (r.type === "table") Fr(g, r, u, y, v, a ? (e) => a({
+			...e,
+			elementIndex: n,
+			origin: t.elementSources?.[n]?.origin ?? "slide"
+		}) : void 0);
 		else if (r.type === "media") await jr(g, r, u, c, i.fetchMedia, i.skipMediaControls, i.fetchImage);
 		else if (r.type === "chart") {
 			let e = J * u;
