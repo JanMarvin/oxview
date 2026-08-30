@@ -1,8 +1,10 @@
-import { PptxScrollViewer } from "/assets/pptx.mjs";
+import { PptxScrollViewer, PptxPresentation } from "/assets/pptx.mjs";
 import { threeD } from "/assets/three-d.mjs";
 import { regionMap } from "/assets/region-map.mjs";
 import { chartEx } from "/assets/chart-ex.mjs";
 import { math } from "/assets/math.mjs";
+import { initTableCopy } from "./ox_tables.js";
+import { initMediaCopy } from "./ox_media.js";
 
 // Ported from the docx viewer: same reasoning applies here (see docx_viewer.js
 // for the full history). Using the library's native `enableTextSelection: true`
@@ -28,7 +30,16 @@ async function init() {
     const qs = new URLSearchParams(window.location.search);
     const bgParam = qs.get("background");
 
-    const viewer = new PptxScrollViewer(container, {
+    // Same shape as the docx viewer: load the engine, inject it with
+    // fromPresentation(), keep the handle for slideWidth/renderSlide and the
+    // element hit-testing the copy buttons need.
+    const res = await fetch("./workbook.pptx");
+    const blob = await res.blob();
+    const fileUrl = URL.createObjectURL(blob);
+    const pres = await PptxPresentation.load(fileUrl);
+    URL.revokeObjectURL(fileUrl);
+
+    const viewer = PptxScrollViewer.fromPresentation(container, pres, {
         threeD,
         regionMap,
         chartEx,
@@ -50,12 +61,6 @@ async function init() {
         },
         onError: (err) => console.error("[oxview] pptx viewer error:", err)
     });
-
-    const res = await fetch("./workbook.pptx");
-    const blob = await res.blob();
-    const fileUrl = URL.createObjectURL(blob);
-    await viewer.load(fileUrl);
-    URL.revokeObjectURL(fileUrl);
 
     // See the NOTE at computeTotalWordCount() below re: what "Ready" here
     // actually confirms (viewer.load() resolved) vs. doesn't (background
@@ -226,6 +231,41 @@ async function init() {
         try { await viewer.findPrev(); } catch (e) {}
     });
 
+    // ---- table copy (see ox_tables.js) ----
+
+    const tableStatus = document.getElementById("table-status");
+
+    // Hover a table and a small copy button appears in its top-right corner,
+    // the way a code block offers one; shift-drag marks a region instead.
+    const tableCopy = initTableCopy(container, {
+        onStatus: (msg) => { tableStatus.textContent = msg; },
+        // PptxTextRunInfo.tableCell (upstream #1410) gives each table run its
+        // zero-based row/column, so once the bundled ooxml carries it the grid
+        // is exact and the manual column splits are no longer needed here.
+        slideRuns: (slideIndex) => pres.collectSlideRuns(slideIndex)
+    });
+
+    // Charts, images and shapes get a hover button too. PPTX charts are PNG
+    // only - PptxPresentation keeps its slide models private in this release,
+    // so there is no public route to the chart's series values.
+    initMediaCopy({
+        container,
+        engine: pres,
+        kind: "pptx",
+        onStatus: (msg) => { tableStatus.textContent = msg; }
+    });
+
+    window.addEventListener("pagehide", () => { try { pres.destroy(); } catch (e) {} });
+
+    // The provenance attributes this reads are internal details rather than
+    // public API, so a future bundled ooxml release may reasonably stop
+    // emitting them. Say so once in the console rather than offering a button
+    // that would hand back silently wrong grids.
+    setTimeout(() => {
+        const s = tableCopy.support();
+        if (!s.ok) console.warn("[oxview] table copy unavailable:", s.reason);
+    }, 1500);
+
     // ---- word count / selected-word count ----
 
     const wordCountEl = document.getElementById("word-count");
@@ -236,10 +276,9 @@ async function init() {
         return trimmed === "" ? 0 : trimmed.split(/\s+/).length;
     }
 
-    // NOTE: uses the private _collectSlideRuns method (same one the hand-rolled
-    // overlay used) purely to count words - independent of enableTextSelection,
-    // still the only way to get full-document text since there's no public
-    // word-count API.
+    // No public word-count API exists, so this walks the runs. Now that we
+    // own the engine it can use the public PptxPresentation.collectSlideRuns()
+    // instead of the viewer's private method.
     async function computeTotalWordCount() {
         const total = viewer.slideCount;
         if (!total) return;
@@ -247,7 +286,7 @@ async function init() {
         let words = 0;
         try {
             for (let p = 0; p < total; p++) {
-                const runs = await viewer._collectSlideRuns(p);
+                const runs = await pres.collectSlideRuns(p);
                 for (const run of runs) words += countWords(run.text);
             }
             wordCountEl.textContent = "Words: " + words.toLocaleString();

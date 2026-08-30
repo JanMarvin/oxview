@@ -62,6 +62,16 @@
   file.copy(file.path(.ox_template_root(), paste0(template, ".js")),
             file.path(sess$dir, "viewer.js"), overwrite = TRUE)
 
+  ## Helper modules the templates import by relative path: ox_tables.js
+  ## (docx/pptx table-to-TSV copy), ox_media.js (chart/image/shape copy) and
+  ## ox_find.js (xlsx Excel-style find). Copied unconditionally - they are
+  ## small, and this keeps the list in one place rather than tied to which
+  ## template was picked.
+  for (helper in c("ox_tables.js", "ox_media.js", "ox_find.js")) {
+    src <- file.path(.ox_template_root(), helper)
+    if (file.exists(src)) file.copy(src, file.path(sess$dir, helper), overwrite = TRUE)
+  }
+
   url <- sprintf("http://127.0.0.1:%d/session/%s/index.html", .ox_env$port, sess$id)
   if (isTRUE(debug)) extra_params$debug <- 1
   url <- paste0(url, .ox_query_string(extra_params))

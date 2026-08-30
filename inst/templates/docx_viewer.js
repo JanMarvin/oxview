@@ -1,8 +1,10 @@
-import { DocxScrollViewer } from "/assets/docx.mjs";
+import { DocxScrollViewer, DocxDocument } from "/assets/docx.mjs";
 import { threeD } from "/assets/three-d.mjs";
 import { regionMap } from "/assets/region-map.mjs";
 import { chartEx } from "/assets/chart-ex.mjs";
 import { math } from "/assets/math.mjs";
+import { initTableCopy } from "./ox_tables.js";
+import { initMediaCopy } from "./ox_media.js";
 
 // Using the library's native `enableTextSelection: true` instead of our
 // earlier hand-rolled overlay: the hand-rolled version accumulated a series
@@ -36,7 +38,17 @@ async function init() {
     const qs = new URLSearchParams(window.location.search);
     const bgParam = qs.get("background");
 
-    const viewer = new DocxScrollViewer(container, {
+    // Load the headless engine ourselves and hand it to the viewer with
+    // fromDocument(): one parse, and it gives us the public model, pageSize()
+    // and collectPageRuns() that the copy affordances need. The viewer no
+    // longer owns the engine's lifecycle, so we destroy it (see below).
+    const res = await fetch("./workbook.docx");
+    const blob = await res.blob();
+    const fileUrl = URL.createObjectURL(blob);
+    const doc = await DocxDocument.load(fileUrl);
+    URL.revokeObjectURL(fileUrl);
+
+    const viewer = DocxScrollViewer.fromDocument(container, doc, {
         threeD,
         regionMap,
         chartEx,
@@ -58,12 +70,6 @@ async function init() {
         },
         onError: (err) => console.error("[oxview] docx viewer error:", err)
     });
-
-    const res = await fetch("./workbook.docx");
-    const blob = await res.blob();
-    const fileUrl = URL.createObjectURL(blob);
-    await viewer.load(fileUrl);
-    URL.revokeObjectURL(fileUrl);
 
     // See the NOTE at computeTotalWordCount() below re: what "Ready" here
     // actually confirms (viewer.load() resolved) vs. doesn't (background
@@ -238,6 +244,36 @@ async function init() {
         try { await viewer.findPrev(); } catch (e) {}
     });
 
+    // ---- table copy (see ox_tables.js) ----
+
+    const tableStatus = document.getElementById("table-status");
+
+    // Hover a table and a small copy button appears in its top-right corner,
+    // the way a code block offers one; shift-drag marks a region instead.
+    const tableCopy = initTableCopy(container, {
+        onStatus: (msg) => { tableStatus.textContent = msg; }
+    });
+
+    // Charts, images and shapes get their own hover button: PNG for anything,
+    // plus the underlying data as TSV when it's a chart.
+    initMediaCopy({
+        container,
+        engine: doc,
+        kind: "docx",
+        onStatus: (msg) => { tableStatus.textContent = msg; }
+    });
+
+    window.addEventListener("pagehide", () => { try { doc.destroy(); } catch (e) {} });
+
+    // The provenance attributes this reads are internal details rather than
+    // public API, so a future bundled ooxml release may reasonably stop
+    // emitting them. Say so once in the console rather than offering a button
+    // that would hand back silently wrong grids.
+    setTimeout(() => {
+        const s = tableCopy.support();
+        if (!s.ok) console.warn("[oxview] table copy unavailable:", s.reason);
+    }, 1500);
+
     // ---- word count / selected-word count ----
 
     const wordCountEl = document.getElementById("word-count");
@@ -248,10 +284,9 @@ async function init() {
         return trimmed === "" ? 0 : trimmed.split(/\s+/).length;
     }
 
-    // NOTE: uses the private _collectPageRuns method (same one the hand-rolled
-    // overlay used) purely to count words - independent of enableTextSelection,
-    // still the only way to get full-document text since there's no public
-    // word-count API.
+    // No public word-count API exists, so this walks the runs. Now that we
+    // own the engine it can use the public DocxDocument.collectPageRuns()
+    // instead of the viewer's private method.
     async function computeTotalWordCount() {
         const total = viewer.pageCount;
         if (!total) return;
@@ -259,7 +294,7 @@ async function init() {
         let words = 0;
         try {
             for (let p = 0; p < total; p++) {
-                const runs = await viewer._collectPageRuns(p);
+                const runs = await doc.collectPageRuns(p);
                 for (const run of runs) words += countWords(run.text);
             }
             wordCountEl.textContent = "Words: " + words.toLocaleString();

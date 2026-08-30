@@ -1,4 +1,6 @@
 import { XlsxViewer } from "/assets/xlsx.mjs";
+import { makeFinder, initFind } from "./ox_find.js";
+import { initXlsxMediaCopy } from "./ox_media.js";
 import { threeD } from "/assets/three-d.mjs";
 import { regionMap } from "/assets/region-map.mjs";
 import { chartEx } from "/assets/chart-ex.mjs";
@@ -102,7 +104,12 @@ async function init() {
     loadStatus.textContent = "Loading\u2026";
 
     let currentState = null;
+    let media = null;
 
+    // Constructed first, then loaded - the viewer puts its chrome up while the
+    // workbook parses. Loading the workbook ourselves and injecting it with
+    // fromWorkbook() cost no extra parsing, but it moved the whole parse in
+    // front of the first paint, which reads as a slow open.
     const xlsx = new XlsxViewer(container, {
         threeD,
         regionMap,
@@ -127,7 +134,9 @@ async function init() {
             // separate headless document model this viewer doesn't expose.
             if (context && context.kind === "element") {
                 showElementInfo(context);
+                if (media) media.show(context);
             } else {
+                if (media) media.hide();
                 hideElementInfo();
             }
         },
@@ -141,6 +150,14 @@ async function init() {
         },
         onError: (err) => console.error("[oxview] xlsx viewer error:", err)
     });
+
+    // Charts, images and shapes get a copy button in their top-right corner
+    // when selected, the way the docx and pptx viewers offer one on hover.
+    media = initXlsxMediaCopy({
+        viewer: xlsx,
+        onStatus: (msg) => { loadStatus.textContent = msg; }
+    });
+    container.addEventListener("scroll", () => requestAnimationFrame(() => media.reposition()), true);
 
     const res = await fetch("./workbook.xlsx");
     const blob = await res.blob();
@@ -332,6 +349,8 @@ async function init() {
 
     const searchInput = document.getElementById("search-input");
 
+    let find = null;
+
     function openSearch() {
         searchbar.style.display = "flex";
         searchInput.focus();
@@ -339,6 +358,9 @@ async function init() {
     }
     function closeSearch() {
         searchbar.style.display = "none";
+        const results = document.getElementById("find-results");
+        if (results) results.style.display = "none";
+        if (find) find.clear();
         xlsx.clearFind();
     }
 
@@ -387,19 +409,50 @@ async function init() {
         sheetJump.value = xlsx.sheetNames[idx];
     });
 
-    searchInput.addEventListener("keydown", async (ev) => {
-        if (ev.key !== "Enter") return;
+    // ---- Excel-style find (see ox_find.js) ----
+    //
+    // The library's findText() always spans every sheet and only sees
+    // rendered values. ox_find.js adds the scope and formula options Excel's
+    // dialog has, over the same public workbook model, and lists the hits so
+    // a match on another sheet is something you can see and click rather
+    // than something that silently moves you. Falls back to the library's
+    // own find if the workbook can't be reached.
+
+    const findEls = {
+        input: searchInput,
+        results: document.getElementById("find-results"),
+        status: document.getElementById("find-status"),
+        allSheets: document.getElementById("find-all-sheets"),
+        formulas: document.getElementById("find-formulas"),
+        matchCase: document.getElementById("find-case"),
+        wholeCell: document.getElementById("find-whole")
+    };
+
+    // Constructed, not resolved: nothing is parsed or indexed until the first
+    // search, so opening a workbook costs exactly what it did before.
+    async function builtInFind(query) {
         try {
-            const matches = await xlsx.findText(searchInput.value);
+            const matches = await xlsx.findText(query, { caseSensitive: findEls.matchCase.checked });
+            findEls.status.textContent = matches.length + " matches (built-in)";
             if (matches.length > 0) await xlsx.findNext();
         } catch (e) {
             console.error("[oxview] findText failed:", e);
         }
-    });
+    }
+
+    find = initFind(
+        makeFinder(xlsx, () => blob.arrayBuffer()),
+        findEls,
+        () => xlsx.sheetIndex,
+        builtInFind
+    );
+
     document.getElementById("search-next").addEventListener("click", async () => {
+        if (find) return find.next();
         try { await xlsx.findNext(); } catch (e) {}
     });
     document.getElementById("search-prev").addEventListener("click", async () => {
+        if (find) return find.prev();
         try { await xlsx.findPrev(); } catch (e) {}
     });
 
@@ -462,7 +515,7 @@ async function init() {
         document.getElementById("ox-element-info-title").textContent = context.elementType + " selected (read-only)";
         const lines = [];
         if (context.elementType === "chart" && context.seriesCount !== undefined) {
-            lines.push(context.seriesCount + " series (data values not exposed by this API)");
+            lines.push(context.seriesCount + " series - use the chart button to copy the data as TSV");
         }
         if (context.mimeType) lines.push(context.mimeType);
         if (context.text) lines.push(context.text);

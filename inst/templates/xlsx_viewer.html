@@ -38,13 +38,31 @@
         #searchbar {
             position: absolute; right: 12px; background: #fff; border: 1px solid #ccc;
             border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); padding: 6px; z-index: 998;
-            display: none; align-items: center; gap: 4px; font-size: 12px;
+            display: none; flex-direction: column; align-items: stretch; gap: 6px; font-size: 12px;
         }
+        #searchbar-row { display: flex; align-items: center; gap: 4px; }
         #searchbar input { height: 24px; font-size: 12px; box-sizing: border-box; }
         #search-input { width: 160px; }
         #sheet-jump { width: 130px; }
         #searchbar button { height: 24px; font-size: 12px; cursor: pointer; }
         #searchbar .sep { width: 1px; height: 20px; background: #ccc; }
+        #searchbar label { display: inline-flex; align-items: center; gap: 3px; color: #333; white-space: nowrap; }
+        #searchbar input[type="checkbox"] { height: auto; margin: 0; }
+        #find-status { color: #666; min-width: 90px; }
+        /* Stacked under the controls inside #searchbar rather than floated
+           on its own - as a separate absolute box its top had to be computed
+           from searchbar.offsetHeight, which is 0 while the bar is hidden,
+           so it landed on top of the controls. */
+        #find-results {
+            display: none; max-height: 240px; overflow: auto; min-width: 320px;
+            border: 1px solid #e2e2e2; border-radius: 3px;
+        }
+        #find-results .find-note { padding: 5px 8px; color: #555; background: #f7f7f7; border-bottom: 1px solid #eee; }
+        #find-results .find-hit { padding: 3px 8px; cursor: pointer; display: flex; gap: 8px; }
+        #find-results .find-hit:hover { background: #eef4fb; }
+        #find-results .find-hit.active { background: #dbe9f8; }
+        #find-results .find-where { color: #2b6cb0; font-family: monospace; white-space: nowrap; }
+        #find-results .find-body { color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         #debugpanel {
             display: none; position: absolute; left: 12px; right: 12px; height: 35%;
             background: #fff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -79,13 +97,22 @@
         <span id="stat-hint" style="margin-left:auto; color:#888;"></span>
     </div>
     <div id="searchbar">
+      <div id="searchbar-row">
         <input type="text" id="sheet-jump" placeholder="Jump to sheet..." list="sheet-names" />
         <datalist id="sheet-names"></datalist>
         <span class="sep"></span>
         <input type="text" id="search-input" placeholder="Find in sheet..." />
         <button id="search-prev" title="Previous match">&uarr;</button>
         <button id="search-next" title="Next match">&darr;</button>
+        <span class="sep"></span>
+        <label title="Search every sheet, not just the active one"><input type="checkbox" id="find-all-sheets" />All sheets</label>
+        <label title="Search formula text where a cell has one, as Excel's &quot;Look in: Formulas&quot; does"><input type="checkbox" id="find-formulas" />Formulas</label>
+        <label title="Match case"><input type="checkbox" id="find-case" />Aa</label>
+        <label title="Match entire cell contents"><input type="checkbox" id="find-whole" />Whole cell</label>
+        <span id="find-status"></span>
         <button id="search-close" title="Close">&times;</button>
+      </div>
+      <div id="find-results"></div>
     </div>
     <textarea id="clip-helper" style="position:absolute; left:-9999px;"></textarea>
     <script type="module" src="./viewer.js"></script>
