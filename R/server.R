@@ -75,6 +75,23 @@
   ))
 }
 
+## Resolve a request path underneath `root`, or NULL if it would escape.
+## PATH_INFO arrives percent-decoded, so "..", backslashes and NUL all have to
+## be handled here rather than trusted to the client: a browser normalises
+## these away before sending, but the server is reachable by any local process
+## that finds the port. normalizePath() also resolves symlinks, so a link
+## planted inside the session directory cannot point out of it either.
+.ox_confine <- function(root, rel) {
+  if (is.null(rel) || !nzchar(rel)) return(NULL)
+  ## R strings cannot carry an embedded NUL, so "..", backslashes and the
+  ## normalized-prefix test below are the whole guard.
+  if (grepl("\\.\\.", rel) || grepl("\\\\", rel)) return(NULL)
+  root_norm <- normalizePath(root, winslash = "/", mustWork = FALSE)
+  path_norm <- normalizePath(file.path(root, rel), winslash = "/", mustWork = FALSE)
+  if (!startsWith(path_norm, paste0(root_norm, "/"))) return(NULL)
+  path_norm
+}
+
 .ox_app <- function() {
   list(
     call = function(req) {
@@ -88,11 +105,14 @@
       }
       rel <- sub("^/", "", path_info)
       if (startsWith(rel, "assets/")) {
-        local_path <- file.path(.ox_asset_root(), sub("^assets/", "", rel))
+        local_path <- .ox_confine(.ox_asset_root(), sub("^assets/", "", rel))
       } else if (startsWith(rel, "session/")) {
-        local_path <- file.path(.ox_env$session_root, sub("^session/", "", rel))
+        local_path <- .ox_confine(.ox_env$session_root, sub("^session/", "", rel))
       } else {
         return(.ox_plain_response(404L, "Not found"))
+      }
+      if (is.null(local_path)) {
+        return(.ox_plain_response(403L, "Forbidden"))
       }
       .ox_serve_file(local_path)
     }
