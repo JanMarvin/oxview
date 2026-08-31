@@ -10,11 +10,11 @@
 ## Citation
 
 Garbuszus J (2026). *oxview: Local Canvas Preview for xlsx, docx, and
-pptx Files*. R package version 0.6.3.
+pptx Files*. R package version 0.6.4.
 
     @Manual{,
       title = {oxview: Local Canvas Preview for xlsx, docx, and pptx Files},
       author = {Jan Marvin Garbuszus},
       year = {2026},
-      note = {R package version 0.6.3},
+      note = {R package version 0.6.4},
     }
