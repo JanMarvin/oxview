@@ -3,6 +3,7 @@ import { threeD } from "/assets/three-d.mjs";
 import { regionMap } from "/assets/region-map.mjs";
 import { chartEx } from "/assets/chart-ex.mjs";
 import { math } from "/assets/math.mjs";
+import { tiff } from "/assets/tiff.mjs";
 import { initTableCopy } from "./ox_tables.js";
 import { initMediaCopy } from "./ox_media.js";
 
@@ -44,6 +45,7 @@ async function init() {
         regionMap,
         chartEx,
         math,
+        tiff,
         enableElementSelection: true,
         enableTextSelection: true,
         background: bgParam || undefined,

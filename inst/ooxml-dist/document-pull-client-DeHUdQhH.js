@@ -1,11 +1,12 @@
-import { $ as e, A as t, At as n, C as r, Ct as i, D as a, Dt as o, E as s, Et as c, Ft as l, It as u, J as d, M as f, Mt as p, N as m, Nt as h, O as g, Ot as _, Pt as v, S as y, St as b, _ as x, _t as S, at as C, bt as w, c as T, d as E, dt as D, et as O, f as k, g as A, h as j, ht as M, it as N, j as P, jt as ee, k as F, l as te, m as ne, n as re, nt as ie, o as ae, ot as oe, pt as se, s as ce, t as le, tt as ue, u as de, ut as fe, v as pe, vt as me, w as he, y as ge } from "./line-metrics-Bpn7OeZD.js";
+import { $ as e, A as t, At as n, C as r, Ct as i, D as a, Dt as o, E as s, Et as c, Ft as l, It as u, J as d, M as f, Mt as p, N as m, Nt as h, O as g, Ot as _, Pt as v, S as y, St as b, _ as x, _t as S, at as C, bt as w, c as T, d as E, dt as D, et as O, f as k, g as A, h as j, ht as M, it as N, j as P, jt as ee, k as F, l as te, m as ne, n as re, nt as ie, o as ae, ot as oe, pt as se, s as ce, t as le, tt as ue, u as de, ut as fe, v as pe, vt as me, w as he, y as ge } from "./line-metrics-CXyjyYd5.js";
 import { c as _e, o as ve, r as ye, s as be } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { a as xe, c as Se, d as Ce, f as we, i as Te, n as Ee, o as De, s as Oe, t as ke, u as Ae } from "./line-distribute-D7A_wnJg.js";
-import { g as je, h as Me, in as Ne, k as Pe, ln as I, nn as Fe, rn as Ie, v as Le, w as Re, y as ze } from "./plot-area-frame-DHV02PJU.js";
-import "./units-BzZ0gAxs.js";
-import { L as Be } from "./three-d-7MaVzQuZ.js";
-import { k as Ve } from "./renderer-CYr9YTXM.js";
-import { a as He, i as L, n as R, o as z, r as Ue, s as B, t as We } from "./source-key-BklvnEyQ.js";
+import { a as xe, c as Se, d as Ce, f as we, i as Te, n as Ee, o as De, s as Oe, t as ke, u as Ae } from "./line-distribute-MqInuujx.js";
+import { s as je } from "./tiff-contract-Xjn3qXqK.js";
+import { g as Me, h as Ne, in as Pe, k as I, nn as Fe, rn as Ie, v as Le, w as Re, y as ze } from "./plot-area-frame-DuXZzovH.js";
+import "./units-EJdC96r6.js";
+import { L as Be } from "./three-d-B7LsKeOS.js";
+import { k as Ve } from "./renderer-Bmky2yBc.js";
+import { a as He, i as L, n as R, o as z, r as Ue, s as B, t as We } from "./source-key-DORuuFb-.js";
 //#region packages/core/src/fonts/canvas-route.ts
 function Ge(e, t) {
 	let n = e.trim();
@@ -70,7 +71,7 @@ function Ze(e) {
 	return Xe.has(e) || e === "line" || e === "straightconnector1" || e.startsWith("bentconnector");
 }
 function Qe(e, t, n, r, i) {
-	if (Me(e, t, n), t.fill) {
+	if (Ne(e, t, n), t.fill) {
 		let n = Le(t.fill, e, r.x, r.y, r.w, r.h, i);
 		n && (e.strokeStyle = n);
 	}
@@ -8796,14 +8797,15 @@ async function ef(e, t) {
 	for (let e = 0; e < s.data.length; e += 4) s.data[e] === n && s.data[e + 1] === r && s.data[e + 2] === i && (s.data[e + 3] = 0);
 	return o.putImageData(s, 0, 0), createImageBitmap(a);
 }
-async function tf(e, t, n, r, i = 0, a = 0, o, s = !1) {
-	let c = await se(e, t, r, {
+async function tf(e, t, n, r, i = 0, a = 0, o, s = !1, c) {
+	let l = await se(e, t, r, {
 		widthPt: i,
 		heightPt: a,
-		suppressBoundaryFrame: !0
+		suppressBoundaryFrame: !0,
+		tiff: c
 	});
-	return c ? !n && !o ? c : M($d, `${Qd(e, n, o)}${s ? "|strict" : ""}`, r, async () => {
-		let e = c;
+	return l ? !n && !o ? l : M($d, `${Qd(e, n, o)}${s ? "|strict" : ""}`, r, async () => {
+		let e = l;
 		try {
 			if (n && (e = await ef(e, n)), o) {
 				let { w: t, h: n } = Ie(e);
@@ -8812,26 +8814,26 @@ async function tf(e, t, n, r, i = 0, a = 0, o, s = !1) {
 						width: t,
 						height: n
 					});
-					if (s && i === r) return r !== c && S(r), {
+					if (s && i === r) return r !== l && S(r), {
 						bitmap: null,
 						owned: !1
 					};
-					e = i, r !== c && e !== r && S(r);
+					e = i, r !== l && e !== r && S(r);
 				}
 			}
 			return {
 				bitmap: e,
-				owned: e !== c
+				owned: e !== l
 			};
 		} catch (t) {
-			throw e !== c && S(e), t;
+			throw e !== l && S(e), t;
 		}
 	}) : null;
 }
 function nf(e) {
 	let t = /* @__PURE__ */ new Map(), n = e.filter((e) => e.kind === "image" || e.kind === "picture-bullet").sort((e, t) => (e.documentOrder ?? 2 ** 53 - 1) - (t.documentOrder ?? 2 ** 53 - 1));
 	for (let e of n) {
-		let n = Ne(e.mimeType, e.srcRect, e.intrinsicSize.widthPt, e.intrinsicSize.heightPt);
+		let n = Pe(e.mimeType, e.srcRect, e.intrinsicSize.widthPt, e.intrinsicSize.heightPt);
 		if (!n) continue;
 		let r = {
 			imagePath: e.partPath,
@@ -8847,24 +8849,24 @@ function nf(e) {
 	}
 	return [...t.values()];
 }
-async function rf(e, t) {
+async function rf(e, t, n) {
 	if (!t) return /* @__PURE__ */ new Map();
-	let n = await Promise.all(nf(e).map(async (e) => {
-		let n = e.mimeType === "image/svg+xml", r = {
+	let r = await Promise.all(nf(e).map(async (e) => {
+		let r = e.mimeType === "image/svg+xml", i = {
 			svgImagePath: e.svgImagePath,
 			srcRect: e.hasCrop || null
-		}, i;
-		if (C(r)) try {
-			i = await fe(r.svgImagePath, t);
-		} catch (r) {
-			let a = n ? await fe(e.imagePath, t) : await tf(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone);
-			if (!a) throw r;
-			i = a;
+		}, a;
+		if (C(i)) try {
+			a = await fe(i.svgImagePath, t);
+		} catch (i) {
+			let o = r ? await fe(e.imagePath, t) : await tf(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone, !1, n);
+			if (!o) throw i;
+			a = o;
 		}
-		else i = n ? await fe(e.imagePath, t) : await tf(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone);
-		return i == null ? null : [Qd(e.imagePath, e.colorReplaceFrom, e.duotone), i];
+		else a = r ? await fe(e.imagePath, t) : await tf(e.imagePath, e.mimeType, e.colorReplaceFrom, t, e.widthPt, e.heightPt, e.duotone, !1, n);
+		return a == null ? null : [Qd(e.imagePath, e.colorReplaceFrom, e.duotone), a];
 	}));
-	return new Map(n.filter((e) => e !== null));
+	return new Map(r.filter((e) => e !== null));
 }
 //#endregion
 //#region packages/docx/src/paint/column-separator-raster.ts
@@ -9366,7 +9368,7 @@ function Tf(e) {
 	if (r !== "" && !/^\s+$/u.test(r)) throw Error(`Retained glyph slices are incomplete (paint end ${n}/${e.range.end})`);
 }
 function Ef(e, t) {
-	return e.kind === "explicit" ? e.color : e.kind === "auto" ? je(e.background ?? "#FFFFFF") : t.defaultTextColor ?? "#000000";
+	return e.kind === "explicit" ? e.color : e.kind === "auto" ? Me(e.background ?? "#FFFFFF") : t.defaultTextColor ?? "#000000";
 }
 function Df(e, t) {
 	return Ef(e.color, t);
@@ -9823,7 +9825,7 @@ async function lp(e, t, n, r) {
 		}
 		let g;
 		try {
-			g = await rf(r.registry.descriptors, r.fetchImage);
+			g = await rf(r.registry.descriptors, r.fetchImage, r.tiff);
 		} catch (e) {
 			if (o()) return;
 			throw e;
@@ -9832,27 +9834,27 @@ async function lp(e, t, n, r) {
 		let _ = /* @__PURE__ */ new Map();
 		if (r.fetchImage) {
 			let e = r.fetchImage, t = /* @__PURE__ */ new Map();
-			for (let e of Pe(r.registry.descriptors.filter((e) => e.kind === "chart").map((e) => e.model))) {
+			for (let e of I(r.registry.descriptors.filter((e) => e.kind === "chart").map((e) => e.model))) {
 				let n = Re(e);
 				t.has(n) || t.set(n, e);
 			}
 			await Promise.all([...t].map(async ([t, n]) => {
-				let r = Ne(n.mimeType, n.srcRect, 72, 72);
-				if (!r) {
+				let i = Pe(n.mimeType, n.srcRect, 72, 72);
+				if (!i) {
 					_.set(t, null);
 					return;
 				}
 				try {
-					let i = () => n.mimeType === "image/svg+xml" ? n.duotone ? Promise.resolve(null) : fe(n.imagePath, e) : tf(n.imagePath, n.mimeType, void 0, e, r.widthPt, r.heightPt, n.duotone, !0), a;
+					let a = () => n.mimeType === "image/svg+xml" ? n.duotone ? Promise.resolve(null) : fe(n.imagePath, e) : tf(n.imagePath, n.mimeType, void 0, e, i.widthPt, i.heightPt, n.duotone, !0, r.tiff), o;
 					if (!n.duotone && C(n)) try {
-						a = await fe(n.svgImagePath, e);
+						o = await fe(n.svgImagePath, e);
 					} catch {
-						a = await i();
+						o = await a();
 					}
-					else a = await i();
-					_.set(t, a);
+					else o = await a();
+					_.set(t, o);
 				} catch (e) {
-					if (I(e)) throw e;
+					if (je(e)) throw e;
 					_.set(t, null);
 				}
 			}));
@@ -15600,7 +15602,7 @@ function Kg(e, t, n, r, i, a, o) {
 	};
 }
 function qg(e) {
-	return e.kind === "explicit" ? e.color : e.kind === "auto" ? je(e.background ?? "#FFFFFF") : "#000000";
+	return e.kind === "explicit" ? e.color : e.kind === "auto" ? Me(e.background ?? "#FFFFFF") : "#000000";
 }
 function Jg(e) {
 	return e.inkBounds ?? {
@@ -21824,14 +21826,14 @@ function kS(e, t, n, r, i) {
 	}, l = kx({
 		...e.input,
 		rows: [c]
-	})[0] ?? 0, u = Math.max(0, r - o - s - l), d = t.cells.map((t, n) => OS(e, t, a[n], u, i));
-	if (!d.some((e, t) => e.next.blockIndex !== a[t]?.blockIndex || e.next.paragraphLineStart !== a[t]?.paragraphLineStart || e.next.nestedFragmentIndex !== a[t]?.nestedFragmentIndex)) return {
+	})[0] ?? 0, u = Math.max(0, r - o - s - l), d = t.cells.map((t, n) => OS(e, t, a[n], u, i)), f = (e, t) => e.next.blockIndex !== a[t]?.blockIndex || e.next.paragraphLineStart !== a[t]?.paragraphLineStart || e.next.nestedFragmentIndex !== a[t]?.nestedFragmentIndex;
+	if (d.some((e, t) => !e.complete && !f(e, t)) || !d.some(f)) return {
 		selected: null,
 		next: n,
 		complete: !1
 	};
-	let f = d.every((e) => e.complete);
-	return f && n.rowFragmentIndex === 0 ? {
+	let p = d.every((e) => e.complete);
+	return p && n.rowFragmentIndex === 0 ? {
 		selected: TS(t, "source"),
 		next: Object.freeze({
 			rowIndex: n.rowIndex + 1,
@@ -21857,11 +21859,11 @@ function kS(e, t, n, r, i) {
 			ranges: d.map((e) => e.range)
 		},
 		next: Object.freeze({
-			rowIndex: f ? n.rowIndex + 1 : n.rowIndex,
-			rowFragmentIndex: f ? 0 : n.rowFragmentIndex + 1,
-			cells: Object.freeze(f ? [] : d.map((e) => e.next))
+			rowIndex: p ? n.rowIndex + 1 : n.rowIndex,
+			rowFragmentIndex: p ? 0 : n.rowFragmentIndex + 1,
+			cells: Object.freeze(p ? [] : d.map((e) => e.next))
 		}),
-		complete: f
+		complete: p
 	};
 }
 function AS(e, t, n) {
@@ -26699,7 +26701,8 @@ function RT(e, t, n, r) {
 			onTextRun: r.onTextRun,
 			threeD: r.threeD,
 			regionMap: r.regionMap,
-			chartEx: r.chartEx
+			chartEx: r.chartEx,
+			tiff: r.tiff
 		}
 	};
 }

@@ -19,13 +19,14 @@ function r(e, r, i) {
 	return t.set(e, a), e;
 }
 function i(e) {
-	let n = e.math ? t.get(e.math) : void 0, r = e.threeD ? t.get(e.threeD) : void 0, i = e.regionMap ? t.get(e.regionMap) : void 0, a = e.chartEx ? t.get(e.chartEx) : void 0, o = {
+	let n = e.math ? t.get(e.math) : void 0, r = e.threeD ? t.get(e.threeD) : void 0, i = e.regionMap ? t.get(e.regionMap) : void 0, a = e.chartEx ? t.get(e.chartEx) : void 0, o = e.tiff ? t.get(e.tiff) : void 0, s = {
 		...n ? { math: n } : {},
 		...r ? { threeD: r } : {},
 		...i ? { regionMap: i } : {},
-		...a ? { chartEx: a } : {}
+		...a ? { chartEx: a } : {},
+		...o ? { tiff: o } : {}
 	};
-	return Object.keys(o).length > 0 ? Object.freeze(o) : void 0;
+	return Object.keys(s).length > 0 ? Object.freeze(s) : void 0;
 }
 //#endregion
 export { i as n, r as t };

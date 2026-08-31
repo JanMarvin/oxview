@@ -5,6 +5,7 @@ import { threeD } from "/assets/three-d.mjs";
 import { regionMap } from "/assets/region-map.mjs";
 import { chartEx } from "/assets/chart-ex.mjs";
 import { math } from "/assets/math.mjs";
+import { tiff } from "/assets/tiff.mjs";
 
 // v0.77 migration: select()/selection/onSelectionChange/CellRange were
 // removed upstream (breaking, no aliases kept) in favor of setSelection()/
@@ -115,6 +116,7 @@ async function init() {
         regionMap,
         chartEx,
         math,
+        tiff,
         enableHyperlinks: true,
         enableElementSelection: true,
         onSelectionStateChange: (state) => {

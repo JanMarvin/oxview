@@ -2,7 +2,7 @@
 # vendors the @silurus/ooxml JS/WASM viewer (xlsx/docx/pptx canvas renderer)
 # run from the package root: source("inst/prepare_lib.R")
 
-ooxml_ver <- "0.83.2"
+ooxml_ver <- "0.84.0"
 
 tarball_url <- sprintf("https://registry.npmjs.org/@silurus/ooxml/-/ooxml-%s.tgz", ooxml_ver)
 
@@ -62,7 +62,7 @@ file.copy(dist_files, "inst/ooxml-dist", recursive = TRUE)
   invisible(unreachable)
 }
 
-pruned <- .prune_unreachable("inst/ooxml-dist", c("xlsx.mjs", "docx.mjs", "pptx.mjs", "math.mjs", "region-map.mjs", "three-d.mjs", "chart-ex.mjs"))
+pruned <- .prune_unreachable("inst/ooxml-dist", c("xlsx.mjs", "docx.mjs", "pptx.mjs", "math.mjs", "region-map.mjs", "three-d.mjs", "chart-ex.mjs", "tiff.mjs"))
 message("prepare_lib.R: pruned ", length(pruned), " unreachable file(s): ",
         paste(pruned, collapse = ", "))
 

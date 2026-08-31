@@ -1,6 +1,7 @@
-import { an as e, cn as t, on as n, sn as r, un as i } from "./plot-area-frame-DHV02PJU.js";
-import { L as a } from "./three-d-7MaVzQuZ.js";
-import { t as o } from "./mathjax-DwIrafQ6.js";
+import { c as e, o as t, r as n } from "./tiff-contract-Xjn3qXqK.js";
+import { an as r, on as i } from "./plot-area-frame-DuXZzovH.js";
+import { L as a } from "./three-d-B7LsKeOS.js";
+import { t as o } from "./mathjax-DPEX346v.js";
 //#region packages/core/src/errors/ooxml-error.ts
 var s = class e extends Error {
 	code;
@@ -22447,7 +22448,7 @@ function Re(e) {
 }
 var A = /* @__PURE__ */ new WeakMap(), ze = /* @__PURE__ */ new WeakSet();
 function j(e) {
-	!e || ze.has(e) || (ze.add(e), n(e));
+	!e || ze.has(e) || (ze.add(e), i(e));
 }
 function Be(e) {
 	j(e);
@@ -22475,13 +22476,13 @@ function He(e) {
 	let t = Number(e.width), n = Number(e.height);
 	return Number.isSafeInteger(t) && t > 0 && Number.isSafeInteger(n) && n > 0 ? t * n * 4 : 0;
 }
-function Ue(e, n) {
-	if (!n) return;
+function Ue(e, r) {
+	if (!r) return;
 	let i = A.get(e);
-	if (!i || i.count === 0 || i.activeBitmaps.has(n)) return;
-	let a = i.activeBytes + He(n);
-	if (a > 134217728) throw new t("active-decoded-bytes", r, a);
-	i.activeBitmaps.add(n), i.activeBytes = a;
+	if (!i || i.count === 0 || i.activeBitmaps.has(r)) return;
+	let a = i.activeBytes + He(r);
+	if (a > 134217728) throw new t("active-decoded-bytes", n, a);
+	i.activeBitmaps.add(r), i.activeBytes = a;
 }
 function We(e, t, n) {
 	let r = [...t.entries].find(([e]) => e !== n);
@@ -22497,10 +22498,10 @@ function Ge(e, t) {
 	}
 	t.then((e) => j(e)).catch(() => {});
 }
-function Ke(e, t, n) {
+function Ke(e, t, r) {
 	let i = Re(t), a = i.entries, o = a.get(e);
 	if (o) return a.delete(e), a.set(e, o), o.promise.then((e) => (Ue(t, e), e));
-	let s = Ie(t, n), c = s.then(({ bitmap: e, owned: t }) => t ? e : null), l = s.then(({ bitmap: e, owned: n }) => {
+	let s = Ie(t, r), c = s.then(({ bitmap: e, owned: t }) => t ? e : null), l = s.then(({ bitmap: e, owned: n }) => {
 		try {
 			return Ue(t, e), e;
 		} catch (t) {
@@ -22511,13 +22512,13 @@ function Ke(e, t, n) {
 		ownedPromise: c,
 		weight: 0
 	};
-	for (s.then(({ bitmap: n, owned: o }) => {
+	for (s.then(({ bitmap: r, owned: o }) => {
 		if (a.get(e) === u) {
-			if (u.bitmap = n, !o) {
+			if (u.bitmap = r, !o) {
 				a.delete(e);
 				return;
 			}
-			for (u.weight = He(n), i.retainedBytes += u.weight; i.retainedBytes > r && We(t, i, e););
+			for (u.weight = He(r), i.retainedBytes += u.weight; i.retainedBytes > n && We(t, i, e););
 		}
 	}).catch(() => {}), l.catch(() => {
 		a.get(e) === u && (a.delete(e), i.retainedBytes -= u.weight, Ge(t, c));
@@ -22531,13 +22532,14 @@ function Xe(e, t, n, r) {
 function Ze(e, t, n, r) {
 	return Xe(`${Ye}${e}`, t, n, r);
 }
-function Qe(t, n, r, i = {}) {
-	let { widthPt: a = 0, heightPt: o = 0, suppressBoundaryFrame: s = !1 } = i;
-	return Xe(qe, t, r, async () => ({
-		bitmap: await e(await r(t, n), {
+function Qe(e, t, n, i = {}) {
+	let { widthPt: a = 0, heightPt: o = 0, suppressBoundaryFrame: s = !1, tiff: c } = i;
+	return Xe(qe, e, n, async () => ({
+		bitmap: await r(await n(e, t), {
 			widthPt: a,
 			heightPt: o,
-			suppressBoundaryFrame: s
+			suppressBoundaryFrame: s,
+			tiff: c
 		}),
 		owned: !0
 	}));
@@ -22882,15 +22884,15 @@ function Rt(e, t, n, r) {
 	}
 	e.restore();
 }
-async function zt(e, t) {
-	let { width: n, height: r } = a(e.widthEm * 256, (e.ascentEm + e.descentEm) * 256), s = i(n, r), c = s?.getContext("2d");
+async function zt(t, n) {
+	let { width: r, height: i } = a(t.widthEm * 256, (t.ascentEm + t.descentEm) * 256), s = e(r, i), c = s?.getContext("2d");
 	if (!s || !c || typeof Path2D > "u") throw Error("Math SVG rasterization requires Canvas 2D and Path2D support");
-	Rt(c, Nt(o(e.svg, t), e.widthEm, e.ascentEm + e.descentEm), n, r);
-	let l = s, u = n, d = r, f = Mt / 256, p = Math.max(1, Math.round(n * f)), m = Math.max(1, Math.round(r * f));
+	Rt(c, Nt(o(t.svg, n), t.widthEm, t.ascentEm + t.descentEm), r, i);
+	let l = s, u = r, d = i, f = Mt / 256, p = Math.max(1, Math.round(r * f)), m = Math.max(1, Math.round(i * f));
 	for (; u > p || d > m;) {
-		let e = Math.max(p, Math.ceil(u / 2)), t = Math.max(m, Math.ceil(d / 2)), n = i(e, t), r = n?.getContext("2d");
-		if (!n || !r) break;
-		r.imageSmoothingEnabled = !0, r.imageSmoothingQuality = "high", r.drawImage(l, 0, 0, e, t), l = n, u = e, d = t;
+		let t = Math.max(p, Math.ceil(u / 2)), n = Math.max(m, Math.ceil(d / 2)), r = e(t, n), i = r?.getContext("2d");
+		if (!r || !i) break;
+		i.imageSmoothingEnabled = !0, i.imageSmoothingQuality = "high", i.drawImage(l, 0, 0, t, n), l = r, u = t, d = n;
 	}
 	return {
 		source: l,
@@ -22898,11 +22900,11 @@ async function zt(e, t) {
 		heightPx: d
 	};
 }
-function Bt(e, t) {
-	let n = i(e.widthPx, e.heightPx);
-	if (!n) return e.source;
-	let r = n.getContext("2d");
-	return r ? (r.drawImage(e.source, 0, 0, e.widthPx, e.heightPx), r.globalCompositeOperation = "source-in", r.fillStyle = t, r.fillRect(0, 0, e.widthPx, e.heightPx), n) : e.source;
+function Bt(t, n) {
+	let r = e(t.widthPx, t.heightPx);
+	if (!r) return t.source;
+	let i = r.getContext("2d");
+	return i ? (i.drawImage(t.source, 0, 0, t.widthPx, t.heightPx), i.globalCompositeOperation = "source-in", i.fillStyle = n, i.fillRect(0, 0, t.widthPx, t.heightPx), r) : t.source;
 }
 //#endregion
 //#region packages/core/src/canvas/env.ts

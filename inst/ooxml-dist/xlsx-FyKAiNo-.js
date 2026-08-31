@@ -1,15 +1,16 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { $ as t, A as n, At as r, B as i, C as a, Ct as o, D as s, Dt as c, Et as l, Ht as u, M as d, Mt as f, Nt as p, O as m, Ot as h, Pt as g, Qt as _, R as v, S as y, T as b, V as x, Vt as S, W as C, Zt as w, _ as T, a as E, at as D, c as O, d as k, dt as A, et as j, f as M, ft as N, g as ee, h as P, it as F, j as te, jt as I, lt as L, m as R, n as z, nt as ne, p as B, rt as V, s as re, tt as H, u as ie, ut as U, w as ae, y as oe, z as se } from "./line-metrics-Bpn7OeZD.js";
-import { C as ce, E as le, S as ue, T as de, _ as fe, a as pe, b as me, d as W, f as G, h as K, i as he, l as ge, m as _e, p as ve, t as ye, u as q, v as be, w as xe, x as Se, y as Ce } from "./canvas-viewer-mechanics-DVGK-fLT.js";
+import { $ as t, A as n, At as r, B as i, C as a, Ct as o, D as s, Dt as c, Et as l, Ht as u, M as d, Mt as f, Nt as p, O as m, Ot as h, Pt as g, Qt as _, R as v, S as y, T as b, V as x, Vt as S, W as C, Zt as w, _ as T, a as E, at as D, c as O, d as k, dt as A, et as j, f as M, ft as N, g as ee, h as P, it as F, j as te, jt as I, lt as L, m as R, n as z, nt as ne, p as B, rt as V, s as re, tt as H, u as ie, ut as U, w as ae, y as oe, z as se } from "./line-metrics-CXyjyYd5.js";
+import { C as ce, E as le, S as ue, T as de, _ as fe, a as pe, b as me, d as W, f as G, h as K, i as he, l as ge, m as _e, p as ve, t as ye, u as q, v as be, w as xe, x as Se, y as Ce } from "./canvas-viewer-mechanics-CIfhCgYA.js";
 import { a as we, i as Te, t as Ee } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { C as De, _ as J, c as Oe, cn as ke, h as Ae, in as je, k as Me, l as Ne, ln as Pe, nn as Fe, o as Ie, s as Le, un as Re, v as ze, w as Be } from "./plot-area-frame-DHV02PJU.js";
-import { a as Ve, i as Y, r as He } from "./units-BzZ0gAxs.js";
-import { L as Ue } from "./three-d-7MaVzQuZ.js";
-import { k as We } from "./renderer-CYr9YTXM.js";
-import { i as Ge } from "./resource-measurement-DuiFWzam.js";
-import { n as Ke } from "./renderer-module-contract-DLbb7zY0.js";
-import { n as qe, r as Je, t as Ye } from "./visible-index-BFE3PWiY.js";
-import { a as Xe, c as Ze, d as Qe, i as $e, l as et, n as tt, o as nt, s as rt, t as it, u as at } from "./worksheet-pull-client-DyFsDF4A.js";
+import { c as De, o as Oe, s as ke } from "./tiff-contract-Xjn3qXqK.js";
+import { C as Ae, _ as J, c as je, h as Me, in as Ne, k as Pe, l as Fe, nn as Ie, o as Le, s as Re, v as ze, w as Be } from "./plot-area-frame-DuXZzovH.js";
+import { a as Ve, i as Y, r as He } from "./units-EJdC96r6.js";
+import { L as Ue } from "./three-d-B7LsKeOS.js";
+import { k as We } from "./renderer-Bmky2yBc.js";
+import { i as Ge } from "./resource-measurement-esyGbzAF.js";
+import { n as Ke } from "./renderer-module-contract-C6sYZvTV.js";
+import { n as qe, r as Je, t as Ye } from "./visible-index-DwJzuGmJ.js";
+import { a as Xe, c as Ze, d as Qe, i as $e, l as et, n as tt, o as nt, s as rt, t as it, u as at } from "./worksheet-pull-client-B0zfEVau.js";
 //#region packages/core/src/sparkline/renderer.ts
 function ot(e, t, n) {
 	let { values: r } = n;
@@ -646,16 +647,16 @@ function qt(e) {
 }
 function Jt() {
 	let e = /* @__PURE__ */ new Date();
-	return Ne(new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate())), !1);
+	return Fe(new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate())), !1);
 }
 function Yt() {
-	return Ne(new Date(Date.now()), !1);
+	return Fe(new Date(Date.now()), !1);
 }
 function Xt(e, t, n) {
-	return Math.floor(Ne(new Date(Date.UTC(e, t - 1, n)), !1));
+	return Math.floor(Fe(new Date(Date.UTC(e, t - 1, n)), !1));
 }
 function Zt(e) {
-	return Oe(Math.floor(e), !1);
+	return je(Math.floor(e), !1);
 }
 function Qt(e) {
 	let t = Zt(e);
@@ -825,7 +826,7 @@ function dn(e) {
 	};
 }
 function fn(e, t, n = !1) {
-	let r = Oe(e, n), i = r.getUTCFullYear(), a = r.getUTCMonth() + 1, o = r.getUTCDate(), s = r.getUTCDay(), c = r.getUTCHours(), l = r.getUTCMinutes(), u = r.getUTCSeconds(), d = t.split(";")[0], f = /am\/pm|a\/p/i.test(d), p = null, m = () => p ??= dn(r), h = "", g = 0, _ = !1;
+	let r = je(e, n), i = r.getUTCFullYear(), a = r.getUTCMonth() + 1, o = r.getUTCDate(), s = r.getUTCDay(), c = r.getUTCHours(), l = r.getUTCMinutes(), u = r.getUTCSeconds(), d = t.split(";")[0], f = /am\/pm|a\/p/i.test(d), p = null, m = () => p ??= dn(r), h = "", g = 0, _ = !1;
 	for (; g < d.length;) {
 		let t = d[g];
 		if (t === "\"") {
@@ -912,7 +913,7 @@ function yn(e) {
 	return t ? `-${i}` : i;
 }
 function bn(e, t, n, r = !1) {
-	if (t === 14 && !n) return { text: Ie(e, r) };
+	if (t === 14 && !n) return { text: Le(e, r) };
 	let i = an[t];
 	if (i) return { text: fn(e, i, r) };
 	if (n && n.trim().toLowerCase() === "general") return { text: yn(e) };
@@ -1145,11 +1146,11 @@ function jn(e, t, n) {
 	}
 	if (r.exp) {
 		let e = Math.max(r.intSpec.length, 1), t = r.fracSpec.length, n = 0, i = 0;
-		o !== 0 && (i = Math.floor(Math.log10(o)), i = Math.floor(i / e) * e, n = o / 10 ** i, parseFloat(Le(n, t)) >= 10 ** e && (i += e, n = o / 10 ** i));
-		let [s, c = ""] = Le(n, t).split(".");
+		o !== 0 && (i = Math.floor(Math.log10(o)), i = Math.floor(i / e) * e, n = o / 10 ** i, parseFloat(Re(n, t)) >= 10 ** e && (i += e, n = o / 10 ** i));
+		let [s, c = ""] = Re(n, t).split(".");
 		return a + Mn(r, On(s, r.intSpec, !1), kn(c, r.fracSpec), "E" + (i < 0 ? "-" : r.exp.plus ? "+" : "") + String(Math.abs(i)).padStart(r.exp.width, "0"));
 	}
-	let s = r.fracSpec.length, [c, l = ""] = Le(o, s).split("."), u = c.replace(/^0+/, ""), d = /[0]/.test(r.intSpec) || r.intSpec === "" && !1;
+	let s = r.fracSpec.length, [c, l = ""] = Re(o, s).split("."), u = c.replace(/^0+/, ""), d = /[0]/.test(r.intSpec) || r.intSpec === "" && !1;
 	return u === "" && d && (u = "0"), a + Mn(r, On(u, r.intSpec, r.grouping), kn(l, r.fracSpec), "");
 }
 function Mn(e, t, n, r) {
@@ -2049,7 +2050,7 @@ function Nr(e, t, n, r) {
 	if (jr.has(s)) return jr.get(s);
 	let c = Mr[t];
 	if (!c) return jr.set(s, null), null;
-	let l = c.length, u = Re(l, l);
+	let l = c.length, u = De(l, l);
 	if (!u) return jr.set(s, null), null;
 	let d = u.getContext("2d");
 	if (!d) return jr.set(s, null), null;
@@ -3412,7 +3413,7 @@ function Ui(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.images) {
 		}
 		if (S <= 0 || C <= 0) continue;
 		let w = Tr(u + (b - _) - c, S, h, m), T = d + (x - v) - l;
-		w + S < y || w > y + f || T + C < d || T > d + p || (t.alpha != null && t.alpha < 1 ? (e.save(), e.globalAlpha = t.alpha, Fe(e, o, t.srcRect, w, T, S, C), e.restore()) : Fe(e, o, t.srcRect, w, T, S, C));
+		w + S < y || w > y + f || T + C < d || T > d + p || (t.alpha != null && t.alpha < 1 ? (e.save(), e.globalAlpha = t.alpha, Ie(e, o, t.srcRect, w, T, S, C), e.restore()) : Ie(e, o, t.srcRect, w, T, S, C));
 	}
 	e.restore();
 }
@@ -3488,7 +3489,7 @@ function Gi(e, t, n, r, i, a, s, c) {
 		let n = c?.get(hr(t.geom.imagePath, t.geom.duotone));
 		if (n) {
 			let r = t.geom.alpha;
-			r != null && r < 1 ? (e.save(), e.globalAlpha = r, Fe(e, n, t.geom.srcRect, 0, 0, i, a), e.restore()) : Fe(e, n, t.geom.srcRect, 0, 0, i, a);
+			r != null && r < 1 ? (e.save(), e.globalAlpha = r, Ie(e, n, t.geom.srcRect, 0, 0, i, a), e.restore()) : Ie(e, n, t.geom.srcRect, 0, 0, i, a);
 		}
 	}
 	t.text && Zi(e, t.text, i, a, s), e.restore();
@@ -3701,7 +3702,7 @@ function $i(e) {
 function ea(e, t, n, r) {
 	let i = $i(t);
 	if (i) {
-		if (Ae(e, i, 1 / Y), i.fill) {
+		if (Me(e, i, 1 / Y), i.fill) {
 			let a = ze(i.fill, e, 0, 0, n, r, t.rot);
 			a && (e.strokeStyle = a);
 		}
@@ -3841,7 +3842,7 @@ function aa(e) {
 	}
 }
 function oa(e) {
-	return De(e);
+	return Ae(e);
 }
 function sa(e) {
 	switch (e) {
@@ -3969,26 +3970,27 @@ function Aa(e, t, n, r, i) {
 	};
 	return g(u, p, s.offsetOf(h.cols + 1), s.offsetOf(n.col), s.offsetOf(n.col + n.cols)) && g(d, m, c.offsetOf(h.rows + 1), c.offsetOf(n.row), c.offsetOf(n.row + n.rows));
 }
-async function ja(e, t, n, r, i = 0, a = 0, o = null, s = null, c, l = !1) {
-	let u = t === "image/svg+xml";
-	if (u && s) return null;
-	let d = je(t, o, i, a);
-	if (!d) return null;
-	let f = () => Ge(e, t, s, r, {
-		widthPt: d.widthPt,
-		heightPt: d.heightPt,
+async function ja(e, t, n, r, i = 0, a = 0, o = null, s = null, c, l = !1, u) {
+	let d = t === "image/svg+xml";
+	if (d && s) return null;
+	let f = Ne(t, o, i, a);
+	if (!f) return null;
+	let p = () => Ge(e, t, s, r, {
+		widthPt: f.widthPt,
+		heightPt: f.heightPt,
 		offscreenFactory: c,
-		failClosedOnDuotoneFailure: l
-	}), p = {
+		failClosedOnDuotoneFailure: l,
+		tiff: u
+	}), m = {
 		svgImagePath: n,
 		srcRect: o
 	};
-	if (!s && D(p)) try {
-		return await U(p.svgImagePath, r);
+	if (!s && D(m)) try {
+		return await U(m.svgImagePath, r);
 	} catch {
-		return u ? U(e, r) : f();
+		return d ? U(e, r) : p();
 	}
-	return u ? U(e, r) : f();
+	return d ? U(e, r) : p();
 }
 async function Ma(e, t, n, r) {
 	if (t.clear(), !n) return;
@@ -4020,7 +4022,7 @@ async function Ma(e, t, n, r) {
 		});
 	}
 	let c = (e.charts ?? []).filter((t) => Aa(t, e, r?.viewport, o, s)).map((e) => e.chart);
-	for (let e of Me(c)) a.set(Be(e), {
+	for (let e of Pe(c)) a.set(Be(e), {
 		imagePath: e.imagePath,
 		mimeType: e.mimeType,
 		svgImagePath: e.svgImagePath,
@@ -4032,10 +4034,10 @@ async function Ma(e, t, n, r) {
 	});
 	a.size !== 0 && await Promise.all([...a.entries()].map(async ([e, n]) => {
 		try {
-			let a = await ja(n.imagePath, n.mimeType, n.svgImagePath, i, n.widthPt, n.heightPt, n.srcRect, n.duotone, r?.offscreenFactory, n.failClosedOnDuotoneFailure ?? !1);
+			let a = await ja(n.imagePath, n.mimeType, n.svgImagePath, i, n.widthPt, n.heightPt, n.srcRect, n.duotone, r?.offscreenFactory, n.failClosedOnDuotoneFailure ?? !1, r?.tiff);
 			t.set(e, a);
 		} catch (n) {
-			if (Pe(n)) throw n;
+			if (ke(n)) throw n;
 			t.delete(e);
 		}
 	}));
@@ -4071,7 +4073,8 @@ async function Ia(e, t, n, r = {}) {
 		height: u,
 		cellScale: r.cellScale,
 		freezeRows: r.freezeRows,
-		freezeCols: r.freezeCols
+		freezeCols: r.freezeCols,
+		tiff: e.tiff
 	}), e.math && Yi(o) && await Xi(o, e.math), r[Oa]?.() === !1) return;
 	let f = r.dpr ?? j(), p = Ue(l * f, u * f), m = p.clamped ? f * p.scale : f, h = p.width, g = p.height;
 	if (t.width !== h && (t.width = h), t.height !== g && (t.height = g), H(t)) {
@@ -4258,6 +4261,7 @@ var Ya = Symbol("retain-xlsx-viewer-fonts"), Xa = Symbol("prepare-xlsx-viewer-ro
 	threeD;
 	regionMap;
 	chartEx;
+	tiff;
 	googleFontNames = [];
 	retainedFontSets = /* @__PURE__ */ new Map();
 	fontsDestroyed = !1;
@@ -4307,7 +4311,7 @@ var Ya = Symbol("retain-xlsx-viewer-fonts"), Xa = Symbol("prepare-xlsx-viewer-ro
 			s = le(await de(s, n.password));
 			let c = s === i;
 			o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let l = a === "worker" ? (await import("./render-worker-host-CmPBviYJ.js")).createRenderWorker() : new pt(), u;
+			let l = a === "worker" ? (await import("./render-worker-host-BWdhjVH_.js")).createRenderWorker() : new pt(), u;
 			try {
 				return u = new e(l, a, n.wasmUrl), u.metrics = o, await u._load(s, n, r.policy, (e) => o.observeUsage(e), c), o.checkpoint("workbook index ready"), o.succeed({ sheets: u.sheetCount }), u;
 			} catch (e) {
@@ -4324,9 +4328,9 @@ var Ya = Symbol("retain-xlsx-viewer-fonts"), Xa = Symbol("prepare-xlsx-viewer-ro
 			cells: 0,
 			ownedUtf8Bytes: 0,
 			jsonBytes: 0
-		}, this.sheetCache.clear(), await this.worksheetPullClient?.cancelAll("closed"), this.worksheetPullClient = null, this.generation = (this.generation ?? 0) + 1, this.resourcePolicy = n, this.workerTimeoutMs = t.workerTimeoutMs, this.math = this._mode === "worker" ? void 0 : t.math, this.threeD = this._mode === "worker" ? void 0 : t.threeD, this.regionMap = this._mode === "worker" ? void 0 : t.regionMap, this.chartEx = this._mode === "worker" ? void 0 : t.chartEx;
+		}, this.sheetCache.clear(), await this.worksheetPullClient?.cancelAll("closed"), this.worksheetPullClient = null, this.generation = (this.generation ?? 0) + 1, this.resourcePolicy = n, this.workerTimeoutMs = t.workerTimeoutMs, this.math = this._mode === "worker" ? void 0 : t.math, this.threeD = this._mode === "worker" ? void 0 : t.threeD, this.regionMap = this._mode === "worker" ? void 0 : t.regionMap, this.chartEx = this._mode === "worker" ? void 0 : t.chartEx, this.tiff = this._mode === "worker" ? void 0 : t.tiff;
 		let a = this._mode === "worker" ? Ke(t) : void 0;
-		t.math && this._mode === "worker" && !a?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), t.threeD && this._mode === "worker" && !a?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), t.regionMap && this._mode === "worker" && !a?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), t.chartEx && this._mode === "worker" && !a?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex.");
+		t.math && this._mode === "worker" && !a?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), t.threeD && this._mode === "worker" && !a?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), t.regionMap && this._mode === "worker" && !a?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), t.chartEx && this._mode === "worker" && !a?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), t.tiff && this._mode === "worker" && !a?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; TIFF images will be skipped in mode: 'worker'. Use the codec from @silurus/ooxml/tiff.");
 		let o = i ? e.slice(0) : e, s = await this.bridge.request((e) => this._mode === "worker" ? {
 			type: "parse",
 			id: e,
@@ -4555,7 +4559,8 @@ var Ya = Symbol("retain-xlsx-viewer-fonts"), Xa = Symbol("prepare-xlsx-viewer-ro
 				math: this.math,
 				threeD: this.threeD,
 				regionMap: this.regionMap,
-				chartEx: this.chartEx
+				chartEx: this.chartEx,
+				tiff: this.tiff
 			}, e, n, {
 				...s,
 				fetchImage: this._fetchImage
@@ -5740,7 +5745,7 @@ function is(e) {
 //#region packages/xlsx/src/viewer.ts
 var as = Symbol("XlsxViewer.borrowedWorkbook"), os;
 function ss() {
-	return os ??= import("./comment-ui-runtime-DTGN3Vyy.js");
+	return os ??= import("./comment-ui-runtime-aPzHfV_A.js");
 }
 var cs = 150, ls = 280, us = 200, ds = 240, fs = 200, ps = 30, ms = 50, hs = 1, gs = 1, _s = .45, vs = "data-xlsx-viewer-styles", ys = ".xlsx-tab-strip::-webkit-scrollbar{display:none}[data-xlsx-viewport-input]:focus{outline:none}[data-xlsx-viewport-input]:focus-visible{outline:2px solid var(--ooxml-xlsx-focus-ring,transparent);outline-offset:-2px}.xlsx-tab-nav{background:transparent;transition:background 0.1s;}.xlsx-tab-nav:hover{background:color-mix(in srgb,var(--ooxml-xlsx-chrome-text,#444) 8%,transparent);}.xlsx-zoom-slider{-webkit-appearance:none;appearance:none;background:transparent;height:15px;margin:0;}.xlsx-zoom-slider::-webkit-slider-runnable-track{height:4px;background:var(--ooxml-xlsx-chrome-border,#c4c4c4);border-radius:2px;}.xlsx-zoom-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:var(--ooxml-xlsx-chrome-text-muted,#808080);cursor:pointer;}.xlsx-zoom-slider:hover::-webkit-slider-thumb{background:var(--ooxml-xlsx-chrome-text,#5f5f5f);}.xlsx-zoom-slider::-moz-range-track{height:4px;background:var(--ooxml-xlsx-chrome-border,#c4c4c4);border-radius:2px;}.xlsx-zoom-slider::-moz-range-thumb{width:12px;height:12px;border:none;border-radius:50%;background:var(--ooxml-xlsx-chrome-text-muted,#808080);cursor:pointer;}";
 function bs(e) {
@@ -8071,14 +8076,14 @@ var Gs = class {
 	MAX_SELECTION_AREAS: () => 128,
 	MAX_SELECTION_CONTEXT_CELLS: () => wo,
 	MAX_SELECTION_CONTEXT_TEXT_CHARACTERS: () => To,
-	OoxmlDecodedImageLimitError: () => ke,
+	OoxmlDecodedImageLimitError: () => Oe,
 	OoxmlError: () => w,
 	OoxmlResourceLimitError: () => _,
 	XlsxSheetViewer: () => qs,
 	XlsxViewer: () => Ks,
 	XlsxWorkbook: () => Qa,
 	autoResize: () => xe,
-	isOoxmlDecodedImageLimitError: () => Pe,
+	isOoxmlDecodedImageLimitError: () => ke,
 	openExternalHyperlink: () => E,
 	resolveSharedStrings: () => $e
 });

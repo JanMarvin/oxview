@@ -1,4 +1,4 @@
-import { Lt as e } from "./line-metrics-Bpn7OeZD.js";
+import { Lt as e } from "./line-metrics-CXyjyYd5.js";
 import { c as t, o as n, r, s as i } from "./bounded-raw-part-cache-C6ro6Ezf.js";
 //#region packages/core/src/fonts/embedded.ts
 function a(e, t) {

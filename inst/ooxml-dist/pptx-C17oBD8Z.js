@@ -1,16 +1,16 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-B9rcJdO4.js";
-import { B as p, G as m, Qt as h, R as g, Rt as _, Vt as v, W as y, Zt as b, a as x, et as S, ft as C, lt as w, tt as ee, z as te } from "./line-metrics-Bpn7OeZD.js";
-import { C as ne, E as re, S as ie, T as ae, _ as oe, a as T, b as se, c as E, d as ce, f as le, g as ue, h as de, i as D, l as O, m as fe, n as pe, o as me, p as he, r as ge, s as _e, t as ve, v as ye, w as be, x as xe, y as Se } from "./canvas-viewer-mechanics-DVGK-fLT.js";
+import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-BS0EeZo2.js";
+import { B as p, G as m, Qt as h, R as g, Rt as _, Vt as v, W as y, Zt as b, a as x, et as S, ft as C, lt as w, tt as ee, z as te } from "./line-metrics-CXyjyYd5.js";
+import { C as ne, E as re, S as ie, T as ae, _ as oe, a as T, b as se, c as E, d as ce, f as le, g as ue, h as de, i as D, l as O, m as fe, n as pe, o as me, p as he, r as ge, s as _e, t as ve, v as ye, w as be, x as xe, y as Se } from "./canvas-viewer-mechanics-CIfhCgYA.js";
 import { a as Ce, i as k, n as we, t as Te } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { a as A, c as Ee, i as De, l as j, n as Oe, r as ke, t as Ae } from "./dom-interaction-boundary-CepOlXt6.js";
-import { cn as je, ln as Me } from "./plot-area-frame-DHV02PJU.js";
-import { i as M } from "./units-BzZ0gAxs.js";
-import { n as Ne } from "./resource-measurement-DuiFWzam.js";
-import { n as Pe } from "./renderer-module-contract-DLbb7zY0.js";
-import { t as Fe } from "./visible-index-BFE3PWiY.js";
-import { n as Ie, t as N } from "./highlight-rect-Hes0z_Mj.js";
-import { t as P } from "./comment-occurrence-X54si2ob.js";
+import { a as A, c as Ee, i as De, l as j, n as Oe, r as ke, t as Ae } from "./dom-interaction-boundary-DS6BVyHA.js";
+import { o as je, s as Me } from "./tiff-contract-Xjn3qXqK.js";
+import { i as M } from "./units-EJdC96r6.js";
+import { n as Ne } from "./resource-measurement-esyGbzAF.js";
+import { n as Pe } from "./renderer-module-contract-C6sYZvTV.js";
+import { t as Fe } from "./visible-index-DwJzuGmJ.js";
+import { n as Ie, t as N } from "./highlight-rect-MaCt0om0.js";
+import { t as P } from "./comment-occurrence-C34fWs_F.js";
 //#region packages/core/src/nav/internal-target.ts
 function Le(e, t) {
 	let n = t.startsWith("/") ? [] : e.split("/").filter((e) => e !== "");
@@ -892,6 +892,7 @@ var J = class e {
 	_threeD;
 	_regionMap;
 	_chartEx;
+	_tiff;
 	constructor(e, t, n) {
 		this._worker = e, this._mode = t, this._bridge = new ne(this._worker, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
@@ -929,9 +930,9 @@ var J = class e {
 				s = await e.arrayBuffer();
 			} else s = t;
 			s = re(await ae(s, r.password)), o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let c = a === "worker" ? (await import("./render-worker-host-D1jcACJV.js")).createRenderWorker() : new bt(), l = a === "worker" ? Pe(r) : void 0, u;
+			let c = a === "worker" ? (await import("./render-worker-host-CbaQivE7.js")).createRenderWorker() : new bt(), l = a === "worker" ? Pe(r) : void 0, u;
 			try {
-				u = new e(c, a, r.wasmUrl), u._metrics = o, r.math && a === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), r.threeD && a === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._math = a === "worker" ? void 0 : r.math, u._threeD = a === "worker" ? void 0 : r.threeD, r.regionMap && a === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = a === "worker" ? void 0 : r.regionMap, r.chartEx && a === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = a === "worker" ? void 0 : r.chartEx;
+				u = new e(c, a, r.wasmUrl), u._metrics = o, r.math && a === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), r.threeD && a === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._math = a === "worker" ? void 0 : r.math, u._threeD = a === "worker" ? void 0 : r.threeD, r.regionMap && a === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = a === "worker" ? void 0 : r.regionMap, r.chartEx && a === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = a === "worker" ? void 0 : r.chartEx, r.tiff && a === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; TIFF images will be skipped in mode: 'worker'. Use the codec from @silurus/ooxml/tiff."), u._tiff = a === "worker" ? void 0 : r.tiff;
 				let t = r.progressiveLayout ? {
 					onProgress: r.onLayoutProgress,
 					onPartial: r.onLayoutPartial,
@@ -1240,7 +1241,8 @@ var J = class e {
 				math: this._math,
 				threeD: this._threeD,
 				regionMap: this._regionMap,
-				chartEx: this._chartEx
+				chartEx: this._chartEx,
+				tiff: this._tiff
 			}, n.onTextRun)));
 		} catch (e) {
 			this._rethrowWithResourceFailure(e);
@@ -2007,7 +2009,7 @@ var zt = Symbol("PptxViewer.borrowedPresentation"), Bt = {
 	}
 }, Vt = 150, Ht = "0 1px 3px rgba(0,0,0,0.2)", Ut = 12, Wt;
 function Gt() {
-	return Wt ??= import("./comment-ui-runtime-BelHJt73.js");
+	return Wt ??= import("./comment-ui-runtime-CdMMApEN.js");
 }
 var $ = 440, Kt = 20, qt = Symbol("PptxScrollViewer.borrowedPresentation"), Jt = class e {
 	_presentationOwner;
