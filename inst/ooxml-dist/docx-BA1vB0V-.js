@@ -3,7 +3,7 @@ import { B as t, Qt as n, R as r, Vt as i, W as a, Zt as o, a as s, et as c, ft 
 import { C as f, E as p, S as m, T as h, _ as g, a as _, b as ee, c as v, d as y, f as te, g as ne, h as re, i as b, l as x, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-CIfhCgYA.js";
 import { a as ge, i as _e, t as ve } from "./bounded-raw-part-cache-C6ro6Ezf.js";
 import { c as ye, i as be, l as xe, n as Se, o as S, r as Ce, s as we, t as Te } from "./dom-interaction-boundary-DS6BVyHA.js";
-import { A as Ee, C, D as w, E as De, O as T, S as Oe, T as E, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as D, o as Ve, p as He, s as Ue, t as O, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-DeHUdQhH.js";
+import { A as Ee, C, D as w, E as De, O as T, S as Oe, T as E, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as D, o as Ve, p as He, s as Ue, t as O, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-BXw6AAhY.js";
 import { o as Je, s as Ye } from "./tiff-contract-Xjn3qXqK.js";
 import { a as k } from "./units-EJdC96r6.js";
 import { n as Xe } from "./renderer-module-contract-C6sYZvTV.js";
@@ -552,7 +552,7 @@ var q = class e {
 				t = await e.arrayBuffer();
 			} else t = n;
 			t = p(await h(t, i.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let r = s === "worker" ? (await import("./render-worker-host-CZi7Mn5v.js")).createRenderWorker() : new rt(), l = s === "worker" ? Xe(i) : void 0, u = s === "worker" && !!i.progressiveLayout, d;
+			let r = s === "worker" ? (await import("./render-worker-host-BbhwA24Y.js")).createRenderWorker() : new rt(), l = s === "worker" ? Xe(i) : void 0, u = s === "worker" && !!i.progressiveLayout, d;
 			try {
 				d = new e(r, s, o, i.wasmUrl), d._metrics = c;
 				let n = w(d), f = E(i.currentDate, n.defaultCurrentDateMs, i.showTrackedChanges === !0);

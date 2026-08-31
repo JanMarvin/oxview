@@ -1,5 +1,5 @@
 //#region packages/docx/src/render-worker.ts?worker&url
-var e = "" + new URL("assets/render-worker-BZd4-U4w.js", import.meta.url).href;
+var e = "" + new URL("assets/render-worker-BWPpayBu.js", import.meta.url).href;
 //#endregion
 //#region packages/docx/src/render-worker-host.ts
 function t() {
