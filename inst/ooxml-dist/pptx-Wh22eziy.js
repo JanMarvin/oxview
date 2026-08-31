@@ -1,7 +1,7 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
 import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-B9rcJdO4.js";
 import { B as p, G as m, Qt as h, R as g, Rt as _, Vt as v, W as y, Zt as b, a as x, et as S, ft as C, lt as w, tt as ee, z as te } from "./line-metrics-Bpn7OeZD.js";
-import { C as ne, E as re, S as ie, T as ae, _ as oe, a as T, b as se, c as E, d as ce, f as le, g as ue, h as de, i as D, l as O, m as fe, n as pe, o as me, p as he, r as ge, s as _e, t as ve, v as ye, w as be, x as xe, y as Se } from "./canvas-viewer-mechanics-h07vpVOQ.js";
+import { C as ne, E as re, S as ie, T as ae, _ as oe, a as T, b as se, c as E, d as ce, f as le, g as ue, h as de, i as D, l as O, m as fe, n as pe, o as me, p as he, r as ge, s as _e, t as ve, v as ye, w as be, x as xe, y as Se } from "./canvas-viewer-mechanics-DVGK-fLT.js";
 import { a as Ce, i as k, n as we, t as Te } from "./bounded-raw-part-cache-C6ro6Ezf.js";
 import { a as A, c as Ee, i as De, l as j, n as Oe, r as ke, t as Ae } from "./dom-interaction-boundary-CepOlXt6.js";
 import { cn as je, ln as Me } from "./plot-area-frame-DHV02PJU.js";
@@ -2100,7 +2100,7 @@ var $ = 440, Kt = 20, qt = Symbol("PptxScrollViewer.borrowedPresentation"), Jt =
 			this._pendingZoomAnchor = Number.isFinite(n) && Number.isFinite(r) ? {
 				x: n,
 				y: r
-			} : null, this.setScale(xe(this._scale, e.deltaY));
+			} : null, this.setScale(xe(this._scale, e.deltaY, e.deltaMode));
 		}, this._scrollHost.addEventListener("wheel", this._wheelListener, { passive: !1 })), typeof ResizeObserver < "u" && (this._resizeObserver = new ResizeObserver(() => this._onResize()), this._resizeObserver.observe(this._container)), this._borrowed && (this._bindLayoutPresentation(r), this.relayout());
 	}
 	async load(e) {

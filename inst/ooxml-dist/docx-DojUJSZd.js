@@ -1,6 +1,6 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
 import { B as t, Qt as n, R as r, Vt as i, W as a, Zt as o, a as s, et as c, ft as l, lt as u, z as d } from "./line-metrics-Bpn7OeZD.js";
-import { C as f, E as p, S as m, T as h, _ as g, a as _, b as ee, c as v, d as y, f as te, g as ne, h as re, i as b, l as x, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-h07vpVOQ.js";
+import { C as f, E as p, S as m, T as h, _ as g, a as _, b as ee, c as v, d as y, f as te, g as ne, h as re, i as b, l as x, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-DVGK-fLT.js";
 import { a as ge, i as _e, t as ve } from "./bounded-raw-part-cache-C6ro6Ezf.js";
 import { c as ye, i as be, l as xe, n as Se, o as S, r as Ce, s as we, t as Te } from "./dom-interaction-boundary-CepOlXt6.js";
 import { A as Ee, C, D as w, E as De, O as T, S as Oe, T as E, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as D, o as Ve, p as He, s as Ue, t as O, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-DSx36ZsB.js";
@@ -1875,7 +1875,7 @@ var rn = class e {
 			this._pendingZoomAnchor = Number.isFinite(n) && Number.isFinite(r) ? {
 				x: n,
 				y: r
-			} : null, this.setScale(me(this._scale, e.deltaY));
+			} : null, this.setScale(me(this._scale, e.deltaY, e.deltaMode));
 		}, this._scrollHost.addEventListener("wheel", this._wheelListener, { passive: !1 })), typeof ResizeObserver < "u" && (this._resizeObserver = new ResizeObserver(() => this._onResize()), this._resizeObserver.observe(this._container)), this._borrowed && (this._bindLayoutDocument(n), this.relayout());
 	}
 	async load(e) {

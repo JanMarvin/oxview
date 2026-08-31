@@ -698,11 +698,26 @@ function we(e, t) {
 }
 //#endregion
 //#region packages/core/src/interaction/zoom.ts
-var Te = .01;
-function Ee(e, t) {
-	return e * Math.exp(-t * Te);
+var Te = 1.1, Ee = 10, De = 3, Oe = 1;
+function ke(e, t) {
+	let n;
+	switch (t) {
+		case 1:
+			n = e / De;
+			break;
+		case 2:
+			n = e / Oe;
+			break;
+		default:
+			n = e / Ee;
+			break;
+	}
+	return Math.max(-1, Math.min(1, n));
 }
-function De(e, t, n, r, i) {
+function Ae(e, t, n = 0) {
+	return e * Te ** +-ke(t, n);
+}
+function je(e, t, n, r, i) {
 	let a = n > 0 ? r / n : 1, o = (e + t) * a - t, s = i.maxScroll > 0 ? i.maxScroll : 0;
 	return o < 0 ? 0 : o > s ? s : o;
 }
@@ -725,21 +740,21 @@ var q = Object.freeze([
 	3,
 	4
 ]), J = .005;
-function Oe(e) {
+function Me(e) {
 	for (let t of q) if (t > e + J) return t;
 	return q[q.length - 1];
 }
-function ke(e) {
+function Ne(e) {
 	for (let t = q.length - 1; t >= 0; t--) {
 		let n = q[t];
 		if (n < e - J) return n;
 	}
 	return q[0];
 }
-function Ae(e, t, n) {
+function Pe(e, t, n) {
 	return e < t ? t : e > n ? n : e;
 }
-function je(e, t) {
+function Fe(e, t) {
 	let { contentWidth: n, contentHeight: r, containerWidth: i, containerHeight: a } = e;
 	if (n <= 0 || i <= 0) return 0;
 	let o = i / n;
@@ -760,7 +775,7 @@ function Y(e) {
 	}
 	return n;
 }
-function Me(e) {
+function Ie(e) {
 	let t = Array(e.length), n = 0, r = "";
 	for (let i = 0; i < e.length; i++) t[i] = n, r += e[i].text, n += e[i].text.length;
 	return {
@@ -770,7 +785,7 @@ function Me(e) {
 		runCount: e.length
 	};
 }
-function Ne(e, t) {
+function Le(e, t) {
 	let { runStart: n } = e, r = 0, i = n.length - 1;
 	for (; r < i;) {
 		let e = r + i + 1 >> 1;
@@ -778,8 +793,8 @@ function Ne(e, t) {
 	}
 	return r;
 }
-function Pe(e, t, n) {
-	let { runStart: r, runCount: i, text: a } = e, o = [], s = Ne(e, t), c = t;
+function Re(e, t, n) {
+	let { runStart: r, runCount: i, text: a } = e, o = [], s = Le(e, t), c = t;
 	for (; c < n && s < i;) {
 		let e = s + 1 < i ? r[s + 1] : a.length, t = Math.min(n, e), l = c - r[s], u = t - r[s];
 		u > l && o.push({
@@ -790,7 +805,7 @@ function Pe(e, t, n) {
 	}
 	return o;
 }
-function Fe(e, t, n = {}) {
+function ze(e, t, n = {}) {
 	if (t.length === 0) return [];
 	let r = n.caseSensitive ?? !1, i = r ? e.text : e.folded, a = r ? t : Y(t), o = [], s = 0, c = 0;
 	for (;;) {
@@ -798,23 +813,23 @@ function Fe(e, t, n = {}) {
 		if (t === -1) break;
 		o.push({
 			matchIndex: c,
-			slices: Pe(e, t, t + a.length)
+			slices: Re(e, t, t + a.length)
 		}), c++, s = t + a.length;
 	}
 	return o;
 }
 //#endregion
 //#region packages/core/src/search/find-cursor.ts
-function Ie(e, t) {
+function Be(e, t) {
 	return t <= 0 ? -1 : e < 0 ? 0 : (e + 1) % t;
 }
-function Le(e, t) {
+function Ve(e, t) {
 	return t <= 0 ? -1 : e < 0 ? t - 1 : (e - 1 + t) % t;
 }
 //#endregion
 //#region packages/core/src/internal/chart-context.ts
 var X = 65536;
-function Re(e, t) {
+function He(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -822,19 +837,19 @@ function Re(e, t) {
 	}
 	return e.slice(0, n);
 }
-function ze(e) {
+function Ue(e) {
 	let t = e ?? 16384;
 	if (!Number.isFinite(t) || t < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
 	return Math.min(X, Math.floor(t));
 }
-function Be(e, t) {
-	let n = ze(t), r = [], i = 0, a = !1, o = !1, s = (e, t) => {
+function We(e, t) {
+	let n = Ue(t), r = [], i = 0, a = !1, o = !1, s = (e, t) => {
 		if (t && o) {
 			if (i >= n) return a = !0, !1;
 			r.push("\n"), i++;
 		}
 		o = !0;
-		let s = Re(e, Math.max(0, n - i));
+		let s = He(e, Math.max(0, n - i));
 		return r.push(s), i += s.length, s.length < e.length ? (a = !0, !1) : !0;
 	};
 	if (!s(`Chart type: ${e.chartType}`, !0) || e.title !== null && !s(`Title: ${e.title}`, !0)) return {
@@ -876,13 +891,13 @@ function Be(e, t) {
 }
 //#endregion
 //#region packages/core/src/internal/canvas-viewer-mechanics.ts
-var Ve = 65536, He = 1024;
+var Ge = 65536, Ke = 1024;
 function Z(e, t, n) {
 	let r = e ?? t;
 	if (!Number.isFinite(r) || r < 0) throw RangeError(`${n} must be a finite non-negative number.`);
 	return Math.min(t, Math.floor(r));
 }
-function Q(e, t) {
+function qe(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -890,7 +905,7 @@ function Q(e, t) {
 	}
 	return e.slice(0, n);
 }
-function* Ue(e) {
+function* Je(e) {
 	let t = e.firstChild ?? e.childNodes[0] ?? null;
 	for (; t;) {
 		if (t.nodeType === 3 && (yield t), t.firstChild) {
@@ -902,13 +917,13 @@ function* Ue(e) {
 		t = t.nextSibling;
 	}
 }
-function We(e, t, n, r, i) {
+function Ye(e, t, n, r, i) {
 	for (let a of r) {
 		let r = !1;
 		try {
 			r = a.intersectsNode(n);
 		} catch {}
-		if (r) for (let r of Ue(n)) {
+		if (r) for (let r of Je(n)) {
 			let n = r.data, o, s;
 			if (a.startContainer === r) o = a.startOffset;
 			else try {
@@ -931,7 +946,7 @@ function We(e, t, n, r, i) {
 	}
 	return t;
 }
-function Ge(e, t, n, r = {}) {
+function Xe(e, t, n, r = {}) {
 	if (!t || t.isCollapsed || t.rangeCount === 0) return null;
 	let i = [...e.matches?.("[data-ooxml-selection-surface]") ? [e] : [], ...e.querySelectorAll("[data-ooxml-selection-surface]")];
 	if (i.length === 0) return null;
@@ -941,7 +956,7 @@ function Ge(e, t, n, r = {}) {
 		if (!e.contains(r.startContainer) || !e.contains(r.endContainer) || !a(r.startContainer) || !a(r.endContainer)) return null;
 		o.push(r);
 	}
-	let s = Z(r.maxChars, Ve, "maxTextCharacters"), c = Z(r.maxLocators, He, "maxRunLocators"), l = [], u = !1, d = s + 2, f = [], p = 0;
+	let s = Z(r.maxChars, Ge, "maxTextCharacters"), c = Z(r.maxLocators, Ke, "maxRunLocators"), l = [], u = !1, d = s + 2, f = [], p = 0;
 	for (let t of e.querySelectorAll("[data-ooxml-selection-run]")) {
 		if (!o.some((e) => {
 			try {
@@ -951,12 +966,12 @@ function Ge(e, t, n, r = {}) {
 			}
 		})) continue;
 		let e = n(t);
-		if (e !== null && (l.length >= c ? u = !0 : l.push(structuredClone(e)), p < d && (p = We(f, p, t, o, d)), u && p >= d)) break;
+		if (e !== null && (l.length >= c ? u = !0 : l.push(structuredClone(e)), p < d && (p = Ye(f, p, t, o, d)), u && p >= d)) break;
 	}
 	if (l.length === 0 && !u) return null;
 	let m = f.join("");
 	if (m.length === 0) return null;
-	let h = Q(m, s), g = m.length > s;
+	let h = qe(m, s), g = m.length > s;
 	return {
 		text: h,
 		locators: l,
@@ -967,7 +982,7 @@ function Ge(e, t, n, r = {}) {
 		maxLocators: c
 	};
 }
-var Ke = class {
+var Ze = class {
 	wrapper;
 	originalParent;
 	originalNextSibling;
@@ -988,31 +1003,31 @@ var Ke = class {
 			(this.options.restoreMode ?? "display") === "style-and-bitmap" ? (this.originalStyle === null ? this.canvas.removeAttribute("style") : this.canvas.setAttribute("style", this.originalStyle), this.canvas.width = this.originalWidth, this.canvas.height = this.originalHeight) : this.canvas.style.display = this.originalDisplay, this.wrapper.remove();
 		}
 	}
-}, qe = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;user-select:text;-webkit-user-select:text;", Je = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;", Ye = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;";
+}, Qe = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;user-select:text;-webkit-user-select:text;", Q = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;", $e = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;";
 function $(e, t) {
 	if (!t) return null;
 	let n = (e.ownerDocument ?? document).createElement("div");
-	return n.style.cssText = Ye, e.appendChild(n), n;
+	return n.style.cssText = $e, e.appendChild(n), n;
 }
-function Xe(e, t) {
+function et(e, t) {
 	if (!e || (e.innerHTML = "", !t || !Number.isFinite(t.x) || !Number.isFinite(t.y) || !Number.isFinite(t.width) || !Number.isFinite(t.height) || t.width <= 0 || t.height <= 0)) return;
 	let n = (e.ownerDocument ?? document).createElement("div"), r = Number.isFinite(t.rotation) ? t.rotation ?? 0 : 0;
 	n.style.cssText = `position:absolute;left:${t.x * 100}%;top:${t.y * 100}%;width:${t.width * 100}%;height:${t.height * 100}%;box-sizing:border-box;border:2px solid #1a73e8;background:color-mix(in srgb, #1a73e8 6%, transparent);transform:rotate(${r}deg);transform-origin:center;pointer-events:none;`, e.appendChild(n);
 }
-var Ze = class {
+var tt = class {
 	textLayer;
 	highlightLayer;
 	elementLayer;
 	constructor(e, t, n = !1) {
 		let r = e.ownerDocument ?? document;
-		this.textLayer = t ? r.createElement("div") : null, this.textLayer && (this.textLayer.style.cssText = qe, e.appendChild(this.textLayer)), this.highlightLayer = r.createElement("div"), this.highlightLayer.style.cssText = Je, e.appendChild(this.highlightLayer), this.elementLayer = $(e, n);
+		this.textLayer = t ? r.createElement("div") : null, this.textLayer && (this.textLayer.style.cssText = Qe, e.appendChild(this.textLayer)), this.highlightLayer = r.createElement("div"), this.highlightLayer.style.cssText = Q, e.appendChild(this.highlightLayer), this.elementLayer = $(e, n);
 	}
 };
-function Qe(e, t, n) {
+function nt(e, t, n) {
 	if (n && t !== void 0 && t !== n.mode) throw Error(`${e}: opts.mode='${t}' conflicts with the borrowed engine's mode='${n.mode}'. Omit opts.mode when borrowing an engine — the engine owns its render mode.`);
 	return n?.mode ?? t ?? "main";
 }
-var $e = class {
+var rt = class {
 	generation = 0;
 	resource;
 	ownsResource;
@@ -1064,7 +1079,7 @@ var $e = class {
 			e.destroy();
 		} catch {}
 	}
-}, et = class {
+}, it = class {
 	generation = 0;
 	destroyed = !1;
 	bitmapContext;
@@ -1103,7 +1118,7 @@ var $e = class {
 	destroy() {
 		this.destroyed || (this.destroyed = !0, this.generation++);
 	}
-}, tt = class {
+}, at = class {
 	closed = !1;
 	handled = /* @__PURE__ */ new WeakSet();
 	backgroundLifecycleOwners = 0;
@@ -1146,4 +1161,4 @@ var $e = class {
 	}
 };
 //#endregion
-export { Ce as C, xe as E, we as S, be as T, je as _, $e as a, De as b, Xe as c, Be as d, Ie as f, Ae as g, Fe as h, et as i, Qe as l, Me as m, Ze as n, $ as o, Le as p, tt as r, Ge as s, Ke as t, X as u, Oe as v, Se as w, Ee as x, ke as y };
+export { Ce as C, xe as E, we as S, be as T, Fe as _, rt as a, je as b, et as c, We as d, Be as f, Pe as g, ze as h, it as i, nt as l, Ie as m, tt as n, $ as o, Ve as p, at as r, Xe as s, Ze as t, X as u, Me as v, Se as w, Ae as x, Ne as y };

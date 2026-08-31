@@ -2,7 +2,7 @@
 # vendors the @silurus/ooxml JS/WASM viewer (xlsx/docx/pptx canvas renderer)
 # run from the package root: source("inst/prepare_lib.R")
 
-ooxml_ver <- "0.83.1"
+ooxml_ver <- "0.83.2"
 
 tarball_url <- sprintf("https://registry.npmjs.org/@silurus/ooxml/-/ooxml-%s.tgz", ooxml_ver)
 

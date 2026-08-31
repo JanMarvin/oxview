@@ -1,6 +1,6 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
 import { $ as t, A as n, At as r, B as i, C as a, Ct as o, D as s, Dt as c, Et as l, Ht as u, M as d, Mt as f, Nt as p, O as m, Ot as h, Pt as g, Qt as _, R as v, S as y, T as b, V as x, Vt as S, W as C, Zt as w, _ as T, a as E, at as D, c as O, d as k, dt as A, et as j, f as M, ft as N, g as ee, h as P, it as F, j as te, jt as I, lt as L, m as R, n as z, nt as ne, p as B, rt as V, s as re, tt as H, u as ie, ut as U, w as ae, y as oe, z as se } from "./line-metrics-Bpn7OeZD.js";
-import { C as ce, E as le, S as ue, T as de, _ as fe, a as pe, b as me, d as W, f as G, h as K, i as he, l as ge, m as _e, p as ve, t as ye, u as q, v as be, w as xe, x as Se, y as Ce } from "./canvas-viewer-mechanics-h07vpVOQ.js";
+import { C as ce, E as le, S as ue, T as de, _ as fe, a as pe, b as me, d as W, f as G, h as K, i as he, l as ge, m as _e, p as ve, t as ye, u as q, v as be, w as xe, x as Se, y as Ce } from "./canvas-viewer-mechanics-DVGK-fLT.js";
 import { a as we, i as Te, t as Ee } from "./bounded-raw-part-cache-C6ro6Ezf.js";
 import { C as De, _ as J, c as Oe, cn as ke, h as Ae, in as je, k as Me, l as Ne, ln as Pe, nn as Fe, o as Ie, s as Le, un as Re, v as ze, w as Be } from "./plot-area-frame-DHV02PJU.js";
 import { a as Ve, i as Y, r as He } from "./units-BzZ0gAxs.js";
@@ -7628,7 +7628,7 @@ var Gs = class {
 			this._pendingZoomAnchor = Number.isFinite(t) && Number.isFinite(n) ? {
 				x: t,
 				y: n
-			} : null, this.setScale(Se(this.viewport.scale, e.deltaY));
+			} : null, this.setScale(Se(this.viewport.scale, e.deltaY, e.deltaMode));
 		}, { passive: !1 }), this.surface.on("pointerleave", (e) => {
 			let t = e.relatedTarget;
 			t && this.commentPopup.contains(t) || this.hideCommentPopup();
