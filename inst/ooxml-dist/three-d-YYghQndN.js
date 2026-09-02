@@ -1,5 +1,4 @@
-import { c as e, l as t } from "./tiff-contract-Xjn3qXqK.js";
-import { Bt as n, D as r, F as i, I as a, M as o, N as s, O as c, P as l, _ as u, a as d, b as f, nn as p, rn as m, tn as h, v as g } from "./plot-area-frame-DuXZzovH.js";
+import { F as e, Ht as t, I as n, L as r, O as i, P as a, R as o, _ as s, a as c, an as l, b as u, gn as d, hn as f, in as p, k as m, rn as h, v as g } from "./plot-area-frame-D5hEOgkJ.js";
 import { r as _ } from "./units-EJdC96r6.js";
 //#region packages/core/src/canvas/clamp.ts
 var v = 32767, y = 1 << 24;
@@ -53,60 +52,60 @@ function T(e, t) {
 		}
 	});
 }
-function E(t, n, r, i, a, o, s, c = 0, l) {
-	let d = Math.max(0, S(i.blur, a)), f = S(i.dist, a), p = i.rotWithShape === !1 ? 0 : c, m = (i.dir + p) * Math.PI / 180, h = Math.cos(m) * f, g = Math.sin(m) * f, _ = w(r, Math.ceil(d * 3 + Math.max(Math.abs(h), Math.abs(g))) + 2, o, s), v = e(_.w, _.h);
+function E(e, t, n, r, i, a, o, c = 0, l) {
+	let u = Math.max(0, S(r.blur, i)), d = S(r.dist, i), p = r.rotWithShape === !1 ? 0 : c, m = (r.dir + p) * Math.PI / 180, h = Math.cos(m) * d, g = Math.sin(m) * d, _ = w(n, Math.ceil(u * 3 + Math.max(Math.abs(h), Math.abs(g))) + 2, a, o), v = f(_.w, _.h);
 	if (!v) return !1;
 	let y = C(v);
 	if (!y) return !1;
-	n(T(y, _)), y.save(), y.setTransform(1, 0, 0, 1, 0, 0), y.globalCompositeOperation = "source-in", y.fillStyle = u(i.color, i.alpha), y.fillRect(0, 0, _.w, _.h), y.restore(), t.save(), d > 0 && (t.filter = `blur(${d}px)`);
-	let [b, E] = l ?? x(r, i.algn ?? "b"), D = i.sx ?? 1, O = i.sy ?? 1, k = Math.tan((i.kx ?? 0) * Math.PI / 180), A = Math.tan((i.ky ?? 0) * Math.PI / 180);
-	return t.translate(h, g), t.translate(b, E), p !== 0 && t.rotate(p * Math.PI / 180), t.transform(D, A, k, O, 0, 0), p !== 0 && t.rotate(-p * Math.PI / 180), t.translate(-b, -E), t.drawImage(v, _.x, _.y), t.restore(), !0;
+	t(T(y, _)), y.save(), y.setTransform(1, 0, 0, 1, 0, 0), y.globalCompositeOperation = "source-in", y.fillStyle = s(r.color, r.alpha), y.fillRect(0, 0, _.w, _.h), y.restore(), e.save(), u > 0 && (e.filter = `blur(${u}px)`);
+	let [b, E] = l ?? x(n, r.algn ?? "b"), D = r.sx ?? 1, O = r.sy ?? 1, k = Math.tan((r.kx ?? 0) * Math.PI / 180), A = Math.tan((r.ky ?? 0) * Math.PI / 180);
+	return e.translate(h, g), e.translate(b, E), p !== 0 && e.rotate(p * Math.PI / 180), e.transform(D, A, k, O, 0, 0), p !== 0 && e.rotate(-p * Math.PI / 180), e.translate(-b, -E), e.drawImage(v, _.x, _.y), e.restore(), !0;
 }
-function D(t, n, r, i, a, o, s) {
-	let c = S(i.blur, a), l = S(i.dist, a), d = i.dir * Math.PI / 180, f = Math.cos(d) * l, p = Math.sin(d) * l, m = w(r, Math.ceil(3 * c + Math.abs(l)) + 2, o, s), h = e(m.w, m.h);
+function D(e, t, n, r, i, a, o) {
+	let c = S(r.blur, i), l = S(r.dist, i), u = r.dir * Math.PI / 180, d = Math.cos(u) * l, p = Math.sin(u) * l, m = w(n, Math.ceil(3 * c + Math.abs(l)) + 2, a, o), h = f(m.w, m.h);
 	if (!h) return;
 	let g = C(h);
 	if (!g) return;
 	let _ = T(g, m);
-	_.save(), _.fillStyle = u(i.color, i.alpha), n(_), _.restore(), _.save(), _.globalCompositeOperation = "destination-out", _.filter = c > 0 ? `blur(${c}px)` : "none", _.translate(f, p), _.fillStyle = "#000", n(_), _.restore(), _.save(), _.globalCompositeOperation = "destination-in", _.filter = "none", _.fillStyle = "#000", n(_), _.restore(), t.save(), t.drawImage(h, m.x, m.y), t.restore();
+	_.save(), _.fillStyle = s(r.color, r.alpha), t(_), _.restore(), _.save(), _.globalCompositeOperation = "destination-out", _.filter = c > 0 ? `blur(${c}px)` : "none", _.translate(d, p), _.fillStyle = "#000", t(_), _.restore(), _.save(), _.globalCompositeOperation = "destination-in", _.filter = "none", _.fillStyle = "#000", t(_), _.restore(), e.save(), e.drawImage(h, m.x, m.y), e.restore();
 }
-function O(t, n, r, i, a, o, s, c) {
-	let l = S(i.radius, a);
-	if (l <= 0) {
-		n(t);
+function O(e, t, n, r, i, a, o, s) {
+	let c = S(r.radius, i);
+	if (c <= 0) {
+		t(e);
 		return;
 	}
-	let u = w(r, Math.ceil(l) + 2, o, s), d = r.x - u.x, f = r.y - u.y, p = e(u.w, u.h);
+	let l = w(n, Math.ceil(c) + 2, a, o), u = n.x - l.x, d = n.y - l.y, p = f(l.w, l.h);
 	if (!p) {
-		n(t);
+		t(e);
 		return;
 	}
 	let m = C(p);
 	if (!m) {
-		n(t);
+		t(e);
 		return;
 	}
-	let h = T(m, u), g = c ?? n;
-	n(h);
-	let _ = e(u.w, u.h), v = e(u.w, u.h), y = _ ? C(_) : null, b = v ? C(v) : null;
+	let h = T(m, l), g = s ?? t;
+	t(h);
+	let _ = f(l.w, l.h), v = f(l.w, l.h), y = _ ? C(_) : null, b = v ? C(v) : null;
 	if (_ && y && v && b) {
-		let e = T(y, u);
-		e.fillStyle = "#000", g(e), b.drawImage(p, d, f, r.w, r.h, d - l, f - l, r.w + l * 2, r.h + l * 2), b.drawImage(p, 0, 0), b.globalCompositeOperation = "destination-in", b.filter = `blur(${l / 3}px)`, b.drawImage(_, 0, 0), b.filter = "none", b.globalCompositeOperation = "source-over", t.save(), t.drawImage(v, u.x, u.y), t.restore();
+		let t = T(y, l);
+		t.fillStyle = "#000", g(t), b.drawImage(p, u, d, n.w, n.h, u - c, d - c, n.w + c * 2, n.h + c * 2), b.drawImage(p, 0, 0), b.globalCompositeOperation = "destination-in", b.filter = `blur(${c / 3}px)`, b.drawImage(_, 0, 0), b.filter = "none", b.globalCompositeOperation = "source-over", e.save(), e.drawImage(v, l.x, l.y), e.restore();
 		return;
 	}
-	t.save(), t.drawImage(p, 0, 0), t.restore();
+	e.save(), e.drawImage(p, 0, 0), e.restore();
 }
-function k(t, n, r, i, a, o, s) {
-	let c = e(o, s);
+function k(e, t, n, r, i, a, o) {
+	let s = f(a, o);
+	if (!s) return;
+	let c = C(s);
 	if (!c) return;
-	let l = C(c);
-	if (!l) return;
-	let u = S(i.blur, a);
-	l.save(), u > 0 && (l.filter = `blur(${u}px)`), n(l), l.restore(), l.save(), l.globalCompositeOperation = "destination-in";
-	let d = r.y, f = r.y + r.h, p = l.createLinearGradient(0, f, 0, d), m = A(i.stPos), h = A(i.endPos);
-	p.addColorStop(0, `rgba(0,0,0,${i.stA})`), m > 0 && p.addColorStop(m, `rgba(0,0,0,${i.stA})`), h < 1 && h > m && p.addColorStop(h, `rgba(0,0,0,${i.endA})`), p.addColorStop(1, `rgba(0,0,0,${i.endA})`), l.fillStyle = p, l.fillRect(0, 0, o, s), l.restore();
-	let g = S(i.dist, a), _ = i.dir * Math.PI / 180, v = Math.cos(_) * g, y = Math.sin(_) * g;
-	t.save(), t.translate(r.x + v, f + y), t.scale(i.sx, i.sy), t.translate(-r.x, -f), t.drawImage(c, 0, 0), t.restore();
+	let l = S(r.blur, i);
+	c.save(), l > 0 && (c.filter = `blur(${l}px)`), t(c), c.restore(), c.save(), c.globalCompositeOperation = "destination-in";
+	let u = n.y, d = n.y + n.h, p = c.createLinearGradient(0, d, 0, u), m = A(r.stPos), h = A(r.endPos);
+	p.addColorStop(0, `rgba(0,0,0,${r.stA})`), m > 0 && p.addColorStop(m, `rgba(0,0,0,${r.stA})`), h < 1 && h > m && p.addColorStop(h, `rgba(0,0,0,${r.endA})`), p.addColorStop(1, `rgba(0,0,0,${r.endA})`), c.fillStyle = p, c.fillRect(0, 0, a, o), c.restore();
+	let g = S(r.dist, i), _ = r.dir * Math.PI / 180, v = Math.cos(_) * g, y = Math.sin(_) * g;
+	e.save(), e.translate(n.x + v, d + y), e.scale(r.sx, r.sy), e.translate(-n.x, -d), e.drawImage(s, 0, 0), e.restore();
 }
 function A(e) {
 	return e < 0 ? 0 : e > 1 ? 1 : e;
@@ -235,30 +234,30 @@ function H() {
 	V || (V = !0, typeof console < "u" && typeof console.warn == "function" && console.warn("[ooxml] scene3d: no offscreen canvas available — using the direct warp fallback (per-cell bleed only, no supersample). Textured-source seams may be faintly visible; the silhouette and geometry are unaffected."));
 }
 var U = 2;
-function W(t, n, r, i, a, o, s, c, l, u, d) {
-	let f = a.map((e) => ({
-		x: o[0] * e.x + o[2] * e.y + o[4],
-		y: o[1] * e.x + o[3] * e.y + o[5]
+function W(e, t, n, r, i, a, o, s, c, l, u) {
+	let d = i.map((e) => ({
+		x: a[0] * e.x + a[2] * e.y + a[4],
+		y: a[1] * e.x + a[3] * e.y + a[5]
 	})), p = Infinity, m = Infinity, h = -Infinity, g = -Infinity;
-	for (let e of f) e.x < p && (p = e.x), e.y < m && (m = e.y), e.x > h && (h = e.x), e.y > g && (g = e.y);
+	for (let e of d) e.x < p && (p = e.x), e.y < m && (m = e.y), e.x > h && (h = e.x), e.y > g && (g = e.y);
 	p = Math.floor(p) - 1, m = Math.floor(m) - 1, h = Math.ceil(h) + 1, g = Math.ceil(g) + 1;
 	let _ = h - p, v = g - m;
 	if (_ <= 0 || v <= 0) return !1;
-	let y = Math.max(1, Math.ceil(_ * U)), b = Math.max(1, Math.ceil(v * U)), x = e(y, b);
+	let y = Math.max(1, Math.ceil(_ * U)), b = Math.max(1, Math.ceil(v * U)), x = f(y, b);
 	if (!x || x.width !== y || x.height !== b) return !1;
 	let S = x.getContext("2d") ?? null;
 	if (!S) return !1;
 	let C = U, w = [
-		o[0] * C,
-		o[1] * C,
-		o[2] * C,
-		o[3] * C,
-		(o[4] - p) * C,
-		(o[5] - m) * C
+		a[0] * C,
+		a[1] * C,
+		a[2] * C,
+		a[3] * C,
+		(a[4] - p) * C,
+		(a[5] - m) * C
 	];
-	S.save(), S.setTransform(w[0], w[1], w[2], w[3], w[4], w[5]), S.beginPath(), S.moveTo(a[0].x, a[0].y), S.lineTo(a[1].x, a[1].y), S.lineTo(a[2].x, a[2].y), S.lineTo(a[3].x, a[3].y), S.closePath(), S.clip(), I(S, t, r, i, w, s, c, l, 0, 0, 1, 1, u * C, d), S.restore(), n.save(), n.setTransform(1, 0, 0, 1, 0, 0);
-	let T = n.imageSmoothingEnabled, E = n.imageSmoothingQuality;
-	return n.imageSmoothingEnabled = !0, n.imageSmoothingQuality = "high", n.drawImage(x, 0, 0, _ * C, v * C, p, m, _, v), n.imageSmoothingEnabled = T, n.imageSmoothingQuality = E, n.restore(), !0;
+	S.save(), S.setTransform(w[0], w[1], w[2], w[3], w[4], w[5]), S.beginPath(), S.moveTo(i[0].x, i[0].y), S.lineTo(i[1].x, i[1].y), S.lineTo(i[2].x, i[2].y), S.lineTo(i[3].x, i[3].y), S.closePath(), S.clip(), I(S, e, n, r, w, o, s, c, 0, 0, 1, 1, l * C, u), S.restore(), t.save(), t.setTransform(1, 0, 0, 1, 0, 0);
+	let T = t.imageSmoothingEnabled, E = t.imageSmoothingQuality;
+	return t.imageSmoothingEnabled = !0, t.imageSmoothingQuality = "high", t.drawImage(x, 0, 0, _ * C, v * C, p, m, _, v), t.imageSmoothingEnabled = T, t.imageSmoothingQuality = E, t.restore(), !0;
 }
 //#endregion
 //#region packages/core/src/chart/three-d-surface-picture.ts
@@ -314,12 +313,12 @@ function ne(e, t, n) {
 function re(e, t, n) {
 	return Math.hypot(e.x - t.x, e.y - t.y, (e.depth - t.depth) * n);
 }
-function ie(e, n, u, d, f, g, _, v, y) {
-	let b = o(n, d, f, y);
+function ie(t, s, c, u, f, g, _, v, y) {
+	let b = a(s, u, f, y);
 	if (!b || g.inner.length !== 4) return !1;
-	let x = m(u);
+	let x = l(c);
 	if (!(x.w > 0) || !(x.h > 0)) return !1;
-	let S = h(u, n.srcRect), C = S ? {
+	let S = h(c, s.srcRect), C = S ? {
 		x0: S.sx,
 		y0: S.sy,
 		x1: S.sx + S.sw,
@@ -338,42 +337,42 @@ function ie(e, n, u, d, f, g, _, v, y) {
 		v(T(e[2], e[1], n)),
 		v(T(e[2], e[1], t)),
 		v(T(e[3], e[0], t))
-	], D = b.mode === "stack" ? ne(g.pictureStackAspect, x.w, x.h) : null, O = b.mode === "tile" ? r(n, u) : null, k = [];
+	], D = b.mode === "stack" ? ne(g.pictureStackAspect, x.w, x.h) : null, O = b.mode === "tile" ? i(s, c) : null, k = [];
 	if (b.mode === "stack") {
 		if (D == null) return !1;
-		let e = 0, t = !1;
-		for (let n of _) {
-			if (!s(b, n) || !G(g, f, n, v)) continue;
-			let r = i(b, n) ? Math.ceil(1 / D) : 1;
-			if (!Number.isSafeInteger(r) || r < 1 || (e += r, e > 4096)) return !1;
-			t = !0;
+		let t = 0, n = !1;
+		for (let i of _) {
+			if (!e(b, i) || !G(g, f, i, v)) continue;
+			let a = r(b, i) ? Math.ceil(1 / D) : 1;
+			if (!Number.isSafeInteger(a) || a < 1 || (t += a, t > 4096)) return !1;
+			n = !0;
 		}
-		if (!t) return !1;
+		if (!n) return !1;
 	}
 	if (b.mode === "tile") {
 		if (!O) return !1;
 		let n = 0, r = 0, i = !1;
 		for (let a of _) {
-			if (!s(b, a)) continue;
+			if (!e(b, a)) continue;
 			let o = G(g, f, a, v);
 			if (!o) continue;
-			let l = re(o[0], o[1], g.modelDepth), u = re(o[0], o[3], g.modelDepth);
-			if (!(l > 0) || !(u > 0)) continue;
-			let d = c(O, l, u), p = Math.floor(-d.x / O.tileW), m = Math.floor(-d.y / O.tileH), h = Math.ceil((l - d.x) / O.tileW), _ = Math.ceil((u - d.y) / O.tileH), y = Math.max(0, h - p) * Math.max(0, _ - m);
+			let s = re(o[0], o[1], g.modelDepth), c = re(o[0], o[3], g.modelDepth);
+			if (!(s > 0) || !(c > 0)) continue;
+			let l = m(O, s, c), u = Math.floor(-l.x / O.tileW), p = Math.floor(-l.y / O.tileH), h = Math.ceil((s - l.x) / O.tileW), _ = Math.ceil((c - l.y) / O.tileH), y = Math.max(0, h - u) * Math.max(0, _ - p);
 			if (!Number.isSafeInteger(y) || (n += y, n > 4096)) return !1;
 			if (y === 0) continue;
-			let x = Math.ceil(l), S = Math.ceil(u);
+			let x = Math.ceil(s), S = Math.ceil(c);
 			if (!(x > 0 && x <= 32767) || !(S > 0 && S <= 32767) || x > Math.floor((16777216 - r) / S)) return !1;
 			r += x * S;
-			let C = t(e, x, S), w = C?.getContext("2d");
+			let C = d(t, x, S), w = C?.getContext("2d");
 			if (!C || !w) return !1;
 			k.push({
 				faceIndex: a,
-				width: l,
-				height: u,
-				origin: d,
-				firstColumn: p,
-				firstRow: m,
+				width: s,
+				height: c,
+				origin: l,
+				firstColumn: u,
+				firstRow: p,
 				lastColumn: h,
 				lastRow: _,
 				canvas: C,
@@ -382,11 +381,11 @@ function ie(e, n, u, d, f, g, _, v, y) {
 		}
 		if (!i) return !1;
 	}
-	if (e.save(), n.alpha != null && (e.globalAlpha *= n.alpha), b.mode === "stretch") for (let t of _) {
-		if (!s(b, t)) continue;
-		let r = G(g, f, t, v), i = g.thickness === 0 && t === 0 ? w : r?.map(v);
+	if (t.save(), s.alpha != null && (t.globalAlpha *= s.alpha), b.mode === "stretch") for (let n of _) {
+		if (!e(b, n)) continue;
+		let r = G(g, f, n, v), i = g.thickness === 0 && n === 0 ? w : r?.map(v);
 		if (!i) continue;
-		let a = ee(i, n.fillRect);
+		let a = ee(i, s.fillRect);
 		if (!a) continue;
 		let o = S ? ee(a, {
 			l: S.dxFraction,
@@ -395,43 +394,43 @@ function ie(e, n, u, d, f, g, _, v, y) {
 			b: 1 - S.dyFraction - S.dhFraction
 		}) : a;
 		if (o) {
-			e.save(), e.beginPath(), e.moveTo(i[0].x, i[0].y);
-			for (let t = 1; t < i.length; t++) e.lineTo(i[t].x, i[t].y);
-			e.closePath(), e.clip(), L(u, e, x.w, x.h, o, .5, C), e.restore();
+			t.save(), t.beginPath(), t.moveTo(i[0].x, i[0].y);
+			for (let e = 1; e < i.length; e++) t.lineTo(i[e].x, i[e].y);
+			t.closePath(), t.clip(), L(c, t, x.w, x.h, o, .5, C), t.restore();
 		}
 	}
-	else for (let t of _) {
-		if (!s(b, t)) continue;
-		let r = G(g, f, t, v);
-		if (!r) continue;
-		let o = r.map(v);
-		e.save(), e.beginPath(), e.moveTo(o[0].x, o[0].y);
-		for (let t = 1; t < o.length; t++) e.lineTo(o[t].x, o[t].y);
-		e.closePath(), e.clip();
-		let c = l(b, t);
+	else for (let i of _) {
+		if (!e(b, i)) continue;
+		let a = G(g, f, i, v);
+		if (!a) continue;
+		let l = a.map(v);
+		t.save(), t.beginPath(), t.moveTo(l[0].x, l[0].y);
+		for (let e = 1; e < l.length; e++) t.lineTo(l[e].x, l[e].y);
+		t.closePath(), t.clip();
+		let u = n(b, i);
 		if (b.mode === "tile") {
 			if (!O) continue;
-			let r = k.find((e) => e.faceIndex === t);
-			if (!r) continue;
-			let i = r.canvas.width / r.width, a = r.canvas.height / r.height;
-			r.context.save(), r.context.scale(i, a);
-			for (let e = r.firstRow; e < r.lastRow; e++) for (let t = r.firstColumn; t < r.lastColumn; t++) {
-				let i = r.origin.x + t * O.tileW, a = r.origin.y + e * O.tileH, o = O.flipX && Math.abs(t) % 2 == 1, s = O.flipY && Math.abs(e) % 2 == 1;
-				r.context.save(), r.context.translate(i + (o ? O.tileW : 0), a + (s ? O.tileH : 0)), r.context.scale(o ? -1 : 1, s ? -1 : 1), p(r.context, u, n.srcRect, 0, 0, O.tileW, O.tileH), r.context.restore();
+			let e = k.find((e) => e.faceIndex === i);
+			if (!e) continue;
+			let n = e.canvas.width / e.width, r = e.canvas.height / e.height;
+			e.context.save(), e.context.scale(n, r);
+			for (let t = e.firstRow; t < e.lastRow; t++) for (let n = e.firstColumn; n < e.lastColumn; n++) {
+				let r = e.origin.x + n * O.tileW, i = e.origin.y + t * O.tileH, a = O.flipX && Math.abs(n) % 2 == 1, o = O.flipY && Math.abs(t) % 2 == 1;
+				e.context.save(), e.context.translate(r + (a ? O.tileW : 0), i + (o ? O.tileH : 0)), e.context.scale(a ? -1 : 1, o ? -1 : 1), p(e.context, c, s.srcRect, 0, 0, O.tileW, O.tileH), e.context.restore();
 			}
-			r.context.restore(), L(r.canvas, e, r.canvas.width, r.canvas.height, o, .5);
+			e.context.restore(), L(e.canvas, t, e.canvas.width, e.canvas.height, l, .5);
 		} else if (b.mode === "stack") {
 			if (D == null) continue;
-			if (i(b, t)) for (let t = 0; t < Math.ceil(1 / D); t++) L(u, e, x.w, x.h, E(r, t * D, (t + 1) * D), .5, C);
-			else L(u, e, x.w, x.h, o, .5, C);
-		} else if (b.stackUnit != null && a(b, t)) for (let t = 0; t < c; t++) {
-			let n = t * b.stackUnit / y, i = (t + 1) * b.stackUnit / y;
-			L(u, e, x.w, x.h, E(r, n, i), .5, C);
+			if (r(b, i)) for (let e = 0; e < Math.ceil(1 / D); e++) L(c, t, x.w, x.h, E(a, e * D, (e + 1) * D), .5, C);
+			else L(c, t, x.w, x.h, l, .5, C);
+		} else if (b.stackUnit != null && o(b, i)) for (let e = 0; e < u; e++) {
+			let n = e * b.stackUnit / y, r = (e + 1) * b.stackUnit / y;
+			L(c, t, x.w, x.h, E(a, n, r), .5, C);
 		}
-		else b.stackUnit != null && L(u, e, x.w, x.h, o, .5, C);
-		e.restore();
+		else b.stackUnit != null && L(c, t, x.w, x.h, l, .5, C);
+		t.restore();
 	}
-	return e.restore(), !0;
+	return t.restore(), !0;
 }
 //#endregion
 //#region packages/core/src/chart/label-box.ts
@@ -467,7 +466,7 @@ function ae(e, t, n, r, i = 0) {
 	}
 	if (t.borderHidden === !0) return;
 	let a = t.borderFill ? g(t.borderFill, e, n.x, n.y, n.w, n.h, i) : t.borderColor ? `#${t.borderColor}` : null;
-	a && (e.save(), e.strokeStyle = a, e.lineWidth = t.borderWidthEmu == null ? Math.max(.25, .75 * r) : Math.max(.25, t.borderWidthEmu / _ * r), e.setLineDash(f(t.borderCustomDash, t.borderDash, e.lineWidth)), t.borderCap === "rnd" ? e.lineCap = "round" : t.borderCap === "sq" ? e.lineCap = "square" : t.borderCap === "flat" && (e.lineCap = "butt"), t.borderJoin === "round" ? e.lineJoin = "round" : t.borderJoin === "bevel" ? e.lineJoin = "bevel" : t.borderJoin === "miter" && (e.lineJoin = "miter"), e.strokeRect(n.x, n.y, n.w, n.h), e.restore());
+	a && (e.save(), e.strokeStyle = a, e.lineWidth = t.borderWidthEmu == null ? Math.max(.25, .75 * r) : Math.max(.25, t.borderWidthEmu / _ * r), e.setLineDash(u(t.borderCustomDash, t.borderDash, e.lineWidth)), t.borderCap === "rnd" ? e.lineCap = "round" : t.borderCap === "sq" ? e.lineCap = "square" : t.borderCap === "flat" && (e.lineCap = "butt"), t.borderJoin === "round" ? e.lineJoin = "round" : t.borderJoin === "bevel" ? e.lineJoin = "bevel" : t.borderJoin === "miter" && (e.lineJoin = "miter"), e.strokeRect(n.x, n.y, n.w, n.h), e.restore());
 }
 //#endregion
 //#region packages/core/src/chart/axis-scale.ts
@@ -824,16 +823,16 @@ function ye(e, t, n) {
 //#endregion
 //#region packages/core/src/chart/rich-data-label.ts
 var be = 4096, xe = 4, Se = be;
-function Ce(e, t, r, i) {
+function Ce(e, n, r, i) {
 	let a = [[]], o = [null], s = 0, c = (e) => {
 		if (!e) return null;
 		let t = e.startsWith("#") ? e.slice(1) : e;
 		return /^[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$/.test(t) ? `#${t}` : null;
 	};
-	outer: for (let l = 0; l < t.runs.length && l < Se; l++) {
-		let u = t.runs[l];
+	outer: for (let l = 0; l < n.runs.length && l < Se; l++) {
+		let u = n.runs[l];
 		u.text !== "\n" && o[a.length - 1] == null && (o[a.length - 1] = u.paragraphAlign ?? null);
-		let d = n(u.fontSizeHpt, t.ptToPx) ?? r, f = u.fontFace?.trim().replaceAll("\"", ""), p = f && !f.startsWith("+") ? f : null, m = f && t.fontFamilyForFace ? t.fontFamilyForFace(f) : p ? `"${p}", Calibri, Arial, sans-serif` : t.fontFamily, h = `${u.italic ?? t.fallbackItalic ?? !1 ? "italic " : ""}${u.bold ?? t.fallbackBold ? "bold " : ""}${d}px ${m}`, g = (u.baseline ?? t.fallbackBaseline ?? 0) * d, _ = u.colorPaintAuthored === !0 || u.color != null || u.colorHidden === !0 ? u.colorHidden === !0 ? null : c(u.color) : t.fallbackColorHidden === !0 ? null : i, v = "", y = () => {
+		let d = t(u.fontSizeHpt, n.ptToPx) ?? r, f = u.fontFace?.trim().replaceAll("\"", ""), p = f && !f.startsWith("+") ? f : null, m = f && n.fontFamilyForFace ? n.fontFamilyForFace(f) : p ? `"${p}", Calibri, Arial, sans-serif` : n.fontFamily, h = `${u.italic ?? n.fallbackItalic ?? !1 ? "italic " : ""}${u.bold ?? n.fallbackBold ? "bold " : ""}${d}px ${m}`, g = (u.baseline ?? n.fallbackBaseline ?? 0) * d, _ = u.colorPaintAuthored === !0 || u.color != null || u.colorHidden === !0 ? u.colorHidden === !0 ? null : c(u.color) : n.fallbackColorHidden === !0 ? null : i, v = "", y = () => {
 			v &&= (e.font = h, a[a.length - 1].push({
 				text: v,
 				font: h,
@@ -893,9 +892,9 @@ function Te(e) {
 	let t = [];
 	if (e.showCategory && e.category && t.push(e.category), e.showSeries && e.seriesName && t.push(e.seriesName), e.showValue && e.sourceValue != null) {
 		let n = e.valueDivisor != null && Number.isFinite(e.valueDivisor) && e.valueDivisor > 0 ? e.valueDivisor : 1;
-		t.push(d(e.sourceValue / n, e.formatCode ?? null, e.date1904));
+		t.push(c(e.sourceValue / n, e.formatCode ?? null, e.date1904));
 	}
-	return e.showPercent && e.percentRatio != null && t.push(d(e.percentRatio, e.percentFormatCode ?? e.formatCode ?? "0%", e.date1904)), e.showBubbleSize && e.bubbleSize != null && t.push(d(e.bubbleSize, e.formatCode ?? null, e.date1904)), t.filter((e) => e !== "").join(e.separator ?? e.defaultSeparator ?? " ");
+	return e.showPercent && e.percentRatio != null && t.push(c(e.percentRatio, e.percentFormatCode ?? e.formatCode ?? "0%", e.date1904)), e.showBubbleSize && e.bubbleSize != null && t.push(c(e.bubbleSize, e.formatCode ?? null, e.date1904)), t.filter((e) => e !== "").join(e.separator ?? e.defaultSeparator ?? " ");
 }
 //#endregion
 //#region packages/core/src/chart/material-color.ts

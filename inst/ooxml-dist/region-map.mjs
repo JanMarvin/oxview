@@ -1,5 +1,5 @@
-import { Vt as e, Wt as t, a as n, n as r, t as i } from "./plot-area-frame-DuXZzovH.js";
-import { t as a } from "./renderer-module-contract-C6sYZvTV.js";
+import { Kt as e, Ut as t, a as n, n as r, t as i } from "./plot-area-frame-D5hEOgkJ.js";
+import { t as a } from "./renderer-module-contract-Cu-GKuPd.js";
 //#region packages/core/src/chart/region-map-natural-earth.generated.ts
 var o = [
 	{
@@ -12651,19 +12651,19 @@ function N(n, a, s, c, l = 0) {
 	if (f.geography?.cachePresent) return M(n, s, c, "(region map cache is unavailable offline)"), !0;
 	let p = f.geography?.viewedRegionType;
 	if (p != null && p !== "world") return M(n, s, c, "(region map detail is unavailable offline)"), !0;
-	let m = k(f), h = O([...m.values()], f.colors, a.chartexAccents?.[0]), g = e(a, s.h, c, .02, .015);
+	let m = k(f), h = O([...m.values()], f.colors, a.chartexAccents?.[0]), g = t(a, s.h, c, .02, .015);
 	A(n, a, s, g.fontPx, g.topPad);
 	let _ = a.showLegend ? Math.max(32, s.h * .16) : 0, y = a.showLegend ? {
 		x: s.x,
 		y: s.y + g.bandH,
 		w: s.w,
 		h: _
-	} : null, b = y && a.legendManualLayout ? t(a.legendManualLayout, s, y) ?? y : y, x = a.legendOverlay === !0 ? 0 : _, S = s.w * .03, C = s.h * .035, w = {
+	} : null, b = y && a.legendManualLayout ? e(a.legendManualLayout, s, y) ?? y : y, x = a.legendOverlay === !0 ? 0 : _, S = s.w * .03, C = s.h * .035, w = {
 		x: s.x + S,
 		y: s.y + g.bandH + x,
 		w: Math.max(1, s.w - S * 2),
 		h: Math.max(1, s.h - g.bandH - x - C)
-	}, T = a.plotAreaManualLayout ? t(a.plotAreaManualLayout, s, w) ?? w : w;
+	}, T = a.plotAreaManualLayout ? e(a.plotAreaManualLayout, s, w) ?? w : w;
 	i(n, a, T.x, T.y, T.w, T.h, c, l), b && (r(n, a, b, c, l), j(n, a, h, b.x, b.y, b.w, b.h, c));
 	let E = f.geography?.projectionType, D = Infinity, N = Infinity, P = -Infinity, F = -Infinity;
 	for (let e of o) for (let t of e.g) for (let e of t) for (let t of e) {

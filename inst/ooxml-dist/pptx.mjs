@@ -1,6 +1,7 @@
-import { u as e } from "./slide-pull-client-BS0EeZo2.js";
-import { Qt as t, Zt as n, a as r } from "./line-metrics-CXyjyYd5.js";
-import { w as i } from "./canvas-viewer-mechanics-CIfhCgYA.js";
-import { o as a, s as o } from "./tiff-contract-Xjn3qXqK.js";
-import { a as s, i as c, n as l, o as u, r as d, s as f } from "./pptx-C17oBD8Z.js";
-export { a as OoxmlDecodedImageLimitError, n as OoxmlError, t as OoxmlResourceLimitError, s as PptxPresentation, l as PptxScrollViewer, d as PptxViewer, i as autoResize, u as buildPptxHighlightLayer, f as buildPptxTextLayer, o as isOoxmlDecodedImageLimitError, r as openExternalHyperlink, c as readPptxTextSelectionContext, e as renderSlide };
+import { u as e } from "./slide-pull-client-RTwQbJiy.js";
+import { a as t, cn as n, sn as r } from "./line-metrics-BGtFM-ec.js";
+import { T as i } from "./canvas-viewer-mechanics-CDNMJ-Yz.js";
+import { l as a, s as o } from "./pixel-budget-Dgjw269h.js";
+import { i as s, s as c } from "./raster-target-ojDdQizC.js";
+import { a as l, i as u, n as d, o as f, r as p, s as m } from "./pptx-C4z96sAA.js";
+export { o as OoxmlDecodedImageLimitError, r as OoxmlError, n as OoxmlResourceLimitError, l as PptxPresentation, d as PptxScrollViewer, p as PptxViewer, s as TiffDecodeError, i as autoResize, f as buildPptxHighlightLayer, m as buildPptxTextLayer, a as isOoxmlDecodedImageLimitError, c as isTiffDecodeError, t as openExternalHyperlink, u as readPptxTextSelectionContext, e as renderSlide };
