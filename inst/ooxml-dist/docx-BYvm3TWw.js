@@ -3,7 +3,7 @@ import { B as t, R as n, W as r, Zt as i, a, cn as o, et as s, pt as c, sn as l,
 import { C as p, D as m, E as h, S as g, T as _, _ as v, a as y, b, c as x, d as ee, f as te, g as ne, h as re, i as S, l as C, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-CDNMJ-Yz.js";
 import { a as ge, i as _e, t as ve } from "./bounded-raw-part-cache-C6ro6Ezf.js";
 import { c as ye, i as be, l as xe, n as Se, o as w, r as Ce, s as we, t as Te } from "./dom-interaction-boundary-CDGegIB5.js";
-import { A as Ee, C as T, D as E, E as De, O as D, S as Oe, T as O, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as k, o as Ve, p as He, s as Ue, t as A, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-BssAk95w.js";
+import { A as Ee, C as T, D as E, E as De, O as D, S as Oe, T as O, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as k, o as Ve, p as He, s as Ue, t as A, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-F3ox_VXK.js";
 import { l as Je, s as Ye } from "./pixel-budget-Dgjw269h.js";
 import { a as j } from "./units-EJdC96r6.js";
 import { i as Xe, s as Ze } from "./raster-target-ojDdQizC.js";
@@ -553,7 +553,7 @@ var J = class e {
 				t = await e.arrayBuffer();
 			} else t = r;
 			t = m(await h(t, i.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let n = s === "worker" ? (await import("./render-worker-host-BAXcBGq3.js")).createRenderWorker() : new at(), l = s === "worker" ? Qe(i) : void 0, u = s === "worker" && !!i.progressiveLayout, d;
+			let n = s === "worker" ? (await import("./render-worker-host-CBcQXsR5.js")).createRenderWorker() : new at(), l = s === "worker" ? Qe(i) : void 0, u = s === "worker" && !!i.progressiveLayout, d;
 			try {
 				d = new e(n, s, o, i.wasmUrl), d._metrics = c;
 				let r = E(d), f = O(i.currentDate, r.defaultCurrentDateMs, i.showTrackedChanges === !0);
@@ -2296,7 +2296,10 @@ var cn = class e {
 		} finally {
 			this._bitmapInFlight.delete(e);
 			let n = this._slots.get(e);
-			!u && n && (n !== t || c !== this._renderEpoch || !a.isCurrent(o)) && !this._bitmapInFlight.has(e) && !this._destroyed && this._renderSlotBitmap(e, n, this._pageWidthPx(e), this._dpr(), this._scale);
+			if (!u && n && (n !== t || c !== this._renderEpoch || !a.isCurrent(o)) && !this._bitmapInFlight.has(e) && !this._destroyed) {
+				let t = n.dispatcher;
+				await this._renderSlotBitmap(e, n, this._pageWidthPx(e), this._dpr(), this._scale, t, t.begin(), s);
+			}
 		}
 	}
 	setScale(e) {

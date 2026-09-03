@@ -1,5 +1,5 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-RTwQbJiy.js";
+import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-Dwek7xW8.js";
 import { B as p, G as m, Jt as h, R as g, W as _, Zt as v, a as y, cn as b, et as x, pt as S, sn as C, tt as w, ut as ee, vt as te, z as ne } from "./line-metrics-BGtFM-ec.js";
 import { C as re, D as ie, E as ae, S as oe, T as se, _ as ce, a as T, b as le, c as E, d as ue, f as de, g as fe, h as pe, i as D, l as O, m as me, n as he, o as ge, p as _e, r as ve, s as ye, t as be, v as xe, w as Se, x as Ce, y as we } from "./canvas-viewer-mechanics-CDNMJ-Yz.js";
 import { a as Te, i as k, n as Ee, t as De } from "./bounded-raw-part-cache-C6ro6Ezf.js";
@@ -929,7 +929,7 @@ var J = class e {
 				s = await e.arrayBuffer();
 			} else s = t;
 			s = ie(await ae(s, r.password)), o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let c = a === "worker" ? (await import("./render-worker-host-CXTCU4PO.js")).createRenderWorker() : new wt(), l = a === "worker" ? Re(r) : void 0, u;
+			let c = a === "worker" ? (await import("./render-worker-host-BKtXmlEF.js")).createRenderWorker() : new wt(), l = a === "worker" ? Re(r) : void 0, u;
 			try {
 				u = new e(c, a, r.wasmUrl), u._metrics = o, r.math && a === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), r.threeD && a === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._math = a === "worker" ? void 0 : r.math, u._threeD = a === "worker" ? void 0 : r.threeD, r.regionMap && a === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = a === "worker" ? void 0 : r.regionMap, r.chartEx && a === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = a === "worker" ? void 0 : r.chartEx, r.tiff && a === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), u._tiff = a === "worker" ? void 0 : r.tiff;
 				let t = r.progressiveLayout ? {
@@ -2531,7 +2531,10 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		} finally {
 			this._slideInFlight.delete(e);
 			let n = this._slots.get(e);
-			!d && n && (n !== t || l !== this._renderEpoch || a !== n.renderGeneration || !o.isCurrent(s)) && !this._slideInFlight.has(e) && !this._destroyed && !(this._opts.enableMediaPlayback && n.mediaInteractive) && this._renderSlotBitmap(e, n, this._slideWidthPx(), this._dpr(), this._scale);
+			if (!d && n && (n !== t || l !== this._renderEpoch || a !== n.renderGeneration || !o.isCurrent(s)) && !this._slideInFlight.has(e) && !this._destroyed && !(this._opts.enableMediaPlayback && n.mediaInteractive)) {
+				let t = n.dispatcher;
+				await this._renderSlotBitmap(e, n, this._slideWidthPx(), this._dpr(), this._scale, ++n.renderGeneration, t, t.begin(), c);
+			}
 		}
 	}
 	setScale(e) {
