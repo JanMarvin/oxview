@@ -1,13 +1,14 @@
-import { $ as e, A as t, At as n, Bt as r, C as i, Ct as a, D as o, E as s, Et as c, Gt as l, Ht as u, It as d, J as f, Kt as p, Lt as m, M as h, Mt as g, N as _, Nt as v, O as y, Ot as b, Rt as x, S, St as C, Tt as w, Ut as T, Vt as E, Wt as D, _ as O, at as k, bt as A, c as j, d as M, dt as N, et as P, f as F, ft as I, g as ee, gt as te, h as ne, ht as re, it as ie, j as ae, k as oe, l as se, m as ce, mt as le, n as ue, nt as de, o as fe, s as pe, st as me, t as he, tt as ge, u as _e, v as ve, w as ye, wt as L, xt as be, y as xe, yt as Se } from "./line-metrics-BGtFM-ec.js";
-import { c as Ce, o as we, r as Te, s as Ee } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { c as De, f as Oe, i as ke, l as Ae, m as je, n as Me, o as R, p as Ne, s as Pe, t as Fe, u as Ie } from "./line-distribute-BsV4MVZ2.js";
-import { A as Le, D as Re, g as ze, h as Be, in as Ve, j as z, on as He, sn as Ue, v as We, w as Ge, y as Ke } from "./plot-area-frame-D5hEOgkJ.js";
-import { i as qe, l as Je } from "./pixel-budget-Dgjw269h.js";
+import { $ as e, A as t, At as n, Bt as r, Ct as i, D as a, E as o, Et as s, Ft as c, Gt as l, Ht as u, It as d, K as f, O as p, Ot as m, Pt as h, Q as g, Rt as _, S as v, St as y, T as b, Ut as x, Wt as S, Z as C, _ as w, _t as T, a as E, at as D, b as O, bt as k, c as A, et as j, f as M, ft as N, g as ee, h as te, i as P, j as ne, jt as F, k as re, l as ie, lt as I, m as ae, mt as oe, nt as se, o as ce, p as le, pt as ue, rt as de, s as fe, u as pe, ut as me, vt as he, w as ge, wt as _e, x as ve, xt as ye, yt as be, zt as L } from "./hyperlink-enyPbflR.js";
+import { c as xe, o as Se, r as Ce, s as we } from "./bounded-raw-part-cache-DVx3Camo.js";
+import { c as Te, f as Ee, i as De, l as Oe, m as ke, n as Ae, o as je, p as Me, s as R, t as Ne, u as Pe } from "./line-distribute-BFB575d6.js";
+import { A as Fe, D as Ie, g as Le, h as Re, in as ze, j as Be, on as Ve, sn as z, v as He, w as Ue, y as We } from "./plot-area-frame-D5hEOgkJ.js";
+import { i as Ge, l as Ke } from "./pixel-budget-Dgjw269h.js";
 import "./units-EJdC96r6.js";
-import { L as Ye } from "./three-d-YYghQndN.js";
-import { k as Xe } from "./renderer-XFSCOT6m.js";
-import { r as Ze, s as Qe } from "./raster-target-ojDdQizC.js";
-import { a as $e, i as et, n as tt, o as B, r as nt, s as rt, t as it } from "./source-key-BkBB3X82.js";
+import { L as qe } from "./three-d-YYghQndN.js";
+import { k as Je } from "./renderer-XFSCOT6m.js";
+import { r as Ye, s as Xe } from "./raster-target-ojDdQizC.js";
+import { n as Ze, t as Qe } from "./line-metrics-CBbw80Ko.js";
+import { a as $e, i as et, n as tt, o as B, r as nt, s as rt, t as it } from "./source-key-Ktb1GRE5.js";
 //#region packages/core/src/fonts/canvas-route.ts
 function at(e, t) {
 	let n = e.trim();
@@ -39,8 +40,8 @@ function ct(e, t) {
 	let { x: n, y: r, w: i, h: a } = t.rect;
 	if (e.beginPath(), t.geometry.kind === "preset") {
 		let o = [...t.geometry.adjustments];
-		b(e, t.geometry.name, n, r, i, a, o) || De(e, t.geometry.name, n, r, i, a, o[0], o[1], o[2], o[3]);
-	} else Ie(e, t.geometry.subpaths, n, r, i, a);
+		s(e, t.geometry.name, n, r, i, a, o) || Te(e, t.geometry.name, n, r, i, a, o[0], o[1], o[2], o[3]);
+	} else Pe(e, t.geometry.subpaths, n, r, i, a);
 	e.clip();
 }
 var lt = new Set([
@@ -72,45 +73,45 @@ function dt(e) {
 	return ut.has(e) || e === "line" || e === "straightconnector1" || e.startsWith("bentconnector");
 }
 function ft(e, t, n, r, i) {
-	if (Be(e, t, n), t.fill) {
-		let n = We(t.fill, e, r.x, r.y, r.w, r.h, i);
+	if (Re(e, t, n), t.fill) {
+		let n = He(t.fill, e, r.x, r.y, r.w, r.h, i);
 		n && (e.strokeStyle = n);
 	}
 }
-function pt(e, t, r, i) {
-	let a = t.stroke;
-	if (!a || !lt.has(r) && !ut.has(r)) return;
-	let { x: o, y: s, w: c, h: l } = t.rect, u = a.fill ? We(a.fill, e, o, s, c, l, t.transform.rotationDeg) ?? void 0 : void 0, d = n(r, o, s, c, l, [...t.geometry.kind === "preset" ? t.geometry.adjustments : []]);
-	if (d) {
-		if (dt(r) && d.vertices.length >= 2 && (a.headEnd || a.tailEnd)) {
-			let n = d.vertices.map((e) => ({
+function pt(e, t, n, r) {
+	let i = t.stroke;
+	if (!i || !lt.has(n) && !ut.has(n)) return;
+	let { x: a, y: o, w: s, h: c } = t.rect, l = i.fill ? He(i.fill, e, a, o, s, c, t.transform.rotationDeg) ?? void 0 : void 0, u = m(n, a, o, s, c, [...t.geometry.kind === "preset" ? t.geometry.adjustments : []]);
+	if (u) {
+		if (dt(n) && u.vertices.length >= 2 && (i.headEnd || i.tailEnd)) {
+			let n = u.vertices.map((e) => ({
 				x: e.x,
 				y: e.y
 			}));
-			a.tailEnd && (n[n.length - 1] = Pe(n[n.length - 1], n[n.length - 2], R(a.tailEnd, a, i))), a.headEnd && (n[0] = Pe(n[0], n[1], R(a.headEnd, a, i))), ft(e, a, i, t.rect, t.transform.rotationDeg), e.beginPath(), e.moveTo(n[0].x, n[0].y);
+			i.tailEnd && (n[n.length - 1] = R(n[n.length - 1], n[n.length - 2], je(i.tailEnd, i, r))), i.headEnd && (n[0] = R(n[0], n[1], je(i.headEnd, i, r))), ft(e, i, r, t.rect, t.transform.rotationDeg), e.beginPath(), e.moveTo(n[0].x, n[0].y);
 			for (let t = 1; t < n.length; t++) e.lineTo(n[t].x, n[t].y);
 			e.stroke();
 		}
-		a.tailEnd && ke(e, d.end.x, d.end.y, d.end.angle, a.tailEnd, a, i, u), a.headEnd && ke(e, d.start.x, d.start.y, d.start.angle, a.headEnd, a, i, u);
+		i.tailEnd && De(e, u.end.x, u.end.y, u.end.angle, i.tailEnd, i, r, l), i.headEnd && De(e, u.start.x, u.start.y, u.start.angle, i.headEnd, i, r, l);
 	}
 }
 function mt(e, t, n) {
 	if (t.geometry.kind !== "custom") return;
 	let r = t.stroke;
 	if (!r || !r.headEnd && !r.tailEnd) return;
-	let i = Ae(t.geometry.subpaths), { x: a, y: o, w: s, h: c } = t.rect, l = r.fill ? We(r.fill, e, a, o, s, c, t.transform.rotationDeg) ?? void 0 : void 0;
-	i.start && r.headEnd && ke(e, a + i.start.x * s, o + i.start.y * c, Math.atan2(i.start.dy * c, i.start.dx * s), r.headEnd, r, n, l), i.end && r.tailEnd && ke(e, a + i.end.x * s, o + i.end.y * c, Math.atan2(i.end.dy * c, i.end.dx * s), r.tailEnd, r, n, l);
+	let i = Oe(t.geometry.subpaths), { x: a, y: o, w: s, h: c } = t.rect, l = r.fill ? He(r.fill, e, a, o, s, c, t.transform.rotationDeg) ?? void 0 : void 0;
+	i.start && r.headEnd && De(e, a + i.start.x * s, o + i.start.y * c, Math.atan2(i.start.dy * c, i.start.dx * s), r.headEnd, r, n, l), i.end && r.tailEnd && De(e, a + i.end.x * s, o + i.end.y * c, Math.atan2(i.end.dy * c, i.end.dx * s), r.tailEnd, r, n, l);
 }
-function ht(e, t, n) {
-	let { x: r, y: i, w: a, h: o } = t.rect;
+function ht(e, t, r) {
+	let { x: i, y: a, w: o, h: s } = t.rect;
 	st(e, t, () => {
-		let s = We(t.fill, e, r, i, a, o, t.transform.rotationDeg), c = t.stroke, l = c ? () => {
-			ft(e, c, n, t.rect, t.transform.rotationDeg), e.stroke();
+		let c = He(t.fill, e, i, a, o, s, t.transform.rotationDeg), l = t.stroke, u = l ? () => {
+			ft(e, l, r, t.rect, t.transform.rotationDeg), e.stroke();
 		} : null;
 		if (t.geometry.kind === "preset") {
-			let u = t.geometry.name.toLowerCase(), d = [...t.geometry.adjustments], f = dt(u) && !!(c?.headEnd || c?.tailEnd);
-			g(u) && v(e, u, r, i, a, o, d, s, l, () => {}, f ? { skipTrailingStroke: !0 } : void 0) || (e.beginPath(), De(e, u, r, i, a, o, d[0], d[1], d[2], d[3]), s && u !== "arc" && (e.fillStyle = s, u === "donut" || u === "smileyface" || u === "frame" ? e.fill("evenodd") : e.fill()), l && l()), pt(e, t, u, n);
-		} else e.beginPath(), Ie(e, t.geometry.subpaths, r, i, a, o), s && (e.fillStyle = s, e.fill()), l && l(), mt(e, t, n);
+			let d = t.geometry.name.toLowerCase(), f = [...t.geometry.adjustments], p = dt(d) && !!(l?.headEnd || l?.tailEnd);
+			n(d) && F(e, d, i, a, o, s, f, c, u, () => {}, p ? { skipTrailingStroke: !0 } : void 0) || (e.beginPath(), Te(e, d, i, a, o, s, f[0], f[1], f[2], f[3]), c && d !== "arc" && (e.fillStyle = c, d === "donut" || d === "smileyface" || d === "frame" ? e.fill("evenodd") : e.fill()), u && u()), pt(e, t, d, r);
+		} else e.beginPath(), Pe(e, t.geometry.subpaths, i, a, o, s), c && (e.fillStyle = c, e.fill()), u && u(), mt(e, t, r);
 	});
 }
 //#endregion
@@ -673,7 +674,7 @@ function bn() {
 	return typeof OffscreenCanvas < "u" ? new OffscreenCanvas(1, 1).getContext("2d") : typeof document < "u" && document?.createElement ? document.createElement("canvas").getContext("2d") : null;
 }
 async function xn(e) {
-	let t = Te();
+	let t = Ce();
 	if (!t || typeof FontFace > "u") return {
 		faces: [],
 		metrics: {}
@@ -698,7 +699,7 @@ async function xn(e) {
 		}), i.set(c, l);
 	}
 	for (let [e, a] of i) {
-		let i = yn(e), { face: o } = Ce(e, t, () => {
+		let i = yn(e), { face: o } = xe(e, t, () => {
 			let e = a.requests[0], n = new FontFace(i, a.source, {
 				weight: String(e.weight),
 				style: e.style
@@ -706,7 +707,7 @@ async function xn(e) {
 			return t.add(n), n;
 		});
 		try {
-			if (!await we(o.load()) || o.status !== "loaded") throw Error("local font load timed out");
+			if (!await Se(o.load()) || o.status !== "loaded") throw Error("local font load timed out");
 			let e = !1;
 			for (let t of a.requests) {
 				let n;
@@ -732,7 +733,7 @@ async function xn(e) {
 			if (!e) throw Error("exact local font route unavailable");
 			n.push(o);
 		} catch {
-			Ee([o]);
+			we([o]);
 		}
 	}
 	return {
@@ -741,7 +742,7 @@ async function xn(e) {
 	};
 }
 function Sn(e) {
-	Ee(e);
+	we(e);
 }
 //#endregion
 //#region packages/core/src/text/font-advance-metrics.ts
@@ -1589,7 +1590,7 @@ function ni(e, t, n, r, i) {
 	}).advancePt, l = (e) => {
 		let n = [
 			0,
-			...O(e),
+			...te(e),
 			e.length
 		].filter((e, t, n) => t === 0 || e !== n[t - 1]), r = n.length - 1;
 		for (; r > 0 && c(`${e.slice(0, n[r])}…`) > t;) --r;
@@ -1599,7 +1600,7 @@ function ni(e, t, n, r, i) {
 	}, d = (e) => {
 		let n = [
 			0,
-			...O(e),
+			...te(e),
 			e.length
 		].filter((e, t, n) => t === 0 || e !== n[t - 1]), r = 0;
 		for (; r < n.length - 1;) {
@@ -2146,7 +2147,7 @@ function Di(e) {
 //#endregion
 //#region packages/docx/src/layout/border-treatment.ts
 function Oi(e, t) {
-	let n = Ke(e, t), r = e === "triple" || /^(?:thinThick|thickThin|thinThickThin)(?:Small|Medium|Large)Gap$/.test(e);
+	let n = We(e, t), r = e === "triple" || /^(?:thinThick|thickThin|thinThickThin)(?:Small|Medium|Large)Gap$/.test(e);
 	return Object.freeze({
 		authoredStyle: e,
 		style: e === "double" ? "double" : r ? "compound" : n.length > 0 ? "dashed" : e.includes("wave") ? "wavy" : "solid",
@@ -2200,12 +2201,12 @@ function Ni(e, t) {
 }
 function Pi(e, t = {}, n = {}) {
 	if (!e) return "sans-serif";
-	let r = t[e];
-	if (r === "roman") return "serif";
-	if (r === "swiss") return "sans-serif";
-	if (r === "modern" && n[e] === "fixed") return "monospace";
-	let i = u(e);
-	return i === "mono" ? "monospace" : i === "serif" ? "serif" : "sans-serif";
+	let i = t[e];
+	if (i === "roman") return "serif";
+	if (i === "swiss") return "sans-serif";
+	if (i === "modern" && n[e] === "fixed") return "monospace";
+	let a = r(e);
+	return a === "mono" ? "monospace" : a === "serif" ? "serif" : "sans-serif";
 }
 function Fi(e) {
 	return e === "eastAsia" ? "sans-serif" : "serif";
@@ -2351,7 +2352,7 @@ function Hi(e) {
 			if (n) return n;
 			let i = [], o = Object.freeze([...new Set([
 				0,
-				...O(e.text),
+				...te(e.text),
 				e.text.length
 			])].sort((e, t) => e - t)), u = new Set(o), d = 0;
 			for (let t of e.text) {
@@ -4421,14 +4422,14 @@ function ks(e) {
 }
 var As = ["Noto Naskh Arabic", "Noto Sans Arabic"];
 function js(e) {
-	let t = e && e !== "jp" ? r(e, "sans") : [
+	let t = e && e !== "jp" ? _(e, "sans") : [
 		"Noto Sans JP",
 		"Hiragino Sans",
 		"Meiryo",
-		...r("jp", "sans").slice(1)
+		..._("jp", "sans").slice(1)
 	];
 	return e == null ? `${ks([
-		...d,
+		...h,
 		"Arial",
 		"Helvetica",
 		"Liberation Sans",
@@ -4437,20 +4438,20 @@ function js(e) {
 	])}, sans-serif` : `${ks([
 		...t,
 		...As,
-		...d
+		...h
 	])}, sans-serif`;
 }
 function Ms(e) {
-	let t = e && e !== "jp" ? r(e, "serif") : [
+	let t = e && e !== "jp" ? _(e, "serif") : [
 		"Yu Mincho",
 		"YuMincho",
 		"Hiragino Mincho ProN",
 		"MS Mincho",
 		"Noto Serif JP",
-		...r("jp", "serif").slice(1)
+		..._("jp", "serif").slice(1)
 	];
 	return e == null ? `${ks([
-		...m,
+		...c,
 		"Times New Roman",
 		"Cambria",
 		"Liberation Serif",
@@ -4459,7 +4460,7 @@ function Ms(e) {
 	])}, serif` : `${ks([
 		...t,
 		...As,
-		...m
+		...c
 	])}, serif`;
 }
 var Ns = /* @__PURE__ */ new WeakMap(), Ps = /* @__PURE__ */ new WeakMap();
@@ -4478,7 +4479,7 @@ function Is(e, t = {}) {
 }
 function Ls(e, t, n = {}) {
 	if (!e) return js(null);
-	let i = `"${((e) => e.replace(/"/g, "\\\""))(e)}"`, a = e.toLowerCase(), o = E(e);
+	let i = `"${((e) => e.replace(/"/g, "\\\""))(e)}"`, a = e.toLowerCase(), o = L(e);
 	if (Os(e)) return Ds.has(a) ? `${i}, "Noto Naskh Arabic", "Noto Sans Arabic", "Noto Serif", "Noto Sans JP", "Hiragino Sans", serif` : `${i}, "Noto Sans Arabic", "Noto Naskh Arabic", "Noto Sans JP", "Hiragino Sans", sans-serif`;
 	let s = t[e];
 	if (s && s !== "auto") switch (s) {
@@ -4491,18 +4492,18 @@ function Ls(e, t, n = {}) {
 				"Hiragino Sans",
 				"Meiryo",
 				"Noto Sans JP"
-			] : r(o, "sans"), "Courier New"])}, monospace`;
+			] : _(o, "sans"), "Courier New"])}, monospace`;
 			break;
 		default: break;
 	}
-	let c = u(e);
+	let c = r(e);
 	if (c === "serif") return `${i}, ${Ms(o)}`;
 	if (c === "mono") return `${i}, "Courier New", monospace`;
 	if (o == null || o === "jp") {
 		if (a.includes("meiryo") || e.includes("メイリオ")) return `${i}, "Meiryo UI", "Meiryo", ${js(o)}`;
 		if (e.includes("游ゴシック") || /\byu\s*gothic\b/i.test(e) || a.includes("yugothic")) return `${i}, "Yu Gothic", "YuGothic", ${js(o)}`;
 		if (a.includes("ipa")) return `${i}, "IPAexGothic", ${js(o)}`;
-		if (a.includes("segoe")) return `${i}, "Segoe UI", ${ks([...As, ...d])}, sans-serif`;
+		if (a.includes("segoe")) return `${i}, "Segoe UI", ${ks([...As, ...h])}, sans-serif`;
 	}
 	return `${i}, ${js(o)}`;
 }
@@ -4510,10 +4511,10 @@ function Rs(e, t, n, r, i = {}, a) {
 	return a ? ot(a, n, e ? 700 : 400, t ? "italic" : "normal") : `${t ? "italic" : "normal"} ${e ? "bold" : "normal"} ${n}px ${Is(r, i)}`;
 }
 function zs(e, t, n = !1) {
-	return Math.max(ue(e.fontFamily, t, n), (e.resolvedLineHeightRatio ?? 0) * t);
+	return Math.max(Ze(e.fontFamily, t, n), (e.resolvedLineHeightRatio ?? 0) * t);
 }
 function Bs(e, t, n = !1) {
-	return Math.max(ue(e.eaFloorFamily, t, n), (e.resolvedEaFloorLineHeightRatio ?? 0) * t);
+	return Math.max(Ze(e.eaFloorFamily, t, n), (e.resolvedEaFloorLineHeightRatio ?? 0) * t);
 }
 function Vs(e) {
 	for (let t of e.runs) if (t.type === "text" || t.type === "field") return t.fontSize;
@@ -4524,7 +4525,7 @@ function Hs(e, t = !1) {
 	return t && e.defaultFontFamilyEastAsia ? e.defaultFontFamilyEastAsia : e.defaultFontFamily ?? null;
 }
 function Us(e, t, n) {
-	return ue(Hs(e, n), Vs(e) * t, n);
+	return Ze(Hs(e, n), Vs(e) * t, n);
 }
 function Ws(e, t) {
 	return !e || e.charSpacePt == null || e.type !== "linesAndChars" && e.type !== "snapToChars" ? 0 : e.charSpacePt * t;
@@ -4582,14 +4583,14 @@ function nc(e, t, n = 0) {
 	let r = tc(e);
 	return [
 		0,
-		...O(e.text),
+		...te(e.text),
 		e.text.length
 	].filter((e, t, n) => n.indexOf(e) === t).filter((e) => e >= n && e <= t && !r.has(e)).at(-1) ?? 0;
 }
 function rc(e) {
 	if (e.hardJoinPrev !== !0 || e.text.length === 0) return;
 	let t = tc(e);
-	return [...O(e.text), e.text.length].find((e) => e > 0 && !t.has(e)) ?? e.text.length;
+	return [...te(e.text), e.text.length].find((e) => e > 0 && !t.has(e)) ?? e.text.length;
 }
 function q(e, t, n) {
 	return {
@@ -4643,7 +4644,7 @@ function sc(e) {
 		}
 		let e = r, i = e.punctuationCompressions ?? [], a = new Map(i.map((e, t) => [e.end, t])), o = i.length > 0 ? oc(e) : void 0, s = [
 			0,
-			...O(e.text),
+			...te(e.text),
 			e.text.length
 		];
 		for (let r = 0; r < s.length - 1; r += 1) {
@@ -4727,7 +4728,7 @@ function vc(e, t) {
 	};
 }
 function yc(e, t, n, r, i = !1) {
-	return he(t, r, e.fontBoundingBoxAscent ?? e.actualBoundingBoxAscent ?? n * .8, e.fontBoundingBoxDescent ?? e.actualBoundingBoxDescent ?? n * .2, i);
+	return Qe(t, r, e.fontBoundingBoxAscent ?? e.actualBoundingBoxAscent ?? n * .8, e.fontBoundingBoxDescent ?? e.actualBoundingBoxDescent ?? n * .2, i);
 }
 function bc(e, t, n, r, i = !1, a, o = {}, s = e.lineSpacing, c = {}, l, u, d = !1) {
 	let f = u, p = i || f?.fontHint === "eastAsia", m = f?.complexScript === !0, h = f?.fontSizePt ?? Vs(e), g = Hs(e, p), _ = g ? c[_n(g)] : void 0, v = _?.family ?? g, y, b;
@@ -4836,7 +4837,7 @@ function Ec(e, t) {
 function Dc(e) {
 	for (let t = 0; t < e.length;) {
 		let n = e.codePointAt(t);
-		if (ye(n)) return !0;
+		if (v(n)) return !0;
 		t += n > 65535 ? 2 : 1;
 	}
 	return !1;
@@ -4929,7 +4930,7 @@ function Ic(e, t) {
 function Lc(e) {
 	let t = [], n = null, r = "";
 	for (let i of e) {
-		let e = ye(i.codePointAt(0));
+		let e = v(i.codePointAt(0));
 		n === null || e === n ? (n = e, r += i) : (t.push({
 			text: r,
 			ea: n
@@ -5024,92 +5025,92 @@ function Gc(e, t) {
 		if (o) return o;
 		let s = a[i];
 		return n === 400 && r === "normal" && s ? s : Object.values(a).find((e) => _n(e.requestedFamily ?? "") === i && (e.weight ?? 400) === n && (e.style ?? "normal") === r);
-	}, a = /* @__PURE__ */ new Map(), o = [];
+	}, i = /* @__PURE__ */ new Map(), a = [];
 	for (let [t, n] of e.entries()) {
 		if (n.type !== "text") {
-			o.push({
+			a.push({
 				charCount: 0,
 				naturalWidthPx: 0
 			});
 			continue;
 		}
 		let e = n.text.split("	");
-		for (let r = 0; r < e.length; r += 1) a.set(`${t}:${r}`, o.length), o.push({
+		for (let r = 0; r < e.length; r += 1) i.set(`${t}:${r}`, a.length), a.push({
 			fitTextValTwips: n.fitTextVal,
 			fitTextId: n.fitTextId,
 			charCount: [...e[r]].length,
 			naturalWidthPx: 0,
 			charScale: n.charScale
-		}), r < e.length - 1 && o.push({
+		}), r < e.length - 1 && a.push({
 			charCount: 0,
 			naturalWidthPx: 0
 		});
 	}
 	let s = /* @__PURE__ */ new Map();
-	Ui(o, 1).forEach((e, t) => {
+	Ui(a, 1).forEach((e, t) => {
 		for (let n = e.start; n < e.end; n += 1) s.set(n, t);
 	});
-	let c = (e, i, o, c, l, u = !1) => {
-		let d = i, f = d.typographyInput, p = (e, t) => e?.status === "valid" && e.value !== null ? e.value : t, m = p(f?.verticalAlign, o ?? void 0) ?? null, h = p(f?.positionPt, d.position), g = f?.characterSpacingPt ?? d.charSpacing, _ = ns(g), v = f?.characterScale ?? d.charScale, y = f?.kerningThresholdPt ?? d.kerning, b = f?.snapToGrid ?? d.snapToGrid, x = !1, S = d.ruby, C = S ? {
+	let c = (e, a, o, c, l, u = !1) => {
+		let d = a, f = d.typographyInput, p = (e, t) => e?.status === "valid" && e.value !== null ? e.value : t, m = p(f?.verticalAlign, o ?? void 0) ?? null, h = p(f?.positionPt, d.position), g = f?.characterSpacingPt ?? d.charSpacing, _ = ns(g), v = f?.characterScale ?? d.charScale, y = f?.kerningThresholdPt ?? d.kerning, b = f?.snapToGrid ?? d.snapToGrid, x = !1, S = d.ruby, C = S ? {
 			text: S.text,
 			fontSizePt: S.fontSizePt,
 			...S.hpsRaisePt == null ? {} : { hpsRaisePt: S.hpsRaisePt }
-		} : void 0, w = d.revision, T = d.rtl === !0 ? !0 : void 0, E = l === void 0 ? void 0 : a.get(`${c}:${l}`), D = E === void 0 ? void 0 : s.get(E), k = d.hyperlink ? {
+		} : void 0, w = d.revision, T = d.rtl === !0 ? !0 : void 0, E = l === void 0 ? void 0 : i.get(`${c}:${l}`), D = E === void 0 ? void 0 : s.get(E), O = d.hyperlink ? {
 			kind: "external",
 			url: d.hyperlink
 		} : d.hyperlinkAnchor ? {
 			kind: "internal",
 			ref: d.hyperlinkAnchor
-		} : void 0, A = d.rtl === !0 || d.cs === !0, j = d.fontSizeCs ?? i.fontSize, M = d.fontFamilyCs ?? i.fontFamily, N = d.fontFamilyHighAnsi ?? i.fontFamily, P = d.boldCs ?? !1, F = d.italicCs ?? !1, I = d.fontFamilyEastAsia ?? i.fontFamily, ee = (A || !!d.rtl) && Ic(d.langBidi, !!d.rtl), te = !0, ne = !1, re = (e, a, o, s, c = !1, l = !1) => {
-			if (t.balanceSingleByteDoubleByteWidth && !a && e.includes("　") && [...e].some((e) => e !== "　")) {
-				for (let t of e.split(/(\u3000+)/u).filter(Boolean)) re(t, a, o, void 0, c, l);
+		} : void 0, k = d.rtl === !0 || d.cs === !0, A = d.fontSizeCs ?? a.fontSize, j = d.fontFamilyCs ?? a.fontFamily, M = d.fontFamilyHighAnsi ?? a.fontFamily, N = d.boldCs ?? !1, ee = d.italicCs ?? !1, P = d.fontFamilyEastAsia ?? a.fontFamily, ne = (k || !!d.rtl) && Ic(d.langBidi, !!d.rtl), F = !0, re = !1, ie = (e, i, o, s, c = !1, l = !1) => {
+			if (t.balanceSingleByteDoubleByteWidth && !i && e.includes("　") && [...e].some((e) => e !== "　")) {
+				for (let t of e.split(/(\u3000+)/u).filter(Boolean)) ie(t, i, o, void 0, c, l);
 				return;
 			}
 			if (!c && _ && D === void 0) {
 				let n = [
 					0,
-					...O(e),
+					...te(e),
 					e.length
 				];
 				if (n.slice(0, -1).map((t, r) => e.slice(t, n[r + 1])).some((e) => Ac(e, t.characterSpacingControl))) {
-					re(e, a, o, void 0, !0, l);
+					ie(e, i, o, void 0, !0, l);
 					return;
 				}
 			}
-			let f = a ? P : i.bold, p = a ? F : i.italic, S = f ? 700 : 400, A = p ? "italic" : "normal", ie = Object.freeze({
+			let f = i ? N : a.bold, p = i ? ee : a.italic, S = f ? 700 : 400, k = p ? "italic" : "normal", I = Object.freeze({
 				text: e,
-				fontSizePt: a ? j : i.fontSize,
+				fontSizePt: i ? A : a.fontSize,
 				fonts: l ? {
 					ascii: null,
 					highAnsi: null,
 					eastAsia: null,
 					complexScript: null
 				} : d.fontSlots?.direct ?? {
-					ascii: i.fontFamily,
-					highAnsi: N,
-					eastAsia: I,
-					complexScript: M
+					ascii: a.fontFamily,
+					highAnsi: M,
+					eastAsia: P,
+					complexScript: j
 				},
 				themeFonts: l ? void 0 : d.fontSlots?.theme,
 				themeFontPresence: l ? void 0 : d.fontSlots?.themePresent,
 				weight: S,
-				style: A,
-				complexScript: a,
+				style: k,
+				complexScript: i,
 				fontHint: d.fontHint,
 				eastAsiaLanguage: d.langEastAsia,
-				kerning: y == null ? void 0 : (a ? j : i.fontSize) >= y,
+				kerning: y == null ? void 0 : (i ? A : a.fontSize) >= y,
 				measure: !1
-			}), ae = s ? { spans: [s] } : t.layoutServices?.text.shape(ie), oe = c && _ ? (() => {
+			}), ae = s ? { spans: [s] } : t.layoutServices?.text.shape(I), oe = c && _ ? (() => {
 				let n = [
 					0,
-					...O(e),
+					...te(e),
 					e.length
 				], r = [];
 				for (let i = 0; i < n.length - 1; i += 1) {
 					let a = n[i], o = n[i + 1], s = e.slice(a, o);
 					if (!Ac(s, t.characterSpacingControl)) continue;
 					let c = t.layoutServices?.text.shape({
-						...ie,
+						...I,
 						text: s,
 						measure: !0,
 						clusterGeometry: !1
@@ -5117,7 +5118,7 @@ function Gc(e, t) {
 						let e = Math.max(0, Math.min(c.advancePt, c.advancePt - c.inkBounds.xMaxPt));
 						if (!Oc.has(s)) return e;
 						let n = c.spans[0]?.fontRoute.fingerprint, r = t.layoutServices?.text.shape({
-							...ie,
+							...I,
 							text: "一",
 							fontHint: "eastAsia",
 							measure: !0,
@@ -5137,26 +5138,26 @@ function Gc(e, t) {
 					});
 				}
 				return r.length === 0 ? void 0 : Object.freeze(r.map((e) => Object.freeze(e)));
-			})() : void 0, se = ae?.spans.some((e) => e.script === "complexScript" !== a) ?? !1;
+			})() : void 0, se = ae?.spans.some((e) => e.script === "complexScript" !== i) ?? !1;
 			if (ae && (ae.spans.length > 1 || se)) {
 				for (let e = 0; e < ae.spans.length; e += 1) {
-					let n = ae.spans[e], r = n.script === "complexScript", a = r ? M : n.script === "eastAsia" ? I : n.script === "highAnsi" ? N : i.fontFamily, o = _ && c && [...n.text].some((e) => Ac(e, t.characterSpacingControl));
-					re(n.text, r, a, n, o);
+					let n = ae.spans[e], r = n.script === "complexScript", i = r ? j : n.script === "eastAsia" ? P : n.script === "highAnsi" ? M : a.fontFamily, o = _ && c && [...n.text].some((e) => Ac(e, t.characterSpacingControl));
+					ie(n.text, r, i, n, o);
 				}
 				return;
 			}
 			let ce = ae?.spans[0], le = (e, n) => {
 				if (!e) return;
-				let r = Object.values(t.layoutServices?.text.localMetrics ?? {}).filter((t) => _n(t.family) === _n(e) && (t.weight ?? 400) === S && (t.style ?? "normal") === A);
+				let r = Object.values(t.layoutServices?.text.localMetrics ?? {}).filter((t) => _n(t.family) === _n(e) && (t.weight ?? 400) === S && (t.style ?? "normal") === k);
 				return r.find((e) => n && _n(e.requestedFamily ?? "") === _n(n)) ?? r[0];
-			}, ue = ce ? le(ce.font.resolvedFamily, ce.font.requestedFamily) : r(o, S, A), de = t.layoutServices?.text.resolve({
-				fonts: ie.fonts,
-				themeFonts: ie.themeFonts,
-				themeFontPresence: ie.themeFontPresence,
+			}, ue = ce ? le(ce.font.resolvedFamily, ce.font.requestedFamily) : r(o, S, k), de = t.layoutServices?.text.resolve({
+				fonts: I.fonts,
+				themeFonts: I.themeFonts,
+				themeFontPresence: I.themeFontPresence,
 				slot: "eastAsia",
 				weight: S,
-				style: A
-			}), fe = de ? le(de.resolvedFamily, de.requestedFamily) : r(I, S, A), pe = ue ?? (o ? t.resolvedLocalFonts?.[_n(o)] : void 0), me = fe ?? (I ? t.resolvedLocalFonts?.[_n(I)] : void 0), he = de?.resolvedFamily ?? fe?.family ?? I, ge = t.useFeLayout && (d.fontHint === "eastAsia" || !!he?.trim()), _e = ce?.script ?? s?.script ?? (a ? "complexScript" : Ai.test(e) ? "eastAsia" : "ascii"), ve = t.balanceSingleByteDoubleByteWidth ? es(e, _e) : void 0;
+				style: k
+			}), fe = de ? le(de.resolvedFamily, de.requestedFamily) : r(P, S, k), pe = ue ?? (o ? t.resolvedLocalFonts?.[_n(o)] : void 0), me = fe ?? (P ? t.resolvedLocalFonts?.[_n(P)] : void 0), he = de?.resolvedFamily ?? fe?.family ?? P, ge = t.useFeLayout && (d.fontHint === "eastAsia" || !!he?.trim()), _e = ce?.script ?? s?.script ?? (i ? "complexScript" : Ai.test(e) ? "eastAsia" : "ascii"), ve = t.balanceSingleByteDoubleByteWidth ? es(e, _e) : void 0;
 			n.push({
 				text: e,
 				script: _e,
@@ -5164,43 +5165,43 @@ function Gc(e, t) {
 				...ge ? { metricEastAsian: !0 } : {},
 				bold: f,
 				italic: p,
-				underline: i.underline,
+				underline: a.underline,
 				underlineStyle: d.underlineStyle,
 				underlineColor: d.underlineColor,
-				strikethrough: i.strikethrough,
-				fontSize: a ? j : i.fontSize,
-				color: i.color,
+				strikethrough: a.strikethrough,
+				fontSize: i ? A : a.fontSize,
+				color: a.color,
 				fontFamily: ce?.font.resolvedFamily ?? ue?.family ?? o,
 				fontRoute: ce?.fontRoute,
 				resolvedLineHeightRatio: pe?.lineHeightRatio,
 				vertAlign: m,
 				measuredWidth: 0,
 				textLayoutService: t.layoutServices?.text,
-				textShapeRequest: ie,
+				textShapeRequest: I,
 				breakBefore: ce?.breakBefore ?? s?.breakBefore ?? !0,
 				smallCaps: x,
-				joinPrev: te && (d.noBreakBefore === !0 || u) || ne || s?.breakBefore === !1 ? !0 : void 0,
-				hardJoinPrev: te && (d.noBreakBefore === !0 || u) ? !0 : void 0,
-				doubleStrikethrough: i.doubleStrikethrough ?? !1,
-				highlight: i.highlight ?? null,
-				emphasisMark: i.emphasisMark,
-				background: i.background ?? null,
+				joinPrev: F && (d.noBreakBefore === !0 || u) || re || s?.breakBefore === !1 ? !0 : void 0,
+				hardJoinPrev: F && (d.noBreakBefore === !0 || u) ? !0 : void 0,
+				doubleStrikethrough: a.doubleStrikethrough ?? !1,
+				highlight: a.highlight ?? null,
+				emphasisMark: a.emphasisMark,
+				background: a.background ?? null,
 				colorAuto: d.colorAuto ?? !1,
 				border: d.border ?? null,
-				ruby: te ? C : void 0,
+				ruby: F ? C : void 0,
 				revision: w,
 				...w && t.showTrackedChanges === !0 ? { trackChangesMarkup: {
 					kind: w.kind,
 					authorColor: t.revisionAuthorColor?.(w.author) ?? "#C00000"
 				} } : {},
 				rtl: T,
-				digitsAsAN: ee ? !0 : void 0,
+				digitsAsAN: ne ? !0 : void 0,
 				eaFloorFamily: he,
 				eaFloorRoute: de?.route,
 				resolvedEaFloorLineHeightRatio: me?.lineHeightRatio,
 				textBoxLineFloor: d.textBoxLineFloor,
 				textBoxVertical: d.textBoxVertical,
-				hyperlink: k,
+				hyperlink: O,
 				snapToCharacterGrid: b !== !1,
 				charSpacing: g,
 				punctuationCompressions: oe,
@@ -5216,33 +5217,33 @@ function Gc(e, t) {
 				tateChuYoko: t.verticalCJK && d.eastAsianVert === !0 ? !0 : void 0,
 				tateChuYokoCompress: t.verticalCJK && d.eastAsianVert === !0 && d.eastAsianVertCompress === !0 ? !0 : void 0,
 				verticalRun: t.verticalCJK && d.eastAsianVert !== !0 ? !0 : void 0
-			}), te = !1, ne = !1;
-		}, ie = (e, t) => {
-			let n = t === "cs", r = t === "cs" ? M : t === "ea" ? I : i.fontFamily;
-			if (Oe(r)) {
-				for (let t of je(e, r)) re(t.text, n, t.mapped ? null : r, void 0, !1, t.mapped);
+			}), F = !1, re = !1;
+		}, I = (e, t) => {
+			let n = t === "cs", r = t === "cs" ? j : t === "ea" ? P : a.fontFamily;
+			if (Ee(r)) {
+				for (let t of ke(e, r)) ie(t.text, n, t.mapped ? null : r, void 0, !1, t.mapped);
 				return;
 			}
-			re(e, n, r);
+			ie(e, n, r);
 		}, ae = (e) => {
 			if (t.layoutServices?.text) {
-				if (Oe(i.fontFamily)) {
-					ie(e, "latin");
+				if (Ee(a.fontFamily)) {
+					I(e, "latin");
 					return;
 				}
-				re(e, !1, i.fontFamily);
+				ie(e, !1, a.fontFamily);
 				return;
 			}
-			for (let t of Lc(e)) ie(t.text, t.ea ? "ea" : "latin");
-		}, oe = i.smallCaps ? wc(e) : [{
+			for (let t of Lc(e)) I(t.text, t.ea ? "ea" : "latin");
+		}, oe = a.smallCaps ? wc(e) : [{
 			text: e,
 			reduced: !1
 		}], se = "";
 		for (let e of oe) {
-			x = e.reduced, ne = se.length > 0 && !/\s$/.test(se), se = e.text;
-			let t = i.allCaps || i.smallCaps ? e.text.toUpperCase() : e.text;
-			for (let e of zc(t)) if (A) if (ee) for (let t of Rc(e)) ie(t, "cs");
-			else ie(e, "cs");
+			x = e.reduced, re = se.length > 0 && !/\s$/.test(se), se = e.text;
+			let t = a.allCaps || a.smallCaps ? e.text.toUpperCase() : e.text;
+			for (let e of zc(t)) if (k) if (ne) for (let t of Rc(e)) I(t, "cs");
+			else I(e, "cs");
 			else ae(e);
 		}
 	}, l = !1;
@@ -5447,7 +5448,7 @@ function Gc(e, t) {
 		}
 		let l = /* @__PURE__ */ new Set();
 		for (let e of o.matchAll(/\S+/gu)) {
-			let t = e[0], n = e.index, r = new Set(O(t).map((e) => n + e)), i = new Set([...s].filter((e) => e > n && e <= n + t.length).map((e) => e - n)), a = new Set([...r].map((e) => e - n));
+			let t = e[0], n = e.index, r = new Set(te(t).map((e) => n + e)), i = new Set([...s].filter((e) => e > n && e <= n + t.length).map((e) => e - n)), a = new Set([...r].map((e) => e - n));
 			for (let e of us(t, a, i)) l.add(n + e);
 		}
 		if (l.size === 0) {
@@ -5514,7 +5515,7 @@ function Gc(e, t) {
 		let t = n[e];
 		if (!("text" in t) || t.joinPrev) continue;
 		let r = t.text.codePointAt(0);
-		if (r === void 0 || !y.lineStartForbidden.has(r)) continue;
+		if (r === void 0 || !o.lineStartForbidden.has(r)) continue;
 		let i = n[e - 1];
 		!("text" in i) || /\s$/.test(i.text) || (t.joinPrev = !0);
 	}
@@ -5531,77 +5532,77 @@ function Gc(e, t) {
 		if (!("text" in t) || t.joinPrev || t.externalLinkBreakBefore || t.text.length === 0) continue;
 		let r = n[e - 1];
 		if (!("text" in r) || r.text.length === 0 || /\s$/u.test(r.text) || /^\s/u.test(t.text)) continue;
-		let a = [...r.text].at(-1), o = [...t.text][0], s = a?.codePointAt(0), c = o?.codePointAt(0);
-		s === void 0 || c === void 0 || s === 8203 || c === 8203 || ne(r.text) || ne(t.text) || Dc(r.text) || Dc(t.text) || i(s, c) && (t.joinPrev = !0);
+		let i = [...r.text].at(-1), a = [...t.text][0], o = i?.codePointAt(0), s = a?.codePointAt(0);
+		o === void 0 || s === void 0 || o === 8203 || s === 8203 || le(r.text) || le(t.text) || Dc(r.text) || Dc(t.text) || ve(o, s) && (t.joinPrev = !0);
 	}
 	let u = /* @__PURE__ */ new Set();
 	for (let e of n) !("text" in e) || e.fitTextRegionIndex === void 0 || (u.has(e.fitTextRegionIndex) ? e.joinPrev = !0 : (e.fitTextRegionStart = !0, u.add(e.fitTextRegionIndex)));
 	return sc(n), n;
 }
-function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, m = n, h = !1, g = !1, _ = !1, v, b = "bounded", x, C = !1, w) {
-	if (w === void 0) {
-		let o = (o, s) => Kc(e, Ho(t), n, r, i, a, c, l, u, d, f, p, m, h, g, _, v, b, x, C, {
+function Kc(e, t, n, r, i, a = [], s, c = {}, l = 0, u = o, d = void 0, f = 36, p = n, m = !1, h = !1, g = !1, _, v = "bounded", y, x = !1, S) {
+	if (S === void 0) {
+		let o = (o, b) => Kc(e, Ho(t), n, r, i, a, s, c, l, u, d, f, p, m, h, g, _, v, y, x, {
 			probeHeights: o,
-			preparedFloatWrap: s
+			preparedFloatWrap: b
 		});
-		if (!c || b === "intrinsic") return o(null);
-		let s = c.lineWindow ? void 0 : ho(c.floats);
-		return Go((e) => o(e, s), (e) => c.lineBoxH(e.ascent, e.descent, e.hasRuby, e.intendedSingle, e.eastAsian, e.gridCountSingle));
+		if (!s || v === "intrinsic") return o(null);
+		let b = s.lineWindow ? void 0 : ho(s.floats);
+		return Go((e) => o(e, b), (e) => s.lineBoxH(e.ascent, e.descent, e.hasRuby, e.intendedSingle, e.eastAsian, e.gridCountSingle));
 	}
-	let { probeHeights: T, preparedFloatWrap: E } = w, D = [], k = [], A = 0, j = f?.type === "snapToChars" && f.characterPitchPt != null && f.characterPitchPt > 0 ? f.characterPitchPt * i : null, M = null, N = 0, P = 0, F = 0, I = 0, te = /* @__PURE__ */ new Set(), re = 0, ie = 0, ae = 0, oe = 0, se = 0, ce = 0, le = 0, ue = 0, de = !1, fe = !0, pe = n, me = 0, he = c?.startPageY ?? 0, ge = () => Ra(i), _e = t.length > 0 && t.every((e) => "text" in e && e.metricOnly === !0 || "imagePath" in e && !!e.anchor), ye = (e = 0) => {
-		if (M = null, I = 0, te.clear(), me = 0, pe = n, !c) return;
-		let t = T?.[D.length];
+	let { probeHeights: C, preparedFloatWrap: T } = S, E = [], D = [], k = 0, A = d?.type === "snapToChars" && d.characterPitchPt != null && d.characterPitchPt > 0 ? d.characterPitchPt * i : null, j = null, M = 0, N = 0, P = 0, ne = 0, F = /* @__PURE__ */ new Set(), re = 0, ie = 0, I = 0, oe = 0, se = 0, ce = 0, ue = 0, de = 0, fe = !1, pe = !0, me = n, he = 0, _e = s?.startPageY ?? 0, ve = () => Ra(i), ye = t.length > 0 && t.every((e) => "text" in e && e.metricOnly === !0 || "imagePath" in e && !!e.anchor), be = (e = 0) => {
+		if (j = null, ne = 0, F.clear(), he = 0, me = n, !s) return;
+		let t = C?.[E.length];
 		if (t === void 0) return;
 		let r = {
-			xLeftPt: c.referenceXPt ?? c.paraX,
-			xRightPt: (c.referenceXPt ?? c.paraX) + (c.referenceWidthPt ?? n),
-			readingDirection: c.readingDirection ?? (h ? "rtl" : "ltr")
+			xLeftPt: s.referenceXPt ?? s.paraX,
+			xRightPt: (s.referenceXPt ?? s.paraX) + (s.referenceWidthPt ?? n),
+			readingDirection: s.readingDirection ?? (m ? "rtl" : "ltr")
 		};
-		if (c.lineWindow) {
-			let r = c.lineWindow({
-				topYPt: he,
+		if (s.lineWindow) {
+			let r = s.lineWindow({
+				topYPt: _e,
 				minimumStartWidthPt: 1,
 				squareMinimumStartWidthPt: e,
 				probeHeightPt: t,
-				paragraphXPt: c.paraX,
+				paragraphXPt: s.paraX,
 				maximumWidthPt: n,
-				columnXPt: c.columnXPt,
-				columnWidthPt: c.columnWidthPt
+				columnXPt: s.columnXPt,
+				columnWidthPt: s.columnWidthPt
 			});
-			he = r.topYPt, me = r.xOffsetPt, pe = r.maximumWidthPt;
+			_e = r.topYPt, he = r.xOffsetPt, me = r.maximumWidthPt;
 		} else {
-			let i = No(he, 1, t, c.paraX, n, E ?? ho(c.floats), c.columnXPt, c.columnXPt + c.columnWidthPt, r, e);
-			he = i.topY, me = i.xOffset, pe = i.maxWidth;
+			let i = No(_e, 1, t, s.paraX, n, T ?? ho(s.floats), s.columnXPt, s.columnXPt + s.columnWidthPt, r, e);
+			_e = i.topY, he = i.xOffset, me = i.maxWidth;
 		}
-	}, L = () => b === "intrinsic" ? Infinity : pe - (fe ? r : 0), be = h ? a.map((e) => ({
+	}, L = () => v === "intrinsic" ? Infinity : me - (pe ? r : 0), xe = m ? a.map((e) => ({
 		pos: e.pos * i,
 		alignment: e.alignment,
 		leader: e.leader
-	})) : [], Se = p * i, Ce = () => {
-		if (!h || !k.some((e) => "isTab" in e)) return;
-		let e = k.map((e) => ({
+	})) : [], Se = f * i, Ce = () => {
+		if (!m || !D.some((e) => "isTab" in e)) return;
+		let e = D.map((e) => ({
 			isTab: "isTab" in e,
 			width: e.measuredWidth
 		}));
-		for (let t = 0; t < k.length; t += 1) {
-			if (!("isTab" in k[t])) continue;
+		for (let t = 0; t < D.length; t += 1) {
+			if (!("isTab" in D[t])) continue;
 			let n = t + 1;
-			for (; n < k.length && !("isTab" in k[n]);) n += 1;
-			let r = et(k.slice(t + 1, n));
+			for (; n < D.length && !("isTab" in D[n]);) n += 1;
+			let r = et(D.slice(t + 1, n));
 			if (!r) continue;
-			let i = t + 1 + r.segmentIndex, a = k[i];
+			let i = t + 1 + r.segmentIndex, a = D[i];
 			"text" in a && (e[i].decimalOffset = Xe(a, a.text.slice(0, r.charOffset)));
 		}
-		let t = Uc(e, be, m - (me + pe) + (fe ? r : 0), m + u, Se), n = 0;
-		for (let e = 0; e < k.length; e++) {
-			let r = k[e];
+		let t = Uc(e, xe, p - (he + me) + (pe ? r : 0), p + l, Se), n = 0;
+		for (let e = 0; e < D.length; e++) {
+			let r = D[e];
 			"isTab" in r && (n += t[e].width - r.measuredWidth, r.measuredWidth = t[e].width, r.leader = t[e].leader);
 		}
-		A += n;
+		k += n;
 	}, we = !1, Te = !1, Ee = !1, De = (e, t = !1, n) => {
 		Ce();
 		let r, a = !1;
-		for (let e of k) {
+		for (let e of D) {
 			if ("isTab" in e) continue;
 			let t = "text" in e ? e.position ?? 0 : 0;
 			if ("text" in e && e.positionExtendsLineBox === !1) {
@@ -5615,11 +5616,11 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 			}
 		}
 		let o = a ? r ?? 0 : 0;
-		if (o !== 0) for (let e of k) "text" in e && (e.lineRelativePosition = ds(e.position ?? 0, o));
-		let s = e === void 0 ? re || 10 : Math.max(re, e), l = ie > 0 || ae > 0, u = l ? ie : s * i * .8, d = l ? ae : s * i * .2, f = de ? ce : u, p = de ? le : d, m = de ? ue : oe, h = se || (Te ? gc(oe, s * i) : u + d);
-		D.push({
-			segments: k,
-			height: s,
+		if (o !== 0) for (let e of D) "text" in e && (e.lineRelativePosition = ds(e.position ?? 0, o));
+		let c = e === void 0 ? re || 10 : Math.max(re, e), l = ie > 0 || I > 0, u = l ? ie : c * i * .8, d = l ? I : c * i * .2, f = fe ? ce : u, p = fe ? ue : d, m = fe ? de : oe, h = se || (Te ? gc(oe, c * i) : u + d);
+		E.push({
+			segments: D,
+			height: c,
 			ascent: u,
 			descent: d,
 			visibleAscent: f,
@@ -5627,43 +5628,43 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 			visibleIntendedSingle: m,
 			intendedSingle: oe,
 			gridCountSingle: h,
-			xOffset: me,
-			availWidth: pe,
-			topY: c ? he : void 0,
+			xOffset: he,
+			availWidth: me,
+			topY: s ? _e : void 0,
 			hasRuby: we,
 			eastAsian: Te,
 			endsWithBreak: t,
 			consumedEnd: n ?? z[0]?.src ?? Be
-		}), c && (he += c.lineBoxH(u, d, we, oe, Te, h)), k = [], A = 0, N = 0, P = 0, F = 0, I = 0, te.clear(), re = 0, ie = 0, ae = 0, oe = 0, se = 0, ce = 0, le = 0, ue = 0, de = !1, we = !1, Te = !1, Ee = !1, fe = !1, ye(ge());
+		}), s && (_e += s.lineBoxH(u, d, we, oe, Te, h)), D = [], k = 0, M = 0, N = 0, P = 0, ne = 0, F.clear(), re = 0, ie = 0, I = 0, oe = 0, se = 0, ce = 0, ue = 0, de = 0, fe = !1, we = !1, Te = !1, Ee = !1, pe = !1, be(ve());
 	}, Oe = (e, t = e.text) => Tn(e.fontFamily) * ki(e, i) * cc(e) * [...t].length, ke = (e) => {
 		let t = e.bold ? 700 : 400, n = e.italic ? "italic" : "normal";
-		return e.fontRoute ? `${e.fontRoute.fingerprint}|${t}|${n}` : `implicit|${Rs(e.bold, e.italic, 1, e.fontFamily, l)}`;
+		return e.fontRoute ? `${e.fontRoute.fingerprint}|${t}|${n}` : `implicit|${Rs(e.bold, e.italic, 1, e.fontFamily, c)}`;
 	}, Ae = (e, t, n = t.text) => {
 		/\S/.test(n) && e.add(ke(t));
 	}, je = (e) => {
-		let t = te.size;
-		for (let n of e) te.has(n) || (t += 1);
+		let t = F.size;
+		for (let n of e) F.has(n) || (t += 1);
 		return t;
 	}, Me = (e, t) => {
-		let n = fc(e, f);
-		return !n || j == null ? t : n === "eastAsia" ? pc(t, n, j, Ye(e)) : M?.kind === n ? pc(M.naturalWidthPx + t, n, j) - M.allocatedWidthPx : pc(t, n, j);
+		let n = fc(e, d);
+		return !n || A == null ? t : n === "eastAsia" ? pc(t, n, A, Ye(e)) : j?.kind === n ? pc(j.naturalWidthPx + t, n, A) - j.allocatedWidthPx : pc(t, n, A);
 	}, R = (e, t, n, r, a, o = 0) => {
 		let s = t;
 		if ("text" in e) {
-			let n = fc(e, f), r = e.snapGridNaturalWidthPx ?? t;
-			if (n && j != null) if (e.snapGridClass = n, e.snapGridNaturalWidthPx = r, e.snapGridCellPitchPx = j, n === "eastAsia") s = pc(r, n, j, Ye(e)), e.snapGridLeadingPadPx = 0, e.snapGridTrailingPadPx = s - r, e.measuredWidth = s, M = null;
-			else if (M?.kind === n) {
-				let t = M.first.snapGridLeadingPadPx ?? 0, i = M.last.snapGridTrailingPadPx ?? 0, a = M.naturalWidthPx + r, o = pc(a, n, j), c = o - a, l = n === "latin" ? c / 2 : 0, u = c - l;
-				M.first.measuredWidth -= t, M.first.snapGridLeadingPadPx = l, M.first.measuredWidth += l, M.last.measuredWidth -= i, e.snapGridLeadingPadPx = 0, e.snapGridTrailingPadPx = u, e.measuredWidth = r + u, s = o - M.allocatedWidthPx, M = {
+			let n = fc(e, d), r = e.snapGridNaturalWidthPx ?? t;
+			if (n && A != null) if (e.snapGridClass = n, e.snapGridNaturalWidthPx = r, e.snapGridCellPitchPx = A, n === "eastAsia") s = pc(r, n, A, Ye(e)), e.snapGridLeadingPadPx = 0, e.snapGridTrailingPadPx = s - r, e.measuredWidth = s, j = null;
+			else if (j?.kind === n) {
+				let t = j.first.snapGridLeadingPadPx ?? 0, i = j.last.snapGridTrailingPadPx ?? 0, a = j.naturalWidthPx + r, o = pc(a, n, A), c = o - a, l = n === "latin" ? c / 2 : 0, u = c - l;
+				j.first.measuredWidth -= t, j.first.snapGridLeadingPadPx = l, j.first.measuredWidth += l, j.last.measuredWidth -= i, e.snapGridLeadingPadPx = 0, e.snapGridTrailingPadPx = u, e.measuredWidth = r + u, s = o - j.allocatedWidthPx, j = {
 					kind: n,
-					first: M.first,
+					first: j.first,
 					last: e,
 					naturalWidthPx: a,
 					allocatedWidthPx: o
 				};
 			} else {
-				let t = pc(r, n, j), i = t - r, a = n === "latin" ? i / 2 : 0, o = i - a;
-				e.snapGridLeadingPadPx = a, e.snapGridTrailingPadPx = o, e.measuredWidth = t, s = t, M = {
+				let t = pc(r, n, A), i = t - r, a = n === "latin" ? i / 2 : 0, o = i - a;
+				e.snapGridLeadingPadPx = a, e.snapGridTrailingPadPx = o, e.measuredWidth = t, s = t, j = {
 					kind: n,
 					first: e,
 					last: e,
@@ -5671,29 +5672,29 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					allocatedWidthPx: t
 				};
 			}
-			else e.snapGridClass = void 0, e.snapGridLeadingPadPx = void 0, e.snapGridTrailingPadPx = void 0, e.snapGridCellPitchPx = void 0, e.measuredWidth = t, M = null;
-		} else M = null;
-		if (k.push(e), A += s, "text" in e) {
+			else e.snapGridClass = void 0, e.snapGridLeadingPadPx = void 0, e.snapGridTrailingPadPx = void 0, e.snapGridCellPitchPx = void 0, e.measuredWidth = t, j = null;
+		} else j = null;
+		if (D.push(e), k += s, "text" in e) {
 			let t = e.text.length - e.text.replace(/ +$/, "").length, n = t > 0 && t === e.text.length;
-			if (n && P > 0) N -= F, P += t, F = 0;
+			if (n && N > 0) M -= P, N += t, P = 0;
 			else {
-				P = 0, F = 0;
-				let e = k[k.length - 2], r = e !== void 0 && "text" in e && /\S$/u.test(e.text);
-				(n && r || t > 0 && !n) && (P = t, F = t === 1 ? o : 0, N += F);
+				N = 0, P = 0;
+				let e = D[D.length - 2], r = e !== void 0 && "text" in e && /\S$/u.test(e.text);
+				(n && r || t > 0 && !n) && (N = t, P = t === 1 ? o : 0, M += P);
 			}
-			I += Oe(e), Ae(te, e);
+			ne += Oe(e), Ae(F, e);
 		}
-		n > re && (re = n), r > ie && (ie = r), a > ae && (ae = a);
+		n > re && (re = n), r > ie && (ie = r), a > I && (I = a);
 		let c = !("text" in e) || e.metricOnly !== !0;
-		c && (de = !0, r > ce && (ce = r), a > le && (le = a));
+		c && (fe = !0, r > ce && (ce = r), a > ue && (ue = a));
 		let l = 0;
 		if (!("isTab" in e) && !("imagePath" in e) && !("math" in e)) {
 			let t = e;
-			t.ruby && (we = !0), t.seaBreaks !== void 0 && ve(t.text) && (Ee = !0);
+			t.ruby && (we = !0), t.seaBreaks !== void 0 && ee(t.text) && (Ee = !0);
 			let n = t.metricEastAsian === !0 || Ai.test(t.text);
 			!Te && n && (Te = !0);
 			let r = t.smallCaps && !t.vertAlign ? t.fontSize * i : Ne(t), a = n && !t.ruby, o = t.textBoxLineFloor && t.ruby ? 0 : Math.max(zs(t, r, a), t.textBoxLineFloor || t.metricEastAsian === !0 ? Bs(t, r, a) : 0);
-			o > oe && (oe = o), c && o > ue && (ue = o), a && (l = gc(o, r));
+			o > oe && (oe = o), c && o > de && (de = o), a && (l = gc(o, r));
 		} else "isTab" in e || (l = r + a);
 		l > se && (se = l);
 	}, Ne = (e) => ki(e, i), Pe = null, Fe = (t) => {
@@ -5729,16 +5730,16 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 				fontBoundingBoxDescent: e.descentPt
 			};
 		}
-		Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, l, t.fontRoute));
+		Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, c, t.fontRoute));
 		let r = Ie(t), i = e.measureText(t.text);
 		return Le(r), i;
 	}, ze = (e, t) => {
 		if (!e.verticalRun) return 0;
-		if (!x) throw Error("Vertical glyph measurement capability is required for vertical text");
-		Fe(Rs(e.bold, e.italic, Ne(e), e.fontFamily, l, e.fontRoute));
+		if (!y) throw Error("Vertical glyph measurement capability is required for vertical text");
+		Fe(Rs(e.bold, e.italic, Ne(e), e.fontFamily, c, e.fontRoute));
 		let n = Ie(e);
 		try {
-			return x.measureRunInkExtra(t);
+			return y.measureRunInkExtra(t);
 		} finally {
 			Le(n);
 		}
@@ -5749,34 +5750,34 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 		if (e.src = {
 			segIndex: t,
 			charOffset: 0
-		}, "text" in e && ne(e.text)) {
+		}, "text" in e && le(e.text)) {
 			let t = tc(e);
-			e.seaBreaks = S(e.text, {
+			e.seaBreaks = O(e.text, {
 				cjk: !0,
-				kinsoku: d
+				kinsoku: u
 			}).filter((e) => !t.has(e));
 		}
 		return e;
 	}), z;
-	if (!v) z = Ve;
-	else if (v.segIndex >= Ve.length) z = [];
+	if (!_) z = Ve;
+	else if (_.segIndex >= Ve.length) z = [];
 	else {
-		let e = Ve[v.segIndex];
-		if (v.charOffset > 0) if (!("text" in e) || v.charOffset > e.text.length) z = [];
+		let e = Ve[_.segIndex];
+		if (_.charOffset > 0) if (!("text" in e) || _.charOffset > e.text.length) z = [];
 		else {
-			let t = e.text.slice(v.charOffset);
+			let t = e.text.slice(_.charOffset);
 			z = t ? [{
 				...e,
 				text: t,
 				measuredWidth: 0,
-				src: { ...v },
+				src: { ..._ },
 				joinPrev: void 0,
 				hardJoinPrev: void 0,
-				...q(e, v.charOffset, e.text.length),
-				seaBreaks: jc(e.seaBreaks, v.charOffset)
-			}, ...Ve.slice(v.segIndex + 1)] : Ve.slice(v.segIndex + 1);
+				...q(e, _.charOffset, e.text.length),
+				seaBreaks: jc(e.seaBreaks, _.charOffset)
+			}, ...Ve.slice(_.segIndex + 1)] : Ve.slice(_.segIndex + 1);
 		}
-		else z = Ve.slice(v.segIndex);
+		else z = Ve.slice(_.segIndex);
 	}
 	let He = 0, Ue = -1, We = [];
 	for (let e = z.length - 1; e >= 0; --e) {
@@ -5805,9 +5806,9 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 		e && "text" in e && (e.paragraphFinalIdeographicSpaceTailStart = !0);
 	}
 	Wc(z.filter((e) => "text" in e), i, (e) => Re(e).width + ze(e, e.text));
-	let Ge = (e) => dc(e, Re(e).width + ze(e, e.text), f, i), Ke = (e, t) => {
-		let n = fc(e, f);
-		return !n || j == null || e.text.length === 0 ? t : pc(t, n, j, n === "eastAsia" ? Ye(e) : 1);
+	let Ge = (e) => dc(e, Re(e).width + ze(e, e.text), d, i), Ke = (e, t) => {
+		let n = fc(e, d);
+		return !n || A == null || e.text.length === 0 ? t : pc(t, n, A, n === "eastAsia" ? Ye(e) : 1);
 	}, qe = (e) => Ke(e, Ge(e)), Je = (t, n, r = !1) => {
 		let a = r ? t.text.length - n.length : 0, o = {
 			...t,
@@ -5820,16 +5821,16 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 			fontSizePt: Ne(t),
 			measure: !0,
 			clusterGeometry: !1
-		}).advancePt + ze(t, n), f, i);
-		Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, l, t.fontRoute));
-		let s = Ie(t), c = e.measureText(n).width;
-		return Le(s), dc(o, c + ze(t, n), f, i);
+		}).advancePt + ze(t, n), d, i);
+		Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, c, t.fontRoute));
+		let s = Ie(t), l = e.measureText(n).width;
+		return Le(s), dc(o, l + ze(t, n), d, i);
 	}, Ye = (t) => {
-		if (j == null) return 1;
+		if (A == null) return 1;
 		t.textLayoutService && t.textShapeRequest && !t.shapedClusters && Re(t, !0);
 		let n = t.shapedClusters?.length ? t.shapedClusters : null, r = n == null ? [...new Set([
 			0,
-			...O(t.text),
+			...te(t.text),
 			t.text.length
 		])].sort((e, t) => e - t) : null, a = n?.map((e) => ({
 			start: e.range.start,
@@ -5843,18 +5844,18 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 		for (let n of a) {
 			let { start: r, end: a } = n;
 			if (a <= r) continue;
-			let s = t.text.slice(r, a), c = {
+			let s = t.text.slice(r, a), l = {
 				...t,
 				text: s,
 				punctuationCompressions: $s(t, r, a)
 			}, u;
-			if (n.advancePx != null) u = dc(c, n.advancePx + ze(t, s), f, i);
+			if (n.advancePx != null) u = dc(l, n.advancePx + ze(t, s), d, i);
 			else {
-				Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, l, t.fontRoute));
+				Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, c, t.fontRoute));
 				let n = Ie(t), r = e.measureText(s).width;
-				Le(n), u = dc(c, r + ze(t, s), f, i);
+				Le(n), u = dc(l, r + ze(t, s), d, i);
 			}
-			o += Ko(u, j);
+			o += Ko(u, A);
 		}
 		return Math.max(1, o);
 	}, Xe = (e, t, n = !1) => Ke({
@@ -5862,7 +5863,7 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 		text: t,
 		shapedClusters: t === e.text ? e.shapedClusters : void 0
 	}, Je(e, t, n)), Ze = (t) => {
-		let n = Re(t, fc(t, f) === "eastAsia"), r = dc(t, n.width + ze(t, t.text), f, i);
+		let n = Re(t, fc(t, d) === "eastAsia"), r = dc(t, n.width + ze(t, t.text), d, i);
 		t.snapGridNaturalWidthPx = r;
 		let a = t.fontSize * i, o = n, s = Ne(t);
 		if (t.smallCaps && !t.vertAlign && s !== a) {
@@ -5883,20 +5884,20 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 				};
 			} else {
 				let n = e.font;
-				e.font = Rs(t.bold, t.italic, a, t.fontFamily, l, t.fontRoute), o = e.measureText(t.text || "X"), e.font = n;
+				e.font = Rs(t.bold, t.italic, a, t.fontFamily, c, t.fontRoute), o = e.measureText(t.text || "X"), e.font = n;
 			}
 			s = a;
 		}
-		let c = yc(o, t.fontFamily, a, s, (t.metricEastAsian === !0 || Ai.test(t.text)) && !t.ruby), u = c.ascent, d = c.descent;
+		let l = yc(o, t.fontFamily, a, s, (t.metricEastAsian === !0 || Ai.test(t.text)) && !t.ruby), u = l.ascent, f = l.descent;
 		if (t.positionExtendsLineBox !== !1) {
 			let e = (t.position ?? 0) * i;
-			e > 0 ? u += e : e < 0 && (d -= e);
+			e > 0 ? u += e : e < 0 && (f -= e);
 		}
-		return t.ruby && (!t.textBoxLineFloor || t.textBoxVertical) && (u += Ts(t.ruby.fontSizePt, t.ruby.hpsRaisePt, i, t, e, l)), {
+		return t.ruby && (!t.textBoxLineFloor || t.textBoxVertical) && (u += Ts(t.ruby.fontSizePt, t.ruby.hpsRaisePt, i, t, e, c)), {
 			width: r,
 			height: t.fontSize,
 			ascent: u,
-			descent: d
+			descent: f
 		};
 	}, Qe = (e) => {
 		if (/\s$/u.test(e.text) || e.ruby !== void 0 || e.tateChuYoko === !0 || e.fitTextRegionIndex !== void 0) return;
@@ -5974,18 +5975,18 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 			decimalPrefixWidth: n
 		};
 	}, nt = null;
-	ye(_e ? c?.paragraphMarkLineStartWidth ?? ge() : ge());
+	be(ye ? s?.paragraphMarkLineStartWidth ?? ve() : ve());
 	let rt = (t, n, r = !0) => {
 		let a = tc(t), o = [
 			0,
-			...O(t.text),
+			...te(t.text),
 			t.text.length
 		].filter((e, t, n) => n.indexOf(e) === t), s = 0;
-		if (n > 0) if (Js(t, i) >= 0 && fc(t, f) !== "latin") {
-			Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, l, t.fontRoute));
+		if (n > 0) if (Js(t, i) >= 0 && fc(t, d) !== "latin") {
+			Fe(Rs(t.bold, t.italic, Ne(t), t.fontFamily, c, t.fontRoute));
 			let r = Ie(t);
 			try {
-				let r = Pc(e, t.text, n, qs(t, f, i), cc(t), Js(t, i), t.verticalRun === !0, x, (e) => Xe(t, e)).length;
+				let r = Pc(e, t.text, n, qs(t, d, i), cc(t), Js(t, i), t.verticalRun === !0, y, (e) => Xe(t, e)).length;
 				s = o.filter((e) => e <= r && !a.has(e)).at(-1) ?? 0;
 			} finally {
 				Le(r);
@@ -6014,42 +6015,42 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 			}
 		});
 	}, ot = (e) => {
-		let t = e.text.codePointAt(0), n = k[k.length - 1];
-		if (t === void 0 || !d.lineStartForbidden.has(t) || n === void 0 || !("text" in n)) return { kind: "none" };
-		let r = n, i = [...r.text], a = s(i, d, k.length > 1 ? 0 : 1);
+		let t = e.text.codePointAt(0), n = D[D.length - 1];
+		if (t === void 0 || !u.lineStartForbidden.has(t) || n === void 0 || !("text" in n)) return { kind: "none" };
+		let r = n, i = [...r.text], a = ge(i, u, D.length > 1 ? 0 : 1);
 		if (a <= 0) return { kind: "none" };
-		let o = i.slice(0, i.length - a).join(""), c = o.length;
-		if (c === 0 && r.hardJoinPrev === !0 || tc(r).has(c)) return { kind: "blocked" };
-		let l = r.text.slice(c), u = {
+		let o = i.slice(0, i.length - a).join(""), s = o.length;
+		if (s === 0 && r.hardJoinPrev === !0 || tc(r).has(s)) return { kind: "blocked" };
+		let c = r.text.slice(s), l = {
 			...r,
 			...ws,
-			text: l,
-			...q(r, c, r.text.length),
-			measuredWidth: Xe(r, l, !0),
+			text: c,
+			...q(r, s, r.text.length),
+			measuredWidth: Xe(r, c, !0),
 			joinPrev: void 0,
 			hardJoinPrev: void 0,
 			src: {
 				segIndex: r.src.segIndex,
-				charOffset: r.src.charOffset + c
+				charOffset: r.src.charOffset + s
 			},
-			seaBreaks: jc(r.seaBreaks, c)
+			seaBreaks: jc(r.seaBreaks, s)
 		};
 		if (o) {
 			let e = Xe(r, o);
-			A -= r.measuredWidth - e, k[k.length - 1] = {
+			k -= r.measuredWidth - e, D[D.length - 1] = {
 				...r,
 				...ws,
 				text: o,
 				measuredWidth: e,
-				...q(r, 0, c)
+				...q(r, 0, s)
 			};
-		} else A -= r.measuredWidth, k.pop();
+		} else k -= r.measuredWidth, D.pop();
 		return {
 			kind: "retracted",
-			tail: u
+			tail: l
 		};
 	}, st = (e, t, n, r) => {
-		let i = O(e.text)[0] ?? e.text.length;
+		let i = te(e.text)[0] ?? e.text.length;
 		if (i <= 0) return !1;
 		let a = e.text.slice(0, i), o = Je(e, a);
 		return R({
@@ -6067,27 +6068,27 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 			continue;
 		}
 		if (nt = null, "isTab" in t) {
-			if (h && !t.ptab) {
+			if (m && !t.ptab) {
 				t.measuredWidth = 0, R(t, 0, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2);
 				continue;
 			}
-			let e = A + (fe ? r : 0);
+			let e = k + (pe ? r : 0);
 			if (t.ptab) {
 				t.resolvedAlignment = t.ptab.alignment;
-				let r = t.ptab.relativeTo === "indent" ? 0 : -u, a = t.ptab.relativeTo === "indent" ? n : m, o = t.ptab.alignment === "left" ? r : t.ptab.alignment === "center" ? (r + a) / 2 : a, s = 0;
+				let r = t.ptab.relativeTo === "indent" ? 0 : -l, a = t.ptab.relativeTo === "indent" ? n : p, o = t.ptab.alignment === "left" ? r : t.ptab.alignment === "center" ? (r + a) / 2 : a, s = 0;
 				for (let e of z) {
 					if ("isTab" in e || "lineBreak" in e) break;
 					s += $e(e);
 				}
-				let c = t.ptab.alignment === "center" ? .5 : +(t.ptab.alignment === "right"), l = o - e - s * c;
-				if (l <= 0) {
-					if (k.length > 0) {
+				let c = t.ptab.alignment === "center" ? .5 : +(t.ptab.alignment === "right"), u = o - e - s * c;
+				if (u <= 0) {
+					if (D.length > 0) {
 						De(void 0, !1, t.src), z.unshift(t);
 						continue;
 					}
-					l = 0;
+					u = 0;
 				}
-				if (t.measuredWidth = l, R(t, l, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2), t.ptab.alignment !== "left") for (; z.length > 0;) {
+				if (t.measuredWidth = u, R(t, u, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2), t.ptab.alignment !== "left") for (; z.length > 0;) {
 					let e = z[0];
 					if ("isTab" in e || "lineBreak" in e) break;
 					if (z.shift(), "imagePath" in e) {
@@ -6095,7 +6096,7 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 						e.measuredWidth = t, R(e, t, e.heightPt, e.heightPt * i, 0);
 					} else if ("math" in e) R(e, e.measuredWidth || 0, e.fontSize, e.mathAscent || 0, e.mathDescent || 0);
 					else {
-						let t = Re(e), n = dc(e, t.width + ze(e, e.text), f, i);
+						let t = Re(e), n = dc(e, t.width + ze(e, e.text), d, i);
 						e.measuredWidth = n;
 						let r = t.fontBoundingBoxAscent ?? t.actualBoundingBoxAscent ?? e.fontSize * i * .8, a = t.fontBoundingBoxDescent ?? t.actualBoundingBoxDescent ?? e.fontSize * i * .2;
 						R(e, n, e.fontSize, r, a);
@@ -6103,13 +6104,13 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 				}
 				continue;
 			}
-			let o = ji(e + u, a.map((e) => ({
+			let o = ji(e + l, a.map((e) => ({
 				pos: e.pos * i,
 				alignment: e.alignment,
 				leader: e.leader
-			})), p * i);
+			})), f * i);
 			t.resolvedAlignment = o?.alignment ?? "left";
-			let s = o ? o.pos - u : e, c = o ? Hc(o.alignment) : "leading";
+			let s = o ? o.pos - l : e, c = o ? Hc(o.alignment) : "leading";
 			if (o && c !== "leading") {
 				let n = s;
 				t.leader = o.leader;
@@ -6122,7 +6123,7 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 						e.measuredWidth = t, R(e, t, e.heightPt, e.heightPt * i, 0);
 					} else if ("math" in e) R(e, e.measuredWidth || 0, e.fontSize, e.mathAscent || 0, e.mathDescent || 0);
 					else {
-						let t = Re(e), n = dc(e, t.width + ze(e, e.text), f, i);
+						let t = Re(e), n = dc(e, t.width + ze(e, e.text), d, i);
 						e.measuredWidth = n;
 						let r = t.fontBoundingBoxAscent ?? t.actualBoundingBoxAscent ?? e.fontSize * i * .8, a = t.fontBoundingBoxDescent ?? t.actualBoundingBoxDescent ?? e.fontSize * i * .2;
 						R(e, n, e.fontSize, r, a);
@@ -6130,16 +6131,16 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 				}
 				continue;
 			}
-			let l = s - e;
-			if (o && (t.leader = o.leader), l <= 0) {
+			let u = s - e;
+			if (o && (t.leader = o.leader), u <= 0) {
 				De(void 0, !1, t.src), z.unshift(t);
 				continue;
 			}
-			if (A + l > L() && k.length > 0) {
+			if (k + u > L() && D.length > 0) {
 				De(void 0, !1, t.src), z.unshift(t);
 				continue;
 			}
-			t.measuredWidth = l, R(t, l, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2);
+			t.measuredWidth = u, R(t, u, t.fontSize, t.fontSize * i * .8, t.fontSize * i * .2);
 			continue;
 		}
 		if ("imagePath" in t) {
@@ -6148,61 +6149,61 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 				continue;
 			}
 			let e = t.widthPt * i, n = t.heightPt, r = t.heightPt * i;
-			t.measuredWidth = e, k.length > 0 && A + e > L() && De(void 0, !1, t.src), R(t, e, n, r, 0);
+			t.measuredWidth = e, D.length > 0 && k + e > L() && De(void 0, !1, t.src), R(t, e, n, r, 0);
 			continue;
 		}
 		if ("math" in t) {
 			let n = t.mathMetadata;
 			if (!n || n.available === !1) {
 				let n = t.fontSize * i;
-				Fe(Rs(!1, !1, n, null, l));
+				Fe(Rs(!1, !1, n, null, c));
 				let r = e.measureText(t.fallbackText), a = r.width, o = r.fontBoundingBoxAscent ?? r.actualBoundingBoxAscent ?? n * .8, s = r.fontBoundingBoxDescent ?? r.actualBoundingBoxDescent ?? n * .2;
-				t.measuredWidth = a, t.mathAscent = o, t.mathDescent = s, k.length > 0 && A + a > L() && De(void 0, !1, t.src), R(t, a, t.fontSize, Math.max(o, n * .8), Math.max(s, n * .2));
+				t.measuredWidth = a, t.mathAscent = o, t.mathDescent = s, D.length > 0 && k + a > L() && De(void 0, !1, t.src), R(t, a, t.fontSize, Math.max(o, n * .8), Math.max(s, n * .2));
 				continue;
 			}
 			let r = t.fontSize * i, a = n.widthEm * r, o = n.ascentEm * r, s = n.descentEm * r;
 			t.measuredWidth = a, t.mathAscent = o, t.mathDescent = s;
-			let c = Math.max(o, r * .8), u = Math.max(s, r * .2);
-			k.length > 0 && A + a > L() && De(void 0, !1, t.src), R(t, a, t.fontSize, c, u);
+			let l = Math.max(o, r * .8), u = Math.max(s, r * .2);
+			D.length > 0 && k + a > L() && De(void 0, !1, t.src), R(t, a, t.fontSize, l, u);
 			continue;
 		}
-		let s = t, c = Ze(s), v = c.width, b = Me(s, v), S = c.height, w = c.ascent, T = c.descent, E = s.paragraphFinalIdeographicSpaceTail === !0, D = s.paragraphFinalIdeographicSpaceCount ?? 0, j = s.paragraphFinalIdeographicSpaceLocalCount ?? 0, M = E ? s.text.slice(0, Math.max(0, s.text.length - j)) : s.text;
-		if (E && D > 1 && M.length > 0) {
+		let s = t, _ = Ze(s), v = _.width, S = Me(s, v), C = _.height, T = _.ascent, E = _.descent, O = s.paragraphFinalIdeographicSpaceTail === !0, A = s.paragraphFinalIdeographicSpaceCount ?? 0, j = s.paragraphFinalIdeographicSpaceLocalCount ?? 0, N = O ? s.text.slice(0, Math.max(0, s.text.length - j)) : s.text;
+		if (O && A > 1 && N.length > 0) {
 			let e = {
 				...s,
 				...ws,
-				text: M,
+				text: N,
 				paragraphFinalIdeographicSpaceTail: void 0,
 				paragraphFinalIdeographicSpaceLocalCount: void 0,
 				paragraphFinalIdeographicSpaceCount: void 0,
 				paragraphFinalIdeographicSpaceTailStart: void 0,
 				measuredWidth: 0,
-				...q(s, 0, M.length)
+				...q(s, 0, N.length)
 			}, t = {
 				...s,
 				...ws,
-				text: s.text.slice(M.length),
+				text: s.text.slice(N.length),
 				paragraphFinalIdeographicSpaceLocalCount: j,
 				joinPrev: void 0,
 				hardJoinPrev: void 0,
 				paragraphFinalIdeographicSpaceTailStart: !0,
 				measuredWidth: 0,
-				...q(s, M.length, s.text.length),
+				...q(s, N.length, s.text.length),
 				src: s.src ? {
 					segIndex: s.src.segIndex,
-					charOffset: s.src.charOffset + M.length
+					charOffset: s.src.charOffset + N.length
 				} : void 0
 			};
 			z.unshift(t), z.unshift(e);
 			continue;
 		}
-		if (E && /^\u3000+$/u.test(s.text) && s.paragraphFinalIdeographicSpaceTailStart === !0 && k.some((e) => "text" in e && /[^\u3000]/u.test(e.text))) {
+		if (O && /^\u3000+$/u.test(s.text) && s.paragraphFinalIdeographicSpaceTailStart === !0 && D.some((e) => "text" in e && /[^\u3000]/u.test(e.text))) {
 			let e = v;
 			for (let t of z) {
 				if (!("text" in t) || t.paragraphFinalIdeographicSpaceTail !== !0) break;
 				e += qe(t);
 			}
-			if (A + e > L()) {
+			if (k + e > L()) {
 				De(void 0, !1, s.src), z.unshift(s);
 				continue;
 			}
@@ -6214,116 +6215,116 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					if (!("text" in t) || t.fitTextRegionIndex !== s.fitTextRegionIndex) break;
 					e += qe(t);
 				}
-				k.length > 0 && A + e > L() && De(void 0, !1, s.src);
+				D.length > 0 && k + e > L() && De(void 0, !1, s.src);
 			}
-			s.measuredWidth = v, R(s, v, S, w, T);
+			s.measuredWidth = v, R(s, v, C, T, E);
 			continue;
 		}
-		let P = s.text.replace(/ +$/, ""), F = fc(s, f) ? 0 : s.text.endsWith(" ") ? v - Xe(s, P) : 0, te = (e) => {
+		let P = s.text.replace(/ +$/, ""), F = fc(s, d) ? 0 : s.text.endsWith(" ") ? v - Xe(s, P) : 0, re = (e) => {
 			let t = e === void 0 || "lineBreak" in e;
-			return g && (!t || _);
-		}, ne = (e, t, r) => ss({
+			return h && (!t || g);
+		}, ie = (e, t, r) => ss({
 			widthPx: e,
 			trailingSpacePx: t,
-			lineWillJustify: te(r),
-			wrapNarrowed: pe !== n || me !== 0
-		}), re = ne(b, F, z[0]), ie = s.seaBreaks !== void 0 && ve(s.text), ae = /* @__PURE__ */ new Set();
-		Ae(ae, s, P);
-		let oe = (e, t, n) => te(e) ? cs({
+			lineWillJustify: re(r),
+			wrapNarrowed: me !== n || he !== 0
+		}), I = ie(S, F, z[0]), oe = s.seaBreaks !== void 0 && ee(s.text), se = /* @__PURE__ */ new Set();
+		Ae(se, s, P);
+		let ce = (e, t, n) => re(e) ? cs({
 			biasBudgetPx: t,
 			resolvedMeasurementRouteCount: je(n)
-		}) : Ee || ie ? 0 : N * Bc;
-		if (!s.joinPrev && k.length > 0 && z[0]?.joinPrev && (z[0]?.hardJoinPrev === !0 || !Dc(s.text)) && (z[0]?.hardJoinPrev === !0 || !(s.seaBreaks && s.seaBreaks.length > 0))) {
-			let e = v, t = F, n = 0, r = I, i = new Set(ae), a = s, o = s.text, c = (e, t = e.text) => {
-				r += Oe(a, o), a = e, o = t;
+		}) : Ee || oe ? 0 : M * Bc;
+		if (!s.joinPrev && D.length > 0 && z[0]?.joinPrev && (z[0]?.hardJoinPrev === !0 || !Dc(s.text)) && (z[0]?.hardJoinPrev === !0 || !(s.seaBreaks && s.seaBreaks.length > 0))) {
+			let e = v, t = F, n = 0, r = ne, i = new Set(se), a = s, c = s.text, l = (e, t = e.text) => {
+				r += Oe(a, c), a = e, c = t;
 			};
 			for (; n < z.length && z[n].joinPrev; n++) {
 				let r = z[n], a = rc(r);
 				if (a !== void 0) {
 					let n = r.text.slice(0, a), o = Xe(r, n);
-					if (e += o, c(r, n), Ae(i, r, n), t = n.endsWith(" ") ? o - Xe(r, n.replace(/ +$/, "")) : 0, a < r.text.length) break;
+					if (e += o, l(r, n), Ae(i, r, n), t = n.endsWith(" ") ? o - Xe(r, n.replace(/ +$/, "")) : 0, a < r.text.length) break;
 					continue;
 				}
-				let o = r.externalLinkBreakOffsets?.[0];
-				if (o !== void 0) {
-					let n = r.text.slice(0, o), a = Xe(r, n);
-					e += a, c(r, n), Ae(i, r, n), t = 0;
+				let s = r.externalLinkBreakOffsets?.[0];
+				if (s !== void 0) {
+					let n = r.text.slice(0, s), a = Xe(r, n);
+					e += a, l(r, n), Ae(i, r, n), t = 0;
 					break;
 				}
 				if (Dc(r.text)) {
 					let n = [...r.text], a = 0;
-					for (; a < n.length && y.lineStartForbidden.has(n[a].codePointAt(0));) a++;
+					for (; a < n.length && o.lineStartForbidden.has(n[a].codePointAt(0));) a++;
 					if (a < n.length) {
 						let o = n.slice(0, a).join(""), s = Xe(r, o);
-						e += s, o.length > 0 && (c(r, o), Ae(i, r, o)), t = 0;
+						e += s, o.length > 0 && (l(r, o), Ae(i, r, o)), t = 0;
 						break;
 					}
 				}
-				let s = qe(r);
-				e += s, c(r), Ae(i, r);
-				let l = r.text.replace(/ +$/, ""), u = r.text.endsWith(" ") ? s - Xe(r, l) : 0;
-				t = l.length === 0 && t > 0 ? t + u : u;
+				let c = qe(r);
+				e += c, l(r), Ae(i, r);
+				let u = r.text.replace(/ +$/, ""), d = r.text.endsWith(" ") ? c - Xe(r, u) : 0;
+				t = u.length === 0 && t > 0 ? t + d : d;
 			}
-			r += Oe(a, o.replace(/ +$/, "")), A + ne(e, t, z[n]) > L() + oe(z[n], r, i) && De(void 0, !1, s.src);
+			r += Oe(a, c.replace(/ +$/, "")), k + ie(e, t, z[n]) > L() + ce(z[n], r, i) && De(void 0, !1, s.src);
 		}
-		if (ie && k.length > 0 && (() => {
-			let e = k[k.length - 1];
+		if (oe && D.length > 0 && (() => {
+			let e = D[D.length - 1];
 			return !("text" in e) || e.text.endsWith(" ");
 		})()) {
-			let e = v, t = F, n = 0, r = I + Oe(s, P), i = new Set(ae);
+			let e = v, t = F, n = 0, r = ne + Oe(s, P), i = new Set(se);
 			if (!s.text.endsWith(" ")) for (; n < z.length; n++) {
 				let a = z[n];
-				if (!("text" in a) || a.seaBreaks === void 0 || !ve(a.text)) break;
+				if (!("text" in a) || a.seaBreaks === void 0 || !ee(a.text)) break;
 				let o = a, s = qe(o), c = o.text.replace(/ +$/, "");
 				if (e += s, t = o.text.endsWith(" ") ? s - Xe(o, c) : 0, r += Oe(o, c), Ae(i, o, c), o.text.endsWith(" ")) {
 					n++;
 					break;
 				}
 			}
-			let a = ne(e, t, z[n]);
-			A + a > L() + oe(z[n], r, i) && a <= pe && De(void 0, !1, s.src);
+			let a = ie(e, t, z[n]);
+			k + a > L() + ce(z[n], r, i) && a <= me && De(void 0, !1, s.src);
 		}
-		let se = oe(z[0], I + Oe(s, P), ae), ce = [...P], le = ce.at(-1), ue = ce.slice(0, -1).join(""), de = C && le !== void 0 && (k.length > 0 || ue.length > 0) && os(le, s.eastAsiaLanguage) && A + Xe(s, ue) <= L() + se;
-		if (A + re <= L() + se) s.measuredWidth = v, R(s, v, S, w, T, F), Qe(s);
-		else if (de) s.measuredWidth = v, R(s, v, S, w, T, F), Qe(s);
+		let le = ce(z[0], ne + Oe(s, P), se), ue = [...P], de = ue.at(-1), fe = ue.slice(0, -1).join(""), ge = x && de !== void 0 && (D.length > 0 || fe.length > 0) && os(de, s.eastAsiaLanguage) && k + Xe(s, fe) <= L() + le;
+		if (k + I <= L() + le) s.measuredWidth = v, R(s, v, C, T, E, F), Qe(s);
+		else if (ge) s.measuredWidth = v, R(s, v, C, T, E, F), Qe(s);
 		else if (Dc(s.text) && s.seaBreaks === void 0 && s.hardJoinPrev !== !0) {
-			let t = L() - A, n = "", r = E ? $o(Nc(s.text), s.paragraphFinalIdeographicSpaceCount ?? 0) : Infinity;
-			if (t > 0) if (Js(s, i) < 0 || fc(s, f) === "latin") n = s.text.slice(0, rt(s, t, !1));
+			let t = L() - k, n = "", r = O ? $o(Nc(s.text), s.paragraphFinalIdeographicSpaceCount ?? 0) : Infinity;
+			if (t > 0) if (Js(s, i) < 0 || fc(s, d) === "latin") n = s.text.slice(0, rt(s, t, !1));
 			else {
-				Fe(Rs(s.bold, s.italic, Ne(s), s.fontFamily, l, s.fontRoute));
+				Fe(Rs(s.bold, s.italic, Ne(s), s.fontFamily, c, s.fontRoute));
 				let a = Ie(s);
 				try {
-					n = Pc(e, s.text, t, qs(s, f, i), cc(s), Js(s, i), s.verticalRun === !0, x, (e) => Xe(s, e), r);
+					n = Pc(e, s.text, t, qs(s, d, i), cc(s), Js(s, i), s.verticalRun === !0, y, (e) => Xe(s, e), r);
 				} finally {
 					Le(a);
 				}
 			}
-			let a = [...s.text], c = [...n].length, u = k.length > 0 ? 0 : 1, p = Mc(a, (C && c < a.length && (k.length > 0 || c > 0) && os(a[c], s.eastAsiaLanguage) ? c + 1 : null) ?? o(a, c, d, u), E && r === 0 ? 0 : r), m = a.slice(0, p).join("").length, h = nc(s, m, +(u > 0)), g = s.text.slice(0, h);
-			if (g.length > 0) {
-				let e = Je(s, g);
+			let a = [...s.text], o = [...n].length, l = D.length > 0 ? 0 : 1, f = Mc(a, (x && o < a.length && (D.length > 0 || o > 0) && os(a[o], s.eastAsiaLanguage) ? o + 1 : null) ?? b(a, o, u, l), O && r === 0 ? 0 : r), p = a.slice(0, f).join("").length, m = nc(s, p, +(l > 0)), h = s.text.slice(0, m);
+			if (h.length > 0) {
+				let e = Je(s, h);
 				R({
 					...s,
 					...ws,
-					text: g,
+					text: h,
 					measuredWidth: e,
-					...q(s, 0, g.length)
-				}, e, S, w, T);
-				let t = s.text.slice(g.length);
+					...q(s, 0, h.length)
+				}, e, C, T, E);
+				let t = s.text.slice(h.length);
 				t ? z.unshift({
 					...s,
 					...ws,
 					text: t,
-					...q(s, g.length, s.text.length),
+					...q(s, h.length, s.text.length),
 					measuredWidth: 0,
 					src: {
 						segIndex: s.src.segIndex,
-						charOffset: s.src.charOffset + g.length
+						charOffset: s.src.charOffset + h.length
 					}
 				}) : Qe(s);
-			} else if (k.length > 0) {
+			} else if (D.length > 0) {
 				let e = ot(s);
 				if (e.kind === "blocked") {
-					st(s, S, w, T);
+					st(s, C, T, E);
 					continue;
 				}
 				De(void 0, !1, e.kind === "retracted" ? e.tail.src : s.src), z.unshift(s), e.kind === "retracted" && z.unshift(e.tail);
@@ -6337,7 +6338,7 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 						text: i,
 						measuredWidth: e,
 						...q(s, 0, i.length)
-					}, e, S, w, T);
+					}, e, C, T, E);
 					let t = s.text.slice(i.length);
 					t ? z.unshift({
 						...s,
@@ -6353,7 +6354,7 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 				}
 			}
 		} else if (s.seaBreaks !== void 0 && s.hardJoinPrev !== !0) {
-			let e = L() - A, t = (e) => Xe(s, e), n = xe(s.text) && Js(s, i) >= 0 && fc(s, f) !== "latin", r = ee(s.text, s.seaBreaks, 0, e, t, n);
+			let e = L() - k, t = (e) => Xe(s, e), n = w(s.text) && Js(s, i) >= 0 && fc(s, d) !== "latin", r = ae(s.text, s.seaBreaks, 0, e, t, n);
 			if (r > 0) {
 				let e = s.text.slice(0, r), t = Je(s, e);
 				R({
@@ -6362,7 +6363,7 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					text: e,
 					measuredWidth: t,
 					...q(s, 0, e.length)
-				}, t, S, w, T);
+				}, t, C, T, E);
 				let n = s.text.slice(r);
 				n && z.unshift({
 					...s,
@@ -6376,15 +6377,15 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					},
 					seaBreaks: jc(s.seaBreaks, r)
 				});
-			} else if (k.length > 0) {
+			} else if (D.length > 0) {
 				let e = ot(s);
 				if (e.kind === "blocked") {
-					st(s, S, w, T);
+					st(s, C, T, E);
 					continue;
 				}
 				De(void 0, !1, e.kind === "retracted" ? e.tail.src : s.src), z.unshift(s), e.kind === "retracted" && z.unshift(e.tail);
 			} else {
-				let r = s.seaBreaks[0] ?? s.text.length, i = s.text.slice(0, r), a = O(i), o = ee(i, a, 0, e, t, n);
+				let r = s.seaBreaks[0] ?? s.text.length, i = s.text.slice(0, r), a = te(i), o = ae(i, a, 0, e, t, n);
 				o <= 0 && (o = a.length > 0 ? a[0] : i.length), o = nc(s, o) || rt(s, e, !0);
 				let c = s.text.slice(0, o), l = Je(s, c);
 				R({
@@ -6393,7 +6394,7 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					text: c,
 					measuredWidth: l,
 					...q(s, 0, c.length)
-				}, l, S, w, T);
+				}, l, C, T, E);
 				let u = s.text.slice(o);
 				u && z.unshift({
 					...s,
@@ -6408,9 +6409,9 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					seaBreaks: jc(s.seaBreaks, o)
 				});
 			}
-		} else if (k.length === 0) {
+		} else if (D.length === 0) {
 			let e = it(s, L()) || rt(s, L());
-			if (e >= s.text.length) s.measuredWidth = v, R(s, v, S, w, T);
+			if (e >= s.text.length) s.measuredWidth = v, R(s, v, C, T, E);
 			else {
 				let t = s.text.slice(0, e), n = Je(s, t);
 				R({
@@ -6419,10 +6420,10 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					text: t,
 					measuredWidth: n,
 					...q(s, 0, t.length)
-				}, n, S, w, T), at(s, e);
+				}, n, C, T, E), at(s, e);
 			}
 		} else {
-			let e = it(s, L() + se - A);
+			let e = it(s, L() + le - k);
 			if (e > 0 && e < s.text.length) {
 				let t = s.text.slice(0, e), n = Je(s, t);
 				R({
@@ -6431,11 +6432,11 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 					text: t,
 					measuredWidth: n,
 					...q(s, 0, t.length)
-				}, n, S, w, T), at(s, e);
+				}, n, C, T, E), at(s, e);
 				continue;
 			}
 			if (s.joinPrev) {
-				let e = L() - A, t = rt(s, e, !0);
+				let e = L() - k, t = rt(s, e, !0);
 				if ((e > 0 || s.hardJoinPrev === !0) && t > 0 && t < s.text.length) {
 					let e = s.text.slice(0, t), n = Je(s, e);
 					R({
@@ -6444,17 +6445,17 @@ function Kc(e, t, n, r, i, a = [], c, l = {}, u = 0, d = y, f = void 0, p = 36, 
 						text: e,
 						measuredWidth: n,
 						...q(s, 0, e.length)
-					}, n, S, w, T), at(s, t);
+					}, n, C, T, E), at(s, t);
 					continue;
 				}
-				s.measuredWidth = v, R(s, v, S, w, T, F);
+				s.measuredWidth = v, R(s, v, C, T, E, F);
 				continue;
 			}
 			De(void 0, !1, s.src), z.unshift(s);
 		}
 	}
-	if (k.length > 0 ? De() : nt !== null && De(nt), b === "bounded") for (let e of D) for (let t of e.segments) !("text" in t) || t.metricOnly || t.text.length === 0 || (t.shapedClusters = void 0, t.textLayoutService && t.textShapeRequest && Re(t, !0));
-	return D;
+	if (D.length > 0 ? De() : nt !== null && De(nt), v === "bounded") for (let e of E) for (let t of e.segments) !("text" in t) || t.metricOnly || t.text.length === 0 || (t.shapedClusters = void 0, t.textLayoutService && t.textShapeRequest && Re(t, !0));
+	return E;
 }
 //#endregion
 //#region packages/docx/src/bidi-line.ts
@@ -6466,7 +6467,7 @@ function Zc(e) {
 	for (let t of e) {
 		if (Jc(t)) return !0;
 		let e = qc(t);
-		if (e !== void 0 && ae(e)) return !0;
+		if (e !== void 0 && re(e)) return !0;
 	}
 	return !1;
 }
@@ -6492,7 +6493,7 @@ function Qc(e, n) {
 		}
 	}
 	if (s) for (; s.length < i.length;) s.push(null);
-	let { levels: l, paragraphLevel: u } = h().computeLevels(i, n ? "rtl" : "ltr", s), d = Array(r), f = Array(r);
+	let { levels: l, paragraphLevel: u } = t().computeLevels(i, n ? "rtl" : "ltr", s), d = Array(r), f = Array(r);
 	for (let e = 0; e < r; e++) {
 		let t = o[e];
 		for (; t > a[e] && i[t - 1] === " ";) t--;
@@ -6513,9 +6514,9 @@ function Qc(e, n) {
 			}
 		}
 	}
-	let { order: p } = t(l, u, f);
+	let { order: m } = p(l, u, f);
 	return {
-		order: p,
+		order: m,
 		rtl: d
 	};
 }
@@ -6715,7 +6716,7 @@ function dl(e, t, n) {
 	return t.find((t) => ls(e, t)) ?? ji(e, [...t], n);
 }
 function fl(e, t, n, r, i = !0) {
-	let a = e.picBulletImagePath ? "" : Ne(e.text, e.fontFamily ?? null), o = a ? ul(t, a, 1, r, i)?.shape ?? null : null, s = e.picBulletImagePath ? e.picBulletWidthPt ?? t.fontSizePt : o?.advancePt ?? 0, c = e.jc === "right" ? -s : e.jc === "center" ? -s / 2 : 0, l = n.authoredFirstIndentPt + c + s, u = e.suff || "tab", d = l;
+	let a = e.picBulletImagePath ? "" : Me(e.text, e.fontFamily ?? null), o = a ? ul(t, a, 1, r, i)?.shape ?? null : null, s = e.picBulletImagePath ? e.picBulletWidthPt ?? t.fontSizePt : o?.advancePt ?? 0, c = e.jc === "right" ? -s : e.jc === "center" ? -s / 2 : 0, l = n.authoredFirstIndentPt + c + s, u = e.suff || "tab", d = l;
 	if (u === "space") d += ul(t, " ", 1, r, i)?.shape.advancePt ?? 0;
 	else if (u === "tab" && (d = 0, l > 0)) {
 		let e = dl(n.physicalIndentLeftPt + l, n.tabStops, n.defaultTabPt);
@@ -7107,7 +7108,7 @@ function jl(e, t, n, r, i, a) {
 				clusterGeometry: !0
 			}).clusters : void 0, t = e?.length ? null : [...new Set([
 				0,
-				...O(f),
+				...te(f),
 				f.length
 			])].sort((e, t) => e - t), n = e?.map((e) => ({
 				start: e.range.start,
@@ -7175,7 +7176,7 @@ function Ml(e, t, n) {
 			}
 			let d = [
 				0,
-				...O(a),
+				...te(a),
 				a.length
 			], f = [];
 			for (let e = 1; e < d.length; e += 1) f.push({
@@ -7380,7 +7381,7 @@ function $l(e) {
 }
 function eu(e, t = { normalStyleFontSizePt: 10 }) {
 	return ql(e.body), {
-		kinsoku: oe(e.settings),
+		kinsoku: a(e.settings),
 		defaultTabPt: Vc(e.settings),
 		characterSpacingControl: e.settings?.characterSpacingControl,
 		mathDefJc: e.settings?.mathDefJc,
@@ -8904,7 +8905,7 @@ async function Tf(e, t, n, r, i) {
 	let a = async (n) => {
 		if (t) throw n instanceof Error ? n : /* @__PURE__ */ Error("2D canvas is unavailable for image color effects");
 		if (r) return null;
-		let a = Ze(e.width, e.height, i?.targetWidthPx, i?.targetHeightPx);
+		let a = Ye(e.width, e.height, i?.targetWidthPx, i?.targetHeightPx);
 		if (!a) return e;
 		if (typeof createImageBitmap > "u") throw Error("createImageBitmap is unavailable for duotone fallback resampling");
 		return createImageBitmap(e, a);
@@ -8925,27 +8926,27 @@ async function Tf(e, t, n, r, i) {
 		return a(e);
 	}
 	if (t && wf(c, t), n) try {
-		me(c, n.clr1, n.clr2);
+		D(c, n.clr1, n.clr2);
 	} catch {
 		if (r) return null;
 	}
 	s.putImageData(c, 0, 0);
-	let l = Ze(e.width, e.height, i?.targetWidthPx, i?.targetHeightPx);
+	let l = Ye(e.width, e.height, i?.targetWidthPx, i?.targetHeightPx);
 	return l ? createImageBitmap(o, l) : createImageBitmap(o);
 }
 async function Ef(e, t, n, r, i = 0, a = 0, o, s = !1, c, l, u) {
-	let d = Math.floor(qe / (n || o ? 4 : 1)), f = Number.isSafeInteger(u) && (u ?? 0) > 0 ? Math.min(d, u) : d, p = n || o ? I(r, Cf) : void 0, m = {
+	let d = Math.floor(Ge / (n || o ? 4 : 1)), f = Number.isSafeInteger(u) && (u ?? 0) > 0 ? Math.min(d, u) : d, p = n || o ? me(r, Cf) : void 0, m = {
 		widthPt: i,
 		heightPt: a,
 		suppressBoundaryFrame: !0,
 		tiff: c,
 		maxRetainedPixels: f,
 		...l ?? {}
-	}, h = await le(e, t, r, { ...m });
+	}, h = await N(e, t, r, { ...m });
 	if (!h) return null;
 	if (!n && !o) return h;
-	let g = await Se(e, t, r, m, p, h), _ = Ze(h.width, h.height, l?.targetWidthPx, l?.targetHeightPx), v = _ ? `|resize:${_.resizeWidth}x${_.resizeHeight}` : "";
-	return re(Cf, `${xf(g, n, o)}${v}${s ? "|strict" : ""}`, r, async () => {
+	let g = await T(e, t, r, m, p, h), _ = Ye(h.width, h.height, l?.targetWidthPx, l?.targetHeightPx), v = _ ? `|resize:${_.resizeWidth}x${_.resizeHeight}` : "";
+	return ue(Cf, `${xf(g, n, o)}${v}${s ? "|strict" : ""}`, r, async () => {
 		let e = await Tf(h, n, o, s, l);
 		return {
 			bitmap: e,
@@ -8967,7 +8968,7 @@ function Df(e, t, n) {
 	for (let e of a) {
 		let t = i.get(`${e.kind}:${e.resourceKey}`);
 		if (!t) continue;
-		let a = He(e.mimeType, e.srcRect, t.widthPt, t.heightPt);
+		let a = Ve(e.mimeType, e.srcRect, t.widthPt, t.heightPt);
 		if (!a) continue;
 		let o = {
 			imagePath: e.partPath,
@@ -8978,7 +8979,7 @@ function Df(e, t, n) {
 			widthPt: a.widthPt,
 			heightPt: a.heightPt,
 			hasCrop: e.srcRect != null
-		}, s = n === void 0 ? null : Ue(t.widthPt * n, t.heightPt * n, e.srcRect);
+		}, s = n === void 0 ? null : z(t.widthPt * n, t.heightPt * n, e.srcRect);
 		s && (o.targetWidthPx = s.width, o.targetHeightPx = s.height);
 		let c = Sf(o), l = r.get(c);
 		l ? (l.widthPt = Math.max(l.widthPt, o.widthPt), l.heightPt = Math.max(l.heightPt, o.heightPt), l.hasCrop ||= o.hasCrop, l.targetWidthPx = Math.max(l.targetWidthPx ?? 0, o.targetWidthPx ?? 0) || void 0, l.targetHeightPx = Math.max(l.targetHeightPx ?? 0, o.targetHeightPx ?? 0) || void 0) : r.set(c, o);
@@ -8996,16 +8997,16 @@ function Df(e, t, n) {
 			heightPt: e.heightPt,
 			targetWidthPx: n === void 0 ? void 0 : e.widthPt * n,
 			targetHeightPx: n === void 0 ? void 0 : e.heightPt * n
-		}, a = Le(t.model).map((e) => ({
+		}, a = Fe(t.model).map((e) => ({
 			usage: e,
-			size: Re(e, i)
+			size: Ie(e, i)
 		}));
 		if (!a.some(({ size: e }) => e === null)) for (let { usage: e, size: t } of a) {
 			if (!t) continue;
-			let n = e.fill, i = He(n.mimeType, n.srcRect, t.widthPt, t.heightPt);
+			let n = e.fill, i = Ve(n.mimeType, n.srcRect, t.widthPt, t.heightPt);
 			if (!i) continue;
 			let a = {
-				cacheKey: Ge(n),
+				cacheKey: Ue(n),
 				imagePath: n.imagePath,
 				mimeType: n.mimeType,
 				...n.svgImagePath === void 0 ? {} : { svgImagePath: n.svgImagePath },
@@ -9026,72 +9027,72 @@ function Df(e, t, n) {
 	}
 	return [...r.values()];
 }
-async function Of(e, t, n, r, i, o, s) {
+async function Of(e, t, n, r, a, o, s) {
 	if (!n) return /* @__PURE__ */ new Map();
-	let l = be(s), u = (e, t) => o ? N(e, n, {
+	let c = be(s), l = (e, t) => o ? I(e, n, {
 		targetWidthPx: t.targetWidthPx,
 		targetHeightPx: t.targetHeightPx,
 		maxRetainedPixels: t.targetWidthPx && t.targetHeightPx ? t.targetWidthPx * t.targetHeightPx : void 0,
 		workerDecoder: o
-	}) : N(e, n), d = Df(e, t, i), f = C((await Promise.all(d.map(async (e) => {
+	}) : I(e, n), u = Df(e, t, a), d = k((await Promise.all(u.map(async (e) => {
 		if (!e.targetWidthPx || !e.targetHeightPx || e.colorReplaceFrom || e.duotone) return null;
-		let t = e.mimeType === "image/svg+xml", i = {
+		let t = e.mimeType === "image/svg+xml", a = {
 			svgImagePath: e.svgImagePath,
 			srcRect: e.hasCrop || null
 		};
-		if (t || k(i)) return null;
-		if (w(e.mimeType) && (l.resolution === "display" || l.strategy === "adaptive")) return {
+		if (t || de(a)) return null;
+		if (i(e.mimeType) && (c.resolution === "display" || c.strategy === "adaptive")) return {
 			key: Sf(e),
 			targetWidthPx: e.targetWidthPx,
 			targetHeightPx: e.targetHeightPx,
 			retainedSurfaceCount: 1
 		};
-		let a = await te(e.imagePath, e.mimeType, n).catch(() => null);
-		return !a?.dimensions || !c(a.format, r !== void 0) ? null : {
+		let o = await oe(e.imagePath, e.mimeType, n).catch(() => null);
+		return !o?.dimensions || !_e(o.format, r !== void 0) ? null : {
 			key: Sf(e),
 			targetWidthPx: e.targetWidthPx,
 			targetHeightPx: e.targetHeightPx,
-			sourceWidthPx: a.dimensions.width,
-			sourceHeightPx: a.dimensions.height,
+			sourceWidthPx: o.dimensions.width,
+			sourceHeightPx: o.dimensions.height,
 			retainedSurfaceCount: 1
 		};
-	}))).filter((e) => e !== null), l);
-	for (let e of d) {
-		if (e.mimeType === "image/svg+xml" || !e.colorReplaceFrom && !e.duotone && k({
+	}))).filter((e) => e !== null), c);
+	for (let e of u) {
+		if (e.mimeType === "image/svg+xml" || !e.colorReplaceFrom && !e.duotone && de({
 			svgImagePath: e.svgImagePath,
 			srcRect: e.hasCrop || null
 		})) continue;
-		let t = f.targets.get(Sf(e));
+		let t = d.targets.get(Sf(e));
 		e.targetWidthPx = t?.width, e.targetHeightPx = t?.height, e.plannedPixelLimit = t?.maxRetainedPixels;
 	}
-	let p = await Promise.all(d.map(async (e) => {
+	let f = await Promise.all(u.map(async (e) => {
 		try {
 			let t = e.mimeType === "image/svg+xml", i = {
 				svgImagePath: e.svgImagePath,
 				srcRect: e.hasCrop || null
 			}, a;
-			if (k(i)) try {
-				a = await u(i.svgImagePath, e);
+			if (de(i)) try {
+				a = await l(i.svgImagePath, e);
 			} catch (i) {
-				let o = t ? await u(e.imagePath, e) : await Ef(e.imagePath, e.mimeType, e.colorReplaceFrom, n, e.widthPt, e.heightPt, e.duotone, e.failClosedOnDuotoneFailure ?? !1, r, e.targetWidthPx && e.targetHeightPx ? {
+				let o = t ? await l(e.imagePath, e) : await Ef(e.imagePath, e.mimeType, e.colorReplaceFrom, n, e.widthPt, e.heightPt, e.duotone, e.failClosedOnDuotoneFailure ?? !1, r, e.targetWidthPx && e.targetHeightPx ? {
 					targetWidthPx: e.targetWidthPx,
 					targetHeightPx: e.targetHeightPx
 				} : void 0, e.plannedPixelLimit);
 				if (!o) throw i;
 				a = o;
 			}
-			else a = t ? await u(e.imagePath, e) : await Ef(e.imagePath, e.mimeType, e.colorReplaceFrom, n, e.widthPt, e.heightPt, e.duotone, e.failClosedOnDuotoneFailure ?? !1, r, e.targetWidthPx && e.targetHeightPx ? {
+			else a = t ? await l(e.imagePath, e) : await Ef(e.imagePath, e.mimeType, e.colorReplaceFrom, n, e.widthPt, e.heightPt, e.duotone, e.failClosedOnDuotoneFailure ?? !1, r, e.targetWidthPx && e.targetHeightPx ? {
 				targetWidthPx: e.targetWidthPx,
 				targetHeightPx: e.targetHeightPx
 			} : void 0, e.plannedPixelLimit);
 			return a == null ? null : [Sf(e), a];
 		} catch (t) {
-			if (a(t, "tiff")) return [Sf(e), t];
+			if (ye(t, "tiff")) return [Sf(e), t];
 			throw t;
 		}
-	})), m = /* @__PURE__ */ new Map();
-	for (let e of p) e && m.set(e[0], e[1]);
-	return m;
+	})), p = /* @__PURE__ */ new Map();
+	for (let e of f) e && p.set(e[0], e[1]);
+	return p;
 }
 //#endregion
 //#region packages/docx/src/paint/column-separator-raster.ts
@@ -9197,7 +9198,7 @@ function Nf(e, t) {
 			continue;
 		}
 		if (n.kind === "watermark-text") {
-			let e = We(n.fill, t.ctx, n.rect.xPt, n.rect.yPt, n.rect.widthPt, n.rect.heightPt);
+			let e = He(n.fill, t.ctx, n.rect.xPt, n.rect.yPt, n.rect.widthPt, n.rect.heightPt);
 			if (e === null) continue;
 			t.ctx.save();
 			let r = n.rect.xPt + n.rect.widthPt / 2, i = n.rect.yPt + n.rect.heightPt / 2;
@@ -9288,16 +9289,16 @@ function If(e, t, n) {
 function Lf(e) {
 	return 1 / e.dpr;
 }
-function Rf(t, n, r = 0) {
-	let i = r / n.scale, a = i > t.widthPt ? {
-		...t,
-		widthPt: i,
-		...typeof t.authoredStyle == "string" ? { dashPatternPt: Object.freeze(Ke(t.authoredStyle, i)) } : {}
-	} : t, { ctx: o } = n;
-	o.strokeStyle = a.color, o.lineWidth = a.widthPt, o.setLineDash("dashPatternPt" in a && a.dashPatternPt ? [...a.dashPatternPt] : []), o.beginPath();
-	let s = "path" in a && a.path?.length ? a.path : [a.from, a.to], c = s.length === 2 && (s[0].xPt === s[1].xPt || s[0].yPt === s[1].yPt), l = c && s[0].yPt === s[1].yPt, u = c && s[0].xPt === s[1].xPt, d = n.pointToCss ?? Vd(n.scale), f = s.map((e) => Wd(d, e)), p = c ? s[1].xPt - s[0].xPt : 0, m = c ? s[1].yPt - s[0].yPt : 0, h = d.a * p + d.c * m, g = d.b * p + d.d * m, _ = c && g === 0, v = c && h === 0, y = l ? Math.hypot(d.c, d.d) : u ? Math.hypot(d.a, d.b) : 0, b = a.style === "compound" && c && y > 0 ? Pf(a.authoredStyle, a.widthPt * y, n.dpr) : null;
-	if (b) {
-		o.fillStyle = a.color;
+function Rf(e, t, n = 0) {
+	let r = n / t.scale, i = r > e.widthPt ? {
+		...e,
+		widthPt: r,
+		...typeof e.authoredStyle == "string" ? { dashPatternPt: Object.freeze(We(e.authoredStyle, r)) } : {}
+	} : e, { ctx: a } = t;
+	a.strokeStyle = i.color, a.lineWidth = i.widthPt, a.setLineDash("dashPatternPt" in i && i.dashPatternPt ? [...i.dashPatternPt] : []), a.beginPath();
+	let o = "path" in i && i.path?.length ? i.path : [i.from, i.to], s = o.length === 2 && (o[0].xPt === o[1].xPt || o[0].yPt === o[1].yPt), c = s && o[0].yPt === o[1].yPt, l = s && o[0].xPt === o[1].xPt, u = t.pointToCss ?? Vd(t.scale), d = o.map((e) => Wd(u, e)), f = s ? o[1].xPt - o[0].xPt : 0, p = s ? o[1].yPt - o[0].yPt : 0, m = u.a * f + u.c * p, h = u.b * f + u.d * p, g = s && h === 0, _ = s && m === 0, v = c ? Math.hypot(u.c, u.d) : l ? Math.hypot(u.a, u.b) : 0, y = i.style === "compound" && s && v > 0 ? Pf(i.authoredStyle, i.widthPt * v, t.dpr) : null;
+	if (y) {
+		a.fillStyle = i.color;
 		let e = (e, t, n, r) => {
 			let i = [
 				{
@@ -9316,25 +9317,25 @@ function Rf(t, n, r = 0) {
 					xPt: e + n,
 					yPt: t + r
 				}
-			].map((e) => Gd(d, e));
+			].map((e) => Gd(u, e));
 			if (i.some((e) => e === null)) return;
-			let a = i.filter((e) => e !== null), s = a.map((e) => e.xPt), c = a.map((e) => e.yPt);
-			o.fillRect(Math.min(...s), Math.min(...c), Math.max(...s) - Math.min(...s), Math.max(...c) - Math.min(...c));
-		}, t = Math.round((_ ? f[0].yPt : f[0].xPt) * n.dpr - b.spanDev / 2);
-		for (let r of b.bands) {
-			let i = (t + r.offsetDev) / n.dpr, a = r.widthDev / n.dpr;
-			if (_) e(Math.min(f[0].xPt, f[1].xPt), i, Math.abs(h), a);
-			else if (v) e(i, Math.min(f[0].yPt, f[1].yPt), a, Math.abs(g));
+			let o = i.filter((e) => e !== null), s = o.map((e) => e.xPt), c = o.map((e) => e.yPt);
+			a.fillRect(Math.min(...s), Math.min(...c), Math.max(...s) - Math.min(...s), Math.max(...c) - Math.min(...c));
+		}, n = Math.round((g ? d[0].yPt : d[0].xPt) * t.dpr - y.spanDev / 2);
+		for (let r of y.bands) {
+			let i = (n + r.offsetDev) / t.dpr, s = r.widthDev / t.dpr;
+			if (g) e(Math.min(d[0].xPt, d[1].xPt), i, Math.abs(m), s);
+			else if (_) e(i, Math.min(d[0].yPt, d[1].yPt), s, Math.abs(h));
 			else {
-				let e = (r.offsetDev - b.spanDev / 2) / n.dpr / y, t = r.widthDev / n.dpr / y;
-				l ? o.fillRect(Math.min(s[0].xPt, s[1].xPt), s[0].yPt + e, Math.abs(s[1].xPt - s[0].xPt), t) : o.fillRect(s[0].xPt + e, Math.min(s[0].yPt, s[1].yPt), t, Math.abs(s[1].yPt - s[0].yPt));
+				let e = (r.offsetDev - y.spanDev / 2) / t.dpr / v, n = r.widthDev / t.dpr / v;
+				c ? a.fillRect(Math.min(o[0].xPt, o[1].xPt), o[0].yPt + e, Math.abs(o[1].xPt - o[0].xPt), n) : a.fillRect(o[0].xPt + e, Math.min(o[0].yPt, o[1].yPt), n, Math.abs(o[1].yPt - o[0].yPt));
 			}
 		}
-		o.setLineDash([]);
+		a.setLineDash([]);
 		return;
 	}
-	if (a.style === "double" && c && y > 0) {
-		if (o.fillStyle = a.color, _ || v) {
+	if (i.style === "double" && s && v > 0) {
+		if (a.fillStyle = i.color, g || _) {
 			let e = (e, t, n, r) => {
 				let i = [
 					{
@@ -9353,48 +9354,48 @@ function Rf(t, n, r = 0) {
 						xPt: e + n,
 						yPt: t + r
 					}
-				].map((e) => Gd(d, e));
+				].map((e) => Gd(u, e));
 				if (i.some((e) => e === null)) return;
-				let a = i.filter((e) => e !== null), s = a.map((e) => e.xPt), c = a.map((e) => e.yPt);
-				o.fillRect(Math.min(...s), Math.min(...c), Math.max(...s) - Math.min(...s), Math.max(...c) - Math.min(...c));
-			}, { railDev: t, gapDev: r, spanDev: i } = Me(a.widthPt * y, n.dpr), s = t / n.dpr;
-			if (_) {
-				let a = Math.round(f[0].yPt * n.dpr - i / 2), o = Math.min(f[0].xPt, f[1].xPt), c = Math.abs(f[1].xPt - f[0].xPt);
-				e(o, a / n.dpr, c, s), e(o, (a + t + r) / n.dpr, c, s);
+				let o = i.filter((e) => e !== null), s = o.map((e) => e.xPt), c = o.map((e) => e.yPt);
+				a.fillRect(Math.min(...s), Math.min(...c), Math.max(...s) - Math.min(...s), Math.max(...c) - Math.min(...c));
+			}, { railDev: n, gapDev: r, spanDev: o } = Ae(i.widthPt * v, t.dpr), s = n / t.dpr;
+			if (g) {
+				let i = Math.round(d[0].yPt * t.dpr - o / 2), a = Math.min(d[0].xPt, d[1].xPt), c = Math.abs(d[1].xPt - d[0].xPt);
+				e(a, i / t.dpr, c, s), e(a, (i + n + r) / t.dpr, c, s);
 			} else {
-				let a = Math.round(f[0].xPt * n.dpr - i / 2), o = Math.min(f[0].yPt, f[1].yPt), c = Math.abs(f[1].yPt - f[0].yPt);
-				e(a / n.dpr, o, s, c), e((a + t + r) / n.dpr, o, s, c);
+				let i = Math.round(d[0].xPt * t.dpr - o / 2), a = Math.min(d[0].yPt, d[1].yPt), c = Math.abs(d[1].yPt - d[0].yPt);
+				e(i / t.dpr, a, s, c), e((i + n + r) / t.dpr, a, s, c);
 			}
 		} else {
-			let { railDev: e, gapDev: t, spanDev: r } = Me(a.widthPt * y, n.dpr), i = e / n.dpr / y, c = t / n.dpr / y, u = r / n.dpr / y;
-			if (l) {
-				let e = Math.min(s[0].xPt, s[1].xPt), t = Math.abs(s[1].xPt - s[0].xPt);
-				o.fillRect(e, s[0].yPt - u / 2, t, i), o.fillRect(e, s[0].yPt - u / 2 + i + c, t, i);
+			let { railDev: e, gapDev: n, spanDev: r } = Ae(i.widthPt * v, t.dpr), s = e / t.dpr / v, l = n / t.dpr / v, u = r / t.dpr / v;
+			if (c) {
+				let e = Math.min(o[0].xPt, o[1].xPt), t = Math.abs(o[1].xPt - o[0].xPt);
+				a.fillRect(e, o[0].yPt - u / 2, t, s), a.fillRect(e, o[0].yPt - u / 2 + s + l, t, s);
 			} else {
-				let e = Math.min(s[0].yPt, s[1].yPt), t = Math.abs(s[1].yPt - s[0].yPt);
-				o.fillRect(s[0].xPt - u / 2, e, i, t), o.fillRect(s[0].xPt - u / 2 + i + c, e, i, t);
+				let e = Math.min(o[0].yPt, o[1].yPt), t = Math.abs(o[1].yPt - o[0].yPt);
+				a.fillRect(o[0].xPt - u / 2, e, s, t), a.fillRect(o[0].xPt - u / 2 + s + l, e, s, t);
 			}
 		}
-		o.setLineDash([]);
+		a.setLineDash([]);
 		return;
 	}
-	let x = Kd(d, v && y > 0 ? {
-		xPt: e(f[0].xPt, a.widthPt * y, n.dpr),
+	let b = Kd(u, _ && v > 0 ? {
+		xPt: C(d[0].xPt, i.widthPt * v, t.dpr),
 		yPt: 0
-	} : _ && y > 0 ? {
+	} : g && v > 0 ? {
 		xPt: 0,
-		yPt: e(f[0].yPt, a.widthPt * y, n.dpr)
+		yPt: C(d[0].yPt, i.widthPt * v, t.dpr)
 	} : {
 		xPt: 0,
 		yPt: 0
 	}) ?? {
 		xPt: 0,
 		yPt: 0
-	}, S = s[0];
-	o.moveTo(S.xPt + x.xPt, S.yPt + x.yPt);
-	for (let e of s.slice(1)) o.lineTo(e.xPt + x.xPt, e.yPt + x.yPt);
-	let C = a.style === "wavy" && s.length > 2;
-	C && (o.save(), o.lineJoin = "bevel"), o.stroke(), C && o.restore(), o.setLineDash([]);
+	}, x = o[0];
+	a.moveTo(x.xPt + b.xPt, x.yPt + b.yPt);
+	for (let e of o.slice(1)) a.lineTo(e.xPt + b.xPt, e.yPt + b.yPt);
+	let S = i.style === "wavy" && o.length > 2;
+	S && (a.save(), a.lineJoin = "bevel"), a.stroke(), S && a.restore(), a.setLineDash([]);
 }
 //#endregion
 //#region packages/docx/src/paint/deferred-paint-frame.ts
@@ -9593,7 +9594,7 @@ function Yf(e) {
 	if (r !== "" && !/^\s+$/u.test(r)) throw Error(`Retained glyph slices are incomplete (paint end ${n}/${e.range.end})`);
 }
 function Xf(e, t) {
-	return e.kind === "explicit" ? e.color : e.kind === "auto" ? ze(e.background ?? "#FFFFFF") : t.defaultTextColor ?? "#000000";
+	return e.kind === "explicit" ? e.color : e.kind === "auto" ? Le(e.background ?? "#FFFFFF") : t.defaultTextColor ?? "#000000";
 }
 function Zf(e, t) {
 	return Xf(e.color, t);
@@ -9687,7 +9688,7 @@ function rp(e, t) {
 				if (t.glyphOrientation === "upright") {
 					n.save(), n.translate(r, i), n.rotate(-Math.PI / 2), (t.scaleX !== 1 || t.scaleY !== void 0) && (t.writingMode === "vertical-rl" ? n.scale(1, t.scaleX) : n.scale(t.scaleX, t.scaleY ?? 1)), n.textAlign = "center", n.textBaseline = "middle", n.letterSpacing = `${t.letterSpacingPt}px`;
 					let e = () => n.fillText(t.text, a, o);
-					t.verticalFeature ? j(n, e) : e(), n.restore();
+					t.verticalFeature ? ce(n, e) : e(), n.restore();
 				} else t.glyphOrientation === "rotate" ? (n.save(), n.translate(r, i), t.scaleX !== 1 && n.scale(t.scaleX, 1), n.textAlign = "center", n.textBaseline = "middle", n.letterSpacing = `${t.letterSpacingPt / t.scaleX}px`, n.fillText(t.text, a, o), n.restore()) : t.scaleX === 1 ? (n.letterSpacing = `${t.letterSpacingPt}px`, n.fillText(t.text, r + a, i + o)) : (n.save(), n.translate(r + a, i + o), n.scale(t.scaleX, 1), n.letterSpacing = `${t.letterSpacingPt / t.scaleX}px`, n.fillText(t.text, 0, 0), n.restore());
 			}
 			if (n.letterSpacing = r, n.fontKerning = i, e.ruby) {
@@ -9970,7 +9971,7 @@ function Cp(e, t, n) {
 	let r = e.descriptor, i = Sp(e), a = vp(e.handle) ? e.handle.placeholder : void 0;
 	if (!i && !a) return;
 	let o = (e, o) => {
-		i ? Ve(n, i, r.srcRect, e, o, t.widthPt, t.heightPt) : a === "tiff" && L(n, "tiff", {
+		i ? ze(n, i, r.srcRect, e, o, t.widthPt, t.heightPt) : a === "tiff" && y(n, "tiff", {
 			x: e,
 			y: o,
 			width: t.widthPt,
@@ -9984,7 +9985,7 @@ function Cp(e, t, n) {
 function wp(e, t, n) {
 	let r = Sp(e);
 	if (!r) {
-		vp(e.handle) && e.handle.placeholder === "tiff" && L(n, "tiff", {
+		vp(e.handle) && e.handle.placeholder === "tiff" && y(n, "tiff", {
 			x: t.xPt,
 			y: t.yPt,
 			width: t.widthPt,
@@ -10000,7 +10001,7 @@ function Tp(e, t, n, r) {
 			Cp(e, t, n);
 		},
 		chart(i, a, o) {
-			Xe(o, i.descriptor.model, {
+			Je(o, i.descriptor.model, {
 				x: a.xPt,
 				y: a.yPt,
 				w: a.widthPt,
@@ -10022,10 +10023,10 @@ function Op(e) {
 function kp(e, t) {
 	return (t ?? e.geometry.widthPt * 1.3333333333333333) / e.geometry.widthPt;
 }
-function Ap(e) {
-	if (ge(e)) return e.ownerDocument ?? (typeof document > "u" ? null : document);
-	let t = e.ownerDocument, n = t?.defaultView?.HTMLCanvasElement;
-	return n && e instanceof n ? t : null;
+function Ap(t) {
+	if (e(t)) return t.ownerDocument ?? (typeof document > "u" ? null : document);
+	let n = t.ownerDocument, r = n?.defaultView?.HTMLCanvasElement;
+	return r && t instanceof r ? n : null;
 }
 function jp(e) {
 	return Ap(e) !== null;
@@ -10056,32 +10057,32 @@ async function Np(e, t, n, r) {
 		let t = s.get(e);
 		if (!t) throw Error(`Missing retained paint resource descriptor: ${e}`);
 		return t;
-	}) : r.registry.descriptors, l = c.some((e) => e.kind === "image" || e.kind === "picture-bullet" || e.kind === "chart" && Le(e.model).length > 0), u = () => a() ? Promise.resolve() : Pp(e, t, n, r, c, a);
-	return r.fetchImage && l ? A(r.fetchImage, r.imageResources, u) : u();
+	}) : r.registry.descriptors, l = c.some((e) => e.kind === "image" || e.kind === "picture-bullet" || e.kind === "chart" && Fe(e.model).length > 0), u = () => a() ? Promise.resolve() : Pp(e, t, n, r, c, a);
+	return r.fetchImage && l ? he(r.fetchImage, r.imageResources, u) : u();
 }
-async function Pp(e, t, n, r, i, o) {
-	let s;
+async function Pp(e, t, n, r, i, a) {
+	let o;
 	try {
-		let c = r.dpr ?? P(), l = Mp(n, !r.parseError && t.layers.capabilities.requiresElementBackedVerticalGlyphPaint), u = l.canvas;
-		s = l.release;
-		let d = u.getContext("2d");
-		if (!d) throw Error("2D canvas is unavailable for DOCX paint");
-		let f = kp(t, r.width), p = t.geometry.widthPt * f, m = t.geometry.heightPt * f, h = Ye(p * c, m * c), g = h.clamped ? c * h.scale : c;
-		if (n.width = h.width, n.height = h.height, u !== n && (u.width = h.width, u.height = h.height), jp(n) && (n.style.width = `${p}px`, n.style.height = `${m}px`, n.style.display || (n.style.display = "block")), jp(u) && u !== n && (u.style.width = `${p}px`, u.style.height = `${m}px`), d.scale(g, g), d.fillStyle = "#ffffff", d.fillRect(0, 0, p, m), r.parseError) {
+		let s = r.dpr ?? g(), c = Mp(n, !r.parseError && t.layers.capabilities.requiresElementBackedVerticalGlyphPaint), l = c.canvas;
+		o = c.release;
+		let u = l.getContext("2d");
+		if (!u) throw Error("2D canvas is unavailable for DOCX paint");
+		let d = kp(t, r.width), f = t.geometry.widthPt * d, p = t.geometry.heightPt * d, m = qe(f * s, p * s), h = m.clamped ? s * m.scale : s;
+		if (n.width = m.width, n.height = m.height, l !== n && (l.width = m.width, l.height = m.height), jp(n) && (n.style.width = `${f}px`, n.style.height = `${p}px`, n.style.display || (n.style.display = "block")), jp(l) && l !== n && (l.style.width = `${f}px`, l.style.height = `${p}px`), u.scale(h, h), u.fillStyle = "#ffffff", u.fillRect(0, 0, f, p), r.parseError) {
 			await hp(e, 0, n, {
-				scale: f,
-				dpr: g
+				scale: d,
+				dpr: h
 			});
 			return;
 		}
 		let _;
 		try {
-			_ = await Of(i, r.rasterPaintOccurrences, r.fetchImage, r.tiff, f * g, r.svgDecoder, r.imageResources);
+			_ = await Of(i, r.rasterPaintOccurrences, r.fetchImage, r.tiff, d * h, r.svgDecoder, r.imageResources);
 		} catch (e) {
-			if (o()) return;
+			if (a()) return;
 			throw e;
 		}
-		if (o()) return;
+		if (a()) return;
 		let v = /* @__PURE__ */ new Map();
 		if (r.fetchImage) {
 			let e = r.fetchImage, t = /* @__PURE__ */ new Map();
@@ -10096,11 +10097,11 @@ async function Pp(e, t, n, r, i, o) {
 				let t = {
 					widthPt: r.widthPt,
 					heightPt: r.heightPt,
-					targetWidthPx: r.widthPt * f * g,
-					targetHeightPx: r.heightPt * f * g
+					targetWidthPx: r.widthPt * d * h,
+					targetHeightPx: r.heightPt * d * h
 				}, i = [], a = !0;
-				for (let n of Le(e.model)) {
-					let e = Re(n, t);
+				for (let n of Fe(e.model)) {
+					let e = Ie(n, t);
 					if (!e) {
 						a = !1;
 						break;
@@ -10116,10 +10117,10 @@ async function Pp(e, t, n, r, i, o) {
 					usages: i
 				});
 			}
-			let o = /* @__PURE__ */ new Map();
-			for (let e of z(n.map(({ descriptor: e }) => e.model), (e, t) => Re(e, n[t].frame) != null)) {
-				let { fill: t } = e, n = Ge(t);
-				o.has(n) || o.set(n, {
+			let a = /* @__PURE__ */ new Map();
+			for (let e of Be(n.map(({ descriptor: e }) => e.model), (e, t) => Ie(e, n[t].frame) != null)) {
+				let { fill: t } = e, n = Ue(t);
+				a.has(n) || a.set(n, {
 					fill: t,
 					widthPt: 0,
 					heightPt: 0,
@@ -10128,84 +10129,84 @@ async function Pp(e, t, n, r, i, o) {
 				});
 			}
 			for (let { usages: e } of n) for (let { usage: t, size: n } of e) {
-				let { fill: e } = t, r = Ge(e), i = o.get(r);
+				let { fill: e } = t, r = Ue(e), i = a.get(r);
 				if (!i) continue;
-				let a = i.preserveNaturalSize || t.preserveNaturalSize;
-				o.set(r, {
+				let o = i.preserveNaturalSize || t.preserveNaturalSize;
+				a.set(r, {
 					...i,
 					widthPt: Math.max(i.widthPt, n.widthPt),
 					heightPt: Math.max(i.heightPt, n.heightPt),
-					targetWidthPx: a ? void 0 : Math.max(i.targetWidthPx ?? 0, n.targetWidthPx ?? 0) || void 0,
-					targetHeightPx: a ? void 0 : Math.max(i.targetHeightPx ?? 0, n.targetHeightPx ?? 0) || void 0,
-					preserveNaturalSize: a,
+					targetWidthPx: o ? void 0 : Math.max(i.targetWidthPx ?? 0, n.targetWidthPx ?? 0) || void 0,
+					targetHeightPx: o ? void 0 : Math.max(i.targetHeightPx ?? 0, n.targetHeightPx ?? 0) || void 0,
+					preserveNaturalSize: o,
 					hasSourceCrop: i.hasSourceCrop || t.hasSourceCrop
 				});
 			}
-			await Promise.all([...o].map(async ([t, n]) => {
+			await Promise.all([...a].map(async ([t, n]) => {
 				if (_.has(t)) {
 					let e = _.get(t);
-					v.set(t, a(e, "tiff") ? null : e ?? null);
+					v.set(t, ye(e, "tiff") ? null : e ?? null);
 					return;
 				}
-				let { fill: i, widthPt: o, heightPt: s, targetWidthPx: c, targetHeightPx: l, hasSourceCrop: u } = n, d = c && l ? {
-					targetWidthPx: c,
-					targetHeightPx: l
+				let { fill: i, widthPt: a, heightPt: o, targetWidthPx: s, targetHeightPx: c, hasSourceCrop: l } = n, u = s && c ? {
+					targetWidthPx: s,
+					targetHeightPx: c
 				} : void 0;
 				try {
-					let n = (t) => r.svgDecoder ? N(t, e, {
-						...d ?? {},
+					let n = (t) => r.svgDecoder ? I(t, e, {
+						...u ?? {},
 						workerDecoder: r.svgDecoder
-					}) : N(t, e), a = () => i.mimeType === "image/svg+xml" ? i.duotone ? Promise.resolve(null) : n(i.imagePath) : Ef(i.imagePath, i.mimeType, void 0, e, o, s, i.duotone, !0, r.tiff, d), c, l = {
+					}) : I(t, e), s = () => i.mimeType === "image/svg+xml" ? i.duotone ? Promise.resolve(null) : n(i.imagePath) : Ef(i.imagePath, i.mimeType, void 0, e, a, o, i.duotone, !0, r.tiff, u), c, d = {
 						svgImagePath: i.svgImagePath,
-						srcRect: u ? !0 : null
+						srcRect: l ? !0 : null
 					};
-					if (!i.duotone && k(l)) try {
-						c = await n(l.svgImagePath);
+					if (!i.duotone && de(d)) try {
+						c = await n(d.svgImagePath);
 					} catch {
-						c = await a();
+						c = await s();
 					}
-					else c = await a();
+					else c = await s();
 					v.set(t, c);
 				} catch (e) {
-					if (a(e, "tiff")) {
+					if (ye(e, "tiff")) {
 						v.set(t, null);
 						return;
 					}
-					if (Je(e) || Qe(e)) throw e;
+					if (Ke(e) || Xe(e)) throw e;
 					v.set(t, null);
 				}
 			}));
 		}
-		if (o()) return;
+		if (a()) return;
 		let y = cp(xp(r.registry, (e) => {
 			if (e.kind === "math") return r.privateResources?.keys.includes(e.resourceKey) ? r.privateResources.resolve(e.resourceKey) : _p("optional math renderer unavailable");
 			if (e.kind === "image" || e.kind === "picture-bullet") {
 				let t = _.get(xf(e.partPath, e.colorReplaceFrom, e.duotone));
-				return a(t, "tiff") ? _p("optional TIFF codec unavailable", { placeholder: "tiff" }) : t ?? _p(r.fetchImage ? "unsupported image format produced no drawable output" : "image byte source unavailable");
+				return ye(t, "tiff") ? _p("optional TIFF codec unavailable", { placeholder: "tiff" }) : t ?? _p(r.fetchImage ? "unsupported image format produced no drawable output" : "image byte source unavailable");
 			}
-		}), r.threeD || r.regionMap || r.chartEx || v.size > 0 ? Tp(r.threeD, r.regionMap, (e) => v.get(Ge(e)), r.chartEx) : Ep);
-		d.save();
+		}), r.threeD || r.regionMap || r.chartEx || v.size > 0 ? Tp(r.threeD, r.regionMap, (e) => v.get(Ue(e)), r.chartEx) : Ep);
+		u.save();
 		try {
-			d.scale(f, f), mp(t, {
-				ctx: d,
-				scale: f,
-				dpr: g,
+			u.scale(d, d), mp(t, {
+				ctx: u,
+				scale: d,
+				dpr: h,
 				resources: y,
 				documentDefaultTextColor: r.defaultTextColor ?? "#000000",
 				defaultTextColor: r.defaultTextColor ?? "#000000"
 			});
 		} finally {
-			d.restore();
+			u.restore();
 		}
-		if (u !== n) {
-			if (o()) return;
+		if (l !== n) {
+			if (a()) return;
 			let e = n.getContext("2d");
 			if (!e) throw Error("2D canvas is unavailable for DOCX paint projection");
-			e.drawImage(u, 0, 0);
+			e.drawImage(l, 0, 0);
 		}
 		if (r.onTextRun) for (let e of r.textRuns) r.onTextRun(e);
 	} finally {
-		s?.();
+		o?.();
 	}
 }
 //#endregion
@@ -11425,7 +11426,7 @@ function Jm(e) {
 //#endregion
 //#region packages/docx/src/text-distribute.ts
 function Ym(e, t, n, r, i = -Infinity, a = !0, o = !1) {
-	return Fe(e, t, {
+	return Ne(e, t, {
 		firstContentSi: n,
 		lastDrawnSi: r,
 		minPerGap: i,
@@ -15373,7 +15374,7 @@ function Xg(e) {
 					mark: h.emphasis.mark,
 					scaleX: r.basePaintOps[0]?.scaleX ?? 1
 				})
-			} : void 0, N = m ?? h?.base, P = N ? {
+			} : void 0, N = m ?? h?.base, ee = N ? {
 				xPt: E,
 				yPt: t.baselinePt + k - N.ascentPt,
 				widthPt: s + w,
@@ -15383,7 +15384,7 @@ function Xg(e) {
 				yPt: t.topPt,
 				widthPt: s + w,
 				heightPt: t.advancePt
-			}, F = {
+			}, te = {
 				..._,
 				kind: "text",
 				origin: T,
@@ -15393,7 +15394,7 @@ function Xg(e) {
 					widthPt: s,
 					heightPt: t.advancePt
 				},
-				highlightBounds: P,
+				highlightBounds: ee,
 				advancePt: s,
 				clusters: y.clusters,
 				paintOps: x.map((e) => ({
@@ -15405,7 +15406,7 @@ function Xg(e) {
 				direction: b,
 				...w === 0 ? {} : { ownedTrailingSlackPt: w },
 				..._.highlight || _.background ? { highlightFragments: [{
-					rect: _.highlight ? P : {
+					rect: _.highlight ? ee : {
 						xPt: E,
 						yPt: t.topPt,
 						widthPt: s + w,
@@ -15423,8 +15424,8 @@ function Xg(e) {
 						}
 					}))
 				} } : {}
-			}, I = d === void 0 ? 0 : Math.max(0, s + w - d);
-			b === "ltr" && I > 0 && O.set(D.length, I), D.push(F);
+			}, P = d === void 0 ? 0 : Math.max(0, s + w - d);
+			b === "ltr" && P > 0 && O.set(D.length, P), D.push(te);
 		}
 		E += s, a?.trailingGap && (E += v);
 	}
@@ -15927,7 +15928,7 @@ function v_(e, t, n, r, i, a, o) {
 	};
 }
 function y_(e) {
-	return e.kind === "explicit" ? e.color : e.kind === "auto" ? ze(e.background ?? "#FFFFFF") : "#000000";
+	return e.kind === "explicit" ? e.color : e.kind === "auto" ? Le(e.background ?? "#FFFFFF") : "#000000";
 }
 function b_(e) {
 	return e.inkBounds ?? {
@@ -16772,8 +16773,8 @@ function G_(e, t, n, r, i, a, o, s, c, l) {
 	}
 	let j = H_(x, A);
 	if (g.allowOverlapStatus !== "valid" || g.allowOverlap === null || g.layoutInCellStatus !== "valid" || g.layoutInCell === null) throw Error("resolved anchor frame must retain overlap and cell behavior");
-	let M = j.geometry.wrapBounds, N = !g.allowOverlap, P = g.allowOverlap && i.ordinaryFlow && M !== null;
-	if (N || P) {
+	let M = j.geometry.wrapBounds, N = !g.allowOverlap, ee = g.allowOverlap && i.ordinaryFlow && M !== null;
+	if (N || ee) {
 		let t = W_(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0), n = l.filter((e) => !Zh(t, g.relativeHeight, e.relativeHeight)), r = (N ? [...c, ...n].filter((t) => t.occurrenceId !== e).map((e) => ({
 			occurrenceId: e.occurrenceId,
 			bounds: e.bounds
@@ -16851,7 +16852,7 @@ function G_(e, t, n, r, i, a, o, s, c, l) {
 			u && (D.push(u), O.push(l));
 		}
 	}
-	let F = {
+	let te = {
 		kind: "drawing",
 		id: `${i.id}:anchor-drawing:${e}`,
 		source: $g(i.source, p.runIndex),
@@ -16876,15 +16877,15 @@ function G_(e, t, n, r, i, a, o, s, c, l) {
 			...g.layoutInCell && Kh(g.allowOverlap, j.geometry.wrap.kind) && i.anchorCellBounds ? { cellContainment: !0 } : {}
 		},
 		...O.length ? { textBoxIds: O } : {}
-	}, I = j.geometry.wrapBounds, ee = I && j.geometry.wrap.kind !== "none" ? {
+	}, P = j.geometry.wrapBounds, ne = P && j.geometry.wrap.kind !== "none" ? {
 		id: `${i.id}:anchor-exclusion:${e}`,
 		wrap: j.geometry.wrap.kind,
 		...j.geometry.wrap.side ? { wrapSide: j.geometry.wrap.side } : {},
-		bounds: I,
-		polygon: j.geometry.wrap.polygon?.points ?? I_(I),
+		bounds: P,
+		polygon: j.geometry.wrap.polygon?.points ?? I_(P),
 		anchorOccurrenceId: e,
 		verticalOwnership: W_(j, "vertical", g.layoutInCell && i.anchorCellBounds !== void 0)
-	} : void 0, te = {
+	} : void 0, F = {
 		occurrenceId: e,
 		bounds: A,
 		horizontalOwnership: W_(j, "horizontal", g.layoutInCell && i.anchorCellBounds !== void 0),
@@ -16893,9 +16894,9 @@ function G_(e, t, n, r, i, a, o, s, c, l) {
 	};
 	return {
 		result: j,
-		drawing: F,
-		exclusion: ee,
-		collision: te,
+		drawing: te,
+		exclusion: ne,
+		collision: F,
 		textBoxes: D,
 		...g.layoutInCell && Kh(g.allowOverlap, j.geometry.wrap.kind) && i.anchorCellBounds ? { cellContainmentBounds: A } : {},
 		hostLineIndex: u,
@@ -19341,8 +19342,8 @@ function* Ry(e, t, n, r, i, a, o) {
 		}
 		_.moveAcquisitionCursor(Ey(p));
 	}
-	let P = new Set([...C.keys(), ...w.keys()]);
-	for (let e of P) {
+	let ee = new Set([...C.keys(), ...w.keys()]);
+	for (let e of ee) {
 		let t = C.get(e) ?? 0, n = (w.get(e) ?? []).reduce((e, t) => e + t.advancePt, 0);
 		if (t !== n) throw new H("INVALID_GEOMETRY", `Page ${e} footnote reserve ${t} does not equal retained advance ${n}`);
 	}
@@ -19492,7 +19493,7 @@ function By(e, t, n, r) {
 			...O.slice(A)
 		], M = -1;
 		for (let e = 0; e < j.length; e += 1) j[e].layer === "body" && (M = e);
-		let N = M < 0 ? j.length : M + 1, P = [
+		let N = M < 0 ? j.length : M + 1, ee = [
 			...j.slice(0, N),
 			...S.map((e) => ({
 				layer: "notes",
@@ -19509,7 +19510,7 @@ function By(e, t, n, r) {
 		return Object.freeze({
 			...i,
 			flowDomains: Object.freeze([...i.flowDomains, ...D]),
-			layers: Zr(P),
+			layers: Zr(ee),
 			readingOrder: Object.freeze([
 				...h?.blocks.map((e) => e.id) ?? [],
 				...i.readingOrder,
@@ -19810,7 +19811,7 @@ async function ob(e, t) {
 		if (i.has(a.resourceKey)) throw Error(`Duplicate math occurrence: ${a.resourceKey}`);
 		i.add(a.resourceKey);
 		try {
-			let e = await t.mathMLToSvg(ie(a.nodes, a.display)), i = await de(e, "#000000");
+			let e = await t.mathMLToSvg(se(a.nodes, a.display)), i = await j(e, "#000000");
 			n.push({
 				resourceKey: a.resourceKey,
 				widthEm: e.widthEm,
@@ -21231,7 +21232,7 @@ function dS(e, t, n) {
 			}, M = e.verticalMerge !== "continue" && r.rows.slice(n, o + 1).every((e) => e.heightRule === "exact") ? yl(j, t.availableBounds) : void 0, N = e.verticalMerge === "continue" ? [] : E.blocks.map((e) => ({
 				...e,
 				offsetPt: k + e.offsetPt
-			})), P = td([j, ...N.map((e) => uS(e, A.xPt, j.yPt)).map((e) => M ? lS(e, M) : e).filter((e) => e !== null)]) ?? j;
+			})), ee = td([j, ...N.map((e) => uS(e, A.xPt, j.yPt)).map((e) => M ? lS(e, M) : e).filter((e) => e !== null)]) ?? j;
 			return {
 				kind: "table-cell",
 				id: e.id,
@@ -21239,7 +21240,7 @@ function dS(e, t, n) {
 				flowDomainId: r.flowDomainId,
 				ordinaryFlow: r.ordinaryFlow,
 				flowBounds: j,
-				inkBounds: P,
+				inkBounds: ee,
 				...M ? { clipBounds: M } : {},
 				contentBounds: A,
 				advancePt: T,
@@ -22535,7 +22536,7 @@ function mC(e) {
 //#endregion
 //#region packages/docx/src/vertical-text.ts
 function hC(e) {
-	let t = F(e);
+	let t = pe(e);
 	return t === "U" || t === "Tu" ? "upright" : t === "Tr" ? "rotate" : "sideways";
 }
 var gC = new Set([65294]);
@@ -22580,10 +22581,10 @@ function xC(e, t) {
 	return typeof a == "number" && typeof o == "number" ? (a - o) / 2 : 0;
 }
 function SC(e) {
-	return hC(e) === "rotate" && _e(e) === null && !ce(e);
+	return hC(e) === "rotate" && A(e) === null && !M(e);
 }
 function CC(e) {
-	let t = F(e);
+	let t = pe(e);
 	return t === "Tu" || t === "Tr";
 }
 function wC(e, t) {
@@ -22600,7 +22601,7 @@ function wC(e, t) {
 function TC(e, t, n, r, i, a, o) {
 	let s = e.textAlign, c = e.textBaseline, l = () => (e.textAlign = n === "sideways" ? "left" : "center", e.textBaseline = n === "sideways" ? "alphabetic" : "middle", e.measureText(t)), u;
 	try {
-		u = o ? j(e, l) : l();
+		u = o ? ce(e, l) : l();
 	} finally {
 		e.textAlign = s, e.textBaseline = c;
 	}
@@ -22622,7 +22623,7 @@ function TC(e, t, n, r, i, a, o) {
 function EC(e, t, n, r, i) {
 	let a = e.measureText(t).width;
 	if (CC(n) && r(n)) {
-		let n = fe(e, t);
+		let n = P(e, t);
 		return {
 			naturalPx: n.cellAdvancePx,
 			vert: n,
@@ -22667,7 +22668,7 @@ function DC(e, t, n, r, i = 1, a = !1, o = yC, s = "vertical-rl") {
 			continue;
 		}
 		for (let t of f.text) {
-			let l = t.codePointAt(0) ?? 0, f = hC(l), p = f === "rotate" ? _e(l) : null, m = f === "rotate" && p === null && ce(l), h = EC(e, t, l, o, a), g = h.naturalPx * i + r, _ = {
+			let l = t.codePointAt(0) ?? 0, f = hC(l), p = f === "rotate" ? A(l) : null, m = f === "rotate" && p === null && M(l), h = EC(e, t, l, o, a), g = h.naturalPx * i + r, _ = {
 				start: d,
 				end: d + t.length
 			};
@@ -22687,7 +22688,7 @@ function DC(e, t, n, r, i = 1, a = !1, o = yC, s = "vertical-rl") {
 					...r ? { blockAxisInkBounds: r } : {}
 				});
 			} else if (f === "upright" || p !== null || m) {
-				let r = p === null ? M(l) : null, a = p ?? r, o = a === null ? t : String.fromCodePoint(a), d = a === null ? _C(l) : {
+				let r = p === null ? ie(l) : null, a = p ?? r, o = a === null ? t : String.fromCodePoint(a), d = a === null ? _C(l) : {
 					dx: 0,
 					dy: 0
 				}, f = Cs(r), m = d.dy === 0 && !f ? xC(e, o) / n : 0, h = {
@@ -22740,7 +22741,7 @@ function OC(e, t, n) {
 	return r - e.measureText(t).width;
 }
 function kC(e, t) {
-	return OC(e, t, (t) => pe(e, t));
+	return OC(e, t, (t) => E(e, t));
 }
 function AC(e, t, n, r, i) {
 	return {
@@ -23126,21 +23127,21 @@ function jC(e, t, n) {
 					pageAnchorPrescanned: /* @__PURE__ */ new Set()
 				}, r = Eg(e.acquired);
 				return y.retainedTableAcquisition.acquireParagraph(n, t, e.acquired.flowBounds.widthPt, e.acquired.source.path, e.acquired.flowDomainId, void 0, r);
-			}, P = Av(e.blocks.endnotes), F = /* @__PURE__ */ new Map(), I = (t) => {
+			}, ee = Av(e.blocks.endnotes), te = /* @__PURE__ */ new Map(), P = (t) => {
 				if (t.path.length !== 0) throw Error("Story acquisition requires a story-root source");
 				return e.blocks.storyRoot(t);
-			}, ee = (t) => {
+			}, ne = (t) => {
 				if (t.path.length === 0 || (t.path.length - 1) % 3 != 0) throw Error("Story block acquisition requires a canonical source path");
 				return e.blocks.resolve(t);
-			}, te = (e) => {
+			}, F = (e) => {
 				let t = JSON.stringify({
 					source: e.source,
 					pageIndex: e.pageIndex,
 					section: e.section,
 					container: e.container
-				}), n = F.get(t);
+				}), n = te.get(t);
 				if (n) return n;
-				let r = I(e.source), i = e.source.story === "footnote" || e.source.story === "endnote" ? y.noteNumbers?.get(`${e.source.story}:${e.source.storyInstance}`) : void 0, a = jr(g), s = a.resolveDestinationPage?.(e.pageIndex), c = jb(e.section.textDirection), l = {
+				let r = P(e.source), i = e.source.story === "footnote" || e.source.story === "endnote" ? y.noteNumbers?.get(`${e.source.story}:${e.source.storyInstance}`) : void 0, a = jr(g), s = a.resolveDestinationPage?.(e.pageIndex), c = jb(e.section.textDirection), l = {
 					...y,
 					sectionLayout: e.section,
 					pageIndex: e.pageIndex,
@@ -23194,7 +23195,7 @@ function jC(e, t, n) {
 				}), f = null;
 				sy(u, {
 					layoutParagraph(e, t) {
-						let n = ee(e.source);
+						let n = ne(e.source);
 						if (n.type !== "paragraph") throw Error("Story paragraph source kind mismatch");
 						let i = e.source.path[0], a = i > 0 ? r[i - 1] : void 0, s = a?.type === "paragraph" ? a : null, c = r[i + 1], u = c?.type === "paragraph" ? c : null, d = f?.spaceAfter ?? 0, p = yg(f, n, d, n.spaceBefore), m = Math.max(t.container.bounds.yPt, t.cursor.yPt - p.overlap);
 						l.y = m, l.contentX = t.container.bounds.xPt, l.contentW = t.container.bounds.widthPt;
@@ -23270,7 +23271,7 @@ function jC(e, t, n) {
 						});
 					}))
 				});
-				return F.set(t, h), h;
+				return te.set(t, h), h;
 			};
 			y.acquireCompleteTextBoxStory = (e) => {
 				let t = e.coordinateSpace === "upright-physical" ? {
@@ -23278,14 +23279,14 @@ function jC(e, t, n) {
 					geometry: yu(y.sectionLayout.geometry),
 					textDirection: "lrTb"
 				} : y.sectionLayout;
-				return te({
+				return F({
 					source: e.source,
 					pageIndex: y.pageIndex,
 					section: t,
 					container: e.container
 				});
 			};
-			let ne = {
+			let re = {
 				hasPaginationFields: e.hasPaginationFields,
 				measureParagraph(t) {
 					A(t.location);
@@ -23810,11 +23811,11 @@ function jC(e, t, n) {
 						...u.floatingTableRegistryDelta ? { flowRegistryDelta: Object.freeze({ floats: u.floatingTableRegistryDelta }) } : {}
 					});
 				},
-				layoutStory: te,
+				layoutStory: F,
 				layoutNotes(e) {
 					let t = [], n = e.container.bounds.yPt, r = e.firstOnPage;
 					for (let i of e.referenceIds) {
-						if (!(e.kind === "footnote" ? S : P).has(i)) continue;
+						if (!(e.kind === "footnote" ? S : ee).has(i)) continue;
 						let a = {
 							story: e.kind,
 							storyInstance: i,
@@ -23829,7 +23830,7 @@ function jC(e, t, n) {
 							}
 						}, c;
 						try {
-							c = te({
+							c = F({
 								source: a,
 								pageIndex: e.pageIndex,
 								section: e.section,
@@ -24119,7 +24120,7 @@ function jC(e, t, n) {
 					}), y.floatParaSeq = e.floats.nextParagraphId), O = t;
 				}
 			};
-			return Object.freeze(ne);
+			return Object.freeze(re);
 		} });
 	}
 	function d(e, t) {
@@ -24629,18 +24630,18 @@ function BC(e) {
 //#endregion
 //#region packages/docx/src/google-fonts.ts
 var VC = {
-	...D,
-	...x
+	...x,
+	...d
 };
 function* HC(e) {
 	for (let t of zC(e)) yield t.text;
 }
 function UC(e) {
-	let t = E(e.majorFont) ?? E(e.minorFont) ?? null;
+	let t = L(e.majorFont) ?? L(e.minorFont) ?? null;
 	return [
 		e.majorFont,
 		e.minorFont,
-		...T(HC(e), t)
+		...u(HC(e), t)
 	];
 }
 //#endregion
@@ -26974,15 +26975,15 @@ function sE(e, t = {}) {
 		fingerprint: r === null ? "vertical-glyph-measurement:deterministic-v1" : s ? "vertical-glyph-measurement:dom-vert-probe-v2" : "vertical-glyph-measurement:no-dom-vert-probe-v1",
 		measureRunInkExtra(e) {
 			if (r === null) throw Error("Vertical glyph measurement requires a concrete text context");
-			return se(r, () => kC(r, e));
+			return fe(r, () => kC(r, e));
 		},
 		planRun(e) {
 			if (r === null) throw Error("Vertical glyph planning requires a concrete text context");
-			return se(r, () => {
+			return fe(r, () => {
 				let t = r.font, n = r.fontKerning;
 				r.font = e.font, r.fontKerning = e.fontKerning;
 				try {
-					return DC(r, e.text, e.fontSizePt, e.letterSpacingPt, e.charScale, e.growTrRotateInk, (e) => pe(r, e), e.writingMode);
+					return DC(r, e.text, e.fontSizePt, e.letterSpacingPt, e.charScale, e.growTrRotateInk, (e) => E(r, e), e.writingMode);
 				} finally {
 					r.font = t, r.fontKerning = n;
 				}
@@ -27067,7 +27068,7 @@ function pE(e, t, n) {
 }
 //#endregion
 //#region packages/docx/src/document-pull-client.ts
-var mE = 1024 * 1024, hE = Math.max(l, p);
+var mE = 1024 * 1024, hE = Math.max(S, l);
 async function gE(e, t, n = {}) {
 	let r = [];
 	return bE(e, t, n, {
@@ -27108,7 +27109,7 @@ async function yE(e, t, n = {}) {
 	});
 }
 async function bE(e, t, n, r) {
-	let i = new _(e, {
+	let i = new ne(e, {
 		...t,
 		maxByteCredit: hE,
 		timeoutMs: n.timeoutMs

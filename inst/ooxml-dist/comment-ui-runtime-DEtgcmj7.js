@@ -1,8 +1,8 @@
-import { t as e } from "./highlight-rect-DBcYVJDv.js";
-import { o as t } from "./source-key-BkBB3X82.js";
-import { n } from "./comments-Brfxa3hQ.js";
-import { i as r, n as i, o as a, r as o, s, t as c } from "./read-only-comment-margin-Cqu-Ir0C.js";
-import { i as l, n as u, r as d, t as f } from "./read-only-comment-decoration-Mv_SAiHy.js";
+import { t as e } from "./highlight-rect-FuUSmL3a.js";
+import { o as t } from "./source-key-Ktb1GRE5.js";
+import { n } from "./comments-CAn2A_Xh.js";
+import { i as r, n as i, o as a, r as o, s, t as c } from "./read-only-comment-margin-plStyGfE.js";
+import { i as l, n as u, r as d, t as f } from "./read-only-comment-decoration-BTnWEeo5.js";
 //#region packages/docx/src/comment-margin.ts
 function p(e, r) {
 	let i = /* @__PURE__ */ new Set();

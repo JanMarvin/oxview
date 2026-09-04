@@ -1,8 +1,8 @@
-import { $t as e, F as t, I as n, K as r, N as i, P as a, U as o, an as s, cn as c, en as l, in as u, nn as d, on as f, rn as p, tn as m } from "./line-metrics-BGtFM-ec.js";
-import { n as h, r as g, t as _ } from "./resource-measurement-D41R-0Bl.js";
+import { $t as e, M as t, N as n, P as r, Qt as i, V as a, W as o, an as s, en as c, in as l, j as u, nn as d, rn as f, sn as p, tn as m } from "./hyperlink-enyPbflR.js";
+import { n as h, r as g, t as _ } from "./resource-measurement-Do07ZRcR.js";
 import { t as v } from "./transfer-mIj7E7NB.js";
 //#region packages/xlsx/src/worksheet-resource-limits.ts
-var y = f, b = p, x = u, S = s, C = d, w = e, T = l, E = m, D = Object.freeze({
+var y = s, b = d, x = f, S = l, C = m, w = i, T = e, E = c, D = Object.freeze({
 	archiveEntryCount: 0,
 	declaredInflatedBytes: 0,
 	distinctInflatedBytes: 0,
@@ -19,21 +19,24 @@ function O(e) {
 		}, e), 0)
 	};
 }
-function k(e, t) {
+function k(e) {
+	return A(e, O(e.rows));
+}
+function A(e, t) {
 	let n = h(e, Math.max(x, S));
 	return {
 		...t,
 		jsonBytes: n.jsonBytes
 	};
 }
-function A(e, t) {
+function j(e, t) {
 	return {
 		rows: _(e.rows, t.rows, y),
 		cells: _(e.cells, t.cells, b),
 		ownedUtf8Bytes: _(e.ownedUtf8Bytes, t.ownedUtf8Bytes, x)
 	};
 }
-function j(e, t, n = {}) {
+function M(e, t, n = {}) {
 	let r = e.rows - (n.rows ?? 0), i = e.cells - (n.cells ?? 0), a = e.ownedUtf8Bytes - (n.ownedUtf8Bytes ?? 0), o = e.jsonBytes - (n.jsonBytes ?? 0);
 	if (r < 0 || i < 0 || a < 0 || o < 0) throw Error("worksheet cache accounting underflow");
 	return {
@@ -43,9 +46,9 @@ function j(e, t, n = {}) {
 		jsonBytes: _(o, t.jsonBytes, E)
 	};
 }
-function M(e, t, n, r, i, a, o) {
+function N(e, t, n, r, i, a, o) {
 	let s = n === "worksheet-json" ? "serialization" : "parsing";
-	return new c(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
+	return new p(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
 		stage: s,
 		violation: {
 			format: "xlsx",
@@ -60,7 +63,7 @@ function M(e, t, n, r, i, a, o) {
 		}
 	});
 }
-function N(e, t, n, r) {
+function P(e, t, n, r) {
 	let i = [
 		[
 			"rows",
@@ -78,23 +81,23 @@ function N(e, t, n, r) {
 			x
 		]
 	];
-	for (let [e, a, o] of i) if (a > o) throw M(t, n, e === "owned-utf8-bytes" ? "worksheet-cell-content" : "worksheet-model", e, o, a, r);
-}
-function P(e, t, n, r) {
-	if (e > S) throw M(t, n, "worksheet-json", "bytes", S, e, r);
+	for (let [e, a, o] of i) if (a > o) throw N(t, n, e === "owned-utf8-bytes" ? "worksheet-cell-content" : "worksheet-model", e, o, a, r);
 }
 function F(e, t, n, r) {
-	if (e.rows > C) throw M(t, n, "worksheet-cache", "rows", C, e.rows, r);
-	if (e.cells > w) throw M(t, n, "worksheet-cache", "cells", w, e.cells, r);
-	if (e.ownedUtf8Bytes > T) throw M(t, n, "worksheet-cache", "owned-utf8-bytes", T, e.ownedUtf8Bytes, r);
-	if (e.jsonBytes > E) throw M(t, n, "worksheet-cache", "bytes", E, e.jsonBytes, r);
+	if (e > S) throw N(t, n, "worksheet-json", "bytes", S, e, r);
+}
+function I(e, t, n, r) {
+	if (e.rows > C) throw N(t, n, "worksheet-cache", "rows", C, e.rows, r);
+	if (e.cells > w) throw N(t, n, "worksheet-cache", "cells", w, e.cells, r);
+	if (e.ownedUtf8Bytes > T) throw N(t, n, "worksheet-cache", "owned-utf8-bytes", T, e.ownedUtf8Bytes, r);
+	if (e.jsonBytes > E) throw N(t, n, "worksheet-cache", "bytes", E, e.jsonBytes, r);
 }
 //#endregion
 //#region packages/xlsx/src/shared-strings.ts
-function I(e, t) {
-	return L(e.rows, t), e;
-}
 function L(e, t) {
+	return R(e.rows, t), e;
+}
+function R(e, t) {
 	for (let n of e) for (let e of n.cells) {
 		let n = e.value;
 		if (n.type === "shared") {
@@ -115,14 +118,14 @@ function L(e, t) {
 }
 //#endregion
 //#region packages/xlsx/src/worksheet-pull-codec.ts
-function R(e, t, n, r) {
+function z(e, t, n, r) {
 	let i = e instanceof ArrayBuffer ? new Uint8Array(e) : new Uint8Array(e.buffer, e.byteOffset, e.byteLength), a = JSON.parse(new TextDecoder().decode(i));
 	if (!a || typeof a != "object" || !("kind" in a)) throw Error("worksheet cursor returned an invalid unit");
 	let o = a;
 	if (t !== (o.kind === "finished")) throw Error("worksheet cursor terminal marker mismatch");
 	if (o.kind === "rows") {
 		if (!Array.isArray(o.rows)) throw Error("worksheet row unit is missing rows");
-		return n && L(o.rows, n), r?.(o.rows), {
+		return n && R(o.rows, n), r?.(o.rows), {
 			kind: "rows",
 			rows: o.rows
 		};
@@ -138,8 +141,8 @@ function R(e, t, n, r) {
 }
 //#endregion
 //#region packages/xlsx/src/worksheet-pull-worker.ts
-var z = 64 * 1024 * 1024, B = class {
-	coordinator = new n();
+var B = 64 * 1024 * 1024, V = class {
+	coordinator = new r();
 	sessions = /* @__PURE__ */ new Map();
 	operationTail = Promise.resolve();
 	pendingOpens = /* @__PURE__ */ new Map();
@@ -159,7 +162,7 @@ var z = 64 * 1024 * 1024, B = class {
 	get pendingOpenCount() {
 		return this.pendingOpens.size;
 	}
-	async open(e, n, r) {
+	async open(e, t, r) {
 		if (this.resourceFailure) throw this.resourceFailure;
 		let i = this.pendingOpens.get(r.sessionId);
 		if (!i || i.identity.operationId !== r.operationId || i.identity.generation !== r.generation) throw Error("worksheet pull session open reservation is stale or missing");
@@ -167,30 +170,30 @@ var z = 64 * 1024 * 1024, B = class {
 			a = e;
 		}), s = this.operationTail.then(() => this.coordinator.enqueue(async () => {
 			if (i.canceled) throw Error("worksheet pull session open was canceled");
-			this.executeArchive((t) => t.open_sheet_cursor(e, n));
+			this.executeArchive((n) => n.open_sheet_cursor(e, t));
 			let o = [], s = {
 				rows: 0,
 				cells: 0,
 				ownedUtf8Bytes: 0
-			}, l, u = !1, d = new t({
+			}, c, l = !1, u = new n({
 				...r,
-				maxByteCredit: z,
+				maxByteCredit: B,
 				coordinator: this.coordinator,
 				driver: {
 					pull: () => {
 						let e = this.executeArchive((e) => e.pull_sheet_cursor(128)), t = this.executeArchive((e) => e.sheet_cursor_pull_finished());
 						if (this.acceptWorksheet) {
-							let n = R(e, t, void 0, this.prepareRows);
+							let n = z(e, t, void 0, this.prepareRows);
 							try {
 								if (n.kind === "rows") {
-									let e = A(s, O(n.rows));
-									N(e, "get-worksheet-worker", void 0, this.readResourceUsage()), o.push(...n.rows), s = e;
-								} else l = n.worksheet;
+									let e = j(s, O(n.rows));
+									P(e, "get-worksheet-worker", void 0, this.readResourceUsage()), o.push(...n.rows), s = e;
+								} else c = n.worksheet;
 							} catch (e) {
-								throw e instanceof c && (this.resourceFailure ??= e), e;
+								throw e instanceof p && (this.resourceFailure ??= e), e;
 							}
 						}
-						u = t;
+						l = t;
 						let n = v(e);
 						return {
 							payload: n,
@@ -201,26 +204,26 @@ var z = 64 * 1024 * 1024, B = class {
 					},
 					measureChunk: ({ payload: e }) => e.byteLength,
 					acknowledge: () => {
-						if (!u) return;
+						if (!l) return;
 						let t, n;
 						try {
 							if (this.acceptWorksheet) {
-								if (!l) throw Error("worksheet terminal payload is missing");
-								l.rows = l.parseError ? [] : o;
-								let r = l.parseError ? {
+								if (!c) throw Error("worksheet terminal payload is missing");
+								c.rows = c.parseError ? [] : o;
+								let r = c.parseError ? {
 									rows: 0,
 									cells: 0,
 									ownedUtf8Bytes: 0
-								} : s, i = k(l, r), a = this.readResourceUsage();
-								N(i, "get-worksheet-worker", void 0, a), P(i.jsonBytes, "get-worksheet-worker", void 0, a);
-								let c = this.acceptWorksheet(e, l, i, a);
-								typeof c == "function" ? t = c : c && ({rollback: t, commit: n} = c);
+								} : s, i = A(c, r), a = this.readResourceUsage();
+								P(i, "get-worksheet-worker", void 0, a), F(i.jsonBytes, "get-worksheet-worker", void 0, a);
+								let l = this.acceptWorksheet(e, c, i, a);
+								typeof l == "function" ? t = l : l && ({rollback: t, commit: n} = l);
 							}
 							this.executeArchive((e) => e.acknowledge_sheet_cursor_terminal()), n?.();
 						} catch (e) {
-							throw t?.(), e instanceof c && (this.resourceFailure ??= e), e;
+							throw t?.(), e instanceof p && (this.resourceFailure ??= e), e;
 						}
-						u = !1, this.sessions.delete(r.sessionId), a();
+						l = !1, this.sessions.delete(r.sessionId), a();
 					},
 					cancel: () => {
 						try {
@@ -240,7 +243,7 @@ var z = 64 * 1024 * 1024, B = class {
 				}
 			});
 			this.sessions.set(r.sessionId, {
-				host: d,
+				host: u,
 				identity: r
 			}), this.pendingOpens.delete(r.sessionId);
 		}));
@@ -261,14 +264,14 @@ var z = 64 * 1024 * 1024, B = class {
 			} catch {}
 		}
 	}
-	dispatch(e, t) {
-		let n = this.sessions.get(e.sessionId);
-		if (n) return n.host.dispatch(e, t);
+	dispatch(e, n) {
+		let r = this.sessions.get(e.sessionId);
+		if (r) return r.host.dispatch(e, n);
 		let i = this.pendingOpens.get(e.sessionId);
 		if (i && (e.kind === "cancel" || e.kind === "close")) {
-			let n = i.identity.operationId === e.operationId && i.identity.generation === e.generation;
-			return n && (i.canceled = !0), t(n ? {
-				protocol: a,
+			let r = i.identity.operationId === e.operationId && i.identity.generation === e.generation;
+			return r && (i.canceled = !0), n(r ? {
+				protocol: t,
 				kind: "accepted",
 				sessionId: e.sessionId,
 				operationId: e.operationId,
@@ -276,7 +279,7 @@ var z = 64 * 1024 * 1024, B = class {
 				requestId: e.requestId,
 				command: e.kind
 			} : {
-				protocol: a,
+				protocol: t,
 				kind: "error",
 				sessionId: e.sessionId,
 				operationId: e.operationId,
@@ -289,37 +292,37 @@ var z = 64 * 1024 * 1024, B = class {
 				}
 			}), Promise.resolve();
 		}
-		return e.kind === "cancel" || e.kind === "close" ? (t({
-			protocol: a,
+		return e.kind === "cancel" || e.kind === "close" ? (n({
+			protocol: t,
 			kind: "accepted",
 			sessionId: e.sessionId,
 			operationId: e.operationId,
 			generation: e.generation,
 			requestId: e.requestId,
 			command: e.kind
-		}), Promise.resolve()) : (t({
-			protocol: a,
+		}), Promise.resolve()) : (n({
+			protocol: t,
 			kind: "error",
 			sessionId: e.sessionId,
 			operationId: e.operationId,
 			generation: e.generation,
 			requestId: e.requestId,
-			error: r(/* @__PURE__ */ Error("worksheet pull session is not open"))
+			error: o(/* @__PURE__ */ Error("worksheet pull session is not open"))
 		}), Promise.resolve());
 	}
-	async dispatchSafely(e, t) {
+	async dispatchSafely(e, n) {
 		try {
-			await this.dispatch(e, t);
-		} catch (n) {
+			await this.dispatch(e, n);
+		} catch (r) {
 			try {
-				t({
-					protocol: a,
+				n({
+					protocol: t,
 					kind: "error",
 					sessionId: e.sessionId,
 					operationId: e.operationId,
 					generation: e.generation,
 					requestId: e.requestId,
-					error: r(n)
+					error: o(r)
 				});
 			} catch {}
 		}
@@ -329,17 +332,17 @@ var z = 64 * 1024 * 1024, B = class {
 			if (this.resourceFailure) throw this.resourceFailure;
 			return e();
 		})).catch((e) => {
-			throw e instanceof c && (this.resourceFailure ??= e), e;
+			throw e instanceof p && (this.resourceFailure ??= e), e;
 		});
 		return this.operationTail = t.then(() => void 0, () => void 0), t;
 	}
 	async reset() {
 		for (let e of this.pendingOpens.values()) e.canceled = !0;
 		let e = 1;
-		for (let { host: t, identity: n } of [...this.sessions.values()]) await t.dispatch({
-			protocol: a,
+		for (let { host: n, identity: r } of [...this.sessions.values()]) await n.dispatch({
+			protocol: t,
 			kind: "close",
-			...n,
+			...r,
 			requestId: e++
 		}, () => void 0);
 		this.sessions.clear(), await this.operationTail, this.pendingOpens.clear(), this.resourceFailure = void 0;
@@ -350,28 +353,28 @@ var z = 64 * 1024 * 1024, B = class {
 		return e;
 	}
 	async closeIdentity(e) {
-		let t = this.sessions.get(e.sessionId);
-		if (t) {
-			await t.host.dispatch({
-				protocol: a,
+		let n = this.sessions.get(e.sessionId);
+		if (n) {
+			await n.host.dispatch({
+				protocol: t,
 				kind: "close",
 				...e,
 				requestId: 1
 			}, () => void 0);
 			return;
 		}
-		let n = this.pendingOpens.get(e.sessionId);
-		n && n.identity.operationId === e.operationId && n.identity.generation === e.generation && (n.canceled = !0);
+		let r = this.pendingOpens.get(e.sessionId);
+		r && r.identity.operationId === e.operationId && r.identity.generation === e.generation && (r.canceled = !0);
 	}
 	readResourceUsage() {
 		try {
-			return o(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
+			return a(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
 		} catch (e) {
 			if (String(e).includes("worksheet cursor usage is unavailable")) return;
 			throw e;
 		}
 	}
-}, V = class {
+}, H = class {
 	active = /* @__PURE__ */ new Set();
 	nextSessionId = 1;
 	constructor(e) {
@@ -380,27 +383,27 @@ var z = 64 * 1024 * 1024, B = class {
 	async *stream(e, t, n) {
 		if (!Number.isSafeInteger(e) || e < 0) throw RangeError("sheetIndex must be a non-negative safe integer");
 		if (!t) throw TypeError("sheetName must be non-empty");
-		W(n);
-		let r = this.nextSessionId++, a = {
+		G(n);
+		let r = this.nextSessionId++, i = {
 			sessionId: r,
 			operationId: r,
 			generation: this.options.generation ?? 1
-		}, o = new i(this.options.transport, {
-			...a,
-			maxByteCredit: z,
+		}, a = new u(this.options.transport, {
+			...i,
+			maxByteCredit: B,
 			timeoutMs: this.options.timeoutMs,
 			disposeTransferred: this.options.disposeTransferred
 		});
-		this.active.add(o);
-		let s = !1, c;
+		this.active.add(a);
+		let o = !1, s;
 		try {
-			for (await this.options.open(e, t, a, this.options.timeoutMs);;) {
-				W(n);
-				let e = await o.pull(z, { signal: n });
+			for (await this.options.open(e, t, i, this.options.timeoutMs);;) {
+				G(n);
+				let e = await a.pull(B, { signal: n });
 				try {
-					let t = e.usage ?? o.usageCheckpoint;
+					let t = e.usage ?? a.usageCheckpoint;
 					t && this.options.onUsage?.(t);
-					let r = R(e.payload, e.done, this.options.sharedStrings);
+					let r = z(e.payload, e.done, this.options.sharedStrings);
 					if (yield r.kind === "rows" ? {
 						kind: "rows",
 						rows: r.rows,
@@ -414,7 +417,7 @@ var z = 64 * 1024 * 1024, B = class {
 						wireBytes: e.byteLength,
 						usage: t
 					}, await e.ack({ signal: n }), r.kind === "finished") {
-						s = !0;
+						o = !0;
 						return;
 					}
 				} finally {
@@ -422,17 +425,17 @@ var z = 64 * 1024 * 1024, B = class {
 				}
 			}
 		} catch (e) {
-			throw c = e, e;
+			throw s = e, e;
 		} finally {
 			let e;
 			try {
-				s || await o.cancel(U(c));
+				o || await a.cancel(W(s));
 			} catch (t) {
 				e = t;
 			} finally {
-				this.active.delete(o);
+				this.active.delete(a);
 			}
-			if (c === void 0 && e !== void 0) throw e;
+			if (s === void 0 && e !== void 0) throw e;
 		}
 	}
 	async cancelAll(e = "closed") {
@@ -440,16 +443,16 @@ var z = 64 * 1024 * 1024, B = class {
 		if (t) throw t.reason;
 	}
 };
-function H(e) {
+function U(e) {
 	return !!e && typeof e == "object" && e.protocol === "ooxml-pull-v1";
 }
-function U(e) {
+function W(e) {
 	return e && typeof e == "object" && "name" in e && e.name === "AbortError" ? "abort" : e === void 0 ? "closed" : "request-error";
 }
-function W(e) {
+function G(e) {
 	if (!e?.aborted) return;
 	let t = /* @__PURE__ */ Error("XLSX workbook session was aborted");
 	throw t.name = "AbortError", t;
 }
 //#endregion
-export { j as a, P as c, O as d, I as i, N as l, H as n, A as o, B as r, F as s, V as t, k as u };
+export { S as a, I as c, A as d, O as f, L as i, F as l, N as m, U as n, M as o, k as p, V as r, j as s, H as t, P as u };

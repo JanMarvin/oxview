@@ -1,5 +1,5 @@
-import { qt as e } from "./line-metrics-BGtFM-ec.js";
-import { c as t, o as n, r, s as i } from "./bounded-raw-part-cache-C6ro6Ezf.js";
+import { Kt as e } from "./hyperlink-enyPbflR.js";
+import { c as t, o as n, r, s as i } from "./bounded-raw-part-cache-DVx3Camo.js";
 //#region packages/core/src/fonts/embedded.ts
 function a(e, t) {
 	let n = o(t), r = e.slice(), i = Math.min(32, r.length);

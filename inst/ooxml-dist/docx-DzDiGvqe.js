@@ -1,16 +1,16 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { B as t, R as n, W as r, Zt as i, a, cn as o, et as s, pt as c, sn as l, ut as u, vt as d, z as f } from "./line-metrics-BGtFM-ec.js";
-import { C as p, D as m, E as h, S as g, T as _, _ as v, a as y, b, c as x, d as ee, f as te, g as ne, h as re, i as S, l as C, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-CDNMJ-Yz.js";
-import { a as ge, i as _e, t as ve } from "./bounded-raw-part-cache-C6ro6Ezf.js";
-import { c as ye, i as be, l as xe, n as Se, o as w, r as Ce, s as we, t as Te } from "./dom-interaction-boundary-CDGegIB5.js";
-import { A as Ee, C as T, D as E, E as De, O as D, S as Oe, T as O, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as k, o as Ve, p as He, s as Ue, t as A, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-F3ox_VXK.js";
+import { H as t, I as n, L as r, Q as i, R as a, Xt as o, ct as s, dt as c, gt as l, on as u, r as d, sn as f } from "./hyperlink-enyPbflR.js";
+import { C as p, D as m, E as h, S as g, T as _, _ as v, a as y, b, c as x, d as ee, f as te, g as ne, h as re, i as S, l as C, m as ie, n as ae, o as oe, p as se, r as ce, s as le, t as ue, u as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-B3A7KLLi.js";
+import { a as ge, i as _e, t as ve } from "./bounded-raw-part-cache-DVx3Camo.js";
+import { c as ye, i as be, l as xe, n as Se, o as w, r as Ce, s as we, t as Te } from "./dom-interaction-boundary-DK1JLkrz.js";
+import { A as Ee, C as T, D as E, E as De, O as D, S as Oe, T as O, _ as ke, a as Ae, b as je, c as Me, d as Ne, f as Pe, g as Fe, h as Ie, j as Le, k as Re, l as ze, m as Be, n as k, o as Ve, p as He, s as Ue, t as A, v as We, w as Ge, x as Ke, y as qe } from "./document-pull-client-xZrA2IjM.js";
 import { l as Je, s as Ye } from "./pixel-budget-Dgjw269h.js";
 import { a as j } from "./units-EJdC96r6.js";
 import { i as Xe, s as Ze } from "./raster-target-ojDdQizC.js";
 import { n as Qe } from "./renderer-module-contract-Cu-GKuPd.js";
-import { n as $e, t as M } from "./highlight-rect-DBcYVJDv.js";
-import { o as N } from "./source-key-BkBB3X82.js";
-import { i as et, n as P, r as tt, t as nt } from "./comments-Brfxa3hQ.js";
+import { n as $e, t as M } from "./highlight-rect-FuUSmL3a.js";
+import { o as N } from "./source-key-Ktb1GRE5.js";
+import { i as et, n as P, r as tt, t as nt } from "./comments-CAn2A_Xh.js";
 //#region packages/docx/src/worker.ts?worker&inline
 var rt = "var e=(e,t)=>()=>(e&&(t=e(e=0)),t),t=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,r.unregister(this),e}free(){let e=this.__destroy_into_raw();v.__wbg_docxarchive_free(e,0)}acknowledge_document_chunk(e,t,n){let r=v.docxarchive_acknowledge_document_chunk(this.__wbg_ptr,e,t,n);if(r[1])throw p(r[0])}assert_healthy(){let e=v.docxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw p(e[0])}cancel_document_cursor(){v.docxarchive_cancel_document_cursor(this.__wbg_ptr)}close_document_session(){v.docxarchive_close_document_session(this.__wbg_ptr)}document_chunk_done(){let e=v.docxarchive_document_chunk_done(this.__wbg_ptr);if(e[2])throw p(e[1]);return e[0]!==0}document_cursor_resource_usage(){let e=v.docxarchive_document_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw p(e[2]);var t=i(e[0],e[1]).slice();return v.__wbindgen_free(e[0],e[1]*1,1),t}extract_image(e){let t=f(e,v.__wbindgen_malloc,v.__wbindgen_realloc),n=_,r=v.docxarchive_extract_image(this.__wbg_ptr,t,n);if(r[3])throw p(r[2]);var a=i(r[0],r[1]).slice();return v.__wbindgen_free(r[0],r[1]*1,1),a}constructor(e,t,n,i){let a=d(e,v.__wbindgen_malloc),o=_,s=v.docxarchive_new(a,o,!u(t),u(t)?BigInt(0):t,!u(n),u(n)?BigInt(0):n,!u(i),u(i)?BigInt(0):i);if(s[2])throw p(s[1]);return this.__wbg_ptr=s[0]>>>0,r.register(this,this.__wbg_ptr,this),this}open_document_cursor(e,t){let n=v.docxarchive_open_document_cursor(this.__wbg_ptr,e,t);if(n[1])throw p(n[0])}parse(){let e=v.docxarchive_parse(this.__wbg_ptr);if(e[3])throw p(e[2]);var t=i(e[0],e[1]).slice();return v.__wbindgen_free(e[0],e[1]*1,1),t}pull_document_chunk(e,t,n,r){let a=v.docxarchive_pull_document_chunk(this.__wbg_ptr,e,t,n,r);if(a[3])throw p(a[2]);var o=i(a[0],a[1]).slice();return v.__wbindgen_free(a[0],a[1]*1,1),o}resource_usage(){let e=v.docxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw p(e[2]);var t=i(e[0],e[1]).slice();return v.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=v.docxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,p(i[2]);return e=n,t=r,s(n,r)}finally{v.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(t.prototype[Symbol.dispose]=t.prototype.free);function n(){return{__proto__:null,\"./docx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(s(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(s(e,t))}finally{v.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=f(n,v.__wbindgen_malloc,v.__wbindgen_realloc),i=_;o().setInt32(e+4,i,!0),o().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return s(e,t)},__wbindgen_init_externref_table:function(){let e=v.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const r=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>v.__wbg_docxarchive_free(e>>>0,1));function i(e,t){return e>>>=0,l().subarray(e/1,e/1+t)}let a=null;function o(){return(a===null||a.buffer.detached===!0||a.buffer.detached===void 0&&a.buffer!==v.memory.buffer)&&(a=new DataView(v.memory.buffer)),a}function s(e,t){return e>>>=0,ee(e,t)}let c=null;function l(){return(c===null||c.byteLength===0)&&(c=new Uint8Array(v.memory.buffer)),c}function u(e){return e==null}function d(e,t){let n=t(e.length*1,1)>>>0;return l().set(e,n/1),_=e.length,n}function f(e,t,n){if(n===void 0){let n=g.encode(e),r=t(n.length,1)>>>0;return l().subarray(r,r+n.length).set(n),_=n.length,r}let r=e.length,i=t(r,1)>>>0,a=l(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=l().subarray(i+o,i+r),a=g.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return _=o,i}function p(e){let t=v.__wbindgen_externrefs.get(e);return v.__externref_table_dealloc(e),t}let m=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});m.decode();let h=0;function ee(e,t){return h+=t,h>=2146435072&&(m=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),m.decode(),h=t),m.decode(l().subarray(e,e+t))}const g=new TextEncoder;`encodeInto`in g||(g.encodeInto=function(e,t){let n=g.encode(e);return t.set(n),{read:e.length,written:n.length}});let _=0,v;function te(e,t){return v=e.exports,a=null,c=null,v.__wbindgen_start(),v}async function ne(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function y(e){if(v!==void 0)return v;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let t=n();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:r,module:i}=await ne(await e,t);return te(r,i)}async function b(e){return v=void 0,a=null,c=null,y(e)}var x=class e extends Error{code;constructor(t,n){super(n),this.name=`OoxmlError`,this.code=t,Object.setPrototypeOf(this,e.prototype)}},S=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}};function re(e){return e===`image-dimension`||e===`image-pixels`||e===`active-decoded-bytes`}function C(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function ie(e){if(!(!e||typeof e!=`object`))try{let t=e,n=t.code,r=t.metric,i=t.limit,a=t.observed;return n!==`ooxml-decoded-image-limit`||!re(r)||!C(i)||!C(a)||a<=i?void 0:{metric:r,limit:i,observed:a}}catch{return}}var w,T,E,D=e((()=>{w=1<<25,T=1<<27,w*4,T*4,E=class e extends RangeError{code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}}}));function O(e){if(!(typeof e!=`object`||!e))try{let t=e,n=t.code,r=t.message;return n===`ooxml-tiff-decode`&&typeof r==`string`?{message:r}:void 0}catch{return}}var ae=e((()=>{}));function oe(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var se=class{state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},k=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function ce(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function le(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function ue(e,t){return e({module_or_path:t})}var de=class{runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new se(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),fe),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return this.runtime.run(e)}poison(){this.runtime.poison(new k(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):ue(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,le(e)}};function fe(e){return ce(e)?new k(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function A(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function pe(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return A(t.requiredBytes)&&A(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var j=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function M(e){if(e instanceof j)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!pe(r)))return new j(r)}function me(e,t,n){let r=M(e);if(!(!r||r.offeredBytes!==t||r.requiredBytes>n))return r}D(),ae();const N=`OOXML_RESOURCE_LIMIT:`;function P(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function F(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return P(t.archiveEntryCount)&&P(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||P(t.largestInflatedEntryBytes))&&P(t.distinctInflatedBytes)&&P(t.operationInflatedBytes)}function I(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!F(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function L(e){return e===`docx`||e===`xlsx`||e===`pptx`}function R(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function z(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function B(e){return z(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function he(e){return!z(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const V=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}]]),ge=new Set([...V.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),_e=new Set([...V.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function ve(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!L(t.format)||!z(t.operation,256)||!B(t.resource)||!B(t.metric)||!P(t.limit)||!P(t.observed)||typeof t.configurable!=`boolean`||!F(t.usage)?!1:!(`part`in t)||he(t.part)}function H(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!R(t.stage)||!ve(t.violation))return!1;let n=t.violation,r=V.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(ge.has(n.resource)&&_e.has(n.metric))}function ye(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function be(e){if(!H(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:ye(t.usage)}};return H(n)?n:void 0}function U(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``}: ${t.metric} ${t.observed} > ${t.limit}`}function xe(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(N))return;let n;try{n=JSON.parse(t.slice(21))}catch{return}if(!n||typeof n!=`object`)return;let r=n;if(!(r.code!==`ooxml-resource-limit`||!H(r.details)))return new S(U(r.details),r.details)}function Se(e){let t=ie(e);if(t){let e=new E(t.metric,t.limit,t.observed);return{message:e.message,errorName:e.name,code:e.code,decodedImage:t}}let n=O(e);if(n)return{message:n.message,errorName:`TiffDecodeError`,code:`ooxml-tiff-decode`};let r=M(e);if(r)return{message:r.message,errorName:r.name,code:r.code,insufficientCredit:{requiredBytes:r.requiredBytes,offeredBytes:r.offeredBytes}};let i=e instanceof x||e instanceof S?e:xe(e);if(i instanceof S){let e=be(i.details);return e?{message:typeof i.message==`string`?i.message:U(e),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:e}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(i instanceof x)return{message:typeof i.message==`string`?i.message:String(i.message),errorName:z(i.name,128)?i.name:`OoxmlError`,...B(i.code)?{code:i.code}:{}};let a=e instanceof Error?e.message:String(e);if(typeof a==`string`&&a.startsWith(N))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let o=e instanceof Error?e:Error(a),s=o;return{message:typeof o.message==`string`?o.message:String(o.message),errorName:z(o.name,128)?o.name:`Error`,...typeof s.code==`string`?{code:s.code}:{}}}function W(e){try{return Se(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}function Ce(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function we(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const G=`ooxml-pull-v1`;function K(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function Te(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var q=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,K(this.maxRetainedBytes,`max retained lease bytes`),K(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},Ee=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){Te(e.sessionId),K(e.operationId,`operation id`),K(e.generation,`generation`),K(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&K(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=W(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(K(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:G,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){K(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(K(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:G,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:G,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};const J=67108864;var De=class{coordinator=new q;host=null;identity=null;constructor(e,t=e=>e(this.requireArchive())){this.archive=e,this.executeArchive=t}open(e){if(this.host)throw Error(`a DOCX document pull session is already active`);this.executeArchive(t=>{t.open_document_cursor(e.operationId,e.generation)});let t=0;this.identity=e,this.host=new Ee({...e,maxByteCredit:J,coordinator:this.coordinator,driver:{pull:n=>{let r;try{r=this.executeArchive(r=>r.pull_document_chunk(t,e.operationId,e.generation,n))}catch(e){throw me(e,n,J)||e}let i=Ce(r);return{payload:i,byteLength:i.byteLength,done:this.executeArchive(e=>e.document_chunk_done()),transfer:[i]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:n=>{if(n!==t)throw Error(`DOCX document acknowledgement sequence mismatch`);this.executeArchive(n=>n.acknowledge_document_chunk(t,e.operationId,e.generation)),t+=1},cancel:()=>this.executeArchive(e=>e.cancel_document_cursor()),close:()=>this.executeArchive(e=>e.close_document_session()),resourceUsage:()=>{let e=this.executeArchive(e=>e.document_cursor_resource_usage?.());return e?I(e):void 0}}})}dispatch(e,t){return!this.host||!this.identity?(t({protocol:G,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:W(Error(`DOCX document pull session is not open`))}),Promise.resolve()):this.host.dispatch(e,t)}async reset(){if(this.host)try{this.archive()&&this.executeArchive(e=>e.close_document_session())}finally{this.host=null,this.identity=null,this.coordinator=new q}}requireArchive(){let e=this.archive();if(!e)throw Error(`No docx loaded`);return e}};function Y(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}const X=new de(y,{freeArchive:e=>e.free(),reinit:b}),Z=new De(()=>X.archive,e=>X.run(()=>{let t=X.archive;if(!t)throw Error(`No docx loaded`);return e(t)}));let Q=0;const $=(e,t)=>self.postMessage(e,t);self.onmessage=async e=>{let n=e.data;if(Y(n)){try{await Z.dispatch(n,$)}catch(e){$({protocol:G,kind:`error`,sessionId:n.sessionId,operationId:n.operationId,generation:n.generation,requestId:n.requestId,error:W(e)})}return}if(n.type===`init`){X.setWasmInput(oe(n.wasmUrl)??n.wasmUrl);return}let r=n.id;try{if(await X.ensureReady(),n.type!==`parse`&&X.archive){let e=X.archive;X.run(()=>e.assert_healthy())}if(n.type===`parse`){await Z.reset();let[e,i,a]=we(n.resourcePolicy),o=new Uint8Array(n.data);X.run(()=>{let n=new t(o,e,i,a);X.setArchive(n)}),Q+=1;let s={sessionId:Q,operationId:Q,generation:Q};Z.open(s),$({type:`documentSessionOpened`,id:r,...s});return}let e=X.archive;if(n.type===`extractImage`){if(!e)throw Error(`No docx loaded`);let t=X.run(()=>e.extract_image(n.path).buffer),i={type:`imageExtracted`,id:r,bytes:t};self.postMessage(i,[t]);return}if(n.type===`resourceUsage`){if(!e)throw Error(`No docx loaded`);$({type:`resourceUsage`,id:r,usage:I(X.run(()=>e.resource_usage()))});return}if(n.type===`toMarkdown`){if(!e)throw Error(`No docx loaded`);$({type:`markdownRendered`,id:r,markdown:X.run(()=>e.to_markdown())});return}}catch(e){$({type:`error`,id:r,...W(e)})}};", it = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", rt], { type: "text/javascript;charset=utf-8" });
 function at(e) {
@@ -510,18 +510,18 @@ var J = class e {
 	_bridge;
 	_rawParts = new ve({
 		maxEntries: 64,
-		maxBytes: i
+		maxBytes: o
 	});
 	_embeddedFontFaces = [];
 	_googleFontFaces = [];
 	_localMetricFontFaces = [];
 	_fetchImage = (e, t) => this.getImage(e, t);
-	constructor(e, t, n, i) {
-		this._worker = e, this._mode = t, De(this, n), this._bridge = new pe(this._worker, {
+	constructor(e, n, r, i) {
+		this._worker = e, this._mode = n, De(this, r), this._bridge = new pe(this._worker, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
 			onUnsolicited: (e) => this._onWorkerLayoutPush(e),
 			toError: (e) => {
-				if (!("protocol" in e || e.type !== "error")) return Object.assign(r(e), {
+				if (!("protocol" in e || e.type !== "error")) return Object.assign(t(e), {
 					...e.reason === void 0 ? {} : { reason: e.reason },
 					...e.outgoingColumnIndex === void 0 ? {} : { outgoingColumnIndex: e.outgoingColumnIndex },
 					...e.outgoingColumnCount === void 0 ? {} : { outgoingColumnCount: e.outgoingColumnCount },
@@ -535,59 +535,59 @@ var J = class e {
 			wasmUrl: a
 		});
 	}
-	static async load(r, i = {}) {
-		let a = t(i), o = Date.now(), s = i.mode ?? "main", c = new n({
+	static async load(t, r = {}) {
+		let i = a(r), o = Date.now(), s = r.mode ?? "main", c = new n({
 			enabled: !0,
 			format: "docx",
 			mode: s,
-			policy: a.policy,
-			onMetrics: a.onResourceMetrics,
-			emitToConsole: a.debug
+			policy: i.policy,
+			onMetrics: i.onResourceMetrics,
+			emitToConsole: i.debug
 		});
 		try {
 			if (s === "worker" && (typeof Worker > "u" || typeof OffscreenCanvas > "u")) throw Error("mode: 'worker' requires Worker and OffscreenCanvas support");
-			let t;
-			if (typeof r == "string") {
-				let e = await fetch(r);
+			let n;
+			if (typeof t == "string") {
+				let e = await fetch(t);
 				if (!e.ok) throw Error(`Failed to fetch: ${e.status} ${e.statusText}`);
-				t = await e.arrayBuffer();
-			} else t = r;
-			t = m(await h(t, i.password)), c.setSourceBytes(t.byteLength), c.checkpoint("container ready");
-			let n = s === "worker" ? (await import("./render-worker-host-CBcQXsR5.js")).createRenderWorker() : new at(), l = s === "worker" ? Qe(i) : void 0, u = s === "worker" && !!i.progressiveLayout, d;
+				n = await e.arrayBuffer();
+			} else n = t;
+			n = m(await h(n, r.password)), c.setSourceBytes(n.byteLength), c.checkpoint("container ready");
+			let a = s === "worker" ? (await import("./render-worker-host-BHz9vjxB.js")).createRenderWorker() : new at(), l = s === "worker" ? Qe(r) : void 0, u = s === "worker" && !!r.progressiveLayout, d;
 			try {
-				d = new e(n, s, o, i.wasmUrl), d._metrics = c;
-				let r = E(d), f = O(i.currentDate, r.defaultCurrentDateMs, i.showTrackedChanges === !0);
-				if (r.activeLayoutOptions = f, await d._parse(t, a.policy, s === "worker" ? !!i.useGoogleFonts : !1, i.workerTimeoutMs, (e) => c.observeUsage(e), l, u ? {
-					onPartial: i.onLayoutPartial,
-					onComplete: i.onLayoutComplete,
-					onProgress: i.onLayoutProgress,
+				d = new e(a, s, o, r.wasmUrl), d._metrics = c;
+				let t = E(d), f = O(r.currentDate, t.defaultCurrentDateMs, r.showTrackedChanges === !0);
+				if (t.activeLayoutOptions = f, await d._parse(n, i.policy, s === "worker" ? !!r.useGoogleFonts : !1, r.workerTimeoutMs, (e) => c.observeUsage(e), l, u ? {
+					onPartial: r.onLayoutPartial,
+					onComplete: r.onLayoutComplete,
+					onProgress: r.onLayoutProgress,
 					layoutOptions: f,
 					abort: new AbortController(),
 					firstPublication: Vt(),
 					published: !1,
 					settled: !1
-				} : void 0), s === "worker" && d._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), i.math && d._mode === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), i.threeD && d._mode === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), d._threeD = d._mode === "worker" ? void 0 : i.threeD, i.regionMap && d._mode === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), d._regionMap = d._mode === "worker" ? void 0 : i.regionMap, i.chartEx && d._mode === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), d._chartEx = d._mode === "worker" ? void 0 : i.chartEx, i.tiff && d._mode === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), d._tiff = d._mode === "worker" ? void 0 : i.tiff, d._mode === "main" && i.useGoogleFonts && d._document && (d._googleFontFaces = await _e(He(d._document), Pe)), d._mode === "main" && d._document?.embeddedFonts?.length) {
+				} : void 0), s === "worker" && d._mode === "main" && (c.setMode("main"), console.warn("[ooxml] mode: 'worker' fell back to main-thread rendering because this document requires DOM OpenType vertical glyph selection.")), r.math && d._mode === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), r.threeD && d._mode === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), d._threeD = d._mode === "worker" ? void 0 : r.threeD, r.regionMap && d._mode === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), d._regionMap = d._mode === "worker" ? void 0 : r.regionMap, r.chartEx && d._mode === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), d._chartEx = d._mode === "worker" ? void 0 : r.chartEx, r.tiff && d._mode === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), d._tiff = d._mode === "worker" ? void 0 : r.tiff, d._mode === "main" && r.useGoogleFonts && d._document && (d._googleFontFaces = await _e(He(d._document), Pe)), d._mode === "main" && d._document?.embeddedFonts?.length) {
 					let e = d;
 					d._embeddedFontFaces = await ct(d._document, (t) => e.getFontBytes(t));
 				}
 				let p;
 				d._mode === "main" && d._document && (p = await Ne(d._document), d._localMetricFontFaces = p.faces);
 				let m;
-				if (d._mode === "main" && i.math && d._document && Ve(d._document) && (m = await Ue(d._document, i.math)), d._mode === "main" && d._document && d._source) {
+				if (d._mode === "main" && r.math && d._document && Ve(d._document) && (m = await Ue(d._document, r.math)), d._mode === "main" && d._document && d._source) {
 					let e = d, t = E(d);
 					t.services = ze(d._source, {
 						localMetrics: p?.metrics,
-						useGoogleFonts: !!i.useGoogleFonts,
+						useGoogleFonts: !!r.useGoogleFonts,
 						embeddedFaces: d._embeddedFontFaces,
 						googleFaces: d._googleFontFaces,
 						mathResources: m?.records,
 						mathDrawables: m?.drawables
 					});
-					let n = t.services, r = Ae(d._source, n, t.defaultCurrentDateMs), a = d._source.fatalParse === null, o = t.activeLayoutOptions;
+					let n = t.services, i = Ae(d._source, n, t.defaultCurrentDateMs), a = d._source.fatalParse === null, o = t.activeLayoutOptions;
 					if (!o) throw Error("Active layout view was not recorded at load");
-					let s = { onProgress: i.onLayoutProgress ? (t) => e._layoutObservers.notify("onLayoutProgress", i.onLayoutProgress, { committedUnits: t }) : void 0 };
-					if (a && i.progressiveLayout) {
-						let e = r.layoutVariants, t = d, a = new AbortController();
+					let s = { onProgress: r.onLayoutProgress ? (t) => e._layoutObservers.notify("onLayoutProgress", r.onLayoutProgress, { committedUnits: t }) : void 0 };
+					if (a && r.progressiveLayout) {
+						let e = i.layoutVariants, t = d, a = new AbortController();
 						t._layoutAbort = a;
 						let c = Vt(), l = null, u = !0;
 						t._layoutCompletion = Pt(d._source.bodyLayoutInput, n, o, {
@@ -597,12 +597,12 @@ var J = class e {
 							},
 							onPreview: (n) => {
 								if (!u) return;
-								let r = l === null, a = t._replaceMainLayoutPublication(e, o, l, n.layout);
+								let i = l === null, a = t._replaceMainLayoutPublication(e, o, l, n.layout);
 								if (a === null) {
 									u = !1;
 									return;
 								}
-								if (l = a, r) t._layoutLifecycle.begin(), U(t, {
+								if (l = a, i) t._layoutLifecycle.begin(), U(t, {
 									pageCount: n.layout.pages.length,
 									exact: n.exact,
 									complete: !1
@@ -613,7 +613,7 @@ var J = class e {
 										pageCount: n.layout.pages.length,
 										exact: n.exact,
 										complete: !1
-									}), t._layoutObservers.notify("onLayoutPartial", i.onLayoutPartial, {
+									}), t._layoutObservers.notify("onLayoutPartial", r.onLayoutPartial, {
 										availableUnits: n.layout.pages.length,
 										exact: n.exact
 									});
@@ -624,7 +624,7 @@ var J = class e {
 								pageCount: t.pageCount,
 								exact: !0,
 								complete: !0
-							}), l !== null && t._layoutObservers.notify("onLayoutComplete", i.onLayoutComplete), c.resolve();
+							}), l !== null && t._layoutObservers.notify("onLayoutComplete", r.onLayoutComplete), c.resolve();
 						}).catch((e) => {
 							if (l === null) {
 								c.reject(e);
@@ -640,17 +640,17 @@ var J = class e {
 								exact: !1,
 								complete: !1,
 								error: n
-							}), t._layoutObservers.notify("onLayoutComplete", i.onLayoutComplete, n);
+							}), t._layoutObservers.notify("onLayoutComplete", r.onLayoutComplete, n);
 						}), await c.promise;
-					} else if (a && (i.sliceLayout || i.onLayoutProgress)) {
+					} else if (a && (r.sliceLayout || r.onLayoutProgress)) {
 						let e = await Be(d._source.bodyLayoutInput, n, o, s);
-						r.layoutVariants.prime(o, e);
-					} else r.layoutVariants.layoutFor(o);
+						i.layoutVariants.prime(o, e);
+					} else i.layoutVariants.layoutFor(o);
 				}
-				return await d._resourceUsage(i.workerTimeoutMs ?? 1e3).then((e) => c.observeUsage(e), () => void 0), c.checkpoint("model and layout ready"), c.succeed({ pages: d.pageCount }), d;
+				return await d._resourceUsage(r.workerTimeoutMs ?? 1e3).then((e) => c.observeUsage(e), () => void 0), c.checkpoint("model and layout ready"), c.succeed({ pages: d.pageCount }), d;
 			} catch (e) {
 				let t = d;
-				throw p(n, t ? () => t.destroy() : void 0), e;
+				throw p(a, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw c.fail(e), e;
@@ -836,7 +836,7 @@ var J = class e {
 		}), this._rearmParseWatchdog(), await o.firstPublication.promise;
 	}
 	destroy() {
-		this._layoutAbort?.abort(), this._layoutAbort = null, this._clearParseWatchdog(), this._parseRequestId = null, this._progressive = null, this._layoutViewGeneration++, this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, this._review = Wt, E(this).services = null, this._bookmarkPages = null, this._commentAnchorRanges = null, this._revisionAnchorRanges = null, this._reviewProjectionIndex = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (xe(this._embeddedFontFaces), this._embeddedFontFaces = []), this._googleFontFaces.length > 0 && (ge(this._googleFontFaces), this._googleFontFaces = []), this._localMetricFontFaces.length > 0 && (Le(this._localMetricFontFaces), this._localMetricFontFaces = []), c(this._fetchImage), u(this._fetchImage);
+		this._layoutAbort?.abort(), this._layoutAbort = null, this._clearParseWatchdog(), this._parseRequestId = null, this._progressive = null, this._layoutViewGeneration++, this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, this._review = Wt, E(this).services = null, this._bookmarkPages = null, this._commentAnchorRanges = null, this._revisionAnchorRanges = null, this._reviewProjectionIndex = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (xe(this._embeddedFontFaces), this._embeddedFontFaces = []), this._googleFontFaces.length > 0 && (ge(this._googleFontFaces), this._googleFontFaces = []), this._localMetricFontFaces.length > 0 && (Le(this._localMetricFontFaces), this._localMetricFontFaces = []), c(this._fetchImage), s(this._fetchImage);
 	}
 	async getImage(e, t) {
 		return this._rawParts.get(e, t, () => this._bridge.request((t) => ({
@@ -865,7 +865,7 @@ var J = class e {
 	async getResourceMetrics() {
 		let e = this._metrics;
 		if (!e) throw Error("Document not loaded");
-		return f(e, (e) => this._resourceUsage(e));
+		return r(e, (e) => this._resourceUsage(e));
 	}
 	async toMarkdown() {
 		return (await this._bridge.request((e) => ({
@@ -1019,29 +1019,29 @@ var J = class e {
 		});
 	}
 	async renderPageToBitmap(e, t = {}) {
-		let { onTextRun: n, ...r } = t, i = {
+		let { onTextRun: n, ...r } = t, a = {
 			...this._withActiveView(r),
-			dpr: r.dpr ?? s()
+			dpr: r.dpr ?? i()
 		};
 		if (this._mode === "worker") {
 			let t = await this._bridge.request((t) => ({
 				type: "renderPage",
 				id: t,
 				pageIndex: e,
-				opts: i
+				opts: a
 			}));
 			try {
 				if (n) for (let e of t.runs) n(e);
 			} catch (e) {
-				throw d(t.bitmap), e;
+				throw l(t.bitmap), e;
 			}
 			return t.bitmap;
 		}
-		let a = new OffscreenCanvas(1, 1);
-		return await this.renderPage(a, e, {
-			...i,
+		let o = new OffscreenCanvas(1, 1);
+		return await this.renderPage(o, e, {
+			...a,
 			onTextRun: n
-		}), a.transferToImageBitmap();
+		}), o.transferToImageBitmap();
 	}
 	async collectPageRuns(e, t = {}) {
 		let n = { ...this._withActiveView(t) };
@@ -1763,7 +1763,7 @@ var Qt = Symbol("DocxViewer.borrowedDocument"), $t = class e {
 	_hyperlinkHandler() {
 		return this._opts.enableHyperlinks === !1 ? void 0 : this._opts.onHyperlinkClick || ((e) => {
 			if (e.kind === "external") {
-				a(e.url, void 0, this._hostWindow);
+				d(e.url, void 0, this._hostWindow);
 				return;
 			}
 			let t = this._doc;
@@ -1779,7 +1779,7 @@ var Qt = Symbol("DocxViewer.borrowedDocument"), $t = class e {
 	}
 }, en = 150, tn = "0 1px 3px rgba(0,0,0,0.2)", nn = 12, rn = 13, an = Symbol("DocxScrollViewer.borrowedDocument"), on;
 function sn() {
-	return on ??= import("./comment-ui-runtime-DAKBCpsM.js");
+	return on ??= import("./comment-ui-runtime-DEtgcmj7.js");
 }
 var cn = class e {
 	_documentOwner;
@@ -2234,7 +2234,7 @@ var cn = class e {
 	_hyperlinkHandler() {
 		return this._opts.enableHyperlinks === !1 ? void 0 : this._opts.onHyperlinkClick || ((e) => {
 			if (e.kind === "external") {
-				a(e.url);
+				d(e.url);
 				return;
 			}
 			let t = this._doc;
@@ -2784,8 +2784,8 @@ var un = /* @__PURE__ */ e({
 	DocxScrollViewer: () => cn,
 	DocxViewer: () => $t,
 	OoxmlDecodedImageLimitError: () => Ye,
-	OoxmlError: () => l,
-	OoxmlResourceLimitError: () => o,
+	OoxmlError: () => u,
+	OoxmlResourceLimitError: () => f,
 	TiffDecodeError: () => Xe,
 	autoResize: () => _,
 	buildDocxHighlightLayer: () => Z,
@@ -2793,7 +2793,7 @@ var un = /* @__PURE__ */ e({
 	isOoxmlDecodedImageLimitError: () => Je,
 	isTiffDecodeError: () => Ze,
 	noteText: () => ln,
-	openExternalHyperlink: () => a,
+	openExternalHyperlink: () => d,
 	readDocxTextSelectionContext: () => Q,
 	resolveCommentAnchorRuns: () => P,
 	resolveDocxCommentThreads: () => tt,

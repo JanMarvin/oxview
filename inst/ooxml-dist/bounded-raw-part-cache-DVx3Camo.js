@@ -84,16 +84,18 @@ async function l(e, n, r = s()) {
 	let u = /* @__PURE__ */ new Set(), d = /* @__PURE__ */ new Set(), f = /* @__PURE__ */ new Set(), p = /* @__PURE__ */ new Map(), m = /* @__PURE__ */ new Set();
 	for (let t of e) {
 		if (!t) continue;
-		let e = t.toLowerCase();
-		if (u.has(e)) continue;
-		u.add(e);
-		let r = n[e];
-		if (!r) continue;
-		f.add(r.url);
-		let i = (r.loadFamily ?? t).toLowerCase();
-		d.add(i);
-		let a = p.get(r.url);
-		a || (a = /* @__PURE__ */ new Set(), p.set(r.url, a)), a.add(i);
+		let e = t.trim();
+		if (!e) continue;
+		let r = e.toLowerCase();
+		if (u.has(r)) continue;
+		u.add(r);
+		let i = n[r];
+		if (!i) continue;
+		f.add(i.url);
+		let a = (i.loadFamily ?? e).toLowerCase();
+		d.add(a);
+		let o = p.get(i.url);
+		o || (o = /* @__PURE__ */ new Set(), p.set(i.url, o)), o.add(a);
 	}
 	if (d.size === 0) return [];
 	let h = await i(Promise.all([...f].map(async (e) => {

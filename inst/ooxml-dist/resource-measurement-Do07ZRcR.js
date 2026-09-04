@@ -1,4 +1,4 @@
-import { ft as e, ht as t, mt as n, ot as r, yt as i } from "./line-metrics-BGtFM-ec.js";
+import { _t as e, ft as t, it as n, pt as r, ut as i } from "./hyperlink-enyPbflR.js";
 import { an as a } from "./plot-area-frame-D5hEOgkJ.js";
 import { i as o } from "./pixel-budget-Dgjw269h.js";
 import { r as s } from "./raster-target-ojDdQizC.js";
@@ -15,23 +15,23 @@ async function u(u, d, f, p, m = {}) {
 		...v,
 		targetWidthPx: void 0,
 		targetHeightPx: void 0
-	} : v, b = f ? e(p, l) : void 0, x = await n(u, d, p, y);
+	} : v, b = f ? i(p, l) : void 0, x = await t(u, d, p, y);
 	if (!f || !x) return x;
-	let S = await i(u, d, p, y, b, x), C = s(Number(x.width), Number(x.height), _.targetWidthPx, _.targetHeightPx), w = C ? `|resize:${C.resizeWidth}x${C.resizeHeight}` : "";
-	return t(l, `${c(S, f)}${w}${g ? "|strict" : ""}`, p, async () => {
+	let S = await e(u, d, p, y, b, x), C = s(Number(x.width), Number(x.height), _.targetWidthPx, _.targetHeightPx), w = C ? `|resize:${C.resizeWidth}x${C.resizeHeight}` : "";
+	return r(l, `${c(S, f)}${w}${g ? "|strict" : ""}`, p, async () => {
 		let { w: e, h: t } = a(x);
 		if (e <= 0 || t <= 0) return {
 			bitmap: g ? null : x,
 			owned: !1
 		};
-		let n = await r(x, f, {
+		let r = await n(x, f, {
 			width: e,
 			height: t,
 			offscreenFactory: h,
 			targetWidthPx: _.targetWidthPx,
 			targetHeightPx: _.targetHeightPx
 		});
-		if (n === x) {
+		if (r === x) {
 			if (g) return {
 				bitmap: null,
 				owned: !1
@@ -47,7 +47,7 @@ async function u(u, d, f, p, m = {}) {
 				owned: e !== x
 			};
 		}
-		let i = n;
+		let i = r;
 		return {
 			bitmap: i,
 			owned: i !== x

@@ -1,4 +1,4 @@
-import { Dt as e, sn as t } from "./line-metrics-BGtFM-ec.js";
+import { Tt as e, on as t } from "./hyperlink-enyPbflR.js";
 import { i as n, r, s as i } from "./pixel-budget-Dgjw269h.js";
 //#region packages/core/src/errors/cfb-sniff.ts
 var a = [
