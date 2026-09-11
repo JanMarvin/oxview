@@ -1,4 +1,4 @@
-import { Tt as e, on as t } from "./hyperlink-enyPbflR.js";
+import { Et as e, sn as t } from "./hyperlink-BR1NCO7S.js";
 import { i as n, r, s as i } from "./pixel-budget-Dgjw269h.js";
 //#region packages/core/src/errors/cfb-sniff.ts
 var a = [
@@ -87,20 +87,20 @@ var y = [
 	177,
 	26,
 	225
-], ee = 4294967290, b = 4294967294, te = 512, x = 128, S = 4e6, ne = 8e6, re = 65536, ie = 1e6;
-function C(e, t) {
+], ee = 4294967290, b = 4294967294, te = 512, ne = 128, x = 4e6, re = 8e6, ie = 65536, ae = 1e6;
+function S(e, t) {
 	if (e.length < te) return null;
 	for (let t = 0; t < y.length; t++) if (e[t] !== y[t]) return null;
-	let n = new DataView(e.buffer, e.byteOffset, e.byteLength), r = ae(n);
+	let n = new DataView(e.buffer, e.byteOffset, e.byteLength), r = oe(n);
 	if (r === null) return null;
-	let i = oe(n, e.length, r);
+	let i = se(n, e.length, r);
 	if (i === null) return null;
-	let a = se(n, e.length, r, i, t);
+	let a = ce(n, e.length, r, i, t);
 	if (a === null || a.target === null) return null;
 	let { target: o, root: s } = a;
-	return o.size === 0 ? new Uint8Array() : o.size < r.miniStreamCutoff ? s === null ? null : le(n, e.length, r, i, s, o) : D(n, e.length, r, i, o.startSector, o.size);
+	return o.size === 0 ? new Uint8Array() : o.size < r.miniStreamCutoff ? s === null ? null : ue(n, e.length, r, i, s, o) : E(n, e.length, r, i, o.startSector, o.size);
 }
-function ae(e) {
+function oe(e) {
 	let t = e.getUint16(30, !0);
 	if (t !== 9 && t !== 12) return null;
 	let n = e.getUint16(32, !0);
@@ -114,57 +114,57 @@ function ae(e) {
 		numDifatSectors: e.getUint32(72, !0)
 	} : null;
 }
-function w(e, t) {
+function C(e, t) {
 	return (e + 1) * t;
 }
-function T(e) {
+function w(e) {
 	return e >= 0 && e <= ee;
 }
-function oe(e, t, n) {
+function se(e, t, n) {
 	let { sectorSize: r } = n, i = [];
 	for (let t = 0; t < 109; t++) {
 		let n = e.getUint32(76 + t * 4, !0);
-		T(n) && i.push(n);
+		w(n) && i.push(n);
 	}
 	let a = r / 4 - 1, o = n.firstDifatSector, s = /* @__PURE__ */ new Set(), c = 0;
-	for (; T(o);) {
-		if (c++ > ie) return null;
+	for (; w(o);) {
+		if (c++ > ae) return null;
 		if (s.has(o)) break;
 		s.add(o);
-		let n = w(o, r);
+		let n = C(o, r);
 		if (n < 0 || n + r > t) return null;
 		for (let t = 0; t < a; t++) {
 			let r = e.getUint32(n + t * 4, !0);
-			T(r) && i.push(r);
+			w(r) && i.push(r);
 		}
 		o = e.getUint32(n + a * 4, !0);
 	}
 	return i;
 }
-function E(e, t, n, r, i) {
+function T(e, t, n, r, i) {
 	let a = n / 4, o = Math.floor(i / a), s = i % a;
 	if (o >= r.length) return null;
 	let c = r[o];
-	if (!T(c)) return null;
-	let l = w(c, n) + s * 4;
+	if (!w(c)) return null;
+	let l = C(c, n) + s * 4;
 	return l < 0 || l + 4 > t ? null : e.getUint32(l, !0);
 }
-function se(e, t, n, r, i) {
-	let { sectorSize: a } = n, o = Math.floor(a / x);
+function ce(e, t, n, r, i) {
+	let { sectorSize: a } = n, o = Math.floor(a / ne);
 	if (o < 1) return null;
 	let s = null, c = null, l = /* @__PURE__ */ new Set(), u = n.firstDirSector, d = 0, f = 0;
-	for (; T(u);) {
-		if (d++ > S) return null;
+	for (; w(u);) {
+		if (d++ > x) return null;
 		if (l.has(u)) break;
 		l.add(u);
-		let n = w(u, a);
+		let n = C(u, a);
 		if (n < 0 || n + a > t) return null;
 		for (let t = 0; t < o; t++) {
-			if (f++ > re) return {
+			if (f++ > ie) return {
 				target: s,
 				root: c
 			};
-			let r = n + t * x, a = e.getUint8(r + 66);
+			let r = n + t * ne, a = e.getUint8(r + 66);
 			if (a === 0) continue;
 			let o = e.getUint32(r + 116, !0), l = e.getUint32(r + 120, !0);
 			if (a === 5) {
@@ -174,12 +174,12 @@ function se(e, t, n, r, i) {
 				};
 				continue;
 			}
-			ce(e, r) === i && (s = {
+			le(e, r) === i && (s = {
 				startSector: o,
 				size: l
 			});
 		}
-		let p = E(e, t, a, r, u);
+		let p = T(e, t, a, r, u);
 		if (p === null) break;
 		u = p;
 	}
@@ -188,7 +188,7 @@ function se(e, t, n, r, i) {
 		root: c
 	};
 }
-function ce(e, t) {
+function le(e, t) {
 	let n = e.getUint16(t + 64, !0);
 	if (n < 2 || n > 64) return "";
 	let r = n / 2 - 1, i = "";
@@ -199,56 +199,56 @@ function ce(e, t) {
 	}
 	return i;
 }
-function D(e, t, n, r, i, a) {
+function E(e, t, n, r, i, a) {
 	let { sectorSize: o } = n, s = new Uint8Array(a), c = 0, l = i, u = /* @__PURE__ */ new Set(), d = 0;
-	for (; T(l) && c < a;) {
-		if (d++ > S || u.has(l)) return null;
+	for (; w(l) && c < a;) {
+		if (d++ > x || u.has(l)) return null;
 		u.add(l);
-		let n = w(l, o);
+		let n = C(l, o);
 		if (n < 0 || n + o > t) return null;
 		let i = Math.min(o, a - c);
 		s.set(new Uint8Array(e.buffer, e.byteOffset + n, i), c), c += i;
-		let f = E(e, t, o, r, l);
+		let f = T(e, t, o, r, l);
 		if (f === null) return null;
 		l = f;
 	}
 	return c === a ? s : null;
 }
-function le(e, t, n, r, i, a) {
-	let { sectorSize: o, miniSectorSize: s } = n, c = D(e, t, n, r, i.startSector, i.size);
+function ue(e, t, n, r, i, a) {
+	let { sectorSize: o, miniSectorSize: s } = n, c = E(e, t, n, r, i.startSector, i.size);
 	if (c === null) return null;
 	let l = new Uint8Array(a.size), u = 0, d = a.startSector, f = /* @__PURE__ */ new Set(), p = 0, m = o / 4;
-	for (; T(d) && u < a.size;) {
-		if (p++ > ne || f.has(d)) return null;
+	for (; w(d) && u < a.size;) {
+		if (p++ > re || f.has(d)) return null;
 		f.add(d);
 		let i = d * s;
 		if (i < 0 || i + s > c.length) return null;
 		let o = Math.min(s, a.size - u);
 		l.set(c.subarray(i, i + o), u), u += o;
-		let h = ue(e, t, n, r, m, d);
+		let h = de(e, t, n, r, m, d);
 		if (h === null) return null;
 		d = h;
 	}
 	return u === a.size ? l : null;
 }
-function ue(e, t, n, r, i, a) {
+function de(e, t, n, r, i, a) {
 	let { sectorSize: o } = n, s = Math.floor(a / i), c = a % i, l = n.firstMiniFatSector, u = /* @__PURE__ */ new Set();
 	for (let n = 0; n < s; n++) {
-		if (!T(l) || u.has(l)) return null;
+		if (!w(l) || u.has(l)) return null;
 		u.add(l);
-		let n = E(e, t, o, r, l);
+		let n = T(e, t, o, r, l);
 		if (n === null) return null;
 		l = n;
 	}
-	if (!T(l)) return null;
-	let d = w(l, o) + c * 4;
+	if (!w(l)) return null;
+	let d = C(l, o) + c * 4;
 	if (d < 0 || d + 4 > t) return null;
 	let f = e.getUint32(d, !0);
 	return f === b ? b : f;
 }
 //#endregion
 //#region packages/core/src/crypto/encryption-info.ts
-function O(e) {
+function D(e) {
 	if (typeof atob == "function") {
 		let t = atob(e), n = new Uint8Array(t.length);
 		for (let e = 0; e < t.length; e++) n[e] = t.charCodeAt(e);
@@ -258,19 +258,19 @@ function O(e) {
 	if (t) return new Uint8Array(t.from(e, "base64"));
 	throw Error("no base64 decoder available");
 }
-function k(e, t, n) {
+function O(e, t, n) {
 	let r = RegExp(`<(?:[\\w]+:)?${t}\\b[^>]*>`).exec(e);
 	if (!r) return null;
 	let i = r[0], a = RegExp(`\\b${n}\\s*=\\s*"([^"]*)"`).exec(i);
 	return a ? a[1] : null;
 }
-function A(e) {
+function k(e) {
 	if (e === null) return null;
 	let t = Number(e);
 	return Number.isFinite(t) ? t : null;
 }
-function j(e, t) {
-	let n = A(k(e, t, "saltSize")), r = A(k(e, t, "blockSize")), i = A(k(e, t, "keyBits")), a = A(k(e, t, "hashSize")), o = k(e, t, "cipherAlgorithm"), s = k(e, t, "cipherChaining"), c = k(e, t, "hashAlgorithm"), l = k(e, t, "saltValue");
+function A(e, t) {
+	let n = k(O(e, t, "saltSize")), r = k(O(e, t, "blockSize")), i = k(O(e, t, "keyBits")), a = k(O(e, t, "hashSize")), o = O(e, t, "cipherAlgorithm"), s = O(e, t, "cipherChaining"), c = O(e, t, "hashAlgorithm"), l = O(e, t, "saltValue");
 	return n === null || r === null || i === null || a === null || !o || !s || !c || l === null ? null : {
 		saltSize: n,
 		blockSize: r,
@@ -279,14 +279,14 @@ function j(e, t) {
 		cipherAlgorithm: o,
 		cipherChaining: s,
 		hashAlgorithm: c,
-		saltValue: O(l)
+		saltValue: D(l)
 	};
 }
-function de(e) {
+function fe(e) {
 	if (e.length < 8) return { kind: "unknown" };
 	let t = new DataView(e.buffer, e.byteOffset, e.byteLength), n = t.getUint16(0, !0), r = t.getUint16(2, !0);
 	if (n === 4 && r === 4) {
-		let t = fe(e.subarray(8));
+		let t = pe(e.subarray(8));
 		return t ? {
 			kind: "agile",
 			descriptor: t
@@ -294,21 +294,21 @@ function de(e) {
 	}
 	return r === 16 && (n === 3 || n === 4) ? { kind: "extensible" } : r === 2 && (n === 2 || n === 3 || n === 4) ? { kind: "standard" } : { kind: "unknown" };
 }
-function fe(e) {
-	let t = new TextDecoder("utf-8").decode(e), n = j(t, "keyData"), r = j(t, "encryptedKey");
+function pe(e) {
+	let t = new TextDecoder("utf-8").decode(e), n = A(t, "keyData"), r = A(t, "encryptedKey");
 	if (!n || !r) return null;
-	let i = A(k(t, "encryptedKey", "spinCount")), a = k(t, "encryptedKey", "encryptedVerifierHashInput"), o = k(t, "encryptedKey", "encryptedVerifierHashValue"), s = k(t, "encryptedKey", "encryptedKeyValue");
+	let i = k(O(t, "encryptedKey", "spinCount")), a = O(t, "encryptedKey", "encryptedVerifierHashInput"), o = O(t, "encryptedKey", "encryptedVerifierHashValue"), s = O(t, "encryptedKey", "encryptedKeyValue");
 	if (i === null || a === null || o === null || s === null) return null;
 	let c = {
 		...r,
 		spinCount: i,
-		encryptedVerifierHashInput: O(a),
-		encryptedVerifierHashValue: O(o),
-		encryptedKeyValue: O(s)
-	}, l = null, u = k(t, "dataIntegrity", "encryptedHmacKey"), d = k(t, "dataIntegrity", "encryptedHmacValue");
+		encryptedVerifierHashInput: D(a),
+		encryptedVerifierHashValue: D(o),
+		encryptedKeyValue: D(s)
+	}, l = null, u = O(t, "dataIntegrity", "encryptedHmacKey"), d = O(t, "dataIntegrity", "encryptedHmacValue");
 	return u !== null && d !== null && (l = {
-		encryptedHmacKey: O(u),
-		encryptedHmacValue: O(d)
+		encryptedHmacKey: D(u),
+		encryptedHmacValue: D(d)
 	}), {
 		keyData: n,
 		passwordKeyEncryptor: c,
@@ -317,7 +317,7 @@ function fe(e) {
 }
 //#endregion
 //#region packages/core/src/crypto/agile.ts
-var M = {
+var j = {
 	verifierHashInput: new Uint8Array([
 		254,
 		167,
@@ -368,120 +368,120 @@ var M = {
 		132,
 		51
 	])
-}, pe = 54, N = 4096, P = class extends Error {
+}, me = 54, M = 4096, N = class extends Error {
 	reason;
 	constructor(e, t) {
 		super(t), this.name = "AgileDecryptError", this.reason = e;
 	}
 };
-function F() {
+function P() {
 	let e = globalThis.crypto;
-	if (!e || !e.subtle) throw new P("unsupported-encryption", "WebCrypto (globalThis.crypto.subtle) is unavailable; cannot decrypt.");
+	if (!e || !e.subtle) throw new N("unsupported-encryption", "WebCrypto (globalThis.crypto.subtle) is unavailable; cannot decrypt.");
 	return e.subtle;
 }
-function I(e) {
+function F(e) {
 	switch (e.toUpperCase().replace(/[-_]/g, "")) {
 		case "SHA512": return "SHA-512";
 		case "SHA384": return "SHA-384";
 		case "SHA256": return "SHA-256";
 		case "SHA1": return "SHA-1";
-		default: throw new P("unsupported-encryption", `Unsupported hashAlgorithm "${e}" (only SHA-1/256/384/512).`);
+		default: throw new N("unsupported-encryption", `Unsupported hashAlgorithm "${e}" (only SHA-1/256/384/512).`);
 	}
 }
-function L(e) {
-	if (e.cipherAlgorithm.toUpperCase() !== "AES") throw new P("unsupported-encryption", `Unsupported cipherAlgorithm "${e.cipherAlgorithm}" (only AES).`);
-	if (e.cipherChaining.toLowerCase() !== "chainingmodecbc") throw new P("unsupported-encryption", `Unsupported cipherChaining "${e.cipherChaining}" (only ChainingModeCBC).`);
-	if (e.keyBits !== 128 && e.keyBits !== 192 && e.keyBits !== 256) throw new P("unsupported-encryption", `Unsupported keyBits ${e.keyBits} (only 128/192/256).`);
+function I(e) {
+	if (e.cipherAlgorithm.toUpperCase() !== "AES") throw new N("unsupported-encryption", `Unsupported cipherAlgorithm "${e.cipherAlgorithm}" (only AES).`);
+	if (e.cipherChaining.toLowerCase() !== "chainingmodecbc") throw new N("unsupported-encryption", `Unsupported cipherChaining "${e.cipherChaining}" (only ChainingModeCBC).`);
+	if (e.keyBits !== 128 && e.keyBits !== 192 && e.keyBits !== 256) throw new N("unsupported-encryption", `Unsupported keyBits ${e.keyBits} (only 128/192/256).`);
 }
-function R(...e) {
+function L(...e) {
 	let t = e.reduce((e, t) => e + t.length, 0), n = new Uint8Array(t), r = 0;
 	for (let t of e) n.set(t, r), r += t.length;
 	return n;
 }
-function z(e) {
+function R(e) {
 	let t = new Uint8Array(4);
 	return new DataView(t.buffer).setUint32(0, e >>> 0, !0), t;
 }
-function me(e) {
+function he(e) {
 	let t = new Uint8Array(e.length * 2), n = new DataView(t.buffer);
 	for (let t = 0; t < e.length; t++) n.setUint16(t * 2, e.charCodeAt(t), !0);
 	return t;
 }
-async function B(e, t) {
-	return new Uint8Array(await F().digest(e, t));
+async function z(e, t) {
+	return new Uint8Array(await P().digest(e, t));
 }
-function V(e, t) {
+function ge(e, t) {
 	if (e.length > t) return e.slice(0, t);
 	let n = new Uint8Array(t);
-	return n.set(e), e.length < t && n.fill(pe, e.length), n;
+	return n.set(e), e.length < t && n.fill(me, e.length), n;
 }
-async function H(e, t, n, r) {
-	let i = I(t.hashAlgorithm), a = await B(i, R(t.saltValue, me(e)));
-	for (let e = 0; e < n; e++) a = await B(i, R(z(e), a));
-	return V(await B(i, R(a, r)), t.keyBits / 8);
+async function B(e, t, n, r) {
+	let i = F(t.hashAlgorithm), a = await z(i, L(t.saltValue, he(e)));
+	for (let e = 0; e < n; e++) a = await z(i, L(R(e), a));
+	return ge(await z(i, L(a, r)), t.keyBits / 8);
 }
-async function U(e, t, n) {
-	return V(n ? await B(I(e.hashAlgorithm), R(t, n)) : t, e.blockSize);
+async function V(e, t, n) {
+	return ge(n ? await z(F(e.hashAlgorithm), L(t, n)) : t, e.blockSize);
 }
-async function W(e, t, n) {
+async function H(e, t, n) {
 	let r = t.length;
 	if (n.length === 0) return new Uint8Array();
-	if (n.length % r !== 0) throw new P("corrupt", "ciphertext length is not a multiple of the block size");
-	let i = await F().importKey("raw", e, { name: "AES-CBC" }, !1, ["decrypt"]), a = await F().importKey("raw", e, { name: "AES-CBC" }, !1, ["encrypt"]), o = n.subarray(n.length - r), s = he(new Uint8Array(r).fill(r), o), c = R(n, new Uint8Array(await F().encrypt({
+	if (n.length % r !== 0) throw new N("corrupt", "ciphertext length is not a multiple of the block size");
+	let i = await P().importKey("raw", e, { name: "AES-CBC" }, !1, ["decrypt"]), a = await P().importKey("raw", e, { name: "AES-CBC" }, !1, ["encrypt"]), o = n.subarray(n.length - r), s = _e(new Uint8Array(r).fill(r), o), c = L(n, new Uint8Array(await P().encrypt({
 		name: "AES-CBC",
 		iv: new Uint8Array(r)
-	}, a, s)).subarray(0, r)), l = new Uint8Array(await F().decrypt({
+	}, a, s)).subarray(0, r)), l = new Uint8Array(await P().decrypt({
 		name: "AES-CBC",
 		iv: t
 	}, i, c));
 	return l.length >= n.length ? l.subarray(0, n.length) : l;
 }
-function he(e, t) {
+function _e(e, t) {
 	let n = new Uint8Array(e.length);
 	for (let r = 0; r < e.length; r++) n[r] = e[r] ^ t[r];
 	return n;
 }
-async function ge(e, t) {
-	L(t);
-	let n = I(t.hashAlgorithm), r = await W(await H(e, t, t.spinCount, M.verifierHashInput), await U(t, t.saltValue, null), t.encryptedVerifierHashInput), i = await W(await H(e, t, t.spinCount, M.verifierHashValue), await U(t, t.saltValue, null), t.encryptedVerifierHashValue);
-	return _e((await B(n, r)).subarray(0, t.hashSize), i.subarray(0, t.hashSize));
+async function ve(e, t) {
+	I(t);
+	let n = F(t.hashAlgorithm), r = await H(await B(e, t, t.spinCount, j.verifierHashInput), await V(t, t.saltValue, null), t.encryptedVerifierHashInput), i = await H(await B(e, t, t.spinCount, j.verifierHashValue), await V(t, t.saltValue, null), t.encryptedVerifierHashValue);
+	return ye((await z(n, r)).subarray(0, t.hashSize), i.subarray(0, t.hashSize));
 }
-function _e(e, t) {
+function ye(e, t) {
 	if (e.length !== t.length) return !1;
 	let n = 0;
 	for (let r = 0; r < e.length; r++) n |= e[r] ^ t[r];
 	return n === 0;
 }
-async function ve(e, t) {
-	return await W(await H(e, t, t.spinCount, M.keyValue), await U(t, t.saltValue, null), t.encryptedKeyValue);
+async function be(e, t) {
+	return await H(await B(e, t, t.spinCount, j.keyValue), await V(t, t.saltValue, null), t.encryptedKeyValue);
 }
-async function ye(e, t, n) {
-	if (L(t), e.length < 8) throw new P("corrupt", "EncryptedPackage is shorter than its size prefix");
+async function xe(e, t, n) {
+	if (I(t), e.length < 8) throw new N("corrupt", "EncryptedPackage is shorter than its size prefix");
 	let r = new DataView(e.buffer, e.byteOffset, e.byteLength), i = Number(r.getBigUint64(0, !0)), a = e.subarray(8);
-	if (i > a.length) throw new P("corrupt", "EncryptedPackage size prefix exceeds the ciphertext");
+	if (i > a.length) throw new N("corrupt", "EncryptedPackage size prefix exceeds the ciphertext");
 	let o = n.slice(0, t.keyBits / 8), s = new Uint8Array(i), c = 0, l = 0;
-	for (let e = 0; e < a.length; e += N) {
-		let n = a.subarray(e, e + N), r = await W(o, await U(t, t.saltValue, z(l)), n), u = Math.min(r.length, i - c);
+	for (let e = 0; e < a.length; e += M) {
+		let n = a.subarray(e, e + M), r = await H(o, await V(t, t.saltValue, R(l)), n), u = Math.min(r.length, i - c);
 		if (s.set(r.subarray(0, u), c), c += u, l++, c >= i) break;
 	}
-	if (c !== i) throw new P("corrupt", "decrypted output is shorter than the declared size");
+	if (c !== i) throw new N("corrupt", "decrypted output is shorter than the declared size");
 	return s;
 }
-async function be(e, t, n) {
+async function Se(e, t, n) {
 	let { keyData: r, passwordKeyEncryptor: i } = e;
-	if (L(r), L(i), !await ge(n, i)) throw new P("invalid-password", "The supplied password is incorrect.");
-	return ye(t, r, await ve(n, i));
+	if (I(r), I(i), !await ve(n, i)) throw new N("invalid-password", "The supplied password is incorrect.");
+	return xe(t, r, await be(n, i));
 }
 //#endregion
 //#region packages/core/src/crypto/decrypt-ooxml.ts
-var xe = "EncryptionInfo", Se = "EncryptedPackage";
-async function Ce(e, t) {
-	let n = C(e, xe), r = C(e, Se);
+var Ce = "EncryptionInfo", we = "EncryptedPackage";
+async function Te(e, t) {
+	let n = S(e, Ce), r = S(e, we);
 	if (n === null || r === null) return {
 		ok: !1,
 		reason: "corrupt"
 	};
-	let i = de(n);
+	let i = fe(n);
 	if (i.kind !== "agile") return {
 		ok: !1,
 		reason: "unsupported-encryption"
@@ -489,10 +489,10 @@ async function Ce(e, t) {
 	try {
 		return {
 			ok: !0,
-			data: await be(i.descriptor, r, t)
+			data: await Se(i.descriptor, r, t)
 		};
 	} catch (e) {
-		return e instanceof P ? {
+		return e instanceof N ? {
 			ok: !1,
 			reason: e.reason
 		} : {
@@ -503,7 +503,7 @@ async function Ce(e, t) {
 }
 //#endregion
 //#region packages/core/src/errors/cfb-guard.ts
-function we(e) {
+function Ee(e) {
 	let n = p(e instanceof Uint8Array ? e : new Uint8Array(e));
 	if (n !== null) switch (n) {
 		case "encrypted": throw new t("encrypted", "This file is password-protected (MS-OFFCRYPTO). Pass LoadOptions.password to decrypt it.");
@@ -512,12 +512,12 @@ function we(e) {
 		default: throw new t("not-ooxml", "This file is an OLE2/Compound File container of an unrecognised kind, not an OOXML (ZIP) document.");
 	}
 }
-async function Te(e, n) {
+async function De(e, n) {
 	let r = e instanceof Uint8Array ? e : new Uint8Array(e), i = p(r);
 	if (i === null) return r;
 	if (i === "encrypted") {
 		if (n === void 0) throw new t("encrypted", "This file is password-protected (MS-OFFCRYPTO). Pass LoadOptions.password to decrypt it.");
-		let e = await Ce(r, n);
+		let e = await Te(r, n);
 		if (e.ok) return e.data;
 		switch (e.reason) {
 			case "invalid-password": throw new t("invalid-password", "The supplied password is incorrect.");
@@ -526,14 +526,151 @@ async function Te(e, n) {
 			default: throw e.reason, new t("not-ooxml", "This encrypted file could not be decrypted.");
 		}
 	}
-	return we(r), r;
+	return Ee(r), r;
 }
-function Ee(e) {
+function Oe(e) {
 	return e.byteOffset === 0 && e.byteLength === e.buffer.byteLength && e.buffer instanceof ArrayBuffer ? e.buffer : e.slice().buffer;
 }
 //#endregion
+//#region packages/core/src/fonts/font-registry.ts
+var U = /* @__PURE__ */ new Map();
+function W(e, t, n) {
+	let r = U.get(e), i = r?.get(t);
+	if (i) return i.refs++, {
+		face: i.face,
+		isNew: !1
+	};
+	let a = n(), o = r ?? /* @__PURE__ */ new Map();
+	return o.set(t, {
+		face: a,
+		set: t,
+		refs: 1
+	}), U.set(e, o), {
+		face: a,
+		isNew: !0
+	};
+}
+function G(e) {
+	let t = /* @__PURE__ */ new Set();
+	for (let n of e) if (!t.has(n)) {
+		t.add(n);
+		for (let [e, t] of U) {
+			let r = !1;
+			for (let [i, a] of t) if (a.face === n) {
+				if (r = !0, a.refs--, a.refs <= 0) {
+					try {
+						a.set.delete(n);
+					} catch {}
+					t.delete(i), t.size === 0 && U.delete(e);
+				}
+				break;
+			}
+			if (r) break;
+		}
+	}
+}
+//#endregion
+//#region packages/core/src/fonts/preload.ts
+var ke = 15e3;
+function K(e) {
+	return Promise.race([e, new Promise((e) => setTimeout(e, ke))]);
+}
+var q = /* @__PURE__ */ new Map();
+function Ae(e) {
+	let t = [], n = /@font-face\s*\{([^}]*)\}/g, r;
+	for (; r = n.exec(e);) {
+		let e = r[1], n = (t) => e.match(RegExp(`(?:^|;|\\n)\\s*${t}\\s*:\\s*([^;]+)`, "i"))?.[1].trim(), i = n("font-family"), a = n("src");
+		if (!i || !a) continue;
+		let o = {}, s = n("font-style");
+		s && (o.style = s);
+		let c = n("font-weight");
+		c && (o.weight = c);
+		let l = n("font-stretch");
+		l && (o.stretch = l);
+		let u = n("unicode-range");
+		u && (o.unicodeRange = u), t.push({
+			family: i.replace(/^['"]|['"]$/g, ""),
+			src: a,
+			descriptors: o
+		});
+	}
+	return t;
+}
+function J() {
+	return typeof document < "u" && document && document.fonts ? document.fonts : typeof self < "u" && self && "fonts" in self ? self.fonts : null;
+}
+function je(e, t) {
+	let n = t.descriptors;
+	return [
+		"gfonts",
+		e,
+		t.family.toLowerCase(),
+		n.style ?? "",
+		n.weight ?? "",
+		n.stretch ?? "",
+		n.unicodeRange ?? "",
+		t.src
+	].join("|");
+}
+async function Me(e, t, n = J()) {
+	let r = n;
+	if (!r || typeof FontFace > "u" || typeof fetch > "u") return [];
+	let i = /* @__PURE__ */ new Set(), a = /* @__PURE__ */ new Set(), o = /* @__PURE__ */ new Set(), s = /* @__PURE__ */ new Map(), c = /* @__PURE__ */ new Set();
+	for (let n of e) {
+		if (!n) continue;
+		let e = n.trim();
+		if (!e) continue;
+		let r = e.toLowerCase();
+		if (i.has(r)) continue;
+		i.add(r);
+		let c = t[r];
+		if (!c) continue;
+		o.add(c.url);
+		let l = (c.loadFamily ?? e).toLowerCase();
+		a.add(l);
+		let u = s.get(c.url);
+		u || (u = /* @__PURE__ */ new Set(), s.set(c.url, u)), u.add(l);
+	}
+	if (a.size === 0) return [];
+	let l = await K(Promise.all([...o].map(async (e) => {
+		let t = q.get(e);
+		if (t) return {
+			url: e,
+			rules: await t
+		};
+		let n = (async () => {
+			try {
+				let t = await fetch(e);
+				if (!t.ok) throw Error(`HTTP ${t.status}`);
+				return Ae(await t.text());
+			} catch {
+				q.delete(e);
+				for (let t of s.get(e) ?? []) c.add(t);
+				return [];
+			}
+		})();
+		return q.set(e, n), {
+			url: e,
+			rules: await n
+		};
+	}))), u = [], d = [];
+	for (let e of Array.isArray(l) ? l : []) for (let t of e.rules) {
+		let { face: n, isNew: i } = W(je(e.url, t), r, () => {
+			let e = new FontFace(t.family, t.src, t.descriptors);
+			return r.add(e), e;
+		});
+		u.push(n), i && d.push(n);
+	}
+	return d.length > 0 && await K(Promise.allSettled(d.map((e) => e.load())).then((e) => (e.forEach((e, t) => {
+		e.status === "rejected" && c.add(d[t].family.replace(/['"]/g, "").toLowerCase());
+	}), r.ready))), c.size > 0 && console.warn(`[ooxml] failed to preload web font(s): ${[...c].join(", ")}; falling back to system fonts (text may shift or differ).`), u;
+}
+function Ne(e) {
+	G(e);
+}
+//#endregion
 //#region packages/core/src/autoResize.ts
-function De(e, t, n = {}) {
+function Pe(e, t, n = {}) {
 	let r = n.pauseWhenHidden ?? !0, i = null, a = 0, o = 0, s = null, c = !1, l = !1, u = () => {
 		if (!l && !(r && typeof document < "u" && document.hidden)) {
 			if (s) {
@@ -570,11 +707,11 @@ function De(e, t, n = {}) {
 }
 //#endregion
 //#region packages/core/src/worker/bridge.ts
-function G() {
+function Y() {
 	let e = /* @__PURE__ */ Error("worker request aborted");
 	return e.name = "AbortError", e;
 }
-var Oe = class {
+var Fe = class {
 	_worker;
 	_opts;
 	_pending = /* @__PURE__ */ new Map();
@@ -631,7 +768,7 @@ var Oe = class {
 				return;
 			}
 			if (a?.aborted) {
-				o("abort"), c(G());
+				o("abort"), c(Y());
 				return;
 			}
 			let l, u;
@@ -647,7 +784,7 @@ var Oe = class {
 				e && (this._pending.delete(r), e.onOrphanedResponse && this._orphaned.set(r, e.onOrphanedResponse), e.cleanup(), o("timeout"), e.reject(/* @__PURE__ */ Error(`worker request timed out after ${i}ms`)));
 			}, i)), a && (u = () => {
 				let e = this._pending.get(r);
-				e && (this._pending.delete(r), e.onOrphanedResponse && this._orphaned.set(r, e.onOrphanedResponse), e.cleanup(), o("abort"), e.reject(G()));
+				e && (this._pending.delete(r), e.onOrphanedResponse && this._orphaned.set(r, e.onOrphanedResponse), e.cleanup(), o("abort"), e.reject(Y()));
 			}, a.addEventListener("abort", u));
 			try {
 				this._worker.postMessage(e(r), t);
@@ -688,7 +825,7 @@ var Oe = class {
 };
 //#endregion
 //#region packages/core/src/worker/rejected-load.ts
-function ke(e, t) {
+function Ie(e, t) {
 	if (t) try {
 		t();
 		return;
@@ -699,10 +836,10 @@ function ke(e, t) {
 }
 //#endregion
 //#region packages/core/src/worker/svg-decode-bridge.ts
-function K(e) {
+function X(e) {
 	return typeof e == "number" && Number.isFinite(e) && e > 0 ? Math.ceil(e) : void 0;
 }
-function q(e, t) {
+function Z(e, t) {
 	if (!Number.isFinite(e) || !Number.isFinite(t) || !(e > 0) || !(t > 0)) throw Error(`invalid SVG raster size: ${e}x${t}`);
 	let i = Math.sqrt(n) / Math.sqrt(e) / Math.sqrt(t), a = Math.min(1, r / e, r / t, i);
 	return {
@@ -710,22 +847,22 @@ function q(e, t) {
 		height: Math.min(r, Math.max(1, Math.floor(t * a)))
 	};
 }
-function Ae(e, t, i, a) {
+function Le(e, t, i, a) {
 	let o = i === void 0 ? 0 : i / e, s = a === void 0 ? 0 : a / t, c = i === void 0 && a === void 0 ? 1 : Math.max(o, s), l = Math.min(r / e, r / t, Math.sqrt(n) / Math.sqrt(e) / Math.sqrt(t));
 	if (!Number.isFinite(c) || !(c > 0) || !Number.isFinite(l) || !(l > 0)) throw Error(`invalid SVG raster scale: ${Math.min(c, l)}`);
-	return l < c ? q(Math.max(1, Math.floor(e * l)), Math.max(1, Math.floor(t * l))) : i !== void 0 && o >= s ? q(i, Math.max(1, Math.ceil(t * i / e))) : a === void 0 ? q(Math.ceil(e), Math.ceil(t)) : q(Math.max(1, Math.ceil(e * a / t)), a);
+	return l < c ? Z(Math.max(1, Math.floor(e * l)), Math.max(1, Math.floor(t * l))) : i !== void 0 && o >= s ? Z(i, Math.max(1, Math.ceil(t * i / e))) : a === void 0 ? Z(Math.ceil(e), Math.ceil(t)) : Z(Math.max(1, Math.ceil(e * a / t)), a);
 }
-async function je(t, r = {}) {
+async function Re(t, r = {}) {
 	if (typeof Image > "u") throw Error("SVG host decode requires HTMLImageElement");
 	let a = URL.createObjectURL(t);
 	try {
-		let t = new Image(), o = K(r.targetWidthPx), s = K(r.targetHeightPx);
+		let t = new Image(), o = X(r.targetWidthPx), s = X(r.targetHeightPx);
 		await new Promise((e, n) => {
 			t.onload = () => {
 				typeof t.decode == "function" ? t.decode().then(e).catch(e) : e();
 			}, t.onerror = () => n(/* @__PURE__ */ Error("SVG host decode failed")), t.src = a;
 		});
-		let c = Number.isFinite(t.naturalWidth) && t.naturalWidth > 0 && Number.isFinite(t.naturalHeight) && t.naturalHeight > 0, l = Ae(c ? t.naturalWidth : 300, c ? t.naturalHeight : 150, o, s);
+		let c = Number.isFinite(t.naturalWidth) && t.naturalWidth > 0 && Number.isFinite(t.naturalHeight) && t.naturalHeight > 0, l = Le(c ? t.naturalWidth : 300, c ? t.naturalHeight : 150, o, s);
 		t.width = l.width, t.height = l.height;
 		let u;
 		if (typeof OffscreenCanvas < "u") {
@@ -746,11 +883,11 @@ async function je(t, r = {}) {
 		URL.revokeObjectURL(a);
 	}
 }
-function Me(e) {
+function ze(e) {
 	return !!e && typeof e == "object" && e.kind === "ooxmlDecodeSvg";
 }
-function Ne(t, n) {
-	return Me(n) ? (je(new Blob([n.bytes], { type: "image/svg+xml" }), n).then((r) => {
+function Be(t, n) {
+	return ze(n) ? (Re(new Blob([n.bytes], { type: "image/svg+xml" }), n).then((r) => {
 		try {
 			t({
 				kind: "ooxmlSvgDecoded",
@@ -772,32 +909,32 @@ function Ne(t, n) {
 }
 //#endregion
 //#region packages/core/src/interaction/zoom.ts
-var Pe = 1.1, Fe = 10, Ie = 3, Le = 1;
-function Re(e, t) {
+var Ve = 1.1, He = 10, Ue = 3, We = 1;
+function Ge(e, t) {
 	let n;
 	switch (t) {
 		case 1:
-			n = e / Ie;
+			n = e / Ue;
 			break;
 		case 2:
-			n = e / Le;
+			n = e / We;
 			break;
 		default:
-			n = e / Fe;
+			n = e / He;
 			break;
 	}
 	return Math.max(-1, Math.min(1, n));
 }
-function ze(e, t, n = 0) {
-	return e * Pe ** +-Re(t, n);
+function Ke(e, t, n = 0) {
+	return e * Ve ** +-Ge(t, n);
 }
-function Be(e, t, n, r, i) {
+function qe(e, t, n, r, i) {
 	let a = n > 0 ? r / n : 1, o = (e + t) * a - t, s = i.maxScroll > 0 ? i.maxScroll : 0;
 	return o < 0 ? 0 : o > s ? s : o;
 }
 //#endregion
 //#region packages/core/src/interaction/zoomable.ts
-var J = Object.freeze([
+var Q = Object.freeze([
 	.25,
 	.33,
 	.5,
@@ -813,22 +950,22 @@ var J = Object.freeze([
 	2.5,
 	3,
 	4
-]), Y = .005;
-function Ve(e) {
-	for (let t of J) if (t > e + Y) return t;
-	return J[J.length - 1];
+]), Je = .005;
+function Ye(e) {
+	for (let t of Q) if (t > e + Je) return t;
+	return Q[Q.length - 1];
 }
-function He(e, t = J[0]) {
-	for (let t = J.length - 1; t >= 0; t--) {
-		let n = J[t];
-		if (n < e - Y) return n;
+function Xe(e, t = Q[0]) {
+	for (let t = Q.length - 1; t >= 0; t--) {
+		let n = Q[t];
+		if (n < e - Je) return n;
 	}
-	return Math.min(t, J[0]);
+	return Math.min(t, Q[0]);
 }
-function Ue(e, t, n) {
+function Ze(e, t, n) {
 	return e < t ? t : e > n ? n : e;
 }
-function We(e, t) {
+function Qe(e, t) {
 	let { contentWidth: n, contentHeight: r, containerWidth: i, containerHeight: a } = e;
 	if (n <= 0 || i <= 0) return 0;
 	let o = i / n;
@@ -839,7 +976,7 @@ function We(e, t) {
 }
 //#endregion
 //#region packages/core/src/search/text-index.ts
-function X(e) {
+function $(e) {
 	let t = e.toLowerCase();
 	if (t.length === e.length) return t;
 	let n = "";
@@ -849,17 +986,17 @@ function X(e) {
 	}
 	return n;
 }
-function Ge(e) {
+function $e(e) {
 	let t = Array(e.length), n = 0, r = "";
 	for (let i = 0; i < e.length; i++) t[i] = n, r += e[i].text, n += e[i].text.length;
 	return {
 		text: r,
-		folded: X(r),
+		folded: $(r),
 		runStart: t,
 		runCount: e.length
 	};
 }
-function Ke(e, t) {
+function et(e, t) {
 	let { runStart: n } = e, r = 0, i = n.length - 1;
 	for (; r < i;) {
 		let e = r + i + 1 >> 1;
@@ -867,8 +1004,8 @@ function Ke(e, t) {
 	}
 	return r;
 }
-function qe(e, t, n) {
-	let { runStart: r, runCount: i, text: a } = e, o = [], s = Ke(e, t), c = t;
+function tt(e, t, n) {
+	let { runStart: r, runCount: i, text: a } = e, o = [], s = et(e, t), c = t;
 	for (; c < n && s < i;) {
 		let e = s + 1 < i ? r[s + 1] : a.length, t = Math.min(n, e), l = c - r[s], u = t - r[s];
 		u > l && o.push({
@@ -879,31 +1016,31 @@ function qe(e, t, n) {
 	}
 	return o;
 }
-function Je(e, t, n = {}) {
+function nt(e, t, n = {}) {
 	if (t.length === 0) return [];
-	let r = n.caseSensitive ?? !1, i = r ? e.text : e.folded, a = r ? t : X(t), o = [], s = 0, c = 0;
+	let r = n.caseSensitive ?? !1, i = r ? e.text : e.folded, a = r ? t : $(t), o = [], s = 0, c = 0;
 	for (;;) {
 		let t = i.indexOf(a, s);
 		if (t === -1) break;
 		o.push({
 			matchIndex: c,
-			slices: qe(e, t, t + a.length)
+			slices: tt(e, t, t + a.length)
 		}), c++, s = t + a.length;
 	}
 	return o;
 }
 //#endregion
 //#region packages/core/src/search/find-cursor.ts
-function Ye(e, t) {
+function rt(e, t) {
 	return t <= 0 ? -1 : e < 0 ? 0 : (e + 1) % t;
 }
-function Xe(e, t) {
+function it(e, t) {
 	return t <= 0 ? -1 : e < 0 ? t - 1 : (e - 1 + t) % t;
 }
 //#endregion
 //#region packages/core/src/internal/chart-context.ts
-var Z = 65536;
-function Ze(e, t) {
+var at = 65536;
+function ot(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -911,19 +1048,19 @@ function Ze(e, t) {
 	}
 	return e.slice(0, n);
 }
-function Qe(e) {
+function st(e) {
 	let t = e ?? 16384;
 	if (!Number.isFinite(t) || t < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	return Math.min(Z, Math.floor(t));
+	return Math.min(at, Math.floor(t));
 }
-function $e(e, t) {
-	let n = Qe(t), r = [], i = 0, a = !1, o = !1, s = (e, t) => {
+function ct(e, t) {
+	let n = st(t), r = [], i = 0, a = !1, o = !1, s = (e, t) => {
 		if (t && o) {
 			if (i >= n) return a = !0, !1;
 			r.push("\n"), i++;
 		}
 		o = !0;
-		let s = Ze(e, Math.max(0, n - i));
+		let s = ot(e, Math.max(0, n - i));
 		return r.push(s), i += s.length, s.length < e.length ? (a = !0, !1) : !0;
 	};
 	if (!s(`Chart type: ${e.chartType}`, !0) || e.title !== null && !s(`Title: ${e.title}`, !0)) return {
@@ -965,13 +1102,13 @@ function $e(e, t) {
 }
 //#endregion
 //#region packages/core/src/internal/canvas-viewer-mechanics.ts
-var et = 65536, tt = 1024;
-function Q(e, t, n) {
+var lt = 65536, ut = 1024;
+function dt(e, t, n) {
 	let r = e ?? t;
 	if (!Number.isFinite(r) || r < 0) throw RangeError(`${n} must be a finite non-negative number.`);
 	return Math.min(t, Math.floor(r));
 }
-function nt(e, t) {
+function ft(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -979,7 +1116,7 @@ function nt(e, t) {
 	}
 	return e.slice(0, n);
 }
-function* rt(e) {
+function* pt(e) {
 	let t = e.firstChild ?? e.childNodes[0] ?? null;
 	for (; t;) {
 		if (t.nodeType === 3 && (yield t), t.firstChild) {
@@ -991,13 +1128,13 @@ function* rt(e) {
 		t = t.nextSibling;
 	}
 }
-function it(e, t, n, r, i) {
+function mt(e, t, n, r, i) {
 	for (let a of r) {
 		let r = !1;
 		try {
 			r = a.intersectsNode(n);
 		} catch {}
-		if (r) for (let r of rt(n)) {
+		if (r) for (let r of pt(n)) {
 			let n = r.data, o, s;
 			if (a.startContainer === r) o = a.startOffset;
 			else try {
@@ -1020,7 +1157,7 @@ function it(e, t, n, r, i) {
 	}
 	return t;
 }
-function at(e, t, n, r = {}) {
+function ht(e, t, n, r = {}) {
 	if (!t || t.isCollapsed || t.rangeCount === 0) return null;
 	let i = [...e.matches?.("[data-ooxml-selection-surface]") ? [e] : [], ...e.querySelectorAll("[data-ooxml-selection-surface]")];
 	if (i.length === 0) return null;
@@ -1030,7 +1167,7 @@ function at(e, t, n, r = {}) {
 		if (!e.contains(r.startContainer) || !e.contains(r.endContainer) || !a(r.startContainer) || !a(r.endContainer)) return null;
 		o.push(r);
 	}
-	let s = Q(r.maxChars, et, "maxTextCharacters"), c = Q(r.maxLocators, tt, "maxRunLocators"), l = [], u = !1, d = s + 2, f = [], p = 0;
+	let s = dt(r.maxChars, lt, "maxTextCharacters"), c = dt(r.maxLocators, ut, "maxRunLocators"), l = [], u = !1, d = s + 2, f = [], p = 0;
 	for (let t of e.querySelectorAll("[data-ooxml-selection-run]")) {
 		if (!o.some((e) => {
 			try {
@@ -1040,12 +1177,12 @@ function at(e, t, n, r = {}) {
 			}
 		})) continue;
 		let e = n(t);
-		if (e !== null && (l.length >= c ? u = !0 : l.push(structuredClone(e)), p < d && (p = it(f, p, t, o, d)), u && p >= d)) break;
+		if (e !== null && (l.length >= c ? u = !0 : l.push(structuredClone(e)), p < d && (p = mt(f, p, t, o, d)), u && p >= d)) break;
 	}
 	if (l.length === 0 && !u) return null;
 	let m = f.join("");
 	if (m.length === 0) return null;
-	let h = nt(m, s), g = m.length > s;
+	let h = ft(m, s), g = m.length > s;
 	return {
 		text: h,
 		locators: l,
@@ -1056,7 +1193,7 @@ function at(e, t, n, r = {}) {
 		maxLocators: c
 	};
 }
-var ot = class {
+var gt = class {
 	wrapper;
 	originalParent;
 	originalNextSibling;
@@ -1077,31 +1214,31 @@ var ot = class {
 			(this.options.restoreMode ?? "display") === "style-and-bitmap" ? (this.originalStyle === null ? this.canvas.removeAttribute("style") : this.canvas.setAttribute("style", this.originalStyle), this.canvas.width = this.originalWidth, this.canvas.height = this.originalHeight) : this.canvas.style.display = this.originalDisplay, this.wrapper.remove();
 		}
 	}
-}, st = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;user-select:text;-webkit-user-select:text;", ct = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;", lt = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;";
-function $(e, t) {
+}, _t = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;user-select:text;-webkit-user-select:text;", vt = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;", yt = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;";
+function bt(e, t) {
 	if (!t) return null;
 	let n = (e.ownerDocument ?? document).createElement("div");
-	return n.style.cssText = lt, e.appendChild(n), n;
+	return n.style.cssText = yt, e.appendChild(n), n;
 }
-function ut(e, t) {
+function xt(e, t) {
 	if (!e || (e.innerHTML = "", !t || !Number.isFinite(t.x) || !Number.isFinite(t.y) || !Number.isFinite(t.width) || !Number.isFinite(t.height) || t.width <= 0 || t.height <= 0)) return;
 	let n = (e.ownerDocument ?? document).createElement("div"), r = Number.isFinite(t.rotation) ? t.rotation ?? 0 : 0;
 	n.style.cssText = `position:absolute;left:${t.x * 100}%;top:${t.y * 100}%;width:${t.width * 100}%;height:${t.height * 100}%;box-sizing:border-box;border:2px solid #1a73e8;background:color-mix(in srgb, #1a73e8 6%, transparent);transform:rotate(${r}deg);transform-origin:center;pointer-events:none;`, e.appendChild(n);
 }
-var dt = class {
+var St = class {
 	textLayer;
 	highlightLayer;
 	elementLayer;
 	constructor(e, t, n = !1) {
 		let r = e.ownerDocument ?? document;
-		this.textLayer = t ? r.createElement("div") : null, this.textLayer && (this.textLayer.style.cssText = st, e.appendChild(this.textLayer)), this.highlightLayer = r.createElement("div"), this.highlightLayer.style.cssText = ct, e.appendChild(this.highlightLayer), this.elementLayer = $(e, n);
+		this.textLayer = t ? r.createElement("div") : null, this.textLayer && (this.textLayer.style.cssText = _t, e.appendChild(this.textLayer)), this.highlightLayer = r.createElement("div"), this.highlightLayer.style.cssText = vt, e.appendChild(this.highlightLayer), this.elementLayer = bt(e, n);
 	}
 };
-function ft(e, t, n) {
+function Ct(e, t, n) {
 	if (n && t !== void 0 && t !== n.mode) throw Error(`${e}: opts.mode='${t}' conflicts with the borrowed engine's mode='${n.mode}'. Omit opts.mode when borrowing an engine — the engine owns its render mode.`);
 	return n?.mode ?? t ?? "main";
 }
-var pt = class {
+var wt = class {
 	generation = 0;
 	resource;
 	ownsResource;
@@ -1153,7 +1290,7 @@ var pt = class {
 			e.destroy();
 		} catch {}
 	}
-}, mt = class {
+}, Tt = class {
 	generation = 0;
 	destroyed = !1;
 	bitmapContext;
@@ -1192,7 +1329,7 @@ var pt = class {
 	destroy() {
 		this.destroyed || (this.destroyed = !0, this.generation++);
 	}
-}, ht = class {
+}, Et = class {
 	closed = !1;
 	handled = /* @__PURE__ */ new WeakSet();
 	backgroundLifecycleOwners = 0;
@@ -1235,4 +1372,4 @@ var pt = class {
 	}
 };
 //#endregion
-export { ke as C, Ee as D, Te as E, Ne as S, De as T, We as _, pt as a, Be as b, ut as c, $e as d, Ye as f, Ue as g, Je as h, mt as i, ft as l, Ge as m, dt as n, $ as o, Xe as p, ht as r, at as s, ot as t, Z as u, Ve as v, Oe as w, ze as x, He as y };
+export { G as A, Ie as C, Me as D, J as E, De as M, Oe as N, Ne as O, Be as S, Pe as T, Qe as _, wt as a, qe as b, xt as c, ct as d, rt as f, Ze as g, nt as h, Tt as i, W as j, K as k, Ct as l, $e as m, St as n, bt as o, it as p, Et as r, ht as s, gt as t, at as u, Ye as v, Fe as w, Ke as x, Xe as y };

@@ -1,65 +1,68 @@
-import { Kt as e } from "./hyperlink-enyPbflR.js";
-import { c as t, o as n, r, s as i } from "./bounded-raw-part-cache-DVx3Camo.js";
+import { qt as e } from "./hyperlink-BR1NCO7S.js";
+import { A as t, E as n, j as r, k as i } from "./canvas-viewer-mechanics-DN5SqWGS.js";
 //#region packages/core/src/fonts/embedded.ts
-function a(e, t) {
-	let n = o(t), r = e.slice(), i = Math.min(32, r.length);
+function a(t, n = e) {
+	return t.byteLength > 0 && t.byteLength <= n;
+}
+function o(e, t) {
+	let n = s(t), r = e.slice(), i = Math.min(32, r.length);
 	for (let e = 0; e < i; e++) r[e] ^= n[e % 16];
 	return r;
 }
-function o(e) {
+function s(e) {
 	let t = e.replace(/[{}\-\s]/g, "");
 	if (t.length !== 32 || /[^0-9a-fA-F]/.test(t)) throw Error(`invalid fontKey GUID: ${e}`);
 	let n = new Uint8Array(16);
 	for (let e = 0; e < 16; e++) n[e] = parseInt(t.slice(e * 2, e * 2 + 2), 16);
 	return n.reverse();
 }
-function s(e, t, n, r) {
+function c(e, t, n, r) {
 	let i = 2166136261;
 	for (let e = 0; e < r.length; e++) i ^= r[e], i = Math.imul(i, 16777619);
 	return `${e}|${t}|${n}|${r.length}|${(i >>> 0).toString(16)}`;
 }
-async function c(o, c = e) {
-	let l = r();
-	if (!l || typeof FontFace > "u") return [];
-	let u = [], d = /* @__PURE__ */ new Set(), f = [];
-	for (let e of o) try {
-		if (e.bytes.length === 0 || e.bytes.length > c) {
-			f.push(e.family);
+async function l(s, l = e) {
+	let u = n();
+	if (!u || typeof FontFace > "u") return [];
+	let d = [], f = /* @__PURE__ */ new Set(), p = [];
+	for (let e of s) try {
+		if (!a(e.bytes, l)) {
+			p.push(e.family);
 			continue;
 		}
-		let n = e.odttf ? a(e.bytes, e.fontKey ?? "") : e.bytes, r = `embedded:${s(e.family, e.weight, e.style, n)}`;
-		if (d.has(r)) continue;
-		d.add(r);
-		let { face: i } = t(r, l, () => {
-			let t = n.buffer.slice(n.byteOffset, n.byteOffset + n.byteLength), r = new FontFace(e.family, t, {
+		let t = e.odttf ? o(e.bytes, e.fontKey ?? "") : e.bytes, n = `embedded:${c(e.family, e.weight, e.style, t)}`;
+		if (f.has(n)) continue;
+		f.add(n);
+		let { face: i } = r(n, u, () => {
+			let n = t.buffer.slice(t.byteOffset, t.byteOffset + t.byteLength), r = new FontFace(e.family, n, {
 				weight: e.weight,
 				style: e.style
 			});
-			return l.add(r), r;
+			return u.add(r), r;
 		});
-		u.push(i);
+		d.push(i);
 	} catch {
-		f.push(e.family);
+		p.push(e.family);
 	}
-	let p = u;
-	if (u.length > 0) {
-		let e = await n(Promise.allSettled(u.map((e) => Promise.resolve().then(() => e.load()))));
-		Array.isArray(e) ? (p = [], e.forEach((e, t) => {
-			let n = u[t];
-			e.status === "fulfilled" ? p.push(n) : (f.push(n.family), i([n]));
-		}), await n(l.ready)) : (f.push(...u.map((e) => e.family)), i(u), p = []);
+	let m = d;
+	if (d.length > 0) {
+		let e = await i(Promise.allSettled(d.map((e) => Promise.resolve().then(() => e.load()))));
+		Array.isArray(e) ? (m = [], e.forEach((e, n) => {
+			let r = d[n];
+			e.status === "fulfilled" ? m.push(r) : (p.push(r.family), t([r]));
+		}), await i(u.ready)) : (p.push(...d.map((e) => e.family)), t(d), m = []);
 	}
-	return f.length > 0 && console.warn(`[ooxml] failed to register embedded font(s): ${[...new Set(f)].join(", ")}; falling back to substitute fonts (text may shift or differ).`), p;
+	return p.length > 0 && console.warn(`[ooxml] failed to register embedded font(s): ${[...new Set(p)].join(", ")}; falling back to substitute fonts (text may shift or differ).`), m;
 }
-function l(e) {
-	i(e);
+function u(e) {
+	t(e);
 }
 //#endregion
 //#region packages/core/src/layout/virtual-scroll.ts
-function u(e, t, n) {
+function d(e, t, n) {
 	return e < t ? t : e > n ? n : e;
 }
-function d(e, t, n) {
+function f(e, t, n) {
 	let r = e.length;
 	if (r === 0) return {
 		offsets: [],
@@ -72,7 +75,7 @@ function d(e, t, n) {
 		totalHeight: i + s + (r - 1) * t + a
 	};
 }
-function f(e, t, n, r) {
+function p(e, t, n, r) {
 	let i = e.offsets, a = i.length;
 	if (a === 0) return {
 		start: 0,
@@ -86,38 +89,38 @@ function f(e, t, n, r) {
 		let e = o + s >>> 1;
 		i[e] <= t ? o = e + 1 : s = e;
 	}
-	let c = u(o - 1, 0, a - 1), l = t + n;
+	let c = d(o - 1, 0, a - 1), l = t + n;
 	for (o = 0, s = a; o < s;) {
 		let e = o + s >>> 1;
 		i[e] < l ? o = e + 1 : s = e;
 	}
-	let d = u(o - 1, 0, a - 1);
+	let u = d(o - 1, 0, a - 1);
 	return {
-		start: u(c - r, 0, a - 1),
-		end: u(d + r, 0, a - 1),
+		start: d(c - r, 0, a - 1),
+		end: d(u + r, 0, a - 1),
 		topIndex: c,
 		offsets: i,
 		totalHeight: e.totalHeight
 	};
 }
-function p(e, t, n, r, i, a, o) {
+function m(e, t, n, r, i, a, o) {
 	if (e === 0) return {
 		start: 0,
 		end: -1,
 		topIndex: 0,
 		totalHeight: 0
 	};
-	let s = o?.leading ?? 0, c = o?.trailing ?? 0, l = t + n, d = u(r < s ? 0 : l > 0 ? Math.floor((r - s) / l) : e - 1, 0, e - 1), f = r + i, p = u(f <= s ? 0 : l > 0 ? Math.ceil((f - s) / l) - 1 : e - 1, 0, e - 1);
+	let s = o?.leading ?? 0, c = o?.trailing ?? 0, l = t + n, u = d(r < s ? 0 : l > 0 ? Math.floor((r - s) / l) : e - 1, 0, e - 1), f = r + i, p = d(f <= s ? 0 : l > 0 ? Math.ceil((f - s) / l) - 1 : e - 1, 0, e - 1);
 	return {
-		start: u(d - a, 0, e - 1),
-		end: u(p + a, 0, e - 1),
-		topIndex: d,
+		start: d(u - a, 0, e - 1),
+		end: d(p + a, 0, e - 1),
+		topIndex: u,
 		totalHeight: s + e * t + (e - 1) * n + c
 	};
 }
 //#endregion
 //#region packages/core/src/internal/progressive-layout-lifecycle.ts
-var m = class {
+var h = class {
 	state = Object.freeze({ status: "complete" });
 	get complete() {
 		return this.state.status === "complete";
@@ -141,7 +144,7 @@ var m = class {
 	throwIfFailed() {
 		if (this.state.status === "failed") throw this.state.error;
 	}
-}, h = class {
+}, g = class {
 	failed = /* @__PURE__ */ new WeakMap();
 	notify(e, t, ...n) {
 		if (!(!t || this.failed.get(t)?.has(e))) try {
@@ -158,8 +161,8 @@ var m = class {
 		let i = n instanceof Error ? n : Error(String(n));
 		console.error(`[ooxml] ${e} callback failed and was disabled:`, i);
 	}
-}, g = 65536;
-function _(e, t) {
+}, _ = 65536;
+function v(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -167,13 +170,13 @@ function _(e, t) {
 	}
 	return e.slice(0, n);
 }
-function v(e) {
+function y(e) {
 	if (e !== void 0 && (!Number.isFinite(e) || e < 0)) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	return Math.min(g, Math.floor(e ?? 65536));
+	return Math.min(_, Math.floor(e ?? 65536));
 }
-function y(e, t, n) {
-	let r = v(n), i = 0, a = !1, o = (e) => {
-		let t = _(e.text, Math.max(0, r - i));
+function b(e, t, n) {
+	let r = y(n), i = 0, a = !1, o = (e) => {
+		let t = v(e.text, Math.max(0, r - i));
 		return i += t.length, t.length < e.text.length && (a = !0), {
 			...e,
 			text: t
@@ -191,27 +194,27 @@ function y(e, t, n) {
 }
 //#endregion
 //#region packages/core/src/internal/dom-interaction-boundary.ts
-function b(e, t) {
+function x(e, t) {
 	return e.dataset?.[t] !== void 0;
 }
-function x(e, t, n) {
+function S(e, t, n) {
 	let r = typeof e.composedPath == "function" ? e.composedPath() : [];
 	if (r.length > 0) {
 		let e = !1;
 		for (let i of r) {
 			if (i === t) return e;
-			b(i, n) && (e = !0);
+			x(i, n) && (e = !0);
 		}
 	}
 	let i = e.target;
 	if (!i || !t.contains(i)) return !1;
 	let a = i;
 	for (; a;) {
-		if (b(a, n)) return !0;
+		if (x(a, n)) return !0;
 		if (a === t) break;
 		a = a.parentElement;
 	}
 	return !1;
 }
 //#endregion
-export { p as a, c, m as i, l, y as n, f as o, h as r, d as s, x as t };
+export { m as a, o as c, u as d, h as i, a as l, b as n, p as o, g as r, f as s, S as t, l as u };

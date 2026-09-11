@@ -1,17 +1,17 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-DuEaUxPw.js";
-import { $ as p, H as m, I as h, L as g, Q as _, R as v, U as y, Xt as b, ct as x, dt as S, gt as C, on as w, qt as ee, r as T, sn as E } from "./hyperlink-enyPbflR.js";
-import { C as te, D as ne, E as re, S as ie, T as ae, _ as oe, a as D, b as se, c as O, d as ce, f as le, g as ue, h as de, i as k, l as A, m as fe, n as pe, o as me, p as he, r as ge, s as _e, t as ve, v as ye, w as be, x as xe, y as Se } from "./canvas-viewer-mechanics-B3A7KLLi.js";
-import { a as Ce, i as we, n as Te, t as Ee } from "./bounded-raw-part-cache-DVx3Camo.js";
-import { a as De, c as Oe, i as ke, l as j, n as Ae, r as je, t as Me } from "./dom-interaction-boundary-DK1JLkrz.js";
-import { l as Ne, s as Pe } from "./pixel-budget-Dgjw269h.js";
+import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-Ck8wfRT_.js";
+import { $ as p, Jt as m, L as h, R as g, U as _, W as v, Zt as y, _t as b, cn as x, et as S, ft as C, lt as w, r as T, sn as ee, z as te } from "./hyperlink-BR1NCO7S.js";
+import { C as ne, D as re, M as ie, N as ae, O as oe, S as se, T as ce, _ as le, a as E, b as ue, c as D, d as de, f as fe, g as pe, h as me, i as O, l as k, m as he, n as ge, o as _e, p as ve, r as ye, s as be, t as xe, v as Se, w as Ce, x as we, y as A } from "./canvas-viewer-mechanics-DN5SqWGS.js";
+import { a as Te, d as j, i as Ee, n as De, r as Oe, t as ke, u as Ae } from "./dom-interaction-boundary-CswB9Tzi.js";
+import { l as je, s as Me } from "./pixel-budget-Dgjw269h.js";
 import { i as M } from "./units-EJdC96r6.js";
-import { i as Fe, s as Ie } from "./raster-target-ojDdQizC.js";
-import { n as Le } from "./resource-measurement-Do07ZRcR.js";
-import { n as Re } from "./renderer-module-contract-Cu-GKuPd.js";
-import { t as ze } from "./visible-index-DPoQYSDt.js";
-import { n as Be, t as N } from "./highlight-rect-FuUSmL3a.js";
-import { t as P } from "./comment-occurrence-Dhdplprg.js";
+import { i as Ne, s as Pe } from "./raster-target-ojDdQizC.js";
+import { n as Fe } from "./resource-measurement-CclArDRs.js";
+import { n as Ie } from "./renderer-module-contract-Cu-GKuPd.js";
+import { t as Le } from "./visible-index-DPoQYSDt.js";
+import { n as Re, t as N } from "./highlight-rect-FuUSmL3a.js";
+import { n as ze, t as Be } from "./bounded-raw-part-cache-BfbSxRIL.js";
+import { t as P } from "./comment-occurrence-CqejEuts.js";
 //#region packages/core/src/nav/internal-target.ts
 function Ve(e, t) {
 	let n = t.startsWith("/") ? [] : e.split("/").filter((e) => e !== "");
@@ -90,7 +90,7 @@ function L(e, t, n, r, i, a, o = {}) {
 		for (let r of e.slices) {
 			let e = t[r.runIndex];
 			if (!e) continue;
-			let i = a(e.font), { x: o, width: s } = Be(e.text, r.start, r.end, i);
+			let i = a(e.font), { x: o, width: s } = Re(e.text, r.start, r.end, i);
 			if (s <= 0) continue;
 			let c = u(e), l = document.createElement("div");
 			l.style.cssText = `position:absolute;left:${N(e.inShapeX + o, c.w)};top:${N(e.inShapeY, c.h)};width:${N(s, c.w)};height:${N(e.h, c.h)};background:${n};pointer-events:none;`, c.div.appendChild(l);
@@ -170,8 +170,8 @@ var Je = class {
 		if (n !== this._generation) return [];
 		let o = r === this._runsRevision ? i : new Map([...i, ...this._slideRuns]), s = [];
 		for (let n = 0; n < a; n++) {
-			let r = o.get(n) ?? [], i = fe(r);
-			for (let a of de(i, e, t)) {
+			let r = o.get(n) ?? [], i = he(r);
+			for (let a of me(i, e, t)) {
 				if (!qe(r, a.slices)) continue;
 				let e = a.slices.map((e) => r[e.runIndex].text.slice(e.start, e.end)).join("");
 				s.push({
@@ -184,10 +184,10 @@ var Je = class {
 		return this._runsRevision++, this._slideRuns = o, this._matches = s, this._active = -1, this.matches();
 	}
 	next() {
-		return this._active = le(this._active, this._matches.length), this._activePublic();
+		return this._active = fe(this._active, this._matches.length), this._activePublic();
 	}
 	prev() {
-		return this._active = he(this._active, this._matches.length), this._activePublic();
+		return this._active = ve(this._active, this._matches.length), this._activePublic();
 	}
 	_activePublic() {
 		let e = this._matches[this._active];
@@ -508,10 +508,10 @@ var _t = class {
 	#o;
 	constructor(e) {
 		if (!Number.isSafeInteger(e.slideCount) || e.slideCount < 0) throw TypeError("slideCount must be a non-negative safe integer");
-		this.#e = e.slideCount, this.#t = e.loadSlide, this.#n = new Te({
+		this.#e = e.slideCount, this.#t = e.loadSlide, this.#n = new ze({
 			maxEntries: e.maxCachedSlides,
 			maxWeight: e.maxCachedStructuralBytes,
-			measure: (e) => Le(e).jsonBytes
+			measure: (e) => Fe(e).jsonBytes
 		});
 	}
 	get slideCount() {
@@ -559,7 +559,7 @@ var _t = class {
 	}
 };
 function vt(e) {
-	return e instanceof E ? e : y(e);
+	return e instanceof x ? e : v(e);
 }
 //#endregion
 //#region packages/pptx/src/embedded-fonts.ts
@@ -593,7 +593,7 @@ async function bt(e, t) {
 				return null;
 			}
 		}))).filter((e) => e !== null);
-		if (o.length !== 0) for (let e of await Oe(o)) a.has(e) ? j([e]) : (a.add(e), i.push(e));
+		if (o.length !== 0) for (let e of await Ae(o)) a.has(e) ? j([e]) : (a.add(e), i.push(e));
 	}
 	let o = new Set(i.map((e) => W(e.family))), s = new Map([...r].filter(([, e]) => o.has(W(e))));
 	return {
@@ -731,7 +731,7 @@ function It(e, t, n, r = {}) {
 	for (let r = t.elements.length - 1; r >= 0; r--) {
 		let i = t.elements[r];
 		if (!At(i, n, o)) continue;
-		let s = i.type === "chart" ? ce(i.chart, a) : Ft(Mt(i), a);
+		let s = i.type === "chart" ? de(i.chart, a) : Ft(Mt(i), a);
 		return {
 			format: "pptx",
 			kind: "element",
@@ -815,7 +815,7 @@ function q(e, t) {
 		} catch {}
 	}
 }
-function Rt(e, t, n, r) {
+function J(e, t, n, r) {
 	let i = K.get(e);
 	i || (i = /* @__PURE__ */ new Set(), K.set(e, i));
 	let a = Object.freeze({
@@ -836,7 +836,7 @@ function Rt(e, t, n, r) {
 }
 //#endregion
 //#region packages/pptx/src/worker-task-scheduler.ts
-function zt() {
+function Rt() {
 	return new Promise((e) => {
 		let t = new MessageChannel();
 		t.port1.onmessage = () => {
@@ -846,7 +846,7 @@ function zt() {
 }
 //#endregion
 //#region packages/pptx/src/presentation.ts
-function Bt() {
+function zt() {
 	let e, t;
 	return {
 		promise: new Promise((n, r) => {
@@ -856,7 +856,7 @@ function Bt() {
 		reject: t
 	};
 }
-var J = class e {
+var Y = class e {
 	_metrics = null;
 	_worker;
 	_bridge;
@@ -864,8 +864,8 @@ var J = class e {
 	_bootstrap = null;
 	_preflight = null;
 	_availableSlideCount = 0;
-	_layoutLifecycle = new ke();
-	_layoutObservers = new je();
+	_layoutLifecycle = new Ee();
+	_layoutObservers = new Oe();
 	_layoutCompletion = null;
 	_parseRequestId = null;
 	_progressive = null;
@@ -876,9 +876,9 @@ var J = class e {
 	_slidePullClient = null;
 	_resourceFailure = null;
 	_slidePartIndex = null;
-	_rawParts = new Ee({
+	_rawParts = new Be({
 		maxEntries: 64,
-		maxBytes: b
+		maxBytes: y
 	});
 	_googleFontFaces = [];
 	_embeddedFontFaces = [];
@@ -893,9 +893,9 @@ var J = class e {
 	_chartEx;
 	_tiff;
 	constructor(e, t, n) {
-		this._worker = e, this._mode = t, this._bridge = new be(this._worker, {
+		this._worker = e, this._mode = t, this._bridge = new Ce(this._worker, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
-			toError: (e) => !("protocol" in e) && e.kind === "error" ? m(e) : void 0,
+			toError: (e) => !("protocol" in e) && e.kind === "error" ? _(e) : void 0,
 			onUnsolicited: (e) => this._onWorkerLayoutPush(e)
 		});
 		let r = new URL(n ?? Tt, location.href).href;
@@ -908,11 +908,11 @@ var J = class e {
 		if (this._resourceFailure) throw this._resourceFailure;
 	}
 	_rethrowWithResourceFailure(e) {
-		let t = e instanceof E ? e : y(e);
+		let t = e instanceof x ? e : v(e);
 		throw t ? (this._resourceFailure ??= t, this._resourceFailure) : e;
 	}
 	static async load(t, r = {}) {
-		let i = v(r), a = r.mode ?? "main", o = new h({
+		let i = te(r), a = r.mode ?? "main", o = new h({
 			enabled: !0,
 			format: "pptx",
 			mode: a,
@@ -928,23 +928,23 @@ var J = class e {
 				if (!e.ok) throw Error(`Failed to fetch: ${e.status} ${e.statusText}`);
 				s = await e.arrayBuffer();
 			} else s = t;
-			s = ne(await re(s, r.password)), o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let c = a === "worker" ? (await import("./render-worker-host-CO0UYoQh.js")).createRenderWorker() : new wt(), l = a === "worker" ? Re(r) : void 0, u;
+			s = ae(await ie(s, r.password)), o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
+			let c = a === "worker" ? (await import("./render-worker-host-BEfLZvSL.js")).createRenderWorker() : new wt(), l = a === "worker" ? Ie(r) : void 0, u;
 			try {
 				u = new e(c, a, r.wasmUrl), u._metrics = o, r.math && a === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), r.threeD && a === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._math = a === "worker" ? void 0 : r.math, u._threeD = a === "worker" ? void 0 : r.threeD, r.regionMap && a === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = a === "worker" ? void 0 : r.regionMap, r.chartEx && a === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = a === "worker" ? void 0 : r.chartEx, r.tiff && a === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), u._tiff = a === "worker" ? void 0 : r.tiff;
 				let t = r.progressiveLayout ? {
 					onProgress: r.onLayoutProgress,
 					onPartial: r.onLayoutPartial,
 					onComplete: r.onLayoutComplete,
-					firstPublication: Bt(),
+					firstPublication: zt(),
 					published: !1,
 					deferred: !1,
 					settled: !1
 				} : void 0;
-				return await u._parse(s, i.policy, !!r.useGoogleFonts, r.workerTimeoutMs, (e) => o.observeUsage(e), l, t), o.checkpoint("presentation preflight ready"), a === "main" && r.useGoogleFonts && u._preflight && !t && (u._googleFontFaces = await we(xt(u._preflight.fontPreloadNames, u._embeddedFontAliases), n)), o.succeed({ slides: u.slideCount }), u;
+				return await u._parse(s, i.policy, !!r.useGoogleFonts, r.workerTimeoutMs, (e) => o.observeUsage(e), l, t), o.checkpoint("presentation preflight ready"), a === "main" && r.useGoogleFonts && u._preflight && !t && (u._googleFontFaces = await re(xt(u._preflight.fontPreloadNames, u._embeddedFontAliases), n)), o.succeed({ slides: u.slideCount }), u;
 			} catch (e) {
 				let t = u;
-				throw te(c, t ? () => t.destroy() : void 0), e;
+				throw ne(c, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw o.fail(e), e;
@@ -991,20 +991,20 @@ var J = class e {
 			},
 			onUsage: a
 		});
-		let m;
+		let h;
 		try {
 			for (let e = 0; e < f.slideCount; e += 1) await this._slidePullClient.load(e, !1, i);
-			m = await this._bridge.request((e) => ({
+			h = await this._bridge.request((e) => ({
 				kind: "finishPresentationPreflight",
 				id: e
 			}), void 0, { timeoutMs: i }), await p;
 		} catch (e) {
 			throw p.catch(() => void 0), e;
 		}
-		this._preflight = c(m.preflight), this._availableSlideCount = this._preflight.slideCount, this._slides = new _t({
+		this._preflight = c(h.preflight), this._availableSlideCount = this._preflight.slideCount, this._slides = new _t({
 			slideCount: this._preflight.slideCount,
 			maxCachedSlides: 8,
-			maxCachedStructuralBytes: ee,
+			maxCachedStructuralBytes: m,
 			loadSlide: async (e) => {
 				let t = await this._slidePullClient?.load(e, !0, i);
 				if (!t) throw Error("PPTX slide pull client is unavailable");
@@ -1027,7 +1027,7 @@ var J = class e {
 		this._slidePullClient = this._createSlidePullClient(c.slideCount, a, o), this._slides = new _t({
 			slideCount: c.slideCount,
 			maxCachedSlides: 8,
-			maxCachedStructuralBytes: ee,
+			maxCachedStructuralBytes: m,
 			loadSlide: async (e) => {
 				let t = await this._slidePullClient?.load(e, !0, a);
 				if (!t) throw Error("PPTX slide pull client is unavailable");
@@ -1039,13 +1039,13 @@ var J = class e {
 			let e = xt(d.currentFontPreloadNames, this._embeddedFontAliases).filter((e) => !!e && !f.has(e));
 			if (e.length !== 0) {
 				for (let t of e) f.add(t);
-				this._googleFontFaces.push(...await we(e, n));
+				this._googleFontFaces.push(...await re(e, n));
 			}
 		};
 		this._layoutCompletion = (async () => {
 			for (let e = 0; e < c.slideCount; e += 1) await this._slides.withSlide(e, (e) => {
 				d.addSlide(e);
-			}), await p(), this._applyProgressivePrefix(d.snapshot(), s), e === 0 && s.deferred && await zt();
+			}), await p(), this._applyProgressivePrefix(d.snapshot(), s), e === 0 && s.deferred && await Rt();
 			await u, this._finishProgressiveLayout(d.finish(), s);
 		})().then(() => void 0, (e) => this._failProgressiveLayout(e, s)), await s.firstPublication.promise;
 	}
@@ -1084,7 +1084,7 @@ var J = class e {
 		});
 	}
 	_onWorkerLayoutPush(e) {
-		if (!ie((e, t) => this._worker.postMessage(e, t), e) && !(!("kind" in e) || e.kind !== "presentationLayoutPartial" || e.forId !== this._parseRequestId || !this._progressive)) try {
+		if (!se((e, t) => this._worker.postMessage(e, t), e) && !(!("kind" in e) || e.kind !== "presentationLayoutPartial" || e.forId !== this._parseRequestId || !this._progressive)) try {
 			this._rearmProgressiveWatchdog(), e.usage && this._metrics?.observeUsage(e.usage), e.bootstrap && (this._bootstrap = t(e.bootstrap));
 			let n = this._bootstrap;
 			if (!n) throw Error("PPTX progressive worker published before bootstrap");
@@ -1094,7 +1094,7 @@ var J = class e {
 				...n,
 				slides: [...r, e.slide],
 				fontPreloadNames: e.fontPreloadNames
-			}), this._progressive), zt().then(() => {
+			}), this._progressive), Rt().then(() => {
 				this._destroyed || this._parseRequestId !== e.forId || this._bridge.post({
 					kind: "continuePresentationPreflight",
 					forId: e.forId,
@@ -1223,7 +1223,7 @@ var J = class e {
 			this._assertSlideIndex(t), await this._waitForSlide(t);
 			let i = this._preflight, a = this._slides;
 			if (!i || !a) throw Error("Presentation not loaded");
-			let o = n.dpr ?? _(), s = n.width ?? ((p(e) ? e.offsetWidth : 0) || 960);
+			let o = n.dpr ?? p(), s = n.width ?? ((S(e) ? e.offsetWidth : 0) || 960);
 			await a.withSlide(t, (t) => (this._assertResourceHealthy(), r(e, t, i.slideWidth, i.slideHeight, {
 				width: s,
 				dpr: o,
@@ -1252,7 +1252,7 @@ var J = class e {
 		this._assertResourceHealthy();
 		try {
 			this._assertSlideIndex(e), await this._waitForSlide(e);
-			let n = t.width ?? 960, r = t.dpr ?? _();
+			let n = t.width ?? 960, r = t.dpr ?? p();
 			if (this._mode === "worker") {
 				let i = await this._bridge.request((i) => ({
 					kind: "renderSlide",
@@ -1267,7 +1267,7 @@ var J = class e {
 				try {
 					if (t.onTextRun) for (let e of i.runs) t.onTextRun(e);
 				} catch (e) {
-					throw C(i.bitmap), e;
+					throw b(i.bitmap), e;
 				}
 				return i.bitmap;
 			}
@@ -1405,7 +1405,7 @@ var J = class e {
 		this._assertResourceHealthy();
 		try {
 			if (this._assertSlideIndex(t), await this._waitForSlide(t), !this._preflight) throw Error("Presentation not loaded");
-			let r = n.dpr ?? _(), i = n.width ?? (e.offsetWidth || 960), a = this.slideWidth > 0 ? i * this.slideHeight / this.slideWidth : 0;
+			let r = n.dpr ?? p(), i = n.width ?? (e.offsetWidth || 960), a = this.slideWidth > 0 ? i * this.slideHeight / this.slideWidth : 0;
 			e.style.width = `${Math.round(i)}px`, e.style.height = `${Math.round(a)}px`, e.style.display || (e.style.display = "block");
 			let o = this._mode === "worker" ? async () => {
 				let a = await this.renderSlideToBitmap(t, {
@@ -1422,7 +1422,7 @@ var J = class e {
 					if (!t) throw Error("2D context not available");
 					t.drawImage(a, 0, 0);
 				} finally {
-					C(a);
+					b(a);
 				}
 			} : () => this.renderSlide(e, t, {
 				width: i,
@@ -1446,13 +1446,13 @@ var J = class e {
 		}
 	}
 	destroy() {
-		this._destroyed = !0, this._clearProgressiveWatchdog(), this._slidePullClient?.cancelAll(), this._bridge.terminate(), this._slides?.clear(), this._slides = null, this._slidePullClient = null, this._bootstrap = null, this._preflight = null, this._availableSlideCount = 0, this._layoutLifecycle.succeed(), this._layoutCompletion = null, this._progressive = null, this._parseRequestId = null, this._wakeLayoutWaiters(), this._resourceFailure = null, this._slidePartIndex = null, this._rawParts.clear(), this._googleFontFaces.length > 0 && (Ce(this._googleFontFaces), this._googleFontFaces = []), this._embeddedFontFaces.length > 0 && (j(this._embeddedFontFaces), this._embeddedFontFaces = []), this._embeddedFontAliases = /* @__PURE__ */ new Map(), this._embeddedFontAuthoredFamilies = /* @__PURE__ */ new Map(), S(this._fetchImage), x(this._fetchImage);
+		this._destroyed = !0, this._clearProgressiveWatchdog(), this._slidePullClient?.cancelAll(), this._bridge.terminate(), this._slides?.clear(), this._slides = null, this._slidePullClient = null, this._bootstrap = null, this._preflight = null, this._availableSlideCount = 0, this._layoutLifecycle.succeed(), this._layoutCompletion = null, this._progressive = null, this._parseRequestId = null, this._wakeLayoutWaiters(), this._resourceFailure = null, this._slidePartIndex = null, this._rawParts.clear(), this._googleFontFaces.length > 0 && (oe(this._googleFontFaces), this._googleFontFaces = []), this._embeddedFontFaces.length > 0 && (j(this._embeddedFontFaces), this._embeddedFontFaces = []), this._embeddedFontAliases = /* @__PURE__ */ new Map(), this._embeddedFontAuthoredFamilies = /* @__PURE__ */ new Map(), C(this._fetchImage), w(this._fetchImage);
 	}
 };
 //#endregion
 //#region packages/pptx/src/selection-context.ts
-function Vt(e, t, n, r, i = {}) {
-	let a = Ae({
+function Bt(e, t, n, r, i = {}) {
+	let a = De({
 		id: e.id,
 		author: e.author,
 		date: e.date,
@@ -1483,23 +1483,23 @@ function Vt(e, t, n, r, i = {}) {
 		maxTextCharacters: a.maxTextCharacters
 	});
 }
-function Y(e) {
+function X(e) {
 	if (e === void 0 || !/^\d+$/.test(e)) return null;
 	let t = Number(e);
 	return Number.isSafeInteger(t) ? t : null;
 }
-function Ht(e) {
+function Vt(e) {
 	for (let t = e; t; t = t.parentElement) {
-		let e = Y(t.dataset.slideIndex);
+		let e = X(t.dataset.slideIndex);
 		if (e !== null) return e;
 	}
 	return null;
 }
-function X(e, t, n = {}) {
-	let r = _e(e, t, (e) => {
-		let t = Ht(e), n = Y(e.dataset.runIndex);
+function Z(e, t, n = {}) {
+	let r = be(e, t, (e) => {
+		let t = Vt(e), n = X(e.dataset.runIndex);
 		if (t === null || n === null) return null;
-		let r = Y(e.dataset.elementIndex), i = e.dataset.elementOrigin, a = r !== null && (i === "master" || i === "layout" || i === "slide");
+		let r = X(e.dataset.elementIndex), i = e.dataset.elementOrigin, a = r !== null && (i === "master" || i === "layout" || i === "slide");
 		return {
 			slideIndex: t,
 			runIndex: n,
@@ -1531,8 +1531,41 @@ function X(e, t, n = {}) {
 }
 //#endregion
 //#region packages/pptx/src/focused-view-runtime.ts
-function Z(e, t, n, r, i) {
+function Q(e, t, n, r, i) {
 	return r === "worker" ? e.renderSlideToBitmap(n, i) : e.renderSlide(t, n, i);
+}
+//#endregion
+//#region packages/pptx/src/loading-indicator.ts
+function Ht(e) {
+	let t = e.createElement("span");
+	t.style.cssText = [
+		"position:absolute",
+		"top:0",
+		"right:0",
+		"bottom:0",
+		"left:0",
+		"display:none",
+		"align-items:center",
+		"justify-content:center",
+		"background:rgba(255,255,255,0.72)",
+		"backdrop-filter:blur(2px)",
+		"pointer-events:none",
+		"z-index:4"
+	].join(";"), t.setAttribute("role", "status"), t.setAttribute("aria-live", "polite"), t.setAttribute("aria-label", "Loading slide");
+	let n = e.createElement("span");
+	return n.className = "ooxml-pptx-progress-circle", n.style.cssText = [
+		"width:34px",
+		"height:34px",
+		"box-sizing:border-box",
+		"border-radius:50%",
+		"border:3px solid var(--border-bright, rgba(100,116,139,0.28))",
+		"border-top-color:var(--signal, #12bfd8)",
+		"box-shadow:0 2px 10px rgba(15,23,42,0.08)"
+	].join(";"), n.setAttribute("aria-hidden", "true"), t.appendChild(n), !(e.defaultView?.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? !1) && typeof n.animate == "function" && n.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(360deg)" }], {
+		duration: 800,
+		iterations: Infinity,
+		easing: "linear"
+	}), t;
 }
 //#endregion
 //#region packages/pptx/src/viewer.ts
@@ -1591,29 +1624,18 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	constructor(e, t = {}) {
 		this.opts = t, this.canvas = e;
 		let n = t[Ut];
-		this.borrowed = n !== void 0, this._mode = A("PptxViewer", t.mode, n), this.presentationOwner = new D("PptxViewer", n ?? null, !1);
+		this.borrowed = n !== void 0, this._mode = k("PptxViewer", t.mode, n), this.presentationOwner = new E("PptxViewer", n ?? null, !1);
 		let r = e.ownerDocument?.defaultView ?? (typeof window < "u" ? window : null);
 		if (!r) throw Error("PptxViewer requires a canvas with an active Window");
 		this.hostWindow = r;
 		let i = t.elementHitTolerance ?? 6;
 		if (!Number.isFinite(i) || i < 0) throw RangeError("elementHitTolerance must be a finite non-negative number.");
-		this.elementHitTolerance = i, this._hiddenMode = t.hiddenSlideMode ?? "show", this.canvasMount = new ve(e, {
+		this.elementHitTolerance = i, this._hiddenMode = t.hiddenSlideMode ?? "show", this.canvasMount = new xe(e, {
 			wrapperCssText: "position:relative;display:inline-block;vertical-align:top;",
 			forceDisplayBlock: !0
-		}), this.wrapper = this.canvasMount.wrapper, this.renderDispatcher = new k(e, this._mode === "worker" && !t.enableMediaPlayback), this.errorRouter = new ge("PptxViewer", t.onError);
-		let a = new pe(this.wrapper, t.enableTextSelection === !0, t.enableElementSelection === !0);
-		this.textLayer = a.textLayer, this.highlightLayer = a.highlightLayer, this.elementLayer = a.elementLayer, this._loadingLayer = this.wrapper.ownerDocument.createElement("span"), this._loadingLayer.style.cssText = [
-			"position:absolute",
-			"inset:0",
-			"display:none",
-			"align-items:center",
-			"justify-content:center",
-			"background:rgba(255,255,255,0.72)",
-			"pointer-events:none",
-			"z-index:4"
-		].join(";"), this._loadingLayer.setAttribute("role", "status"), this._loadingLayer.setAttribute("aria-live", "polite"), this._loadingLayer.setAttribute("aria-label", "Loading slide");
-		let o = this.wrapper.ownerDocument.createElement("progress");
-		o.setAttribute("aria-hidden", "true"), this._loadingLayer.appendChild(o), this.wrapper.insertBefore(this._loadingLayer, this.elementLayer), this.textLayer && (t.onSelectionContextChange || t.enableElementSelection) && (this.selectionChangeListener = () => this._emitSelectionContextChange(), this.wrapper.ownerDocument.addEventListener("selectionchange", this.selectionChangeListener)), t.enableElementSelection && (this.elementClickListener = (e) => {
+		}), this.wrapper = this.canvasMount.wrapper, this.renderDispatcher = new O(e, this._mode === "worker" && !t.enableMediaPlayback), this.errorRouter = new ye("PptxViewer", t.onError);
+		let a = new ge(this.wrapper, t.enableTextSelection === !0, t.enableElementSelection === !0);
+		this.textLayer = a.textLayer, this.highlightLayer = a.highlightLayer, this.elementLayer = a.elementLayer, this._loadingLayer = Ht(this.wrapper.ownerDocument), this.wrapper.insertBefore(this._loadingLayer, this.elementLayer), this.textLayer && (t.onSelectionContextChange || t.enableElementSelection) && (this.selectionChangeListener = () => this._emitSelectionContextChange(), this.wrapper.ownerDocument.addEventListener("selectionchange", this.selectionChangeListener)), t.enableElementSelection && (this.elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
 		}, this.wrapper.addEventListener("click", this.elementClickListener)), t.onContextMenu && (this.contextMenuListener = (e) => this._onContextMenu(e), this.wrapper.addEventListener("contextmenu", this.contextMenuListener)), this._find = new Je(() => this.slideCount, (e) => this._collectSlideRuns(e)), n && this._bindLayoutPresentation(n);
 	}
@@ -1622,7 +1644,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 		if (this.borrowed) throw Error("PptxViewer.load() is unsupported on a Viewer created by fromPresentation(); the borrowed presentation is already loaded.");
 		let t = !1;
 		try {
-			let n = await this.presentationOwner.replace(() => J.load(e, {
+			let n = await this.presentationOwner.replace(() => Y.load(e, {
 				password: this.opts.password,
 				useGoogleFonts: this.opts.useGoogleFonts,
 				maxZipEntryBytes: this.opts.maxZipEntryBytes,
@@ -1712,7 +1734,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	get visibleSlideCount() {
 		if (!this.engine) return 0;
 		let e = this.engine;
-		return ze((t) => e.isHidden(t), this.slideCount);
+		return Le((t) => e.isHidden(t), this.slideCount);
 	}
 	get slideIndex() {
 		return this.currentSlide;
@@ -1758,14 +1780,14 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 		return this.opts.zoomMax ?? 4;
 	}
 	async setScale(e) {
-		let t = ue(e, this._zoomMin(), this._zoomMax()), n = t !== this.getScale();
+		let t = pe(e, this._zoomMin(), this._zoomMax()), n = t !== this.getScale();
 		this._scale = t, await this.renderCurrentSlide(), n && this.opts.onScaleChange?.(t);
 	}
 	async zoomIn() {
-		await this.setScale(ye(this.getScale()));
+		await this.setScale(Se(this.getScale()));
 	}
 	async zoomOut() {
-		await this.setScale(Se(this.getScale()));
+		await this.setScale(A(this.getScale()));
 	}
 	async fitWidth() {
 		await this._fit("width");
@@ -1777,7 +1799,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 		if (!this.engine) return;
 		let t = this.wrapper.parentElement;
 		if (!t) return;
-		let n = oe({
+		let n = le({
 			contentWidth: this.engine.slideWidth / M,
 			contentHeight: this.engine.slideHeight / M,
 			containerWidth: t.clientWidth,
@@ -1813,7 +1835,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 				}
 				this.handle = n;
 			} else if (l) {
-				let e = await Z(this.engine, this.canvas, t, "worker", {
+				let e = await Q(this.engine, this.canvas, t, "worker", {
 					width: a,
 					dpr: o,
 					imageResources: this.opts.imageResources,
@@ -1821,7 +1843,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 					onTextRun: d
 				});
 				if (!this.renderDispatcher.commitBitmap(r, e)) return;
-			} else if (await Z(this.engine, this.canvas, t, "main", {
+			} else if (await Q(this.engine, this.canvas, t, "main", {
 				width: a,
 				dpr: o,
 				imageResources: this.opts.imageResources,
@@ -1839,7 +1861,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	_bindLayoutPresentation(e) {
 		this._unbindLayoutPresentation(), this._layoutFailed = !1;
 		let t = !0;
-		this._layoutUnsubscribe = Rt(e, () => ({
+		this._layoutUnsubscribe = J(e, () => ({
 			availableSlides: e.availableSlideCount,
 			slideCount: e.slideCount,
 			exact: e.layoutComplete,
@@ -1960,7 +1982,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	}
 	getSelectionContext(e = {}) {
 		if (this.destroyed) throw Error("PptxViewer is destroyed");
-		return (this.textLayer ? X(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this.elementContext ? Pt(this.elementContext, e.maxTextCharacters) : null);
+		return (this.textLayer ? Z(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this.elementContext ? Pt(this.elementContext, e.maxTextCharacters) : null);
 	}
 	_emitSelectionContextChange() {
 		let e = this.getSelectionContext();
@@ -1977,10 +1999,10 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	_redrawElementOutline() {
 		let e = this.elementContext, t = this.engine;
 		if (!e || !t || e.slideIndex !== this.currentSlide) {
-			O(this.elementLayer, null);
+			D(this.elementLayer, null);
 			return;
 		}
-		O(this.elementLayer, {
+		D(this.elementLayer, {
 			x: e.bounds.x / t.slideWidth,
 			y: e.bounds.y / t.slideHeight,
 			width: e.bounds.width / t.slideWidth,
@@ -2001,7 +2023,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	async _resolveContextAt(e) {
 		let t = this.engine;
 		if (this.destroyed || !t) return null;
-		if (this.textLayer && X(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this.destroyed ? null : this.getSelectionContext();
+		if (this.textLayer && Z(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this.destroyed ? null : this.getSelectionContext();
 		if (!this.opts.enableElementSelection) return this.getSelectionContext();
 		let n = this.canvas.getBoundingClientRect();
 		if (n.width <= 0 || n.height <= 0) return this._invalidateElementSelection(), null;
@@ -2025,11 +2047,11 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	destroy() {
 		this.destroyed || (this.destroyed = !0, this.errorRouter.close(), this.renderDispatcher.destroy(), o(this.canvas), this.handle?.destroy(), this.handle = null, this._unbindLayoutPresentation(), this.presentationOwner.close(), this._invalidateFind(), this.selectionChangeListener &&= (this.wrapper.ownerDocument.removeEventListener("selectionchange", this.selectionChangeListener), null), this.elementHitGeneration++, this.elementClickListener &&= (this.wrapper.removeEventListener("click", this.elementClickListener), null), this.contextMenuListener &&= (this.wrapper.removeEventListener("contextmenu", this.contextMenuListener), null), this.elementContext = null, this.canvasMount.restore());
 	}
-}, Kt = 150, qt = "0 1px 3px rgba(0,0,0,0.2)", Q = 12, Jt;
-function Yt() {
-	return Jt ??= import("./comment-ui-runtime-ssI6IE39.js");
+}, Kt = 150, qt = "0 1px 3px rgba(0,0,0,0.2)", Jt = 12, Yt;
+function Xt() {
+	return Yt ??= import("./comment-ui-runtime-lXwVOgjW.js");
 }
-var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt = class e {
+var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t = class e {
 	_presentationOwner;
 	get _pres() {
 		return this._presentationOwner.current;
@@ -2091,17 +2113,17 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 	static fromPresentation(t, n, r = {}) {
 		return new e(t, {
 			...r,
-			[Zt]: n
+			[Qt]: n
 		});
 	}
 	constructor(e, t = {}) {
 		if (e.tagName === "CANVAS") throw Error("PptxScrollViewer takes a container element (e.g. a <div>), not a <canvas> — the viewer creates and manages its own canvases. Pass a block container; for the single-slide canvas API use PptxViewer.");
-		this._container = e, this._opts = t, this._errorRouter = new ge("PptxScrollViewer", t.onError);
+		this._container = e, this._opts = t, this._errorRouter = new ye("PptxScrollViewer", t.onError);
 		let n = t.elementHitTolerance ?? 6;
 		if (!Number.isFinite(n) || n < 0) throw RangeError("elementHitTolerance must be a finite non-negative number.");
 		this._elementHitTolerance = n, this._pageShadow = t.pageShadow ?? qt;
-		let r = t[Zt];
-		this._borrowed = r !== void 0, r ? (this._presentationOwner = new D("PptxScrollViewer", r, !1), this._mode = A("PptxScrollViewer", t.mode, r), this._scanAvailableComments(r, !1)) : (this._presentationOwner = new D("PptxScrollViewer"), this._mode = A("PptxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), this._commentsEnabled() && Yt().then((e) => {
+		let r = t[Qt];
+		this._borrowed = r !== void 0, r ? (this._presentationOwner = new E("PptxScrollViewer", r, !1), this._mode = k("PptxScrollViewer", t.mode, r), this._scanAvailableComments(r, !1)) : (this._presentationOwner = new E("PptxScrollViewer"), this._mode = k("PptxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), this._commentsEnabled() && Xt().then((e) => {
 			if (!this._destroyed) {
 				this._commentUi = e;
 				for (let [e, t] of this._slots) this._redrawSlotComments(e, t);
@@ -2109,7 +2131,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		}).catch((e) => this._reportRenderError(e)), t.enableTextSelection && (t.onSelectionContextChange || t.enableElementSelection) && (this._selectionChangeListener = () => this._emitSelectionContextChange(), this._wrapper.ownerDocument.addEventListener("selectionchange", this._selectionChangeListener)), t.enableElementSelection && (this._elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
 		}, this._scrollHost.addEventListener("click", this._elementClickListener)), t.onContextMenu && (this._contextMenuListener = (e) => this._onContextMenu(e), this._scrollHost.addEventListener("contextmenu", this._contextMenuListener)), this._scrollListener = () => this._onScroll(), this._scrollHost.addEventListener("scroll", this._scrollListener), t.comments && (this._commentOutsidePointerListener = (e) => {
-			if (!Me(e, this._wrapper, "ooxmlCommentId") && this._activeCommentId !== null) {
+			if (!ke(e, this._wrapper, "ooxmlCommentId") && this._activeCommentId !== null) {
 				this._activeCommentId = null, this._activeCommentSlide = null;
 				for (let [e, t] of this._slots) this._redrawSlotComments(e, t);
 				this._emitSelectionContextChange();
@@ -2120,7 +2142,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 			this._pendingZoomAnchor = Number.isFinite(n) && Number.isFinite(r) ? {
 				x: n,
 				y: r
-			} : null, this.setScale(xe(this._scale, e.deltaY, e.deltaMode));
+			} : null, this.setScale(we(this._scale, e.deltaY, e.deltaMode));
 		}, this._scrollHost.addEventListener("wheel", this._wheelListener, { passive: !1 })), typeof ResizeObserver < "u" && (this._resizeObserver = new ResizeObserver(() => this._onResize()), this._resizeObserver.observe(this._container)), this._borrowed && (this._bindLayoutPresentation(r), this.relayout());
 	}
 	async load(e) {
@@ -2128,7 +2150,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		if (this._borrowed) throw Error("PptxScrollViewer.load() is unsupported on a Viewer created by fromPresentation(); the borrowed presentation is already loaded.");
 		let t = !1;
 		try {
-			let n = await this._presentationOwner.replace(() => J.load(e, {
+			let n = await this._presentationOwner.replace(() => Y.load(e, {
 				password: this._opts.password,
 				useGoogleFonts: this._opts.useGoogleFonts,
 				maxZipEntryBytes: this._opts.maxZipEntryBytes,
@@ -2191,7 +2213,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		return r <= 0 ? 0 : r;
 	}
 	_commentMarginExtent() {
-		return this._hasCommentMargin() ? (Q + $) * this._commentZoom() : 0;
+		return this._hasCommentMargin() ? (Jt + $) * this._commentZoom() : 0;
 	}
 	_hasCommentMargin() {
 		return this._commentsEnabled() && this._hasComments && this._commentsOptions()?.cards !== !1;
@@ -2212,8 +2234,8 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 	_syncCommentMarginGeometry(e) {
 		if (!e) return;
 		e.style.display = this._hasCommentMargin() ? "" : "none";
-		let t = this._commentZoom(), n = `calc(100% + ${Q * t}px)`;
-		e.style.left = this._commentSide() === "right" ? n : "", e.style.right = this._commentSide() === "left" ? n : "", e.style.width = `${$ * t}px`, e.style.fontSize = `${Xt}px`, e.dataset.ooxmlCommentZoom = String(t);
+		let t = this._commentZoom(), n = `calc(100% + ${Jt * t}px)`;
+		e.style.left = this._commentSide() === "right" ? n : "", e.style.right = this._commentSide() === "left" ? n : "", e.style.width = `${$ * t}px`, e.style.fontSize = `${Zt}px`, e.dataset.ooxmlCommentZoom = String(t);
 	}
 	_scanAvailableComments(e, t) {
 		if (!this._commentsEnabled() || this._hasComments) return;
@@ -2280,10 +2302,10 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		return this._pad().leading + e * (this._uniformSlideHeight + this._gap());
 	}
 	_slideIndexAtOffset(e) {
-		return De(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, 0, 0, this._pad()).topIndex;
+		return Te(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, 0, 0, this._pad()).topIndex;
 	}
 	_rangeAt(e, t) {
-		return De(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, this._scrollHost.clientHeight, t, this._pad());
+		return Te(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, this._scrollHost.clientHeight, t, this._pad());
 	}
 	_range() {
 		return this._rangeAt(this._scrollHost.scrollTop, this._overscan());
@@ -2333,42 +2355,28 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		this._opts.enableTextSelection && (r = document.createElement("div"), r.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;user-select:text;-webkit-user-select:text;", t.appendChild(r));
 		let i = document.createElement("div");
 		i.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;", t.appendChild(i);
-		let a = document.createElement("span");
-		a.style.cssText = [
-			"position:absolute",
-			"top:0",
-			"right:0",
-			"bottom:0",
-			"left:0",
-			"display:none",
-			"align-items:center",
-			"justify-content:center",
-			"background:rgba(255,255,255,0.72)",
-			"pointer-events:none",
-			"z-index:4"
-		].join(";"), a.setAttribute("role", "status"), a.setAttribute("aria-live", "polite"), a.setAttribute("aria-label", "Loading slide");
-		let o = document.createElement("progress");
-		o.setAttribute("aria-hidden", "true"), a.appendChild(o), t.appendChild(a);
-		let s = null, c = null, l = null;
-		this._commentsEnabled() && (s = document.createElement("div"), s.style.cssText = "position:absolute;inset:0;overflow:hidden;pointer-events:none;", t.appendChild(s), this._commentsOptions()?.cards !== !1 && (c = document.createElement("div"), c.style.cssText = "position:absolute;top:0;height:100%;box-sizing:border-box;overflow-x:hidden;overflow-y:auto;pointer-events:auto;", this._syncCommentMarginGeometry(c), this._commentsOptions()?.connectors !== void 0 && (l = document.createElement("div"), l.style.cssText = "position:absolute;top:0;left:0;overflow:visible;pointer-events:none;", t.appendChild(l)), t.appendChild(c)));
-		let u = me(t, this._opts.enableElementSelection === !0);
+		let a = Ht(document);
+		t.appendChild(a);
+		let o = null, s = null, c = null;
+		this._commentsEnabled() && (o = document.createElement("div"), o.style.cssText = "position:absolute;inset:0;overflow:hidden;pointer-events:none;", t.appendChild(o), this._commentsOptions()?.cards !== !1 && (s = document.createElement("div"), s.style.cssText = "position:absolute;top:0;height:100%;box-sizing:border-box;overflow-x:hidden;overflow-y:auto;pointer-events:auto;", this._syncCommentMarginGeometry(s), this._commentsOptions()?.connectors !== void 0 && (c = document.createElement("div"), c.style.cssText = "position:absolute;top:0;left:0;overflow:visible;pointer-events:none;", t.appendChild(c)), t.appendChild(s)));
+		let l = _e(t, this._opts.enableElementSelection === !0);
 		return this._scrollHost.appendChild(t), {
 			wrapper: t,
 			canvas: n,
 			textLayer: r,
 			highlightLayer: i,
-			elementLayer: u,
+			elementLayer: l,
 			loadingLayer: a,
-			commentMarkerLayer: s,
-			commentMargin: c,
-			commentDecorationLayer: l,
+			commentMarkerLayer: o,
+			commentMargin: s,
+			commentDecorationLayer: c,
 			commentElementBounds: Object.freeze([]),
 			commentGeometry: null,
 			commentAnchorSlide: -1,
 			commentAnchorGeneration: 0,
 			renderedSlide: -1,
 			renderedScale: -1,
-			dispatcher: new k(n, this._mode === "worker" && !this._opts.enableMediaPlayback),
+			dispatcher: new O(n, this._mode === "worker" && !this._opts.enableMediaPlayback),
 			presentationHandle: null,
 			mediaInteractive: !1,
 			renderGeneration: 0,
@@ -2376,7 +2384,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		};
 	}
 	_recycleSlot(e, t) {
-		this._slots.delete(e), t.renderGeneration++, t.presentationGeneration++, t.presentationHandle?.destroy(), t.presentationHandle = null, t.mediaInteractive = !1, t.dispatcher.destroy(), this._destroyed || (t.dispatcher = new k(t.canvas, this._mode === "worker" && !this._opts.enableMediaPlayback)), t.textLayer && (t.textLayer.innerHTML = "", this._clearTextLayerPreview(t.textLayer)), t.highlightLayer.innerHTML = "", t.highlightLayer.style.transform = "", t.highlightLayer.style.transformOrigin = "", t.loadingLayer.style.display = "none", t.commentMarkerLayer && (t.commentMarkerLayer.replaceChildren(), t.commentMarkerLayer.style.visibility = ""), t.commentMargin && (this._commentUi?.disposeReadOnlyCommentMargin(t.commentMargin), this._commentUi || t.commentMargin.replaceChildren(), t.commentMargin.style.visibility = ""), t.commentDecorationLayer && (this._commentUi?.disposeReadOnlyCommentDecoration(t.commentDecorationLayer), this._commentUi || t.commentDecorationLayer.replaceChildren(), t.commentDecorationLayer.style.visibility = ""), t.commentElementBounds = Object.freeze([]), t.commentGeometry = null, t.commentAnchorSlide = -1, t.commentAnchorGeneration++, O(t.elementLayer, null), t.canvas.style.height = "", t.renderedSlide = -1, t.renderedScale = -1, t.wrapper.remove(), this._free.push(t);
+		this._slots.delete(e), t.renderGeneration++, t.presentationGeneration++, t.presentationHandle?.destroy(), t.presentationHandle = null, t.mediaInteractive = !1, t.dispatcher.destroy(), this._destroyed || (t.dispatcher = new O(t.canvas, this._mode === "worker" && !this._opts.enableMediaPlayback)), t.textLayer && (t.textLayer.innerHTML = "", this._clearTextLayerPreview(t.textLayer)), t.highlightLayer.innerHTML = "", t.highlightLayer.style.transform = "", t.highlightLayer.style.transformOrigin = "", t.loadingLayer.style.display = "none", t.commentMarkerLayer && (t.commentMarkerLayer.replaceChildren(), t.commentMarkerLayer.style.visibility = ""), t.commentMargin && (this._commentUi?.disposeReadOnlyCommentMargin(t.commentMargin), this._commentUi || t.commentMargin.replaceChildren(), t.commentMargin.style.visibility = ""), t.commentDecorationLayer && (this._commentUi?.disposeReadOnlyCommentDecoration(t.commentDecorationLayer), this._commentUi || t.commentDecorationLayer.replaceChildren(), t.commentDecorationLayer.style.visibility = ""), t.commentElementBounds = Object.freeze([]), t.commentGeometry = null, t.commentAnchorSlide = -1, t.commentAnchorGeneration++, D(t.elementLayer, null), t.canvas.style.height = "", t.renderedSlide = -1, t.renderedScale = -1, t.wrapper.remove(), this._free.push(t);
 	}
 	_positionSlot(e, t, n) {
 		e.wrapper.dataset.slideIndex = String(t), e.wrapper.style.top = `${this._slideOffset(t)}px`;
@@ -2402,7 +2410,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		if (this._opts.enableMediaPlayback && n) return t.mediaInteractive = !0, this._trackSlotLoading(e, t, i, this._renderInteractiveSlot(e, t, o, a, c, s, r));
 		if (t.mediaInteractive = !1, this._mode === "worker") return this._trackSlotLoading(e, t, i, this._renderSlotBitmap(e, t, o, a, c, i, l, u, r));
 		let d = [], f = !!this._opts.enableTextSelection && !!t.textLayer, p = f || this._findActive, m = p ? (e) => d.push(e) : void 0, h = t.canvas;
-		return this._trackSlotLoading(e, t, i, Z(this._pres, h, e, "main", {
+		return this._trackSlotLoading(e, t, i, Q(this._pres, h, e, "main", {
 			width: o,
 			dpr: a,
 			imageResources: this._opts.imageResources,
@@ -2424,7 +2432,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 	_bindLayoutPresentation(e) {
 		this._unbindLayoutPresentation();
 		let t = !0;
-		this._layoutUnsubscribe = Rt(e, () => ({
+		this._layoutUnsubscribe = J(e, () => ({
 			availableSlides: e.availableSlideCount,
 			slideCount: e.slideCount,
 			exact: e.layoutComplete,
@@ -2509,7 +2517,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		this._slideInFlight.add(e);
 		let u = t.canvas, d = !1, f = !!this._opts.enableTextSelection && !!t.textLayer, p = f || this._findActive, m = [];
 		try {
-			let c = await Z(this._pres, u, e, "worker", {
+			let c = await Q(this._pres, u, e, "worker", {
 				width: n,
 				dpr: r,
 				imageResources: this._opts.imageResources,
@@ -2553,7 +2561,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		let h = Math.max(0, m.totalHeight - this._scrollHost.clientHeight), g = this._slideOffset(l) + d * this._uniformSlideHeight, _ = c < this._slideOffset(0) ? s : g - o;
 		if (this._scrollHost.scrollTop = Math.min(h, Math.max(0, _)), i) {
 			let e = Math.max(0, (this._spacer.offsetWidth || 0) - this._scrollHost.clientWidth);
-			this._scrollHost.scrollLeft = se(p, i.x - f, a, r, { maxScroll: e });
+			this._scrollHost.scrollLeft = ue(p, i.x - f, a, r, { maxScroll: e });
 		}
 		this._previewVisible(), this._scheduleSettle(), this._opts.onScaleChange?.(r);
 	}
@@ -2561,10 +2569,10 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		return this._scaleEstablished ? this._scale : this._pendingScale ?? 1;
 	}
 	zoomIn() {
-		this.setScale(ye(this.getScale()));
+		this.setScale(Se(this.getScale()));
 	}
 	zoomOut() {
-		this.setScale(Se(this.getScale(), this._effectiveZoomMin()));
+		this.setScale(A(this.getScale(), this._effectiveZoomMin()));
 	}
 	_effectiveZoomMin() {
 		let e = this._opts.zoomMin ?? .1;
@@ -2578,7 +2586,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 	}
 	_fit(e) {
 		if (!this._pres || this._pres.slideCount === 0) return;
-		let t = oe({
+		let t = le({
 			contentWidth: this._pres.slideWidth / M,
 			contentHeight: this._pres.slideHeight / M,
 			containerWidth: this._fitWidthPx(),
@@ -2642,8 +2650,8 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		}
 		let o = document.createElement("canvas"), s = ++t.renderGeneration;
 		o.style.cssText = "display:block;background:#fff;", this._applyPageShadow(o);
-		let c = new k(o, !1), l = c.begin(), u = [], d = !!this._opts.enableTextSelection && !!t.textLayer, f = d || this._findActive, p = f ? (e) => u.push(e) : void 0;
-		Z(this._pres, o, e, "main", {
+		let c = new O(o, !1), l = c.begin(), u = [], d = !!this._opts.enableTextSelection && !!t.textLayer, f = d || this._findActive, p = f ? (e) => u.push(e) : void 0;
+		Q(this._pres, o, e, "main", {
 			width: r,
 			dpr: n,
 			onTextRun: p
@@ -2676,7 +2684,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 				return;
 			}
 			let d = t.canvas, f = t.presentationHandle;
-			t.dispatcher.destroy(), t.wrapper.insertBefore(s, d), d.remove(), t.canvas = s, t.dispatcher = new k(s, !1), t.presentationHandle = r, t.renderedScale = i, f?.destroy(), t.textLayer && (this._clearTextLayerPreview(t.textLayer), l && I(t.textLayer, c, Math.round(n), Math.round(this._slideHeightPx()), this._hyperlinkHandler(), e)), u && this._refreshFindRuns(e, c), this._commitSlotComments(e, t), this._redrawSlotHighlights(e, t);
+			t.dispatcher.destroy(), t.wrapper.insertBefore(s, d), d.remove(), t.canvas = s, t.dispatcher = new O(s, !1), t.presentationHandle = r, t.renderedScale = i, f?.destroy(), t.textLayer && (this._clearTextLayerPreview(t.textLayer), l && I(t.textLayer, c, Math.round(n), Math.round(this._slideHeightPx()), this._hyperlinkHandler(), e)), u && this._refreshFindRuns(e, c), this._commitSlotComments(e, t), this._redrawSlotHighlights(e, t);
 		}).catch((e) => {
 			o === t.presentationGeneration && this._reportRenderError(e);
 		});
@@ -2951,9 +2959,9 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 		if (this._destroyed) throw Error("PptxScrollViewer is destroyed");
 		if (this._pres && this._activeCommentId !== null && this._activeCommentSlide !== null) {
 			let t = this._pres.getComments(this._activeCommentSlide), n = t.findIndex((e, t) => P(e, t, this._activeCommentSlide) === this._activeCommentId), r = t[n];
-			if (r && n >= 0) return Vt(r, this._activeCommentSlide, n, this._activeCommentId, e);
+			if (r && n >= 0) return Bt(r, this._activeCommentSlide, n, this._activeCommentId, e);
 		}
-		return (this._opts.enableTextSelection ? X(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? Pt(this._elementContext, e.maxTextCharacters) : null);
+		return (this._opts.enableTextSelection ? Z(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? Pt(this._elementContext, e.maxTextCharacters) : null);
 	}
 	_emitSelectionContextChange() {
 		let e = this.getSelectionContext();
@@ -2973,10 +2981,10 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 	_redrawElementOutlineForSlot(e, t) {
 		let n = this._elementContext, r = this._pres;
 		if (!n || !r || n.slideIndex !== e) {
-			O(t.elementLayer, null);
+			D(t.elementLayer, null);
 			return;
 		}
-		O(t.elementLayer, {
+		D(t.elementLayer, {
 			x: n.bounds.x / r.slideWidth,
 			y: n.bounds.y / r.slideHeight,
 			width: n.bounds.width / r.slideWidth,
@@ -2997,7 +3005,7 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 	async _resolveContextAt(e) {
 		let t = this._pres;
 		if (this._destroyed || !t) return null;
-		if (this._opts.enableTextSelection && X(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this._destroyed ? null : this.getSelectionContext();
+		if (this._opts.enableTextSelection && Z(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this._destroyed ? null : this.getSelectionContext();
 		if (!this._opts.enableElementSelection) return this.getSelectionContext();
 		let n = e.target, r = [...this._slots].find(([, e]) => n !== null && e.wrapper.contains(n));
 		if (!r) return this._invalidateElementSelection(), null;
@@ -3027,22 +3035,22 @@ var $ = 440, Xt = 20, Zt = Symbol("PptxScrollViewer.borrowedPresentation"), Qt =
 			this._free.length = 0, this._presentationOwner.close(), this._wrapper.remove();
 		}
 	}
-}, $t = /* @__PURE__ */ e({
-	OoxmlDecodedImageLimitError: () => Pe,
-	OoxmlError: () => w,
-	OoxmlResourceLimitError: () => E,
-	PptxPresentation: () => J,
-	PptxScrollViewer: () => Qt,
+}, en = /* @__PURE__ */ e({
+	OoxmlDecodedImageLimitError: () => Me,
+	OoxmlError: () => ee,
+	OoxmlResourceLimitError: () => x,
+	PptxPresentation: () => Y,
+	PptxScrollViewer: () => $t,
 	PptxViewer: () => Gt,
-	TiffDecodeError: () => Fe,
-	autoResize: () => ae,
+	TiffDecodeError: () => Ne,
+	autoResize: () => ce,
 	buildPptxHighlightLayer: () => L,
 	buildPptxTextLayer: () => I,
-	isOoxmlDecodedImageLimitError: () => Ne,
-	isTiffDecodeError: () => Ie,
+	isOoxmlDecodedImageLimitError: () => je,
+	isTiffDecodeError: () => Pe,
 	openExternalHyperlink: () => T,
-	readPptxTextSelectionContext: () => X,
+	readPptxTextSelectionContext: () => Z,
 	renderSlide: () => f
 });
 //#endregion
-export { J as a, X as i, Qt as n, L as o, Gt as r, I as s, $t as t };
+export { Y as a, Z as i, $t as n, L as o, Gt as r, I as s, en as t };

@@ -1,4 +1,4 @@
-import { _t as e, ft as t, it as n, pt as r, ut as i } from "./hyperlink-enyPbflR.js";
+import { at as e, dt as t, mt as n, pt as r, vt as i } from "./hyperlink-BR1NCO7S.js";
 import { an as a } from "./plot-area-frame-D5hEOgkJ.js";
 import { i as o } from "./pixel-budget-Dgjw269h.js";
 import { r as s } from "./raster-target-ojDdQizC.js";
@@ -15,18 +15,18 @@ async function u(u, d, f, p, m = {}) {
 		...v,
 		targetWidthPx: void 0,
 		targetHeightPx: void 0
-	} : v, b = f ? i(p, l) : void 0, x = await t(u, d, p, y);
+	} : v, b = f ? t(p, l) : void 0, x = await r(u, d, p, y);
 	if (!f || !x) return x;
-	let S = await e(u, d, p, y, b, x), C = s(Number(x.width), Number(x.height), _.targetWidthPx, _.targetHeightPx), w = C ? `|resize:${C.resizeWidth}x${C.resizeHeight}` : "";
-	return r(l, `${c(S, f)}${w}${g ? "|strict" : ""}`, p, async () => {
-		let { w: e, h: t } = a(x);
-		if (e <= 0 || t <= 0) return {
+	let S = await i(u, d, p, y, b, x), C = s(Number(x.width), Number(x.height), _.targetWidthPx, _.targetHeightPx), w = C ? `|resize:${C.resizeWidth}x${C.resizeHeight}` : "";
+	return n(l, `${c(S, f)}${w}${g ? "|strict" : ""}`, p, async () => {
+		let { w: t, h: n } = a(x);
+		if (t <= 0 || n <= 0) return {
 			bitmap: g ? null : x,
 			owned: !1
 		};
-		let r = await n(x, f, {
-			width: e,
-			height: t,
+		let r = await e(x, f, {
+			width: t,
+			height: n,
 			offscreenFactory: h,
 			targetWidthPx: _.targetWidthPx,
 			targetHeightPx: _.targetHeightPx

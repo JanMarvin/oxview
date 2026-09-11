@@ -1,18 +1,18 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { $ as t, A as n, Bt as r, C as i, Ct as a, E as o, Ft as s, H as c, Ht as l, I as u, It as d, L as f, O as p, Pt as m, Q as h, R as g, Rt as _, S as v, St as y, T as b, Ut as x, Vt as S, Xt as C, Z as w, Zt as T, _ as E, a as D, b as O, bt as k, c as A, ct as j, d as ee, dt as M, et as N, f as te, h as ne, jt as P, k as F, l as I, lt as L, m as R, mt as z, nt as B, o as re, on as V, p as H, r as ie, rt as U, sn as ae, tt as oe, u as se, vt as ce, wt as le, x as ue, xt as de, yt as fe, z as pe, zt as me } from "./hyperlink-enyPbflR.js";
-import { C as W, D as G, E as K, S as he, T as ge, _ as _e, a as ve, b as ye, d as q, f as be, h as xe, i as Se, l as Ce, m as we, p as Te, t as Ee, u as De, v as Oe, w as ke, x as Ae, y as je } from "./canvas-viewer-mechanics-B3A7KLLi.js";
-import { a as Me, i as Ne, t as Pe } from "./bounded-raw-part-cache-DVx3Camo.js";
-import { A as Fe, C as Ie, D as Le, _ as J, c as Re, h as ze, hn as Be, in as Ve, j as He, l as Ue, o as We, on as Ge, s as Ke, sn as qe, v as Je, w as Ye } from "./plot-area-frame-D5hEOgkJ.js";
-import { l as Xe, s as Ze } from "./pixel-budget-Dgjw269h.js";
-import { a as Qe, i as Y, r as $e } from "./units-EJdC96r6.js";
-import { L as et } from "./three-d-YYghQndN.js";
-import { k as tt } from "./renderer-XFSCOT6m.js";
-import { i as nt, s as rt } from "./raster-target-ojDdQizC.js";
-import { a as it } from "./resource-measurement-Do07ZRcR.js";
-import { n as at } from "./renderer-module-contract-Cu-GKuPd.js";
-import { n as ot, r as st, t as ct } from "./visible-index-DPoQYSDt.js";
-import { n as lt } from "./line-metrics-CBbw80Ko.js";
-import { a as ut, c as dt, d as ft, f as pt, i as mt, l as ht, m as gt, n as _t, o as vt, p as yt, s as bt, t as xt, u as St } from "./worksheet-pull-client-eDiHHEG2.js";
+import { $ as t, A as n, B as r, Bt as i, C as a, Ct as o, D as s, E as c, Ft as l, Ht as u, It as d, L as f, Lt as p, Mt as m, Q as h, Qt as g, R as _, St as v, Tt as y, U as b, Ut as x, Vt as S, Wt as C, Zt as w, _ as T, a as E, b as D, bt as O, c as k, cn as A, d as j, et as M, f as N, ft as P, h as ee, ht as te, it as F, j as I, k as L, l as R, lt as z, m as B, nt as V, o as ne, p as H, r as U, rt as re, sn as W, tt as ie, u as ae, ut as oe, w as se, wt as ce, x as le, xt as ue, yt as de, z as fe, zt as pe } from "./hyperlink-BR1NCO7S.js";
+import { C as me, D as G, M as K, N as he, O as ge, S as _e, T as ve, _ as ye, a as q, b as be, d as xe, f as Se, h as Ce, i as we, l as Te, m as Ee, p as De, t as Oe, u as ke, v as Ae, w as je, x as Me, y as Ne } from "./canvas-viewer-mechanics-DN5SqWGS.js";
+import { A as Pe, C as Fe, D as Ie, _ as J, c as Le, h as Re, hn as ze, in as Be, j as Ve, l as He, o as Ue, on as We, s as Ge, sn as Ke, v as qe, w as Je } from "./plot-area-frame-D5hEOgkJ.js";
+import { l as Ye, s as Xe } from "./pixel-budget-Dgjw269h.js";
+import { a as Ze, i as Y, r as Qe } from "./units-EJdC96r6.js";
+import { L as $e } from "./three-d-YYghQndN.js";
+import { k as et } from "./renderer-XFSCOT6m.js";
+import { i as tt, s as nt } from "./raster-target-ojDdQizC.js";
+import { a as rt } from "./resource-measurement-CclArDRs.js";
+import { n as it } from "./renderer-module-contract-Cu-GKuPd.js";
+import { n as at, r as ot, t as st } from "./visible-index-DPoQYSDt.js";
+import { n as ct } from "./line-metrics-CBbw80Ko.js";
+import { t as lt } from "./bounded-raw-part-cache-BfbSxRIL.js";
+import { a as ut, c as dt, d as ft, f as pt, i as mt, l as ht, m as gt, n as _t, o as vt, p as yt, s as bt, t as xt, u as St } from "./worksheet-pull-client-CAvuf22q.js";
 //#region packages/core/src/sparkline/renderer.ts
 function Ct(e, t, n) {
 	let { values: r } = n;
@@ -36,7 +36,7 @@ function Ct(e, t, n) {
 		e.moveTo(s, t), e.lineTo(s + l, t), e.stroke(), e.restore();
 	}
 	let v = r.length, y = (e) => v === 1 ? s + l / 2 : s + e / (v - 1) * l;
-	e.save(), e.strokeStyle = i, e.lineCap = "round", e.lineJoin = "round", e.lineWidth = (n.lineWeight ?? .75) * Qe, e.beginPath();
+	e.save(), e.strokeStyle = i, e.lineCap = "round", e.lineJoin = "round", e.lineWidth = (n.lineWeight ?? .75) * Ze, e.beginPath();
 	let b = !1, x = n.displayEmptyCellsAs ?? "gap";
 	for (let t = 0; t < v; t++) {
 		let n = r[t];
@@ -99,7 +99,7 @@ function Et(e, t, n, r, i, a) {
 //#endregion
 //#region packages/core/src/text/bidi/segments.ts
 function Dt(e, t) {
-	return e === !0 ? "rtl" : e === !1 ? "ltr" : n().computeLevels(t, "auto").paragraphLevel === 1 ? "rtl" : "ltr";
+	return e === !0 ? "rtl" : e === !1 ? "ltr" : I().computeLevels(t, "auto").paragraphLevel === 1 ? "rtl" : "ltr";
 }
 //#endregion
 //#region packages/xlsx/src/worker.ts?worker&inline
@@ -649,16 +649,16 @@ function dn(e) {
 }
 function fn() {
 	let e = /* @__PURE__ */ new Date();
-	return Ue(new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate())), !1);
+	return He(new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate())), !1);
 }
 function pn() {
-	return Ue(new Date(Date.now()), !1);
+	return He(new Date(Date.now()), !1);
 }
 function mn(e, t, n) {
-	return Math.floor(Ue(new Date(Date.UTC(e, t - 1, n)), !1));
+	return Math.floor(He(new Date(Date.UTC(e, t - 1, n)), !1));
 }
 function hn(e) {
-	return Re(Math.floor(e), !1);
+	return Le(Math.floor(e), !1);
 }
 function gn(e) {
 	let t = hn(e);
@@ -828,7 +828,7 @@ function On(e) {
 	};
 }
 function kn(e, t, n = !1) {
-	let r = Re(e, n), i = r.getUTCFullYear(), a = r.getUTCMonth() + 1, o = r.getUTCDate(), s = r.getUTCDay(), c = r.getUTCHours(), l = r.getUTCMinutes(), u = r.getUTCSeconds(), d = t.split(";")[0], f = /am\/pm|a\/p/i.test(d), p = null, m = () => p ??= On(r), h = "", g = 0, _ = !1;
+	let r = Le(e, n), i = r.getUTCFullYear(), a = r.getUTCMonth() + 1, o = r.getUTCDate(), s = r.getUTCDay(), c = r.getUTCHours(), l = r.getUTCMinutes(), u = r.getUTCSeconds(), d = t.split(";")[0], f = /am\/pm|a\/p/i.test(d), p = null, m = () => p ??= On(r), h = "", g = 0, _ = !1;
 	for (; g < d.length;) {
 		let t = d[g];
 		if (t === "\"") {
@@ -915,7 +915,7 @@ function In(e) {
 	return t ? `-${i}` : i;
 }
 function Ln(e, t, n, r = !1) {
-	if (t === 14 && !n) return { text: We(e, r) };
+	if (t === 14 && !n) return { text: Ue(e, r) };
 	let i = Sn[t];
 	if (i) return { text: kn(e, i, r) };
 	if (n && n.trim().toLowerCase() === "general") return { text: In(e) };
@@ -1148,11 +1148,11 @@ function Jn(e, t, n) {
 	}
 	if (r.exp) {
 		let e = Math.max(r.intSpec.length, 1), t = r.fracSpec.length, n = 0, i = 0;
-		o !== 0 && (i = Math.floor(Math.log10(o)), i = Math.floor(i / e) * e, n = o / 10 ** i, parseFloat(Ke(n, t)) >= 10 ** e && (i += e, n = o / 10 ** i));
-		let [s, c = ""] = Ke(n, t).split(".");
+		o !== 0 && (i = Math.floor(Math.log10(o)), i = Math.floor(i / e) * e, n = o / 10 ** i, parseFloat(Ge(n, t)) >= 10 ** e && (i += e, n = o / 10 ** i));
+		let [s, c = ""] = Ge(n, t).split(".");
 		return a + Yn(r, Gn(s, r.intSpec, !1), Kn(c, r.fracSpec), "E" + (i < 0 ? "-" : r.exp.plus ? "+" : "") + String(Math.abs(i)).padStart(r.exp.width, "0"));
 	}
-	let s = r.fracSpec.length, [c, l = ""] = Ke(o, s).split("."), u = c.replace(/^0+/, ""), d = /[0]/.test(r.intSpec) || r.intSpec === "" && !1;
+	let s = r.fracSpec.length, [c, l = ""] = Ge(o, s).split("."), u = c.replace(/^0+/, ""), d = /[0]/.test(r.intSpec) || r.intSpec === "" && !1;
 	return u === "" && d && (u = "0"), a + Yn(r, Gn(u, r.intSpec, r.grouping), Kn(l, r.fracSpec), "");
 }
 function Yn(e, t, n, r) {
@@ -1200,10 +1200,10 @@ function Xn(e, t) {
 }
 //#endregion
 //#region packages/xlsx/src/renderer-coordinate-index.ts
-var Zn = T;
+var Zn = g;
 function Qn(e, t) {
 	let n = Zn;
-	return new ae(`XLSX renderer ${e.resource} exceeded its hard limit of ${n} entries`, {
+	return new A(`XLSX renderer ${e.resource} exceeded its hard limit of ${n} entries`, {
 		stage: "rendering",
 		violation: {
 			format: "xlsx",
@@ -1469,29 +1469,29 @@ var vr = (e) => {
 	return typeof t == "string" ? t : void 0;
 };
 function yr(e, t) {
-	let n = e === 2 || F(t);
+	let r = e === 2 || n(t);
 	return {
-		needBidi: n,
-		baseRtl: n && _r(e, t)
+		needBidi: r,
+		baseRtl: r && _r(e, t)
 	};
 }
 function br(e, t) {
-	let r = e.length;
-	if (r === 0) return {
+	let n = e.length;
+	if (n === 0) return {
 		order: [],
 		rtl: []
 	};
-	let i = "", a = Array(r);
-	for (let t = 0; t < r; t++) {
-		a[t] = i.length;
+	let r = "", i = Array(n);
+	for (let t = 0; t < n; t++) {
+		i[t] = r.length;
 		let n = vr(e[t]) ?? "";
-		i += n.length > 0 ? n : "￼";
+		r += n.length > 0 ? n : "￼";
 	}
-	let { levels: o, paragraphLevel: s } = n().computeLevels(i, t ? "rtl" : "ltr"), { order: c, segLevels: l } = p(o, s, a), u = Array(r);
-	for (let e = 0; e < r; e++) u[e] = (l[e] & 1) == 1;
+	let { levels: a, paragraphLevel: o } = I().computeLevels(r, t ? "rtl" : "ltr"), { order: s, segLevels: c } = L(a, o, i), l = Array(n);
+	for (let e = 0; e < n; e++) l[e] = (c[e] & 1) == 1;
 	return {
-		order: c,
-		rtl: u
+		order: s,
+		rtl: l
 	};
 }
 function xr(e, t = 8) {
@@ -1501,10 +1501,10 @@ function Sr(e, t = 8) {
 	return e / t;
 }
 function Cr(e) {
-	return Math.round(e * Qe);
+	return Math.round(e * Ze);
 }
 function wr(e) {
-	return e / Qe;
+	return e / Ze;
 }
 //#endregion
 //#region packages/xlsx/src/internal/grid-axis-geometry.ts
@@ -1785,25 +1785,25 @@ function kr(e, t) {
 //#endregion
 //#region packages/xlsx/src/vertical-text.ts
 function Ar(e, t, n, r, i, a = !1) {
-	let o = t.codePointAt(0) ?? 0, s = se(o);
-	if (a && ee(o)) {
-		e.save(), e.translate(n, r + i / 2), e.textAlign = "center", e.textBaseline = "middle", re(e, () => e.fillText(t, 0, 0)), e.restore();
+	let o = t.codePointAt(0) ?? 0, s = ae(o);
+	if (a && j(o)) {
+		e.save(), e.translate(n, r + i / 2), e.textAlign = "center", e.textBaseline = "middle", ne(e, () => e.fillText(t, 0, 0)), e.restore();
 		return;
 	}
 	if (s === "Tr") {
-		let a = A(o);
+		let a = k(o);
 		if (a !== null) {
 			e.fillText(String.fromCodePoint(a), n, r);
 			return;
 		}
-		if (te(o)) {
+		if (N(o)) {
 			e.fillText(t, n, r);
 			return;
 		}
 		e.save(), e.translate(n, r + i / 2), e.rotate(Math.PI / 2), e.textAlign = "center", e.textBaseline = "middle", e.fillText(t, 0, 0), e.restore();
 		return;
 	}
-	let c = s === "Tu" ? I(o) : null;
+	let c = s === "Tu" ? R(o) : null;
 	e.fillText(c === null ? t : String.fromCodePoint(c), n, r);
 }
 //#endregion
@@ -1829,12 +1829,12 @@ function Fr(e, t, n) {
 function Ir(e, t) {
 	return t ? `${e}|duo:${t.clr1}:${t.clr2}` : e;
 }
-var Lr = m.map((e) => `"${e}"`).join(", "), Rr = s.map((e) => `"${e}"`).join(", "), zr = `"Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${Lr}, sans-serif`, Br = `"Cambria", "Caladea", "Times New Roman", "Liberation Serif", "Noto Naskh Arabic", "Noto Sans Arabic", ${Rr}, serif`, Vr = "\"Courier New\", \"Liberation Mono\", monospace";
+var Lr = l.map((e) => `"${e}"`).join(", "), Rr = d.map((e) => `"${e}"`).join(", "), zr = `"Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${Lr}, sans-serif`, Br = `"Cambria", "Caladea", "Times New Roman", "Liberation Serif", "Noto Naskh Arabic", "Noto Sans Arabic", ${Rr}, serif`, Vr = "\"Courier New\", \"Liberation Mono\", monospace";
 function Hr(e) {
-	let t = e ? me(e) : null, n = r(e);
+	let t = e ? i(e) : null, n = S(e);
 	if (!t) return n === "serif" ? Br : n === "mono" ? Vr : zr;
-	let i = n === "serif", a = S(e), o = [...a ? [a] : [], ..._(t, i ? "serif" : "sans").filter((e) => e !== a)].map((e) => `"${e}"`).join(", ");
-	return `${o ? `${o}, ` : ""}"Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${i ? Rr : Lr}, ${i ? "serif" : "sans-serif"}`;
+	let r = n === "serif", a = u(e), o = [...a ? [a] : [], ...pe(t, r ? "serif" : "sans").filter((e) => e !== a)].map((e) => `"${e}"`).join(", ");
+	return `${o ? `${o}, ` : ""}"Calibri", "Carlito", "Cambria", "Caladea", Arial, "Noto Naskh Arabic", "Noto Sans Arabic", ${r ? Rr : Lr}, ${r ? "serif" : "sans-serif"}`;
 }
 function Ur(e) {
 	let t = e?.trim();
@@ -1849,7 +1849,7 @@ function Kr(e, t, n, r) {
 }
 var qr = "#7a7a7a";
 function Jr(e, t) {
-	let n = t * Qe, r = typeof OffscreenCanvas < "u" ? new OffscreenCanvas(1, 1) : typeof document < "u" ? document.createElement("canvas") : null;
+	let n = t * Ze, r = typeof OffscreenCanvas < "u" ? new OffscreenCanvas(1, 1) : typeof document < "u" ? document.createElement("canvas") : null;
 	if (!r) return 8;
 	let i = r.getContext("2d");
 	if (!i) return 8;
@@ -2066,7 +2066,7 @@ function ei(e, t, n, r) {
 	if (Qr.has(s)) return Qr.get(s);
 	let c = $r[t];
 	if (!c) return Qr.set(s, null), null;
-	let l = c.length, u = Be(l, l);
+	let l = c.length, u = ze(l, l);
 	if (!u) return Qr.set(s, null), null;
 	let d = u.getContext("2d");
 	if (!d) return Qr.set(s, null), null;
@@ -2121,11 +2121,11 @@ function ai(e, t, n) {
 	return `rgb(${Math.round(a * d + c * (1 - d))},${Math.round(o * d + l * (1 - d))},${Math.round(s * d + u * (1 - d))})`;
 }
 function $(e, t, n = 1, r) {
-	let i = Math.round(e * Qe * n * t);
-	return r ? Math.max(i, Math.round(lt(r, e * Qe * t))) : i;
+	let i = Math.round(e * Ze * n * t);
+	return r ? Math.max(i, Math.round(ct(r, e * Ze * t))) : i;
 }
 function oi(e, t = 1) {
-	return `${e.italic ? "italic " : ""}${e.bold ? "bold " : ""}${Math.max(1, Math.round(e.size * Qe * t))}px ${Ur(e.name)}`;
+	return `${e.italic ? "italic " : ""}${e.bold ? "bold " : ""}${Math.max(1, Math.round(e.size * Ze * t))}px ${Ur(e.name)}`;
 }
 function si(e, t, n, r, i, a, o, s, c, l) {
 	if (t.length === 0) return;
@@ -2164,10 +2164,10 @@ function ci(e, t, n) {
 }
 function li(e, t, n, r, i, a, o = 1) {
 	if (e.save(), e.strokeStyle = i, e.lineWidth = .5, e.beginPath(), a) {
-		let i = r - 1, a = r + 1, s = i + w(i, .5, o), c = a + w(a, .5, o);
+		let i = r - 1, a = r + 1, s = i + h(i, .5, o), c = a + h(a, .5, o);
 		e.moveTo(t, s), e.lineTo(n, s), e.moveTo(t, c), e.lineTo(n, c);
 	} else {
-		let i = r + w(r, .5, o);
+		let i = r + h(r, .5, o);
 		e.moveTo(t, i), e.lineTo(n, i);
 	}
 	e.stroke(), e.restore();
@@ -2239,13 +2239,13 @@ function mi(e, t, n) {
 function hi(e, t) {
 	if (e.length === 0 || t.length === 0) return 0;
 	let n = [...e, ...t], r = e.length;
-	return r - b(n, r, o, 1);
+	return r - c(n, r, s, 1);
 }
 function gi(e, t) {
 	let n = t;
 	for (; n < e.length;) {
-		let t = e[e.length - n - 1], r = e[e.length - n], a = t?.codePointAt(0), o = r?.codePointAt(0);
-		if (a !== void 0 && o !== void 0 && i(a) && i(o)) n++;
+		let t = e[e.length - n - 1], r = e[e.length - n], i = t?.codePointAt(0), a = r?.codePointAt(0);
+		if (i !== void 0 && a !== void 0 && se(i) && se(a)) n++;
 		else break;
 	}
 	return n >= e.length ? t : n;
@@ -2253,128 +2253,128 @@ function gi(e, t) {
 function _i(e, t) {
 	if (e.length === 0 || t.length === 0) return 0;
 	let n = t[0].codePointAt(0), r = e.length - 1, i = e[r].codePointAt(0);
-	if (i === void 0 || n === void 0 || i === 8203 || n === 8203 || !ue(i, n)) return 0;
+	if (i === void 0 || n === void 0 || i === 8203 || n === 8203 || !le(i, n)) return 0;
 	for (; r > 0;) {
 		let t = e[r - 1].codePointAt(0), n = e[r].codePointAt(0);
-		if (t === void 0 || n === void 0 || !ue(t, n)) break;
+		if (t === void 0 || n === void 0 || !le(t, n)) break;
 		r--;
 	}
 	return r === 0 ? 0 : e.length - r;
 }
 function vi(e, t, n) {
-	let r = [], i = [], a = 0;
-	for (; a < t.length;) {
-		let e = t[a], n = e.codePointAt(0) ?? 0;
-		if (v(n)) i.push(e), a += n > 65535 ? 2 : 1;
+	let r = [], i = [], o = 0;
+	for (; o < t.length;) {
+		let e = t[o], n = e.codePointAt(0) ?? 0;
+		if (a(n)) i.push(e), o += n > 65535 ? 2 : 1;
 		else if (e === " ") {
-			let e = a;
+			let e = o;
 			for (; e < t.length && t[e] === " ";) e++;
-			i.push(t.slice(a, e)), a = e;
+			i.push(t.slice(o, e)), o = e;
 		} else {
-			let e = a;
+			let e = o;
 			for (; e < t.length;) {
 				let n = t[e], r = n.codePointAt(0) ?? 0;
-				if (n === " " || v(r)) break;
+				if (n === " " || a(r)) break;
 				e += r > 65535 ? 2 : 1;
 			}
-			let n = t.slice(a, e), r = H(n) ? O(n) : null;
+			let n = t.slice(o, e), r = H(n) ? D(n) : null;
 			if (r && r.length > 0) {
 				let e = 0;
 				for (let t of r) i.push(n.slice(e, t)), e = t;
 				i.push(n.slice(e));
 			} else i.push(n);
-			a = e;
+			o = e;
 		}
 	}
-	let o = "";
+	let s = "";
 	for (let t of i) {
-		if (o === "") {
-			o = t;
+		if (s === "") {
+			s = t;
 			continue;
 		}
-		let i = o + t;
-		if (e.measureText(i).width <= n) o = i;
+		let i = s + t;
+		if (e.measureText(i).width <= n) s = i;
 		else {
 			let e = t.replace(/^ +/, "");
 			e === "" && (e = t);
-			let n = [...o], i = hi(n, [...e]);
+			let n = [...s], i = hi(n, [...e]);
 			if (i > 0) {
 				let t = n.length - i;
-				r.push(n.slice(0, t).join("")), o = n.slice(t).join("") + e;
-			} else r.push(o), o = e;
+				r.push(n.slice(0, t).join("")), s = n.slice(t).join("") + e;
+			} else r.push(s), s = e;
 		}
 	}
-	return r.push(o), r;
+	return r.push(s), r;
 }
 function yi(e, t, n, r, i) {
-	let a = [], o = [], s = 0, c = 0, l = null, u = n.size, d = n.name, f = 0, p = () => {
-		o.length !== 0 && (a.push({
-			segments: o,
-			maxFontSize: c,
-			maxFontFamily: l,
-			para: f
-		}), o = [], s = 0, c = 0, l = null);
-	}, m = () => {
-		if (o.length === 0) {
-			a.push({
+	let o = [], s = [], c = 0, l = 0, u = null, d = n.size, f = n.name, p = 0, m = () => {
+		s.length !== 0 && (o.push({
+			segments: s,
+			maxFontSize: l,
+			maxFontFamily: u,
+			para: p
+		}), s = [], c = 0, l = 0, u = null);
+	}, h = () => {
+		if (s.length === 0) {
+			o.push({
 				segments: [],
-				maxFontSize: u || Wr,
-				maxFontFamily: d,
-				para: f
+				maxFontSize: d || Wr,
+				maxFontFamily: f,
+				para: p
 			});
 			return;
 		}
-		p();
-	}, h = (t, n) => {
+		m();
+	}, g = (t, n) => {
 		if (!t) return;
-		u = n.size, d = n.name, e.font = oi(Si(n), r);
+		d = n.size, f = n.name, e.font = oi(Si(n), r);
 		let a = e.measureText(t).width;
-		if (o.length > 0 && s + a > i) {
-			let i = o.flatMap((e) => [...e.text]), a = hi(i, [...t]);
-			a > 0 ? a = gi(i, a) : !H(t) && !H(o[o.length - 1]?.text ?? "") && !/^\s/u.test(t) && !/\s$/u.test(i.at(-1) ?? "") && (a = _i(i, [...t]));
-			let u = o[o.length - 1], d = [...u.text];
+		if (s.length > 0 && c + a > i) {
+			let i = s.flatMap((e) => [...e.text]), a = hi(i, [...t]);
+			a > 0 ? a = gi(i, a) : !H(t) && !H(s[s.length - 1]?.text ?? "") && !/^\s/u.test(t) && !/\s$/u.test(i.at(-1) ?? "") && (a = _i(i, [...t]));
+			let o = s[s.length - 1], d = [...o.text];
 			a > d.length && (a = d.length);
 			let f = null;
 			if (a > 0) {
 				let t = d.slice(0, d.length - a), n = d.slice(d.length - a);
-				if (e.font = oi(Si(u.font), r), t.length === 0) o.pop();
+				if (e.font = oi(Si(o.font), r), t.length === 0) s.pop();
 				else {
 					let n = t.join("");
-					u.text = n, u.width = e.measureText(n).width;
+					o.text = n, o.width = e.measureText(n).width;
 				}
 				let i = n.join("");
 				f = {
 					text: i,
-					font: u.font,
+					font: o.font,
 					width: e.measureText(i).width
 				};
 			}
-			p(), f && (o.push(f), s += f.width, f.font.size > c && (c = f.font.size, l = f.font.name)), e.font = oi(Si(n), r);
+			m(), f && (s.push(f), c += f.width, f.font.size > l && (l = f.font.size, u = f.font.name)), e.font = oi(Si(n), r);
 		}
-		o.push({
+		s.push({
 			text: t,
 			font: n,
 			width: a
-		}), s += a, n.size > c && (c = n.size, l = n.name);
-	}, g = (t, n) => {
-		let a = O(t);
+		}), c += a, n.size > l && (l = n.size, u = n.name);
+	}, _ = (t, n) => {
+		let a = D(t);
 		if (a.length === 0) {
-			h(t, n);
+			g(t, n);
 			return;
 		}
 		e.font = oi(Si(n), r);
-		let o = (t) => e.measureText(t).width, c = E(t), l = t.length, u = 0;
+		let o = (t) => e.measureText(t).width, s = T(t), l = t.length, u = 0;
 		for (; u < l;) {
-			let e = i - s, r = R(t, a, u, e, o, c);
+			let e = i - c, r = B(t, a, u, e, o, s);
 			if (r <= u) {
-				if (s > 0) {
-					p();
+				if (c > 0) {
+					m();
 					continue;
 				}
-				let n = a.find((e) => e > u) ?? l, i = t.slice(u, n), d = ne(i), f = R(i, d, 0, e, o, c);
+				let n = a.find((e) => e > u) ?? l, i = t.slice(u, n), d = ee(i), f = B(i, d, 0, e, o, s);
 				f <= 0 && (f = d.length > 0 ? d[0] : i.length), r = u + f;
 			}
-			h(t.slice(u, r), n), u = r, u < l && p();
+			g(t.slice(u, r), n), u = r, u < l && m();
 		}
 	};
 	for (let e of t) {
@@ -2382,7 +2382,7 @@ function yi(e, t, n, r, i) {
 		for (; i < e.text.length;) {
 			let t = e.text[i], n = t.codePointAt(0) ?? 0;
 			if (n === 10) r.push("\n"), i += 1;
-			else if (v(n)) r.push(t), i += n > 65535 ? 2 : 1;
+			else if (a(n)) r.push(t), i += n > 65535 ? 2 : 1;
 			else if (t === " ") {
 				let t = i;
 				for (; t < e.text.length && e.text[t] === " ";) t++;
@@ -2391,15 +2391,15 @@ function yi(e, t, n, r, i) {
 				let t = i;
 				for (; t < e.text.length;) {
 					let n = e.text[t], r = n.codePointAt(0) ?? 0;
-					if (n === " " || n === "\n" || v(r)) break;
+					if (n === " " || n === "\n" || a(r)) break;
 					t += r > 65535 ? 2 : 1;
 				}
 				r.push(e.text.slice(i, t)), i = t;
 			}
 		}
-		for (let e of r) e === "\n" ? (m(), f++) : H(e) ? g(e, t) : h(e, t);
+		for (let e of r) e === "\n" ? (h(), p++) : H(e) ? _(e, t) : g(e, t);
 	}
-	return (o.length > 0 || a.length > 0) && m(), a;
+	return (s.length > 0 || o.length > 0) && h(), o;
 }
 function bi(e, t, n) {
 	return e === "middle" ? {
@@ -2444,17 +2444,17 @@ function Ci(e, t, n, r, i, a, o, s) {
 		e.font = oi(p, a);
 		let m = s.fontColor ?? f.font.color;
 		e.fillStyle = m ? J(m) : "#000000";
-		let h = $(f.font.size, a), g = 0;
-		f.font.vertAlign === "superscript" ? g = -Math.round(h * .35) : f.font.vertAlign === "subscript" && (g = Math.round(h * .1)), e.fillText(f.text, u, r + g);
-		let _ = $(p.size, a);
+		let g = $(f.font.size, a), _ = 0;
+		f.font.vertAlign === "superscript" ? _ = -Math.round(g * .35) : f.font.vertAlign === "subscript" && (_ = Math.round(g * .1)), e.fillText(f.text, u, r + _);
+		let v = $(p.size, a);
 		if (f.font.underline || f.font.strike) {
-			let t = bi(i, r, _);
+			let t = bi(i, r, v);
 			if (f.font.underline) {
 				let n = m ? J(m) : "#000000", r = f.font.underlineStyle === "double" || f.font.underlineStyle === "doubleAccounting";
-				li(e, u, u + f.width, t.underline + g, n, r, o);
+				li(e, u, u + f.width, t.underline + _, n, r, o);
 			}
 			if (f.font.strike) {
-				let n = t.strike + g, r = n + w(n, .5, o);
+				let n = t.strike + _, r = n + h(n, .5, o);
 				e.save(), e.strokeStyle = m ? J(m) : "#000000", e.lineWidth = .5, e.beginPath(), e.moveTo(u, r), e.lineTo(u + f.width, r), e.stroke(), e.restore();
 			}
 		}
@@ -2661,395 +2661,395 @@ function Bi(e) {
 	let n = parseInt(t.slice(0, 2), 16), r = parseInt(t.slice(2, 4), 16), i = parseInt(t.slice(4, 6), 16), a = (e) => Math.round(e * .2 + 255 * .8), o = (e) => e.toString(16).padStart(2, "0").toUpperCase();
 	return `#${o(a(n))}${o(a(r))}${o(a(i))}`;
 }
-function Vi(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h) {
-	if (m <= 0 || h <= 0) return;
-	let { styles: g, cellMap: _, mergeAnchorMap: v, mergeSkipSet: y, cfContext: b, cs: x, dpr: S } = t, C = i.length, T = a.length, E = new Set(s), O = new Set(o), k = (e, n) => t.rtl ? Gr(e, n, t.canvasW) : e, A = [], j = -c;
-	for (let e = 0; e < C; e++) A.push(j), j += i[e];
-	let M = [], N = -l;
-	for (let e = 0; e < T; e++) M.push(N), N += a[e];
-	e.save(), e.beginPath(), e.rect(k(f, m), p, m, h), e.clip();
-	let te = [], ne = [], P = [];
+function Vi(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, g) {
+	if (m <= 0 || g <= 0) return;
+	let { styles: _, cellMap: v, mergeAnchorMap: y, mergeSkipSet: b, cfContext: x, cs: S, dpr: C } = t, w = i.length, T = a.length, D = new Set(s), O = new Set(o), k = (e, n) => t.rtl ? Gr(e, n, t.canvasW) : e, A = [], M = -c;
+	for (let e = 0; e < w; e++) A.push(M), M += i[e];
+	let N = [], P = -l;
+	for (let e = 0; e < T; e++) N.push(P), P += a[e];
+	e.save(), e.beginPath(), e.rect(k(f, m), p, m, g), e.clip();
+	let ee = [], te = [], F = [];
 	for (let i of t.worksheet.mergeCells ?? []) {
 		let a = i.top, f = i.left;
-		if (E.has(a) && O.has(f) || !s.some((e) => e >= i.top && e <= i.bottom) || !o.some((e) => e >= i.left && e <= i.right)) continue;
+		if (D.has(a) && O.has(f) || !s.some((e) => e >= i.top && e <= i.bottom) || !o.some((e) => e >= i.left && e <= i.right)) continue;
 		let p = t.mergeAnchorMap.get(`${a}:${f}`);
 		if (!p) continue;
-		let m = u - c + t.colAxis.offsetOf(f) - t.colAxis.offsetOf(r), h = d - l + t.rowAxis.offsetOf(a) - t.rowAxis.offsetOf(n), _ = p.totalW, v = p.totalH;
-		m = k(m, _);
-		let y = `${a}:${f}`, C = t.cellMap.get(y), { font: w, fill: T, border: D, xf: A } = di(g, pi(t.worksheet, C, f)), j = gr(C, a, f, b, g.dxfs ?? []);
-		if (ti(e, j.fill ?? T, m, h, _, v), j.dataBar && j.dataBar.ratio > 0) {
-			let t = Math.max(0, (_ - 4) * j.dataBar.ratio);
+		let m = u - c + t.colAxis.offsetOf(f) - t.colAxis.offsetOf(r), h = d - l + t.rowAxis.offsetOf(a) - t.rowAxis.offsetOf(n), g = p.totalW, v = p.totalH;
+		m = k(m, g);
+		let y = `${a}:${f}`, b = t.cellMap.get(y), { font: w, fill: T, border: E, xf: A } = di(_, pi(t.worksheet, b, f)), j = gr(b, a, f, x, _.dxfs ?? []);
+		if (ti(e, j.fill ?? T, m, h, g, v), j.dataBar && j.dataBar.ratio > 0) {
+			let t = Math.max(0, (g - 4) * j.dataBar.ratio);
 			Xr(e, j.dataBar.color, m + 2, h + 2, t, v - 4, j.dataBar.gradient);
 		}
-		let ee = Ca(Sa(D, a, f, p.right, p.bottom, t.cellMap, g), j.border);
-		if (ne.push(() => Ta(e, ee, m, h, _, v, S)), !C) continue;
-		let M = yn(C, g, j.numFmt, t.worksheet.date1904), N = M.text;
-		if (!N || N === "0" && t.worksheet.showZeros === !1) continue;
-		let te = w.bold || !!j.fontBold, P = w.italic || !!j.fontItalic, F = w.underline || !!j.fontUnderline, I = w.strike || !!j.fontStrike, L = te !== w.bold || P !== w.italic || F !== w.underline || I !== w.strike ? {
+		let M = Ca(Sa(E, a, f, p.right, p.bottom, t.cellMap, _), j.border);
+		if (te.push(() => Ta(e, M, m, h, g, v, C)), !b) continue;
+		let N = yn(b, _, j.numFmt, t.worksheet.date1904), P = N.text;
+		if (!P || P === "0" && t.worksheet.showZeros === !1) continue;
+		let ee = w.bold || !!j.fontBold, F = w.italic || !!j.fontItalic, I = w.underline || !!j.fontUnderline, L = w.strike || !!j.fontStrike, R = ee !== w.bold || F !== w.italic || I !== w.underline || L !== w.strike ? {
 			...w,
-			bold: te,
-			italic: P,
-			underline: F,
-			strike: I
+			bold: ee,
+			italic: F,
+			underline: I,
+			strike: L
 		} : w;
-		e.font = oi(L, x);
-		let R = t.hyperlinkMap.get(y) ? "#0563C1" : j.fontColor ?? M.color ?? w.color;
-		e.fillStyle = R ? J(R) : "#000000";
-		let z = C.value.type === "number", B = A.alignH ?? (z ? "right" : "left"), re = A.alignV ?? "bottom", V = A.indent ? Math.round(A.indent * 3 * t.mdw) : 0, H = 3 + (B === "left" || !A.alignH ? V : 0);
-		e.save(), e.beginPath(), e.rect(m, h, _, v), e.clip();
-		let ie;
-		B === "right" ? (ie = m + _ - 3, e.textAlign = "right") : B === "center" ? (ie = m + _ / 2, e.textAlign = "center") : (ie = m + H, e.textAlign = "left");
-		let U = C.value.type === "text" ? C.value.runs : void 0, ae = U && U.length > 0;
-		if (A.wrapText && ae) Ai(e, U, L, {
-			alignH: B,
-			alignV: re,
+		e.font = oi(R, S);
+		let z = t.hyperlinkMap.get(y) ? "#0563C1" : j.fontColor ?? N.color ?? w.color;
+		e.fillStyle = z ? J(z) : "#000000";
+		let B = b.value.type === "number", V = A.alignH ?? (B ? "right" : "left"), ne = A.alignV ?? "bottom", H = A.indent ? Math.round(A.indent * 3 * t.mdw) : 0, U = 3 + (V === "left" || !A.alignH ? H : 0);
+		e.save(), e.beginPath(), e.rect(m, h, g, v), e.clip();
+		let re;
+		V === "right" ? (re = m + g - 3, e.textAlign = "right") : V === "center" ? (re = m + g / 2, e.textAlign = "center") : (re = m + U, e.textAlign = "left");
+		let W = b.value.type === "text" ? b.value.runs : void 0, ie = W && W.length > 0;
+		if (A.wrapText && ie) Ai(e, W, R, {
+			alignH: V,
+			alignV: ne,
 			cx: m,
 			cy: h,
-			cellW: _,
+			cellW: g,
 			cellH: v,
-			leftPad: H,
+			leftPad: U,
 			paddingX: 3,
 			paddingY: 2
-		}, x, S, {
+		}, S, C, {
 			fontColor: j.fontColor,
 			readingOrder: A.readingOrder
 		});
-		else if (A.wrapText) ki(e, N, ie, L, {
-			alignH: B,
-			alignV: re,
+		else if (A.wrapText) ki(e, P, re, R, {
+			alignH: V,
+			alignV: ne,
 			cx: m,
 			cy: h,
-			cellW: _,
+			cellW: g,
 			cellH: v,
-			leftPad: H,
+			leftPad: U,
 			paddingX: 3,
 			paddingY: 2
-		}, x);
-		else if (ae) Oi(e, U, L, {
-			alignH: B,
-			alignV: re,
+		}, S);
+		else if (ie) Oi(e, W, R, {
+			alignH: V,
+			alignV: ne,
 			cx: m,
 			cy: h,
-			cellW: _,
+			cellW: g,
 			cellH: v,
-			leftPad: H,
+			leftPad: U,
 			paddingX: 3,
 			paddingY: 2
-		}, x, S, {
+		}, S, C, {
 			fontColor: j.fontColor,
 			readingOrder: A.readingOrder
 		});
 		else {
 			let { baseline: t, textY: n } = xi({
-				alignH: B,
-				alignV: re,
+				alignH: V,
+				alignV: ne,
 				cx: m,
 				cy: h,
-				cellW: _,
+				cellW: g,
 				cellH: v,
-				leftPad: H,
+				leftPad: U,
 				paddingX: 3,
 				paddingY: 2
 			});
-			e.textBaseline = t, e.fillText(N, ie, n);
+			e.textBaseline = t, e.fillText(P, re, n);
 		}
 		e.restore();
 	}
 	for (let n = 0; n < T; n++) {
-		let r = s[n], c = d + M[n], l = a[n];
-		if ((c + l <= p || c >= p + h) && !o.some((e) => {
-			let t = v.get(`${r}:${e}`);
-			return t != null && c + t.totalH > p && c < p + h;
+		let r = s[n], c = d + N[n], l = a[n];
+		if ((c + l <= p || c >= p + g) && !o.some((e) => {
+			let t = y.get(`${r}:${e}`);
+			return t != null && c + t.totalH > p && c < p + g;
 		})) continue;
-		let T = /* @__PURE__ */ new Set(), E = /* @__PURE__ */ new Set(), O = -1, j = (e) => {
+		let T = /* @__PURE__ */ new Set(), D = /* @__PURE__ */ new Set(), O = -1, M = (e) => {
 			if (O >= 0 && e - O >= 2) {
 				for (let t = O; t < e - 1; t++) T.add(t);
-				for (let t = O + 1; t < e; t++) E.add(t);
+				for (let t = O + 1; t < e; t++) D.add(t);
 			}
 			O = -1;
 		};
-		for (let e = 0; e <= C; e++) {
+		for (let e = 0; e <= w; e++) {
 			let n = !1, i = !1;
-			if (e < C) {
+			if (e < w) {
 				let a = `${r}:${o[e]}`;
-				if (!y.has(a) && !v.has(a)) {
-					let r = _.get(a);
-					n = di(g, pi(t.worksheet, r, o[e])).xf.alignH === "centerContinuous", i = !!(r && r.value && r.value.type !== "empty");
+				if (!b.has(a) && !y.has(a)) {
+					let r = v.get(a);
+					n = di(_, pi(t.worksheet, r, o[e])).xf.alignH === "centerContinuous", i = !!(r && r.value && r.value.type !== "empty");
 				}
 			}
-			n ? i && O >= 0 && e > O ? (j(e), O = e) : O < 0 && (O = e) : j(e);
+			n ? i && O >= 0 && e > O ? (M(e), O = e) : O < 0 && (O = e) : M(e);
 		}
-		for (let a = 0; a < C; a++) {
-			let s = o[a], d = u + A[a], O = i[a], j = `${r}:${s}`;
-			if (y.has(j)) continue;
-			let M = v.get(j), N = M ? M.totalW : O, F = M ? M.totalH : l, I = d + N <= f || d >= f + m;
-			if (c + F <= p || c >= p + h || I && !t.overflowTextAnchors.has(j)) continue;
-			let L = k(d, N), R = _.get(j), { font: z, fill: B, border: re, xf: V } = di(g, pi(t.worksheet, R, s)), H = gr(R, r, s, b, g.dxfs ?? []), ie = H.fill ?? B, U = t.tableStyleMap.get(j), ae = g.dxfs ?? [], oe = (e) => e == null ? void 0 : ae[e], se = oe(U?.wholeTableDxf), ce = oe(U?.headerRowDxf), le = oe(U?.totalRowDxf), ue = oe(U?.firstColumnDxf), de = oe(U?.lastColumnDxf), fe = oe(U?.stripeDxf), pe = U?.isHeader && ce?.fill?.fgColor ? ce : U?.isTotals && le?.fill?.fgColor ? le : U?.isLastCol && de?.fill?.fgColor ? de : U?.isFirstCol && ue?.fill?.fgColor ? ue : fe?.fill?.fgColor ? fe : !U?.isHeader && !U?.isTotals && se?.fill?.fgColor ? se : void 0, me = ti(e, ie, L, c, N, F);
-			if (me || (U && pe?.fill?.fgColor ? (e.fillStyle = J(pe.fill.fgColor), e.fillRect(L, c, N, F), me = !0) : U && !U.isCustom && U.isBanded && (e.fillStyle = Bi(U.accent), e.fillRect(L, c, N, F), me = !0)), t.commentCells.has(j) && ii(e, L, c, N, F), H.dataBar && H.dataBar.ratio > 0) {
-				let t = Math.max(0, (N - 4) * H.dataBar.ratio);
-				Xr(e, H.dataBar.color, L + 2, c + 2, t, F - 4, H.dataBar.gradient);
+		for (let a = 0; a < w; a++) {
+			let s = o[a], d = u + A[a], O = i[a], M = `${r}:${s}`;
+			if (b.has(M)) continue;
+			let N = y.get(M), P = N ? N.totalW : O, I = N ? N.totalH : l, L = d + P <= f || d >= f + m;
+			if (c + I <= p || c >= p + g || L && !t.overflowTextAnchors.has(M)) continue;
+			let R = k(d, P), z = v.get(M), { font: B, fill: V, border: ne, xf: H } = di(_, pi(t.worksheet, z, s)), U = gr(z, r, s, x, _.dxfs ?? []), re = U.fill ?? V, W = t.tableStyleMap.get(M), ie = _.dxfs ?? [], ae = (e) => e == null ? void 0 : ie[e], oe = ae(W?.wholeTableDxf), se = ae(W?.headerRowDxf), ce = ae(W?.totalRowDxf), le = ae(W?.firstColumnDxf), ue = ae(W?.lastColumnDxf), de = ae(W?.stripeDxf), fe = W?.isHeader && se?.fill?.fgColor ? se : W?.isTotals && ce?.fill?.fgColor ? ce : W?.isLastCol && ue?.fill?.fgColor ? ue : W?.isFirstCol && le?.fill?.fgColor ? le : de?.fill?.fgColor ? de : !W?.isHeader && !W?.isTotals && oe?.fill?.fgColor ? oe : void 0, pe = ti(e, re, R, c, P, I);
+			if (pe || (W && fe?.fill?.fgColor ? (e.fillStyle = J(fe.fill.fgColor), e.fillRect(R, c, P, I), pe = !0) : W && !W.isCustom && W.isBanded && (e.fillStyle = Bi(W.accent), e.fillRect(R, c, P, I), pe = !0)), t.commentCells.has(M) && ii(e, R, c, P, I), U.dataBar && U.dataBar.ratio > 0) {
+				let t = Math.max(0, (P - 4) * U.dataBar.ratio);
+				Xr(e, U.dataBar.color, R + 2, c + 2, t, I - 4, U.dataBar.gradient);
 			}
-			let W = t.sparklineMap.get(j);
-			if (W && Ct(e, {
-				x: L,
+			let me = t.sparklineMap.get(M);
+			if (me && Ct(e, {
+				x: R,
 				y: c,
-				w: N,
-				h: F
-			}, W), t.worksheet.isChartSheet !== !0 && t.worksheet.showGridlines !== !1 && !me) {
+				w: P,
+				h: I
+			}, me), t.worksheet.isChartSheet !== !0 && t.worksheet.showGridlines !== !1 && !pe) {
 				if (e.strokeStyle = "#d0d0d0", e.lineWidth = .5, e.beginPath(), !T.has(a)) {
-					let t = L + N + w(L + N, .5, S);
-					e.moveTo(t, c), e.lineTo(t, c + F);
+					let t = R + P + h(R + P, .5, C);
+					e.moveTo(t, c), e.lineTo(t, c + I);
 				}
-				let t = c + F + w(c + F, .5, S);
-				if (e.moveTo(L, t), e.lineTo(L + N, t), n === 0) {
-					let t = c + w(c, .5, S);
-					e.moveTo(L, t), e.lineTo(L + N, t);
+				let t = c + I + h(c + I, .5, C);
+				if (e.moveTo(R, t), e.lineTo(R + P, t), n === 0) {
+					let t = c + h(c, .5, C);
+					e.moveTo(R, t), e.lineTo(R + P, t);
 				}
 				if (a === 0) {
-					let t = L + w(L, .5, S);
-					e.moveTo(t, c), e.lineTo(t, c + F);
+					let t = R + h(R, .5, C);
+					e.moveTo(t, c), e.lineTo(t, c + I);
 				}
 				e.stroke();
 			}
-			let G = Ca(M ? Sa(re, r, s, M.right, M.bottom, _, g) : re, H.border);
-			(T.has(a) || E.has(a)) && (G = {
+			let G = Ca(N ? Sa(ne, r, s, N.right, N.bottom, v, _) : ne, U.border);
+			(T.has(a) || D.has(a)) && (G = {
 				...G,
-				left: E.has(a) ? null : G.left,
+				left: D.has(a) ? null : G.left,
 				right: T.has(a) ? null : G.right
 			});
-			let K = _.get(`${r - 1}:${s}`), he = K ? di(g, pi(t.worksheet, K, s)).border.bottom : null;
+			let K = v.get(`${r - 1}:${s}`), he = K ? di(_, pi(t.worksheet, K, s)).border.bottom : null;
 			if (he?.style && (n === 0 || G.top?.style) && (G = {
 				...G,
 				top: ka(G.top, he)
-			}), !E.has(a)) {
-				let e = _.get(`${r}:${s - 1}`), n = e ? di(g, pi(t.worksheet, e, s - 1)).border.right : null;
+			}), !D.has(a)) {
+				let e = v.get(`${r}:${s - 1}`), n = e ? di(_, pi(t.worksheet, e, s - 1)).border.right : null;
 				n?.style && (a === 0 || G.left?.style) && (G = {
 					...G,
 					left: ka(G.left, n)
 				});
 			}
-			let ge = U ? Ri(U, se, ce, s) : null, _e = t.autoFilterCells.has(j), ve = () => {
+			let ge = W ? Ri(W, oe, se, s) : null, _e = t.autoFilterCells.has(M), ve = () => {
 				if (ge) {
-					if (ge.kind === "dxf") Ta(e, ge.border, L, c, N, F, S);
+					if (ge.kind === "dxf") Ta(e, ge.border, R, c, P, I, C);
 					else if (ge.kind === "accent") {
-						let t = .5 / S;
-						if (e.strokeStyle = ge.color, e.lineWidth = ge.lineWidth, e.beginPath(), e.moveTo(L, c + F - t), e.lineTo(L + N, c + F - t), ge.topEdge) {
-							let t = c + w(c, ge.lineWidth, S);
-							e.moveTo(L, t), e.lineTo(L + N, t);
+						let t = .5 / C;
+						if (e.strokeStyle = ge.color, e.lineWidth = ge.lineWidth, e.beginPath(), e.moveTo(R, c + I - t), e.lineTo(R + P, c + I - t), ge.topEdge) {
+							let t = c + h(c, ge.lineWidth, C);
+							e.moveTo(R, t), e.lineTo(R + P, t);
 						}
 						e.stroke();
 					}
 				}
-				_e && Ii(e, L, c, O, F);
+				_e && Ii(e, R, c, O, I);
 			};
-			if (M) {
+			if (N) {
 				let t = G;
-				ne.push(() => Ta(e, t, L, c, N, F, S)), ve();
+				te.push(() => Ta(e, t, R, c, P, I, C)), ve();
 			} else {
 				let t = G;
-				P.push(() => {
-					Ta(e, t, L, c, N, F, S), ve();
+				F.push(() => {
+					Ta(e, t, R, c, P, I, C), ve();
 				});
 			}
-			if (!R) continue;
-			let ye = yn(R, g, H.numFmt, t.worksheet.date1904), q = ye.text;
-			!q || q === "0" && t.worksheet.showZeros === !1 || te.push(() => {
-				let n = U?.isHeader ? ce : U?.isTotals ? le : U?.isLastCol && de ? de : U?.isFirstCol && ue ? ue : fe || (U ? se : void 0), l = U ? U.isCustom ? !!n?.font?.bold : U.isHeader || U.isTotals : !1, u = z.bold || !!H.fontBold || l, d = z.italic || !!H.fontItalic, f = z.underline || !!H.fontUnderline, p = z.strike || !!H.fontStrike, m = u !== z.bold || d !== z.italic || f !== z.underline || p !== z.strike ? {
-					...z,
+			if (!z) continue;
+			let ye = yn(z, _, U.numFmt, t.worksheet.date1904), q = ye.text;
+			!q || q === "0" && t.worksheet.showZeros === !1 || ee.push(() => {
+				let n = W?.isHeader ? se : W?.isTotals ? ce : W?.isLastCol && ue ? ue : W?.isFirstCol && le ? le : de || (W ? oe : void 0), l = W ? W.isCustom ? !!n?.font?.bold : W.isHeader || W.isTotals : !1, u = B.bold || !!U.fontBold || l, d = B.italic || !!U.fontItalic, f = B.underline || !!U.fontUnderline, p = B.strike || !!U.fontStrike, m = u !== B.bold || d !== B.italic || f !== B.underline || p !== B.strike ? {
+					...B,
 					bold: u,
 					italic: d,
 					underline: f,
 					strike: p
-				} : z;
-				e.font = oi(m, x);
-				let h = t.hyperlinkMap.get(j), b = n?.font?.color ?? null, T = h ? "#0563C1" : H.fontColor ?? ye.color ?? b ?? z.color;
+				} : B;
+				e.font = oi(m, S);
+				let g = t.hyperlinkMap.get(M), x = n?.font?.color ?? null, T = g ? "#0563C1" : U.fontColor ?? ye.color ?? x ?? B.color;
 				e.fillStyle = T ? J(T) : "#000000";
-				let E = R.value.type === "number", O = V.alignH ?? (E ? "right" : "left"), k = V.alignV ?? "bottom", A = V.indent ? Math.round(V.indent * 3 * t.mdw) : 0, te = H.iconSet ? Math.max(8, Math.round(Math.min(N, F) * .55)) : 0, ne = te > 0 ? te + 4 : 0, P = 3 + (O === "left" || !V.alignH ? A : 0) + ne, I = N, B = a;
-				if (O === "centerContinuous" && !M) for (let e = a + 1; e < C; e++) {
+				let D = z.value.type === "number", O = H.alignH ?? (D ? "right" : "left"), k = H.alignV ?? "bottom", A = H.indent ? Math.round(H.indent * 3 * t.mdw) : 0, ee = U.iconSet ? Math.max(8, Math.round(Math.min(P, I) * .55)) : 0, te = ee > 0 ? ee + 4 : 0, F = 3 + (O === "left" || !H.alignH ? A : 0) + te, L = P, V = a;
+				if (O === "centerContinuous" && !N) for (let e = a + 1; e < w; e++) {
 					let n = `${r}:${o[e]}`;
-					if (y.has(n) || v.has(n)) break;
-					let a = _.get(n);
-					if (a && a.value.type !== "empty" || di(g, pi(t.worksheet, a, o[e])).xf.alignH !== "centerContinuous") break;
-					I += i[e], B = e;
+					if (b.has(n) || y.has(n)) break;
+					let a = v.get(n);
+					if (a && a.value.type !== "empty" || di(_, pi(t.worksheet, a, o[e])).xf.alignH !== "centerContinuous") break;
+					L += i[e], V = e;
 				}
-				let re = t.rtl ? L - (I - N) : L, ie = O === "centerContinuous" ? re : L, ae = O === "centerContinuous" ? I : N, oe = q.includes("\n");
-				if (!M && !V.wrapText && !V.textRotation && !E && !oe) {
-					let n = e.measureText(q).width, s = O === "centerContinuous", c = s ? n + 6 : n + P + 3, l = s ? I : N;
+				let ne = t.rtl ? R - (L - P) : R, re = O === "centerContinuous" ? ne : R, ie = O === "centerContinuous" ? L : P, ae = q.includes("\n");
+				if (!N && !H.wrapText && !H.textRotation && !D && !ae) {
+					let n = e.measureText(q).width, s = O === "centerContinuous", c = s ? n + 6 : n + F + 3, l = s ? L : P;
 					if (c > l) {
 						let e = c - l, n = 0, u = 0;
 						O === "right" ? u = e : O === "center" || s ? (u = e / 2, n = e / 2) : n = e;
-						let d = t.rtl ? -1 : 1, f = t.rtl ? a - 1 : B + 1, p = t.rtl ? 1 : -1, m = t.rtl ? B + 1 : a - 1;
+						let d = t.rtl ? -1 : 1, f = t.rtl ? a - 1 : V + 1, p = t.rtl ? 1 : -1, m = t.rtl ? V + 1 : a - 1;
 						if (n > 0) {
 							let e = n;
-							for (let t = f; t >= 0 && t < C && e > 0; t += d) {
+							for (let t = f; t >= 0 && t < w && e > 0; t += d) {
 								let n = `${r}:${o[t]}`;
-								if (y.has(n) || v.has(n)) break;
-								let a = _.get(n);
+								if (b.has(n) || y.has(n)) break;
+								let a = v.get(n);
 								if (a && a.value.type !== "empty") break;
-								ae += i[t], e -= i[t];
+								ie += i[t], e -= i[t];
 							}
 						}
 						if (u > 0) {
 							let e = u;
-							for (let t = m; t >= 0 && t < C && e > 0; t += p) {
+							for (let t = m; t >= 0 && t < w && e > 0; t += p) {
 								let n = `${r}:${o[t]}`;
-								if (y.has(n) || v.has(n)) break;
-								let a = _.get(n);
+								if (b.has(n) || y.has(n)) break;
+								let a = v.get(n);
 								if (a && a.value.type !== "empty") break;
-								ie -= i[t], ae += i[t], e -= i[t];
+								re -= i[t], ie += i[t], e -= i[t];
 							}
 						}
 					}
 				}
-				let pe = q, me = 0;
-				if (O === "fill" && !E && q.length > 0) {
-					let t = Math.max(1, N - 6), n = e.measureText(q).width;
+				let fe = q, pe = 0;
+				if (O === "fill" && !D && q.length > 0) {
+					let t = Math.max(1, P - 6), n = e.measureText(q).width;
 					if (n > 0 && n < t) {
 						let e = Math.max(1, Math.floor(t / n));
-						pe = q.repeat(e);
+						fe = q.repeat(e);
 					}
 				}
-				if (O === "distributed" || O === "justify" && !V.wrapText && !oe) {
-					let t = Math.max(1, N - 6), n = e.measureText(pe).width, r = Math.max(1, [...pe].length - 1);
-					n < t && (me = Math.max(0, (t - n) / r));
+				if (O === "distributed" || O === "justify" && !H.wrapText && !ae) {
+					let t = Math.max(1, P - 6), n = e.measureText(fe).width, r = Math.max(1, [...fe].length - 1);
+					n < t && (pe = Math.max(0, (t - n) / r));
 				}
-				let W, G;
-				O === "right" ? (W = L + N - 3, G = "right") : O === "center" ? (W = L + N / 2, G = "center") : O === "centerContinuous" ? (W = re + I / 2, G = "center") : O === "distributed" || O === "justify" && !V.wrapText && !oe ? (W = L + 3, G = "left") : (W = L + P, G = "left");
-				let K = V.textRotation ?? 0, he = K === 255, ge = K > 0 && K !== 255;
-				if (H.iconSet && te > 0 && (e.save(), e.beginPath(), e.rect(L, c, N, F), e.clip(), Fi(e, H.iconSet.name, H.iconSet.index, L + 2, c + (F - te) / 2, te), e.restore()), e.save(), e.beginPath(), e.rect(ie, c, ae, F), e.clip(), he) {
-					let t = $(z.size, x, 1.1), n = [...q].length * t, r = k === "top" ? c + 2 : k === "center" ? c + (F - n) / 2 : c + F - n - 2;
+				let me, G;
+				O === "right" ? (me = R + P - 3, G = "right") : O === "center" ? (me = R + P / 2, G = "center") : O === "centerContinuous" ? (me = ne + L / 2, G = "center") : O === "distributed" || O === "justify" && !H.wrapText && !ae ? (me = R + 3, G = "left") : (me = R + F, G = "left");
+				let K = H.textRotation ?? 0, he = K === 255, ge = K > 0 && K !== 255;
+				if (U.iconSet && ee > 0 && (e.save(), e.beginPath(), e.rect(R, c, P, I), e.clip(), Fi(e, U.iconSet.name, U.iconSet.index, R + 2, c + (I - ee) / 2, ee), e.restore()), e.save(), e.beginPath(), e.rect(re, c, ie, I), e.clip(), he) {
+					let t = $(B.size, S, 1.1), n = [...q].length * t, r = k === "top" ? c + 2 : k === "center" ? c + (I - n) / 2 : c + I - n - 2;
 					e.textAlign = "center", e.textBaseline = "top";
 					for (let n of q) {
-						let i = n.codePointAt(0) ?? 0, a = ee(i) && D(e, i);
-						Ar(e, n, L + N / 2, r, t, a), r += t;
+						let i = n.codePointAt(0) ?? 0, a = j(i) && E(e, i);
+						Ar(e, n, R + P / 2, r, t, a), r += t;
 					}
 					e.restore();
 					return;
 				}
 				if (ge) {
 					let t = K <= 90 ? -(K * Math.PI / 180) : (K - 90) * Math.PI / 180;
-					e.translate(L + N / 2, c + F / 2), e.rotate(t), e.textAlign = "center", e.textBaseline = "middle", e.fillText(q, 0, 0), e.restore();
+					e.translate(R + P / 2, c + I / 2), e.rotate(t), e.textAlign = "center", e.textBaseline = "middle", e.fillText(q, 0, 0), e.restore();
 					return;
 				}
-				if (V.shrinkToFit) {
-					let t = e.measureText(q).width, n = N - P - 3;
+				if (H.shrinkToFit) {
+					let t = e.measureText(q).width, n = P - F - 3;
 					if (t > n && t > 0) {
-						let r = n / t, i = O === "right" ? L + N - 3 : O === "center" ? L + N / 2 : L + P;
+						let r = n / t, i = O === "right" ? R + P - 3 : O === "center" ? R + P / 2 : R + F;
 						e.transform(r, 0, 0, 1, i * (1 - r), 0);
 					}
 				}
-				if (e.textAlign = G, me > 0) try {
-					e.letterSpacing = `${me}px`;
+				if (e.textAlign = G, pe > 0) try {
+					e.letterSpacing = `${pe}px`;
 				} catch {}
 				try {
-					e.direction = _r(V.readingOrder, q) ? "rtl" : "ltr";
+					e.direction = _r(H.readingOrder, q) ? "rtl" : "ltr";
 				} catch {}
-				let _e = R.value.type === "text" ? R.value.runs : void 0, ve = _e && _e.length > 0;
-				if (V.wrapText && ve) Ai(e, _e, m, {
+				let _e = z.value.type === "text" ? z.value.runs : void 0, ve = _e && _e.length > 0;
+				if (H.wrapText && ve) Ai(e, _e, m, {
 					alignH: O,
 					alignV: k,
-					cx: L,
+					cx: R,
 					cy: c,
-					cellW: N,
-					cellH: F,
-					leftPad: P,
+					cellW: P,
+					cellH: I,
+					leftPad: F,
 					paddingX: 3,
 					paddingY: 2
-				}, x, S, {
-					fontColor: H.fontColor,
-					readingOrder: V.readingOrder
+				}, S, C, {
+					fontColor: U.fontColor,
+					readingOrder: H.readingOrder
 				});
-				else if (V.wrapText) ki(e, q, W, m, {
+				else if (H.wrapText) ki(e, q, me, m, {
 					alignH: O,
 					alignV: k,
-					cx: L,
+					cx: R,
 					cy: c,
-					cellW: N,
-					cellH: F,
-					leftPad: P,
+					cellW: P,
+					cellH: I,
+					leftPad: F,
 					paddingX: 3,
 					paddingY: 2
-				}, x);
+				}, S);
 				else if (ve) Oi(e, _e, m, {
 					alignH: O,
 					alignV: k,
-					cx: L,
+					cx: R,
 					cy: c,
-					cellW: N,
-					cellH: F,
-					leftPad: P,
+					cellW: P,
+					cellH: I,
+					leftPad: F,
 					paddingX: 3,
 					paddingY: 2
-				}, x, S, {
-					fontColor: H.fontColor,
-					readingOrder: V.readingOrder
+				}, S, C, {
+					fontColor: U.fontColor,
+					readingOrder: H.readingOrder
 				});
 				else {
-					let t = m.vertAlign, n = $(z.size, x), r = 0;
+					let t = m.vertAlign, n = $(B.size, S), r = 0;
 					t === "superscript" ? r = -Math.round(n * .35) : t === "subscript" && (r = Math.round(n * .1));
 					let i = t ? {
 						...m,
 						size: m.size * .65
 					} : m;
-					t && (e.font = oi(i, x));
+					t && (e.font = oi(i, S));
 					let a = null, o = () => a ??= e.measureText(q), s = () => {
-						let e = Math.min(o().width, ae - P - 3);
+						let e = Math.min(o().width, ie - F - 3);
 						return {
-							x: O === "right" ? L + N - 3 - e : O === "center" ? L + N / 2 - e / 2 : L + P,
+							x: O === "right" ? R + P - 3 - e : O === "center" ? R + P / 2 - e / 2 : R + F,
 							width: e
 						};
-					}, l = $(i.size, x);
-					if (m.underline || h) {
-						let { x: t, width: n } = s(), i = (k === "top" ? c + 2 + l + 1 : k === "center" ? c + F / 2 + Math.round(l * .55) : c + F - 2 + 1) + r, a = h ? "#0563C1" : T ? J(T) : "#000000", o = m.underlineStyle === "double" || m.underlineStyle === "doubleAccounting";
-						li(e, t, t + n, i, a, o, S);
+					}, l = $(i.size, S);
+					if (m.underline || g) {
+						let { x: t, width: n } = s(), i = (k === "top" ? c + 2 + l + 1 : k === "center" ? c + I / 2 + Math.round(l * .55) : c + I - 2 + 1) + r, a = g ? "#0563C1" : T ? J(T) : "#000000", o = m.underlineStyle === "double" || m.underlineStyle === "doubleAccounting";
+						li(e, t, t + n, i, a, o, C);
 					}
 					if (m.strike) {
-						let { x: t, width: n } = s(), i = (k === "top" ? c + 2 + Math.round(l * .5) : k === "center" ? c + F / 2 : c + F - 2 - Math.round(l * .35)) + r, a = i + w(i, .5, S);
+						let { x: t, width: n } = s(), i = (k === "top" ? c + 2 + Math.round(l * .5) : k === "center" ? c + I / 2 : c + I - 2 - Math.round(l * .35)) + r, a = i + h(i, .5, C);
 						e.save(), e.strokeStyle = T ? J(T) : "#000000", e.lineWidth = .5, e.beginPath(), e.moveTo(t, a), e.lineTo(t + n, a), e.stroke(), e.restore();
 					}
 					if (q.includes("\n")) {
-						let t = q.split("\n"), n = $(z.size, x, 1.2, z.name ?? void 0), i = t.length * n, a;
-						k === "top" ? (a = c + 2, e.textBaseline = "top") : k === "center" ? (a = c + (F - i) / 2, e.textBaseline = "top") : (a = c + F - i - 2, e.textBaseline = "top");
-						for (let i = 0; i < t.length; i++) e.fillText(t[i], W, a + i * n + r);
+						let t = q.split("\n"), n = $(B.size, S, 1.2, B.name ?? void 0), i = t.length * n, a;
+						k === "top" ? (a = c + 2, e.textBaseline = "top") : k === "center" ? (a = c + (I - i) / 2, e.textBaseline = "top") : (a = c + I - i - 2, e.textBaseline = "top");
+						for (let i = 0; i < t.length; i++) e.fillText(t[i], me, a + i * n + r);
 					} else {
 						let { baseline: t, textY: n } = xi({
 							alignH: O,
 							alignV: k,
-							cx: L,
+							cx: R,
 							cy: c,
-							cellW: N,
-							cellH: F,
-							leftPad: P,
+							cellW: P,
+							cellH: I,
+							leftPad: F,
 							paddingX: 3,
 							paddingY: 2
 						});
-						e.textBaseline = t, e.fillText(pe, W, n + r);
+						e.textBaseline = t, e.fillText(fe, me, n + r);
 					}
 				}
-				let be = R.value.type === "text" ? R.value.phoneticRuns : void 0;
-				if (R.showPhonetic && be && be.length > 0 && !q.includes("\n")) {
-					let t = oi(m, x), n = ci(e, q, t), r;
-					r = O === "right" ? L + N - 3 - n : O === "center" ? L + N / 2 - n / 2 : L + P;
+				let be = z.value.type === "text" ? z.value.phoneticRuns : void 0;
+				if (z.showPhonetic && be && be.length > 0 && !q.includes("\n")) {
+					let t = oi(m, S), n = ci(e, q, t), r;
+					r = O === "right" ? R + P - 3 - n : O === "center" ? R + P / 2 - n / 2 : R + F;
 					let i = T ? J(T) : "#000000";
-					si(e, be, R.value.type === "text" ? R.value.phoneticPr : void 0, q, t, g, r, c, x, i);
+					si(e, be, z.value.type === "text" ? z.value.phoneticPr : void 0, q, t, _, r, c, S, i);
 				}
 				e.restore(), q && t.onTextRun && t.onTextRun({
 					sheetName: t.worksheet.name,
 					cellRef: kr(r, s),
 					text: q,
-					x: L,
+					x: R,
 					y: c,
-					width: N,
-					height: F,
+					width: P,
+					height: I,
 					row: r,
 					col: s
 				});
 			});
 		}
 	}
-	for (let e of P) e();
-	for (let e of ne) e();
+	for (let e of F) e();
 	for (let e of te) e();
+	for (let e of ee) e();
 	e.restore();
 }
 var Hi = /* @__PURE__ */ new WeakMap();
@@ -3258,8 +3258,8 @@ function ra(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g) {
 			bold: E,
 			italic: D
 		} : v, m);
-		let O = y.alignH ?? "left", k = y.indent ? Math.round(y.indent * 3 * h) : 0, A = c.sizeOf(u), j = l.sizeOf(i), ee = b.iconSet ? Math.max(8, Math.round(Math.min(A, j) * .55)) : 0, M = ee > 0 ? ee + 4 : 0, N = 3 + (O === "left" || !y.alignH ? k : 0) + M, te = e.measureText(x).width + N + 3, ne = Math.max(0, te - A);
-		return ne <= 0 ? !1 : (O === "center" || O === "centerContinuous" ? ne / 2 : ((g ? d === "higher" ? "left" : "right" : d === "higher" ? "right" : "left") == "left" ? O === "right" : O !== "right") ? ne : 0) > f;
+		let O = y.alignH ?? "left", k = y.indent ? Math.round(y.indent * 3 * h) : 0, A = c.sizeOf(u), j = l.sizeOf(i), M = b.iconSet ? Math.max(8, Math.round(Math.min(A, j) * .55)) : 0, N = M > 0 ? M + 4 : 0, P = 3 + (O === "left" || !y.alignH ? k : 0) + N, ee = e.measureText(x).width + P + 3, te = Math.max(0, ee - A);
+		return te <= 0 ? !1 : (O === "center" || O === "centerContinuous" ? te / 2 : ((g ? d === "higher" ? "left" : "right" : d === "higher" ? "right" : "left") == "left" ? O === "right" : O !== "right") ? te : 0) > f;
 	};
 	for (let e of u) {
 		let n = i.get(e);
@@ -3281,101 +3281,101 @@ function ia(e, t) {
 function aa(e, t, n, r, i = {}) {
 	let a = i.dpr ?? 1, o = i.cellScale ?? 1, s = t.isChartSheet === !0, c = Q(t), l = c.maximumDigitWidth, u = e.canvas.width / a, d = e.canvas.height / a;
 	e.clearRect(0, 0, u, d), e.fillStyle = "#ffffff", e.fillRect(0, 0, u, d);
-	let f = (e) => Math.round(e * o), p = s ? 0 : f(50), m = s ? 0 : f(22), { row: h, col: g, rows: _, cols: v } = r, y = (i.scrollOffsetX ?? 0) * o, b = (i.scrollOffsetY ?? 0) * o, { col: x, row: S } = c.axesAtScale(o), C = x.bandsToCover(1, s ? 0 : i.freezeCols ?? 0, Math.max(0, u - p)), T = S.bandsToCover(1, s ? 0 : i.freezeRows ?? 0, Math.max(0, d - m)), E = T.at(-1)?.index ?? 0, D = C.at(-1)?.index ?? 0, O = C.map(({ index: e }) => e), k = T.map(({ index: e }) => e), A = C.map(({ size: e }) => e), j = T.map(({ size: e }) => e), ee = A.reduce((e, t) => e + t, 0), M = j.reduce((e, t) => e + t, 0), N = x.bandsToCover(g, Math.min(16384, g + v - 1)), te = S.bandsToCover(h, Math.min(1048576, h + _ - 1)), ne = N.map(({ index: e }) => e), P = te.map(({ index: e }) => e), F = N.map(({ size: e }) => e), I = te.map(({ size: e }) => e), { cellMap: L, cfContext: R, mergeSkipSet: z, autoFilterCells: B, hyperlinkMap: re, commentCells: V, tableStyleMap: H, sparklineMap: ie, nonEmptyColsByRow: U } = Wi(t), ae = /* @__PURE__ */ new Map(), oe = Ui("worksheet-merge-anchor-index", "index-merge-anchor-coordinates");
+	let f = (e) => Math.round(e * o), p = s ? 0 : f(50), m = s ? 0 : f(22), { row: g, col: _, rows: v, cols: y } = r, b = (i.scrollOffsetX ?? 0) * o, x = (i.scrollOffsetY ?? 0) * o, { col: S, row: C } = c.axesAtScale(o), w = S.bandsToCover(1, s ? 0 : i.freezeCols ?? 0, Math.max(0, u - p)), T = C.bandsToCover(1, s ? 0 : i.freezeRows ?? 0, Math.max(0, d - m)), E = T.at(-1)?.index ?? 0, D = w.at(-1)?.index ?? 0, O = w.map(({ index: e }) => e), k = T.map(({ index: e }) => e), A = w.map(({ size: e }) => e), j = T.map(({ size: e }) => e), M = A.reduce((e, t) => e + t, 0), N = j.reduce((e, t) => e + t, 0), P = S.bandsToCover(_, Math.min(16384, _ + y - 1)), ee = C.bandsToCover(g, Math.min(1048576, g + v - 1)), te = P.map(({ index: e }) => e), F = ee.map(({ index: e }) => e), I = P.map(({ size: e }) => e), L = ee.map(({ size: e }) => e), { cellMap: R, cfContext: z, mergeSkipSet: B, autoFilterCells: V, hyperlinkMap: ne, commentCells: H, tableStyleMap: U, sparklineMap: re, nonEmptyColsByRow: W } = Wi(t), ie = /* @__PURE__ */ new Map(), ae = Ui("worksheet-merge-anchor-index", "index-merge-anchor-coordinates");
 	for (let e of t.mergeCells ?? []) {
-		let t = x.offsetOf(e.right + 1) - x.offsetOf(e.left), n = S.offsetOf(e.bottom + 1) - S.offsetOf(e.top);
-		er(ae, `${e.top}:${e.left}`, {
+		let t = S.offsetOf(e.right + 1) - S.offsetOf(e.left), n = C.offsetOf(e.bottom + 1) - C.offsetOf(e.top);
+		er(ie, `${e.top}:${e.left}`, {
 			totalW: t,
 			totalH: n,
 			right: e.right,
 			bottom: e.bottom
-		}, oe);
+		}, ae);
 	}
-	let se = ne[0] ?? g, ce = ne.at(-1) ?? Math.min(16384, g + v - 1), le = ra(e, t, n, L, U, R, H, ae, x, S, [...new Set([...k, ...P])], se, ce, D + 1, o, l, t.rightToLeft === !0), ue = x.bandsToCover(le.startCol, le.endCol), de = ue.map(({ index: e }) => e), fe = ue.map(({ size: e }) => e), pe = y + x.offsetOf(se) - x.offsetOf(le.startCol), me = {
+	let oe = te[0] ?? _, se = te.at(-1) ?? Math.min(16384, _ + y - 1), ce = ra(e, t, n, R, W, z, U, ie, S, C, [...new Set([...k, ...F])], oe, se, D + 1, o, l, t.rightToLeft === !0), le = S.bandsToCover(ce.startCol, ce.endCol), ue = le.map(({ index: e }) => e), de = le.map(({ size: e }) => e), fe = b + S.offsetOf(oe) - S.offsetOf(ce.startCol), pe = {
 		worksheet: t,
 		styles: n,
-		cellMap: L,
-		mergeAnchorMap: ae,
-		mergeSkipSet: z,
-		cfContext: R,
-		colWidths: fe,
-		rowHeights: I,
-		colAxis: x,
-		rowAxis: S,
+		cellMap: R,
+		mergeAnchorMap: ie,
+		mergeSkipSet: B,
+		cfContext: z,
+		colWidths: de,
+		rowHeights: L,
+		colAxis: S,
+		rowAxis: C,
 		frozenColWidths: A,
 		frozenRowHeights: j,
-		frozenW: ee,
-		frozenH: M,
-		startRow: h,
-		startCol: g,
+		frozenW: M,
+		frozenH: N,
+		startRow: g,
+		startCol: _,
 		cs: o,
 		dpr: a,
-		autoFilterCells: B,
-		hyperlinkMap: re,
-		commentCells: V,
-		tableStyleMap: H,
-		sparklineMap: ie,
-		overflowTextAnchors: le.anchorKeys,
+		autoFilterCells: V,
+		hyperlinkMap: ne,
+		commentCells: H,
+		tableStyleMap: U,
+		sparklineMap: re,
+		overflowTextAnchors: ce.anchorKeys,
 		mdw: l,
 		onTextRun: i.onTextRun,
 		rtl: t.rightToLeft === !0,
 		canvasW: u,
 		threeD: i.threeD
-	}, W = p, G = m, K = W + ee, he = G + M, ge = Math.max(0, u - K), _e = Math.max(0, d - he);
-	E > 0 && D > 0 && Vi(e, me, 1, 1, A, j, O, k, 0, 0, W, G, W, G, ee, M), E > 0 && Vi(e, me, 1, le.startCol, fe, j, de, k, pe, 0, K, G, K, G, ge, M), D > 0 && Vi(e, me, h, 1, A, I, O, P, 0, b, W, he, W, he, ee, _e), s || Vi(e, me, h, le.startCol, fe, I, de, P, pe, b, K, he, K, he, ge, _e), sa(e, t, x, S, i.loadedImages, o, h, g, y, b, K, he, ge, _e, t.rightToLeft === !0, u, i.threeD, i.regionMap, i.chartEx), !s && t.slicers && t.slicers.length > 0 && Ua(e, t, x, S, o, h, g, y, b, K, he, ge, _e, t.rightToLeft === !0, u), s || oa(e, u, d, h, g, _, v, F, I, ne, P, y, b, A, j, O, k, ee, M, p, m, o, a, i.selectedRowRange ?? null, i.selectedColRange ?? null, t.rightToLeft === !0, i.chromeColors);
+	}, me = p, G = m, K = me + M, he = G + N, ge = Math.max(0, u - K), _e = Math.max(0, d - he);
+	E > 0 && D > 0 && Vi(e, pe, 1, 1, A, j, O, k, 0, 0, me, G, me, G, M, N), E > 0 && Vi(e, pe, 1, ce.startCol, de, j, ue, k, fe, 0, K, G, K, G, ge, N), D > 0 && Vi(e, pe, g, 1, A, L, O, F, 0, x, me, he, me, he, M, _e), s || Vi(e, pe, g, ce.startCol, de, L, ue, F, fe, x, K, he, K, he, ge, _e), sa(e, t, S, C, i.loadedImages, o, g, _, b, x, K, he, ge, _e, t.rightToLeft === !0, u, i.threeD, i.regionMap, i.chartEx), !s && t.slicers && t.slicers.length > 0 && Ua(e, t, S, C, o, g, _, b, x, K, he, ge, _e, t.rightToLeft === !0, u), s || oa(e, u, d, g, _, v, y, I, L, te, F, b, x, A, j, O, k, M, N, p, m, o, a, i.selectedRowRange ?? null, i.selectedColRange ?? null, t.rightToLeft === !0, i.chromeColors);
 	let ve = t.rightToLeft === !0;
 	if (E > 0) {
 		e.save(), e.strokeStyle = qr, e.lineWidth = .5, e.beginPath();
-		let t = he + w(he, .5, a);
+		let t = he + h(he, .5, a);
 		e.moveTo(0, t), e.lineTo(u, t), e.stroke(), e.restore();
 	}
 	if (D > 0) {
 		e.save(), e.strokeStyle = qr, e.lineWidth = .5, e.beginPath();
-		let t = ve ? u - K : K, n = t + w(t, .5, a);
+		let t = ve ? u - K : K, n = t + h(t, .5, a);
 		e.moveTo(n, m), e.lineTo(n, d), e.stroke(), e.restore();
 	}
 }
-function oa(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b, x, S, C, T, E, D) {
-	let O = D?.surface ?? "#f8f9fa", k = D?.mutedSurface ?? "#e8eaed", A = D?.selectedSurface ?? "#caddf6", j = D?.border ?? "#c8ccd0", ee = D?.accent ?? "#5b9bd5", M = D?.text ?? "#444", N = (e) => !T || e < T.start || e > T.end ? O : T.strong ? A : k, te = (e) => !T || e < T.start || e > T.end ? j : T.strong ? ee : j, ne = (e) => !C || e < C.start || e > C.end ? O : C.strong ? A : k, P = (e) => !C || e < C.start || e > C.end ? j : C.strong ? ee : j, F = `${Math.max(1, Math.round(11 * x))}px ${zr}`, I = y + _, L = b + v, R = .5 / S, z = (e, n) => E ? Gr(e, n, t) : e, B = E ? t - y : 0;
-	e.fillStyle = O, e.fillRect(B, 0, y, b), e.strokeStyle = j, e.lineWidth = .5, e.beginPath();
-	let re = E ? B + w(B, .5, S) : B + y - R;
-	e.moveTo(re, 0), e.lineTo(re, b), e.moveTo(B, b - R), e.lineTo(B + y, b - R), e.stroke(), e.font = F, e.fillStyle = M;
-	let V = (t, n, r) => {
-		let i = z(n, r);
-		e.fillStyle = N(t), e.fillRect(i, 0, r, b), e.strokeStyle = te(t), e.lineWidth = .5, e.beginPath();
-		let a = i + w(i, .5, S);
-		e.moveTo(a, 0), e.lineTo(a, b), e.moveTo(i, b - R), e.lineTo(i + r, b - R), e.stroke(), e.fillStyle = M, e.textAlign = "center", e.textBaseline = "middle", e.fillText(ji(t), i + r / 2, b / 2);
-	}, H = (t, n, r) => {
-		let i = B;
-		e.fillStyle = ne(t), e.fillRect(i, n, y, r), e.strokeStyle = P(t), e.lineWidth = .5, e.beginPath();
-		let a = n + w(n, .5, S), o = E ? i + w(i, .5, S) : i + y - R;
-		e.moveTo(o, n), e.lineTo(o, n + r), e.moveTo(i, a), e.lineTo(i + y, a), e.stroke(), e.fillStyle = M, e.textBaseline = "middle";
-		let s = Math.max(2, Math.round(4 * x));
-		E ? (e.textAlign = "left", e.fillText(String(t), i + s, n + r / 2)) : (e.textAlign = "right", e.fillText(String(t), i + y - s, n + r / 2));
+function oa(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, g, _, v, y, b, x, S, C, w, T, E, D) {
+	let O = D?.surface ?? "#f8f9fa", k = D?.mutedSurface ?? "#e8eaed", A = D?.selectedSurface ?? "#caddf6", j = D?.border ?? "#c8ccd0", M = D?.accent ?? "#5b9bd5", N = D?.text ?? "#444", P = (e) => !T || e < T.start || e > T.end ? O : T.strong ? A : k, ee = (e) => !T || e < T.start || e > T.end ? j : T.strong ? M : j, te = (e) => !w || e < w.start || e > w.end ? O : w.strong ? A : k, F = (e) => !w || e < w.start || e > w.end ? j : w.strong ? M : j, I = `${Math.max(1, Math.round(11 * S))}px ${zr}`, L = b + v, R = x + y, z = .5 / C, B = (e, n) => E ? Gr(e, n, t) : e, V = E ? t - b : 0;
+	e.fillStyle = O, e.fillRect(V, 0, b, x), e.strokeStyle = j, e.lineWidth = .5, e.beginPath();
+	let ne = E ? V + h(V, .5, C) : V + b - z;
+	e.moveTo(ne, 0), e.lineTo(ne, x), e.moveTo(V, x - z), e.lineTo(V + b, x - z), e.stroke(), e.font = I, e.fillStyle = N;
+	let H = (t, n, r) => {
+		let i = B(n, r);
+		e.fillStyle = P(t), e.fillRect(i, 0, r, x), e.strokeStyle = ee(t), e.lineWidth = .5, e.beginPath();
+		let a = i + h(i, .5, C);
+		e.moveTo(a, 0), e.lineTo(a, x), e.moveTo(i, x - z), e.lineTo(i + r, x - z), e.stroke(), e.fillStyle = N, e.textAlign = "center", e.textBaseline = "middle", e.fillText(ji(t), i + r / 2, x / 2);
+	}, U = (t, n, r) => {
+		let i = V;
+		e.fillStyle = te(t), e.fillRect(i, n, b, r), e.strokeStyle = F(t), e.lineWidth = .5, e.beginPath();
+		let a = n + h(n, .5, C), o = E ? i + h(i, .5, C) : i + b - z;
+		e.moveTo(o, n), e.lineTo(o, n + r), e.moveTo(i, a), e.lineTo(i + b, a), e.stroke(), e.fillStyle = N, e.textBaseline = "middle";
+		let s = Math.max(2, Math.round(4 * S));
+		E ? (e.textAlign = "left", e.fillText(String(t), i + s, n + r / 2)) : (e.textAlign = "right", e.fillText(String(t), i + b - s, n + r / 2));
 	};
 	if (p.length > 0) {
-		e.save(), e.beginPath(), e.rect(z(y, _), 0, _, b), e.clip();
-		let t = y;
-		for (let e = 0; e < p.length; e++) V(h[e], t, p[e]), t += p[e];
+		e.save(), e.beginPath(), e.rect(B(b, v), 0, v, x), e.clip();
+		let t = b;
+		for (let e = 0; e < p.length; e++) H(g[e], t, p[e]), t += p[e];
 		e.restore();
 	}
-	e.save(), e.beginPath(), e.rect(z(I, t - I), 0, t - I, b), e.clip();
-	let ie = I - d;
+	e.save(), e.beginPath(), e.rect(B(L, t - L), 0, t - L, x), e.clip();
+	let re = L - d;
 	for (let e = 0; e < s.length; e++) {
 		let n = s[e];
-		ie + n > I && ie < t && V(l[e], ie, n), ie += n;
+		re + n > L && re < t && H(l[e], re, n), re += n;
 	}
 	if (e.restore(), m.length > 0) {
-		e.save(), e.beginPath(), e.rect(B, b, y, v), e.clip();
-		let t = b;
-		for (let e = 0; e < m.length; e++) H(g[e], t, m[e]), t += m[e];
+		e.save(), e.beginPath(), e.rect(V, x, b, y), e.clip();
+		let t = x;
+		for (let e = 0; e < m.length; e++) U(_[e], t, m[e]), t += m[e];
 		e.restore();
 	}
-	e.save(), e.beginPath(), e.rect(B, L, y, n - L), e.clip();
-	let U = L - f;
+	e.save(), e.beginPath(), e.rect(V, R, b, n - R), e.clip();
+	let W = R - f;
 	for (let e = 0; e < c.length; e++) {
 		let t = c[e];
-		U + t > L && U < n && H(u[e], U, t), U += t;
+		W + t > R && W < n && U(u[e], W, t), W += t;
 	}
 	e.restore();
 }
@@ -3412,15 +3412,15 @@ function ca(e, t) {
 function la(e, t) {
 	return e.offsetOf(t);
 }
-function ua(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.images) {
-	if (f <= 0 || p <= 0) return;
-	let _ = ca(n, s), v = la(r, o);
+function ua(e, t, n, r, i, a, s, c, l, u, d, f, p, m, h, g, _ = t.images) {
+	if (p <= 0 || m <= 0) return;
+	let v = ca(n, c), y = la(r, s);
 	e.save(), e.beginPath();
-	let b = Kr(u, f, h, m);
-	e.rect(b, d, f, p), e.clip();
-	for (let t of g) {
-		let o = Ir(t.imagePath, t.duotone), s = i.get(o), g = Fr(i, o, "tiff");
-		if (!s && !g) continue;
+	let b = Kr(d, p, g, h);
+	e.rect(b, f, p, m), e.clip();
+	for (let t of _) {
+		let s = Ir(t.imagePath, t.duotone), c = i.get(s), _ = Fr(i, s, "tiff");
+		if (!c && !_) continue;
 		let x = t.fromCol + 1, S = t.fromRow + 1, C = ca(n, x) + t.fromColOff * a / Y, w = la(r, S) + t.fromRowOff * a / Y, T, E;
 		if (jr(t)) T = t.nativeExtCx * a / Y, E = t.nativeExtCy * a / Y;
 		else {
@@ -3428,10 +3428,10 @@ function ua(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.images) {
 			T = o - C, E = s - w;
 		}
 		if (T <= 0 || E <= 0) continue;
-		let D = Kr(u + (C - _) - c, T, h, m), O = d + (w - v) - l;
-		if (D + T < b || D > b + f || O + E < d || O > d + p) continue;
+		let D = Kr(d + (C - v) - l, T, g, h), O = f + (w - y) - u;
+		if (D + T < b || D > b + p || O + E < f || O > f + m) continue;
 		let k = () => {
-			s ? Ve(e, s, t.srcRect, D, O, T, E) : y(e, "tiff", {
+			c ? Be(e, c, t.srcRect, D, O, T, E) : o(e, "tiff", {
 				x: D,
 				y: O,
 				width: T,
@@ -3464,7 +3464,7 @@ function da(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.shapeGroups ??
 	}
 	e.restore();
 }
-function fa(e, t, n, r, i, a, o, s) {
+function fa(e, t, n, r, i, a, s, c) {
 	if (e.save(), t.rot !== 0 || t.flipH || t.flipV ? (e.translate(n + i / 2, r + a / 2), e.rotate(t.rot * Math.PI / 180), e.scale(t.flipH ? -1 : 1, t.flipV ? -1 : 1), e.translate(-i / 2, -a / 2)) : e.translate(n, r), t.geom.type === "custom") for (let n of t.geom.paths) {
 		if (n.w <= 0 || n.h <= 0) continue;
 		let r = i / n.w, o = a / n.h;
@@ -3505,16 +3505,16 @@ function fa(e, t, n, r, i, a, o, s) {
 		ya(e, t, i, a);
 	}
 	else if (t.geom.type === "preset") {
-		let n = Je(t.fill ?? (t.fillColor ? {
+		let n = qe(t.fill ?? (t.fillColor ? {
 			fillType: "solid",
 			color: t.fillColor
 		} : null), e, 0, 0, i, a, t.rot), r = t.strokeColor && t.strokeWidth > 0 ? () => xa(e, t, i, a) : null;
-		P(e, t.geom.name, 0, 0, i, a, t.geom.adj ?? [], n, r, () => {}) || (e.beginPath(), e.rect(0, 0, i, a), ya(e, t, i, a));
+		m(e, t.geom.name, 0, 0, i, a, t.geom.adj ?? [], n, r, () => {}) || (e.beginPath(), e.rect(0, 0, i, a), ya(e, t, i, a));
 	} else if (t.geom.type === "image") {
-		let n = t.geom, r = Ir(n.imagePath, n.duotone), o = s?.get(r), c = Fr(s, r, "tiff");
-		if (o || c) {
+		let n = t.geom, r = Ir(n.imagePath, n.duotone), s = c?.get(r), l = Fr(c, r, "tiff");
+		if (s || l) {
 			let t = n.alpha, r = () => {
-				o ? Ve(e, o, n.srcRect, 0, 0, i, a) : y(e, "tiff", {
+				s ? Be(e, s, n.srcRect, 0, 0, i, a) : o(e, "tiff", {
 					x: 0,
 					y: 0,
 					width: i,
@@ -3524,13 +3524,13 @@ function fa(e, t, n, r, i, a, o, s) {
 			t != null && t < 1 ? (e.save(), e.globalAlpha = t, r(), e.restore()) : r();
 		}
 	}
-	t.text && va(e, t.text, i, a, o), e.restore();
+	t.text && va(e, t.text, i, a, s), e.restore();
 }
 var pa = /* @__PURE__ */ new WeakMap();
 function ma(e, t) {
 	let n = e.tinted.get(t);
 	if (n) return n;
-	let r = oe(e.raster, t);
+	let r = V(e.raster, t);
 	return e.tinted.set(t, r), r;
 }
 function ha(e) {
@@ -3550,7 +3550,7 @@ async function _a(e, t) {
 	if (n.length !== 0) {
 		await t.loadMathJax();
 		for (let e of n) if (!pa.has(e.nodes)) try {
-			let n = await t.mathMLToSvg(B(e.nodes, e.display)), r = await N(n, "#000000");
+			let n = await t.mathMLToSvg(re(e.nodes, e.display)), r = await ie(n, "#000000");
 			pa.set(e.nodes, {
 				raster: r,
 				widthEm: n.widthEm,
@@ -3566,7 +3566,7 @@ function va(e, t, n, r, i) {
 	let a = t.lIns / Y * i, o = t.rIns / Y * i, s = t.tIns / Y * i, c = t.bIns / Y * i, l = Math.max(0, n - a - o), u = Math.max(0, r - s - c);
 	if (l <= 0 || u <= 0) return;
 	let d = (e) => {
-		let t = (e.size > 0 ? e.size : Wr) * Qe * i, n = Ur(e.fontFace);
+		let t = (e.size > 0 ? e.size : Wr) * Ze * i, n = Ur(e.fontFace);
 		return {
 			font: `${e.italic ? "italic " : ""}${e.bold ? "bold " : ""}${t}px ${n}`,
 			px: t
@@ -3580,10 +3580,10 @@ function va(e, t, n, r, i) {
 	for (let n of t.paragraphs) {
 		let r = n.align || "l", a = (n.marL ?? 0) / Y * i, o = (n.marR ?? 0) / Y * i, s = (n.indent ?? 0) / Y * i, c = Math.max(0, s), u = Math.max(0, l - a - o), h = !1, g = () => h ? a : a + c, _ = () => h ? u : u - c, v = [], y = 0, b = 0, x = 0, S = !1, C = n.spaceLine?.type === "pct", w = (e) => {
 			let r = e;
-			return n.spaceLine && (n.spaceLine.type === "pct" ? r *= n.spaceLine.val / 1e5 : r = n.spaceLine.val * Qe * i), t.autoFit === "norm" && t.lnSpcReduction != null && n.spaceLine?.type !== "pts" && (r *= 1 - t.lnSpcReduction), r;
+			return n.spaceLine && (n.spaceLine.type === "pct" ? r *= n.spaceLine.val / 1e5 : r = n.spaceLine.val * Ze * i), t.autoFit === "norm" && t.lnSpcReduction != null && n.spaceLine?.type !== "pts" && (r *= 1 - t.lnSpcReduction), r;
 		}, T = () => {
 			if (b === 0) {
-				let e = (E || Wr) * Qe * i, t = Math.max(lt(D, e), lt(O, e)), n = e * 1.2;
+				let e = (E || Wr) * Ze * i, t = Math.max(ct(D, e), ct(O, e)), n = e * 1.2;
 				b = C ? n : Math.max(n, t), x = f(`${e}px ${Ur(D)}`, e);
 			}
 			b = w(b), m.push({
@@ -3604,7 +3604,7 @@ function va(e, t, n, r, i) {
 			if (t.type === "math") {
 				let e = pa.get(t.nodes);
 				if (!e) continue;
-				let n = (t.fontSize ?? (E || Wr)) * Qe * i, o = e.widthEm * n, s = e.ascentEm * n, c = e.descentEm * n, l = t.color ?? "#000000";
+				let n = (t.fontSize ?? (E || Wr)) * Ze * i, o = e.widthEm * n, s = e.ascentEm * n, c = e.descentEm * n, l = t.color ?? "#000000";
 				if (t.display) {
 					T(), m.push({
 						segs: [{
@@ -3635,7 +3635,7 @@ function va(e, t, n, r, i) {
 				continue;
 			}
 			E = t.size > 0 ? t.size : Wr, D = t.fontFace, O = t.fontFaceEa;
-			let { font: n, px: o } = d(t), s = t.color ?? "#000000", c = Math.max(lt(t.fontFace, o), lt(t.fontFaceEa, o)), l = o * 1.2, g = C ? l : Math.max(l, c);
+			let { font: n, px: o } = d(t), s = t.color ?? "#000000", c = Math.max(ct(t.fontFace, o), ct(t.fontFaceEa, o)), l = o * 1.2, g = C ? l : Math.max(l, c);
 			b = Math.max(b, g), x = Math.max(x, f(n, o)), e.font = n;
 			let k = t.text.split("\n");
 			for (let t = 0; t < k.length; t++) {
@@ -3709,7 +3709,7 @@ function va(e, t, n, r, i) {
 	}
 }
 function ya(e, t, n, r) {
-	let i = Je(t.fill ?? (t.fillColor ? {
+	let i = qe(t.fill ?? (t.fillColor ? {
 		fillType: "solid",
 		color: t.fillColor
 	} : null), e, 0, 0, n, r, t.rot);
@@ -3734,8 +3734,8 @@ function ba(e) {
 function xa(e, t, n, r) {
 	let i = ba(t);
 	if (i) {
-		if (ze(e, i, 1 / Y), i.fill) {
-			let a = Je(i.fill, e, 0, 0, n, r, t.rot);
+		if (Re(e, i, 1 / Y), i.fill) {
+			let a = qe(i.fill, e, 0, 0, n, r, t.rot);
 			a && (e.strokeStyle = a);
 		}
 		e.stroke();
@@ -3855,10 +3855,10 @@ function Ta(e, t, n, r, i, a, o = 1) {
 		e.beginPath(), e.strokeStyle = s;
 		let m = Ea(c.style);
 		e.lineWidth = m;
-		let h = Da(c.style);
-		e.setLineDash(h);
-		let g = p === "v" ? w(l, m, o) : 0, _ = p === "h" ? w(u, m, o) : 0;
-		e.moveTo(l + g, u + _), e.lineTo(d + g, f + _), e.stroke(), e.setLineDash([]);
+		let g = Da(c.style);
+		e.setLineDash(g);
+		let _ = p === "v" ? h(l, m, o) : 0, v = p === "h" ? h(u, m, o) : 0;
+		e.moveTo(l + _, u + v), e.lineTo(d + _, f + v), e.stroke(), e.setLineDash([]);
 	}
 }
 function Ea(e) {
@@ -3874,7 +3874,7 @@ function Ea(e) {
 	}
 }
 function Da(e) {
-	return Ie(e);
+	return Fe(e);
 }
 function Oa(e) {
 	switch (e) {
@@ -3905,7 +3905,7 @@ function Aa(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.charts, _, v, 
 		let a = t.fromCol + 1, o = t.fromRow + 1, g = t.toCol + 1, C = t.toRow + 1, w = ca(n, a) + t.fromColOff * i / Y, T = la(r, o) + t.fromRowOff * i / Y, E = ca(n, g) + t.toColOff * i / Y, D = la(r, C) + t.toRowOff * i / Y, O = E - w, k = D - T;
 		if (O <= 0 || k <= 0) continue;
 		let A = Kr(l + (w - b) - s, O, m, p), j = u + (T - x) - c;
-		A + O < S || A > S + d || j + k < u || j > u + f || (e.save(), e.beginPath(), e.rect(S, u, d, f), e.clip(), e.save(), i !== 1 && e.scale(i, i), tt(e, t.chart, i === 1 ? {
+		A + O < S || A > S + d || j + k < u || j > u + f || (e.save(), e.beginPath(), e.rect(S, u, d, f), e.clip(), e.save(), i !== 1 && e.scale(i, i), et(e, t.chart, i === 1 ? {
 			x: A,
 			y: j,
 			w: O,
@@ -3915,7 +3915,7 @@ function Aa(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.charts, _, v, 
 			y: j / i,
 			w: O / i,
 			h: k / i
-		}, Qe, 0, _, v, (e) => h?.get(Ye(e)), y), e.restore(), e.restore());
+		}, Ze, 0, _, v, (e) => h?.get(Je(e)), y), e.restore(), e.restore());
 	}
 }
 var ja = "600 12px \"Meiryo UI\", \"Segoe UI\", sans-serif", Ma = "11px \"Meiryo UI\", \"Segoe UI\", sans-serif", Na = "#FFFFFF", Pa = "#BFBFBF", Fa = "#F2F2F2", Ia = "#404040", La = "#FFFFFF", Ra = "#000000", za = "#A5A5A5", Ba = "#E7E6E6", Va = "#A6A6A6", Ha = "#C6C6C6";
@@ -4044,9 +4044,9 @@ function ro(e, t, n, r, i) {
 async function io(e, t, n, r, i = 0, a = 0, o = null, s = null, c, l = !1, u, d, f, p) {
 	let m = t === "image/svg+xml";
 	if (m && s) return null;
-	let h = Ge(t, o, i, a);
+	let h = We(t, o, i, a);
 	if (!h) return null;
-	let g = () => it(e, t, s, r, {
+	let g = () => rt(e, t, s, r, {
 		widthPt: h.widthPt,
 		heightPt: h.heightPt,
 		offscreenFactory: c,
@@ -4058,20 +4058,20 @@ async function io(e, t, n, r, i = 0, a = 0, o = null, s = null, c, l = !1, u, d,
 		svgImagePath: n,
 		srcRect: o
 	};
-	if (!s && U(_)) try {
-		return await L(_.svgImagePath, r, {
+	if (!s && F(_)) try {
+		return await oe(_.svgImagePath, r, {
 			...d,
 			maxRetainedPixels: p,
 			workerDecoder: f
 		});
 	} catch {
-		return m ? L(e, r, {
+		return m ? oe(e, r, {
 			...d,
 			maxRetainedPixels: p,
 			workerDecoder: f
 		}) : g();
 	}
-	return m ? L(e, r, {
+	return m ? oe(e, r, {
 		...d,
 		maxRetainedPixels: p,
 		workerDecoder: f
@@ -4079,23 +4079,23 @@ async function io(e, t, n, r, i = 0, a = 0, o = null, s = null, c, l = !1, u, d,
 }
 async function ao(e, t, n, r) {
 	if (t.clear(), Nr(t), !n) return;
-	let i = n, o = /* @__PURE__ */ new Map(), s = r?.viewport ? Q(e) : void 0, c = r?.viewport && r.width !== void 0 && r.height !== void 0 ? {
+	let i = n, a = /* @__PURE__ */ new Map(), o = r?.viewport ? Q(e) : void 0, s = r?.viewport && r.width !== void 0 && r.height !== void 0 ? {
 		width: r.width,
 		height: r.height,
 		scale: r.cellScale ?? 1,
 		freezeRows: r.freezeRows ?? e.freezeRows ?? 0,
 		freezeCols: r.freezeCols ?? e.freezeCols ?? 0
 	} : void 0;
-	if (e.images) for (let t of e.images) ro(t, e, r?.viewport, s, c) && to(o, Ir(t.imagePath, t.duotone), {
+	if (e.images) for (let t of e.images) ro(t, e, r?.viewport, o, s) && to(a, Ir(t.imagePath, t.duotone), {
 		imagePath: t.imagePath,
 		mimeType: t.mimeType,
 		svgImagePath: t.svgImagePath,
-		widthPt: t.nativeExtCx > 0 ? t.nativeExtCx / $e : 0,
-		heightPt: t.nativeExtCy > 0 ? t.nativeExtCy / $e : 0,
+		widthPt: t.nativeExtCx > 0 ? t.nativeExtCx / Qe : 0,
+		heightPt: t.nativeExtCy > 0 ? t.nativeExtCy / Qe : 0,
 		srcRect: t.srcRect ?? null,
 		duotone: t.duotone ?? null,
 		...(() => {
-			let n = no(t, e, s, r?.cellScale ?? 1), i = n && r?.effectiveDpr ? qe(n.width * r.effectiveDpr, n.height * r.effectiveDpr, t.srcRect) : null;
+			let n = no(t, e, o, r?.cellScale ?? 1), i = n && r?.effectiveDpr ? Ke(n.width * r.effectiveDpr, n.height * r.effectiveDpr, t.srcRect) : null;
 			return i ? {
 				targetWidthPx: i.width,
 				targetHeightPx: i.height
@@ -4103,16 +4103,16 @@ async function ao(e, t, n, r) {
 		})()
 	});
 	if (e.shapeGroups) {
-		for (let t of e.shapeGroups) if (ro(t, e, r?.viewport, s, c)) for (let n of t.shapes) n.geom.type === "image" && to(o, Ir(n.geom.imagePath, n.geom.duotone), {
+		for (let t of e.shapeGroups) if (ro(t, e, r?.viewport, o, s)) for (let n of t.shapes) n.geom.type === "image" && to(a, Ir(n.geom.imagePath, n.geom.duotone), {
 			imagePath: n.geom.imagePath,
 			mimeType: n.geom.mimeType,
 			svgImagePath: n.geom.svgImagePath,
-			widthPt: t.nativeExtCx > 0 ? t.nativeExtCx * n.w / $e : 0,
-			heightPt: t.nativeExtCy > 0 ? t.nativeExtCy * n.h / $e : 0,
+			widthPt: t.nativeExtCx > 0 ? t.nativeExtCx * n.w / Qe : 0,
+			heightPt: t.nativeExtCy > 0 ? t.nativeExtCy * n.h / Qe : 0,
 			srcRect: n.geom.srcRect ?? null,
 			duotone: n.geom.duotone ?? null,
 			...(() => {
-				let i = no(t, e, s, r?.cellScale ?? 1), a = i && r?.effectiveDpr ? qe(i.width * n.w * r.effectiveDpr, i.height * n.h * r.effectiveDpr, n.geom.srcRect) : null;
+				let i = no(t, e, o, r?.cellScale ?? 1), a = i && r?.effectiveDpr ? Ke(i.width * n.w * r.effectiveDpr, i.height * n.h * r.effectiveDpr, n.geom.srcRect) : null;
 				return a ? {
 					targetWidthPx: a.width,
 					targetHeightPx: a.height
@@ -4120,21 +4120,21 @@ async function ao(e, t, n, r) {
 			})()
 		});
 	}
-	let l = e.charts ?? [], u = l.length > 0 ? s ?? Q(e) : s, d = [];
-	for (let t of l) {
-		if (!ro(t, e, r?.viewport, u, c)) continue;
-		let n = no(t, e, u, r?.cellScale ?? 1);
+	let c = e.charts ?? [], l = c.length > 0 ? o ?? Q(e) : o, u = [];
+	for (let t of c) {
+		if (!ro(t, e, r?.viewport, l, s)) continue;
+		let n = no(t, e, l, r?.cellScale ?? 1);
 		if (!n || !Number.isFinite(n.width) || !Number.isFinite(n.height) || n.width <= 0 || n.height <= 0) continue;
-		let i = Fe(t.chart), a = {
-			widthPt: n.width * (Y / $e),
-			heightPt: n.height * (Y / $e),
+		let i = Pe(t.chart), a = {
+			widthPt: n.width * (Y / Qe),
+			heightPt: n.height * (Y / Qe),
 			targetWidthPx: r?.effectiveDpr === void 0 ? void 0 : n.width * r.effectiveDpr,
 			targetHeightPx: r?.effectiveDpr === void 0 ? void 0 : n.height * r.effectiveDpr
-		}, o = [], s = !0;
+		}, o = [], c = !0;
 		for (let e of i) {
-			let t = Le(e, a);
+			let t = Ie(e, a);
 			if (!t) {
-				s = !1;
+				c = !1;
 				break;
 			}
 			o.push({
@@ -4142,16 +4142,16 @@ async function ao(e, t, n, r) {
 				size: t
 			});
 		}
-		s && d.push({
+		c && u.push({
 			chart: t,
 			frame: a,
 			usages: o
 		});
 	}
-	let f = He(d.map(({ chart: e }) => e.chart), (e, t) => Le(e, d[t].frame) != null), p = /* @__PURE__ */ new Map();
-	for (let e of f) {
-		let { fill: t } = e, n = Ye(t);
-		p.set(n, {
+	let d = Ve(u.map(({ chart: e }) => e.chart), (e, t) => Ie(e, u[t].frame) != null), f = /* @__PURE__ */ new Map();
+	for (let e of d) {
+		let { fill: t } = e, n = Je(t);
+		f.set(n, {
 			fill: t,
 			widthPt: 0,
 			heightPt: 0,
@@ -4159,11 +4159,11 @@ async function ao(e, t, n, r) {
 			hasSourceCrop: e.hasSourceCrop
 		});
 	}
-	for (let e of d) for (let { usage: t, size: n } of e.usages) {
-		let { fill: e } = t, r = Ye(e), i = p.get(r);
+	for (let e of u) for (let { usage: t, size: n } of e.usages) {
+		let { fill: e } = t, r = Je(e), i = f.get(r);
 		if (!i) continue;
 		let a = i.preserveNaturalSize || t.preserveNaturalSize;
-		p.set(r, {
+		f.set(r, {
 			...i,
 			widthPt: Math.max(i.widthPt, n.widthPt),
 			heightPt: Math.max(i.heightPt, n.heightPt),
@@ -4173,9 +4173,9 @@ async function ao(e, t, n, r) {
 			hasSourceCrop: i.hasSourceCrop || t.hasSourceCrop
 		});
 	}
-	for (let [e, t] of p) {
-		let { fill: n, widthPt: r, heightPt: i, targetWidthPx: a, targetHeightPx: s, hasSourceCrop: c } = t;
-		to(o, e, {
+	for (let [e, t] of f) {
+		let { fill: n, widthPt: r, heightPt: i, targetWidthPx: o, targetHeightPx: s, hasSourceCrop: c } = t;
+		to(a, e, {
 			imagePath: n.imagePath,
 			mimeType: n.mimeType,
 			svgImagePath: n.svgImagePath,
@@ -4189,26 +4189,26 @@ async function ao(e, t, n, r) {
 			} : null,
 			duotone: n.duotone ?? null,
 			failClosedOnDuotoneFailure: !0,
-			...a && s ? {
-				targetWidthPx: a,
+			...o && s ? {
+				targetWidthPx: o,
 				targetHeightPx: s
 			} : {}
 		});
 	}
-	if (o.size === 0) return;
-	let m = fe(r?.imageResources), h = k((await Promise.all([...o].map(async ([e, t]) => {
-		if (!t.targetWidthPx || !t.targetHeightPx || t.mimeType === "image/svg+xml" || t.duotone || !t.duotone && U({
+	if (a.size === 0) return;
+	let p = O(r?.imageResources), m = ue((await Promise.all([...a].map(async ([e, t]) => {
+		if (!t.targetWidthPx || !t.targetHeightPx || t.mimeType === "image/svg+xml" || t.duotone || !t.duotone && F({
 			svgImagePath: t.svgImagePath,
 			srcRect: t.srcRect
 		})) return null;
-		if (a(t.mimeType) && (m.resolution === "display" || m.strategy === "adaptive")) return {
+		if (ce(t.mimeType) && (p.resolution === "display" || p.strategy === "adaptive")) return {
 			key: e,
 			targetWidthPx: t.targetWidthPx,
 			targetHeightPx: t.targetHeightPx,
 			retainedSurfaceCount: 1
 		};
-		let n = await z(t.imagePath, t.mimeType, i).catch(() => null);
-		return !n?.dimensions || !le(n.format, r?.tiff !== void 0) ? null : {
+		let n = await te(t.imagePath, t.mimeType, i).catch(() => null);
+		return !n?.dimensions || !y(n.format, r?.tiff !== void 0) ? null : {
 			key: e,
 			targetWidthPx: t.targetWidthPx,
 			targetHeightPx: t.targetHeightPx,
@@ -4216,16 +4216,16 @@ async function ao(e, t, n, r) {
 			sourceHeightPx: n.dimensions.height,
 			retainedSurfaceCount: 1
 		};
-	}))).filter((e) => e !== null), m);
-	for (let [e, t] of o) {
-		if (t.mimeType === "image/svg+xml" || !t.duotone && U({
+	}))).filter((e) => e !== null), p);
+	for (let [e, t] of a) {
+		if (t.mimeType === "image/svg+xml" || !t.duotone && F({
 			svgImagePath: t.svgImagePath,
 			srcRect: t.srcRect
 		})) continue;
-		let n = h.targets.get(e);
+		let n = m.targets.get(e);
 		t.targetWidthPx = n?.width, t.targetHeightPx = n?.height, t.plannedPixelLimit = n?.maxRetainedPixels;
 	}
-	await Promise.all([...o.entries()].map(async ([e, n]) => {
+	await Promise.all([...a.entries()].map(async ([e, n]) => {
 		try {
 			let a = await io(n.imagePath, n.mimeType, n.svgImagePath, i, n.widthPt, n.heightPt, n.srcRect, n.duotone, r?.offscreenFactory, n.failClosedOnDuotoneFailure ?? !1, r?.tiff, n.targetWidthPx && n.targetHeightPx ? {
 				targetWidthPx: n.targetWidthPx,
@@ -4233,11 +4233,11 @@ async function ao(e, t, n, r) {
 			} : void 0, r?.svgDecoder, n.plannedPixelLimit);
 			t.set(e, a);
 		} catch (n) {
-			if (de(n, "tiff") || rt(n)) {
+			if (v(n, "tiff") || nt(n)) {
 				t.set(e, null), Pr(t, e, "tiff");
 				return;
 			}
-			if (Xe(n)) throw n;
+			if (Ye(n)) throw n;
 			t.delete(e);
 		}
 	}));
@@ -4256,15 +4256,15 @@ function so(e, t, n) {
 	return Dr.forWorksheet(i, a), Xi(e, i, n), Dr.forWorksheet(i, a), oo.set(t, i), i;
 }
 async function co(e, t, n, r = {}, i) {
-	let a = () => lo(e, t, n, r, i), o = !e.ws.isDialogSheet && ((e.ws.images?.length ?? 0) > 0 || (e.ws.shapeGroups?.some((e) => e.shapes.some((e) => e.geom.type === "image")) ?? !1) || He((e.ws.charts ?? []).map((e) => e.chart)).length > 0);
-	return r.fetchImage && o ? ce(r.fetchImage, r.imageResources, a) : a();
+	let a = () => lo(e, t, n, r, i), o = !e.ws.isDialogSheet && ((e.ws.images?.length ?? 0) > 0 || (e.ws.shapeGroups?.some((e) => e.shapes.some((e) => e.geom.type === "image")) ?? !1) || Ve((e.ws.charts ?? []).map((e) => e.chart)).length > 0);
+	return r.fetchImage && o ? de(r.fetchImage, r.imageResources, a) : a();
 }
 async function lo(e, n, r, i = {}, a) {
 	if (i[Ya]?.() === !1) return;
 	let o = e.styles, s = n.getContext("2d");
 	if (!s) throw Error("XLSX render target does not provide a 2-D canvas context");
-	let c = e.ws.isDialogSheet ? e.ws : so(s, e.ws, o), l = t(n) ? n.clientWidth || 800 : n.width, u = t(n) ? n.clientHeight || 600 : n.height, d = i.width ?? l, f = i.height ?? u, p = i.dpr ?? h(), m = et(d * p, f * p), g = m.clamped ? p * m.scale : p, _ = /* @__PURE__ */ new Map();
-	if (c.isDialogSheet || await ao(c, _, i.fetchImage, {
+	let c = e.ws.isDialogSheet ? e.ws : so(s, e.ws, o), l = M(n) ? n.clientWidth || 800 : n.width, u = M(n) ? n.clientHeight || 600 : n.height, d = i.width ?? l, f = i.height ?? u, p = i.dpr ?? t(), m = $e(d * p, f * p), h = m.clamped ? p * m.scale : p, g = /* @__PURE__ */ new Map();
+	if (c.isDialogSheet || await ao(c, g, i.fetchImage, {
 		viewport: r,
 		width: d,
 		height: f,
@@ -4272,28 +4272,28 @@ async function lo(e, n, r, i = {}, a) {
 		freezeRows: i.freezeRows,
 		freezeCols: i.freezeCols,
 		tiff: e.tiff,
-		effectiveDpr: g,
+		effectiveDpr: h,
 		svgDecoder: a,
 		imageResources: i.imageResources
 	}), !c.isDialogSheet && e.math && ga(c) && await _a(c, e.math), i[Ya]?.() === !1) return;
-	let v = m.width, y = m.height;
-	if (n.width !== v && (n.width = v), n.height !== y && (n.height = y), t(n)) {
+	let _ = m.width, v = m.height;
+	if (n.width !== _ && (n.width = _), n.height !== v && (n.height = v), M(n)) {
 		let e = `${d}px`, t = `${f}px`;
 		n.style.width !== e && (n.style.width = e), n.style.height !== t && (n.style.height = t);
 	}
-	let b = n.getContext("2d");
-	if (b.setTransform(g, 0, 0, g, 0, 0), c.parseError) {
-		fo(b, d, f, c.name, c.parseError);
+	let y = n.getContext("2d");
+	if (y.setTransform(h, 0, 0, h, 0, 0), c.parseError) {
+		fo(y, d, f, c.name, c.parseError);
 		return;
 	}
 	if (c.isDialogSheet) {
-		uo(b, d, f);
+		uo(y, d, f);
 		return;
 	}
-	aa(b, c, o, r, {
+	aa(y, c, o, r, {
 		...i,
-		dpr: g,
-		loadedImages: _,
+		dpr: h,
+		loadedImages: g,
 		threeD: e.threeD,
 		regionMap: e.regionMap,
 		chartEx: e.chartEx
@@ -4325,8 +4325,8 @@ function fo(e, t, n, r, i) {
 //#endregion
 //#region packages/xlsx/src/google-fonts.ts
 var po = {
-	...x,
-	...d
+	...C,
+	...p
 };
 function* mo(e) {
 	for (let t of e?.sharedStrings ?? []) if (t.runs && t.runs.length > 0) for (let e of t.runs) yield e.text;
@@ -4334,8 +4334,8 @@ function* mo(e) {
 }
 function ho(e) {
 	let t = /* @__PURE__ */ new Set(), n = null;
-	for (let r of e?.styles?.fonts ?? []) r.name && (t.add(r.name), n ??= me(r.name));
-	for (let r of l(mo(e), n)) t.add(r);
+	for (let r of e?.styles?.fonts ?? []) r.name && (t.add(r.name), n ??= i(r.name));
+	for (let r of x(mo(e), n)) t.add(r);
 	return t;
 }
 function go(e) {
@@ -4538,9 +4538,9 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 	parsedWorkbook = null;
 	sheetCache = /* @__PURE__ */ new Map();
 	sheetLoads = /* @__PURE__ */ new Map();
-	rawParts = new Pe({
+	rawParts = new lt({
 		maxEntries: 64,
-		maxBytes: C
+		maxBytes: w
 	});
 	queuedImageLoads = /* @__PURE__ */ new Map();
 	_fetchImage = (e, t) => this.getImageWithinArchiveOperation(e, t);
@@ -4566,11 +4566,11 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 	};
 	resourceFailure = null;
 	constructor(e, t, n, r = !0) {
-		if (this._mode = t, e && (this.bridge = new ke(e, {
+		if (this._mode = t, e && (this.bridge = new je(e, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
-			toError: (e) => "type" in e && e.type === "error" ? c(e) : void 0,
+			toError: (e) => "type" in e && e.type === "error" ? b(e) : void 0,
 			onUnsolicited: (t) => {
-				he((t, n) => e.postMessage(t, n), t);
+				_e((t, n) => e.postMessage(t, n), t);
 			}
 		}), r)) {
 			let e = new URL(n ?? jt, location.href).href;
@@ -4589,7 +4589,7 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 		throw TypeError("Unsupported XlsxSheetViewer source format");
 	}
 	static async loadDelimitedText(t, n, r) {
-		let i = Do(r), a = g(n), o = n.mode ?? "main", s = new u({
+		let i = Do(r), a = fe(n), o = n.mode ?? "main", s = new f({
 			enabled: !0,
 			format: "xlsx",
 			mode: o,
@@ -4606,20 +4606,20 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 				c = await Oo(e);
 			} else c = t;
 			Eo(c.byteLength), s.setSourceBytes(c.byteLength), s.checkpoint("source ready");
-			let l = o === "worker" ? (await import("./render-worker-host-CbYDBg7U.js")).createRenderWorker() : (await import("./delimited-text-worker-host-DcHj_JZt.js")).createDelimitedTextWorker(), u;
+			let l = o === "worker" ? (await import("./render-worker-host-Ba6Fchqr.js")).createRenderWorker() : (await import("./delimited-text-worker-host-DcHj_JZt.js")).createDelimitedTextWorker(), u;
 			try {
 				let t = new e(l, o, void 0, !1);
 				return u = t, t.metrics = s, await t._loadDelimitedText(r === c ? c.slice(0) : c, n, a.policy, i), o === "main" && (t.bridge?.terminate(), t.bridge = null), s.checkpoint("worksheet ready"), s.succeed({ sheets: 1 }), t;
 			} catch (e) {
 				let t = u;
-				throw W(l, t ? () => t.destroy() : void 0), e;
+				throw me(l, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw s.fail(e), e;
 		}
 	}
 	static async load(t, n = {}) {
-		let r = g(n), i = n.mode ?? "main", a = new u({
+		let r = fe(n), i = n.mode ?? "main", a = new f({
 			enabled: !0,
 			format: "xlsx",
 			mode: i,
@@ -4635,60 +4635,60 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 				if (!e.ok) throw Error(`Failed to fetch: ${e.status} ${e.statusText}`);
 				s = await e.arrayBuffer();
 			} else s = t;
-			s = G(await K(s, n.password));
+			s = he(await K(s, n.password));
 			let c = s === o;
 			a.setSourceBytes(s.byteLength), a.checkpoint("container ready");
-			let l = i === "worker" ? (await import("./render-worker-host-CbYDBg7U.js")).createRenderWorker() : new At(), u;
+			let l = i === "worker" ? (await import("./render-worker-host-Ba6Fchqr.js")).createRenderWorker() : new At(), u;
 			try {
 				return u = new e(l, i, n.wasmUrl), u.metrics = a, await u._load(s, n, r.policy, (e) => a.observeUsage(e), c), a.checkpoint("workbook index ready"), a.succeed({ sheets: u.sheetCount }), u;
 			} catch (e) {
 				let t = u;
-				throw W(l, t ? () => t.destroy() : void 0), e;
+				throw me(l, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw a.fail(e), e;
 		}
 	}
-	async _load(e, t = {}, n = pe(t), r, i = !1) {
-		let a = this.requireBridge();
+	async _load(e, t = {}, n = r(t), i, a = !1) {
+		let o = this.requireBridge();
 		this.resourceFailure = null, this.retainedSheetUsage = {
 			rows: 0,
 			cells: 0,
 			ownedUtf8Bytes: 0,
 			jsonBytes: 0
 		}, this.sheetCache.clear(), await this.worksheetPullClient?.cancelAll("closed"), this.worksheetPullClient = null, this.generation = (this.generation ?? 0) + 1, this.resourcePolicy = n, this.workerTimeoutMs = t.workerTimeoutMs, this.math = this._mode === "worker" ? void 0 : t.math, this.threeD = this._mode === "worker" ? void 0 : t.threeD, this.regionMap = this._mode === "worker" ? void 0 : t.regionMap, this.chartEx = this._mode === "worker" ? void 0 : t.chartEx, this.tiff = this._mode === "worker" ? void 0 : t.tiff;
-		let o = this._mode === "worker" ? at(t) : void 0;
-		t.math && this._mode === "worker" && !o?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), t.threeD && this._mode === "worker" && !o?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), t.regionMap && this._mode === "worker" && !o?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), t.chartEx && this._mode === "worker" && !o?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), t.tiff && this._mode === "worker" && !o?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them.");
-		let s = i ? e.slice(0) : e, c = await a.request((e) => this._mode === "worker" ? {
+		let s = this._mode === "worker" ? it(t) : void 0;
+		t.math && this._mode === "worker" && !s?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), t.threeD && this._mode === "worker" && !s?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), t.regionMap && this._mode === "worker" && !s?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), t.chartEx && this._mode === "worker" && !s?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), t.tiff && this._mode === "worker" && !s?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them.");
+		let c = a ? e.slice(0) : e, l = await o.request((e) => this._mode === "worker" ? {
 			type: "parse",
 			id: e,
-			data: s,
+			data: c,
 			resourcePolicy: n,
 			useGoogleFonts: !!t.useGoogleFonts,
-			renderers: o
+			renderers: s
 		} : {
 			type: "parse",
 			id: e,
-			data: s,
+			data: c,
 			resourcePolicy: n
-		}, [s], { timeoutMs: t.workerTimeoutMs });
+		}, [c], { timeoutMs: t.workerTimeoutMs });
 		if (this._mode === "worker") {
-			let e = c;
-			this.parsedWorkbook = e.workbook, e.usage && r?.(e.usage);
+			let e = l;
+			this.parsedWorkbook = e.workbook, e.usage && i?.(e.usage);
 		} else {
-			let { workbookJson: e, usage: t } = c;
-			t && r?.(t), this.parsedWorkbook = JSON.parse(new TextDecoder().decode(new Uint8Array(e)));
+			let { workbookJson: e, usage: t } = l;
+			t && i?.(t), this.parsedWorkbook = JSON.parse(new TextDecoder().decode(new Uint8Array(e)));
 		}
-		let l = this.parsedWorkbook;
-		if (!l) throw Error("XLSX worker returned no workbook metadata");
+		let u = this.parsedWorkbook;
+		if (!u) throw Error("XLSX worker returned no workbook metadata");
 		this.ensureWorksheetPullClient();
-		let u = l.workbook.parseError;
-		u && console.warn(`[ooxml] xlsx opened with a degraded part: ${u}`), t.useGoogleFonts && (this.googleFontNames = [...ho(l)], typeof document < "u" && document.fonts && await this.retainFontsInSet(document.fonts));
+		let d = u.workbook.parseError;
+		d && console.warn(`[ooxml] xlsx opened with a degraded part: ${d}`), t.useGoogleFonts && (this.googleFontNames = [...ho(u)], typeof document < "u" && document.fonts && await this.retainFontsInSet(document.fonts));
 	}
 	async _loadDelimitedText(e, t, n, r) {
 		let i = this.requireBridge();
 		this.delimitedTextBacked = !0, this.resourcePolicy = n, this.workerTimeoutMs = t.workerTimeoutMs, this.generation++, this.math = this._mode === "worker" ? void 0 : t.math, this.threeD = this._mode === "worker" ? void 0 : t.threeD, this.regionMap = this._mode === "worker" ? void 0 : t.regionMap, this.chartEx = this._mode === "worker" ? void 0 : t.chartEx, this.tiff = this._mode === "worker" ? void 0 : t.tiff;
-		let a = this._mode === "worker" ? at(t) : void 0, o = await i.request((n) => ({
+		let a = this._mode === "worker" ? it(t) : void 0, o = await i.request((n) => ({
 			type: "parseDelimitedText",
 			id: n,
 			data: e,
@@ -4705,13 +4705,13 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 		let t = this.retainedFontSets.get(e);
 		if (t) t.refs++;
 		else {
-			let n = Ne(this.googleFontNames, po, e);
+			let n = G(this.googleFontNames, po, e);
 			t = {
 				refs: 1,
 				faces: null,
 				loading: n
 			}, this.retainedFontSets.set(e, t), n.then((e) => {
-				t.faces = e, this.fontsDestroyed && Me(e);
+				t.faces = e, this.fontsDestroyed && ge(e);
 			});
 		}
 		await t.loading;
@@ -4720,7 +4720,7 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 			if (n) return;
 			n = !0;
 			let r = this.retainedFontSets.get(e);
-			r === t && (r.refs--, !(r.refs > 0) && (this.retainedFontSets.delete(e), r.faces ? Me(r.faces) : r.loading.then(Me)));
+			r === t && (r.refs--, !(r.refs > 0) && (this.retainedFontSets.delete(e), r.faces ? ge(r.faces) : r.loading.then(ge)));
 		};
 	}
 	async [ko](e) {
@@ -4770,7 +4770,7 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 			if (!t) throw Error("OOXML resource metrics are not ready");
 			return t;
 		}
-		return f(e, async (e) => (await this.requireBridge().request((e) => ({
+		return _(e, async (e) => (await this.requireBridge().request((e) => ({
 			type: "resourceUsage",
 			id: e
 		}), void 0, { timeoutMs: e })).usage);
@@ -4813,7 +4813,7 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 			if (!a || !o) throw Error(`XLSX worksheet ${e} did not produce a terminal model`);
 			return this.retainedSheetUsage = o, this.sheetCache.set(e, a), a;
 		} catch (e) {
-			throw e instanceof ae && (this.resourceFailure ??= e), e;
+			throw e instanceof A && (this.resourceFailure ??= e), e;
 		}
 	}
 	ensureWorksheetPullClient() {
@@ -4841,7 +4841,7 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 			try {
 				return await e();
 			} catch (e) {
-				throw e instanceof ae && (this.resourceFailure ??= e), e;
+				throw e instanceof A && (this.resourceFailure ??= e), e;
 			}
 		}, n = (this.archiveOperationTail ?? Promise.resolve()).then(t, t);
 		return this.archiveOperationTail = n.then(() => void 0, () => void 0), n;
@@ -4917,26 +4917,26 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 			});
 		});
 	}
-	async renderViewportToBitmap(e, t, n) {
+	async renderViewportToBitmap(e, n, r) {
 		this.assertResourceHealthy();
-		let r = Co(n), i = {
-			...r.opts,
-			dpr: n.dpr ?? h()
+		let i = Co(r), a = {
+			...i.opts,
+			dpr: r.dpr ?? t()
 		};
 		if (this._mode === "worker") {
 			if (!Number.isInteger(e) || e < 0 || e >= this.sheetCount) throw Error(`Sheet index ${e} out of range (count: ${this.sheetCount})`);
-			return (await this.withWorksheetArchiveOperation(e, () => this.requireBridge().request((n) => ({
+			return (await this.withWorksheetArchiveOperation(e, () => this.requireBridge().request((t) => ({
 				type: "renderViewport",
-				id: n,
+				id: t,
 				sheetIndex: e,
-				viewport: t,
-				opts: i,
-				layoutMetrics: r.layoutMetrics,
-				viewProjection: r.projection
+				viewport: n,
+				opts: a,
+				layoutMetrics: i.layoutMetrics,
+				viewProjection: i.projection
 			})))).bitmap;
 		}
-		let a = new OffscreenCanvas(1, 1);
-		return await this.renderViewport(a, e, t, i), a.transferToImageBitmap();
+		let o = new OffscreenCanvas(1, 1);
+		return await this.renderViewport(o, e, n, a), o.transferToImageBitmap();
 	}
 	[jo](e) {
 		this._mode === "worker" && this.requireBridge().post({
@@ -4968,8 +4968,8 @@ var ko = Symbol("retain-xlsx-viewer-fonts"), Ao = Symbol("prepare-xlsx-viewer-ro
 	}
 	destroy() {
 		this.generation = (this.generation ?? 1) + 1, this.worksheetPullClient?.cancelAll("closed").catch(() => void 0), this.worksheetPullClient = null, this.bridge?.terminate(), this.bridge = null, this.parsedWorkbook = null, this.sheetCache.clear(), this.sheetLoads.clear(), this.fontsDestroyed = !0;
-		for (let e of this.retainedFontSets.values()) e.faces && Me(e.faces);
-		this.retainedFontSets.clear(), this.googleFontNames = [], M(this._fetchImage), j(this._fetchImage), this.rawParts.clear(), this.queuedImageLoads?.clear();
+		for (let e of this.retainedFontSets.values()) e.faces && ge(e.faces);
+		this.retainedFontSets.clear(), this.googleFontNames = [], P(this._fetchImage), z(this._fetchImage), this.rawParts.clear(), this.queuedImageLoads?.clear();
 	}
 	assertResourceHealthy() {
 		if (this.resourceFailure) throw this.resourceFailure;
@@ -5196,7 +5196,7 @@ function Zo(e, t, n, r, i) {
 	for (let a = e.charts.length - 1; a >= 0; a--) {
 		let o = e.charts[a], s = Vo(o, r);
 		if (!s || !Uo(s, r) || !Ho(n, s)) continue;
-		let c = q(o.chart, i);
+		let c = xe(o.chart, i);
 		return {
 			...Xo(e, t, "chart", a, o, c.text, c.truncated, c.maxTextCharacters),
 			seriesCount: o.chart.series.length
@@ -5249,16 +5249,16 @@ function es(e, t, n, r, i) {
 	}
 	return null;
 }
-function ts(e, t, n, r, i = De) {
+function ts(e, t, n, r, i = ke) {
 	if (!Number.isFinite(n.x) || !Number.isFinite(n.y)) throw RangeError("XLSX hit-test point must contain finite coordinates.");
 	if (!Number.isFinite(i) || i < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	let a = Math.min(De, Math.floor(i)), o = Go(e, r);
+	let a = Math.min(ke, Math.floor(i)), o = Go(e, r);
 	return Wo(n, o) ? Zo(e, t, n, o, a) ?? $o(e, t, n, o, a) ?? es(e, t, n, o, a) : null;
 }
 function ns(e, t) {
 	let n = t ?? e.maxTextCharacters;
 	if (!Number.isFinite(n) || n < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	let r = Math.min(De, Math.floor(n)), i = e.text === void 0 ? void 0 : Jo(e.text, r), a = e.truncated || e.text !== void 0 && i.length < e.text.length;
+	let r = Math.min(ke, Math.floor(n)), i = e.text === void 0 ? void 0 : Jo(e.text, r), a = e.truncated || e.text !== void 0 && i.length < e.text.length;
 	return {
 		...structuredClone(e),
 		...i === void 0 ? {} : { text: i },
@@ -5475,7 +5475,7 @@ var hs = class {
 			if (n !== this._generation) return [];
 			let o = this._sheetName(a);
 			for (let n of r) {
-				let r = xe(we([{ text: n.text }]), e, t);
+				let r = Ce(Ee([{ text: n.text }]), e, t);
 				for (let e of r) {
 					let t = e.slices[0], r = n.text.slice(t.start, t.end);
 					i.push({
@@ -5491,10 +5491,10 @@ var hs = class {
 		return n === this._generation ? (this._matches = i, this._active = -1, this.matches()) : [];
 	}
 	next() {
-		return this._active = be(this._active, this._matches.length), this._activePublic();
+		return this._active = Se(this._active, this._matches.length), this._activePublic();
 	}
 	prev() {
-		return this._active = Te(this._active, this._matches.length), this._activePublic();
+		return this._active = De(this._active, this._matches.length), this._activePublic();
 	}
 	_activePublic() {
 		let e = this._locationAt(this._active);
@@ -5677,7 +5677,7 @@ function Os(e, t) {
 //#endregion
 //#region packages/xlsx/src/internal/sheet-viewer-runtime.ts
 var ks = class {
-	owner = new ve("SheetAcquisition");
+	owner = new q("SheetAcquisition");
 	get current() {
 		return this.owner.current;
 	}
@@ -5759,7 +5759,7 @@ var js = class {
 		this.frameScheduler = typeof r.requestAnimationFrame == "function" && typeof r.cancelAnimationFrame == "function" ? {
 			requestAnimationFrame: (e) => r.requestAnimationFrame(e),
 			cancelAnimationFrame: (e) => r.cancelAnimationFrame(e)
-		} : null, this.staticDispatcher = e ? new Se(e, t) : null;
+		} : null, this.staticDispatcher = e ? new we(e, t) : null;
 	}
 	begin() {
 		return this.staticDispatcher ? this.staticDispatcher.begin() : ++this.generation;
@@ -6362,7 +6362,7 @@ var Ec = class {
 		if (!r) throw Error("XlsxViewer requires a document with an active Window");
 		this.hostWindow = r, this.opts = t, this._mountKind = n.kind, this._nativeScrollbars = t.showScrollbars ?? !0;
 		let i = t[zs];
-		this._borrowed = i !== void 0, this._mode = n.kind === "sheet" ? n.mode : Ce("XlsxViewer", t.mode, i), this._hiddenSheetMode = t.hiddenSheetMode ?? "show", this.viewport = new js(t.cellScale ?? 1), this.wrapper = this.hostDocument.createElement("div"), this.wrapper.style.cssText = `position:relative;width:100%;height:100%;background:${n.kind === "composite" ? "var(--ooxml-xlsx-chrome-surface,#fff)" : "transparent"};box-sizing:border-box;font-family:sans-serif;display:flex;flex-direction:column;`, this.gridRegion = this.hostDocument.createElement("div"), this.gridRegion.style.cssText = "position:relative;flex:1;min-height:0;overflow:hidden;";
+		this._borrowed = i !== void 0, this._mode = n.kind === "sheet" ? n.mode : Te("XlsxViewer", t.mode, i), this._hiddenSheetMode = t.hiddenSheetMode ?? "show", this.viewport = new js(t.cellScale ?? 1), this.wrapper = this.hostDocument.createElement("div"), this.wrapper.style.cssText = `position:relative;width:100%;height:100%;background:${n.kind === "composite" ? "var(--ooxml-xlsx-chrome-surface,#fff)" : "transparent"};box-sizing:border-box;font-family:sans-serif;display:flex;flex-direction:column;`, this.gridRegion = this.hostDocument.createElement("div"), this.gridRegion.style.cssText = "position:relative;flex:1;min-height:0;overflow:hidden;";
 		let a = "position:absolute;top:0;left:0;z-index:3;display:none;background:var(--ooxml-xlsx-chrome-background,#f5f5f5);";
 		this.cornerGutter = this.hostDocument.createElement("canvas"), this.cornerGutter.style.cssText = a, this.cornerGutter.setAttribute("data-xlsx-outline", "corner"), this.colGutter = this.hostDocument.createElement("canvas"), this.colGutter.style.cssText = a, this.colGutter.setAttribute("data-xlsx-outline", "col"), this.rowGutter = this.hostDocument.createElement("canvas"), this.rowGutter.style.cssText = a, this.rowGutter.setAttribute("data-xlsx-outline", "row"), this.canvasArea = this.hostDocument.createElement("div"), this.canvasArea.style.cssText = "position:absolute;inset:0;overflow:hidden;", this.canvas = n.kind === "sheet" ? n.canvas : this.hostDocument.createElement("canvas"), this.canvas.style.cssText = "position:absolute;top:0;left:0;z-index:0;display:block;", this.renderDispatcher = new Ms(this.canvas, this._mode === "worker", this.hostWindow), this.scrollHost = this.hostDocument.createElement("div"), this.scrollHost.setAttribute("data-xlsx-viewport-input", n.kind), this.scrollHost.setAttribute("role", "region"), this.scrollHost.setAttribute("aria-label", "Spreadsheet viewport. Use Arrow keys to move the selected cell. Press Enter to show its comment."), this.scrollHost.tabIndex = 0, this.scrollHost.style.cssText = `position:absolute;inset:0;overflow:${this._nativeScrollbars ? "auto" : "clip"};z-index:2;background:transparent;scrollbar-color:var(--ooxml-xlsx-chrome-scrollbar-color,auto);`, this.spacer = this.hostDocument.createElement("div"), this.spacer.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;", this._nativeScrollbars && this.scrollHost.appendChild(this.spacer), this.surface = new Ps(this.canvas, this.canvasArea, this.scrollHost), this.overlayHost = new Fs(this.canvasArea, this.canvas, this.scrollHost, {
 			commentMaxWidth: Ws,
@@ -6822,10 +6822,10 @@ var Ec = class {
 		!n || !this.currentWorksheet || (this._scrollCellIntoView(n.row, n.col, t.align ?? "nearest"), await this.renderCurrentSheet(), this.updateSelectionOverlay(), this.updateFindOverlay(), this.emitViewportChange());
 	}
 	_stepSheet(e) {
-		return this._hiddenSheetMode === "skip" && this.wb ? ot(this.currentSheet, e, (e) => this.wb.isHidden(e), this.sheetCount) : this.currentSheet + e;
+		return this._hiddenSheetMode === "skip" && this.wb ? at(this.currentSheet, e, (e) => this.wb.isHidden(e), this.sheetCount) : this.currentSheet + e;
 	}
 	_initialSheet() {
-		return this._hiddenSheetMode === "skip" && this.wb ? st(0, (e) => this.wb.isHidden(e), this.sheetCount) : 0;
+		return this._hiddenSheetMode === "skip" && this.wb ? ot(0, (e) => this.wb.isHidden(e), this.sheetCount) : 0;
 	}
 	getCellAt(e, t) {
 		if (this._destroyed) return null;
@@ -7191,7 +7191,7 @@ var Ec = class {
 		this.opts.selectionColor = e, this.updateSelectionOverlay();
 	}
 	async setHiddenSheetMode(e) {
-		this._hiddenSheetMode = e, this.buildTabs(), e === "skip" && this.wb && this.wb.isHidden(this.currentSheet) ? await this.showSheet(st(this.currentSheet, (e) => this.wb.isHidden(e), this.sheetCount)) : this.updateTabActive(this.currentSheet);
+		this._hiddenSheetMode = e, this.buildTabs(), e === "skip" && this.wb && this.wb.isHidden(this.currentSheet) ? await this.showSheet(ot(this.currentSheet, (e) => this.wb.isHidden(e), this.sheetCount)) : this.updateTabActive(this.currentSheet);
 	}
 	get hiddenSheetMode() {
 		return this._hiddenSheetMode;
@@ -7199,7 +7199,7 @@ var Ec = class {
 	get visibleSheetCount() {
 		if (!this.wb) return 0;
 		let e = this.wb;
-		return ct((t) => e.isHidden(t), this.sheetCount);
+		return st((t) => e.isHidden(t), this.sheetCount);
 	}
 	async copySelection() {
 		this.assertOpen();
@@ -7631,7 +7631,7 @@ var Ec = class {
 		};
 		else return !1;
 		let r = this.opts.onHyperlinkClick;
-		return r ? (r(n), !0) : (n.kind === "external" ? ie(n.url, void 0, this.hostWindow) : this.navigateInternalHyperlink(n.ref).catch((e) => this._reportRenderError(e)), !0);
+		return r ? (r(n), !0) : (n.kind === "external" ? U(n.url, void 0, this.hostWindow) : this.navigateInternalHyperlink(n.ref).catch((e) => this._reportRenderError(e)), !0);
 	}
 	async navigateInternalHyperlink(e) {
 		let t = Bo(e, this.currentSheet, this.sheetNames, this.currentWorksheet?.definedNames ?? []);
@@ -7992,7 +7992,7 @@ var Ec = class {
 			this._pendingZoomAnchor = Number.isFinite(t) && Number.isFinite(n) ? {
 				x: t,
 				y: n
-			} : null, this.setScale(Ae(this.viewport.scale, e.deltaY, e.deltaMode));
+			} : null, this.setScale(Me(this.viewport.scale, e.deltaY, e.deltaMode));
 		}, { passive: !1 }), this.surface.on("pointerleave", (e) => {
 			let t = e.relatedTarget;
 			t && this.commentPopup.contains(t) || this.hideCommentPopup();
@@ -8105,8 +8105,8 @@ var Ec = class {
 			if (this.viewport.setScale(i), this.zoomSlider && (this.zoomSlider.value = String(this.zoomScaleToPos(i, t, n))), this.zoomLabel && (this.zoomLabel.textContent = `${r}%`), this.currentWorksheet) {
 				let e = this.effectiveScrollLeft, t = this.viewportTop;
 				if (this.layoutGutters(), this.updateSpacerSize(this.currentWorksheet), o) {
-					this.viewportTop = ye(t, o.y, a, i, { maxScroll: this.maxScrollTop });
-					let n = this.screenX(o.x, 0), r = this.maxScrollLeft, s = ye(e, n, a, i, { maxScroll: r });
+					this.viewportTop = be(t, o.y, a, i, { maxScroll: this.maxScrollTop });
+					let n = this.screenX(o.x, 0), r = this.maxScrollLeft, s = be(e, n, a, i, { maxScroll: r });
 					this.setViewportLeft(s);
 				} else this.setViewportLeft(e);
 			}
@@ -8117,10 +8117,10 @@ var Ec = class {
 		return this.viewport.scale;
 	}
 	zoomIn() {
-		this.setScale(Oe(this.getScale()));
+		this.setScale(Ae(this.getScale()));
 	}
 	zoomOut() {
-		this.setScale(je(this.getScale()));
+		this.setScale(Ne(this.getScale()));
 	}
 	fitWidth() {
 		this._fit("width");
@@ -8131,7 +8131,7 @@ var Ec = class {
 	_fit(e) {
 		let t = this.currentWorksheet;
 		if (!t) return;
-		let { width: n, height: r } = this._naturalContentExtent(t), i = _e({
+		let { width: n, height: r } = this._naturalContentExtent(t), i = ye({
 			contentWidth: n,
 			contentHeight: r,
 			containerWidth: this.canvasArea.clientWidth,
@@ -8263,8 +8263,8 @@ var Ec = class {
 	}
 	constructor(e, t = {}) {
 		this.canvasElement = e;
-		let n = t[zs], r = Ce("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
-		this.canvasMount = new Ee(e, {
+		let n = t[zs], r = Te("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
+		this.canvasMount = new Oe(e, {
 			wrapperCssText: `position:relative;display:inline-block;vertical-align:top;overflow:hidden;width:${e.style.width || `${i.width || e.width}px`};height:${e.style.height || `${i.height || e.height}px`};`,
 			restoreMode: "style-and-bitmap"
 		}), this.engine = new Ec(this.canvasMount.wrapper, {
@@ -8439,17 +8439,17 @@ var Ec = class {
 	MAX_SELECTION_AREAS: () => 128,
 	MAX_SELECTION_CONTEXT_CELLS: () => is,
 	MAX_SELECTION_CONTEXT_TEXT_CHARACTERS: () => as,
-	OoxmlDecodedImageLimitError: () => Ze,
-	OoxmlError: () => V,
-	OoxmlResourceLimitError: () => ae,
-	TiffDecodeError: () => nt,
+	OoxmlDecodedImageLimitError: () => Xe,
+	OoxmlError: () => W,
+	OoxmlResourceLimitError: () => A,
+	TiffDecodeError: () => tt,
 	XlsxSheetViewer: () => Oc,
 	XlsxViewer: () => Dc,
 	XlsxWorkbook: () => No,
-	autoResize: () => ge,
-	isOoxmlDecodedImageLimitError: () => Xe,
-	isTiffDecodeError: () => rt,
-	openExternalHyperlink: () => ie,
+	autoResize: () => ve,
+	isOoxmlDecodedImageLimitError: () => Ye,
+	isTiffDecodeError: () => nt,
+	openExternalHyperlink: () => U,
 	resolveSharedStrings: () => mt
 });
 //#endregion
