@@ -1,6 +1,6 @@
-import { a as e, i as t, o as n, r, s as i } from "./pixel-budget-Dgjw269h.js";
+import { a as e, i as t, o as n, r, s as i } from "./pixel-budget-9P63Bsk5.js";
 import { i as a, o, s, t as c } from "./raster-target-ojDdQizC.js";
-import { t as l } from "./renderer-module-contract-Cu-GKuPd.js";
+import { t as l } from "./renderer-module-contract-D91rkYHH.js";
 //#region packages/core/src/image/tiff.ts
 var u = 1, d = 3, f = 4, p = {
 	width: 256,

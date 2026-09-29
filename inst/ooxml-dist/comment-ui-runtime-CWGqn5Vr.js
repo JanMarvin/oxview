@@ -1,8 +1,8 @@
-import { i as e } from "./units-EJdC96r6.js";
-import { t } from "./highlight-rect-FuUSmL3a.js";
-import { t as n } from "./comment-occurrence-CqejEuts.js";
-import { i as r, n as i, o as a, r as o, t as s } from "./read-only-comment-margin-plStyGfE.js";
-import { i as c, n as l, r as u, t as d } from "./read-only-comment-decoration-BTnWEeo5.js";
+import { i as e } from "./units-BzZ0gAxs.js";
+import { t } from "./highlight-rect-C5hkRqUr.js";
+import { t as n } from "./comment-occurrence-C8Y2uoVr.js";
+import { i as r, n as i, o as a, r as o, t as s } from "./read-only-comment-margin-DkgzASAl.js";
+import { i as c, n as l, r as u, t as d } from "./read-only-comment-decoration-Dz7eTQ4d.js";
 //#region packages/pptx/src/comment-margin.ts
 function f(e, t, n) {
 	return {

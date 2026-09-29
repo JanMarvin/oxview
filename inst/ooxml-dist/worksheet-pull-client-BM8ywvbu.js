@@ -1,8 +1,8 @@
-import { $t as e, F as t, G as n, H as r, M as i, N as a, P as o, an as s, cn as c, en as l, in as u, nn as d, on as f, rn as p, tn as m } from "./hyperlink-BR1NCO7S.js";
-import { n as h, r as g, t as _ } from "./resource-measurement-CclArDRs.js";
-import { t as v } from "./transfer-mIj7E7NB.js";
+import { F as e, G as t, H as n, M as r, N as i, P as a, an as o, cn as s, in as c, nn as l, on as u, rn as d, sn as f, tn as p, un as m } from "./hyperlink-Cxzhet30.js";
+import { n as h, r as g, t as _ } from "./resource-measurement-SHQCbkh2.js";
+import { t as v } from "./transfer-p6iCC2R7.js";
 //#region packages/xlsx/src/worksheet-resource-limits.ts
-var y = f, b = p, x = u, S = s, C = d, w = e, T = l, E = m, D = Object.freeze({
+var y = s, b = o, x = u, S = f, C = c, w = p, T = l, E = d, D = Object.freeze({
 	archiveEntryCount: 0,
 	declaredInflatedBytes: 0,
 	distinctInflatedBytes: 0,
@@ -48,7 +48,7 @@ function M(e, t, n = {}) {
 }
 function N(e, t, n, r, i, a, o) {
 	let s = n === "worksheet-json" ? "serialization" : "parsing";
-	return new c(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
+	return new m(`OOXML resource limit exceeded${t ? ` for ${t}` : ""}: ${r} ${a} > ${i}`, {
 		stage: s,
 		violation: {
 			format: "xlsx",
@@ -142,7 +142,7 @@ function z(e, t, n, r) {
 //#endregion
 //#region packages/xlsx/src/worksheet-pull-worker.ts
 var B = 64 * 1024 * 1024, V = class {
-	coordinator = new t();
+	coordinator = new e();
 	sessions = /* @__PURE__ */ new Map();
 	operationTail = Promise.resolve();
 	pendingOpens = /* @__PURE__ */ new Map();
@@ -166,16 +166,16 @@ var B = 64 * 1024 * 1024, V = class {
 		if (this.resourceFailure) throw this.resourceFailure;
 		let r = this.pendingOpens.get(n.sessionId);
 		if (!r || r.identity.operationId !== n.operationId || r.identity.generation !== n.generation) throw Error("worksheet pull session open reservation is stale or missing");
-		let i, a = new Promise((e) => {
+		let i, o = new Promise((e) => {
 			i = e;
 		}), s = this.operationTail.then(() => this.coordinator.enqueue(async () => {
 			if (r.canceled) throw Error("worksheet pull session open was canceled");
 			this.executeArchive((n) => n.open_sheet_cursor(e, t));
-			let a = [], s = {
+			let o = [], s = {
 				rows: 0,
 				cells: 0,
 				ownedUtf8Bytes: 0
-			}, l, u = !1, d = new o({
+			}, c, l = !1, u = new a({
 				...n,
 				maxByteCredit: B,
 				coordinator: this.coordinator,
@@ -187,13 +187,13 @@ var B = 64 * 1024 * 1024, V = class {
 							try {
 								if (n.kind === "rows") {
 									let e = j(s, O(n.rows));
-									P(e, "get-worksheet-worker", void 0, this.readResourceUsage()), a.push(...n.rows), s = e;
-								} else l = n.worksheet;
+									P(e, "get-worksheet-worker", void 0, this.readResourceUsage()), o.push(...n.rows), s = e;
+								} else c = n.worksheet;
 							} catch (e) {
-								throw e instanceof c && (this.resourceFailure ??= e), e;
+								throw e instanceof m && (this.resourceFailure ??= e), e;
 							}
 						}
-						u = t;
+						l = t;
 						let n = v(e);
 						return {
 							payload: n,
@@ -204,26 +204,26 @@ var B = 64 * 1024 * 1024, V = class {
 					},
 					measureChunk: ({ payload: e }) => e.byteLength,
 					acknowledge: () => {
-						if (!u) return;
+						if (!l) return;
 						let t, r;
 						try {
 							if (this.acceptWorksheet) {
-								if (!l) throw Error("worksheet terminal payload is missing");
-								l.rows = l.parseError ? [] : a;
-								let n = l.parseError ? {
+								if (!c) throw Error("worksheet terminal payload is missing");
+								c.rows = c.parseError ? [] : o;
+								let n = c.parseError ? {
 									rows: 0,
 									cells: 0,
 									ownedUtf8Bytes: 0
-								} : s, i = A(l, n), o = this.readResourceUsage();
-								P(i, "get-worksheet-worker", void 0, o), F(i.jsonBytes, "get-worksheet-worker", void 0, o);
-								let c = this.acceptWorksheet(e, l, i, o);
-								typeof c == "function" ? t = c : c && ({rollback: t, commit: r} = c);
+								} : s, i = A(c, n), a = this.readResourceUsage();
+								P(i, "get-worksheet-worker", void 0, a), F(i.jsonBytes, "get-worksheet-worker", void 0, a);
+								let l = this.acceptWorksheet(e, c, i, a);
+								typeof l == "function" ? t = l : l && ({rollback: t, commit: r} = l);
 							}
 							this.executeArchive((e) => e.acknowledge_sheet_cursor_terminal()), r?.();
 						} catch (e) {
-							throw t?.(), e instanceof c && (this.resourceFailure ??= e), e;
+							throw t?.(), e instanceof m && (this.resourceFailure ??= e), e;
 						}
-						u = !1, this.sessions.delete(n.sessionId), i();
+						l = !1, this.sessions.delete(n.sessionId), i();
 					},
 					cancel: () => {
 						try {
@@ -243,11 +243,11 @@ var B = 64 * 1024 * 1024, V = class {
 				}
 			});
 			this.sessions.set(n.sessionId, {
-				host: d,
+				host: u,
 				identity: n
 			}), this.pendingOpens.delete(n.sessionId);
 		}));
-		this.operationTail = s.then(() => a, () => void 0);
+		this.operationTail = s.then(() => o, () => void 0);
 		try {
 			await s;
 		} catch (e) {
@@ -264,14 +264,14 @@ var B = 64 * 1024 * 1024, V = class {
 			} catch {}
 		}
 	}
-	dispatch(e, t) {
+	dispatch(e, n) {
 		let r = this.sessions.get(e.sessionId);
-		if (r) return r.host.dispatch(e, t);
-		let i = this.pendingOpens.get(e.sessionId);
-		if (i && (e.kind === "cancel" || e.kind === "close")) {
-			let n = i.identity.operationId === e.operationId && i.identity.generation === e.generation;
-			return n && (i.canceled = !0), t(n ? {
-				protocol: a,
+		if (r) return r.host.dispatch(e, n);
+		let a = this.pendingOpens.get(e.sessionId);
+		if (a && (e.kind === "cancel" || e.kind === "close")) {
+			let t = a.identity.operationId === e.operationId && a.identity.generation === e.generation;
+			return t && (a.canceled = !0), n(t ? {
+				protocol: i,
 				kind: "accepted",
 				sessionId: e.sessionId,
 				operationId: e.operationId,
@@ -279,7 +279,7 @@ var B = 64 * 1024 * 1024, V = class {
 				requestId: e.requestId,
 				command: e.kind
 			} : {
-				protocol: a,
+				protocol: i,
 				kind: "error",
 				sessionId: e.sessionId,
 				operationId: e.operationId,
@@ -292,37 +292,37 @@ var B = 64 * 1024 * 1024, V = class {
 				}
 			}), Promise.resolve();
 		}
-		return e.kind === "cancel" || e.kind === "close" ? (t({
-			protocol: a,
+		return e.kind === "cancel" || e.kind === "close" ? (n({
+			protocol: i,
 			kind: "accepted",
 			sessionId: e.sessionId,
 			operationId: e.operationId,
 			generation: e.generation,
 			requestId: e.requestId,
 			command: e.kind
-		}), Promise.resolve()) : (t({
-			protocol: a,
+		}), Promise.resolve()) : (n({
+			protocol: i,
 			kind: "error",
 			sessionId: e.sessionId,
 			operationId: e.operationId,
 			generation: e.generation,
 			requestId: e.requestId,
-			error: n(/* @__PURE__ */ Error("worksheet pull session is not open"))
+			error: t(/* @__PURE__ */ Error("worksheet pull session is not open"))
 		}), Promise.resolve());
 	}
-	async dispatchSafely(e, t) {
+	async dispatchSafely(e, n) {
 		try {
-			await this.dispatch(e, t);
+			await this.dispatch(e, n);
 		} catch (r) {
 			try {
-				t({
-					protocol: a,
+				n({
+					protocol: i,
 					kind: "error",
 					sessionId: e.sessionId,
 					operationId: e.operationId,
 					generation: e.generation,
 					requestId: e.requestId,
-					error: n(r)
+					error: t(r)
 				});
 			} catch {}
 		}
@@ -332,7 +332,7 @@ var B = 64 * 1024 * 1024, V = class {
 			if (this.resourceFailure) throw this.resourceFailure;
 			return e();
 		})).catch((e) => {
-			throw e instanceof c && (this.resourceFailure ??= e), e;
+			throw e instanceof m && (this.resourceFailure ??= e), e;
 		});
 		return this.operationTail = t.then(() => void 0, () => void 0), t;
 	}
@@ -340,7 +340,7 @@ var B = 64 * 1024 * 1024, V = class {
 		for (let e of this.pendingOpens.values()) e.canceled = !0;
 		let e = 1;
 		for (let { host: t, identity: n } of [...this.sessions.values()]) await t.dispatch({
-			protocol: a,
+			protocol: i,
 			kind: "close",
 			...n,
 			requestId: e++
@@ -356,7 +356,7 @@ var B = 64 * 1024 * 1024, V = class {
 		let t = this.sessions.get(e.sessionId);
 		if (t) {
 			await t.host.dispatch({
-				protocol: a,
+				protocol: i,
 				kind: "close",
 				...e,
 				requestId: 1
@@ -368,7 +368,7 @@ var B = 64 * 1024 * 1024, V = class {
 	}
 	readResourceUsage() {
 		try {
-			return r(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
+			return n(this.executeArchive((e) => e.sheet_cursor_resource_usage()));
 		} catch (e) {
 			if (String(e).includes("worksheet cursor usage is unavailable")) return;
 			throw e;
@@ -384,11 +384,11 @@ var B = 64 * 1024 * 1024, V = class {
 		if (!Number.isSafeInteger(e) || e < 0) throw RangeError("sheetIndex must be a non-negative safe integer");
 		if (!t) throw TypeError("sheetName must be non-empty");
 		G(n);
-		let r = this.nextSessionId++, a = {
-			sessionId: r,
-			operationId: r,
+		let i = this.nextSessionId++, a = {
+			sessionId: i,
+			operationId: i,
 			generation: this.options.generation ?? 1
-		}, o = new i(this.options.transport, {
+		}, o = new r(this.options.transport, {
 			...a,
 			maxByteCredit: B,
 			timeoutMs: this.options.timeoutMs,

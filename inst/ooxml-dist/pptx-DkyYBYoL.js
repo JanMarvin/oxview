@@ -1,32 +1,33 @@
 import { t as e } from "./chunk-DmhlhrBa.js";
-import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, r as l, s as u, t as d, u as f } from "./slide-pull-client-Ck8wfRT_.js";
-import { $ as p, Jt as m, L as h, R as g, U as _, W as v, Zt as y, _t as b, cn as x, et as S, ft as C, lt as w, r as T, sn as ee, z as te } from "./hyperlink-BR1NCO7S.js";
-import { C as ne, D as re, M as ie, N as ae, O as oe, S as se, T as ce, _ as le, a as E, b as ue, c as D, d as de, f as fe, g as pe, h as me, i as O, l as k, m as he, n as ge, o as _e, p as ve, r as ye, s as be, t as xe, v as Se, w as Ce, x as we, y as A } from "./canvas-viewer-mechanics-DN5SqWGS.js";
-import { a as Te, d as j, i as Ee, n as De, r as Oe, t as ke, u as Ae } from "./dom-interaction-boundary-CswB9Tzi.js";
-import { l as je, s as Me } from "./pixel-budget-Dgjw269h.js";
-import { i as M } from "./units-EJdC96r6.js";
-import { i as Ne, s as Pe } from "./raster-target-ojDdQizC.js";
-import { n as Fe } from "./resource-measurement-CclArDRs.js";
-import { n as Ie } from "./renderer-module-contract-Cu-GKuPd.js";
-import { t as Le } from "./visible-index-DPoQYSDt.js";
-import { n as Re, t as N } from "./highlight-rect-FuUSmL3a.js";
-import { n as ze, t as Be } from "./bounded-raw-part-cache-BfbSxRIL.js";
-import { t as P } from "./comment-occurrence-CqejEuts.js";
+import { $ as t, $t as n, L as r, R as i, U as a, W as o, Xt as s, _t as c, et as l, ft as u, ln as d, lt as f, r as p, un as m, z as h } from "./hyperlink-Cxzhet30.js";
+import { C as g, D as _, M as v, N as y, O as b, S as x, T as S, _ as C, a as w, b as ee, c as T, d as te, f as ne, g as re, h as ie, i as E, l as D, m as ae, n as oe, o as se, p as ce, r as le, s as ue, t as de, v as fe, w as pe, x as me, y as he } from "./canvas-viewer-mechanics-DbLz0rYW.js";
+import { a as ge, c as _e, d as ve, f as O, i as ye, n as be, r as xe, t as Se } from "./dom-interaction-boundary-Cnm8DSBN.js";
+import { n as Ce } from "./cjk-fallback-bLI3z70h.js";
+import { i as k } from "./units-BzZ0gAxs.js";
+import { l as we, s as Te } from "./pixel-budget-9P63Bsk5.js";
+import { i as Ee, s as De } from "./raster-target-ojDdQizC.js";
+import { n as Oe } from "./resource-measurement-SHQCbkh2.js";
+import { a as A, c as ke, d as j, f as Ae, i as je, l as Me, n as Ne, o as M, r as Pe, s as Fe, t as Ie, u as Le } from "./slide-pull-client-DiPnm240.js";
+import { n as Re } from "./renderer-module-contract-D91rkYHH.js";
+import { t as ze } from "./visible-index-BgiHEc1z.js";
+import { n as Be, t as N } from "./highlight-rect-C5hkRqUr.js";
+import { n as Ve, t as He } from "./bounded-raw-part-cache-Cg1BsSZQ.js";
+import { t as P } from "./comment-occurrence-C8Y2uoVr.js";
 //#region packages/core/src/nav/internal-target.ts
-function Ve(e, t) {
+function Ue(e, t) {
 	let n = t.startsWith("/") ? [] : e.split("/").filter((e) => e !== "");
 	for (let e of t.split("/")) if (e === "..") n.pop();
 	else if (e === "." || e === "") continue;
 	else n.push(e);
 	return n.join("/");
 }
-function He(e) {
+function We(e) {
 	let t = /[?&]jump=([a-zA-Z]+)/.exec(e);
 	if (!t) return null;
 	let n = t[1].toLowerCase();
 	return n === "firstslide" || n === "lastslide" || n === "nextslide" || n === "previousslide" ? n : null;
 }
-function Ue(e, t, n) {
+function Ge(e, t, n) {
 	if (!(n <= 0)) switch (e) {
 		case "firstslide": return 0;
 		case "lastslide": return n - 1;
@@ -36,13 +37,13 @@ function Ue(e, t, n) {
 }
 //#endregion
 //#region packages/pptx/src/run-frame-transform.ts
-function We(e) {
+function Ke(e) {
 	let t = e.textBodyRotation ?? 0, n = e.shapeFlipH === !0, r = e.shapeFlipV === !0;
 	if (n || r) return `rotate(${e.rotation}deg) scale(${n ? -1 : 1}, ${r ? -1 : 1})` + (t === 0 ? "" : ` rotate(${t}deg)`);
 	let i = e.rotation + t;
 	return i === 0 ? "" : `rotate(${i}deg)`;
 }
-function Ge(e, t) {
+function qe(e, t) {
 	return `${e.shapeX},${e.shapeY},${e.shapeW},${e.shapeH},` + t;
 }
 //#endregion
@@ -54,7 +55,7 @@ function I(e, t, n, r, i, a) {
 	e.innerHTML = "", F(e, "ooxmlSelectionSurface", "pptx"), F(e, "slideIndex", a === void 0 ? void 0 : String(a));
 	let o = /* @__PURE__ */ new Map(), s = e.ownerDocument ?? document;
 	for (let [a, c] of t.entries()) {
-		let t = We(c), l = Ge(c, t), u = o.get(l);
+		let t = Ke(c), l = qe(c, t), u = o.get(l);
 		if (!u) {
 			let i = s.createElement("div");
 			i.style.cssText = `position:absolute;left:${N(c.shapeX, n)};top:${N(c.shapeY, r)};width:${N(c.shapeW, n)};height:${N(c.shapeH, r)};pointer-events:all;overflow:visible;`, t && (i.style.transformOrigin = "center center", i.style.transform = t), u = {
@@ -74,7 +75,7 @@ function I(e, t, n, r, i, a) {
 function L(e, t, n, r, i, a, o = {}) {
 	e.innerHTML = "";
 	let s = o.match ?? "rgba(255, 214, 0, 0.42)", c = o.active ?? "rgba(255, 140, 0, 0.55)", l = /* @__PURE__ */ new Map(), u = (t) => {
-		let n = We(t), a = Ge(t, n), o = l.get(a);
+		let n = Ke(t), a = qe(t, n), o = l.get(a);
 		if (!o) {
 			let s = document.createElement("div");
 			s.style.cssText = `position:absolute;left:${N(t.shapeX, r)};top:${N(t.shapeY, i)};width:${N(t.shapeW, r)};height:${N(t.shapeH, i)};pointer-events:none;overflow:hidden;`, n && (s.style.transformOrigin = "center center", s.style.transform = n), o = {
@@ -90,7 +91,7 @@ function L(e, t, n, r, i, a, o = {}) {
 		for (let r of e.slices) {
 			let e = t[r.runIndex];
 			if (!e) continue;
-			let i = a(e.font), { x: o, width: s } = Re(e.text, r.start, r.end, i);
+			let i = a(e.font), { x: o, width: s } = Be(e.text, r.start, r.end, i);
 			if (s <= 0) continue;
 			let c = u(e), l = document.createElement("div");
 			l.style.cssText = `position:absolute;left:${N(e.inShapeX + o, c.w)};top:${N(e.inShapeY, c.h)};width:${N(s, c.w)};height:${N(e.h, c.h)};background:${n};pointer-events:none;`, c.div.appendChild(l);
@@ -99,18 +100,18 @@ function L(e, t, n, r, i, a, o = {}) {
 }
 //#endregion
 //#region packages/pptx/src/find.ts
-function Ke(e, t) {
+function Je(e, t) {
 	let n = e.tableCell, r = t.tableCell;
 	return !n && !r ? !0 : !n || !r ? !1 : e.elementIndex === t.elementIndex && e.origin === t.origin && e.shapeId === t.shapeId && n.row === r.row && n.column === r.column;
 }
-function qe(e, t) {
+function Ye(e, t) {
 	for (let n = 1; n < t.length; n++) {
 		let r = e[t[n - 1].runIndex], i = e[t[n].runIndex];
-		if (!r || !i || !Ke(r, i)) return !1;
+		if (!r || !i || !Je(r, i)) return !1;
 	}
 	return !0;
 }
-var Je = class {
+var Xe = class {
 	_slideRuns = /* @__PURE__ */ new Map();
 	_matches = [];
 	_active = -1;
@@ -170,9 +171,9 @@ var Je = class {
 		if (n !== this._generation) return [];
 		let o = r === this._runsRevision ? i : new Map([...i, ...this._slideRuns]), s = [];
 		for (let n = 0; n < a; n++) {
-			let r = o.get(n) ?? [], i = he(r);
-			for (let a of me(i, e, t)) {
-				if (!qe(r, a.slices)) continue;
+			let r = o.get(n) ?? [], i = ae(r);
+			for (let a of ie(i, e, t)) {
+				if (!Ye(r, a.slices)) continue;
 				let e = a.slices.map((e) => r[e.runIndex].text.slice(e.start, e.end)).join("");
 				s.push({
 					slide: n,
@@ -184,10 +185,10 @@ var Je = class {
 		return this._runsRevision++, this._slideRuns = o, this._matches = s, this._active = -1, this.matches();
 	}
 	next() {
-		return this._active = fe(this._active, this._matches.length), this._activePublic();
+		return this._active = ne(this._active, this._matches.length), this._activePublic();
 	}
 	prev() {
-		return this._active = ve(this._active, this._matches.length), this._activePublic();
+		return this._active = ce(this._active, this._matches.length), this._activePublic();
 	}
 	_activePublic() {
 		let e = this._matches[this._active];
@@ -197,22 +198,22 @@ var Je = class {
 			location: { slide: e.slide }
 		} : null;
 	}
-}, Ye = (e) => e >= "0" && e <= "9";
-function Xe(e) {
+}, Ze = (e) => e >= "0" && e <= "9";
+function Qe(e) {
 	let t = 0;
 	for (let n = 0; n < 10; n++) t = Math.max(t, e.measureText(String(n)).width);
 	return t;
 }
-function Ze(e, t, n) {
+function $e(e, t, n) {
 	let r = 0;
-	for (let i of t) r += Ye(i) ? n : e.measureText(i).width;
+	for (let i of t) r += Ze(i) ? n : e.measureText(i).width;
 	return r;
 }
-function Qe(e, t, n, r, i) {
+function et(e, t, n, r, i) {
 	let a = e.textAlign;
 	e.textAlign = "left";
 	let o = n;
-	for (let n of t) if (Ye(n)) {
+	for (let n of t) if (Ze(n)) {
 		let t = e.measureText(n).width;
 		e.fillText(n, o + (i - t) / 2, r), o += i;
 	} else e.fillText(n, o, r), o += e.measureText(n).width;
@@ -220,39 +221,39 @@ function Qe(e, t, n, r, i) {
 }
 //#endregion
 //#region packages/pptx/src/presentation-handle.ts
-var R = (e, t) => e / M * t;
-async function $e(e, t, n) {
+var R = (e, t) => e / k * t;
+async function tt(e, t, n) {
 	let r = e.getContext("2d");
 	if (!r) throw Error("2D context not available");
-	let a = n.width / (n.slideWidthEmu / M);
+	let i = n.width / (n.slideWidthEmu / k);
 	await n.drawBase();
-	let o = document.createElement("canvas");
-	o.width = e.width, o.height = e.height;
-	let s = o.getContext("2d");
-	if (!s) throw Error("base 2D context not available");
-	s.drawImage(e, 0, 0);
-	let c = [], l = !1, u = () => {
-		for (let e of c) {
+	let a = document.createElement("canvas");
+	a.width = e.width, a.height = e.height;
+	let o = a.getContext("2d");
+	if (!o) throw Error("base 2D context not available");
+	o.drawImage(e, 0, 0);
+	let s = [], c = !1, l = () => {
+		for (let e of s) {
 			e.detachListeners(), e.media.pause(), e.media.removeAttribute("src");
 			try {
 				e.media.load();
 			} catch {}
 			URL.revokeObjectURL(e.objectUrl);
 		}
-		c.length = 0;
-	}, d = (e) => {
-		l || (n.onError ? n.onError(e) : console.error("[ooxml] PPTX embedded media failed:", e));
+		s.length = 0;
+	}, u = (e) => {
+		c || (n.onError ? n.onError(e) : console.error("[ooxml] PPTX embedded media failed:", e));
 	};
 	for (let e of t) {
 		let t;
 		try {
 			t = await n.fetchMedia(e.mediaPath);
 		} catch (t) {
-			throw u(), nt(e, t);
+			throw l(), it(e, t);
 		}
-		let r = e.mimeType || t.type, i = t.type === r ? t : new Blob([t], { type: r }), o = URL.createObjectURL(i), s = e.mediaKind === "video" ? document.createElement("video") : document.createElement("audio");
-		s.src = o, s.preload = "metadata", e.mediaKind === "video" && (s.playsInline = !0);
-		let f = et(e, a), p = {
+		let r = e.mimeType || t.type, a = t.type === r ? t : new Blob([t], { type: r }), o = URL.createObjectURL(a), d = e.mediaKind === "video" ? document.createElement("video") : document.createElement("audio");
+		d.src = o, d.preload = "metadata", e.mediaKind === "video" && (d.playsInline = !0);
+		let f = nt(e, i), p = {
 			el: e,
 			rect: e.mediaKind === "audio" ? {
 				x: f.x + f.w / 2 - Math.max(f.w, 260) / 2,
@@ -261,57 +262,57 @@ async function $e(e, t, n) {
 				h: f.h + 36
 			} : f,
 			posterRect: f,
-			media: s,
+			media: d,
 			objectUrl: o,
 			loadState: "loading",
 			detachListeners: () => {}
 		}, m = () => {
-			l || (p.loadState = "metadata");
+			c || (p.loadState = "metadata");
 		}, h = () => {
-			l || (p.loadState = "ready");
+			c || (p.loadState = "ready");
 		}, g = () => {
-			l || (p.loadState = "error", d(z(e, s, "decode")));
+			c || (p.loadState = "error", u(z(e, d, "decode")));
 		};
-		s.addEventListener("loadedmetadata", m), s.addEventListener("canplay", h), s.addEventListener("error", g), p.detachListeners = () => {
-			s.removeEventListener("loadedmetadata", m), s.removeEventListener("canplay", h), s.removeEventListener("error", g);
-		}, c.push(p);
+		d.addEventListener("loadedmetadata", m), d.addEventListener("canplay", h), d.addEventListener("error", g), p.detachListeners = () => {
+			d.removeEventListener("loadedmetadata", m), d.removeEventListener("canplay", h), d.removeEventListener("error", g);
+		}, s.push(p);
 		try {
-			s.load();
+			d.load();
 		} catch (t) {
-			let n = z(e, s, "load", t);
-			throw u(), n;
+			let n = z(e, d, "load", t);
+			throw l(), n;
 		}
 	}
-	let f = null, p = null, m = () => {
-		r.setTransform(e.width / n.width, 0, 0, e.height / n.height, 0, 0), r.drawImage(o, 0, 0, e.width, e.height, 0, 0, n.width, n.height);
-		for (let e of c) {
+	let d = null, f = null, p = () => {
+		r.setTransform(e.width / n.width, 0, 0, e.height / n.height, 0, 0), r.drawImage(a, 0, 0, e.width, e.height, 0, 0, n.width, n.height);
+		for (let e of s) {
 			let t = e.media;
 			if (e.loadState !== "loading") {
 				if (e.loadState === "error") {
-					tt(r, e.posterRect, "Media unavailable");
+					rt(r, e.posterRect, "Media unavailable");
 					continue;
 				}
 				if (e.el.mediaKind === "video" && t.readyState >= 2) {
 					let { x: n, y: i, w: a, h: o } = e.posterRect;
 					r.drawImage(t, n, i, a, o);
 				}
-				if (e === p || v?.state === e) st(r, e, t);
+				if (e === f || _?.state === e) lt(r, e, t);
 				else if (t.paused) {
-					let { x: t, y: n, w: a, h: o } = e.posterRect;
-					i(r, t + a / 2, n + o / 2, a, o, "paused");
+					let { x: t, y: n, w: i, h: a } = e.posterRect;
+					j(r, t + i / 2, n + a / 2, i, a, "paused");
 				}
 			}
 		}
-	}, h = () => {
-		l || (m(), f = requestAnimationFrame(h));
-	}, g = (t, r) => {
+	}, m = () => {
+		c || (p(), d = requestAnimationFrame(m));
+	}, h = (t, r) => {
 		let i = e.getBoundingClientRect();
 		return {
 			x: (t - i.left) / i.width * n.width,
 			y: (r - i.top) / i.height * n.height
 		};
-	}, _ = (e, t) => {
-		for (let n of c) {
+	}, g = (e, t) => {
+		for (let n of s) {
 			let { x: r, y: i, w: a, h: o } = n.rect;
 			if (e < r || e > r + a || t < i || t > i + o) continue;
 			let s = H(n), c = s.y - 12, l = s.y + s.h + 8;
@@ -325,57 +326,57 @@ async function $e(e, t, n) {
 			};
 		}
 		return null;
-	}, v = null, y = (e, t) => {
+	}, _ = null, v = (e, t) => {
 		let n = Number.isFinite(e.media.duration) ? e.media.duration : 0;
 		n <= 0 || (e.media.currentTime = n * t);
-	}, b = (e) => {
+	}, y = (e) => {
 		try {
 			e.media.play().catch((t) => {
-				d(z(e.el, e.media, "play", t));
+				u(z(e.el, e.media, "play", t));
 			});
 		} catch (t) {
-			d(z(e.el, e.media, "play", t));
+			u(z(e.el, e.media, "play", t));
 		}
-	}, x = (t) => {
-		let { x: n, y: r } = g(t.clientX, t.clientY), i = _(n, r);
-		i && (i.kind === "seek" ? (v = {
+	}, b = (t) => {
+		let { x: n, y: r } = h(t.clientX, t.clientY), i = g(n, r);
+		i && (i.kind === "seek" ? (_ = {
 			state: i.state,
 			wasPlaying: !i.state.media.paused
-		}, i.state.media.pause(), y(i.state, i.fraction), e.setPointerCapture(t.pointerId), t.preventDefault()) : i.state.media.paused ? b(i.state) : i.state.media.pause());
-	}, S = (e) => {
-		let { x: t, y: n } = g(e.clientX, e.clientY);
-		p = null;
-		for (let e of c) {
+		}, i.state.media.pause(), v(i.state, i.fraction), e.setPointerCapture(t.pointerId), t.preventDefault()) : i.state.media.paused ? y(i.state) : i.state.media.pause());
+	}, x = (e) => {
+		let { x: t, y: n } = h(e.clientX, e.clientY);
+		f = null;
+		for (let e of s) {
 			let { x: r, y: i, w: a, h: o } = e.rect;
 			if (t >= r && t <= r + a && n >= i && n <= i + o) {
-				p = e;
+				f = e;
 				break;
 			}
 		}
-		if (v) {
-			let e = H(v.state), n = Math.max(0, Math.min(1, (t - e.x) / e.w));
-			y(v.state, n);
+		if (_) {
+			let e = H(_.state), n = Math.max(0, Math.min(1, (t - e.x) / e.w));
+			v(_.state, n);
 		}
-	}, C = () => {
-		p = null;
-	}, w = (t) => {
-		if (!v) return;
-		let { wasPlaying: n, state: r } = v;
-		v = null, e.releasePointerCapture(t.pointerId), n && b(r);
+	}, S = () => {
+		f = null;
+	}, C = (t) => {
+		if (!_) return;
+		let { wasPlaying: n, state: r } = _;
+		_ = null, e.releasePointerCapture(t.pointerId), n && y(r);
 	};
-	return c.length > 0 && (e.addEventListener("pointerdown", x), e.addEventListener("pointermove", S), e.addEventListener("pointerleave", C), e.addEventListener("pointerup", w), e.addEventListener("pointercancel", w), e.style.cursor = "pointer", h()), {
+	return s.length > 0 && (e.addEventListener("pointerdown", b), e.addEventListener("pointermove", x), e.addEventListener("pointerleave", S), e.addEventListener("pointerup", C), e.addEventListener("pointercancel", C), e.style.cursor = "pointer", m()), {
 		play(e) {
-			for (let t of c) (!e || t.el.mediaPath === e) && b(t);
+			for (let t of s) (!e || t.el.mediaPath === e) && y(t);
 		},
 		pause(e) {
-			for (let t of c) (!e || t.el.mediaPath === e) && t.media.pause();
+			for (let t of s) (!e || t.el.mediaPath === e) && t.media.pause();
 		},
 		destroy() {
-			l || (l = !0, f !== null && cancelAnimationFrame(f), e.removeEventListener("pointerdown", x), e.removeEventListener("pointermove", S), e.removeEventListener("pointerleave", C), e.removeEventListener("pointerup", w), e.removeEventListener("pointercancel", w), e.style.cursor = "", u());
+			c || (c = !0, d !== null && cancelAnimationFrame(d), e.removeEventListener("pointerdown", b), e.removeEventListener("pointermove", x), e.removeEventListener("pointerleave", S), e.removeEventListener("pointerup", C), e.removeEventListener("pointercancel", C), e.style.cursor = "", l());
 		}
 	};
 }
-function et(e, t) {
+function nt(e, t) {
 	return {
 		x: R(e.x, t),
 		y: R(e.y, t),
@@ -383,14 +384,14 @@ function et(e, t) {
 		h: R(e.height, t)
 	};
 }
-function tt(e, t, n) {
+function rt(e, t, n) {
 	let r = Math.max(10, Math.min(14, t.h * .12));
 	e.save(), e.font = `500 ${r}px system-ui, -apple-system, sans-serif`, e.textAlign = "center", e.textBaseline = "middle";
 	let i = r + 12, a = Math.min(t.w, Math.max(100, e.measureText(n).width + 24));
 	U(e, t.x + (t.w - a) / 2, t.y + (t.h - i) / 2, a, i, i / 2), e.fillStyle = "rgba(20, 20, 20, 0.72)", e.fill(), e.fillStyle = "rgba(255, 255, 255, 0.95)", e.fillText(n, t.x + t.w / 2, t.y + t.h / 2), e.restore();
 }
-function nt(e, t) {
-	return /* @__PURE__ */ Error(`Embedded ${e.mediaKind} fetch failed for "${e.mediaPath}" (mime=${e.mimeType || "unknown"}): ${rt(t)}`);
+function it(e, t) {
+	return /* @__PURE__ */ Error(`Embedded ${e.mediaKind} fetch failed for "${e.mediaPath}" (mime=${e.mimeType || "unknown"}): ${at(t)}`);
 }
 function z(e, t, n, r) {
 	let i = "";
@@ -404,36 +405,36 @@ function z(e, t, n, r) {
 		`networkState=${t.networkState}`
 	];
 	a && o.push(`mediaError=${a.code}${a.message ? ` ${a.message}` : ""}`);
-	let s = r === void 0 ? "" : `: ${rt(r)}`;
+	let s = r === void 0 ? "" : `: ${at(r)}`;
 	return /* @__PURE__ */ Error(`Embedded ${e.mediaKind} ${n} failed for "${e.mediaPath}" (${o.join("; ")})${s}`);
 }
-function rt(e) {
+function at(e) {
 	return e instanceof Error ? `${e.name || "Error"}${e.message ? `: ${e.message}` : ""}` : String(e);
 }
-var it = 28, B = 14, at = 72, ot = 10, V = 3;
-function st(e, t, n) {
-	let r = Number.isFinite(n.duration) ? n.duration : 0, a = r > 0 ? Math.min(1, n.currentTime / r) : 0, o = t.posterRect;
-	i(e, o.x + o.w / 2, o.y + o.h / 2, o.w, o.h, n.paused ? "paused" : "playing"), t.el.mediaKind === "audio" ? lt(e, t, n, r, a) : ct(e, t, n, r, a);
+var ot = 28, B = 14, st = 72, ct = 10, V = 3;
+function lt(e, t, n) {
+	let r = Number.isFinite(n.duration) ? n.duration : 0, i = r > 0 ? Math.min(1, n.currentTime / r) : 0, a = t.posterRect;
+	j(e, a.x + a.w / 2, a.y + a.h / 2, a.w, a.h, n.paused ? "paused" : "playing"), t.el.mediaKind === "audio" ? dt(e, t, n, r, i) : ut(e, t, n, r, i);
 }
-function ct(e, t, n, r, i) {
+function ut(e, t, n, r, i) {
 	let { x: a, y: o, w: s, h: c } = t.rect, l = Math.max(28, Math.min(56, c * .22)), u = o + c - l;
 	e.save();
 	let d = e.createLinearGradient(0, u, 0, o + c);
 	d.addColorStop(0, "rgba(0, 0, 0, 0)"), d.addColorStop(1, "rgba(0, 0, 0, 0.55)"), e.fillStyle = d, e.fillRect(a, u, s, l), e.restore();
 	let f = H(t);
-	dt(e, f, i, r > 0), e.save(), e.font = "500 11px system-ui, -apple-system, sans-serif", e.textBaseline = "middle", e.shadowColor = "rgba(0, 0, 0, 0.75)", e.shadowBlur = 3, e.fillStyle = "rgba(255, 255, 255, 0.95)", ut(e, n.currentTime, r, f.x, f.y - 10, "bottom"), e.restore();
+	pt(e, f, i, r > 0), e.save(), e.font = "500 11px system-ui, -apple-system, sans-serif", e.textBaseline = "middle", e.shadowColor = "rgba(0, 0, 0, 0.75)", e.shadowBlur = 3, e.fillStyle = "rgba(255, 255, 255, 0.95)", ft(e, n.currentTime, r, f.x, f.y - 10, "bottom"), e.restore();
 }
-function lt(e, t, n, r, i) {
-	let a = ft(t.rect);
-	e.save(), U(e, a.x, a.y, a.w, a.h, a.h / 2), e.fillStyle = "rgba(20, 20, 20, 0.72)", e.fill(), e.font = "500 11px system-ui, -apple-system, sans-serif", e.textBaseline = "middle", e.fillStyle = "rgba(255, 255, 255, 0.95)", ut(e, n.currentTime, r, a.x + B, a.y + a.h / 2, "middle"), e.restore(), dt(e, H(t), i, r > 0);
+function dt(e, t, n, r, i) {
+	let a = mt(t.rect);
+	e.save(), U(e, a.x, a.y, a.w, a.h, a.h / 2), e.fillStyle = "rgba(20, 20, 20, 0.72)", e.fill(), e.font = "500 11px system-ui, -apple-system, sans-serif", e.textBaseline = "middle", e.fillStyle = "rgba(255, 255, 255, 0.95)", ft(e, n.currentTime, r, a.x + B, a.y + a.h / 2, "middle"), e.restore(), pt(e, H(t), i, r > 0);
 }
-function ut(e, t, n, r, i, a) {
-	let o = pt(t), s = pt(n), c = Xe(e), l = Ze(e, o, c), u = Ze(e, s, c), d = e.measureText(" / ").width, f = Math.max(l, u);
-	Qe(e, o, r + f - l, i, c);
+function ft(e, t, n, r, i, a) {
+	let o = ht(t), s = ht(n), c = Qe(e), l = $e(e, o, c), u = $e(e, s, c), d = e.measureText(" / ").width, f = Math.max(l, u);
+	et(e, o, r + f - l, i, c);
 	let p = e.textAlign;
-	e.textAlign = "left", e.fillText(" / ", r + f, i), e.textAlign = p, Qe(e, s, r + f + d, i, c);
+	e.textAlign = "left", e.fillText(" / ", r + f, i), e.textAlign = p, et(e, s, r + f + d, i, c);
 }
-function dt(e, t, n, r) {
+function pt(e, t, n, r) {
 	let i = t.h / 2;
 	if (e.save(), U(e, t.x, t.y, t.w, t.h, i), e.fillStyle = "rgba(255, 255, 255, 0.35)", e.fill(), n > 0 && (U(e, t.x, t.y, t.w * n, t.h, i), e.fillStyle = "#fff", e.fill()), r) {
 		let r = Math.max(t.x + 5, Math.min(t.x + t.w - 5, t.x + t.w * n));
@@ -441,18 +442,18 @@ function dt(e, t, n, r) {
 	}
 	e.restore();
 }
-function ft(e) {
+function mt(e) {
 	let t = Math.max(220, e.w - 24);
 	return {
 		x: e.x + e.w / 2 - t / 2,
-		y: e.y + e.h - it - 4,
+		y: e.y + e.h - ot - 4,
 		w: t,
-		h: it
+		h: ot
 	};
 }
 function H(e) {
 	if (e.el.mediaKind === "audio") {
-		let t = ft(e.rect), n = t.x + B + at + ot, r = Math.max(40, t.x + t.w - B - n);
+		let t = mt(e.rect), n = t.x + B + st + ct, r = Math.max(40, t.x + t.w - B - n);
 		return {
 			x: n,
 			y: t.y + (t.h - V) / 2,
@@ -472,14 +473,14 @@ function U(e, t, n, r, i, a) {
 	let o = Math.min(a, i / 2, r / 2);
 	e.beginPath(), e.moveTo(t + o, n), e.lineTo(t + r - o, n), e.quadraticCurveTo(t + r, n, t + r, n + o), e.lineTo(t + r, n + i - o), e.quadraticCurveTo(t + r, n + i, t + r - o, n + i), e.lineTo(t + o, n + i), e.quadraticCurveTo(t, n + i, t, n + i - o), e.lineTo(t, n + o), e.quadraticCurveTo(t, n, t + o, n), e.closePath();
 }
-function pt(e) {
+function ht(e) {
 	if (!Number.isFinite(e) || e < 0) return "0:00";
 	let t = Math.floor(e);
 	return `${Math.floor(t / 60)}:${(t % 60).toString().padStart(2, "0")}`;
 }
 //#endregion
 //#region packages/pptx/src/slide-nav.ts
-function mt(e) {
+function gt(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n = 0; n < e.length; n++) {
 		let r = e[n];
@@ -487,18 +488,18 @@ function mt(e) {
 	}
 	return t;
 }
-function ht(e, t) {
+function _t(e, t) {
 	if (e === "") return;
-	let n = Ve("ppt/slides", e);
+	let n = Ue("ppt/slides", e);
 	return t.get(n);
 }
-function gt(e, t, n) {
-	let r = He(e);
-	return r === null ? ht(e, t) : Ue(r, n, t.size);
+function vt(e, t, n) {
+	let r = We(e);
+	return r === null ? _t(e, t) : Ge(r, n, t.size);
 }
 //#endregion
 //#region packages/pptx/src/slide-repository.ts
-var _t = class {
+var yt = class {
 	#e;
 	#t;
 	#n;
@@ -508,10 +509,10 @@ var _t = class {
 	#o;
 	constructor(e) {
 		if (!Number.isSafeInteger(e.slideCount) || e.slideCount < 0) throw TypeError("slideCount must be a non-negative safe integer");
-		this.#e = e.slideCount, this.#t = e.loadSlide, this.#n = new ze({
+		this.#e = e.slideCount, this.#t = e.loadSlide, this.#n = new Ve({
 			maxEntries: e.maxCachedSlides,
 			maxWeight: e.maxCachedStructuralBytes,
-			measure: (e) => Fe(e).jsonBytes
+			measure: (e) => Oe(e).jsonBytes
 		});
 	}
 	get slideCount() {
@@ -529,7 +530,7 @@ var _t = class {
 			try {
 				return await t(r);
 			} catch (e) {
-				let t = vt(e);
+				let t = bt(e);
 				throw t ? (this.#l(t, n), this.#o === n ? this.#a ?? t : t) : e;
 			}
 		});
@@ -541,7 +542,7 @@ var _t = class {
 			try {
 				n = await this.#t(e);
 			} catch (e) {
-				let n = vt(e);
+				let n = bt(e);
 				throw n ? (this.#l(n, t), this.#o === t ? this.#a ?? n : n) : e;
 			}
 			if (this.#o === t && this.#a) throw this.#a;
@@ -558,22 +559,22 @@ var _t = class {
 		t !== this.#r || this.#a || (this.#a = e, this.#o = t, this.#r += 1, this.#n.clear());
 	}
 };
-function vt(e) {
-	return e instanceof x ? e : v(e);
+function bt(e) {
+	return e instanceof m ? e : o(e);
 }
 //#endregion
 //#region packages/pptx/src/embedded-fonts.ts
-var yt = 1;
+var xt = 1;
 function W(e) {
 	return e.trim().toLowerCase();
 }
-async function bt(e, t) {
+async function St(e, t) {
 	if (e.length === 0) return {
 		faces: [],
 		aliases: /* @__PURE__ */ new Map(),
 		authoredFamilies: /* @__PURE__ */ new Map()
 	};
-	let n = yt++, r = /* @__PURE__ */ new Map();
+	let n = xt++, r = /* @__PURE__ */ new Map();
 	for (let t of e) {
 		let e = W(t.fontName);
 		r.has(e) || r.set(e, `__ooxml_pptx_${n}_${r.size + 1}`);
@@ -593,7 +594,7 @@ async function bt(e, t) {
 				return null;
 			}
 		}))).filter((e) => e !== null);
-		if (o.length !== 0) for (let e of await Ae(o)) a.has(e) ? j([e]) : (a.add(e), i.push(e));
+		if (o.length !== 0) for (let e of await ve(o)) a.has(e) ? O([e]) : (a.add(e), i.push(e));
 	}
 	let o = new Set(i.map((e) => W(e.family))), s = new Map([...r].filter(([, e]) => o.has(W(e))));
 	return {
@@ -602,16 +603,16 @@ async function bt(e, t) {
 		authoredFamilies: new Map([...s].map(([e, t]) => [t, e]))
 	};
 }
-function xt(e, t) {
+function Ct(e, t) {
 	return e.filter((e) => e === null || !t.has(e.trim().toLowerCase()));
 }
 //#endregion
 //#region packages/pptx/src/worker.ts?worker&inline
-var St = "var e=(e,t)=>()=>(e&&(t=e(e=0)),t),t=class e extends Error{code;constructor(t,n){super(n),this.name=`OoxmlError`,this.code=t,Object.setPrototypeOf(this,e.prototype)}},n=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}};const r=67108864,i=`https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap`,a=`https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap`,o=`https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap`,s={calibri:{url:`https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Carlito`},\"calibri light\":{url:`https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Carlito`},cambria:{url:`https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Caladea`},\"cambria math\":{url:`https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Caladea`},\"franklin gothic book\":{url:o,loadFamily:`Libre Franklin`},\"franklin gothic medium\":{url:o,loadFamily:`Libre Franklin`},\"nunito sans\":{url:`https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap`},nunito:{url:`https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap`},\"open sans\":{url:`https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap`},roboto:{url:`https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap`},lato:{url:`https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap`},montserrat:{url:`https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap`},poppins:{url:`https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap`},raleway:{url:`https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap`},\"playfair display\":{url:`https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap`},ubuntu:{url:`https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap`},\"sakkal majalla\":{url:i,loadFamily:`Noto Naskh Arabic`},\"traditional arabic\":{url:i,loadFamily:`Noto Naskh Arabic`},\"simplified arabic\":{url:i,loadFamily:`Noto Naskh Arabic`},\"arabic typesetting\":{url:i,loadFamily:`Noto Naskh Arabic`},\"univers next arabic\":{url:a,loadFamily:`Noto Sans Arabic`},\"noto naskh arabic\":{url:i,loadFamily:`Noto Naskh Arabic`},\"noto sans arabic\":{url:a,loadFamily:`Noto Sans Arabic`}},c={\"noto sans cjk sc\":`Noto Sans SC`,\"noto serif cjk sc\":`Noto Serif SC`,\"noto sans cjk tc\":`Noto Sans TC`,\"noto serif cjk tc\":`Noto Serif TC`,\"noto sans cjk jp\":`Noto Sans JP`,\"noto serif cjk jp\":`Noto Serif JP`,\"noto sans cjk kr\":`Noto Sans KR`,\"noto serif cjk kr\":`Noto Serif KR`,\"noto sans cjk hk\":`Noto Sans HK`};function l(e){return e?c[e.trim().toLowerCase()]??null:null}function u(e){if(!e)return null;let t=l(e)??e.trim(),n=t.toLowerCase(),r=n.match(/^noto\\s+(?:sans|serif)\\s+(?:cjk\\s+)?(sc|tc|hk|jp|kr)$/);return r?r[1]:/[ᄀ-ᇿ㄰-㆏가-힯]/.test(t)?`kr`:/[぀-ヿ]/.test(t)?`jp`:/jhenghei|微軟正黑|新細明|細明|pmingliu|mingliu|dfkai|標楷|華康|cns11643|kaiti tc|ming\\s*liu/.test(n)||/新細明體|細明體|標楷體|微軟正黑體|華康/.test(t)?`tc`:/simsun|nsimsun|simhei|simkai|simfang|yahei|dengxian|fangsong|kaiti|youyuan|lisu|stsong|stkaiti|stfangsong|stheiti|stxihei|stzhongsong|songti sc|heiti sc|微软雅黑/.test(n)||/宋体|黑体|楷体|仿宋|等线|微软雅黑|隶书|幼圆/.test(t)?`sc`:/malgun|batang|gulim|dotum|gungsuh|nanum|new gulim|hancom|hy(gothic|graphic|namu)?/.test(n)?`kr`:/\\bmeiryo\\b|\\byu\\s*(gothic|mincho)\\b|yugothic|yumincho|hiragino|\\bms\\s*(gothic|mincho|pgothic|pmincho|ui\\s*gothic)\\b|\\bms[pg]?(gothic|mincho)\\b|ipa(ex)?(gothic|mincho)|noto\\s+(sans|serif)\\s+jp|游ゴシック|游明朝|ＭＳ|メイリオ|ヒラギノ/.test(n)||/游ゴシック|游明朝|ＭＳ ゴシック|ＭＳ 明朝|ＭＳ Ｐゴシック|メイリオ|ヒラギノ/.test(t)?`jp`:null}const d=e=>`https://fonts.googleapis.com/css2?family=${e}:wght@400;700&display=swap`,f={\"noto sans kr\":{url:d(`Noto+Sans+KR`)},\"noto sans sc\":{url:d(`Noto+Sans+SC`)},\"noto sans tc\":{url:d(`Noto+Sans+TC`)},\"noto sans hk\":{url:d(`Noto+Sans+HK`)},\"noto sans jp\":{url:d(`Noto+Sans+JP`)},\"noto serif kr\":{url:d(`Noto+Serif+KR`)},\"noto serif sc\":{url:d(`Noto+Serif+SC`)},\"noto serif tc\":{url:d(`Noto+Serif+TC`)},\"noto serif jp\":{url:d(`Noto+Serif+JP`)}},p=Object.fromEntries(Object.entries(c).map(([e,t])=>[e,{...f[t.toLowerCase()],loadFamily:t}])),ee={...f,...p,\"noto sans\":{url:d(`Noto+Sans`)},\"noto serif\":{url:d(`Noto+Serif`)},\"noto sans devanagari\":{url:d(`Noto+Sans+Devanagari`)},\"noto sans thai\":{url:d(`Noto+Sans+Thai`)},\"noto sans hebrew\":{url:d(`Noto+Sans+Hebrew`)},\"noto serif hebrew\":{url:d(`Noto+Serif+Hebrew`)}};var te=class e{hasHan=!1;hasHangul=!1;hasKana=!1;hasArabic=!1;hasThai=!1;hasHebrew=!1;hasDevanagari=!1;hasCyrGreek=!1;constructor(e){this.cjkLang=e}clone(){let t=new e(this.cjkLang);return t.hasHan=this.hasHan,t.hasHangul=this.hasHangul,t.hasKana=this.hasKana,t.hasArabic=this.hasArabic,t.hasThai=this.hasThai,t.hasHebrew=this.hasHebrew,t.hasDevanagari=this.hasDevanagari,t.hasCyrGreek=this.hasCyrGreek,t}addText(e){let t=()=>this.hasHan&&this.hasHangul&&this.hasKana&&this.hasArabic&&this.hasThai&&this.hasHebrew&&this.hasDevanagari&&this.hasCyrGreek;outer:for(let n of e)if(n)for(let e of n){let n=e.codePointAt(0);if(n!==void 0&&!(n<=591)&&(n>=4352&&n<=4607||n>=12592&&n<=12687||n>=44032&&n<=55215?this.hasHangul=!0:n>=12352&&n<=12543?this.hasKana=!0:n>=13312&&n<=19903||n>=19968&&n<=40959||n>=63744&&n<=64255||n>=131072&&n<=195103?this.hasHan=!0:n>=1536&&n<=1791||n>=1872&&n<=1919||n>=2208&&n<=2303||n>=64336&&n<=65023||n>=65136&&n<=65279?this.hasArabic=!0:n>=3584&&n<=3711?this.hasThai=!0:n>=1424&&n<=1535||n>=64285&&n<=64335?this.hasHebrew=!0:n>=2304&&n<=2431?this.hasDevanagari=!0:(n>=1024&&n<=1279||n>=880&&n<=1023)&&(this.hasCyrGreek=!0),t()))break outer}}names(){let e=[],t=new Set;this.hasHangul&&t.add(`kr`),this.hasKana&&t.add(`jp`),this.hasHan&&t.size===0&&t.add(this.cjkLang??`jp`);for(let n of[`kr`,`sc`,`tc`,`hk`,`jp`])if(t.has(n)){let t={kr:`KR`,sc:`SC`,tc:`TC`,hk:`HK`,jp:`JP`}[n];e.push(`Noto Sans ${t}`),n!==`hk`&&e.push(`Noto Serif ${t}`)}return this.hasCyrGreek&&e.push(`Noto Sans`,`Noto Serif`),this.hasArabic&&e.push(`Noto Naskh Arabic`,`Noto Sans Arabic`),this.hasThai&&e.push(`Noto Sans Thai`),this.hasHebrew&&e.push(`Noto Sans Hebrew`,`Noto Serif Hebrew`),this.hasDevanagari&&e.push(`Noto Sans Devanagari`),e}};function ne(e){return e===`image-dimension`||e===`image-pixels`||e===`active-decoded-bytes`}function re(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function ie(e){if(!(!e||typeof e!=`object`))try{let t=e,n=t.code,r=t.metric,i=t.limit,a=t.observed;return n!==`ooxml-decoded-image-limit`||!ne(r)||!re(i)||!re(a)||a<=i?void 0:{metric:r,limit:i,observed:a}}catch{return}}var ae,oe,m,se=e((()=>{ae=1<<25,oe=1<<27,ae*4,oe*4,m=class e extends RangeError{code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}}}));function ce(e){if(!(typeof e!=`object`||!e))try{let t=e,n=t.code,r=t.message;return n===`ooxml-tiff-decode`&&typeof r==`string`?{message:r}:void 0}catch{return}}var le,ue=e((()=>{le=class e extends Error{code=`ooxml-tiff-decode`;constructor(t,n){super(t,n),this.name=`TiffDecodeError`,Object.setPrototypeOf(this,e.prototype)}}}));function de(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var fe=class{state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},h=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function pe(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function me(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function he(e,t){return e({module_or_path:t})}var ge=class{runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new fe(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),_e),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return this.runtime.run(e)}poison(){this.runtime.poison(new h(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):he(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,me(e)}};function _e(e){return pe(e)?new h(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function ve(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function ye(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return ve(t.requiredBytes)&&ve(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var g=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function be(e){if(e instanceof g)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!ye(r)))return new g(r)}function xe(e,t,n){let r=be(e);if(!(!r||r.offeredBytes!==t||r.requiredBytes>n))return r}se(),ue();const _=`OOXML_RESOURCE_LIMIT:`;function v(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function Se(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return v(t.archiveEntryCount)&&v(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||v(t.largestInflatedEntryBytes))&&v(t.distinctInflatedBytes)&&v(t.operationInflatedBytes)}function y(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!Se(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function Ce(e){return e===`docx`||e===`xlsx`||e===`pptx`}function we(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function b(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function x(e){return b(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function Te(e){return!b(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const S=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}]]),Ee=new Set([...S.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),De=new Set([...S.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function Oe(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!Ce(t.format)||!b(t.operation,256)||!x(t.resource)||!x(t.metric)||!v(t.limit)||!v(t.observed)||typeof t.configurable!=`boolean`||!Se(t.usage)?!1:!(`part`in t)||Te(t.part)}function C(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!we(t.stage)||!Oe(t.violation))return!1;let n=t.violation,r=S.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(Ee.has(n.resource)&&De.has(n.metric))}function ke(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function Ae(e){if(!C(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:ke(t.usage)}};return C(n)?n:void 0}function je(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``}: ${t.metric} ${t.observed} > ${t.limit}`}function Me(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(_))return;let r;try{r=JSON.parse(t.slice(21))}catch{return}if(!r||typeof r!=`object`)return;let i=r;if(!(i.code!==`ooxml-resource-limit`||!C(i.details)))return new n(je(i.details),i.details)}function Ne(e){let r=ie(e);if(r){let e=new m(r.metric,r.limit,r.observed);return{message:e.message,errorName:e.name,code:e.code,decodedImage:r}}let i=ce(e);if(i)return{message:i.message,errorName:`TiffDecodeError`,code:`ooxml-tiff-decode`};let a=be(e);if(a)return{message:a.message,errorName:a.name,code:a.code,insufficientCredit:{requiredBytes:a.requiredBytes,offeredBytes:a.offeredBytes}};let o=e instanceof t||e instanceof n?e:Me(e);if(o instanceof n){let e=Ae(o.details);return e?{message:typeof o.message==`string`?o.message:je(e),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:e}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(o instanceof t)return{message:typeof o.message==`string`?o.message:String(o.message),errorName:b(o.name,128)?o.name:`OoxmlError`,...x(o.code)?{code:o.code}:{}};let s=e instanceof Error?e.message:String(e);if(typeof s==`string`&&s.startsWith(_))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let c=e instanceof Error?e:Error(s),l=c;return{message:typeof c.message==`string`?c.message:String(c.message),errorName:b(c.name,128)?c.name:`Error`,...typeof l.code==`string`?{code:l.code}:{}}}function w(e){try{return Ne(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}const Pe=new Set([`encrypted`,`invalid-password`,`unsupported-encryption`,`legacy-binary-format`,`not-ooxml`]),Fe={\"image-dimension\":!0,\"image-pixels\":!0,\"active-decoded-bytes\":!0};function Ie(e){return typeof e==`string`&&Object.prototype.hasOwnProperty.call(Fe,e)}function Le(e,t){if(e!==`ooxml-decoded-image-limit`||!t||typeof t!=`object`)return;let n=t,r=n.metric,i=n.limit,a=n.observed;if(!(!Ie(r)||!v(i)||!v(a)||a<=i))return{metric:r,limit:i,observed:a}}function Re(e){let r=e.message,i=e.errorName,a=e.code,o=e.decodedImage,s=e.insufficientCredit,c=e.resourceLimit,l=typeof r==`string`?r:`Worker operation failed with an invalid error payload`,u=b(i,128)?i:void 0,d=typeof a==`string`?a:void 0,f=Le(d,o);if(f)return new m(f.metric,f.limit,f.observed);if(d===`ooxml-tiff-decode`)return new le(l);if(d===`ooxml-insufficient-credit`&&ye(s))return new g(s);if(d===`ooxml-resource-limit`&&C(c))return new n(l,c);if(d&&Pe.has(d))return new t(d,l);let p=u===`TypeError`?TypeError(l):u===`RangeError`?RangeError(l):Error(l);return u&&(p.name=u),d!==void 0&&Object.assign(p,{code:d}),p}function ze(e){try{return Re(e)}catch{return Error(`Worker operation failed with an unreadable error payload`)}}function Be(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function Ve(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const T=`ooxml-pull-v1`;function E(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function He(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var Ue=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,E(this.maxRetainedBytes,`max retained lease bytes`),E(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},We=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){He(e.sessionId),E(e.operationId,`operation id`),E(e.generation,`generation`),E(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&E(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=w(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(E(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:T,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){E(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(E(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:T,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:T,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};function D(e,t){if(!Number.isSafeInteger(e)||e<0)throw Error(`${t} must be a non-negative safe integer`)}function O(e,t,n){return D(e,`resource measurement`),D(t,`resource measurement`),D(n,`resource measurement limit`),e>n||t>n||t>n-e?n===2**53-1?n:n+1:e+t}function Ge(e,t=2**53-1){D(t,`resource measurement limit`);let n=0;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=3}else a=3;if(n=O(n,a,t),n>t)return n}return n}function Ke(e,t=2**53-1){D(t,`resource measurement limit`);let n=O(0,2,t);if(n>t)return n;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i===34||i===92||i===8||i===9||i===10||i===12||i===13)a=2;else if(i<=31)a=6;else if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=6}else a=i>=55296&&i<=57343?6:3;if(n=O(n,a,t),n>t)return n}return n}function k(e,t){return O(0,e,t)}function A(e,t=2**53-1,n=!1){if(D(t,`resource measurement limit`),e===null)return{jsonBytes:k(4,t),stringValueUtf8Bytes:0};if(typeof e==`string`)return{jsonBytes:Ke(e,t),stringValueUtf8Bytes:Ge(e,t)};if(typeof e==`boolean`)return{jsonBytes:k(e?4:5,t),stringValueUtf8Bytes:0};if(typeof e==`number`)return{jsonBytes:k((Number.isFinite(e)?String(Object.is(e,-0)?0:e):`null`).length,t),stringValueUtf8Bytes:0};if(typeof e==`bigint`)throw TypeError(`BigInt values cannot be serialized to JSON`);if(Array.isArray(e)){let n=k(2,t),r=0;for(let i=0;i<e.length;i+=1){i!==0&&(n=O(n,1,t));let a=A(e[i],t,!0);n=O(n,a.jsonBytes,t),r=O(r,a.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}if(typeof e==`object`){let n=k(2,t),r=0,i=0;for(let[a,o]of Object.entries(e)){if(o===void 0||typeof o==`function`||typeof o==`symbol`)continue;i++!==0&&(n=O(n,1,t)),n=O(n,Ke(a,t),t),n=O(n,1,t);let e=A(o,t);n=O(n,e.jsonBytes,t),r=O(r,e.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}return{jsonBytes:n?k(4,t):0,stringValueUtf8Bytes:0}}({...s,...ee});function*j(e){for(let t of e?.paragraphs??[])for(let e of t.runs)e.type===`text`&&(yield e.text)}function*qe(e){for(let t of e?.paragraphs??[]){t.defFontFamily&&(yield t.defFontFamily);for(let e of t.runs)e.type===`text`&&(e.fontFamily&&(yield e.fontFamily),e.fontFamilyEa&&(yield e.fontFamilyEa),e.fontFamilySym&&(yield e.fontFamilySym))}}function*Je(e){for(let t of e.elements)if(t.type===`shape`)yield*j(t.textBody);else if(t.type===`table`)for(let e of t.rows)for(let t of e.cells)yield*j(t.textBody);else if(t.type===`chart`){t.chart.title&&(yield t.chart.title);for(let e of t.chart.categories)yield e;for(let e of t.chart.series)e.name&&(yield e.name)}}var Ye=class e{scripts;families;constructor(e,t,n,r){this.majorFont=e,this.minorFont=t;let i=u(e)??u(t)??null;this.scripts=n??new te(i),this.families=r??new Set,e&&this.families.add(e),t&&this.families.add(t)}addSlide(e){this.scripts.addText(Je(e));for(let t of e.elements)if(t.type===`shape`)for(let e of qe(t.textBody))this.families.add(e);else if(t.type===`table`)for(let e of t.rows)for(let t of e.cells)for(let e of qe(t.textBody))this.families.add(e)}names(){return[...this.families,...this.scripts.names()]}withSlide(t){let n=new e(this.majorFont,this.minorFont,this.scripts.clone(),new Set(this.families));return n.addSlide(t),n}};const M=Object.freeze({archiveEntryCount:0,declaredInflatedBytes:0,distinctInflatedBytes:0,operationInflatedBytes:0}),Xe=67108864;function N(e,t){if(e!==null&&typeof e!=`string`)throw Error(`invalid PPTX presentation bootstrap ${t}`)}function Ze(e,t){if(!e||typeof e!=`object`||Array.isArray(e))throw Error(`invalid PPTX presentation bootstrap slide at ${t}`);let n=e;if(n.index!==t)throw Error(`invalid PPTX presentation bootstrap slide index ${n.index}`);if(n.partName!==void 0&&typeof n.partName!=`string`)throw Error(`invalid PPTX presentation bootstrap slide partName at ${t}`);return Object.freeze({index:n.index,...n.partName===void 0?{}:{partName:n.partName}})}function Qe(e,t){if(!e||typeof e!=`object`||Array.isArray(e))throw Error(`invalid PPTX presentation bootstrap embedded font at ${t}`);let n=e;if(typeof n.fontName!=`string`||n.fontName.length===0||![`regular`,`bold`,`italic`,`boldItalic`].includes(n.style??``)||typeof n.partPath!=`string`||n.partPath.length===0||n.partPath.startsWith(`/`)||n.partPath.split(`/`).includes(`..`)||![`application/x-font-ttf`,`application/x-fontdata`].includes(n.contentType??``))throw Error(`invalid PPTX presentation bootstrap embedded font fields at ${t}`);return Object.freeze({fontName:n.fontName,style:n.style,partPath:n.partPath,contentType:n.contentType})}function $e(e){if(!e||typeof e!=`object`||Array.isArray(e))throw Error(`invalid PPTX presentation bootstrap payload`);let t=e;if(!Number.isSafeInteger(t.slideCount)||(t.slideCount??-1)<0||!Number.isSafeInteger(t.slideWidth)||(t.slideWidth??0)<=0||!Number.isSafeInteger(t.slideHeight)||(t.slideHeight??0)<=0||!Array.isArray(t.embeddedFonts)||!Array.isArray(t.slides)||t.slides.length!==t.slideCount)throw Error(`invalid PPTX presentation bootstrap dimensions or slide count`);return N(t.defaultTextColor,`defaultTextColor`),N(t.majorFont,`majorFont`),N(t.minorFont,`minorFont`),N(t.hlinkColor,`hlinkColor`),N(t.folHlinkColor,`folHlinkColor`),Object.freeze({slideCount:t.slideCount,slideWidth:t.slideWidth,slideHeight:t.slideHeight,defaultTextColor:t.defaultTextColor,majorFont:t.majorFont,minorFont:t.minorFont,hlinkColor:t.hlinkColor,folHlinkColor:t.folHlinkColor,embeddedFonts:Object.freeze(t.embeddedFonts.map(Qe)),slides:Object.freeze(t.slides.map(Ze))})}function et(e){return Object.freeze({type:`media`,x:e.x,y:e.y,width:e.width,height:e.height,rotation:e.rotation,flipH:e.flipH,flipV:e.flipV,mediaKind:e.mediaKind,posterPath:e.posterPath,posterMimeType:e.posterMimeType,mediaPath:e.mediaPath,mimeType:e.mimeType})}function tt(e){return Object.freeze({...e.id===void 0?{}:{id:e.id},...e.authorId===void 0?{}:{authorId:e.authorId},...e.author===void 0?{}:{author:e.author},...e.date===void 0?{}:{date:e.date},...e.status===void 0?{}:{status:e.status},text:e.text})}function nt(e){return Object.freeze({...e})}function rt(e){return Object.freeze({...e.authorId===void 0?{}:{authorId:e.authorId},...e.modernAuthorId===void 0?{}:{modernAuthorId:e.modernAuthorId},...e.id===void 0?{}:{id:e.id},...e.index===void 0?{}:{index:e.index},...e.author===void 0?{}:{author:e.author},...e.date===void 0?{}:{date:e.date},...e.x===void 0?{}:{x:e.x},...e.y===void 0?{}:{y:e.y},...e.anchors?.length?{anchors:Object.freeze(e.anchors.map(nt))}:{},...e.status===void 0?{}:{status:e.status},text:e.text,...e.replies?.length?{replies:Object.freeze(e.replies.map(tt))}:{}})}function it(e,t){if(e.index!==t.index||e.partName!==t.partName)throw Error(`PPTX pulled slide identity does not match bootstrap index ${t.index}`);return Object.freeze({index:t.index,...t.partName===void 0?{}:{partName:t.partName},notes:e.notes??null,hidden:e.hidden??!1,mediaElements:Object.freeze(e.elements.filter(e=>e.type===`media`).map(et)),...e.comments?.length?{comments:Object.freeze(e.comments.map(rt))}:{}})}function at(e,t,r){if(!(e<=t))throw new n(`PPTX presentation preflight exceeded its hard limit of ${t} projected bytes`,{stage:`parsing`,violation:{format:`pptx`,operation:`presentation-preflight`,resource:`presentation-preflight`,metric:`projected-bytes`,limit:t,observed:Math.min(e,t+1),configurable:!1,usage:r}})}var ot=class{slideCountValue;slideWidthValue;slideHeightValue;defaultTextColorValue;majorFontValue;minorFontValue;hlinkColorValue;folHlinkColorValue;embeddedFontsValue;descriptors;slides=[];fonts;fontPreloadNames;fontProjectionBytes;projectionBytesValue;limit;pending=null;finished=null;constructor(e,t={}){let n=$e(e),r=t.hardLimitForTesting??Xe;if(!Number.isSafeInteger(r)||r<=0||r>Xe)throw Error(`invalid PPTX presentation preflight test limit`);this.limit=r,this.slideCountValue=n.slideCount,this.slideWidthValue=n.slideWidth,this.slideHeightValue=n.slideHeight,this.defaultTextColorValue=n.defaultTextColor,this.majorFontValue=n.majorFont,this.minorFontValue=n.minorFont,this.hlinkColorValue=n.hlinkColor,this.folHlinkColorValue=n.folHlinkColor,this.embeddedFontsValue=n.embeddedFonts,this.descriptors=[...n.slides],this.fonts=new Ye(this.majorFontValue,this.minorFontValue),this.fontPreloadNames=Object.freeze(this.fonts.names()),this.fontProjectionBytes=A(this.fontPreloadNames,this.limit).jsonBytes,this.projectionBytesValue=A({slideCount:this.slideCountValue,slideWidth:this.slideWidthValue,slideHeight:this.slideHeightValue,defaultTextColor:this.defaultTextColorValue,majorFont:this.majorFontValue,minorFont:this.minorFontValue,hlinkColor:this.hlinkColorValue,folHlinkColor:this.folHlinkColorValue,embeddedFonts:this.embeddedFontsValue,remainingSlides:this.descriptors,slides:[],fontPreloadNames:this.fontPreloadNames},this.limit).jsonBytes,at(this.projectionBytesValue,this.limit,M)}get acceptedSlideCount(){return this.finished?.slideCount??this.slides.length}get projectedBytes(){return this.projectionBytesValue}get remainingDescriptorCount(){return this.descriptors.reduce((e,t)=>e+Number(t!==void 0),0)}get latestSlide(){return this.slides[this.slides.length-1]}get currentFontPreloadNames(){return this.fontPreloadNames}snapshot(){if(this.finished)return this.finished;if(this.pending)throw Error(`PPTX presentation preflight has an uncommitted slide`);return Object.freeze({slideCount:this.slideCountValue,slideWidth:this.slideWidthValue,slideHeight:this.slideHeightValue,defaultTextColor:this.defaultTextColorValue,majorFont:this.majorFontValue,minorFont:this.minorFontValue,hlinkColor:this.hlinkColorValue,folHlinkColor:this.folHlinkColorValue,embeddedFonts:this.embeddedFontsValue,slides:Object.freeze([...this.slides]),fontPreloadNames:this.fontPreloadNames})}addSlide(e,t=M){this.prepareSlide(e,t).commit()}prepareSlide(e,t=M){if(this.finished)throw Error(`PPTX presentation preflight is already finished`);if(this.pending)throw Error(`PPTX presentation preflight already has a prepared slide`);let n=this.slides.length,r=this.descriptors[n];if(!r)throw Error(`PPTX presentation preflight received an extra slide`);let i=it(e,r),a=this.fonts.withSlide(e),o=Object.freeze(a.names()),s=A(o,this.limit).jsonBytes,c=A(i,this.limit).jsonBytes,l=this.projectionBytesValue-this.fontProjectionBytes-A(r,this.limit).jsonBytes+4;l=O(l,s,this.limit),l=O(l,c,this.limit),this.slides.length!==0&&(l=O(l,1,this.limit));let u=A({slide:i,fontPreloadNames:o},this.limit).jsonBytes,d=O(this.projectionBytesValue,u,this.limit);at(Math.max(d,l),this.limit,t);let f={state:`prepared`,fact:i,fonts:a,fontNames:o,fontBytes:s,committedBytes:l};return this.pending=f,{projectedBytes:d,commit:()=>{if(f.state!==`committed`){if(f.state===`rolled-back`)throw Error(`PPTX presentation preflight cannot commit a rolled-back slide`);if(this.pending!==f)throw Error(`PPTX presentation preflight prepared slide is stale`);this.descriptors[n]=void 0,this.slides.push(f.fact),this.fonts=f.fonts,this.fontPreloadNames=f.fontNames,this.fontProjectionBytes=f.fontBytes,this.projectionBytesValue=f.committedBytes,f.state=`committed`,this.pending=null}},rollback:()=>{if(f.state!==`rolled-back`){if(f.state===`committed`)throw Error(`PPTX presentation preflight cannot roll back a committed slide`);if(this.pending!==f)throw Error(`PPTX presentation preflight prepared slide is stale`);f.state=`rolled-back`,this.pending=null}}}}finish(){if(this.finished)return this.finished;if(this.pending)throw Error(`PPTX presentation preflight has an uncommitted slide`);if(this.slides.length!==this.slideCountValue)throw Error(`PPTX presentation preflight is incomplete: ${this.slides.length}/${this.slideCountValue} slides`);return this.finished=Object.freeze({slideCount:this.slideCountValue,slideWidth:this.slideWidthValue,slideHeight:this.slideHeightValue,defaultTextColor:this.defaultTextColorValue,majorFont:this.majorFontValue,minorFont:this.minorFontValue,hlinkColor:this.hlinkColorValue,folHlinkColor:this.folHlinkColorValue,embeddedFonts:this.embeddedFontsValue,slides:Object.freeze([...this.slides]),fontPreloadNames:this.fontPreloadNames}),this.descriptors=[],this.slides=[],this.projectionBytesValue=A(this.finished,this.limit).jsonBytes,this.finished}};function st(e){try{return y(e(e=>e.slide_cursor_resource_usage()))}catch(e){if(String(e).includes(`slide cursor usage is unavailable`))return;throw e}}function ct(e,t,n,r,i){let a,o;try{if(i){if(!r)throw Error(`slide payload is missing before acknowledgement`);let t=i(n,r,st(e));typeof t==`function`?a=t:t&&({rollback:a,commit:o}=t)}e(e=>e.acknowledge_slide(t.operationId,t.generation)),o?.()}catch(e){try{a?.()}catch{}throw e}}var lt=class{coordinatorGeneration=new Ue;sessions=new Map;pendingOpens=new Map;operationTail=Promise.resolve();resourceFailure;lifecycleState=`ready`;resetBarrier;resetIdentities=new Map;constructor(e,t,n=e=>e(this.requireArchive())){this.archive=e,this.acceptSlide=t,this.executeArchive=n}get coordinator(){return this.coordinatorGeneration}reserveOpen(e){if(this.assertReady(),dt(e),this.pendingOpens.has(e.sessionId)||this.sessions.has(e.sessionId))throw Error(`slide pull session id is already reserved`);this.pendingOpens.set(e.sessionId,{identity:e,canceled:!1})}abandonOpen(e){this.pendingOpens.delete(e)}get pendingOpenCount(){return this.pendingOpens.size}async open(e,t){if(this.assertReady(),this.resourceFailure)throw this.resourceFailure;if(!Number.isSafeInteger(e)||e<0)throw RangeError(`slide index must be a non-negative safe integer`);let n=this.pendingOpens.get(t.sessionId);if(!n||!P(n.identity,t))throw Error(`slide pull session open reservation is stale or missing`);let i,a=new Promise(e=>{i=e}),o=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(n.canceled)throw Error(`slide pull session open was canceled`);let a,o=!1,s=new We({...t,maxByteCredit:r,coordinator:this.coordinator,driver:{pull:n=>{let i;try{i=this.executeArchive(r=>r.pull_slide(e,t.operationId,t.generation,n))}catch(e){throw xe(e,n,r)||(this.latchResourceFailure(e),e)}let s=Be(i);return this.acceptSlide&&(a=JSON.parse(new TextDecoder().decode(new Uint8Array(s)))),o=!0,{payload:s,byteLength:s.byteLength,done:!0,transfer:[s]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:()=>{if(!o)throw Error(`slide unit is not awaiting acknowledgement`);try{ct(this.executeArchive,t,e,a,this.acceptSlide)}catch(e){throw this.latchResourceFailure(e),e}o=!1,a=void 0,this.sessions.delete(t.sessionId),i()},cancel:async()=>{try{this.archive()&&await this.executeArchive(e=>e.cancel_slide())}finally{a=void 0,o=!1,this.sessions.delete(t.sessionId),i()}},close:async()=>{try{this.archive()&&await this.executeArchive(e=>e.cancel_slide())}finally{a=void 0,o=!1,this.sessions.delete(t.sessionId),i()}},resourceUsage:()=>{try{return this.readResourceUsage()}catch(e){throw this.latchResourceFailure(e),e}}}});this.sessions.set(t.sessionId,{host:s,identity:t}),this.pendingOpens.delete(t.sessionId)}));this.operationTail=o.then(()=>a,()=>void 0);try{await o}catch(e){throw this.pendingOpens.delete(t.sessionId),i(),e}}async postOpenedSafely(e,t,n){if(this.lifecycleState!==`ready`){try{n(this.lifecycleError())}catch{}return}try{t()}catch(t){await this.closeIdentity(e);try{n(t)}catch{}}}dispatch(e,t){if(this.lifecycleState!==`ready`)return t(this.responseDuringReset(e)),Promise.resolve();let n=this.sessions.get(e.sessionId);if(n)return n.host.dispatch(e,t);let r=this.pendingOpens.get(e.sessionId);if(r&&(e.kind===`cancel`||e.kind===`close`)){let n=P(r.identity,e);return n&&(r.canceled=!0),t(n?{protocol:T,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}:this.staleLifecycleResponse(e)),Promise.resolve()}return e.kind===`cancel`||e.kind===`close`?(t({protocol:T,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}),Promise.resolve()):(t({protocol:T,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:w(Error(`slide pull session is not open`))}),Promise.resolve())}async dispatchSafely(e,t){try{await this.dispatch(e,t)}catch(n){try{t({protocol:T,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:w(n)})}catch{}}}run(e){if(this.lifecycleState!==`ready`)return Promise.reject(this.lifecycleError());let t=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;return e()})).catch(e=>{throw this.latchResourceFailure(e),e});return this.operationTail=t.then(()=>void 0,()=>void 0),t}reset(){if(this.resetBarrier)return this.resetBarrier;this.lifecycleState=`resetting`,this.captureResetIdentities();let e=this.performReset().then(()=>{this.resetIdentities.clear(),this.lifecycleState=`ready`},e=>{throw this.lifecycleState=`reset-failed`,e}).finally(()=>{this.resetBarrier===e&&(this.resetBarrier=void 0)});return this.resetBarrier=e,e}async performReset(){for(let e of this.pendingOpens.values())e.canceled=!0;let e=1;for(let{host:t,identity:n}of[...this.sessions.values()]){let r;if(await t.dispatch({protocol:T,kind:`close`,...n,requestId:e++},e=>{e.kind===`error`&&(r=ze(e.error))}),r)throw r}this.sessions.clear(),await this.operationTail,this.pendingOpens.clear(),this.archive()&&await this.executeArchive(e=>e.close_presentation_session()),this.coordinatorGeneration=new Ue,this.resourceFailure=void 0}assertReady(){if(this.lifecycleState!==`ready`)throw this.lifecycleError()}lifecycleError(){let e=this.lifecycleState===`reset-failed`,t=Error(e?`slide pull worker reset failed; retry reset before new work`:`slide pull worker reset is in progress`);return t.name=`PullSessionLifecycleError`,Object.assign(t,{code:e?`ooxml-pull-reset-failed`:`ooxml-pull-resetting`})}captureResetIdentities(){for(let{identity:e}of this.sessions.values())this.resetIdentities.set(e.sessionId,e);for(let{identity:e}of this.pendingOpens.values())this.resetIdentities.set(e.sessionId,e)}responseDuringReset(e){if(e.kind===`cancel`||e.kind===`close`){let t=this.resetIdentities.get(e.sessionId);return t&&!P(t,e)?this.staleLifecycleResponse(e):{protocol:T,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}}return{protocol:T,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:w(this.lifecycleError())}}requireArchive(){let e=this.archive();if(!e)throw Error(`Presentation not loaded`);return e}async closeIdentity(e){if(this.lifecycleState!==`ready`)return;let t=this.sessions.get(e.sessionId);if(t){await t.host.dispatch({protocol:T,kind:`close`,...e,requestId:1},()=>void 0);return}let n=this.pendingOpens.get(e.sessionId);n&&P(n.identity,e)&&(n.canceled=!0)}readResourceUsage(){return st(this.executeArchive)}latchResourceFailure(e){let t=e instanceof n?e:Me(e);t&&(this.resourceFailure??=t)}staleLifecycleResponse(e){return{protocol:T,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:{message:`stale lifecycle targets another slide operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`}}}};function ut(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}function dt(e){if(!Number.isSafeInteger(e.sessionId)||e.sessionId<=0)throw RangeError(`session id must be a positive safe integer`);if(!Number.isSafeInteger(e.operationId)||e.operationId<=0)throw RangeError(`operation id must be a positive safe integer`);if(!Number.isSafeInteger(e.generation)||e.generation<=0)throw RangeError(`generation must be a positive safe integer`)}function P(e,t){return e.sessionId===t.sessionId&&e.operationId===t.operationId&&e.generation===t.generation}var F=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,pt.unregister(this),e}free(){let e=this.__destroy_into_raw();J.__wbg_pptxarchive_free(e,0)}acknowledge_slide(e,t){let n=J.pptxarchive_acknowledge_slide(this.__wbg_ptr,e,t);if(n[1])throw U(n[0])}assert_healthy(){let e=J.pptxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw U(e[0])}cancel_slide(){J.pptxarchive_cancel_slide(this.__wbg_ptr)}close_presentation_session(){J.pptxarchive_close_presentation_session(this.__wbg_ptr)}extract_font(e){let t=H(e,J.__wbindgen_malloc,J.__wbindgen_realloc),n=q,r=J.pptxarchive_extract_font(this.__wbg_ptr,t,n);if(r[3])throw U(r[2]);var i=I(r[0],r[1]).slice();return J.__wbindgen_free(r[0],r[1]*1,1),i}extract_image(e){let t=H(e,J.__wbindgen_malloc,J.__wbindgen_realloc),n=q,r=J.pptxarchive_extract_image(this.__wbg_ptr,t,n);if(r[3])throw U(r[2]);var i=I(r[0],r[1]).slice();return J.__wbindgen_free(r[0],r[1]*1,1),i}extract_media(e){let t=H(e,J.__wbindgen_malloc,J.__wbindgen_realloc),n=q,r=J.pptxarchive_extract_media(this.__wbg_ptr,t,n);if(r[3])throw U(r[2]);var i=I(r[0],r[1]).slice();return J.__wbindgen_free(r[0],r[1]*1,1),i}constructor(e,t,n,r){let i=ht(e,J.__wbindgen_malloc),a=q,o=J.pptxarchive_new(i,a,!V(t),V(t)?BigInt(0):t,!V(n),V(n)?BigInt(0):n,!V(r),V(r)?BigInt(0):r);if(o[2])throw U(o[1]);return this.__wbg_ptr=o[0]>>>0,pt.register(this,this.__wbg_ptr,this),this}parse(){let e=J.pptxarchive_parse(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}presentation_bootstrap(){let e=J.pptxarchive_presentation_bootstrap(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}pull_slide(e,t,n,r){let i=J.pptxarchive_pull_slide(this.__wbg_ptr,e,t,n,r);if(i[3])throw U(i[2]);var a=I(i[0],i[1]).slice();return J.__wbindgen_free(i[0],i[1]*1,1),a}resource_usage(){let e=J.pptxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}slide_cursor_resource_usage(){let e=J.pptxarchive_slide_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=J.pptxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,U(i[2]);return e=n,t=r,R(n,r)}finally{J.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(F.prototype[Symbol.dispose]=F.prototype.free);function ft(){return{__proto__:null,\"./pptx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(R(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(R(e,t))}finally{J.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=H(n,J.__wbindgen_malloc,J.__wbindgen_realloc),i=q;mt().setInt32(e+4,i,!0),mt().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return R(e,t)},__wbindgen_init_externref_table:function(){let e=J.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const pt=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>J.__wbg_pptxarchive_free(e>>>0,1));function I(e,t){return e>>>=0,B().subarray(e/1,e/1+t)}let L=null;function mt(){return(L===null||L.buffer.detached===!0||L.buffer.detached===void 0&&L.buffer!==J.memory.buffer)&&(L=new DataView(J.memory.buffer)),L}function R(e,t){return e>>>=0,gt(e,t)}let z=null;function B(){return(z===null||z.byteLength===0)&&(z=new Uint8Array(J.memory.buffer)),z}function V(e){return e==null}function ht(e,t){let n=t(e.length*1,1)>>>0;return B().set(e,n/1),q=e.length,n}function H(e,t,n){if(n===void 0){let n=K.encode(e),r=t(n.length,1)>>>0;return B().subarray(r,r+n.length).set(n),q=n.length,r}let r=e.length,i=t(r,1)>>>0,a=B(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=B().subarray(i+o,i+r),a=K.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return q=o,i}function U(e){let t=J.__wbindgen_externrefs.get(e);return J.__externref_table_dealloc(e),t}let W=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});W.decode();let G=0;function gt(e,t){return G+=t,G>=2146435072&&(W=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),W.decode(),G=t),W.decode(B().subarray(e,e+t))}const K=new TextEncoder;`encodeInto`in K||(K.encodeInto=function(e,t){let n=K.encode(e);return t.set(n),{read:e.length,written:n.length}});let q=0,J;function _t(e,t){return J=e.exports,L=null,z=null,J.__wbindgen_start(),J}async function vt(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function yt(e){if(J!==void 0)return J;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let t=ft();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:n,module:r}=await vt(await e,t);return _t(n,r)}async function bt(e){return J=void 0,L=null,z=null,yt(e)}const Y=new ge(yt,{freeArchive:e=>e.free(),reinit:bt});let X=null,Z=`empty`;function xt(){if(Z!==`empty`){let e=Error(`this PPTX worker already owns a presentation parse`);throw e.name=`PptxWorkerStateError`,Object.assign(e,{code:`ooxml-pptx-parse-already-started`})}Z=`opening`}const Q=new lt(()=>Y.archive,(e,t,n)=>{if(X){if(e!==X.acceptedSlideCount)throw Error(`PPTX preflight expected slide ${X.acceptedSlideCount}, received ${e}`);return X.prepareSlide(t,n)}},e=>{let t=Y.archive;if(!t)throw Error(`Presentation not loaded`);return Y.run(()=>e(t))}),$=(e,t)=>self.postMessage(e,t);self.onmessage=async e=>{let t=e.data;if(ut(t)){await Q.dispatchSafely(t,$);return}if(t.kind===`init`){Y.setWasmInput(de(t.wasmUrl)??t.wasmUrl);return}let n=t.id,r=!1;try{if(t.kind===`openSlideSession`&&Q.reserveOpen(t),t.kind===`parse`&&(xt(),r=!0),t.kind===`openSlideSession`){await Y.ensureReady(),await Q.open(t.slideIndex,t),await Q.postOpenedSafely(t,()=>$({kind:`slideSessionOpened`,id:n,sessionId:t.sessionId,operationId:t.operationId,generation:t.generation}),e=>$({kind:`error`,id:n,...w(e)}));return}t.kind===`parse`&&await Q.reset(),await Q.run(async()=>{if(await Y.ensureReady(),t.kind!==`parse`&&Y.archive){let e=Y.archive;Y.run(()=>e.assert_healthy())}if(t.kind===`parse`){X=null;let[e,r,i]=Ve(t.resourcePolicy),a=Y.run(()=>{let n=new F(new Uint8Array(t.buffer),e,r,i);return Y.setArchive(n),JSON.parse(new TextDecoder().decode(n.presentation_bootstrap()))});X=t.progressiveLayout?null:new ot(a),$({kind:`presentationOpened`,id:n,bootstrap:a}),Z=`ready`;return}let e=Y.archive;if(!e)throw Error(`No pptx loaded`);if(t.kind===`finishPresentationPreflight`){if(!X)throw Error(`PPTX presentation preflight is not active`);let e=X.finish();X=null,$({kind:`presentationPreflightReady`,id:n,preflight:e});return}if(t.kind===`extractMedia`){let r=Y.run(()=>e.extract_media(t.path).buffer);$({kind:`mediaExtracted`,id:n,bytes:r},[r]);return}if(t.kind===`extractImage`){let r=Y.run(()=>e.extract_image(t.path).buffer);$({kind:`imageExtracted`,id:n,bytes:r},[r]);return}if(t.kind===`extractFont`){let r=Y.run(()=>e.extract_font(t.path).buffer);$({kind:`fontExtracted`,id:n,bytes:r},[r]);return}if(t.kind===`resourceUsage`){$({kind:`resourceUsage`,id:n,usage:y(Y.run(()=>e.resource_usage()))});return}t.kind===`toMarkdown`&&$({kind:`markdownRendered`,id:n,markdown:Y.run(()=>e.to_markdown())})})}catch(e){r&&(Z=`failed`),t.kind===`openSlideSession`&&Q.abandonOpen(t.sessionId);try{$({kind:`error`,id:n,...w(e)})}catch{}}};", Ct = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", St], { type: "text/javascript;charset=utf-8" });
-function wt(e) {
+var wt = "var e=(e,t)=>()=>(e&&(t=e(e=0)),t),t=class e extends Error{code;constructor(t,n){super(n),this.name=`OoxmlError`,this.code=t,Object.setPrototypeOf(this,e.prototype)}},n=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}};const r=67108864,i=`https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap`,a=`https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap`,o=`https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap`,s={calibri:{url:`https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Carlito`},\"calibri light\":{url:`https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Carlito`},cambria:{url:`https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Caladea`},\"cambria math\":{url:`https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap`,loadFamily:`Caladea`},\"franklin gothic book\":{url:o,loadFamily:`Libre Franklin`},\"franklin gothic medium\":{url:o,loadFamily:`Libre Franklin`},\"nunito sans\":{url:`https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap`},nunito:{url:`https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap`},\"open sans\":{url:`https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap`},roboto:{url:`https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap`},lato:{url:`https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap`},montserrat:{url:`https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap`},poppins:{url:`https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap`},raleway:{url:`https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap`},\"playfair display\":{url:`https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap`},ubuntu:{url:`https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap`},\"sakkal majalla\":{url:i,loadFamily:`Noto Naskh Arabic`},\"traditional arabic\":{url:i,loadFamily:`Noto Naskh Arabic`},\"simplified arabic\":{url:i,loadFamily:`Noto Naskh Arabic`},\"arabic typesetting\":{url:i,loadFamily:`Noto Naskh Arabic`},\"univers next arabic\":{url:a,loadFamily:`Noto Sans Arabic`},\"noto naskh arabic\":{url:i,loadFamily:`Noto Naskh Arabic`},\"noto sans arabic\":{url:a,loadFamily:`Noto Sans Arabic`}},c={\"noto sans cjk sc\":`Noto Sans SC`,\"noto serif cjk sc\":`Noto Serif SC`,\"noto sans cjk tc\":`Noto Sans TC`,\"noto serif cjk tc\":`Noto Serif TC`,\"noto sans cjk jp\":`Noto Sans JP`,\"noto serif cjk jp\":`Noto Serif JP`,\"noto sans cjk kr\":`Noto Sans KR`,\"noto serif cjk kr\":`Noto Serif KR`,\"noto sans cjk hk\":`Noto Sans HK`};function l(e){return e?c[e.trim().toLowerCase()]??null:null}function u(e){if(!e)return null;let t=l(e)??e.trim(),n=t.toLowerCase(),r=n.match(/^noto\\s+(?:sans|serif)\\s+(?:cjk\\s+)?(sc|tc|hk|jp|kr)$/);return r?r[1]:/[ᄀ-ᇿ㄰-㆏가-힯]/.test(t)?`kr`:/[぀-ヿ]/.test(t)?`jp`:/jhenghei|微軟正黑|新細明|細明|pmingliu|mingliu|dfkai|標楷|華康|cns11643|kaiti tc|ming\\s*liu/.test(n)||/新細明體|細明體|標楷體|微軟正黑體|華康/.test(t)?`tc`:/simsun|nsimsun|simhei|simkai|simfang|yahei|dengxian|fangsong|kaiti|youyuan|lisu|stsong|stkaiti|stfangsong|stheiti|stxihei|stzhongsong|songti sc|heiti sc|微软雅黑/.test(n)||/宋体|黑体|楷体|仿宋|等线|微软雅黑|隶书|幼圆/.test(t)?`sc`:/malgun|batang|gulim|dotum|gungsuh|nanum|new gulim|hancom|hy(gothic|graphic|namu)?/.test(n)?`kr`:/\\bmeiryo\\b|\\byu\\s*(gothic|mincho)\\b|yugothic|yumincho|hiragino|\\bms\\s*(gothic|mincho|pgothic|pmincho|ui\\s*gothic)\\b|\\bms[pg]?(gothic|mincho)\\b|ipa(ex)?(gothic|mincho)|noto\\s+(sans|serif)\\s+jp|游ゴシック|游明朝|ＭＳ|メイリオ|ヒラギノ/.test(n)||/游ゴシック|游明朝|ＭＳ ゴシック|ＭＳ 明朝|ＭＳ Ｐゴシック|メイリオ|ヒラギノ/.test(t)?`jp`:null}const d=e=>`https://fonts.googleapis.com/css2?family=${e}:wght@400;700&display=swap`,f={\"noto sans kr\":{url:d(`Noto+Sans+KR`)},\"noto sans sc\":{url:d(`Noto+Sans+SC`)},\"noto sans tc\":{url:d(`Noto+Sans+TC`)},\"noto sans hk\":{url:d(`Noto+Sans+HK`)},\"noto sans jp\":{url:d(`Noto+Sans+JP`)},\"noto serif kr\":{url:d(`Noto+Serif+KR`)},\"noto serif sc\":{url:d(`Noto+Serif+SC`)},\"noto serif tc\":{url:d(`Noto+Serif+TC`)},\"noto serif jp\":{url:d(`Noto+Serif+JP`)}},p=Object.fromEntries(Object.entries(c).map(([e,t])=>[e,{...f[t.toLowerCase()],loadFamily:t}])),ee={...f,...p,\"noto sans\":{url:d(`Noto+Sans`)},\"noto serif\":{url:d(`Noto+Serif`)},\"noto sans devanagari\":{url:d(`Noto+Sans+Devanagari`)},\"noto sans thai\":{url:d(`Noto+Sans+Thai`)},\"noto sans hebrew\":{url:d(`Noto+Sans+Hebrew`)},\"noto serif hebrew\":{url:d(`Noto+Serif+Hebrew`)}};function te(e){return/\\p{Script=Han}/u.test(e)}var ne=class e{hasHan=!1;hasHangul=!1;hasKana=!1;hasArabic=!1;hasThai=!1;hasHebrew=!1;hasDevanagari=!1;hasCyrGreek=!1;constructor(e){this.cjkLang=e}scriptCjkLanguage(){return this.hasHangul?`kr`:this.hasKana?`jp`:null}preferredCjkLanguage(){return this.scriptCjkLanguage()??this.cjkLang??`jp`}clone(){let t=new e(this.cjkLang);return t.hasHan=this.hasHan,t.hasHangul=this.hasHangul,t.hasKana=this.hasKana,t.hasArabic=this.hasArabic,t.hasThai=this.hasThai,t.hasHebrew=this.hasHebrew,t.hasDevanagari=this.hasDevanagari,t.hasCyrGreek=this.hasCyrGreek,t}addText(e){let t=()=>this.hasHan&&this.hasHangul&&this.hasKana&&this.hasArabic&&this.hasThai&&this.hasHebrew&&this.hasDevanagari&&this.hasCyrGreek;outer:for(let n of e)if(n)for(let e of n){let n=e.codePointAt(0);if(n!==void 0&&!(n<=591)&&(n>=4352&&n<=4607||n>=12592&&n<=12687||n>=44032&&n<=55215?this.hasHangul=!0:n>=12352&&n<=12543?this.hasKana=!0:te(e)?this.hasHan=!0:n>=1536&&n<=1791||n>=1872&&n<=1919||n>=2208&&n<=2303||n>=64336&&n<=65023||n>=65136&&n<=65279?this.hasArabic=!0:n>=3584&&n<=3711?this.hasThai=!0:n>=1424&&n<=1535||n>=64285&&n<=64335?this.hasHebrew=!0:n>=2304&&n<=2431?this.hasDevanagari=!0:(n>=1024&&n<=1279||n>=880&&n<=1023)&&(this.hasCyrGreek=!0),t()))break outer}}names(e=!1){let t=[],n=new Set;this.hasHangul&&n.add(`kr`),this.hasKana&&n.add(`jp`),this.hasHan&&(n.size===0||e)&&n.add(this.cjkLang??`jp`);for(let e of[`kr`,`sc`,`tc`,`hk`,`jp`])if(n.has(e)){let n={kr:`KR`,sc:`SC`,tc:`TC`,hk:`HK`,jp:`JP`}[e];t.push(`Noto Sans ${n}`),e!==`hk`&&t.push(`Noto Serif ${n}`)}return this.hasCyrGreek&&t.push(`Noto Sans`,`Noto Serif`),this.hasArabic&&t.push(`Noto Naskh Arabic`,`Noto Sans Arabic`),this.hasThai&&t.push(`Noto Sans Thai`),this.hasHebrew&&t.push(`Noto Sans Hebrew`,`Noto Serif Hebrew`),this.hasDevanagari&&t.push(`Noto Sans Devanagari`),t}};function re(e,t,n=!1){let r=new ne(t);return r.addText(e),r.names(n)}function ie(e){return e===`image-dimension`||e===`image-pixels`||e===`active-decoded-bytes`}function ae(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function oe(e){if(!(!e||typeof e!=`object`))try{let t=e,n=t.code,r=t.metric,i=t.limit,a=t.observed;return n!==`ooxml-decoded-image-limit`||!ie(r)||!ae(i)||!ae(a)||a<=i?void 0:{metric:r,limit:i,observed:a}}catch{return}}var se,ce,m,le=e((()=>{se=1<<25,ce=1<<27,se*4,ce*4,m=class e extends RangeError{code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}}}));function ue(e){if(!(typeof e!=`object`||!e))try{let t=e,n=t.code,r=t.message;return n===`ooxml-tiff-decode`&&typeof r==`string`?{message:r}:void 0}catch{return}}var h,de=e((()=>{h=class e extends Error{code=`ooxml-tiff-decode`;constructor(t,n){super(t,n),this.name=`TiffDecodeError`,Object.setPrototypeOf(this,e.prototype)}}}));function fe(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var pe=class{state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},me=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function he(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function ge(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function _e(e,t){return e({module_or_path:t})}var ve=class{runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new pe(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),ye),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return this.runtime.run(e)}poison(){this.runtime.poison(new me(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):_e(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,ge(e)}};function ye(e){return he(e)?new me(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function be(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function xe(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return be(t.requiredBytes)&&be(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var g=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function Se(e){if(e instanceof g)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!xe(r)))return new g(r)}function Ce(e,t,n){let r=Se(e);if(!(!r||r.offeredBytes!==t||r.requiredBytes>n))return r}le(),de();const _=`OOXML_RESOURCE_LIMIT:`;function v(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function we(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return v(t.archiveEntryCount)&&v(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||v(t.largestInflatedEntryBytes))&&v(t.distinctInflatedBytes)&&v(t.operationInflatedBytes)}function Te(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!we(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function Ee(e){return e===`docx`||e===`xlsx`||e===`pptx`}function De(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function y(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function b(e){return y(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function Oe(e){return!y(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const x=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}]]),ke=new Set([...x.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),Ae=new Set([...x.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function je(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!Ee(t.format)||!y(t.operation,256)||!b(t.resource)||!b(t.metric)||!v(t.limit)||!v(t.observed)||typeof t.configurable!=`boolean`||!we(t.usage)?!1:!(`part`in t)||Oe(t.part)}function S(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!De(t.stage)||!je(t.violation))return!1;let n=t.violation,r=x.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(ke.has(n.resource)&&Ae.has(n.metric))}function Me(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function Ne(e){if(!S(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:Me(t.usage)}};return S(n)?n:void 0}function Pe(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``}: ${t.metric} ${t.observed} > ${t.limit}`}function Fe(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(_))return;let r;try{r=JSON.parse(t.slice(21))}catch{return}if(!r||typeof r!=`object`)return;let i=r;if(!(i.code!==`ooxml-resource-limit`||!S(i.details)))return new n(Pe(i.details),i.details)}function Ie(e){let r=oe(e);if(r){let e=new m(r.metric,r.limit,r.observed);return{message:e.message,errorName:e.name,code:e.code,decodedImage:r}}let i=ue(e);if(i)return{message:i.message,errorName:`TiffDecodeError`,code:`ooxml-tiff-decode`};let a=Se(e);if(a)return{message:a.message,errorName:a.name,code:a.code,insufficientCredit:{requiredBytes:a.requiredBytes,offeredBytes:a.offeredBytes}};let o=e instanceof t||e instanceof n?e:Fe(e);if(o instanceof n){let e=Ne(o.details);return e?{message:typeof o.message==`string`?o.message:Pe(e),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:e}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(o instanceof t)return{message:typeof o.message==`string`?o.message:String(o.message),errorName:y(o.name,128)?o.name:`OoxmlError`,...b(o.code)?{code:o.code}:{}};let s=e instanceof Error?e.message:String(e);if(typeof s==`string`&&s.startsWith(_))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let c=e instanceof Error?e:Error(s),l=c;return{message:typeof c.message==`string`?c.message:String(c.message),errorName:y(c.name,128)?c.name:`Error`,...typeof l.code==`string`?{code:l.code}:{}}}function C(e){try{return Ie(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}const Le=new Set([`encrypted`,`invalid-password`,`unsupported-encryption`,`legacy-binary-format`,`not-ooxml`]),Re={\"image-dimension\":!0,\"image-pixels\":!0,\"active-decoded-bytes\":!0};function ze(e){return typeof e==`string`&&Object.prototype.hasOwnProperty.call(Re,e)}function Be(e,t){if(e!==`ooxml-decoded-image-limit`||!t||typeof t!=`object`)return;let n=t,r=n.metric,i=n.limit,a=n.observed;if(!(!ze(r)||!v(i)||!v(a)||a<=i))return{metric:r,limit:i,observed:a}}function Ve(e){let r=e.message,i=e.errorName,a=e.code,o=e.decodedImage,s=e.insufficientCredit,c=e.resourceLimit,l=typeof r==`string`?r:`Worker operation failed with an invalid error payload`,u=y(i,128)?i:void 0,d=typeof a==`string`?a:void 0,f=Be(d,o);if(f)return new m(f.metric,f.limit,f.observed);if(d===`ooxml-tiff-decode`)return new h(l);if(d===`ooxml-insufficient-credit`&&xe(s))return new g(s);if(d===`ooxml-resource-limit`&&S(c))return new n(l,c);if(d&&Le.has(d))return new t(d,l);let p=u===`TypeError`?TypeError(l):u===`RangeError`?RangeError(l):Error(l);return u&&(p.name=u),d!==void 0&&Object.assign(p,{code:d}),p}function He(e){try{return Ve(e)}catch{return Error(`Worker operation failed with an unreadable error payload`)}}function Ue(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function We(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const w=`ooxml-pull-v1`;function T(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function Ge(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var Ke=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,T(this.maxRetainedBytes,`max retained lease bytes`),T(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},qe=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){Ge(e.sessionId),T(e.operationId,`operation id`),T(e.generation,`generation`),T(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&T(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=C(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(T(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:w,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){T(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(T(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:w,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:w,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};function E(e,t){if(!Number.isSafeInteger(e)||e<0)throw Error(`${t} must be a non-negative safe integer`)}function D(e,t,n){return E(e,`resource measurement`),E(t,`resource measurement`),E(n,`resource measurement limit`),e>n||t>n||t>n-e?n===2**53-1?n:n+1:e+t}function Je(e,t=2**53-1){E(t,`resource measurement limit`);let n=0;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=3}else a=3;if(n=D(n,a,t),n>t)return n}return n}function O(e,t=2**53-1){E(t,`resource measurement limit`);let n=D(0,2,t);if(n>t)return n;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i===34||i===92||i===8||i===9||i===10||i===12||i===13)a=2;else if(i<=31)a=6;else if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=6}else a=i>=55296&&i<=57343?6:3;if(n=D(n,a,t),n>t)return n}return n}function k(e,t){return D(0,e,t)}function A(e,t=2**53-1,n=!1){if(E(t,`resource measurement limit`),e===null)return{jsonBytes:k(4,t),stringValueUtf8Bytes:0};if(typeof e==`string`)return{jsonBytes:O(e,t),stringValueUtf8Bytes:Je(e,t)};if(typeof e==`boolean`)return{jsonBytes:k(e?4:5,t),stringValueUtf8Bytes:0};if(typeof e==`number`)return{jsonBytes:k((Number.isFinite(e)?String(Object.is(e,-0)?0:e):`null`).length,t),stringValueUtf8Bytes:0};if(typeof e==`bigint`)throw TypeError(`BigInt values cannot be serialized to JSON`);if(Array.isArray(e)){let n=k(2,t),r=0;for(let i=0;i<e.length;i+=1){i!==0&&(n=D(n,1,t));let a=A(e[i],t,!0);n=D(n,a.jsonBytes,t),r=D(r,a.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}if(typeof e==`object`){let n=k(2,t),r=0,i=0;for(let[a,o]of Object.entries(e)){if(o===void 0||typeof o==`function`||typeof o==`symbol`)continue;i++!==0&&(n=D(n,1,t)),n=D(n,O(a,t),t),n=D(n,1,t);let e=A(o,t);n=D(n,e.jsonBytes,t),r=D(r,e.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}return{jsonBytes:n?k(4,t):0,stringValueUtf8Bytes:0}}({...s,...ee});function*j(e){for(let t of e?.paragraphs??[])for(let e of t.runs)e.type===`text`&&(yield e.text)}function*Ye(e){for(let t of e?.paragraphs??[]){t.defFontFamily&&(yield t.defFontFamily);for(let e of t.runs)e.type===`text`&&(e.fontFamily&&(yield e.fontFamily),e.fontFamilyEa&&(yield e.fontFamilyEa),e.fontFamilySym&&(yield e.fontFamilySym))}}function*Xe(e){for(let t of e.elements)if(t.type===`shape`)yield*j(t.textBody);else if(t.type===`table`)for(let e of t.rows)for(let t of e.cells)yield*j(t.textBody);else if(t.type===`chart`){t.chart.title&&(yield t.chart.title);for(let e of t.chart.categories)yield e;for(let e of t.chart.series)e.name&&(yield e.name)}}var Ze=class e{scripts;families;constructor(e,t,n,r,i,a=new Set){this.majorFont=e,this.minorFont=t,this.fallback=i,this.scriptNames=a;let o=u(e)??u(t)??i??null;this.scripts=n??new ne(o),this.families=r??new Set,e&&this.families.add(e),t&&this.families.add(t)}addSlide(e){this.scripts.addText(Xe(e));for(let t of re(Xe(e),u(this.majorFont)??u(this.minorFont)??this.fallback??null))this.scriptNames.add(t);for(let t of e.elements)if(t.type===`shape`)for(let e of Ye(t.textBody))this.families.add(e);else if(t.type===`table`)for(let e of t.rows)for(let t of e.cells)for(let e of Ye(t.textBody))this.families.add(e)}names(){return[...new Set([...this.families,...this.scripts.names(),...this.scriptNames])]}withSlide(t){let n=new e(this.majorFont,this.minorFont,this.scripts.clone(),new Set(this.families),this.fallback,new Set(this.scriptNames));return n.addSlide(t),n}};const M=Object.freeze({archiveEntryCount:0,declaredInflatedBytes:0,distinctInflatedBytes:0,operationInflatedBytes:0}),Qe=67108864;function N(e,t){if(e!==null&&typeof e!=`string`)throw Error(`invalid PPTX presentation bootstrap ${t}`)}function $e(e,t){if(!e||typeof e!=`object`||Array.isArray(e))throw Error(`invalid PPTX presentation bootstrap slide at ${t}`);let n=e;if(n.index!==t)throw Error(`invalid PPTX presentation bootstrap slide index ${n.index}`);if(n.partName!==void 0&&typeof n.partName!=`string`)throw Error(`invalid PPTX presentation bootstrap slide partName at ${t}`);return Object.freeze({index:n.index,...n.partName===void 0?{}:{partName:n.partName}})}function et(e,t){if(!e||typeof e!=`object`||Array.isArray(e))throw Error(`invalid PPTX presentation bootstrap embedded font at ${t}`);let n=e;if(typeof n.fontName!=`string`||n.fontName.length===0||![`regular`,`bold`,`italic`,`boldItalic`].includes(n.style??``)||typeof n.partPath!=`string`||n.partPath.length===0||n.partPath.startsWith(`/`)||n.partPath.split(`/`).includes(`..`)||![`application/x-font-ttf`,`application/x-fontdata`].includes(n.contentType??``))throw Error(`invalid PPTX presentation bootstrap embedded font fields at ${t}`);return Object.freeze({fontName:n.fontName,style:n.style,partPath:n.partPath,contentType:n.contentType})}function tt(e){if(!e||typeof e!=`object`||Array.isArray(e))throw Error(`invalid PPTX presentation bootstrap payload`);let t=e;if(!Number.isSafeInteger(t.slideCount)||(t.slideCount??-1)<0||!Number.isSafeInteger(t.slideWidth)||(t.slideWidth??0)<=0||!Number.isSafeInteger(t.slideHeight)||(t.slideHeight??0)<=0||!Array.isArray(t.embeddedFonts)||!Array.isArray(t.slides)||t.slides.length!==t.slideCount)throw Error(`invalid PPTX presentation bootstrap dimensions or slide count`);return N(t.defaultTextColor,`defaultTextColor`),N(t.majorFont,`majorFont`),N(t.minorFont,`minorFont`),N(t.hlinkColor,`hlinkColor`),N(t.folHlinkColor,`folHlinkColor`),Object.freeze({slideCount:t.slideCount,slideWidth:t.slideWidth,slideHeight:t.slideHeight,defaultTextColor:t.defaultTextColor,majorFont:t.majorFont,minorFont:t.minorFont,hlinkColor:t.hlinkColor,folHlinkColor:t.folHlinkColor,embeddedFonts:Object.freeze(t.embeddedFonts.map(et)),slides:Object.freeze(t.slides.map($e))})}function nt(e){return Object.freeze({type:`media`,x:e.x,y:e.y,width:e.width,height:e.height,rotation:e.rotation,flipH:e.flipH,flipV:e.flipV,mediaKind:e.mediaKind,posterPath:e.posterPath,posterMimeType:e.posterMimeType,mediaPath:e.mediaPath,mimeType:e.mimeType})}function rt(e){return Object.freeze({...e.id===void 0?{}:{id:e.id},...e.authorId===void 0?{}:{authorId:e.authorId},...e.author===void 0?{}:{author:e.author},...e.date===void 0?{}:{date:e.date},...e.status===void 0?{}:{status:e.status},text:e.text})}function it(e){return Object.freeze({...e})}function at(e){return Object.freeze({...e.authorId===void 0?{}:{authorId:e.authorId},...e.modernAuthorId===void 0?{}:{modernAuthorId:e.modernAuthorId},...e.id===void 0?{}:{id:e.id},...e.index===void 0?{}:{index:e.index},...e.author===void 0?{}:{author:e.author},...e.date===void 0?{}:{date:e.date},...e.x===void 0?{}:{x:e.x},...e.y===void 0?{}:{y:e.y},...e.anchors?.length?{anchors:Object.freeze(e.anchors.map(it))}:{},...e.status===void 0?{}:{status:e.status},text:e.text,...e.replies?.length?{replies:Object.freeze(e.replies.map(rt))}:{}})}function ot(e,t){if(e.index!==t.index||e.partName!==t.partName)throw Error(`PPTX pulled slide identity does not match bootstrap index ${t.index}`);return Object.freeze({index:t.index,...t.partName===void 0?{}:{partName:t.partName},notes:e.notes??null,hidden:e.hidden??!1,mediaElements:Object.freeze(e.elements.filter(e=>e.type===`media`).map(nt)),...e.comments?.length?{comments:Object.freeze(e.comments.map(at))}:{}})}function st(e,t,r){if(!(e<=t))throw new n(`PPTX presentation preflight exceeded its hard limit of ${t} projected bytes`,{stage:`parsing`,violation:{format:`pptx`,operation:`presentation-preflight`,resource:`presentation-preflight`,metric:`projected-bytes`,limit:t,observed:Math.min(e,t+1),configurable:!1,usage:r}})}var ct=class{slideCountValue;slideWidthValue;slideHeightValue;defaultTextColorValue;majorFontValue;minorFontValue;hlinkColorValue;folHlinkColorValue;embeddedFontsValue;descriptors;slides=[];fonts;fontPreloadNames;fontProjectionBytes;projectionBytesValue;limit;pending=null;finished=null;constructor(e,t={}){let n=tt(e),r=t.hardLimitForTesting??Qe;if(!Number.isSafeInteger(r)||r<=0||r>Qe)throw Error(`invalid PPTX presentation preflight test limit`);this.limit=r,this.slideCountValue=n.slideCount,this.slideWidthValue=n.slideWidth,this.slideHeightValue=n.slideHeight,this.defaultTextColorValue=n.defaultTextColor,this.majorFontValue=n.majorFont,this.minorFontValue=n.minorFont,this.hlinkColorValue=n.hlinkColor,this.folHlinkColorValue=n.folHlinkColor,this.embeddedFontsValue=n.embeddedFonts,this.descriptors=[...n.slides],this.fonts=new Ze(this.majorFontValue,this.minorFontValue,void 0,void 0,t.cjkFallback),this.fontPreloadNames=Object.freeze(this.fonts.names()),this.fontProjectionBytes=A(this.fontPreloadNames,this.limit).jsonBytes,this.projectionBytesValue=A({slideCount:this.slideCountValue,slideWidth:this.slideWidthValue,slideHeight:this.slideHeightValue,defaultTextColor:this.defaultTextColorValue,majorFont:this.majorFontValue,minorFont:this.minorFontValue,hlinkColor:this.hlinkColorValue,folHlinkColor:this.folHlinkColorValue,embeddedFonts:this.embeddedFontsValue,remainingSlides:this.descriptors,slides:[],fontPreloadNames:this.fontPreloadNames},this.limit).jsonBytes,st(this.projectionBytesValue,this.limit,M)}get acceptedSlideCount(){return this.finished?.slideCount??this.slides.length}get projectedBytes(){return this.projectionBytesValue}get remainingDescriptorCount(){return this.descriptors.reduce((e,t)=>e+Number(t!==void 0),0)}get latestSlide(){return this.slides[this.slides.length-1]}get currentFontPreloadNames(){return this.fontPreloadNames}snapshot(){if(this.finished)return this.finished;if(this.pending)throw Error(`PPTX presentation preflight has an uncommitted slide`);return Object.freeze({slideCount:this.slideCountValue,slideWidth:this.slideWidthValue,slideHeight:this.slideHeightValue,defaultTextColor:this.defaultTextColorValue,majorFont:this.majorFontValue,minorFont:this.minorFontValue,hlinkColor:this.hlinkColorValue,folHlinkColor:this.folHlinkColorValue,embeddedFonts:this.embeddedFontsValue,slides:Object.freeze([...this.slides]),fontPreloadNames:this.fontPreloadNames})}addSlide(e,t=M){this.prepareSlide(e,t).commit()}prepareSlide(e,t=M){if(this.finished)throw Error(`PPTX presentation preflight is already finished`);if(this.pending)throw Error(`PPTX presentation preflight already has a prepared slide`);let n=this.slides.length,r=this.descriptors[n];if(!r)throw Error(`PPTX presentation preflight received an extra slide`);let i=ot(e,r),a=this.fonts.withSlide(e),o=Object.freeze(a.names()),s=A(o,this.limit).jsonBytes,c=A(i,this.limit).jsonBytes,l=this.projectionBytesValue-this.fontProjectionBytes-A(r,this.limit).jsonBytes+4;l=D(l,s,this.limit),l=D(l,c,this.limit),this.slides.length!==0&&(l=D(l,1,this.limit));let u=A({slide:i,fontPreloadNames:o},this.limit).jsonBytes,d=D(this.projectionBytesValue,u,this.limit);st(Math.max(d,l),this.limit,t);let f={state:`prepared`,fact:i,fonts:a,fontNames:o,fontBytes:s,committedBytes:l};return this.pending=f,{projectedBytes:d,commit:()=>{if(f.state!==`committed`){if(f.state===`rolled-back`)throw Error(`PPTX presentation preflight cannot commit a rolled-back slide`);if(this.pending!==f)throw Error(`PPTX presentation preflight prepared slide is stale`);this.descriptors[n]=void 0,this.slides.push(f.fact),this.fonts=f.fonts,this.fontPreloadNames=f.fontNames,this.fontProjectionBytes=f.fontBytes,this.projectionBytesValue=f.committedBytes,f.state=`committed`,this.pending=null}},rollback:()=>{if(f.state!==`rolled-back`){if(f.state===`committed`)throw Error(`PPTX presentation preflight cannot roll back a committed slide`);if(this.pending!==f)throw Error(`PPTX presentation preflight prepared slide is stale`);f.state=`rolled-back`,this.pending=null}}}}finish(){if(this.finished)return this.finished;if(this.pending)throw Error(`PPTX presentation preflight has an uncommitted slide`);if(this.slides.length!==this.slideCountValue)throw Error(`PPTX presentation preflight is incomplete: ${this.slides.length}/${this.slideCountValue} slides`);return this.finished=Object.freeze({slideCount:this.slideCountValue,slideWidth:this.slideWidthValue,slideHeight:this.slideHeightValue,defaultTextColor:this.defaultTextColorValue,majorFont:this.majorFontValue,minorFont:this.minorFontValue,hlinkColor:this.hlinkColorValue,folHlinkColor:this.folHlinkColorValue,embeddedFonts:this.embeddedFontsValue,slides:Object.freeze([...this.slides]),fontPreloadNames:this.fontPreloadNames}),this.descriptors=[],this.slides=[],this.projectionBytesValue=A(this.finished,this.limit).jsonBytes,this.finished}};function lt(e){try{return Te(e(e=>e.slide_cursor_resource_usage()))}catch(e){if(String(e).includes(`slide cursor usage is unavailable`))return;throw e}}function ut(e,t,n,r,i){let a,o;try{if(i){if(!r)throw Error(`slide payload is missing before acknowledgement`);let t=i(n,r,lt(e));typeof t==`function`?a=t:t&&({rollback:a,commit:o}=t)}e(e=>e.acknowledge_slide(t.operationId,t.generation)),o?.()}catch(e){try{a?.()}catch{}throw e}}var dt=class{coordinatorGeneration=new Ke;sessions=new Map;pendingOpens=new Map;operationTail=Promise.resolve();resourceFailure;lifecycleState=`ready`;resetBarrier;resetIdentities=new Map;constructor(e,t,n=e=>e(this.requireArchive())){this.archive=e,this.acceptSlide=t,this.executeArchive=n}get coordinator(){return this.coordinatorGeneration}reserveOpen(e){if(this.assertReady(),pt(e),this.pendingOpens.has(e.sessionId)||this.sessions.has(e.sessionId))throw Error(`slide pull session id is already reserved`);this.pendingOpens.set(e.sessionId,{identity:e,canceled:!1})}abandonOpen(e){this.pendingOpens.delete(e)}get pendingOpenCount(){return this.pendingOpens.size}async open(e,t){if(this.assertReady(),this.resourceFailure)throw this.resourceFailure;if(!Number.isSafeInteger(e)||e<0)throw RangeError(`slide index must be a non-negative safe integer`);let n=this.pendingOpens.get(t.sessionId);if(!n||!P(n.identity,t))throw Error(`slide pull session open reservation is stale or missing`);let i,a=new Promise(e=>{i=e}),o=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(n.canceled)throw Error(`slide pull session open was canceled`);let a,o=!1,s=new qe({...t,maxByteCredit:r,coordinator:this.coordinator,driver:{pull:n=>{let i;try{i=this.executeArchive(r=>r.pull_slide(e,t.operationId,t.generation,n))}catch(e){throw Ce(e,n,r)||(this.latchResourceFailure(e),e)}let s=Ue(i);return this.acceptSlide&&(a=JSON.parse(new TextDecoder().decode(new Uint8Array(s)))),o=!0,{payload:s,byteLength:s.byteLength,done:!0,transfer:[s]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:()=>{if(!o)throw Error(`slide unit is not awaiting acknowledgement`);try{ut(this.executeArchive,t,e,a,this.acceptSlide)}catch(e){throw this.latchResourceFailure(e),e}o=!1,a=void 0,this.sessions.delete(t.sessionId),i()},cancel:async()=>{try{this.archive()&&await this.executeArchive(e=>e.cancel_slide())}finally{a=void 0,o=!1,this.sessions.delete(t.sessionId),i()}},close:async()=>{try{this.archive()&&await this.executeArchive(e=>e.cancel_slide())}finally{a=void 0,o=!1,this.sessions.delete(t.sessionId),i()}},resourceUsage:()=>{try{return this.readResourceUsage()}catch(e){throw this.latchResourceFailure(e),e}}}});this.sessions.set(t.sessionId,{host:s,identity:t}),this.pendingOpens.delete(t.sessionId)}));this.operationTail=o.then(()=>a,()=>void 0);try{await o}catch(e){throw this.pendingOpens.delete(t.sessionId),i(),e}}async postOpenedSafely(e,t,n){if(this.lifecycleState!==`ready`){try{n(this.lifecycleError())}catch{}return}try{t()}catch(t){await this.closeIdentity(e);try{n(t)}catch{}}}dispatch(e,t){if(this.lifecycleState!==`ready`)return t(this.responseDuringReset(e)),Promise.resolve();let n=this.sessions.get(e.sessionId);if(n)return n.host.dispatch(e,t);let r=this.pendingOpens.get(e.sessionId);if(r&&(e.kind===`cancel`||e.kind===`close`)){let n=P(r.identity,e);return n&&(r.canceled=!0),t(n?{protocol:w,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}:this.staleLifecycleResponse(e)),Promise.resolve()}return e.kind===`cancel`||e.kind===`close`?(t({protocol:w,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}),Promise.resolve()):(t({protocol:w,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:C(Error(`slide pull session is not open`))}),Promise.resolve())}async dispatchSafely(e,t){try{await this.dispatch(e,t)}catch(n){try{t({protocol:w,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:C(n)})}catch{}}}run(e){if(this.lifecycleState!==`ready`)return Promise.reject(this.lifecycleError());let t=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;return e()})).catch(e=>{throw this.latchResourceFailure(e),e});return this.operationTail=t.then(()=>void 0,()=>void 0),t}reset(){if(this.resetBarrier)return this.resetBarrier;this.lifecycleState=`resetting`,this.captureResetIdentities();let e=this.performReset().then(()=>{this.resetIdentities.clear(),this.lifecycleState=`ready`},e=>{throw this.lifecycleState=`reset-failed`,e}).finally(()=>{this.resetBarrier===e&&(this.resetBarrier=void 0)});return this.resetBarrier=e,e}async performReset(){for(let e of this.pendingOpens.values())e.canceled=!0;let e=1;for(let{host:t,identity:n}of[...this.sessions.values()]){let r;if(await t.dispatch({protocol:w,kind:`close`,...n,requestId:e++},e=>{e.kind===`error`&&(r=He(e.error))}),r)throw r}this.sessions.clear(),await this.operationTail,this.pendingOpens.clear(),this.archive()&&await this.executeArchive(e=>e.close_presentation_session()),this.coordinatorGeneration=new Ke,this.resourceFailure=void 0}assertReady(){if(this.lifecycleState!==`ready`)throw this.lifecycleError()}lifecycleError(){let e=this.lifecycleState===`reset-failed`,t=Error(e?`slide pull worker reset failed; retry reset before new work`:`slide pull worker reset is in progress`);return t.name=`PullSessionLifecycleError`,Object.assign(t,{code:e?`ooxml-pull-reset-failed`:`ooxml-pull-resetting`})}captureResetIdentities(){for(let{identity:e}of this.sessions.values())this.resetIdentities.set(e.sessionId,e);for(let{identity:e}of this.pendingOpens.values())this.resetIdentities.set(e.sessionId,e)}responseDuringReset(e){if(e.kind===`cancel`||e.kind===`close`){let t=this.resetIdentities.get(e.sessionId);return t&&!P(t,e)?this.staleLifecycleResponse(e):{protocol:w,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}}return{protocol:w,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:C(this.lifecycleError())}}requireArchive(){let e=this.archive();if(!e)throw Error(`Presentation not loaded`);return e}async closeIdentity(e){if(this.lifecycleState!==`ready`)return;let t=this.sessions.get(e.sessionId);if(t){await t.host.dispatch({protocol:w,kind:`close`,...e,requestId:1},()=>void 0);return}let n=this.pendingOpens.get(e.sessionId);n&&P(n.identity,e)&&(n.canceled=!0)}readResourceUsage(){return lt(this.executeArchive)}latchResourceFailure(e){let t=e instanceof n?e:Fe(e);t&&(this.resourceFailure??=t)}staleLifecycleResponse(e){return{protocol:w,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:{message:`stale lifecycle targets another slide operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`}}}};function ft(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}function pt(e){if(!Number.isSafeInteger(e.sessionId)||e.sessionId<=0)throw RangeError(`session id must be a positive safe integer`);if(!Number.isSafeInteger(e.operationId)||e.operationId<=0)throw RangeError(`operation id must be a positive safe integer`);if(!Number.isSafeInteger(e.generation)||e.generation<=0)throw RangeError(`generation must be a positive safe integer`)}function P(e,t){return e.sessionId===t.sessionId&&e.operationId===t.operationId&&e.generation===t.generation}var F=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,ht.unregister(this),e}free(){let e=this.__destroy_into_raw();J.__wbg_pptxarchive_free(e,0)}acknowledge_slide(e,t){let n=J.pptxarchive_acknowledge_slide(this.__wbg_ptr,e,t);if(n[1])throw U(n[0])}assert_healthy(){let e=J.pptxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw U(e[0])}cancel_slide(){J.pptxarchive_cancel_slide(this.__wbg_ptr)}close_presentation_session(){J.pptxarchive_close_presentation_session(this.__wbg_ptr)}extract_font(e){let t=H(e,J.__wbindgen_malloc,J.__wbindgen_realloc),n=q,r=J.pptxarchive_extract_font(this.__wbg_ptr,t,n);if(r[3])throw U(r[2]);var i=I(r[0],r[1]).slice();return J.__wbindgen_free(r[0],r[1]*1,1),i}extract_image(e){let t=H(e,J.__wbindgen_malloc,J.__wbindgen_realloc),n=q,r=J.pptxarchive_extract_image(this.__wbg_ptr,t,n);if(r[3])throw U(r[2]);var i=I(r[0],r[1]).slice();return J.__wbindgen_free(r[0],r[1]*1,1),i}extract_media(e){let t=H(e,J.__wbindgen_malloc,J.__wbindgen_realloc),n=q,r=J.pptxarchive_extract_media(this.__wbg_ptr,t,n);if(r[3])throw U(r[2]);var i=I(r[0],r[1]).slice();return J.__wbindgen_free(r[0],r[1]*1,1),i}constructor(e,t,n,r){let i=_t(e,J.__wbindgen_malloc),a=q,o=J.pptxarchive_new(i,a,!V(t),V(t)?BigInt(0):t,!V(n),V(n)?BigInt(0):n,!V(r),V(r)?BigInt(0):r);if(o[2])throw U(o[1]);return this.__wbg_ptr=o[0]>>>0,ht.register(this,this.__wbg_ptr,this),this}parse(){let e=J.pptxarchive_parse(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}presentation_bootstrap(){let e=J.pptxarchive_presentation_bootstrap(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}pull_slide(e,t,n,r){let i=J.pptxarchive_pull_slide(this.__wbg_ptr,e,t,n,r);if(i[3])throw U(i[2]);var a=I(i[0],i[1]).slice();return J.__wbindgen_free(i[0],i[1]*1,1),a}resource_usage(){let e=J.pptxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}slide_cursor_resource_usage(){let e=J.pptxarchive_slide_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw U(e[2]);var t=I(e[0],e[1]).slice();return J.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=J.pptxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,U(i[2]);return e=n,t=r,R(n,r)}finally{J.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(F.prototype[Symbol.dispose]=F.prototype.free);function mt(){return{__proto__:null,\"./pptx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(R(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(R(e,t))}finally{J.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=H(n,J.__wbindgen_malloc,J.__wbindgen_realloc),i=q;gt().setInt32(e+4,i,!0),gt().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return R(e,t)},__wbindgen_init_externref_table:function(){let e=J.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const ht=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>J.__wbg_pptxarchive_free(e>>>0,1));function I(e,t){return e>>>=0,B().subarray(e/1,e/1+t)}let L=null;function gt(){return(L===null||L.buffer.detached===!0||L.buffer.detached===void 0&&L.buffer!==J.memory.buffer)&&(L=new DataView(J.memory.buffer)),L}function R(e,t){return e>>>=0,vt(e,t)}let z=null;function B(){return(z===null||z.byteLength===0)&&(z=new Uint8Array(J.memory.buffer)),z}function V(e){return e==null}function _t(e,t){let n=t(e.length*1,1)>>>0;return B().set(e,n/1),q=e.length,n}function H(e,t,n){if(n===void 0){let n=K.encode(e),r=t(n.length,1)>>>0;return B().subarray(r,r+n.length).set(n),q=n.length,r}let r=e.length,i=t(r,1)>>>0,a=B(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=B().subarray(i+o,i+r),a=K.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return q=o,i}function U(e){let t=J.__wbindgen_externrefs.get(e);return J.__externref_table_dealloc(e),t}let W=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});W.decode();let G=0;function vt(e,t){return G+=t,G>=2146435072&&(W=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),W.decode(),G=t),W.decode(B().subarray(e,e+t))}const K=new TextEncoder;`encodeInto`in K||(K.encodeInto=function(e,t){let n=K.encode(e);return t.set(n),{read:e.length,written:n.length}});let q=0,J;function yt(e,t){return J=e.exports,L=null,z=null,J.__wbindgen_start(),J}async function bt(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function xt(e){if(J!==void 0)return J;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let t=mt();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:n,module:r}=await bt(await e,t);return yt(n,r)}async function St(e){return J=void 0,L=null,z=null,xt(e)}const Y=new ve(xt,{freeArchive:e=>e.free(),reinit:St});let X=null,Z=`empty`;function Ct(){if(Z!==`empty`){let e=Error(`this PPTX worker already owns a presentation parse`);throw e.name=`PptxWorkerStateError`,Object.assign(e,{code:`ooxml-pptx-parse-already-started`})}Z=`opening`}const Q=new dt(()=>Y.archive,(e,t,n)=>{if(X){if(e!==X.acceptedSlideCount)throw Error(`PPTX preflight expected slide ${X.acceptedSlideCount}, received ${e}`);return X.prepareSlide(t,n)}},e=>{let t=Y.archive;if(!t)throw Error(`Presentation not loaded`);return Y.run(()=>e(t))}),$=(e,t)=>self.postMessage(e,t);self.onmessage=async e=>{let t=e.data;if(ft(t)){await Q.dispatchSafely(t,$);return}if(t.kind===`init`){Y.setWasmInput(fe(t.wasmUrl)??t.wasmUrl);return}let n=t.id,r=!1;try{if(t.kind===`openSlideSession`&&Q.reserveOpen(t),t.kind===`parse`&&(Ct(),r=!0),t.kind===`openSlideSession`){await Y.ensureReady(),await Q.open(t.slideIndex,t),await Q.postOpenedSafely(t,()=>$({kind:`slideSessionOpened`,id:n,sessionId:t.sessionId,operationId:t.operationId,generation:t.generation}),e=>$({kind:`error`,id:n,...C(e)}));return}t.kind===`parse`&&await Q.reset(),await Q.run(async()=>{if(await Y.ensureReady(),t.kind!==`parse`&&Y.archive){let e=Y.archive;Y.run(()=>e.assert_healthy())}if(t.kind===`parse`){X=null;let[e,r,i]=We(t.resourcePolicy),a=Y.run(()=>{let n=new F(new Uint8Array(t.buffer),e,r,i);return Y.setArchive(n),JSON.parse(new TextDecoder().decode(n.presentation_bootstrap()))});X=t.progressiveLayout?null:new ct(a,{cjkFallback:t.cjkFallback}),$({kind:`presentationOpened`,id:n,bootstrap:a}),Z=`ready`;return}let e=Y.archive;if(!e)throw Error(`No pptx loaded`);if(t.kind===`finishPresentationPreflight`){if(!X)throw Error(`PPTX presentation preflight is not active`);let e=X.finish();X=null,$({kind:`presentationPreflightReady`,id:n,preflight:e});return}if(t.kind===`extractMedia`){let r=Y.run(()=>e.extract_media(t.path).buffer);$({kind:`mediaExtracted`,id:n,bytes:r},[r]);return}if(t.kind===`extractImage`){let r=Y.run(()=>e.extract_image(t.path).buffer);$({kind:`imageExtracted`,id:n,bytes:r},[r]);return}if(t.kind===`extractFont`){let r=Y.run(()=>e.extract_font(t.path).buffer);$({kind:`fontExtracted`,id:n,bytes:r},[r]);return}if(t.kind===`resourceUsage`){$({kind:`resourceUsage`,id:n,usage:Te(Y.run(()=>e.resource_usage()))});return}t.kind===`toMarkdown`&&$({kind:`markdownRendered`,id:n,markdown:Y.run(()=>e.to_markdown())})})}catch(e){r&&(Z=`failed`),t.kind===`openSlideSession`&&Q.abandonOpen(t.sessionId);try{$({kind:`error`,id:n,...C(e)})}catch{}}};", Tt = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", wt], { type: "text/javascript;charset=utf-8" });
+function Et(e) {
 	let t;
 	try {
-		if (t = Ct && (self.URL || self.webkitURL).createObjectURL(Ct), !t) throw "";
+		if (t = Tt && (self.URL || self.webkitURL).createObjectURL(Tt), !t) throw "";
 		let n = new Worker(t, {
 			type: "module",
 			name: e?.name
@@ -620,7 +621,7 @@ function wt(e) {
 			(self.URL || self.webkitURL).revokeObjectURL(t);
 		}), n;
 	} catch {
-		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(St), {
+		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(wt), {
 			type: "module",
 			name: e?.name
 		});
@@ -628,24 +629,24 @@ function wt(e) {
 }
 //#endregion
 //#region packages/pptx/src/wasm/pptx_parser_bg.wasm?url
-var Tt = new URL("pptx_parser_bg.wasm", import.meta.url).href, G = 65536, Et = 16384, Dt = new Set(["line", "straightconnector1"]);
-function Ot(e, t) {
+var Dt = new URL("pptx_parser_bg.wasm", import.meta.url).href, G = 65536, Ot = 16384, kt = new Set(["line", "straightconnector1"]);
+function At(e, t) {
 	let n = e.x + e.width / 2, r = e.y + e.height / 2, i = -e.rotation * Math.PI / 180, a = Math.cos(i), o = Math.sin(i), s = t.x - n, c = t.y - r, l = n + a * s - o * c, u = r + o * s + a * c;
 	return e.flipH && (l = 2 * n - l), e.flipV && (u = 2 * r - u), {
 		x: l,
 		y: u
 	};
 }
-function kt(e, t, n) {
+function jt(e, t, n) {
 	let r = n.x - t.x, i = n.y - t.y, a = r * r + i * i;
 	if (a === 0) return Math.hypot(e.x - t.x, e.y - t.y);
 	let o = Math.max(0, Math.min(1, ((e.x - t.x) * r + (e.y - t.y) * i) / a));
 	return Math.hypot(e.x - (t.x + o * r), e.y - (t.y + o * i));
 }
-function At(e, t, n = 0) {
+function Mt(e, t, n = 0) {
 	if (!Number.isFinite(t.x) || !Number.isFinite(t.y)) return !1;
-	let r = Ot(e, t), i = Number.isFinite(n) && n > 0 ? n : 0;
-	if (e.type === "shape" && (Dt.has(e.geometry.toLowerCase()) || e.width === 0 || e.height === 0)) return kt(r, {
+	let r = At(e, t), i = Number.isFinite(n) && n > 0 ? n : 0;
+	if (e.type === "shape" && (kt.has(e.geometry.toLowerCase()) || e.width === 0 || e.height === 0)) return jt(r, {
 		x: e.x,
 		y: e.y
 	}, {
@@ -655,7 +656,7 @@ function At(e, t, n = 0) {
 	let a = Math.min(e.x, e.x + e.width), o = Math.max(e.x, e.x + e.width), s = Math.min(e.y, e.y + e.height), c = Math.max(e.y, e.y + e.height);
 	return r.x >= a && r.x <= o && r.y >= s && r.y <= c;
 }
-function* jt(e) {
+function* Nt(e) {
 	if (e) for (let t of e.paragraphs) {
 		let e = !0;
 		for (let n of t.runs) {
@@ -667,17 +668,17 @@ function* jt(e) {
 		}
 	}
 }
-function* Mt(e) {
+function* Pt(e) {
 	if (e.type === "shape") {
-		yield* jt(e.textBody);
+		yield* Nt(e.textBody);
 		return;
 	}
 	if (e.type === "table") {
-		for (let t of e.rows) for (let e of t.cells) yield* jt(e.textBody);
+		for (let t of e.rows) for (let e of t.cells) yield* Nt(e.textBody);
 		return;
 	}
 }
-function Nt(e, t) {
+function Ft(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -685,9 +686,9 @@ function Nt(e, t) {
 	}
 	return e.slice(0, n);
 }
-function Pt(e, t = Et) {
+function It(e, t = Ot) {
 	if (!Number.isFinite(t) || t < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	let n = Math.min(G, Math.floor(t)), r = e.text, i = r === void 0 ? void 0 : Nt(r, n), a = r !== void 0 && i.length < r.length;
+	let n = Math.min(G, Math.floor(t)), r = e.text, i = r === void 0 ? void 0 : Ft(r, n), a = r !== void 0 && i.length < r.length;
 	return {
 		...structuredClone(e),
 		...i === void 0 ? {} : { text: i },
@@ -697,7 +698,7 @@ function Pt(e, t = Et) {
 		maxTextCharacters: n
 	};
 }
-function Ft(e, t) {
+function Lt(e, t) {
 	let n = [], r = 0, i = !1, a = !1;
 	for (let o of e) {
 		if (a = !0, o.beginsPart && n.length > 0) {
@@ -707,7 +708,7 @@ function Ft(e, t) {
 			}
 			n.push("\n"), r++;
 		}
-		let e = Math.max(0, t - r), s = Nt(o.text, e);
+		let e = Math.max(0, t - r), s = Ft(o.text, e);
 		if (n.push(s), r += s.length, s.length < o.text.length) {
 			i = !0;
 			break;
@@ -722,16 +723,16 @@ function Ft(e, t) {
 		textCharacters: 0
 	};
 }
-function It(e, t, n, r = {}) {
+function Rt(e, t, n, r = {}) {
 	if (!Number.isFinite(n.x) || !Number.isFinite(n.y)) throw RangeError("PPTX hit-test point must contain finite coordinates.");
-	let i = r.maxTextCharacters ?? Et;
+	let i = r.maxTextCharacters ?? Ot;
 	if (!Number.isFinite(i) || i < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
 	let a = Math.min(G, Math.floor(i)), o = r.tolerance ?? 0;
 	if (!Number.isFinite(o) || o < 0) throw RangeError("tolerance must be a finite non-negative number.");
 	for (let r = t.elements.length - 1; r >= 0; r--) {
 		let i = t.elements[r];
-		if (!At(i, n, o)) continue;
-		let s = i.type === "chart" ? de(i.chart, a) : Ft(Mt(i), a);
+		if (!Mt(i, n, o)) continue;
+		let s = i.type === "chart" ? te(i.chart, a) : Lt(Pt(i), a);
 		return {
 			format: "pptx",
 			kind: "element",
@@ -773,7 +774,7 @@ function It(e, t, n, r = {}) {
 	}
 	return null;
 }
-function Lt(e, t) {
+function zt(e, t) {
 	let n = new Set(t.filter((e) => e.length > 0));
 	if (n.size === 0) return Object.freeze([]);
 	let r = /* @__PURE__ */ new Map();
@@ -815,7 +816,7 @@ function q(e, t) {
 		} catch {}
 	}
 }
-function J(e, t, n, r) {
+function Bt(e, t, n, r) {
 	let i = K.get(e);
 	i || (i = /* @__PURE__ */ new Set(), K.set(e, i));
 	let a = Object.freeze({
@@ -836,7 +837,7 @@ function J(e, t, n, r) {
 }
 //#endregion
 //#region packages/pptx/src/worker-task-scheduler.ts
-function Rt() {
+function Vt() {
 	return new Promise((e) => {
 		let t = new MessageChannel();
 		t.port1.onmessage = () => {
@@ -846,7 +847,7 @@ function Rt() {
 }
 //#endregion
 //#region packages/pptx/src/presentation.ts
-function zt() {
+function Ht() {
 	let e, t;
 	return {
 		promise: new Promise((n, r) => {
@@ -856,7 +857,8 @@ function zt() {
 		reject: t
 	};
 }
-var Y = class e {
+var J = class e {
+	_cjkFallback = "jp";
 	_metrics = null;
 	_worker;
 	_bridge;
@@ -864,8 +866,8 @@ var Y = class e {
 	_bootstrap = null;
 	_preflight = null;
 	_availableSlideCount = 0;
-	_layoutLifecycle = new Ee();
-	_layoutObservers = new Oe();
+	_layoutLifecycle = new ye();
+	_layoutObservers = new xe();
 	_layoutCompletion = null;
 	_parseRequestId = null;
 	_progressive = null;
@@ -876,9 +878,9 @@ var Y = class e {
 	_slidePullClient = null;
 	_resourceFailure = null;
 	_slidePartIndex = null;
-	_rawParts = new Be({
+	_rawParts = new He({
 		maxEntries: 64,
-		maxBytes: y
+		maxBytes: n
 	});
 	_googleFontFaces = [];
 	_embeddedFontFaces = [];
@@ -893,12 +895,12 @@ var Y = class e {
 	_chartEx;
 	_tiff;
 	constructor(e, t, n) {
-		this._worker = e, this._mode = t, this._bridge = new Ce(this._worker, {
+		this._worker = e, this._mode = t, this._bridge = new pe(this._worker, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
-			toError: (e) => !("protocol" in e) && e.kind === "error" ? _(e) : void 0,
+			toError: (e) => !("protocol" in e) && e.kind === "error" ? a(e) : void 0,
 			onUnsolicited: (e) => this._onWorkerLayoutPush(e)
 		});
-		let r = new URL(n ?? Tt, location.href).href;
+		let r = new URL(n ?? Dt, location.href).href;
 		this._bridge.post({
 			kind: "init",
 			wasmUrl: r
@@ -908,79 +910,81 @@ var Y = class e {
 		if (this._resourceFailure) throw this._resourceFailure;
 	}
 	_rethrowWithResourceFailure(e) {
-		let t = e instanceof x ? e : v(e);
+		let t = e instanceof m ? e : o(e);
 		throw t ? (this._resourceFailure ??= t, this._resourceFailure) : e;
 	}
-	static async load(t, r = {}) {
-		let i = te(r), a = r.mode ?? "main", o = new h({
+	static async load(t, n = {}) {
+		let i = Ce(n.cjkFallback), a = h(n), o = n.mode ?? "main", s = new r({
 			enabled: !0,
 			format: "pptx",
-			mode: a,
-			policy: i.policy,
-			onMetrics: i.onResourceMetrics,
-			emitToConsole: i.debug
+			mode: o,
+			policy: a.policy,
+			onMetrics: a.onResourceMetrics,
+			emitToConsole: a.debug
 		});
 		try {
-			if (a === "worker" && (typeof Worker > "u" || typeof OffscreenCanvas > "u")) throw Error("mode: 'worker' requires Worker and OffscreenCanvas support");
-			let s;
+			if (o === "worker" && (typeof Worker > "u" || typeof OffscreenCanvas > "u")) throw Error("mode: 'worker' requires Worker and OffscreenCanvas support");
+			let r;
 			if (typeof t == "string") {
 				let e = await fetch(t);
 				if (!e.ok) throw Error(`Failed to fetch: ${e.status} ${e.statusText}`);
-				s = await e.arrayBuffer();
-			} else s = t;
-			s = ae(await ie(s, r.password)), o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let c = a === "worker" ? (await import("./render-worker-host-BEfLZvSL.js")).createRenderWorker() : new wt(), l = a === "worker" ? Ie(r) : void 0, u;
+				r = await e.arrayBuffer();
+			} else r = t;
+			r = y(await v(r, n.password)), s.setSourceBytes(r.byteLength), s.checkpoint("container ready");
+			let c = o === "worker" ? (await import("./render-worker-host-D4123J27.js")).createRenderWorker() : new Et(), l = o === "worker" ? Re(n) : void 0, u;
 			try {
-				u = new e(c, a, r.wasmUrl), u._metrics = o, r.math && a === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), r.threeD && a === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._math = a === "worker" ? void 0 : r.math, u._threeD = a === "worker" ? void 0 : r.threeD, r.regionMap && a === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = a === "worker" ? void 0 : r.regionMap, r.chartEx && a === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = a === "worker" ? void 0 : r.chartEx, r.tiff && a === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), u._tiff = a === "worker" ? void 0 : r.tiff;
-				let t = r.progressiveLayout ? {
-					onProgress: r.onLayoutProgress,
-					onPartial: r.onLayoutPartial,
-					onComplete: r.onLayoutComplete,
-					firstPublication: zt(),
+				u = new e(c, o, n.wasmUrl), u._metrics = s, n.math && o === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), n.threeD && o === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._cjkFallback = i, u._math = o === "worker" ? void 0 : n.math, u._threeD = o === "worker" ? void 0 : n.threeD, n.regionMap && o === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = o === "worker" ? void 0 : n.regionMap, n.chartEx && o === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = o === "worker" ? void 0 : n.chartEx, n.tiff && o === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), u._tiff = o === "worker" ? void 0 : n.tiff;
+				let t = n.progressiveLayout ? {
+					onProgress: n.onLayoutProgress,
+					onPartial: n.onLayoutPartial,
+					onComplete: n.onLayoutComplete,
+					firstPublication: Ht(),
 					published: !1,
 					deferred: !1,
 					settled: !1
 				} : void 0;
-				return await u._parse(s, i.policy, !!r.useGoogleFonts, r.workerTimeoutMs, (e) => o.observeUsage(e), l, t), o.checkpoint("presentation preflight ready"), a === "main" && r.useGoogleFonts && u._preflight && !t && (u._googleFontFaces = await re(xt(u._preflight.fontPreloadNames, u._embeddedFontAliases), n)), o.succeed({ slides: u.slideCount }), u;
+				return await u._parse(r, a.policy, !!n.useGoogleFonts, n.workerTimeoutMs, (e) => s.observeUsage(e), l, t), s.checkpoint("presentation preflight ready"), o === "main" && n.useGoogleFonts && u._preflight && !t && (u._googleFontFaces = await _(Ct(u._preflight.fontPreloadNames, u._embeddedFontAliases), Ae)), s.succeed({ slides: u.slideCount }), u;
 			} catch (e) {
 				let t = u;
-				throw ne(c, t ? () => t.destroy() : void 0), e;
+				throw g(c, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
-			throw o.fail(e), e;
+			throw s.fail(e), e;
 		}
 	}
-	async _parse(e, n, r = !1, i, a, o, l) {
-		if (l) {
-			this._progressive = l, this._mode === "worker" ? await this._parseWorkerProgressively(e, n, r, i, a, o, l) : await this._parseMainProgressively(e, n, r, i, a, l);
+	async _parse(e, t, n = !1, r, i, a, o) {
+		if (o) {
+			this._progressive = o, this._mode === "worker" ? await this._parseWorkerProgressively(e, t, n, r, i, a, o) : await this._parseMainProgressively(e, t, n, r, i, o);
 			return;
 		}
-		let u = await this._bridge.request((t) => this._mode === "worker" ? {
+		let c = await this._bridge.request((r) => this._mode === "worker" ? {
 			kind: "parse",
-			id: t,
+			id: r,
 			buffer: e,
-			resourcePolicy: n,
-			useGoogleFonts: r,
-			renderers: o
+			resourcePolicy: t,
+			useGoogleFonts: n,
+			cjkFallback: this._cjkFallback,
+			renderers: a
 		} : {
 			kind: "parse",
-			id: t,
+			id: r,
 			buffer: e,
-			resourcePolicy: n
-		}, [e], { timeoutMs: i });
+			resourcePolicy: t,
+			cjkFallback: this._cjkFallback
+		}, [e], { timeoutMs: r });
 		if (this._mode === "worker") {
-			let e = u;
-			e.usage && a?.(e.usage), this._preflight = c(u.preflight), this._bootstrap = this._preflight, this._availableSlideCount = this._preflight.slideCount;
+			let e = c;
+			e.usage && i?.(e.usage), this._preflight = M(c.preflight), this._bootstrap = this._preflight, this._availableSlideCount = this._preflight.slideCount;
 			return;
 		}
-		let f = t(u.bootstrap);
-		this._bootstrap = f;
-		let p = bt(f.embeddedFonts, (e) => this.getFontBytes(e)).then((e) => {
-			this._destroyed ? j(e.faces) : (this._embeddedFontFaces = e.faces, this._embeddedFontAliases = e.aliases, this._embeddedFontAuthoredFamilies = e.authoredFamilies);
+		let l = A(c.bootstrap);
+		this._bootstrap = l;
+		let u = St(l.embeddedFonts, (e) => this.getFontBytes(e)).then((e) => {
+			this._destroyed ? O(e.faces) : (this._embeddedFontFaces = e.faces, this._embeddedFontAliases = e.aliases, this._embeddedFontAuthoredFamilies = e.authoredFamilies);
 		});
-		this._slidePullClient = new d({
-			slideCount: f.slideCount,
-			transport: this._bridge.transport(s),
+		this._slidePullClient = new Ie({
+			slideCount: l.slideCount,
+			transport: this._bridge.transport(Ne),
 			open: async (e, t, n) => {
 				await this._bridge.request((n) => ({
 					kind: "openSlideSession",
@@ -989,65 +993,66 @@ var Y = class e {
 					...t
 				}), void 0, { timeoutMs: n });
 			},
-			onUsage: a
+			onUsage: i
 		});
-		let h;
+		let d;
 		try {
-			for (let e = 0; e < f.slideCount; e += 1) await this._slidePullClient.load(e, !1, i);
-			h = await this._bridge.request((e) => ({
+			for (let e = 0; e < l.slideCount; e += 1) await this._slidePullClient.load(e, !1, r);
+			d = await this._bridge.request((e) => ({
 				kind: "finishPresentationPreflight",
 				id: e
-			}), void 0, { timeoutMs: i }), await p;
+			}), void 0, { timeoutMs: r }), await u;
 		} catch (e) {
-			throw p.catch(() => void 0), e;
+			throw u.catch(() => void 0), e;
 		}
-		this._preflight = c(h.preflight), this._availableSlideCount = this._preflight.slideCount, this._slides = new _t({
+		this._preflight = M(d.preflight), this._availableSlideCount = this._preflight.slideCount, this._slides = new yt({
 			slideCount: this._preflight.slideCount,
 			maxCachedSlides: 8,
-			maxCachedStructuralBytes: m,
+			maxCachedStructuralBytes: s,
 			loadSlide: async (e) => {
-				let t = await this._slidePullClient?.load(e, !0, i);
+				let t = await this._slidePullClient?.load(e, !0, r);
 				if (!t) throw Error("PPTX slide pull client is unavailable");
 				return t;
 			}
 		});
 	}
-	async _parseMainProgressively(e, r, i, a, o, s) {
-		let c = t((await this._bridge.request((t) => ({
+	async _parseMainProgressively(e, t, n, r, i, a) {
+		let o = A((await this._bridge.request((n) => ({
 			kind: "parse",
-			id: t,
+			id: n,
 			buffer: e,
-			resourcePolicy: r,
+			resourcePolicy: t,
+			cjkFallback: this._cjkFallback,
 			progressiveLayout: !0
-		}), [e], { timeoutMs: a })).bootstrap);
-		this._bootstrap = c;
-		let u = bt(c.embeddedFonts, (e) => this.getFontBytes(e)).then((e) => {
-			this._destroyed ? j(e.faces) : (this._embeddedFontFaces = e.faces, this._embeddedFontAliases = e.aliases, this._embeddedFontAuthoredFamilies = e.authoredFamilies);
+		}), [e], { timeoutMs: r })).bootstrap);
+		this._bootstrap = o;
+		let c = St(o.embeddedFonts, (e) => this.getFontBytes(e)).then((e) => {
+			this._destroyed ? O(e.faces) : (this._embeddedFontFaces = e.faces, this._embeddedFontAliases = e.aliases, this._embeddedFontAuthoredFamilies = e.authoredFamilies);
 		});
-		this._slidePullClient = this._createSlidePullClient(c.slideCount, a, o), this._slides = new _t({
-			slideCount: c.slideCount,
+		this._slidePullClient = this._createSlidePullClient(o.slideCount, r, i), this._slides = new yt({
+			slideCount: o.slideCount,
 			maxCachedSlides: 8,
-			maxCachedStructuralBytes: m,
+			maxCachedStructuralBytes: s,
 			loadSlide: async (e) => {
-				let t = await this._slidePullClient?.load(e, !0, a);
+				let t = await this._slidePullClient?.load(e, !0, r);
 				if (!t) throw Error("PPTX slide pull client is unavailable");
 				return t;
 			}
 		});
-		let d = new l(c), f = /* @__PURE__ */ new Set(), p = async () => {
-			if (await u, !i) return;
-			let e = xt(d.currentFontPreloadNames, this._embeddedFontAliases).filter((e) => !!e && !f.has(e));
+		let l = new Pe(o, { cjkFallback: this._cjkFallback }), u = /* @__PURE__ */ new Set(), d = async () => {
+			if (await c, !n) return;
+			let e = Ct(l.currentFontPreloadNames, this._embeddedFontAliases).filter((e) => !!e && !u.has(e));
 			if (e.length !== 0) {
-				for (let t of e) f.add(t);
-				this._googleFontFaces.push(...await re(e, n));
+				for (let t of e) u.add(t);
+				this._googleFontFaces.push(...await _(e, Ae));
 			}
 		};
 		this._layoutCompletion = (async () => {
-			for (let e = 0; e < c.slideCount; e += 1) await this._slides.withSlide(e, (e) => {
-				d.addSlide(e);
-			}), await p(), this._applyProgressivePrefix(d.snapshot(), s), e === 0 && s.deferred && await Rt();
-			await u, this._finishProgressiveLayout(d.finish(), s);
-		})().then(() => void 0, (e) => this._failProgressiveLayout(e, s)), await s.firstPublication.promise;
+			for (let e = 0; e < o.slideCount; e += 1) await this._slides.withSlide(e, (e) => {
+				l.addSlide(e);
+			}), await d(), this._applyProgressivePrefix(l.snapshot(), a), e === 0 && a.deferred && await Vt();
+			await c, this._finishProgressiveLayout(l.finish(), a);
+		})().then(() => void 0, (e) => this._failProgressiveLayout(e, a)), await a.firstPublication.promise;
 	}
 	async _parseWorkerProgressively(e, t, n, r, i, a, o) {
 		this._progressiveWatchdogMs = r;
@@ -1057,21 +1062,22 @@ var Y = class e {
 			buffer: e,
 			resourcePolicy: t,
 			useGoogleFonts: n,
+			cjkFallback: this._cjkFallback,
 			renderers: a,
 			progressiveLayout: !0
 		}), [e], { timeoutMs: !1 });
 		this._rearmProgressiveWatchdog(), this._layoutCompletion = s.then((e) => {
 			this._parseRequestId = null;
 			let t = e;
-			t.usage && i?.(t.usage), this._finishProgressiveLayout(c(t.preflight), o);
+			t.usage && i?.(t.usage), this._finishProgressiveLayout(M(t.preflight), o);
 		}, (e) => {
 			this._parseRequestId = null, this._failProgressiveLayout(e, o);
 		}), await o.firstPublication.promise;
 	}
 	_createSlidePullClient(e, t, n) {
-		return new d({
+		return new Ie({
 			slideCount: e,
-			transport: this._bridge.transport(s),
+			transport: this._bridge.transport(Ne),
 			open: async (e, n, r) => {
 				await this._bridge.request((t) => ({
 					kind: "openSlideSession",
@@ -1084,17 +1090,17 @@ var Y = class e {
 		});
 	}
 	_onWorkerLayoutPush(e) {
-		if (!se((e, t) => this._worker.postMessage(e, t), e) && !(!("kind" in e) || e.kind !== "presentationLayoutPartial" || e.forId !== this._parseRequestId || !this._progressive)) try {
-			this._rearmProgressiveWatchdog(), e.usage && this._metrics?.observeUsage(e.usage), e.bootstrap && (this._bootstrap = t(e.bootstrap));
-			let n = this._bootstrap;
-			if (!n) throw Error("PPTX progressive worker published before bootstrap");
-			let r = this._preflight?.slides ?? [];
-			if (e.availableSlides !== r.length + 1 || e.slide.index !== r.length) throw Error("PPTX progressive worker published a non-sequential slide");
-			this._applyProgressivePrefix(u({
-				...n,
-				slides: [...r, e.slide],
+		if (!x((e, t) => this._worker.postMessage(e, t), e) && !(!("kind" in e) || e.kind !== "presentationLayoutPartial" || e.forId !== this._parseRequestId || !this._progressive)) try {
+			this._rearmProgressiveWatchdog(), e.usage && this._metrics?.observeUsage(e.usage), e.bootstrap && (this._bootstrap = A(e.bootstrap));
+			let t = this._bootstrap;
+			if (!t) throw Error("PPTX progressive worker published before bootstrap");
+			let n = this._preflight?.slides ?? [];
+			if (e.availableSlides !== n.length + 1 || e.slide.index !== n.length) throw Error("PPTX progressive worker published a non-sequential slide");
+			this._applyProgressivePrefix(Fe({
+				...t,
+				slides: [...n, e.slide],
 				fontPreloadNames: e.fontPreloadNames
-			}), this._progressive), Rt().then(() => {
+			}), this._progressive), Vt().then(() => {
 				this._destroyed || this._parseRequestId !== e.forId || this._bridge.post({
 					kind: "continuePresentationPreflight",
 					forId: e.forId,
@@ -1135,11 +1141,11 @@ var Y = class e {
 			slideCount: this.slideCount,
 			exact: !0,
 			complete: !0
-		}), t.deferred && this._layoutObservers.notify("onLayoutComplete", t.onComplete));
+		}), this._layoutObservers.notify("onLayoutComplete", t.onComplete));
 	}
 	_failProgressiveLayout(e, t) {
 		if (t.settled || (t.settled = !0, this._clearProgressiveWatchdog(), this._destroyed)) return;
-		if (!t.published) {
+		if (!t.deferred) {
 			t.firstPublication.reject(e);
 			return;
 		}
@@ -1208,26 +1214,27 @@ var Y = class e {
 		return (this._bootstrap?.slides ?? this._preflight?.slides ?? []).map((e) => e.partName);
 	}
 	_partIndex() {
-		return this._slidePartIndex ||= mt(this._partNames()), this._slidePartIndex;
+		return this._slidePartIndex ||= gt(this._partNames()), this._slidePartIndex;
 	}
 	getSlideIndexByPartName(e) {
 		return this._partIndex().get(e);
 	}
 	resolveInternalTarget(e, t = 0) {
-		return gt(e, this._partIndex(), t);
+		return vt(e, this._partIndex(), t);
 	}
-	async renderSlide(e, t, n = {}) {
+	async renderSlide(e, n, r = {}) {
 		this._assertResourceHealthy();
 		try {
 			if (this._mode === "worker") throw Error("renderSlide(canvas) is unavailable in mode: 'worker'; use renderSlideToBitmap() and paint it via an ImageBitmapRenderingContext");
-			this._assertSlideIndex(t), await this._waitForSlide(t);
+			this._assertSlideIndex(n), await this._waitForSlide(n);
 			let i = this._preflight, a = this._slides;
 			if (!i || !a) throw Error("Presentation not loaded");
-			let o = n.dpr ?? p(), s = n.width ?? ((S(e) ? e.offsetWidth : 0) || 960);
-			await a.withSlide(t, (t) => (this._assertResourceHealthy(), r(e, t, i.slideWidth, i.slideHeight, {
+			let o = r.dpr ?? t(), s = r.width ?? ((l(e) ? e.offsetWidth : 0) || 960);
+			await a.withSlide(n, (t) => (this._assertResourceHealthy(), Le(e, t, i.slideWidth, i.slideHeight, {
 				width: s,
 				dpr: o,
 				defaultTextColor: i.defaultTextColor,
+				cjkFallback: this._cjkFallback,
 				majorFont: i.majorFont,
 				minorFont: i.minorFont,
 				hlinkColor: i.hlinkColor,
@@ -1235,51 +1242,51 @@ var Y = class e {
 				embeddedFontAuthoredFamilies: this._embeddedFontAuthoredFamilies,
 				fetchMedia: this._fetchMedia,
 				fetchImage: this._fetchImage,
-				skipMediaControls: n.skipMediaControls,
-				dim: n.dim,
+				skipMediaControls: r.skipMediaControls,
+				dim: r.dim,
 				math: this._math,
 				threeD: this._threeD,
 				regionMap: this._regionMap,
 				chartEx: this._chartEx,
 				tiff: this._tiff,
-				imageResources: n.imageResources
-			}, n.onTextRun)));
+				imageResources: r.imageResources
+			}, r.onTextRun)));
 		} catch (e) {
 			this._rethrowWithResourceFailure(e);
 		}
 	}
-	async renderSlideToBitmap(e, t = {}) {
+	async renderSlideToBitmap(e, n = {}) {
 		this._assertResourceHealthy();
 		try {
 			this._assertSlideIndex(e), await this._waitForSlide(e);
-			let n = t.width ?? 960, r = t.dpr ?? p();
+			let r = n.width ?? 960, i = n.dpr ?? t();
 			if (this._mode === "worker") {
-				let i = await this._bridge.request((i) => ({
+				let t = await this._bridge.request((t) => ({
 					kind: "renderSlide",
-					id: i,
+					id: t,
 					slideIndex: e,
-					width: n,
-					dpr: r,
-					imageResources: t.imageResources,
-					skipMediaControls: t.skipMediaControls,
-					dim: t.dim
+					width: r,
+					dpr: i,
+					imageResources: n.imageResources,
+					skipMediaControls: n.skipMediaControls,
+					dim: n.dim
 				}));
 				try {
-					if (t.onTextRun) for (let e of i.runs) t.onTextRun(e);
+					if (n.onTextRun) for (let e of t.runs) n.onTextRun(e);
 				} catch (e) {
-					throw b(i.bitmap), e;
+					throw c(t.bitmap), e;
 				}
-				return i.bitmap;
+				return t.bitmap;
 			}
-			let i = new OffscreenCanvas(1, 1);
-			return await this.renderSlide(i, e, {
-				width: n,
-				dpr: r,
-				imageResources: t.imageResources,
-				skipMediaControls: t.skipMediaControls,
-				dim: t.dim,
-				onTextRun: t.onTextRun
-			}), i.transferToImageBitmap();
+			let a = new OffscreenCanvas(1, 1);
+			return await this.renderSlide(a, e, {
+				width: r,
+				dpr: i,
+				imageResources: n.imageResources,
+				skipMediaControls: n.skipMediaControls,
+				dim: n.dim,
+				onTextRun: n.onTextRun
+			}), a.transferToImageBitmap();
 		} catch (e) {
 			this._rethrowWithResourceFailure(e);
 		}
@@ -1313,7 +1320,7 @@ var Y = class e {
 				options: n
 			}))).context;
 			if (!this._slides) throw Error("Presentation not loaded");
-			return await this._slides.withSlide(e, (r) => It(e, r, t, n));
+			return await this._slides.withSlide(e, (r) => Rt(e, r, t, n));
 		} catch (e) {
 			this._rethrowWithResourceFailure(e);
 		}
@@ -1330,7 +1337,7 @@ var Y = class e {
 				elementIds: n
 			}))).bounds;
 			if (!this._slides) throw Error("Presentation not loaded");
-			return await this._slides.withSlide(e, (e) => Lt(e, n));
+			return await this._slides.withSlide(e, (e) => zt(e, n));
 		} catch (e) {
 			this._rethrowWithResourceFailure(e);
 		}
@@ -1352,7 +1359,7 @@ var Y = class e {
 		}
 	}
 	_findMimeTypeForPath(e) {
-		return this._preflight ? a(this._preflight, e) : "";
+		return this._preflight ? je(this._preflight, e) : "";
 	}
 	async getImage(e, t) {
 		this._assertResourceHealthy();
@@ -1385,7 +1392,7 @@ var Y = class e {
 	async getResourceMetrics() {
 		let e = this._metrics;
 		if (!e) throw Error("Presentation not loaded");
-		return g(e, async (e) => (await this._bridge.request((e) => ({
+		return i(e, async (e) => (await this._bridge.request((e) => ({
 			kind: "resourceUsage",
 			id: e
 		}), void 0, { timeoutMs: e })).usage);
@@ -1401,58 +1408,58 @@ var Y = class e {
 			this._rethrowWithResourceFailure(e);
 		}
 	}
-	async presentSlide(e, t, n = {}) {
+	async presentSlide(e, n, r = {}) {
 		this._assertResourceHealthy();
 		try {
-			if (this._assertSlideIndex(t), await this._waitForSlide(t), !this._preflight) throw Error("Presentation not loaded");
-			let r = n.dpr ?? p(), i = n.width ?? (e.offsetWidth || 960), a = this.slideWidth > 0 ? i * this.slideHeight / this.slideWidth : 0;
-			e.style.width = `${Math.round(i)}px`, e.style.height = `${Math.round(a)}px`, e.style.display || (e.style.display = "block");
-			let o = this._mode === "worker" ? async () => {
-				let a = await this.renderSlideToBitmap(t, {
-					width: i,
-					dpr: r,
-					imageResources: n.imageResources,
+			if (this._assertSlideIndex(n), await this._waitForSlide(n), !this._preflight) throw Error("Presentation not loaded");
+			let i = r.dpr ?? t(), a = r.width ?? (e.offsetWidth || 960), o = this.slideWidth > 0 ? a * this.slideHeight / this.slideWidth : 0;
+			e.style.width = `${Math.round(a)}px`, e.style.height = `${Math.round(o)}px`, e.style.display || (e.style.display = "block");
+			let s = this._mode === "worker" ? async () => {
+				let t = await this.renderSlideToBitmap(n, {
+					width: a,
+					dpr: i,
+					imageResources: r.imageResources,
 					skipMediaControls: !0,
-					dim: n.dim,
-					onTextRun: n.onTextRun
+					dim: r.dim,
+					onTextRun: r.onTextRun
 				});
 				try {
-					e.width = a.width, e.height = a.height;
-					let t = e.getContext("2d");
-					if (!t) throw Error("2D context not available");
-					t.drawImage(a, 0, 0);
+					e.width = t.width, e.height = t.height;
+					let n = e.getContext("2d");
+					if (!n) throw Error("2D context not available");
+					n.drawImage(t, 0, 0);
 				} finally {
-					b(a);
+					c(t);
 				}
-			} : () => this.renderSlide(e, t, {
-				width: i,
-				dpr: r,
-				imageResources: n.imageResources,
+			} : () => this.renderSlide(e, n, {
+				width: a,
+				dpr: i,
+				imageResources: r.imageResources,
 				skipMediaControls: !0,
-				dim: n.dim,
-				onTextRun: n.onTextRun
+				dim: r.dim,
+				onTextRun: r.onTextRun
 			});
-			return await $e(e, this._preflight.slides[t]?.mediaElements ?? [], {
-				width: i,
-				height: a,
+			return await tt(e, this._preflight.slides[n]?.mediaElements ?? [], {
+				width: a,
+				height: o,
 				slideWidthEmu: this.slideWidth,
 				fetchMedia: this._fetchMedia,
 				fetchImage: this._fetchImage,
-				drawBase: o,
-				onError: n.onError
+				drawBase: s,
+				onError: r.onError
 			});
 		} catch (e) {
 			this._rethrowWithResourceFailure(e);
 		}
 	}
 	destroy() {
-		this._destroyed = !0, this._clearProgressiveWatchdog(), this._slidePullClient?.cancelAll(), this._bridge.terminate(), this._slides?.clear(), this._slides = null, this._slidePullClient = null, this._bootstrap = null, this._preflight = null, this._availableSlideCount = 0, this._layoutLifecycle.succeed(), this._layoutCompletion = null, this._progressive = null, this._parseRequestId = null, this._wakeLayoutWaiters(), this._resourceFailure = null, this._slidePartIndex = null, this._rawParts.clear(), this._googleFontFaces.length > 0 && (oe(this._googleFontFaces), this._googleFontFaces = []), this._embeddedFontFaces.length > 0 && (j(this._embeddedFontFaces), this._embeddedFontFaces = []), this._embeddedFontAliases = /* @__PURE__ */ new Map(), this._embeddedFontAuthoredFamilies = /* @__PURE__ */ new Map(), C(this._fetchImage), w(this._fetchImage);
+		this._destroyed = !0, this._clearProgressiveWatchdog(), this._slidePullClient?.cancelAll(), this._bridge.terminate(), this._slides?.clear(), this._slides = null, this._slidePullClient = null, this._bootstrap = null, this._preflight = null, this._availableSlideCount = 0, this._layoutLifecycle.succeed(), this._layoutCompletion = null, this._progressive = null, this._parseRequestId = null, this._wakeLayoutWaiters(), this._resourceFailure = null, this._slidePartIndex = null, this._rawParts.clear(), this._googleFontFaces.length > 0 && (b(this._googleFontFaces), this._googleFontFaces = []), this._embeddedFontFaces.length > 0 && (O(this._embeddedFontFaces), this._embeddedFontFaces = []), this._embeddedFontAliases = /* @__PURE__ */ new Map(), this._embeddedFontAuthoredFamilies = /* @__PURE__ */ new Map(), u(this._fetchImage), f(this._fetchImage);
 	}
 };
 //#endregion
 //#region packages/pptx/src/selection-context.ts
-function Bt(e, t, n, r, i = {}) {
-	let a = De({
+function Ut(e, t, n, r, i = {}) {
+	let a = be({
 		id: e.id,
 		author: e.author,
 		date: e.date,
@@ -1483,23 +1490,23 @@ function Bt(e, t, n, r, i = {}) {
 		maxTextCharacters: a.maxTextCharacters
 	});
 }
-function X(e) {
+function Y(e) {
 	if (e === void 0 || !/^\d+$/.test(e)) return null;
 	let t = Number(e);
 	return Number.isSafeInteger(t) ? t : null;
 }
-function Vt(e) {
+function Wt(e) {
 	for (let t = e; t; t = t.parentElement) {
-		let e = X(t.dataset.slideIndex);
+		let e = Y(t.dataset.slideIndex);
 		if (e !== null) return e;
 	}
 	return null;
 }
-function Z(e, t, n = {}) {
-	let r = be(e, t, (e) => {
-		let t = Vt(e), n = X(e.dataset.runIndex);
+function X(e, t, n = {}) {
+	let r = ue(e, t, (e) => {
+		let t = Wt(e), n = Y(e.dataset.runIndex);
 		if (t === null || n === null) return null;
-		let r = X(e.dataset.elementIndex), i = e.dataset.elementOrigin, a = r !== null && (i === "master" || i === "layout" || i === "slide");
+		let r = Y(e.dataset.elementIndex), i = e.dataset.elementOrigin, a = r !== null && (i === "master" || i === "layout" || i === "slide");
 		return {
 			slideIndex: t,
 			runIndex: n,
@@ -1531,12 +1538,12 @@ function Z(e, t, n = {}) {
 }
 //#endregion
 //#region packages/pptx/src/focused-view-runtime.ts
-function Q(e, t, n, r, i) {
+function Z(e, t, n, r, i) {
 	return r === "worker" ? e.renderSlideToBitmap(n, i) : e.renderSlide(t, n, i);
 }
 //#endregion
 //#region packages/pptx/src/loading-indicator.ts
-function Ht(e) {
+function Gt(e) {
 	let t = e.createElement("span");
 	t.style.cssText = [
 		"position:absolute",
@@ -1569,10 +1576,10 @@ function Ht(e) {
 }
 //#endregion
 //#region packages/pptx/src/viewer.ts
-var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
+var Kt = Symbol("PptxViewer.borrowedPresentation"), qt = {
 	color: "#ffffff",
 	opacity: .6
-}, Gt = class e {
+}, Q = class e {
 	canvas;
 	wrapper;
 	canvasMount;
@@ -1618,35 +1625,36 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	static fromPresentation(t, n, r = {}) {
 		return new e(t, {
 			...r,
-			[Ut]: n
+			[Kt]: n
 		});
 	}
 	constructor(e, t = {}) {
 		this.opts = t, this.canvas = e;
-		let n = t[Ut];
-		this.borrowed = n !== void 0, this._mode = k("PptxViewer", t.mode, n), this.presentationOwner = new E("PptxViewer", n ?? null, !1);
+		let n = t[Kt];
+		this.borrowed = n !== void 0, this._mode = D("PptxViewer", t.mode, n), this.presentationOwner = new w("PptxViewer", n ?? null, !1);
 		let r = e.ownerDocument?.defaultView ?? (typeof window < "u" ? window : null);
 		if (!r) throw Error("PptxViewer requires a canvas with an active Window");
 		this.hostWindow = r;
 		let i = t.elementHitTolerance ?? 6;
 		if (!Number.isFinite(i) || i < 0) throw RangeError("elementHitTolerance must be a finite non-negative number.");
-		this.elementHitTolerance = i, this._hiddenMode = t.hiddenSlideMode ?? "show", this.canvasMount = new xe(e, {
+		this.elementHitTolerance = i, this._hiddenMode = t.hiddenSlideMode ?? "show", this.canvasMount = new de(e, {
 			wrapperCssText: "position:relative;display:inline-block;vertical-align:top;",
 			forceDisplayBlock: !0
-		}), this.wrapper = this.canvasMount.wrapper, this.renderDispatcher = new O(e, this._mode === "worker" && !t.enableMediaPlayback), this.errorRouter = new ye("PptxViewer", t.onError);
-		let a = new ge(this.wrapper, t.enableTextSelection === !0, t.enableElementSelection === !0);
-		this.textLayer = a.textLayer, this.highlightLayer = a.highlightLayer, this.elementLayer = a.elementLayer, this._loadingLayer = Ht(this.wrapper.ownerDocument), this.wrapper.insertBefore(this._loadingLayer, this.elementLayer), this.textLayer && (t.onSelectionContextChange || t.enableElementSelection) && (this.selectionChangeListener = () => this._emitSelectionContextChange(), this.wrapper.ownerDocument.addEventListener("selectionchange", this.selectionChangeListener)), t.enableElementSelection && (this.elementClickListener = (e) => {
+		}), this.wrapper = this.canvasMount.wrapper, this.renderDispatcher = new E(e, this._mode === "worker" && !t.enableMediaPlayback), this.errorRouter = new le("PptxViewer", t.onError);
+		let a = new oe(this.wrapper, t.enableTextSelection === !0, t.enableElementSelection === !0);
+		this.textLayer = a.textLayer, this.highlightLayer = a.highlightLayer, this.elementLayer = a.elementLayer, this._loadingLayer = Gt(this.wrapper.ownerDocument), this.wrapper.insertBefore(this._loadingLayer, this.elementLayer), this.textLayer && (t.onSelectionContextChange || t.enableElementSelection) && (this.selectionChangeListener = () => this._emitSelectionContextChange(), this.wrapper.ownerDocument.addEventListener("selectionchange", this.selectionChangeListener)), t.enableElementSelection && (this.elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
-		}, this.wrapper.addEventListener("click", this.elementClickListener)), t.onContextMenu && (this.contextMenuListener = (e) => this._onContextMenu(e), this.wrapper.addEventListener("contextmenu", this.contextMenuListener)), this._find = new Je(() => this.slideCount, (e) => this._collectSlideRuns(e)), n && this._bindLayoutPresentation(n);
+		}, this.wrapper.addEventListener("click", this.elementClickListener)), t.onContextMenu && (this.contextMenuListener = (e) => this._onContextMenu(e), this.wrapper.addEventListener("contextmenu", this.contextMenuListener)), this._find = new Xe(() => this.slideCount, (e) => this._collectSlideRuns(e)), n && this._bindLayoutPresentation(n);
 	}
 	async load(e) {
 		if (this.destroyed) throw Error("PptxViewer is destroyed");
 		if (this.borrowed) throw Error("PptxViewer.load() is unsupported on a Viewer created by fromPresentation(); the borrowed presentation is already loaded.");
 		let t = !1;
 		try {
-			let n = await this.presentationOwner.replace(() => Y.load(e, {
+			let n = await this.presentationOwner.replace(() => J.load(e, {
 				password: this.opts.password,
 				useGoogleFonts: this.opts.useGoogleFonts,
+				cjkFallback: this.opts.cjkFallback,
 				maxZipEntryBytes: this.opts.maxZipEntryBytes,
 				resourceLimits: this.opts.resourceLimits,
 				debug: this.opts.debug,
@@ -1711,8 +1719,8 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	}
 	_dim() {
 		return {
-			color: this.opts.hiddenSlideDim?.color ?? Wt.color,
-			opacity: this.opts.hiddenSlideDim?.opacity ?? Wt.opacity
+			color: this.opts.hiddenSlideDim?.color ?? qt.color,
+			opacity: this.opts.hiddenSlideDim?.opacity ?? qt.opacity
 		};
 	}
 	async setHiddenSlideMode(e) {
@@ -1734,7 +1742,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	get visibleSlideCount() {
 		if (!this.engine) return 0;
 		let e = this.engine;
-		return Le((t) => e.isHidden(t), this.slideCount);
+		return ze((t) => e.isHidden(t), this.slideCount);
 	}
 	get slideIndex() {
 		return this.currentSlide;
@@ -1761,7 +1769,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	}
 	_naturalWidthPx() {
 		let e = this.engine?.slideWidth ?? 0;
-		return e > 0 ? e / M : 0;
+		return e > 0 ? e / k : 0;
 	}
 	_targetWidth() {
 		if (this._scale === null) return this.opts.width ?? (this.canvas.offsetWidth || 960);
@@ -1780,14 +1788,14 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 		return this.opts.zoomMax ?? 4;
 	}
 	async setScale(e) {
-		let t = pe(e, this._zoomMin(), this._zoomMax()), n = t !== this.getScale();
+		let t = re(e, this._zoomMin(), this._zoomMax()), n = t !== this.getScale();
 		this._scale = t, await this.renderCurrentSlide(), n && this.opts.onScaleChange?.(t);
 	}
 	async zoomIn() {
-		await this.setScale(Se(this.getScale()));
+		await this.setScale(fe(this.getScale()));
 	}
 	async zoomOut() {
-		await this.setScale(A(this.getScale()));
+		await this.setScale(he(this.getScale()));
 	}
 	async fitWidth() {
 		await this._fit("width");
@@ -1799,9 +1807,9 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 		if (!this.engine) return;
 		let t = this.wrapper.parentElement;
 		if (!t) return;
-		let n = le({
-			contentWidth: this.engine.slideWidth / M,
-			contentHeight: this.engine.slideHeight / M,
+		let n = C({
+			contentWidth: this.engine.slideWidth / k,
+			contentHeight: this.engine.slideHeight / k,
 			containerWidth: t.clientWidth,
 			containerHeight: t.clientHeight
 		}, e);
@@ -1835,7 +1843,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 				}
 				this.handle = n;
 			} else if (l) {
-				let e = await Q(this.engine, this.canvas, t, "worker", {
+				let e = await Z(this.engine, this.canvas, t, "worker", {
 					width: a,
 					dpr: o,
 					imageResources: this.opts.imageResources,
@@ -1843,7 +1851,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 					onTextRun: d
 				});
 				if (!this.renderDispatcher.commitBitmap(r, e)) return;
-			} else if (await Q(this.engine, this.canvas, t, "main", {
+			} else if (await Z(this.engine, this.canvas, t, "main", {
 				width: a,
 				dpr: o,
 				imageResources: this.opts.imageResources,
@@ -1861,7 +1869,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	_bindLayoutPresentation(e) {
 		this._unbindLayoutPresentation(), this._layoutFailed = !1;
 		let t = !0;
-		this._layoutUnsubscribe = J(e, () => ({
+		this._layoutUnsubscribe = Bt(e, () => ({
 			availableSlides: e.availableSlideCount,
 			slideCount: e.slideCount,
 			exact: e.layoutComplete,
@@ -1960,7 +1968,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 			return;
 		}
 		if (t.kind === "external") {
-			T(t.url, void 0, this.hostWindow);
+			p(t.url, void 0, this.hostWindow);
 			return;
 		}
 		t.slideIndex !== void 0 && this.goToSlide(t.slideIndex).catch((e) => this._reportRenderError(e));
@@ -1982,7 +1990,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	}
 	getSelectionContext(e = {}) {
 		if (this.destroyed) throw Error("PptxViewer is destroyed");
-		return (this.textLayer ? Z(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this.elementContext ? Pt(this.elementContext, e.maxTextCharacters) : null);
+		return (this.textLayer ? X(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this.elementContext ? It(this.elementContext, e.maxTextCharacters) : null);
 	}
 	_emitSelectionContextChange() {
 		let e = this.getSelectionContext();
@@ -1999,10 +2007,10 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	_redrawElementOutline() {
 		let e = this.elementContext, t = this.engine;
 		if (!e || !t || e.slideIndex !== this.currentSlide) {
-			D(this.elementLayer, null);
+			T(this.elementLayer, null);
 			return;
 		}
-		D(this.elementLayer, {
+		T(this.elementLayer, {
 			x: e.bounds.x / t.slideWidth,
 			y: e.bounds.y / t.slideHeight,
 			width: e.bounds.width / t.slideWidth,
@@ -2023,7 +2031,7 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 	async _resolveContextAt(e) {
 		let t = this.engine;
 		if (this.destroyed || !t) return null;
-		if (this.textLayer && Z(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this.destroyed ? null : this.getSelectionContext();
+		if (this.textLayer && X(this.wrapper, this.wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this.destroyed ? null : this.getSelectionContext();
 		if (!this.opts.enableElementSelection) return this.getSelectionContext();
 		let n = this.canvas.getBoundingClientRect();
 		if (n.width <= 0 || n.height <= 0) return this._invalidateElementSelection(), null;
@@ -2045,13 +2053,13 @@ var Ut = Symbol("PptxViewer.borrowedPresentation"), Wt = {
 		return this.destroyed || a !== this.elementHitGeneration || o !== this.currentSlide || t !== this.engine ? null : (this._setElementContext(c), this.destroyed ? null : this.getSelectionContext());
 	}
 	destroy() {
-		this.destroyed || (this.destroyed = !0, this.errorRouter.close(), this.renderDispatcher.destroy(), o(this.canvas), this.handle?.destroy(), this.handle = null, this._unbindLayoutPresentation(), this.presentationOwner.close(), this._invalidateFind(), this.selectionChangeListener &&= (this.wrapper.ownerDocument.removeEventListener("selectionchange", this.selectionChangeListener), null), this.elementHitGeneration++, this.elementClickListener &&= (this.wrapper.removeEventListener("click", this.elementClickListener), null), this.contextMenuListener &&= (this.wrapper.removeEventListener("contextmenu", this.contextMenuListener), null), this.elementContext = null, this.canvasMount.restore());
+		this.destroyed || (this.destroyed = !0, this.errorRouter.close(), this.renderDispatcher.destroy(), ke(this.canvas), this.handle?.destroy(), this.handle = null, this._unbindLayoutPresentation(), this.presentationOwner.close(), this._invalidateFind(), this.selectionChangeListener &&= (this.wrapper.ownerDocument.removeEventListener("selectionchange", this.selectionChangeListener), null), this.elementHitGeneration++, this.elementClickListener &&= (this.wrapper.removeEventListener("click", this.elementClickListener), null), this.contextMenuListener &&= (this.wrapper.removeEventListener("contextmenu", this.contextMenuListener), null), this.elementContext = null, this.canvasMount.restore());
 	}
-}, Kt = 150, qt = "0 1px 3px rgba(0,0,0,0.2)", Jt = 12, Yt;
-function Xt() {
-	return Yt ??= import("./comment-ui-runtime-lXwVOgjW.js");
+}, Jt = 150, Yt = "0 1px 3px rgba(0,0,0,0.2)", Xt = 12, Zt;
+function Qt() {
+	return Zt ??= import("./comment-ui-runtime-CWGqn5Vr.js");
 }
-var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t = class e {
+var $ = 440, $t = 20, en = Symbol("PptxScrollViewer.borrowedPresentation"), tn = class e {
 	_presentationOwner;
 	get _pres() {
 		return this._presentationOwner.current;
@@ -2106,24 +2114,24 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	_prevBase = 0;
 	_lastFitWidth = 0;
 	_pageShadow;
-	_find = new Je(() => this.slideCount, (e) => this._collectSlideRuns(e));
+	_find = new Xe(() => this.slideCount, (e) => this._collectSlideRuns(e));
 	_findGeneration = 0;
 	_findActive = !1;
 	_findMeasureCtx;
 	static fromPresentation(t, n, r = {}) {
 		return new e(t, {
 			...r,
-			[Qt]: n
+			[en]: n
 		});
 	}
 	constructor(e, t = {}) {
 		if (e.tagName === "CANVAS") throw Error("PptxScrollViewer takes a container element (e.g. a <div>), not a <canvas> — the viewer creates and manages its own canvases. Pass a block container; for the single-slide canvas API use PptxViewer.");
-		this._container = e, this._opts = t, this._errorRouter = new ye("PptxScrollViewer", t.onError);
+		this._container = e, this._opts = t, this._errorRouter = new le("PptxScrollViewer", t.onError);
 		let n = t.elementHitTolerance ?? 6;
 		if (!Number.isFinite(n) || n < 0) throw RangeError("elementHitTolerance must be a finite non-negative number.");
-		this._elementHitTolerance = n, this._pageShadow = t.pageShadow ?? qt;
-		let r = t[Qt];
-		this._borrowed = r !== void 0, r ? (this._presentationOwner = new E("PptxScrollViewer", r, !1), this._mode = k("PptxScrollViewer", t.mode, r), this._scanAvailableComments(r, !1)) : (this._presentationOwner = new E("PptxScrollViewer"), this._mode = k("PptxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), this._commentsEnabled() && Xt().then((e) => {
+		this._elementHitTolerance = n, this._pageShadow = t.pageShadow ?? Yt;
+		let r = t[en];
+		this._borrowed = r !== void 0, r ? (this._presentationOwner = new w("PptxScrollViewer", r, !1), this._mode = D("PptxScrollViewer", t.mode, r), this._scanAvailableComments(r, !1)) : (this._presentationOwner = new w("PptxScrollViewer"), this._mode = D("PptxScrollViewer", t.mode, void 0)), this._wrapper = document.createElement("div"), this._wrapper.style.cssText = "position:relative;width:100%;height:100%;overflow:hidden;", this._scrollHost = document.createElement("div"), this._scrollHost.style.cssText = "position:absolute;inset:0;overflow:auto;", this._scrollHost.style.scrollbarGutter = "stable", t.background && (this._scrollHost.style.background = t.background), this._spacer = document.createElement("div"), this._spacer.style.cssText = "position:absolute;top:0;left:0;width:1px;height:0;pointer-events:none;", this._scrollHost.appendChild(this._spacer), this._wrapper.appendChild(this._scrollHost), this._container.appendChild(this._wrapper), this._commentsEnabled() && Qt().then((e) => {
 			if (!this._destroyed) {
 				this._commentUi = e;
 				for (let [e, t] of this._slots) this._redrawSlotComments(e, t);
@@ -2131,7 +2139,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		}).catch((e) => this._reportRenderError(e)), t.enableTextSelection && (t.onSelectionContextChange || t.enableElementSelection) && (this._selectionChangeListener = () => this._emitSelectionContextChange(), this._wrapper.ownerDocument.addEventListener("selectionchange", this._selectionChangeListener)), t.enableElementSelection && (this._elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
 		}, this._scrollHost.addEventListener("click", this._elementClickListener)), t.onContextMenu && (this._contextMenuListener = (e) => this._onContextMenu(e), this._scrollHost.addEventListener("contextmenu", this._contextMenuListener)), this._scrollListener = () => this._onScroll(), this._scrollHost.addEventListener("scroll", this._scrollListener), t.comments && (this._commentOutsidePointerListener = (e) => {
-			if (!ke(e, this._wrapper, "ooxmlCommentId") && this._activeCommentId !== null) {
+			if (!Se(e, this._wrapper, "ooxmlCommentId") && this._activeCommentId !== null) {
 				this._activeCommentId = null, this._activeCommentSlide = null;
 				for (let [e, t] of this._slots) this._redrawSlotComments(e, t);
 				this._emitSelectionContextChange();
@@ -2142,7 +2150,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 			this._pendingZoomAnchor = Number.isFinite(n) && Number.isFinite(r) ? {
 				x: n,
 				y: r
-			} : null, this.setScale(we(this._scale, e.deltaY, e.deltaMode));
+			} : null, this.setScale(me(this._scale, e.deltaY, e.deltaMode));
 		}, this._scrollHost.addEventListener("wheel", this._wheelListener, { passive: !1 })), typeof ResizeObserver < "u" && (this._resizeObserver = new ResizeObserver(() => this._onResize()), this._resizeObserver.observe(this._container)), this._borrowed && (this._bindLayoutPresentation(r), this.relayout());
 	}
 	async load(e) {
@@ -2150,9 +2158,10 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		if (this._borrowed) throw Error("PptxScrollViewer.load() is unsupported on a Viewer created by fromPresentation(); the borrowed presentation is already loaded.");
 		let t = !1;
 		try {
-			let n = await this._presentationOwner.replace(() => Y.load(e, {
+			let n = await this._presentationOwner.replace(() => J.load(e, {
 				password: this._opts.password,
 				useGoogleFonts: this._opts.useGoogleFonts,
+				cjkFallback: this._opts.cjkFallback,
 				maxZipEntryBytes: this._opts.maxZipEntryBytes,
 				resourceLimits: this._opts.resourceLimits,
 				debug: this._opts.debug,
@@ -2200,10 +2209,10 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		});
 	}
 	_slideWidthPx() {
-		return this._pres.slideWidth / M * this._scale;
+		return this._pres.slideWidth / k * this._scale;
 	}
 	_slideHeightPx() {
-		return this._pres.slideHeight / M * this._scale;
+		return this._pres.slideHeight / k * this._scale;
 	}
 	_fitWidthPx() {
 		if (this._opts.width && this._opts.width > 0) return this._opts.width;
@@ -2213,7 +2222,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		return r <= 0 ? 0 : r;
 	}
 	_commentMarginExtent() {
-		return this._hasCommentMargin() ? (Jt + $) * this._commentZoom() : 0;
+		return this._hasCommentMargin() ? (Xt + $) * this._commentZoom() : 0;
 	}
 	_hasCommentMargin() {
 		return this._commentsEnabled() && this._hasComments && this._commentsOptions()?.cards !== !1;
@@ -2234,8 +2243,8 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	_syncCommentMarginGeometry(e) {
 		if (!e) return;
 		e.style.display = this._hasCommentMargin() ? "" : "none";
-		let t = this._commentZoom(), n = `calc(100% + ${Jt * t}px)`;
-		e.style.left = this._commentSide() === "right" ? n : "", e.style.right = this._commentSide() === "left" ? n : "", e.style.width = `${$ * t}px`, e.style.fontSize = `${Zt}px`, e.dataset.ooxmlCommentZoom = String(t);
+		let t = this._commentZoom(), n = `calc(100% + ${Xt * t}px)`;
+		e.style.left = this._commentSide() === "right" ? n : "", e.style.right = this._commentSide() === "left" ? n : "", e.style.width = `${$ * t}px`, e.style.fontSize = `${$t}px`, e.dataset.ooxmlCommentZoom = String(t);
 	}
 	_scanAvailableComments(e, t) {
 		if (!this._commentsEnabled() || this._hasComments) return;
@@ -2252,7 +2261,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	}
 	_baseScale() {
 		if (!this._pres || this._pres.slideCount === 0) return 0;
-		let e = this._fitWidthPx(), t = this._pres.slideWidth / M;
+		let e = this._fitWidthPx(), t = this._pres.slideWidth / k;
 		return e <= 0 || t <= 0 ? 0 : e / t;
 	}
 	relayout() {
@@ -2302,10 +2311,10 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		return this._pad().leading + e * (this._uniformSlideHeight + this._gap());
 	}
 	_slideIndexAtOffset(e) {
-		return Te(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, 0, 0, this._pad()).topIndex;
+		return ge(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, 0, 0, this._pad()).topIndex;
 	}
 	_rangeAt(e, t) {
-		return Te(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, this._scrollHost.clientHeight, t, this._pad());
+		return ge(this._pres?.slideCount ?? 0, this._uniformSlideHeight, this._gap(), e, this._scrollHost.clientHeight, t, this._pad());
 	}
 	_range() {
 		return this._rangeAt(this._scrollHost.scrollTop, this._overscan());
@@ -2355,11 +2364,11 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		this._opts.enableTextSelection && (r = document.createElement("div"), r.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;user-select:text;-webkit-user-select:text;", t.appendChild(r));
 		let i = document.createElement("div");
 		i.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;", t.appendChild(i);
-		let a = Ht(document);
+		let a = Gt(document);
 		t.appendChild(a);
 		let o = null, s = null, c = null;
 		this._commentsEnabled() && (o = document.createElement("div"), o.style.cssText = "position:absolute;inset:0;overflow:hidden;pointer-events:none;", t.appendChild(o), this._commentsOptions()?.cards !== !1 && (s = document.createElement("div"), s.style.cssText = "position:absolute;top:0;height:100%;box-sizing:border-box;overflow-x:hidden;overflow-y:auto;pointer-events:auto;", this._syncCommentMarginGeometry(s), this._commentsOptions()?.connectors !== void 0 && (c = document.createElement("div"), c.style.cssText = "position:absolute;top:0;left:0;overflow:visible;pointer-events:none;", t.appendChild(c)), t.appendChild(s)));
-		let l = _e(t, this._opts.enableElementSelection === !0);
+		let l = se(t, this._opts.enableElementSelection === !0);
 		return this._scrollHost.appendChild(t), {
 			wrapper: t,
 			canvas: n,
@@ -2376,7 +2385,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 			commentAnchorGeneration: 0,
 			renderedSlide: -1,
 			renderedScale: -1,
-			dispatcher: new O(n, this._mode === "worker" && !this._opts.enableMediaPlayback),
+			dispatcher: new E(n, this._mode === "worker" && !this._opts.enableMediaPlayback),
 			presentationHandle: null,
 			mediaInteractive: !1,
 			renderGeneration: 0,
@@ -2384,7 +2393,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		};
 	}
 	_recycleSlot(e, t) {
-		this._slots.delete(e), t.renderGeneration++, t.presentationGeneration++, t.presentationHandle?.destroy(), t.presentationHandle = null, t.mediaInteractive = !1, t.dispatcher.destroy(), this._destroyed || (t.dispatcher = new O(t.canvas, this._mode === "worker" && !this._opts.enableMediaPlayback)), t.textLayer && (t.textLayer.innerHTML = "", this._clearTextLayerPreview(t.textLayer)), t.highlightLayer.innerHTML = "", t.highlightLayer.style.transform = "", t.highlightLayer.style.transformOrigin = "", t.loadingLayer.style.display = "none", t.commentMarkerLayer && (t.commentMarkerLayer.replaceChildren(), t.commentMarkerLayer.style.visibility = ""), t.commentMargin && (this._commentUi?.disposeReadOnlyCommentMargin(t.commentMargin), this._commentUi || t.commentMargin.replaceChildren(), t.commentMargin.style.visibility = ""), t.commentDecorationLayer && (this._commentUi?.disposeReadOnlyCommentDecoration(t.commentDecorationLayer), this._commentUi || t.commentDecorationLayer.replaceChildren(), t.commentDecorationLayer.style.visibility = ""), t.commentElementBounds = Object.freeze([]), t.commentGeometry = null, t.commentAnchorSlide = -1, t.commentAnchorGeneration++, D(t.elementLayer, null), t.canvas.style.height = "", t.renderedSlide = -1, t.renderedScale = -1, t.wrapper.remove(), this._free.push(t);
+		this._slots.delete(e), t.renderGeneration++, t.presentationGeneration++, t.presentationHandle?.destroy(), t.presentationHandle = null, t.mediaInteractive = !1, t.dispatcher.destroy(), this._destroyed || (t.dispatcher = new E(t.canvas, this._mode === "worker" && !this._opts.enableMediaPlayback)), t.textLayer && (t.textLayer.innerHTML = "", this._clearTextLayerPreview(t.textLayer)), t.highlightLayer.innerHTML = "", t.highlightLayer.style.transform = "", t.highlightLayer.style.transformOrigin = "", t.loadingLayer.style.display = "none", t.commentMarkerLayer && (t.commentMarkerLayer.replaceChildren(), t.commentMarkerLayer.style.visibility = ""), t.commentMargin && (this._commentUi?.disposeReadOnlyCommentMargin(t.commentMargin), this._commentUi || t.commentMargin.replaceChildren(), t.commentMargin.style.visibility = ""), t.commentDecorationLayer && (this._commentUi?.disposeReadOnlyCommentDecoration(t.commentDecorationLayer), this._commentUi || t.commentDecorationLayer.replaceChildren(), t.commentDecorationLayer.style.visibility = ""), t.commentElementBounds = Object.freeze([]), t.commentGeometry = null, t.commentAnchorSlide = -1, t.commentAnchorGeneration++, T(t.elementLayer, null), t.canvas.style.height = "", t.renderedSlide = -1, t.renderedScale = -1, t.wrapper.remove(), this._free.push(t);
 	}
 	_positionSlot(e, t, n) {
 		e.wrapper.dataset.slideIndex = String(t), e.wrapper.style.top = `${this._slideOffset(t)}px`;
@@ -2410,7 +2419,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		if (this._opts.enableMediaPlayback && n) return t.mediaInteractive = !0, this._trackSlotLoading(e, t, i, this._renderInteractiveSlot(e, t, o, a, c, s, r));
 		if (t.mediaInteractive = !1, this._mode === "worker") return this._trackSlotLoading(e, t, i, this._renderSlotBitmap(e, t, o, a, c, i, l, u, r));
 		let d = [], f = !!this._opts.enableTextSelection && !!t.textLayer, p = f || this._findActive, m = p ? (e) => d.push(e) : void 0, h = t.canvas;
-		return this._trackSlotLoading(e, t, i, Q(this._pres, h, e, "main", {
+		return this._trackSlotLoading(e, t, i, Z(this._pres, h, e, "main", {
 			width: o,
 			dpr: a,
 			imageResources: this._opts.imageResources,
@@ -2432,7 +2441,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	_bindLayoutPresentation(e) {
 		this._unbindLayoutPresentation();
 		let t = !0;
-		this._layoutUnsubscribe = J(e, () => ({
+		this._layoutUnsubscribe = Bt(e, () => ({
 			availableSlides: e.availableSlideCount,
 			slideCount: e.slideCount,
 			exact: e.layoutComplete,
@@ -2517,7 +2526,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		this._slideInFlight.add(e);
 		let u = t.canvas, d = !1, f = !!this._opts.enableTextSelection && !!t.textLayer, p = f || this._findActive, m = [];
 		try {
-			let c = await Q(this._pres, u, e, "worker", {
+			let c = await Z(this._pres, u, e, "worker", {
 				width: n,
 				dpr: r,
 				imageResources: this._opts.imageResources,
@@ -2561,7 +2570,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		let h = Math.max(0, m.totalHeight - this._scrollHost.clientHeight), g = this._slideOffset(l) + d * this._uniformSlideHeight, _ = c < this._slideOffset(0) ? s : g - o;
 		if (this._scrollHost.scrollTop = Math.min(h, Math.max(0, _)), i) {
 			let e = Math.max(0, (this._spacer.offsetWidth || 0) - this._scrollHost.clientWidth);
-			this._scrollHost.scrollLeft = ue(p, i.x - f, a, r, { maxScroll: e });
+			this._scrollHost.scrollLeft = ee(p, i.x - f, a, r, { maxScroll: e });
 		}
 		this._previewVisible(), this._scheduleSettle(), this._opts.onScaleChange?.(r);
 	}
@@ -2569,10 +2578,10 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		return this._scaleEstablished ? this._scale : this._pendingScale ?? 1;
 	}
 	zoomIn() {
-		this.setScale(Se(this.getScale()));
+		this.setScale(fe(this.getScale()));
 	}
 	zoomOut() {
-		this.setScale(A(this.getScale(), this._effectiveZoomMin()));
+		this.setScale(he(this.getScale(), this._effectiveZoomMin()));
 	}
 	_effectiveZoomMin() {
 		let e = this._opts.zoomMin ?? .1;
@@ -2586,9 +2595,9 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	}
 	_fit(e) {
 		if (!this._pres || this._pres.slideCount === 0) return;
-		let t = le({
-			contentWidth: this._pres.slideWidth / M,
-			contentHeight: this._pres.slideHeight / M,
+		let t = C({
+			contentWidth: this._pres.slideWidth / k,
+			contentHeight: this._pres.slideHeight / k,
 			containerWidth: this._fitWidthPx(),
 			containerHeight: this._scrollHost.clientHeight
 		}, e);
@@ -2629,7 +2638,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	_scheduleSettle() {
 		this._settleTimer !== null && clearTimeout(this._settleTimer), this._settleTimer = setTimeout(() => {
 			this._settleTimer = null, this._settleRender();
-		}, Kt);
+		}, Jt);
 	}
 	_settleRender() {
 		if (this._destroyed || !this._pres || this._pres.slideCount === 0) return;
@@ -2650,8 +2659,8 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		}
 		let o = document.createElement("canvas"), s = ++t.renderGeneration;
 		o.style.cssText = "display:block;background:#fff;", this._applyPageShadow(o);
-		let c = new O(o, !1), l = c.begin(), u = [], d = !!this._opts.enableTextSelection && !!t.textLayer, f = d || this._findActive, p = f ? (e) => u.push(e) : void 0;
-		Q(this._pres, o, e, "main", {
+		let c = new E(o, !1), l = c.begin(), u = [], d = !!this._opts.enableTextSelection && !!t.textLayer, f = d || this._findActive, p = f ? (e) => u.push(e) : void 0;
+		Z(this._pres, o, e, "main", {
 			width: r,
 			dpr: n,
 			onTextRun: p
@@ -2684,18 +2693,18 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 				return;
 			}
 			let d = t.canvas, f = t.presentationHandle;
-			t.dispatcher.destroy(), t.wrapper.insertBefore(s, d), d.remove(), t.canvas = s, t.dispatcher = new O(s, !1), t.presentationHandle = r, t.renderedScale = i, f?.destroy(), t.textLayer && (this._clearTextLayerPreview(t.textLayer), l && I(t.textLayer, c, Math.round(n), Math.round(this._slideHeightPx()), this._hyperlinkHandler(), e)), u && this._refreshFindRuns(e, c), this._commitSlotComments(e, t), this._redrawSlotHighlights(e, t);
+			t.dispatcher.destroy(), t.wrapper.insertBefore(s, d), d.remove(), t.canvas = s, t.dispatcher = new E(s, !1), t.presentationHandle = r, t.renderedScale = i, f?.destroy(), t.textLayer && (this._clearTextLayerPreview(t.textLayer), l && I(t.textLayer, c, Math.round(n), Math.round(this._slideHeightPx()), this._hyperlinkHandler(), e)), u && this._refreshFindRuns(e, c), this._commitSlotComments(e, t), this._redrawSlotHighlights(e, t);
 		}).catch((e) => {
 			o === t.presentationGeneration && this._reportRenderError(e);
 		});
 	}
 	scrollToSlide(e, t) {
 		if (!this._pres || this._pres.slideCount === 0 || !this._scaleEstablished) return;
-		let n = Math.max(0, Math.min(e, this._pres.slideCount - 1)), r = this._rangeAt(0, this._overscan()), i = this._slideOffset(n), a = Math.max(0, r.totalHeight - this._scrollHost.clientHeight), o = Math.min(a, Math.max(0, i)), s = this._scrollHost;
-		typeof s.scrollTo == "function" ? s.scrollTo({
-			top: o,
+		let n = Math.max(0, Math.min(e, this._pres.slideCount - 1)), r = this._rangeAt(0, this._overscan()), i = _e(this._slideOffset(n), Math.max(0, r.totalHeight - this._scrollHost.clientHeight)), a = this._scrollHost;
+		typeof a.scrollTo == "function" ? a.scrollTo({
+			top: i,
 			behavior: t?.behavior ?? "auto"
-		}) : this._scrollHost.scrollTop = o, this._mountVisible();
+		}) : this._scrollHost.scrollTop = i, this._mountVisible();
 	}
 	_scrollToSlideCommentTarget(e, t, n, r) {
 		if (!this._pres) return !1;
@@ -2705,7 +2714,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 			return t ? [t] : [];
 		})[0], s = t.anchors ?? [], c = Number.isFinite(t.x) && Number.isFinite(t.y) && (s.length === 0 || s.some((e) => e.type === "slide"));
 		if (!o && !c) return !1;
-		let l = o ? o.x + (c ? t.x : o.width) : t.x, u = o ? o.y + (c ? t.y : 0) : t.y, d = this._slideWidthPx(), { left: f } = this._padH(), p = Math.max(f, (this._scrollHost.clientWidth - d) / 2) + this._reviewOriginPx, m = this._rangeAt(0, this._overscan()), h = Math.max(0, m.totalHeight - this._scrollHost.clientHeight), g = this._spacer.offsetWidth || Number.parseFloat(this._spacer.style.width) || 0, _ = Math.max(0, g - this._scrollHost.clientWidth), v = l / M * this._scale, y = u / M * this._scale, b = Math.min(h, Math.max(0, this._slideOffset(e) + y - this._scrollHost.clientHeight / 2)), x = Math.min(_, Math.max(0, p + v - this._scrollHost.clientWidth / 2)), S = this._scrollHost;
+		let l = o ? o.x + (c ? t.x : o.width) : t.x, u = o ? o.y + (c ? t.y : 0) : t.y, d = this._slideWidthPx(), { left: f } = this._padH(), p = Math.max(f, (this._scrollHost.clientWidth - d) / 2) + this._reviewOriginPx, m = this._rangeAt(0, this._overscan()), h = Math.max(0, m.totalHeight - this._scrollHost.clientHeight), g = this._spacer.offsetWidth || Number.parseFloat(this._spacer.style.width) || 0, _ = Math.max(0, g - this._scrollHost.clientWidth), v = l / k * this._scale, y = u / k * this._scale, b = Math.min(h, Math.max(0, this._slideOffset(e) + y - this._scrollHost.clientHeight / 2)), x = Math.min(_, Math.max(0, p + v - this._scrollHost.clientWidth / 2)), S = this._scrollHost;
 		return typeof S.scrollTo == "function" ? S.scrollTo({
 			top: b,
 			left: x,
@@ -2886,7 +2895,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 			return;
 		}
 		if (t.kind === "external") {
-			T(t.url);
+			p(t.url);
 			return;
 		}
 		t.slideIndex !== void 0 && this.scrollToSlide(t.slideIndex);
@@ -2959,9 +2968,9 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 		if (this._destroyed) throw Error("PptxScrollViewer is destroyed");
 		if (this._pres && this._activeCommentId !== null && this._activeCommentSlide !== null) {
 			let t = this._pres.getComments(this._activeCommentSlide), n = t.findIndex((e, t) => P(e, t, this._activeCommentSlide) === this._activeCommentId), r = t[n];
-			if (r && n >= 0) return Bt(r, this._activeCommentSlide, n, this._activeCommentId, e);
+			if (r && n >= 0) return Ut(r, this._activeCommentSlide, n, this._activeCommentId, e);
 		}
-		return (this._opts.enableTextSelection ? Z(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? Pt(this._elementContext, e.maxTextCharacters) : null);
+		return (this._opts.enableTextSelection ? X(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null, e) : null) ?? (this._elementContext ? It(this._elementContext, e.maxTextCharacters) : null);
 	}
 	_emitSelectionContextChange() {
 		let e = this.getSelectionContext();
@@ -2981,10 +2990,10 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	_redrawElementOutlineForSlot(e, t) {
 		let n = this._elementContext, r = this._pres;
 		if (!n || !r || n.slideIndex !== e) {
-			D(t.elementLayer, null);
+			T(t.elementLayer, null);
 			return;
 		}
-		D(t.elementLayer, {
+		T(t.elementLayer, {
 			x: n.bounds.x / r.slideWidth,
 			y: n.bounds.y / r.slideHeight,
 			width: n.bounds.width / r.slideWidth,
@@ -3005,7 +3014,7 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 	async _resolveContextAt(e) {
 		let t = this._pres;
 		if (this._destroyed || !t) return null;
-		if (this._opts.enableTextSelection && Z(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this._destroyed ? null : this.getSelectionContext();
+		if (this._opts.enableTextSelection && X(this._wrapper, this._wrapper.ownerDocument?.getSelection?.() ?? null)) return this._emitSelectionContextChange(), this._destroyed ? null : this.getSelectionContext();
 		if (!this._opts.enableElementSelection) return this.getSelectionContext();
 		let n = e.target, r = [...this._slots].find(([, e]) => n !== null && e.wrapper.contains(n));
 		if (!r) return this._invalidateElementSelection(), null;
@@ -3035,22 +3044,22 @@ var $ = 440, Zt = 20, Qt = Symbol("PptxScrollViewer.borrowedPresentation"), $t =
 			this._free.length = 0, this._presentationOwner.close(), this._wrapper.remove();
 		}
 	}
-}, en = /* @__PURE__ */ e({
-	OoxmlDecodedImageLimitError: () => Me,
-	OoxmlError: () => ee,
-	OoxmlResourceLimitError: () => x,
-	PptxPresentation: () => Y,
-	PptxScrollViewer: () => $t,
-	PptxViewer: () => Gt,
-	TiffDecodeError: () => Ne,
-	autoResize: () => ce,
+}, nn = /* @__PURE__ */ e({
+	OoxmlDecodedImageLimitError: () => Te,
+	OoxmlError: () => d,
+	OoxmlResourceLimitError: () => m,
+	PptxPresentation: () => J,
+	PptxScrollViewer: () => tn,
+	PptxViewer: () => Q,
+	TiffDecodeError: () => Ee,
+	autoResize: () => S,
 	buildPptxHighlightLayer: () => L,
 	buildPptxTextLayer: () => I,
-	isOoxmlDecodedImageLimitError: () => je,
-	isTiffDecodeError: () => Pe,
-	openExternalHyperlink: () => T,
-	readPptxTextSelectionContext: () => Z,
-	renderSlide: () => f
+	isOoxmlDecodedImageLimitError: () => we,
+	isTiffDecodeError: () => De,
+	openExternalHyperlink: () => p,
+	readPptxTextSelectionContext: () => X,
+	renderSlide: () => Me
 });
 //#endregion
-export { Y as a, Z as i, $t as n, L as o, Gt as r, I as s, en as t };
+export { J as a, X as i, tn as n, L as o, Q as r, I as s, nn as t };

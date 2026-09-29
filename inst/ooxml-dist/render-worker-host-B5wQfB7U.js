@@ -1,5 +1,5 @@
 //#region packages/xlsx/src/render-worker.ts?worker&url
-var e = "" + new URL("assets/render-worker-DxU7IrKo.js", import.meta.url).href;
+var e = "" + new URL("assets/render-worker-1uPAxMZr.js", import.meta.url).href;
 //#endregion
 //#region packages/xlsx/src/render-worker-host.ts
 function t() {

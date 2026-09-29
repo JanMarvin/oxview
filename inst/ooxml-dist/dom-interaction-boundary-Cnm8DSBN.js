@@ -1,5 +1,5 @@
-import { qt as e } from "./hyperlink-BR1NCO7S.js";
-import { A as t, E as n, j as r, k as i } from "./canvas-viewer-mechanics-DN5SqWGS.js";
+import { Yt as e } from "./hyperlink-Cxzhet30.js";
+import { A as t, E as n, j as r, k as i } from "./canvas-viewer-mechanics-DbLz0rYW.js";
 //#region packages/core/src/fonts/embedded.ts
 function a(t, n = e) {
 	return t.byteLength > 0 && t.byteLength <= n;
@@ -62,7 +62,10 @@ function u(e) {
 function d(e, t, n) {
 	return e < t ? t : e > n ? n : e;
 }
-function f(e, t, n) {
+function f(e, t) {
+	return Math.min(Math.max(0, t), Math.ceil(Math.max(0, e)));
+}
+function p(e, t, n) {
 	let r = e.length;
 	if (r === 0) return {
 		offsets: [],
@@ -75,7 +78,7 @@ function f(e, t, n) {
 		totalHeight: i + s + (r - 1) * t + a
 	};
 }
-function p(e, t, n, r) {
+function m(e, t, n, r) {
 	let i = e.offsets, a = i.length;
 	if (a === 0) return {
 		start: 0,
@@ -103,7 +106,7 @@ function p(e, t, n, r) {
 		totalHeight: e.totalHeight
 	};
 }
-function m(e, t, n, r, i, a, o) {
+function h(e, t, n, r, i, a, o) {
 	if (e === 0) return {
 		start: 0,
 		end: -1,
@@ -120,7 +123,7 @@ function m(e, t, n, r, i, a, o) {
 }
 //#endregion
 //#region packages/core/src/internal/progressive-layout-lifecycle.ts
-var h = class {
+var g = class {
 	state = Object.freeze({ status: "complete" });
 	get complete() {
 		return this.state.status === "complete";
@@ -144,7 +147,7 @@ var h = class {
 	throwIfFailed() {
 		if (this.state.status === "failed") throw this.state.error;
 	}
-}, g = class {
+}, _ = class {
 	failed = /* @__PURE__ */ new WeakMap();
 	notify(e, t, ...n) {
 		if (!(!t || this.failed.get(t)?.has(e))) try {
@@ -161,8 +164,8 @@ var h = class {
 		let i = n instanceof Error ? n : Error(String(n));
 		console.error(`[ooxml] ${e} callback failed and was disabled:`, i);
 	}
-}, _ = 65536;
-function v(e, t) {
+}, v = 65536;
+function y(e, t) {
 	let n = Math.min(e.length, t);
 	if (n > 0 && n < e.length) {
 		let t = e.charCodeAt(n - 1), r = e.charCodeAt(n);
@@ -170,13 +173,13 @@ function v(e, t) {
 	}
 	return e.slice(0, n);
 }
-function y(e) {
+function b(e) {
 	if (e !== void 0 && (!Number.isFinite(e) || e < 0)) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	return Math.min(_, Math.floor(e ?? 65536));
+	return Math.min(v, Math.floor(e ?? 65536));
 }
-function b(e, t, n) {
-	let r = y(n), i = 0, a = !1, o = (e) => {
-		let t = v(e.text, Math.max(0, r - i));
+function x(e, t, n) {
+	let r = b(n), i = 0, a = !1, o = (e) => {
+		let t = y(e.text, Math.max(0, r - i));
 		return i += t.length, t.length < e.text.length && (a = !0), {
 			...e,
 			text: t
@@ -194,27 +197,27 @@ function b(e, t, n) {
 }
 //#endregion
 //#region packages/core/src/internal/dom-interaction-boundary.ts
-function x(e, t) {
+function S(e, t) {
 	return e.dataset?.[t] !== void 0;
 }
-function S(e, t, n) {
+function C(e, t, n) {
 	let r = typeof e.composedPath == "function" ? e.composedPath() : [];
 	if (r.length > 0) {
 		let e = !1;
 		for (let i of r) {
 			if (i === t) return e;
-			x(i, n) && (e = !0);
+			S(i, n) && (e = !0);
 		}
 	}
 	let i = e.target;
 	if (!i || !t.contains(i)) return !1;
 	let a = i;
 	for (; a;) {
-		if (x(a, n)) return !0;
+		if (S(a, n)) return !0;
 		if (a === t) break;
 		a = a.parentElement;
 	}
 	return !1;
 }
 //#endregion
-export { m as a, o as c, u as d, h as i, a as l, b as n, p as o, g as r, f as s, S as t, l as u };
+export { h as a, f as c, l as d, u as f, g as i, o as l, x as n, m as o, _ as r, p as s, C as t, a as u };

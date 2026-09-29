@@ -1,5 +1,5 @@
-import { Et as e, sn as t } from "./hyperlink-BR1NCO7S.js";
-import { i as n, r, s as i } from "./pixel-budget-Dgjw269h.js";
+import { Et as e, ln as t } from "./hyperlink-Cxzhet30.js";
+import { i as n, r, s as i } from "./pixel-budget-9P63Bsk5.js";
 //#region packages/core/src/errors/cfb-sniff.ts
 var a = [
 	208,
@@ -87,20 +87,20 @@ var y = [
 	177,
 	26,
 	225
-], ee = 4294967290, b = 4294967294, te = 512, ne = 128, x = 4e6, re = 8e6, ie = 65536, ae = 1e6;
-function S(e, t) {
+], ee = 4294967290, b = 4294967294, te = 512, x = 128, S = 4e6, ne = 8e6, re = 65536, ie = 1e6;
+function C(e, t) {
 	if (e.length < te) return null;
 	for (let t = 0; t < y.length; t++) if (e[t] !== y[t]) return null;
-	let n = new DataView(e.buffer, e.byteOffset, e.byteLength), r = oe(n);
+	let n = new DataView(e.buffer, e.byteOffset, e.byteLength), r = ae(n);
 	if (r === null) return null;
-	let i = se(n, e.length, r);
+	let i = oe(n, e.length, r);
 	if (i === null) return null;
-	let a = ce(n, e.length, r, i, t);
+	let a = se(n, e.length, r, i, t);
 	if (a === null || a.target === null) return null;
 	let { target: o, root: s } = a;
-	return o.size === 0 ? new Uint8Array() : o.size < r.miniStreamCutoff ? s === null ? null : ue(n, e.length, r, i, s, o) : E(n, e.length, r, i, o.startSector, o.size);
+	return o.size === 0 ? new Uint8Array() : o.size < r.miniStreamCutoff ? s === null ? null : ue(n, e.length, r, i, s, o) : le(n, e.length, r, i, o.startSector, o.size);
 }
-function oe(e) {
+function ae(e) {
 	let t = e.getUint16(30, !0);
 	if (t !== 9 && t !== 12) return null;
 	let n = e.getUint16(32, !0);
@@ -114,57 +114,57 @@ function oe(e) {
 		numDifatSectors: e.getUint32(72, !0)
 	} : null;
 }
-function C(e, t) {
+function w(e, t) {
 	return (e + 1) * t;
 }
-function w(e) {
+function T(e) {
 	return e >= 0 && e <= ee;
 }
-function se(e, t, n) {
+function oe(e, t, n) {
 	let { sectorSize: r } = n, i = [];
 	for (let t = 0; t < 109; t++) {
 		let n = e.getUint32(76 + t * 4, !0);
-		w(n) && i.push(n);
+		T(n) && i.push(n);
 	}
 	let a = r / 4 - 1, o = n.firstDifatSector, s = /* @__PURE__ */ new Set(), c = 0;
-	for (; w(o);) {
-		if (c++ > ae) return null;
+	for (; T(o);) {
+		if (c++ > ie) return null;
 		if (s.has(o)) break;
 		s.add(o);
-		let n = C(o, r);
+		let n = w(o, r);
 		if (n < 0 || n + r > t) return null;
 		for (let t = 0; t < a; t++) {
 			let r = e.getUint32(n + t * 4, !0);
-			w(r) && i.push(r);
+			T(r) && i.push(r);
 		}
 		o = e.getUint32(n + a * 4, !0);
 	}
 	return i;
 }
-function T(e, t, n, r, i) {
+function E(e, t, n, r, i) {
 	let a = n / 4, o = Math.floor(i / a), s = i % a;
 	if (o >= r.length) return null;
 	let c = r[o];
-	if (!w(c)) return null;
-	let l = C(c, n) + s * 4;
+	if (!T(c)) return null;
+	let l = w(c, n) + s * 4;
 	return l < 0 || l + 4 > t ? null : e.getUint32(l, !0);
 }
-function ce(e, t, n, r, i) {
-	let { sectorSize: a } = n, o = Math.floor(a / ne);
+function se(e, t, n, r, i) {
+	let { sectorSize: a } = n, o = Math.floor(a / x);
 	if (o < 1) return null;
 	let s = null, c = null, l = /* @__PURE__ */ new Set(), u = n.firstDirSector, d = 0, f = 0;
-	for (; w(u);) {
-		if (d++ > x) return null;
+	for (; T(u);) {
+		if (d++ > S) return null;
 		if (l.has(u)) break;
 		l.add(u);
-		let n = C(u, a);
+		let n = w(u, a);
 		if (n < 0 || n + a > t) return null;
 		for (let t = 0; t < o; t++) {
-			if (f++ > ie) return {
+			if (f++ > re) return {
 				target: s,
 				root: c
 			};
-			let r = n + t * ne, a = e.getUint8(r + 66);
+			let r = n + t * x, a = e.getUint8(r + 66);
 			if (a === 0) continue;
 			let o = e.getUint32(r + 116, !0), l = e.getUint32(r + 120, !0);
 			if (a === 5) {
@@ -174,12 +174,12 @@ function ce(e, t, n, r, i) {
 				};
 				continue;
 			}
-			le(e, r) === i && (s = {
+			ce(e, r) === i && (s = {
 				startSector: o,
 				size: l
 			});
 		}
-		let p = T(e, t, a, r, u);
+		let p = E(e, t, a, r, u);
 		if (p === null) break;
 		u = p;
 	}
@@ -188,7 +188,7 @@ function ce(e, t, n, r, i) {
 		root: c
 	};
 }
-function le(e, t) {
+function ce(e, t) {
 	let n = e.getUint16(t + 64, !0);
 	if (n < 2 || n > 64) return "";
 	let r = n / 2 - 1, i = "";
@@ -199,27 +199,27 @@ function le(e, t) {
 	}
 	return i;
 }
-function E(e, t, n, r, i, a) {
+function le(e, t, n, r, i, a) {
 	let { sectorSize: o } = n, s = new Uint8Array(a), c = 0, l = i, u = /* @__PURE__ */ new Set(), d = 0;
-	for (; w(l) && c < a;) {
-		if (d++ > x || u.has(l)) return null;
+	for (; T(l) && c < a;) {
+		if (d++ > S || u.has(l)) return null;
 		u.add(l);
-		let n = C(l, o);
+		let n = w(l, o);
 		if (n < 0 || n + o > t) return null;
 		let i = Math.min(o, a - c);
 		s.set(new Uint8Array(e.buffer, e.byteOffset + n, i), c), c += i;
-		let f = T(e, t, o, r, l);
+		let f = E(e, t, o, r, l);
 		if (f === null) return null;
 		l = f;
 	}
 	return c === a ? s : null;
 }
 function ue(e, t, n, r, i, a) {
-	let { sectorSize: o, miniSectorSize: s } = n, c = E(e, t, n, r, i.startSector, i.size);
+	let { sectorSize: o, miniSectorSize: s } = n, c = le(e, t, n, r, i.startSector, i.size);
 	if (c === null) return null;
 	let l = new Uint8Array(a.size), u = 0, d = a.startSector, f = /* @__PURE__ */ new Set(), p = 0, m = o / 4;
-	for (; w(d) && u < a.size;) {
-		if (p++ > re || f.has(d)) return null;
+	for (; T(d) && u < a.size;) {
+		if (p++ > ne || f.has(d)) return null;
 		f.add(d);
 		let i = d * s;
 		if (i < 0 || i + s > c.length) return null;
@@ -234,14 +234,14 @@ function ue(e, t, n, r, i, a) {
 function de(e, t, n, r, i, a) {
 	let { sectorSize: o } = n, s = Math.floor(a / i), c = a % i, l = n.firstMiniFatSector, u = /* @__PURE__ */ new Set();
 	for (let n = 0; n < s; n++) {
-		if (!w(l) || u.has(l)) return null;
+		if (!T(l) || u.has(l)) return null;
 		u.add(l);
-		let n = T(e, t, o, r, l);
+		let n = E(e, t, o, r, l);
 		if (n === null) return null;
 		l = n;
 	}
-	if (!w(l)) return null;
-	let d = C(l, o) + c * 4;
+	if (!T(l)) return null;
+	let d = w(l, o) + c * 4;
 	if (d < 0 || d + 4 > t) return null;
 	let f = e.getUint32(d, !0);
 	return f === b ? b : f;
@@ -476,7 +476,7 @@ async function Se(e, t, n) {
 //#region packages/core/src/crypto/decrypt-ooxml.ts
 var Ce = "EncryptionInfo", we = "EncryptedPackage";
 async function Te(e, t) {
-	let n = S(e, Ce), r = S(e, we);
+	let n = C(e, Ce), r = C(e, we);
 	if (n === null || r === null) return {
 		ok: !1,
 		reason: "corrupt"
@@ -576,25 +576,33 @@ function K(e) {
 	return Promise.race([e, new Promise((e) => setTimeout(e, ke))]);
 }
 var q = /* @__PURE__ */ new Map();
-function Ae(e) {
-	let t = [], n = /@font-face\s*\{([^}]*)\}/g, r;
-	for (; r = n.exec(e);) {
-		let e = r[1], n = (t) => e.match(RegExp(`(?:^|;|\\n)\\s*${t}\\s*:\\s*([^;]+)`, "i"))?.[1].trim(), i = n("font-family"), a = n("src");
-		if (!i || !a) continue;
-		let o = {}, s = n("font-style");
-		s && (o.style = s);
-		let c = n("font-weight");
-		c && (o.weight = c);
-		let l = n("font-stretch");
-		l && (o.stretch = l);
-		let u = n("unicode-range");
-		u && (o.unicodeRange = u), t.push({
-			family: i.replace(/^['"]|['"]$/g, ""),
-			src: a,
-			descriptors: o
+function Ae(e, t) {
+	let n = [], r = /@font-face\s*\{([^}]*)\}/g, i;
+	for (; i = r.exec(e);) {
+		let e = i[1], r = (t) => e.match(RegExp(`(?:^|;|\\n)\\s*${t}\\s*:\\s*([^;]+)`, "i"))?.[1].trim(), a = r("font-family"), o = r("src");
+		if (!a || !o) continue;
+		let s = t ? o.replace(/url\(\s*(?:(['"])(.*?)\1|([^)]*?))\s*\)/gi, (e, n, r, i) => {
+			let a = (r ?? i ?? "").trim();
+			if (!a) return e;
+			try {
+				return `url("${new URL(a, t).href}")`;
+			} catch {
+				return e;
+			}
+		}) : o, c = {}, l = r("font-style");
+		l && (c.style = l);
+		let u = r("font-weight");
+		u && (c.weight = u);
+		let d = r("font-stretch");
+		d && (c.stretch = d);
+		let f = r("unicode-range");
+		f && (c.unicodeRange = f), n.push({
+			family: a.replace(/^['"]|['"]$/g, ""),
+			src: s,
+			descriptors: c
 		});
 	}
-	return t;
+	return n;
 }
 function J() {
 	return typeof document < "u" && document && document.fonts ? document.fonts : typeof self < "u" && self && "fonts" in self ? self.fonts : null;
@@ -625,11 +633,12 @@ async function Me(e, t, n = J()) {
 		i.add(r);
 		let c = t[r];
 		if (!c) continue;
-		o.add(c.url);
-		let l = (c.loadFamily ?? e).toLowerCase();
-		a.add(l);
-		let u = s.get(c.url);
-		u || (u = /* @__PURE__ */ new Set(), s.set(c.url, u)), u.add(l);
+		let l = c.url;
+		o.add(l);
+		let u = (c.loadFamily ?? e).toLowerCase();
+		a.add(u);
+		let d = s.get(l);
+		d || (d = /* @__PURE__ */ new Set(), s.set(l, d)), d.add(u);
 	}
 	if (a.size === 0) return [];
 	let l = await K(Promise.all([...o].map(async (e) => {
@@ -642,7 +651,7 @@ async function Me(e, t, n = J()) {
 			try {
 				let t = await fetch(e);
 				if (!t.ok) throw Error(`HTTP ${t.status}`);
-				return Ae(await t.text());
+				return Ae(await t.text(), t.url || e);
 			} catch {
 				q.delete(e);
 				for (let t of s.get(e) ?? []) c.add(t);
