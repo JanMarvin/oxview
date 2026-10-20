@@ -1,7 +1,8 @@
-import { ln as e, r as t, un as n } from "./hyperlink-Cxzhet30.js";
-import { T as r } from "./canvas-viewer-mechanics-DbLz0rYW.js";
-import { l as i, s as a } from "./pixel-budget-9P63Bsk5.js";
-import { i as o, s } from "./raster-target-ojDdQizC.js";
-import { l as c } from "./slide-pull-client-DiPnm240.js";
-import { a as l, i as u, n as d, o as f, r as p, s as m } from "./pptx-DkyYBYoL.js";
-export { a as OoxmlDecodedImageLimitError, e as OoxmlError, n as OoxmlResourceLimitError, l as PptxPresentation, d as PptxScrollViewer, p as PptxViewer, o as TiffDecodeError, r as autoResize, f as buildPptxHighlightLayer, m as buildPptxTextLayer, i as isOoxmlDecodedImageLimitError, s as isTiffDecodeError, t as openExternalHyperlink, u as readPptxTextSelectionContext, c as renderSlide };
+import { l as e } from "./slide-pull-client-BuBvXMyc.js";
+import { vo as t, yo as n } from "./plot-area-frame-Bs_j4uu7.js";
+import { u as r } from "./bounded-raw-part-cache-C3daknU-.js";
+import { f as i, u as a } from "./pixel-budget-BpTYrepD.js";
+import { i as o, t as s } from "./tiff-contract-C6M3QcPp.js";
+import { D as c } from "./canvas-viewer-mechanics-SZWSnn6j.js";
+import { a as l, c as u, i as d, l as f, n as p, o as m } from "./pptx-Bo9hCGQU.js";
+export { a as OoxmlDecodedImageLimitError, t as OoxmlError, n as OoxmlResourceLimitError, m as PptxPresentation, p as PptxScrollViewer, d as PptxViewer, s as TiffDecodeError, c as autoResize, u as buildPptxHighlightLayer, f as buildPptxTextLayer, i as isOoxmlDecodedImageLimitError, o as isTiffDecodeError, r as openExternalHyperlink, l as readPptxTextSelectionContext, e as renderSlide };

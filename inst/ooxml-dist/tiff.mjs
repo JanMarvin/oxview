@@ -1,8 +1,35 @@
-import { a as e, i as t, o as n, r, s as i } from "./pixel-budget-9P63Bsk5.js";
-import { i as a, o, s, t as c } from "./raster-target-ojDdQizC.js";
-import { t as l } from "./renderer-module-contract-D91rkYHH.js";
+import { c as e, l as t, o as n, s as r, u as i } from "./pixel-budget-BpTYrepD.js";
+import { i as a, r as o, t as s } from "./tiff-contract-C6M3QcPp.js";
+import { t as c } from "./raster-target-YQ4G6rxo.js";
+import { t as l } from "./renderer-module-contract-CWM7jv6d.js";
 //#region packages/core/src/image/tiff.ts
-var u = 1, d = 3, f = 4, p = {
+var u = class {
+	bytes;
+	truncatedMessage;
+	byteCursor = 0;
+	byteEnd = 0;
+	bitInByte = 0;
+	constructor(e, t, n, r) {
+		this.bytes = e, this.truncatedMessage = r, this.beginStrip(t, n);
+	}
+	beginStrip(e, t) {
+		this.byteCursor = e, this.byteEnd = e + t, this.bitInByte = 0;
+	}
+	readBits(e) {
+		if (e > (this.byteEnd - this.byteCursor) * 8 - this.bitInByte) throw new s(this.truncatedMessage);
+		let t = 0;
+		for (; e > 0;) {
+			let n = 8 - this.bitInByte, r = Math.min(e, n);
+			t = t << r | this.bytes[this.byteCursor] >> n - r & (1 << r) - 1, this.bitInByte += r, this.bitInByte === 8 && (this.byteCursor++, this.bitInByte = 0), e -= r;
+		}
+		return t;
+	}
+	readBit() {
+		if (this.byteCursor >= this.byteEnd) throw new s(this.truncatedMessage);
+		let e = this.bytes[this.byteCursor] >> 7 - this.bitInByte & 1;
+		return this.bitInByte++, this.bitInByte === 8 && (this.byteCursor++, this.bitInByte = 0), e;
+	}
+}, d = 1, f = 3, p = 4, m = {
 	width: 256,
 	height: 257,
 	bitsPerSample: 258,
@@ -24,16 +51,18 @@ var u = 1, d = 3, f = 4, p = {
 	inkSet: 332,
 	extraSamples: 338,
 	sampleFormat: 339
-}, m = [
-	p.tileWidth,
-	p.tileLength,
-	p.tileOffsets,
-	p.tileByteCounts
+}, h = [
+	m.tileWidth,
+	m.tileLength,
+	m.tileOffsets,
+	m.tileByteCounts
 ];
-function h(e, t) {
-	throw new a(e, t === void 0 ? void 0 : { cause: t });
+function g(e, t) {
+	throw new s(e, t === void 0 ? void 0 : { cause: t });
 }
-var g = class {
+var _ = class {
+	bytes;
+	littleEndian;
 	view;
 	constructor(e, t) {
 		this.bytes = e, this.littleEndian = t, this.view = new DataView(e.buffer, e.byteOffset, e.byteLength);
@@ -42,32 +71,32 @@ var g = class {
 		return Number.isSafeInteger(e) && Number.isSafeInteger(t) && e >= 0 && t >= 0 && e <= this.view.byteLength - t;
 	}
 	u8(e, t) {
-		return this.contains(e, 1) || h(`Malformed TIFF ${t} range`), this.view.getUint8(e);
+		return this.contains(e, 1) || g(`Malformed TIFF ${t} range`), this.view.getUint8(e);
 	}
 	u16(e, t) {
-		return this.contains(e, 2) || h(`Malformed TIFF ${t} range`), this.view.getUint16(e, this.littleEndian);
+		return this.contains(e, 2) || g(`Malformed TIFF ${t} range`), this.view.getUint16(e, this.littleEndian);
 	}
 	u32(e, t) {
-		return this.contains(e, 4) || h(`Malformed TIFF ${t} range`), this.view.getUint32(e, this.littleEndian);
+		return this.contains(e, 4) || g(`Malformed TIFF ${t} range`), this.view.getUint32(e, this.littleEndian);
 	}
 };
-function _(e) {
+function v(e) {
 	return e.length >= 2 && (e[0] === 73 && e[1] === 73 || e[0] === 77 && e[1] === 77);
 }
-function v(e) {
+function y(e) {
 	if (!o(e)) {
-		if (!_(e)) return null;
-		e.length < 4 && h("Malformed TIFF header: missing version");
+		if (!v(e)) return null;
+		e.length < 4 && g("Malformed TIFF header: missing version");
 		let t = e[0] === 73;
-		h(`Unsupported TIFF version: ${new DataView(e.buffer, e.byteOffset, e.byteLength).getUint16(2, t)}`);
+		g(`Unsupported TIFF version: ${new DataView(e.buffer, e.byteOffset, e.byteLength).getUint16(2, t)}`);
 	}
-	e.length < 8 && h("Malformed TIFF header: missing first-IFD offset");
-	let t = new g(e, e[0] === 73), n = t.u32(4, "first-IFD offset"), r = t.u16(n, "first IFD"), i = r * 12 + 4;
-	t.contains(n + 2, i) || h("Malformed TIFF first-IFD entry range");
+	e.length < 8 && g("Malformed TIFF header: missing first-IFD offset");
+	let t = new _(e, e[0] === 73), n = t.u32(4, "first-IFD offset"), r = t.u16(n, "first IFD"), i = r * 12 + 4;
+	t.contains(n + 2, i) || g("Malformed TIFF first-IFD entry range");
 	let a = /* @__PURE__ */ new Map();
 	for (let e = 0; e < r; e++) {
 		let r = n + 2 + e * 12, i = t.u16(r, `IFD entry ${e}`), o = t.u16(r + 2, `IFD entry ${e} type`), s = t.u32(r + 4, `IFD entry ${e} count`);
-		a.has(i) && h(`Malformed TIFF: duplicate tag ${i}`), a.set(i, {
+		a.has(i) && g(`Malformed TIFF: duplicate tag ${i}`), a.set(i, {
 			type: o,
 			count: s,
 			entryOffset: r
@@ -78,65 +107,66 @@ function v(e) {
 		fields: a
 	};
 }
-function y(e) {
-	return e === u ? 1 : e === d ? 2 : e === f ? 4 : 0;
+function b(e) {
+	return e === d ? 1 : e === f ? 2 : e === p ? 4 : 0;
 }
-function b(e, t, n, r) {
+function x(e, t, n, r) {
 	let i = e.fields.get(t);
 	if (!i) return;
-	r.includes(i.type) || h(`Unsupported TIFF ${n} field type: ${i.type}`), i.count < 1 && h(`Malformed TIFF ${n}: empty value list`);
-	let a = y(i.type), o = i.count * a;
-	Number.isSafeInteger(o) || h(`Malformed TIFF ${n} value count`);
+	r.includes(i.type) || g(`Unsupported TIFF ${n} field type: ${i.type}`), i.count < 1 && g(`Malformed TIFF ${n}: empty value list`);
+	let a = b(i.type), o = i.count * a;
+	Number.isSafeInteger(o) || g(`Malformed TIFF ${n} value count`);
 	let s = o <= 4 ? i.entryOffset + 8 : e.reader.u32(i.entryOffset + 8, `${n} value offset`);
-	return e.reader.contains(s, o) || h(`Malformed TIFF ${n} value range`), {
+	return e.reader.contains(s, o) || g(`Malformed TIFF ${n} value range`), {
 		count: i.count,
 		at(t) {
-			(!Number.isSafeInteger(t) || t < 0 || t >= i.count) && h(`Malformed TIFF ${n} value index`);
+			(!Number.isSafeInteger(t) || t < 0 || t >= i.count) && g(`Malformed TIFF ${n} value index`);
 			let r = s + t * a;
-			return i.type === u ? e.reader.u8(r, n) : i.type === d ? e.reader.u16(r, n) : e.reader.u32(r, n);
+			return i.type === d ? e.reader.u8(r, n) : i.type === f ? e.reader.u16(r, n) : e.reader.u32(r, n);
 		}
 	};
 }
-function x(e, t, n, r, i) {
-	let a = b(e, t, n, r);
+function S(e, t, n, r, i) {
+	let a = x(e, t, n, r);
 	if (!a) {
 		if (i !== void 0) return i;
-		h(`Malformed TIFF: missing ${n}`);
+		g(`Malformed TIFF: missing ${n}`);
 	}
-	return a.count !== 1 && h(`Malformed TIFF ${n}: expected one value`), a.at(0);
+	return a.count !== 1 && g(`Malformed TIFF ${n}: expected one value`), a.at(0);
 }
-function S(e, t, n, r, i) {
-	let a = b(e, t, n, r);
-	return a || h(`Malformed TIFF: missing ${n}`), a.count !== i && h(`Malformed TIFF ${n}: expected ${i} value${i === 1 ? "" : "s"}`), a;
+function C(e, t, n, r, i) {
+	let a = x(e, t, n, r);
+	return a || g(`Malformed TIFF: missing ${n}`), a.count !== i && g(`Malformed TIFF ${n}: expected ${i} value${i === 1 ? "" : "s"}`), a;
 }
-function C(t, r) {
-	(t < 1 || r < 1) && h("Malformed TIFF: image dimensions must be positive");
-	let a = Math.max(t, r);
+var w = 1, T = 4, E = 5;
+function ee(n, r) {
+	(n < 1 || r < 1) && g("Malformed TIFF: image dimensions must be positive");
+	let a = Math.max(n, r);
 	if (a > 134217728) throw new i("image-dimension", e, a);
-	let o = t * r;
-	if (o > 134217728) throw new i("image-pixels", n, Number.isSafeInteger(o) ? o : 2 ** 53 - 1);
+	let o = n * r;
+	if (o > 134217728) throw new i("image-pixels", t, Number.isSafeInteger(o) ? o : 2 ** 53 - 1);
 }
-function w(e, t) {
-	if (!e.fields.has(p.bitsPerSample)) return [1];
-	let n = S(e, p.bitsPerSample, "BitsPerSample", [d], t), r = Array(t);
+function te(e, t) {
+	if (!e.fields.has(m.bitsPerSample)) return [1];
+	let n = C(e, m.bitsPerSample, "BitsPerSample", [f], t), r = Array(t);
 	for (let e = 0; e < t; e++) r[e] = n.at(e);
 	return r;
 }
-function T(e, t) {
-	if (!e.fields.has(p.sampleFormat)) return;
-	let n = S(e, p.sampleFormat, "SampleFormat", [d], t);
-	for (let e = 0; e < n.count; e++) n.at(e) !== 1 && h("Unsupported TIFF SampleFormat: only unsigned integers are supported");
+function ne(e, t) {
+	if (!e.fields.has(m.sampleFormat)) return;
+	let n = C(e, m.sampleFormat, "SampleFormat", [f], t);
+	for (let e = 0; e < n.count; e++) n.at(e) !== 1 && g("Unsupported TIFF SampleFormat: only unsigned integers are supported");
 }
-function E(e, t) {
-	let n = x(e, p.compression, "Compression", [d], 1);
-	n !== 1 && n !== 4 && h(`Unsupported TIFF compression: ${n}`);
-	let r = x(e, p.photometric, "PhotometricInterpretation", [d]), i = x(e, p.samplesPerPixel, "SamplesPerPixel", [d], 1);
-	i !== 1 && i !== 3 && i !== 4 && h(`Unsupported TIFF SamplesPerPixel: ${i}`);
-	let a = w(e, i);
-	if (T(e, i), n === 4) {
-		(i !== 1 || a.length !== 1 || a[0] !== 1 || r !== 0 && r !== 1) && h("Unsupported CCITT Group 4 TIFF sample layout"), e.fields.has(p.extraSamples) && h("Unsupported CCITT Group 4 TIFF ExtraSamples");
-		let t = x(e, p.t6Options, "T6Options", [f], 0);
-		return t !== 0 && h(`Unsupported TIFF T6Options: ${t}`), {
+function D(e, t) {
+	let n = S(e, m.compression, "Compression", [f], 1);
+	n !== w && n !== T && n !== E && g(`Unsupported TIFF compression: ${n}`);
+	let r = S(e, m.photometric, "PhotometricInterpretation", [f]), i = S(e, m.samplesPerPixel, "SamplesPerPixel", [f], 1);
+	i !== 1 && i !== 3 && i !== 4 && g(`Unsupported TIFF SamplesPerPixel: ${i}`);
+	let a = te(e, i);
+	if (ne(e, i), n === T) {
+		(i !== 1 || a.length !== 1 || a[0] !== 1 || r !== 0 && r !== 1) && g("Unsupported CCITT Group 4 TIFF sample layout"), e.fields.has(m.extraSamples) && g("Unsupported CCITT Group 4 TIFF ExtraSamples");
+		let t = S(e, m.t6Options, "T6Options", [p], 0);
+		return t !== 0 && g(`Unsupported TIFF T6Options: ${t}`), {
 			compression: n,
 			layout: {
 				kind: "group4",
@@ -145,7 +175,7 @@ function E(e, t) {
 		};
 	}
 	if (r === 0 || r === 1) {
-		if ((i !== 1 || e.fields.has(p.extraSamples)) && h("Unsupported TIFF grayscale sample layout"), a[0] === 1) return {
+		if ((i !== 1 || e.fields.has(m.extraSamples)) && g("Unsupported TIFF grayscale sample layout"), a[0] === 1) return {
 			compression: n,
 			layout: {
 				kind: "gray-1",
@@ -161,10 +191,10 @@ function E(e, t) {
 				bytesPerRow: t
 			}
 		};
-		h(`Unsupported TIFF grayscale BitsPerSample: ${a[0]}`);
+		g(`Unsupported TIFF grayscale BitsPerSample: ${a[0]}`);
 	}
 	if (r === 2) {
-		if (a.some((e) => e !== 8) && h("Unsupported TIFF RGB BitsPerSample: only 8-bit samples are supported"), i === 3) return e.fields.has(p.extraSamples) && h("Unsupported TIFF RGB ExtraSamples"), {
+		if (a.some((e) => e !== 8) && g("Unsupported TIFF RGB BitsPerSample: only 8-bit samples are supported"), i === 3) return e.fields.has(m.extraSamples) && g("Unsupported TIFF RGB ExtraSamples"), {
 			compression: n,
 			layout: {
 				kind: "rgb",
@@ -172,7 +202,7 @@ function E(e, t) {
 			}
 		};
 		if (i === 4) {
-			let r = S(e, p.extraSamples, "ExtraSamples", [d], 1).at(0);
+			let r = C(e, m.extraSamples, "ExtraSamples", [f], 1).at(0);
 			if (r === 1) return {
 				compression: n,
 				layout: {
@@ -187,14 +217,14 @@ function E(e, t) {
 					bytesPerRow: t * 4
 				}
 			};
-			h(`Unsupported TIFF ExtraSamples value: ${r}`);
+			g(`Unsupported TIFF ExtraSamples value: ${r}`);
 		}
-		h(`Unsupported TIFF RGB SamplesPerPixel: ${i}`);
+		g(`Unsupported TIFF RGB SamplesPerPixel: ${i}`);
 	}
 	if (r === 5) {
-		(i !== 4 || a.length !== 4 || a.some((e) => e !== 8)) && h("Unsupported TIFF separated sample layout: expected 8-bit process CMYK"), e.fields.has(p.extraSamples) && h("Unsupported TIFF CMYK ExtraSamples");
-		let r = x(e, p.inkSet, "InkSet", [d], 1);
-		return r !== 1 && h(`Unsupported TIFF InkSet: ${r}`), {
+		(i !== 4 || a.length !== 4 || a.some((e) => e !== 8)) && g("Unsupported TIFF separated sample layout: expected 8-bit process CMYK"), e.fields.has(m.extraSamples) && g("Unsupported TIFF CMYK ExtraSamples");
+		let r = S(e, m.inkSet, "InkSet", [f], 1);
+		return r !== 1 && g(`Unsupported TIFF InkSet: ${r}`), {
 			compression: n,
 			layout: {
 				kind: "cmyk",
@@ -202,164 +232,287 @@ function E(e, t) {
 			}
 		};
 	}
-	h(`Unsupported TIFF PhotometricInterpretation: ${r}`);
+	g(`Unsupported TIFF PhotometricInterpretation: ${r}`);
 }
-function D(e) {
-	let t = v(e);
+function O(e, t, n) {
+	let r = S(e, m.predictor, "Predictor", [f], 1);
+	if (r === 1) return null;
+	switch (r !== 2 && g(`Unsupported TIFF Predictor: ${r}`), t !== E && g(`Unsupported TIFF Predictor 2 with Compression ${t}`), n.kind) {
+		case "gray-8": return 1;
+		case "rgb": return 3;
+		case "rgba-associated":
+		case "rgba-unassociated":
+		case "cmyk": return 4;
+		default: return g("Unsupported TIFF Predictor 2 with 1-bit samples");
+	}
+}
+function k(e) {
+	let t = y(e);
 	if (!t) return null;
-	let n = x(t, p.width, "ImageWidth", [d, f]), r = x(t, p.height, "ImageLength", [d, f]);
-	C(n, r), m.some((e) => t.fields.has(e)) && h("Unsupported tiled TIFF: only stripped images are supported");
-	let i = x(t, p.orientation, "Orientation", [d], 1);
-	i !== 1 && h(`Unsupported TIFF orientation: ${i}`);
-	let a = x(t, p.planarConfiguration, "PlanarConfiguration", [d], 1);
-	a !== 1 && h(`Unsupported TIFF PlanarConfiguration: ${a}`);
-	let o = x(t, p.fillOrder, "FillOrder", [d], 1);
-	o !== 1 && h(`Unsupported TIFF FillOrder: ${o}`);
-	let s = x(t, p.predictor, "Predictor", [d], 1);
-	s !== 1 && h(`Unsupported TIFF Predictor: ${s}`);
-	let c = x(t, p.rowsPerStrip, "RowsPerStrip", [d, f], 4294967295);
-	c < 1 && h("Malformed TIFF RowsPerStrip: expected a positive value");
-	let l = Math.ceil(r / c), u = S(t, p.stripOffsets, "StripOffsets", [d, f], l), g = S(t, p.stripByteCounts, "StripByteCounts", [d, f], l), { compression: _, layout: y } = E(t, n);
-	for (let e = 0; e < l; e++) {
-		let n = u.at(e), i = g.at(e);
-		if (t.reader.contains(n, i) || h(`Malformed TIFF strip ${e} byte range`), _ === 1) {
-			let t = e * c, n = Math.min(c, r - t) * y.bytesPerRow;
-			i < n && h(`Malformed TIFF strip ${e}: ${i} bytes cannot hold ${n} bytes`);
+	let n = S(t, m.width, "ImageWidth", [f, p]), r = S(t, m.height, "ImageLength", [f, p]);
+	ee(n, r), h.some((e) => t.fields.has(e)) && g("Unsupported tiled TIFF: only stripped images are supported");
+	let i = S(t, m.orientation, "Orientation", [f], 1);
+	i !== 1 && g(`Unsupported TIFF orientation: ${i}`);
+	let a = S(t, m.planarConfiguration, "PlanarConfiguration", [f], 1);
+	a !== 1 && g(`Unsupported TIFF PlanarConfiguration: ${a}`);
+	let o = S(t, m.fillOrder, "FillOrder", [f], 1);
+	o !== 1 && g(`Unsupported TIFF FillOrder: ${o}`);
+	let s = S(t, m.rowsPerStrip, "RowsPerStrip", [f, p], 4294967295);
+	s < 1 && g("Malformed TIFF RowsPerStrip: expected a positive value");
+	let c = Math.ceil(r / s), l = C(t, m.stripOffsets, "StripOffsets", [f, p], c), u = C(t, m.stripByteCounts, "StripByteCounts", [f, p], c), { compression: d, layout: _ } = D(t, n), v = O(t, d, _);
+	for (let e = 0; e < c; e++) {
+		let n = l.at(e), i = u.at(e);
+		if (t.reader.contains(n, i) || g(`Malformed TIFF strip ${e} byte range`), d === w) {
+			let t = e * s, n = Math.min(s, r - t) * _.bytesPerRow;
+			i < n && g(`Malformed TIFF strip ${e}: ${i} bytes cannot hold ${n} bytes`);
 		}
 	}
 	return {
 		directory: t,
 		width: n,
 		height: r,
-		rowsPerStrip: c,
-		stripCount: l,
-		stripOffsets: u,
-		stripByteCounts: g,
-		layout: y
-	};
-}
-function O(e, t) {
-	if (e !== void 0) return (!Number.isFinite(e) || e <= 0) && h(`Invalid TIFF ${t}: expected a positive finite number`), e;
-}
-function k(e, n, a) {
-	let o = O(a.targetWidthPx, "targetWidthPx"), s = O(a.targetHeightPx, "targetHeightPx"), l = c({
-		width: e,
-		height: n
-	}, o, s, !0), u = l?.width ?? e, d = l?.height ?? n, f = Math.max(u, d);
-	if (f > 32767) throw new i("image-dimension", r, f);
-	let p = a.maxRetainedPixels ?? 33554432;
-	(!Number.isFinite(p) || p < 0) && h("Invalid TIFF maxRetainedPixels: expected a non-negative finite number");
-	let m = Math.min(t, Math.floor(p)), g = u * d;
-	if (g > m) throw new i("image-pixels", m, g);
-	return {
-		width: u,
-		height: d,
-		pixels: g
+		rowsPerStrip: s,
+		stripCount: c,
+		stripOffsets: l,
+		stripByteCounts: u,
+		compression: d,
+		layout: _,
+		differencingStride: v
 	};
 }
 function A(e, t) {
-	return Math.round((255 - e) * (255 - t) / 255);
+	if (e !== void 0) return (!Number.isFinite(e) || e <= 0) && g(`Invalid TIFF ${t}: expected a positive finite number`), e;
 }
-function j(e, t) {
-	return t === 0 ? 0 : Math.min(255, Math.round(e * 255 / t));
+function j(e, t, a) {
+	let o = A(a.targetWidthPx, "targetWidthPx"), s = A(a.targetHeightPx, "targetHeightPx"), l = c({
+		width: e,
+		height: t
+	}, o, s, !0), u = l?.width ?? e, d = l?.height ?? t, f = Math.max(u, d);
+	if (f > 32767) throw new i("image-dimension", n, f);
+	let p = a.maxRetainedPixels ?? 33554432;
+	(!Number.isFinite(p) || p < 0) && g("Invalid TIFF maxRetainedPixels: expected a non-negative finite number");
+	let m = Math.min(r, Math.floor(p)), h = u * d;
+	if (h > m) throw new i("image-pixels", m, h);
+	return {
+		width: u,
+		height: d,
+		pixels: h
+	};
 }
 function M(e, t) {
-	let n = e.layout, r = e.directory.reader.bytes;
-	for (let i = 0; i < e.height; i++) {
-		let a = Math.floor(i / e.rowsPerStrip), o = i - a * e.rowsPerStrip, s = e.stripOffsets.at(a) + o * n.bytesPerRow;
-		for (let a = 0; a < e.width; a++) {
-			let o = (i * e.width + a) * 4;
-			if (n.kind === "gray-1") {
-				let e = r[s + (a >> 3)] >> 7 - (a & 7) & 1, i = n.photometric === 0 ? e === 0 ? 255 : 0 : e === 0 ? 0 : 255;
-				t[o] = i, t[o + 1] = i, t[o + 2] = i, t[o + 3] = 255;
-				continue;
-			}
-			if (n.kind === "gray-8") {
-				let e = r[s + a], i = n.photometric === 0 ? 255 - e : e;
-				t[o] = i, t[o + 1] = i, t[o + 2] = i, t[o + 3] = 255;
-				continue;
-			}
-			if (n.kind === "rgb") {
-				let e = s + a * 3;
-				t[o] = r[e], t[o + 1] = r[e + 1], t[o + 2] = r[e + 2], t[o + 3] = 255;
-				continue;
-			}
-			if (n.kind === "rgba-associated" || n.kind === "rgba-unassociated") {
-				let e = s + a * 4, i = r[e + 3];
-				t[o] = n.kind === "rgba-associated" ? j(r[e], i) : r[e], t[o + 1] = n.kind === "rgba-associated" ? j(r[e + 1], i) : r[e + 1], t[o + 2] = n.kind === "rgba-associated" ? j(r[e + 2], i) : r[e + 2], t[o + 3] = i;
-				continue;
-			}
-			let c = s + a * 4, l = r[c + 3];
-			t[o] = A(r[c], l), t[o + 1] = A(r[c + 1], l), t[o + 2] = A(r[c + 2], l), t[o + 3] = 255;
-		}
+	return Math.round((255 - e) * (255 - t) / 255);
+}
+function N(e, t) {
+	return t === 0 ? 0 : Math.min(255, Math.round(e * 255 / t));
+}
+function re(e, t) {
+	let n = {
+		bytes: e.directory.reader.bytes,
+		rowOffset: 0,
+		firstX: 0,
+		endX: e.width
+	};
+	return (r, i) => {
+		let a = Math.floor(r / e.rowsPerStrip), o = r - a * e.rowsPerStrip;
+		n.rowOffset = e.stripOffsets.at(a) + o * t.bytesPerRow, i(n);
+	};
+}
+var ie = 4096;
+function P(e, t) {
+	switch (e.kind) {
+		case "gray-1": return Math.ceil(t / 8);
+		case "gray-8": return t;
+		case "rgb": return t * 3;
+		default: return t * 4;
 	}
 }
-function N(e) {
+function ae(e, t) {
+	let n = 3 * t.bytesPerRow * e.height + 2 * e.stripCount, r = new ce(e.directory.reader.bytes, n), i = Math.min(e.width, ie), a = new Uint8Array(P(t, i)), o = e.differencingStride, s = new Uint8Array(4), c = {
+		bytes: a,
+		rowOffset: 0,
+		firstX: 0,
+		endX: 0
+	}, l = -1, u = 0;
+	return (n, d) => {
+		n !== u && g("Internal TIFF LZW row sequence failure"), u++;
+		let f = Math.floor(n / e.rowsPerStrip);
+		f !== l && (r.beginStrip(e.stripOffsets.at(f), e.stripByteCounts.at(f)), l = f);
+		for (let n = 0; n < e.width; n += i) {
+			let l = Math.min(e.width, n + i), u = a.subarray(0, P(t, l - n));
+			r.fill(u), o !== null && oe(u, o, s, n > 0), c.firstX = n, c.endX = l, c.rowOffset = -P(t, n), d(c);
+		}
+		(u === e.height || u % e.rowsPerStrip === 0) && r.finishStrip();
+	};
+}
+function oe(e, t, n, r) {
+	if (r) for (let r = 0; r < t; r++) e[r] = e[r] + n[r] & 255;
+	for (let n = t; n < e.length; n++) e[n] = e[n] + e[n - t] & 255;
+	n.set(e.subarray(e.length - t));
+}
+function F(e, t) {
+	return e.compression === E ? ae(e, t) : re(e, t);
+}
+function se(e, t) {
+	let n = e.layout, r = F(e, n), i = 0, a = (r) => I(e, n, r, i, t);
+	for (; i < e.height; i++) r(i, a);
+}
+function I(e, t, { bytes: n, rowOffset: r, firstX: i, endX: a }, o, s) {
+	for (let c = i; c < a; c++) {
+		let i = (o * e.width + c) * 4;
+		if (t.kind === "gray-1") {
+			let e = n[r + (c >> 3)] >> 7 - (c & 7) & 1, a = t.photometric === 0 ? e === 0 ? 255 : 0 : e === 0 ? 0 : 255;
+			s[i] = a, s[i + 1] = a, s[i + 2] = a, s[i + 3] = 255;
+			continue;
+		}
+		if (t.kind === "gray-8") {
+			let e = n[r + c], a = t.photometric === 0 ? 255 - e : e;
+			s[i] = a, s[i + 1] = a, s[i + 2] = a, s[i + 3] = 255;
+			continue;
+		}
+		if (t.kind === "rgb") {
+			let e = r + c * 3;
+			s[i] = n[e], s[i + 1] = n[e + 1], s[i + 2] = n[e + 2], s[i + 3] = 255;
+			continue;
+		}
+		if (t.kind === "rgba-associated" || t.kind === "rgba-unassociated") {
+			let e = r + c * 4, a = n[e + 3];
+			s[i] = t.kind === "rgba-associated" ? N(n[e], a) : n[e], s[i + 1] = t.kind === "rgba-associated" ? N(n[e + 1], a) : n[e + 1], s[i + 2] = t.kind === "rgba-associated" ? N(n[e + 2], a) : n[e + 2], s[i + 3] = a;
+			continue;
+		}
+		let a = r + c * 4, l = n[a + 3];
+		s[i] = M(n[a], l), s[i + 1] = M(n[a + 1], l), s[i + 2] = M(n[a + 2], l), s[i + 3] = 255;
+	}
+}
+function L(e) {
 	return Math.max(0, Math.min(255, Math.round(e)));
 }
-function P(e, t, n, r, i) {
-	let a = e.layout, o = e.directory.reader.bytes;
-	for (let s = 0; s < t.width; s++) {
-		let c = s * e.width, l = (s + 1) * e.width, u = Math.floor(c / t.width), d = Math.floor((l - 1) / t.width), f = 0, p = 0, m = 0, h = 0;
-		for (let e = u; e <= d; e++) {
-			let i = e * t.width, s = (e + 1) * t.width, u = (Math.min(l, s) - Math.max(c, i)) * r, d, g, _, v = 255;
-			if (a.kind === "gray-1") {
-				let t = o[n + (e >> 3)] >> 7 - (e & 7) & 1;
-				d = a.photometric === 0 ? t === 0 ? 255 : 0 : t === 0 ? 0 : 255, g = d, _ = d;
-			} else if (a.kind === "gray-8") {
-				let t = o[n + e];
-				d = a.photometric === 0 ? 255 - t : t, g = d, _ = d;
-			} else if (a.kind === "rgb") {
-				let t = n + e * 3;
-				d = o[t], g = o[t + 1], _ = o[t + 2];
-			} else if (a.kind === "rgba-associated") {
-				let t = n + e * 4;
-				v = o[t + 3], d = v === 0 ? 0 : o[t] * 255, g = v === 0 ? 0 : o[t + 1] * 255, _ = v === 0 ? 0 : o[t + 2] * 255;
-			} else if (a.kind === "rgba-unassociated") {
-				let t = n + e * 4;
-				v = o[t + 3], d = o[t] * v, g = o[t + 1] * v, _ = o[t + 2] * v;
+function R(e, t, { bytes: n, rowOffset: r, firstX: i, endX: a }, o, s) {
+	let c = e.layout, l = Math.floor(i * t.width / e.width), u = Math.floor((a * t.width - 1) / e.width);
+	for (let d = l; d <= u; d++) {
+		let l = d * e.width, u = (d + 1) * e.width, f = Math.max(i, Math.floor(l / t.width)), p = Math.min(a - 1, Math.floor((u - 1) / t.width)), m = 0, h = 0, g = 0, _ = 0;
+		for (let e = f; e <= p; e++) {
+			let i = e * t.width, a = (e + 1) * t.width, s = (Math.min(u, a) - Math.max(l, i)) * o, d, f, p, v = 255;
+			if (c.kind === "gray-1") {
+				let t = n[r + (e >> 3)] >> 7 - (e & 7) & 1;
+				d = c.photometric === 0 ? t === 0 ? 255 : 0 : t === 0 ? 0 : 255, f = d, p = d;
+			} else if (c.kind === "gray-8") {
+				let t = n[r + e];
+				d = c.photometric === 0 ? 255 - t : t, f = d, p = d;
+			} else if (c.kind === "rgb") {
+				let t = r + e * 3;
+				d = n[t], f = n[t + 1], p = n[t + 2];
+			} else if (c.kind === "rgba-associated") {
+				let t = r + e * 4;
+				v = n[t + 3], d = v === 0 ? 0 : n[t] * 255, f = v === 0 ? 0 : n[t + 1] * 255, p = v === 0 ? 0 : n[t + 2] * 255;
+			} else if (c.kind === "rgba-unassociated") {
+				let t = r + e * 4;
+				v = n[t + 3], d = n[t] * v, f = n[t + 1] * v, p = n[t + 2] * v;
 			} else {
-				let t = n + e * 4, r = o[t + 3];
-				d = A(o[t], r), g = A(o[t + 1], r), _ = A(o[t + 2], r);
+				let t = r + e * 4, i = n[t + 3];
+				d = M(n[t], i), f = M(n[t + 1], i), p = M(n[t + 2], i);
 			}
-			a.kind !== "rgba-associated" && a.kind !== "rgba-unassociated" && (d *= 255, g *= 255, _ *= 255), f += d * u, p += g * u, m += _ * u, h += v * u;
+			c.kind !== "rgba-associated" && c.kind !== "rgba-unassociated" && (d *= 255, f *= 255, p *= 255), m += d * s, h += f * s, g += p * s, _ += v * s;
 		}
-		let g = s * 4;
-		i[g] += f, i[g + 1] += p, i[g + 2] += m, i[g + 3] += h;
+		let v = d * 4;
+		s[v] += m, s[v + 1] += h, s[v + 2] += g, s[v + 3] += _;
 	}
 }
-function F(e, t, n, r, i) {
+function z(e, t, n, r, i) {
 	for (let a = 0; a < n; a++) {
 		let o = a * 4, s = (r * n + a) * 4, c = e[o + 3];
-		t[s] = c === 0 ? 0 : N(e[o] / c), t[s + 1] = c === 0 ? 0 : N(e[o + 1] / c), t[s + 2] = c === 0 ? 0 : N(e[o + 2] / c), t[s + 3] = N(c / i);
+		t[s] = c === 0 ? 0 : L(e[o] / c), t[s + 1] = c === 0 ? 0 : L(e[o + 1] / c), t[s + 2] = c === 0 ? 0 : L(e[o + 2] / c), t[s + 3] = L(c / i);
 	}
 }
-function I(e, t, n) {
-	let r = e.layout, i = new Float64Array(t.width * 4), a = e.width * e.height, o = -1;
-	for (let s = 0; s < e.height; s++) {
-		let c = Math.floor(s / e.rowsPerStrip), l = s - c * e.rowsPerStrip, u = e.stripOffsets.at(c) + l * r.bytesPerRow, d = s * t.height, f = (s + 1) * t.height, p = Math.floor(d / e.height), m = Math.floor((f - 1) / e.height);
-		for (let r = p; r <= m; r++) {
-			r !== o && (o >= 0 && (F(i, n, t.width, o, a), i.fill(0)), r !== o + 1 && h("Internal TIFF area-row sequence failure"), o = r);
-			let s = r * e.height, c = (r + 1) * e.height;
-			P(e, t, u, Math.min(f, c) - Math.max(d, s), i);
+function B(e, t, n) {
+	let r = F(e, e.layout), i = [new Float64Array(t.width * 4), new Float64Array(t.width * 4)], a = e.width * e.height, o = -1, s = 0, c = 0, l = 0, u = 0, d = (e) => {
+		for (; o < e;) {
+			o++;
+			let e = i[o & 1];
+			z(e, n, t.width, o, a), e.fill(0);
+		}
+	}, f = (n) => {
+		for (let r = l; r <= u; r++) {
+			let a = r * e.height, o = (r + 1) * e.height;
+			R(e, t, n, Math.min(c, o) - Math.max(s, a), i[r & 1]);
+		}
+	};
+	for (let n = 0; n < e.height; n++) s = n * t.height, c = (n + 1) * t.height, l = Math.floor(s / e.height), u = Math.floor((c - 1) / e.height), (l <= o || u > l + 1) && g("Internal TIFF area-row sequence failure"), d(l - 1), r(n, f);
+	u !== t.height - 1 && g("Internal TIFF area-row coverage failure"), d(u);
+}
+function V(e, t, n) {
+	t.width === e.width && t.height === e.height ? se(e, n) : B(e, t, n);
+}
+var H = 256, U = 257, W = 258, G = 9, K = 12, q = 1 << K, ce = class {
+	workLimit;
+	prefix = new Uint16Array(q);
+	suffix = new Uint8Array(q);
+	first = new Uint8Array(q);
+	length = new Uint16Array(q);
+	pending = new Uint8Array(q);
+	pendingStart = 0;
+	pendingEnd = 0;
+	reader;
+	codeWidth = G;
+	nextCode = W;
+	previousCode = -1;
+	ended = !1;
+	work = 0;
+	constructor(e, t) {
+		this.workLimit = t, this.reader = new u(e, 0, 0, "TIFF LZW data is truncated");
+		for (let e = 0; e < 256; e++) this.suffix[e] = e, this.first[e] = e, this.length[e] = 1;
+	}
+	beginStrip(e, t) {
+		this.reader.beginStrip(e, t), this.pendingStart = 0, this.pendingEnd = 0, this.ended = !1, this.clearTable(), this.readCode() !== H && g("TIFF LZW strip must begin with ClearCode");
+	}
+	fill(e) {
+		let t = 0;
+		for (; t < e.length;) {
+			this.pendingStart === this.pendingEnd && this.decodeNextString(), this.ended && g("TIFF LZW strip ended before its declared rows");
+			let n = Math.min(e.length - t, this.pendingEnd - this.pendingStart);
+			e.set(this.pending.subarray(this.pendingStart, this.pendingStart + n), t), this.pendingStart += n, t += n;
 		}
 	}
-	o !== t.height - 1 && h("Internal TIFF area-row coverage failure"), F(i, n, t.width, o, a);
-}
-function L(e, t, n) {
-	t.width === e.width && t.height === e.height ? M(e, n) : I(e, t, n);
-}
-var R = class {
-	bitOffset = 0;
-	constructor(e, t, n) {
-		this.bytes = e, this.byteOffset = t, this.byteLength = n;
+	finishStrip() {
+		this.pendingStart !== this.pendingEnd && g("TIFF LZW data exceeds its declared rows"), this.decodeNextString(!1);
 	}
-	readBit() {
-		this.bitOffset >= this.byteLength * 8 && h("CCITT Group 4 data is truncated");
-		let e = this.bytes[this.byteOffset + (this.bitOffset >> 3)] >> 7 - (this.bitOffset & 7) & 1;
-		return this.bitOffset++, e;
+	chargeWork(e) {
+		if (this.work += e, this.work > this.workLimit) throw new i("tiff-lzw-work", this.workLimit, this.work);
 	}
-}, z = [
+	clearTable() {
+		this.codeWidth = G, this.nextCode = W, this.previousCode = -1;
+	}
+	readCode() {
+		let e = this.reader.readBits(this.codeWidth);
+		return this.chargeWork(1), e;
+	}
+	decodeNextString(e = !0) {
+		for (;;) {
+			this.ended && g("TIFF LZW strip ended before its declared rows");
+			let t = this.readCode();
+			if (t === H) {
+				this.clearTable();
+				continue;
+			}
+			if (t === U) {
+				this.ended = !0;
+				return;
+			}
+			this.previousCode < 0 ? t >= H && g(`Invalid TIFF LZW code: ${t}`) : this.addString(t), e || g("TIFF LZW data exceeds its declared rows"), this.expand(t), this.previousCode = t;
+			return;
+		}
+	}
+	addString(e) {
+		e > this.nextCode && g(`Invalid TIFF LZW code: ${e}`), this.nextCode >= q && g("TIFF LZW code table overflow");
+		let t = this.previousCode, n = this.nextCode;
+		this.prefix[n] = t, this.suffix[n] = e === n ? this.first[t] : this.first[e], this.first[n] = this.first[t], this.length[n] = this.length[t] + 1, this.nextCode++, this.nextCode >= (1 << this.codeWidth) - 1 && this.codeWidth < K && this.codeWidth++;
+	}
+	expand(e) {
+		let t = e, n = this.length[t];
+		this.chargeWork(n);
+		for (let e = n - 1; e >= 0; e--) this.pending[e] = this.suffix[t], t = this.prefix[t];
+		this.pendingStart = 0, this.pendingEnd = n;
+	}
+}, J = [
 	["00000001000", 1792],
 	["00000001100", 1856],
 	["00000001101", 1920],
@@ -373,7 +526,7 @@ var R = class {
 	["000000011101", 2432],
 	["000000011110", 2496],
 	["000000011111", 2560]
-], B = [
+], le = [
 	["00110101", 0],
 	["000111", 1],
 	["0111", 2],
@@ -465,8 +618,8 @@ var R = class {
 	["010011010", 1600],
 	["011000", 1664],
 	["010011011", 1728],
-	...z
-], V = [
+	...J
+], ue = [
 	["0000110111", 0],
 	["010", 1],
 	["11", 2],
@@ -558,14 +711,14 @@ var R = class {
 	["0000001011011", 1600],
 	["0000001100100", 1664],
 	["0000001100101", 1728],
-	...z
+	...J
 ];
-function H(e) {
+function Y(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let [n, r] of e) t.set(1 << n.length | Number.parseInt(n, 2), r);
 	return t;
 }
-var U = H(B), W = H(V), G = new Map([
+var de = Y(le), fe = Y(ue), pe = new Map([
 	[3, 0],
 	[9, "horizontal"],
 	[10, -1],
@@ -576,57 +729,57 @@ var U = H(B), W = H(V), G = new Map([
 	[130, -3],
 	[131, 3]
 ]);
-function K(e) {
+function me(e) {
 	let t = 0;
 	for (let n = 1; n <= 7; n++) {
 		t = t << 1 | e.readBit();
-		let r = G.get(1 << n | t);
+		let r = pe.get(1 << n | t);
 		if (r !== void 0) return r;
 	}
-	h("Invalid or unsupported CCITT Group 4 two-dimensional mode");
+	g("Invalid or unsupported CCITT Group 4 two-dimensional mode");
 }
-function q(e, t, n) {
-	let r = t ? W : U, i = 0, a = Math.ceil(n / 64) + 64;
+function X(e, t, n) {
+	let r = t ? fe : de, i = 0, a = Math.ceil(n / 64) + 64;
 	for (let t = 0; t < a; t++) {
 		let t = 0, a;
 		for (let n = 1; n <= 13 && (t = t << 1 | e.readBit(), a = r.get(1 << n | t), a === void 0); n++);
-		if (a === void 0 && h("Invalid CCITT Group 4 run-length code"), i += a, i > n && h("CCITT Group 4 run exceeds the scanline width"), a < 64) return i;
+		if (a === void 0 && g("Invalid CCITT Group 4 run-length code"), i += a, i > n && g("CCITT Group 4 run exceeds the scanline width"), a < 64) return i;
 	}
-	h("CCITT Group 4 run-length code limit exceeded");
+	g("CCITT Group 4 run-length code limit exceeded");
 }
-var J = r + 1;
-function Y(e, t) {
+var Z = n + 1;
+function Q(e, t) {
 	let n = e[e.length - 1];
-	n !== void 0 && n > t && h("Internal TIFF Group 4 changing-element order failure"), n === t ? e.pop() : (e.length >= J && h("CCITT Group 4 changing-element limit exceeded"), e.push(t));
+	n !== void 0 && n > t && g("Internal TIFF Group 4 changing-element order failure"), n === t ? e.pop() : (e.length >= Z && g("CCITT Group 4 changing-element limit exceeded"), e.push(t));
 }
-function X(e, t, n, r, i, a, o) {
+function he(e, t, n, r, i, a, o) {
 	let s = i ? n : n + 1;
 	for (; a.index < e.length && (o && o.referenceProbeCount++, !(e[a.index] >= s));) a.index++;
 	let c = a.index;
 	return c < e.length && (c + 1 & 1) != (r ^ 1) && c++, [e[c] ?? t, e[c + 1] ?? t];
 }
-function Z(e, t, n, r, i) {
+function ge(e, t, n, r, i) {
 	n.length = 0;
 	let a = 0, o = 0, s = !0, c = { index: 0 }, l = r * 4 + 32;
 	for (let u = 0; a < r; u++) {
-		u >= l && h("CCITT Group 4 scanline operation limit exceeded"), i && i.modeCount++;
-		let d = K(e);
+		u >= l && g("CCITT Group 4 scanline operation limit exceeded"), i && i.modeCount++;
+		let d = me(e);
 		if (d === "horizontal") {
-			let t = q(e, o === 1, r - a), i = a + t, c = i + q(e, o === 0, r - i);
-			c <= a && h("Invalid CCITT Group 4 horizontal mode with no progress"), Y(n, i), Y(n, c), a = c, s = !1;
+			let t = X(e, o === 1, r - a), i = a + t, c = i + X(e, o === 0, r - i);
+			c <= a && g("Invalid CCITT Group 4 horizontal mode with no progress"), Q(n, i), Q(n, c), a = c, s = !1;
 			continue;
 		}
-		let [f, p] = X(t, r, a, o, s, c, i);
+		let [f, p] = he(t, r, a, o, s, c, i);
 		if (d === "pass") {
-			p <= a && h("Invalid CCITT Group 4 pass mode with no progress"), a = p, s = !1;
+			p <= a && g("Invalid CCITT Group 4 pass mode with no progress"), a = p, s = !1;
 			continue;
 		}
 		let m = f + d;
-		(m < a || m > r) && h("Invalid CCITT Group 4 vertical mode position"), Y(n, m), a = m, o ^= 1, s = !1;
+		(m < a || m > r) && g("Invalid CCITT Group 4 vertical mode position"), Q(n, m), a = m, o ^= 1, s = !1;
 	}
-	n[n.length - 1] !== r && (n.length >= J && h("CCITT Group 4 changing-element limit exceeded"), n.push(r));
+	n[n.length - 1] !== r && (n.length >= Z && g("CCITT Group 4 changing-element limit exceeded"), n.push(r));
 }
-function Q(e, t, n, r, i) {
+function $(e, t, n, r, i) {
 	let a = 0;
 	for (let o = 0; o < e.length; o++) {
 		let s = e[o], c = o & 1, l = i === 0 ? c === 0 ? 255 : 0 : c === 0 ? 0 : 255;
@@ -637,74 +790,74 @@ function Q(e, t, n, r, i) {
 		a = s;
 	}
 }
-function $(e, t, n, r, i, a, o) {
+function _e(e, t, n, r, i, a, o) {
 	let s = 0, c = n[0] * t.width;
 	for (let l = 0; l < t.width; l++) {
 		let u = l * e.width, d = (l + 1) * e.width, f = u;
 		for (; f < d;) {
 			for (o && o.areaSegmentCount++; c <= f && s + 1 < n.length;) s++, c = n[s] * t.width;
 			let e = Math.min(d, c);
-			e <= f && h("Internal TIFF Group 4 area-run coverage failure");
-			let u = s & 1, p = r === 0 ? u === 0 ? 255 : 0 : u === 0 ? 0 : 255, m = (e - f) * i, g = l * 4, _ = p * 255 * m;
-			a[g] += _, a[g + 1] += _, a[g + 2] += _, a[g + 3] += 255 * m, f = e;
+			e <= f && g("Internal TIFF Group 4 area-run coverage failure");
+			let u = s & 1, p = r === 0 ? u === 0 ? 255 : 0 : u === 0 ? 0 : 255, m = (e - f) * i, h = l * 4, _ = p * 255 * m;
+			a[h] += _, a[h + 1] += _, a[h + 2] += _, a[h + 3] += 255 * m, f = e;
 		}
 	}
 }
-function ee(e, t, n, r) {
+function ve(e, t, n, r) {
 	let i = e.layout, a = [e.width], o = [], s = t.width !== e.width || t.height !== e.height ? new Float64Array(t.width * 4) : null, c = e.width * e.height, l = -1;
-	for (let u = 0; u < e.stripCount; u++) {
+	for (let d = 0; d < e.stripCount; d++) {
 		a.length = 1, a[0] = e.width;
-		let d = u * e.rowsPerStrip, f = Math.min(e.rowsPerStrip, e.height - d), p = new R(e.directory.reader.bytes, e.stripOffsets.at(u), e.stripByteCounts.at(u));
-		for (let u = 0; u < f; u++) {
-			let f = d + u;
-			if (Z(p, a, o, e.width, r), !s) Q(o, n, e.width, f, i.photometric);
+		let f = d * e.rowsPerStrip, p = Math.min(e.rowsPerStrip, e.height - f), m = new u(e.directory.reader.bytes, e.stripOffsets.at(d), e.stripByteCounts.at(d), "CCITT Group 4 data is truncated");
+		for (let u = 0; u < p; u++) {
+			let d = f + u;
+			if (ge(m, a, o, e.width, r), !s) $(o, n, e.width, d, i.photometric);
 			else {
-				let a = f * t.height, u = (f + 1) * t.height, d = Math.floor(a / e.height), p = Math.floor((u - 1) / e.height);
-				for (let f = d; f <= p; f++) {
-					f !== l && (l >= 0 && (F(s, n, t.width, l, c), s.fill(0)), f !== l + 1 && h("Internal TIFF Group 4 area-row sequence failure"), l = f);
-					let d = f * e.height, p = (f + 1) * e.height, m = Math.min(u, p) - Math.max(a, d);
-					$(e, t, o, i.photometric, m, s, r);
+				let a = d * t.height, u = (d + 1) * t.height, f = Math.floor(a / e.height), p = Math.floor((u - 1) / e.height);
+				for (let d = f; d <= p; d++) {
+					d !== l && (l >= 0 && (z(s, n, t.width, l, c), s.fill(0)), d !== l + 1 && g("Internal TIFF Group 4 area-row sequence failure"), l = d);
+					let f = d * e.height, p = (d + 1) * e.height, m = Math.min(u, p) - Math.max(a, f);
+					_e(e, t, o, i.photometric, m, s, r);
 				}
 			}
 			[a, o] = [o, a];
 		}
 	}
-	s && (l !== t.height - 1 && h("Internal TIFF Group 4 area-row coverage failure"), F(s, n, t.width, l, c));
+	s && (l !== t.height - 1 && g("Internal TIFF Group 4 area-row coverage failure"), z(s, n, t.width, l, c));
 }
-function te(e, t, n) {
-	let r = D(e);
+function ye(e, t, n) {
+	let r = k(e);
 	if (!r) return null;
-	let i = k(r.width, r.height, t), a = new Uint8ClampedArray(i.pixels * 4);
-	return r.layout.kind === "group4" ? ee(r, i, a, n) : L(r, i, a), {
+	let i = j(r.width, r.height, t), a = new Uint8ClampedArray(i.pixels * 4);
+	return r.layout.kind === "group4" ? ve(r, i, a, n) : V(r, i, a), {
 		width: i.width,
 		height: i.height,
 		data: a
 	};
 }
-function ne(e, t = {}) {
-	return te(e, t);
+function be(e, t = {}) {
+	return ye(e, t);
 }
-async function re(e, t = {}) {
-	let n = ne(e, t);
+async function xe(e, t = {}) {
+	let n = be(e, t);
 	if (!n) return null;
-	typeof ImageData != "function" && h("TIFF ImageData construction is unavailable");
+	typeof ImageData != "function" && g("TIFF ImageData construction is unavailable");
 	let r;
 	try {
 		r = new ImageData(n.data, n.width, n.height);
 	} catch (e) {
-		h("TIFF ImageData construction failed", e);
+		g("TIFF ImageData construction failed", e);
 	}
-	typeof createImageBitmap != "function" && h("TIFF ImageBitmap creation is unavailable");
+	typeof createImageBitmap != "function" && g("TIFF ImageBitmap creation is unavailable");
 	let i;
 	try {
 		i = await createImageBitmap(r);
 	} catch (e) {
-		h("TIFF ImageBitmap creation failed", e);
+		g("TIFF ImageBitmap creation failed", e);
 	}
-	return i || h("TIFF ImageBitmap creation returned no bitmap"), i;
+	return i || g("TIFF ImageBitmap creation returned no bitmap"), i;
 }
 //#endregion
 //#region src/tiff.ts
-var ie = l({ render: re }, "tiff");
+var Se = l({ render: xe }, "tiff");
 //#endregion
-export { a as TiffDecodeError, s as isTiffDecodeError, ie as tiff };
+export { s as TiffDecodeError, a as isTiffDecodeError, Se as tiff };
