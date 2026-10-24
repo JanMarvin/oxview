@@ -1,7 +1,7 @@
-import { Ao as e, Cn as t, _a as n, aa as r, ca as i, fa as a, ha as o, la as s, ma as c, qt as l, t as u } from "./plot-area-frame-Bs_j4uu7.js";
-import { a as d, l as f, s as p } from "./duotone-DN8P4aXe.js";
-import { t as m } from "./renderer-module-contract-CWM7jv6d.js";
-//#region packages/core/src/chart/region-map-natural-earth.generated.ts
+// optional-renderer: packages/core/src/chart/region-map-natural-earth.generated.ts
+import { Ao as e, Cn as t, _a as n, aa as r, ca as i, fa as a, ha as o, la as s, ma as c, qt as l, t as u } from "./plot-area-frame-D3JtHvov.js";
+import { a as d, l as f, s as p } from "./duotone-BI7CoghW.js";
+import { t as m } from "./renderer-module-contract-BuTx2FWJ.js";
 var h = [
 	{
 		n: "Fiji",
@@ -12671,8 +12671,5 @@ function V(e, t, a, d, f = 0) {
 	}
 	return !0;
 }
-//#endregion
-//#region src/region-map.ts
 var H = m({ render: V }, "regionMap");
-//#endregion
 export { H as regionMap };

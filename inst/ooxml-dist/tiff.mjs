@@ -1,8 +1,8 @@
-import { c as e, l as t, o as n, s as r, u as i } from "./pixel-budget-BpTYrepD.js";
-import { i as a, r as o, t as s } from "./tiff-contract-C6M3QcPp.js";
-import { t as c } from "./raster-target-YQ4G6rxo.js";
-import { t as l } from "./renderer-module-contract-CWM7jv6d.js";
-//#region packages/core/src/image/tiff.ts
+// optional-renderer: packages/core/src/image/tiff.ts
+import { c as e, l as t, o as n, s as r, u as i } from "./pixel-budget-DI82Hn3R.js";
+import { i as a, r as o, t as s } from "./tiff-contract-DEd8CGuz.js";
+import { t as c } from "./raster-target-Ca3tyA0L.js";
+import { t as l } from "./renderer-module-contract-BuTx2FWJ.js";
 var u = class {
 	bytes;
 	truncatedMessage;
@@ -856,8 +856,5 @@ async function xe(e, t = {}) {
 	}
 	return i || g("TIFF ImageBitmap creation returned no bitmap"), i;
 }
-//#endregion
-//#region src/tiff.ts
 var Se = l({ render: xe }, "tiff");
-//#endregion
 export { s as TiffDecodeError, a as isTiffDecodeError, Se as tiff };

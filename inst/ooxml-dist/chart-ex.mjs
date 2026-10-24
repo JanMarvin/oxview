@@ -1,7 +1,7 @@
-import { $ as e, $i as t, $n as n, Fn as r, Ga as i, Gi as a, In as o, J as s, Ln as c, Mt as l, Nn as u, Pn as d, Qi as f, Qn as p, R as m, Rn as h, Rt as g, S as _, Ta as v, Ut as y, Va as b, Wt as x, Y as S, Ya as C, Yt as w, Zn as T, Zt as E, _a as D, _n as O, b as k, bt as A, ct as j, da as M, ea as N, er as P, fn as F, gn as I, ha as ee, hn as te, ia as ne, in as L, it as R, jt as re, ma as ie, mn as ae, no as z, nt as oe, oa as se, on as ce, ot as le, pn as ue, rt as de, s as fe, st as pe, t as me, ta as he, tt as ge, ua as _e, vi as ve, x as B, xn as V, yt as ye, za as be, zt as H } from "./plot-area-frame-Bs_j4uu7.js";
-import { A as xe, C as Se, D as Ce, E as we, O as Te, S as Ee, T as De, _ as U, a as Oe, b as ke, c as Ae, d as je, f as Me, g as Ne, i as Pe, j as Fe, k as Ie, l as Le, m as Re, o as ze, p as Be, s as Ve, u as He, v as Ue, w as We, x as Ge, y as W } from "./renderer-BFWqhLEt.js";
-import { t as G } from "./renderer-module-contract-CWM7jv6d.js";
-//#region packages/core/src/chart/chart-ex-renderer.ts
+// optional-renderer: packages/core/src/chart/chart-ex-renderer.ts
+import { $ as e, $i as t, $n as n, Fn as r, Ga as i, Gi as a, In as o, J as s, Ln as c, Mt as l, Nn as u, Pn as d, Qi as f, Qn as p, R as m, Rn as h, Rt as g, S as _, Ta as v, Ut as y, Va as b, Wt as x, Y as S, Ya as C, Yt as w, Zn as T, Zt as E, _a as D, _n as O, b as k, bt as A, ct as j, da as M, ea as N, er as P, fn as F, gn as I, ha as ee, hn as te, ia as ne, in as L, it as R, jt as re, ma as ie, mn as ae, no as z, nt as oe, oa as se, on as ce, ot as le, pn as ue, rt as de, s as fe, st as pe, t as me, ta as he, tt as ge, ua as _e, vi as ve, x as B, xn as V, yt as ye, za as be, zt as H } from "./plot-area-frame-D3JtHvov.js";
+import { A as xe, C as Se, D as Ce, E as we, O as Te, S as Ee, T as De, _ as U, a as Oe, b as ke, c as Ae, d as je, f as Me, g as Ne, i as Pe, j as Fe, k as Ie, l as Le, m as Re, o as ze, p as Be, s as Ve, u as He, v as Ue, w as We, x as Ge, y as W } from "./renderer-xdugdcMd.js";
+import { t as G } from "./renderer-module-contract-BuTx2FWJ.js";
 function Ke(e, t, n, r = 1) {
 	let a = 0, o = Math.max(1, n?.w ?? 32 * r), s = Math.max(1, n?.h ?? 16 * r), c = ae(e, ({ label: n, linkedStyleIndex: c }) => {
 		let l = n.labelBox, u = I(l), d = u ? e.chartStyleRoles?.dataLabelCallout ?? e.chartStyleRoles?.dataLabel : e.chartStyleRoles?.dataLabel, f = u ? z(e, "dataLabelCallout") ?? z(e, "dataLabel") : z(e, "dataLabel"), p = O(l, d, f, d != null, 0, c)?.fillPaint, m = be(l?.style, f, 0), h = l?.borderHidden === !0 ? b(f) : void 0, g = l?.borderColor != null || l?.borderFill != null || m !== void 0 || h !== void 0 || l?.borderPaintAuthored === !0 && l?.borderHidden !== !0, _ = m === void 0 ? h === void 0 ? l?.borderFill ?? (l?.borderColor ? {
@@ -979,8 +979,5 @@ function nt(e, t, n, r, i = 0) {
 		default: return !1;
 	}
 }
-//#endregion
-//#region src/chart-ex.ts
 var rt = G({ render: nt }, "chartEx");
-//#endregion
 export { rt as chartEx };

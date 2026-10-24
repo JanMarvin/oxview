@@ -1,7 +1,7 @@
-import { $a as e, Ba as t, Bi as n, Ca as r, Cn as i, Fi as a, Ga as o, Ha as s, Ii as c, Ja as l, Ji as u, Ka as d, Ki as f, Li as p, Ln as m, Nt as h, Ot as g, Pi as _, Ra as v, Ri as y, Rn as b, Rr as x, Sa as S, Si as C, Ui as w, Va as T, Vi as E, Wa as D, Wi as O, Xi as k, Yi as A, Zi as j, _a as M, bn as N, ca as P, da as F, ea as I, eo as L, fa as R, gi as z, ha as B, hi as V, ia as H, ja as U, ka as W, l as ee, la as G, ma as K, mi as te, n as q, na as ne, no as J, oa as Y, on as X, pa as re, qi as Z, qt as ie, sa as ae, sn as oe, sr as se, t as ce, ta as le, v as ue, va as de, vi as fe, vn as pe, xa as me, xn as he, xt as ge, ya as _e, yn as ve, za as ye, zi as be, zn as xe, zr as Se } from "./plot-area-frame-Bs_j4uu7.js";
-import { a as Ce, c as we, i as Te, m as Ee, n as De, o as Oe, p as ke, r as Ae, s as je, t as Me, u as Ne, v as Pe, y as Fe } from "./three-d-BKwNPAP4.js";
-import { t as Ie } from "./renderer-module-contract-CWM7jv6d.js";
-//#region packages/core/src/chart/three-d-datum-style.ts
+// optional-renderer: packages/core/src/chart/three-d-renderer.ts
+import { $a as e, Ba as t, Bi as n, Ca as r, Cn as i, Fi as a, Ga as o, Ha as s, Ii as c, Ja as l, Ji as u, Ka as d, Ki as f, Li as p, Ln as m, Nt as h, Ot as g, Pi as _, Ra as v, Ri as y, Rn as b, Rr as x, Sa as S, Si as C, Ui as w, Va as T, Vi as E, Wa as D, Wi as O, Xi as k, Yi as A, Zi as j, _a as M, bn as N, ca as P, da as F, ea as I, eo as L, fa as R, gi as z, ha as B, hi as V, ia as H, ja as U, ka as W, l as ee, la as G, ma as K, mi as te, n as q, na as ne, no as J, oa as Y, on as X, pa as re, qi as Z, qt as ie, sa as ae, sn as oe, sr as se, t as ce, ta as le, v as ue, va as de, vi as fe, vn as pe, xa as me, xn as he, xt as ge, ya as _e, yn as ve, za as ye, zi as be, zn as xe, zr as Se } from "./plot-area-frame-D3JtHvov.js";
+import { a as Ce, c as we, i as Te, m as Ee, n as De, o as Oe, p as ke, r as Ae, s as je, t as Me, u as Ne, v as Pe, y as Fe } from "./three-d-ByHGsYrX.js";
+import { t as Ie } from "./renderer-module-contract-BuTx2FWJ.js";
 function Le(t, n, r, i) {
 	return e(t, i) ? r : n.chartexFormatIdx ?? i;
 }
@@ -20,8 +20,6 @@ function Re(e, n, r, i, a) {
 	let f = v(n.chartexStyle, u, o);
 	return f === void 0 ? s(c, u, o, r?.chartexStyle, n.chartexStyle) : f;
 }
-//#endregion
-//#region packages/core/src/chart/three-d-mesh.ts
 var ze = 32;
 function Be(e) {
 	switch (e) {
@@ -455,8 +453,6 @@ function Je(e) {
 		silhouetteEdges: h.slice(0, u ? void 0 : -1).map((e, t) => [e, g[t]])
 	};
 }
-//#endregion
-//#region packages/core/src/chart/three-d-scene.ts
 function Ye(e, t) {
 	if (![e, t].every(Number.isFinite)) return null;
 	let n = t - e;
@@ -594,8 +590,6 @@ function nt(e) {
 	}
 	return l;
 }
-//#endregion
-//#region packages/core/src/chart/three-d-stroke.ts
 var Q = 1e-9, rt = 1e4, it = (e, t, n) => ({
 	x: e.x + (t.x - e.x) * n,
 	y: e.y + (t.y - e.y) * n,
@@ -795,8 +789,6 @@ function dt(e, t) {
 	}
 	return s;
 }
-//#endregion
-//#region packages/core/src/chart/three-d-outline.ts
 var ft = 1e-9, pt = (e, t) => Math.hypot(e.x - t.x, e.y - t.y, e.depth - t.depth) <= ft, mt = (e, t) => e.x - t.x || e.y - t.y || e.depth - t.depth, ht = (e, t) => {
 	let n = Math.min(e.length, t.length);
 	for (let r = 0; r < n; r++) {
@@ -879,8 +871,6 @@ function vt(e) {
 		junctions: l
 	};
 }
-//#endregion
-//#region packages/core/src/chart/three-d-renderer.ts
 function yt(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n of e.legendEntries ?? []) t.set(n.idx, n);
@@ -2775,8 +2765,5 @@ function An(e, t, n, r, i) {
 function jn(e, t, n, r, i = 0) {
 	return !t.threeD || !(t.chartType === "pie" || wt.has(t.chartType)) ? !1 : Mt(t) ? An(e, t, n, r, i) ? !0 : kn(e, t, n, r, i) : (Yt(e, n), !0);
 }
-//#endregion
-//#region src/three-d.ts
 var Mn = Ie({ render: jn }, "threeD");
-//#endregion
 export { Mn as threeD };

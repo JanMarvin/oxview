@@ -1,6 +1,5 @@
-import { t as e } from "./renderer-module-contract-CWM7jv6d.js";
-import { n as t } from "./mathjax-BhwN6ilc.js";
-//#region packages/core/assets/mathjax-stix2.js?url
+import { t as e } from "./renderer-module-contract-BuTx2FWJ.js";
+import { n as t } from "./mathjax-DvwccQ8e.js";
 var n = new URL("mathjax-stix2.js", import.meta.url).href, r = null;
 function i(e) {
 	return new Promise((t, n) => {
@@ -35,8 +34,6 @@ async function c(e, n) {
 		...t(r)
 	};
 }
-//#endregion
-//#region packages/core/src/math/engine.ts
 function l() {
 	return new URL(n, import.meta.url).href;
 }
@@ -46,11 +43,8 @@ async function u() {
 async function d(e) {
 	return c(e, l());
 }
-//#endregion
-//#region src/math.ts
 var f = e({
 	loadMathJax: u,
 	mathMLToSvg: d
 }, "math", { engineAssetUrl: l() });
-//#endregion
 export { f as math };
