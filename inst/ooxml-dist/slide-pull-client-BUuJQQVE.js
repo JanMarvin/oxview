@@ -1,12 +1,12 @@
 import { $r as e, Aa as t, Ao as n, Co as r, Dr as i, Eo as a, Fr as o, Gn as s, Hn as c, Ir as l, Jn as u, Kn as d, Oo as f, Pr as p, Qr as m, So as h, To as g, Tr as _, Un as v, Vn as y, Vr as b, Wn as x, Yn as S, Zr as C, _o as w, a as T, ao as E, ar as D, c as O, co as k, cr as A, d as j, do as M, ei as N, fo as P, fr as F, go as I, gr as L, h as R, ho as z, i as B, ka as V, lo as H, lr as U, m as W, mo as G, mr as ee, nr as te, o as K, oo as ne, or as q, po as J, pr as re, qn as ie, r as ae, so as oe, ti as se, u as ce, uo as le, ur as ue, vo as de, wo as fe, wr as pe, xr as me, yo as he } from "./plot-area-frame-D3JtHvov.js";
-import { $ as ge, At as _e, Ct as ve, Dt as ye, E as be, Et as xe, Ft as Se, Gt as Ce, J as we, Mt as Te, Nt as Ee, Pt as De, Q as Oe, Tt as ke, Ut as Ae, Wt as je, X as Me, Y as Ne, Z as Pe, Zt as Fe, _ as Ie, _t as Le, bt as Re, c as ze, ct as Be, dt as Ve, et as He, f as Ue, g as We, h as Ge, i as Ke, jt as qe, kt as Je, l as Ye, mn as Xe, mt as Ze, nt as Qe, o as $e, ot as et, p as tt, pn as nt, pt as rt, r as it, sn as at, tn as ot, tt as st, v as ct, vt as lt, wt as ut, xt as dt, y as ft, yt as pt } from "./bounded-raw-part-cache-Bi_VqXmg.js";
-import { a as mt, c as ht, d as gt, f as _t, h as vt, m as yt, o as bt, p as xt, r as St, s as Ct, t as wt, u as Tt, y as Et } from "./line-distribute-C_CJisnJ.js";
+import { $ as ge, At as _e, Ct as ve, Dt as ye, E as be, Et as xe, Ft as Se, Gt as Ce, J as we, Mt as Te, Nt as Ee, Pt as De, Q as Oe, Tt as ke, Ut as Ae, Wt as je, X as Me, Y as Ne, Z as Pe, Zt as Fe, _ as Ie, _t as Le, bt as Re, c as ze, et as Be, f as Ve, ft as He, g as Ue, gt as We, h as Ge, i as Ke, jt as qe, kt as Je, l as Ye, mn as Xe, nt as Ze, o as Qe, p as $e, pn as et, pt as tt, r as nt, sn as rt, st as it, tn as at, tt as ot, ut as st, v as ct, vt as lt, wt as ut, xt as dt, y as ft, yt as pt } from "./bounded-raw-part-cache-B8t03tSP.js";
+import { a as mt, c as ht, d as gt, f as _t, h as vt, m as yt, o as bt, p as xt, r as St, s as Ct, t as wt, u as Tt, y as Et } from "./line-distribute-DR9Qwd3u.js";
 import { a as Dt, f as Ot, i as kt, u as At } from "./pixel-budget-DI82Hn3R.js";
 import { H as jt, L as Mt, M as Nt, R as Pt, V as Ft, n as It, r as Lt, t as Rt } from "./renderer-xdugdcMd.js";
 import { i as zt } from "./tiff-contract-DEd8CGuz.js";
 import { _ as Bt, g as Vt, h as Ht } from "./three-d-ByHGsYrX.js";
 import { a as Ut, o as Wt } from "./duotone-BI7CoghW.js";
-import { _ as Gt, a as Kt, c as qt, d as Jt, f as Yt, h as Xt, i as Zt, l as Qt, m as $t, n as en, o as tn, p as nn, s as rn, t as an, u as on, v as sn, y as cn } from "./resource-measurement-CTGrNAsD.js";
+import { _ as Gt, a as Kt, c as qt, d as Jt, f as Yt, h as Xt, i as Zt, l as Qt, m as $t, n as en, o as tn, p as nn, s as rn, t as an, u as on, v as sn, y as cn } from "./resource-measurement-D2bu0Qfx.js";
 function ln(e, t, n) {
 	let r = typeof e.getTransform == "function" ? e.getTransform() : {
 		a: 1,
@@ -1994,7 +1994,7 @@ function pr(e, t, n) {
 	let r;
 	for (let i of ur(e, t, n)) {
 		if (i.farEastCodePage == null || !i.win) return;
-		let e = $e({
+		let e = Qe({
 			faceSource: i.source === "macos-supplemental" ? "system" : "office-bundle",
 			unitsPerEm: i.unitsPerEm,
 			hhea: i.hhea,
@@ -2295,7 +2295,7 @@ function Rr(e, t, n, r, i, a) {
 	}
 	e.restore();
 }
-var zr = { isTab: (e) => "isTab" in e }, Br = (e) => Ke(e), Vr = (e, t) => it(e, t, zr), Hr = (e) => /\s/.test(String.fromCodePoint(e));
+var zr = { isTab: (e) => "isTab" in e }, Br = (e) => Ke(e), Vr = (e, t) => nt(e, t, zr), Hr = (e) => /\s/.test(String.fromCodePoint(e));
 function Ur(e, t, n, r, i) {
 	if (r === "just" && i) return null;
 	let a = t - n;
@@ -2303,7 +2303,7 @@ function Ur(e, t, n, r, i) {
 	let o = wt(e, a, {
 		firstContentSi: 0,
 		lastDrawnSi: e.length,
-		isGapChar: at,
+		isGapChar: rt,
 		isWhitespace: Hr,
 		seaClusterGaps: r === "thaiDist"
 	});
@@ -2414,9 +2414,9 @@ function $r(e, t, n, r, i, a, o = "fill", s = Qr) {
 		let t = o.codePointAt(0) ?? 0, l = Ie(t), p = e.measureText(o).width + a, m = l === "Tr" ? Ge(t) : null, h = l === "Tr" && m === null && ft(t), g = l === "U" || l === "Tu" || m !== null || h;
 		if (ct(t) && s(t)) {
 			let t = n + f + p / 2;
-			e.save(), e.translate(t, d), e.rotate(-Math.PI / 2), e.textAlign = "center", e.textBaseline = "middle", tt(e, () => u(o, 0, 0)), e.restore();
+			e.save(), e.translate(t, d), e.rotate(-Math.PI / 2), e.textAlign = "center", e.textBaseline = "middle", $e(e, () => u(o, 0, 0)), e.restore();
 		} else if (g) {
-			let r = m === null && l === "Tu" ? We(t) : null, a = m === null ? r : m, s = a === null ? o : String.fromCodePoint(a), c = n + f + p / 2, h = r === null ? St(e, s) / i : 0;
+			let r = m === null && l === "Tu" ? Ue(t) : null, a = m === null ? r : m, s = a === null ? o : String.fromCodePoint(a), c = n + f + p / 2, h = r === null ? St(e, s) / i : 0;
 			e.save(), e.translate(c, d), e.rotate(-Math.PI / 2), e.textAlign = "center", e.textBaseline = "middle", u(s, 0, h * i), e.restore();
 		} else if (l === "Tr") {
 			let t = n + f + p / 2;
@@ -2427,7 +2427,7 @@ function $r(e, t, n, r, i, a, o = "fill", s = Qr) {
 	e.textAlign = c, e.textBaseline = l;
 }
 function ei(e, t, n, r, i, a, o = "fill") {
-	$r(e, t, n, r, i, a, o, (t) => Ue(e, t));
+	$r(e, t, n, r, i, a, o, (t) => Ve(e, t));
 }
 var ti = /* @__PURE__ */ new WeakMap();
 function ni(e) {
@@ -2852,7 +2852,7 @@ function Li(e, t, n) {
 	};
 }
 function Ri(e, t) {
-	return He(e, t);
+	return Be(e, t);
 }
 function zi(e, t) {
 	let n = e.targets.get(t);
@@ -2863,7 +2863,7 @@ function zi(e, t) {
 	} : void 0;
 }
 function Bi(e) {
-	return !Q(e) && Qe(e) ? e.svgImagePath : e.imagePath;
+	return !Q(e) && Ze(e) ? e.svgImagePath : e.imagePath;
 }
 function Vi(e, t, n, r) {
 	let i = Nr(t.bullet);
@@ -2887,7 +2887,7 @@ async function Hi(e, t, n, r, i, a, o, s, c, l) {
 				});
 				return;
 			}
-			f.push(rt(n, r, i, o).then((n) => n.dimensions && Pt(n.format, l !== void 0) ? {
+			f.push(He(n, r, i, o).then((n) => n.dimensions && Pt(n.format, l !== void 0) ? {
 				key: e,
 				...t,
 				sourceWidthPx: n.dimensions.width,
@@ -2906,9 +2906,9 @@ async function Hi(e, t, n, r, i, a, o, s, c, l) {
 	for (let t of e.elements) {
 		for (let { fill: e, width: n, height: a } of Ui(t)) if (!e.tile && !Q(e)) {
 			let t = e.fillRect ?? {}, s = Z(n, r) * (1 - (t.l ?? 0) - (t.r ?? 0)), c = Z(a, r) * (1 - (t.t ?? 0) - (t.b ?? 0));
-			e.mimeType === "image/svg+xml" || Qe(e) || p(Ri(e.imagePath, Q(e)), Pi(s, c, i, e.srcRect), e.imagePath, e.mimeType, o, 1);
+			e.mimeType === "image/svg+xml" || Ze(e) || p(Ri(e.imagePath, Q(e)), Pi(s, c, i, e.srcRect), e.imagePath, e.mimeType, o, 1);
 		}
-		if (t.type === "picture") !(Qe(t) || t.mimeType === "image/svg+xml") && !Q(t) && p(Ri(t.imagePath, Q(t)), Pi(Z(t.width, r), Z(t.height, r), i, t.srcRect), t.imagePath, t.mimeType, o, 1);
+		if (t.type === "picture") !(Ze(t) || t.mimeType === "image/svg+xml") && !Q(t) && p(Ri(t.imagePath, Q(t)), Pi(Z(t.width, r), Z(t.height, r), i, t.srcRect), t.imagePath, t.mimeType, o, 1);
 		else if (t.type === "media" && t.posterPath) {
 			let e = s ? Mo(s) : void 0;
 			p(Ri(t.posterPath), Pi(Z(t.width, r), Z(t.height, r), i), t.posterPath, t.posterMimeType || "application/octet-stream", e, 1, c ?? e);
@@ -2923,7 +2923,7 @@ async function Hi(e, t, n, r, i, a, o, s, c, l) {
 			};
 			for (let n of W(t.chart)) {
 				let t = n.fill, r = j(n, e);
-				!(t.mimeType === "image/svg+xml" || Qe({
+				!(t.mimeType === "image/svg+xml" || Ze({
 					svgImagePath: t.svgImagePath,
 					srcRect: n.hasSourceCrop ? !0 : null
 				})) && !Q(t) && !n.preserveNaturalSize && r?.targetWidthPx && r.targetHeightPx && p(Ri(t.imagePath, Q(t)), {
@@ -2937,7 +2937,7 @@ async function Hi(e, t, n, r, i, a, o, s, c, l) {
 				let n = Nr(e.bullet);
 				if (n.type !== "blip") continue;
 				let a = Vi(t.textBody, e, r, i);
-				!a || !o || f.push(rt(n.imagePath, n.mimeType, o).then((e) => e.dimensions && e.dimensions.width > 0 && e.dimensions.height > 0 && Pt(e.format, l !== void 0) ? {
+				!a || !o || f.push(He(n.imagePath, n.mimeType, o).then((e) => e.dimensions && e.dimensions.width > 0 && e.dimensions.height > 0 && Pt(e.format, l !== void 0) ? {
 					key: Ri(n.imagePath),
 					targetWidthPx: a * e.dimensions.width / e.dimensions.height,
 					targetHeightPx: a,
@@ -3283,7 +3283,7 @@ function Da(e, t, n) {
 function Oa(e, t, n, i, a, o, s, c, l, u = !1, d) {
 	let f = [], p = e.runs.map((e) => e.type === "text" ? un(e, c) : null), m = [], h = "";
 	for (let e of p) m.push(h.length), h += e ?? "\n";
-	let g = ot(h);
+	let g = at(h);
 	g.push(h.length);
 	let _ = 0, v = (e) => {
 		for (; _ < g.length && g[_] < e;) _++;
@@ -3359,7 +3359,7 @@ function Oa(e, t, n, i, a, o, s, c, l, u = !1, d) {
 			});
 			continue;
 		}
-		let _ = h.fontSize == null ? t : h.fontSize * V * i * s, C = Sa(_, h.baseline ?? void 0), w = ia(h.fontFamily ?? e.defFontFamily ?? null, l), T = h.fontFamilySym ? ia(h.fontFamilySym, l) : null, E = h.bold ?? e.defBold ?? a, D = h.italic ?? e.defItalic ?? o, O = p[c] ?? "", k = h.fontFamilyEa ? [] : Oi(h.fontFamily ?? e.defFontFamily ?? l.themeMinorFont ?? null, [...O].filter((e) => at(e.codePointAt(0) ?? 0)).join("")), A = h.fontFamilyEa ? ia(h.fontFamilyEa, l) : k[0], j = h.fontFamilyCs ? ia(h.fontFamilyCs, l) : null, M = m[c], N = M + O.length;
+		let _ = h.fontSize == null ? t : h.fontSize * V * i * s, C = Sa(_, h.baseline ?? void 0), w = ia(h.fontFamily ?? e.defFontFamily ?? null, l), T = h.fontFamilySym ? ia(h.fontFamilySym, l) : null, E = h.bold ?? e.defBold ?? a, D = h.italic ?? e.defItalic ?? o, O = p[c] ?? "", k = h.fontFamilyEa ? [] : Oi(h.fontFamily ?? e.defFontFamily ?? l.themeMinorFont ?? null, [...O].filter((e) => rt(e.codePointAt(0) ?? 0)).join("")), A = h.fontFamilyEa ? ia(h.fontFamilyEa, l) : k[0], j = h.fontFamilyCs ? ia(h.fontFamilyCs, l) : null, M = m[c], N = M + O.length;
 		if (y && O) {
 			let e = Math.min(v(M), N);
 			e > M && (y.text += O.slice(0, e - M), O = O.slice(e - M), M = e);
@@ -3411,7 +3411,7 @@ function Oa(e, t, n, i, a, o, s, c, l, u = !1, d) {
 		for (; K < O.length;) {
 			let t = Math.min(v(M + K + 1), N) - M, n = O.slice(K, t);
 			K = t, ne = !0;
-			let r = String.fromCodePoint(n.codePointAt(0) ?? 0), i = n, a = r.codePointAt(0) ?? 0, o = !at(a) && !!h.fontFamilyEa && Ni(a, h.lang), s = o || at(a), c = z(a) || xa.test(r), u = c ? j ?? vi(r) : w, d = o ? I(A, n, !0) : s ? P : c ? L(u, n) : I(w, n, aa(h.fontFamily ?? e.defFontFamily)), f = s ? A : u, p = ma(f, E, D, l);
+			let r = String.fromCodePoint(n.codePointAt(0) ?? 0), i = n, a = r.codePointAt(0) ?? 0, o = !rt(a) && !!h.fontFamilyEa && Ni(a, h.lang), s = o || rt(a), c = z(a) || xa.test(r), u = c ? j ?? vi(r) : w, d = o ? I(A, n, !0) : s ? P : c ? L(u, n) : I(w, n, aa(h.fontFamily ?? e.defFontFamily)), f = s ? A : u, p = ma(f, E, D, l);
 			if (/[\uf020-\uf0ff]/u.test(r) && (T != null || yt(w))) {
 				let e = T ?? w, t = vt(r, e);
 				i = t + n.slice(r.length), d = pa(E, D, C, t === r ? e : "sans-serif", l, i), p = void 0, f = t === r ? e : "sans-serif";
@@ -3550,7 +3550,7 @@ async function Ia(e, t, n, r, a, o, s, c) {
 		} : { paint: l }, d, f;
 		try {
 			let l = c && !Q(e) ? zi(c, Ri(e.imagePath, Q(e))) : void 0;
-			f = e.tile ? await Fi(e, rt(e.imagePath, e.mimeType, a)) : void 0, d = await st(e.imagePath, e.mimeType, Q(e.tile ? {
+			f = e.tile ? await Fi(e, He(e.imagePath, e.mimeType, a)) : void 0, d = await ot(e.imagePath, e.mimeType, Q(e.tile ? {
 				...e,
 				dpi: void 0
 			} : e), a, {
@@ -4583,7 +4583,7 @@ function wo(e, t, n, r, i, a, o, s, c, l, u, d, f, p) {
 			if (!xo(a)) return;
 			let o = S[n], s = i;
 			e.save();
-			let c = o.bulletImage, l = c ? d.pictureBulletImages?.has(c.imagePath) ? d.pictureBulletImages.get(c.imagePath) : p ? Ze(c.imagePath, p) : null : null;
+			let c = o.bulletImage, l = c ? d.pictureBulletImages?.has(c.imagePath) ? d.pictureBulletImages.get(c.imagePath) : p ? tt(c.imagePath, p) : null : null;
 			if (c && l) {
 				let t = c.sizePx, n = l.height > 0 ? t * l.width / l.height : t;
 				e.drawImage(l, r - n / 2, s, n, t);
@@ -4828,7 +4828,7 @@ function To(e, t, n, r, i, a, o, s = null, c = 0, l = !1, u = !1, d = "#000000",
 				t > R && (R = t, L = e);
 			}
 		}
-		let B = T && R > 0 ? z === "t" && I > 0 ? s.para.spaceLine?.type === "pct" ? Math.max(I, L + (s.baselineLineHeight - R) / 2) : I : Math.max(I, L + Math.max(0, d - R) / 2) : Math.max(d * .8, I), V = E === void 0 ? G + B : G + E, H = V + (l.segments.find((e) => !e.isTab && !e.math && !!e.text)?.fontAlgnOffsetPx ?? 0), U = O + j, W = S && g ? p.pictureBulletImages?.has(S.imagePath) ? p.pictureBulletImages.get(S.imagePath) : Ze(S.imagePath, g) : void 0, ee = 0;
+		let B = T && R > 0 ? z === "t" && I > 0 ? s.para.spaceLine?.type === "pct" ? Math.max(I, L + (s.baselineLineHeight - R) / 2) : I : Math.max(I, L + Math.max(0, d - R) / 2) : Math.max(d * .8, I), V = E === void 0 ? G + B : G + E, H = V + (l.segments.find((e) => !e.isTab && !e.math && !!e.text)?.fontAlgnOffsetPx ?? 0), U = O + j, W = S && g ? p.pictureBulletImages?.has(S.imagePath) ? p.pictureBulletImages.get(S.imagePath) : tt(S.imagePath, g) : void 0, ee = 0;
 		if (N && M) {
 			if (v) e.font = y, ee = e.measureText(v).width;
 			else if (S && W) {
@@ -5115,7 +5115,7 @@ function Mo(e) {
 }
 function No(e, t, n = Mo(t), r, i, a) {
 	let o = Mo(t);
-	return Ve(e.posterPath, e.posterMimeType || "application/octet-stream", o, {
+	return st(e.posterPath, e.posterMimeType || "application/octet-stream", o, {
 		tiff: r,
 		svgDecoder: a,
 		...i ?? {}
@@ -5144,7 +5144,7 @@ async function Fo(e, t, n, r, a = 1, o, s) {
 	try {
 		let c = e.mimeType === "image/svg+xml", l = pe(e.mimeType, e.srcRect, e.width / V, e.height / V);
 		if (!l) return Fa;
-		let { widthPt: u, heightPt: d } = l, f = Pi(Z(e.width, t), Z(e.height, t), a, e.srcRect), p = Qe(e) || c, m = p ? f : s && !Q(e) ? zi(s, Ri(Bi(e), p ? void 0 : Q(e))) : void 0, h = m && "maxRetainedPixels" in m ? m.maxRetainedPixels : void 0, g = {
+		let { widthPt: u, heightPt: d } = l, f = Pi(Z(e.width, t), Z(e.height, t), a, e.srcRect), p = Ze(e) || c, m = p ? f : s && !Q(e) ? zi(s, Ri(Bi(e), p ? void 0 : Q(e))) : void 0, h = m && "maxRetainedPixels" in m ? m.maxRetainedPixels : void 0, g = {
 			...m ? {
 				targetWidthPx: m.targetWidthPx,
 				targetHeightPx: m.targetHeightPx,
@@ -5152,21 +5152,21 @@ async function Fo(e, t, n, r, a = 1, o, s) {
 			} : {},
 			workerDecoder: o
 		}, _;
-		if (!Q(e) && Qe(e)) try {
-			_ = await Be(e.svgImagePath, n, g);
+		if (!Q(e) && Ze(e)) try {
+			_ = await it(e.svgImagePath, n, g);
 		} catch (t) {
 			if (t instanceof he || Ii(t) || Ot(t)) throw t;
-			_ = c ? await Be(e.imagePath, n, g) : await st(e.imagePath, e.mimeType, Q(e), n, {
+			_ = c ? await it(e.imagePath, n, g) : await ot(e.imagePath, e.mimeType, Q(e), n, {
 				widthPt: u,
 				heightPt: d,
 				...m ?? {},
 				tiff: r
 			});
 		}
-		else if (c && !Q(e)) _ = await Be(e.imagePath, n, g);
+		else if (c && !Q(e)) _ = await it(e.imagePath, n, g);
 		else {
 			let t = e.blipEffects?.length ? i(e.width / V, e.height / V, e.srcRect, null) : null;
-			_ = await st(e.imagePath, e.mimeType, Q(e), n, {
+			_ = await ot(e.imagePath, e.mimeType, Q(e), n, {
 				widthPt: t?.width ?? u,
 				heightPt: t?.height ?? d,
 				...m ?? {},
@@ -5578,10 +5578,10 @@ async function Jo(e, t, n, r, i = {}, a) {
 	let o = i.fetchImage ?? (i.fetchMedia ? Mo(i.fetchMedia) : void 0), s = (Wo.get(e) ?? 0) + 1;
 	Wo.set(e, s);
 	let c = () => Wo.get(e) !== s, l = () => c() ? Promise.resolve(e) : Yo(e, t, n, r, i, a, o, c);
-	return o && Gi(t) ? Le(o, i.imageResources, l) : l();
+	return o && Gi(t) ? We(o, i.imageResources, l) : l();
 }
 async function Yo(e, t, n, r, a = {}, o, s, c = () => !1) {
-	let l = a.svgDecoder ?? (typeof Image < "u" ? et : void 0), u = a.width ?? ((Me(e) ? e.offsetWidth : 0) || 960), d = u / n, f = Math.round(u), p = Math.round(r * d), m = a.dpr ?? Ne(), h = S(f * m, p * m), g = h.clamped ? m * h.scale : m;
+	let l = a.svgDecoder ?? (typeof Image < "u" ? Le : void 0), u = a.width ?? ((Me(e) ? e.offsetWidth : 0) || 960), d = u / n, f = Math.round(u), p = Math.round(r * d), m = a.dpr ?? Ne(), h = S(f * m, p * m), g = h.clamped ? m * h.scale : m;
 	if (a.math && (await ta(t, a.math), c())) return e;
 	let _, v = t;
 	if (a.math) {
@@ -5716,17 +5716,17 @@ async function Yo(e, t, n, r, a = {}, o, s, c = () => !1) {
 					preserveNaturalSize: e.preserveNaturalSize,
 					hasSourceCrop: e.hasSourceCrop,
 					...t.blipEffects?.length ? { host: n } : {}
-				}, o = a.preserveNaturalSize || e.preserveNaturalSize, s = a.hasSourceCrop || e.hasSourceCrop, c = o || Q(t) ? void 0 : zi(y, Ri(t.imagePath, Q(t))), l = !Q(t) && (t.mimeType === "image/svg+xml" || Qe({
+				}, o = a.preserveNaturalSize || e.preserveNaturalSize, s = a.hasSourceCrop || e.hasSourceCrop, c = !Q(t) && (t.mimeType === "image/svg+xml" || Ze({
 					svgImagePath: t.svgImagePath,
 					srcRect: s ? !0 : null
-				}));
+				})), l = o || Q(t) || c ? void 0 : zi(y, Ri(t.imagePath, Q(t)));
 				u.set(i, {
 					...a,
 					widthPt: Math.max(a.widthPt, r.widthPt),
 					heightPt: Math.max(a.heightPt, r.heightPt),
-					targetWidthPx: o ? void 0 : c?.targetWidthPx ?? (l && Math.max(a.targetWidthPx ?? 0, r.targetWidthPx ?? 0) || void 0),
-					targetHeightPx: o ? void 0 : c?.targetHeightPx ?? (l && Math.max(a.targetHeightPx ?? 0, r.targetHeightPx ?? 0) || void 0),
-					maxRetainedPixels: c?.maxRetainedPixels,
+					targetWidthPx: o ? void 0 : l?.targetWidthPx ?? (c && Math.max(a.targetWidthPx ?? 0, r.targetWidthPx ?? 0) || void 0),
+					targetHeightPx: o ? void 0 : l?.targetHeightPx ?? (c && Math.max(a.targetHeightPx ?? 0, r.targetHeightPx ?? 0) || void 0),
+					maxRetainedPixels: l?.maxRetainedPixels,
 					preserveNaturalSize: o,
 					hasSourceCrop: s
 				});
@@ -5778,10 +5778,10 @@ async function Yo(e, t, n, r, a = {}, o, s, c = () => !1) {
 					let i = t === "image/svg+xml" ? r === void 0 ? {} : {
 						targetWidthPx: 1,
 						targetHeightPx: r
-					} : zi(y, Ri(e)) ?? {}, o = t === "image/svg+xml" ? await Be(e, n, {
+					} : zi(y, Ri(e)) ?? {}, o = t === "image/svg+xml" ? await it(e, n, {
 						...i,
 						workerDecoder: l
-					}) : await Ve(e, t, n, {
+					}) : await st(e, t, n, {
 						tiff: a.tiff,
 						...i
 					});
@@ -5801,10 +5801,10 @@ async function Yo(e, t, n, r, a = {}, o, s, c = () => !1) {
 					...u === void 0 ? {} : { maxRetainedPixels: u }
 				} : void 0;
 				try {
-					let t = () => r.mimeType === "image/svg+xml" && !Q(r) ? Be(r.imagePath, n, {
+					let t = () => r.mimeType === "image/svg+xml" && !Q(r) ? it(r.imagePath, n, {
 						...m ?? {},
 						workerDecoder: l
-					}) : st(r.imagePath, r.mimeType, O(r, f, p) ?? void 0, n, {
+					}) : ot(r.imagePath, r.mimeType, O(r, f, p) ?? void 0, n, {
 						widthPt: p ? p.widthPt : r.blipEffects?.length ? 0 : i,
 						heightPt: p ? p.heightPt : r.blipEffects?.length ? 0 : o,
 						...m ?? {},
@@ -5815,8 +5815,8 @@ async function Yo(e, t, n, r, a = {}, o, s, c = () => !1) {
 						svgImagePath: r.svgImagePath,
 						srcRect: d ? !0 : null
 					};
-					if (!Q(r) && Qe(c)) try {
-						s = await Be(c.svgImagePath, n, {
+					if (!Q(r) && Ze(c)) try {
+						s = await it(c.svgImagePath, n, {
 							...m ?? {},
 							workerDecoder: l
 						});
@@ -5841,7 +5841,7 @@ async function Yo(e, t, n, r, a = {}, o, s, c = () => !1) {
 					await Promise.all(e.map((e) => i([e, u.get(e)])));
 				}
 			})()], d = [...r].map(async ([e, { fill: t, host: r, widthPt: i, heightPt: o, targetWidthPx: s, targetHeightPx: c, preserveNaturalSize: u, hasSourceCrop: d }]) => {
-				let f = t.mimeType === "image/svg+xml" || !Q(t, r) && Qe({
+				let f = t.mimeType === "image/svg+xml" || !Q(t, r) && Ze({
 					svgImagePath: t.svgImagePath,
 					srcRect: d ? !0 : null
 				}), p = !u && !Q(t, r) ? zi(y, Ri(t.imagePath, Q(t, r))) : void 0, m = f ? !u && s && c ? {
@@ -5849,21 +5849,21 @@ async function Yo(e, t, n, r, a = {}, o, s, c = () => !1) {
 					targetHeightPx: c
 				} : void 0 : p;
 				try {
-					let s = u ? (await Fi(t, rt(t.imagePath, t.mimeType, n))).dimensions ?? void 0 : void 0, c = () => t.mimeType === "image/svg+xml" && !Q(t, r) ? Be(t.imagePath, n, {
+					let s = u ? (await Fi(t, He(t.imagePath, t.mimeType, n))).dimensions ?? void 0 : void 0, c = () => t.mimeType === "image/svg+xml" && !Q(t, r) ? it(t.imagePath, n, {
 						...m ?? {},
 						workerDecoder: l
-					}) : st(t.imagePath, t.mimeType, Q(t, r), n, {
+					}) : ot(t.imagePath, t.mimeType, Q(t, r), n, {
 						...Li(t, i, o),
 						...m ?? {},
 						failClosedOnDuotoneFailure: !0,
 						tiff: a.tiff,
 						svgDecoder: l
 					}), f;
-					if (!Q(t, r) && Qe({
+					if (!Q(t, r) && Ze({
 						svgImagePath: t.svgImagePath,
 						srcRect: d ? !0 : null
 					})) try {
-						f = await Be(t.svgImagePath, n, {
+						f = await it(t.svgImagePath, n, {
 							...m ?? {},
 							workerDecoder: l
 						});
@@ -5957,7 +5957,7 @@ var Xo = Object.freeze({
 	declaredInflatedBytes: 0,
 	distinctInflatedBytes: 0,
 	operationInflatedBytes: 0
-}), Zo = nt;
+}), Zo = et;
 function Qo(e, t) {
 	if (e !== null && typeof e != "string") throw Error(`invalid PPTX presentation bootstrap ${t}`);
 }

@@ -1,15 +1,15 @@
 import { t as e } from "./chunk-D5OxutzX.js";
-import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, p as l, r as u, s as d, t as f, u as p } from "./slide-pull-client-43mS9T70.js";
+import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, p as l, r as u, s as d, t as f, u as p } from "./slide-pull-client-BUuJQQVE.js";
 import { Aa as m, vo as h, yo as g } from "./plot-area-frame-D3JtHvov.js";
 import { n as _, t as ee } from "./cfb-guard-BIaHdonq.js";
-import { H as v, M as y, N as b, Tn as x, V as S, X as C, Xt as w, Y as T, Yt as te, Zt as E, fn as ne, hn as re, ht as ie, j as ae, n as oe, qt as se, st as ce, t as le, u as D, ut as ue } from "./bounded-raw-part-cache-Bi_VqXmg.js";
-import { C as de, D as fe, E as O, N as pe, O as me, P as k, S as he, T as A, _ as ge, a as _e, b as ve, c as ye, d as be, f as xe, g as Se, h as Ce, i as we, l as Te, m as Ee, n as De, o as Oe, p as ke, r as Ae, t as je, u as Me, v as Ne, w as j, x as Pe, y as Fe } from "./comment-overlay-controller-CR5ySvki.js";
+import { H as v, M as y, N as b, Tn as x, V as S, X as C, Xt as w, Y as T, Yt as te, Zt as E, fn as ne, hn as re, j as ie, lt as ae, mt as oe, n as se, ot as ce, qt as le, t as ue, u as D } from "./bounded-raw-part-cache-B8t03tSP.js";
+import { C as de, D as fe, E as O, N as pe, O as me, P as k, S as he, T as A, _ as ge, a as _e, b as ve, c as ye, d as be, f as xe, g as Se, h as Ce, i as we, l as Te, m as Ee, n as De, o as Oe, p as ke, r as Ae, t as je, u as Me, v as Ne, w as j, x as Pe, y as Fe } from "./comment-overlay-controller-Crm5Syhx.js";
 import { f as M, u as Ie } from "./pixel-budget-DI82Hn3R.js";
 import { i as Le, t as Re } from "./tiff-contract-DEd8CGuz.js";
-import { D as ze, E as Be, T as Ve, a as N, b as He, c as Ue, f as We, i as Ge, l as Ke, n as qe, o as P, p as Je, r as Ye, s as Xe, t as Ze, u as F, v as Qe, w as $e, x as et, y as tt } from "./canvas-viewer-mechanics-ycCX6v-z.js";
+import { D as ze, E as Be, T as Ve, a as N, b as He, c as Ue, f as We, i as Ge, l as Ke, n as qe, o as P, p as Je, r as Ye, s as Xe, t as Ze, u as F, v as Qe, w as $e, x as et, y as tt } from "./canvas-viewer-mechanics-DI38gHNV.js";
 import { n as nt } from "./renderer-module-contract-BuTx2FWJ.js";
 import { t as rt } from "./visible-index-vN-4BNn7.js";
-import { n as it } from "./resource-measurement-CTGrNAsD.js";
+import { n as it } from "./resource-measurement-D2bu0Qfx.js";
 function at(e, t) {
 	let n = t.startsWith("/") ? [] : e.split("/").filter((e) => e !== "");
 	for (let e of t.split("/")) if (e === "..") n.pop();
@@ -118,7 +118,7 @@ var ft = class extends de {
 	}
 };
 async function pt(e) {
-	return e ? (await import("./font-preload-demand-BuMy4iJ1.js")).collectSlideFontDemand : void 0;
+	return e ? (await import("./font-preload-demand-B6HPFxDp.js")).collectSlideFontDemand : void 0;
 }
 var mt = (e) => e >= "0" && e <= "9";
 function ht(e) {
@@ -466,7 +466,7 @@ var Vt = class {
 	#o;
 	constructor(e) {
 		if (!Number.isSafeInteger(e.slideCount) || e.slideCount < 0) throw TypeError("slideCount must be a non-negative safe integer");
-		this.#e = e.slideCount, this.#t = e.loadSlide, this.#n = new oe({
+		this.#e = e.slideCount, this.#t = e.loadSlide, this.#n = new se({
 			maxEntries: e.maxCachedSlides,
 			maxWeight: e.maxCachedStructuralBytes,
 			measure: (e) => it(e).jsonBytes
@@ -818,7 +818,7 @@ var X = class e {
 	_slidePullClient = null;
 	_resourceFailure = null;
 	_slidePartIndex = null;
-	_rawParts = new le({
+	_rawParts = new ue({
 		maxEntries: 64,
 		maxBytes: re
 	});
@@ -857,10 +857,10 @@ var X = class e {
 	}
 	static async load(t, n = {}) {
 		if (n.legacyPpt !== void 0) {
-			let { loadPptxModelSource: e } = await import("./presentation-model-source-rWZ3Y-S_.js");
+			let { loadPptxModelSource: e } = await import("./presentation-model-source-DL6duh5l.js");
 			return e(t, n);
 		}
-		let r = se(n.cjkFallback), i = b(n), a = n.mode ?? "main", o = new ae({
+		let r = le(n.cjkFallback), i = b(n), a = n.mode ?? "main", o = new ie({
 			enabled: !0,
 			format: "pptx",
 			mode: a,
@@ -877,7 +877,7 @@ var X = class e {
 				s = await e.arrayBuffer();
 			} else s = t;
 			s = _(await ee(s, n.password)), o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let c = a === "worker" ? (await import("./render-worker-host-CZC0WOn8.js")).createRenderWorker() : new Jt(), l = a === "worker" ? nt(n) : void 0, u;
+			let c = a === "worker" ? (await import("./render-worker-host-CtlBbau5.js")).createRenderWorker() : new Jt(), l = a === "worker" ? nt(n) : void 0, u;
 			try {
 				u = new e(c, a, n.wasmUrl), u._metrics = o, n.math && a === "worker" && !l?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), n.threeD && a === "worker" && !l?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), u._cjkFallback = r, u._math = a === "worker" ? void 0 : n.math, u._threeD = a === "worker" ? void 0 : n.threeD, n.regionMap && a === "worker" && !l?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), u._regionMap = a === "worker" ? void 0 : n.regionMap, n.chartEx && a === "worker" && !l?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), u._chartEx = a === "worker" ? void 0 : n.chartEx, n.tiff && a === "worker" && !l?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), u._tiff = a === "worker" ? void 0 : n.tiff;
 				let t = n.progressiveLayout ? {
@@ -1244,7 +1244,7 @@ var X = class e {
 				try {
 					if (t.onTextRun) for (let e of a.runs) t.onTextRun(e);
 				} catch (e) {
-					throw ie(a.bitmap), e;
+					throw oe(a.bitmap), e;
 				}
 				return a.bitmap;
 			}
@@ -1403,7 +1403,7 @@ var X = class e {
 					if (!t) throw Error("2D context not available");
 					t.drawImage(a, 0, 0);
 				} finally {
-					ie(a);
+					oe(a);
 				}
 			} : () => this.renderSlide(e, t, {
 				width: i,
@@ -1429,7 +1429,7 @@ var X = class e {
 	destroy() {
 		this._destroyed = !0, this._clearProgressiveWatchdog(), this._slidePullClient?.cancelAll(), this._bridge.terminate(), this._slides?.clear(), this._slides = null, this._slidePullClient = null, this._bootstrap = null, this._preflight = null, this._availableSlideCount = 0, this._layoutLifecycle.succeed(), this._layoutCompletion = null, this._progressive = null, this._parseRequestId = null, this._wakeLayoutWaiters(), this._resourceFailure = null, this._slidePartIndex = null, this._rawParts.clear(), this._googleFonts?.release(), this._googleFonts = null;
 		for (let e of this._officeFontLoads.values()) for (let t of Bt(e)) t.then((e) => w(e.faces));
-		this._officeFontLoads.clear(), this._embeddedFontFaces.length > 0 && (k(this._embeddedFontFaces), this._embeddedFontFaces = []), this._embeddedFontAliases = /* @__PURE__ */ new Map(), this._embeddedFontAuthoredFamilies = /* @__PURE__ */ new Map(), this._embeddedFontTuples = /* @__PURE__ */ new Set(), ue(this._fetchImage), ce(this._fetchImage);
+		this._officeFontLoads.clear(), this._embeddedFontFaces.length > 0 && (k(this._embeddedFontFaces), this._embeddedFontFaces = []), this._embeddedFontAliases = /* @__PURE__ */ new Map(), this._embeddedFontAuthoredFamilies = /* @__PURE__ */ new Map(), this._embeddedFontTuples = /* @__PURE__ */ new Set(), ae(this._fetchImage), ce(this._fetchImage);
 	}
 };
 function un(e, t, n, r, i = {}) {
@@ -2194,7 +2194,7 @@ var gn = class {
 	}
 }, yn = 12, bn;
 function xn() {
-	return bn ??= import("./comment-ui-runtime-CwTOCwA8.js");
+	return bn ??= import("./comment-ui-runtime-BfEPgl5r.js");
 }
 var Sn = 440, Cn = 20, wn = Symbol("PptxScrollViewer.borrowedPresentation"), Tn = class e {
 	_presentationOwner;

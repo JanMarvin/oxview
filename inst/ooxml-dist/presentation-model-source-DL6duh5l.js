@@ -1,8 +1,8 @@
-import { N as e, j as t, qt as n } from "./bounded-raw-part-cache-Bi_VqXmg.js";
-import { b as r } from "./comment-overlay-controller-CR5ySvki.js";
-import { T as i } from "./canvas-viewer-mechanics-ycCX6v-z.js";
+import { N as e, j as t, qt as n } from "./bounded-raw-part-cache-B8t03tSP.js";
+import { b as r } from "./comment-overlay-controller-Crm5Syhx.js";
+import { T as i } from "./canvas-viewer-mechanics-DI38gHNV.js";
 import { n as a } from "./renderer-module-contract-BuTx2FWJ.js";
-import { o, s } from "./pptx-CLyebeF_.js";
+import { o, s } from "./pptx-CfCiVlNB.js";
 import { n as c, o as l, r as u } from "./model-source-COXegBNA.js";
 import { t as d } from "./bundled-asset-url-BMJ8vNHP.js";
 async function f(u, d) {
@@ -30,7 +30,7 @@ async function f(u, d) {
 		let _ = c(t, "pptx");
 		try {
 			g.setSourceBytes(e.byteLength), g.checkpoint("container ready");
-			let t = f === "worker" ? (await import("./render-worker-host-CZC0WOn8.js")).createRenderWorker() : new (await (import("./worker-source-ZQE9C1j6.js"))).default(), c = p(t, _), l = f === "worker" ? a(d) : void 0, u;
+			let t = f === "worker" ? (await import("./render-worker-host-CtlBbau5.js")).createRenderWorker() : new (await (import("./worker-source-ZQE9C1j6.js"))).default(), c = p(t, _), l = f === "worker" ? a(d) : void 0, u;
 			try {
 				u = new o(c, f, d.wasmUrl);
 				let t = u;

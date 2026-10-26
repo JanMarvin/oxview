@@ -1,4 +1,4 @@
-var e = "" + new URL("assets/render-worker-BUa1gyCE.js", import.meta.url).href;
+var e = "" + new URL("assets/render-worker-B5HWxkbU.js", import.meta.url).href;
 function t() {
 	return new Worker(e, { type: "module" });
 }

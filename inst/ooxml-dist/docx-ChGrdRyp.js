@@ -1,12 +1,12 @@
 import { t as e } from "./chunk-D5OxutzX.js";
 import { _o as t, ja as n, vo as r, yo as i } from "./plot-area-frame-D3JtHvov.js";
 import { n as a, t as o } from "./cfb-guard-BIaHdonq.js";
-import { Dn as s, En as c, H as l, M as u, N as d, On as f, V as p, Xt as m, Y as h, Yt as g, hn as _, ht as v, j as y, qt as b, st as x, t as S, u as C, ut as ee } from "./bounded-raw-part-cache-Bi_VqXmg.js";
-import { A as te, C as w, D as ne, E as T, M as re, N as ie, P as E, S as ae, T as D, _ as oe, a as se, b as ce, c as le, d as ue, f as de, g as fe, h as pe, i as me, j as he, k as ge, l as _e, m as ve, n as ye, o as be, p as xe, r as Se, t as Ce, u as we, v as Te, w as Ee, x as De, y as Oe } from "./comment-overlay-controller-CR5ySvki.js";
-import { A as ke, B as Ae, C as je, D as O, E as Me, F as Ne, I as Pe, L as k, M as Fe, N as A, O as Ie, P as Le, R as Re, S as ze, T as Be, V as j, _ as Ve, a as He, b as Ue, c as We, f as Ge, h as Ke, j as M, k as qe, l as Je, m as Ye, n as Xe, o as Ze, p as Qe, s as $e, t as et, u as tt, v as nt, w as rt, x as it, y as N, z as at } from "./document-pull-client-CHpz0Q1p.js";
+import { Dn as s, En as c, H as l, M as u, N as d, On as f, V as p, Xt as m, Y as h, Yt as g, hn as _, j as v, lt as y, mt as b, ot as x, qt as S, t as ee, u as C } from "./bounded-raw-part-cache-B8t03tSP.js";
+import { A as te, C as w, D as ne, E as T, M as re, N as ie, P as E, S as ae, T as D, _ as oe, a as se, b as ce, c as le, d as ue, f as de, g as fe, h as pe, i as me, j as he, k as ge, l as _e, m as ve, n as ye, o as be, p as xe, r as Se, t as Ce, u as we, v as Te, w as Ee, x as De, y as Oe } from "./comment-overlay-controller-Crm5Syhx.js";
+import { A as ke, B as Ae, C as je, D as O, E as Me, F as Ne, I as Pe, L as k, M as Fe, N as A, O as Ie, P as Le, R as Re, S as ze, T as Be, V as j, _ as Ve, a as He, b as Ue, c as We, f as Ge, h as Ke, j as M, k as qe, l as Je, m as Ye, n as Xe, o as Ze, p as Qe, s as $e, t as et, u as tt, v as nt, w as rt, x as it, y as N, z as at } from "./document-pull-client-Ckq8THk6.js";
 import { f as ot, u as st } from "./pixel-budget-DI82Hn3R.js";
 import { i as ct, t as lt } from "./tiff-contract-DEd8CGuz.js";
-import { D as ut, E as dt, T as ft, a as pt, b as mt, c as ht, d as gt, f as _t, i as vt, l as yt, n as bt, o as xt, p as St, r as Ct, s as wt, t as Tt, u as Et, v as Dt, w as Ot, x as kt, y as At } from "./canvas-viewer-mechanics-ycCX6v-z.js";
+import { D as ut, E as dt, T as ft, a as pt, b as mt, c as ht, d as gt, f as _t, i as vt, l as yt, n as bt, o as xt, p as St, r as Ct, s as wt, t as Tt, u as Et, v as Dt, w as Ot, x as kt, y as At } from "./canvas-viewer-mechanics-DI38gHNV.js";
 import { n as jt } from "./renderer-module-contract-BuTx2FWJ.js";
 var P = (e) => (e.charCodeAt(0) << 24 >>> 0 | e.charCodeAt(1) << 16 | e.charCodeAt(2) << 8 | e.charCodeAt(3)) >>> 0, Mt = P("ttcf"), Nt = P("OTTO"), Pt = P("true"), Ft = P("typ1"), It = P("head"), Lt = P("hhea"), Rt = P("OS/2"), zt = P("cmap"), Bt = P("fvar"), F = [
 	[4352, 4607],
@@ -1309,7 +1309,7 @@ var Q = class e {
 	_tiff;
 	_worker;
 	_bridge;
-	_rawParts = new S({
+	_rawParts = new ee({
 		maxEntries: 64,
 		maxBytes: _
 	});
@@ -1344,11 +1344,11 @@ var Q = class e {
 			if (i?.aborted) throw new N();
 		};
 		if (l(), n.legacyDoc !== void 0) {
-			let { loadDocxModelSource: e } = await import("./document-model-source-Csow9uxO.js"), a = await e(t, n, r);
+			let { loadDocxModelSource: e } = await import("./document-model-source-qsnWuGuH.js"), a = await e(t, n, r);
 			if (i?.aborted) throw a.destroy(), new N();
 			return a;
 		}
-		let u = b(n.cjkFallback), p = d(n), h = Date.now(), g = n.mode ?? "main", _ = new y({
+		let u = S(n.cjkFallback), p = d(n), h = Date.now(), g = n.mode ?? "main", _ = new v({
 			enabled: !0,
 			format: "docx",
 			mode: g,
@@ -1365,11 +1365,11 @@ var Q = class e {
 				d = await e.arrayBuffer();
 			} else d = t;
 			l(), d = a(await o(d, n.password)), l(), _.setSourceBytes(d.byteLength), _.checkpoint("container ready");
-			let v = g === "worker" ? (await import("./render-worker-host-BxsA-yJo.js")).createRenderWorker() : new fn(), y = g === "worker" ? jt(n) : void 0, b = g === "worker" && !!n.progressiveLayout, x, S = !1, C = () => {
+			let v = g === "worker" ? (await import("./render-worker-host-DYUY1TuP.js")).createRenderWorker() : new fn(), y = g === "worker" ? jt(n) : void 0, b = g === "worker" && !!n.progressiveLayout, x, S = !1, ee = () => {
 				S || !x || (S = !0, x.destroy());
 			};
 			try {
-				x = new e(v, g, h, n.wasmUrl), i?.addEventListener("abort", C, { once: !0 }), l(), x._metrics = _, x._cjkFallback = u, x._allowFootnoteContinuation = n.allowFootnoteContinuation !== !1;
+				x = new e(v, g, h, n.wasmUrl), i?.addEventListener("abort", ee, { once: !0 }), l(), x._metrics = _, x._cjkFallback = u, x._allowFootnoteContinuation = n.allowFootnoteContinuation !== !1;
 				let t = A(x), a = M(n.currentDate, t.defaultCurrentDateMs, n.showTrackedChanges === !0);
 				t.activeLayoutOptions = a, await x._parse(d, p.policy, g === "worker" ? !!n.useGoogleFonts : !1, n.workerTimeoutMs, (e) => _.observeUsage(e), y, b ? {
 					onPartial: n.onLayoutPartial,
@@ -1381,10 +1381,10 @@ var Q = class e {
 					published: !1,
 					settled: !1
 				} : void 0), l(), g === "worker" && x._mode === "main" && (_.setMode("main"), console.warn(mn(x._mainThreadFallbackReason))), n.math && x._mode === "worker" && !y?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), n.threeD && x._mode === "worker" && !y?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), x._threeD = x._mode === "worker" ? void 0 : n.threeD, n.regionMap && x._mode === "worker" && !y?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), x._regionMap = x._mode === "worker" ? void 0 : n.regionMap, n.chartEx && x._mode === "worker" && !y?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), x._chartEx = x._mode === "worker" ? void 0 : n.chartEx, n.tiff && x._mode === "worker" && !y?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them."), x._tiff = x._mode === "worker" ? void 0 : n.tiff;
-				let o, S, ee = x, te = x._mode === "main" && x._document && x._source ? Ke(tt(x._source, x._document, {
+				let o, S, C = x, te = x._mode === "main" && x._document && x._source ? Ke(tt(x._source, x._document, {
 					useGoogleFonts: !!n.useGoogleFonts,
 					cjkFallback: u
-				}), !0).then((e) => ee._nativeRouteFacesReleased ? (m(e.faces), null) : (ee._nativeRouteFaces.push(...e.faces), e), () => null) : null;
+				}), !0).then((e) => C._nativeRouteFacesReleased ? (m(e.faces), null) : (C._nativeRouteFaces.push(...e.faces), e), () => null) : null;
 				if (x._mode === "main" && x._document?.embeddedFonts?.length) {
 					let e = x, t = await xn(x._document, (t) => e.getFontBytes(t));
 					if (i?.aborted) throw E(t.faces), new N();
@@ -1516,9 +1516,9 @@ var Q = class e {
 				}
 				return l(), await x._resourceUsage(n.workerTimeoutMs ?? 1e3).then((e) => _.observeUsage(e), () => void 0), _.checkpoint("model and layout ready"), l(), _.succeed({ pages: x.pageCount }), x;
 			} catch (e) {
-				throw ft(v, x ? C : void 0), e;
+				throw ft(v, x ? ee : void 0), e;
 			} finally {
-				i?.removeEventListener("abort", C);
+				i?.removeEventListener("abort", ee);
 			}
 		} catch (e) {
 			throw _.fail(e), e;
@@ -1735,7 +1735,7 @@ var Q = class e {
 		}), this._rearmParseWatchdog(), await o.firstPublication.promise;
 	}
 	destroy() {
-		this._layoutAbort?.abort(), this._layoutAbort = null, this._clearParseWatchdog(), this._parseRequestId = null, this._progressive = null, this._layoutViewGeneration++, this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, this._review = Sr, A(this).services = null, this._bookmarkPages = null, this._commentAnchorRanges = null, this._revisionAnchorRanges = null, this._reviewProjectionIndex = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (E(this._embeddedFontFaces), this._embeddedFontFaces = []), this._officeFontFaces.length > 0 && (m(this._officeFontFaces), this._officeFontFaces = []), this._nativeRouteFacesReleased = !0, this._nativeRouteFaces?.length > 0 && (m(this._nativeRouteFaces), this._nativeRouteFaces = []), this._googleFontFaces.length > 0 && (f(this._googleFontFaces), this._googleFontFaces = []), ee(this._fetchImage), x(this._fetchImage);
+		this._layoutAbort?.abort(), this._layoutAbort = null, this._clearParseWatchdog(), this._parseRequestId = null, this._progressive = null, this._layoutViewGeneration++, this._bridge.terminate(), this._document = null, this._source = null, this._meta = null, this._review = Sr, A(this).services = null, this._bookmarkPages = null, this._commentAnchorRanges = null, this._revisionAnchorRanges = null, this._reviewProjectionIndex = null, this._rawParts.clear(), this._embeddedFontFaces.length > 0 && (E(this._embeddedFontFaces), this._embeddedFontFaces = []), this._officeFontFaces.length > 0 && (m(this._officeFontFaces), this._officeFontFaces = []), this._nativeRouteFacesReleased = !0, this._nativeRouteFaces?.length > 0 && (m(this._nativeRouteFaces), this._nativeRouteFaces = []), this._googleFontFaces.length > 0 && (f(this._googleFontFaces), this._googleFontFaces = []), y(this._fetchImage), x(this._fetchImage);
 	}
 	async getImage(e, t) {
 		return this._rawParts.get(e, t, () => this._bridge.request((t) => ({
@@ -1938,7 +1938,7 @@ var Q = class e {
 			try {
 				if (L(this, r.diagnostics), n) for (let e of r.runs) n(e);
 			} catch (e) {
-				throw v(r.bitmap), e;
+				throw b(r.bitmap), e;
 			}
 			return r.bitmap;
 		}
@@ -2760,7 +2760,7 @@ var Mr = Symbol("DocxViewer.borrowedDocument"), Nr = class e {
 	}
 }, Ir = 12, Lr = 13, Rr = Symbol("DocxScrollViewer.borrowedDocument"), zr;
 function Br() {
-	return zr ??= import("./comment-ui-runtime-BWhLz4gq.js");
+	return zr ??= import("./comment-ui-runtime-u7zk49cg.js");
 }
 var Vr = class e {
 	_pendingLoadAbort = null;

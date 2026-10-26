@@ -1,6 +1,6 @@
-import { E as e } from "./comment-overlay-controller-CR5ySvki.js";
-import { L as t } from "./document-pull-client-CHpz0Q1p.js";
-import { f as n } from "./docx-GXxH0AwW.js";
+import { E as e } from "./comment-overlay-controller-Crm5Syhx.js";
+import { L as t } from "./document-pull-client-Ckq8THk6.js";
+import { f as n } from "./docx-ChGrdRyp.js";
 import { i as r, n as i, o as a, r as o, s, t as c } from "./read-only-comment-margin-Ee9Y6vPg.js";
 import { i as l, n as u, r as d, t as f } from "./read-only-comment-decoration-B06YO2zk.js";
 function p(e, r) {

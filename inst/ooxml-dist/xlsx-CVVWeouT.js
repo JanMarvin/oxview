@@ -1,21 +1,21 @@
 import { t as e } from "./chunk-D5OxutzX.js";
 import { Aa as t, Er as n, Tr as r, Yn as i, a, c as o, d as s, h as c, ja as l, ka as u, m as d, o as f, r as p, u as m, vo as h, wr as g, yo as _ } from "./plot-area-frame-D3JtHvov.js";
 import { n as v, t as y } from "./cfb-guard-BIaHdonq.js";
-import { Dn as b, M as x, N as S, On as C, P as w, V as T, X as E, Xt as D, Y as O, Yt as k, _t as A, ct as j, hn as M, j as ee, nt as N, ot as P, pt as te, qt as F, rt as ne, st as re, t as ie, tt as ae, u as oe, ut as I, vt as se, yt as ce } from "./bounded-raw-part-cache-Bi_VqXmg.js";
-import { f as L, u as le } from "./pixel-budget-DI82Hn3R.js";
-import { L as ue, R as de, V as fe, n as pe, t as me } from "./renderer-xdugdcMd.js";
-import { i as he, t as ge } from "./tiff-contract-DEd8CGuz.js";
-import { C as _e, D as ve, E as ye, S as be, T as xe, _ as Se, a as Ce, b as we, d as Te, f as Ee, g as De, h as Oe, m as ke, o as Ae, p as je, t as Me, u as Ne, w as Pe, x as Fe, y as Ie } from "./canvas-viewer-mechanics-ycCX6v-z.js";
-import { A as Le, B as Re, C as ze, D as Be, E as Ve, F as He, H as Ue, I as We, L as Ge, M as R, N as Ke, O as qe, P as Je, R as Ye, S as Xe, T as Ze, V as z, _ as Qe, b as B, c as $e, d as et, f as tt, g as nt, h as rt, i as it, j as at, k as ot, l as st, m as ct, n as lt, o as ut, p as dt, r as ft, s as V, t as pt, u as mt, v as ht, w as gt, x as _t, y as vt, z as yt } from "./renderer-DFDF48zw.js";
-import { n as bt } from "./renderer-module-contract-BuTx2FWJ.js";
-import { _ as xt, a as St, b as Ct, c as wt, d as Tt, f as Et, g as Dt, h as Ot, l as kt, m as At, n as jt, o as Mt, p as Nt, s as Pt, t as Ft, u as It, v as Lt, y as Rt } from "./worksheet-pull-client-D5zAevQv.js";
-import { n as zt, r as Bt, t as Vt } from "./visible-index-vN-4BNn7.js";
-import { a as Ht, c as Ut, d as Wt, f as Gt, l as H, n as U, o as Kt, p as qt, r as W, t as G, u as Jt } from "./grid-geometry-CqTDvpDr.js";
-var Yt = "var e=(e,t)=>()=>(e&&(t=e(e=0)),t);function t(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var n,r,i=e((()=>{n=class e extends Error{code;details;constructor(t,n,r){super(n),this.name=`OoxmlError`,this.code=t,t===`unsupported-content`&&r&&(this.details=Object.freeze({format:r.format,reason:r.reason})),Object.setPrototypeOf(this,e.prototype)}},r=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}}}));function a(e){return e===`image-dimension`||e===`image-pixels`||e===`active-decoded-bytes`||e===`image-effect-count`||e===`image-effect-work`||e===`tiff-lzw-work`||e===`metafile-path-commands`||e===`metafile-record-points`||e===`metafile-record-polygons`||e===`metafile-record-rectangles`||e===`metafile-record-text-units`}function o(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function s(e){if(!(!e||typeof e!=`object`))try{let t=e,n=t.code,r=t.metric,i=t.limit,s=t.observed;return n!==`ooxml-decoded-image-limit`||!a(r)||!o(i)||!o(s)||s<=i?void 0:{metric:r,limit:i,observed:s}}catch{return}}var c,l,u,d,ee,te=e((()=>{c=1<<25,l=1<<27,c*4,l*4,u=Math.floor(c/4),d=l,d/u,ee=class e extends RangeError{metric;limit;observed;code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}}}));function ne(e){if(!(typeof e!=`object`||!e))try{let t=e,n=t.code,r=t.message;return n===`ooxml-tiff-decode`&&typeof r==`string`?{message:r}:void 0}catch{return}}var re=e((()=>{}));function f(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function ie(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return f(t.requiredBytes)&&f(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var p=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function ae(e){if(e instanceof p)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!ie(r)))return new p(r)}i(),te(),re();const m=`OOXML_RESOURCE_LIMIT:`;function h(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function oe(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return h(t.archiveEntryCount)&&h(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||h(t.largestInflatedEntryBytes))&&h(t.distinctInflatedBytes)&&h(t.operationInflatedBytes)}function g(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!oe(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function se(e){return e===`docx`||e===`xlsx`||e===`pptx`}function ce(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function _(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function v(e){return _(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function le(e){return!_(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const y=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`image-effect:work`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chartex-allocation:elements`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chartex-allocation:bytes`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chart-cache:points`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`numbering-marker:bytes`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chart-style-formats:entries`,{stage:`parsing`,part:`required`,configurable:!1}],[`chart-custom-number-formats:entries`,{stage:`parsing`,part:`required`,configurable:!1}],[`chart-number-format-bytes:bytes`,{stage:`parsing`,part:`required`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`theme-style-reparse:bytes`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`style-inheritance:depth`,{stage:`parsing`,part:`required`,configurable:!1}],[`complex-field:depth`,{stage:`parsing`,part:`forbidden`,configurable:!1}]]),ue=new Set([...y.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),de=new Set([...y.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function fe(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!se(t.format)||!_(t.operation,256)||!v(t.resource)||!v(t.metric)||!h(t.limit)||!h(t.observed)||typeof t.configurable!=`boolean`||!oe(t.usage)?!1:!(`part`in t)||le(t.part)}function b(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!ce(t.stage)||!fe(t.violation))return!1;let n=t.violation,r=y.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(ue.has(n.resource)&&de.has(n.metric))}function pe(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function me(e){if(!b(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:pe(t.usage)}};return b(n)?n:void 0}function x(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``} (${t.resource}, ${e.stage}): ${t.metric} ${t.observed} > ${t.limit}`}function S(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(m))return;let n;try{n=JSON.parse(t.slice(21))}catch{return}if(!n||typeof n!=`object`)return;let i=n;if(!(i.code!==`ooxml-resource-limit`||!b(i.details)))return new r(x(i.details),i.details)}function he(e){try{return e()}catch(e){throw e instanceof r||typeof e!=`string`&&!(e instanceof Error)?e:S(e)??e}}function ge(e){let t=e instanceof Error?e.message:String(e);if(t.startsWith(`OOXML_NOT_OOXML:`))return new n(`not-ooxml`,`This file is not an Office Open XML document: ${t.slice(16)}`)}function C(e){if(!e||typeof e!=`object`||Array.isArray(e))return;let t=e,n=t.format,r=t.reason;if(!(!v(n)||r!==`source-subset`))return{format:n,reason:r}}function _e(e){return new n(`unsupported-content`,`Input is outside the source’s supported subset.`,e)}function ve(e){let t=typeof e==`string`?e:e instanceof Error?e.message:``;if(!(!t.startsWith(`MODEL_SOURCE_UNSUPPORTED:`)||t.length>1024))try{let e=C(JSON.parse(t.slice(25)));return e?_e(e):void 0}catch{return}}function ye(e){return e===`OOXML_SOURCE_UNSUPPORTED_ENCRYPTION`||e instanceof Error&&e.message===`OOXML_SOURCE_UNSUPPORTED_ENCRYPTION`?new n(`unsupported-encryption`,`The configured source cannot decrypt this input.`):ve(e)??S(e)??ge(e)}function be(e){let t=s(e);if(t){let e=new ee(t.metric,t.limit,t.observed);return{message:e.message,errorName:e.name,code:e.code,decodedImage:t}}let i=ne(e);if(i)return{message:i.message,errorName:`TiffDecodeError`,code:`ooxml-tiff-decode`};let a=ae(e);if(a)return{message:a.message,errorName:a.name,code:a.code,insufficientCredit:{requiredBytes:a.requiredBytes,offeredBytes:a.offeredBytes}};let o=e instanceof n||e instanceof r?e:ye(e),c=o??e;if(o instanceof r||c&&typeof c==`object`&&c.code===`ooxml-resource-limit`){let e=c,t=me(e.details);return t?{message:typeof e.message==`string`?e.message:x(t),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:t}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(c&&typeof c==`object`&&c.code===`unsupported-content`){let e=C(c.details);return e?{message:_e(e).message,code:`unsupported-content`,unsupportedContent:e}:{message:`Invalid unsupported-content error payload`,errorName:`Error`}}if(o instanceof n)return{message:typeof o.message==`string`?o.message:String(o.message),errorName:_(o.name,128)?o.name:`OoxmlError`,...v(o.code)?{code:o.code}:{}};let l=e instanceof Error?e.message:String(e);if(typeof l==`string`&&l.startsWith(m))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let u=e instanceof Error?e:Error(l),d=u;return{message:typeof u.message==`string`?u.message:String(u.message),errorName:_(u.name,128)?u.name:`Error`,...typeof d.code==`string`?{code:d.code}:{}}}function w(e){try{return be(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}var xe=class{initialize;reinitialize;normalizeFailure;state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},T=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function Se(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function Ce(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function we(e,t){return e({module_or_path:t})}var Te=class{init;options;runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new xe(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),Ee),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return he(()=>this.runtime.run(e))}poison(){this.runtime.poison(new T(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):we(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,Ce(e)}};function Ee(e){return Se(e)?new T(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function De(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function Oe(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const E=`ooxml-pull-v1`;function D(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function ke(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var Ae=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,D(this.maxRetainedBytes,`max retained lease bytes`),D(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},je=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){ke(e.sessionId),D(e.operationId,`operation id`),D(e.generation,`generation`),D(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&D(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=w(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(D(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:E,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){D(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(D(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:E,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:E,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};const O=2**53-1-1;function k(e){return Object.freeze({maxRows:e.maxRows,maxCells:e.maxCells,maxOwnedUtf8Bytes:e.maxOwnedUtf8Bytes,maxJsonBytes:e.maxJsonBytes})}const A=Object.freeze({worksheet:k({maxRows:1e5,maxCells:25e4,maxOwnedUtf8Bytes:33554432,maxJsonBytes:67108864}),cache:k({maxRows:2e5,maxCells:5e5,maxOwnedUtf8Bytes:67108864,maxJsonBytes:134217728}),maxCoordinateIndexEntries:25e4});function j(e,t){let n=e[t];if(n===void 0)return A.worksheet[t];if(typeof n!=`number`)throw TypeError(`xlsxWorksheetLimits.${t} must be a number`);if(!Number.isSafeInteger(n)||n<=0||n>O)throw RangeError(`xlsxWorksheetLimits.${t} must be a positive safe integer no greater than ${O}`);return n}function Me(e={}){let t=e.xlsxWorksheetLimits,n={};if(t!==void 0){if(typeof t!=`object`||!t||Array.isArray(t))throw TypeError(`xlsxWorksheetLimits must be a non-null, non-array object`);n=t}let r=k({maxRows:j(n,`maxRows`),maxCells:j(n,`maxCells`),maxOwnedUtf8Bytes:j(n,`maxOwnedUtf8Bytes`),maxJsonBytes:j(n,`maxJsonBytes`)}),i=A,a=k({maxRows:Math.max(i.cache.maxRows,r.maxRows),maxCells:Math.max(i.cache.maxCells,r.maxCells),maxOwnedUtf8Bytes:Math.max(i.cache.maxOwnedUtf8Bytes,r.maxOwnedUtf8Bytes),maxJsonBytes:Math.max(i.cache.maxJsonBytes,r.maxJsonBytes)});return Object.freeze({worksheet:r,cache:a,maxCoordinateIndexEntries:Math.max(i.maxCoordinateIndexEntries,r.maxCells)})}function Ne(e){let{worksheet:t}=e;return[BigInt(t.maxRows),BigInt(t.maxCells),BigInt(t.maxOwnedUtf8Bytes),BigInt(t.maxJsonBytes)]}var M=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,N.unregister(this),e}free(){let e=this.__destroy_into_raw();K.__wbg_xlsxarchive_free(e,0)}acknowledge_sheet_cursor_terminal(){let e=K.xlsxarchive_acknowledge_sheet_cursor_terminal(this.__wbg_ptr);if(e[1])throw V(e[0])}assert_healthy(){let e=K.xlsxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw V(e[0])}cancel_sheet_cursor(){K.xlsxarchive_cancel_sheet_cursor(this.__wbg_ptr)}close_sheet_cursor(){K.xlsxarchive_close_sheet_cursor(this.__wbg_ptr)}extract_image(e){let t=B(e,K.__wbindgen_malloc,K.__wbindgen_realloc),n=G,r=K.xlsxarchive_extract_image(this.__wbg_ptr,t,n);if(r[3])throw V(r[2]);var i=P(r[0],r[1]).slice();return K.__wbindgen_free(r[0],r[1]*1,1),i}constructor(e,t,n,r){let i=Ie(e,K.__wbindgen_malloc),a=G,o=K.xlsxarchive_new(i,a,!z(t),z(t)?BigInt(0):t,!z(n),z(n)?BigInt(0):n,!z(r),z(r)?BigInt(0):r);if(o[2])throw V(o[1]);return this.__wbg_ptr=o[0]>>>0,N.register(this,this.__wbg_ptr,this),this}open_sheet_cursor(e,t){let n=B(t,K.__wbindgen_malloc,K.__wbindgen_realloc),r=G,i=K.xlsxarchive_open_sheet_cursor(this.__wbg_ptr,e,n,r);if(i[1])throw V(i[0])}parse(){let e=K.xlsxarchive_parse(this.__wbg_ptr);if(e[3])throw V(e[2]);var t=P(e[0],e[1]).slice();return K.__wbindgen_free(e[0],e[1]*1,1),t}pull_sheet_cursor(e){let t=K.xlsxarchive_pull_sheet_cursor(this.__wbg_ptr,e);if(t[3])throw V(t[2]);var n=P(t[0],t[1]).slice();return K.__wbindgen_free(t[0],t[1]*1,1),n}resource_usage(){let e=K.xlsxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw V(e[2]);var t=P(e[0],e[1]).slice();return K.__wbindgen_free(e[0],e[1]*1,1),t}set_worksheet_limits(e,t,n,r){let i=K.xlsxarchive_set_worksheet_limits(this.__wbg_ptr,e,t,n,r);if(i[1])throw V(i[0])}sheet_cursor_pull_finished(){return K.xlsxarchive_sheet_cursor_pull_finished(this.__wbg_ptr)!==0}sheet_cursor_resource_usage(){let e=K.xlsxarchive_sheet_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw V(e[2]);var t=P(e[0],e[1]).slice();return K.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=K.xlsxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,V(i[2]);return e=n,t=r,I(n,r)}finally{K.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(M.prototype[Symbol.dispose]=M.prototype.free);function Pe(){return{__proto__:null,\"./xlsx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(I(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(I(e,t))}finally{K.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=B(n,K.__wbindgen_malloc,K.__wbindgen_realloc),i=G;Fe().setInt32(e+4,i,!0),Fe().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return I(e,t)},__wbindgen_init_externref_table:function(){let e=K.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const N=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>K.__wbg_xlsxarchive_free(e>>>0,1));function P(e,t){return e>>>=0,R().subarray(e/1,e/1+t)}let F=null;function Fe(){return(F===null||F.buffer.detached===!0||F.buffer.detached===void 0&&F.buffer!==K.memory.buffer)&&(F=new DataView(K.memory.buffer)),F}function I(e,t){return e>>>=0,Le(e,t)}let L=null;function R(){return(L===null||L.byteLength===0)&&(L=new Uint8Array(K.memory.buffer)),L}function z(e){return e==null}function Ie(e,t){let n=t(e.length*1,1)>>>0;return R().set(e,n/1),G=e.length,n}function B(e,t,n){if(n===void 0){let n=W.encode(e),r=t(n.length,1)>>>0;return R().subarray(r,r+n.length).set(n),G=n.length,r}let r=e.length,i=t(r,1)>>>0,a=R(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=R().subarray(i+o,i+r),a=W.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return G=o,i}function V(e){let t=K.__wbindgen_externrefs.get(e);return K.__externref_table_dealloc(e),t}let H=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});H.decode();let U=0;function Le(e,t){return U+=t,U>=2146435072&&(H=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),H.decode(),U=t),H.decode(R().subarray(e,e+t))}const W=new TextEncoder;`encodeInto`in W||(W.encodeInto=function(e,t){let n=W.encode(e);return t.set(n),{read:e.length,written:n.length}});let G=0,K;function Re(e,t){return K=e.exports,F=null,L=null,K.__wbindgen_start(),K}async function ze(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function Be(e){if(K!==void 0)return K;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let t=Pe();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:n,module:r}=await ze(await e,t);return Re(n,r)}async function Ve(e){return K=void 0,F=null,L=null,Be(e)}function He(e,t){return{workbook:e(),usage:g(t())}}function Ue(e,t){for(let n of e)for(let e of n.cells){let n=e.value;if(n.type===`shared`){let r=t[n.si];if(r){let t={type:`text`,text:r.text};r.runs!==void 0&&(t.runs=r.runs),r.phoneticRuns!==void 0&&(t.phoneticRuns=r.phoneticRuns),r.phoneticPr!==void 0&&(t.phoneticPr=r.phoneticPr),e.value=t}else e.value={type:`text`,text:``}}}return e}const We=new Set([`outline`,`merge`,`conditional-format`,`ancillary-content`,`metadata-unavailable`,`unordered-rows`]);function Ge(e,t,n,r){let i=e instanceof ArrayBuffer?new Uint8Array(e):new Uint8Array(e.buffer,e.byteOffset,e.byteLength),a=JSON.parse(new TextDecoder().decode(i));if(!a||typeof a!=`object`||!(`kind`in a))throw Error(`worksheet cursor returned an invalid unit`);let o=a;if(t!==(o.kind===`finished`))throw Error(`worksheet cursor terminal marker mismatch`);if(o.kind===`rows`){if(!Array.isArray(o.rows))throw Error(`worksheet row unit is missing rows`);return n&&Ue(o.rows,n),r?.(o.rows),{kind:`rows`,rows:o.rows}}if(o.kind===`preview`){if(!Number.isSafeInteger(o.maxRow)||!Number.isSafeInteger(o.maxCol)||o.maxRow<0||o.maxCol<0||o.worksheet===null==(o.reason===null)||o.worksheet!==null&&(typeof o.worksheet!=`object`||Array.isArray(o.worksheet))||o.reason!==null&&!We.has(o.reason))throw Error(`worksheet preview unit is invalid`);return o.worksheet&&(o.worksheet.rows=[]),o}if(o.kind===`finished`){if(!o.worksheet||typeof o.worksheet!=`object`)throw Error(`worksheet terminal unit is missing its worksheet`);return o.worksheet.rows=[],{kind:`finished`,worksheet:o.worksheet}}throw Error(`worksheet cursor returned an unknown unit kind`)}const Ke=new WeakMap;function qe(e,t){Ke.set(e,t)}function q(e,t){if(!Number.isSafeInteger(e)||e<0)throw Error(`${t} must be a non-negative safe integer`)}function J(e,t,n){return q(e,`resource measurement`),q(t,`resource measurement`),q(n,`resource measurement limit`),e>n||t>n||t>n-e?n===2**53-1?n:n+1:e+t}function Je(e,t=2**53-1){q(t,`resource measurement limit`);let n=0;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=3}else a=3;if(n=J(n,a,t),n>t)return n}return n}function Ye(e,t=2**53-1){q(t,`resource measurement limit`);let n=J(0,2,t);if(n>t)return n;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i===34||i===92||i===8||i===9||i===10||i===12||i===13)a=2;else if(i<=31)a=6;else if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=6}else a=i>=55296&&i<=57343?6:3;if(n=J(n,a,t),n>t)return n}return n}function Y(e,t){return J(0,e,t)}function X(e,t=2**53-1,n=!1){if(q(t,`resource measurement limit`),e===null)return{jsonBytes:Y(4,t),stringValueUtf8Bytes:0};if(typeof e==`string`)return{jsonBytes:Ye(e,t),stringValueUtf8Bytes:Je(e,t)};if(typeof e==`boolean`)return{jsonBytes:Y(e?4:5,t),stringValueUtf8Bytes:0};if(typeof e==`number`)return{jsonBytes:Y((Number.isFinite(e)?String(Object.is(e,-0)?0:e):`null`).length,t),stringValueUtf8Bytes:0};if(typeof e==`bigint`)throw TypeError(`BigInt values cannot be serialized to JSON`);if(Array.isArray(e)){let n=Y(2,t),r=0;for(let i=0;i<e.length;i+=1){i!==0&&(n=J(n,1,t));let a=X(e[i],t,!0);n=J(n,a.jsonBytes,t),r=J(r,a.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}if(typeof e==`object`){let n=Y(2,t),r=0,i=0;for(let[a,o]of Object.entries(e)){if(o===void 0||typeof o==`function`||typeof o==`symbol`)continue;i++!==0&&(n=J(n,1,t)),n=J(n,Ye(a,t),t),n=J(n,1,t);let e=X(o,t);n=J(n,e.jsonBytes,t),r=J(r,e.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}return{jsonBytes:n?Y(4,t):0,stringValueUtf8Bytes:0}}i();const Xe=Object.freeze({archiveEntryCount:0,declaredInflatedBytes:0,distinctInflatedBytes:0,operationInflatedBytes:0});function Ze(e,t=A){let{maxCells:n,maxOwnedUtf8Bytes:r}=t.worksheet,i=e.reduce((e,t)=>J(e,t.cells.length,n),0);return{rows:e.length,cells:i,ownedUtf8Bytes:e.reduce((e,t)=>t.cells.reduce((e,t)=>{let n=X(t.value,r).stringValueUtf8Bytes;return J(e,J(n,t.formula===void 0?0:Je(t.formula,r),r),r)},e),0)}}function Qe(e,t,n=A){let r=X(e,n.worksheet.maxJsonBytes);return{...t,jsonBytes:r.jsonBytes}}function $e(e,t,n=A){let r=n.worksheet;return{rows:J(e.rows,t.rows,r.maxRows),cells:J(e.cells,t.cells,r.maxCells),ownedUtf8Bytes:J(e.ownedUtf8Bytes,t.ownedUtf8Bytes,r.maxOwnedUtf8Bytes)}}function et(e,t,n,i,a,o,s,c=n!==`delimited-text-source`){let l=n===`worksheet-json`?`serialization`:`parsing`;return new r(x({stage:l,violation:{part:t,resource:n,metric:i,observed:o,limit:a}}),{stage:l,violation:{format:`xlsx`,operation:e,resource:n,metric:i,...t===void 0?{}:{part:t},limit:a,observed:Math.min(o,a+1),configurable:c,usage:s??Xe}})}function tt(e,t,n,r,i=A){let a=i.worksheet,o=[[`rows`,e.rows,a.maxRows],[`cells`,e.cells,a.maxCells],[`owned-utf8-bytes`,e.ownedUtf8Bytes,a.maxOwnedUtf8Bytes]];for(let[e,i,a]of o)if(i>a)throw et(t,n,e===`owned-utf8-bytes`?`worksheet-cell-content`:`worksheet-model`,e,a,i,r)}function nt(e,t,n,r,i=A){let a=i.worksheet.maxJsonBytes;if(e>a)throw et(t,n,`worksheet-json`,`bytes`,a,e,r)}i();var rt=class{archive;acceptWorksheet;executeArchive;prepareRows;provisional;worksheetPolicy;coordinator=new Ae;sessions=new Map;operationTail=Promise.resolve();pendingOpens=new Map;resourceFailure;constructor(e,t,n=e=>e(this.requireArchive()),r,i,a=()=>A){this.archive=e,this.acceptWorksheet=t,this.executeArchive=n,this.prepareRows=r,this.provisional=i,this.worksheetPolicy=a}reserveOpen(e){this.pendingOpens.set(e.sessionId,{identity:e,canceled:!1})}abandonOpen(e){this.pendingOpens.delete(e)}get pendingOpenCount(){return this.pendingOpens.size}runDuringPull(e){return this.sessions.size===0?this.run(e):this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;try{return e()}catch(e){throw e instanceof r&&(this.resourceFailure??=e),e}})}async open(e,t,n){if(this.resourceFailure)throw this.resourceFailure;let i=this.pendingOpens.get(n.sessionId);if(!i||i.identity.operationId!==n.operationId||i.identity.generation!==n.generation)throw Error(`worksheet pull session open reservation is stale or missing`);let a=this.worksheetPolicy(),o,s=new Promise(e=>{o=e}),c=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(i.canceled)throw Error(`worksheet pull session open was canceled`);this.executeArchive(n=>n.open_sheet_cursor(e,t));let s=[],c={rows:0,cells:0,ownedUtf8Bytes:0},l,u=!1,d=new je({...n,maxByteCredit:67108864,coordinator:this.coordinator,driver:{pull:()=>{let t=this.executeArchive(e=>e.pull_sheet_cursor(128)),n=this.executeArchive(e=>e.sheet_cursor_pull_finished());if(this.acceptWorksheet){let i=Ge(t,n,void 0,this.prepareRows);try{if(i.kind===`preview`)i.worksheet&&(i.worksheet.rows=s,qe(i.worksheet,a),this.provisional?.preview(e,i.worksheet));else if(i.kind===`rows`){let e=$e(c,Ze(i.rows,a),a);tt(e,`get-worksheet-worker`,void 0,this.readResourceUsage(),a),s.push(...i.rows),c=e}else i.kind===`finished`&&(l=i.worksheet)}catch(e){throw e instanceof r&&(this.resourceFailure??=e),e}}u=n;let i=De(t);return{payload:i,byteLength:i.byteLength,done:n,transfer:[i]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:()=>{if(!u)return;let t,i;try{if(this.acceptWorksheet){if(!l)throw Error(`worksheet terminal payload is missing`);l.rows=l.parseError?[]:s;let n=l.parseError?{rows:0,cells:0,ownedUtf8Bytes:0}:c,r=Qe(l,n,a),o=this.readResourceUsage();tt(r,`get-worksheet-worker`,void 0,o,a),nt(r.jsonBytes,`get-worksheet-worker`,void 0,o,a),qe(l,a);let u=this.acceptWorksheet(e,l,r,o);typeof u==`function`?t=u:u&&({rollback:t,commit:i}=u)}this.executeArchive(e=>e.acknowledge_sheet_cursor_terminal()),i?.()}catch(e){throw t?.(),e instanceof r&&(this.resourceFailure??=e),e}u=!1,this.sessions.delete(n.sessionId),this.provisional?.stop(e),o()},cancel:()=>{try{this.archive()&&this.executeArchive(e=>e.cancel_sheet_cursor())}finally{this.sessions.delete(n.sessionId),this.provisional?.stop(e),o()}},close:()=>{try{this.archive()&&this.executeArchive(e=>e.close_sheet_cursor())}finally{this.sessions.delete(n.sessionId),this.provisional?.stop(e),o()}},resourceUsage:()=>this.readResourceUsage()}});this.sessions.set(n.sessionId,{host:d,identity:n}),this.pendingOpens.delete(n.sessionId)}));this.operationTail=c.then(()=>s,()=>void 0);try{await c}catch(e){throw this.pendingOpens.delete(n.sessionId),o(),e}}async postOpenedSafely(e,t,n){try{t()}catch(t){await this.closeIdentity(e);try{n(t)}catch{}}}dispatch(e,t){let n=this.sessions.get(e.sessionId);if(n)return n.host.dispatch(e,t);let r=this.pendingOpens.get(e.sessionId);if(r&&(e.kind===`cancel`||e.kind===`close`)){let n=r.identity.operationId===e.operationId&&r.identity.generation===e.generation;return n&&(r.canceled=!0),t(n?{protocol:E,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}:{protocol:E,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:{message:`stale lifecycle targets another pending worksheet operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`}}),Promise.resolve()}return e.kind===`cancel`||e.kind===`close`?(t({protocol:E,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}),Promise.resolve()):(t({protocol:E,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:w(Error(`worksheet pull session is not open`))}),Promise.resolve())}async dispatchSafely(e,t){try{await this.dispatch(e,t)}catch(n){try{t({protocol:E,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:w(n)})}catch{}}}run(e){let t=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;return e()})).catch(e=>{throw e instanceof r&&(this.resourceFailure??=e),e});return this.operationTail=t.then(()=>void 0,()=>void 0),t}async reset(){for(let e of this.pendingOpens.values())e.canceled=!0;let e=1;for(let{host:t,identity:n}of[...this.sessions.values()])await t.dispatch({protocol:E,kind:`close`,...n,requestId:e++},()=>void 0);this.sessions.clear(),await this.operationTail,this.pendingOpens.clear(),this.resourceFailure=void 0}requireArchive(){let e=this.archive();if(!e)throw Error(`Workbook not loaded`);return e}async closeIdentity(e){let t=this.sessions.get(e.sessionId);if(t){await t.host.dispatch({protocol:E,kind:`close`,...e,requestId:1},()=>void 0);return}let n=this.pendingOpens.get(e.sessionId);n&&n.identity.operationId===e.operationId&&n.identity.generation===e.generation&&(n.canceled=!0)}readResourceUsage(){return g(this.executeArchive(e=>e.sheet_cursor_resource_usage()))}};function it(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}const Z=new Te(Be,{freeArchive:e=>e.free(),reinit:Ve});let Q=A;const $=new rt(()=>Z.archive,void 0,e=>{let t=Z.archive;if(!t)throw Error(`Workbook not loaded`);return Z.run(()=>e(t))},void 0,void 0,()=>Q);self.onmessage=async e=>{let n=e.data;if(it(n)){await $.dispatchSafely(n,(e,t)=>self.postMessage(e,t));return}if(n.type===`init`){Z.setWasmInput(t(n.wasmUrl)??n.wasmUrl);return}let r=n.id;n.type===`openSheetSession`&&$.reserveOpen(n);try{let e=n.type===`parse`?Me({xlsxWorksheetLimits:n.worksheetPolicy?.worksheet}):void 0;if(n.type===`openSheetSession`){await Z.ensureReady(),Z.archive&&Z.run(()=>Z.archive?.assert_healthy()),await $.open(n.sheetIndex,n.sheetName,n),await $.postOpenedSafely(n,()=>self.postMessage({type:`sheetSessionOpened`,id:r,sessionId:n.sessionId,operationId:n.operationId,generation:n.generation}),e=>self.postMessage({type:`error`,id:r,...w(e)}));return}n.type===`parse`&&await $.reset(),await(n.type===`extractImage`?$.runDuringPull:$.run).call($,async()=>{if(await Z.ensureReady(),n.type!==`parse`&&Z.archive){let e=Z.archive;Z.run(()=>e.assert_healthy())}if(n.type===`parse`){let[t,i,a]=Oe(n.resourcePolicy),o=new Uint8Array(n.data);Q=e??A;let s=Ne(Q),{workbook:c,usage:l}=He(()=>Z.run(()=>{let e=new M(o,t,i,a);return Z.setArchive(e),e.set_worksheet_limits(...s),e.parse()}),()=>Z.run(()=>Z.archive.resource_usage())),u=c.buffer,d={type:`parsed`,id:r,workbookJson:u,usage:l};self.postMessage(d,[u]);return}let t=Z.archive;if(n.type===`extractImage`){if(!t)throw Error(`No xlsx loaded`);let e=Z.run(()=>t.extract_image(n.path).buffer),i={type:`imageExtracted`,id:r,bytes:e};self.postMessage(i,[e]);return}if(n.type===`resourceUsage`){if(!t)throw Error(`No xlsx loaded`);let e=Z.run(()=>g(t.resource_usage()));self.postMessage({type:`resourceUsage`,id:r,usage:e});return}if(n.type===`toMarkdown`){if(!t)throw Error(`No xlsx loaded`);let e={type:`markdownRendered`,id:r,markdown:Z.run(()=>t.to_markdown())};self.postMessage(e);return}})}catch(e){n.type===`openSheetSession`&&$.abandonOpen(n.sessionId);let t={type:`error`,id:r,...w(e)};try{self.postMessage(t)}catch{}}};", Xt = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", Yt], { type: "text/javascript;charset=utf-8" });
-function Zt(e) {
+import { Dn as b, M as x, N as S, On as C, P as w, V as T, X as E, Xt as D, Y as O, Yt as k, _t as A, ft as ee, gt as te, hn as j, j as M, lt as N, nt as P, ot as ne, qt as F, rt as re, st as I, t as ie, tt as ae, u as L, vt as oe, yt as se } from "./bounded-raw-part-cache-B8t03tSP.js";
+import { f as R, u as ce } from "./pixel-budget-DI82Hn3R.js";
+import { L as le, R as ue, V as de, n as fe, t as pe } from "./renderer-xdugdcMd.js";
+import { i as me, t as he } from "./tiff-contract-DEd8CGuz.js";
+import { C as ge, D as _e, E as ve, S as ye, T as be, _ as xe, a as Se, b as Ce, d as we, f as Te, g as Ee, h as De, m as Oe, o as ke, p as Ae, t as je, u as Me, w as Ne, x as Pe, y as Fe } from "./canvas-viewer-mechanics-DI38gHNV.js";
+import { A as Ie, B as Le, C as Re, D as ze, E as Be, F as Ve, H as He, I as Ue, L as We, M as z, N as Ge, O as Ke, P as qe, R as Je, S as Ye, T as Xe, V as B, _ as Ze, b as V, c as Qe, d as $e, f as et, g as tt, h as nt, i as rt, j as it, k as at, l as ot, m as st, n as ct, o as lt, p as ut, r as dt, s as H, t as ft, u as pt, v as mt, w as ht, x as gt, y as _t, z as vt } from "./renderer-BYt3nsdR.js";
+import { n as yt } from "./renderer-module-contract-BuTx2FWJ.js";
+import { _ as bt, a as xt, b as U, c as St, d as Ct, f as wt, g as Tt, h as Et, l as Dt, m as Ot, n as kt, o as At, p as jt, s as Mt, t as Nt, u as Pt, v as Ft, y as It } from "./worksheet-pull-client-Du0MuIro.js";
+import { n as Lt, r as Rt, t as zt } from "./visible-index-vN-4BNn7.js";
+import { a as Bt, c as Vt, d as Ht, f as Ut, l as W, n as G, o as Wt, p as Gt, r as K, t as q, u as Kt } from "./grid-geometry-CqTDvpDr.js";
+var qt = "var e=(e,t)=>()=>(e&&(t=e(e=0)),t);function t(e){if(!e.startsWith(`data:`))return null;let t=e.indexOf(`,`);if(t===-1)return null;let n=atob(e.slice(t+1)),r=new Uint8Array(n.length);for(let e=0;e<n.length;e++)r[e]=n.charCodeAt(e);return r.buffer}var n,r,i=e((()=>{n=class e extends Error{code;details;constructor(t,n,r){super(n),this.name=`OoxmlError`,this.code=t,t===`unsupported-content`&&r&&(this.details=Object.freeze({format:r.format,reason:r.reason})),Object.setPrototypeOf(this,e.prototype)}},r=class e extends Error{code=`ooxml-resource-limit`;details;constructor(t,n){super(t),this.name=`OoxmlResourceLimitError`;let r=n.violation,i=Object.freeze({format:r.format,operation:r.operation,resource:r.resource,metric:r.metric,...r.part===void 0?{}:{part:r.part},limit:r.limit,observed:r.observed,configurable:r.configurable,usage:Object.freeze({archiveEntryCount:r.usage.archiveEntryCount,declaredInflatedBytes:r.usage.declaredInflatedBytes,...r.usage.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:r.usage.largestInflatedEntryBytes},distinctInflatedBytes:r.usage.distinctInflatedBytes,operationInflatedBytes:r.usage.operationInflatedBytes})});this.details=Object.freeze({stage:n.stage,violation:i}),Object.setPrototypeOf(this,e.prototype)}}}));function a(e){return e===`image-dimension`||e===`image-pixels`||e===`active-decoded-bytes`||e===`image-effect-count`||e===`image-effect-work`||e===`tiff-lzw-work`||e===`metafile-path-commands`||e===`metafile-record-points`||e===`metafile-record-polygons`||e===`metafile-record-rectangles`||e===`metafile-record-text-units`}function o(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function s(e){if(!(!e||typeof e!=`object`))try{let t=e,n=t.code,r=t.metric,i=t.limit,s=t.observed;return n!==`ooxml-decoded-image-limit`||!a(r)||!o(i)||!o(s)||s<=i?void 0:{metric:r,limit:i,observed:s}}catch{return}}var c,l,u,d,ee,te=e((()=>{c=1<<25,l=1<<27,c*4,l*4,u=Math.floor(c/4),d=l,d/u,ee=class e extends RangeError{metric;limit;observed;code=`ooxml-decoded-image-limit`;constructor(t,n,r){super(`OOXML decoded image limit exceeded: ${t} ${r} > ${n}`),this.metric=t,this.limit=n,this.observed=r,this.name=`OoxmlDecodedImageLimitError`,Object.setPrototypeOf(this,e.prototype)}}}));function ne(e){if(!(typeof e!=`object`||!e))try{let t=e,n=t.code,r=t.message;return n===`ooxml-tiff-decode`&&typeof r==`string`?{message:r}:void 0}catch{return}}var re=e((()=>{}));function f(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>0}function ie(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return f(t.requiredBytes)&&f(t.offeredBytes)&&t.requiredBytes>t.offeredBytes}var p=class e extends RangeError{code=`ooxml-insufficient-credit`;requiredBytes;offeredBytes;constructor(t){super(`Pull unit requires ${t.requiredBytes} bytes but credit is ${t.offeredBytes}`),this.name=`PullSessionInsufficientCreditError`,this.requiredBytes=t.requiredBytes,this.offeredBytes=t.offeredBytes,Object.setPrototypeOf(this,e.prototype)}};function ae(e){if(e instanceof p)return e;let t=e instanceof Error?e.message:String(e);if(!t.startsWith(`OOXML_INSUFFICIENT_CREDIT:`))return;let n;try{n=JSON.parse(t.slice(26))}catch{return}if(!n||typeof n!=`object`||Array.isArray(n))return;let r=n;if(!(r.code!==`ooxml-insufficient-credit`||!ie(r)))return new p(r)}i(),te(),re();const m=`OOXML_RESOURCE_LIMIT:`;function h(e){return typeof e==`number`&&Number.isSafeInteger(e)&&e>=0}function oe(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return h(t.archiveEntryCount)&&h(t.declaredInflatedBytes)&&(t.largestInflatedEntryBytes===void 0||h(t.largestInflatedEntryBytes))&&h(t.distinctInflatedBytes)&&h(t.operationInflatedBytes)}function g(e){let t;try{t=JSON.parse(new TextDecoder().decode(e))}catch{throw TypeError(`OOXML resource usage checkpoint is not valid JSON`)}if(!oe(t))throw TypeError(`OOXML resource usage checkpoint is invalid`);return t}function se(e){return e===`docx`||e===`xlsx`||e===`pptx`}function ce(e){return e===`container`||e===`decompression`||e===`parsing`||e===`serialization`||e===`layout`||e===`rendering`||e===`worker`}function _(e,t){return typeof e==`string`&&e.length>0&&e.length<=t&&!/[\\u0000-\\u001f\\u007f]/u.test(e)}function v(e){return _(e,128)&&/^[a-z0-9][a-z0-9-]*$/u.test(e)}function le(e){return!_(e,4096)||e.startsWith(`/`)||e.startsWith(`\\\\`)||e.includes(`\\\\`)||e.includes(`?`)||e.includes(`#`)||e.includes(`://`)||/^[a-z]:/iu.test(e)?!1:e.split(`/`).every(e=>e!==``&&e!==`.`&&e!==`..`)}const y=new Map([[`archive-entry:declared-inflated-bytes`,{stage:`container`,part:`required`}],[`archive-entry:actual-inflated-bytes`,{stage:`decompression`,part:`required`}],[`archive:entry-count`,{stage:`container`,part:`forbidden`}],[`archive:central-directory-bytes`,{stage:`container`,part:`forbidden`,configurable:!1}],[`archive:distinct-inflated-bytes`,{stage:`decompression`,part:`required`}],[`xml-event:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`xml-context:bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`image-effect:work`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chartex-allocation:elements`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chartex-allocation:bytes`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chart-cache:points`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`numbering-marker:bytes`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`chart-style-formats:entries`,{stage:`parsing`,part:`required`,configurable:!1}],[`chart-custom-number-formats:entries`,{stage:`parsing`,part:`required`,configurable:!1}],[`chart-number-format-bytes:bytes`,{stage:`parsing`,part:`required`,configurable:!1}],[`xml-tree:depth`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-row:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`worksheet-shell:projected-bytes`,{stage:`parsing`,part:`optional`,configurable:!1}],[`theme-style-reparse:bytes`,{stage:`parsing`,part:`forbidden`,configurable:!1}],[`style-inheritance:depth`,{stage:`parsing`,part:`required`,configurable:!1}],[`complex-field:depth`,{stage:`parsing`,part:`forbidden`,configurable:!1}]]),ue=new Set([...y.keys()].map(e=>e.slice(0,e.indexOf(`:`)))),de=new Set([...y.keys()].map(e=>e.slice(e.indexOf(`:`)+1)));function fe(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;return!se(t.format)||!_(t.operation,256)||!v(t.resource)||!v(t.metric)||!h(t.limit)||!h(t.observed)||typeof t.configurable!=`boolean`||!oe(t.usage)?!1:!(`part`in t)||le(t.part)}function b(e){if(!e||typeof e!=`object`||Array.isArray(e))return!1;let t=e;if(!ce(t.stage)||!fe(t.violation))return!1;let n=t.violation,r=y.get(`${n.resource}:${n.metric}`);return r?t.stage!==r.stage||r.configurable===!1&&n.configurable!==!1?!1:r.part===`required`?n.part!==void 0:r.part===`forbidden`?n.part===void 0:!0:!(ue.has(n.resource)&&de.has(n.metric))}function pe(e){return{archiveEntryCount:e.archiveEntryCount,declaredInflatedBytes:e.declaredInflatedBytes,...e.largestInflatedEntryBytes===void 0?{}:{largestInflatedEntryBytes:e.largestInflatedEntryBytes},distinctInflatedBytes:e.distinctInflatedBytes,operationInflatedBytes:e.operationInflatedBytes}}function me(e){if(!b(e))return;let t=e.violation,n={stage:e.stage,violation:{format:t.format,operation:t.operation,resource:t.resource,metric:t.metric,...t.part===void 0?{}:{part:t.part},limit:t.limit,observed:t.observed,configurable:t.configurable,usage:pe(t.usage)}};return b(n)?n:void 0}function x(e){let t=e.violation;return`OOXML resource limit exceeded${t.part?` for ${t.part}`:``} (${t.resource}, ${e.stage}): ${t.metric} ${t.observed} > ${t.limit}`}function S(e){let t=e instanceof Error?e.message:String(e);if(!t.startsWith(m))return;let n;try{n=JSON.parse(t.slice(21))}catch{return}if(!n||typeof n!=`object`)return;let i=n;if(!(i.code!==`ooxml-resource-limit`||!b(i.details)))return new r(x(i.details),i.details)}function he(e){try{return e()}catch(e){throw e instanceof r||typeof e!=`string`&&!(e instanceof Error)?e:S(e)??e}}function ge(e){let t=e instanceof Error?e.message:String(e);if(t.startsWith(`OOXML_NOT_OOXML:`))return new n(`not-ooxml`,`This file is not an Office Open XML document: ${t.slice(16)}`)}function C(e){if(!e||typeof e!=`object`||Array.isArray(e))return;let t=e,n=t.format,r=t.reason;if(!(!v(n)||r!==`source-subset`))return{format:n,reason:r}}function _e(e){return new n(`unsupported-content`,`Input is outside the source’s supported subset.`,e)}function ve(e){let t=typeof e==`string`?e:e instanceof Error?e.message:``;if(!(!t.startsWith(`MODEL_SOURCE_UNSUPPORTED:`)||t.length>1024))try{let e=C(JSON.parse(t.slice(25)));return e?_e(e):void 0}catch{return}}function ye(e){return e===`OOXML_SOURCE_UNSUPPORTED_ENCRYPTION`||e instanceof Error&&e.message===`OOXML_SOURCE_UNSUPPORTED_ENCRYPTION`?new n(`unsupported-encryption`,`The configured source cannot decrypt this input.`):ve(e)??S(e)??ge(e)}function be(e){let t=s(e);if(t){let e=new ee(t.metric,t.limit,t.observed);return{message:e.message,errorName:e.name,code:e.code,decodedImage:t}}let i=ne(e);if(i)return{message:i.message,errorName:`TiffDecodeError`,code:`ooxml-tiff-decode`};let a=ae(e);if(a)return{message:a.message,errorName:a.name,code:a.code,insufficientCredit:{requiredBytes:a.requiredBytes,offeredBytes:a.offeredBytes}};let o=e instanceof n||e instanceof r?e:ye(e),c=o??e;if(o instanceof r||c&&typeof c==`object`&&c.code===`ooxml-resource-limit`){let e=c,t=me(e.details);return t?{message:typeof e.message==`string`?e.message:x(t),errorName:`OoxmlResourceLimitError`,code:`ooxml-resource-limit`,resourceLimit:t}:{message:`Invalid OOXML resource-limit error payload`,errorName:`Error`}}if(c&&typeof c==`object`&&c.code===`unsupported-content`){let e=C(c.details);return e?{message:_e(e).message,code:`unsupported-content`,unsupportedContent:e}:{message:`Invalid unsupported-content error payload`,errorName:`Error`}}if(o instanceof n)return{message:typeof o.message==`string`?o.message:String(o.message),errorName:_(o.name,128)?o.name:`OoxmlError`,...v(o.code)?{code:o.code}:{}};let l=e instanceof Error?e.message:String(e);if(typeof l==`string`&&l.startsWith(m))return{message:`Invalid OOXML resource-limit payload`,errorName:`Error`};let u=e instanceof Error?e:Error(l),d=u;return{message:typeof u.message==`string`?u.message:String(u.message),errorName:_(u.name,128)?u.name:`Error`,...typeof d.code==`string`?{code:d.code}:{}}}function w(e){try{return be(e)}catch{return{message:`Worker operation failed with an unreadable error`,errorName:`Error`}}}var xe=class{initialize;reinitialize;normalizeFailure;state=`uninitialized`;generationValue=0;readiness;poisonListeners=new Set;constructor(e,t,n){this.initialize=e,this.reinitialize=t,this.normalizeFailure=n}get generation(){return this.generationValue}get poisoned(){return this.state===`poisoned`}onPoison(e){return this.poisonListeners.add(e),()=>this.poisonListeners.delete(e)}async ensureReady(){if(this.state!==`ready`){if(!this.readiness){let e=this.state===`uninitialized`?this.initialize:this.reinitialize;this.readiness=Promise.resolve().then(e).then(()=>{this.generationValue+=1,this.state=`ready`,this.readiness=void 0},e=>{throw this.readiness=void 0,e})}await this.readiness}}run(e){try{return e()}catch(e){let t=this.normalizeFailure(e);throw t?(this.poison(t),t):e}}tryRunReady(e){if(this.state!==`ready`)return{current:!1};let t=this.generationValue,n=this.run(e);return this.state!==`ready`||t!==this.generationValue?{current:!1}:{current:!0,generation:t,value:n}}poison(e){this.state=`poisoned`,this.readiness=void 0;for(let t of this.poisonListeners)t(e)}assertCurrent(e){if(this.state!==`ready`||e!==this.generationValue)throw Error(`WASM archive session belongs to a discarded runtime generation`)}},T=class e extends Error{code=`parser-crashed`;constructor(t){super(t),this.name=`WasmTrapError`,Object.setPrototypeOf(this,e.prototype)}};function Se(e){let t=globalThis.WebAssembly?.RuntimeError;return t&&e instanceof t||e instanceof RangeError?!0:e instanceof Error?e.name===`RuntimeError`||e.name===`CompileError`||e.name===`LinkError`||e.name===`InternalError`||e.name===`OOMError`:!1}function Ce(e){try{if((typeof e!=`object`||!e)&&typeof e!=`function`)return;let t=Reflect.get(e,`__destroy_into_raw`);typeof t==`function`&&Reflect.apply(t,e,[])}catch{}}function we(e,t){return e({module_or_path:t})}var Te=class{init;options;runtime;wasmInput=null;currentArchive=null;constructor(e,t={}){this.init=e,this.options=t,this.runtime=new xe(()=>this.invokeConfigured(this.init),()=>this.invokeConfigured(this.options.reinit??this.init),Ee),this.runtime.onPoison(()=>this.dropPoisonedArchive())}setWasmInput(e){this.wasmInput=e,this.runtime.ensureReady().catch(()=>void 0)}setWasmUrl(e){this.setWasmInput(e)}get archive(){return this.currentArchive}setArchive(e){this.freeArchive(),this.currentArchive=e}disposeArchive(){this.freeArchive()}get poisoned(){return this.runtime.poisoned}async ensureReady(){await this.runtime.ensureReady()}run(e){return he(()=>this.runtime.run(e))}poison(){this.runtime.poison(new T(`WASM parser was recycled`))}invokeConfigured(e){return this.wasmInput===null?Promise.reject(Error(`WasmParserHost: setWasmInput was never called`)):we(e,this.wasmInput)}freeArchive(){this.currentArchive!==null&&this.options.freeArchive&&this.options.freeArchive(this.currentArchive),this.currentArchive=null}dropPoisonedArchive(){let e=this.currentArchive;this.currentArchive=null,Ce(e)}};function Ee(e){return Se(e)?new T(`WASM parser trapped and was recycled: ${e instanceof Error?e.message:String(e)}`):null}function De(e){return e.byteOffset===0&&e.byteLength===e.buffer.byteLength&&e.buffer instanceof ArrayBuffer?e.buffer:e.slice().buffer}Object.freeze({maxArchiveEntryBytes:134217728,maxTotalInflatedBytes:268435456,maxArchiveEntries:4096});function Oe(e){return[e.maxArchiveEntryBytes===null?0n:BigInt(e.maxArchiveEntryBytes),e.maxTotalInflatedBytes===null?0n:BigInt(e.maxTotalInflatedBytes),e.maxArchiveEntries===null?0n:BigInt(e.maxArchiveEntries)]}const E=`ooxml-pull-v1`;function D(e,t){if(!Number.isSafeInteger(e)||e<=0)throw RangeError(`${t} must be a positive safe integer`)}function ke(e){if(!(typeof e==`string`&&e.length>0||typeof e==`number`&&Number.isSafeInteger(e)&&e>0))throw RangeError(`session id must be a non-empty string or positive safe integer`)}var Ae=class{owner;queue=Promise.resolve();leases=new Map;retainedBytes=0;retainedCount=0;maxRetainedBytes;maxRetainedCount;cleanups=new Set;pendingFatalCleanups=[];poisonRunning=!1;fatal;constructor(e){this.maxRetainedBytes=e?.maxRetainedBytes??64*1024*1024,this.maxRetainedCount=e?.maxRetainedCount??256,D(this.maxRetainedBytes,`max retained lease bytes`),D(this.maxRetainedCount,`max retained lease count`)}enqueue(e){let t=this.queue.then(e,e);return this.queue=t.then(()=>void 0,()=>void 0),t}acquire(e){return this.owner===void 0?(this.owner=e,!0):this.owner===e}release(e){this.owner===e&&(this.owner=void 0)}retainLease(e,t,n){if(!Number.isSafeInteger(n)||n<0)throw RangeError(`retained lease bytes are invalid`);let r=this.leases.get(e)??new Map;if(r.has(t))throw Error(`driver returned a duplicate lease id`);if(this.retainedCount+1>this.maxRetainedCount)throw RangeError(`retained lease count exceeds limit`);if(this.retainedBytes+n>this.maxRetainedBytes)throw RangeError(`retained lease bytes exceed limit`);r.set(t,n),this.leases.set(e,r),this.retainedCount++,this.retainedBytes+=n}releaseLease(e,t){let n=this.leases.get(e),r=n?.get(t);r!==void 0&&(n?.delete(t),n?.size===0&&this.leases.delete(e),this.retainedCount--,this.retainedBytes-=r)}registerCleanup(e){return this.fatal?(this.poisonRunning?this.pendingFatalCleanups.push(e):this.enqueue(e).catch(()=>void 0),()=>void 0):(this.cleanups.add(e),()=>this.cleanups.delete(e))}get fatalError(){return this.fatal}get registeredHostCount(){return this.cleanups.size}async poison(e){if(this.fatal??=e,this.poisonRunning)return this.fatal;this.poisonRunning=!0,this.pendingFatalCleanups.push(...this.cleanups);try{let e;for(;(e=this.pendingFatalCleanups.shift())!==void 0;)await e().catch(()=>void 0)}finally{this.poisonRunning=!1}return this.fatal}},je=class{options;coordinator;coordinatorOwner=Symbol(`pull-session-host`);unregisterCleanup;sequence=0;unacked;leases=new Map;activeDriverLeases=new Set;nextWireLeaseId;cancelRequested=!1;cancelComplete=!1;closeRequested=!1;closeComplete=!1;driverCancelComplete=!1;driverCloseComplete=!1;completed=!1;constructor(e){ke(e.sessionId),D(e.operationId,`operation id`),D(e.generation,`generation`),D(e.maxByteCredit,`max byte credit`),e.wireLeaseIdStart!==void 0&&D(e.wireLeaseIdStart,`wire lease id start`),this.options=e,this.coordinator=e.coordinator,this.nextWireLeaseId=e.wireLeaseIdStart??1,this.unregisterCleanup=this.coordinator.registerCleanup(()=>this.forceFatalCleanup())}dispatch(e,t){return this.coordinator.enqueue(async()=>{let n=await this.execute(e);try{t(n.response,n.transfer)}catch(e){throw await this.rollbackFailedPost(n),e}})}async rollbackFailedPost(e){let t=e.response;if(t.kind===`chunk`){let n=t.leaseId===void 0?void 0:this.leases.get(t.leaseId);try{await this.options.driver.disposeInvalidChunk?.({payload:t.payload,byteLength:t.byteLength,done:t.done,leaseId:n?.driverLeaseId,retainedBytes:n?.retainedBytes,transfer:e.transfer})}catch{}}this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);for(let[e,t]of[...this.leases])try{await this.options.driver.releaseLease?.(t.driverLeaseId)}catch{}finally{this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e)}if(this.cancelRequested=!0,!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch{}this.unregisterCleanup()}async execute(e){try{if(this.isStaleLifecycle(e)){let t=e.kind===`cancel`?`cancel`:`close`;return this.sameOperationIdentity(e)?{response:this.accepted(e,t,!0)}:{response:this.errorResponse(e,{message:`stale lifecycle targets another session or operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`})}}this.validateCommandIdentity(e);let t=this.coordinator.fatalError;if(t)return e.kind===`pull`?{response:this.errorResponse(e,t)}:(e.kind===`cancel`?await this.cancel():e.kind===`close`?await this.close():e.kind===`release`&&await this.release(e.leaseId),{response:this.accepted(e,e.kind)});switch(e.kind){case`pull`:return await this.pull(e);case`ack`:return await this.ack(e.sequence),{response:this.accepted(e,`ack`)};case`release`:return await this.release(e.leaseId),{response:this.accepted(e,`release`)};case`cancel`:return await this.cancel(),{response:this.accepted(e,`cancel`)};case`close`:return await this.close(),{response:this.accepted(e,`close`)}}}catch(t){let n=w(t);return n.code===`ooxml-resource-limit`&&(n=await this.coordinator.poison(n)),{response:this.errorResponse(e,n)}}}async pull(e){if(this.closeRequested||this.cancelRequested||this.completed)throw Error(`pull session is closed`);if(this.unacked)throw Error(`previous chunk is not acknowledged`);if(!Number.isSafeInteger(e.sequence)||e.sequence<0||e.sequence!==this.sequence)throw Error(`pull command sequence mismatch`);if(this.validateHostCredit(e.byteCredit),!this.coordinator.acquire(this.coordinatorOwner))throw Error(`another operation has an unacknowledged package chunk`);let t;try{t=await this.options.driver.pull(e.byteCredit)}catch(e){throw this.coordinator.release(this.coordinatorOwner),e}let n=!1,r=!1,i,a;try{let o=this.options.driver.measureChunk(t),s=this.arrayBufferTransferBytes(t.transfer);if(o<s)throw RangeError(`measured chunk bytes are below ArrayBuffer transfer bytes`);if(a=Math.max(o,s),t.leaseId!==void 0){if(D(t.leaseId,`lease id`),t.retainedBytes===void 0)throw Error(`retained lease bytes are required`);if(this.activeDriverLeases.has(t.leaseId))throw r=!0,Error(`driver returned an active duplicate lease id`);i=this.allocateWireLeaseId(),this.coordinator.retainLease(this.coordinatorOwner,i,t.retainedBytes),this.leases.set(i,{driverLeaseId:t.leaseId,retainedBytes:t.retainedBytes}),this.activeDriverLeases.add(t.leaseId),n=!0}else if(t.retainedBytes!==void 0)throw Error(`retained lease bytes require a lease id`);if(!Number.isSafeInteger(a)||a<0)throw RangeError(`host chunk byte length must be a non-negative safe integer`);if(a>e.byteCredit)throw RangeError(`host chunk exceeds byte credit`)}catch(e){let a;try{await this.options.driver.disposeInvalidChunk?.(t)}catch(e){a=e}if(n&&i!==void 0)try{await this.release(i)}catch(e){a??=e}else if(t.leaseId!==void 0&&!r)try{await this.options.driver.releaseLease?.(t.leaseId)}catch(e){a??=e}if(r)try{await this.cancel()}catch(e){a??=e}throw this.coordinator.release(this.coordinatorOwner),a||e}return this.unacked={sequence:this.sequence,done:t.done},{response:{kind:`chunk`,protocol:E,...this.identity(),requestId:e.requestId,sequence:this.sequence,byteLength:a,done:t.done,payload:t.payload,leaseId:i,usage:this.resourceUsage()},transfer:t.transfer}}async ack(e){if(!Number.isSafeInteger(e)||e<0)throw RangeError(`invalid ack sequence`);if(e<this.sequence)return;if(!this.unacked||e!==this.sequence)throw Error(`ack sequence mismatch`);let t=this.unacked.done;await this.options.driver.acknowledge?.(e),this.unacked=void 0,this.coordinator.release(this.coordinatorOwner),this.sequence++,t&&(this.completed=!0,this.maybeUnregisterCompleted())}async release(e){D(e,`wire lease id`);let t=this.leases.get(e);t&&(await this.options.driver.releaseLease?.(t.driverLeaseId),this.leases.delete(e),this.activeDriverLeases.delete(t.driverLeaseId),this.coordinator.releaseLease(this.coordinatorOwner,e),this.maybeUnregisterCompleted())}async cancel(){if(this.cancelComplete)return;this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.cancelComplete=!0,this.unregisterCleanup()}async close(){if(this.closeComplete)return;this.closeRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;try{await this.releaseAllLeases()}catch(t){e=t}if(!this.driverCloseComplete)try{await this.options.driver.close?.(),this.driverCloseComplete=!0}catch(t){e??=t}if(e)throw e;this.closeComplete=!0,this.unregisterCleanup()}async releaseAllLeases(){let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(e)throw e}validateCommandIdentity(e){if(e.protocol!==`ooxml-pull-v1`||e.sessionId!==this.options.sessionId||e.operationId!==this.options.operationId||e.generation!==this.options.generation||!Number.isSafeInteger(e.requestId)||e.requestId<=0)throw Error(`stale or mismatched pull session command`)}validateHostCredit(e){if(D(e,`byte credit`),e>this.options.maxByteCredit)throw RangeError(`byte credit exceeds host maximum`)}accepted(e,t,n=!1){return{kind:`accepted`,protocol:E,...n?{sessionId:e.sessionId,operationId:e.operationId,generation:e.generation}:this.identity(),requestId:e.requestId,command:t,usage:this.resourceUsage()}}identity(){return{sessionId:this.options.sessionId,operationId:this.options.operationId,generation:this.options.generation}}isStaleLifecycle(e){return(e.kind===`cancel`||e.kind===`close`)&&e.protocol===`ooxml-pull-v1`&&Number.isSafeInteger(e.requestId)&&e.requestId>0&&Number.isSafeInteger(e.generation)&&e.generation>0&&e.generation<this.options.generation}sameOperationIdentity(e){return e.sessionId===this.options.sessionId&&e.operationId===this.options.operationId}errorResponse(e,t){return{kind:`error`,protocol:E,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:t,usage:this.errorResourceUsage()}}async forceFatalCleanup(){this.cancelRequested=!0,this.unacked=void 0,this.coordinator.release(this.coordinatorOwner);let e;for(let t of[...this.leases.keys()])try{await this.release(t)}catch(t){e??=t}if(!this.driverCancelComplete)try{await this.options.driver.cancel?.(),this.driverCancelComplete=!0}catch(t){e??=t}if(e)throw e;this.unregisterCleanup()}allocateWireLeaseId(){if(!Number.isSafeInteger(this.nextWireLeaseId)||this.nextWireLeaseId<=0)throw RangeError(`wire lease id space exhausted`);return this.nextWireLeaseId++}arrayBufferTransferBytes(e){let t=0;for(let n of e??[])if(n instanceof ArrayBuffer&&(t+=n.byteLength,!Number.isSafeInteger(t)))throw RangeError(`ArrayBuffer transfer bytes overflow`);return t}maybeUnregisterCompleted(){this.completed&&this.leases.size===0&&this.unregisterCleanup()}resourceUsage(){return this.options.driver.resourceUsage?.()}errorResourceUsage(){try{return this.resourceUsage()}catch{return}}};const O=2**53-1-1;function k(e){return Object.freeze({maxRows:e.maxRows,maxCells:e.maxCells,maxOwnedUtf8Bytes:e.maxOwnedUtf8Bytes,maxJsonBytes:e.maxJsonBytes})}const A=Object.freeze({worksheet:k({maxRows:1e5,maxCells:25e4,maxOwnedUtf8Bytes:33554432,maxJsonBytes:67108864}),cache:k({maxRows:2e5,maxCells:5e5,maxOwnedUtf8Bytes:67108864,maxJsonBytes:134217728}),maxCoordinateIndexEntries:25e4});function j(e,t){let n=e[t];if(n===void 0)return A.worksheet[t];if(typeof n!=`number`)throw TypeError(`xlsxWorksheetLimits.${t} must be a number`);if(!Number.isSafeInteger(n)||n<=0||n>O)throw RangeError(`xlsxWorksheetLimits.${t} must be a positive safe integer no greater than ${O}`);return n}function Me(e={}){let t=e.xlsxWorksheetLimits,n={};if(t!==void 0){if(typeof t!=`object`||!t||Array.isArray(t))throw TypeError(`xlsxWorksheetLimits must be a non-null, non-array object`);n=t}let r=k({maxRows:j(n,`maxRows`),maxCells:j(n,`maxCells`),maxOwnedUtf8Bytes:j(n,`maxOwnedUtf8Bytes`),maxJsonBytes:j(n,`maxJsonBytes`)}),i=A,a=k({maxRows:Math.max(i.cache.maxRows,r.maxRows),maxCells:Math.max(i.cache.maxCells,r.maxCells),maxOwnedUtf8Bytes:Math.max(i.cache.maxOwnedUtf8Bytes,r.maxOwnedUtf8Bytes),maxJsonBytes:Math.max(i.cache.maxJsonBytes,r.maxJsonBytes)});return Object.freeze({worksheet:r,cache:a,maxCoordinateIndexEntries:Math.max(i.maxCoordinateIndexEntries,r.maxCells)})}function Ne(e){let{worksheet:t}=e;return[BigInt(t.maxRows),BigInt(t.maxCells),BigInt(t.maxOwnedUtf8Bytes),BigInt(t.maxJsonBytes)]}var M=class{__destroy_into_raw(){let e=this.__wbg_ptr;return this.__wbg_ptr=0,N.unregister(this),e}free(){let e=this.__destroy_into_raw();K.__wbg_xlsxarchive_free(e,0)}acknowledge_sheet_cursor_terminal(){let e=K.xlsxarchive_acknowledge_sheet_cursor_terminal(this.__wbg_ptr);if(e[1])throw V(e[0])}assert_healthy(){let e=K.xlsxarchive_assert_healthy(this.__wbg_ptr);if(e[1])throw V(e[0])}cancel_sheet_cursor(){K.xlsxarchive_cancel_sheet_cursor(this.__wbg_ptr)}close_sheet_cursor(){K.xlsxarchive_close_sheet_cursor(this.__wbg_ptr)}extract_image(e){let t=B(e,K.__wbindgen_malloc,K.__wbindgen_realloc),n=G,r=K.xlsxarchive_extract_image(this.__wbg_ptr,t,n);if(r[3])throw V(r[2]);var i=P(r[0],r[1]).slice();return K.__wbindgen_free(r[0],r[1]*1,1),i}constructor(e,t,n,r){let i=Ie(e,K.__wbindgen_malloc),a=G,o=K.xlsxarchive_new(i,a,!z(t),z(t)?BigInt(0):t,!z(n),z(n)?BigInt(0):n,!z(r),z(r)?BigInt(0):r);if(o[2])throw V(o[1]);return this.__wbg_ptr=o[0]>>>0,N.register(this,this.__wbg_ptr,this),this}open_sheet_cursor(e,t){let n=B(t,K.__wbindgen_malloc,K.__wbindgen_realloc),r=G,i=K.xlsxarchive_open_sheet_cursor(this.__wbg_ptr,e,n,r);if(i[1])throw V(i[0])}parse(){let e=K.xlsxarchive_parse(this.__wbg_ptr);if(e[3])throw V(e[2]);var t=P(e[0],e[1]).slice();return K.__wbindgen_free(e[0],e[1]*1,1),t}pull_sheet_cursor(e){let t=K.xlsxarchive_pull_sheet_cursor(this.__wbg_ptr,e);if(t[3])throw V(t[2]);var n=P(t[0],t[1]).slice();return K.__wbindgen_free(t[0],t[1]*1,1),n}resource_usage(){let e=K.xlsxarchive_resource_usage(this.__wbg_ptr);if(e[3])throw V(e[2]);var t=P(e[0],e[1]).slice();return K.__wbindgen_free(e[0],e[1]*1,1),t}set_worksheet_limits(e,t,n,r){let i=K.xlsxarchive_set_worksheet_limits(this.__wbg_ptr,e,t,n,r);if(i[1])throw V(i[0])}sheet_cursor_pull_finished(){return K.xlsxarchive_sheet_cursor_pull_finished(this.__wbg_ptr)!==0}sheet_cursor_resource_usage(){let e=K.xlsxarchive_sheet_cursor_resource_usage(this.__wbg_ptr);if(e[3])throw V(e[2]);var t=P(e[0],e[1]).slice();return K.__wbindgen_free(e[0],e[1]*1,1),t}to_markdown(){let e,t;try{let i=K.xlsxarchive_to_markdown(this.__wbg_ptr);var n=i[0],r=i[1];if(i[3])throw n=0,r=0,V(i[2]);return e=n,t=r,I(n,r)}finally{K.__wbindgen_free(e,t,1)}}};Symbol.dispose&&(M.prototype[Symbol.dispose]=M.prototype.free);function Pe(){return{__proto__:null,\"./xlsx_parser_bg.js\":{__proto__:null,__wbg___wbindgen_throw_6b64449b9b9ed33c:function(e,t){throw Error(I(e,t))},__wbg_error_a6fa202b58aa1cd3:function(e,t){let n,r;try{n=e,r=t,console.error(I(e,t))}finally{K.__wbindgen_free(n,r,1)}},__wbg_new_227d7c05414eb861:function(){return Error()},__wbg_stack_3b0d974bbf31e44f:function(e,t){let n=t.stack,r=B(n,K.__wbindgen_malloc,K.__wbindgen_realloc),i=G;Fe().setInt32(e+4,i,!0),Fe().setInt32(e+0,r,!0)},__wbindgen_cast_0000000000000001:function(e,t){return I(e,t)},__wbindgen_init_externref_table:function(){let e=K.__wbindgen_externrefs,t=e.grow(4);e.set(0,void 0),e.set(t+0,void 0),e.set(t+1,null),e.set(t+2,!0),e.set(t+3,!1)}}}}const N=typeof FinalizationRegistry>`u`?{register:()=>{},unregister:()=>{}}:new FinalizationRegistry(e=>K.__wbg_xlsxarchive_free(e>>>0,1));function P(e,t){return e>>>=0,R().subarray(e/1,e/1+t)}let F=null;function Fe(){return(F===null||F.buffer.detached===!0||F.buffer.detached===void 0&&F.buffer!==K.memory.buffer)&&(F=new DataView(K.memory.buffer)),F}function I(e,t){return e>>>=0,Le(e,t)}let L=null;function R(){return(L===null||L.byteLength===0)&&(L=new Uint8Array(K.memory.buffer)),L}function z(e){return e==null}function Ie(e,t){let n=t(e.length*1,1)>>>0;return R().set(e,n/1),G=e.length,n}function B(e,t,n){if(n===void 0){let n=W.encode(e),r=t(n.length,1)>>>0;return R().subarray(r,r+n.length).set(n),G=n.length,r}let r=e.length,i=t(r,1)>>>0,a=R(),o=0;for(;o<r;o++){let t=e.charCodeAt(o);if(t>127)break;a[i+o]=t}if(o!==r){o!==0&&(e=e.slice(o)),i=n(i,r,r=o+e.length*3,1)>>>0;let t=R().subarray(i+o,i+r),a=W.encodeInto(e,t);o+=a.written,i=n(i,r,o,1)>>>0}return G=o,i}function V(e){let t=K.__wbindgen_externrefs.get(e);return K.__externref_table_dealloc(e),t}let H=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0});H.decode();let U=0;function Le(e,t){return U+=t,U>=2146435072&&(H=new TextDecoder(`utf-8`,{ignoreBOM:!0,fatal:!0}),H.decode(),U=t),H.decode(R().subarray(e,e+t))}const W=new TextEncoder;`encodeInto`in W||(W.encodeInto=function(e,t){let n=W.encode(e);return t.set(n),{read:e.length,written:n.length}});let G=0,K;function Re(e,t){return K=e.exports,F=null,L=null,K.__wbindgen_start(),K}async function ze(e,t){if(typeof Response==`function`&&e instanceof Response){if(typeof WebAssembly.instantiateStreaming==`function`)try{return await WebAssembly.instantiateStreaming(e,t)}catch(t){if(e.ok&&n(e.type)&&e.headers.get(`Content-Type`)!==`application/wasm`)console.warn(\"`WebAssembly.instantiateStreaming` failed because your server does not serve Wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\\n\",t);else throw t}let r=await e.arrayBuffer();return await WebAssembly.instantiate(r,t)}else{let n=await WebAssembly.instantiate(e,t);return n instanceof WebAssembly.Instance?{instance:n,module:e}:n}function n(e){switch(e){case`basic`:case`cors`:case`default`:return!0}return!1}}async function Be(e){if(K!==void 0)return K;e!==void 0&&(Object.getPrototypeOf(e)===Object.prototype?{module_or_path:e}=e:console.warn(`using deprecated parameters for the initialization function; pass a single object instead`));let t=Pe();(typeof e==`string`||typeof Request==`function`&&e instanceof Request||typeof URL==`function`&&e instanceof URL)&&(e=fetch(e));let{instance:n,module:r}=await ze(await e,t);return Re(n,r)}async function Ve(e){return K=void 0,F=null,L=null,Be(e)}function He(e,t){return{workbook:e(),usage:g(t())}}function Ue(e,t){for(let n of e)for(let e of n.cells){let n=e.value;if(n.type===`shared`){let r=t[n.si];if(r){let t={type:`text`,text:r.text};r.runs!==void 0&&(t.runs=r.runs),r.phoneticRuns!==void 0&&(t.phoneticRuns=r.phoneticRuns),r.phoneticPr!==void 0&&(t.phoneticPr=r.phoneticPr),e.value=t}else e.value={type:`text`,text:``}}}return e}const We=new Set([`outline`,`merge`,`conditional-format`,`ancillary-content`,`metadata-unavailable`,`unordered-rows`]);function Ge(e,t,n,r){let i=e instanceof ArrayBuffer?new Uint8Array(e):new Uint8Array(e.buffer,e.byteOffset,e.byteLength),a=JSON.parse(new TextDecoder().decode(i));if(!a||typeof a!=`object`||!(`kind`in a))throw Error(`worksheet cursor returned an invalid unit`);let o=a;if(t!==(o.kind===`finished`))throw Error(`worksheet cursor terminal marker mismatch`);if(o.kind===`rows`){if(!Array.isArray(o.rows))throw Error(`worksheet row unit is missing rows`);return n&&Ue(o.rows,n),r?.(o.rows),{kind:`rows`,rows:o.rows}}if(o.kind===`preview`){if(!Number.isSafeInteger(o.maxRow)||!Number.isSafeInteger(o.maxCol)||o.maxRow<0||o.maxCol<0||o.worksheet===null==(o.reason===null)||o.worksheet!==null&&(typeof o.worksheet!=`object`||Array.isArray(o.worksheet))||o.reason!==null&&!We.has(o.reason))throw Error(`worksheet preview unit is invalid`);return o.worksheet&&(o.worksheet.rows=[]),o}if(o.kind===`finished`){if(!o.worksheet||typeof o.worksheet!=`object`)throw Error(`worksheet terminal unit is missing its worksheet`);return o.worksheet.rows=[],{kind:`finished`,worksheet:o.worksheet}}throw Error(`worksheet cursor returned an unknown unit kind`)}const Ke=new WeakMap;function qe(e,t){Ke.set(e,t)}function q(e,t){if(!Number.isSafeInteger(e)||e<0)throw Error(`${t} must be a non-negative safe integer`)}function J(e,t,n){return q(e,`resource measurement`),q(t,`resource measurement`),q(n,`resource measurement limit`),e>n||t>n||t>n-e?n===2**53-1?n:n+1:e+t}function Je(e,t=2**53-1){q(t,`resource measurement limit`);let n=0;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=3}else a=3;if(n=J(n,a,t),n>t)return n}return n}function Ye(e,t=2**53-1){q(t,`resource measurement limit`);let n=J(0,2,t);if(n>t)return n;for(let r=0;r<e.length;r+=1){let i=e.charCodeAt(r),a;if(i===34||i===92||i===8||i===9||i===10||i===12||i===13)a=2;else if(i<=31)a=6;else if(i<=127)a=1;else if(i<=2047)a=2;else if(i>=55296&&i<=56319&&r+1<e.length){let t=e.charCodeAt(r+1);t>=56320&&t<=57343?(a=4,r+=1):a=6}else a=i>=55296&&i<=57343?6:3;if(n=J(n,a,t),n>t)return n}return n}function Y(e,t){return J(0,e,t)}function X(e,t=2**53-1,n=!1){if(q(t,`resource measurement limit`),e===null)return{jsonBytes:Y(4,t),stringValueUtf8Bytes:0};if(typeof e==`string`)return{jsonBytes:Ye(e,t),stringValueUtf8Bytes:Je(e,t)};if(typeof e==`boolean`)return{jsonBytes:Y(e?4:5,t),stringValueUtf8Bytes:0};if(typeof e==`number`)return{jsonBytes:Y((Number.isFinite(e)?String(Object.is(e,-0)?0:e):`null`).length,t),stringValueUtf8Bytes:0};if(typeof e==`bigint`)throw TypeError(`BigInt values cannot be serialized to JSON`);if(Array.isArray(e)){let n=Y(2,t),r=0;for(let i=0;i<e.length;i+=1){i!==0&&(n=J(n,1,t));let a=X(e[i],t,!0);n=J(n,a.jsonBytes,t),r=J(r,a.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}if(typeof e==`object`){let n=Y(2,t),r=0,i=0;for(let[a,o]of Object.entries(e)){if(o===void 0||typeof o==`function`||typeof o==`symbol`)continue;i++!==0&&(n=J(n,1,t)),n=J(n,Ye(a,t),t),n=J(n,1,t);let e=X(o,t);n=J(n,e.jsonBytes,t),r=J(r,e.stringValueUtf8Bytes,t)}return{jsonBytes:n,stringValueUtf8Bytes:r}}return{jsonBytes:n?Y(4,t):0,stringValueUtf8Bytes:0}}i();const Xe=Object.freeze({archiveEntryCount:0,declaredInflatedBytes:0,distinctInflatedBytes:0,operationInflatedBytes:0});function Ze(e,t=A){let{maxCells:n,maxOwnedUtf8Bytes:r}=t.worksheet,i=e.reduce((e,t)=>J(e,t.cells.length,n),0);return{rows:e.length,cells:i,ownedUtf8Bytes:e.reduce((e,t)=>t.cells.reduce((e,t)=>{let n=X(t.value,r).stringValueUtf8Bytes;return J(e,J(n,t.formula===void 0?0:Je(t.formula,r),r),r)},e),0)}}function Qe(e,t,n=A){let r=X(e,n.worksheet.maxJsonBytes);return{...t,jsonBytes:r.jsonBytes}}function $e(e,t,n=A){let r=n.worksheet;return{rows:J(e.rows,t.rows,r.maxRows),cells:J(e.cells,t.cells,r.maxCells),ownedUtf8Bytes:J(e.ownedUtf8Bytes,t.ownedUtf8Bytes,r.maxOwnedUtf8Bytes)}}function et(e,t,n,i,a,o,s,c=n!==`delimited-text-source`){let l=n===`worksheet-json`?`serialization`:`parsing`;return new r(x({stage:l,violation:{part:t,resource:n,metric:i,observed:o,limit:a}}),{stage:l,violation:{format:`xlsx`,operation:e,resource:n,metric:i,...t===void 0?{}:{part:t},limit:a,observed:Math.min(o,a+1),configurable:c,usage:s??Xe}})}function tt(e,t,n,r,i=A){let a=i.worksheet,o=[[`rows`,e.rows,a.maxRows],[`cells`,e.cells,a.maxCells],[`owned-utf8-bytes`,e.ownedUtf8Bytes,a.maxOwnedUtf8Bytes]];for(let[e,i,a]of o)if(i>a)throw et(t,n,e===`owned-utf8-bytes`?`worksheet-cell-content`:`worksheet-model`,e,a,i,r)}function nt(e,t,n,r,i=A){let a=i.worksheet.maxJsonBytes;if(e>a)throw et(t,n,`worksheet-json`,`bytes`,a,e,r)}i();var rt=class{archive;acceptWorksheet;executeArchive;prepareRows;provisional;worksheetPolicy;coordinator=new Ae;sessions=new Map;operationTail=Promise.resolve();pendingOpens=new Map;resourceFailure;constructor(e,t,n=e=>e(this.requireArchive()),r,i,a=()=>A){this.archive=e,this.acceptWorksheet=t,this.executeArchive=n,this.prepareRows=r,this.provisional=i,this.worksheetPolicy=a}reserveOpen(e){this.pendingOpens.set(e.sessionId,{identity:e,canceled:!1})}abandonOpen(e){this.pendingOpens.delete(e)}get pendingOpenCount(){return this.pendingOpens.size}runDuringPull(e){return this.sessions.size===0?this.run(e):this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;try{return e()}catch(e){throw e instanceof r&&(this.resourceFailure??=e),e}})}async open(e,t,n){if(this.resourceFailure)throw this.resourceFailure;let i=this.pendingOpens.get(n.sessionId);if(!i||i.identity.operationId!==n.operationId||i.identity.generation!==n.generation)throw Error(`worksheet pull session open reservation is stale or missing`);let a=this.worksheetPolicy(),o,s=new Promise(e=>{o=e}),c=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(i.canceled)throw Error(`worksheet pull session open was canceled`);this.executeArchive(n=>n.open_sheet_cursor(e,t));let s=[],c={rows:0,cells:0,ownedUtf8Bytes:0},l,u=!1,d=new je({...n,maxByteCredit:67108864,coordinator:this.coordinator,driver:{pull:()=>{let t=this.executeArchive(e=>e.pull_sheet_cursor(128)),n=this.executeArchive(e=>e.sheet_cursor_pull_finished());if(this.acceptWorksheet){let i=Ge(t,n,void 0,this.prepareRows);try{if(i.kind===`preview`)i.worksheet&&(i.worksheet.rows=s,qe(i.worksheet,a),this.provisional?.preview(e,i.worksheet));else if(i.kind===`rows`){let e=$e(c,Ze(i.rows,a),a);tt(e,`get-worksheet-worker`,void 0,this.readResourceUsage(),a),s.push(...i.rows),c=e}else i.kind===`finished`&&(l=i.worksheet)}catch(e){throw e instanceof r&&(this.resourceFailure??=e),e}}u=n;let i=De(t);return{payload:i,byteLength:i.byteLength,done:n,transfer:[i]}},measureChunk:({payload:e})=>e.byteLength,acknowledge:()=>{if(!u)return;let t,i;try{if(this.acceptWorksheet){if(!l)throw Error(`worksheet terminal payload is missing`);l.rows=l.parseError?[]:s;let n=l.parseError?{rows:0,cells:0,ownedUtf8Bytes:0}:c,r=Qe(l,n,a),o=this.readResourceUsage();tt(r,`get-worksheet-worker`,void 0,o,a),nt(r.jsonBytes,`get-worksheet-worker`,void 0,o,a),qe(l,a);let u=this.acceptWorksheet(e,l,r,o);typeof u==`function`?t=u:u&&({rollback:t,commit:i}=u)}this.executeArchive(e=>e.acknowledge_sheet_cursor_terminal()),i?.()}catch(e){throw t?.(),e instanceof r&&(this.resourceFailure??=e),e}u=!1,this.sessions.delete(n.sessionId),this.provisional?.stop(e),o()},cancel:()=>{try{this.archive()&&this.executeArchive(e=>e.cancel_sheet_cursor())}finally{this.sessions.delete(n.sessionId),this.provisional?.stop(e),o()}},close:()=>{try{this.archive()&&this.executeArchive(e=>e.close_sheet_cursor())}finally{this.sessions.delete(n.sessionId),this.provisional?.stop(e),o()}},resourceUsage:()=>this.readResourceUsage()}});this.sessions.set(n.sessionId,{host:d,identity:n}),this.pendingOpens.delete(n.sessionId)}));this.operationTail=c.then(()=>s,()=>void 0);try{await c}catch(e){throw this.pendingOpens.delete(n.sessionId),o(),e}}async postOpenedSafely(e,t,n){try{t()}catch(t){await this.closeIdentity(e);try{n(t)}catch{}}}dispatch(e,t){let n=this.sessions.get(e.sessionId);if(n)return n.host.dispatch(e,t);let r=this.pendingOpens.get(e.sessionId);if(r&&(e.kind===`cancel`||e.kind===`close`)){let n=r.identity.operationId===e.operationId&&r.identity.generation===e.generation;return n&&(r.canceled=!0),t(n?{protocol:E,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}:{protocol:E,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:{message:`stale lifecycle targets another pending worksheet operation`,errorName:`PullSessionProtocolError`,code:`ooxml-stale-lifecycle`}}),Promise.resolve()}return e.kind===`cancel`||e.kind===`close`?(t({protocol:E,kind:`accepted`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,command:e.kind}),Promise.resolve()):(t({protocol:E,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:w(Error(`worksheet pull session is not open`))}),Promise.resolve())}async dispatchSafely(e,t){try{await this.dispatch(e,t)}catch(n){try{t({protocol:E,kind:`error`,sessionId:e.sessionId,operationId:e.operationId,generation:e.generation,requestId:e.requestId,error:w(n)})}catch{}}}run(e){let t=this.operationTail.then(()=>this.coordinator.enqueue(async()=>{if(this.resourceFailure)throw this.resourceFailure;return e()})).catch(e=>{throw e instanceof r&&(this.resourceFailure??=e),e});return this.operationTail=t.then(()=>void 0,()=>void 0),t}async reset(){for(let e of this.pendingOpens.values())e.canceled=!0;let e=1;for(let{host:t,identity:n}of[...this.sessions.values()])await t.dispatch({protocol:E,kind:`close`,...n,requestId:e++},()=>void 0);this.sessions.clear(),await this.operationTail,this.pendingOpens.clear(),this.resourceFailure=void 0}requireArchive(){let e=this.archive();if(!e)throw Error(`Workbook not loaded`);return e}async closeIdentity(e){let t=this.sessions.get(e.sessionId);if(t){await t.host.dispatch({protocol:E,kind:`close`,...e,requestId:1},()=>void 0);return}let n=this.pendingOpens.get(e.sessionId);n&&n.identity.operationId===e.operationId&&n.identity.generation===e.generation&&(n.canceled=!0)}readResourceUsage(){return g(this.executeArchive(e=>e.sheet_cursor_resource_usage()))}};function it(e){return!!e&&typeof e==`object`&&e.protocol===`ooxml-pull-v1`}const Z=new Te(Be,{freeArchive:e=>e.free(),reinit:Ve});let Q=A;const $=new rt(()=>Z.archive,void 0,e=>{let t=Z.archive;if(!t)throw Error(`Workbook not loaded`);return Z.run(()=>e(t))},void 0,void 0,()=>Q);self.onmessage=async e=>{let n=e.data;if(it(n)){await $.dispatchSafely(n,(e,t)=>self.postMessage(e,t));return}if(n.type===`init`){Z.setWasmInput(t(n.wasmUrl)??n.wasmUrl);return}let r=n.id;n.type===`openSheetSession`&&$.reserveOpen(n);try{let e=n.type===`parse`?Me({xlsxWorksheetLimits:n.worksheetPolicy?.worksheet}):void 0;if(n.type===`openSheetSession`){await Z.ensureReady(),Z.archive&&Z.run(()=>Z.archive?.assert_healthy()),await $.open(n.sheetIndex,n.sheetName,n),await $.postOpenedSafely(n,()=>self.postMessage({type:`sheetSessionOpened`,id:r,sessionId:n.sessionId,operationId:n.operationId,generation:n.generation}),e=>self.postMessage({type:`error`,id:r,...w(e)}));return}n.type===`parse`&&await $.reset(),await(n.type===`extractImage`?$.runDuringPull:$.run).call($,async()=>{if(await Z.ensureReady(),n.type!==`parse`&&Z.archive){let e=Z.archive;Z.run(()=>e.assert_healthy())}if(n.type===`parse`){let[t,i,a]=Oe(n.resourcePolicy),o=new Uint8Array(n.data);Q=e??A;let s=Ne(Q),{workbook:c,usage:l}=He(()=>Z.run(()=>{let e=new M(o,t,i,a);return Z.setArchive(e),e.set_worksheet_limits(...s),e.parse()}),()=>Z.run(()=>Z.archive.resource_usage())),u=c.buffer,d={type:`parsed`,id:r,workbookJson:u,usage:l};self.postMessage(d,[u]);return}let t=Z.archive;if(n.type===`extractImage`){if(!t)throw Error(`No xlsx loaded`);let e=Z.run(()=>t.extract_image(n.path).buffer),i={type:`imageExtracted`,id:r,bytes:e};self.postMessage(i,[e]);return}if(n.type===`resourceUsage`){if(!t)throw Error(`No xlsx loaded`);let e=Z.run(()=>g(t.resource_usage()));self.postMessage({type:`resourceUsage`,id:r,usage:e});return}if(n.type===`toMarkdown`){if(!t)throw Error(`No xlsx loaded`);let e={type:`markdownRendered`,id:r,markdown:Z.run(()=>t.to_markdown())};self.postMessage(e);return}})}catch(e){n.type===`openSheetSession`&&$.abandonOpen(n.sessionId);let t={type:`error`,id:r,...w(e)};try{self.postMessage(t)}catch{}}};", Jt = typeof self < "u" && self.Blob && new Blob(["URL.revokeObjectURL(import.meta.url);", qt], { type: "text/javascript;charset=utf-8" });
+function Yt(e) {
 	let t;
 	try {
-		if (t = Xt && (self.URL || self.webkitURL).createObjectURL(Xt), !t) throw "";
+		if (t = Jt && (self.URL || self.webkitURL).createObjectURL(Jt), !t) throw "";
 		let n = new Worker(t, {
 			type: "module",
 			name: e?.name
@@ -24,27 +24,27 @@ function Zt(e) {
 			(self.URL || self.webkitURL).revokeObjectURL(t);
 		}), n;
 	} catch {
-		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(Yt), {
+		return new Worker("data:text/javascript;charset=utf-8," + encodeURIComponent(qt), {
 			type: "module",
 			name: e?.name
 		});
 	}
 }
-var Qt = new URL("xlsx_parser_bg.wasm", import.meta.url).href;
-function $t(e, t) {
+var Xt = new URL("xlsx_parser_bg.wasm", import.meta.url).href;
+function Zt(e, t) {
 	return !Number.isInteger(t) || t < 0 || t >= e.length ? "visible" : e[t].visibility ?? "visible";
 }
-var en = Symbol("xlsx-render-commit-guard");
-function tn(e, t) {
+var Qt = Symbol("xlsx-render-commit-guard");
+function $t(e, t) {
 	return {
 		...e,
-		[en]: t
+		[Qt]: t
 	};
 }
-function K(e, t) {
+function en(e, t) {
 	return e === void 0 ? t : t === void 0 ? e : Math.max(e, t);
 }
-function nn(e, t) {
+function tn(e, t) {
 	if (!e && !t) return null;
 	let n = e ? 1 - e.l - e.r : 1, r = (t ? 1 - t.l - t.r : 1) < n ? t : e, i = e ? 1 - e.t - e.b : 1, a = (t ? 1 - t.t - t.b : 1) < i ? t : e;
 	return {
@@ -54,27 +54,27 @@ function nn(e, t) {
 		b: a?.b ?? 0
 	};
 }
-function rn(e, t) {
+function nn(e, t) {
 	return e ? t ? e === t ? e : void 0 : e : t;
 }
-function an(e, t) {
+function rn(e, t) {
 	return {
 		...e,
-		svgImagePath: rn(e.svgImagePath, t.svgImagePath),
-		widthPt: K(e.widthPt, t.widthPt),
-		heightPt: K(e.heightPt, t.heightPt),
-		srcRect: nn(e.srcRect, t.srcRect),
+		svgImagePath: nn(e.svgImagePath, t.svgImagePath),
+		widthPt: en(e.widthPt, t.widthPt),
+		heightPt: en(e.heightPt, t.heightPt),
+		srcRect: tn(e.srcRect, t.srcRect),
 		failClosedOnDuotoneFailure: e.failClosedOnDuotoneFailure || t.failClosedOnDuotoneFailure || void 0,
-		targetWidthPx: K(e.targetWidthPx, t.targetWidthPx),
-		targetHeightPx: K(e.targetHeightPx, t.targetHeightPx)
+		targetWidthPx: en(e.targetWidthPx, t.targetWidthPx),
+		targetHeightPx: en(e.targetHeightPx, t.targetHeightPx)
 	};
 }
-function on(e, t, n) {
+function an(e, t, n) {
 	let r = e.get(t);
-	e.set(t, r ? an(r, n) : n);
+	e.set(t, r ? rn(r, n) : n);
 }
-function q(e, t, n, r) {
-	let { col: i, row: a } = (n ?? V(t)).axesAtScale(r), o = Le(t, e, i, a, r);
+function on(e, t, n, r) {
+	let { col: i, row: a } = (n ?? H(t)).axesAtScale(r), o = Ie(t, e, i, a, r);
 	return o.width > 0 && o.height > 0 ? {
 		width: o.width,
 		height: o.height
@@ -86,7 +86,7 @@ var sn = {
 };
 function cn(e, t, n, r, i) {
 	if (!e?.length) return sn;
-	let a = ne(e, t, n);
+	let a = re(e, t, n);
 	return a === null ? null : a.x === 0 && a.y === 0 ? sn : r > 0 && i > 0 ? {
 		x: a.x / r,
 		y: a.y / i
@@ -99,10 +99,10 @@ function ln(e, t) {
 	};
 }
 function un(e, t, n, r, i, a = sn) {
-	if (!n || a === null) return e.anchorTag === void 0 || q(e, t, r, i?.scale ?? 1) !== null;
-	let o = r ?? V(t), s = i?.scale ?? 1, { col: c, row: l } = o.axesAtScale(s), u = Le(t, e, c, l, s);
+	if (!n || a === null) return e.anchorTag === void 0 || on(e, t, r, i?.scale ?? 1) !== null;
+	let o = r ?? H(t), s = i?.scale ?? 1, { col: c, row: l } = o.axesAtScale(s), u = Ie(t, e, c, l, s);
 	if (u.width <= 0 || u.height <= 0) return !1;
-	let d = u.width * a.x, f = u.height * a.y, p = ze({
+	let d = u.width * a.x, f = u.height * a.y, p = Re({
 		x: u.x - d,
 		y: u.y - f,
 		width: u.width + 2 * d,
@@ -136,36 +136,36 @@ async function dn(e, t, r, i, a = 0, o = 0, s = null, c = null, l, u = !1, d, f,
 		offscreenFactory: l,
 		failClosedOnDuotoneFailure: u,
 		tiff: d,
-		svgDecoder: p ?? (typeof Image < "u" ? P : void 0),
+		svgDecoder: p ?? (typeof Image < "u" ? A : void 0),
 		...f ?? {},
 		...m ? { maxRetainedPixels: m } : {}
 	}), b = {
 		svgImagePath: r,
 		srcRect: s
 	};
-	if (!c && N(b)) try {
-		return await j(b.svgImagePath, i, {
+	if (!c && P(b)) try {
+		return await I(b.svgImagePath, i, {
 			...f,
 			maxRetainedPixels: m,
 			workerDecoder: p
 		});
 	} catch (t) {
-		if (t instanceof _ || L(t)) throw t;
-		return h ? j(e, i, {
+		if (t instanceof _ || R(t)) throw t;
+		return h ? I(e, i, {
 			...f,
 			maxRetainedPixels: m,
 			workerDecoder: p
 		}) : y();
 	}
-	return h && c ? y() : h ? j(e, i, {
+	return h && c ? y() : h ? I(e, i, {
 		...f,
 		maxRetainedPixels: m,
 		workerDecoder: p
 	}) : y();
 }
 async function fn(e, n, i, g) {
-	if (n.clear(), gt(n), !i) return;
-	let v = i, y = /* @__PURE__ */ new Map(), b = g?.viewport ? V(e) : void 0, x = g?.viewport && g.width !== void 0 && g.height !== void 0 ? {
+	if (n.clear(), ht(n), !i) return;
+	let v = i, y = /* @__PURE__ */ new Map(), b = g?.viewport ? H(e) : void 0, x = g?.viewport && g.width !== void 0 && g.height !== void 0 ? {
 		width: g.width,
 		height: g.height,
 		scale: g.cellScale ?? 1,
@@ -173,9 +173,9 @@ async function fn(e, n, i, g) {
 		freezeCols: g.freezeCols ?? e.freezeCols ?? 0
 	} : void 0;
 	if (e.images) for (let n of e.images) {
-		if (!un(n, e, g?.viewport, b, x, ((e) => cn(n.blipEffects, e.cx, e.cy, e.cx, e.cy))(mt(n)))) continue;
-		let i = q(n, e, b, g?.cellScale ?? 1), a = mt(n), o = tt(n, a), s = n.blipEffects?.length ? it(a) : null;
-		on(y, et(n.imagePath, o, a), {
+		if (!un(n, e, g?.viewport, b, x, ((e) => cn(n.blipEffects, e.cx, e.cy, e.cx, e.cy))(pt(n)))) continue;
+		let i = on(n, e, b, g?.cellScale ?? 1), a = pt(n), o = et(n, a), s = n.blipEffects?.length ? rt(a) : null;
+		an(y, $e(n.imagePath, o, a), {
 			imagePath: n.imagePath,
 			mimeType: n.mimeType,
 			svgImagePath: n.svgImagePath,
@@ -195,8 +195,8 @@ async function fn(e, n, i, g) {
 	if (e.shapeGroups) {
 		for (let n of e.shapeGroups) if (un(n, e, g?.viewport, b, x, n.shapes.reduce((e, t) => t.geom?.type === "image" ? ln(e, cn(t.geom.blipEffects, n.nativeExtCx * t.w, n.nativeExtCy * t.h, n.nativeExtCx, n.nativeExtCy)) : e, sn))) {
 			for (let i of n.shapes) if (i.geom.type === "image") {
-				let a = q(n, e, b, g?.cellScale ?? 1), o = $e(n, i), s = tt(i.geom, o), c = i.geom.blipEffects?.length ? it(o) : null;
-				on(y, et(i.geom.imagePath, s, o), {
+				let a = on(n, e, b, g?.cellScale ?? 1), o = Qe(n, i), s = et(i.geom, o), c = i.geom.blipEffects?.length ? rt(o) : null;
+				an(y, $e(i.geom.imagePath, s, o), {
 					imagePath: i.geom.imagePath,
 					mimeType: i.geom.mimeType,
 					svgImagePath: i.geom.svgImagePath,
@@ -215,10 +215,10 @@ async function fn(e, n, i, g) {
 			}
 		}
 	}
-	let S = e.charts ?? [], C = S.length > 0 ? b ?? V(e) : b, w = [];
+	let S = e.charts ?? [], C = S.length > 0 ? b ?? H(e) : b, w = [];
 	for (let n of S) {
 		if (!un(n, e, g?.viewport, C, x)) continue;
-		let r = q(n, e, C, g?.cellScale ?? 1);
+		let r = on(n, e, C, g?.cellScale ?? 1);
 		if (!r || !Number.isFinite(r.width) || !Number.isFinite(r.height) || r.width <= 0 || r.height <= 0) continue;
 		let i = d(n.chart), a = {
 			widthPt: r.width * (t / u),
@@ -260,7 +260,7 @@ async function fn(e, n, i, g) {
 	}
 	let D = new Set(T.map(({ fill: e }) => a(e))), O = (e) => {
 		let t = [], n = g?.cellScale ?? 1;
-		for (let r of w) for (let { fill: i, occurrence: o } of pe(r.chart.chart, {
+		for (let r of w) for (let { fill: i, occurrence: o } of fe(r.chart.chart, {
 			x: 0,
 			y: 0,
 			w: r.displayWidth / n,
@@ -277,7 +277,7 @@ async function fn(e, n, i, g) {
 				renderedSize: o
 			}), t.push(e));
 		}
-		return me(E.size), t;
+		return pe(E.size), t;
 	};
 	O();
 	for (let e of w) for (let { usage: t, size: n } of e.usages) {
@@ -298,7 +298,7 @@ async function fn(e, n, i, g) {
 	}
 	let k = (e, t) => {
 		let { fill: n, widthPt: r, heightPt: i, targetWidthPx: a, targetHeightPx: s, hasSourceCrop: c, renderedSize: l } = t;
-		on(y, e, {
+		an(y, e, {
 			imagePath: n.imagePath,
 			mimeType: n.mimeType,
 			svgImagePath: n.svgImagePath,
@@ -320,22 +320,22 @@ async function fn(e, n, i, g) {
 	};
 	for (let [e, t] of E) k(e, t);
 	if (y.size === 0) return;
-	let A = se(g?.imageResources), j = ce((await Promise.all([...y].map(async ([e, t]) => {
-		if (!t.targetWidthPx || !t.targetHeightPx || t.mimeType === "image/svg+xml" || t.duotone || !t.duotone && N({
+	let A = oe(g?.imageResources), te = se((await Promise.all([...y].map(async ([e, t]) => {
+		if (!t.targetWidthPx || !t.targetHeightPx || t.mimeType === "image/svg+xml" || t.duotone || !t.duotone && P({
 			svgImagePath: t.svgImagePath,
 			srcRect: t.srcRect
 		})) return null;
-		if (ue(t.mimeType) && (A.resolution === "display" || A.strategy === "adaptive")) return {
+		if (le(t.mimeType) && (A.resolution === "display" || A.strategy === "adaptive")) return {
 			key: e,
 			targetWidthPx: t.targetWidthPx,
 			targetHeightPx: t.targetHeightPx,
 			retainedSurfaceCount: 1
 		};
-		let n = await te(t.imagePath, t.mimeType, v).catch((e) => {
-			if (e instanceof _ || L(e)) throw e;
+		let n = await ee(t.imagePath, t.mimeType, v).catch((e) => {
+			if (e instanceof _ || R(e)) throw e;
 			return null;
 		});
-		return !n?.dimensions || !de(n.format, g?.tiff !== void 0) ? null : {
+		return !n?.dimensions || !ue(n.format, g?.tiff !== void 0) ? null : {
 			key: e,
 			targetWidthPx: t.targetWidthPx,
 			targetHeightPx: t.targetHeightPx,
@@ -345,14 +345,14 @@ async function fn(e, n, i, g) {
 		};
 	}))).filter((e) => e !== null), A);
 	for (let [e, t] of y) {
-		if (t.mimeType === "image/svg+xml" || !t.duotone && N({
+		if (t.mimeType === "image/svg+xml" || !t.duotone && P({
 			svgImagePath: t.svgImagePath,
 			srcRect: t.srcRect
 		})) continue;
-		let n = j.targets.get(e);
+		let n = te.targets.get(e);
 		t.targetWidthPx = n?.width, t.targetHeightPx = n?.height, t.plannedPixelLimit = n?.maxRetainedPixels;
 	}
-	let M = async ([e, t]) => {
+	let j = async ([e, t]) => {
 		try {
 			let r = await dn(t.imagePath, t.mimeType, t.svgImagePath, v, t.widthPt, t.heightPt, t.srcRect, t.duotone, g?.offscreenFactory, t.failClosedOnDuotoneFailure ?? !1, g?.tiff, t.targetWidthPx && t.targetHeightPx ? {
 				targetWidthPx: t.targetWidthPx,
@@ -360,46 +360,46 @@ async function fn(e, n, i, g) {
 			} : void 0, g?.svgDecoder, t.plannedPixelLimit);
 			n.set(e, r);
 		} catch (t) {
-			if (fe(t, "tiff") || he(t)) {
-				n.set(e, null), Ze(n, e, "tiff");
+			if (de(t, "tiff") || me(t)) {
+				n.set(e, null), Xe(n, e, "tiff");
 				return;
 			}
-			if (t instanceof _ || L(t) || t instanceof h && t.code === "unsupported-image-effect") throw t;
+			if (t instanceof _ || R(t) || t instanceof h && t.code === "unsupported-image-effect") throw t;
 			n.delete(e);
 		}
 	};
-	for (await Promise.all([...y.entries()].map(M));;) {
+	for (await Promise.all([...y.entries()].map(j));;) {
 		let e = O(m(n, void 0, !1));
 		if (e.length === 0) break;
 		for (let t of e) k(t, E.get(t));
-		await Promise.all(e.map((e) => M([e, y.get(e)])));
+		await Promise.all(e.map((e) => j([e, y.get(e)])));
 	}
 }
 var pn = /* @__PURE__ */ new WeakMap();
 function mn(e, t, n, r) {
-	if (st(t)) return t;
-	let i = V(t), a = pn.get(t);
-	if (a && a.sourceGeometry === i && xt(a.projection) === xt(t)) return a.projection;
+	if (ot(t)) return t;
+	let i = H(t), a = pn.get(t);
+	if (a && a.sourceGeometry === i && bt(a.projection) === bt(t)) return a.projection;
 	let o = {
 		...t,
 		rowHeights: { ...t.rowHeights }
 	};
-	Kt(t, o), dt(t, o);
+	Wt(t, o), ut(t, o);
 	let s = i.maximumDigitWidth;
-	return G.forWorksheet(o, s), pt(e, o, n, r), G.forWorksheet(o, s), pn.set(t, {
+	return q.forWorksheet(o, s), ft(e, o, n, r), q.forWorksheet(o, s), pn.set(t, {
 		projection: o,
 		sourceGeometry: i
 	}), o;
 }
 async function hn(e, t, n, r = {}, i) {
 	let a = () => gn(e, t, n, r, i), o = !e.ws.isDialogSheet && ((e.ws.images?.length ?? 0) > 0 || (e.ws.shapeGroups?.some((e) => e.shapes.some((e) => e.geom.type === "image")) ?? !1) || c((e.ws.charts ?? []).map((e) => e.chart)).length > 0);
-	return r.fetchImage && o ? A(r.fetchImage, r.imageResources, a) : a();
+	return r.fetchImage && o ? te(r.fetchImage, r.imageResources, a) : a();
 }
 async function gn(e, t, n, r = {}, a) {
-	if (r[en]?.() === !1) return;
+	if (r[Qt]?.() === !1) return;
 	let o = e.styles, s = t.getContext("2d");
 	if (!s) throw Error("XLSX render target does not provide a 2-D canvas context");
-	lt(s, e.ws, r.officeFontRoutes, r.googleSubstitutes === !0), nt(e.ws, r.authoritativeMdw);
+	ct(s, e.ws, r.officeFontRoutes, r.googleSubstitutes === !0), tt(e.ws, r.authoritativeMdw);
 	let c = e.ws.isDialogSheet ? e.ws : mn(s, e.ws, o, e.cjkFallback), l = E(t) ? t.clientWidth || 800 : t.width, u = E(t) ? t.clientHeight || 600 : t.height, d = r.width ?? l, f = r.height ?? u, p = r.dpr ?? O(), m = i(d * p, f * p), h = m.clamped ? p * m.scale : p, g = /* @__PURE__ */ new Map();
 	if (c.isDialogSheet || await fn(c, g, r.fetchImage, {
 		viewport: n,
@@ -415,7 +415,7 @@ async function gn(e, t, n, r = {}, a) {
 		threeD: e.threeD,
 		regionMap: e.regionMap,
 		chartEx: e.chartEx
-	}), !c.isDialogSheet && e.math && _t(c) && await Qe(c, e.math), r[en]?.() === !1) return;
+	}), !c.isDialogSheet && e.math && gt(c) && await Ze(c, e.math), r[Qt]?.() === !1) return;
 	let _ = m.width, v = m.height;
 	if (t.width !== _ && (t.width = _), t.height !== v && (t.height = v), E(t)) {
 		let e = `${d}px`, n = `${f}px`;
@@ -430,7 +430,7 @@ async function gn(e, t, n, r = {}, a) {
 		_n(y, d, f);
 		return;
 	}
-	ht(y, c, o, n, {
+	mt(y, c, o, n, {
 		...r,
 		dpr: h,
 		loadedImages: g,
@@ -477,9 +477,9 @@ function yn(e) {
 		let e = t.slice(0, i);
 		e.startsWith("'") && e.endsWith("'") && e.length >= 2 && (e = e.slice(1, -1).replace(/''/g, "'")), n = e, r = t.slice(i + 1);
 	}
-	let [a, o] = r.split(":"), s = R(a ?? "");
+	let [a, o] = r.split(":"), s = z(a ?? "");
 	if (s) {
-		let e = o ? R(o) : s;
+		let e = o ? z(o) : s;
 		if (e) {
 			let t = {
 				row: Math.min(s.row, e.row),
@@ -540,15 +540,15 @@ function Sn(e, t) {
 function Cn(e, t) {
 	if (!t) return;
 	let n = !1;
-	if (t.rowHeightRanges && (Jt(e, t.rowHeightRanges), n = !0), t.rows && (n = Sn(e.rowHeights, t.rows) || n), t.cols && (n = Sn(e.colWidths, t.cols) || n), t.columnCssWidths) for (let [r, i] of Object.entries(t.columnCssWidths)) H(e, Number(r), i) && (n = !0);
-	n && G.invalidate(e);
+	if (t.rowHeightRanges && (Kt(e, t.rowHeightRanges), n = !0), t.rows && (n = Sn(e.rowHeights, t.rows) || n), t.cols && (n = Sn(e.colWidths, t.cols) || n), t.columnCssWidths) for (let [r, i] of Object.entries(t.columnCssWidths)) W(e, Number(r), i) && (n = !0);
+	n && q.invalidate(e);
 }
 function wn(e, t) {
 	return t ? Tn(e, t) : e;
 }
 function Tn(e, t) {
 	let n = { ...e };
-	return t && (n.rowHeights = { ...e.rowHeights }, n.colWidths = { ...e.colWidths }), z(e, n), Lt(e, n), Kt(e, n), Cn(n, t), n;
+	return t && (n.rowHeights = { ...e.rowHeights }, n.colWidths = { ...e.colWidths }), B(e, n), Ft(e, n), Wt(e, n), Cn(n, t), n;
 }
 var En = Symbol("xlsx-viewer-render-context");
 function Dn(e, t, n) {
@@ -571,9 +571,9 @@ function On(e) {
 		projection: t.projection
 	} : { opts: n };
 }
-var kn = "load-delimited-text", J = Mt;
+var kn = "load-delimited-text", J = At;
 function An(e) {
-	if (e > J) throw Ot(kn, void 0, "delimited-text-source", "bytes", J, e);
+	if (e > J) throw Et(kn, void 0, "delimited-text-source", "bytes", J, e);
 }
 Object.freeze({
 	fonts: [Object.freeze({
@@ -723,15 +723,15 @@ function Rn(e, t = {}) {
 		r = Math.max(r, t, n), i = Math.max(i, a, o);
 	}
 	return {
-		maxRow: Math.min(W, r),
-		maxCol: Math.min(U, i)
+		maxRow: Math.min(K, r),
+		maxCol: Math.min(G, i)
 	};
 }
 var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-row-heights"), Vn = Symbol("release-xlsx-viewer-projection"), Hn = Symbol("load-xlsx-sheet-source"), Un = class e {
 	metrics = null;
 	bridge = null;
 	delimitedTextBacked = !1;
-	japaneseCellFonts = Ue();
+	japaneseCellFonts = He();
 	parsedWorkbook = null;
 	sheetCache = /* @__PURE__ */ new Map();
 	sheetCacheUsage = /* @__PURE__ */ new Map();
@@ -741,11 +741,11 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 	sheetPreviews = /* @__PURE__ */ new Map();
 	rawParts = new ie({
 		maxEntries: 64,
-		maxBytes: M
+		maxBytes: j
 	});
 	queuedImageLoads = /* @__PURE__ */ new Map();
 	_fetchImage = (e, t) => this.getImageWithinArchiveOperation(e, t);
-	worksheetPolicy = Rt;
+	worksheetPolicy = It;
 	cjkFallback = "jp";
 	math;
 	threeD;
@@ -770,14 +770,14 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 	};
 	resourceFailure = null;
 	constructor(e, t, n, r = !0) {
-		if (this._mode = t, e && (this.bridge = new ye(e, {
+		if (this._mode = t, e && (this.bridge = new ve(e, {
 			correlate: (e) => "protocol" in e && e.protocol === "ooxml-pull-v1" ? e.requestId : "id" in e ? e.id : void 0,
 			toError: (e) => "type" in e && e.type === "error" ? T(e) : void 0,
 			onUnsolicited: (t) => {
-				Pe((t, n) => e.postMessage(t, n), t);
+				Ne((t, n) => e.postMessage(t, n), t);
 			}
 		}), r)) {
-			let e = new URL(n ?? Qt, location.href).href;
+			let e = new URL(n ?? Xt, location.href).href;
 			this.bridge.post({
 				type: "init",
 				wasmUrl: e
@@ -793,7 +793,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		throw TypeError("Unsupported XlsxSheetViewer source format");
 	}
 	static async loadDelimitedText(t, n, r) {
-		let i = Ct(n);
+		let i = U(n);
 		n = {
 			...n,
 			xlsxWorksheetLimits: i.worksheet
@@ -801,7 +801,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 			...n,
 			cjkFallback: F(n.cjkFallback)
 		};
-		let a = jn(r), o = S(n), s = n.mode ?? "main", c = new ee({
+		let a = jn(r), o = S(n), s = n.mode ?? "main", c = new M({
 			enabled: !0,
 			format: "xlsx",
 			mode: s,
@@ -819,29 +819,29 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 				i = await Mn(e);
 			} else i = t;
 			An(i.byteLength), c.setSourceBytes(i.byteLength), c.checkpoint("source ready");
-			let o = s === "worker" ? (await import("./render-worker-host-BR7n4xKy.js")).createRenderWorker() : (await import("./delimited-text-worker-host-RwvuSsP2.js")).createDelimitedTextWorker(), l;
+			let o = s === "worker" ? (await import("./render-worker-host-DSrgUCkT.js")).createRenderWorker() : (await import("./delimited-text-worker-host-RwvuSsP2.js")).createDelimitedTextWorker(), l;
 			try {
 				let t = new e(o, s, void 0, !1);
 				return l = t, t.metrics = c, await t._loadDelimitedText(r === i ? i.slice(0) : i, n, a), s === "main" && (t.bridge?.terminate(), t.bridge = null), c.checkpoint("worksheet ready"), c.succeed({ sheets: 1 }), t;
 			} catch (e) {
 				let t = l;
-				throw xe(o, t ? () => t.destroy() : void 0), e;
+				throw be(o, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw c.fail(e), e;
 		}
 	}
 	static async load(t, n = {}) {
-		let r = Ct(n);
+		let r = U(n);
 		if (n = {
 			...n,
 			xlsxWorksheetLimits: r.worksheet
-		}, n.legacyXls !== void 0) return (await import("./workbook-model-source-ChIQjX9a.js")).loadXlsxModelSource(t, n, e);
+		}, n.legacyXls !== void 0) return (await import("./workbook-model-source-CbEnWvU-.js")).loadXlsxModelSource(t, n, e);
 		n = {
 			...n,
 			cjkFallback: F(n.cjkFallback)
 		};
-		let i = S(n), a = n.mode ?? "main", o = new ee({
+		let i = S(n), a = n.mode ?? "main", o = new M({
 			enabled: !0,
 			format: "xlsx",
 			mode: a,
@@ -861,26 +861,26 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 			s = v(await y(s, n.password));
 			let c = s === r;
 			o.setSourceBytes(s.byteLength), o.checkpoint("container ready");
-			let l = a === "worker" ? (await import("./render-worker-host-BR7n4xKy.js")).createRenderWorker() : new Zt(), u;
+			let l = a === "worker" ? (await import("./render-worker-host-DSrgUCkT.js")).createRenderWorker() : new Yt(), u;
 			try {
 				return u = new e(l, a, n.wasmUrl), u.metrics = o, await u._load(s, n, i.policy, (e) => o.observeUsage(e), c), o.checkpoint("workbook index ready"), o.succeed({ sheets: u.sheetCount }), u;
 			} catch (e) {
 				let t = u;
-				throw xe(l, t ? () => t.destroy() : void 0), e;
+				throw be(l, t ? () => t.destroy() : void 0), e;
 			}
 		} catch (e) {
 			throw o.fail(e), e;
 		}
 	}
 	async _load(e, t = {}, n = w(t), r, i = !1) {
-		let a = Ct(t), o = this.requireBridge();
+		let a = U(t), o = this.requireBridge();
 		this.worksheetPolicy = a, this.resourceFailure = null, this.retainedSheetUsage = {
 			rows: 0,
 			cells: 0,
 			ownedUtf8Bytes: 0,
 			jsonBytes: 0
 		}, this.sheetCache.clear(), this.sheetCacheUsage.clear(), this.sheetLeases.clear(), this.completePendingEvictions(), await this.worksheetPullClient?.cancelAll("closed"), this.worksheetPullClient = null, this.generation = (this.generation ?? 0) + 1, this.workerTimeoutMs = t.workerTimeoutMs, this.googleSubstitutes = t.useGoogleFonts === !0, this.cjkFallback = F(t.cjkFallback), this.math = this._mode === "worker" ? void 0 : t.math, this.threeD = this._mode === "worker" ? void 0 : t.threeD, this.regionMap = this._mode === "worker" ? void 0 : t.regionMap, this.chartEx = this._mode === "worker" ? void 0 : t.chartEx, this.tiff = this._mode === "worker" ? void 0 : t.tiff;
-		let s = this._mode === "worker" ? bt(t) : void 0;
+		let s = this._mode === "worker" ? yt(t) : void 0;
 		t.math && this._mode === "worker" && !s?.math && console.warn("[ooxml] a custom math renderer cannot cross the worker boundary; equations will be skipped in mode: 'worker'. Use the math renderer from @silurus/ooxml/math."), t.threeD && this._mode === "worker" && !s?.threeD && console.warn("[ooxml] a custom 3-D chart renderer cannot cross the worker boundary; charts use their 2-D family fallback in mode: 'worker'. Use the renderer from @silurus/ooxml/three-d."), t.regionMap && this._mode === "worker" && !s?.regionMap && console.warn("[ooxml] a custom Region Map renderer cannot cross the worker boundary; geospatial charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/region-map."), t.chartEx && this._mode === "worker" && !s?.chartEx && console.warn("[ooxml] a custom ChartEx renderer cannot cross the worker boundary; ChartEx charts use the unsupported-chart placeholder in mode: 'worker'. Use the renderer from @silurus/ooxml/chart-ex."), t.tiff && this._mode === "worker" && !s?.tiff && console.warn("[ooxml] a custom TIFF codec cannot cross the worker boundary; recognized TIFF images will use an unavailable-image placeholder in mode: 'worker'. Use the codec from @silurus/ooxml/tiff to display them.");
 		let c = i ? e.slice(0) : e, l = await o.request((e) => this._mode === "worker" ? {
 			type: "parse",
@@ -908,14 +908,14 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		}
 		let u = this.parsedWorkbook;
 		if (!u) throw Error("XLSX worker returned no workbook metadata");
-		this.cjkFallback = He(u, this.cjkFallback), this.ensureWorksheetPullClient();
+		this.cjkFallback = Ve(u, this.cjkFallback), this.ensureWorksheetPullClient();
 		let d = u.workbook.parseError;
-		d && console.warn(`[ooxml] xlsx opened with a degraded part: ${d}`), this.officeFontRequests = Ge(u), t.useGoogleFonts && (this.googleFontNames = [...We(u, this.cjkFallback)]), typeof document < "u" && document.fonts && await this.retainFontsInSet(document.fonts);
+		d && console.warn(`[ooxml] xlsx opened with a degraded part: ${d}`), this.officeFontRequests = We(u), t.useGoogleFonts && (this.googleFontNames = [...Ue(u, this.cjkFallback)]), typeof document < "u" && document.fonts && await this.retainFontsInSet(document.fonts);
 	}
 	async _loadDelimitedText(e, t, n) {
-		let r = Ct(t), i = this.requireBridge();
+		let r = U(t), i = this.requireBridge();
 		this.worksheetPolicy = r, this.delimitedTextBacked = !0, this.workerTimeoutMs = t.workerTimeoutMs, this.googleSubstitutes = t.useGoogleFonts === !0, this.cjkFallback = F(t.cjkFallback), this.generation++, this.math = this._mode === "worker" ? void 0 : t.math, this.threeD = this._mode === "worker" ? void 0 : t.threeD, this.regionMap = this._mode === "worker" ? void 0 : t.regionMap, this.chartEx = this._mode === "worker" ? void 0 : t.chartEx, this.tiff = this._mode === "worker" ? void 0 : t.tiff;
-		let a = this._mode === "worker" ? bt(t) : void 0, o = await i.request((i) => ({
+		let a = this._mode === "worker" ? yt(t) : void 0, o = await i.request((i) => ({
 			type: "parseDelimitedText",
 			japaneseCellFonts: this.japaneseCellFonts,
 			id: i,
@@ -926,14 +926,14 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 			cjkFallback: this.cjkFallback,
 			renderers: a
 		}), [e], { timeoutMs: t.workerTimeoutMs }), s = JSON.parse(new TextDecoder().decode(o.worksheetJson));
-		Dt(s, r), Re(s, this.japaneseCellFonts);
+		Tt(s, r), Le(s, this.japaneseCellFonts);
 		let c = o.workbook.workbook.sheets;
 		if (c.length !== 1 || c[0]?.name !== s.name) throw Error("Delimited text worker returned inconsistent worksheet metadata");
-		let l = At(s, r);
-		if (Tt(l, "load-delimited-text", void 0, void 0, r), It(l.jsonBytes, "load-delimited-text", void 0, void 0, r), kt(l, "load-delimited-text", void 0, void 0, r), this.parsedWorkbook = o.workbook, this.cjkFallback = He(o.workbook, this.cjkFallback), this.sheetCache.set(0, s), this.sheetCacheUsage.set(0, l), this.retainedSheetUsage = l, this.officeFontRequests = Ge(o.workbook), t.useGoogleFonts && (this.googleFontNames = [...We(o.workbook, this.cjkFallback)]), typeof document < "u" && document.fonts) {
+		let l = Ot(s, r);
+		if (Ct(l, "load-delimited-text", void 0, void 0, r), Pt(l.jsonBytes, "load-delimited-text", void 0, void 0, r), Dt(l, "load-delimited-text", void 0, void 0, r), this.parsedWorkbook = o.workbook, this.cjkFallback = Ve(o.workbook, this.cjkFallback), this.sheetCache.set(0, s), this.sheetCacheUsage.set(0, l), this.retainedSheetUsage = l, this.officeFontRequests = We(o.workbook), t.useGoogleFonts && (this.googleFontNames = [...Ue(o.workbook, this.cjkFallback)]), typeof document < "u" && document.fonts) {
 			await this.retainFontsInSet(document.fonts), await this.retainWorksheetOfficeFonts(s);
 			let e = this.retainedFontSets.get(document.fonts)?.loaded?.office;
-			ft(s, e?.routes, this.googleSubstitutes);
+			dt(s, e?.routes, this.googleSubstitutes);
 		}
 	}
 	async retainFontsInSet(e) {
@@ -941,7 +941,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		let t = this.retainedFontSets.get(e);
 		if (t) t.refs++;
 		else {
-			let n = Promise.all([b(this.googleFontNames, Je, e), k(this.officeFontRequests, e)]).then(([e, t]) => ({
+			let n = Promise.all([b(this.googleFontNames, qe, e), k(this.officeFontRequests, e)]).then(([e, t]) => ({
 				google: e,
 				office: t
 			}));
@@ -965,7 +965,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		};
 	}
 	async retainWorksheetOfficeFonts(e) {
-		let t = Ye(e).filter((e) => !this.officeFontRequests.some((t) => yt(t) === yt(e)));
+		let t = Je(e).filter((e) => !this.officeFontRequests.some((t) => vt(t) === vt(e)));
 		t.length !== 0 && (this.officeFontRequests.push(...t), await Promise.all([...this.retainedFontSets].map(async ([e, n]) => {
 			let r = await n.loading, i = await k(t, e);
 			if (this.fontsDestroyed || this.retainedFontSets.get(e) !== n || n.refs <= 0) D(i.faces);
@@ -983,7 +983,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 	[Bn](e, t) {
 		if (!this.parsedWorkbook) return;
 		let n = E(t.canvas) ? t.canvas.ownerDocument.fonts : null;
-		lt(t, e, n ? this.retainedFontSets.get(n)?.loaded?.office.routes : void 0, this.googleSubstitutes), V(e), pt(t, e, this.parsedWorkbook.styles, this.cjkFallback);
+		ct(t, e, n ? this.retainedFontSets.get(n)?.loaded?.office.routes : void 0, this.googleSubstitutes), H(e), ft(t, e, this.parsedWorkbook.styles, this.cjkFallback);
 	}
 	get sheetNames() {
 		return this.parsedWorkbook?.workbook.sheets.map((e) => e.name) ?? [];
@@ -995,7 +995,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		return this.parsedWorkbook?.workbook.sheets.map((e) => e.tabColor ?? null) ?? [];
 	}
 	sheetVisibility(e) {
-		return $t(this.parsedWorkbook?.workbook.sheets ?? [], e);
+		return Zt(this.parsedWorkbook?.workbook.sheets ?? [], e);
 	}
 	isHidden(e) {
 		return this.sheetVisibility(e) !== "visible";
@@ -1113,47 +1113,47 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		try {
 			for await (let u of i.stream(e, t)) {
 				if (u.kind === "preview") {
-					if (u.worksheet && (Dt(u.worksheet, r), Re(u.worksheet, this.japaneseCellFonts)), n.preview(u.worksheet, u.reason, u.maxRow, u.maxCol), u.worksheet) {
+					if (u.worksheet && (Tt(u.worksheet, r), Le(u.worksheet, this.japaneseCellFonts)), n.preview(u.worksheet, u.reason, u.maxRow, u.maxCol), u.worksheet) {
 						In(u.worksheet, {
 							maxRow: u.maxRow,
 							maxCol: u.maxCol
 						}), await this.retainWorksheetOfficeFonts(u.worksheet);
 						let e = typeof document < "u" ? this.retainedFontSets.get(document.fonts)?.loaded?.office : void 0;
-						ft(u.worksheet, e?.routes, this.googleSubstitutes);
+						dt(u.worksheet, e?.routes, this.googleSubstitutes);
 					}
 					continue;
 				}
 				if (u.kind === "rows") {
-					let e = wt(o, Nt(u.rows, r), r);
-					Tt(e, "get-worksheet", void 0, u.usage, r), n.append(u.rows), o = e;
+					let e = St(o, jt(u.rows, r), r);
+					Ct(e, "get-worksheet", void 0, u.usage, r), n.append(u.rows), o = e;
 					continue;
 				}
 				let e = u.worksheet;
-				Dt(e, r), Re(e, this.japaneseCellFonts), e.rows = e.parseError ? [] : a;
-				let t = Et(e, e.parseError ? {
+				Tt(e, r), Le(e, this.japaneseCellFonts), e.rows = e.parseError ? [] : a;
+				let t = wt(e, e.parseError ? {
 					rows: 0,
 					cells: 0,
 					ownedUtf8Bytes: 0
 				} : o, r);
-				Tt(t, "get-worksheet", void 0, u.usage, r), It(t.jsonBytes, "get-worksheet", void 0, u.usage, r);
-				let i = this.retainedSheetUsage, d = Pt(i, t, {}, r), f = [];
+				Ct(t, "get-worksheet", void 0, u.usage, r), Pt(t.jsonBytes, "get-worksheet", void 0, u.usage, r);
+				let i = this.retainedSheetUsage, d = Mt(i, t, {}, r), f = [];
 				for (let [e] of this.sheetCache) {
 					try {
-						kt(d, "get-worksheet", void 0, u.usage, r);
+						Dt(d, "get-worksheet", void 0, u.usage, r);
 						break;
 					} catch (e) {
 						if (!(e instanceof _)) throw e;
 					}
 					if ((this.sheetLeases.get(e) ?? 0) > 0) continue;
 					let n = this.sheetCacheUsage.get(e);
-					n && (i = Pt(i, {
+					n && (i = Mt(i, {
 						rows: 0,
 						cells: 0,
 						ownedUtf8Bytes: 0,
 						jsonBytes: 0
-					}, n, r), d = Pt(i, t, {}, r), f.push(e));
+					}, n, r), d = Mt(i, t, {}, r), f.push(e));
 				}
-				kt(d, "get-worksheet", void 0, u.usage, r);
+				Dt(d, "get-worksheet", void 0, u.usage, r);
 				let p;
 				if (f.length && this._mode === "worker") {
 					let e;
@@ -1187,7 +1187,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 			if (u = !0, !s || !c || !l) throw Error(`XLSX worksheet ${e} did not produce a terminal model`);
 			this.retainedSheetUsage = c, this.sheetCache.set(e, s), this.sheetCacheUsage.set(e, l), await this.retainWorksheetOfficeFonts(s);
 			let d = typeof document < "u" ? this.retainedFontSets.get(document.fonts)?.loaded?.office : void 0;
-			return ft(s, d?.routes, this.googleSubstitutes), n.finish(s), s;
+			return dt(s, d?.routes, this.googleSubstitutes), n.finish(s), s;
 		} catch (e) {
 			throw this._mode === "worker" && s && !u && this.destroy(), this.latchFatalResourceFailure(e), n.fail(e), e;
 		}
@@ -1195,9 +1195,9 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 	ensureWorksheetPullClient() {
 		if (this.worksheetPullClient) return this.worksheetPullClient;
 		if (!this.parsedWorkbook) throw Error("Workbook not loaded");
-		return this.worksheetPullClient = new Ft({
+		return this.worksheetPullClient = new Nt({
 			generation: this.generation || 1,
-			transport: this.requireBridge().transport(jt),
+			transport: this.requireBridge().transport(kt),
 			sharedStrings: this.parsedWorkbook.sharedStrings,
 			timeoutMs: this.workerTimeoutMs,
 			open: async (e, t, n, r) => {
@@ -1269,14 +1269,14 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 			for (let t of e.rows) for (let e of t.cells) r.set(`${e.row}:${e.col}`, e);
 			return bn(n, (n, i) => {
 				let a = r.get(`${n}:${i}`);
-				return a ? Ke(a, t, null, e.date1904) : null;
+				return a ? Ge(a, t, null, e.date1904) : null;
 			});
 		} finally {
 			i.release();
 		}
 	}
 	cellText(e, t) {
-		return this.parsedWorkbook ? Ke(t, this.parsedWorkbook.styles, null, e.date1904) : "";
+		return this.parsedWorkbook ? Ge(t, this.parsedWorkbook.styles, null, e.date1904) : "";
 	}
 	async renderViewport(e, t, n, r = {}) {
 		if (this.assertResourceHealthy(), n = {
@@ -1310,7 +1310,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		}
 		return this.withWorksheetArchiveOperation(t, (t) => {
 			let r = a.worksheet ?? wn(t, o);
-			return r !== t && dt(t, r), hn({
+			return r !== t && ut(t, r), hn({
 				ws: r,
 				styles: i,
 				cjkFallback: this.cjkFallback,
@@ -1409,7 +1409,7 @@ var zn = Symbol("retain-xlsx-viewer-fonts"), Bn = Symbol("prepare-xlsx-viewer-ro
 		for (let e of this.sheetPreviews?.values() ?? []) e.fail(/* @__PURE__ */ Error("XLSX workbook has been destroyed"));
 		this.sheetPreviews?.clear(), this.fontsDestroyed = !0;
 		for (let e of this.retainedFontSets.values()) e.loaded && (C(e.loaded.google), D(e.loaded.office.faces));
-		this.retainedFontSets.clear(), this.googleFontNames = [], this.googleSubstitutes = !1, this.officeFontRequests = [], I(this._fetchImage), re(this._fetchImage), this.rawParts.clear(), this.queuedImageLoads?.clear();
+		this.retainedFontSets.clear(), this.googleFontNames = [], this.googleSubstitutes = !1, this.officeFontRequests = [], N(this._fetchImage), ne(this._fetchImage), this.rawParts.clear(), this.queuedImageLoads?.clear();
 	}
 	assertResourceHealthy() {
 		if (this.resourceFailure) throw this.resourceFailure;
@@ -1461,11 +1461,11 @@ function Zn(e, t, n) {
 	return t < 1 ? null : Yn(e, 1, t, n) ? "drawing-dependency" : null;
 }
 function Qn(e, t) {
-	let n = Le(t.worksheet, e, t.colAxis, t.rowAxis, t.scale), { width: r, height: i } = n;
+	let n = Ie(t.worksheet, e, t.colAxis, t.rowAxis, t.scale), { width: r, height: i } = n;
 	if (r <= 0 || i <= 0) return null;
 	let a = t.colAxis.offsetOf(t.startCol), o = t.rowAxis.offsetOf(t.startRow);
 	return {
-		x: B(t.scrollAreaX + (n.x - a) - t.scrollOffsetX, r, t.canvasWidth, t.rtl),
+		x: V(t.scrollAreaX + (n.x - a) - t.scrollOffsetX, r, t.canvasWidth, t.rtl),
 		y: t.scrollAreaY + (n.y - o) - t.scrollOffsetY,
 		width: r,
 		height: i
@@ -1475,15 +1475,15 @@ function $n(e, t) {
 	return e.x >= t.x && e.x <= t.x + t.width && e.y >= t.y && e.y <= t.y + t.height;
 }
 function er(e, t) {
-	let n = B(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
+	let n = V(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
 	return e.x + e.width >= n && e.x <= n + t.scrollAreaW && e.y + e.height >= t.scrollAreaY && e.y <= t.scrollAreaY + t.scrollAreaH;
 }
 function tr(e, t) {
-	let n = B(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
+	let n = V(t.scrollAreaX, t.scrollAreaW, t.canvasWidth, t.rtl);
 	return e.x >= n && e.x <= n + t.scrollAreaW && e.y >= t.scrollAreaY && e.y <= t.scrollAreaY + t.scrollAreaH;
 }
 function nr(e, t) {
-	let n = V(e), r = t.cellScale, { col: i, row: a } = n.axesAtScale(r), o = Math.round(50 * r), s = Math.round(22 * r), c = i.bandsToCover(1, t.freezeCols, Math.max(0, t.width - o)), l = a.bandsToCover(1, t.freezeRows, Math.max(0, t.height - s)), u = c.reduce((e, t) => e + t.size, 0), d = l.reduce((e, t) => e + t.size, 0);
+	let n = H(e), r = t.cellScale, { col: i, row: a } = n.axesAtScale(r), o = Math.round(50 * r), s = Math.round(22 * r), c = i.bandsToCover(1, t.freezeCols, Math.max(0, t.width - o)), l = a.bandsToCover(1, t.freezeRows, Math.max(0, t.height - s)), u = c.reduce((e, t) => e + t.size, 0), d = l.reduce((e, t) => e + t.size, 0);
 	return {
 		worksheet: e,
 		colAxis: i,
@@ -1515,7 +1515,7 @@ function rr(e, t, n) {
 			height: r.h * o.height
 		}, a = r.rot);
 	}
-	let s = B(r.scrollAreaX, r.scrollAreaW, r.canvasWidth, r.rtl);
+	let s = V(r.scrollAreaX, r.scrollAreaW, r.canvasWidth, r.rtl);
 	return {
 		rect: o,
 		clip: {
@@ -1558,7 +1558,7 @@ function ar(e, t) {
 			n.push("\n"), r++;
 		}
 		for (let e of o.runs) {
-			let a = e.type === "text" ? e.text : e.type === "break" ? "\n" : "[equation]", o = je(a, Math.max(0, t - r));
+			let a = e.type === "text" ? e.text : e.type === "break" ? "\n" : "[equation]", o = Ae(a, Math.max(0, t - r));
 			if (n.push(o), r += o.length, o.length < a.length) {
 				i = !0;
 				break;
@@ -1592,7 +1592,7 @@ function sr(e, t, n, r, i) {
 	for (let a = e.charts.length - 1; a >= 0; a--) {
 		let o = e.charts[a], s = Qn(o, r);
 		if (!s || !er(s, r) || !$n(n, s)) continue;
-		let c = Ee(o.chart, i);
+		let c = Te(o.chart, i);
 		return {
 			...or(e, t, "chart", a, o, c.text, c.truncated, c.maxTextCharacters),
 			seriesCount: o.chart.series.length
@@ -1638,23 +1638,23 @@ function lr(e, t, n, r, i) {
 function ur(e, t, n, r, i) {
 	for (let a = e.images.length - 1; a >= 0; a--) {
 		let o = e.images[a], s = Qn(o, r);
-		if (s && er(ze(s, o.rotation), r) && $n(Xe(n, s, o.rotation, o.flipH, o.flipV), s)) return {
+		if (s && er(Re(s, o.rotation), r) && $n(Ye(n, s, o.rotation, o.flipH, o.flipV), s)) return {
 			...or(e, t, "image", a, o, void 0, !1, i),
 			mimeType: o.svgImagePath ? "image/svg+xml" : o.mimeType
 		};
 	}
 	return null;
 }
-function dr(e, t, n, r, i = Te) {
+function dr(e, t, n, r, i = we) {
 	if (!Number.isFinite(n.x) || !Number.isFinite(n.y)) throw RangeError("XLSX hit-test point must contain finite coordinates.");
 	if (!Number.isFinite(i) || i < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	let a = Math.min(Te, Math.floor(i)), o = nr(e, r);
+	let a = Math.min(we, Math.floor(i)), o = nr(e, r);
 	return tr(n, o) ? sr(e, t, n, o, a) ?? lr(e, t, n, o, a) ?? ur(e, t, n, o, a) : null;
 }
 function fr(e, t) {
 	let n = t ?? e.maxTextCharacters;
 	if (!Number.isFinite(n) || n < 0) throw RangeError("maxTextCharacters must be a finite non-negative number.");
-	let r = Math.min(Te, Math.floor(n)), i = e.text === void 0 ? void 0 : je(e.text, r), a = e.truncated || e.text !== void 0 && i.length < e.text.length;
+	let r = Math.min(we, Math.floor(n)), i = e.text === void 0 ? void 0 : Ae(e.text, r), a = e.truncated || e.text !== void 0 && i.length < e.text.length;
 	return {
 		...structuredClone(e),
 		...i === void 0 ? {} : { text: i },
@@ -1666,7 +1666,7 @@ function fr(e, t) {
 }
 var pr = 128, mr = 1e4, hr = 8 * 1024 * 1024;
 function gr(e) {
-	return e.areas.reduce((e, t) => e + (t.kind === "cells" ? (t.bottom - t.top + 1) * (t.right - t.left + 1) : t.kind === "rows" ? (t.lastRow - t.firstRow + 1) * U : t.kind === "columns" ? (t.lastColumn - t.firstColumn + 1) * W : W * U), 0);
+	return e.areas.reduce((e, t) => e + (t.kind === "cells" ? (t.bottom - t.top + 1) * (t.right - t.left + 1) : t.kind === "rows" ? (t.lastRow - t.firstRow + 1) * G : t.kind === "columns" ? (t.lastColumn - t.firstColumn + 1) * K : K * G), 0);
 }
 function Y(e, t) {
 	return Number.isInteger(e) && e >= 1 && e <= t;
@@ -1785,7 +1785,7 @@ function xr(e) {
 	}
 	let i = t.split(":");
 	if (i.length > 2) return null;
-	let a = R(i[0]), o = i.length === 2 ? R(i[1]) : a;
+	let a = z(i[0]), o = i.length === 2 ? z(i[1]) : a;
 	if (!a || !o) return null;
 	let s = {
 		kind: "cells",
@@ -1830,7 +1830,7 @@ function Cr(e, t, n) {
 			});
 		}
 	}
-	return Wt(i), Object.freeze(i.map((e) => Object.freeze(e)));
+	return Ht(i), Object.freeze(i.map((e) => Object.freeze(e)));
 }
 var wr = class {
 	stashedRowHeights = /* @__PURE__ */ new Map();
@@ -1857,11 +1857,11 @@ var wr = class {
 			let t = this.stashedRowHeights.get(r);
 			t === void 0 ? delete e.rowHeights[r] : e.rowHeights[r] = t, this.stashedRowHeights.delete(r);
 		} else e.rowHeights[r] === 0 && delete e.rowHeights[r];
-		else if (i) this.stashedColWidths.has(r) || (this.stashedColWidths.set(r, e.colWidths[r]), this.stashedColCssWidths.set(r, Ht(e, r))), e.colWidths[r] = 0, H(e, r, null);
+		else if (i) this.stashedColWidths.has(r) || (this.stashedColWidths.set(r, e.colWidths[r]), this.stashedColCssWidths.set(r, Bt(e, r))), e.colWidths[r] = 0, W(e, r, null);
 		else if (this.stashedColWidths.has(r)) {
 			let t = this.stashedColWidths.get(r);
-			t === void 0 ? delete e.colWidths[r] : e.colWidths[r] = t, H(e, r, this.stashedColCssWidths.get(r) ?? null), this.stashedColWidths.delete(r), this.stashedColCssWidths.delete(r);
-		} else e.colWidths[r] === 0 && (delete e.colWidths[r], H(e, r, null));
+			t === void 0 ? delete e.colWidths[r] : e.colWidths[r] = t, W(e, r, this.stashedColCssWidths.get(r) ?? null), this.stashedColWidths.delete(r), this.stashedColCssWidths.delete(r);
+		} else e.colWidths[r] === 0 && (delete e.colWidths[r], W(e, r, null));
 		this.recordSizeOverride(e, t, n, r);
 	}
 	recordSizeOverride(e, t, n, r, i) {
@@ -1877,8 +1877,8 @@ var wr = class {
 		n === "row" && a.automaticRows.delete(r);
 		let s = n === "row" ? e.rowHeights[r] ?? null : e.colWidths[r] ?? null, c = !1;
 		if (o.get(r) !== s && (o.set(r, s), c = !0), n === "col") {
-			i !== void 0 && H(e, r, i);
-			let t = Ht(e, r) ?? null;
+			i !== void 0 && W(e, r, i);
+			let t = Bt(e, r) ?? null;
 			(a.colCss.has(r) ? a.colCss.get(r) !== t : t !== null) && (a.colCss.set(r, t), c = !0);
 		}
 		c && (a.revision++, a.wire = void 0);
@@ -1889,7 +1889,7 @@ var wr = class {
 		if (o > r) throw RangeError(`A resize projection may retain at most ${r} manually edited bands per axis.`);
 	}
 	beginRowResizePreview(e, t, n) {
-		let r = Ut(e), i = !1, a = (n) => {
+		let r = Vt(e), i = !1, a = (n) => {
 			let r = this.sizeOverrideStore.get(t);
 			!r && n.length && (r = {
 				rows: /* @__PURE__ */ new Map(),
@@ -1897,7 +1897,7 @@ var wr = class {
 				cols: /* @__PURE__ */ new Map(),
 				colCss: /* @__PURE__ */ new Map(),
 				revision: 0
-			}, this.sizeOverrideStore.set(t, r)), Jt(e, n), r && (r.rowHeightRanges = n, r.revision++, r.wire = void 0), G.invalidate(e);
+			}, this.sizeOverrideStore.set(t, r)), Kt(e, n), r && (r.rowHeightRanges = n, r.revision++, r.wire = void 0), q.invalidate(e);
 		};
 		return {
 			apply: (e) => {
@@ -1909,8 +1909,8 @@ var wr = class {
 		};
 	}
 	restoreRowResizeRanges(e, t) {
-		let n = this.sizeOverrideStore.get(e)?.rowHeightRanges ?? [], r = Ut(t);
-		(n.length || r.length) && n !== r && (Jt(t, n), G.invalidate(t));
+		let n = this.sizeOverrideStore.get(e)?.rowHeightRanges ?? [], r = Vt(t);
+		(n.length || r.length) && n !== r && (Kt(t, n), q.invalidate(t));
 	}
 	wireSizeOverrides(e) {
 		let t = this.sizeOverrideStore.get(e);
@@ -1938,7 +1938,7 @@ var wr = class {
 		return this.sizeOverrideStore.get(e)?.revision ?? 0;
 	}
 	syncAutomaticRowOverrides(e, t) {
-		let n = new Map(ut(t)), r = this.sizeOverrideStore.get(e);
+		let n = new Map(lt(t)), r = this.sizeOverrideStore.get(e);
 		!r && n.size === 0 || (r || (r = {
 			rows: /* @__PURE__ */ new Map(),
 			automaticRows: /* @__PURE__ */ new Map(),
@@ -1960,7 +1960,7 @@ var wr = class {
 		if (n) {
 			for (let [e, r] of n.rows) r === null ? delete t.rowHeights[e] : t.rowHeights[e] = r;
 			for (let [e, r] of n.cols) r === null ? delete t.colWidths[e] : t.colWidths[e] = r;
-			for (let [e, r] of n.colCss) H(t, e, r);
+			for (let [e, r] of n.colCss) W(t, e, r);
 		}
 		let r = this.outlineStateStore.get(e);
 		if (r) {
@@ -2209,7 +2209,7 @@ var Z = class {
 		u.setTransform(l, 0, 0, l, 0, 0), u.clearRect(0, 0, s, c), u.fillStyle = r.background ?? "#f5f5f5", u.fillRect(0, 0, s, c);
 		let d = 19 * n;
 		u.strokeStyle = r.border ?? "#808080", u.lineWidth = 1, u.fillStyle = r.text ?? "#404040";
-		let f = V(t), p = f.effectiveFrozenBands({
+		let f = H(t), p = f.effectiveFrozenBands({
 			scale: n,
 			width: this.host.canvasArea.clientWidth,
 			height: this.host.canvasArea.clientHeight,
@@ -2549,13 +2549,13 @@ function Yr(e, t, n) {
 	if (!e) return !1;
 	for (let r of e.split(/\s+/)) {
 		if (!r) continue;
-		let [e, i] = r.split(":"), a = R(e);
+		let [e, i] = r.split(":"), a = z(e);
 		if (!a) continue;
 		if (!i) {
 			if (a.row === t && a.col === n) return !0;
 			continue;
 		}
-		let o = R(i);
+		let o = z(i);
 		if (!o) continue;
 		let s = Math.min(a.row, o.row), c = Math.max(a.row, o.row), l = Math.min(a.col, o.col), u = Math.max(a.col, o.col);
 		if (t >= s && t <= c && n >= l && n <= u) return !0;
@@ -2705,7 +2705,7 @@ function ei(e) {
 }
 function ti(e, t, n) {
 	let r = $r(e), i = r >= 0 ? ei(e.slice(0, r)) : void 0, a = (r >= 0 ? e.slice(r + 1) : e).split(":", 1)[0]?.trim() ?? "";
-	if (!R(a)) return null;
+	if (!z(a)) return null;
 	let o = t;
 	if (i !== void 0) {
 		let e = i.toLocaleLowerCase("en-US");
@@ -2758,7 +2758,7 @@ var ri = class {
 		};
 		else return !1;
 		let r = this.host.onHyperlinkClick();
-		return r ? (r(n), !0) : (n.kind === "external" ? oe(n.url, void 0, this.host.hostWindow) : this.navigateInternal(n.ref).catch((e) => this.host.reportError(e)), !0);
+		return r ? (r(n), !0) : (n.kind === "external" ? L(n.url, void 0, this.host.hostWindow) : this.navigateInternal(n.ref).catch((e) => this.host.reportError(e)), !0);
 	}
 	async navigateInternal(e) {
 		let t = ni(e, this.host.currentSheet(), this.host.sheetNames(), this.host.definedNames());
@@ -2800,7 +2800,7 @@ var ri = class {
 		return t ? {
 			sheet: t.sheet,
 			sheetName: t.sheetName,
-			ref: at(t.row, t.col),
+			ref: it(t.row, t.col),
 			row: t.row,
 			col: t.col
 		} : null;
@@ -2830,7 +2830,7 @@ var ri = class {
 			if (n !== this._generation) return [];
 			let o = this._sheetName(a);
 			for (let n of r) {
-				let r = Se(De([{ text: n.text }]), e, t);
+				let r = xe(Ee([{ text: n.text }]), e, t);
 				for (let e of r) {
 					let t = e.slices[0], r = n.text.slice(t.start, t.end);
 					i.push({
@@ -2846,10 +2846,10 @@ var ri = class {
 		return n === this._generation ? (this._matches = i, this._active = -1, this.matches()) : [];
 	}
 	next() {
-		return this._active = ke(this._active, this._matches.length), this._activePublic();
+		return this._active = Oe(this._active, this._matches.length), this._activePublic();
 	}
 	prev() {
-		return this._active = Oe(this._active, this._matches.length), this._activePublic();
+		return this._active = De(this._active, this._matches.length), this._activePublic();
 	}
 	_activePublic() {
 		let e = this._locationAt(this._active);
@@ -2900,7 +2900,7 @@ var ci = class {
 		e.clearFind();
 		let t = this.host.worksheet();
 		if (!t) return;
-		let n = this.host.scale(), r = (e) => Math.round(e * n), i = r(50), a = r(22), o = t.freezeRows ?? 0, s = t.freezeCols ?? 0, c = V(t).roundedFrozenExtent(n), l = i + c.width, u = a + c.height, d = this.host.highlightColors(), f = si(!1, d), p = si(!0, d);
+		let n = this.host.scale(), r = (e) => Math.round(e * n), i = r(50), a = r(22), o = t.freezeRows ?? 0, s = t.freezeCols ?? 0, c = H(t).roundedFrozenExtent(n), l = i + c.width, u = a + c.height, d = this.host.highlightColors(), f = si(!1, d), p = si(!0, d);
 		for (let t of this.controller.sheetHighlights(this.host.currentSheet())) {
 			let n = this.host.cellRect(t.row, t.col);
 			if (!n) continue;
@@ -3089,34 +3089,37 @@ var xi = class {
 	beginSelectionDrag(e) {
 		this.pendingTap?.pointerId !== e && (this.pendingTap = null), this.pendingClick?.pointerId !== e && (this.pendingClick = null), this.host.selection.beginDrag(e);
 	}
-	getHeaderHit(e, t) {
-		let n = this.host.worksheet();
-		if (!n) return null;
-		let r = this.host.scale(), i = this.host.canvasArea.getBoundingClientRect(), a = this.host.screenX(e - i.left, 0), o = t - i.top, s = Math.round(50 * r), c = Math.round(22 * r), l = a < s, u = o < c;
-		if (!l && !u) return null;
-		if (l && u) return { kind: "corner" };
-		let d = V(n);
-		if (l) {
-			let e = o - c;
+	getHeaderHit(e, t, n = "displayed") {
+		let r = this.host.worksheet();
+		if (!r) return null;
+		let i = this.host.scale(), a = this.host.canvasArea.getBoundingClientRect(), o = this.host.screenX(e - a.left, 0), s = t - a.top, c = Math.round(50 * i), l = Math.round(22 * i), u = o < c, d = s < l;
+		if (!u && !d) return null;
+		if (u && d) return { kind: "corner" };
+		let f = H(r), p = n === "logical" ? {
+			x: this.host.scrollLeft(),
+			y: this.host.scrollTop()
+		} : this.host.displayedViewportOffset();
+		if (u) {
+			let e = s - l;
 			if (e < 0) return { kind: "corner" };
-			let t = d.rowAt(e, this.host.scrollTop(), r);
+			let t = f.rowAt(e, p.y, i);
 			return t === null ? null : {
 				kind: "row",
 				row: t
 			};
 		}
-		let f = a - s;
-		if (f < 0) return { kind: "corner" };
-		let p = d.colAt(f, this.host.scrollLeft(), r);
-		return p === null ? null : {
+		let m = o - c;
+		if (m < 0) return { kind: "corner" };
+		let h = f.colAt(m, p.x, i);
+		return h === null ? null : {
 			kind: "col",
-			col: p
+			col: h
 		};
 	}
 	getResizeTarget(e, t) {
 		let n = this.host.worksheet();
 		if (!n) return null;
-		let r = this.host.scale(), i = this.host.canvasArea.getBoundingClientRect(), a = this.host.screenX(e - i.left, 0), o = t - i.top, s = Math.round(50 * r), c = Math.round(22 * r), l = V(n), u = l.maximumDigitWidth, d = l.axesAtScale(r);
+		let r = this.host.scale(), i = this.host.canvasArea.getBoundingClientRect(), a = this.host.screenX(e - i.left, 0), o = t - i.top, s = Math.round(50 * r), c = Math.round(22 * r), l = H(n), u = l.maximumDigitWidth, d = l.axesAtScale(r);
 		if (o <= c && a > s) {
 			let n = this.getHeaderHit(e, t);
 			if (n?.kind !== "col") return null;
@@ -3169,7 +3172,7 @@ var xi = class {
 			t && e[0] <= t[1] + 1 ? t[1] = Math.max(t[1], e[1]) : i.push([...e]);
 		}
 		if (i.reduce((e, [t, n]) => e + n - t + 1, 0) > yi) throw RangeError(`A resize gesture may affect at most ${yi} selected bands.`);
-		let a = V(n), o = e === "col" ? a.col : a.row, s = [];
+		let a = H(n), o = e === "col" ? a.col : a.row, s = [];
 		for (let [e, t] of i) for (let n = e; n <= t; n++) o.sizeOf(n) > 0 && s.push(n);
 		return s;
 	}
@@ -3189,9 +3192,9 @@ var xi = class {
 			let t = i.at(-1);
 			t && e.first <= t.last + 1 ? t.last = Math.max(t.last, e.last) : i.push({ ...e });
 		}
-		if (!t && !Ut(n).length && i.reduce((e, t) => e + t.last - t.first + 1, 0) <= yi) return;
+		if (!t && !Vt(n).length && i.reduce((e, t) => e + t.last - t.first + 1, 0) <= yi) return;
 		let a = [], o = 0;
-		for (let e of V(n).row.positiveRanges()) {
+		for (let e of H(n).row.positiveRanges()) {
 			for (; o < i.length && i[o].last < e.first;) o++;
 			for (let t = o; t < i.length && i[t].first <= e.last; t++) {
 				let n = Math.max(e.first, i[t].first), r = Math.min(e.last, i[t].last);
@@ -3235,21 +3238,21 @@ var xi = class {
 		}
 		let i = this.host.scale(), a = this.host.canvasArea.getBoundingClientRect();
 		if (n.kind === "col") {
-			let t = this.host.screenX(e - a.left, 0), o = Math.max(vi, Math.round((t - n.originScaled) / i)), s = Gt(o, n.mdw);
+			let t = this.host.screenX(e - a.left, 0), o = Math.max(vi, Math.round((t - n.originScaled) / i)), s = Ut(o, n.mdw);
 			for (let e of n.indices) r.colWidths[e] = s, this.host.recordSizeOverride("col", e, o);
 		} else if (n.rowPreview) {
 			let e = t - a.top, o = Math.max(vi, Math.round((e - n.originScaled) / i));
 			try {
-				n.rowPreview.apply(qt(o)), this.host.updateSpacerSize(r), this.host.updateSelectionOverlay(), this.host.scheduleRender();
+				n.rowPreview.apply(Gt(o)), this.host.updateSpacerSize(r), this.host.updateSelectionOverlay(), this.host.scheduleRender();
 			} catch (e) {
 				this.finishResize(n.pointerId, !1, !0), this.host.reportError(e);
 			}
 			return;
 		} else {
-			let e = t - a.top, o = qt(Math.max(vi, Math.round((e - n.originScaled) / i)));
+			let e = t - a.top, o = Gt(Math.max(vi, Math.round((e - n.originScaled) / i)));
 			for (let e of n.indices) r.rowHeights[e] = o, this.host.recordSizeOverride("row", e);
 		}
-		G.invalidate(r), this.host.updateSpacerSize(r), this.host.updateSelectionOverlay(), this.host.scheduleRender();
+		q.invalidate(r), this.host.updateSpacerSize(r), this.host.updateSelectionOverlay(), this.host.scheduleRender();
 	}
 	applyPointerSelection(e, t, n, r, i, a) {
 		let o = this.getHeaderHit(e, t);
@@ -3304,27 +3307,27 @@ var xi = class {
 		};
 	}
 	extendDragSelection(e, t, n) {
-		let r = e, i = t, a = this.viewportInputBounds(), o = e < a.left || e >= a.left + a.width || t < a.top || t >= a.top + a.height;
-		if (n || o) {
-			let e = this.host.scale(), t = Math.round(50 * e), n = Math.round(22 * e), o = a.left + (this.host.isRtl() ? 0 : t), s = a.left + a.width - (this.host.isRtl() ? t : 0);
-			r = Math.min(s - 1, Math.max(o + 1, r)), i = Math.min(a.top + a.height - 1, Math.max(a.top + n + 1, i));
+		let r = e, i = t, a = n || this.selectionAutoScrollFrame !== null ? "logical" : "displayed", o = this.viewportInputBounds(), s = e < o.left || e >= o.left + o.width || t < o.top || t >= o.top + o.height;
+		if (n || s) {
+			let e = this.host.scale(), t = Math.round(50 * e), n = Math.round(22 * e), a = o.left + (this.host.isRtl() ? 0 : t), s = o.left + o.width - (this.host.isRtl() ? t : 0);
+			r = Math.min(s - 1, Math.max(a + 1, r)), i = Math.min(o.top + o.height - 1, Math.max(o.top + n + 1, i));
 		}
 		if (this.selectionMode === "rows") {
-			let e = n ? null : this.getHeaderHit(r, i), t = e?.kind === "row" ? e.row : this.host.cellAt(r, i)?.row;
+			let e = n ? null : this.getHeaderHit(r, i, a), t = e?.kind === "row" ? e.row : this.host.cellAt(r, i, a)?.row;
 			return !t || t === this.activeCell?.row ? !1 : (this.host.selection.extend({
 				row: t,
 				col: 1
 			}), !0);
 		}
 		if (this.selectionMode === "cols") {
-			let e = n ? null : this.getHeaderHit(r, i), t = e?.kind === "col" ? e.col : this.host.cellAt(r, i)?.col;
+			let e = n ? null : this.getHeaderHit(r, i, a), t = e?.kind === "col" ? e.col : this.host.cellAt(r, i, a)?.col;
 			return !t || t === this.activeCell?.col ? !1 : (this.host.selection.extend({
 				row: 1,
 				col: t
 			}), !0);
 		}
-		let s = this.host.cellAt(r, i);
-		return !s || s.row === this.activeCell?.row && s.col === this.activeCell?.col ? !1 : (this.host.selection.extend(s), !0);
+		let c = this.host.cellAt(r, i, a);
+		return !c || c.row === this.activeCell?.row && c.col === this.activeCell?.col ? !1 : (this.host.selection.extend(c), !0);
 	}
 	selectionAutoScrollSpeed() {
 		let e = this.selectionAutoScrollPointer;
@@ -3372,7 +3375,7 @@ var xi = class {
 		let a = this.host.scrollLeft(), o = this.host.scrollTop();
 		this.host.setScrollLeft(a + n.x * i), this.host.setScrollTop(o + n.y * i);
 		let s = this.host.scrollLeft() !== a || this.host.scrollTop() !== o, c = s && this.extendDragSelection(t.clientX, t.clientY, !0);
-		if (s && (this.host.updateSelectionOverlay(), this.host.updateFindOverlay(), this.host.scheduleRender(), this.host.emitViewportChange(), c && this.host.emitSelectionChange()), !s) {
+		if (s && (this.host.updateSelectionOverlay(), this.host.updateFindOverlay(), this.host.scheduleRender(!0), this.host.emitViewportChange(), c && this.host.emitSelectionChange()), !s) {
 			this.stopSelectionAutoScroll();
 			return;
 		}
@@ -3494,7 +3497,7 @@ var xi = class {
 				let t = this.host.cellAt(e.clientX, e.clientY);
 				t ? this.host.comments.scheduleForCell(t) : this.host.hideCommentPopup(), this.host.scrollHost.style.cursor = t && this.host.hyperlinks.at(t) ? "pointer" : "";
 			}
-			!this.isSelecting || e.pointerId !== this.selectionPointerId || (this.trackSelectionAutoScroll(e), this.extendDragSelection(e.clientX, e.clientY, !1) && (this.host.updateSelectionOverlay(), this.host.scheduleRender(), this.host.emitSelectionChange()));
+			!this.isSelecting || e.pointerId !== this.selectionPointerId || (this.trackSelectionAutoScroll(e), this.extendDragSelection(e.clientX, e.clientY, !1) && (this.host.updateSelectionOverlay(), this.host.scheduleRender(this.selectionAutoScrollFrame !== null), this.host.emitSelectionChange()));
 		}), this.on("pointerup", (e) => {
 			if (this.resizeDrag && this.resizeDrag.pointerId === e.pointerId) {
 				this.finishResize(e.pointerId);
@@ -3533,7 +3536,7 @@ var xi = class {
 				if (!this.host.nativeScrollbars) {
 					e.preventDefault();
 					let t = e.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : e.deltaMode === WheelEvent.DOM_DELTA_PAGE ? Math.max(1, this.host.scrollHost.clientHeight) : 1, n = (e.shiftKey ? e.deltaY : e.deltaX) * t, r = (e.shiftKey ? 0 : e.deltaY) * t;
-					this.host.setScrollLeft(this.host.scrollLeft() + n), this.host.setScrollTop(this.host.scrollTop() + r), this.host.scheduleRender(), this.host.updateSelectionOverlay(), this.host.updateFindOverlay(), this.host.emitViewportChange();
+					this.host.setScrollLeft(this.host.scrollLeft() + n), this.host.setScrollTop(this.host.scrollTop() + r), this.host.scheduleRender(!0), this.host.updateSelectionOverlay(), this.host.updateFindOverlay(), this.host.emitViewportChange();
 				}
 				return;
 			}
@@ -3542,7 +3545,7 @@ var xi = class {
 			this.host.zoomAt(Number.isFinite(t) && Number.isFinite(n) ? {
 				x: t,
 				y: n
-			} : null, _e(this.host.scale(), e.deltaY, e.deltaMode));
+			} : null, ge(this.host.scale(), e.deltaY, e.deltaMode));
 		}, { passive: !1 }), this.on("pointerleave", (e) => {
 			let t = e.relatedTarget;
 			t && this.host.comments.contains(t) || this.host.hideCommentPopup();
@@ -3556,14 +3559,14 @@ var xi = class {
 				e.preventDefault(), this.host.copySelection();
 			} else if (!e.defaultPrevented && !e.isComposing && !e.ctrlKey && !e.metaKey && !e.altKey && !e.shiftKey && (e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "ArrowLeft" || e.key === "ArrowRight")) {
 				let t = this.activeCell, n = e.key === "ArrowUp" ? -1 : +(e.key === "ArrowDown"), r = e.key === "ArrowLeft" ? this.host.isRtl() ? 1 : -1 : e.key === "ArrowRight" ? this.host.isRtl() ? -1 : 1 : 0, i = t ? {
-					row: Math.max(1, Math.min(W, t.row + n)),
-					col: Math.max(1, Math.min(U, t.col + r))
+					row: Math.max(1, Math.min(K, t.row + n)),
+					col: Math.max(1, Math.min(G, t.col + r))
 				} : {
 					row: 1,
 					col: 1
 				};
 				e.preventDefault(), this.host.hideCommentPopup();
-				let a = at(i.row, i.col);
+				let a = it(i.row, i.col);
 				this.host.setSelection(a), this.host.scrollCellIntoView(i.row, i.col), this.host.updateSelectionOverlay(), this.host.updateFindOverlay(), this.host.emitViewportChange();
 			} else if (e.key === "Escape" && this.resizeDrag?.rowPreview) e.preventDefault(), this.finishResize(this.resizeDrag.pointerId, !1, !0);
 			else if (e.key === "Escape" && this.host.validation.isOpen()) this.host.hideValidationPanel();
@@ -3645,7 +3648,7 @@ var Ti = 0, Ei = class {
 		if (!e) return;
 		let t = this.host.scale(), n = this.host.worksheet();
 		if (!n) return;
-		let r = (e) => Math.round(e * t), i = r(50), a = r(22), o = this.host.canvasArea.clientWidth, s = this.host.canvasArea.clientHeight, c = V(n), l = c.effectiveFrozenBands({
+		let r = (e) => Math.round(e * t), i = r(50), a = r(22), o = this.host.canvasArea.clientWidth, s = this.host.canvasArea.clientHeight, c = H(n), l = c.effectiveFrozenBands({
 			scale: t,
 			width: o,
 			height: s,
@@ -3660,12 +3663,12 @@ var Ti = 0, Ei = class {
 			end: Math.min(o, i + d)
 		}, {
 			first: l.cols + 1,
-			last: U,
+			last: G,
 			start: Math.min(o, i + d),
 			end: o
 		}] : [{
 			first: 1,
-			last: U,
+			last: G,
 			start: i,
 			end: o
 		}], m = l.rows > 0 ? [{
@@ -3675,12 +3678,12 @@ var Ti = 0, Ei = class {
 			end: Math.min(s, a + f)
 		}, {
 			first: l.rows + 1,
-			last: W,
+			last: K,
 			start: Math.min(s, a + f),
 			end: s
 		}] : [{
 			first: 1,
-			last: W,
+			last: K,
 			start: a,
 			end: s
 		}], h = p.filter((e) => e.end > e.start), g = m.filter((e) => e.end > e.start), _ = this.host.selectionColor() ?? Si, { background: v } = Ci(_), y = /* @__PURE__ */ new Set(), b = [], x = [];
@@ -3698,14 +3701,14 @@ var Ti = 0, Ei = class {
 				top: t.firstRow,
 				bottom: t.lastRow,
 				left: 1,
-				right: U,
+				right: G,
 				topEdge: !0,
 				bottomEdge: !0,
 				leftEdge: !1,
 				rightEdge: !1
 			} : t.kind === "columns" ? {
 				top: 1,
-				bottom: W,
+				bottom: K,
 				left: t.firstColumn,
 				right: t.lastColumn,
 				topEdge: !1,
@@ -3714,9 +3717,9 @@ var Ti = 0, Ei = class {
 				rightEdge: !0
 			} : {
 				top: 1,
-				bottom: W,
+				bottom: K,
 				left: 1,
-				right: U,
+				right: G,
 				topEdge: !1,
 				bottomEdge: !1,
 				leftEdge: !1,
@@ -3729,28 +3732,28 @@ var Ti = 0, Ei = class {
 				if (!u || !d) continue;
 				let f = u.x, p = u.y, m = d.x + d.w, _ = d.y + d.h, v = Math.max(f, r.start), S = Math.max(p, n.start), C = Math.min(m, r.end), w = Math.min(_, n.end), T = C - v, E = w - S;
 				if (T <= 0 || E <= 0) continue;
-				let D = t.kind === "columns" && n === g[0], O = t.kind === "columns" && n === g.at(-1), k = t.kind === "rows" && r === h[0], A = t.kind === "rows" && r === h.at(-1), j = D || e.topEdge && i === e.top && p >= n.start, M = O || e.bottomEdge && a === e.bottom && _ <= n.end, ee = k || e.leftEdge && c === e.left && f >= r.start, N = A || e.rightEdge && l === e.right && m <= r.end, P = this.host.screenX(v, T), te = this.host.isRtl() ? N : ee, F = this.host.isRtl() ? ee : N, ne = [
-					P,
+				let D = t.kind === "columns" && n === g[0], O = t.kind === "columns" && n === g.at(-1), k = t.kind === "rows" && r === h[0], A = t.kind === "rows" && r === h.at(-1), ee = D || e.topEdge && i === e.top && p >= n.start, te = O || e.bottomEdge && a === e.bottom && _ <= n.end, j = k || e.leftEdge && c === e.left && f >= r.start, M = A || e.rightEdge && l === e.right && m <= r.end, N = this.host.screenX(v, T), P = this.host.isRtl() ? M : j, ne = this.host.isRtl() ? j : M, F = [
+					N,
 					S,
 					T,
 					E,
-					j,
-					F,
-					M,
-					te
+					ee,
+					ne,
+					te,
+					P
 				].join("|");
-				if (y.has(ne)) continue;
-				y.add(ne), b.push(`M${P} ${S}h${T}v${E}h${-T}Z`);
-				let re = Math.min(1, T / 2), ie = Math.min(1, E / 2), ae = this.host.isRtl() ? A : k, oe = this.host.isRtl() ? k : A, I = (e, t) => e <= 0 || e >= t, se = P + (ae && I(P, o) ? re : 0), ce = P + T - (oe && I(P + T, o) ? re : 0), L = S + (D && I(S, s) ? ie : 0), le = w - (O && I(w, s) ? ie : 0);
+				if (y.has(F)) continue;
+				y.add(F), b.push(`M${N} ${S}h${T}v${E}h${-T}Z`);
+				let re = Math.min(1, T / 2), I = Math.min(1, E / 2), ie = this.host.isRtl() ? A : k, ae = this.host.isRtl() ? k : A, L = (e, t) => e <= 0 || e >= t, oe = N + (ie && L(N, o) ? re : 0), se = N + T - (ae && L(N + T, o) ? re : 0), R = S + (D && L(S, s) ? I : 0), ce = w - (O && L(w, s) ? I : 0);
 				x.push({
-					x: se,
-					y: L,
-					width: ce - se,
-					height: le - L,
-					top: j,
-					right: F,
-					bottom: M,
-					left: te
+					x: oe,
+					y: R,
+					width: se - oe,
+					height: ce - R,
+					top: ee,
+					right: ne,
+					bottom: te,
+					left: P
 				});
 			}
 		}
@@ -3885,7 +3888,7 @@ function Mi(e, t) {
 }
 var Ni = 1 * 1024 * 1024, Pi = 65536;
 function Fi(e, t) {
-	return je(e, Math.max(0, t));
+	return Ae(e, Math.max(0, t));
 }
 var Ii = class {
 	rows = /* @__PURE__ */ new WeakMap();
@@ -3921,7 +3924,7 @@ var Ii = class {
 			active: !1
 		}]).sort((e, t) => e.row - t.row || Number(e.active) - Number(t.active)), v = /* @__PURE__ */ new Set(), y = 0, b = [], x = [], S = !1, C = p || h.length > 0 ? [{
 			first: 1,
-			last: W
+			last: K
 		}] : $([...m, ...g.map((e) => ({
 			first: e.top,
 			last: e.bottom
@@ -3943,7 +3946,7 @@ var Ii = class {
 				}))));
 				let c = p || Ai(m, a.index) ? [{
 					first: 1,
-					last: U
+					last: G
 				}] : $([...h, ...b]);
 				for (let t of c) {
 					let n = this.cells.get(a);
@@ -4080,7 +4083,7 @@ var Wi = 150;
 function Gi(e) {
 	let t = /* @__PURE__ */ new Map();
 	for (let n of e) {
-		let e = R(n.cellRef);
+		let e = z(n.cellRef);
 		e && t.set(`${e.row}:${e.col}`, n);
 	}
 	return t;
@@ -4199,7 +4202,7 @@ var Ki = class {
 		this.resizeObserver?.disconnect(), this.resizeObserver = null, this.hide(), this.commentMap.clear();
 	}
 }, qi = class {
-	owner = new Ae("SheetAcquisition");
+	owner = new ke("SheetAcquisition");
 	get current() {
 		return this.owner.current;
 	}
@@ -4220,7 +4223,7 @@ function Ji(e) {
 		rowHeights: { ...e.rowHeights },
 		colWidths: { ...e.colWidths }
 	};
-	return e.colCollapsed && (t.colCollapsed = { ...e.colCollapsed }), z(e, t), Ln(e, t), Lt(e, t), Kt(e, t), t;
+	return e.colCollapsed && (t.colCollapsed = { ...e.colCollapsed }), B(e, t), Ln(e, t), Ft(e, t), Wt(e, t), t;
 }
 var Yi = class {
 	scaleValue;
@@ -4282,7 +4285,7 @@ var Yi = class {
 		this.frameScheduler = typeof r.requestAnimationFrame == "function" && typeof r.cancelAnimationFrame == "function" ? {
 			requestAnimationFrame: (e) => r.requestAnimationFrame(e),
 			cancelAnimationFrame: (e) => r.cancelAnimationFrame(e)
-		} : null, this.staticDispatcher = e ? new Ce(e, t) : null;
+		} : null, this.staticDispatcher = e ? new Se(e, t) : null;
 	}
 	begin() {
 		return this.staticDispatcher ? this.staticDispatcher.begin() : ++this.generation;
@@ -4298,10 +4301,10 @@ var Yi = class {
 			cssHeight: r
 		});
 	}
-	schedule(e) {
+	schedule(e, t = !1) {
 		if (!this.destroyed) {
 			if (this.pendingRender = e, this.activeRender) {
-				this.begin();
+				t || this.begin();
 				return;
 			}
 			this.animationFrame === null && this.queuePendingRender();
@@ -4692,6 +4695,7 @@ var da = class {
 		return this.selectionController.mode;
 	}
 	_pendingZoomAnchor = null;
+	displayedViewport = null;
 	selectionController = new Zi();
 	notifier;
 	contextReader = new Ii();
@@ -4715,7 +4719,7 @@ var da = class {
 		if (!r) throw Error("XlsxViewer requires a document with an active Window");
 		this.hostWindow = r, this.opts = t, this.gridExtent = ua(t), this._mountKind = n.kind, this._nativeScrollbars = t.showScrollbars ?? !0;
 		let i = t[ea];
-		this._borrowed = i !== void 0, this._mode = n.kind === "sheet" ? n.mode : Ne("XlsxViewer", t.mode, i), this._hiddenSheetMode = t.hiddenSheetMode ?? "show", this.viewport = new Yi(t.cellScale ?? 1), this.wrapper = this.hostDocument.createElement("div"), this.wrapper.style.cssText = `position:relative;width:100%;height:100%;background:${n.kind === "composite" ? "var(--ooxml-xlsx-chrome-surface,#fff)" : "transparent"};box-sizing:border-box;font-family:sans-serif;display:flex;flex-direction:column;`, this.gridRegion = this.hostDocument.createElement("div"), this.gridRegion.style.cssText = "position:relative;flex:1;min-height:0;overflow:hidden;", this.canvasArea = this.hostDocument.createElement("div"), this.canvasArea.style.cssText = "position:absolute;inset:0;overflow:hidden;", this.canvas = n.kind === "sheet" ? n.canvas : this.hostDocument.createElement("canvas"), this.canvas.style.cssText = "position:absolute;top:0;left:0;z-index:0;display:block;", this.renderDispatcher = new Xi(this.canvas, this._mode === "worker", this.hostWindow), this.scrollHost = this.hostDocument.createElement("div"), this.scrollHost.setAttribute("data-xlsx-viewport-input", n.kind), this.scrollHost.setAttribute("role", "region"), this.scrollHost.setAttribute("aria-label", "Spreadsheet viewport. Use Arrow keys to move the selected cell. Press Enter to show its comment."), this.scrollHost.tabIndex = 0, this.scrollHost.style.cssText = `position:absolute;inset:0;overflow:${this._nativeScrollbars ? "auto" : "clip"};z-index:2;background:transparent;scrollbar-color:var(--ooxml-xlsx-chrome-scrollbar-color,auto);`, this.spacer = this.hostDocument.createElement("div"), this.spacer.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;", this._nativeScrollbars && this.scrollHost.appendChild(this.spacer), this.surface = new Qi(this.canvas, this.canvasArea, this.scrollHost), this.overlayHost = new $i(this.canvasArea, this.canvas, this.scrollHost, {
+		this._borrowed = i !== void 0, this._mode = n.kind === "sheet" ? n.mode : Me("XlsxViewer", t.mode, i), this._hiddenSheetMode = t.hiddenSheetMode ?? "show", this.viewport = new Yi(t.cellScale ?? 1), this.wrapper = this.hostDocument.createElement("div"), this.wrapper.style.cssText = `position:relative;width:100%;height:100%;background:${n.kind === "composite" ? "var(--ooxml-xlsx-chrome-surface,#fff)" : "transparent"};box-sizing:border-box;font-family:sans-serif;display:flex;flex-direction:column;`, this.gridRegion = this.hostDocument.createElement("div"), this.gridRegion.style.cssText = "position:relative;flex:1;min-height:0;overflow:hidden;", this.canvasArea = this.hostDocument.createElement("div"), this.canvasArea.style.cssText = "position:absolute;inset:0;overflow:hidden;", this.canvas = n.kind === "sheet" ? n.canvas : this.hostDocument.createElement("canvas"), this.canvas.style.cssText = "position:absolute;top:0;left:0;z-index:0;display:block;", this.renderDispatcher = new Xi(this.canvas, this._mode === "worker", this.hostWindow), this.scrollHost = this.hostDocument.createElement("div"), this.scrollHost.setAttribute("data-xlsx-viewport-input", n.kind), this.scrollHost.setAttribute("role", "region"), this.scrollHost.setAttribute("aria-label", "Spreadsheet viewport. Use Arrow keys to move the selected cell. Press Enter to show its comment."), this.scrollHost.tabIndex = 0, this.scrollHost.style.cssText = `position:absolute;inset:0;overflow:${this._nativeScrollbars ? "auto" : "clip"};z-index:2;background:transparent;scrollbar-color:var(--ooxml-xlsx-chrome-scrollbar-color,auto);`, this.spacer = this.hostDocument.createElement("div"), this.spacer.style.cssText = "position:absolute;top:0;left:0;pointer-events:none;", this._nativeScrollbars && this.scrollHost.appendChild(this.spacer), this.surface = new Qi(this.canvas, this.canvasArea, this.scrollHost), this.overlayHost = new $i(this.canvasArea, this.canvas, this.scrollHost, {
 			commentMaxWidth: 280,
 			commentMaxHeight: 200,
 			validationMaxWidth: na,
@@ -4814,7 +4818,7 @@ var da = class {
 				let e = this.scrollHost.scrollLeft, t = this.isRtl ? this.maxScrollLeft - e : e;
 				this.viewport.setViewportSize(this.scrollHost.clientWidth, this.scrollHost.clientHeight), this.viewport.setOffset(t, this.scrollHost.scrollTop);
 			}
-			this.emitViewportChange(), this.scheduleRender(), this.updateSelectionOverlay(), this.updateFindOverlay();
+			this.emitViewportChange(), this.scheduleRender(!0), this.updateSelectionOverlay(), this.updateFindOverlay();
 		});
 		let a = new this.hostWindow.ResizeObserver(() => {
 			let e = {
@@ -4839,9 +4843,10 @@ var da = class {
 			scale: () => this.viewport.scale,
 			isRtl: () => this.isRtl,
 			isDestroyed: () => this._destroyed,
-			cellAt: (e, t) => this.getCellAt(e, t),
+			cellAt: (e, t, n) => this.cellAtGeometry(e, t, n),
 			cellRect: (e, t) => this._cellRect(e, t),
 			screenX: (e, t) => this.screenX(e, t),
+			displayedViewportOffset: () => this.displayedViewportOffset(),
 			scrollLeft: () => this.effectiveScrollLeft,
 			scrollTop: () => this.viewportTop,
 			setScrollLeft: (e) => this.setViewportLeft(e),
@@ -4860,7 +4865,7 @@ var da = class {
 			copySelection: () => this.copySelection(),
 			updateSelectionOverlay: () => this.updateSelectionOverlay(),
 			updateFindOverlay: () => this.updateFindOverlay(),
-			scheduleRender: () => this.scheduleRender(),
+			scheduleRender: (e) => this.scheduleRender(e),
 			renderCurrentSheet: () => this.renderCurrentSheet(),
 			emitSelectionChange: () => this.emitSelectionChange(),
 			emitViewportChange: () => this.emitViewportChange(),
@@ -4946,13 +4951,13 @@ var da = class {
 			i = u.worksheet, a = u.release;
 			let d = () => this.isCurrentSheetRequest(t, n) ? !1 : (a?.(), a = void 0, !0);
 			if (d()) return;
-			let f = u.partial, p = this.sheetViews.get(e), m = this.initialAnchorReferenceFor(n, e), h = m === void 0 ? qe(i) : void 0, g = h !== void 0;
+			let f = u.partial, p = this.sheetViews.get(e), m = this.initialAnchorReferenceFor(n, e), h = m === void 0 ? Ke(i) : void 0, g = h !== void 0;
 			if (g && (p !== void 0 && !p.parseError || this.viewEdits.hasViewEdits(e))) throw Error(`XLSX viewer cannot establish the initial size of editAs="oneCell" anchors on sheet ${e} after view edits.`);
 			let _ = (t) => {
 				let n = t.parseError || p?.parseError ? void 0 : p, r = n ?? this.createVisibleSheetView(t);
-				return (n || u.partial) && (r.rows = t.rows), n || (m && !t.parseError && Ve(r, m), this.viewEdits.restoreSheetViewState(e, r)), r;
+				return (n || u.partial) && (r.rows = t.rows), n || (m && !t.parseError && Be(r, m), this.viewEdits.restoreSheetViewState(e, r)), r;
 			}, v = (r, i) => {
-				i && ct(r);
+				i && st(r);
 				let a = n[Bn];
 				if (typeof a == "function") {
 					let e = this.hostDocument.createElement("canvas").getContext("2d");
@@ -4961,8 +4966,8 @@ var da = class {
 				this.isCurrentSheetRequest(t, n) && this.viewEdits.syncAutomaticRowOverrides(e, r);
 			}, y = (e) => {
 				if (!g || e.parseError || !this.isCurrentSheetRequest(t, n)) return;
-				let r = Be(e, V(e), this.viewport.scale) ?? null;
-				return r && Ve(e, r), r;
+				let r = ze(e, H(e), this.viewport.scale) ?? null;
+				return r && Be(e, r), r;
 			};
 			if (r = _(i), u.partial) {
 				let e = {
@@ -4971,7 +4976,7 @@ var da = class {
 					scale: this.viewport.scale
 				};
 				s = e;
-				let t = () => V(r).visibleRange({
+				let t = () => H(r).visibleRange({
 					width: e.width,
 					height: e.height,
 					scale: e.scale,
@@ -5003,29 +5008,29 @@ var da = class {
 			} else v(r, !1), c = y(r);
 			o = f ? u.completion : null;
 		} catch (e) {
-			if (a?.(), c && ot(c), !this.isCurrentSheetRequest(t, n)) return;
+			if (a?.(), c && at(c), !this.isCurrentSheetRequest(t, n)) return;
 			throw await this.restoreDisplayedWorksheetLease(n, t), e;
 		}
 		if (!this.isCurrentSheetRequest(t, n)) {
-			a?.(), c && ot(c);
+			a?.(), c && at(c);
 			return;
 		}
-		this.selectionInput.clearSheetGestures(), this.viewEdits.restoreRowResizeRanges(e, r), c !== void 0 && this.installInitialAnchorReference(n, e, c), this.currentAutoRowHeightsPrepared = l, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = a ?? null, this.sheetViews.clear(), this.sheetViews.set(e, r), this.currentSheet = e, this.currentWorksheet = r, this.previewCompletion = o, this.firstPreviewRender = o !== null, this.previewPreparedViewport = s, o && o.then((i) => {
+		this.selectionInput.clearSheetGestures(), this.viewEdits.restoreRowResizeRanges(e, r), c !== void 0 && this.installInitialAnchorReference(n, e, c), this.currentAutoRowHeightsPrepared = l, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = a ?? null, this.sheetViews.clear(), this.sheetViews.set(e, r), this.currentSheet = e, this.displayedViewport = null, this.currentWorksheet = r, this.previewCompletion = o, this.firstPreviewRender = o !== null, this.previewPreparedViewport = s, o && o.then((i) => {
 			if (!this.isCurrentSheetRequest(t, n) || this.currentWorksheet !== r) return;
 			this.previewCompletion = null, this.firstPreviewRender = !1, this.previewPreparedViewport = null;
 			let a = !!i.parseError;
 			this.selectionInput.clearSheetGestures();
 			let o = this.createVisibleSheetView(i), s = a ? void 0 : this.initialAnchorReferenceFor(n, e);
-			if (s && Ve(o, s), this.viewEdits.restoreSheetViewState(e, o), this.currentWorksheet = o, this.sheetViews.set(e, o), a) {
+			if (s && Be(o, s), this.viewEdits.restoreSheetViewState(e, o), this.displayedViewport = null, this.currentWorksheet = o, this.sheetViews.set(e, o), a) {
 				this.currentSourceComments = [], this.sourceCommentMap.clear(), this.selectionController.reset(), this.emitSelectionChange(), this.updateSelectionOverlay(), this.buildCommentMap(o), this.buildHyperlinkMap(o), this.buildOutline(o), this.layoutGutters(), this.updateSpacerSize(o), this.scheduleRender();
 				return;
 			}
-			rt(r), ct(r);
+			nt(r), st(r);
 			let c = this.hostDocument.createElement("canvas").getContext("2d");
 			c && (n[Bn](o, c), this.currentAutoRowHeightsPrepared = !0), this.viewEdits.syncAutomaticRowOverrides(e, o), this.currentSourceComments = i.comments ?? [], this.sourceCommentMap = Gi(this.currentSourceComments), this.buildCommentMap(o), this.buildHyperlinkMap(o), this.buildOutline(o), this.layoutGutters(), this.updateSpacerSize(o), this.scheduleRender(), this.scheduleSelectionContextNotification();
 		}).catch((e) => {
 			if (!(!this.isCurrentSheetRequest(t, n) || this.currentWorksheet !== r)) {
-				if (this.previewCompletion = null, this.firstPreviewRender = !1, this.previewPreparedViewport = null, this.selectionInput.clearSheetGestures(), this.currentWorksheet = null, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = null, this.renderDispatcher.begin(), this._mode === "worker") {
+				if (this.previewCompletion = null, this.firstPreviewRender = !1, this.previewPreparedViewport = null, this.selectionInput.clearSheetGestures(), this.displayedViewport = null, this.currentWorksheet = null, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = null, this.renderDispatcher.begin(), this._mode === "worker") {
 					let e = new OffscreenCanvas(1, 1);
 					e.getContext("2d");
 					let t = e.transferToImageBitmap();
@@ -5053,7 +5058,7 @@ var da = class {
 		this.initialAnchorWorkbook !== e && (this.releaseInitialAnchorReferences(), this.initialAnchorWorkbook = e), this.initialAnchorReferences.has(t) || this.initialAnchorReferences.set(t, n);
 	}
 	releaseInitialAnchorReferences() {
-		for (let e of this.initialAnchorReferences.values()) e && ot(e);
+		for (let e of this.initialAnchorReferences.values()) e && at(e);
 		this.initialAnchorReferences.clear(), this.initialAnchorWorkbook = null;
 	}
 	async restoreDisplayedWorksheetLease(e, t) {
@@ -5073,7 +5078,7 @@ var da = class {
 	scrollOutlineSummaryToStart(e, t) {
 		let n = this.currentWorksheet;
 		if (!n) return;
-		let r = this.viewport.scale, i = V(n).scrollOffsetForCell(e === "row" ? t : 1, e === "col" ? t : 1, {
+		let r = this.viewport.scale, i = H(n).scrollOffsetForCell(e === "row" ? t : 1, e === "col" ? t : 1, {
 			scale: r,
 			viewportWidth: this.canvasArea.clientWidth,
 			viewportHeight: this.canvasArea.clientHeight,
@@ -5101,7 +5106,7 @@ var da = class {
 		r && this.viewEdits.setBandCollapsed(r, this.currentSheet, e, t, n);
 	}
 	afterOutlineMutation(e, t) {
-		G.invalidate(e), this.outlineGutter.rebuild(e), this.updateSpacerSize(e), t && this.scrollOutlineSummaryToStart(t.axis, t.summary), this.updateSelectionOverlay(), this.updateFindOverlay(), this.scheduleRender(), t && this.emitViewportChange();
+		q.invalidate(e), this.outlineGutter.rebuild(e), this.updateSpacerSize(e), t && this.scrollOutlineSummaryToStart(t.axis, t.summary), this.updateSelectionOverlay(), this.updateFindOverlay(), this.scheduleRender(), t && this.emitViewportChange();
 	}
 	get isRtl() {
 		return this.currentWorksheet?.rightToLeft === !0;
@@ -5136,7 +5141,7 @@ var da = class {
 		this.viewport.setOffset(e, this.viewport.y), this._nativeScrollbars && (this.scrollHost.scrollLeft = this.isRtl ? Math.max(0, this.maxScrollLeft - this.viewport.x) : this.viewport.x);
 	}
 	screenX(e, t) {
-		return this.isRtl ? vt(e, t, this.canvasArea.clientWidth) : e;
+		return this.isRtl ? _t(e, t, this.canvasArea.clientWidth) : e;
 	}
 	resetHorizontalScroll() {
 		this.viewport.setOffset(0, this.viewport.y), this._nativeScrollbars && (this.scrollHost.scrollLeft = this.isRtl ? this.maxScrollLeft : 0);
@@ -5172,8 +5177,14 @@ var da = class {
 	emitViewportChange() {
 		let e = this.opts.onViewportChange;
 		if (!e) return;
-		let t = this.getViewportOffset(), n = this._lastViewportNotification;
-		n && n.x === t.x && n.y === t.y || (this._lastViewportNotification = t, e(t));
+		let t = this.getViewportOffset(), n = this.displayedViewportOffset(), r = {
+			x: n.x,
+			y: n.y
+		}, i = this._lastViewportNotification;
+		i && i.offset.x === t.x && i.offset.y === t.y && i.displayed.x === r.x && i.displayed.y === r.y || (this._lastViewportNotification = {
+			offset: t,
+			displayed: r
+		}, e(t));
 	}
 	async setViewportOffset(e) {
 		if (!Number.isFinite(e.x) || !Number.isFinite(e.y)) throw TypeError("XLSX viewport offsets must be finite numbers");
@@ -5184,26 +5195,39 @@ var da = class {
 		this.reanchorHorizontalScroll(), this.layoutGutters(), this.currentWorksheet && this.updateSpacerSize(this.currentWorksheet), await this.renderCurrentSheet(), this.updateSelectionOverlay(), this.updateFindOverlay();
 	}
 	async scrollToCell(e, t = {}) {
-		let n = R(e);
+		let n = z(e);
 		!n || !this.currentWorksheet || (this.previewCompletion && await this.previewCompletion, this._scrollCellIntoView(n.row, n.col, t.align ?? "nearest"), await this.renderCurrentSheet(), this.updateSelectionOverlay(), this.updateFindOverlay(), this.emitViewportChange());
 	}
 	_stepSheet(e) {
-		return this._hiddenSheetMode === "skip" && this.wb ? zt(this.currentSheet, e, (e) => this.wb.isHidden(e), this.sheetCount) : this.currentSheet + e;
+		return this._hiddenSheetMode === "skip" && this.wb ? Lt(this.currentSheet, e, (e) => this.wb.isHidden(e), this.sheetCount) : this.currentSheet + e;
 	}
 	_initialSheet() {
-		return this._hiddenSheetMode === "skip" && this.wb ? Bt(0, (e) => this.wb.isHidden(e), this.sheetCount) : 0;
+		return this._hiddenSheetMode === "skip" && this.wb ? Rt(0, (e) => this.wb.isHidden(e), this.sheetCount) : 0;
+	}
+	displayedViewportOffset() {
+		let e = this.displayedViewport;
+		return e && e.worksheet === this.currentWorksheet && e.scale === this.viewport.scale && e.width === this.canvasArea.clientWidth && e.height === this.canvasArea.clientHeight ? e : {
+			x: this.effectiveScrollLeft,
+			y: this.viewportTop
+		};
 	}
 	getCellAt(e, t) {
+		return this.cellAtGeometry(e, t, "displayed");
+	}
+	cellAtGeometry(e, t, n = "displayed") {
 		if (this._destroyed) return null;
-		let n = this.currentWorksheet;
-		if (!n) return null;
-		let r = this.viewport.scale, i = this.canvasArea.getBoundingClientRect(), a = this.screenX(e - i.left, 0), o = t - i.top, s = Math.round(50 * r), c = Math.round(22 * r);
-		if (a < s || o < c) return null;
-		let l = a - s, u = o - c;
-		return V(n).cellAt(l, u, {
-			scrollX: this.effectiveScrollLeft,
-			scrollY: this.viewportTop,
-			scale: r
+		let r = this.currentWorksheet;
+		if (!r) return null;
+		let i = this.viewport.scale, a = this.canvasArea.getBoundingClientRect(), o = this.screenX(e - a.left, 0), s = t - a.top, c = Math.round(50 * i), l = Math.round(22 * i);
+		if (o < c || s < l) return null;
+		let u = o - c, d = s - l, f = n === "logical" ? {
+			x: this.effectiveScrollLeft,
+			y: this.viewportTop
+		} : this.displayedViewportOffset();
+		return H(r).cellAt(u, d, {
+			scrollX: f.x,
+			scrollY: f.y,
+			scale: i
 		});
 	}
 	elementContextViewport() {
@@ -5211,12 +5235,12 @@ var da = class {
 		if (!e) return null;
 		let t = this.canvasArea.clientWidth, n = this.canvasArea.clientHeight;
 		if (t <= 0 || n <= 0) return null;
-		let r = this.viewport.scale, i = V(e).visibleRange({
+		let r = this.viewport.scale, i = H(e).visibleRange({
 			width: t,
 			height: n,
 			scale: r,
-			scrollX: this.effectiveScrollLeft,
-			scrollY: this.viewportTop,
+			scrollX: this.displayedViewportOffset().x,
+			scrollY: this.displayedViewportOffset().y,
 			headerWidth: 50,
 			headerHeight: 22,
 			buffer: 2
@@ -5246,17 +5270,17 @@ var da = class {
 		let n = this.currentWorksheet;
 		if (!n) return null;
 		let r = this.viewport.scale;
-		return V(n).cellRect(e, t, {
+		return H(n).cellRect(e, t, {
 			scale: r,
-			scrollX: this.effectiveScrollLeft,
-			scrollY: this.viewportTop,
+			scrollX: this.displayedViewportOffset().x,
+			scrollY: this.displayedViewportOffset().y,
 			headerWidth: 50,
 			headerHeight: 22
 		});
 	}
 	getCellViewportRect(e) {
 		if (this._destroyed) return null;
-		let t = typeof e == "string" ? R(e) : e;
+		let t = typeof e == "string" ? z(e) : e;
 		if (!t || t.row < 1 || t.col < 1) return null;
 		let n = this._cellRect(t.row, t.col);
 		return n ? Object.freeze({
@@ -5270,12 +5294,12 @@ var da = class {
 		return this.assertOpen(), structuredClone(this.currentSourceComments);
 	}
 	async goToComment(e, t, n) {
-		let r = R(t), i = this.wb;
+		let r = z(t), i = this.wb;
 		if (!r || !i || !Number.isInteger(e) || e < 0 || e >= i.sheetCount) return !1;
 		let a = ++this.commentNavigationGeneration, o = e === this.currentSheet && this.currentWorksheet !== null ? this.currentSourceComments : await i.getComments(e);
 		if (this._destroyed) throw this.destroyedError();
 		if (a !== this.commentNavigationGeneration || i !== this.wb || !o.some((e) => {
-			let t = R(e.cellRef);
+			let t = z(e.cellRef);
 			return t?.row === r.row && t.col === r.col;
 		})) return !1;
 		if (e !== this.currentSheet || this.currentWorksheet === null) {
@@ -5320,7 +5344,7 @@ var da = class {
 	refitAutoRowsAfterColumnResize() {
 		let e = this.currentWorksheet, t = this.preparedWorkbook;
 		if (!e || !t) return;
-		ct(e, this.viewEdits.manualRows(this.currentSheet));
+		st(e, this.viewEdits.manualRows(this.currentSheet));
 		let n = t[Bn];
 		if (typeof n != "function") return;
 		let r = this.hostDocument.createElement("canvas").getContext("2d");
@@ -5330,7 +5354,7 @@ var da = class {
 		this.opts.selectionColor = e, this.updateSelectionOverlay();
 	}
 	async setHiddenSheetMode(e) {
-		this._hiddenSheetMode = e, this.buildTabs(), e === "skip" && this.wb && this.wb.isHidden(this.currentSheet) ? await this.showSheet(Bt(this.currentSheet, (e) => this.wb.isHidden(e), this.sheetCount)) : this.updateTabActive(this.currentSheet);
+		this._hiddenSheetMode = e, this.buildTabs(), e === "skip" && this.wb && this.wb.isHidden(this.currentSheet) ? await this.showSheet(Rt(this.currentSheet, (e) => this.wb.isHidden(e), this.sheetCount)) : this.updateTabActive(this.currentSheet);
 	}
 	get hiddenSheetMode() {
 		return this._hiddenSheetMode;
@@ -5338,7 +5362,7 @@ var da = class {
 	get visibleSheetCount() {
 		if (!this.wb) return 0;
 		let e = this.wb;
-		return Vt((t) => e.isHidden(t), this.sheetCount);
+		return zt((t) => e.isHidden(t), this.sheetCount);
 	}
 	async copySelection() {
 		return this.assertOpen(), this.previewCompletion && await this.previewCompletion, this.copier.copy();
@@ -5364,7 +5388,7 @@ var da = class {
 	_scrollCellIntoView(e, t, n = "nearest") {
 		let r = this.currentWorksheet;
 		if (!r) return;
-		let i = this.viewport.scale, a = V(r).scrollOffsetForCell(e, t, {
+		let i = this.viewport.scale, a = H(r).scrollOffsetForCell(e, t, {
 			scale: i,
 			viewportWidth: this.canvasArea.clientWidth,
 			viewportHeight: this.canvasArea.clientHeight,
@@ -5390,7 +5414,7 @@ var da = class {
 				commentRefs: [],
 				comments: []
 			};
-			return z(t, e), Ln(t, e), Lt(t, e), e;
+			return B(t, e), Ln(t, e), Ft(t, e), e;
 		}
 		if ((typeof this.opts.comments == "object" ? this.opts.comments : void 0)?.includeResolved !== !1) return t;
 		let n = new Set((t.comments ?? []).filter((e) => e.resolved === !0).map((e) => e.cellRef));
@@ -5400,7 +5424,7 @@ var da = class {
 			commentRefs: t.commentRefs?.filter((e) => !n.has(e)),
 			comments: t.comments?.filter((e) => !n.has(e.cellRef))
 		};
-		return z(t, r), Ln(t, r), Lt(t, r), r;
+		return B(t, r), Ln(t, r), Ft(t, r), r;
 	}
 	buildHyperlinkMap(e) {
 		this.hyperlinks.build(e);
@@ -5420,8 +5444,8 @@ var da = class {
 			if (this.viewport.setScale(i), this.zoomControl?.sync(i, r, t, n), this.currentWorksheet) {
 				let e = this.effectiveScrollLeft, t = this.viewportTop;
 				if (this.layoutGutters(), this.updateSpacerSize(this.currentWorksheet), o) {
-					this.viewportTop = be(t, o.y, a, i, { maxScroll: this.maxScrollTop });
-					let n = this.screenX(o.x, 0), r = this.maxScrollLeft, s = be(e, n, a, i, { maxScroll: r });
+					this.viewportTop = ye(t, o.y, a, i, { maxScroll: this.maxScrollTop });
+					let n = this.screenX(o.x, 0), r = this.maxScrollLeft, s = ye(e, n, a, i, { maxScroll: r });
 					this.setViewportLeft(s);
 				} else this.setViewportLeft(e);
 			}
@@ -5432,10 +5456,10 @@ var da = class {
 		return this.viewport.scale;
 	}
 	zoomIn() {
-		this.setScale(we(this.getScale()));
+		this.setScale(Ce(this.getScale()));
 	}
 	zoomOut() {
-		this.setScale(Fe(this.getScale()));
+		this.setScale(Pe(this.getScale()));
 	}
 	fitWidth() {
 		this._fit("width");
@@ -5446,7 +5470,7 @@ var da = class {
 	_fit(e) {
 		let t = this.currentWorksheet;
 		if (!t) return;
-		let { width: n, height: r } = this._naturalContentExtent(t), i = Ie({
+		let { width: n, height: r } = this._naturalContentExtent(t), i = Fe({
 			contentWidth: n,
 			contentHeight: r,
 			containerWidth: this.canvasArea.clientWidth,
@@ -5456,16 +5480,16 @@ var da = class {
 	}
 	_naturalContentExtent(e) {
 		let { maxRow: t, maxCol: n } = Rn(e, this.gridExtent);
-		return V(e).logicalContentExtent(t, n, 50, 22);
+		return H(e).logicalContentExtent(t, n, 50, 22);
 	}
 	updateSpacerSize(e) {
 		let t = this.viewport.scale, { maxRow: n, maxCol: r } = Rn(e, this.gridExtent);
 		n += this.gridExtent.marginRows, r += this.gridExtent.marginCols;
-		let i = V(e).roundedContentExtent(n, r, t, 50, 22), a = i.width, o = i.height;
+		let i = H(e).roundedContentExtent(n, r, t, 50, 22), a = i.width, o = i.height;
 		this.spacer.style.width = `${a}px`, this.spacer.style.height = `${o}px`, this.viewport.setViewportSize(this.scrollHost.clientWidth, this.scrollHost.clientHeight), this.viewport.setExtent(a, o), this.setViewportLeft(this.viewport.x), this.viewportTop = this.viewport.y;
 	}
-	scheduleRender() {
-		this.renderDispatcher.schedule(() => this.renderCurrentSheet().catch((e) => this._reportRenderError(e)));
+	scheduleRender(e = !1) {
+		this.renderDispatcher.schedule(() => this.renderCurrentSheet().catch((e) => this._reportRenderError(e)), e && this._mode === "worker");
 	}
 	async renderCurrentSheet() {
 		let e = this.renderDispatcher.begin(), t = this.selectionInput.rowResizePreview;
@@ -5492,44 +5516,52 @@ var da = class {
 		}
 		let t = this.currentWorksheet, n = this.canvasArea.clientWidth, r = this.canvasArea.clientHeight;
 		if (n <= 0 || r <= 0) return;
-		let i = this.viewport.scale, a = this.surface.dpr, o = t.freezeRows ?? 0, s = t.freezeCols ?? 0, c = V(t).visibleRange({
+		let i = this.viewport.scale, a = this.surface.dpr, o = t.freezeRows ?? 0, s = t.freezeCols ?? 0, c = this.effectiveScrollLeft, l = this.viewportTop, u = H(t).visibleRange({
 			width: n,
 			height: r,
 			scale: i,
-			scrollX: this.effectiveScrollLeft,
-			scrollY: this.viewportTop,
+			scrollX: c,
+			scrollY: l,
 			headerWidth: 50,
 			headerHeight: 22,
 			buffer: 2
-		}), l = c.range, { offsetX: u, offsetY: d } = c, { selectedRowRange: f, selectedColRange: p } = this.computeHeaderHighlight(), m = {
+		}), d = u.range, { offsetX: f, offsetY: p } = u, { selectedRowRange: m, selectedColRange: h } = this.computeHeaderHighlight(), g = {
 			width: n,
 			height: r,
 			dpr: a,
 			imageResources: this.opts.imageResources,
 			cellScale: i,
-			scrollOffsetX: u,
-			scrollOffsetY: d,
+			scrollOffsetX: f,
+			scrollOffsetY: p,
 			freezeRows: o,
 			freezeCols: s,
-			selectedRowRange: f,
-			selectedColRange: p,
+			selectedRowRange: m,
+			selectedColRange: h,
 			chromeColors: this.chromeColors
-		}, h = this.wireSizeOverrides(), g = t.parseError ? void 0 : this.initialAnchorReferenceFor(this.workbook, this.currentSheet) ?? void 0, _ = h || g ? {
+		}, _ = this.wireSizeOverrides(), v = t.parseError ? void 0 : this.initialAnchorReferenceFor(this.workbook, this.currentSheet) ?? void 0, y = _ || v ? {
 			id: this.projectionId,
 			revision: this.viewEdits.sizeRevision(this.currentSheet),
 			autoRowHeightsPrepared: this.currentAutoRowHeightsPrepared,
-			...g ? { initialAnchorSizes: g } : {}
-		} : void 0, v = Dn(h ? {
-			...m,
-			sizeOverrides: h.overrides
-		} : m, V(t).maximumDigitWidth, {
+			...v ? { initialAnchorSizes: v } : {}
+		} : void 0, b = Dn(_ ? {
+			...g,
+			sizeOverrides: _.overrides
+		} : g, H(t).maximumDigitWidth, {
 			worksheet: t,
-			projection: _
+			projection: y
 		});
 		if (this._mode === "worker") {
-			let t = await this.workbook.renderViewportToBitmap(this.currentSheet, l, v);
-			if (!this.renderDispatcher.commitBitmap(e, t, n, r)) return;
-		} else if (await this.workbook.renderViewport(this.canvas, this.currentSheet, l, tn(v, () => !this._destroyed && this.renderDispatcher.isCurrent(e))), !this.renderDispatcher.isCurrent(e) || this._destroyed) return;
+			let a = await this.workbook.renderViewportToBitmap(this.currentSheet, d, b);
+			if (!this.renderDispatcher.commitBitmap(e, a, n, r)) return;
+			this.displayedViewport = {
+				worksheet: t,
+				x: c,
+				y: l,
+				scale: i,
+				width: n,
+				height: r
+			}, this.updateSelectionOverlay(), this.updateFindOverlay(), this._lastViewportNotification && this.emitViewportChange();
+		} else if (await this.workbook.renderViewport(this.canvas, this.currentSheet, d, $t(b, () => !this._destroyed && this.renderDispatcher.isCurrent(e))), !this.renderDispatcher.isCurrent(e) || this._destroyed) return;
 		this.renderGutters(), this.firstPreviewRender = !1, this.committedFrameCount++;
 	}
 	computeHeaderHighlight() {
@@ -5549,7 +5581,7 @@ var da = class {
 		if (this._destroyed) return;
 		this._destroyed = !0, this.notifier.destroy(), this.selectionInput.destroy(), this.sheetRequestGeneration++, this.resizeObserver?.disconnect(), this.chromeTheme.destroy(), this.renderDispatcher.destroy(), this.surface.destroy(), this.overlayHost.destroy(), this.sheetTabs?.destroy(), this.zoomControl?.destroy(), this.comments.destroy(), this.validation.destroy(), this.finder.destroy(), this.releaseHostFonts();
 		let e = this.wb?.[Vn];
-		typeof e == "function" && e.call(this.wb, this.projectionId), this.currentWorksheet = null, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = null, this.sheetViews.clear(), this.releaseInitialAnchorReferences(), this.viewEdits.destroy(), this.currentSourceComments = [], this.sourceCommentMap.clear(), this.hyperlinks.destroy(), this.preparedWorkbook = null, this.outlineGutter.destroy(), this.elementContext = null, this.selectionController.reset(), this.acquisition.destroy(), this.wrapper.remove();
+		typeof e == "function" && e.call(this.wb, this.projectionId), this.displayedViewport = null, this.currentWorksheet = null, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = null, this.sheetViews.clear(), this.releaseInitialAnchorReferences(), this.viewEdits.destroy(), this.currentSourceComments = [], this.sourceCommentMap.clear(), this.hyperlinks.destroy(), this.preparedWorkbook = null, this.outlineGutter.destroy(), this.elementContext = null, this.selectionController.reset(), this.acquisition.destroy(), this.wrapper.remove();
 	}
 	assertOpen() {
 		if (this._destroyed) throw this.destroyedError();
@@ -5585,8 +5617,8 @@ var da = class {
 	}
 	constructor(e, t = {}) {
 		this.canvasElement = e;
-		let n = t[ea], r = Ne("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
-		this.canvasMount = new Me(e, {
+		let n = t[ea], r = Me("XlsxSheetViewer", t.mode, n), i = e.getBoundingClientRect();
+		this.canvasMount = new je(e, {
 			wrapperCssText: `position:relative;display:inline-block;vertical-align:top;overflow:hidden;width:${e.style.width || `${i.width || e.width}px`};height:${e.style.height || `${i.height || e.height}px`};`,
 			restoreMode: "style-and-bitmap"
 		}), this.engine = new da(this.canvasMount.wrapper, {
@@ -5761,17 +5793,17 @@ var da = class {
 	MAX_SELECTION_AREAS: () => 128,
 	MAX_SELECTION_CONTEXT_CELLS: () => mr,
 	MAX_SELECTION_CONTEXT_TEXT_CHARACTERS: () => hr,
-	OoxmlDecodedImageLimitError: () => le,
+	OoxmlDecodedImageLimitError: () => ce,
 	OoxmlError: () => h,
 	OoxmlResourceLimitError: () => _,
-	TiffDecodeError: () => ge,
+	TiffDecodeError: () => he,
 	XlsxSheetViewer: () => pa,
 	XlsxViewer: () => fa,
 	XlsxWorkbook: () => Un,
-	autoResize: () => ve,
-	isOoxmlDecodedImageLimitError: () => L,
-	isTiffDecodeError: () => he,
-	openExternalHyperlink: () => oe,
-	resolveSharedStrings: () => St
+	autoResize: () => _e,
+	isOoxmlDecodedImageLimitError: () => R,
+	isTiffDecodeError: () => me,
+	openExternalHyperlink: () => L,
+	resolveSharedStrings: () => xt
 });
 export { mr as a, On as c, pr as i, Dn as l, pa as n, hr as o, fa as r, Un as s, ma as t };
