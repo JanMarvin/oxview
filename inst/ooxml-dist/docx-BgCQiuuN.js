@@ -3,7 +3,7 @@ import { _o as t, ja as n, vo as r, yo as i } from "./plot-area-frame-D3JtHvov.j
 import { n as a, t as o } from "./cfb-guard-BIaHdonq.js";
 import { Dn as s, En as c, H as l, M as u, N as d, On as f, V as p, Xt as m, Y as h, Yt as g, hn as _, j as v, lt as y, mt as b, ot as x, qt as S, t as ee, u as C } from "./bounded-raw-part-cache-B8t03tSP.js";
 import { A as te, C as w, D as ne, E as T, M as re, N as ie, P as E, S as ae, T as D, _ as oe, a as se, b as ce, c as le, d as ue, f as de, g as fe, h as pe, i as me, j as he, k as ge, l as _e, m as ve, n as ye, o as be, p as xe, r as Se, t as Ce, u as we, v as Te, w as Ee, x as De, y as Oe } from "./comment-overlay-controller-Crm5Syhx.js";
-import { A as ke, B as Ae, C as je, D as O, E as Me, F as Ne, I as Pe, L as k, M as Fe, N as A, O as Ie, P as Le, R as Re, S as ze, T as Be, V as j, _ as Ve, a as He, b as Ue, c as We, f as Ge, h as Ke, j as M, k as qe, l as Je, m as Ye, n as Xe, o as Ze, p as Qe, s as $e, t as et, u as tt, v as nt, w as rt, x as it, y as N, z as at } from "./document-pull-client-Ckq8THk6.js";
+import { A as ke, B as Ae, C as je, D as O, E as Me, F as Ne, I as Pe, L as k, M as Fe, N as A, O as Ie, P as Le, R as Re, S as ze, T as Be, V as j, _ as Ve, a as He, b as Ue, c as We, f as Ge, h as Ke, j as M, k as qe, l as Je, m as Ye, n as Xe, o as Ze, p as Qe, s as $e, t as et, u as tt, v as nt, w as rt, x as it, y as N, z as at } from "./document-pull-client-CzhPbnY_.js";
 import { f as ot, u as st } from "./pixel-budget-DI82Hn3R.js";
 import { i as ct, t as lt } from "./tiff-contract-DEd8CGuz.js";
 import { D as ut, E as dt, T as ft, a as pt, b as mt, c as ht, d as gt, f as _t, i as vt, l as yt, n as bt, o as xt, p as St, r as Ct, s as wt, t as Tt, u as Et, v as Dt, w as Ot, x as kt, y as At } from "./canvas-viewer-mechanics-DI38gHNV.js";
@@ -1344,7 +1344,7 @@ var Q = class e {
 			if (i?.aborted) throw new N();
 		};
 		if (l(), n.legacyDoc !== void 0) {
-			let { loadDocxModelSource: e } = await import("./document-model-source-qsnWuGuH.js"), a = await e(t, n, r);
+			let { loadDocxModelSource: e } = await import("./document-model-source-xnkMoTZ_.js"), a = await e(t, n, r);
 			if (i?.aborted) throw a.destroy(), new N();
 			return a;
 		}
@@ -1365,7 +1365,7 @@ var Q = class e {
 				d = await e.arrayBuffer();
 			} else d = t;
 			l(), d = a(await o(d, n.password)), l(), _.setSourceBytes(d.byteLength), _.checkpoint("container ready");
-			let v = g === "worker" ? (await import("./render-worker-host-DYUY1TuP.js")).createRenderWorker() : new fn(), y = g === "worker" ? jt(n) : void 0, b = g === "worker" && !!n.progressiveLayout, x, S = !1, ee = () => {
+			let v = g === "worker" ? (await import("./render-worker-host-G1fnymI8.js")).createRenderWorker() : new fn(), y = g === "worker" ? jt(n) : void 0, b = g === "worker" && !!n.progressiveLayout, x, S = !1, ee = () => {
 				S || !x || (S = !0, x.destroy());
 			};
 			try {
@@ -2760,7 +2760,7 @@ var Mr = Symbol("DocxViewer.borrowedDocument"), Nr = class e {
 	}
 }, Ir = 12, Lr = 13, Rr = Symbol("DocxScrollViewer.borrowedDocument"), zr;
 function Br() {
-	return zr ??= import("./comment-ui-runtime-u7zk49cg.js");
+	return zr ??= import("./comment-ui-runtime-DKlEfBPp.js");
 }
 var Vr = class e {
 	_pendingLoadAbort = null;
