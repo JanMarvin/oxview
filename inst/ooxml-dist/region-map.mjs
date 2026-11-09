@@ -1,6 +1,6 @@
 // optional-renderer: packages/core/src/chart/region-map-natural-earth.generated.ts
-import { Ao as e, Cn as t, _a as n, aa as r, ca as i, fa as a, ha as o, la as s, ma as c, qt as l, t as u } from "./plot-area-frame-D3JtHvov.js";
-import { a as d, l as f, s as p } from "./duotone-BI7CoghW.js";
+import { Cn as e, Io as t, Sa as n, _a as r, ba as i, ma as a, pa as o, qt as s, t as c, ua as l, ya as u } from "./plot-area-frame-DNYMd9Pf.js";
+import { a as d, l as f, s as p } from "./duotone-GK4Hqn7f.js";
 import { t as m } from "./renderer-module-contract-BuTx2FWJ.js";
 var h = [
 	{
@@ -12512,10 +12512,10 @@ var E = {
 	drcongo: "Democratic Republic of the Congo",
 	congodemocraticrepublic: "Democratic Republic of the Congo"
 };
-function D(t, n) {
+function D(e, n) {
 	let r = (e) => S.get(e) ?? C.get(e) ?? w.get(e) ?? T.get(e), i = n ? r(x(n)) : void 0;
 	if (i) return i;
-	let a = x(t), o = e(E, a);
+	let a = x(e), o = t(E, a);
 	return r(a) ?? (o ? r(x(o)) : void 0);
 }
 function O(e, t) {
@@ -12578,52 +12578,52 @@ function I(e) {
 	}
 	return t;
 }
-function L(e, t, n, r, i) {
+function L(e, t, n, r, a) {
 	if (!t.title && !t.titlePresent) return;
-	let a = t.titleFontFace || t.themeMajorFontLatin || "sans-serif";
-	e.font = `${t.titleFontBold ?? !0 ? "bold " : ""}${r}px ${JSON.stringify(a)}`, e.fillStyle = t.titleFontColor ? `#${t.titleFontColor}` : "#333333", e.textAlign = "center", e.textBaseline = "top", o(e, t.title ?? "", n.x + n.w / 2, n.y + i, r);
+	let o = t.titleFontFace || t.themeMajorFontLatin || "sans-serif";
+	e.font = `${t.titleFontBold ?? !0 ? "bold " : ""}${r}px ${JSON.stringify(o)}`, e.fillStyle = t.titleFontColor ? `#${t.titleFontColor}` : "#333333", e.textAlign = "center", e.textBaseline = "top", i(e, t.title ?? "", n.x + n.w / 2, n.y + a, r);
 }
-function R(e, n, r, i, s, c, l, u) {
+function R(t, n, a, o, s, c, l, u) {
 	let d = n.series[0]?.name ?? "", f = Math.max(8, (n.legendFontSizeHpt ?? 900) / 100 * u);
-	e.font = `${n.legendFontBold ? "bold " : ""}${f}px ${JSON.stringify(n.legendFontFace || n.themeMinorFontLatin || "sans-serif")}`, e.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", e.textAlign = "center", e.textBaseline = "top", d && o(e, d, i + c / 2, s, f + 2);
-	let p = Math.min(c * .58, 240), m = Math.max(6, Math.min(12, l * .25)), h = i + (c - p) / 2, g = s + (d ? f + 2 + (a(d) - 1) * (f + 2) : 0), _ = e.createLinearGradient(h, 0, h + p, 0);
-	_.addColorStop(0, r.minColor), r.midColor && _.addColorStop(.5, r.midColor), _.addColorStop(1, r.maxColor), e.fillStyle = _, e.fillRect(h, g, p, m), e.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", e.textBaseline = "top", e.textAlign = "left";
+	t.font = `${n.legendFontBold ? "bold " : ""}${f}px ${JSON.stringify(n.legendFontFace || n.themeMinorFontLatin || "sans-serif")}`, t.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", t.textAlign = "center", t.textBaseline = "top", d && i(t, d, o + c / 2, s, f + 2);
+	let p = Math.min(c * .58, 240), m = Math.max(6, Math.min(12, l * .25)), h = o + (c - p) / 2, g = s + (d ? f + 2 + (r(d) - 1) * (f + 2) : 0), _ = t.createLinearGradient(h, 0, h + p, 0);
+	_.addColorStop(0, a.minColor), a.midColor && _.addColorStop(.5, a.midColor), _.addColorStop(1, a.maxColor), t.fillStyle = _, t.fillRect(h, g, p, m), t.fillStyle = n.legendFontColor ? `#${n.legendFontColor}` : "#595959", t.textBaseline = "top", t.textAlign = "left";
 	let v = n.series[0]?.valFormatCode ?? null;
-	o(e, t(r.min, v, n.date1904), h, g + m + 2, f + 2), e.textAlign = "right", o(e, t(r.max, v, n.date1904), h + p, g + m + 2, f + 2);
+	i(t, e(a.min, v, n.date1904), h, g + m + 2, f + 2), t.textAlign = "right", i(t, e(a.max, v, n.date1904), h + p, g + m + 2, f + 2);
 }
-function z(e, n, r, i) {
-	let o = e.series[0]?.name ?? "", s = Math.max(8, (e.legendFontSizeHpt ?? 900) / 100 * r), c = e.series[0]?.valFormatCode ?? null, l = o ? a(o) : 0, u = Math.max(a(t(n.min, c, e.date1904)), a(t(n.max, c, e.date1904)));
-	if (l <= 1 && u <= 1) return i;
+function z(t, n, i, a) {
+	let o = t.series[0]?.name ?? "", s = Math.max(8, (t.legendFontSizeHpt ?? 900) / 100 * i), c = t.series[0]?.valFormatCode ?? null, l = o ? r(o) : 0, u = Math.max(r(e(n.min, c, t.date1904)), r(e(n.max, c, t.date1904)));
+	if (l <= 1 && u <= 1) return a;
 	let d = l * (s + 2) + 12 + 2 + (u - 1) * (s + 2) + s;
-	return Math.max(i, d);
+	return Math.max(a, d);
 }
 function B(e, t, n, r) {
 	e.fillStyle = "#666666", e.font = `${Math.max(9, 9 * n)}px sans-serif`, e.textAlign = "center", e.textBaseline = "middle", e.fillText(r, t.x + t.w / 2, t.y + t.h / 2);
 }
-function V(e, t, a, d, f = 0) {
+function V(e, t, r, d, f = 0) {
 	if (t.chartType !== "regionMap" || !t.chartexRegionMap) return !1;
 	let p = t.chartexRegionMap;
-	if (p.rows.length > y) return B(e, a, d, "(chart values exceed rendering limit)"), !0;
-	if (p.geography?.cachePresent) return B(e, a, d, "(region map cache is unavailable offline)"), !0;
+	if (p.rows.length > y) return B(e, r, d, "(chart values exceed rendering limit)"), !0;
+	if (p.geography?.cachePresent) return B(e, r, d, "(region map cache is unavailable offline)"), !0;
 	let m = p.geography?.viewedRegionType;
-	if (m != null && m !== "world") return B(e, a, d, "(region map detail is unavailable offline)"), !0;
-	let g = I(p), _ = F([...g.values()], p.colors, t.chartexAccents?.[0]), v = r(t, a.h, d, .02, .015), x = t.titleRichRuns?.length ? {
+	if (m != null && m !== "world") return B(e, r, d, "(region map detail is unavailable offline)"), !0;
+	let g = I(p), _ = F([...g.values()], p.colors, t.chartexAccents?.[0]), v = l(t, r.h, d, .02, .015), x = t.titleRichRuns?.length ? {
 		...v,
-		bandH: v.bandH + s(t.title, v.fontPx)
+		bandH: v.bandH + a(t.title, v.fontPx)
 	} : v;
-	L(e, t, a, x.fontPx, x.topPad);
-	let S = t.showLegend ? z(t, _, d, Math.max(32, a.h * .16)) : 0, C = t.showLegend ? {
-		x: a.x,
-		y: a.y + x.bandH,
-		w: a.w,
+	L(e, t, r, x.fontPx, x.topPad);
+	let S = t.showLegend ? z(t, _, d, Math.max(32, r.h * .16)) : 0, C = t.showLegend ? {
+		x: r.x,
+		y: r.y + x.bandH,
+		w: r.w,
 		h: S
-	} : null, w = C && t.legendManualLayout ? i(t.legendManualLayout, a, C) ?? C : C, T = t.legendOverlay === !0 ? 0 : S, E = a.w * .03, O = a.h * .035, k = {
-		x: a.x + E,
-		y: a.y + x.bandH + T,
-		w: Math.max(1, a.w - E * 2),
-		h: Math.max(1, a.h - x.bandH - T - O)
-	}, A = t.plotAreaManualLayout ? i(t.plotAreaManualLayout, a, k) ?? k : k;
-	u(e, t, A.x, A.y, A.w, A.h, d, f), w && (l(e, t, w, d, f), R(e, t, _, w.x, w.y, w.w, w.h, d));
+	} : null, w = C && t.legendManualLayout ? o(t.legendManualLayout, r, C) ?? C : C, T = t.legendOverlay === !0 ? 0 : S, E = r.w * .03, O = r.h * .035, k = {
+		x: r.x + E,
+		y: r.y + x.bandH + T,
+		w: Math.max(1, r.w - E * 2),
+		h: Math.max(1, r.h - x.bandH - T - O)
+	}, A = t.plotAreaManualLayout ? o(t.plotAreaManualLayout, r, k) ?? k : k;
+	c(e, t, A.x, A.y, A.w, A.h, d, f), w && (s(e, t, w, d, f), R(e, t, _, w.x, w.y, w.w, w.h, d));
 	let j = p.geography?.projectionType, M = Infinity, N = Infinity, P = -Infinity, V = -Infinity;
 	for (let e of h) for (let t of e.g) for (let e of t) for (let t of e) {
 		let e = b(t, j);
@@ -12659,15 +12659,15 @@ function V(e, t, a, d, f = 0) {
 		let r = Math.max(7, (t.dataLabelFontSizeHpt ?? 800) / 100 * d);
 		e.font = `${r}px ${JSON.stringify(t.dataLabelFontFace || t.themeMinorFontLatin || "sans-serif")}`, e.fillStyle = t.dataLabelFontColor ? `#${t.dataLabelFontColor}` : "#404040", e.textAlign = "center", e.textBaseline = "middle";
 		for (let t of p.rows) {
-			let i = D(t.label, t.entityId), a = i ? K.get(i) : void 0;
-			if (!i || !a || !t.label) continue;
-			let s = G(i.l), l = n(e, t.label) <= Math.max(0, a.maxX - a.minX - 4);
-			(p.regionLabelLayout === "showAll" || l) && o(e, t.label, s.x, s.y, c(r));
+			let a = D(t.label, t.entityId), o = a ? K.get(a) : void 0;
+			if (!a || !o || !t.label) continue;
+			let s = G(a.l), c = n(e, t.label) <= Math.max(0, o.maxX - o.minX - 4);
+			(p.regionLabelLayout === "showAll" || c) && i(e, t.label, s.x, s.y, u(r));
 		}
 	}
 	if (p.geography?.attribution) {
 		let t = Math.max(7, 7 * d);
-		e.font = `${t}px sans-serif`, e.fillStyle = "#777777", e.textAlign = "right", e.textBaseline = "bottom", o(e, p.geography.attribution, a.x + a.w - 4, a.y + a.h - 2, c(t));
+		e.font = `${t}px sans-serif`, e.fillStyle = "#777777", e.textAlign = "right", e.textBaseline = "bottom", i(e, p.geography.attribution, r.x + r.w - 4, r.y + r.h - 2, u(t));
 	}
 	return !0;
 }
