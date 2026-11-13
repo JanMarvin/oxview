@@ -141,13 +141,14 @@ var N = class {
 	_collectRuns;
 	_location;
 	_acceptMatch;
+	_includeUnit;
 	_runs = /* @__PURE__ */ new Map();
 	_matches = [];
 	_active = -1;
 	_generation = 0;
 	_runsRevision = 0;
-	constructor(e, t, n, r = () => !0) {
-		this._count = e, this._collectRuns = t, this._location = n, this._acceptMatch = r;
+	constructor(e, t, n, r = () => !0, i = () => !0) {
+		this._count = e, this._collectRuns = t, this._location = n, this._acceptMatch = r, this._includeUnit = i;
 	}
 	invalidate() {
 		this._generation++, this._runsRevision++, this._runs.clear(), this._matches = [], this._active = -1;
@@ -182,8 +183,10 @@ var N = class {
 	async find(e, t = {}) {
 		let n = ++this._generation;
 		if (e.length === 0) return this._runsRevision++, this._runs.clear(), this._matches = [], this._active = -1, [];
-		let r = this._runsRevision, i = new Map(this._runs), a = this._count();
+		let r = this._runsRevision, i = new Map(this._runs), a = this._count(), o = [];
+		for (let e = 0; e < a; e++) o.push(this._includeUnit(e));
 		for (let e = 0; e < a; e++) {
+			if (!o[e]) continue;
 			let t = i.get(e);
 			if (!t) {
 				try {
@@ -197,20 +200,21 @@ var N = class {
 			}
 		}
 		if (n !== this._generation) return [];
-		let o = r === this._runsRevision ? i : new Map([...i, ...this._runs]), s = [];
+		let s = r === this._runsRevision ? i : new Map([...i, ...this._runs]), l = [];
 		for (let n = 0; n < a; n++) {
-			let r = o.get(n) ?? [];
+			if (!o[n]) continue;
+			let r = s.get(n) ?? [];
 			for (let i of c(d(r), e, t)) {
 				if (!this._acceptMatch(r, i.slices)) continue;
 				let e = i.slices.map((e) => r[e.runIndex].text.slice(e.start, e.end)).join("");
-				s.push({
+				l.push({
 					unit: n,
 					text: e,
 					slices: i.slices
 				});
 			}
 		}
-		return this._runsRevision++, this._runs = o, this._matches = s, this._active = -1, this.matches();
+		return this._runsRevision++, this._runs = s, this._matches = l, this._active = -1, this.matches();
 	}
 	next() {
 		return this._active = m(this._active, this._matches.length), this._activePublic();

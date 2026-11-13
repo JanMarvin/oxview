@@ -3,7 +3,7 @@ import { a as t, c as n, d as r, f as i, i as a, l as o, n as s, o as c, p as l,
 import { Co as m, Fa as h, Fo as g, Io as _, wo as v } from "./plot-area-frame-DNYMd9Pf.js";
 import { n as ee, t as y } from "./cfb-guard-DzYlucez.js";
 import { $ as b, $t as x, F as te, G as S, I as C, On as w, P as ne, Q as T, Qt as re, W as ie, Xt as ae, _t as oe, en as E, ft as se, hn as ce, lt as le, n as ue, p as D, t as de, vn as fe } from "./bounded-raw-part-cache-B5a6cGKO.js";
-import { C as pe, D as me, E as O, N as he, O as ge, P as k, S as _e, T as A, _ as ve, a as ye, b as be, c as xe, d as Se, f as Ce, g as we, h as Te, i as Ee, l as De, m as Oe, n as ke, o as Ae, p as je, r as Me, t as Ne, u as Pe, v as Fe, w as j, x as Ie, y as Le } from "./comment-overlay-controller-B7AoyoDK.js";
+import { C as pe, D as me, E as O, N as he, O as ge, P as k, S as _e, T as A, _ as ve, a as ye, b as be, c as xe, d as Se, f as Ce, g as we, h as Te, i as Ee, l as De, m as Oe, n as ke, o as Ae, p as je, r as Me, t as Ne, u as Pe, v as Fe, w as j, x as Ie, y as Le } from "./comment-overlay-controller-b3tKmzMa.js";
 import { f as M, u as Re } from "./pixel-budget-DI82Hn3R.js";
 import { i as ze, t as Be } from "./tiff-contract-DEd8CGuz.js";
 import { D as Ve, E as He, T as Ue, a as N, b as We, c as Ge, f as Ke, i as qe, l as Je, n as Ye, o as P, p as Xe, r as Ze, s as Qe, t as $e, u as F, v as et, w as tt, x as nt, y as rt } from "./canvas-viewer-mechanics-BsqaoYgK.js";
@@ -101,8 +101,8 @@ function pt(e, t) {
 	return !0;
 }
 var mt = class extends pe {
-	constructor(e, t) {
-		super(e, t, (e) => ({ slide: e }), pt);
+	constructor(e, t, n) {
+		super(e, t, (e) => ({ slide: e }), pt, n);
 	}
 	slideRuns(e) {
 		return this.unitRuns(e);
@@ -858,7 +858,7 @@ var X = class e {
 	}
 	static async load(t, n = {}) {
 		if (n.legacyPpt !== void 0) {
-			let { loadPptxModelSource: e } = await import("./presentation-model-source-3N7xLtmI.js");
+			let { loadPptxModelSource: e } = await import("./presentation-model-source-DLNioq7T.js");
 			return e(t, n);
 		}
 		let r = ae(n.cjkFallback), i = C(n), a = n.mode ?? "main", o = new ne({
@@ -1596,7 +1596,7 @@ var hn = Symbol("PptxViewer.borrowedPresentation"), gn = {
 		let a = new Ze(this.wrapper, t.enableTextSelection === !0, t.enableElementSelection === !0);
 		this.textLayer = a.textLayer, this.highlightLayer = a.highlightLayer, this.elementLayer = a.elementLayer, this._loadingIndicator = mn(this.wrapper), this.wrapper.insertBefore(this._loadingIndicator.layer, this.elementLayer), this.textLayer && (t.onSelectionContextChange || t.enableElementSelection) && (this.selectionChangeListener = () => this._emitSelectionContextChange(), this.wrapper.ownerDocument.addEventListener("selectionchange", this.selectionChangeListener)), t.enableElementSelection && (this.elementClickListener = (e) => {
 			this._onElementClick(e).catch((e) => this._reportRenderError(e));
-		}, this.wrapper.addEventListener("click", this.elementClickListener)), t.onContextMenu && (this.contextMenuListener = (e) => this._onContextMenu(e), this.wrapper.addEventListener("contextmenu", this.contextMenuListener)), this._find = new mt(() => this.slideCount, (e) => this._collectSlideRuns(e)), n && this._bindLayoutPresentation(n);
+		}, this.wrapper.addEventListener("click", this.elementClickListener)), t.onContextMenu && (this.contextMenuListener = (e) => this._onContextMenu(e), this.wrapper.addEventListener("contextmenu", this.contextMenuListener)), this._find = new mt(() => this.slideCount, (e) => this._collectSlideRuns(e), (e) => !(this._hiddenMode === "skip" && this.engine?.isHidden(e))), n && this._bindLayoutPresentation(n);
 	}
 	async load(e) {
 		if (this.destroyed) throw Error("PptxViewer is destroyed");
@@ -1644,7 +1644,13 @@ var hn = Symbol("PptxViewer.borrowedPresentation"), gn = {
 	}
 	async _goToSlide(e, t) {
 		if (t !== this._navigationGeneration || !this.engine || this.slideCount === 0) return;
-		let n = Math.max(0, Math.min(e, this.slideCount - 1)), r = n !== this.currentSlide;
+		let n = Math.max(0, Math.min(e, this.slideCount - 1));
+		if (this._hiddenMode === "skip") {
+			let e = await this._nearestShownSlide(n, t);
+			if (t !== this._navigationGeneration) return;
+			typeof e == "number" && (n = e);
+		}
+		let r = n !== this.currentSlide;
 		r && this._invalidateElementSelection(!1), this.currentSlide = n, await this.renderCurrentSlide(), r && !this.destroyed && this._emitSelectionContextChange();
 	}
 	async nextSlide() {
@@ -1658,11 +1664,20 @@ var hn = Symbol("PptxViewer.borrowedPresentation"), gn = {
 	async _step(e, t) {
 		let n = this.engine, r = this.currentSlide;
 		if (this._hiddenMode !== "skip" || !n) return r + e;
-		for (let i = r + e; i >= 0 && i < this.slideCount; i += e) {
-			if (i >= n.availableSlideCount && (n.layoutComplete || this._setLoading(!0), !await this._waitForSlide(n, i, () => t === this._navigationGeneration))) return r;
-			if (!n.isHidden(i)) return i;
+		let i = await this._scanShown(r + e, e, t);
+		return typeof i == "number" ? i : r;
+	}
+	async _scanShown(e, t, n) {
+		let r = this.engine;
+		if (!r) return null;
+		for (let i = e; i >= 0 && i < this.slideCount; i += t) {
+			if (i >= r.availableSlideCount && (r.layoutComplete || this._setLoading(!0), !await this._waitForSlide(r, i, () => n === this._navigationGeneration))) return null;
+			if (!r.isHidden(i)) return i;
 		}
-		return r;
+	}
+	async _nearestShownSlide(e, t) {
+		let n = await this._scanShown(e, 1, t);
+		return n === void 0 ? await this._scanShown(e - 1, -1, t) : n;
 	}
 	async _initialSlide(e) {
 		let t = this.engine;
@@ -1678,7 +1693,7 @@ var hn = Symbol("PptxViewer.borrowedPresentation"), gn = {
 	}
 	async setHiddenSlideMode(e) {
 		let t = this._beginNavigation();
-		this._hiddenMode = e;
+		this._hiddenMode === "skip" != (e === "skip") && this._invalidateFind(), this._hiddenMode = e;
 		let n = this.currentSlide;
 		if (e === "skip" && this.engine) {
 			let e = this.engine;
@@ -2196,7 +2211,7 @@ var vn = class {
 	}
 }, xn = 12, Sn;
 function Cn() {
-	return Sn ??= import("./comment-ui-runtime-CV0I9faV.js");
+	return Sn ??= import("./comment-ui-runtime-Bp37ytDC.js");
 }
 var wn = 440, Tn = 20, En = Symbol("PptxScrollViewer.borrowedPresentation"), Dn = class e {
 	_presentationOwner;

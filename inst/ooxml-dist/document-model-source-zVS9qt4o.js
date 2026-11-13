@@ -1,7 +1,7 @@
 import { $t as e, An as t, I as n, P as r, Xt as i, jn as a } from "./bounded-raw-part-cache-B5a6cGKO.js";
-import { P as o, b as s } from "./comment-overlay-controller-B7AoyoDK.js";
-import { N as c, _ as l, a as u, d, f, j as p, l as m, o as h, p as g, s as _, v, y } from "./document-pull-client-DSYpUET2.js";
-import { _ as b, c as x, g as S, h as C, l as w, m as T, u as E } from "./docx-DCCDnwrG.js";
+import { P as o, b as s } from "./comment-overlay-controller-b3tKmzMa.js";
+import { N as c, _ as l, a as u, d, f, j as p, l as m, o as h, p as g, s as _, v, y } from "./document-pull-client-DIRkBd6z.js";
+import { _ as b, c as x, g as S, h as C, l as w, m as T, u as E } from "./docx-hRmOTAbV.js";
 import { T as D } from "./canvas-viewer-mechanics-BsqaoYgK.js";
 import { n as O } from "./renderer-module-contract-BuTx2FWJ.js";
 import { n as k, o as A, r as j } from "./model-source-COXegBNA.js";
@@ -54,7 +54,7 @@ async function F(j, M = {}, N) {
 		let i = k(r, "docx");
 		try {
 			H.setSourceBytes(n.byteLength), H.checkpoint("container ready");
-			let r = V === "worker" ? (await import("./render-worker-host-BmVeB_mR.js")).createRenderWorker() : new (await (import("./worker-source-D3NwPe6l.js"))).default(), k, A, j = !1, U = () => {
+			let r = V === "worker" ? (await import("./render-worker-host-PC5hgu9x.js")).createRenderWorker() : new (await (import("./worker-source-D3NwPe6l.js"))).default(), k, A, j = !1, U = () => {
 				j || !k || (j = !0, k.destroy());
 			}, W = I(r, i, M, (e) => {
 				k && P(k, e);

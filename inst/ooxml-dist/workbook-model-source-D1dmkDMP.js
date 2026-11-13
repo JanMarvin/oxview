@@ -1,8 +1,8 @@
 import { I as e, P as t, Xt as n } from "./bounded-raw-part-cache-B5a6cGKO.js";
 import { T as r } from "./canvas-viewer-mechanics-BsqaoYgK.js";
-import { a as i, g as a } from "./renderer-CCA_bQB8.js";
+import { a as i, g as a } from "./renderer-DuYC3xXi.js";
 import { b as o } from "./worksheet-pull-client-BudfclVl.js";
-import { c as s, l as c } from "./xlsx-DTtDjzFq.js";
+import { c as s, l as c } from "./xlsx-DBhYlJKp.js";
 import { n as l, o as u, r as d } from "./model-source-COXegBNA.js";
 import { t as f } from "./bundled-asset-url-BMJ8vNHP.js";
 import { n as p } from "./host-layout-Cz_lCuTZ.js";
@@ -52,7 +52,7 @@ async function m(i, d, f) {
 		let p = l(t, "xlsx");
 		try {
 			_.setSourceBytes(e.byteLength), _.checkpoint("container ready");
-			let t = g === "worker" ? (await import("./render-worker-host-BZoh-wqR.js")).createRenderWorker() : new (await (import("./worker-source-C29EQNUj.js"))).default(), n, i = h(t, p, d, (e) => {
+			let t = g === "worker" ? (await import("./render-worker-host-pKls3F_t.js")).createRenderWorker() : new (await (import("./worker-source-C29EQNUj.js"))).default(), n, i = h(t, p, d, (e) => {
 				n && (n.sourceMdw = e);
 			});
 			try {

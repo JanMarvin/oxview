@@ -2,8 +2,8 @@ import { t as e } from "./chunk-D5OxutzX.js";
 import { Co as t, Fo as n, Ia as r, So as i, wo as a } from "./plot-area-frame-DNYMd9Pf.js";
 import { n as o, t as s } from "./cfb-guard-DzYlucez.js";
 import { $t as c, An as l, F as u, G as d, I as f, P as p, Q as m, Qt as h, W as g, Xt as _, _t as ee, ft as v, jn as y, kn as te, lt as b, p as x, t as ne, vn as re } from "./bounded-raw-part-cache-B5a6cGKO.js";
-import { A as S, C as ie, D as C, E as w, M as ae, N as oe, P as T, S as se, T as E, _ as ce, a as le, b as ue, c as de, d as fe, f as pe, g as me, h as he, i as ge, j as _e, k as ve, l as ye, m as be, n as xe, o as Se, p as Ce, r as we, t as Te, u as Ee, v as De, w as Oe, x as ke, y as Ae } from "./comment-overlay-controller-B7AoyoDK.js";
-import { A as je, B as Me, C as Ne, D, E as Pe, F as Fe, I as Ie, L as O, M as Le, N as k, O as Re, P as ze, R as Be, S as Ve, T as He, V as A, _ as Ue, a as We, b as Ge, c as Ke, f as qe, h as Je, j, k as Ye, l as Xe, m as Ze, n as Qe, o as $e, p as et, s as tt, t as nt, u as rt, v as it, w as at, x as ot, y as M, z as st } from "./document-pull-client-DSYpUET2.js";
+import { A as S, C as ie, D as C, E as w, M as ae, N as oe, P as T, S as se, T as E, _ as ce, a as le, b as ue, c as de, d as fe, f as pe, g as me, h as he, i as ge, j as _e, k as ve, l as ye, m as be, n as xe, o as Se, p as Ce, r as we, t as Te, u as Ee, v as De, w as Oe, x as ke, y as Ae } from "./comment-overlay-controller-b3tKmzMa.js";
+import { A as je, B as Me, C as Ne, D, E as Pe, F as Fe, I as Ie, L as O, M as Le, N as k, O as Re, P as ze, R as Be, S as Ve, T as He, V as A, _ as Ue, a as We, b as Ge, c as Ke, f as qe, h as Je, j, k as Ye, l as Xe, m as Ze, n as Qe, o as $e, p as et, s as tt, t as nt, u as rt, v as it, w as at, x as ot, y as M, z as st } from "./document-pull-client-DIRkBd6z.js";
 import { f as ct, u as lt } from "./pixel-budget-DI82Hn3R.js";
 import { i as ut, t as dt } from "./tiff-contract-DEd8CGuz.js";
 import { D as ft, E as pt, T as mt, a as ht, b as gt, c as _t, d as vt, f as yt, i as bt, l as xt, n as St, o as Ct, p as wt, r as Tt, s as Et, t as Dt, u as Ot, v as kt, w as At, x as jt, y as Mt } from "./canvas-viewer-mechanics-BsqaoYgK.js";
@@ -1344,7 +1344,7 @@ var Z = class e {
 			if (i?.aborted) throw new M();
 		};
 		if (a(), n.legacyDoc !== void 0) {
-			let { loadDocxModelSource: e } = await import("./document-model-source-90ext13g.js"), a = await e(t, n, r);
+			let { loadDocxModelSource: e } = await import("./document-model-source-zVS9qt4o.js"), a = await e(t, n, r);
 			if (i?.aborted) throw a.destroy(), new M();
 			return a;
 		}
@@ -1365,7 +1365,7 @@ var Z = class e {
 				f = await e.arrayBuffer();
 			} else f = t;
 			a(), f = o(await s(f, n.password)), a(), g.setSourceBytes(f.byteLength), g.checkpoint("container ready");
-			let p = h === "worker" ? (await import("./render-worker-host-BmVeB_mR.js")).createRenderWorker() : new mn(), _ = h === "worker" ? Nt(n) : void 0, ee = h === "worker" && !!n.progressiveLayout, v, b = !1, x = () => {
+			let p = h === "worker" ? (await import("./render-worker-host-PC5hgu9x.js")).createRenderWorker() : new mn(), _ = h === "worker" ? Nt(n) : void 0, ee = h === "worker" && !!n.progressiveLayout, v, b = !1, x = () => {
 				b || !v || (b = !0, v.destroy());
 			};
 			try {
@@ -2760,7 +2760,7 @@ var Nr = Symbol("DocxViewer.borrowedDocument"), Pr = class e {
 	}
 }, Lr = 12, Rr = 13, zr = Symbol("DocxScrollViewer.borrowedDocument"), Br;
 function Vr() {
-	return Br ??= import("./comment-ui-runtime-C5eWtZSW.js");
+	return Br ??= import("./comment-ui-runtime-DM65K2I9.js");
 }
 var Hr = class e {
 	_pendingLoadAbort = null;

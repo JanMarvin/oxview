@@ -1,8 +1,8 @@
 import { I as e, P as t, Xt as n } from "./bounded-raw-part-cache-B5a6cGKO.js";
-import { b as r } from "./comment-overlay-controller-B7AoyoDK.js";
+import { b as r } from "./comment-overlay-controller-b3tKmzMa.js";
 import { T as i } from "./canvas-viewer-mechanics-BsqaoYgK.js";
 import { n as a } from "./renderer-module-contract-BuTx2FWJ.js";
-import { o, s } from "./pptx-Ci1Y9SS_.js";
+import { o, s } from "./pptx-DbjWegUB.js";
 import { n as c, o as l, r as u } from "./model-source-COXegBNA.js";
 import { t as d } from "./bundled-asset-url-BMJ8vNHP.js";
 async function f(u, d) {

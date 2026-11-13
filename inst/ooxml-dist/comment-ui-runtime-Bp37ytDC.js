@@ -1,6 +1,6 @@
 import { Fa as e } from "./plot-area-frame-DNYMd9Pf.js";
-import { E as t } from "./comment-overlay-controller-B7AoyoDK.js";
-import { r as n } from "./pptx-Ci1Y9SS_.js";
+import { E as t } from "./comment-overlay-controller-b3tKmzMa.js";
+import { r as n } from "./pptx-DbjWegUB.js";
 import { i as r, n as i, o as a, r as o, t as s } from "./read-only-comment-margin-Ee9Y6vPg.js";
 import { i as c, n as l, r as u, t as d } from "./read-only-comment-decoration-B06YO2zk.js";
 function f(e, t, n) {
