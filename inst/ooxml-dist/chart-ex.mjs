@@ -1,24 +1,25 @@
 // optional-renderer: packages/core/src/chart/chart-ex-renderer.ts
-import { $ as e, $n as t, Aa as n, Ci as r, Fn as i, In as a, J as o, Ka as s, Ln as c, Mt as l, Nn as u, Pn as d, Qn as f, R as p, Rn as m, Rt as h, S as g, Sa as _, Ut as v, Wa as y, Wt as b, Xa as x, Xi as S, Y as C, Yt as w, Zn as T, Zt as E, _n as D, aa as O, b as k, ba as A, bt as j, ct as M, da as N, eo as P, er as F, fn as I, ga as ee, gn as L, ha as te, hn as ne, ia as R, in as z, it as re, jt as ie, la as B, mn as ae, nt as oe, oa as se, on as ce, ot as le, pn as ue, ra as de, rt as fe, s as pe, so as V, st as me, t as he, tt as ge, x as H, xn as _e, ya as ve, yt as ye, zt as be } from "./plot-area-frame-DNYMd9Pf.js";
-import { A as xe, C as Se, D as Ce, E as we, O as Te, S as Ee, T as De, _ as U, a as Oe, b as ke, c as Ae, d as je, f as Me, g as Ne, i as Pe, j as Fe, k as Ie, l as Le, m as Re, o as ze, p as Be, s as Ve, u as He, v as Ue, w as We, x as Ge, y as W } from "./renderer-DpTePxGq.js";
+import { $ as e, $t as t, Bt as n, Cn as r, Di as i, Dn as a, En as o, Fi as s, Gi as c, Gt as l, Hn as u, J as d, Kt as f, Li as p, Nt as m, On as h, Pt as g, Qi as _, R as v, S as y, Tn as b, Un as x, Vi as S, Vn as C, Vt as w, Wn as T, Y as E, Zt as D, _i as O, _n as k, b as A, br as j, bt as M, ci as N, cn as P, ct as F, ei as I, fi as ee, gi as L, gn as te, hn as R, it as ne, mn as z, ni as re, nt as ie, oi as ae, on as B, ot as oe, pi as se, qr as ce, ri as le, rt as ue, s as de, st as fe, t as pe, ti as me, tt as he, vn as ge, wn as _e, x as V, xt as H, yi as ve, yn as ye } from "./plot-area-frame-BSqoSYxZ.js";
+import { t as be } from "./chart-number-format-BTQAc_0Z.js";
+import { A as xe, C as Se, D as Ce, E as we, O as Te, S as Ee, T as De, _ as U, a as Oe, b as ke, c as Ae, d as je, f as Me, g as Ne, i as Pe, j as Fe, k as Ie, l as Le, m as Re, o as ze, p as Be, s as Ve, u as He, v as Ue, w as We, x as Ge, y as W } from "./renderer-D3GIB31w.js";
 import { t as G } from "./renderer-module-contract-BuTx2FWJ.js";
-function Ke(e, t, n, i = 1) {
-	let a = 0, o = Math.max(1, n?.w ?? 32 * i), c = Math.max(1, n?.h ?? 16 * i), l = ae(e, ({ label: n, linkedStyleIndex: l }) => {
-		let u = n.labelBox, d = L(u), f = d ? e.chartStyleRoles?.dataLabelCallout ?? e.chartStyleRoles?.dataLabel : e.chartStyleRoles?.dataLabel, p = d ? V(e, "dataLabelCallout") ?? V(e, "dataLabel") : V(e, "dataLabel"), m = D(u, f, p, f != null, 0, l)?.fillPaint, h = y(u?.style, p, 0), g = u?.borderHidden === !0 ? s(p) : void 0, _ = u?.borderColor != null || u?.borderFill != null || h !== void 0 || g !== void 0 || u?.borderPaintAuthored === !0 && u?.borderHidden !== !0, v = h === void 0 ? g === void 0 ? u?.borderFill ?? (u?.borderColor ? {
+function Ke(e, t, n, r = 1) {
+	let i = 0, a = Math.max(1, n?.w ?? 32 * r), o = Math.max(1, n?.h ?? 16 * r), c = te(e, ({ label: n, linkedStyleIndex: c }) => {
+		let l = n.labelBox, u = ge(l), d = u ? e.chartStyleRoles?.dataLabelCallout ?? e.chartStyleRoles?.dataLabel : e.chartStyleRoles?.dataLabel, f = u ? _(e, "dataLabelCallout") ?? _(e, "dataLabel") : _(e, "dataLabel"), m = ye(l, d, f, d != null, 0, c)?.fillPaint, h = s(l?.style, f, 0), g = l?.borderHidden === !0 ? p(f) : void 0, v = l?.borderColor != null || l?.borderFill != null || h !== void 0 || g !== void 0 || l?.borderPaintAuthored === !0 && l?.borderHidden !== !0, y = h === void 0 ? g === void 0 ? l?.borderFill ?? (l?.borderColor ? {
 			fillType: "solid",
-			color: u.borderColor
-		} : _ ? null : x(f, l)) : g : h;
-		for (let e of [m, v]) {
+			color: l.borderColor
+		} : v ? null : S(d, c)) : g : h;
+		for (let e of [m, y]) {
 			if (!e) continue;
-			let n = e.fillType === "image" ? pe(e, t, o, c, i) ?? 1048577 : r(e);
-			if (e.fillType === "gradient" && n > 4096 || n > 1048576 - a) {
-				a = ce + 1;
+			let n = e.fillType === "image" ? de(e, t, a, o, r) ?? 1048577 : j(e);
+			if (e.fillType === "gradient" && n > 4096 || n > 1048576 - i) {
+				i = P + 1;
 				return;
 			}
-			a += n;
+			i += n;
 		}
 	});
-	return l === "not-hierarchy" ? null : l === "too-large" ? ce + 1 : a;
+	return c === "not-hierarchy" ? null : c === "too-large" ? P + 1 : i;
 }
 function K(e, t, n, r) {
 	if (!e.chartexParetoOutlineOwner) return t;
@@ -34,7 +35,7 @@ function K(e, t, n, r) {
 		lineHidden: !1
 	};
 }
-function qe(e, t, n = 1) {
+function qe(e, t, r = 1) {
 	if (e.chartexSuppressGeometry) return 0;
 	if (![
 		"waterfall",
@@ -49,8 +50,8 @@ function qe(e, t, n = 1) {
 	].includes(e.chartType)) return null;
 	let i = 0, a = (e) => {
 		if (!e || i > 1048576) return;
-		let a = e.fillType === "image" ? pe(e, void 0, Math.max(1, t.w), Math.max(1, t.h), n) : r(e);
-		e.fillType === "gradient" && a > 4096 || a > 1048576 - i ? i = ce + 1 : i += a;
+		let n = e.fillType === "image" ? de(e, void 0, Math.max(1, t.w), Math.max(1, t.h), r) : j(e);
+		e.fillType === "gradient" && n > 4096 || n > 1048576 - i ? i = P + 1 : i += n;
 	}, o = (t, n, r, i) => {
 		let o = Fe(e, t, n, r, i, "#000000", { linkedNoStyleFallback: !0 });
 		o.visible && a(o.paint ?? {
@@ -70,19 +71,19 @@ function qe(e, t, n = 1) {
 			fillType: "solid",
 			color: "000000"
 		});
-	}, l = k(e, (t, n, r) => n === 0 ? K(e, t, n, r) : t);
-	if (l) {
-		if (l.kind === "tooManyInputPoints") return ce + 1;
-		if (g(l, s), i > 1048576 || (H(l, s), i > 1048576)) return i;
-		if (e.chartType === "pareto" && l.series.length > 0) {
-			let t = e.chartexParetoOwnerIndex ?? 0, n = l.series[t], r = e.series.find((e) => e.seriesType === "line");
+	}, u = A(e, (t, n, r) => n === 0 ? K(e, t, n, r) : t);
+	if (u) {
+		if (u.kind === "tooManyInputPoints") return P + 1;
+		if (y(u, s), i > 1048576 || (V(u, s), i > 1048576)) return i;
+		if (e.chartType === "pareto" && u.series.length > 0) {
+			let t = e.chartexParetoOwnerIndex ?? 0, n = u.series[t], r = e.series.find((e) => e.seriesType === "line");
 			c(r ?? n, r?.chartexFormatIdx ?? n?.chartexFormatIdx ?? 0);
 		}
 	} else if (e.chartType === "paretoLine") {
 		let t = e.series[0];
-		t && v(t, e.categories, { sortDescending: e.chartexParetoSortDescending ?? !1 }).points.length > 0 && c(t, h(t, 0));
+		t && l(t, e.categories, { sortDescending: e.chartexParetoSortDescending ?? !1 }).points.length > 0 && c(t, n(t, 0));
 	} else if (e.chartType === "waterfall") {
-		let t = e.series[0], n = t?.values ?? [], r = be(t?.dataPointOverrides), i = I(n, e.categories.length, e.subtotalIndices);
+		let t = e.series[0], n = t?.values ?? [], r = w(t?.dataPointOverrides), i = z(n, e.categories.length, e.subtotalIndices);
 		if (i.cumulativeOverflow || i.rawMax <= i.rawMin) return 0;
 		for (let n = 0; n < i.bars.length; n++) {
 			let o = i.bars[n];
@@ -98,7 +99,7 @@ function qe(e, t, n = 1) {
 	} else if (e.chartType === "funnel") {
 		let t = e.series[0], n = t?.values ?? [], r = Math.max(n.length, e.categories.length);
 		if (n.some((e) => e != null && e > 0)) {
-			let i = be(t?.dataPointOverrides);
+			let i = w(t?.dataPointOverrides);
 			for (let o = 0; o < r; o++) {
 				if (!((n[o] ?? 0) > 0)) continue;
 				let r = i.get(o);
@@ -114,15 +115,15 @@ function qe(e, t, n = 1) {
 		let t = e.chartexBox, n = t?.series.length ?? 0;
 		for (let r = 0; r < n; r++) {
 			let i = t.series[r], s = i.chartexFormatIdx ?? r, c = Ue(e, s, n, i.chartexStyle, i.color);
-			for (let t of i.valuesByCategory) F(t, i.quartileMethod) && (a(c), o(e.chartexDataPointStyle, Se(i, s), s, n));
+			for (let t of i.valuesByCategory) T(t, i.quartileMethod) && (a(c), o(e.chartexDataPointStyle, Se(i, s), s, n));
 		}
 	} else {
 		let t = e.series[0], n = 1;
-		ue(e, ({ node: e }) => {
+		R(e, ({ node: e }) => {
 			n = Math.max(n, e.branchIndex + 1);
 		});
-		let r = be(t?.dataPointOverrides);
-		if (ue(e, ({ node: i, paintsBody: o }) => {
+		let r = w(t?.dataPointOverrides);
+		if (R(e, ({ node: i, paintsBody: o }) => {
 			if (!o) return;
 			let s = r.get(i.labelIndex);
 			a(Ie(e, t, s, i.branchIndex, n));
@@ -131,19 +132,19 @@ function qe(e, t, n = 1) {
 				fillType: "solid",
 				color: "000000"
 			});
-		}) === "too-large") return ce + 1;
+		}) === "too-large") return P + 1;
 	}
 	return i;
 }
 function Je(e, t, n, r, i = 0) {
 	let a = t.series[0];
 	if (!a) return;
-	let o = b(a.values, t.chartexHistogramBinning ?? {}, a.valFormatCode, t.date1904 === !0);
+	let o = f(a.values, t.chartexHistogramBinning ?? {}, a.valFormatCode, t.date1904 === !0);
 	if (o.kind === "tooManyInputPoints") {
-		Le(e, n, z + 1);
+		Le(e, n, B + 1);
 		return;
 	}
-	ze(e, P(t, {
+	ze(e, c(t, {
 		chartType: "clusteredBar",
 		categories: o.categories,
 		series: [{
@@ -154,108 +155,108 @@ function Je(e, t, n, r, i = 0) {
 		}]
 	}), n, r, { gapPolicy: "chartex" }, i);
 }
-function Ye(t, r, i, a, s) {
-	let { x: l, y: u, w: d, h: f } = i, h = r.series[0]?.values ?? [], g = r.categories, v = Math.max(h.length, g.length);
-	if (v === 0 || Le(t, i, v)) return;
-	let { bars: y, rawMax: b, rawMin: x, cumulativeOverflow: S } = I(h, g.length, r.subtotalIndices);
-	if (S) {
-		t.fillStyle = "#888", t.font = "12px sans-serif", t.textAlign = "center", t.textBaseline = "middle", t.fillText("(chart values out of range)", l + d / 2, u + f / 2);
+function Ye(n, r, o, s, l) {
+	let { x: u, y: f, w: p, h: m } = o, g = r.series[0]?.values ?? [], _ = r.categories, y = Math.max(g.length, _.length);
+	if (y === 0 || Le(n, o, y)) return;
+	let { bars: b, rawMax: x, rawMin: S, cumulativeOverflow: C } = z(g, _.length, r.subtotalIndices);
+	if (C) {
+		n.fillStyle = "#888", n.font = "12px sans-serif", n.textAlign = "center", n.textBaseline = "middle", n.fillText("(chart values out of range)", u + p / 2, f + m / 2);
 		return;
 	}
-	if (b <= x) return;
-	let w = r.subtotalIndices.length === 0 && y.every((e, t) => !e.hasValue || h[t] >= 0), T = !r.valAxisHidden && r.valAxisTickLabelPos !== "none" && !w, D = Ae(t, r, d, f, a), k = O(r, d, f, a), F = p(r.valAxisFontSizeHpt, f, a), L = p(r.catAxisFontSizeHpt, f, a), te = j(r, r.valAxisFontFace, "minor"), R = j(r, r.catAxisFontFace, "minor"), z = oe(r, x, b, f / a);
-	t.save();
-	let ie = 0;
-	if (T) {
-		t.font = ye(F, te, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1);
+	if (x <= S) return;
+	let T = r.subtotalIndices.length === 0 && b.every((e, t) => !e.hasValue || g[t] >= 0), D = !r.valAxisHidden && r.valAxisTickLabelPos !== "none" && !T, A = Ae(n, r, p, m, s), j = re(r, p, m, s), P = v(r.valAxisFontSizeHpt, m, s), I = v(r.catAxisFontSizeHpt, m, s), ee = H(r, r.valAxisFontFace, "minor"), te = H(r, r.catAxisFontFace, "minor"), R = ie(r, S, x, m / s);
+	n.save();
+	let B = 0;
+	if (D) {
+		n.font = M(P, ee, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1);
 		let e = 0;
-		for (let n of z.majorLines) e = Math.max(e, _(t, ge(r, n, !1)));
-		ie = e + 8;
+		for (let t of R.majorLines) e = Math.max(e, ve(n, he(r, t, !1)));
+		B = e + 8;
 	}
-	let ae = T ? ee(z.majorLines.map((e) => ge(r, e, !1)), ve(F)) / 2 : 0, ce = Math.max(1, d - k.valBandW - ie - d * .02) / v;
-	t.font = ye(L, R, r.catAxisFontBold ?? !1, r.catAxisFontItalic ?? !1);
-	let ue = g.slice(0, v).map((e) => M(t, _e(e, r.catAxisFormatCode, r.date1904), Math.max(1, ce - 8))), de = 0;
-	for (let e of ue) e.some(Boolean) && (de = Math.max(de, e.length));
-	let pe = r.catAxisHidden || de === 0 ? 0 : de * (L + 2) + 4, V = r.series[0], H = be(V?.dataLabelOverrides), Ce = be(V?.dataPointOverrides), Ee = V?.chartexStyle, De = `#${V?.color ?? U(r, 0, 3, Ee)}`, Oe = `#${U(r, 1, 3, Ee)}`, Pe = `#${U(r, 2, 3, Ee)}`, Fe = Ue(r, 0, 3, Ee, V?.color), Re = Ue(r, 1, 3, Ee), ze = Ue(r, 2, 3, Ee), W = P(r, {
+	let ce = D ? se(R.majorLines.map((e) => he(r, e, !1)), L(P)) / 2 : 0, de = Math.max(1, p - j.valBandW - B - p * .02) / y;
+	n.font = M(I, te, r.catAxisFontBold ?? !1, r.catAxisFontItalic ?? !1);
+	let me = _.slice(0, y).map((e) => F(n, be(e, r.catAxisFormatCode, r.date1904, r.catAxisFormatDivisors), Math.max(1, de - 8))), ge = 0;
+	for (let e of me) e.some(Boolean) && (ge = Math.max(ge, e.length));
+	let _e = r.catAxisHidden || ge === 0 ? 0 : ge * (I + 2) + 4, V = r.series[0], ye = w(V?.dataLabelOverrides), Ce = w(V?.dataPointOverrides), Ee = V?.chartexStyle, De = `#${V?.color ?? U(r, 0, 3, Ee)}`, Oe = `#${U(r, 1, 3, Ee)}`, Pe = `#${U(r, 2, 3, Ee)}`, Fe = Ue(r, 0, 3, Ee, V?.color), Re = Ue(r, 1, 3, Ee), ze = Ue(r, 2, 3, Ee), W = c(r, {
 		chartType: "clusteredBar",
 		series: [
 			ke(r, "Increase", V, r.chartexDataPointStyle, 0, 3, De, !1, !0, !0),
 			ke(r, "Decrease", V, r.chartexDataPointStyle, 1, 3, Oe, !1, !0, !0),
 			ke(r, "Total", V, r.chartexDataPointStyle, 2, 3, Pe, !1, !0, !0)
 		]
-	}), G = Be(t, W, d, f, a), { legRightW: Ke, legLeftW: K, legTopH: qe, legBottomH: Je } = se(G, r.legendOverlay === !0), Ye = N(r, l, u, d, f, a, {
-		titleBand: D,
+	}), G = Be(n, W, p, m, s), { legRightW: Ke, legLeftW: K, legTopH: qe, legBottomH: Je } = le(G, r.legendOverlay === !0), Ye = N(r, u, f, p, m, s, {
+		titleBand: A,
 		legendReserve: G,
 		pad: {
-			t: D.bandH + qe + F / 2 + 2 + ae,
-			r: Ke + d * .02,
-			b: Je + k.catBandH + pe,
-			l: K + k.valBandW + (r.valAxisHidden ? d * .02 : Math.max(d * .03, ie))
+			t: A.bandH + qe + P / 2 + 2 + ce,
+			r: Ke + p * .02,
+			b: Je + j.catBandH + _e,
+			l: K + j.valBandW + (r.valAxisHidden ? p * .02 : Math.max(p * .03, B))
 		},
 		honorPlotAreaManualLayout: !0
 	});
-	Ve(t, r, l, u, d, f, u + Ye.title.topPad, Ye.title.fontPx);
+	Ve(n, r, u, f, p, m, f + Ye.title.topPad, Ye.title.fontPx);
 	let { px0: q, py0: J, pw: Y, ph: X } = Ye.plotRect;
 	if (Y <= 0 || X <= 0) return;
-	he(t, r, q, J, Y, X, a, s);
-	let Xe = oe(r, x, b, X / a), Z = (e) => J + X - Xe.frac(e) * X, Q = E(r.valAxisLineColor, r.valAxisLineWidthEmu, a), Ze = E(r.catAxisLineColor, r.catAxisLineWidthEmu, a), Qe = le(r, a);
+	pe(n, r, q, J, Y, X, s, l);
+	let Xe = ie(r, S, x, X / s), Z = (e) => J + X - Xe.frac(e) * X, Q = t(r.valAxisLineColor, r.valAxisLineWidthEmu, s), Ze = t(r.catAxisLineColor, r.catAxisLineWidthEmu, s), Qe = oe(r, s);
 	if (!r.valAxisHidden) {
-		t.font = ye(F, te, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1), t.fillStyle = r.valAxisFontColor ? `#${r.valAxisFontColor}` : "#595959", t.textAlign = "right", t.textBaseline = "middle";
-		let n = me(r, a);
-		for (let e of Xe.minorLines) re(t, q, Y, Z(e), !1, n);
-		for (let n of Xe.majorLines) {
-			let i = Z(n);
+		n.font = M(P, ee, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1), n.fillStyle = r.valAxisFontColor ? `#${r.valAxisFontColor}` : "#595959", n.textAlign = "right", n.textBaseline = "middle";
+		let t = fe(r, s);
+		for (let e of Xe.minorLines) ne(n, q, Y, Z(e), !1, t);
+		for (let t of Xe.majorLines) {
+			let i = Z(t);
 			if (e(r)) {
-				t.strokeStyle = Qe.color, t.lineWidth = Qe.width;
-				let e = Qe.dash.length > 0 && t.getLineDash ? t.getLineDash() : [];
-				Qe.dash.length > 0 && t.setLineDash(Qe.dash), t.beginPath(), t.moveTo(q, i), t.lineTo(q + Y, i), t.stroke(), Qe.dash.length > 0 && t.setLineDash(e);
+				n.strokeStyle = Qe.color, n.lineWidth = Qe.width;
+				let e = Qe.dash.length > 0 && n.getLineDash ? n.getLineDash() : [];
+				Qe.dash.length > 0 && n.setLineDash(Qe.dash), n.beginPath(), n.moveTo(q, i), n.lineTo(q + Y, i), n.stroke(), Qe.dash.length > 0 && n.setLineDash(e);
 			}
-			T && A(t, ge(r, n, !1), q - 4, i, ve(F)), o(t, r.valAxisMajorTickMark, "val", q, i, Q.color, Q.width, !1, r.valAxisLineHidden, "major", a, r.valAxisLineDash);
+			D && O(n, he(r, t, !1), q - 4, i, L(P)), d(n, r.valAxisMajorTickMark, "val", q, i, Q.color, Q.width, !1, r.valAxisLineHidden, "major", s, r.valAxisLineDash);
 		}
-		for (let e of Xe.minorTicks) o(t, r.valAxisMinorTickMark, "val", q, Z(e), Q.color, Q.width, !1, r.valAxisLineHidden, "minor", a, r.valAxisLineDash);
+		for (let e of Xe.minorTicks) d(n, r.valAxisMinorTickMark, "val", q, Z(e), Q.color, Q.width, !1, r.valAxisLineHidden, "minor", s, r.valAxisLineDash);
 	}
 	let $e = !r.valAxisHidden && !r.valAxisLineHidden, et = !r.catAxisHidden && !r.catAxisLineHidden;
-	$e && fe(t, q, J, q, J + X, Q.color, Q.width, r.valAxisLineDash), et && fe(t, q, J + X, q + Y, J + X, Ze.color, Ze.width, r.catAxisLineDash);
-	let tt = Y / v, $ = tt / (1 + n(r.barGapWidth, "chartex") / 100);
-	y.forEach((e, n) => {
-		let i = q + tt * n + (tt - $) / 2, o = Math.min(Z(e.start), Z(e.end)), _ = Math.max(Z(e.start), Z(e.end)), b = Math.max(1, _ - o), x = e.semanticIndex, S = Ce.get(n), C = Ie(r, V, S, x, 3), w = S?.color ? `#${S.color}` : e.isSub ? Pe : e.isPos ? De : Oe, T = We(r, r.chartexDataPointStyle, "line", x, 3), E = xe(r, V, S, x, 3, T ? `#${T}` : w);
-		if (e.paintSlot && m(t, c(S?.chartexStyle, V?.chartexStyle), r.chartexDataPointStyle, x, {
+	$e && ue(n, q, J, q, J + X, Q.color, Q.width, r.valAxisLineDash), et && ue(n, q, J + X, q + Y, J + X, Ze.color, Ze.width, r.catAxisLineDash);
+	let tt = Y / y, $ = tt / (1 + i(r.barGapWidth, "chartex") / 100);
+	b.forEach((e, t) => {
+		let i = q + tt * t + (tt - $) / 2, o = Math.min(Z(e.start), Z(e.end)), c = Math.max(Z(e.start), Z(e.end)), d = Math.max(1, c - o), x = e.semanticIndex, S = Ce.get(t), C = Ie(r, V, S, x, 3), w = S?.color ? `#${S.color}` : e.isSub ? Pe : e.isPos ? De : Oe, T = We(r, r.chartexDataPointStyle, "line", x, 3), E = xe(r, V, S, x, 3, T ? `#${T}` : w);
+		if (e.paintSlot && h(n, a(S?.chartexStyle, V?.chartexStyle), r.chartexDataPointStyle, x, {
 			x: i,
 			y: o,
 			w: $,
-			h: b
-		}, a, (e) => {
+			h: d
+		}, s, (e) => {
 			C && we(e, C, {
 				x: i,
 				y: o,
 				w: $,
-				h: b
-			}, w, a, s), !Ge(E) && Ne(e, E, a, {
+				h: d
+			}, w, s, l), !Ge(E) && Ne(e, E, s, {
 				x: i,
 				y: o,
 				w: $,
-				h: b
-			}, s) && e.strokeRect(i, o, $, b);
-		}), e.paintSlot && y[n + 1]?.paintSlot && n < v - 1 && r.chartexConnectorLines !== !1) {
-			let s = q + tt * (n + 1) + (tt - $) / 2, c = e.isPos ? o : _;
-			t.save();
-			let l = [r.chartexSeriesLineStyle, r.chartexDataPointLineStyle], u = Te(r, Se(V, x), l, l, x, 3, "#000000", { linkedNoStyleFallback: !0 });
-			Ne(t, u, a) && (u.widthEmu ?? (t.lineWidth = .75 * a), t.beginPath(), t.moveTo(i + $, c), t.lineTo(s, c), t.stroke()), t.restore();
+				h: d
+			}, l) && e.strokeRect(i, o, $, d);
+		}), e.paintSlot && b[t + 1]?.paintSlot && t < y - 1 && r.chartexConnectorLines !== !1) {
+			let a = q + tt * (t + 1) + (tt - $) / 2, l = e.isPos ? o : c;
+			n.save();
+			let u = [r.chartexSeriesLineStyle, r.chartexDataPointLineStyle], d = Te(r, Se(V, x), u, u, x, 3, "#000000", { linkedNoStyleFallback: !0 });
+			Ne(n, d, s) && (d.widthEmu ?? (n.lineWidth = .75 * s), n.beginPath(), n.moveTo(i + $, l), n.lineTo(a, l), n.stroke()), n.restore();
 		}
-		let D = e.hasValue ? h[n] : 0, O = ne(r, V, n, g[n] ?? "", D, {
+		let D = e.hasValue ? g[t] : 0, O = k(r, V, t, _[t] ?? "", D, {
 			visible: r.showDataLabels,
 			showVal: !0,
 			showCatName: !1
-		}, H, !e.hasValue);
+		}, ye, !e.hasValue);
 		if (O) {
-			let e = V?.dataLabelColors?.[n] ?? O.fontColor ?? null, c = e ? `#${e}` : r.dataLabelFontColor ? `#${r.dataLabelFontColor}` : "#595959", m = B(O.fontSizeHpt, a) ?? p(r.dataLabelFontSizeHpt, f, a), h = O.fontBold ?? r.dataLabelFontBold ?? !1, g = j(r, O.fontFace ?? r.dataLabelFontFace, "minor");
-			t.font = `${O.textStyle.fontItalic ? "italic " : ""}${h ? "bold " : ""}${m}px ${g}`, He(t, O.text, {
+			let e = V?.dataLabelColors?.[t] ?? O.fontColor ?? null, a = e ? `#${e}` : r.dataLabelFontColor ? `#${r.dataLabelFontColor}` : "#595959", c = ae(O.fontSizeHpt, s) ?? v(r.dataLabelFontSizeHpt, m, s), h = O.fontBold ?? r.dataLabelFontBold ?? !1, g = H(r, O.fontFace ?? r.dataLabelFontFace, "minor");
+			n.font = `${O.textStyle.fontItalic ? "italic " : ""}${h ? "bold " : ""}${c}px ${g}`, He(n, O.text, {
 				kind: "bar",
 				rect: {
 					x: i,
 					y: o,
 					w: $,
-					h: b
+					h: d
 				},
 				orientation: "vertical",
 				negative: D < 0,
@@ -265,145 +266,145 @@ function Ye(t, r, i, a, s) {
 				y: J,
 				w: Y,
 				h: X
-			}, m, c, O.manualLayout, {
-				x: l,
-				y: u,
-				w: d,
-				h: f
-			}, je(r, O.richRuns, a, g, h, O.textStyle), void 0, O.textStyle, a, O.labelBox, s);
+			}, c, a, O.manualLayout, {
+				x: u,
+				y: f,
+				w: p,
+				h: m
+			}, je(r, O.richRuns, s, g, h, O.textStyle), void 0, O.textStyle, s, O.labelBox, l);
 		}
-	}), t.textAlign = "center", t.textBaseline = "top", t.fillStyle = r.catAxisFontColor ? `#${r.catAxisFontColor}` : "#595959", t.font = ye(L, R, r.catAxisFontBold ?? !1, r.catAxisFontItalic ?? !1);
+	}), n.textAlign = "center", n.textBaseline = "top", n.fillStyle = r.catAxisFontColor ? `#${r.catAxisFontColor}` : "#595959", n.font = M(I, te, r.catAxisFontBold ?? !1, r.catAxisFontItalic ?? !1);
 	let nt = J + X + 4;
-	for (let e = 0; e < v && !r.catAxisHidden; e++) {
-		let n = q + tt * e + tt / 2;
-		(ue[e] ?? []).forEach((e, r) => e && t.fillText(e, n, nt + r * (L + 2)));
+	for (let e = 0; e < y && !r.catAxisHidden; e++) {
+		let t = q + tt * e + tt / 2;
+		(me[e] ?? []).forEach((e, r) => e && n.fillText(e, t, nt + r * (I + 2)));
 	}
-	C(t, r, l, u, d, f, q, J, Y, X, K, Je, k.catFontPx, k.valFontPx), Me(t, W, G, l, u, d, f, q, J, Y, X, D.bandH + 2, a, [
+	E(n, r, u, f, p, m, q, J, Y, X, K, Je, j.catFontPx, j.valFontPx), Me(n, W, G, u, f, p, m, q, J, Y, X, A.bandH + 2, s, [
 		Fe,
 		Re,
 		ze
-	], s), t.restore();
+	], l), n.restore();
 }
-function q(e, t, r, i, a) {
-	let o = t.series[0]?.values ?? [], s = Math.max(o.length, t.categories.length);
-	if (s === 0 || Le(e, r, s)) return;
-	let l = 0;
-	for (let e = 0; e < s; e++) l = Math.max(l, o[e] ?? 0);
-	if (!(l > 0)) return;
-	let { x: u, y: d, w: f, h } = r, g = Ae(e, t, f, h, i), v = t.series[0], y = be(v?.dataLabelOverrides), b = `#${v?.color ?? U(t, 0, 1, v?.chartexStyle)}`, x = Ue(t, 0, 1, v?.chartexStyle, v?.color), S = {
-		...t,
-		series: [ke(t, v?.name ?? "", v, t.chartexDataPointStyle, 0, 1, b)]
-	}, C = Be(e, S, f, h, i), { legRightW: w, legLeftW: T, legTopH: D, legBottomH: O } = se(C, t.legendOverlay === !0), k = p(t.catAxisFontSizeHpt, h, i);
-	e.save(), e.font = ye(k, j(t, t.catAxisFontFace, "minor"), t.catAxisFontBold ?? !1, t.catAxisFontItalic ?? !1);
-	let M = 0;
-	if (!t.catAxisHidden) {
-		for (let n = 0; n < Math.min(s, t.categories.length); n++) M = Math.max(M, _(e, t.categories[n]));
-		t.categories.length > 0 && (M += 10);
+function q(e, n, r, o, s) {
+	let c = n.series[0]?.values ?? [], l = Math.max(c.length, n.categories.length);
+	if (l === 0 || Le(e, r, l)) return;
+	let u = 0;
+	for (let e = 0; e < l; e++) u = Math.max(u, c[e] ?? 0);
+	if (!(u > 0)) return;
+	let { x: d, y: f, w: p, h: m } = r, g = Ae(e, n, p, m, o), _ = n.series[0], y = w(_?.dataLabelOverrides), b = `#${_?.color ?? U(n, 0, 1, _?.chartexStyle)}`, x = Ue(n, 0, 1, _?.chartexStyle, _?.color), S = {
+		...n,
+		series: [ke(n, _?.name ?? "", _, n.chartexDataPointStyle, 0, 1, b)]
+	}, C = Be(e, S, p, m, o), { legRightW: T, legLeftW: E, legTopH: D, legBottomH: A } = le(C, n.legendOverlay === !0), j = v(n.catAxisFontSizeHpt, m, o);
+	e.save(), e.font = M(j, H(n, n.catAxisFontFace, "minor"), n.catAxisFontBold ?? !1, n.catAxisFontItalic ?? !1);
+	let P = 0;
+	if (!n.catAxisHidden) {
+		for (let t = 0; t < Math.min(l, n.categories.length); t++) P = Math.max(P, ve(e, n.categories[t]));
+		n.categories.length > 0 && (P += 10);
 	}
-	let P = N(t, u, d, f, h, i, {
+	let F = N(n, d, f, p, m, o, {
 		titleBand: g,
 		legendReserve: C,
 		pad: {
 			t: g.bandH + D + 2,
-			r: w + f * .02,
-			b: O + h * .02,
-			l: T + M + f * .02
+			r: T + p * .02,
+			b: A + m * .02,
+			l: E + P + p * .02
 		},
 		honorPlotAreaManualLayout: !0
 	});
-	Ve(e, t, u, d, f, h, d + P.title.topPad, P.title.fontPx);
-	let { px0: F, py0: I, pw: ee, ph: L } = P.plotRect;
-	if (ee <= 0 || L <= 0) return;
-	he(e, t, F, I, ee, L, i, a);
-	let te = L / s, R = te / (1 + n(t.barGapWidth, "chartex") / 100), z = be(v?.dataPointOverrides);
-	for (let n = 0; n < s; n++) {
-		let r = Math.max(0, o[n] ?? 0), s = ee * r / l, g = F + (ee - s) / 2, _ = I + te * n + (te - R) / 2, x = z.get(n), S = Ie(t, v, x, 0, 1), C = xe(t, v, x, 0, 1, b), w = (e) => {
-			S && s > 0 ? we(e, S, {
-				x: g,
-				y: _,
-				w: s,
-				h: R
-			}, b, i, a) : S && (e.fillStyle = W(e, S, g, _, s, R, b, a), e.fillRect(g, _, s, R)), Ne(e, C, i, s > 0 ? {
-				x: g,
-				y: _,
-				w: s,
-				h: R
-			} : void 0, a) && e.strokeRect(g, _, s, R);
+	Ve(e, n, d, f, p, m, f + F.title.topPad, F.title.fontPx);
+	let { px0: I, py0: ee, pw: te, ph: R } = F.plotRect;
+	if (te <= 0 || R <= 0) return;
+	pe(e, n, I, ee, te, R, o, s);
+	let ne = R / l, z = ne / (1 + i(n.barGapWidth, "chartex") / 100), re = w(_?.dataPointOverrides);
+	for (let t = 0; t < l; t++) {
+		let r = Math.max(0, c[t] ?? 0), i = te * r / u, l = I + (te - i) / 2, g = ee + ne * t + (ne - z) / 2, x = re.get(t), S = Ie(n, _, x, 0, 1), C = xe(n, _, x, 0, 1, b), w = (e) => {
+			S && i > 0 ? we(e, S, {
+				x: l,
+				y: g,
+				w: i,
+				h: z
+			}, b, o, s) : S && (e.fillStyle = W(e, S, l, g, i, z, b, s), e.fillRect(l, g, i, z)), Ne(e, C, o, i > 0 ? {
+				x: l,
+				y: g,
+				w: i,
+				h: z
+			} : void 0, s) && e.strokeRect(l, g, i, z);
 		};
-		s > 0 ? m(e, c(x?.chartexStyle, v?.chartexStyle), t.chartexDataPointStyle, 0, {
-			x: g,
-			y: _,
-			w: s,
-			h: R
-		}, i, w) : w(e);
-		let T = t.categories[n];
-		!t.catAxisHidden && T != null && (e.fillStyle = t.catAxisFontColor ? `#${t.catAxisFontColor}` : "#595959", e.textAlign = "right", e.textBaseline = "middle", A(e, T, F - 6, _ + R / 2, ve(k)));
-		let E = ne(t, v, n, T ?? "", r, {
+		i > 0 ? h(e, a(x?.chartexStyle, _?.chartexStyle), n.chartexDataPointStyle, 0, {
+			x: l,
+			y: g,
+			w: i,
+			h: z
+		}, o, w) : w(e);
+		let T = n.categories[t];
+		!n.catAxisHidden && T != null && (e.fillStyle = n.catAxisFontColor ? `#${n.catAxisFontColor}` : "#595959", e.textAlign = "right", e.textBaseline = "middle", O(e, T, I - 6, g + z / 2, L(j)));
+		let E = k(n, _, t, T ?? "", r, {
 			visible: !1,
 			showVal: !1,
 			showCatName: !1
 		}, y);
 		if (E) {
-			let n = B(E.fontSizeHpt, i) ?? p(t.dataLabelFontSizeHpt, h, i), r = j(t, E.fontFace ?? t.dataLabelFontFace, "minor");
-			e.font = `${E.textStyle.fontItalic ? "italic " : ""}${E.fontBold ? "bold " : ""}${n}px ${r}`, He(e, E.text, {
+			let t = ae(E.fontSizeHpt, o) ?? v(n.dataLabelFontSizeHpt, m, o), r = H(n, E.fontFace ?? n.dataLabelFontFace, "minor");
+			e.font = `${E.textStyle.fontItalic ? "italic " : ""}${E.fontBold ? "bold " : ""}${t}px ${r}`, He(e, E.text, {
 				kind: "bar",
 				rect: {
-					x: g,
-					y: _,
-					w: s,
-					h: R
+					x: l,
+					y: g,
+					w: i,
+					h: z
 				},
 				orientation: "horizontal",
 				negative: !1,
 				position: E.position ?? "ctr"
 			}, {
-				x: F,
-				y: I,
-				w: ee,
-				h: L
-			}, n, E.fontColor ? `#${E.fontColor}` : "#ffffff", E.manualLayout, {
-				x: u,
-				y: d,
-				w: f,
-				h
-			}, je(t, E.richRuns, i, r, E.fontBold ?? !1, E.textStyle), void 0, E.textStyle, i, E.labelBox, a);
+				x: I,
+				y: ee,
+				w: te,
+				h: R
+			}, t, E.fontColor ? `#${E.fontColor}` : "#ffffff", E.manualLayout, {
+				x: d,
+				y: f,
+				w: p,
+				h: m
+			}, je(n, E.richRuns, o, r, E.fontBold ?? !1, E.textStyle), void 0, E.textStyle, o, E.labelBox, s);
 		}
 	}
-	if (!t.catAxisHidden && !t.catAxisLineHidden) {
-		let n = E(t.catAxisLineColor, t.catAxisLineWidthEmu, i);
-		e.strokeStyle = n.color, e.lineWidth = n.width, e.beginPath(), e.moveTo(F, I), e.lineTo(F, I + L), e.stroke();
+	if (!n.catAxisHidden && !n.catAxisLineHidden) {
+		let r = t(n.catAxisLineColor, n.catAxisLineWidthEmu, o);
+		e.strokeStyle = r.color, e.lineWidth = r.width, e.beginPath(), e.moveTo(I, ee), e.lineTo(I, ee + R), e.stroke();
 	}
-	Me(e, S, C, u, d, f, h, F, I, ee, L, g.bandH + 2, i, [x], a), e.restore();
+	Me(e, S, C, d, f, p, m, I, ee, te, R, g.bandH + 2, o, [x], s), e.restore();
 }
-function J(e, t, n, r, i = 0) {
-	let a = t.series[0];
-	if (!a || Le(e, n, Math.max(t.categories.length, a.categories?.length ?? 0, a.values.length))) return;
-	let o = v(a, t.categories, { sortDescending: t.chartexParetoSortDescending ?? !1 });
-	if (o.points.length === 0) return;
-	let s = h(a, 0), c = [t.chartexDataPointStyle, t.chartexDataPointLineStyle], l = Te(t, Se(a, s), c, c, s, 1, `#${U(t, s, 1, a.chartexStyle)}`, { linkedNoStyleFallback: !0 });
-	Pe(e, P(t, {
+function J(e, t, r, i, a = 0) {
+	let o = t.series[0];
+	if (!o || Le(e, r, Math.max(t.categories.length, o.categories?.length ?? 0, o.values.length))) return;
+	let s = l(o, t.categories, { sortDescending: t.chartexParetoSortDescending ?? !1 });
+	if (s.points.length === 0) return;
+	let u = n(o, 0), d = [t.chartexDataPointStyle, t.chartexDataPointLineStyle], f = Te(t, Se(o, u), d, d, u, 1, `#${U(t, u, 1, o.chartexStyle)}`, { linkedNoStyleFallback: !0 });
+	Pe(e, c(t, {
 		chartType: "line",
-		categories: t.chartexParetoFlatEndpoint ? [...o.categories, ""] : o.categories,
+		categories: t.chartexParetoFlatEndpoint ? [...s.categories, ""] : s.categories,
 		series: [{
-			...o.series,
-			values: t.chartexParetoFlatEndpoint ? [...o.series.values, 1] : o.series.values,
+			...s.series,
+			values: t.chartexParetoFlatEndpoint ? [...s.series.values, 1] : s.series.values,
 			showMarker: !1,
-			lineHidden: !l.visible,
-			lineColor: l.color.replace(/^#/, ""),
-			lineWidthEmu: l.widthEmu ?? 9525,
+			lineHidden: !f.visible,
+			lineColor: f.color.replace(/^#/, ""),
+			lineWidthEmu: f.widthEmu ?? 9525,
 			chartexStyle: {
-				lineDash: l.dash,
-				lineCap: l.cap,
-				lineJoin: l.join
+				lineDash: f.dash,
+				lineCap: f.cap,
+				lineJoin: f.join
 			}
 		}],
 		catAxisHidden: !1,
-		catAxisTickLabelPos: t.chartexParetoSortDescending == null || !(a.categories ?? t.categories).some((e) => e != null && e !== "") ? "none" : "nextTo",
+		catAxisTickLabelPos: t.chartexParetoSortDescending == null || !(o.categories ?? t.categories).some((e) => e != null && e !== "") ? "none" : "nextTo",
 		showLegend: !1,
 		valMin: t.valMin ?? 0,
 		valMax: t.valMax ?? (t.valAxisFormatCode === "0%" ? 1 : 1.2),
 		valAxisMajorUnit: t.valAxisMajorUnit ?? (t.valAxisFormatCode === "0%" ? .1 : .2)
-	}), n, r, i);
+	}), r, i, a);
 }
 function Y(e) {
 	return {
@@ -412,6 +413,7 @@ function Y(e) {
 		title: e.secondaryValAxis?.title ?? null,
 		hidden: e.secondaryValAxis?.hidden ?? !1,
 		formatCode: e.secondaryValAxis?.formatCode ?? "0%",
+		formatDivisors: e.secondaryValAxis?.formatCode == null ? null : e.secondaryValAxis.formatDivisors,
 		fontColor: e.secondaryValAxis?.fontColor ?? null,
 		fontSizeHpt: e.secondaryValAxis?.fontSizeHpt ?? null,
 		fontFace: e.secondaryValAxis?.fontFace ?? null,
@@ -431,34 +433,34 @@ function Y(e) {
 function X(e, t, n, r, i = 0) {
 	let a = t.series.filter((e) => e.seriesType !== "line"), o = t.chartexParetoOwnerIndex ?? 0, s = a[o];
 	if (!s || a.length === 0 || Le(e, n, Math.max(t.categories.length, ...a.map((e) => e.values.length)))) return;
-	let c = a.map((e, n) => v(n === 0 ? K(t, e, n, a.length) : e, t.categories, {
+	let u = a.map((e, n) => l(n === 0 ? K(t, e, n, a.length) : e, t.categories, {
 		sortDescending: t.chartexParetoSortDescending ?? !0,
 		keepUnvaluedCategories: !0
-	})), l = c[o], u = c[0];
-	if (l.points.length === 0 || u.points.length === 0) return;
-	let d = t.chartexParetoFlatEndpoint === !0 && u.categories.length === u.points.length, f = t.series.find((e) => e.seriesType === "line"), p = f?.chartexFormatIdx ?? s.chartexFormatIdx ?? 0, m = {
-		...f ?? l.series,
-		name: f?.name || "Cumulative %",
-		values: l.series.values,
-		categories: u.categories,
-		color: f?.color ?? We(t, t.chartexDataPointLineStyle, "line", p, 1) ?? s.lineColor ?? s.color,
+	})), d = u[o], f = u[0];
+	if (d.points.length === 0 || f.points.length === 0) return;
+	let p = t.chartexParetoFlatEndpoint === !0 && f.categories.length === f.points.length, m = t.series.find((e) => e.seriesType === "line"), h = m?.chartexFormatIdx ?? s.chartexFormatIdx ?? 0, g = {
+		...m ?? d.series,
+		name: m?.name || "Cumulative %",
+		values: d.series.values,
+		categories: f.categories,
+		color: m?.color ?? We(t, t.chartexDataPointLineStyle, "line", h, 1) ?? s.lineColor ?? s.color,
 		seriesType: "line",
 		useSecondaryAxis: !0,
 		showMarker: !1
-	}, h = Y(t);
-	ze(e, P(t, {
+	}, _ = Y(t);
+	ze(e, c(t, {
 		chartType: "clusteredBar",
-		categories: d ? [...u.categories, ""] : u.categories,
-		series: [...c.map((e) => ({
+		categories: p ? [...f.categories, ""] : f.categories,
+		series: [...u.map((e) => ({
 			...e.orderedSeries,
-			values: d ? [...e.orderedSeries.values, null] : e.orderedSeries.values,
+			values: p ? [...e.orderedSeries.values, null] : e.orderedSeries.values,
 			seriesType: null,
 			useSecondaryAxis: !1
-		})), d ? {
-			...m,
-			values: [...m.values, 1]
-		} : m],
-		secondaryValAxis: h
+		})), p ? {
+			...g,
+			values: [...g.values, 1]
+		} : g],
+		secondaryValAxis: _
 	}), n, r, {
 		gapPolicy: "chartex",
 		semanticLineNoStyleFallback: !0
@@ -468,7 +470,7 @@ var Xe = 7, Z = .05, Q = 1.2;
 function Ze(e, t, n, r) {
 	let i = (r ?? t) - (n ?? e);
 	if (!(i > 0) || !Number.isFinite(i)) return null;
-	let a = ie(i, Xe);
+	let a = m(i, Xe);
 	if (!(a > 0) || !Number.isFinite(a)) return null;
 	let o = e - i * Z, s = t + i * Z;
 	e >= 0 && (e === 0 || t > Q * e) && (o = 0), t <= 0 && (t === 0 || Math.abs(e) > Q * Math.abs(t)) && (s = 0);
@@ -479,57 +481,57 @@ function Ze(e, t, n, r) {
 		majorUnit: a
 	};
 }
-function Qe(e, r, i, a, s) {
-	let u = 3 * a, d = r.chartexBox;
-	if (!d || d.categories.length === 0 || d.series.length === 0) return;
-	let { x: g, y: v, w: y, h: b } = i;
-	if (Le(e, i, t(d.series.map((e) => e.valuesByCategory), 1e4))) return;
-	let x = () => {
-		e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(chart values out of range)", g + y / 2, v + b / 2);
-	}, D = (e) => {
+function Qe(e, r, o, s, c) {
+	let l = 3 * s, f = r.chartexBox;
+	if (!f || f.categories.length === 0 || f.series.length === 0) return;
+	let { x: p, y: m, w: _, h: y } = o;
+	if (Le(e, o, x(f.series.map((e) => e.valuesByCategory), 1e4))) return;
+	let b = () => {
+		e.fillStyle = "#888", e.font = "12px sans-serif", e.textAlign = "center", e.textBaseline = "middle", e.fillText("(chart values out of range)", p + _ / 2, m + y / 2);
+	}, S = (e) => {
 		let t = e.max - e.min, n = t / e.step;
 		return Number.isFinite(e.min) && Number.isFinite(e.max) && Number.isFinite(e.step) && Number.isFinite(t) && Number.isFinite(n) && e.max > e.min && e.step > 0 && n <= 1e3 && e.min + e.step > e.min;
-	}, k = Infinity, M = -Infinity;
-	for (let e of d.series) for (let t of e.valuesByCategory) for (let e of t) Number.isFinite(e) && (e < k && (k = e), e > M && (M = e));
-	if (!isFinite(k) || !isFinite(M)) return;
-	if (!Number.isFinite(M - k)) {
-		x();
+	}, w = Infinity, k = -Infinity;
+	for (let e of f.series) for (let t of e.valuesByCategory) for (let e of t) Number.isFinite(e) && (e < w && (w = e), e > k && (k = e));
+	if (!isFinite(w) || !isFinite(k)) return;
+	if (!Number.isFinite(k - w)) {
+		b();
 		return;
 	}
-	let P = r.valAxisMajorUnit == null ? Ze(k, M, r.valMin, r.valMax) : null, I = P ? {
+	let A = r.valAxisMajorUnit == null ? Ze(w, k, r.valMin, r.valMax) : null, j = A ? {
 		...r,
-		valMin: P.min,
-		valMax: P.max,
-		valAxisMajorUnit: P.majorUnit
-	} : r, L = j(r, r.valAxisFontFace, "minor"), ne = p(r.valAxisFontSizeHpt, b, a), z = te(ne), ie = Oe(a), B = l({
-		dataMin: k,
-		dataMax: M,
-		explicitMin: I.valMin,
-		explicitMax: I.valMax,
-		axisLenPt: b / a,
-		majorUnit: I.valAxisMajorUnit
+		valMin: A.min,
+		valMax: A.max,
+		valAxisMajorUnit: A.majorUnit
+	} : r, P = H(r, r.valAxisFontFace, "minor"), F = v(r.valAxisFontSizeHpt, y, s), te = ee(F), R = Oe(s), z = g({
+		dataMin: w,
+		dataMax: k,
+		explicitMin: j.valMin,
+		explicitMax: j.valMax,
+		axisLenPt: y / s,
+		majorUnit: j.valAxisMajorUnit
 	});
-	if (!D({
-		min: B.min,
-		max: B.max,
-		step: B.majorUnit
+	if (!S({
+		min: z.min,
+		max: z.max,
+		step: z.majorUnit
 	})) {
-		x();
+		b();
 		return;
 	}
 	let ae = 0;
 	if (!r.valAxisHidden) {
 		let t = e.font;
-		e.font = ye(ne, L, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1);
+		e.font = M(F, P, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1);
 		let n = 0;
-		for (let t of B.majorTicks) {
-			let i = ge(r, t, !1);
-			n = Math.max(n, _(e, i));
+		for (let t of z.majorTicks) {
+			let i = he(r, t, !1);
+			n = Math.max(n, ve(e, i));
 		}
-		e.font = t, ae = n + z + S * a;
+		e.font = t, ae = n + te + ce * s;
 	}
-	let ce = Ae(e, r, y, b, a), ue = p(r.catAxisFontSizeHpt, b, a), pe = p(r.valAxisFontSizeHpt, b, a), V = O(r, y, b, a), H = d.series.length, _e = d.series.map((e, t) => h(e, t)), be = d.series.map((e, t) => {
-		let n = _e[t], i = e.color ?? U(r, n, H, e.chartexStyle), a = ke(r, e.name, Se(e, n) ?? e, r.chartexDataPointStyle, n, H, i, !0), o = Ce(r, e, n, H, i);
+	let B = Ae(e, r, _, y, s), de = v(r.catAxisFontSizeHpt, y, s), ge = v(r.valAxisFontSizeHpt, y, s), _e = re(r, _, y, s), V = f.series.length, ye = f.series.map((e, t) => n(e, t)), be = f.series.map((e, t) => {
+		let n = ye[t], i = e.color ?? U(r, n, V, e.chartexStyle), a = ke(r, e.name, Se(e, n) ?? e, r.chartexDataPointStyle, n, V, i, !0), o = Ce(r, e, n, V, i);
 		return o.darkened && a.lineColor != null ? {
 			...a,
 			lineColor: o.line.color.replace(/^#/, "")
@@ -537,33 +539,33 @@ function Qe(e, r, i, a, s) {
 	}), xe = {
 		...r,
 		series: be
-	}, Te = Be(e, xe, y, b, a), { legRightW: De, legLeftW: je, legTopH: Pe, legBottomH: Ie } = se(Te, r.legendOverlay === !0), ze = r.valAxisHidden ? 0 : ee(B.majorTicks.map((e) => ge(r, e, !1)), ve(ne)) / 2, He = r.catAxisHidden ? 0 : ee(d.categories, ve(ue)), Ge = N(r, g, v, y, b, a, {
-		titleBand: ce,
+	}, Te = Be(e, xe, _, y, s), { legRightW: De, legLeftW: je, legTopH: Pe, legBottomH: Ie } = le(Te, r.legendOverlay === !0), ze = r.valAxisHidden ? 0 : se(z.majorTicks.map((e) => he(r, e, !1)), L(F)) / 2, He = r.catAxisHidden ? 0 : se(f.categories, L(de)), Ge = N(r, p, m, _, y, s, {
+		titleBand: B,
 		legendReserve: Te,
 		pad: {
-			t: ce.bandH + Pe + pe / 2 + 2 + ze,
-			r: De + y * .02,
-			b: Ie + V.catBandH + (r.catAxisHidden ? b * .02 : de(ue) + He),
-			l: je + V.valBandW + (r.valAxisHidden ? y * .02 : ae)
+			t: B.bandH + Pe + ge / 2 + 2 + ze,
+			r: De + _ * .02,
+			b: Ie + _e.catBandH + (r.catAxisHidden ? y * .02 : I(de) + He),
+			l: je + _e.valBandW + (r.valAxisHidden ? _ * .02 : ae)
 		},
 		honorPlotAreaManualLayout: !0
 	}), { px0: W, py0: G, pw: Ke, ph: K } = Ge.plotRect;
 	if (Ke <= 0 || K <= 0) {
-		Ve(e, r, g, v, y, b, v + Ge.title.topPad, Ge.title.fontPx);
+		Ve(e, r, p, m, _, y, m + Ge.title.topPad, Ge.title.fontPx);
 		return;
 	}
-	he(e, r, W, G, Ke, K, a, s);
-	let qe = d.categories, Je = qe.length, Ye = oe(I, k, M, K / a);
-	if (!D(Ye)) {
-		x();
+	pe(e, r, W, G, Ke, K, s, c);
+	let qe = f.categories, Je = qe.length, Ye = ie(j, w, k, K / s);
+	if (!S(Ye)) {
+		b();
 		return;
 	}
-	Ve(e, r, g, v, y, b, v + Ge.title.topPad, Ge.title.fontPx);
-	let { min: q, max: J } = Ye, Y = J - q, X = (e) => G + K * (1 - (e - q) / Y), Xe = E(r.valAxisLineColor, r.valAxisLineWidthEmu, a), Z = le(r, a);
+	Ve(e, r, p, m, _, y, m + Ge.title.topPad, Ge.title.fontPx);
+	let { min: q, max: J } = Ye, Y = J - q, X = (e) => G + K * (1 - (e - q) / Y), Xe = t(r.valAxisLineColor, r.valAxisLineWidthEmu, s), Z = oe(r, s);
 	if (e.save(), !r.valAxisHidden) {
-		if (e.font = ye(ne, L, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1), e.textAlign = "right", e.textBaseline = "middle", r.valAxisMinorGridlines) {
-			let t = me(r, a);
-			for (let n of Ye.minorLines) re(e, W, Ke, X(n), !1, t);
+		if (e.font = M(F, P, r.valAxisFontBold ?? !1, r.valAxisFontItalic ?? !1), e.textAlign = "right", e.textBaseline = "middle", r.valAxisMinorGridlines) {
+			let t = fe(r, s);
+			for (let n of Ye.minorLines) ne(e, W, Ke, X(n), !1, t);
 		}
 		for (let t of Ye.majorLines) {
 			let n = X(t);
@@ -572,15 +574,15 @@ function Qe(e, r, i, a, s) {
 				let t = Z.dash.length > 0 && e.getLineDash ? e.getLineDash() : [];
 				Z.dash.length > 0 && e.setLineDash(Z.dash), e.beginPath(), e.moveTo(W, n), e.lineTo(W + Ke, n), e.stroke(), Z.dash.length > 0 && e.setLineDash(t);
 			}
-			e.fillStyle = r.valAxisFontColor ? `#${r.valAxisFontColor}` : "#595959", A(e, ge(r, t, !1), W - ie, n, ve(ne)), o(e, r.valAxisMajorTickMark, "val", W, n, Xe.color, Xe.width, !1, r.valAxisLineHidden, "major", a, r.valAxisLineDash);
+			e.fillStyle = r.valAxisFontColor ? `#${r.valAxisFontColor}` : "#595959", O(e, he(r, t, !1), W - R, n, L(F)), d(e, r.valAxisMajorTickMark, "val", W, n, Xe.color, Xe.width, !1, r.valAxisLineHidden, "major", s, r.valAxisLineDash);
 		}
-		for (let t of Ye.minorTicks) o(e, r.valAxisMinorTickMark, "val", W, X(t), Xe.color, Xe.width, !1, r.valAxisLineHidden, "minor", a, r.valAxisLineDash);
-		r.valAxisLineHidden || fe(e, W, G, W, G + K, Xe.color, Xe.width, r.valAxisLineDash);
+		for (let t of Ye.minorTicks) d(e, r.valAxisMinorTickMark, "val", W, X(t), Xe.color, Xe.width, !1, r.valAxisLineHidden, "minor", s, r.valAxisLineDash);
+		r.valAxisLineHidden || ue(e, W, G, W, G + K, Xe.color, Xe.width, r.valAxisLineDash);
 	}
-	let Q = E(r.catAxisLineColor, r.catAxisLineWidthEmu, a);
-	!r.catAxisHidden && !r.catAxisLineHidden && fe(e, W, G + K, W + Ke, G + K, Q.color, Q.width, r.catAxisLineDash);
-	let Qe = Ke / Je, $e = n(r.barGapWidth, "chartex"), et = (e) => `#${d.series[e].color ?? U(r, _e[e], H, d.series[e].chartexStyle)}`, tt = (e) => Ue(r, _e[e], H, d.series[e].chartexStyle, d.series[e].color), $ = d.series.map((e) => e.valuesByCategory.map((t) => F(t, e.quartileMethod))), nt = r.chartStyleMarkerSymbol ?? r.chartexMarkerSymbol ?? "circle", rt = d.series.map((e, t) => nt === "none" ? $[t].map(() => []) : f($[t], e.showNonoutliers, e.showOutliers, X, 3 * a)), it = (e, t) => {
-		let n = T(W, Ke, d.oneBoxPerSeries ? 1 : Je, H, d.oneBoxPerSeries ? 0 : e, t, $e);
+	let Q = t(r.catAxisLineColor, r.catAxisLineWidthEmu, s);
+	!r.catAxisHidden && !r.catAxisLineHidden && ue(e, W, G + K, W + Ke, G + K, Q.color, Q.width, r.catAxisLineDash);
+	let Qe = Ke / Je, $e = i(r.barGapWidth, "chartex"), et = (e) => `#${f.series[e].color ?? U(r, ye[e], V, f.series[e].chartexStyle)}`, tt = (e) => Ue(r, ye[e], V, f.series[e].chartexStyle, f.series[e].color), $ = f.series.map((e) => e.valuesByCategory.map((t) => T(t, e.quartileMethod))), nt = r.chartStyleMarkerSymbol ?? r.chartexMarkerSymbol ?? "circle", rt = f.series.map((e, t) => nt === "none" ? $[t].map(() => []) : u($[t], e.showNonoutliers, e.showOutliers, X, 3 * s)), it = (e, t) => {
+		let n = C(W, Ke, f.oneBoxPerSeries ? 1 : Je, V, f.oneBoxPerSeries ? 0 : e, t, $e);
 		return n ? {
 			bx: n.boxX,
 			boxW: n.boxWidth,
@@ -591,46 +593,46 @@ function Qe(e, r, i, a, s) {
 			cx: W
 		};
 	}, at = (t, n) => {
-		let i = d.series[t], o = $[t][n];
+		let i = f.series[t], o = $[t][n];
 		if (!o) return;
-		let { bx: l, boxW: f, cx: p } = it(n, t), h = et(t), g = tt(t), _ = r.chartexDataPointStyle, v = r.chartexDataPointMarkerStyle ?? _, y = _e[t], b = Se(i, y) ?? i, x = We(r, _, "line", y, H), S = b.lineColor ? `#${b.lineColor}` : x ? `#${x}` : h, C = Ce(r, i, y, H, S).line, T = We(r, v, "fill", y, H), E = Ee(r, y, H, i.chartexStyle, i.color, v), D = Fe(r, v, b, y, H, We(r, v, "line", y, H) ?? S, { linkedNoStyleFallback: !0 }), O = c(i.chartexStyle), k = X(o.q1), A = X(o.q3), j = Math.min(k, A), M = Math.max(1, Math.abs(k - A)), N = f * .4;
-		if (Ne(e, C, a)) {
+		let { bx: u, boxW: d, cx: p } = it(n, t), m = et(t), g = tt(t), _ = r.chartexDataPointStyle, v = r.chartexDataPointMarkerStyle ?? _, y = ye[t], b = Se(i, y) ?? i, x = We(r, _, "line", y, V), S = b.lineColor ? `#${b.lineColor}` : x ? `#${x}` : m, C = Ce(r, i, y, V, S).line, w = We(r, v, "fill", y, V), T = Ee(r, y, V, i.chartexStyle, i.color, v), E = Fe(r, v, b, y, V, We(r, v, "line", y, V) ?? S, { linkedNoStyleFallback: !0 }), O = a(i.chartexStyle), k = X(o.q1), A = X(o.q3), j = Math.min(k, A), M = Math.max(1, Math.abs(k - A)), N = d * .4;
+		if (Ne(e, C, s)) {
 			let t = X(o.whiskerHi), n = X(o.whiskerLo);
 			e.beginPath(), o.whiskerHi > o.q3 && (e.moveTo(p, t), e.lineTo(p, A)), o.whiskerLo < o.q1 && (e.moveTo(p, k), e.lineTo(p, n)), o.whiskerHi >= o.q3 && (e.moveTo(p - N / 2, t), e.lineTo(p + N / 2, t)), o.whiskerLo <= o.q1 && (e.moveTo(p - N / 2, n), e.lineTo(p + N / 2, n)), e.stroke();
 		}
-		m(e, i.chartexStyle, _, y, {
-			x: l,
+		h(e, i.chartexStyle, _, y, {
+			x: u,
 			y: j,
-			w: f,
+			w: d,
 			h: M
-		}, a, (e) => {
+		}, s, (e) => {
 			if (g && we(e, g, {
-				x: l,
+				x: u,
 				y: j,
-				w: f,
+				w: d,
 				h: M
-			}, h, a, s), Ne(e, C, a, {
-				x: l,
+			}, m, s, c), Ne(e, C, s, {
+				x: u,
 				y: j,
-				w: f,
+				w: d,
 				h: M
-			}, s)) {
+			}, c)) {
 				let t = e.lineWidth;
-				e.strokeRect(l + t / 2, j + t / 2, f - t, M - t);
+				e.strokeRect(u + t / 2, j + t / 2, d - t, M - t);
 			}
 		});
 		let P = X(o.median);
-		Ne(e, C, a) && (e.beginPath(), e.moveTo(l, P), e.lineTo(l + f, P), e.stroke());
-		for (let r of rt[t][n]) Re(e, p, X(r), nt, 3, E ? T ? `#${T}` : h : "transparent", D.visible ? D.color : null, a, D.widthEmu == null ? 1 : w(D.widthEmu, a), E, s, D.visible ? D.paint : null, D.dash, D.customDash, D.cap, D.join, !1, O, v, y, y);
+		Ne(e, C, s) && (e.beginPath(), e.moveTo(u, P), e.lineTo(u + d, P), e.stroke());
+		for (let r of rt[t][n]) Re(e, p, X(r), nt, 3, T ? w ? `#${w}` : m : "transparent", E.visible ? E.color : null, s, E.widthEmu == null ? 1 : D(E.widthEmu, s), T, c, E.visible ? E.paint : null, E.dash, E.customDash, E.cap, E.join, !1, O, v, y, y);
 		if (i.meanMarker) {
-			let t = X(o.mean), n = u;
-			Ne(e, C, a) && (e.beginPath(), e.moveTo(p - n, t - n), e.lineTo(p + n, t + n), e.moveTo(p + n, t - n), e.lineTo(p - n, t + n), e.stroke());
+			let t = X(o.mean), n = l;
+			Ne(e, C, s) && (e.beginPath(), e.moveTo(p - n, t - n), e.lineTo(p + n, t + n), e.moveTo(p + n, t - n), e.lineTo(p - n, t + n), e.stroke());
 		}
 	}, ot = (t) => {
-		let n = d.series[t];
+		let n = f.series[t];
 		if (!n.meanLine) return;
-		let i = Ce(r, n, _e[t], H, et(t)).line;
-		if (e.save(), Ne(e, i, a)) {
+		let i = Ce(r, n, ye[t], V, et(t)).line;
+		if (e.save(), Ne(e, i, s)) {
 			let n = !1;
 			e.beginPath();
 			for (let r = 0; r < Je; r++) {
@@ -646,103 +648,103 @@ function Qe(e, r, i, a, s) {
 		}
 		e.restore();
 	};
-	for (let e = 0; e < H; e++) {
+	for (let e = 0; e < V; e++) {
 		for (let t = 0; t < Je; t++) at(e, t);
 		ot(e);
 	}
-	let st = p(r.catAxisFontSizeHpt, b, a), ct = R(st);
+	let st = v(r.catAxisFontSizeHpt, y, s), ct = me(st);
 	for (let t = 0; t < Je; t++) {
 		let n = W + Qe * (t + .5);
-		if (r.catAxisHidden || o(e, r.catAxisMajorTickMark, "cat", G + K, n, Q.color, Q.width, !1, r.catAxisLineHidden, "major", a, r.catAxisLineDash), !r.catAxisHidden) {
-			e.font = ye(st, j(r, r.catAxisFontFace, "minor"), r.catAxisFontBold ?? !1, r.catAxisFontItalic ?? !1), e.fillStyle = r.catAxisFontColor ? `#${r.catAxisFontColor}` : "#595959", e.textAlign = "center", e.textBaseline = "top";
+		if (r.catAxisHidden || d(e, r.catAxisMajorTickMark, "cat", G + K, n, Q.color, Q.width, !1, r.catAxisLineHidden, "major", s, r.catAxisLineDash), !r.catAxisHidden) {
+			e.font = M(st, H(r, r.catAxisFontFace, "minor"), r.catAxisFontBold ?? !1, r.catAxisFontItalic ?? !1), e.fillStyle = r.catAxisFontColor ? `#${r.catAxisFontColor}` : "#595959", e.textAlign = "center", e.textBaseline = "top";
 			let i = qe[t];
-			A(e, i, n, G + K + ct, ve(st));
+			O(e, i, n, G + K + ct, L(st));
 		}
 	}
-	e.restore(), C(e, r, g, v, y, b, W, G, Ke, K, je, Ie, V.catFontPx, V.valFontPx), Me(e, xe, Te, g, v, y, b, W, G, Ke, K, ce.bandH + 2, a, d.series.map((e, t) => tt(t)), s);
+	e.restore(), E(e, r, p, m, _, y, W, G, Ke, K, je, Ie, _e.catFontPx, _e.valFontPx), Me(e, xe, Te, p, m, _, y, W, G, Ke, K, B.bandH + 2, s, f.series.map((e, t) => tt(t)), c);
 }
 var $e = .18;
-function et(e, t, n, r, o) {
-	let s = t.chartexSunburst;
-	if (!s || s.rows.length === 0) return;
-	let { x: l, y: f, w: p, h } = n;
-	if (d(s.rows)) {
-		Le(e, n, z + 1);
+function et(e, t, n, i, s) {
+	let l = t.chartexSunburst;
+	if (!l || l.rows.length === 0) return;
+	let { x: u, y: d, w: f, h: p } = n;
+	if (_e(l.rows)) {
+		Le(e, n, B + 1);
 		return;
 	}
-	let g = u(s.rows);
-	if (g.layoutWeight <= 0 || g.children.length === 0) return;
-	let _ = t.series[0], v = be(_?.dataLabelOverrides), y = g.children.map((e, n) => Ue(t, n, g.children.length, _?.chartexStyle, _?.color)), b = P(t, {
+	let m = r(l.rows);
+	if (m.layoutWeight <= 0 || m.children.length === 0) return;
+	let g = t.series[0], _ = w(g?.dataLabelOverrides), v = m.children.map((e, n) => Ue(t, n, m.children.length, g?.chartexStyle, g?.color)), y = c(t, {
 		chartType: "clusteredBar",
-		series: g.children.map((e) => {
-			let n = U(t, e.branchIndex, g.children.length, _?.chartexStyle);
-			return ke(t, e.label, _, t.chartexDataPointStyle, e.branchIndex, g.children.length, n, !1, !1);
+		series: m.children.map((e) => {
+			let n = U(t, e.branchIndex, m.children.length, g?.chartexStyle);
+			return ke(t, e.label, g, t.chartexDataPointStyle, e.branchIndex, m.children.length, n, !1, !1);
 		})
-	}), x = Be(e, b, p, h, r), S = N(t, l, f, p, h, r, {
+	}), x = Be(e, y, f, p, i), S = N(t, u, d, f, p, i, {
 		titleTopPadFrac: .035,
 		titleBottomPadFrac: .035,
 		legendReserve: x,
 		radialGapFrac: .02,
 		honorPlotAreaManualLayout: !0
 	});
-	Ve(e, t, l, f, p, h, f + S.title.topPad, S.title.fontPx);
-	let { px0: C, py0: w, pw: T, ph: E } = S.plotRect;
-	if (!(T > 0) || !(E > 0)) return;
-	he(e, t, C, w, T, E, r, o);
-	let D = C + T / 2, O = w + E / 2, k = Math.min(T, E) * .46;
-	g.a0 = -Math.PI / 2, g.a1 = -Math.PI / 2 + Math.PI * 2, i(g);
-	let A = a(g) + 1, M = k * $e, F = (k - M) / A, I = (e) => `#${U(t, e, g.children.length, _?.chartexStyle)}`, ee = be(_?.dataPointOverrides), L = _?.seriesDataLabels, te = j(t, L?.fontFace ?? t.dataLabelFontFace, "minor"), R = B(L?.fontSizeHpt, r) ?? Math.max(7, Math.min(13, k * .075)), re = L?.fontColor ? `#${L.fontColor}` : "#ffffff", ie = Array.from({ length: A }, () => []), ae = [g];
-	for (; ae.length > 0;) {
-		let e = ae.pop();
-		e.depth >= 0 && ie[e.depth].push(e);
-		for (let t = e.children.length - 1; t >= 0; t--) ae.push(e.children[t]);
+	Ve(e, t, u, d, f, p, d + S.title.topPad, S.title.fontPx);
+	let { px0: C, py0: T, pw: E, ph: D } = S.plotRect;
+	if (!(E > 0) || !(D > 0)) return;
+	pe(e, t, C, T, E, D, i, s);
+	let O = C + E / 2, A = T + D / 2, j = Math.min(E, D) * .46;
+	m.a0 = -Math.PI / 2, m.a1 = -Math.PI / 2 + Math.PI * 2, b(m);
+	let M = o(m) + 1, P = j * $e, F = (j - P) / M, I = (e) => `#${U(t, e, m.children.length, g?.chartexStyle)}`, ee = w(g?.dataPointOverrides), L = g?.seriesDataLabels, te = H(t, L?.fontFace ?? t.dataLabelFontFace, "minor"), R = ae(L?.fontSizeHpt, i) ?? Math.max(7, Math.min(13, j * .075)), ne = L?.fontColor ? `#${L.fontColor}` : "#ffffff", z = Array.from({ length: M }, () => []), re = [m];
+	for (; re.length > 0;) {
+		let e = re.pop();
+		e.depth >= 0 && z[e.depth].push(e);
+		for (let t = e.children.length - 1; t >= 0; t--) re.push(e.children[t]);
 	}
 	e.save();
-	for (let n = 0; n < A; n++) {
-		let i = M + n * F, a = i + F;
-		for (let s of ie[n]) {
-			let n = s.a1 - s.a0;
+	for (let n = 0; n < M; n++) {
+		let r = P + n * F, o = r + F;
+		for (let c of z[n]) {
+			let n = c.a1 - c.a0;
 			if (n <= 1e-4) continue;
-			let u = ee.get(s.labelIndex), d = Ie(t, _, u, s.branchIndex, g.children.length), y = xe(t, _, u, s.branchIndex, g.children.length, "#ffffff"), b = {
-				x: D - a,
-				y: O - a,
-				w: a * 2,
-				h: a * 2
+			let l = ee.get(c.labelIndex), v = Ie(t, g, l, c.branchIndex, m.children.length), y = xe(t, g, l, c.branchIndex, m.children.length, "#ffffff"), b = {
+				x: O - o,
+				y: A - o,
+				w: o * 2,
+				h: o * 2
 			};
-			m(e, c(u?.chartexStyle, _?.chartexStyle), t.chartexDataPointStyle, _?.chartexFormatIdx ?? 0, b, r, (e) => {
-				e.beginPath(), e.arc(D, O, a, s.a0, s.a1), e.arc(D, O, i, s.a1, s.a0, !0), e.closePath(), d && De(e, d, b, I(s.branchIndex), r, o), Ne(e, y, r, b, o) && e.stroke();
-			}, s.branchIndex);
-			let x = ne(t, _, s.labelIndex, s.label, s.value, {
+			h(e, a(l?.chartexStyle, g?.chartexStyle), t.chartexDataPointStyle, g?.chartexFormatIdx ?? 0, b, i, (e) => {
+				e.beginPath(), e.arc(O, A, o, c.a0, c.a1), e.arc(O, A, r, c.a1, c.a0, !0), e.closePath(), v && De(e, v, b, I(c.branchIndex), i, s), Ne(e, y, i, b, s) && e.stroke();
+			}, c.branchIndex);
+			let x = k(t, g, c.labelIndex, c.label, c.value, {
 				visible: !1,
 				showVal: !1,
 				showCatName: !1
-			}, v);
+			}, _);
 			if (!x) continue;
-			let S = x.text, k = B(x.fontSizeHpt, r) ?? R, A = x.fontColor ? `#${x.fontColor}` : re, M = x.fontFace ? j(t, x.fontFace, "minor") : te, N = (s.a0 + s.a1) / 2, P = (i + a) / 2, L = F - 4, z = n * P;
-			if (!x.manualLayout && L < k * .9 && z < k * .9) continue;
-			let ie = D + Math.cos(N) * P, ae = O + Math.sin(N) * P;
-			if (e.font = `${x.textStyle.fontItalic ? "italic " : ""}${x.fontBold ? "bold " : ""}${k}px ${M}`, x.manualLayout) {
+			let S = x.text, w = ae(x.fontSizeHpt, i) ?? R, j = x.fontColor ? `#${x.fontColor}` : ne, M = x.fontFace ? H(t, x.fontFace, "minor") : te, N = (c.a0 + c.a1) / 2, P = (r + o) / 2, L = F - 4, z = n * P;
+			if (!x.manualLayout && L < w * .9 && z < w * .9) continue;
+			let re = O + Math.cos(N) * P, ie = A + Math.sin(N) * P;
+			if (e.font = `${x.textStyle.fontItalic ? "italic " : ""}${x.fontBold ? "bold " : ""}${w}px ${M}`, x.manualLayout) {
 				He(e, S, {
 					kind: "point",
-					x: ie,
-					y: ae,
+					x: re,
+					y: ie,
 					position: x.position ?? "ctr"
 				}, {
 					x: C,
-					y: w,
-					w: T,
-					h: E
-				}, k, A, x.manualLayout, {
-					x: l,
-					y: f,
-					w: p,
-					h
-				}, je(t, x.richRuns, r, M, x.fontBold ?? !1, x.textStyle), void 0, x.textStyle, r, x.labelBox, o);
+					y: T,
+					w: E,
+					h: D
+				}, w, j, x.manualLayout, {
+					x: u,
+					y: d,
+					w: f,
+					h: p
+				}, je(t, x.richRuns, i, M, x.fontBold ?? !1, x.textStyle), void 0, x.textStyle, i, x.labelBox, s);
 				continue;
 			}
-			e.save(), e.translate(ie, ae);
-			let oe = N, se = oe * 180 / Math.PI % 360;
-			(se > 90 || se < -90) && (oe += Math.PI), e.rotate(oe), e.font = `${x.textStyle.fontItalic ? "italic " : ""}${x.fontBold ? "bold " : ""}${k}px ${M}`, He(e, S, {
+			e.save(), e.translate(re, ie);
+			let B = N, oe = B * 180 / Math.PI % 360;
+			(oe > 90 || oe < -90) && (B += Math.PI), e.rotate(B), e.font = `${x.textStyle.fontItalic ? "italic " : ""}${x.fontBold ? "bold " : ""}${w}px ${M}`, He(e, S, {
 				kind: "point",
 				x: 0,
 				y: 0,
@@ -752,15 +754,15 @@ function et(e, t, n, r, o) {
 				y: -z / 2,
 				w: L,
 				h: z
-			}, k, A, void 0, {
+			}, w, j, void 0, {
 				x: -L / 2,
 				y: -z / 2,
 				w: L,
 				h: z
-			}, je(t, x.richRuns, r, M, x.fontBold ?? !1, x.textStyle), void 0, x.textStyle, r, x.labelBox, o), e.restore();
+			}, je(t, x.richRuns, i, M, x.fontBold ?? !1, x.textStyle), void 0, x.textStyle, i, x.labelBox, s), e.restore();
 		}
 	}
-	e.restore(), Me(e, b, x, l, f, p, h, C, w, T, E, S.title.bandH + 2, r, y, o);
+	e.restore(), Me(e, y, x, u, d, f, p, C, T, E, D, S.title.bandH + 2, i, v, s);
 }
 function tt(e, t) {
 	let n = e.map((e, t) => ({
@@ -825,124 +827,124 @@ function tt(e, t) {
 	}
 	return p(c, l), o;
 }
-function $(e, t, n, r, i) {
-	let a = t.chartexTreemap;
-	if (!a || a.rows.length === 0) return;
-	if (d(a.rows)) {
-		Le(e, n, z + 1);
+function $(e, t, n, i, o) {
+	let s = t.chartexTreemap;
+	if (!s || s.rows.length === 0) return;
+	if (_e(s.rows)) {
+		Le(e, n, B + 1);
 		return;
 	}
-	let o = u(a.rows, !0);
-	if (o.layoutWeight <= 0 || o.children.length === 0) return;
-	let s = t.series[0], l = o.children.map((e) => Ue(t, e.branchIndex, o.children.length, s?.chartexStyle, s?.color)), f = P(t, {
+	let l = r(s.rows, !0);
+	if (l.layoutWeight <= 0 || l.children.length === 0) return;
+	let u = t.series[0], d = l.children.map((e) => Ue(t, e.branchIndex, l.children.length, u?.chartexStyle, u?.color)), f = c(t, {
 		chartType: "clusteredBar",
-		series: o.children.map((e) => {
-			let n = U(t, e.branchIndex, o.children.length, s?.chartexStyle);
-			return ke(t, e.label, s, t.chartexDataPointStyle, e.branchIndex, o.children.length, n);
+		series: l.children.map((e) => {
+			let n = U(t, e.branchIndex, l.children.length, u?.chartexStyle);
+			return ke(t, e.label, u, t.chartexDataPointStyle, e.branchIndex, l.children.length, n);
 		})
-	}), p = Be(e, f, n.w, n.h, r), h = N(t, n.x, n.y, n.w, n.h, r, {
+	}), p = Be(e, f, n.w, n.h, i), m = N(t, n.x, n.y, n.w, n.h, i, {
 		titleTopPadFrac: .035,
 		titleBottomPadFrac: .035,
 		legendReserve: p,
 		radialGapFrac: .015,
 		honorPlotAreaManualLayout: !0
 	});
-	Ve(e, t, n.x, n.y, n.w, n.h, n.y + h.title.topPad, h.title.fontPx);
-	let { px0: g, py0: _, pw: v, ph: y } = h.plotRect;
+	Ve(e, t, n.x, n.y, n.w, n.h, n.y + m.title.topPad, m.title.fontPx);
+	let { px0: g, py0: _, pw: v, ph: y } = m.plotRect;
 	if (!(v > 0) || !(y > 0)) return;
-	he(e, t, g, _, v, y, r, i);
+	pe(e, t, g, _, v, y, i, o);
 	let b = {
 		x: g,
 		y: _,
 		w: v,
 		h: y
-	}, x = a.parentLabelLayout ?? "overlapping", S = t.series[0]?.seriesDataLabels, C = j(t, S?.fontFace ?? t.dataLabelFontFace, "minor"), w = B(S?.fontSizeHpt, r) ?? Math.max(8, Math.min(13, h.plotRect.ph * .025)), T = S?.fontColor ? `#${S.fontColor}` : "#ffffff", E = new Map((t.series[0]?.dataLabelOverrides ?? []).map((e) => [e.idx, e])), D = t.chartBg ? t.chartBg.startsWith("#") ? t.chartBg : `#${t.chartBg}` : "#ffffff", O = be(s?.dataPointOverrides), k = (a, l) => {
-		if (l.w < .5 || l.h < .5) return;
-		let u = `#${U(t, a.branchIndex, o.children.length, s?.chartexStyle)}`, d = O.get(a.labelIndex), f = Ie(t, s, d, a.branchIndex, o.children.length), p = c(d?.chartexStyle, s?.chartexStyle), h = E.get(a.labelIndex), g = h?.fontColor ? `#${h.fontColor}` : T, _ = B(h?.fontSizeHpt, r) ?? w, v = h?.fontBold ?? S?.fontBold ?? !1;
-		if (a.children.length > 0) {
-			let o = ne(t, s, a.labelIndex, a.label, a.value, {
+	}, x = s.parentLabelLayout ?? "overlapping", S = t.series[0]?.seriesDataLabels, C = H(t, S?.fontFace ?? t.dataLabelFontFace, "minor"), T = ae(S?.fontSizeHpt, i) ?? Math.max(8, Math.min(13, m.plotRect.ph * .025)), E = S?.fontColor ? `#${S.fontColor}` : "#ffffff", D = new Map((t.series[0]?.dataLabelOverrides ?? []).map((e) => [e.idx, e])), O = t.chartBg ? t.chartBg.startsWith("#") ? t.chartBg : `#${t.chartBg}` : "#ffffff", A = w(u?.dataPointOverrides), j = (r, s) => {
+		if (s.w < .5 || s.h < .5) return;
+		let c = `#${U(t, r.branchIndex, l.children.length, u?.chartexStyle)}`, d = A.get(r.labelIndex), f = Ie(t, u, d, r.branchIndex, l.children.length), p = a(d?.chartexStyle, u?.chartexStyle), m = D.get(r.labelIndex), g = m?.fontColor ? `#${m.fontColor}` : E, _ = ae(m?.fontSizeHpt, i) ?? T, v = m?.fontBold ?? S?.fontBold ?? !1;
+		if (r.children.length > 0) {
+			let a = k(t, u, r.labelIndex, r.label, r.value, {
 				visible: x !== "none",
 				showVal: !1,
 				showCatName: !0
-			}, E, !0), c = o != null && (x !== "overlapping" || a.depth === 0), d = _, y = o?.fontFace ? j(t, o.fontFace, "minor") : C, S = x === "banner" && c ? Math.min(l.h * .28, d + 7) : 0;
-			S > 0 && m(e, p, t.chartexDataPointStyle, s?.chartexFormatIdx ?? 0, {
-				x: l.x,
-				y: l.y,
-				w: l.w,
+			}, D, !0), l = a != null && (x !== "overlapping" || r.depth === 0), d = _, y = a?.fontFace ? H(t, a.fontFace, "minor") : C, S = x === "banner" && l ? Math.min(s.h * .28, d + 7) : 0;
+			S > 0 && h(e, p, t.chartexDataPointStyle, u?.chartexFormatIdx ?? 0, {
+				x: s.x,
+				y: s.y,
+				w: s.w,
 				h: S
-			}, r, (e) => {
+			}, i, (e) => {
 				f && we(e, f, {
-					x: l.x,
-					y: l.y,
-					w: l.w,
+					x: s.x,
+					y: s.y,
+					w: s.w,
 					h: S
-				}, u, r, i);
-			}, a.branchIndex);
+				}, c, i, o);
+			}, r.branchIndex);
 			let w = {
-				x: l.x,
-				y: l.y + S,
-				w: l.w,
-				h: Math.max(0, l.h - S)
+				x: s.x,
+				y: s.y + S,
+				w: s.w,
+				h: Math.max(0, s.h - S)
 			};
-			for (let e of tt(a.children, w)) k(e.node, e.rect);
-			if (c && (o.manualLayout || l.w > d * 2 && l.h > d + 4)) {
+			for (let e of tt(r.children, w)) j(e.node, e.rect);
+			if (l && (a.manualLayout || s.w > d * 2 && s.h > d + 4)) {
 				e.font = `${v ? "bold " : ""}${d}px ${y}`;
-				let a = S > 0 ? {
-					x: l.x,
-					y: l.y,
-					w: l.w,
+				let r = S > 0 ? {
+					x: s.x,
+					y: s.y,
+					w: s.w,
 					h: S
-				} : l, s = h?.position ?? "inBase";
-				He(e, o.text, o.manualLayout ? {
+				} : s, c = m?.position ?? "inBase";
+				He(e, a.text, a.manualLayout ? {
 					kind: "point",
-					x: l.x + l.w / 2,
-					y: l.y + l.h / 2,
-					position: s
+					x: s.x + s.w / 2,
+					y: s.y + s.h / 2,
+					position: c
 				} : {
 					kind: "box",
-					rect: a,
-					position: s
-				}, o.manualLayout ? b : a, d, g, o.manualLayout, n, je(t, o.richRuns, r, y, v, o.textStyle), void 0, o.textStyle, r, o.labelBox, i);
+					rect: r,
+					position: c
+				}, a.manualLayout ? b : r, d, g, a.manualLayout, n, je(t, a.richRuns, i, y, v, a.textStyle), void 0, a.textStyle, i, a.labelBox, o);
 			}
 			return;
 		}
-		m(e, p, t.chartexDataPointStyle, s?.chartexFormatIdx ?? 0, l, r, (e) => {
-			f && we(e, f, l, u, r, i), Ne(e, xe(t, s, d, a.branchIndex, o.children.length, D, t.chartexDataPointStyle, { linkedNoStyleFallback: !0 }), r, l, i) && e.strokeRect(l.x, l.y, l.w, l.h);
-		}, a.branchIndex);
-		let y = ne(t, s, a.labelIndex, a.label, a.value, {
+		h(e, p, t.chartexDataPointStyle, u?.chartexFormatIdx ?? 0, s, i, (e) => {
+			f && we(e, f, s, c, i, o), Ne(e, xe(t, u, d, r.branchIndex, l.children.length, O, t.chartexDataPointStyle, { linkedNoStyleFallback: !0 }), i, s, o) && e.strokeRect(s.x, s.y, s.w, s.h);
+		}, r.branchIndex);
+		let y = k(t, u, r.labelIndex, r.label, r.value, {
 			visible: !1,
 			showVal: !1,
 			showCatName: !1
-		}, E);
+		}, D);
 		if (!y) return;
-		let A = B(y.fontSizeHpt, r) ?? _;
-		if (!y.manualLayout && (l.w <= A * 1.2 || l.h <= A * 1.2)) return;
-		let M = y.fontFace ? j(t, y.fontFace, "minor") : C;
-		e.font = `${y.fontBold ? "bold " : ""}${A}px ${M}`;
-		let N = l, P = y.position === "outEnd" ? "inEnd" : y.position ?? "ctr";
+		let w = ae(y.fontSizeHpt, i) ?? _;
+		if (!y.manualLayout && (s.w <= w * 1.2 || s.h <= w * 1.2)) return;
+		let M = y.fontFace ? H(t, y.fontFace, "minor") : C;
+		e.font = `${y.fontBold ? "bold " : ""}${w}px ${M}`;
+		let N = s, P = y.position === "outEnd" ? "inEnd" : y.position ?? "ctr";
 		He(e, y.text, y.manualLayout ? {
 			kind: "point",
-			x: l.x + l.w / 2,
-			y: l.y + l.h / 2,
+			x: s.x + s.w / 2,
+			y: s.y + s.h / 2,
 			position: P
 		} : {
 			kind: "box",
 			rect: N,
 			position: P
-		}, y.manualLayout ? b : N, A, y.fontColor ? `#${y.fontColor}` : g, y.manualLayout, n, je(t, y.richRuns, r, M, y.fontBold ?? !1, y.textStyle), void 0, y.textStyle, r, y.labelBox, i);
+		}, y.manualLayout ? b : N, w, y.fontColor ? `#${y.fontColor}` : g, y.manualLayout, n, je(t, y.richRuns, i, M, y.fontBold ?? !1, y.textStyle), void 0, y.textStyle, i, y.labelBox, o);
 	};
 	e.save(), e.beginPath(), e.rect(g, _, v, y), e.clip();
-	for (let e of tt(o.children, {
+	for (let e of tt(l.children, {
 		x: g,
 		y: _,
 		w: v,
 		h: y
-	})) k(e.node, e.rect);
-	e.restore(), Me(e, f, p, n.x, n.y, n.w, n.h, g, _, v, y, h.title.bandH + 2, r, l, i);
+	})) j(e.node, e.rect);
+	e.restore(), Me(e, f, p, n.x, n.y, n.w, n.h, g, _, v, y, m.title.bandH + 2, i, d, o);
 }
 function nt(e, t, n, r, i = 0) {
 	let a = Ke(t, void 0, n, r), o = qe(t, n, r);
-	if (a != null && a > 1048576 || o != null && o > 1048576 || a != null && o != null && a > 1048576 - o) return Le(e, n, z + 1), !0;
+	if (a != null && a > 1048576 || o != null && o > 1048576 || a != null && o != null && a > 1048576 - o) return Le(e, n, B + 1), !0;
 	if (t.chartexSuppressGeometry) {
 		let i = Ae(e, t, n.w, n.h, r);
 		return Ve(e, t, n.x, n.y, n.w, n.h, n.y + i.topPad, i.fontPx), !0;
@@ -950,7 +952,7 @@ function nt(e, t, n, r, i = 0) {
 	switch (t.chartType) {
 		case "waterfall": return Ye(e, t, n, r, i), !0;
 		case "clusteredColumn": {
-			let a = t.series.map((e, n) => n === 0 ? K(t, e, n, t.series.length) : e), o = t.chartexParetoSortDescending ? a.map((e) => v(e, t.categories, {
+			let a = t.series.map((e, n) => n === 0 ? K(t, e, n, t.series.length) : e), o = t.chartexParetoSortDescending ? a.map((e) => l(e, t.categories, {
 				sortDescending: !0,
 				keepUnvaluedCategories: !0
 			}).orderedSeries) : a, s = t.chartexShowUnpairedPercentageAxis && o[0] ? [{
@@ -962,7 +964,7 @@ function nt(e, t, n, r, i = 0) {
 				lineHidden: !0,
 				showMarker: !1
 			}] : [];
-			return ze(e, P(t, {
+			return ze(e, c(t, {
 				chartType: "clusteredBar",
 				categories: o[0]?.categories ?? t.categories,
 				series: [...o, ...s],
