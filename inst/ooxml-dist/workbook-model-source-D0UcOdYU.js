@@ -1,5 +1,5 @@
 import { n as e } from "./cjk-fallback-CxqXJu32.js";
-import { a as t, g as n } from "./renderer-D-5lFQlk.js";
+import { a as t, g as n } from "./renderer-BpEFRczF.js";
 import { i as r, n as i } from "./resource-debug-D8EBjKbZ.js";
 import { t as a } from "./rejected-load-CS5sDp04.js";
 import { n as o } from "./bundled-asset-url-Cv8ajMAZ.js";
@@ -54,7 +54,7 @@ async function h(t, o, u) {
 		let m = d(r, "xlsx");
 		try {
 			v.setSourceBytes(e.byteLength), v.checkpoint("container ready");
-			let t = _ === "worker" ? (await import("./render-worker-host-BLcI-NEt.js")).createRenderWorker() : new (await (import("./worker-source-CswzFCb1.js"))).default(), n, r = g(t, m, o, (e) => {
+			let t = _ === "worker" ? (await import("./render-worker-host-Cr7MmN8g.js")).createRenderWorker() : new (await (import("./worker-source-CswzFCb1.js"))).default(), n, r = g(t, m, o, (e) => {
 				n && (n.sourceMdw = e);
 			});
 			try {

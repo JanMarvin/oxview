@@ -3507,8 +3507,8 @@ function To(e, t, n, r, i, a, o, c, l, u, d, f, p, m, h, g, _) {
 			let t = Math.max(0, (E - 4) * F.dataBar.ratio);
 			xa(e, F.dataBar.color, b + 2, x + 2, t, D - 4, F.dataBar.gradient);
 		}
-		let R = Ls(Is(te, a, s, y.right, y.bottom, t.cellMap, v), F.border);
-		if (ne.push(() => zs(e, R, b, x, E, D, w)), !M) continue;
+		let R = Rs(Ls(te, a, s, y.right, y.bottom, t.cellMap, v), F.border);
+		if (ne.push(() => Bs(e, R, b, x, E, D, w)), !M) continue;
 		let z = Je(M, v, F.numFmt, t.worksheet.date1904, T ??= Ge(v.numFmts));
 		if (!z.text || z.text === "0" && t.worksheet.showZeros === !1) continue;
 		let B = Io(N, F, L);
@@ -3649,7 +3649,7 @@ function To(e, t, n, r, i, a, o, c, l, u, d, f, p, m, h, g, _) {
 				}
 				e.stroke();
 			}
-			let W = Ls(F ? Is(V, r, c, F.right, F.bottom, y, v) : V, U.border);
+			let W = Rs(F ? Ls(V, r, c, F.right, F.bottom, y, v) : V, U.border);
 			ce && (W = {
 				...W,
 				top: W.top?.style ? W.top : ce.top ?? W.top,
@@ -3664,12 +3664,12 @@ function To(e, t, n, r, i, a, o, c, l, u, d, f, p, m, h, g, _) {
 			let G = y.get(`${r - 1}:${c}`), ue = G ? Ya(v, Ke(t.worksheet, G, c)).border.bottom : null;
 			if (ue?.style && (n === 0 || W.top?.style) && (W = {
 				...W,
-				top: Us(W.top, ue)
+				top: Ws(W.top, ue)
 			}), !O.has(a)) {
 				let e = y.get(`${r}:${c - 1}`), n = e ? Ya(v, Ke(t.worksheet, e, c - 1)).border.right : null;
 				n?.style && (M || W.left?.style) && (W = {
 					...W,
-					left: Us(W.left, n)
+					left: Ws(W.left, n)
 				});
 			}
 			let de = t.autoFilterCells.has(N), fe = () => {
@@ -3677,11 +3677,11 @@ function To(e, t, n, r, i, a, o, c, l, u, d, f, p, m, h, g, _) {
 			};
 			if (F) {
 				let t = W;
-				ne.push(() => zs(e, t, z, l, I, L, w)), fe();
+				ne.push(() => Bs(e, t, z, l, I, L, w)), fe();
 			} else {
 				let t = W;
 				P.push(() => {
-					zs(e, t, z, l, I, L, w), fe();
+					Bs(e, t, z, l, I, L, w), fe();
 				});
 			}
 			if (!B) continue;
@@ -4268,7 +4268,7 @@ function ts(e, t, n, r, i = {}, a) {
 		for (let e of q.textRuns.owned.values()) i.onTextRun(e);
 		for (let [e, t] of q.textRuns.foreign) q.textRuns.owned.has(e) || i.onTextRun(t);
 	}
-	rs(e, t, C, w, i.loadedImages, c, y, b, x, S, ye, J, be, xe, t.rightToLeft === !0, f, i.threeD, i.regionMap, i.chartEx, a), !l && t.slicers && t.slicers.length > 0 && rc(e, t, C, w, c, y, b, x, S, ye, J, be, xe, t.rightToLeft === !0, f), l || ns(e, f, p, y, b, _, v, I, L, P, F, x, S, j, M, k, A, N, ee, h, g, c, o, i.selectedRowRange ?? null, i.selectedColRange ?? null, t.rightToLeft === !0, i.chromeColors);
+	rs(e, t, C, w, i.loadedImages, c, y, b, x, S, ye, J, be, xe, t.rightToLeft === !0, f, i.threeD, i.regionMap, i.chartEx, a), !l && t.slicers && t.slicers.length > 0 && ic(e, t, C, w, c, y, b, x, S, ye, J, be, xe, t.rightToLeft === !0, f), l || ns(e, f, p, y, b, _, v, I, L, P, F, x, S, j, M, k, A, N, ee, h, g, c, o, i.selectedRowRange ?? null, i.selectedColRange ?? null, t.rightToLeft === !0, i.chromeColors);
 	let De = t.rightToLeft === !0;
 	if (D > 0) {
 		e.save(), e.strokeStyle = ha, e.lineWidth = .5, e.beginPath();
@@ -4347,7 +4347,7 @@ function rs(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y) {
 		anchor: e
 	});
 	b.sort((e, t) => e.zOrder - t.zOrder || e.fallbackOrder - t.fallbackOrder);
-	for (let x of b) x.kind === "image" ? os(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, [x.anchor]) : x.kind === "shape" ? ss(e, t, n, r, a, o, s, c, l, u, d, f, p, i, m, h, [x.anchor], y, x.shape) : Ws(e, t, n, r, a, o, s, c, l, u, d, f, p, m, h, i, [x.anchor], g, _, v);
+	for (let x of b) x.kind === "image" ? os(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, [x.anchor]) : x.kind === "shape" ? ss(e, t, n, r, a, o, s, c, l, u, d, f, p, i, m, h, [x.anchor], y, x.shape) : Gs(e, t, n, r, a, o, s, c, l, u, d, f, p, m, h, i, [x.anchor], g, _, v);
 }
 function is(e, t) {
 	return e.offsetOf(t);
@@ -4523,17 +4523,19 @@ function fs(e, t, n) {
 	} : null;
 }
 function ps(e, t, n, r, i, a, o, s, c, l) {
-	if (_e(t.strokeFill) && (e = ve(e)), e.save(), t.rot !== 0 || t.flipH || t.flipV ? (e.translate(n + i / 2, r + a / 2), e.rotate(t.rot * Math.PI / 180), e.scale(t.flipH ? -1 : 1, t.flipV ? -1 : 1), e.translate(-i / 2, -a / 2)) : e.translate(n, r), t.geom.type === "custom") {
-		let n = Ss(e, t, i, a, o, s), r = t.geom.paths.filter((e) => e.w > 0 && e.h > 0), c = Ps(t), l = c && (ds(c.headEnd) || ds(c.tailEnd)) ? fs(r, i, a) : null, u = l?.start && c?.headEnd ? ee(c.headEnd, c, 1 / K, ge) : 0, d = l?.end && c?.tailEnd ? ee(c.tailEnd, c, 1 / K, ge) : 0;
+	_e(t.strokeFill) && (e = ve(e));
+	let u = Fs(o);
+	if (e.save(), t.rot !== 0 || t.flipH || t.flipV ? (e.translate(n + i / 2, r + a / 2), e.rotate(t.rot * Math.PI / 180), e.scale(t.flipH ? -1 : 1, t.flipV ? -1 : 1), e.translate(-i / 2, -a / 2)) : e.translate(n, r), t.geom.type === "custom") {
+		let n = Ss(e, t, i, a, o, s), r = t.geom.paths.filter((e) => e.w > 0 && e.h > 0), c = Ps(t), l = c && (ds(c.headEnd) || ds(c.tailEnd)) ? fs(r, i, a) : null, d = l?.start && c?.headEnd ? ee(c.headEnd, c, u, ge) : 0, f = l?.end && c?.tailEnd ? ee(c.tailEnd, c, u, ge) : 0;
 		r.forEach((s, c) => {
 			if (e.beginPath(), cs(e, s, 0, 0, i, a), s.fill !== "none" && Ms(e, t, i, a, o, n)) {
 				let t = A(s.fill);
 				t && (e.fillStyle = t, e.fill());
 			}
 			if (s.stroke === !1) return;
-			let l = c === 0 ? u : 0, f = c === r.length - 1 ? d : 0;
-			(l > 0 || f > 0) && (e.beginPath(), te(e, (e) => cs(e, s, 0, 0, i, a), l, f)), Fs(e, t, i, a, o);
-		}), l && c && ne(e, l, c, 1 / K, ge, {
+			let l = c === 0 ? d : 0, u = c === r.length - 1 ? f : 0;
+			(l > 0 || u > 0) && (e.beginPath(), te(e, (e) => cs(e, s, 0, 0, i, a), l, u)), Is(e, t, i, a, o);
+		}), l && c && ne(e, l, c, u, ge, {
 			x: 0,
 			y: 0,
 			w: i,
@@ -4543,13 +4545,13 @@ function ps(e, t, n, r, i, a, o, s, c, l) {
 			patternCoordinateTransform: xs(t, i, a)
 		});
 	} else if (t.geom.type === "preset") {
-		let n = Ss(e, t, i, a, o, s), r = t.strokeColor && t.strokeWidth > 0 ? () => Fs(e, t, i, a, o) : null, c = Ps(t), l = t.geom.name.toLowerCase(), u = F(l, c, 1 / K, ge), d = u?.decorated ? u : null, f = d?.restroke != null, p = t.fill?.fillType === "hatch" || t.fill?.fillType === "image" && (t.fill.shift || t.fill.alpha !== void 0) ? (e) => Ms(e, t, i, a, o, n) : void 0, m = t.geom.adj ?? [], h = G(e, t.geom.name, 0, 0, i, a, m, n, r, () => {}, f || p ? {
-			...f ? { skipTrailingStroke: !0 } : {},
-			...p ? { paintFill: p } : {}
+		let n = Ss(e, t, i, a, o, s), r = t.strokeColor && t.strokeWidth > 0 ? () => Is(e, t, i, a, o) : null, c = Ps(t), l = t.geom.name.toLowerCase(), d = F(l, c, u, ge), f = d?.decorated ? d : null, p = f?.restroke != null, m = t.fill?.fillType === "hatch" || t.fill?.fillType === "image" && (t.fill.shift || t.fill.alpha !== void 0) ? (e) => Ms(e, t, i, a, o, n) : void 0, h = t.geom.adj ?? [], g = G(e, t.geom.name, 0, 0, i, a, h, n, r, () => {}, p || m ? {
+			...p ? { skipTrailingStroke: !0 } : {},
+			...m ? { paintFill: m } : {}
 		} : void 0);
-		if (h && d && c) {
-			let n = j(l, 0, 0, i, a, m);
-			n && (e.beginPath(), P(e, d, l, n, 0, 0, i, a, m) && Fs(e, t, i, a, o), ne(e, n, c, 1 / K, ge, {
+		if (g && f && c) {
+			let n = j(l, 0, 0, i, a, h);
+			n && (e.beginPath(), P(e, f, l, n, 0, 0, i, a, h) && Is(e, t, i, a, o), ne(e, n, c, u, ge, {
 				x: 0,
 				y: 0,
 				w: i,
@@ -4559,7 +4561,7 @@ function ps(e, t, n, r, i, a, o, s, c, l) {
 				patternCoordinateTransform: xs(t, i, a)
 			}));
 		}
-		h || (e.beginPath(), e.rect(0, 0, i, a), Ms(e, t, i, a, o, n), Fs(e, t, i, a, o));
+		g || (e.beginPath(), e.rect(0, 0, i, a), Ms(e, t, i, a, o, n), Is(e, t, i, a, o));
 	} else if (t.geom.type === "image") {
 		let n = t.geom, r = l ? ji(l, t) : void 0, o = Oi(n.imagePath, Mi(n, r), r), c = s?.get(o), u = Si(s, o, "tiff");
 		if (c || u) {
@@ -5133,17 +5135,20 @@ function Ps(e) {
 		...e.strokeTailEnd ? { tailEnd: e.strokeTailEnd } : {}
 	};
 }
-function Fs(e, t, n, r, i) {
+function Fs(e) {
+	return e / K;
+}
+function Is(e, t, n, r, i) {
 	let a = Ps(t);
 	if (a) {
-		if (ye(e, a, 1 / K), a.fill) {
+		if (ye(e, a, Fs(i)), a.fill) {
 			let o = xe(a.fill, e, 0, 0, n, r, t.rot, q * i, xs(t, n, r), void 0, be(e));
 			o && (e.strokeStyle = o);
 		}
 		e.stroke();
 	}
 }
-function Is(e, t, n, r, i, a, o) {
+function Ls(e, t, n, r, i, a, o) {
 	if (r === n && i === t) return e;
 	let s = (e, r) => {
 		if (e === t && r === n) return null;
@@ -5163,7 +5168,7 @@ function Is(e, t, n, r, i, a, o) {
 		diagonalDown: e.diagonalDown ?? null
 	};
 }
-function Ls(e, t) {
+function Rs(e, t) {
 	if (!t) return e;
 	let n = (e, t) => t && t.style ? t : e ?? null;
 	return {
@@ -5175,7 +5180,7 @@ function Ls(e, t) {
 		diagonalDown: n(e.diagonalDown, t.diagonalDown)
 	};
 }
-function Rs(e, t, n, r, i = 1) {
+function zs(e, t, n, r, i = 1) {
 	return {
 		outerStart: n ? e - i : e,
 		outerEnd: r ? t + i : t,
@@ -5183,7 +5188,7 @@ function Rs(e, t, n, r, i = 1) {
 		innerEnd: r ? t - i : t
 	};
 }
-function zs(e, t, n, r, i, a, o = 1) {
+function Bs(e, t, n, r, i, a, o = 1) {
 	let c = [
 		{
 			edge: t.top,
@@ -5245,25 +5250,25 @@ function zs(e, t, n, r, i, a, o = 1) {
 		}
 		if (l.style === "double" && m !== "d") {
 			if (e.strokeStyle = c, e.lineWidth = 1, e.setLineDash([]), e.beginPath(), m === "h") {
-				let o = d === r, s = o ? r - 1 : r + a + 1, c = o ? r + 1 : r + a - 1, l = Rs(n, n + i, !!t.left?.style && t.left.style !== "none", !!t.right?.style && t.right.style !== "none", 1);
+				let o = d === r, s = o ? r - 1 : r + a + 1, c = o ? r + 1 : r + a - 1, l = zs(n, n + i, !!t.left?.style && t.left.style !== "none", !!t.right?.style && t.right.style !== "none", 1);
 				e.moveTo(l.outerStart, s), e.lineTo(l.outerEnd, s), e.moveTo(l.innerStart, c), e.lineTo(l.innerEnd, c);
 			} else {
-				let o = u === n, s = o ? n - 1 : n + i + 1, c = o ? n + 1 : n + i - 1, l = Rs(r, r + a, !!t.top?.style && t.top.style !== "none", !!t.bottom?.style && t.bottom.style !== "none", 1);
+				let o = u === n, s = o ? n - 1 : n + i + 1, c = o ? n + 1 : n + i - 1, l = zs(r, r + a, !!t.top?.style && t.top.style !== "none", !!t.bottom?.style && t.bottom.style !== "none", 1);
 				e.moveTo(s, l.outerStart), e.lineTo(s, l.outerEnd), e.moveTo(c, l.innerStart), e.lineTo(c, l.innerEnd);
 			}
 			e.stroke();
 			continue;
 		}
 		e.beginPath(), e.strokeStyle = c;
-		let h = Bs(l.style);
+		let h = Vs(l.style);
 		e.lineWidth = h;
-		let g = Vs(l.style);
+		let g = Hs(l.style);
 		e.setLineDash(g);
 		let _ = m === "v" ? s(u, h, o) : 0, v = m === "h" ? s(d, h, o) : 0;
 		e.moveTo(u + _, d + v), e.lineTo(f + _, p + v), e.stroke(), e.setLineDash([]);
 	}
 }
-function Bs(e) {
+function Vs(e) {
 	switch (e) {
 		case "thick": return 3;
 		case "medium":
@@ -5275,10 +5280,10 @@ function Bs(e) {
 		default: return 1;
 	}
 }
-function Vs(e) {
+function Hs(e) {
 	return c(e);
 }
-function Hs(e) {
+function Us(e) {
 	switch (e) {
 		case "double": return 13;
 		case "thick": return 12;
@@ -5296,11 +5301,11 @@ function Hs(e) {
 		default: return 0;
 	}
 }
-function Us(e, t) {
-	let n = Hs(e?.style), r = Hs(t?.style);
+function Ws(e, t) {
+	let n = Us(e?.style), r = Us(t?.style);
 	return n === 0 && r === 0 ? null : n >= r ? e ?? null : t ?? null;
 }
-function Ws(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.charts, _, v, y) {
+function Gs(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.charts, _, v, y) {
 	if (d <= 0 || f <= 0) return;
 	let b = is(n, o), x = as(r, a), S = ma(l, d, m, p);
 	for (let t of g) {
@@ -5320,8 +5325,8 @@ function Ws(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g = t.charts, _, v, 
 		}, q, 0, _, v, h ? he(h) : void 0, y), e.restore(), e.restore());
 	}
 }
-var Gs = "600 12px \"Meiryo UI\", \"Segoe UI\", sans-serif", Ks = "11px \"Meiryo UI\", \"Segoe UI\", sans-serif", qs = "#FFFFFF", Js = "#BFBFBF", Ys = "#F2F2F2", Xs = "#404040", Zs = "#FFFFFF", Qs = "#000000", $s = "#A5A5A5", ec = "#E7E6E6", tc = "#A6A6A6", nc = "#C6C6C6";
-function rc(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m) {
+var Ks = "600 12px \"Meiryo UI\", \"Segoe UI\", sans-serif", qs = "11px \"Meiryo UI\", \"Segoe UI\", sans-serif", Js = "#FFFFFF", Ys = "#BFBFBF", Xs = "#F2F2F2", Zs = "#404040", Qs = "#FFFFFF", $s = "#000000", ec = "#A5A5A5", tc = "#E7E6E6", nc = "#A6A6A6", rc = "#C6C6C6";
+function ic(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m) {
 	if (d <= 0 || f <= 0) return;
 	let h = t.slicers;
 	if (!h) return;
@@ -5330,38 +5335,38 @@ function rc(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m) {
 		let a = t.fromCol + 1, o = t.fromRow + 1, h = t.toCol + 1, y = t.toRow + 1, b = is(n, a) + t.fromColOff * i / K, x = as(r, o) + t.fromRowOff * i / K, S = is(n, h) + t.toColOff * i / K, C = as(r, y) + t.toRowOff * i / K, w = S - b, T = C - x;
 		if (w <= 0 || T <= 0) continue;
 		let E = ma(l + (b - g) - s, w, m, p), D = u + (x - _) - c;
-		E + w < v || E > v + d || D + T < u || D > u + f || (e.save(), e.beginPath(), e.rect(v, u, d, f), e.clip(), ic(e, t.caption, t.items, E, D, w, T, i, t.style), e.restore());
+		E + w < v || E > v + d || D + T < u || D > u + f || (e.save(), e.beginPath(), e.rect(v, u, d, f), e.clip(), ac(e, t.caption, t.items, E, D, w, T, i, t.style), e.restore());
 	}
 }
-function ic(e, t, n, r, i, a, o, s, c) {
+function ac(e, t, n, r, i, a, o, s, c) {
 	let l = c != null;
-	e.fillStyle = c?.whole?.fillColor ?? qs, e.fillRect(r, i, a, o);
-	let u = l ? c.whole?.borderColor : Js;
+	e.fillStyle = c?.whole?.fillColor ?? Js, e.fillRect(r, i, a, o);
+	let u = l ? c.whole?.borderColor : Ys;
 	u && (e.strokeStyle = u, e.lineWidth = 1, e.strokeRect(r + .5, i + .5, a - 1, o - 1));
-	let d = Math.max(20 * s, 14), f = l ? c.header?.fillColor : Ys;
-	f && (e.fillStyle = f, e.fillRect(r + 1, i + 1, a - 2, d)), e.fillStyle = c?.header?.fontColor ?? Xs, e.font = sc(c?.header, Gs, s, Hi.get(e), t);
-	let p = oc(e, c?.header, s, t);
+	let d = Math.max(20 * s, 14), f = l ? c.header?.fillColor : Xs;
+	f && (e.fillStyle = f, e.fillRect(r + 1, i + 1, a - 2, d)), e.fillStyle = c?.header?.fontColor ?? Zs, e.font = cc(c?.header, Ks, s, Hi.get(e), t);
+	let p = sc(e, c?.header, s, t);
 	e.textBaseline = "middle", e.textAlign = "left";
 	let m = 6 * s;
-	if (lc(e, t, r + m, i + d / 2 + 1, a - 2 * m, p), n.length === 0) return;
+	if (uc(e, t, r + m, i + d / 2 + 1, a - 2 * m, p), n.length === 0) return;
 	let h = Math.max(1, Math.round(2 * s)), g = 4 * s, _ = r + g, v = i + d + g, y = a - 2 * g, b = o - d - 2 * g;
 	if (y <= 0 || b <= 0) return;
 	let x = Math.max(18 * s, 16), S = Math.max(1, Math.floor((b + h) / (x + h))), C = Math.min(n.length, S), w = Math.min(x, (b - h * (C - 1)) / C);
 	if (w <= 0) return;
-	e.font = cc(Ks, s, Hi.get(e)?.families);
+	e.font = lc(qs, s, Hi.get(e)?.families);
 	let T = 8 * s;
 	for (let t = 0; t < C; t++) {
-		let r = n[t], i = v + t * (w + h), a = r.selected, o = a ? c?.selectedItemWithData : c?.unselectedItemWithData, u = o?.fillColor ?? (a ? Zs : ec), d = l ? o?.borderColor : a ? $s : nc;
-		e.fillStyle = u, l ? (ac(e, _, i, y, w, Math.min(4 * s, w / 4)), e.fill(), d && (e.strokeStyle = d, e.lineWidth = 1, e.stroke())) : (e.fillRect(_, i, y, w), d && (e.strokeStyle = d, e.lineWidth = 1, e.strokeRect(_ + .5, i + .5, y - 1, w - 1))), e.font = sc(o, Ks, s, Hi.get(e), r.name);
-		let f = oc(e, o, s, r.name);
-		e.fillStyle = o?.fontColor ?? (a ? Qs : tc), lc(e, r.name, _ + T, i + w / 2 + 1, y - 2 * T, f);
+		let r = n[t], i = v + t * (w + h), a = r.selected, o = a ? c?.selectedItemWithData : c?.unselectedItemWithData, u = o?.fillColor ?? (a ? Qs : tc), d = l ? o?.borderColor : a ? ec : rc;
+		e.fillStyle = u, l ? (oc(e, _, i, y, w, Math.min(4 * s, w / 4)), e.fill(), d && (e.strokeStyle = d, e.lineWidth = 1, e.stroke())) : (e.fillRect(_, i, y, w), d && (e.strokeStyle = d, e.lineWidth = 1, e.strokeRect(_ + .5, i + .5, y - 1, w - 1))), e.font = cc(o, qs, s, Hi.get(e), r.name);
+		let f = sc(e, o, s, r.name);
+		e.fillStyle = o?.fontColor ?? (a ? $s : nc), uc(e, r.name, _ + T, i + w / 2 + 1, y - 2 * T, f);
 	}
 }
-function ac(e, t, n, r, i, a) {
+function oc(e, t, n, r, i, a) {
 	let o = Math.max(0, Math.min(a, r / 2, i / 2));
 	e.beginPath(), e.moveTo(t + o, n), e.lineTo(t + r - o, n), e.quadraticCurveTo(t + r, n, t + r, n + o), e.lineTo(t + r, n + i - o), e.quadraticCurveTo(t + r, n + i, t + r - o, n + i), e.lineTo(t + o, n + i), e.quadraticCurveTo(t, n + i, t, n + i - o), e.lineTo(t, n + o), e.quadraticCurveTo(t, n, t + o, n), e.closePath();
 }
-function oc(e, t, n, r) {
+function sc(e, t, n, r) {
 	let i = e.font;
 	if (!t?.fontFamily || !k(t.fontFamily)) return {
 		paint: (e) => e,
@@ -5370,10 +5375,10 @@ function oc(e, t, n, r) {
 			font: i
 		}]
 	};
-	let a = Hi.get(e), o = sn(ta(e), r, t.fontFamily, i, () => sc({
+	let a = Hi.get(e), o = sn(ta(e), r, t.fontFamily, i, () => cc({
 		...t,
 		fontSize: 24
-	}, "", 1, a, "", !0)), s = sc(t, "", n, a, r, !0);
+	}, "", 1, a, "", !0)), s = cc(t, "", n, a, r, !0);
 	return {
 		paint: o.paint,
 		segments: o.segments.map((e) => ({
@@ -5382,15 +5387,15 @@ function oc(e, t, n, r) {
 		}))
 	};
 }
-function sc(e, n, r, i, a, s = !1) {
-	if (!e) return cc(n, r, i?.families);
+function cc(e, n, r, i, a, s = !1) {
+	if (!e) return lc(n, r, i?.families);
 	let c = Math.round((e.fontSize ?? 11) * r), l = e.fontBold ? "bold " : "";
 	return s ? `${l}${c}px ${t(Fa, i?.families)}` : `${l}${c}px ${t(e.fontFamily ? `${o(e.fontFamily)}, ${la(i?.substitutions, e.fontFamily, a)}"Segoe UI", sans-serif` : "\"Meiryo UI\", \"Segoe UI\", sans-serif", i?.families)}`;
 }
-function cc(e, n, r) {
+function lc(e, n, r) {
 	return e.replace(/(\d+(?:\.\d+)?)px (.*)$/, (e, i, a) => `${Math.round(Number(i) * n)}px ${t(a, r)}`);
 }
-function lc(e, t, n, r, i, a = {
+function uc(e, t, n, r, i, a = {
 	paint: (e) => e,
 	segments: [{
 		authored: t,

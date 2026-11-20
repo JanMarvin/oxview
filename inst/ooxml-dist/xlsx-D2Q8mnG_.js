@@ -16,7 +16,7 @@ import { L as j, R as ie, V as ae, n as oe, t as se } from "./renderer-D3GIB31w.
 import { i as ce, t as le } from "./tiff-contract-DEd8CGuz.js";
 import { _ as ue, a as M, b as de, d as fe, f as pe, g as me, m as he, o as ge, p as _e, t as ve, u as ye, v as be, x as xe, y as Se } from "./canvas-viewer-mechanics-DrH37lzF.js";
 import { _ as Ce, a as we, f as Te, g as Ee, i as De, l as Oe, n as ke, o as Ae, r as je, s as Me, v as Ne, y as Pe } from "./duotone-bitmap-by-path-B_pNKO0M.js";
-import { A as Fe, C as Ie, D as Le, E as Re, F as N, I as ze, M as P, N as Be, O as Ve, P as He, S as Ue, T as We, _ as Ge, b as Ke, c as qe, d as Je, f as Ye, g as Xe, h as Ze, i as Qe, j as $e, k as et, l as tt, m as nt, n as rt, o as it, p as at, r as ot, s as F, t as st, u as ct, v as lt, w as ut, x as dt, y as ft } from "./renderer-D-5lFQlk.js";
+import { A as Fe, C as Ie, D as Le, E as Re, F as N, I as ze, M as P, N as Be, O as Ve, P as He, S as Ue, T as We, _ as Ge, b as Ke, c as qe, d as Je, f as Ye, g as Xe, h as Ze, i as Qe, j as $e, k as et, l as tt, m as nt, n as rt, o as it, p as at, r as ot, s as F, t as st, u as ct, v as lt, w as ut, x as dt, y as ft } from "./renderer-BpEFRczF.js";
 import { n as pt } from "./renderer-module-contract-BuTx2FWJ.js";
 import { a as mt, c as ht, i as gt, n as _t, o as vt, r as yt, s as bt, t as xt } from "./chart-context-DqNY4BWJ.js";
 import { n as St } from "./error-wire-Dr1HjXGZ.js";
@@ -880,7 +880,7 @@ var vr = Symbol("retain-xlsx-viewer-fonts"), q = Symbol("prepare-xlsx-viewer-row
 				i = await pr(e);
 			} else i = t;
 			dr(i.byteLength), c.setSourceBytes(i.byteLength), c.checkpoint("source ready");
-			let o = s === "worker" ? (await import("./render-worker-host-BLcI-NEt.js")).createRenderWorker() : (await import("./delimited-text-worker-host-BfQCF8yx.js")).createDelimitedTextWorker(), l;
+			let o = s === "worker" ? (await import("./render-worker-host-Cr7MmN8g.js")).createRenderWorker() : (await import("./delimited-text-worker-host-BfQCF8yx.js")).createDelimitedTextWorker(), l;
 			try {
 				let t = new e(o, s, void 0, !1);
 				return l = t, t.metrics = c, await t._loadDelimitedText(r === i ? i.slice(0) : i, n, a), s === "main" && (t.bridge?.terminate(), t.bridge = null), c.checkpoint("worksheet ready"), c.succeed({ sheets: 1 }), t;
@@ -898,7 +898,7 @@ var vr = Symbol("retain-xlsx-viewer-fonts"), q = Symbol("prepare-xlsx-viewer-row
 		if (n = {
 			...n,
 			xlsxWorksheetLimits: r.worksheet
-		}, n.legacyXls !== void 0 || n.ods !== void 0) return (await import("./workbook-model-source-ByEPFCiU.js")).loadXlsxModelSource(t, n, e);
+		}, n.legacyXls !== void 0 || n.ods !== void 0) return (await import("./workbook-model-source-D0UcOdYU.js")).loadXlsxModelSource(t, n, e);
 		n = {
 			...n,
 			cjkFallback: f(n.cjkFallback)
@@ -923,7 +923,7 @@ var vr = Symbol("retain-xlsx-viewer-fonts"), q = Symbol("prepare-xlsx-viewer-row
 			l = i(await a(l, n.password));
 			let u = l === r;
 			c.setSourceBytes(l.byteLength), c.checkpoint("container ready");
-			let d = s === "worker" ? (await import("./render-worker-host-BLcI-NEt.js")).createRenderWorker() : new Fn(), f;
+			let d = s === "worker" ? (await import("./render-worker-host-Cr7MmN8g.js")).createRenderWorker() : new Fn(), f;
 			try {
 				return f = new e(d, s, n.wasmUrl), f.metrics = c, await f._load(l, n, o.policy, (e) => c.observeUsage(e), u), c.checkpoint("workbook index ready"), c.succeed({ sheets: f.sheetCount }), f;
 			} catch (e) {
@@ -3042,6 +3042,9 @@ function Bi(e, t = {}) {
 }
 var Vi = class {
 	host;
+	activationController;
+	searchedWorkbook = null;
+	findRequest = 0;
 	controller;
 	constructor(e) {
 		this.host = e, this.controller = new Li(() => e.sheetCount(), (t) => e.workbook()?.sheetNames[t] ?? "", (e) => this.collectSheetCells(e));
@@ -3071,7 +3074,13 @@ var Vi = class {
 		}
 	}
 	invalidate() {
-		this.controller.invalidate();
+		this.findRequest++, this.searchedWorkbook = null, this.retireActivation(), this.controller.invalidate();
+	}
+	invalidateUnlessFor(e) {
+		this.searchedWorkbook !== e && this.invalidate();
+	}
+	retireActivation(e) {
+		this.activationController?.signal !== e && (this.activationController?.abort(), this.activationController = void 0);
 	}
 	updateOverlay() {
 		let e = this.host.overlayHost;
@@ -3089,9 +3098,12 @@ var Vi = class {
 		}
 	}
 	async find(e, t = {}) {
-		if (!this.host.workbook()) return [];
-		let n = await this.controller.find(e, t);
-		return this.updateOverlay(), n;
+		let n = this.host.workbook();
+		if (!n) return [];
+		let r = ++this.findRequest;
+		this.searchedWorkbook = n, this.retireActivation();
+		let i = await this.controller.find(e, t);
+		return r === this.findRequest && this.retireActivation(), this.updateOverlay(), i;
 	}
 	async next() {
 		return this.activateMatch(this.controller.next());
@@ -3100,15 +3112,17 @@ var Vi = class {
 		return this.activateMatch(this.controller.prev());
 	}
 	clear() {
-		this.controller.invalidate(), this.updateOverlay();
+		this.invalidate(), this.updateOverlay();
 	}
 	async activateMatch(e) {
-		if (!e) return this.updateOverlay(), null;
-		let { sheet: t, row: n, col: r } = e.location;
-		return t !== this.host.currentSheet() && await this.host.goToSheet(t), this.host.scrollCellIntoView(n, r), this.updateOverlay(), e;
+		if (this.retireActivation(), !e) return this.updateOverlay(), null;
+		let t = new AbortController();
+		this.activationController = t;
+		let { sheet: n, row: r, col: i } = e.location;
+		return n !== this.host.currentSheet() && await this.host.goToSheet(n, t.signal), t.signal.aborted ? null : (this.host.scrollCellIntoView(r, i), this.updateOverlay(), e);
 	}
 	destroy() {
-		this.controller.invalidate();
+		this.invalidate();
 	}
 }, Hi = 25e4, Ui = 8 * 1024 * 1024;
 function Wi(e, t) {
@@ -5070,7 +5084,7 @@ var Wa = class {
 			highlightColors: () => this.opts.findHighlightColors,
 			cellRect: (e, t) => this._cellRect(e, t),
 			screenX: (e, t) => this.screenX(e, t),
-			goToSheet: (e) => this.goToSheet(e),
+			goToSheet: (e, t) => this.navigateToSheet(e, t),
 			scrollCellIntoView: (e, t) => this._scrollCellIntoView(e, t)
 		}), i && (this.acquisition.install(i, !1), this.partFailureDelivery.attach(Vn(i)), this._mountKind === "composite" && this.activateWorkbook(i).catch((e) => this._reportRenderError(e)));
 	}
@@ -5113,7 +5127,7 @@ var Wa = class {
 		this.fontBindingGeneration++, this.fontBinding?.release(), this.fontBinding = null;
 	}
 	prepareWorkbook(e) {
-		return this._destroyed || this.wb !== e ? !1 : this.preparedWorkbook === e ? !0 : (this.finder.invalidate(), this.selectionInput.clearSheetGestures(), this.viewEdits.clear(), this.releaseInitialAnchorReferences(), this.sheetViews.clear(), this.buildTabs(), this.preparedWorkbook = e, this.partFailureDelivery.attach(Vn(e)), this._destroyed || this.wb !== e ? !1 : (this.opts.onReady?.(e.sheetNames), !0));
+		return this._destroyed || this.wb !== e ? !1 : this.preparedWorkbook === e ? !0 : (this.finder.invalidateUnlessFor(e), this.selectionInput.clearSheetGestures(), this.viewEdits.clear(), this.releaseInitialAnchorReferences(), this.sheetViews.clear(), this.buildTabs(), this.preparedWorkbook = e, this.partFailureDelivery.attach(Vn(e)), this._destroyed || this.wb !== e ? !1 : (this.opts.onReady?.(e.sheetNames), !0));
 	}
 	get workbook() {
 		let e = this.acquisition.current;
@@ -5126,44 +5140,44 @@ var Wa = class {
 	set wb(e) {
 		e ? this.acquisition.install(e) : this.acquisition.destroy();
 	}
-	async showSheet(e) {
-		this.selectionInput.clearSheetGestures();
-		let t = ++this.sheetRequestGeneration;
+	async showSheet(e, t) {
+		this.finder.retireActivation(t), this.selectionInput.clearSheetGestures();
+		let n = ++this.sheetRequestGeneration;
 		this.previewFallbackReason = null;
-		let n = this.workbook, r, i, a, o = null, s = null, c, l = !1;
+		let r = this.workbook, i, a, o, s = null, c = null, l, u = !1;
 		try {
-			if (!await this.ensureHostFonts(n) || !this.isCurrentSheetRequest(t, n)) return;
+			if (!await this.ensureHostFonts(r) || !this.isCurrentSheetRequest(n, r)) return;
 			e !== this.currentSheet && this.currentWorksheet && (this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = null);
-			let u = await wr(n, e);
-			i = u.worksheet, a = u.release;
-			let d = () => this.isCurrentSheetRequest(t, n) ? !1 : (a?.(), a = void 0, !0);
+			let t = await wr(r, e);
+			a = t.worksheet, o = t.release;
+			let d = () => this.isCurrentSheetRequest(n, r) ? !1 : (o?.(), o = void 0, !0);
 			if (d()) return;
-			let f = u.partial, p = this.sheetViews.get(e), m = this.initialAnchorReferenceFor(n, e), h = m === void 0 ? Ve(i) : void 0, g = h !== void 0;
+			let f = t.partial, p = this.sheetViews.get(e), m = this.initialAnchorReferenceFor(r, e), h = m === void 0 ? Ve(a) : void 0, g = h !== void 0;
 			if (g && (p !== void 0 && !p.parseError || this.viewEdits.hasViewEdits(e))) throw Error(`XLSX viewer cannot establish the initial size of editAs="oneCell" anchors on sheet ${e} after view edits.`);
-			let _ = (t) => {
-				let n = t.parseError || p?.parseError ? void 0 : p, r = n ?? this.createVisibleSheetView(t);
-				return (n || u.partial) && (r.rows = t.rows), n || (m && !t.parseError && Re(r, m), this.viewEdits.restoreSheetViewState(e, r)), r;
-			}, v = (r, i) => {
-				i && nt(r);
-				let a = n[q];
+			let _ = (n) => {
+				let r = n.parseError || p?.parseError ? void 0 : p, i = r ?? this.createVisibleSheetView(n);
+				return (r || t.partial) && (i.rows = n.rows), r || (m && !n.parseError && Re(i, m), this.viewEdits.restoreSheetViewState(e, i)), i;
+			}, v = (t, i) => {
+				i && nt(t);
+				let a = r[q];
 				if (typeof a == "function") {
 					let e = this.hostDocument.createElement("canvas").getContext("2d");
-					e && (a.call(n, r, e), l = !0);
+					e && (a.call(r, t, e), u = !0);
 				}
-				this.isCurrentSheetRequest(t, n) && this.viewEdits.syncAutomaticRowOverrides(e, r);
+				this.isCurrentSheetRequest(n, r) && this.viewEdits.syncAutomaticRowOverrides(e, t);
 			}, y = (e) => {
-				if (!g || e.parseError || !this.isCurrentSheetRequest(t, n)) return;
-				let r = Le(e, F(e), this.viewport.scale) ?? null;
-				return r && Re(e, r), r;
+				if (!g || e.parseError || !this.isCurrentSheetRequest(n, r)) return;
+				let t = Le(e, F(e), this.viewport.scale) ?? null;
+				return t && Re(e, t), t;
 			};
-			if (r = _(i), u.partial) {
+			if (i = _(a), t.partial) {
 				let e = {
 					width: this.canvasArea.clientWidth,
 					height: this.canvasArea.clientHeight,
 					scale: this.viewport.scale
 				};
-				s = e;
-				let t = () => F(r).visibleRange({
+				c = e;
+				let n = () => F(i).visibleRange({
 					width: e.width,
 					height: e.height,
 					scale: e.scale,
@@ -5172,51 +5186,51 @@ var Wa = class {
 					headerWidth: 50,
 					headerHeight: 22,
 					buffer: 2
-				}), n = t(), a = 0, o = h ?? 0;
+				}), r = n(), o = 0, s = h ?? 0;
 				for (;;) {
-					let e = Math.max(n.range.row + n.range.rows - 1, r.freezeRows ?? 0, o);
-					if (e > a) {
-						if (await (u.waitForRows?.(e) ?? Promise.resolve()), d()) return;
-						a = e;
+					let e = Math.max(r.range.row + r.range.rows - 1, i.freezeRows ?? 0, s);
+					if (e > o) {
+						if (await (t.waitForRows?.(e) ?? Promise.resolve()), d()) return;
+						o = e;
 					}
-					if (v(r, !0), n = t(), Math.max(n.range.row + n.range.rows - 1, r.freezeRows ?? 0, o) <= a) break;
+					if (v(i, !0), r = n(), Math.max(r.range.row + r.range.rows - 1, i.freezeRows ?? 0, s) <= o) break;
 				}
-				let l = {
-					row: (r.freezeRows ?? 0) > 0 ? 1 : n.range.row,
-					col: (r.freezeCols ?? 0) > 0 ? 1 : n.range.col,
-					rows: n.range.row + n.range.rows - ((r.freezeRows ?? 0) > 0 ? 1 : n.range.row),
-					cols: n.range.col + n.range.cols - ((r.freezeCols ?? 0) > 0 ? 1 : n.range.col)
+				let u = {
+					row: (i.freezeRows ?? 0) > 0 ? 1 : r.range.row,
+					col: (i.freezeCols ?? 0) > 0 ? 1 : r.range.col,
+					rows: r.range.row + r.range.rows - ((i.freezeRows ?? 0) > 0 ? 1 : r.range.row),
+					cols: r.range.col + r.range.cols - ((i.freezeCols ?? 0) > 0 ? 1 : r.range.col)
 				};
-				if (this.previewFallbackReason = kr(r, l, a) ?? (g ? Ar(r, o, a) : null), this.previewFallbackReason) {
-					if (i = await u.completion, d()) return;
-					f = !1, s = null, r = _(i), v(r, !0);
+				if (this.previewFallbackReason = kr(i, u, o) ?? (g ? Ar(i, s, o) : null), this.previewFallbackReason) {
+					if (a = await t.completion, d()) return;
+					f = !1, c = null, i = _(a), v(i, !0);
 				}
-				c = y(r);
-			} else v(r, !1), c = y(r);
-			o = f ? u.completion : null;
+				l = y(i);
+			} else v(i, !1), l = y(i);
+			s = f ? t.completion : null;
 		} catch (e) {
-			if (a?.(), c && et(c), !this.isCurrentSheetRequest(t, n)) return;
-			throw await this.restoreDisplayedWorksheetLease(n, t), e;
+			if (o?.(), l && et(l), !this.isCurrentSheetRequest(n, r)) return;
+			throw await this.restoreDisplayedWorksheetLease(r, n), e;
 		}
-		if (!this.isCurrentSheetRequest(t, n)) {
-			a?.(), c && et(c);
+		if (!this.isCurrentSheetRequest(n, r)) {
+			o?.(), l && et(l);
 			return;
 		}
-		this.selectionInput.clearSheetGestures(), this.viewEdits.restoreRowResizeRanges(e, r), c !== void 0 && this.installInitialAnchorReference(n, e, c), this.currentAutoRowHeightsPrepared = l, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = a ?? null, this.sheetViews.clear(), this.sheetViews.set(e, r), this.currentSheet = e, this.displayedViewport = null, this.currentWorksheet = r, this.previewCompletion = o, this.firstPreviewRender = o !== null, this.previewPreparedViewport = s, o && o.then((i) => {
-			if (!this.isCurrentSheetRequest(t, n) || this.currentWorksheet !== r) return;
+		this.selectionInput.clearSheetGestures(), this.viewEdits.restoreRowResizeRanges(e, i), l !== void 0 && this.installInitialAnchorReference(r, e, l), this.currentAutoRowHeightsPrepared = u, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = o ?? null, this.sheetViews.clear(), this.sheetViews.set(e, i), this.currentSheet = e, this.displayedViewport = null, this.currentWorksheet = i, this.previewCompletion = s, this.firstPreviewRender = s !== null, this.previewPreparedViewport = c, s && s.then((t) => {
+			if (!this.isCurrentSheetRequest(n, r) || this.currentWorksheet !== i) return;
 			this.previewCompletion = null, this.firstPreviewRender = !1, this.previewPreparedViewport = null;
-			let a = !!i.parseError;
+			let a = !!t.parseError;
 			this.selectionInput.clearSheetGestures();
-			let o = this.createVisibleSheetView(i), s = a ? void 0 : this.initialAnchorReferenceFor(n, e);
+			let o = this.createVisibleSheetView(t), s = a ? void 0 : this.initialAnchorReferenceFor(r, e);
 			if (s && Re(o, s), this.viewEdits.restoreSheetViewState(e, o), this.displayedViewport = null, this.currentWorksheet = o, this.sheetViews.set(e, o), a) {
 				this.currentSourceComments = [], this.sourceCommentMap.clear(), this.selectionController.reset(), this.emitSelectionChange(), this.updateSelectionOverlay(), this.buildCommentMap(o), this.buildHyperlinkMap(o), this.buildOutline(o), this.layoutGutters(), this.updateSpacerSize(o), this.scheduleRender();
 				return;
 			}
-			Ze(r), nt(r);
+			Ze(i), nt(i);
 			let c = this.hostDocument.createElement("canvas").getContext("2d");
-			c && (n[q](o, c), this.currentAutoRowHeightsPrepared = !0), this.viewEdits.syncAutomaticRowOverrides(e, o), this.currentSourceComments = i.comments ?? [], this.sourceCommentMap = wa(this.currentSourceComments), this.buildCommentMap(o), this.buildHyperlinkMap(o), this.buildOutline(o), this.layoutGutters(), this.updateSpacerSize(o), this.scheduleRender(), this.scheduleSelectionContextNotification();
+			c && (r[q](o, c), this.currentAutoRowHeightsPrepared = !0), this.viewEdits.syncAutomaticRowOverrides(e, o), this.currentSourceComments = t.comments ?? [], this.sourceCommentMap = wa(this.currentSourceComments), this.buildCommentMap(o), this.buildHyperlinkMap(o), this.buildOutline(o), this.layoutGutters(), this.updateSpacerSize(o), this.scheduleRender(), this.scheduleSelectionContextNotification();
 		}).catch((e) => {
-			if (!(!this.isCurrentSheetRequest(t, n) || this.currentWorksheet !== r)) {
+			if (!(!this.isCurrentSheetRequest(n, r) || this.currentWorksheet !== i)) {
 				if (this.previewCompletion = null, this.firstPreviewRender = !1, this.previewPreparedViewport = null, this.selectionInput.clearSheetGestures(), this.displayedViewport = null, this.currentWorksheet = null, this.releaseCurrentWorksheet?.(), this.releaseCurrentWorksheet = null, this.renderDispatcher.begin(), this._mode === "worker") {
 					let e = new OffscreenCanvas(1, 1);
 					e.getContext("2d");
@@ -5225,15 +5239,15 @@ var Wa = class {
 				} else this.canvas.getContext("2d")?.clearRect?.(0, 0, this.canvas.width, this.canvas.height);
 				this._reportRenderError(e);
 			}
-		}), this.currentSourceComments = i.comments ?? [], this.opts.comments !== !1 && this.currentSourceComments.length > 0 && this.comments.loadUi().catch((e) => this._reportRenderError(e)), this.sourceCommentMap = wa(this.currentSourceComments), this.setElementContext(null), this.selectionInput.clearSheetGestures(), this.updateFooterDirection(), this.viewportTop = 0, this.selectionController.reset(), this.emitSelectionChange(), this.hideCommentPopup(), this.hideValidationPanel(), this.updateSelectionOverlay(), this.updateTabActive(e), this.buildCommentMap(this.currentWorksheet), this.buildHyperlinkMap(this.currentWorksheet), this.buildOutline(this.currentWorksheet), this.layoutGutters(), this.updateSpacerSize(this.currentWorksheet), this.resetHorizontalScroll();
-		let u = this.committedFrameCount;
+		}), this.currentSourceComments = a.comments ?? [], this.opts.comments !== !1 && this.currentSourceComments.length > 0 && this.comments.loadUi().catch((e) => this._reportRenderError(e)), this.sourceCommentMap = wa(this.currentSourceComments), this.setElementContext(null), this.selectionInput.clearSheetGestures(), this.updateFooterDirection(), this.viewportTop = 0, this.selectionController.reset(), this.emitSelectionChange(), this.hideCommentPopup(), this.hideValidationPanel(), this.updateSelectionOverlay(), this.updateTabActive(e), this.buildCommentMap(this.currentWorksheet), this.buildHyperlinkMap(this.currentWorksheet), this.buildOutline(this.currentWorksheet), this.layoutGutters(), this.updateSpacerSize(this.currentWorksheet), this.resetHorizontalScroll();
+		let d = this.committedFrameCount;
 		await this.renderCurrentSheet();
-		let d = this.committedFrameCount > u;
-		if (o && !d && this.isCurrentSheetRequest(t, n)) {
-			if (await o, !this.isCurrentSheetRequest(t, n)) return;
+		let f = this.committedFrameCount > d;
+		if (s && !f && this.isCurrentSheetRequest(n, r)) {
+			if (await s, !this.isCurrentSheetRequest(n, r)) return;
 			await this.renderCurrentSheet();
 		}
-		this.isCurrentSheetRequest(t, n) && (this.updateFindOverlay(), this.emitViewportChange(), this.opts.onSheetChange?.(e, this.workbook.sheetNames.length));
+		this.isCurrentSheetRequest(n, r) && (this.updateFindOverlay(), this.emitViewportChange(), this.opts.onSheetChange?.(e, this.workbook.sheetNames.length));
 	}
 	isCurrentSheetRequest(e, t) {
 		return !this._destroyed && e === this.sheetRequestGeneration && this.wb === t;
@@ -5348,9 +5362,22 @@ var Wa = class {
 		return this._destroyed ? [] : this.wb?.partFailures ?? [];
 	}
 	async goToSheet(e) {
-		if (this.sheetCount === 0) return;
-		let t = this.workbook;
-		this.prepareWorkbook(t) && await this.showSheet(Math.max(0, Math.min(e, this.sheetCount - 1)));
+		await this.navigateToSheet(e);
+	}
+	async navigateToSheet(e, t) {
+		if (this.sheetCount === 0 || t?.aborted) return;
+		let n = this.workbook;
+		if (!this.prepareWorkbook(n)) return;
+		let r = Math.max(0, Math.min(e, this.sheetCount - 1)), i = this.showSheet(r, t), a = this.sheetRequestGeneration, o, s = () => {
+			this.sheetRequestGeneration === a && this.currentSheet !== r && (o = ++this.sheetRequestGeneration);
+		};
+		t?.addEventListener("abort", s, { once: !0 }), t?.aborted && s();
+		try {
+			await i;
+		} finally {
+			t?.removeEventListener("abort", s);
+		}
+		o !== void 0 && await this.restoreDisplayedWorksheetLease(n, o);
 	}
 	async nextSheet() {
 		await this.goToSheet(this._stepSheet(1));
